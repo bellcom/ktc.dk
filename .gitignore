@@ -3,3 +3,5 @@ sessions/*
 tmp/*
 private/*
 site
+production-to-test.sh
+production-to-preprod.sh
