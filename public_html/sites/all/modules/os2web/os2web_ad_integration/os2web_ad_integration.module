@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ * Code for the OS2Web AD Integration feature.
+ */
+
+/**
+ * Implements hook_os2web_help().
+ */
+function os2web_ad_integration_os2web_help($sections) {
+
+  // Module specific.
+  $sections['configuration'] = t('AD Integration:  <a href="http://test.os2web.bellcom.dk/admin/config/people/ldap" target="_blank">AD configuration</a>');
+  
+  return $sections;
+}
+
+
+include_once('os2web_ad_integration.features.inc');

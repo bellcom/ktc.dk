@@ -1,0 +1,156 @@
+<?php
+/**
+ * @file
+ * Code for the Taxonomies and taxonomy importers feature.
+ */
+
+include_once('os2web_taxonomies.features.inc');
+
+/**
+ * Implements hook_form_alter().
+ */
+function os2web_taxonomies_form_alter(&$form, &$form_state, $form_id) {
+
+  if (isset($form['field_os2web_base_field_kle_ref'])) {
+    $node_type = isset($form['type']['#value']) ? $form['type']['#value'] : 'os2web_base_news';
+    // Make KLE not required if so in settings.
+    if (!variable_get('os2web_taxonomies-' . $node_type . '-kle_required', TRUE)) {
+      $form['field_os2web_base_field_kle_ref']['und']['#required'] = FALSE;
+    }
+
+    // Hide KLE if so in settings, only if not required.
+    if (variable_get('os2web_taxonomies-' . $node_type . '-kle_hidden', FALSE) && !variable_get('os2web_taxonomies-' . $node_type . '-kle_required', TRUE)) {
+      $form['field_os2web_base_field_kle_ref']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_node_validate().
+ */
+function os2web_taxonomies_node_validate($node, $form, &$form_state) {
+  if (isset($node->field_os2web_base_field_kle_ref)) {
+    foreach ($node->field_os2web_base_field_kle_ref['und'] as $term) {
+      // Restrict to only be able to use already existing KLE numbers.
+      if (!isset($term['tid']) || $term['tid'] === 'autocreate') {
+        form_set_error('field_os2web_base_field_kle_ref', $term['name'] . ': ' . t('Du kan kun vælge de eksisterende KLE numre.'));
+      }
+      // Match the number with xx.xx.xx, only these are approved to use.
+      elseif (!preg_match('/^\d+\.\d+\.\d+./', $term['name'])) {
+        form_set_error('field_os2web_base_field_kle_ref', $term['name'] . ': ' . t('Du kan kun vælge KLE numre startende med XX.XX.XX numre.'));
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_FORM_alter().
+ */
+function os2web_taxonomies_form_os2web_settings_settings_form_alter(&$form, &$form_state, $form_id) {
+  // Alter the OS2web Subscription settings form. Add some Meeting specific
+  // configurations.
+  $form['os2web_taxonomies_tax_kle'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('KLE Settings'),
+    '#description' => t('Set KLE as required when creating or editing a node. This is only possible on content types which has the KLE field. If non-required, you can choose to hide the KLE field from the form.'),
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  );
+
+  $form['#attached']['js'][] = drupal_get_path('module', 'os2web_taxonomies') . '/os2web_taxonomies.js';
+
+  // Lets loop trough all content types and see which has the KLE field.
+  foreach ($types = node_type_get_types() as $type) {
+    if (field_info_instance('node', 'field_os2web_base_field_kle_ref', $type->type)) {
+      $form['os2web_taxonomies_tax_kle']['os2web_taxonomies-' . $type->type] = array(
+        '#type' => 'fieldset',
+        '#title' => $type->name,
+        '#collapsible' => TRUE,
+        '#collapsed' => TRUE,
+      );
+      $form['os2web_taxonomies_tax_kle']['os2web_taxonomies-' . $type->type]['os2web_taxonomies-' . $type->type . '-kle_required'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Required'),
+        '#default_value' => variable_get('os2web_taxonomies-' . $type->type . '-kle_required', TRUE),
+        '#return_value' => TRUE,
+      );
+      $form['os2web_taxonomies_tax_kle']['os2web_taxonomies-' . $type->type]['os2web_taxonomies-' . $type->type . '-kle_hidden'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Hidden'),
+        '#default_value' => variable_get('os2web_taxonomies-' . $type->type . '-kle_hidden', FALSE),
+        '#return_value' => TRUE,
+        '#states' => array(
+          // Only show this field when KLE is not required.
+          'visible' => array(
+            ':input[name="os2web_taxonomies-' . $type->type . '-kle_required"]' => array('checked' => FALSE),
+          ),
+        ),
+      );
+      $form['os2web_taxonomies_tax_kle']['os2web_taxonomies-' . $type->type]['os2web_taxonomies-' . $type->type . '-delete_refs'] = array(
+        '#type' => 'button',
+        '#value' => t('Delete KLE references from !type', array('!type' => $type->name)),
+        '#attributes' => array(
+          'class' => array('confirm'),
+        ),
+        // 'attributes' => array('class' => array('confirm')),
+        '#states' => array(
+          // Only show this field when KLE is not required.
+          'visible' => array(
+            ':input[name="os2web_taxonomies-' . $type->type . '-kle_required"]' => array('checked' => FALSE),
+            ':input[name="os2web_taxonomies-' . $type->type . '-kle_hidden"]' => array('checked' => TRUE),
+          ),
+        ),
+        '#ajax' => array(
+          'callback' => 'os2web_taxonomies_delete_kle_references',
+          'wrapper' => 'edit-os2web-taxonomies-' . str_replace('_', '-', $type->type) . '-delete-refs',
+          'method' => 'replace',
+          'event' => 'click',
+        ),
+      );
+    }
+  }
+}
+
+/**
+ * Ajax callback, to delete all KLE references for a specific content type.
+ */
+function os2web_taxonomies_delete_kle_references($form, $form_state) {
+  $button = $form_state['clicked_button'];
+  $parent = array_shift($button['#parents']);
+  $parent = explode('-', $parent);
+
+  if (!empty($parent[1])) {
+    $content_type = $parent[1];
+
+    $nodes = node_load_multiple(array(), array('type' => $content_type));
+    foreach ($nodes as $nid => $node) {
+      $node->revision = TRUE;
+      $node->log = t('Deleted automatically by OS2web Taxonomies script.');
+      $lang = field_language('node', $node, 'field_os2web_base_field_kle_ref');
+      unset($node->field_os2web_base_field_kle_ref[$lang]);
+      node_save($node);
+    }
+  }
+
+  return t('All KLE references are now removed from this type.');
+}
+
+/**
+ * Implements hook_os2web_help().
+ */
+function os2web_taxonomies_os2web_help($sections) {
+
+  // Specific fields.
+  $sections['fields'] = t('<p><b>Portal category:</b> Set in which category from the menu, this content is accesible from.</p>');
+  $sections['fields'] .= t('<p><b>Comittee:</b> A comittee is used to map e.g. a meeting to a specific department/comittee in your site.</p>');
+  $sections['fields'] .= t('<p><b>Places (<i>Egennavne/stednavne</i>):</b> Link your content to a specific GIS name on your site.</p>');
+  $sections['fields'] .= t('<p><b>KLE:</b> Link your content with KLE numbers. Use multiple numbers by seperating them with a comma. See a full list of KLE numbers at <a href="@url" target="_blank">KLE-Online</a></p>', array('@url' => 'http://www.kle-online.dk/'));
+  $sections['fields'] .= t('<p><b>Organization:</b> Set which organization which is responsible to the content. Use a comma to seperate multiple. Using this, its possible to group all content dependent on which organization it is owned by.</p>');
+  $sections['fields'] .= t('<p><b>Politics:</b> Set which politic party, council, board or committee is represented in this content. Use a comma to seperate multiple. Using this, its possible to group all content dependent on which politic party etc. is present in it.</p>');
+  $sections['fields'] .= t('<p><b>Tags (<i>Stikord</i>):</b> Use tags as an editor to group your content in several tags. Use a comma to seperate multiple. Using this, its possible to group all content in lists on tags.</p>');
+
+  // Import.
+  $sections['import'] = t('<p><b>Taxonomies:</b> Initialize the importer for all taxonomies herein GIS, KLE, Organizations and Politics at <a href="@url">the import page.</a><br />By Default the importer will import from an XML file located in the module. E.g you can upload your own XML file.</p>', array('@url' => 'import/os2web_selfservicelinks_feeds_import'));
+
+  return $sections;
+}
