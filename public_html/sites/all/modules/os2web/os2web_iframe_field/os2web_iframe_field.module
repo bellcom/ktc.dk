@@ -1,0 +1,96 @@
+<?php
+
+/**
+ * @file
+ * Iframe field display for os2web projects
+ */
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function os2web_iframe_field_field_formatter_info() {
+  return array(
+    'os2web_iframe_field_iframe' => array(
+      'label' => t('iFrame content'),
+      'field types' => array('text'),
+      'settings' => array('width' => 460, 'height' => 400),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function os2web_iframe_field_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $element = array();
+
+  if ($display['type'] == 'os2web_iframe_field_iframe') {
+    $element['width'] = array(
+      '#title' => t('Width'),
+      '#type' => 'textfield',
+      '#size' => 3,
+      '#default_value' => $settings['width'],
+      '#element_validate' => array('element_validate_integer_positive'),
+      '#required' => TRUE,
+    );
+    $element['height'] = array(
+      '#title' => t('Height'),
+      '#type' => 'textfield',
+      '#size' => 3,
+      '#default_value' => $settings['height'],
+      '#element_validate' => array('element_validate_integer_positive'),
+      '#required' => TRUE,
+    );
+  }
+
+  return $element;
+}
+
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function os2web_iframe_field_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $summary = array();
+
+  if ($display['type'] == 'os2web_iframe_field_iframe') {
+    $summary[] = t('Width') . ': ' . $settings['width'];
+    $summary[] = t('Height') . ': ' . $settings['height'];
+  }
+
+  return implode('<br />', $summary);
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function os2web_iframe_field_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  if ($display['type'] == 'os2web_iframe_field_iframe') {
+    foreach ($items as $delta => $item) {
+      $output = '<iframe src="' . $item['safe_value'] . '" width="' . $display['settings']['width'] . '" height="' . $display['settings']['height'] . '"></iframe>';
+
+      $element[$delta] = array('#markup' => $output);
+    }
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_os2web_help().
+ */
+function os2web_iframe_field_os2web_help($sections) {
+
+  // Fields.
+  $sections['fields'] = t('<p><b>iFrame Field:</b> Many contenttypes accept to add an iFrame to its content. In the iframe field, specify the URL and th iframe will automatically generated on the page.</p>');
+
+  return $sections;
+}

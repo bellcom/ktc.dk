@@ -1,0 +1,9 @@
+name = OS2Web iFrame Field Display
+description = iFrame Field Display module for OS2Web projects
+core = 7.x
+package = OS2Web - Frontend
+php = 5.2.4
+version = 7.x-1.0-beta1
+project = os2web_iframe_field
+dependencies[] = features
+features[features_api][] = api:1
