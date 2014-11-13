@@ -5,3 +5,5 @@ private/*
 site
 production-to-test.sh
 production-to-preprod.sh
+public_html/sites/ktc.dk.local
+public_html/sites/sites.php
