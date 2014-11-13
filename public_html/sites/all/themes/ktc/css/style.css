@@ -268,8 +268,8 @@ body {
   font-family: 'PT Sans', Geneva, Verdana, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #30353c;
-  background-color: #ffffff;
+  color: #000000;
+  background-color: #f5f5f5;
 }
 input,
 button,
@@ -314,7 +314,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857143;
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1436,7 +1436,7 @@ th {
   border-top: 2px solid #dddddd;
 }
 .table .table {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
 }
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
@@ -1930,7 +1930,7 @@ select[multiple].input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #697483;
+  color: #404040;
 }
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -3521,7 +3521,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #cccccc;
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -3567,7 +3567,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #f5f5f5;
   }
 }
 .nav-pills > li {
@@ -3635,7 +3635,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #f5f5f5;
   }
 }
 .tab-content > .tab-pane {
@@ -4415,7 +4415,7 @@ a.list-group-item.active > .badge,
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -4433,7 +4433,7 @@ a.thumbnail.active {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #30353c;
+  color: #000000;
 }
 .alert {
   padding: 15px;
@@ -6102,7 +6102,7 @@ table tr.error {
 }
 .control-group.error .help-block,
 .control-group.error .help-inline {
-  color: #30353c;
+  color: #000000;
 }
 .list-inline > li.first {
   padding-left: 0;
@@ -6518,7 +6518,7 @@ The provided classes are intended to be used with the array-like variables
 }
 */
 a {
-  color: #30353c;
+  color: #000000;
   text-decoration: none;
 }
 a:hover {
@@ -6546,7 +6546,7 @@ a:hover {
   padding: 0 34px 0 64px;
   font-size: 1.2em;
   font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
-  color: #30353c;
+  color: #000000;
   display: table-cell;
   vertical-align: middle;
   line-height: 1.1;
@@ -6640,7 +6640,7 @@ a:hover {
 }
 .carousel .carousel-inner > .item > .carousel-caption a {
   font-size: 1.46em;
-  color: #30353c;
+  color: #000000;
   text-transform: initial;
 }
 .carousel .carousel-inner > .item .btn-primary {
@@ -6720,7 +6720,7 @@ a:hover {
   border-radius: 4px 4px 0 0;
 }
 .content_header_2 {
-  color: #30353c;
+  color: #000000;
   text-transform: initial;
   font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
   font-size: 2.4em;
@@ -6759,12 +6759,11 @@ body .form-control {
 }
 .main-container {
   border-bottom: 1px solid white;
-  background-image: rgba(223, 222, 215, 0.9);
   border-left: 1px solid rgba(255, 255, 255, 0.8);
   border-right: 1px solid rgba(255, 255, 255, 0.8);
 }
 .not-front .main-container {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
 }
 .main-container,
 .header_svendborg .region-navigation.container {
@@ -7865,7 +7864,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
 }
 .page-node-edit .region-content section,
 .page-node-add .region-content section {
-  background-color: #FFF;
+  background-color: #F5F5F5;
   padding: 10px;
 }
 .page-node-edit h1.page-header,
@@ -7886,7 +7885,6 @@ body.page-node div.node-os2web-borger-dk-article,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article,
 body.page-node div.node-os2web-base-news,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news {
-  background: white;
   border-radius: 0 0 4px 4px;
   margin-bottom: 20px;
 }
@@ -7957,7 +7955,7 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 {
   font-size: 2.4em;
   font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
   text-transform: initial;
-  color: #30353c;
+  color: #000000;
   font-weight: 600;
 }
 body.page-node article header h2 a,
@@ -7966,7 +7964,7 @@ body.page-node div.node-os2web-borger-dk-article header h2 a,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header h2 a,
 body.page-node div.node-os2web-base-news header h2 a,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 a {
-  color: #30353c;
+  color: #000000;
   text-transform: initial;
   font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
   font-size: 2.4em;
@@ -8522,7 +8520,7 @@ body.page-node article #borger_dk-body .microArticle ul {
 }
 .front-s-news-item-text .news-title {
   font-size: 1.46em;
-  color: #30353c;
+  color: #000000;
 }
 .front-s-news-item-text .news-title:hover {
   color: #005191;
@@ -8740,7 +8738,7 @@ fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li.active {
 }
 .menu-block-wrapper ul li a {
   font-size: 15px;
-  color: #30353c;
+  color: #000000;
 }
 footer {
   background: white;
@@ -9031,7 +9029,6 @@ h2.menu-footer a.Kommunen {
   padding-right: 0 !important;
 }
 .front-s-news {
-  background-image: url('../images/front_s_news_bg.png');
   overflow: hidden;
 }
 .front-s-news .front-s-news-inner {
@@ -9130,28 +9127,4 @@ h2.menu-footer a.Kommunen {
 .front .region-navigation #search-block-form .input-group-btn {
   border: none;
   text-align: right;
-}
-@media (min-width: 768px) {
-  body.front {
-    background-image: url(../images/front_bg_724.jpg);
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center top;
-  }
-  .front .main-container {
-    background-image: none;
-    background-color: transparent;
-    border: none;
-  }
-}
-@media (min-width: 992px) {
-  body.front {
-    background-image: url(../images/front_bg_940.jpg);
-  }
-}
-@media (min-width: 1300px) {
-  body.front {
-    background-image: url(../images/front_bg_1170.jpg);
-  }
 }

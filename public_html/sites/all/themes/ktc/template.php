@@ -213,7 +213,7 @@ function ktc_preprocess_page(&$variables) {
   drupal_add_html_head(array(
     '#tag' => 'link',
     '#attributes' => array(
-      'href' => 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic|Bree',
+      'href' => 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic|Bree+Serif',
       'rel' => 'stylesheet',
       'type' => 'text/css',
     ),
@@ -236,16 +236,7 @@ function ktc_preprocess_page(&$variables) {
   // Pass the theme path to js.
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
 
-  if (drupal_is_front_page()) {
-    // Frontpage big menu.
-    $variables['page']['front_big_menu'] = _ktc_get_front_big_menu_buttons();
-
-    // Frontpage large carousel.
-    $variables['page']['front_large_carousel'] = _ktc_get_front_large_carousel();
-
-    // Frontpage small carousel.
-    $variables['page']['front_small_carousel'] = _ktc_get_front_small_carousel();
-  }
+  
 }
 
 /**
@@ -569,177 +560,5 @@ function ktc_file_formatter_table($variables) {
 /**
  * Retrieve front page big menu buttons.
  */
-function _ktc_get_front_big_menu_buttons() {
-  $front_big_menu = '';
-  $tree = menu_tree_all_data('menu-indholdsmenu', $link = NULL, $max_depth = 3);
 
-  foreach ($tree as $key => $menu_item) {
-    $title = $menu_item['link']['link_title'];
-    $path = drupal_get_path_alias($menu_item['link']['link_path']);
-    switch($title) {
-      case 'Kommunen':
-        $menu_links[0] = array('mlid' => array('title' => $title,'path' => $path));
-        break;
-      case 'Borger':
-        $menu_links[1] = array('mlid' => array('title' => $title,'path' => $path));
-        break;
-      case 'Erhverv':
-        $menu_links[2] = array('mlid' => array('title' => $title,'path' => $path));
-        break;
-      case 'Politik':
-        $menu_links[3] = array('mlid' => array('title' => $title,'path' => $path));
-        break;
-    }
-  }
-  ksort($menu_links);
-  foreach ($menu_links as $menus) {
-    foreach($menus as $key =>$menu_item) {
-      $front_big_menu .= '<div class="menu-' . $key . ' front-indholsdmenu col-md-3 col-sm-3 col-xs-12">';
-      $front_big_menu .= '<h2 class="menu-front ' . $menu_item['title'] . '">';
-      $front_big_menu .= '<a title="' . $menu_item['title'] . '" href="' . $menu_item['path'] . '" class="' . $menu_item['title'] . '">' . $menu_item['title'] . '</a>';
-      $front_big_menu .= '</h2></div>';
-    }
-  }
-  return $front_big_menu;
-}
 
-function _ktc_get_front_large_carousel() {
-  $front_large_carousel = '';
-  // Branding news view
-  $view = views_get_view('svendborg_news_view');
-  $view->set_arguments(array('branding'));
-  $view->set_display('front');
-  $view->set_items_per_page(3);
-  $view->execute();
-
-  $results = $view->result;
-
-  $front_large_carousel .= '<ol class="carousel-indicators col-md-12 col-sm-12 col-xs-12">';
-  foreach ($results as $key => $item) {
-    $front_large_carousel .= '<li data-target="#front-news-branding" data-slide-to="' . $key . '"';
-    if ($key == 0) {
-      $front_large_carousel .= 'class="active"></li>';
-    }
-    else {
-      $front_large_carousel .= '></li>';
-    }
-  }
-  $front_large_carousel .= '</ol>';
-  $front_large_carousel .= '<div class="carousel-inner" id="front-carousel-large" >';
-
-  foreach ($results as $key => $item) {
-    if ($key == 0) {
-      $front_large_carousel .= '<div class="item active">';
-    }
-    else {
-      $front_large_carousel .= '<div class="item">';
-    }
-    $node = node_load($item->nid);
-    $img = field_get_items('node', $node, 'field_os2web_base_field_lead_img');
-    $image = $img[0];
-    image_get_info($image["filename"]);
-
-    $style = 'svendborg_content_image';
-    $public_filename = image_style_url($style, $image["uri"]);
-    $path = drupal_get_path_alias('node/' . $node->nid);
-    $front_large_carousel .= '<a href="' . $path . '" title="' . $node->title . '">';
-    $front_large_carousel .= '<div class="row-no-padding col-md-7 col-sm-8 col-xs-12 front-branding-img">';
-
-    $front_large_carousel .= '<img title = "' . $image["title"] . '" src="' . $public_filename . '"/>';
-    $front_large_carousel .= '</div>';
-    $front_large_carousel .= '<div class="carousel-title col-md-5 col-sm-4 col-xs-12">';
-
-    $front_large_carousel .= '<div class="title col-md-12">';
-    $front_large_carousel .= $node->title;
-    $front_large_carousel .= '</div>';
-
-    $front_large_carousel .= '<div class="col-md-12">';
-    $front_large_carousel .= '<a href="' . $path . '" title="' . $node->title . '" class="btn btn-primary">L&aelig;s mere</a>';
-    $front_large_carousel .= '</div></div>';
-    $front_large_carousel .= '</a>';
-    $front_large_carousel .= '</div>';
-  }
-  $front_large_carousel .= '</div>';
-  return $front_large_carousel;
-}
-
-function _ktc_get_front_small_carousel() {
-  $front_small_carousel = '';
-  $view = views_get_view('svendborg_news_view');
-  $view->set_arguments(array('all'));
-  $view->set_display('block_3');
-  $view->set_items_per_page(9);
-  $view->pre_execute();
-  $view->execute();
-
-  $results = $view->result;
-
-  $front_small_carousel .= '<div id="front-carousel-small" class="carousel slide" data-ride="carousel">
-                           <ol class="carousel-indicators col-md-12 col-sm-12 col-xs-12">';
-  if (count($results) > 0) {
-    $front_small_carousel .= '<li data-target="#front-carousel-small" data-slide-to="0" class="active"></li>';
-  }
-  if (count($results) > 3) {
-    $front_small_carousel .= '<li data-target="#front-carousel-small" data-slide-to="1"></li>';
-  }
-  if (count($results) > 6) {
-    $front_small_carousel .= '<li data-target="#front-carousel-small" data-slide-to="2"></li>';
-  }
-
-  $front_small_carousel .= '</ol>';
-
-  $front_small_carousel .= '<div class="carousel-inner">';
-
-  $small_news_carousel = array();
-  foreach ($results as $key => $item) {
-    if ($key < 3) {
-      $small_news_carousel[0][] = $item;
-    }
-    elseif ($key >= 3 && $key <= 5) {
-      $small_news_carousel[1][] = $item;
-    }
-    elseif ($key >= 6) {
-      $small_news_carousel[2][] = $item;
-    }
-  }
-  foreach ($small_news_carousel as $key => $items) {
-    if ($key == 0) {
-      $front_small_carousel .= '<div class="item active">';
-    }
-    else {
-      $front_small_carousel .= '<div class="item">';
-    }
-    foreach ($items as $i=> $item) {
-      $node = node_load($item->nid);
-      $img = field_get_items('node', $node, 'field_os2web_base_field_lead_img');
-      $image = $img[0];
-      image_get_info($image["filename"]);
-
-      $style = 'svendborg_content_image';
-      $public_filename = image_style_url($style, $image["uri"]);
-
-      $path = drupal_get_path_alias('node/' . $node->nid);
-      $front_small_carousel .= '<a href="' . $path . '">';
-      $front_small_carousel .= '<div class="col-md-4 col-sm-4 col-xs-12">';
-      $front_small_carousel .= '<div class="front-s-news-item front-s-news-item-' . $i . '">';
-
-      $front_small_carousel .= '<div class="front-s-news-item-img">';
-      $front_small_carousel .= '<img title = "' . $image["title"] . '" src="' . $public_filename . '"/>';
-      $front_small_carousel .= '</div>';
-
-      $front_small_carousel .= '<div class="front-s-news-item-text">';
-      $front_small_carousel .= '<div class="bubble"><span>' . $node->title . '</span></div>';
-      $front_small_carousel .= '</div>';
-
-      $front_small_carousel .= '</div>';
-      $front_small_carousel .= '</div>';
-      $front_small_carousel .= '</a>';
-    }
-    $front_small_carousel .= '</div>';
-  }
-
-  $front_small_carousel .= '</div></div>';
-
-  $front_small_carousel .= '<div class="front-seperator"></div>';
-  return $front_small_carousel;
-}
