@@ -65,9 +65,9 @@ print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
       <div class="container">
         <div class="row">
         <div class="col-md-3 col-xs-12 col-sm-6 col-md-push-9 col-sm-push-6 social-icons">
-          <a href="https://www.facebook.com/Svendborg" title="Svendborg Kommune Facebook" class="footer_fb" target="_blank">facebook</a>
-          <a href="http://www.linkedin.com/company/svendborg-kommune" title="Svendborg Kommune Linkedin" class="footer_linkedin" target="_blank">linkedin</a>
-          <a href="http://www.youtube.com/user/wwwsvendborgdk" title="Svendborg Kommune Youtube" class="footer_flickr" target="_blank">youtube</a>
+          <a href="https://www.facebook.com/" title="Facebook" class="footer_fb" target="_blank">facebook</a>
+          <a href="http://www.linkedin.com/company/ktc" title="Linkedin" class="footer_linkedin" target="_blank">linkedin</a>
+          <a href="http://www.youtube.com/" title="Youtube" class="footer_flickr" target="_blank">youtube</a>
         </div>
         <div class="col-md-9 col-sm-6 col-xs-12 col-md-pull-3 col-sm-pull-6">
           <div class='footer-logo'>
@@ -76,7 +76,7 @@ print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
           </div>
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12 footer-address">
-          <span>Ramsherred 5 ∙ 5700 Svendborg ∙ Telefon 62 23 30 00 ∙ </span>
+          <span>Adresse og koantaktoplysninger</span>
           <a href="/kontakt" title="Kontakt kommunen">Kontakt og åbningstider her</a>
         </div>
         </div>
