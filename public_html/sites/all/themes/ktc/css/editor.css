@@ -268,7 +268,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
+  font-family: 'PT Sans', Geneva, Verdana, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #30353c;
@@ -357,7 +357,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Titillium Web', Geneva, Verdana, sans-serif;
+  font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
   font-weight: 400;
   line-height: 1.1;
   color: inherit;

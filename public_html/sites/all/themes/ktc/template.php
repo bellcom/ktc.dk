@@ -213,11 +213,12 @@ function ktc_preprocess_page(&$variables) {
   drupal_add_html_head(array(
     '#tag' => 'link',
     '#attributes' => array(
-      'href' => 'http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700|Open+Sans:400,700',
+      'href' => 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic|Bree',
       'rel' => 'stylesheet',
       'type' => 'text/css',
     ),
   ), 'google_font_ktc');
+
 
   // Add google site verification
   drupal_add_html_head(array(
