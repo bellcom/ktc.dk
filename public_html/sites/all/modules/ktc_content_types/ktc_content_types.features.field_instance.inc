@@ -1560,124 +1560,6 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_billed_id_titel'
-  $field_instances['node-page-field_billed_id_titel'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_billed_id_titel',
-    'label' => 'Billed-ID/titel',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_billed_url'
-  $field_instances['node-page-field_billed_url'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'URL(er) til billede(r).',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_billed_url',
-    'label' => 'Billed-URL',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_design_enhed'
-  $field_instances['node-page-field_design_enhed'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Standard, boks, harmonika - andre design/layout muligheder.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_design_enhed',
-    'label' => 'Design-enhed',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-page-field_gammel_menuplacering'
   $field_instances['node-page-field_gammel_menuplacering'] = array(
     'bundle' => 'page',
@@ -1712,7 +1594,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 6,
     ),
   );
 
@@ -1752,309 +1634,25 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-page-field_har_billeder'
-  $field_instances['node-page-field_har_billeder'] = array(
+  // Exported field_instance: 'node-page-field_image'
+  $field_instances['node-page-field_image'] = array(
     'bundle' => 'page',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Sæt kryds hvis indholdet har fotos/illustrationer tilknyttet. De vil blive overflyttet på et senere tidspunkt, når de tekniske spørgsmål angående billeder er afklaret.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_har_billeder',
-    'label' => 'Har billeder',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_internt_link_url_'
-  $field_instances['node-page-field_internt_link_url_'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'URL til internt link på det gamle site.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_internt_link_url_',
-    'label' => 'Internt link (URL)',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_kort_beskrivelse'
-  $field_instances['node-page-field_kort_beskrivelse'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Beskriv indholdet og indholdets funktion ganske kort.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_kort_beskrivelse',
-    'label' => 'Kort beskrivelse',
-    'required' => 1,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_link_mangler_opdatering'
-  $field_instances['node-page-field_link_mangler_opdatering'] = array(
-    'bundle' => 'page',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Sæt kryds hvis teksten indeholder link til andet internt indhold.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_link_mangler_opdatering',
-    'label' => 'Link mangler opdatering',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_noter'
-  $field_instances['node-page-field_noter'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Noter om indholdet: Hvad skal der ske med det på det nye site. Er der særlige udfordringer i forhold til layout etc.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_noter',
-    'label' => 'Noter',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_skal_muligvis_udg_'
-  $field_instances['node-page-field_skal_muligvis_udg_'] = array(
-    'bundle' => 'page',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Sæt kryds hvis dette indhold ikke med sikkerhed skal overflyttes til det nye site.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_skal_muligvis_udg_',
-    'label' => 'Skal muligvis udgå',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 14,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_special_indhold'
-  $field_instances['node-page-field_special_indhold'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Indsæt indhold som muligvis skal genereres af et view eller på anden vis skiller sig ud fra sidens almindelige indhold.
-Beskriv hvert element for sig i et nyt felt.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_special_indhold',
-    'label' => 'Special-indhold',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_status'
-  $field_instances['node-page-field_status'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2064,18 +1662,45 @@ Beskriv hvert element for sig i et nyt felt.',
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_status',
-    'label' => 'Status',
+    'field_name' => 'field_image',
+    'label' => 'Billede',
     'required' => 0,
     'settings' => array(
+      'alt_field' => 0,
+      'alt_field_required' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 13,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
     ),
   );
 
@@ -2278,13 +1903,9 @@ Beskriv hvert element for sig i et nyt felt.',
   t('Adresse (vej, nr., postnr. og by)');
   t('Afholdelsessted');
   t('Arrangementets dato');
-  t('Beskriv indholdet og indholdets funktion ganske kort.');
   t('Beskrivelse');
-  t('Billed-ID/titel');
-  t('Billed-URL');
   t('Billede');
   t('Body');
-  t('Design-enhed');
   t('Determine if this is an OG group.');
   t('Direkte link til program');
   t('Direkte link til tilmelding');
@@ -2295,41 +1916,24 @@ Beskriv hvert element for sig i et nyt felt.',
   t('Gammel menuplacering');
   t('Gruppe');
   t('Gruppe/Netværk');
-  t('Har billeder');
   t('Hvor var indholdet placeret i menuen på det gamle site?');
   t('Indhold');
-  t('Indsæt indhold som muligvis skal genereres af et view eller på anden vis skiller sig ud fra sidens almindelige indhold.
-Beskriv hvert element for sig i et nyt felt.');
-  t('Internt link (URL)');
   t('KL Emneord');
   t('KLE stikord');
-  t('Kort beskrivelse');
   t('Kort beskrivende tekst');
   t('Link');
-  t('Link mangler opdatering');
   t('Link til arrangørs hjemmeside');
   t('Lovhenvisninger');
   t('Målgruppe');
-  t('Noter');
-  t('Noter om indholdet: Hvad skal der ske med det på det nye site. Er der særlige udfordringer i forhold til layout etc.');
   t('Nøgleord/ kategorier (max 5 stk.)');
   t('Primære billede');
   t('Pris (inkl./ ekskl. moms)');
   t('Resume (maks 2 linier!)');
-  t('Skal muligvis udgå');
-  t('Special-indhold');
-  t('Standard, boks, harmonika - andre design/layout muligheder.');
-  t('Status');
   t('Stikord');
-  t('Sæt kryds hvis dette indhold ikke med sikkerhed skal overflyttes til det nye site.');
-  t('Sæt kryds hvis indholdet har fotos/illustrationer tilknyttet. De vil blive overflyttet på et senere tidspunkt, når de tekniske spørgsmål angående billeder er afklaret.');
-  t('Sæt kryds hvis teksten indeholder link til andet internt indhold.');
   t('Søgeord');
   t('Tilmeldingsfrist');
   t('Type');
-  t('URL til internt link på det gamle site.');
   t('URL\'en til indholdet på det gamle site.');
-  t('URL(er) til billede(r).');
   t('Udgået');
   t('Visningsperiode');
 
