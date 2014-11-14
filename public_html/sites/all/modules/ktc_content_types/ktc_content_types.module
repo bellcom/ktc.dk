@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KTC content types feature.
+ */
+
+include_once 'ktc_content_types.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KTC Høring feature.
+ */
+
+include_once 'ktc_hearing.features.inc';
