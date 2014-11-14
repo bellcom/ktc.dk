@@ -26,16 +26,24 @@ function ktc_content_types_node_info() {
       'title_label' => t('Titel'),
       'help' => '',
     ),
-    'article' => array(
-      'name' => t('Artikel'),
+    'banner' => array(
+      'name' => t('Banner'),
       'base' => 'node_content',
-      'description' => t('Brug <em>artikler</em> til tidsfølsomt indhold som nyheder, pressemeddelelser eller blogindlæg.'),
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Titel'),
       'help' => '',
     ),
     'factbox' => array(
       'name' => t('Faktaboks'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Titel'),
+      'help' => '',
+    ),
+    'forum_post' => array(
+      'name' => t('Debatindlæg'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
