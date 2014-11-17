@@ -6,6 +6,7 @@
 * wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
 * echo "deb http://packages.elasticsearch.org/elasticsearch/1.4/debian stable main" > /etc/apt/sources.list.d/elasticsearch.list
 * apt-get update && apt-get install elasticsearch
+* Edit /etc/elasticsearch/elasticsearch.yml and set: "discovery.zen.ping.multicast.enabled: false" (will disable auto cluster discovery)
 
 ### Modules
 * cd public_html
@@ -21,4 +22,4 @@
 * drush en search_api
 * drush en elasticsearch_connector_search_api
 * Setup a server on /admin/config/search/search_api
-
+* Use search_api_pages (https://www.drupal.org/project/search_api_page) for a search page or use another search_api way
