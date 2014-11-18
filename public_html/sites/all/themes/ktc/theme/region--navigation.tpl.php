@@ -58,11 +58,7 @@
     <div class="navbar-header col-md-3 col-sm-3 col-xs-12">
       <?php if ($page['logo']): ?>
         <a class="logo navbar-btn pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
-          <?php if ($is_front): ?>
-            <img id="front-logo" src="/<?php print drupal_get_path('theme','svendborg_theme'); ?>/images/footer_logo.png" title="<?php print t('Home') ?>" />
-          <?php else: ?>
-            <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
-          <?php endif; ?>
+          <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
         </a>
       <?php endif; ?>
       <?php if ($page['site_name']): ?>
