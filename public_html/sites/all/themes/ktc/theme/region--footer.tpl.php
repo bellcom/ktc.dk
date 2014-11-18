@@ -55,7 +55,7 @@ print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
 
       ?>
       <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
-      <?php //print $content; ?>
+      <?php print $content; ?>
       <?php if ($content_attributes): ?></div><?php endif; ?>
       </div>
       </div>
