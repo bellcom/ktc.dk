@@ -236,9 +236,19 @@ function ktc_preprocess_page(&$variables) {
   // Pass the theme path to js.
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
 
-  
 }
 
+function ktc_process_page(&$variables) {
+  // Primary menu.
+  $variables['primary_nav'] = array();
+  if ($variables['main_menu']) {
+    // Build links.
+    $tree = menu_tree_all_data('main-menu', $link = NULL, $max_depth = 2);
+    $variables['primary_nav'] = menu_tree_output($tree);
+    // Provide default theme wrapper function.
+    $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
+  }
+}
 /**
  * Implements template_preprocess_taxonomy_term().
  */
