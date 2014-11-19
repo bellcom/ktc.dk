@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KTC feeds feature.
+ */
+
+include_once 'ktc_feeds.features.inc';
