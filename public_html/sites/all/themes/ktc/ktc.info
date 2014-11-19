@@ -55,3 +55,5 @@ scripts[] = 'js/os2web_spotbox_adjust.js'
 
 ; Disable BootstrapCDN so the compiled LESS source files can be used.
 settings[bootstrap_cdn] = ''
+
+plugins[panels][layouts] = layouts
