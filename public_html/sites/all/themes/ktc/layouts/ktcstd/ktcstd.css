@@ -1,5 +1,7 @@
 
-.panel-2col { 
+#panels-panel-context-edit-content .row {
+	width: 100%;
+	clear: both;
 /*  overflow: hidden;  */
 }
 
