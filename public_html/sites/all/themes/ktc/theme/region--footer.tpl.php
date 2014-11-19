@@ -30,30 +30,6 @@
     <div class="lcontainer-fluid clearfix"  id="footer-menu">
       <div class="container footer-menu">
         <div class="row">
-      <?php
-        $tree = menu_tree_all_data('menu-indholdsmenu', $link = NULL, $max_depth = 3);
-
-        $count = 0;
-        foreach ($tree as $key => $menu_item) {
-          if (!$menu_item['link']['hidden']) {
-            if ($count > 3) {
-              continue;
-            }
-            $path = $alias = drupal_get_path_alias($menu_item['link']['link_path']);
-            print "<div class='menu-". $menu_item['link']['mlid']. " footer-indholsdmenu col-xs-12 col-sm-6 col-md-3'>";
-print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
-            <a title='" . $menu_item['link']['link_title'] . "' href='/". $path ."' class='" . $menu_item['link']['link_title']. "'>" . $menu_item['link']['link_title'] . "</a></h2>";
-            if($menu_item['link']['has_children'] && !$menu_item['link']['hidden']) {
-
-              $tree_display =menu_tree_output($menu_item['below']);
-              print render($tree_display);
-            }
-            print "</div>";
-            $count += 1;
-          }
-        }
-
-      ?>
       <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
       <?php print $content; ?>
       <?php if ($content_attributes): ?></div><?php endif; ?>
@@ -64,26 +40,15 @@ print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
     <div class="lcontainer-fluid clearfix" id="footer-contacts">
       <div class="container">
         <div class="row">
-        <div class="col-md-3 col-xs-12 col-sm-6 col-md-push-9 col-sm-push-6 social-icons">
-          <a href="https://www.facebook.com/" title="Facebook" class="footer_fb" target="_blank">facebook</a>
-          <a href="http://www.linkedin.com/company/ktc" title="Linkedin" class="footer_linkedin" target="_blank">linkedin</a>
-          <a href="http://www.youtube.com/" title="Youtube" class="footer_flickr" target="_blank">youtube</a>
+        <div class="col-md-3 col-xs-12 col-sm-6 col-md-push-9 col-sm-push-6">
         </div>
         <div class="col-md-9 col-sm-6 col-xs-12 col-md-pull-3 col-sm-pull-6">
           <div class='footer-logo'>
-            <img id="footer-logo" src="/<?php print drupal_get_path('theme','svendborg_theme'); ?>/images/footer_logo.png" title="<?php print $page['site_name'] ?>" />
+            <img id="footer-logo" src="/<?php print drupal_get_path('theme','ktc'); ?>/images/footer_logo.png" title="<?php print $page['site_name'] ?>" />
 
           </div>
         </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 footer-address">
-          <span>Adresse og koantaktoplysninger</span>
-          <a href="/kontakt" title="Kontakt kommunen">Kontakt og åbningstider her</a>
-        </div>
         </div>
       </div>
-    </div>
-    <!-- footer bg-image -->
-    <div class="lcontainer-fluid clearfix footer-bg-image">
-      <img class="" src="/<?php print drupal_get_path('theme','svendborg_theme'); ?>/images/footer_bottom_bg.png" />
     </div>
   </footer>

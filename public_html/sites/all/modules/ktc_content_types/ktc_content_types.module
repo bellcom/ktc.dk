@@ -5,3 +5,10 @@
  */
 
 include_once 'ktc_content_types.features.inc';
+
+function ktc_content_types_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['listevisning'] = array(
+    'label' => t('Listevisning'),
+    'custom settings' => TRUE,
+  );
+} 

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KTC - Arrangement feature.
+ */
+
+include_once 'ktc_arrangement.features.inc';

@@ -90,7 +90,7 @@
           <?php print render($page['primary_nav']); ?>
         </div>
         <?php //print render($page['secondary_nav']); ?>
-        <div class="<?php print $search_classes; ?> search_box">
+        <div class="user_box">
           <?php print $content; ?>
         </div>
       </nav>

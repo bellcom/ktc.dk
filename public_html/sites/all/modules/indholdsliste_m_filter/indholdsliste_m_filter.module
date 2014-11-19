@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Indholdsliste m filter feature.
+ */
+
+include_once 'indholdsliste_m_filter.features.inc';
