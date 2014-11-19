@@ -13,6 +13,7 @@ dependencies[] = features
 dependencies[] = file
 dependencies[] = filter
 dependencies[] = image
+dependencies[] = ktc_hearing
 dependencies[] = link
 dependencies[] = list
 dependencies[] = media
