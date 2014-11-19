@@ -615,10 +615,10 @@ function ktc_content_types_strongarm() {
       'display' => array(),
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '45',
+          'weight' => '11',
         ),
         'workbench_access' => array(
           'weight' => '0',
