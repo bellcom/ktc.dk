@@ -7997,7 +7997,7 @@ body.page-node div.node-os2web-borger-dk-article #borger_dk_header,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk_header,
 body.page-node div.node-os2web-base-news #borger_dk_header,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk_header {
-  padding: 15px;
+  padding: 15px 0;
 }
 body.page-node article .inner,
 body.page-taxonomy-term.term-is-not-top article .inner,
@@ -8336,16 +8336,6 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web
 .page-taxonomy .region-content.col-md-9 article header,
 .page-node .region-content.col-md-9 article header {
   width: 77.77777776%;
-}
-.page-taxonomy .region-content.col-sm-12 article .wrap,
-.page-node .region-content.col-sm-12 article .wrap,
-.page-taxonomy .region-content.col-md-12 article .wrap,
-.page-node .region-content.col-md-12 article .wrap,
-.page-taxonomy .region-content.col-sm-12 article header,
-.page-node .region-content.col-sm-12 article header,
-.page-taxonomy .region-content.col-md-12 article header,
-.page-node .region-content.col-md-12 article header {
-  width: 83.33333333%;
 }
 .region-content .taxonomy-term-description a,
 .region-content .field-name-body a {

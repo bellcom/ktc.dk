@@ -81,22 +81,24 @@
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php if ((!$page && !empty($title)) || !empty($title_prefix) || !empty($title_suffix) || $display_submitted): ?>
-  <header>
-    <?php print render($title_prefix); ?>
     <?php if (!$page && !empty($title)): ?>
-    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
+  		<header>
+    		<?php print render($title_prefix); ?>
+    		<h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
+    		<?php print render($title_suffix); ?>
+    			<?php if ($display_submitted): ?>
+    				<span class="submitted">
+      					<?php print $user_picture; ?>
+      					<?php print $submitted; ?>
+    				</span>
+  				<?php endif; ?>
+  		</header>
     <?php endif; ?>
-    <?php print render($title_suffix); ?>
-    <?php if ($display_submitted): ?>
-    <span class="submitted">
-      <?php print $user_picture; ?>
-      <?php print $submitted; ?>
-    </span>
-    <?php endif; ?>
-  </header>
   <?php endif; ?>
+
   <?php if($page) : ?>
   <header>
+    
     <?php if ($type == 'os2web_base_news') : ?>
       <?php if(isset($content['field_os2web_base_field_video'])) : ?>
         <?php hide($content['field_os2web_base_field_lead_img']); ?>
@@ -117,6 +119,24 @@
     <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
     <?php endif; ?>
     <?php print render($title_suffix); ?>
+    
+    
+    <?php if ($type == 'arrangement') : ?>
+    <div class="row">
+  	<div class="col-md-8"><?php print render($content['field_arrangement_date']); ?></div>
+ 	<div class="col-md-4 panel-info">
+ 	 <div class="panel-heading">Tilmelding</div>
+ 	<div class="panle-body bg-white padding-10">
+ 	<?php print render($content['field_link_to_signup']); ?>
+ 	<?php print render($content['field_link_to_arrangement']); ?>
+ 	</div>
+ 	
+ 	
+ 	</div>
+	</div>
+    
+    <?php endif; ?>
+    
   </header>
   <?php endif; ?>
 
@@ -130,6 +150,8 @@
       hide($content['field_os2web_base_field_lead_img']);
       hide($content['field_svendborg_hide_sidebar']);
       hide($content['field_svendborg_hide_contact']);
+      hide($content['field_arrangement_period']);
+            
 
       print render($content['field_os2web_base_field_summary']);
       print render($content['body']);
@@ -138,12 +160,6 @@
       <div class="addthis_sharing_toolbox"></div>';
       print render($content);
 
-      if (user_is_logged_in()) {
-        $view = views_get_view('redaktoerinfo');
-        $view->set_arguments(array($node->nid));
-        $view->execute();
-        print $view->render('block');
-      }
     ?>
 
   </div>
