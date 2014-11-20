@@ -405,3 +405,99 @@ function ktc_arrangement_default_page_manager_handlers() {
 
   return $export;
 }
+
+/**
+ * Implements hook_default_page_manager_pages().
+ */
+function ktc_arrangement_default_page_manager_pages() {
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'aktiviteter';
+  $page->task = 'page';
+  $page->admin_title = 'Aktiviteter';
+  $page->admin_description = '';
+  $page->path = 'aktiviteter';
+  $page->access = array();
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'Aktiviteter',
+    'name' => 'main-menu',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_aktiviteter_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'aktiviteter';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+  );
+  $display = new panels_display();
+  $display->layout = 'ktcstd';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'f794f9e1-6f8c-4f40-ace7-703c81a0cae6';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-26b10c11-d202-445d-845c-10b758076dbd';
+    $pane->panel = 'left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'indhold_m_filter-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'type' => 'arrangement',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '26b10c11-d202-445d-845c-10b758076dbd';
+    $display->content['new-26b10c11-d202-445d-845c-10b758076dbd'] = $pane;
+    $display->panels['left'][0] = 'new-26b10c11-d202-445d-845c-10b758076dbd';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['aktiviteter'] = $page;
+
+  return $pages;
+
+}
