@@ -77,14 +77,11 @@
     <div class="col-md-9 col-sm-9 col-xs-12 navbar-collapse collapse navbar-default header_main_menu">
 
       <nav role="navigation">
-        <?php if($is_front) {
-                $menu_classes = "col-md-11 col-sm-11 col-xs-12";
-                $search_classes = "col-md-1 col-sm-1 col-xs-12";
-              }
-              else {
+        <?php 
+                
                 $menu_classes = "col-md-9 col-sm-8 col-xs-12";
                 $search_classes = "col-md-3 col-sm-4 col-xs-12";
-              }
+				
         ?>
         <div class="<?php print $menu_classes; ?> nav_main_menu">
           <?php print render($page['primary_nav']); ?>
