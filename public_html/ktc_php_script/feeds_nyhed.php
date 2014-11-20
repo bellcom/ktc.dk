@@ -1,5 +1,4 @@
 <?php
-require 'QueryPath/src/qp.php';
 function getNodeElements($feed_url) {
 
   $qp = htmlqp($feed_url, '.news-single-text');
