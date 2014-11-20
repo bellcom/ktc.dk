@@ -89,6 +89,35 @@ function indholdsliste_m_filter_views_default_views() {
       'label' => 'Indhold: Type',
     ),
   );
+
+  /* Display: Footer lister m filter */
+  $handler = $view->new_display('panel_pane', 'Footer lister m filter', 'panel_pane_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'listevisning';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 'offset';
+  $handler->display->display_options['allow']['link_to_view'] = 'link_to_view';
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'type' => array(
+      'type' => 'user',
+      'context' => 'entity:user.cancel-url',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Type',
+    ),
+  );
   $translatables['indhold_m_filter'] = array(
     t('Master'),
     t('mere'),
@@ -108,6 +137,7 @@ function indholdsliste_m_filter_views_default_views() {
     t('Side'),
     t('Content pane'),
     t('View panes'),
+    t('Footer lister m filter'),
   );
   $export['indhold_m_filter'] = $view;
 
