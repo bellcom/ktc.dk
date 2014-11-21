@@ -621,7 +621,7 @@ function ktc_content_types_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '7',
         ),
         'workbench_access' => array(
           'weight' => '0',
