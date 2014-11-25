@@ -23,20 +23,5 @@
             </div>
     </div>
 
-
-  <?php
-    // Hide comments, tags, and links now so that we can render them later.
-    hide($content['comments']);
-    hide($content['links']);
-    hide($content['field_tags']);
-    hide($content['field_os2web_base_field_image']);
-    hide($content['field_os2web_base_field_lead_img']);
-  ?>
-
-  <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
-    <?php hide($content['field_tags']); ?>
-    <?php hide($content['links']); ?>
-  <?php endif; ?>
-  <?php hide($content['comments']); ?>
 </article>
 <hr />
