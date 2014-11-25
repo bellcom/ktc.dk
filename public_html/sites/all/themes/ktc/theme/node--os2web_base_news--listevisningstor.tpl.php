@@ -80,8 +80,20 @@
  */
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> $comment_count clearfix"<?php print $attributes; ?>>
-	<header><h3><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3></header>
+	<header>
+		<?php 
+			$billede_lead_liste_stor= field_view_field('node',
+			 $node, 'field_os2web_base_field_lead_img',
+			 array(
+			 	'label'=>'hidden',
+			 	'settings' => array(
+			 		'image_style' => 'listevisning_stor')
+			 	)
+			 );
+			print render($billede_lead_liste_stor); ?>
+		<h3><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3></header>
 	<p><?php 
+     hide($content['field_os2web_base_field_lead_img']);
      print render($content);
     ?></p>  
 </article>
