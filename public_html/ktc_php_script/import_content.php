@@ -35,57 +35,48 @@ function getNodeElements($type, $filename) {
       // Image.
       $urls = $data->children('billede')->text();
       $urls_ar = explode(',', $urls);
-        $error = array_filter($files_ar);
-        if (!empty($error)) {
-          foreach ($urls_ar as $key => $url) {
-            $url_ar = explode('/', $url);
+      $error = array_filter($urls_ar);
+      if (!empty($error)) {
+        foreach ($urls_ar as $key => $url) {
+          $url_ar = explode('/', $url);
 
-            switch ($type) {
-              case 'arrangement':
-                $file_dir = 'events';
-                $field = 'field_image';
-                break;
+          switch ($type) {
+            case 'arrangement':
+              $file_dir = 'events';
+              $field = 'field_image';
+              break;
 
-              case 'forum_post':
-                $file_dir = 'discussion';
-                $field = 'field_image';
-                break;
+            case 'forum_post':
+              $file_dir = 'discussion';
+              $field = 'field_image';
+              break;
 
-              case 'os2web_base_news':
-                $files_ar = 'news';
-                $field = 'field_os2web_base_field_lead_img';
-                break;
+            case 'os2web_base_news':
+              $files_ar = 'news';
+              $field = 'field_os2web_base_field_lead_img';
+              break;
 
-              case 'group':
-                $file_dir = 'netvaerk';
-                $field = 'field_groupimage';
-                break;
+            case 'group':
+              $file_dir = 'netvaerk';
+              $field = 'field_groupimage';
+              break;
 
-              default:
-                $file_dir = 'images';
-                $field = 'field_image';
-                break;
-            }
-            $url = 'public://' . $file_dir . '/' . $url_ar[count($url_ar) - 1];
-            if ($drupalfile = get_images_or_files($url, $file_dir)) {
-              $node->$field[LANGUAGE_NONE][$key]['fid'] = $drupalfile->fid;
-              $node->$field[LANGUAGE_NONE][$key]['uri'] = $drupalfile->uri;
-            }
+            default:
+              $file_dir = 'images';
+              $field = 'field_image';
+              break;
+          }
+          $url = 'public://' . $file_dir . '/' . $url_ar[count($url_ar) - 1];
+          // Default image.
+          if ($url_ar[count($url_ar) - 1] == 'network.jpg') {
+              continue;
+          }
+          if ($drupalfile = get_images_or_files($url, $file_dir, $url_ar[count($url_ar) - 1])) {
+            $node->{$field}[LANGUAGE_NONE][$key]['fid'] = $drupalfile->fid;
+            $node->{$field}[LANGUAGE_NONE][$key]['uri'] = $drupalfile->uri;
           }
         }
-
-      /*if (is_object($image) && $type == 'os2web_base_news'){
-        $node->field_os2web_base_field_lead_img[LANGUAGE_NONE][0]['fid'] = $image->fid;
-        $node->field_os2web_base_field_lead_img[LANGUAGE_NONE][0]['uri'] = $image->uri;
       }
-      elseif (is_object($image) && $type == 'group') {
-        $node->field_groupimage[LANGUAGE_NONE][0]['fid'] = $image->fid;
-        $node->field_groupimage[LANGUAGE_NONE][0]['uri'] = $image->uri;
-      }
-      elseif (is_object($image) && $type != 'os2web_base_news') {
-        $node->field_image[LANGUAGE_NONE][0]['fid'] = $image->fid;
-        $node->field_image[LANGUAGE_NONE][0]['uri'] = $image->uri;
-      }*/
 
       // old gid
       if (!$gid = field_get_items('node', $node, 'field_gammel_gid')) {
@@ -100,13 +91,9 @@ function getNodeElements($type, $filename) {
         $node->og_group_ref[LANGUAGE_NONE][0]['target_id'] = $new_gid;
       }
 
-      // $node->field_gammel_nid[LANGUAGE_NONE][0]['value'] = $data->children('nid')->text();
-      // $node->field_gammel_nid[LANGUAGE_NONE][0]['safe_value'] = $data->children('nid')->text();
-
       $topics = $data->children('field_topics')->text();
       $topics_ar = explode(',', $topics);
       $error = array_filter($topics_ar);
-      //print_r($topics_ar);
       if (!empty($error)) {
         foreach ($topics_ar as $key => $value) {
           $node->field_topics[LANGUAGE_NONE][$key]['tid'] = $value;
@@ -175,7 +162,7 @@ function getNodeElements($type, $filename) {
                 break;
             }
             $url = 'public://' . $file_dir . '/' . $url_ar[count($url_ar) - 1];
-            if ($drupalfile = get_images_or_files($url, $file_dir)) {
+            if ($drupalfile = get_images_or_files($url, $file_dir, $url_ar[count($url_ar) - 1])) {
               $node->field_os2web_base_field_media[LANGUAGE_NONE][$key]['fid'] = $drupalfile->fid;
               $node->field_os2web_base_field_media[LANGUAGE_NONE][$key]['uri'] = $drupalfile->uri;
               $node->field_os2web_base_field_media[LANGUAGE_NONE][$key]['display'] = 1;
@@ -202,8 +189,8 @@ function getNodeElements($type, $filename) {
   print "\n\n";
 }
 
-// getNodeElements('group', 'node-export-group.xml');
- getNodeElements('arrangement', 'node-export-arrangement.xml');
+ getNodeElements('group', 'node-export-group.xml');
+//getNodeElements('arrangement', 'node-export-arrangement.xml');
 
 // getNodeElements('forum_post', 'node-export-diskussion.xml');
 // getNodeElements('os2web_base_news' , 'node-export-nyhed.xml');
@@ -242,7 +229,7 @@ function get_group_id_by_oldGid($gid) {
   return $new_gid;
 }
 
-function get_images_or_files($url, $file_dir) {
+function get_images_or_files($url, $file_dir, $name = NULL) {
   $drupalfile = FALSE;
   if (file_exists($url)) {
     $dfile = (object) array(
@@ -251,7 +238,7 @@ function get_images_or_files($url, $file_dir) {
       'status' => 1,
     );
     // Now get Drupal to copy it.
-    $drupalfile = file_copy($dfile, 'private://' . $file_dir);
+    $drupalfile = file_copy($dfile, 'private://' . $file_dir . '/' . $name, FILE_EXISTS_RENAME);
   }
   return $drupalfile;
 }
