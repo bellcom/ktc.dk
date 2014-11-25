@@ -4,7 +4,8 @@
     <div class="margin-bottom-20">
     <div class="magazine row">
 	    <div class="col-md-3 col-sm-3 col-xs-2">
-		    <?php print $node->title; ?><br><?php print render($content['field_udgave']); ?>
+		    <h2><?php print $node->title; ?></h2>
+		    <h3><?php print render($content['field_udgave']); ?></h3>
 		    
 		    <p class="margin-bottom-20">
 		      <a class="margin-bottom-20" href="<?php  print render($content['field_linkbladreversion']); ?>">
@@ -16,8 +17,7 @@
                 print $html = '<img title = "' . $image["title"] . '" src="' . $public_filename . '"/>';
               ?>
 		      </a>
-			
-		    </p>
+			</p>
 		    <p>
 		      <?php
                 $img = field_get_items('node', $node, 'field_bannere');
@@ -25,7 +25,8 @@
                 $style = 'magazinethumb';
                 $public_filename = image_style_url($style, $image["uri"]);
                 print $html = '<img title = "' . $image["title"] . '" src="' . $public_filename . '"/>';
-              ?>			</p>
+              ?>
+              </p>
               <p class="margin-bottom-20">
               		      <?php
                 $img = field_get_items('node', $node, 'field_banner_2');
@@ -33,7 +34,6 @@
                 $style = 'magazinethumb';
                 $public_filename = image_style_url($style, $image["uri"]);
                 print $html = '<img title = "' . $image["title"] . '" src="' . $public_filename . '"/>';?>
-
               </p>
 			<a href="#" class="btn btn-info btn-std">Tegn online abonnement</a>
 		</div>
