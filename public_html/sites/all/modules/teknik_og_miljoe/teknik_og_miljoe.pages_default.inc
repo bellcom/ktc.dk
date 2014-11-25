@@ -181,6 +181,29 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $display->content['new-bd6411a0-3663-4747-b2b3-d31e4b9ac07a'] = $pane;
     $display->panels['left'][4] = 'new-bd6411a0-3663-4747-b2b3-d31e4b9ac07a';
     $pane = new stdClass();
+    $pane->pid = 'new-a51d2798-11b4-4986-9d49-84c5138cbf14';
+    $pane->panel = 'left';
+    $pane->type = 'node_form_log';
+    $pane->subtype = 'node_form_log';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_node_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = 'a51d2798-11b4-4986-9d49-84c5138cbf14';
+    $display->content['new-a51d2798-11b4-4986-9d49-84c5138cbf14'] = $pane;
+    $display->panels['left'][5] = 'new-a51d2798-11b4-4986-9d49-84c5138cbf14';
+    $pane = new stdClass();
     $pane->pid = 'new-6873f290-8908-4999-8b48-152bb967be8f';
     $pane->panel = 'right';
     $pane->type = 'node_form_buttons';
@@ -403,6 +426,29 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->uuid = '9c2f6b64-9523-4cb6-86be-75193c511a63';
     $display->content['new-9c2f6b64-9523-4cb6-86be-75193c511a63'] = $pane;
     $display->panels['right'][8] = 'new-9c2f6b64-9523-4cb6-86be-75193c511a63';
+    $pane = new stdClass();
+    $pane->pid = 'new-f8aedd82-2d46-46c5-8b90-1369f75bb645';
+    $pane->panel = 'right';
+    $pane->type = 'node_form_publishing';
+    $pane->subtype = 'node_form_publishing';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_node_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 9;
+    $pane->locks = array();
+    $pane->uuid = 'f8aedd82-2d46-46c5-8b90-1369f75bb645';
+    $display->content['new-f8aedd82-2d46-46c5-8b90-1369f75bb645'] = $pane;
+    $display->panels['right'][9] = 'new-f8aedd82-2d46-46c5-8b90-1369f75bb645';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2c624ddf-7d8d-487b-b366-cfa8d78c4cb7';
   $handler->conf['display'] = $display;

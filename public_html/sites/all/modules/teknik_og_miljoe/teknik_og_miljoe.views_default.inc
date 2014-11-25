@@ -156,8 +156,13 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'listevisning';
+  $handler->display->display_options['row_options']['relationship'] = 'field_ekstra_artikler_target_id';
+  $handler->display->display_options['row_options']['view_mode'] = 'listevisningstor';
   $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Forbindelse: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['id'] = 'field_ekstra_artikler_target_id';
+  $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['table'] = 'field_data_field_ekstra_artikler';
+  $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['field'] = 'field_ekstra_artikler_target_id';
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -165,6 +170,11 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_ekstra_artikler_target_id';
   /* Sorteringskriterie: Indhold: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -188,28 +198,39 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'os2web_base_news' => 'os2web_base_news',
-  );
-  /* Filterkriterie: Indhold: Forfrem til (field_os2web_base_field_promote) */
-  $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['id'] = 'field_os2web_base_field_promote_tid';
-  $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['table'] = 'field_data_field_os2web_base_field_promote';
-  $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['field'] = 'field_os2web_base_field_promote_tid';
-  $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['value'] = array(
-    5 => '5',
-  );
-  $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_os2web_base_field_promote_tid']['vocabulary'] = 'os2web_base_tax_promoteto';
 
   /* Display: Top artikel */
   $handler = $view->new_display('block', 'Top artikel', 'block_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['relationship'] = 'field_top_artikel_target_id';
+  $handler->display->display_options['row_options']['view_mode'] = 'listevisningstor';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['id'] = 'field_ekstra_artikler_target_id';
+  $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['table'] = 'field_data_field_ekstra_artikler';
+  $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['field'] = 'field_ekstra_artikler_target_id';
+  /* Forbindelse: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_top_artikel_target_id']['id'] = 'field_top_artikel_target_id';
+  $handler->display->display_options['relationships']['field_top_artikel_target_id']['table'] = 'field_data_field_top_artikel';
+  $handler->display->display_options['relationships']['field_top_artikel_target_id']['field'] = 'field_top_artikel_target_id';
 
   /* Display: Ekstra artikler */
   $handler = $view->new_display('block', 'Ekstra artikler', 'block_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['relationship'] = 'field_ekstra_artikler_target_id';
+  $handler->display->display_options['row_options']['view_mode'] = 'listevisning';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $translatables['bladintro_nyheder'] = array(
     t('Master'),
     t('mere'),
@@ -225,8 +246,11 @@ function teknik_og_miljoe_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
+    t('Indhold entity referenced from field_ekstra_artikler'),
+    t('Titel'),
     t('Alle'),
     t('Top artikel'),
+    t('Indhold entity referenced from field_top_artikel'),
     t('Ekstra artikler'),
   );
   $export['bladintro_nyheder'] = $view;
