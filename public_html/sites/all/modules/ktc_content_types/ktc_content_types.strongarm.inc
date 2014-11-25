@@ -27,6 +27,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_document';
+  $strongarm->value = 0;
+  $export['comment_anonymous_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_factbox';
   $strongarm->value = 0;
   $export['comment_anonymous_factbox'] = $strongarm;
@@ -51,6 +58,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'comment_anonymous_magazine';
   $strongarm->value = 0;
   $export['comment_anonymous_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_meeting_doodle';
+  $strongarm->value = 0;
+  $export['comment_anonymous_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -104,6 +118,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_document';
+  $strongarm->value = 1;
+  $export['comment_default_mode_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_factbox';
   $strongarm->value = 1;
   $export['comment_default_mode_factbox'] = $strongarm;
@@ -128,6 +149,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'comment_default_mode_magazine';
   $strongarm->value = 1;
   $export['comment_default_mode_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_meeting_doodle';
+  $strongarm->value = 1;
+  $export['comment_default_mode_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -167,6 +195,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_document';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_factbox';
   $strongarm->value = '50';
   $export['comment_default_per_page_factbox'] = $strongarm;
@@ -195,6 +230,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_meeting_doodle';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_meeting_doodle'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_os2web_base_news';
   $strongarm->value = '50';
   $export['comment_default_per_page_os2web_base_news'] = $strongarm;
@@ -216,6 +258,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_document';
+  $strongarm->value = '2';
+  $export['comment_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_factbox';
   $strongarm->value = '1';
   $export['comment_factbox'] = $strongarm;
@@ -233,6 +282,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'comment_form_location_banner';
   $strongarm->value = 0;
   $export['comment_form_location_banner'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_document';
+  $strongarm->value = 1;
+  $export['comment_form_location_document'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -261,6 +317,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'comment_form_location_magazine';
   $strongarm->value = 0;
   $export['comment_form_location_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_meeting_doodle';
+  $strongarm->value = 1;
+  $export['comment_form_location_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -307,6 +370,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_meeting_doodle';
+  $strongarm->value = '2';
+  $export['comment_meeting_doodle'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_os2web_base_news';
   $strongarm->value = '1';
   $export['comment_os2web_base_news'] = $strongarm;
@@ -335,6 +405,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_document';
+  $strongarm->value = '1';
+  $export['comment_preview_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_factbox';
   $strongarm->value = '0';
   $export['comment_preview_factbox'] = $strongarm;
@@ -359,6 +436,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'comment_preview_magazine';
   $strongarm->value = '0';
   $export['comment_preview_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_meeting_doodle';
+  $strongarm->value = '1';
+  $export['comment_preview_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -398,6 +482,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_document';
+  $strongarm->value = 1;
+  $export['comment_subject_field_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_factbox';
   $strongarm->value = 0;
   $export['comment_subject_field_factbox'] = $strongarm;
@@ -422,6 +513,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'comment_subject_field_magazine';
   $strongarm->value = 0;
   $export['comment_subject_field_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_meeting_doodle';
+  $strongarm->value = 1;
+  $export['comment_subject_field_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -517,6 +615,26 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__document';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__factbox';
   $strongarm->value = array(
     'view_modes' => array(
@@ -596,6 +714,26 @@ function ktc_content_types_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__meeting_doodle';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '3',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -711,6 +849,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_document';
+  $strongarm->value = '0';
+  $export['language_content_type_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_factbox';
   $strongarm->value = '0';
   $export['language_content_type_factbox'] = $strongarm;
@@ -735,6 +880,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'language_content_type_magazine';
   $strongarm->value = '0';
   $export['language_content_type_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_meeting_doodle';
+  $strongarm->value = '0';
+  $export['language_content_type_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -787,6 +939,15 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_document';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_factbox';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -815,6 +976,15 @@ function ktc_content_types_strongarm() {
     0 => 'main-menu',
   );
   $export['menu_options_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_meeting_doodle';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -865,6 +1035,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_document';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_factbox';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_factbox'] = $strongarm;
@@ -889,6 +1066,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'menu_parent_magazine';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_meeting_doodle';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -942,6 +1126,15 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_document';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_factbox';
   $strongarm->value = array(
     0 => 'status',
@@ -974,6 +1167,15 @@ function ktc_content_types_strongarm() {
     0 => 'status',
   );
   $export['node_options_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_meeting_doodle';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1029,6 +1231,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_document';
+  $strongarm->value = '0';
+  $export['node_preview_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_factbox';
   $strongarm->value = '0';
   $export['node_preview_factbox'] = $strongarm;
@@ -1053,6 +1262,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'node_preview_magazine';
   $strongarm->value = '0';
   $export['node_preview_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_meeting_doodle';
+  $strongarm->value = '0';
+  $export['node_preview_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1099,6 +1315,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_document';
+  $strongarm->value = 1;
+  $export['node_submitted_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_factbox';
   $strongarm->value = 0;
   $export['node_submitted_factbox'] = $strongarm;
@@ -1123,6 +1346,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'node_submitted_magazine';
   $strongarm->value = 0;
   $export['node_submitted_magazine'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_meeting_doodle';
+  $strongarm->value = 1;
+  $export['node_submitted_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

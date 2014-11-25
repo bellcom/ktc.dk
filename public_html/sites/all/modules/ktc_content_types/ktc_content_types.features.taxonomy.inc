@@ -9,6 +9,14 @@
  */
 function ktc_content_types_taxonomy_default_vocabularies() {
   return array(
+    'dokument' => array(
+      'name' => 'Dokument',
+      'machine_name' => 'dokument',
+      'description' => '',
+      'hierarchy' => 1,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'faktaboks_typer' => array(
       'name' => 'Faktaboks typer',
       'machine_name' => 'faktaboks_typer',
