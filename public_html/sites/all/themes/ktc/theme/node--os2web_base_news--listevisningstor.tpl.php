@@ -80,7 +80,9 @@
  */
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> $comment_count clearfix"<?php print $attributes; ?>>
-	<h3><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-	<p>sdsd<?php render($content['body']); ?></p>  
+	<header><h3><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3></header>
+	<p><?php 
+     print render($content);
+    ?></p>  
 </article>
 
