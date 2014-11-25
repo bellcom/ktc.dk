@@ -3,13 +3,11 @@
 
     <div class="margin-bottom-20">
     <div class="magazine row">
-	    <div class="col-md-3 col-sm-3 col-xs-2">1. kolonne
-		    <br>
-		    
+	    <div class="col-md-3 col-sm-3 col-xs-2">
 		    <?php print $node->title; ?><br><?php print render($content['field_udgave']); ?>
 		    
-		    <br>              
-		      <a href="<?php  print render($content['field_linkbladreversion']); ?>">
+		    <p class="margin-bottom-20">
+		      <a class="margin-bottom-20" href="<?php  print render($content['field_linkbladreversion']); ?>">
 			      <?php
                 $img = field_get_items('node', $node, 'field_forside_billede_');
                 $image = $img[0];
@@ -18,14 +16,17 @@
                 print $html = '<img title = "' . $image["title"] . '" src="' . $public_filename . '"/>';
               ?>
 		      </a>
-			<br>
+			
+		    </p>
+		    <p>
 		      <?php
                 $img = field_get_items('node', $node, 'field_bannere');
                 $image = $img[0];
                 $style = 'magazinethumb';
                 $public_filename = image_style_url($style, $image["uri"]);
                 print $html = '<img title = "' . $image["title"] . '" src="' . $public_filename . '"/>';
-              ?>			<br>
+              ?>			</p>
+              <p class="margin-bottom-20">
               		      <?php
                 $img = field_get_items('node', $node, 'field_banner_2');
                 $image = $img[0];
@@ -33,10 +34,32 @@
                 $public_filename = image_style_url($style, $image["uri"]);
                 print $html = '<img title = "' . $image["title"] . '" src="' . $public_filename . '"/>';?>
 
-			<br>
-			tegn abb
+              </p>
+			<a href="#" class="btn btn-info btn-std">Tegn online abonnement</a>
 		</div>
-	    <div class="col-md-9 col-sm-9 col-xs-10">2. kolonne<br>top<br>1<br>2<br>3<br><?php print render($content['field_os2web_base_field_summary']); ?></div>
+	    <div class="col-md-9 col-sm-9 col-xs-10 margin-bottom-20">
+		    <div class="thumbnail">
+			    <h3><a href="#">Top artikel</a></h3>
+			    <img height="120px" width="120px" align="right">
+			    <p>Artikel tekst</p>		    
+			</div>
+		    <div class="thumbnail">
+				    <h4><a href="#">Ekstraartikel 2</a></h4>
+				    <img height="80px" width="80px" align="right">
+				    <p>Artikel tekst</p>
+			</div>
+				<div class="thumbnail">
+				    <h4><a href="#">Ekstraartikel 2</a></h4>
+				    <img height="80px" width="80px" align="right">
+				    <p>Artikel tekst</p>		    
+			</div>
+				<div class="thumbnail">
+				    <h4><a href="#">Ekstraartikel 2</a></h4>
+				    <img height="80px" width="80px" align="right">
+				    <p>Artikel tekst</p>		    
+			</div>
+		    <div class="leder well well-sm"><?php print render($content['body']); ?></div>
+		    </div>
 
 
 
@@ -59,3 +82,4 @@
   <?php endif; ?>
   <?php hide($content['comments']); ?>
 </article>
+<hr />
