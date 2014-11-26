@@ -1,6 +1,15 @@
 <?php
+
+ //getNodeElements('group', 'node-export-group.xml');
+//getNodeElements('arrangement', 'node-export-arrangement.xml');
+
+// getNodeElements('forum_post', 'node-export-diskussion.xml');
+// getNodeElements('os2web_base_news' , 'node-export-nyhed.xml');
+
 function getNodeElements($type, $filename) {
-  $content = file_get_contents(dirname(__FILE__) . '/xml/' . $filename);
+  $path = 'public://xml';
+  $content = file_get_contents(drupal_realpath($path) . '/' . $filename);
+
   $count = 0;
   $size = count(qp($content, 'node'));
   print "There are " . $size . " nodes \n";
@@ -52,7 +61,7 @@ function getNodeElements($type, $filename) {
               break;
 
             case 'os2web_base_news':
-              $files_ar = 'news';
+              $files_dir = 'images';
               $field = 'field_os2web_base_field_lead_img';
               break;
 
@@ -188,12 +197,6 @@ function getNodeElements($type, $filename) {
   }
   print "\n\n";
 }
-
- getNodeElements('group', 'node-export-group.xml');
-//getNodeElements('arrangement', 'node-export-arrangement.xml');
-
-// getNodeElements('forum_post', 'node-export-diskussion.xml');
-// getNodeElements('os2web_base_news' , 'node-export-nyhed.xml');
 
 function node_load_by_old_nid($nid) {
   $node = FALSE;
