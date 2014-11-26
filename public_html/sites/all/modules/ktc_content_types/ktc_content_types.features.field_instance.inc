@@ -3616,108 +3616,6 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_gammel_menuplacering'
-  $field_instances['node-page-field_gammel_menuplacering'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Hvor var indholdet placeret i menuen på det gamle site?',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_gammel_menuplacering',
-    'label' => 'Gammel menuplacering',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_gammel_url'
-  $field_instances['node-page-field_gammel_url'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'URL\'en til indholdet på det gamle site.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_gammel_url',
-    'label' => 'Gammel URL',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
-    ),
-  );
-
   // Exported field_instance: 'node-page-field_image'
   $field_instances['node-page-field_image'] = array(
     'bundle' => 'page',
@@ -4006,12 +3904,9 @@ function ktc_content_types_field_default_field_instances() {
   t('Flere emner');
   t('Forfatter');
   t('Forfrem til');
-  t('Gammel URL');
   t('Gammel gid');
-  t('Gammel menuplacering');
   t('Gammel nid');
   t('Gruppe/Netværk');
-  t('Hvor var indholdet placeret i menuen på det gamle site?');
   t('Indhold');
   t('KL Emneord');
   t('KLE stikord');
@@ -4035,7 +3930,6 @@ function ktc_content_types_field_default_field_instances() {
   t('Tilmeldte');
   t('Type');
   t('Type af møde');
-  t('URL\'en til indholdet på det gamle site.');
   t('Udgået');
   t('Visningsperiode');
 
