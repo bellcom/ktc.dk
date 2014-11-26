@@ -50,6 +50,14 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Felt: Indhold: Type */
+  $handler->display->display_options['fields']['field_factbox_type']['id'] = 'field_factbox_type';
+  $handler->display->display_options['fields']['field_factbox_type']['table'] = 'field_data_field_factbox_type';
+  $handler->display->display_options['fields']['field_factbox_type']['field'] = 'field_factbox_type';
+  /* Felt: Indhold: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
   /* Sorteringskriterie: Indhold: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -118,6 +126,25 @@ function indholdsliste_m_filter_views_default_views() {
       'label' => 'Indhold: Type',
     ),
   );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_3');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['argument_input'] = array(
+    'type' => array(
+      'type' => 'user',
+      'context' => 'entity:user.cancel-url',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Type',
+    ),
+  );
   $translatables['indhold_m_filter'] = array(
     t('Master'),
     t('mere'),
@@ -133,6 +160,7 @@ function indholdsliste_m_filter_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
+    t('Type'),
     t('Alle'),
     t('Side'),
     t('Content pane'),
