@@ -11,4 +11,8 @@ function ktc_content_types_entity_info_alter(&$entity_info) {
     'label' => t('Listevisning'),
     'custom settings' => TRUE,
   );
+  $entity_info['node']['view modes']['listevisningstor'] = array(
+    'label' => t('Listevisning Stor'),
+    'custom settings' => TRUE,
+  );
 } 

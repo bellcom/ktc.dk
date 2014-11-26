@@ -5,9 +5,10 @@
 /*  overflow: hidden;  */
 }
 
-.panel-2col .panel-col-first, .page-admin .col-md-9 { 
+.panel-2col .panel-col-first, .page-admin .col-md-9, .adminimal-theme .col-md-9 { 
   float: left; 
-  width: 75%; 
+  width: 73%; 
+  margin-right: 2%;
 }
 * html .panel-2col .panel-col-first, .page-admin .col-md-9 {
   width: 74.9%;
@@ -17,12 +18,12 @@
   margin: 0 .5em 1em 0;
 }
 
-.panel-2col .panel-col-last, .page-admin .col-md-3 { 
+.panel-2col .panel-col-last, .page-admin .col-md-3, .adminimal-theme  .col-md-3 { 
   float: left; 
   width: 25%; 
 }
 * html .panel-2col .panel-col-last, .page-admin .col-md-3 {
-  width: 24.9%;
+  width: 23.0%;
 }
 
 .panel-2col .panel-col-last .inside { 

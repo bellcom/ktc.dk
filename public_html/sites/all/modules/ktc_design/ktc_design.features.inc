@@ -1,20 +1,13 @@
 <?php
 /**
  * @file
- * indholdsliste_m_filter.features.inc
+ * ktc_design.features.inc
  */
-
-/**
- * Implements hook_views_api().
- */
-function indholdsliste_m_filter_views_api($module = NULL, $api = NULL) {
-  return array("api" => "3.0");
-}
 
 /**
  * Implements hook_image_default_styles().
  */
-function indholdsliste_m_filter_image_default_styles() {
+function ktc_design_image_default_styles() {
   $styles = array();
 
   // Exported image style: listevisning.
@@ -80,6 +73,29 @@ function indholdsliste_m_filter_image_default_styles() {
         'data' => array(
           'width' => 200,
           'height' => 200,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: stdbillede.
+  $styles['stdbillede'] = array(
+    'name' => 'stdbillede',
+    'label' => 'stdbillede',
+    'effects' => array(
+      4 => array(
+        'label' => 'Skalér og beskær',
+        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 900,
+          'height' => 500,
         ),
         'weight' => 1,
       ),

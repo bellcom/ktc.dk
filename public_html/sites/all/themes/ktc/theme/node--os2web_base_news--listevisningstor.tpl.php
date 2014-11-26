@@ -79,93 +79,22 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php if ((!$page && !empty($title)) || !empty($title_prefix) || !empty($title_suffix) || $display_submitted): ?>
-    <?php if (!$page && !empty($title)): ?>
-  		<header>
-    		<?php print render($title_prefix); ?>
-    		<h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-    		<?php print render($title_suffix); ?>
-    			<?php if ($display_submitted): ?>
-    				<span class="submitted">
-      					<?php print $user_picture; ?>
-      					<?php print $submitted; ?>
-    				</span>
-  				<?php endif; ?>
-  		</header>
-    <?php endif; ?>
-  <?php endif; ?>
-
-  <?php if($page) : ?>
-  <header>
-    
-    <?php if ($type == 'os2web_base_news') : ?>
-      <?php if(isset($content['field_os2web_base_field_video'])) : ?>
-        <?php hide($content['field_os2web_base_field_lead_img']); ?>
-        <?php print render($content['field_os2web_base_field_video']); ?>
-      <?php else: ?>
-        <?php print render($content['field_os2web_base_field_lead_img']); ?>
-      <?php endif; ?>
-    <?php else : ?>
-      <?php print render($content['field_os2web_base_field_image']); ?>
-    <?php endif; ?>
-    <?php if ($node->type != 'os2web_base_contentpage' &&  $node->type != 'os2web_borger_dk_article'): ?>
-    <time pubdate="pubdate">
-      <i></i><?php print format_date($created, 'custom', 'j. F'); ?>
-    </time>
-    <?php endif; ?>
-    <?php print render($title_prefix); ?>
-    <?php if (!empty($title)): ?>
-    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
-    
-    
-    <?php if ($type == 'arrangement') : ?>
-    <div class="row">
-  	<div class="col-md-8"><?php print render($content['field_arrangement_date']); ?></div>
- 	<div class="col-md-4 panel-info">
- 	 <div class="panel-heading">Tilmelding</div>
- 	<div class="panle-body bg-white padding-10">
- 	<?php print render($content['field_link_to_signup']); ?>
- 	<?php print render($content['field_link_to_arrangement']); ?>
- 	</div>
- 	
- 	
- 	</div>
-	</div>
-    
-    <?php endif; ?>
-    
-  </header>
-  <?php endif; ?>
-
-  <div class="wrap">
-    <?php
-      // Hide comments, tags, and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      hide($content['field_tags']);
-      hide($content['field_os2web_base_field_image']);
-      hide($content['field_os2web_base_field_lead_img']);
-      hide($content['field_svendborg_hide_sidebar']);
-      hide($content['field_svendborg_hide_contact']);
-      hide($content['field_arrangement_period']);
-            
-
-      print render($content['field_os2web_base_field_summary']);
-      print render($content['body']);
-      print render($content);
-
-    ?>
-
-  </div>
-  <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
-  <footer>
-    <?php print render($content['field_tags']); ?>
-    <?php print render($content['links']); ?>
-  </footer>
-  <?php endif; ?>
-  <?php print render($content['comments']); ?>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> $comment_count clearfix"<?php print $attributes; ?>>
+	<header>
+		<?php 
+			$billede_lead_liste_stor= field_view_field('node',
+			 $node, 'field_os2web_base_field_lead_img',
+			 array(
+			 	'label'=>'hidden',
+			 	'settings' => array(
+			 		'image_style' => 'listevisning_stor')
+			 	)
+			 );
+			print render($billede_lead_liste_stor); ?>
+		<h3><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3></header>
+	<p><?php 
+     hide($content['field_os2web_base_field_lead_img']);
+     print render($content);
+    ?></p>  
 </article>
 

@@ -319,7 +319,14 @@ function ktc_preprocess_html(&$variables) {
  * Implements hook_preprocess_node().
  */
 function ktc_preprocess_node(&$vars) {
-
+  
+/*  $vars['billede_lead_liste_stor'] = 
+  		field_view_field('node', $node, 'field_os2web_base_field_lead_img',
+			 array(	'label'=>'hidden',
+			 		'settings' => array('image_style' => 'listevisning_stor')
+			 	)
+			 );
+  */
   // Add css class "node--NODETYPE--VIEWMODE" to nodes.
   $vars['classes_array'][] = 'node--' . $vars['type'] . '--' . $vars['view_mode'];
 

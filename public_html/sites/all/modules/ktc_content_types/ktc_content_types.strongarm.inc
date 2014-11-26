@@ -706,6 +706,9 @@ function ktc_content_types_strongarm() {
         'title' => array(
           'weight' => '0',
         ),
+        'path' => array(
+          'weight' => '13',
+        ),
       ),
       'display' => array(),
     ),
