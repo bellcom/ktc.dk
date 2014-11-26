@@ -1,0 +1,7 @@
+name = KTC - Design
+core = 7.x
+package = KTC
+dependencies[] = image
+dependencies[] = indholdsliste_m_filter
+features[features_api][] = api:2
+features[image][] = ktc_content_image

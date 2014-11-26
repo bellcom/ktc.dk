@@ -7881,8 +7881,6 @@ body.page-taxonomy-term.term-is-not-top h1.page-header {
 }
 body.page-node article,
 body.page-taxonomy-term.term-is-not-top article,
-body.page-node div.node-os2web-borger-dk-article,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article,
 body.page-node div.node-os2web-base-news,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news {
   border-radius: 0 0 4px 4px;
@@ -7890,44 +7888,30 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news {
 }
 body.page-node article a[id]:before,
 body.page-taxonomy-term.term-is-not-top article a[id]:before,
-body.page-node div.node-os2web-borger-dk-article a[id]:before,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article a[id]:before,
 body.page-node div.node-os2web-base-news a[id]:before,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news a[id]:before,
 body.page-node article h1[id]:before,
 body.page-taxonomy-term.term-is-not-top article h1[id]:before,
-body.page-node div.node-os2web-borger-dk-article h1[id]:before,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h1[id]:before,
 body.page-node div.node-os2web-base-news h1[id]:before,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h1[id]:before,
 body.page-node article h2[id]:before,
 body.page-taxonomy-term.term-is-not-top article h2[id]:before,
-body.page-node div.node-os2web-borger-dk-article h2[id]:before,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h2[id]:before,
 body.page-node div.node-os2web-base-news h2[id]:before,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h2[id]:before,
 body.page-node article h3[id]:before,
 body.page-taxonomy-term.term-is-not-top article h3[id]:before,
-body.page-node div.node-os2web-borger-dk-article h3[id]:before,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h3[id]:before,
 body.page-node div.node-os2web-base-news h3[id]:before,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h3[id]:before,
 body.page-node article h4[id]:before,
 body.page-taxonomy-term.term-is-not-top article h4[id]:before,
-body.page-node div.node-os2web-borger-dk-article h4[id]:before,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h4[id]:before,
 body.page-node div.node-os2web-base-news h4[id]:before,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h4[id]:before,
 body.page-node article h5[id]:before,
 body.page-taxonomy-term.term-is-not-top article h5[id]:before,
-body.page-node div.node-os2web-borger-dk-article h5[id]:before,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h5[id]:before,
 body.page-node div.node-os2web-base-news h5[id]:before,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h5[id]:before,
 body.page-node article h6[id]:before,
 body.page-taxonomy-term.term-is-not-top article h6[id]:before,
-body.page-node div.node-os2web-borger-dk-article h6[id]:before,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h6[id]:before,
 body.page-node div.node-os2web-base-news h6[id]:before,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h6[id]:before {
   display: block;
@@ -7938,16 +7922,12 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h6[id]:before 
 }
 body.page-node article p,
 body.page-taxonomy-term.term-is-not-top article p,
-body.page-node div.node-os2web-borger-dk-article p,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article p,
 body.page-node div.node-os2web-base-news p,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news p {
   line-height: 1.6em;
 }
 body.page-node article header h2,
 body.page-taxonomy-term.term-is-not-top article header h2,
-body.page-node div.node-os2web-borger-dk-article header h2,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header h2,
 body.page-node div.node-os2web-base-news header h2,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 {
   margin: 0;
@@ -7960,8 +7940,6 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 {
 }
 body.page-node article header h2 a,
 body.page-taxonomy-term.term-is-not-top article header h2 a,
-body.page-node div.node-os2web-borger-dk-article header h2 a,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header h2 a,
 body.page-node div.node-os2web-base-news header h2 a,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 a {
   color: #000000;
@@ -7972,8 +7950,6 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 a {
 @media (max-width: 460px) {
   body.page-node article header h2 a,
   body.page-taxonomy-term.term-is-not-top article header h2 a,
-  body.page-node div.node-os2web-borger-dk-article header h2 a,
-  body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header h2 a,
   body.page-node div.node-os2web-base-news header h2 a,
   body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 a {
     font-size: 1.3em;
@@ -7981,36 +7957,22 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 a {
 }
 body.page-node article .wrap,
 body.page-taxonomy-term.term-is-not-top article .wrap,
-body.page-node div.node-os2web-borger-dk-article .wrap,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .wrap,
 body.page-node div.node-os2web-base-news .wrap,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .wrap,
 body.page-node article header h2,
 body.page-taxonomy-term.term-is-not-top article header h2,
-body.page-node div.node-os2web-borger-dk-article header h2,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header h2,
 body.page-node div.node-os2web-base-news header h2,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2,
-body.page-node article #borger_dk_header,
-body.page-taxonomy-term.term-is-not-top article #borger_dk_header,
-body.page-node div.node-os2web-borger-dk-article #borger_dk_header,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk_header,
-body.page-node div.node-os2web-base-news #borger_dk_header,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk_header {
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 {
   padding: 15px 0;
 }
 body.page-node article .inner,
 body.page-taxonomy-term.term-is-not-top article .inner,
-body.page-node div.node-os2web-borger-dk-article .inner,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .inner,
 body.page-node div.node-os2web-base-news .inner,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .inner {
   padding: 15px 0px;
 }
 body.page-node article header time,
 body.page-taxonomy-term.term-is-not-top article header time,
-body.page-node div.node-os2web-borger-dk-article header time,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header time,
 body.page-node div.node-os2web-base-news header time,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header time {
   padding: 15px 30px;
@@ -8019,8 +7981,6 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header time {
 }
 body.page-node article header time i,
 body.page-taxonomy-term.term-is-not-top article header time i,
-body.page-node div.node-os2web-borger-dk-article header time i,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header time i,
 body.page-node div.node-os2web-base-news header time i,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header time i {
   display: inline-block;
@@ -8034,39 +7994,25 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header time i 
 }
 body.page-node article .field-name-field-os2web-base-field-image .field-slideshow,
 body.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-image .field-slideshow,
-body.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow,
 body.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow {
   margin: 0 auto;
 }
 body.page-node article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
 body.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
-body.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
 body.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption {
   display: none;
 }
 body.page-node article .field-name-field-os2web-base-field-image img,
 body.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-image img,
-body.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
 body.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
   width: 100%;
   height: auto;
 }
-body.page-node article .borger_dk_header_text,
-body.page-taxonomy-term.term-is-not-top article .borger_dk_header_text,
-body.page-node div.node-os2web-borger-dk-article .borger_dk_header_text,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_header_text,
-body.page-node div.node-os2web-base-news .borger_dk_header_text,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_header_text,
 body.page-node article .field-name-field-os2web-base-field-summary .field-item,
 body.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-summary .field-item,
-body.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-summary .field-item,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-summary .field-item,
 body.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-summary .field-item,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-field-os2web-base-field-summary .field-item {
   font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
@@ -8075,151 +8021,8 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-fi
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
-body.page-node article .borger_dk_header_text,
-body.page-taxonomy-term.term-is-not-top article .borger_dk_header_text,
-body.page-node div.node-os2web-borger-dk-article .borger_dk_header_text,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_header_text,
-body.page-node div.node-os2web-base-news .borger_dk_header_text,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_header_text {
-  margin-bottom: 0px;
-}
-body.page-node article .borger_dk_body_intro_text,
-body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text,
-body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text,
-body.page-node div.node-os2web-base-news .borger_dk_body_intro_text,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text {
-  margin-bottom: 20px;
-}
-body.page-node article .borger_dk_body_intro_text .intro_text_text,
-body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text .intro_text_text,
-body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text .intro_text_text,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text .intro_text_text,
-body.page-node div.node-os2web-base-news .borger_dk_body_intro_text .intro_text_text,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text .intro_text_text {
-  width: 70%;
-  display: inline-block;
-}
-body.page-node article .borger_dk_body_intro_text .intro_text_buttons,
-body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text .intro_text_buttons,
-body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text .intro_text_buttons,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text .intro_text_buttons,
-body.page-node div.node-os2web-base-news .borger_dk_body_intro_text .intro_text_buttons,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text .intro_text_buttons {
-  float: right;
-}
-body.page-node article .borger_dk_body_intro_text .gplus_gminus,
-body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text .gplus_gminus,
-body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gplus_gminus,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gplus_gminus,
-body.page-node div.node-os2web-base-news .borger_dk_body_intro_text .gplus_gminus,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text .gplus_gminus {
-  margin-left: 5px;
-}
-body.page-node article .borger_dk_body_intro_text .gplus_button,
-body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text .gplus_button,
-body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gplus_button,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gplus_button,
-body.page-node div.node-os2web-base-news .borger_dk_body_intro_text .gplus_button,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text .gplus_button {
-  background-image: url(../images/sprites.png);
-  background-position: 0px -143px;
-  width: 23px;
-  height: 23px;
-  display: inline-block;
-  font-size: 0;
-  vertical-align: middle;
-}
-body.page-node article .borger_dk_body_intro_text .gminus_button,
-body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text .gminus_button,
-body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gminus_button,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gminus_button,
-body.page-node div.node-os2web-base-news .borger_dk_body_intro_text .gminus_button,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text .gminus_button {
-  background-image: url(../images/sprites.png);
-  background-position: 0px -166px;
-  width: 23px;
-  height: 23px;
-  display: inline-block;
-  font-size: 0;
-  vertical-align: middle;
-}
-body.page-node article #borger_dk-body,
-body.page-taxonomy-term.term-is-not-top article #borger_dk-body,
-body.page-node div.node-os2web-borger-dk-article #borger_dk-body,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body,
-body.page-node div.node-os2web-base-news #borger_dk-body,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body {
-  clear: both;
-}
-body.page-node article #borger_dk-body .microArticle,
-body.page-taxonomy-term.term-is-not-top article #borger_dk-body .microArticle,
-body.page-node div.node-os2web-borger-dk-article #borger_dk-body .microArticle,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body .microArticle,
-body.page-node div.node-os2web-base-news #borger_dk-body .microArticle,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body .microArticle {
-  padding: 10px 10px;
-  background-color: #e3e3e3;
-  border-radius: 5px;
-  margin-bottom: 5px;
-}
-body.page-node article #borger_dk-body div.mArticle,
-body.page-taxonomy-term.term-is-not-top article #borger_dk-body div.mArticle,
-body.page-node div.node-os2web-borger-dk-article #borger_dk-body div.mArticle,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body div.mArticle,
-body.page-node div.node-os2web-base-news #borger_dk-body div.mArticle,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body div.mArticle {
-  padding-top: 10px;
-}
-body.page-node article #borger_dk-body h2,
-body.page-taxonomy-term.term-is-not-top article #borger_dk-body h2,
-body.page-node div.node-os2web-borger-dk-article #borger_dk-body h2,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body h2,
-body.page-node div.node-os2web-base-news #borger_dk-body h2,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body h2 {
-  display: inline-block;
-  width: 90%;
-  border-top: none;
-  margin-top: 0;
-  text-transform: inherit;
-  font-weight: bold;
-  font-size: 16px;
-  background: none;
-}
-body.page-node article #borger_dk-body a.gplus,
-body.page-taxonomy-term.term-is-not-top article #borger_dk-body a.gplus,
-body.page-node div.node-os2web-borger-dk-article #borger_dk-body a.gplus,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body a.gplus,
-body.page-node div.node-os2web-base-news #borger_dk-body a.gplus,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body a.gplus {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -143px;
-  width: 23px;
-  height: 23px;
-  font-size: 0;
-  vertical-align: middle;
-  float: right;
-}
-body.page-node article #borger_dk-body a.gminus,
-body.page-taxonomy-term.term-is-not-top article #borger_dk-body a.gminus,
-body.page-node div.node-os2web-borger-dk-article #borger_dk-body a.gminus,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body a.gminus,
-body.page-node div.node-os2web-base-news #borger_dk-body a.gminus,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body a.gminus {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -166px;
-  width: 23px;
-  height: 23px;
-  font-size: 0;
-  vertical-align: middle;
-  float: right;
-}
 body.page-node article .media-ustream-video iframe,
 body.page-taxonomy-term.term-is-not-top article .media-ustream-video iframe,
-body.page-node div.node-os2web-borger-dk-article .media-ustream-video iframe,
-body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .media-ustream-video iframe,
 body.page-node div.node-os2web-base-news .media-ustream-video iframe,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .media-ustream-video iframe {
   max-width: 100%;
@@ -8255,42 +8058,12 @@ body.page-taxonomy-term.term-is-not-top .field-type-text-long img {
   max-width: 100%;
   height: auto;
 }
-body.page-node .region-content.col-sm-6 .borger_dk_body_intro_text .intro_text_text,
-body.page-taxonomy-term.term-is-not-top .region-content.col-sm-6 .borger_dk_body_intro_text .intro_text_text,
-body.page-node .region-content.col-md-6 .borger_dk_body_intro_text .intro_text_text,
-body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 .borger_dk_body_intro_text .intro_text_text {
-  width: 50%;
-}
-body.page-node.two-sidebars article .field-name-field-os2web-borger-dk-image img,
-body.page-taxonomy-term.term-is-not-top.two-sidebars article .field-name-field-os2web-borger-dk-image img,
-body.page-node .region-content.col-sm-6 article .field-name-field-os2web-borger-dk-image img,
-body.page-taxonomy-term.term-is-not-top .region-content.col-sm-6 article .field-name-field-os2web-borger-dk-image img,
-body.page-node .region-content.col-md-6 article .field-name-field-os2web-borger-dk-image img,
-body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 article .field-name-field-os2web-borger-dk-image img,
-body.page-node.two-sidebars div.node-os2web-borger-dk-article .field-name-field-os2web-borger-dk-image img,
-body.page-taxonomy-term.term-is-not-top.two-sidebars div.node-os2web-borger-dk-article .field-name-field-os2web-borger-dk-image img,
-body.page-node .region-content.col-sm-6 div.node-os2web-borger-dk-article .field-name-field-os2web-borger-dk-image img,
-body.page-taxonomy-term.term-is-not-top .region-content.col-sm-6 div.node-os2web-borger-dk-article .field-name-field-os2web-borger-dk-image img,
-body.page-node .region-content.col-md-6 div.node-os2web-borger-dk-article .field-name-field-os2web-borger-dk-image img,
-body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web-borger-dk-article .field-name-field-os2web-borger-dk-image img,
-body.page-node.two-sidebars div.node-os2web-base-news .field-name-field-os2web-borger-dk-image img,
-body.page-taxonomy-term.term-is-not-top.two-sidebars div.node-os2web-base-news .field-name-field-os2web-borger-dk-image img,
-body.page-node .region-content.col-sm-6 div.node-os2web-base-news .field-name-field-os2web-borger-dk-image img,
-body.page-taxonomy-term.term-is-not-top .region-content.col-sm-6 div.node-os2web-base-news .field-name-field-os2web-borger-dk-image img,
-body.page-node .region-content.col-md-6 div.node-os2web-base-news .field-name-field-os2web-borger-dk-image img,
-body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web-base-news .field-name-field-os2web-borger-dk-image img,
 body.page-node.two-sidebars article .field-name-field-os2web-base-field-image img,
 body.page-taxonomy-term.term-is-not-top.two-sidebars article .field-name-field-os2web-base-field-image img,
 body.page-node .region-content.col-sm-6 article .field-name-field-os2web-base-field-image img,
 body.page-taxonomy-term.term-is-not-top .region-content.col-sm-6 article .field-name-field-os2web-base-field-image img,
 body.page-node .region-content.col-md-6 article .field-name-field-os2web-base-field-image img,
 body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 article .field-name-field-os2web-base-field-image img,
-body.page-node.two-sidebars div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
-body.page-taxonomy-term.term-is-not-top.two-sidebars div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
-body.page-node .region-content.col-sm-6 div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
-body.page-taxonomy-term.term-is-not-top .region-content.col-sm-6 div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
-body.page-node .region-content.col-md-6 div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
-body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
 body.page-node.two-sidebars div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
 body.page-taxonomy-term.term-is-not-top.two-sidebars div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
 body.page-node .region-content.col-sm-6 div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
@@ -8359,109 +8132,13 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web
   margin-top: -135px;
   display: block;
 }
-.view-nypostliste .view-grouping-header {
-  display: none;
+.view-bladintro-node img {
+  margin-bottom: 20px;
 }
-#borger_dk-body h2 {
-  border-top: none;
-  font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
-  font-size: 1.2em !important;
-  margin-bottom: 2px;
-  padding-top: 1px;
-}
-div.microArticle,
-body.page-node article #borger_dk-body .microArticle {
-  background-color: #E2E1DC;
-}
-div.microArticle a,
-body.page-node article #borger_dk-body .microArticle a {
-  color: #0089cd;
-}
-div.microArticle a:hover,
-body.page-node article #borger_dk-body .microArticle a:hover {
-  color: #005191;
-}
-div.microArticle ul,
-body.page-node article #borger_dk-body .microArticle ul {
-  padding-left: 16px;
-}
-.os2web_borger_dk_selfservi {
-  clear: both;
-  padding: 0;
-  background-color: transparent;
-  border-radius: none;
-}
-.os2web_borger_dk_selfservi h3 {
-  color: #333333;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  border-bottom: none;
-}
-.os2web_borger_dk_selfservi ul {
-  padding-left: 18px;
-}
-.os2web_borger_dk_selfservi a,
-.os2web_borger_dk_selfservi a:link,
-.os2web_borger_dk_selfservi ul li a {
-  color: #0089cd;
-  font-size: 14px;
-}
-.os2web_borger_dk_selfservi a:hover,
-.os2web_borger_dk_selfservi a:link:hover,
-.os2web_borger_dk_selfservi ul li a:hover {
-  color: #005191;
-}
-.borger_dk-field_os2web-borger-dk-pre_text,
-.borger_dk-field_os2web-borger-dk-post_text {
-  margin: 6px auto;
-}
-.borger_dk_body_intro_text {
-  font-size: 1.2em;
-}
-.borger_dk-field_os2web-borger-dk-recommend,
-.borger_dk-field_os2web-borger-dk-legislati,
-.borger_dk-field_os2web-borger-dk-shortlist {
-  margin-top: 6px;
-  background-color: #FFF;
-  border-radius: none;
-  padding: 0;
-}
-.borger_dk-field_os2web-borger-dk-recommend a,
-.borger_dk-field_os2web-borger-dk-legislati a,
-.borger_dk-field_os2web-borger-dk-shortlist a {
-  color: #0089cd;
-}
-.borger_dk-field_os2web-borger-dk-recommend a:hover,
-.borger_dk-field_os2web-borger-dk-legislati a:hover,
-.borger_dk-field_os2web-borger-dk-shortlist a:hover {
-  color: #005191;
-}
-.borger_dk-field_os2web-borger-dk-recommend h3,
-.borger_dk-field_os2web-borger-dk-legislati h3,
-.borger_dk-field_os2web-borger-dk-shortlist h3 {
-  border-bottom: none;
-  font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
-  font-size: 17.5px;
-  font-weight: 400;
-}
-.borger_dk-field_os2web-borger-dk-recommend h4,
-.borger_dk-field_os2web-borger-dk-legislati h4,
-.borger_dk-field_os2web-borger-dk-shortlist h4 {
-  font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
-  font-size: 1.2em;
-  font-weight: 400;
-  border-top: 1px solid #dfded7;
-  padding-top: 10px;
-}
-.borger_dk-field_os2web-borger-dk-recommend ul,
-.borger_dk-field_os2web-borger-dk-legislati ul,
-.borger_dk-field_os2web-borger-dk-shortlist ul {
-  padding-left: 18px;
-}
-.borger_dk-field_os2web-borger-dk-byline {
-  font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
+.view-id-bladintro_nyheder .field-type-image {
   float: right;
-  padding-right: 16px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 #nyheder-carousel-large {
   background-color: #fff;

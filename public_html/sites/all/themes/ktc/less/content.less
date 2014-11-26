@@ -22,7 +22,6 @@ body.page-taxonomy-term.term-is-not-top {
     display: none;
   }
   article,
-  div.node-os2web-borger-dk-article,
   div.node-os2web-base-news {
     border-radius: 0 0 4px 4px;
     margin-bottom: @grid-gutter-width;
@@ -63,8 +62,7 @@ body.page-taxonomy-term.term-is-not-top {
     }
 
     .wrap,
-    header h2,
-    #borger_dk_header {
+    header h2 {
       padding: 15px 0;
     }
     .inner {
@@ -96,7 +94,7 @@ body.page-taxonomy-term.term-is-not-top {
         height: auto;
       }
     }
-    .borger_dk_header_text,
+    
     .field-name-field-os2web-base-field-summary .field-item {
       font-family: @headings-font-family;
       font-size: @font-size-intro-text;
@@ -104,70 +102,7 @@ body.page-taxonomy-term.term-is-not-top {
       padding-bottom: 20px;
       margin-bottom: 20px;
     }
-    .borger_dk_header_text {
-      margin-bottom: 0px;
-    }
-    .borger_dk_body_intro_text {
-      margin-bottom: 20px;
-      .intro_text_text {
-        width: 70%;
-        display: inline-block;
-      }
-      .intro_text_buttons {
-        float: right;
-      }
-      .gplus_gminus {
-        margin-left: 5px;
-      }
-      .gplus_button {
-        .sprite(@gplus);
-        display: inline-block;
-        font-size: 0;
-        vertical-align: middle;
-      }
-      .gminus_button {
-        .sprite(@gminus);
-        display: inline-block;
-        font-size: 0;
-        vertical-align: middle;
-      }
-    }
-    #borger_dk-body {
-      clear: both;
-      .microArticle {
-        padding: 10px 10px;
-        background-color: #e3e3e3;
-        border-radius: 5px;
-        margin-bottom: 5px;
-      }
-      div.mArticle {
-        padding-top: 10px;
-      }
-      h2 {
-        display: inline-block;
-        width: 90%;
-        border-top: none;
-        margin-top: 0;
-        text-transform: inherit;
-        font-weight: bold;
-        font-size: 16px;
-        background: none;
-      }
-      a.gplus {
-        display: inline-block;
-        .sprite(@gplus);
-        font-size: 0;
-        vertical-align: middle;
-        float: right;
-      }
-      a.gminus {
-        display: inline-block;
-        .sprite(@gminus);
-        font-size: 0;
-        vertical-align: middle;
-        float: right;
-      }
-    }
+
     .media-ustream-video iframe {
       max-width: 100%;
     }
@@ -201,14 +136,6 @@ body.page-taxonomy-term.term-is-not-top {
     max-width: 100%;
     height: auto;
   }
-  .region-content.col-sm-6,
-  .region-content.col-md-6 {
-    .borger_dk_body_intro_text {
-      .intro_text_text {
-        width: 50%;
-      }
-    }
-  }
 }
 
 // These rules target the article when we have two sidebars.
@@ -220,9 +147,7 @@ body.page-taxonomy-term.term-is-not-top {
   .region-content.col-sm-6,
   .region-content.col-md-6 {
     article,
-    div.node-os2web-borger-dk-article,
     div.node-os2web-base-news {
-      .field-name-field-os2web-borger-dk-image img,
       .field-name-field-os2web-base-field-image img {
         border-radius: 4px 4px 0 0;
       }
@@ -233,7 +158,6 @@ body.page-taxonomy-term.term-is-not-top {
   .region-content.col-sm-6,
   .region-content.col-md-6 {
     article,
-    div.node-os2web-borger-dk-article,
     div.node-os2web-base-news {
       // .one-sidebar
     }
@@ -243,7 +167,6 @@ body.page-taxonomy-term.term-is-not-top {
   .region-content.col-sm-12,
   .region-content.col-md-12 {
     article,
-    div.node-os2web-borger-dk-article,
     div.node-os2web-base-news {
       // .no-sidebars
     }
@@ -307,76 +230,11 @@ body.page-taxonomy-term.term-is-not-top {
   margin-top: -135px;
   display: block;
 }
-.view-nypostliste .view-grouping-header { display: none}
 
-#borger_dk-body h2 {
-  border-top: none;
-  font-family: @headings-font-family;
-  font-size: @font-size-h4 !important;
-  margin-bottom: 2px;
-  padding-top: 1px;
+.view-bladintro-node {
+	img { margin-bottom: 20px;}
 }
 
-div.microArticle,
-body.page-node article #borger_dk-body .microArticle {
-	background-color: #E2E1DC;
-	a {color: @link-color;&:hover {color: @link-hover-color}}
-	ul { padding-left: @padding-large-horizontal}
+.view-id-bladintro_nyheder {
+	.field-type-image { float: right; margin-left: 20px; margin-bottom: 20px;}
 }
-
-
-
-.os2web_borger_dk_selfservi {
-  clear: both;
-  padding: 0;
-  background-color: transparent;
-  border-radius: none;
- h3 {
-  color: @gray-dark;
-  margin-top: @padding-large-vertical;
-  margin-bottom: @padding-small-vertical;
-  border-bottom: none;}
-  ul { padding-left: 18px;}
-  a,a:link, ul li a {  color: @link-color;
-  font-size: @font-size-base;
-  &:hover {color: @link-hover-color}
-}}
-
-.borger_dk-field_os2web-borger-dk-pre_text,
-.borger_dk-field_os2web-borger-dk-post_text {
-  margin: @padding-base-vertical auto;
-}
-
-.borger_dk_body_intro_text {
-  font-size: @font-size-h4;
-}
-
-
-.borger_dk-field_os2web-borger-dk-recommend,
-.borger_dk-field_os2web-borger-dk-legislati,
-.borger_dk-field_os2web-borger-dk-shortlist {
-  margin-top: @padding-base-vertical ; 
-  background-color: #FFF;
-  border-radius: none;
-  padding:0;
-a {color: @link-color; &:hover {color: @link-hover-color}}
-
-h3 {
-  border-bottom:none;
-  font-family: @headings-font-family;
-  font-size: @font-size-h3;
-  font-weight: @headings-font-weight;}
-h4 {font-family: @headings-font-family;
-  font-size: @font-size-h4;
-  font-weight: @headings-font-weight;
-  border-top: 1px solid @brand-warmgray;
-  padding-top: 10px;}
-  ul { padding-left: 18px;}
-}
-
-.borger_dk-field_os2web-borger-dk-byline {
-  font-family: @headings-font-family;
-  float: right;
-  padding-right: @padding-large-horizontal;
-}
-
