@@ -91,9 +91,9 @@ function ktc_content_types_node_info() {
       'help' => '',
     ),
     'webform' => array(
-      'name' => t('Webform'),
+      'name' => t('Webformular'),
       'base' => 'node_content',
-      'description' => t('Create a new form or questionnaire accessible to users. Submission results and statistics are recorded and accessible to privileged users.'),
+      'description' => t('Opret en ny formular eller et nyt spørgeskema. Resultater og statistik gemmes og er tilgængelige for priviligerede brugere.'),
       'has_title' => '1',
       'title_label' => t('Titel'),
       'help' => '',
