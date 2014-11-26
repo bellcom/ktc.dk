@@ -214,8 +214,6 @@ function ktc_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-
-
   // Exported field_base: 'field_event_seats'
   $field_bases['field_event_seats'] = array(
     'active' => 1,
@@ -268,6 +266,36 @@ function ktc_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_forfrem_til'
+  $field_bases['field_forfrem_til'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_forfrem_til',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
 
   // Exported field_base: 'field_gammel_gid'
   $field_bases['field_gammel_gid'] = array(
@@ -450,7 +478,6 @@ function ktc_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
- 
   // Exported field_base: 'field_link_arrangement_organizer'
   $field_bases['field_link_arrangement_organizer'] = array(
     'active' => 1,
@@ -541,6 +568,48 @@ function ktc_content_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
+  // Exported field_base: 'field_magasin_reference'
+  $field_bases['field_magasin_reference'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_magasin_reference',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'magazine' => 'magazine',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
 
   // Exported field_base: 'field_meeting_type'
   $field_bases['field_meeting_type'] = array(
@@ -607,7 +676,6 @@ function ktc_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  
   // Exported field_base: 'field_os2web_base_field_edi_tags'
   $field_bases['field_os2web_base_field_edi_tags'] = array(
     'active' => 1,
@@ -1087,7 +1155,6 @@ function ktc_content_types_field_default_field_bases() {
     'translatable' => 0,
     'type' => 'text',
   );
-
 
   // Exported field_base: 'group_content_access'
   $field_bases['group_content_access'] = array(

@@ -82,7 +82,7 @@ function ktc_content_types_node_info() {
       'base' => 'node_content',
       'description' => t('Opret en ny formular eller et nyt spørgeskema. Resultater og statistik gemmes og er tilgængelige for priviligerede brugere.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );
