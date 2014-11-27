@@ -478,6 +478,46 @@ function ktc_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_gammel_uid'
+  $field_instances['user-user-field_gammel_uid'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 29,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_gammel_uid',
+    'label' => 'Gammel uid',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 32,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_hidden'
   $field_instances['user-user-field_hidden'] = array(
     'bundle' => 'user',
@@ -1055,6 +1095,7 @@ function ktc_users_field_default_field_instances() {
   t('Emner');
   t('Flere emner');
   t('Fødselsdato');
+  t('Gammel uid');
   t('Kommune');
   t('Land');
   t('LinkedIn');
