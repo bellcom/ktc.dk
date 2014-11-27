@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KTC users feature.
+ */
+
+include_once 'ktc_users.features.inc';
