@@ -47,7 +47,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -90,7 +90,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => -5,
     ),
   );
 
@@ -130,7 +130,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 14,
     ),
   );
 
@@ -171,7 +171,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 16,
     ),
   );
 
@@ -215,7 +215,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 9,
+      'weight' => -7,
     ),
   );
 
@@ -255,7 +255,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 17,
     ),
   );
 
@@ -337,7 +337,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 13,
     ),
   );
 
@@ -393,7 +393,7 @@ function ktc_users_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -551,7 +551,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 31,
+      'weight' => -1,
     ),
   );
 
@@ -713,7 +713,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -756,7 +756,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
+      'weight' => -6,
     ),
   );
 
@@ -839,7 +839,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
@@ -919,7 +919,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -1037,7 +1037,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => -8,
     ),
   );
 
@@ -1078,7 +1078,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 15,
     ),
   );
 
