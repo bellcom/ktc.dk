@@ -192,6 +192,72 @@ function ktc_hearing_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hearing-group_content_access'
+  $field_instances['node-hearing-group_content_access'] = array(
+    'bundle' => 'hearing',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Synlighed',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 31,
+    ),
+    'widget_type' => 'options_select',
+  );
+
   // Exported field_instance: 'node-hearing-og_group_ref'
   $field_instances['node-hearing-og_group_ref'] = array(
     'bundle' => 'hearing',
@@ -305,14 +371,15 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
+    'label' => 'Indhold',
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -459,10 +526,11 @@ function ktc_hearing_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Beskrivelse');
   t('Bilag');
-  t('Body');
   t('Gruppe/Netværk');
   t('Høring');
+  t('Indhold');
   t('Status');
+  t('Synlighed');
 
   return $field_instances;
 }
