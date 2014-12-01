@@ -1,7 +1,7 @@
 <?php
 
 $nodes = node_load_multiple(array(), array('type' => 'page'));
-foreach($nodes as $node) {
+foreach ($nodes as $node) {
   if ($node->nid == 189) {
     continue;
   }

@@ -33,6 +33,14 @@ function ktc_hearing_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'hearing_type' => array(
+      'name' => 'Høring type',
+      'machine_name' => 'hearing_type',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'official' => array(
       'name' => 'Officiel',
       'machine_name' => 'official',

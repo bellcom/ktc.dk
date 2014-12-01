@@ -1,5 +1,5 @@
 <?php
-
+include 'functions.php';
  //getNodeElements('group', 'node-export-group.xml');
 //getNodeElements('arrangement', 'node-export-arrangement.xml');
 
@@ -7,7 +7,7 @@
 // getNodeElements('os2web_base_news' , 'node-export-nyhed.xml');
 
 function getNodeElements($type, $filename) {
-  $path = 'public://xml';
+  $path = 'private://xml';
   $content = file_get_contents(drupal_realpath($path) . '/' . $filename);
 
   $count = 0;
@@ -78,7 +78,7 @@ function getNodeElements($type, $filename) {
           $url = 'public://' . $file_dir . '/' . $url_ar[count($url_ar) - 1];
           // Default image.
           if ($url_ar[count($url_ar) - 1] == 'network.jpg') {
-              continue;
+            continue;
           }
           if ($drupalfile = get_images_or_files($url, $file_dir, $url_ar[count($url_ar) - 1])) {
             $node->{$field}[LANGUAGE_NONE][$key]['fid'] = $drupalfile->fid;
@@ -87,7 +87,7 @@ function getNodeElements($type, $filename) {
         }
       }
 
-      // old gid
+      // Old gid.
       if (!$gid = field_get_items('node', $node, 'field_gammel_gid')) {
         $node->field_gammel_gid[LANGUAGE_NONE][0]['value'] = $data->children('gid')->text();
         $node->field_gammel_gid[LANGUAGE_NONE][0]['safe_value'] = $data->children('gid')->text();
@@ -116,7 +116,7 @@ function getNodeElements($type, $filename) {
           $node->field_tags[LANGUAGE_NONE][$key]['tid'] = $value;
         }
       }
-      // <forfatteruid> <body> <nid> get from feeds import
+      // <forfatteruid> <body> <nid> Get from feeds import.
       if ($type == 'arrangement') {
         // <field_event_seats>
         if (is_numeric($data->children('field_event_seats')->text())) {
@@ -182,7 +182,7 @@ function getNodeElements($type, $filename) {
       }
       node_save($node);
     }
-    $count ++;
+    $count++;
     if ($count > 4) {
       //break;
     }
@@ -196,52 +196,4 @@ function getNodeElements($type, $filename) {
     }
   }
   print "\n\n";
-}
-
-function node_load_by_old_nid($nid) {
-  $node = FALSE;
-  if (isset($nid)) {
-    $query = db_select('field_data_field_gammel_nid', 'g')
-      ->fields('g', array('entity_id'))
-      ->condition('field_gammel_nid_value', $nid, '=');
-
-    $result = $query->execute();
-  }
-  if ($result->rowCount() > 0) {
-    while ($record = $result->fetchAssoc()) {
-      $node = node_load($record['entity_id']);
-    }
-  }
-  return $node;
-}
-
-function get_group_id_by_oldGid($gid) {
-  $new_gid = FALSE;
-  if (isset($gid)) {
-    $query = db_select('field_data_field_gammel_gid', 'g')
-      ->fields('g', array('entity_id'))
-      ->condition('field_gammel_gid_value', $gid, '=')
-      ->condition('bundle', 'group', '=');
-
-    $result = $query->execute()->fetchAssoc();
-    if ($result) {
-      $new_gid = $result['entity_id'];
-    }
-  }
-
-  return $new_gid;
-}
-
-function get_images_or_files($url, $file_dir, $name = NULL) {
-  $drupalfile = FALSE;
-  if (file_exists($url)) {
-    $dfile = (object) array(
-      'uri' => $url,
-      'filemime' => file_get_mimetype($url),
-      'status' => 1,
-    );
-    // Now get Drupal to copy it.
-    $drupalfile = file_copy($dfile, 'private://' . $file_dir . '/' . $name, FILE_EXISTS_RENAME);
-  }
-  return $drupalfile;
 }
