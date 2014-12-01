@@ -1,5 +1,5 @@
 <?php
-include 'import_content.php';
+include 'functions.php';
 
 // getDocmentElements('document', 'node-export-dokument_1.xml');
 // getDocmentElements('document', 'node-export-dokument_2.xml');
@@ -17,9 +17,9 @@ include 'import_content.php';
 // getDocmentElements('document', 'node-export-dokument_14.xml');
 // getDocmentElements('document', 'node-export-dokument_15.xml');
 // getDocmentElements('document', 'node-export-dokument_16.xml');
- getDocmentElements('document', 'node-export-dokument_17.xml');
- getDocmentElements('document', 'node-export-dokument_18.xml');
- getDocmentElements('document', 'node-export-dokument_19.xml');
+// getDocmentElements('document', 'node-export-dokument_17.xml');
+// getDocmentElements('document', 'node-export-dokument_18.xml');
+// getDocmentElements('document', 'node-export-dokument_19.xml');
 
 function getDocmentElements($type, $filename) {
   $path = 'private://xml';
@@ -39,7 +39,7 @@ function getDocmentElements($type, $filename) {
       if (is_numeric($data->children('field_dokument')->text())) {
         $node->field_document_type[LANGUAGE_NONE][0]['tid'] = $data->children('field_dokument')->text();
       }
-      // old gid
+      // Old gid.
       if (!$gid = field_get_items('node', $node, 'field_gammel_gid')) {
         $node->field_gammel_gid[LANGUAGE_NONE][0]['value'] = $data->children('gid')->text();
         $node->field_gammel_gid[LANGUAGE_NONE][0]['safe_value'] = $data->children('gid')->text();
@@ -68,7 +68,7 @@ function getDocmentElements($type, $filename) {
           $node->field_tags[LANGUAGE_NONE][$key]['tid'] = $value;
         }
       }
-      // <forfatteruid> <body> <nid> get from feeds import
+      // <forfatteruid> <body> <nid> Get from feeds import.
 
       // <group_content_access>
       if (isset($node->group_content_access) && is_numeric($data->children('group_content_access')->text())) {
@@ -90,7 +90,7 @@ function getDocmentElements($type, $filename) {
 
               $new_url = preg_replace('/netvaerk.yani\/system\/files\/documents/', 'ktc.bellcom.dk/sites/default/files/uploads/public/doc_typo_3', $url);
               $dfile = system_retrieve_file($new_url, NULL, TRUE, FILE_EXISTS_RENAME);
-              if(is_object($dfile)) {
+              if (is_object($dfile)) {
                 $dfile = file_copy($dfile, 'private://documents_typo3/' . $url_ar[count($url_ar) - 1], FILE_EXISTS_RENAME);
                 $node->field_os2web_base_field_media[LANGUAGE_NONE][$key]['fid'] = $dfile->fid;
                 $node->field_os2web_base_field_media[LANGUAGE_NONE][$key]['uri'] = $dfile->uri;
@@ -109,7 +109,7 @@ function getDocmentElements($type, $filename) {
       }
       node_save($node);
     }
-    $count ++;
+    $count++;
     if ($count > 4) {
       //break;
     }

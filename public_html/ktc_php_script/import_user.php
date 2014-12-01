@@ -1,17 +1,22 @@
 <?php
-include 'import_content.php';
+include 'functions.php';
 
- //getUserElements('user', 'user-export_1.xml');
- //getUserElements('user', 'user-export_2.xml');
+// getUserElements('user', 'user-export_1.xml');
+// getUserElements('user', 'user-export_2.xml');
 
-   //getUserElements('user', 'user-export_3.xml');
-//   getUserElements('user', 'user-export_4.xml');
- //getUserElements('user', 'user-export_5.xml');
+// getUserElements('user', 'user-export_3.xml');
+// getUserElements('user', 'user-export_4.xml');
+// getUserElements('user', 'user-export_5.xml');
 // getUserElements('user', 'user-export_6.xml');
- getUserElements('user', 'user-export_7.xml');
+// getUserElements('user', 'user-export_7.xml');
 // getUserElements('user', 'user-export_8.xml');
 // getUserElements('user', 'user-export_9.xml');
 // getUserElements('user', 'user-export_10.xml');
+// getUserElements('user', 'user-export_11.xml');
+ getUserElements('user', 'user-export_12.xml');
+ getUserElements('user', 'user-export_13.xml');
+ getUserElements('user', 'user-export_14.xml');
+ getUserElements('user', 'user-export_15.xml');
 
 
 function getUserElements($type, $filename) {
@@ -24,16 +29,24 @@ function getUserElements($type, $filename) {
   $step = 0;
   $count = 0;
   $skip = 0;
+  $not_found = 0;
 
   foreach (qp($content, 'node') as $data) {
     $email = $data->children('E-mail')->text();
     if ($user = user_load_by_mail($email)) {
       if ($user->field_navn[LANGUAGE_NONE][0]['value'] == $data->children('Navn')->text()) {
-        $skip ++;
-        $count ++;
+        $skip++;
+        $count++;
+        if (is_numeric($data->children('typo3_uid')->text())) {
+
+          $user->field_typo3_uid[LANGUAGE_NONE][0]['value'] = $data->children('typo3_uid')->text();
+          user_save($user);
+
+        }
         if ($count == $size) {
           print ($count - $skip) . " Users are updated. Done \n";
-          print "Skip " . $skip . " users";
+          print "Skip " . $skip . " users \n";
+          print "NOT found " . $not_found;
         }
         continue;
       }
@@ -69,10 +82,6 @@ function getUserElements($type, $filename) {
       $user->field_zipcode[LANGUAGE_NONE][0]['value'] = $data->children('Postnr')->text();
       $user->fiefield_zipcodeld_city[LANGUAGE_NONE][0]['safe_value'] = $data->children('Postnr')->text();
 
-      // <field_country>
-      //$user->field_country[LANGUAGE_NONE][0]['value'] = $data->children('field_short')->text();
-      //$user->field_country[LANGUAGE_NONE][0]['safe_value'] = $data->children('field_short')->text();
-
       // <field_department>
       $user->field_department[LANGUAGE_NONE][0]['value'] = $data->children('afdeling')->text();
       $user->field_department[LANGUAGE_NONE][0]['safe_value'] = $data->children('afdeling')->text();
@@ -106,6 +115,10 @@ function getUserElements($type, $filename) {
       $user->field_navn[LANGUAGE_NONE][0]['value'] = $data->children('Navn')->text();
       $user->field_navn[LANGUAGE_NONE][0]['safe_value'] = $data->children('Navn')->text();
 
+      if (is_numeric($data->children('typo3_uid')->text())) {
+        $user->field_typo3_uid[LANGUAGE_NONE][0]['value'] = $data->children('typo3_uid')->text();
+      }
+
       // <field_phone>
       $user->field_phone[LANGUAGE_NONE][0]['value'] = $data->children('phone')->text();
       $user->field_phone[LANGUAGE_NONE][0]['safe_value'] = $data->children('phone')->text();
@@ -123,7 +136,7 @@ function getUserElements($type, $filename) {
       $user->field_gammel_uid[LANGUAGE_NONE][0]['value'] = $data->children('uid')->text();
       $user->field_gammel_uid[LANGUAGE_NONE][0]['safe_value'] = $data->children('uid')->text();
 
-      // <roles> array
+      // <roles> Array.
       $role = $data->children('Roller')->text();
       $roles = explode(',', $role);
       $error = array_filter($roles);
@@ -158,13 +171,13 @@ function getUserElements($type, $filename) {
       $url_ar = explode('/', $url);
       $url = 'public://user_picture/' . $url_ar[count($url_ar) - 1];
       if ($url_ar[count($url_ar) - 1] != 'intet_billede.png') {
-        if ($drupalfile = get_images($url, 'user_picture', $url_ar[count($url_ar) - 1])) {
+        if ($drupalfile = get_images_or_files($url, 'user_picture', $url_ar[count($url_ar) - 1])) {
           $user->picture[LANGUAGE_NONE][0]['fid'] = $drupalfile->fid;
           $user->picture[LANGUAGE_NONE][0]['uri'] = $drupalfile->uri;
         }
       }
 
-      // old uid
+      // Old uid.
       $user->field_gammel_uid[LANGUAGE_NONE][0]['value'] = $data->children('uid')->text();
 
       // Groups.
@@ -173,8 +186,9 @@ function getUserElements($type, $filename) {
       $error = array_filter($groups_ar);
       if (!empty($error)) {
         foreach ($groups_ar as $key => $value) {
-          if ($value == '')
+          if ($value == '') {
             $key -= 1;
+          }
           if ($value != '' && $new_gid = get_group_id_by_oldGid($value)) {
             $user->og_user_node[LANGUAGE_NONE][$key]['target_id'] = $new_gid;
           }
@@ -199,10 +213,13 @@ function getUserElements($type, $filename) {
       }
       user_save($user);
     }
-    $count ++;
+    else {
+      $not_found++;
+    }
+    $count++;
     if ($count > 4) {
-      //print "\n number 4\n";
-      //break;
+      // print "\n number 4\n";
+      // break;
     }
     $left = (int) $size - $count;
     if ($count > $step) {
@@ -211,24 +228,9 @@ function getUserElements($type, $filename) {
     }
     if ($count == $size) {
       print ($count - $skip) . " Users are updated. Done \n";
-      print "Skip " . $skip . " users";
+      print "Skip " . $skip . " users \n";
+      print "Not found " . $not_found;
     }
   }
   print "\n\n";
-}
-
-function get_images($url, $file_dir, $name = NULL) {
-  $drupalfile = FALSE;
-  if (file_exists($url)) {
-    $dfile = (object) array(
-      'uri' => $url,
-      'filemime' => file_get_mimetype($url),
-      'status' => 1,
-    );
-    // Now get Drupal to copy it.
-    $mydir = 'private://' . $file_dir;
-    file_prepare_directory($mydir, FILE_CREATE_DIRECTORY);
-    $drupalfile = file_copy($dfile, 'private://' . $file_dir . '/' . $name, FILE_EXISTS_RENAME);
-  }
-  return $drupalfile;
 }

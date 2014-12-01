@@ -1,5 +1,5 @@
 <?php
-include 'import_content.php';
+include 'functions.php';
 include 'add_user_to_content.php';
 getDocmentElements('comment', 'comments-import.xml');
 
@@ -29,15 +29,15 @@ function getDocmentElements($type, $filename) {
       $comment['nid'] = $node->nid;
       $comment['comment_body'] = array(
         LANGUAGE_NONE => array(
-          0 => array (
+          0 => array(
             'value' => $body,
-            'format' => 'filtered_html'
-          )
+            'format' => 'filtered_html',
+          ),
         ),
       );
       add_comments($comment);
     }
-    $count ++;
+    $count++;
     if ($count > 4) {
       //break;
     }
@@ -53,7 +53,7 @@ function get_comment_elements($cid) {
 }
 
 function add_comments($comment_array) {
-    $comment = (object) array(
+  $comment = (object) array(
     'nid' => $comment_array['nid'],
     'cid' => $comment_array['cid'],
     'pid' => $comment_array['pid'],
