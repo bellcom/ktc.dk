@@ -22,7 +22,7 @@ include 'import_content.php';
  getDocmentElements('document', 'node-export-dokument_19.xml');
 
 function getDocmentElements($type, $filename) {
-  $path = 'public://xml';
+  $path = 'private://xml';
   $content = file_get_contents(drupal_realpath($path) . '/' . $filename);
 
   $count = 0;

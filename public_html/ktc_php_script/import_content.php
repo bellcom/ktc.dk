@@ -7,7 +7,7 @@
 // getNodeElements('os2web_base_news' , 'node-export-nyhed.xml');
 
 function getNodeElements($type, $filename) {
-  $path = 'public://xml';
+  $path = 'private://xml';
   $content = file_get_contents(drupal_realpath($path) . '/' . $filename);
 
   $count = 0;
@@ -241,6 +241,8 @@ function get_images_or_files($url, $file_dir, $name = NULL) {
       'status' => 1,
     );
     // Now get Drupal to copy it.
+    $mydir = 'private://' . $file_dir;
+    file_prepare_directory($mydir, FILE_CREATE_DIRECTORY);
     $drupalfile = file_copy($dfile, 'private://' . $file_dir . '/' . $name, FILE_EXISTS_RENAME);
   }
   return $drupalfile;
