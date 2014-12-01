@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KTC views feature.
+ */
+
+include_once 'ktc_views.features.inc';
