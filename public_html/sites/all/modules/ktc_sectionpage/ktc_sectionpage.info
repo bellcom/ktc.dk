@@ -1,0 +1,6 @@
+name = KTC Section page functions
+core = 7.x
+package = KTC
+version = 7.x-1.0
+project = ktc_sectionpage
+description = Includes ajax function.

@@ -1,0 +1,45 @@
+<?php
+
+function ktc_sectionpage_menu() {
+  $items['ajax/%/view/%/%/%'] = array(
+    'page callback' => 'ktc_sectionpage_ajax_view',
+    'access arguments' => array('access content'),
+    'page arguments' => array(1, 3, 4, 5),
+  );
+  return $items;
+}
+function ktc_sectionpage_ajax_view($page, $term1_id, $term2_id = 'all', $term3_id = 'all') {
+
+  switch ($page) {
+    case 'nyheder':
+      $type = 'os2web_base_news';
+      break;
+
+    case 'netvaerk':
+      $type = 'group';
+      break;
+
+    case 'aktiviteter':
+      $type = 'arrangement';
+      break;
+
+    case 'hoeringer':
+      $type = 'hearing';
+      break;
+
+    case 'teksnik-miljoe':
+      $type = 'all';
+      break;
+  }
+
+  $view = views_get_view('indhold_m_filter');
+  $view->set_display('panel_pane_1');
+
+  $view->set_arguments(array($type, $term1_id, $term2_id, $term3_id));
+  /*if ($item) {
+    $view->set_items_per_page($item);
+  }*/
+  $view->execute();
+  print $view->render('panel_pane_1');
+
+}
