@@ -26,6 +26,10 @@
 
     // filter buttons.
     $('.filter-link').click(function(event){
+
+      $container = $("#section-page-with-filter .view-content");
+      $container.infinitescroll('unbind');
+
       $(this).addClass(button_class);
       button = $(this).attr('id');
       var name = $(this).attr('name');
@@ -35,11 +39,30 @@
       var f1 = $('#filter-1').find('.btn-primary').attr('data-filter');
       var f2 = $('#filter-2').find('.btn-primary').attr('data-filter');
       var f3 = $('#filter-3').find('.btn-primary').attr('data-filter');
+
+      if (f1 === undefined) {
+        f1 = 'all';
+      }
+      if (f2 === undefined) {
+        f2 = 'all';
+      }
+      if (f3 === undefined) {
+        f3 = 'all';
+      }
+      // Netvaerk. ajax
+      if (type == 'netvaerk') {
+        //TODO: f1 = netvaerk nid/gid, f2 = content type f3 = f3, f4 = netværkstyper f5 = regioner
+      }
+
+
       jQuery.get('ajax/' + type +'/view/'+f1+'/'+f2+'/'+f3, function(data){
+
         $('#section-page-with-filter').html(data);
         load_content();
       });
     });
+
+
 
     $container = $("#section-page-with-filter .view-content");
 
@@ -50,11 +73,11 @@
     function load_content() {
       $container = $("#section-page-with-filter .view-content");
 
+
       $container.imagesLoaded(function(){
         $container.masonry({
           columnWidth: '.switch-elements',
         });
-        $container.masonry('layout');
 
         $container.infinitescroll({
           state : {
