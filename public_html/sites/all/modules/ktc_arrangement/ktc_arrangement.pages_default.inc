@@ -462,6 +462,8 @@ function ktc_arrangement_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'left' => NULL,
+      'right' => NULL,
     ),
   );
   $display->cache = array();
@@ -479,19 +481,58 @@ function ktc_arrangement_default_page_manager_pages() {
     $pane->configuration = array(
       'arguments' => array(
         'type' => 'arrangement',
+        'term_node_tid_depth' => 'all',
+        'term_node_tid_depth_1' => 'all',
+        'term_node_tid_depth_2' => 'all',
       ),
+      'items_per_page' => '10',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'section-page-with-filter',
+      'css_class' => 'term all',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '26b10c11-d202-445d-845c-10b758076dbd';
     $display->content['new-26b10c11-d202-445d-845c-10b758076dbd'] = $pane;
     $display->panels['left'][0] = 'new-26b10c11-d202-445d-845c-10b758076dbd';
+    $pane = new stdClass();
+    $pane->pid = 'new-0d78718e-c838-4306-88c8-8a7b3d4e17c7';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = '-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '9',
+      'offset' => '0',
+      'arguments' => array(
+        'vid' => '5',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer på aktiviteter',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'filter-1',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0d78718e-c838-4306-88c8-8a7b3d4e17c7';
+    $display->content['new-0d78718e-c838-4306-88c8-8a7b3d4e17c7'] = $pane;
+    $display->panels['right'][0] = 'new-0d78718e-c838-4306-88c8-8a7b3d4e17c7';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
