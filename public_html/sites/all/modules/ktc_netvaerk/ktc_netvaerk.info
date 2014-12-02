@@ -7,6 +7,7 @@ dependencies[] = features
 dependencies[] = image
 dependencies[] = ktc_content_types
 dependencies[] = list
+dependencies[] = node
 dependencies[] = number
 dependencies[] = page_manager
 dependencies[] = strongarm
