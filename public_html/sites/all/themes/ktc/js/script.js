@@ -1,7 +1,92 @@
-/* Svendborg theme script
+/* KTC theme script
 */
 ( function ($) {
   $(document).ready(function(){
+
+    var button = 'filter-all';
+    var button_class = "btn-primary";
+    var button_normal = "btn-blacknblue";
+    var $container = $("#nyheder-content-isotoper .view-content");
+
+    $('.col-md-3 .pane-views-panes').each(function() {
+      var filter_id = $(this).attr('id');
+      $(this).find('.filter-link').attr('name', filter_id);
+    });
+
+    check_button(button, 'filter-1');
+    check_button(button, 'filter-2');
+    check_button(button, 'filter-3');
+
+    function check_button(button, name){
+      $('#' + name + ' .filter-link').removeClass(button_class);
+      $('#' + name + ' .filter-link').addClass(button_normal);
+      $('#' + name +' #'+button).addClass(button_class);
+      $('#' + name +' #'+button).removeClass(button_normal);
+    }
+
+    // filter buttons.
+    $('.filter-link').click(function(event){
+      $(this).addClass(button_class);
+      button = $(this).attr('id');
+      var name = $(this).attr('name');
+      check_button(button, name);
+      var path = window.location.href.split('/');
+      var type = path[path.length-1];
+      var f1 = $('#filter-1').find('.btn-primary').attr('data-filter');
+      var f2 = $('#filter-2').find('.btn-primary').attr('data-filter');
+      var f3 = $('#filter-3').find('.btn-primary').attr('data-filter');
+      jQuery.get('ajax/' + type +'/view/'+f1+'/'+f2+'/'+f3, function(data){
+        $('#section-page-with-filter').html(data);
+        load_content();
+      });
+    });
+
+    $container = $("#section-page-with-filter .view-content");
+
+    // Initial masonry
+    if ($container.length) {
+      load_content();
+    }
+    function load_content() {
+      $container = $("#section-page-with-filter .view-content");
+
+      $container.imagesLoaded(function(){
+        $container.masonry({
+          columnWidth: '.switch-elements',
+        });
+        $container.masonry('layout');
+
+        $container.infinitescroll({
+          state : {
+            currPage: 0
+          },
+          // selector for the paged navigation
+          navSelector  : '.pagination',
+          // selector for the NEXT link (to page 2)
+          nextSelector : '.pagination li.next a',
+          // selector for all items you'll retrieve
+          itemSelector : '.switch-elements',
+          loading: {
+            //finishedMsg: 'Der er ikke flere.',
+            //img: 'http://i.imgur.com/qkKy8.gif'
+          },
+          debug: false,
+        },
+        function(newElements) {
+          var $newElems = $(newElements).hide();
+          $newElems.imagesLoaded(function(){
+            $newElems.fadeIn(); // fade in when ready
+            $container.masonry( 'appended', $newElems);
+            Drupal.attachBehaviors();
+          });
+            /*setTimeout(function() {
+              $container.masonry( 'insert', $newElems);
+            }, 500);*/
+        }
+        );
+      });
+    }
+
 
     // Navbar scroll
     $(window).bind('scroll', function() {
@@ -23,59 +108,6 @@
           $('img#front-logo').attr('src', Drupal.settings.basePath + Drupal.settings.pathToTheme + '/images/footer_logo.png');
         }
     });
-
-    // Nyheder page filter
-    $('.node-os2web-base-news').each(function(){
-      var $this = $(this);
-
-      $this.parent().attr('data-filter',$this.attr('date-filter'));
-      $this.parent().addClass($this.attr('date-filter'));
-    });
-
-
-    var button = 'filter-all';
-    var button_class = "btn-primary";
-    var button_normal = "btn-blacknblue";
-
-    // Initial masonry
-    var $container = $("#nyheder-content-isotoper .view-content");
-    if ($container.length) {
-
-      $container.imagesLoaded(function(){
-        $container.masonry({
-          itemSelector: '.switch-elements',
-          columnWidth: '.switch-elements',
-        });
-        // filter elements
-        $container.isotope({
-          itemSelector: '.switch-elements',
-        });
-        $(".filter-link").click(function() {
-          button = $(this).attr('id');
-          var filterValue = $( this ).attr('data-filter');
-          filterValue = '.'+filterValue;
-          $container.isotope({ filter: filterValue });
-          check_button();
-        });
-        $(".filter-link-all").click(function() {
-
-          $container.isotope({ filter: '.all' });
-          button = $(this).attr('id');
-          check_button();
-        });
-
-        function check_button(){
-          $('.filter-link').removeClass(button_class);
-          $(".filter-link-all").removeClass(button_class);
-          $('.filter-link').addClass(button_normal);
-          $(".filter-link-all").addClass(button_normal);
-          $('#'+button).addClass(button_class);
-          $('#'+button).removeClass(button_normal);
-        }
-        check_button();
-
-      });
-    }
 
     // borger.dk articles
       $("div.mArticle").hide();
