@@ -38,26 +38,26 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Title */
+  /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Post date */
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -65,7 +65,7 @@ function ktc_netvaerk_views_default_views() {
     'group' => 'group',
   );
   $handler->display->display_options['filters']['type']['group'] = '0';
-  /* Filter criterion: Content: Title */
+  /* Filterkriterie: Indhold: Titel */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
@@ -90,7 +90,6 @@ function ktc_netvaerk_views_default_views() {
     t('Faldende'),
     t('Titel'),
     t('Page'),
-    t('more'),
   );
   $export['netv_rk_filtre'] = $view;
 
@@ -138,20 +137,20 @@ function ktc_netvaerk_views_default_views() {
   );
   $handler->display->display_options['row_options']['separator'] = '-';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  /* Relationship: Content: Author */
+  /* Forbindelse: Indhold: Forfatter */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: OG membership: OG membership from User */
+  /* Forbindelse: OG membership: OG membership from Bruger */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['relationship'] = 'uid';
-  /* Relationship: OG membership: OG membership from Node */
+  /* Forbindelse: OG membership: OG membership from Indholdselement */
   $handler->display->display_options['relationships']['og_membership_rel_1']['id'] = 'og_membership_rel_1';
   $handler->display->display_options['relationships']['og_membership_rel_1']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel_1']['field'] = 'og_membership_rel';
-  /* Field: User: Picture */
+  /* Felt: Bruger: Billede */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
   $handler->display->display_options['fields']['picture']['field'] = 'picture';
@@ -162,7 +161,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['picture']['element_wrapper_class'] = 'image';
   $handler->display->display_options['fields']['picture']['image_style'] = 'mini_thumb';
-  /* Field: Content: Billede */
+  /* Felt: Indhold: Billede */
   $handler->display->display_options['fields']['field_groupimage']['id'] = 'field_groupimage';
   $handler->display->display_options['fields']['field_groupimage']['table'] = 'field_data_field_groupimage';
   $handler->display->display_options['fields']['field_groupimage']['field'] = 'field_groupimage';
@@ -176,7 +175,7 @@ function ktc_netvaerk_views_default_views() {
     'image_style' => 'mini_thumb',
     'image_link' => 'content',
   );
-  /* Field: Broken/missing handler */
+  /* Felt: Handler mangler eller er i stykker */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
@@ -184,7 +183,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'image';
-  /* Field: Content: Title */
+  /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -193,7 +192,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: User: Uid */
+  /* Felt: Bruger: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -202,14 +201,14 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['uid']['alter']['text'] = '[field_navn]';
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  /* Field: Content: Post date */
+  /* Felt: Indhold: Oprettelsesdato */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
-  /* Field: Content: Comment count */
+  /* Felt: Indhold: Kommentarantal */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
@@ -217,13 +216,13 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['alter']['text'] = 'comment_count]';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['suffix'] = ' kommentar(er)';
-  /* Field: Broken/missing handler */
+  /* Felt: Handler mangler eller er i stykker */
   $handler->display->display_options['fields']['group_audience']['id'] = 'group_audience';
   $handler->display->display_options['fields']['group_audience']['table'] = 'field_data_group_audience';
   $handler->display->display_options['fields']['group_audience']['field'] = 'group_audience';
   $handler->display->display_options['fields']['group_audience']['label'] = '';
   $handler->display->display_options['fields']['group_audience']['element_label_colon'] = FALSE;
-  /* Field: Field: Emner */
+  /* Felt: Felt: Emner */
   $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
   $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
   $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
@@ -231,7 +230,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['field_topics']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_topics']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
-  /* Field: Content: Indhold */
+  /* Felt: Indhold: Indhold */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -241,26 +240,26 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = 'p';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Post date */
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Broken/missing handler */
+  /* Kontekstuelt filter: Handler mangler eller er i stykker */
   $handler->display->display_options['arguments']['group_audience_gid']['id'] = 'group_audience_gid';
   $handler->display->display_options['arguments']['group_audience_gid']['table'] = 'field_data_group_audience';
   $handler->display->display_options['arguments']['group_audience_gid']['field'] = 'group_audience_gid';
   $handler->display->display_options['arguments']['group_audience_gid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['group_audience_gid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['group_audience_gid']['summary']['format'] = 'default_summary';
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -271,7 +270,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Byg og bolig';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Picture */
+  /* Felt: Bruger: Billede */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
   $handler->display->display_options['fields']['picture']['field'] = 'picture';
@@ -282,7 +281,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['picture']['element_wrapper_class'] = 'image';
   $handler->display->display_options['fields']['picture']['image_style'] = 'mini_thumb';
-  /* Field: Content: Billede */
+  /* Felt: Indhold: Billede */
   $handler->display->display_options['fields']['field_groupimage']['id'] = 'field_groupimage';
   $handler->display->display_options['fields']['field_groupimage']['table'] = 'field_data_field_groupimage';
   $handler->display->display_options['fields']['field_groupimage']['field'] = 'field_groupimage';
@@ -296,7 +295,7 @@ function ktc_netvaerk_views_default_views() {
     'image_style' => 'mini_thumb',
     'image_link' => 'content',
   );
-  /* Field: Broken/missing handler */
+  /* Felt: Handler mangler eller er i stykker */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
@@ -304,7 +303,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'image';
-  /* Field: Content: Title */
+  /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -313,7 +312,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: User: Uid */
+  /* Felt: Bruger: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -322,14 +321,14 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['uid']['alter']['text'] = '[field_navn]';
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  /* Field: Content: Post date */
+  /* Felt: Indhold: Oprettelsesdato */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
-  /* Field: Content: Comment count */
+  /* Felt: Indhold: Kommentarantal */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
@@ -337,13 +336,13 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['alter']['text'] = 'comment_count]';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['suffix'] = ' kommentar(er)';
-  /* Field: Broken/missing handler */
+  /* Felt: Handler mangler eller er i stykker */
   $handler->display->display_options['fields']['group_audience']['id'] = 'group_audience';
   $handler->display->display_options['fields']['group_audience']['table'] = 'field_data_group_audience';
   $handler->display->display_options['fields']['group_audience']['field'] = 'group_audience';
   $handler->display->display_options['fields']['group_audience']['label'] = '';
   $handler->display->display_options['fields']['group_audience']['element_label_colon'] = FALSE;
-  /* Field: Field: Emner */
+  /* Felt: Felt: Emner */
   $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
   $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
   $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
@@ -351,7 +350,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['field_topics']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_topics']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
-  /* Field: Content: Indhold */
+  /* Felt: Indhold: Indhold */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -368,14 +367,14 @@ function ktc_netvaerk_views_default_views() {
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -403,14 +402,14 @@ function ktc_netvaerk_views_default_views() {
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -438,14 +437,14 @@ function ktc_netvaerk_views_default_views() {
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -480,16 +479,16 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Author */
+  /* Forbindelse: Indhold: Forfatter */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: OG membership: OG membership from Node */
+  /* Forbindelse: OG membership: OG membership from Indholdselement */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Broken/missing handler */
+  /* Kontekstuelt filter: Handler mangler eller er i stykker */
   $handler->display->display_options['arguments']['group_audience_gid']['id'] = 'group_audience_gid';
   $handler->display->display_options['arguments']['group_audience_gid']['table'] = 'field_data_group_audience';
   $handler->display->display_options['arguments']['group_audience_gid']['field'] = 'group_audience_gid';
@@ -522,14 +521,14 @@ return implode(\'+\', $top);';
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -558,14 +557,14 @@ return implode(\'+\', $top);';
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -593,14 +592,14 @@ return implode(\'+\', $top);';
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -628,14 +627,14 @@ return implode(\'+\', $top);';
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -663,14 +662,14 @@ return implode(\'+\', $top);';
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -702,14 +701,14 @@ return implode(\'+\', $top);';
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Field: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -746,7 +745,7 @@ return implode(\'+\', $top);';
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('author'),
+    t('forfatter'),
     t('OG membership from user'),
     t('OG membership from node'),
     t('[field_navn]'),
@@ -756,7 +755,6 @@ return implode(\'+\', $top);';
     t(' kommentar(er)'),
     t('Alle'),
     t('Byg og bolig'),
-    t('more'),
     t('Kompetencenet'),
     t('Digital forvaltning'),
     t('Forsyning'),
@@ -808,31 +806,31 @@ return implode(\'+\', $top);';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['grouping'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* No results behavior: Global: Text area */
+  /* Opførsel ved ingen resultater: Global: Tekstområde */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['content'] = 'Test views';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Relationship: Broken/missing handler */
+  /* Forbindelse: Handler mangler eller er i stykker */
   $handler->display->display_options['relationships']['group']['id'] = 'group';
   $handler->display->display_options['relationships']['group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['group']['field'] = 'group';
-  /* Relationship: OG membership: Node from OG membership */
+  /* Forbindelse: OG membership: Indholdselement from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node']['id'] = 'og_membership_related_node';
   $handler->display->display_options['relationships']['og_membership_related_node']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node']['field'] = 'og_membership_related_node';
-  /* Relationship: Broken/missing handler */
+  /* Forbindelse: Handler mangler eller er i stykker */
   $handler->display->display_options['relationships']['og_related_node']['id'] = 'og_related_node';
   $handler->display->display_options['relationships']['og_related_node']['table'] = 'og';
   $handler->display->display_options['relationships']['og_related_node']['field'] = 'og_related_node';
   $handler->display->display_options['relationships']['og_related_node']['relationship'] = 'group';
-  /* Relationship: Content: Author */
+  /* Forbindelse: Indhold: Forfatter */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['relationship'] = 'og_membership_related_node';
-  /* Field: User: Picture */
+  /* Felt: Bruger: Billede */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
   $handler->display->display_options['fields']['picture']['field'] = 'picture';
@@ -840,7 +838,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'mini_thumb';
-  /* Field: Content: Type */
+  /* Felt: Indhold: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
@@ -850,7 +848,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['type']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['type']['alter']['text'] = '([type])';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
+  /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -860,7 +858,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['title']['alter']['text'] = '[title] <span class="type">[type]</span>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: User: Navn */
+  /* Felt: Bruger: Navn */
   $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
   $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
@@ -868,7 +866,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['field_navn']['label'] = '';
   $handler->display->display_options['fields']['field_navn']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_navn']['element_label_colon'] = FALSE;
-  /* Field: User: Arbejdsgiver */
+  /* Felt: Bruger: Arbejdsgiver */
   $handler->display->display_options['fields']['field_employer_name']['id'] = 'field_employer_name';
   $handler->display->display_options['fields']['field_employer_name']['table'] = 'field_data_field_employer_name';
   $handler->display->display_options['fields']['field_employer_name']['field'] = 'field_employer_name';
@@ -876,7 +874,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['field_employer_name']['label'] = '';
   $handler->display->display_options['fields']['field_employer_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_employer_name']['element_label_colon'] = FALSE;
-  /* Field: User: Uid */
+  /* Felt: Bruger: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -885,7 +883,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['uid']['alter']['text'] = '<a href="/user/[uid]">[field_navn]</a>, [field_employer_name]';
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  /* Field: Content: Post date */
+  /* Felt: Indhold: Oprettelsesdato */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -895,7 +893,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['created']['alter']['text'] = '- [created]';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
-  /* Field: Content: Comment count */
+  /* Felt: Indhold: Kommentarantal */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
@@ -904,7 +902,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['alter']['text'] = '- [comment_count] ';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
+  /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
@@ -912,7 +910,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['title_1']['label'] = '';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Indhold */
+  /* Felt: Indhold: Indhold */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -922,12 +920,12 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Title */
+  /* Sorteringskriterie: Indhold: Titel */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['sorts']['title']['relationship'] = 'og_membership_related_node';
-  /* Contextual filter: Broken/missing handler */
+  /* Kontekstuelt filter: Handler mangler eller er i stykker */
   $handler->display->display_options['arguments']['group']['id'] = 'group';
   $handler->display->display_options['arguments']['group']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['group']['field'] = 'group';
@@ -941,7 +939,7 @@ return implode(\'+\', $top);';
     1 => 'AND',
     2 => 'AND',
   );
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -954,7 +952,7 @@ return implode(\'+\', $top);';
     'page' => 'page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: OG membership: State */
+  /* Filterkriterie: OG membership: State */
   $handler->display->display_options['filters']['state']['id'] = 'state';
   $handler->display->display_options['filters']['state']['table'] = 'og_membership';
   $handler->display->display_options['filters']['state']['field'] = 'state';
@@ -962,7 +960,7 @@ return implode(\'+\', $top);';
     1 => '1',
   );
   $handler->display->display_options['filters']['state']['group'] = 1;
-  /* Filter criterion: OG membership: Entity_type */
+  /* Filterkriterie: OG membership: Entity_type */
   $handler->display->display_options['filters']['entity_type']['id'] = 'entity_type';
   $handler->display->display_options['filters']['entity_type']['table'] = 'og_membership';
   $handler->display->display_options['filters']['entity_type']['field'] = 'entity_type';
@@ -995,7 +993,7 @@ return implode(\'+\', $top);';
     t('group'),
     t('node from OG membership'),
     t('og_related_node'),
-    t('author'),
+    t('forfatter'),
     t('([type])'),
     t('[title] <span class="type">[type]</span>'),
     t('<a href="/user/[uid]">[field_navn]</a>, [field_employer_name]'),
@@ -1005,7 +1003,6 @@ return implode(\'+\', $top);';
     t(','),
     t('Alle'),
     t('Nyt fra mine netværk OG'),
-    t('more'),
     t('Side'),
   );
   $export['nyt_fra_mine_netv_rk'] = $view;
