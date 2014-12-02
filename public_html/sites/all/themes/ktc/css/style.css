@@ -8377,20 +8377,35 @@ fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li.active {
 #svendborg_tabs .views-row .quicktabs-nyheder-row {
   min-height: 67px;
 }
-#block-views-news-filter-block .panel {
+.col-md-3 .panel-separator {
+  clear: both;
+}
+.col-md-3 #filter-1 .pane-content,
+.col-md-3 #filter-2 .pane-content,
+.col-md-3 #filter-3 .pane-content {
   margin-bottom: 0;
   border-bottom: 1px solid #dfded7;
   border-radius: 4px 4px 0 0;
 }
-#block-views-news-filter-block .panel .panel-heading {
-  padding: 20px 19px;
+.col-md-3 #filter-1 .pane-content:after,
+.col-md-3 #filter-2 .pane-content:after,
+.col-md-3 #filter-3 .pane-content:after {
+  content: "";
+  display: table;
+  clear: both;
 }
-#block-views-news-filter-block .panel .view-id-news_filter {
+.col-md-3 #filter-1 .pane-content .view,
+.col-md-3 #filter-2 .pane-content .view,
+.col-md-3 #filter-3 .pane-content .view {
+  padding: 0 0;
   margin: 30px 0 20px 0;
 }
-#block-views-news-filter-block .panel .view-id-news_filter #filter-all,
-#block-views-news-filter-block .panel .view-id-news_filter .filter-link {
-  font-weight: bold;
+.col-md-3 #filter-1 .pane-content .view #filter-all,
+.col-md-3 #filter-2 .pane-content .view #filter-all,
+.col-md-3 #filter-3 .pane-content .view #filter-all,
+.col-md-3 #filter-1 .pane-content .view .filter-link,
+.col-md-3 #filter-2 .pane-content .view .filter-link,
+.col-md-3 #filter-3 .pane-content .view .filter-link {
   margin-bottom: 10px;
 }
 .menu-block-wrapper ul {

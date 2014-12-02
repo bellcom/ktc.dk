@@ -2580,11 +2580,17 @@ function ktc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_forfrem_til',
     'label' => 'Forfrem til',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
@@ -3314,6 +3320,61 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-os2web_base_news-field_os2web_news_page_type'
+  $field_instances['node-os2web_base_news-field_os2web_news_page_type'] = array(
+    'bundle' => 'os2web_base_news',
+    'default_value' => array(
+      0 => array(
+        'tid' => 1848,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 16,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_news_page_type',
+    'label' => 'Nyhedstype',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 18,
+    ),
+  );
+
   // Exported field_instance: 'node-os2web_base_news-field_tags'
   $field_instances['node-os2web_base_news-field_tags'] = array(
     'bundle' => 'os2web_base_news',
@@ -3694,6 +3755,46 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-emner_faste_-field_typo3_uid'
+  $field_instances['taxonomy_term-emner_faste_-field_typo3_uid'] = array(
+    'bundle' => 'emner_faste_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_typo3_uid',
+    'label' => 'Typo3 uid(pages)',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 33,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-os2web_taxonomies_tax_kle-field_os2web_taxonomies_cue_word'
   $field_instances['taxonomy_term-os2web_taxonomies_tax_kle-field_os2web_taxonomies_cue_word'] = array(
     'bundle' => 'os2web_taxonomies_tax_kle',
@@ -3917,6 +4018,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Magasin reference');
   t('Manchet');
   t('Målgruppe');
+  t('Nyhedstype');
   t('Nøgleord/ kategorier (max 5 stk.)');
   t('Primære billede');
   t('Pris (inkl./ ekskl. moms)');
@@ -3930,6 +4032,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Tilmeldte');
   t('Type');
   t('Type af møde');
+  t('Typo3 uid(pages)');
   t('Udgået');
   t('Visningsperiode');
 

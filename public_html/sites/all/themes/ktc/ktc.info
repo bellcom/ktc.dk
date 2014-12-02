@@ -51,6 +51,8 @@ scripts[] = 'js/masonry.pkgd.min.js'
 scripts[] = 'js/isotope.pkgd.min.js'
 scripts[] = 'js/script.js'
 scripts[] = 'js/os2web_spotbox_adjust.js'
+scripts[] = 'js/jquery.imagesloaded.js'
+scripts[] = 'js/jquery.infinitescroll.min.js'
 
 
 ; Disable BootstrapCDN so the compiled LESS source files can be used.
