@@ -1,0 +1,44 @@
+<?php
+/**
+ * @file
+ * KTC CRM integration module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_crm_menu() {
+  $items['admin/config/services/ktc-crm'] = array(
+    'title' => 'KTC CRM',
+    'description' => 'Configure CRM integration',
+    'access arguments' => array('administer site'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_crm_settings'),
+  );
+
+  return $items;
+}
+
+/**
+ * Form callback for settings.
+ */
+function ktc_crm_settings() {
+  $form = array();
+
+  $form['ktc_crm_endpoint'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Endpoint'),
+  );
+
+  $form['ktc_crm_username'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Username'),
+  );
+
+  $form['ktc_crm_password'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Password'),
+  );
+
+  return system_settings_form($form);
+}

@@ -1,0 +1,3 @@
+name = KTC CRM Integration
+description = Provide integration to Dynamics CRM.
+core = 7.x
