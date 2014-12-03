@@ -13,10 +13,12 @@ include 'functions.php';
 // getUserElements('user', 'user-export_9.xml');
 // getUserElements('user', 'user-export_10.xml');
 // getUserElements('user', 'user-export_11.xml');
- getUserElements('user', 'user-export_12.xml');
- getUserElements('user', 'user-export_13.xml');
- getUserElements('user', 'user-export_14.xml');
- getUserElements('user', 'user-export_15.xml');
+// getUserElements('user', 'user-export_12.xml');
+// getUserElements('user', 'user-export_13.xml');
+// getUserElements('user', 'user-export_14.xml');
+// getUserElements('user', 'user-export_15.xml');
+
+  getUserElements('user', 'user-export_kl.xml');
 
 
 function getUserElements($type, $filename) {
