@@ -18,7 +18,8 @@ include 'functions.php';
 // getUserElements('user', 'user-export_14.xml');
 // getUserElements('user', 'user-export_15.xml');
 
-  getUserElements('user', 'user-export_kl.xml');
+  //getUserElements('user', 'user-export_kl.xml');
+  getUserElements('user', 'user-export_svar.xml');
 
 
 function getUserElements($type, $filename) {

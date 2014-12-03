@@ -7,8 +7,8 @@ include 'functions.php';
  //addUidToContent('os2web_base_news');
 // addUidToContent('document');
 // addUidToContent('meeting_doodle');
-  addUidToHoering('hearing');
-  //addUidToHoering('hearing_responses');
+//  addUidToHoering('hearing');
+  addUidToHoering('hearing_responses');
 
 function addUidToContent($type) {
   $count = 0;
@@ -32,7 +32,7 @@ function addUidToContent($type) {
 function addUidToHoering($type) {
 
   $count = 0;
-  $missing = array();
+  $missing = '';
   $nodes = node_load_multiple(array(), array('type' => $type));
   foreach ($nodes as $node) {
     // Get originator typo3 user id.
@@ -46,8 +46,11 @@ function addUidToHoering($type) {
           $node->uid = $uid;
         }
         else {
-          $count++;
-          $missing[$forfatter[0]['value']] = $forfatter[0]['value'];
+          if ($mail = get_email_from_fe_users($forfatter[0]['value'])) {
+            $missing .= ',' . $mail;
+            $count++;
+
+          }
         }
       }
       node_save($node);
@@ -55,19 +58,11 @@ function addUidToHoering($type) {
     else {
       // Then get responsible_foreman to uid.
       if ($admin = field_get_items('node', $node, 'field_responsible_admin')) {
-        if ($uid = get_id_by_typo3_uid($admin[0]['value'], 'user')) {
-          $node->uid = $uid;
-        }
-        else {
-          $node->uid = 1;
-          if ($uid = get_old_user_info_from_typo3($admin[0]['value'])) {
-            $node->uid = $uid;
-          }
-          else {
-            $count++;
-            $missing[$admin[0]['value']] = $admin[0]['value'];
-          }
-        }
+        $node->uid = $admin[0]['target_id'];
+        node_save($node);
+      }
+      elseif ($responsible_forman = field_get_items('node', $node, 'field_responsible_foreman')) {
+        $node->uid = $responsible_forman[0]['target_id'];
         node_save($node);
       }
     }
@@ -90,6 +85,26 @@ function get_old_user_info_from_typo3($typo3_uid) {
       else {
         return FALSE;
       }
+    }
+  }
+}
+
+function get_email_from_fe_users($typo3_uid) {
+  if (is_numeric($typo3_uid)) {
+    $query = db_select('fe_users', 'g')
+      ->fields('g', array('email'))
+      ->condition('uid', $typo3_uid, '=');
+    $result = $query->execute()->fetchAssoc();
+    if ($result) {
+      if ($result['email'] != '') {
+        return $result['email'];
+      }
+      else {
+        return FALSE;
+      }
+    }
+    else {
+      return FALSE;
     }
   }
 }
