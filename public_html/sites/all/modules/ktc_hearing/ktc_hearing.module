@@ -28,7 +28,7 @@ function ktc_hearing_menu() {
 
   $items['node/%node/hearing_response'] = array(
     'type' => MENU_LOCAL_TASK,
-    'title' => 'Response',
+    'title' => 'Answer',
     'page callback' => 'ktc_hearing_responses',
     'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
@@ -41,7 +41,7 @@ function ktc_hearing_menu() {
 
   $items['node/%node/final_hearing_response'] = array(
     'type' => MENU_LOCAL_TASK,
-    'title' => 'Final response',
+    'title' => 'Final answer',
     'page callback' => 'ktc_hearing_final_responses',
     'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
@@ -63,6 +63,121 @@ function ktc_hearing_menu() {
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ktc_hearing_theme() {
+  return array(
+    'hearing_final_answer' => array(
+      'template' => 'hearing-final-answer',
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state, $form_id) {
+  // Don't process the entire form and don't use cache if this was an ajax
+  // request. This will break the prefilled fields.
+  if (!empty($form_state['triggering_element']['#ajax'])) {
+    $form_state['no_cache'] = TRUE;
+    return;
+  }
+
+  // Change the way the form for hearing responses behave on the response page.
+  $form['#hearing_id'] = arg(1);
+  // Prefill title.
+  global $user;
+  $user = user_load($user->uid);
+  $user_name = $user->name;
+
+  if ($name_field = field_get_items('user', $user, 'field_navn')) {
+    $user_name = $name_field[0]['value'];
+  }
+
+  $form['title']['#default_value'] = t('Hearing response') . ': ' . $user_name;
+
+  // Add reference to the hearing.
+  $language = $form['field_hearing_node']['#language'];
+  if (!$form['field_hearing_node'][$language][0]['target_id']['#default_value']) {
+    $form['field_hearing_node'][$language][0]['target_id']['#default_value'] = arg(1);
+    unset($form['field_hearing_node'][$language][0]['target_id']['#element_validate']);
+  }
+
+  if (arg(2) == 'final_hearing_response') {
+    $language = $form['field_is_final']['#language'];
+    $form['field_is_final'][$language]['#default_value'] = 1;
+    $form['title']['#default_value'] = t('Final response') . ': ' . $user_name;
+  }
+
+  // Hide fields.
+  $form['title']['#access'] = 0;
+  $form['field_hearing_node']['#access'] = 0;
+  $form['field_typo3_uid']['#access'] = 0;
+  $form['field_is_final']['#access'] = 0;
+  $form['field_is_summary']['#access'] = 0;
+  $form['field_typo3_user_id']['#access'] = 0;
+  $form['group_content_access']['#access'] = 0;
+  $form['field_hearing_response_type']['#access'] = 0;
+  $form['og_group_ref']['#access'] = 0;
+  $form['options']['#access'] = 0;
+  $form['revision_information']['#access'] = 0;
+}
+
+/**
+ * Implements hook_mail().
+ */
+function ktc_hearing_mail($key, &$message, $params) {
+  $message['subject'] = $params['subject'];
+  $message['body'][] = $params['body'];
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function ktc_hearing_node_access($node, $op, $account) {
+  if ($node->uid == $account->uid) {
+    return NODE_ACCESS_IGNORE;
+  }
+
+  // Determine if it's a hearing.
+  if ($node->type == 'hearing') {
+    $hearing = $node;
+
+    $access = ktc_hearing_user_has_access($hearing, $account);
+
+    if (in_array($op, $access)) {
+      return NODE_ACCESS_ALLOW;
+    }
+
+    // This is a hearing, if no other access is returned, deny.
+    return NODE_ACCESS_DENY;
+  }
+
+  if ($node->type == 'hearing_responses') {
+    if ($hearing_field = field_get_items('node', $node, 'field_hearing_node')) {
+      $hearing = node_load($hearing_field[0]['target_id']);
+      $access = ktc_hearing_user_has_access($hearing, $account);
+
+      if ($op == 'view' && in_array($op, $access)) {
+        return NODE_ACCESS_ALLOW;
+      }
+
+      return NODE_ACCESS_DENY;
+    }
+  }
+
+  // Determine who has permissions to create hearings.
+  if (is_string($node) && $node == 'hearing') {
+    if ($op == 'create') {
+      if (_ktc_hearing_user_can_create_hearing($account)) {
+        return NODE_ACCESS_ALLOW;
+      }
+    }
+  }
 }
 
 /**
@@ -165,13 +280,58 @@ function ktc_hearing_final_responses($hearing) {
 
     module_load_include('inc', 'node', 'node.pages');
 
-    $response_form = render(node_add('hearing_responses'));
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'hearing_responses')
+      ->fieldCondition('field_hearing_node', 'target_id', $hearing->nid);
+    $result = $query->execute();
 
-    return $response_form;
+    if (isset($result['node'])) {
+      foreach ($result['node'] as $item) {
+        $vars['responses'][] = node_view(node_load($item->nid), 'full');
+      }
+    }
+
+    $type = 'hearing_responses';
+
+    $node = (object) array(
+      'uid' => $user->uid,
+      'name' => (isset($user->name) ? $user->name : ''),
+      'type' => $type,
+      'language' => LANGUAGE_NONE,
+    );
+
+    if ($final_response = ktc_hearing_get_final_response($hearing)) {
+      $node = $final_response;
+    }
+
+    $vars['answer_form'] = render(drupal_get_form($type . '_node_form', $node));
+
+    return theme('hearing_final_answer', $vars);
   }
   else {
     return 'Høringens status tillader ikke sammenskrivning af høringssvar.';
   }
+}
+
+/**
+ * Get final response for a hearing.
+ */
+function ktc_hearing_get_final_response($hearing) {
+  // Find the final response for a hearing.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'hearing_responses')
+    ->fieldCondition('field_is_final', 'value', 1)
+    ->fieldCondition('field_hearing_node', 'target_id', $hearing->nid);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    // If it exists load the node and return it.
+    return node_load(key($result['node']));
+  }
+
+  return FALSE;
 }
 
 /**
@@ -225,8 +385,6 @@ function ktc_hearing_responses($hearing) {
     }
   }
 
-  module_load_include('inc', 'node', 'node.pages');
-
   $response_list .= '<hr>';
 
   $response_form = '';
@@ -239,6 +397,9 @@ function ktc_hearing_responses($hearing) {
     && _ktc_hearing_is_open($hearing)
     && !ktc_hearing_user_has_responded($hearing)) {
     $response_form = '<h2>Tilføj svar</h2>';
+
+    module_load_include('inc', 'node', 'node.pages');
+
     $response_form = render(node_add('hearing_responses'));
   }
 
@@ -267,51 +428,6 @@ function ktc_hearing_user_has_responded($hearing, $account = FALSE) {
 }
 
 /**
- * Implements hook_node_access().
- */
-function ktc_hearing_node_access($node, $op, $account) {
-  if ($node->uid == $account->uid) {
-    return NODE_ACCESS_IGNORE;
-  }
-
-  // Determine if it's a hearing.
-  if ($node->type == 'hearing') {
-    $hearing = $node;
-
-    $access = ktc_hearing_user_has_access($hearing, $account);
-
-    if (in_array($op, $access)) {
-      return NODE_ACCESS_ALLOW;
-    }
-
-    // This is a hearing, if no other access is returned, deny.
-    return NODE_ACCESS_DENY;
-  }
-
-  if ($node->type == 'hearing_responses') {
-    if ($hearing_field = field_get_items('node', $node, 'field_hearing_node')) {
-      $hearing = node_load($hearing_field[0]['target_id']);
-      $access = ktc_hearing_user_has_access($hearing, $account);
-
-      if ($op == 'view' && in_array($op, $access)) {
-        return NODE_ACCESS_ALLOW;
-      }
-
-      return NODE_ACCESS_DENY;
-    }
-  }
-
-  // Determine who has permissions to create hearings.
-  if (is_string($node) && $node == 'hearing') {
-    if ($op == 'create') {
-      if (_ktc_hearing_user_can_create_hearing($account)) {
-        return NODE_ACCESS_ALLOW;
-      }
-    }
-  }
-}
-
-/**
  * Retrieve a list of hearings, the user needs to repond to.
  */
 function ktc_hearing_get_users_unresponded($account = FALSE) {
@@ -334,51 +450,6 @@ function ktc_hearing_get_users_unresponded($account = FALSE) {
   }
 
   return $hearings;
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state, $form_id) {
-  // Don't process the entire form and don't use cache if this was an ajax
-  // request. This will break the prefilled fields.
-  if (!empty($form_state['triggering_element']['#ajax'])) {
-    $form_state['no_cache'] = TRUE;
-    return;
-  }
-
-  // Change the way the form for hearing responses behave on the response page.
-  $form['#hearing_id'] = arg(1);
-  // Prefill title.
-  global $user;
-  $user = user_load($user->uid);
-  $user_name = $user->name;
-
-  if ($name_field = field_get_items('user', $user, 'field_navn')) {
-    $user_name = $name_field[0]['value'];
-  }
-
-  $form['title']['#default_value'] = t('Hearing response') . ': ' . $user_name;
-
-  // Add reference to the hearing.
-  $language = $form['field_hearing_node']['#language'];
-  if (!$form['field_hearing_node'][$language][0]['target_id']['#default_value']) {
-    $form['field_hearing_node'][$language][0]['target_id']['#default_value'] = arg(1);
-    unset($form['field_hearing_node'][$language][0]['target_id']['#element_validate']);
-  }
-
-  // Hide fields.
-  $form['title']['#access'] = 0;
-  $form['field_hearing_node']['#access'] = 0;
-  $form['field_typo3_uid']['#access'] = 0;
-  $form['field_is_final']['#access'] = 0;
-  $form['field_is_summary']['#access'] = 0;
-  $form['field_typo3_user_id']['#access'] = 0;
-  $form['group_content_access']['#access'] = 0;
-  $form['field_hearing_response_type']['#access'] = 0;
-  $form['og_group_ref']['#access'] = 0;
-  $form['options']['#access'] = 0;
-  $form['revision_information']['#access'] = 0;
 }
 
 /**
@@ -475,14 +546,6 @@ function ktc_hearing_notify_users($op, $hearing) {
       drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
       break;
   }
-}
-
-/**
- * Implements hook_mail().
- */
-function ktc_hearing_mail($key, &$message, $params) {
-  $message['subject'] = $params['subject'];
-  $message['body'][] = $params['body'];
 }
 
 /**
