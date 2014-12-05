@@ -102,7 +102,7 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_gammel_gid',
-    'label' => 'Gammel gid',
+    'label' => 'Gammel drupal gid',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -167,6 +167,64 @@ function ktc_netvaerk_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance: 'node-group-field_gammel_typo3_id'
+  $field_instances['node-group-field_gammel_typo3_id'] = array(
+    'bundle' => 'group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 11,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_gammel_typo3_id',
+    'label' => 'Gammel typo3 id',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 35,
     ),
   );
 
@@ -660,8 +718,9 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Determine if this is an OG group.');
   t('Emner');
   t('Flere emner');
-  t('Gammel gid');
+  t('Gammel drupal gid');
   t('Gammel nid');
+  t('Gammel typo3 id');
   t('Gruppe');
   t('Gruppens roller og tilladelser');
   t('Indhold');

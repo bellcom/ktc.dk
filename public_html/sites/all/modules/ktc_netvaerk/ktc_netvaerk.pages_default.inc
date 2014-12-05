@@ -58,6 +58,8 @@ function ktc_netvaerk_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'left' => NULL,
+      'right' => NULL,
     ),
   );
   $display->cache = array();
@@ -74,20 +76,59 @@ function ktc_netvaerk_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'type' => 'group',
+        'type' => 'os2web_base_news+forum_post+page+arrangement+meeting_doodle+document',
+        'term_node_tid_depth' => 'all',
+        'term_node_tid_depth_1' => 'all',
+        'term_node_tid_depth_2' => 'all',
       ),
+      'items_per_page' => '20',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'section-page-with-filter',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'ca0e33d2-ca38-48a9-8f4d-41b8b85eb73b';
     $display->content['new-ca0e33d2-ca38-48a9-8f4d-41b8b85eb73b'] = $pane;
     $display->panels['left'][0] = 'new-ca0e33d2-ca38-48a9-8f4d-41b8b85eb73b';
+    $pane = new stdClass();
+    $pane->pid = 'new-7a795114-b3b8-469b-b134-d29e5edb9f3f';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '9',
+      'offset' => '0',
+      'arguments' => array(
+        'vid' => '4',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer på faglige emner',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'filter-1',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7a795114-b3b8-469b-b134-d29e5edb9f3f';
+    $display->content['new-7a795114-b3b8-469b-b134-d29e5edb9f3f'] = $pane;
+    $display->panels['right'][0] = 'new-7a795114-b3b8-469b-b134-d29e5edb9f3f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -28,7 +28,6 @@
 ?>
 <?php if ($content): ?>
   <aside<?php print $attributes; ?>>
-    <?php print render($page['breadcrumb']); ?>
     <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
     <?php print $content; ?>
     <?php if ($content_attributes): ?></div><?php endif; ?>

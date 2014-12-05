@@ -1001,6 +1001,46 @@ function ktc_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_typo3_uid'
+  $field_instances['user-user-field_typo3_uid'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 30,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_typo3_uid',
+    'label' => 'Typo3 uid(fe_users)',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 33,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_usertype'
   $field_instances['user-user-field_usertype'] = array(
     'bundle' => 'user',
@@ -1110,6 +1150,7 @@ function ktc_users_field_default_field_instances() {
   t('Stilling/titel');
   t('Særlige kompetencer');
   t('Tlf.');
+  t('Typo3 uid(fe_users)');
 
   return $field_instances;
 }
