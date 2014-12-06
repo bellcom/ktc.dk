@@ -472,20 +472,15 @@ function ktc_arrangement_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-26b10c11-d202-445d-845c-10b758076dbd';
+    $pane->pid = 'new-f2a164e6-e4d2-4896-83e8-36d479eda349';
     $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'indhold_m_filter-panel_pane_1';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_sectionpage-arrangement_page_block';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'arguments' => array(
-        'type' => 'arrangement',
-        'term_node_tid_depth' => 'all',
-        'term_node_tid_depth_1' => 'all',
-        'term_node_tid_depth_2' => 'all',
-      ),
-      'items_per_page' => '10',
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -493,14 +488,14 @@ function ktc_arrangement_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
-      'css_class' => 'term all',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '26b10c11-d202-445d-845c-10b758076dbd';
-    $display->content['new-26b10c11-d202-445d-845c-10b758076dbd'] = $pane;
-    $display->panels['left'][0] = 'new-26b10c11-d202-445d-845c-10b758076dbd';
+    $pane->uuid = 'f2a164e6-e4d2-4896-83e8-36d479eda349';
+    $display->content['new-f2a164e6-e4d2-4896-83e8-36d479eda349'] = $pane;
+    $display->panels['left'][0] = 'new-f2a164e6-e4d2-4896-83e8-36d479eda349';
     $pane = new stdClass();
     $pane->pid = 'new-fbc410b6-6f73-4ad0-89f2-0ec941000bd7';
     $pane->panel = 'right';
@@ -524,7 +519,7 @@ function ktc_arrangement_default_page_manager_pages() {
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => 'filter-1',
+      'css_id' => 'term_type',
       'css_class' => '',
     );
     $pane->extras = array();
