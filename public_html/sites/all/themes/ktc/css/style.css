@@ -7932,7 +7932,6 @@ body.page-node div.node-os2web-base-news header h2,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 {
   margin: 0;
   margin-top: 14px;
-  font-size: 2.4em;
   font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
   text-transform: initial;
   color: #000000;
@@ -7945,7 +7944,6 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 a {
   color: #000000;
   text-transform: initial;
   font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
-  font-size: 2.4em;
 }
 @media (max-width: 460px) {
   body.page-node article header h2 a,
@@ -8139,6 +8137,95 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web
   float: right;
   margin-left: 20px;
   margin-bottom: 20px;
+}
+.node-type-group .panel-pane .field-name-group-group a {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #496e7e 0%, #36525e 100%);
+  background-image: linear-gradient(to bottom, #496e7e 0%, #36525e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff496e7e', endColorstr='#ff36525e', GradientType=0);
+  border: none;
+}
+.node-type-group .panel-pane .field-name-group-group a:focus,
+.node-type-group .panel-pane .field-name-group-group a:active:focus,
+.node-type-group .panel-pane .field-name-group-group a.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.node-type-group .panel-pane .field-name-group-group a:hover,
+.node-type-group .panel-pane .field-name-group-group a:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+.node-type-group .panel-pane .field-name-group-group a:active,
+.node-type-group .panel-pane .field-name-group-group a.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.node-type-group .panel-pane .field-name-group-group a.disabled,
+.node-type-group .panel-pane .field-name-group-group a[disabled],
+fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.node-type-group .panel-pane .field-name-group-group a:hover,
+.node-type-group .panel-pane .field-name-group-group a:focus,
+.node-type-group .panel-pane .field-name-group-group a:active,
+.node-type-group .panel-pane .field-name-group-group a.active {
+  background-image: -webkit-linear-gradient(top, #36525e 0%, #496e7e 100%);
+  background-image: linear-gradient(to bottom, #36525e 0%, #496e7e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff36525e', endColorstr='#ff496e7e', GradientType=0);
+  color: #ffffff;
+}
+.node-type-group .panel-pane .field-name-group-group a.disabled,
+.node-type-group .panel-pane .field-name-group-group a[disabled],
+fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a,
+.node-type-group .panel-pane .field-name-group-group a.disabled:hover,
+.node-type-group .panel-pane .field-name-group-group a[disabled]:hover,
+fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a:hover,
+.node-type-group .panel-pane .field-name-group-group a.disabled:focus,
+.node-type-group .panel-pane .field-name-group-group a[disabled]:focus,
+fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a:focus,
+.node-type-group .panel-pane .field-name-group-group a.disabled:active,
+.node-type-group .panel-pane .field-name-group-group a[disabled]:active,
+fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a:active,
+.node-type-group .panel-pane .field-name-group-group a.disabled.active,
+.node-type-group .panel-pane .field-name-group-group a[disabled].active,
+fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a.active {
+  background-color: #36525e;
+}
+.node-type-group .panel-pane.pane-og-members-panel-pane-1,
+.node-type-group .panel-pane.pane-node-body,
+.node-type-group .panel-pane.pane-node-field-groupimage {
+  float: right;
+  clear: right;
 }
 #nyheder-carousel-large {
   background-color: #fff;
@@ -8376,37 +8463,6 @@ fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li.active {
 }
 #svendborg_tabs .views-row .quicktabs-nyheder-row {
   min-height: 67px;
-}
-.col-md-3 .panel-separator {
-  clear: both;
-}
-.col-md-3 #filter-1 .pane-content,
-.col-md-3 #filter-2 .pane-content,
-.col-md-3 #filter-3 .pane-content {
-  margin-bottom: 0;
-  border-bottom: 1px solid #dfded7;
-  border-radius: 4px 4px 0 0;
-}
-.col-md-3 #filter-1 .pane-content:after,
-.col-md-3 #filter-2 .pane-content:after,
-.col-md-3 #filter-3 .pane-content:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.col-md-3 #filter-1 .pane-content .view,
-.col-md-3 #filter-2 .pane-content .view,
-.col-md-3 #filter-3 .pane-content .view {
-  padding: 0 0;
-  margin: 30px 0 20px 0;
-}
-.col-md-3 #filter-1 .pane-content .view #filter-all,
-.col-md-3 #filter-2 .pane-content .view #filter-all,
-.col-md-3 #filter-3 .pane-content .view #filter-all,
-.col-md-3 #filter-1 .pane-content .view .filter-link,
-.col-md-3 #filter-2 .pane-content .view .filter-link,
-.col-md-3 #filter-3 .pane-content .view .filter-link {
-  margin-bottom: 10px;
 }
 .menu-block-wrapper ul {
   padding: 0;
@@ -8788,4 +8844,203 @@ h2.menu-footer a:hover {
 .front .region-navigation #search-block-form .input-group-btn {
   border: none;
   text-align: right;
+}
+.col-md-3 .panel-separator {
+  clear: both;
+}
+.col-md-3 .panel-pane {
+  position: relative;
+  border-bottom: 1px solid #dfded7;
+}
+.col-md-3 .panel-pane .pane-content {
+  display: block;
+  position: relative;
+  margin-bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+.col-md-3 .panel-pane .pane-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.col-md-3 .panel-pane .pane-content .filter-box {
+  padding: 0 0;
+  margin: 0px 0 20px 0;
+}
+.col-md-3 .panel-pane .pane-content .filter-box #filter-all,
+.col-md-3 .panel-pane .pane-content .filter-box .filter-link {
+  margin-bottom: 10px;
+}
+.col-md-3 .panel-pane .pane-content .filter-box .filter-foldin {
+  cursor: pointer;
+  text-align: right;
+  position: absolute;
+  top: -40px;
+  right: 15px;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a {
+  background-color: #589000;
+  border-color: #487700;
+  color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #85c500 0%, #589000 100%);
+  background-image: linear-gradient(to bottom, #85c500 0%, #589000 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff85c500', endColorstr='#ff589000', GradientType=0);
+  border: none;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:hover,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.active,
+.open .dropdown-toggle.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a {
+  color: #ffffff;
+  background-color: #3f6700;
+  border-color: #233900;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.active,
+.open .dropdown-toggle.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a {
+  background-image: none;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.disabled,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a[disabled],
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li.active > a,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.disabled:hover,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a[disabled]:hover,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:hover,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.disabled:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a[disabled]:focus,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.disabled:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a[disabled]:active,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.disabled.active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a[disabled].active,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.active {
+  background-color: #589000;
+  border-color: #487700;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a .badge {
+  color: #589000;
+  background-color: #ffffff;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:hover,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.active {
+  background-image: -webkit-linear-gradient(top, #589000 0%, #85c500 100%);
+  background-image: linear-gradient(to bottom, #589000 0%, #85c500 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff589000', endColorstr='#ff85c500', GradientType=0);
+  color: #ffffff;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.disabled,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a[disabled],
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li.active > a,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.disabled:hover,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a[disabled]:hover,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:hover,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.disabled:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a[disabled]:focus,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.disabled:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a[disabled]:active,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li.active > a:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.disabled.active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li.active > a[disabled].active,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li.active > a.active {
+  background-color: #589000;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li a {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #496e7e 0%, #36525e 100%);
+  background-image: linear-gradient(to bottom, #496e7e 0%, #36525e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff496e7e', endColorstr='#ff36525e', GradientType=0);
+  border: none;
+  margin-right: 0px;
+  margin-bottom: 10px;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li a:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a:active:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li a:hover,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li a:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li a.disabled,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a[disabled],
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li a {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li a:hover,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a.active {
+  background-image: -webkit-linear-gradient(top, #36525e 0%, #496e7e 100%);
+  background-image: linear-gradient(to bottom, #36525e 0%, #496e7e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff36525e', endColorstr='#ff496e7e', GradientType=0);
+  color: #ffffff;
+}
+.col-md-3 .panel-pane .pane-content #edit-tabs li a.disabled,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a[disabled],
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li a,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a.disabled:hover,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a[disabled]:hover,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li a:hover,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a.disabled:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a[disabled]:focus,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li a:focus,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a.disabled:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a[disabled]:active,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li a:active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a.disabled.active,
+.col-md-3 .panel-pane .pane-content #edit-tabs li a[disabled].active,
+fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li a.active {
+  background-color: #36525e;
+}
+.col-md-3 .filter-foldout {
+  cursor: pointer;
+  text-align: right;
+  position: absolute;
+  top: 3px;
+  right: 15px;
+  display: none;
 }
