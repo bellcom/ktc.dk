@@ -1,11 +1,14 @@
 <?php
 
-function get_hearing_elements_from_db_table($table) {
+function get_hearing_elements_from_db_table($table, $condition = NULL) {
   $elements = array();
   $query = db_select($table, 'tx')
     ->fields('tx');
     //->range(0,4);
 
+  if (isset($condition)) {
+    $query->condition($condition, '', '<>');
+  }
   $result = $query->execute();
   while ($record = $result->fetchAssoc()) {
     $elements[] = $record;
@@ -203,15 +206,23 @@ function get_group_id_by_oldGid($gid) {
   return $new_gid;
 }
 
-function get_images_or_files($url, $file_dir, $name = NULL) {
+function get_images_or_files($url, $file_dir, $name = NULL, $real_name = NULL) {
   $drupalfile = FALSE;
   if (file_exists($url)) {
-    $dfile = (object) array(
-      'uri' => $url,
-      'filemime' => file_get_mimetype($url),
-      'status' => 1,
-    );
-
+    if (!isset($real_name)) {
+      $dfile = (object) array(
+        'uri' => $url,
+        'filemime' => file_get_mimetype($url),
+        'status' => 1,
+      );
+    }
+    else {
+      $dfile = (object) array(
+        'uri' => $url,
+        'filemime' => file_get_mimetype($real_name),
+        'status' => 1,
+      );
+    }
     // Now get Drupal to copy it.
     $mydir = 'private://' . $file_dir;
     file_prepare_directory($mydir, FILE_CREATE_DIRECTORY);
@@ -235,4 +246,33 @@ function get_new_uid($old_uid) {
   }
   $uid;
   return $uid;
+}
+
+function get_file_md5filename($file_no) {
+  $file_name = FALSE;
+  $query = db_select('tx_ktcfileman_files', 'tx')
+    ->fields('tx', array('md5filename', 'filename'))
+    ->condition('uid', $file_no, '=');
+  $result = $query->execute()->fetchAssoc();
+  if ($result) {
+    $file_name = $result;
+  }
+  return $file_name;
+}
+
+function check_title_name($str) {
+  if (strlen($str) > 240) {
+    $str = substr($str, 0, 235);
+  }
+  return $str;
+}
+
+function rebuild_array($array) {
+  $array_2 = array();
+  foreach($array as $value) {
+    if($value != '') {
+      $array_2[] = $value;
+    }
+  }
+  return $array_2;
 }

@@ -79,9 +79,7 @@ function ktc_content_types_field_group_info() {
     'weight' => '17',
     'children' => array(
       0 => 'field_os2web_base_field_promote',
-      1 => 'field_link',
-      2 => 'field_news_author',
-      3 => 'field_magasin',
+      1 => 'field_news_author',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -108,9 +106,9 @@ function ktc_content_types_field_group_info() {
     'label' => 'Nyheder',
     'weight' => '6',
     'children' => array(
-      0 => 'group_redaktion',
+      0 => 'group_metadata',
       1 => 'group_networkngroups',
-      2 => 'group_metadata',
+      2 => 'group_redaktion',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(

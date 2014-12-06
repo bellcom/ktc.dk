@@ -274,11 +274,11 @@ function ktc_content_types_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_forfrem_til',
     'foreign keys' => array(
-      'node' => array(
+      'taxonomy_term_data' => array(
         'columns' => array(
-          'target_id' => 'nid',
+          'target_id' => 'tid',
         ),
-        'table' => 'node',
+        'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
@@ -290,8 +290,20 @@ function ktc_content_types_field_default_field_bases() {
     'module' => 'entityreference',
     'settings' => array(
       'handler' => 'base',
-      'handler_settings' => array(),
-      'target_type' => 'node',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'os2web_base_tax_promoteto' => 'os2web_base_tax_promoteto',
+        ),
+      ),
+      'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
@@ -804,6 +816,42 @@ function ktc_content_types_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_with_summary',
+  );
+
+  // Exported field_base: 'field_os2web_news_page_type'
+  $field_bases['field_os2web_news_page_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_news_page_type',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'os2web_news_page_newstypes',
+          'parent' => 0,
+          'depth' => '',
+        ),
+      ),
+      'options_list_callback' => 'content_taxonomy_allowed_values',
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_os2web_taxonomies_cue_word'

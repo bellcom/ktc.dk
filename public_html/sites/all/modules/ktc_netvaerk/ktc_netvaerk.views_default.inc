@@ -222,7 +222,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['group_audience']['field'] = 'group_audience';
   $handler->display->display_options['fields']['group_audience']['label'] = '';
   $handler->display->display_options['fields']['group_audience']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Emner */
+  /* Felt: Felt: Emner */
   $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
   $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
   $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
@@ -259,7 +259,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -342,7 +342,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['fields']['group_audience']['field'] = 'group_audience';
   $handler->display->display_options['fields']['group_audience']['label'] = '';
   $handler->display->display_options['fields']['group_audience']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Emner */
+  /* Felt: Felt: Emner */
   $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
   $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
   $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
@@ -374,7 +374,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -409,7 +409,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -444,7 +444,7 @@ function ktc_netvaerk_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -528,7 +528,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -564,7 +564,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -599,7 +599,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -634,7 +634,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -669,7 +669,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -708,7 +708,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Emner (field_topics) */
+  /* Filterkriterie: Felt: Emner (field_topics) */
   $handler->display->display_options['filters']['field_topics_tid']['id'] = 'field_topics_tid';
   $handler->display->display_options['filters']['field_topics_tid']['table'] = 'field_data_field_topics';
   $handler->display->display_options['filters']['field_topics_tid']['field'] = 'field_topics_tid';
@@ -858,7 +858,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['title']['alter']['text'] = '[title] <span class="type">[type]</span>';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Felt: Handler mangler eller er i stykker */
+  /* Felt: Bruger: Navn */
   $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
   $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
@@ -866,7 +866,7 @@ return implode(\'+\', $top);';
   $handler->display->display_options['fields']['field_navn']['label'] = '';
   $handler->display->display_options['fields']['field_navn']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_navn']['element_label_colon'] = FALSE;
-  /* Felt: Handler mangler eller er i stykker */
+  /* Felt: Bruger: Arbejdsgiver */
   $handler->display->display_options['fields']['field_employer_name']['id'] = 'field_employer_name';
   $handler->display->display_options['fields']['field_employer_name']['table'] = 'field_data_field_employer_name';
   $handler->display->display_options['fields']['field_employer_name']['field'] = 'field_employer_name';
