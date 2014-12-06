@@ -1327,6 +1327,7 @@ function ktc_hearing_field_default_field_instances() {
   $field_instances['node-hearing-og_group_ref'] = array(
     'bundle' => 'hearing',
     'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1372,6 +1373,17 @@ function ktc_hearing_field_default_field_instances() {
           ),
           'status' => TRUE,
         ),
+        'prepopulate' => array(
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+        ),
       ),
       'user_register_form' => FALSE,
     ),
@@ -1389,11 +1401,9 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
       'weight' => 1,
     ),
   );
