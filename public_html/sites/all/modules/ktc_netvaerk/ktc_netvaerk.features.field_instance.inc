@@ -79,7 +79,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -130,7 +130,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -187,7 +187,7 @@ function ktc_netvaerk_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 11,
+        'weight' => 7,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -270,7 +270,7 @@ function ktc_netvaerk_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 22411,
       'file_directory' => 'netvaerk',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '5 MB',
@@ -283,22 +283,6 @@ function ktc_netvaerk_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'imce' => 'imce',
-            'reference' => 0,
-            'remote' => 0,
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'copy',
-            'path' => 'file_attach',
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
-        ),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -531,7 +515,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -593,9 +577,12 @@ function ktc_netvaerk_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
+        'module' => 'og_ui',
+        'settings' => array(
+          'field_name' => FALSE,
+        ),
+        'type' => 'og_group_subscribe',
+        'weight' => 6,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -661,7 +648,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'listevisning' => array(
         'label' => 'above',
