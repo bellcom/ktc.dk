@@ -1,7 +1,7 @@
 name = KTC users
 description = KTC users fields
 core = 7.x
-package = KTC
+package = KTC user
 version = 7.x-1.0
 project = ktc_users
 dependencies[] = ctools
