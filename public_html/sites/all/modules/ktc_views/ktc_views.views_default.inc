@@ -535,7 +535,7 @@ function ktc_views_views_default_views() {
   $view->description = 'Show groups of a user.';
   $view->tag = 'og';
   $view->base_table = 'og_membership';
-  $view->human_name = 'KTC OG User groups';
+  $view->human_name = 'KTC OG User groups and filters';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -749,6 +749,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['break_phrase'] = TRUE;
+  $handler->display->display_options['pane_title'] = 'Mine netværk';
 
   /* Display: KTC users filter groups */
   $handler = $view->new_display('panel_pane', 'KTC users filter groups', 'panel_pane_3');
@@ -769,6 +770,63 @@ function ktc_views_views_default_views() {
 </div>
 <div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="my">Mine netværk</div>
+</div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Felt: Indhold: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Felt: Global: Tilpasset tekst */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="gid-[nid]" data-filter="[nid]" name="filter-gid">[title]</div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Nyt indhold filtrer grupper */
+  $handler = $view->new_display('panel_pane', 'Nyt indhold filtrer grupper', 'panel_pane_4');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'filter-box';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="filter-foldin"> - </div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alt</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -832,6 +890,7 @@ function ktc_views_views_default_views() {
     t('View panes'),
     t('KTC users groups'),
     t('<h2>Mine netværk</h2>'),
+    t('Mine netværk'),
     t('KTC users filter groups'),
     t('<div class="filter-foldin"> - </div>
 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -842,6 +901,11 @@ function ktc_views_views_default_views() {
 </div>'),
     t('<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="gid-[nid]" data-filter="[nid]" name="filter-gid">[title]</div>
+</div>'),
+    t('Nyt indhold filtrer grupper'),
+    t('<div class="filter-foldin"> - </div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alt</div>
 </div>'),
   );
   $export['ktc_og_user_groups'] = $view;
