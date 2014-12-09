@@ -202,15 +202,34 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
     $display = 'panel_pane_5';
   }
 
-  $view = views_get_view('indhold_m_filter');
+  if ($page != 'new_content') {
+    $view = views_get_view('indhold_m_filter');
 
-  $view->set_display($display);
-  $view->set_arguments(
-          array($content_type, $term_type, $emner, $tags, $regioner, $gid)
-        );
-  $view->pre_execute();
-  $view->execute();
-  return $view->render($display);
+    $view->set_display($display);
+    $view->set_arguments(
+            array($content_type, $term_type, $emner, $tags, $regioner, $gid)
+          );
+    $view->pre_execute();
+    $view->execute();
+    return $view->render($display);
+  }
+  // New content page under user profile. Get new (unreaded) content from user group
+  else {
+    if ($gid == 'all') {
+      $ids = og_get_groups_by_user();
+      if (!empty($ids)) {
+        $ids = $ids['node'];
+        $gid = implode('+', array_keys($ids));
+      }
+    }
+    $view = views_get_view('new_content_from_group');
+
+    $view->set_display('panel_pane_1');
+    $view->set_arguments(array($gid, $content_type));
+    $view->pre_execute();
+    $view->execute();
+    return $view->render('panel_pane_1');
+  }
 
 }
 
