@@ -468,6 +468,19 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'meeting_doodle' => 'meeting_doodle',
+    'arrangement' => 'arrangement',
+    'forum_post' => 'forum_post',
+    'document' => 'document',
+    'hearing' => 'hearing',
+    'hearing_responses' => 'hearing_responses',
+    'os2web_base_news' => 'os2web_base_news',
+  );
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');

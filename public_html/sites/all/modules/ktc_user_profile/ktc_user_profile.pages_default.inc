@@ -291,7 +291,11 @@ function ktc_user_profile_default_page_manager_pages() {
     $pane->subtype = 'new_content_from_group-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'items_per_page' => '10',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
