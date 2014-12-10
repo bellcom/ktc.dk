@@ -33,22 +33,6 @@ function ktc_hearing_permission_settings() {
   if (!$vocabulary = taxonomy_vocabulary_machine_name_load('hearing_status')) {
     drupal_set_message('Vocabulary with machinename "hearing_status" is missing', 'error');
   }
-  else {
-    $taxonomy_terms = taxonomy_term_load_multiple(array(), array('vid' => $vocabulary->vid));
-
-    $status_open = array();
-
-    foreach ($taxonomy_terms as $term) {
-      $status_open[$term->tid] = $term->name;
-    }
-
-    $form['ktc_hearing_status_open'] = array(
-      '#title' => 'Høringstatus der tillader svar',
-      '#type' => 'checkboxes',
-      '#options' => $status_open,
-      '#default_value' => variable_get('ktc_hearing_status_open', array()),
-    );
-  }
 
   // Mail settings.
   $form['mail_templates'] = array(

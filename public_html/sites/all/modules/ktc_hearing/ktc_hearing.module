@@ -39,26 +39,26 @@ function ktc_hearing_menu() {
     'file path' => drupal_get_path('module', 'node'),
   );
 
-  $items['node/%node/final_hearing_response'] = array(
+  $items['node/%node/summary_hearing_response'] = array(
     'type' => MENU_LOCAL_TASK,
-    'title' => 'Final answer',
-    'page callback' => 'ktc_hearing_final_responses',
+    'title' => 'Summary answer',
+    'page callback' => 'ktc_hearing_summary_responses',
     'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
-    'access arguments' => array(1, 'final response'),
+    'access arguments' => array(1, 'summary response'),
     'weight' => 15,
     // Include node pages, since we're embedding the node add form.
     'file' => 'node.pages.inc',
     'file path' => drupal_get_path('module', 'node'),
   );
 
-  $items['node/%node/approve_final_hearing_response'] = array(
+  $items['node/%node/approve_summary_hearing_response'] = array(
     'type' => MENU_LOCAL_TASK,
-    'title' => 'Approve final answer',
-    'page callback' => 'ktc_hearing_approve_final_responses',
+    'title' => 'Approve summary answer',
+    'page callback' => 'ktc_hearing_approve_summary_responses',
     'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
-    'access arguments' => array(1, 'approve final response'),
+    'access arguments' => array(1, 'approve summary response'),
     'weight' => 16,
     // Include node pages, since we're embedding the node add form.
     'file' => 'node.pages.inc',
@@ -120,10 +120,10 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
     unset($form['field_hearing_node'][$language][0]['target_id']['#element_validate']);
   }
 
-  if (arg(2) == 'final_hearing_response') {
-    $language = $form['field_is_final']['#language'];
-    $form['field_is_final'][$language]['#default_value'] = 1;
-    $form['title']['#default_value'] = t('Final response') . ': ' . $user_name;
+  if (arg(2) == 'summary_hearing_response') {
+    $language = $form['field_is_summary']['#language'];
+    $form['field_is_summary'][$language]['#default_value'] = 1;
+    $form['title']['#default_value'] = t('Summary response') . ': ' . $user_name;
 
     $form['#submit'][] = 'ktc_hearing_set_status_approval';
 
@@ -218,7 +218,9 @@ function ktc_hearing_node_presave($node) {
       $node->field_status[$language][0]['tid'] = KTC_HEARING_STATUS_OPEN;
     }
 
-    if ($hearing_status == KTC_HEARING_STATUS_APPROVED) {
+    $original_status = ktc_hearing_get_status($node->original);
+
+    if ($hearing_status == KTC_HEARING_STATUS_APPROVED && $original_status != KTC_HEARING_STATUS_APPROVED) {
       ktc_hearing_notify_users('approved', $node);
     }
   }
@@ -233,6 +235,11 @@ function ktc_hearing_access($node, $op) {
   // responses.
   if (arg(0) == 'node' && $op == 'view responses' && $node->type == 'hearing_responses') {
     return FALSE;
+  }
+
+  global $user;
+  if ($user->uid == 1) {
+    return TRUE;
   }
 
   global $user;
@@ -291,9 +298,9 @@ function ktc_hearing_invite_submit(&$form, &$form_state) {
 }
 
 /**
- * Hearing final response page.
+ * Hearing summary response page.
  */
-function ktc_hearing_final_responses($hearing) {
+function ktc_hearing_summary_responses($hearing) {
   if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
     $preface = 'Tryk "Ok" herunder for at skifte høringsstatus til "Under sammenskrivning" og påbegynde sammenskrivning af høringssvar.<br/>';
 
@@ -314,7 +321,7 @@ function ktc_hearing_final_responses($hearing) {
       foreach ($result['node'] as $item) {
         $node = node_load($item->nid);
 
-        if (_ktc_hearing_response_is_final($node)) {
+        if (_ktc_hearing_response_is_summary($node)) {
           continue;
         }
 
@@ -324,6 +331,7 @@ function ktc_hearing_final_responses($hearing) {
 
     $type = 'hearing_responses';
 
+    global $user;
     $node = (object) array(
       'uid' => $user->uid,
       'name' => (isset($user->name) ? $user->name : ''),
@@ -331,8 +339,8 @@ function ktc_hearing_final_responses($hearing) {
       'language' => LANGUAGE_NONE,
     );
 
-    if ($final_response = ktc_hearing_get_final_response($hearing)) {
-      $node = $final_response;
+    if ($summary_response = ktc_hearing_get_summary_response($hearing)) {
+      $node = $summary_response;
     }
 
     $vars['answer_form'] = render(drupal_get_form($type . '_node_form', $node));
@@ -347,16 +355,16 @@ function ktc_hearing_final_responses($hearing) {
 /**
  * Page callback allowing the hearing response to be approved.
  */
-function ktc_hearing_approve_final_responses($hearing) {
-  $final_response = ktc_hearing_get_final_response($hearing);
+function ktc_hearing_approve_summary_responses($hearing) {
+  $summary_response = ktc_hearing_get_summary_response($hearing);
 
   if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVAL) {
     return '<h1>' . t('Godkend endeligt svar') . '</h1>' .
-      render(node_view($final_response)) .
-      render(drupal_get_form('ktc_hearing_approve_final_response_form', $final_response));
+      render(node_view($summary_response)) .
+      render(drupal_get_form('ktc_hearing_approve_summary_response_form', $summary_response));
   }
   if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVED) {
-    return render(node_view($final_response)) .
+    return render(node_view($summary_response)) .
       'Det endelige høringssvar er godkendt.';
   }
   else {
@@ -365,14 +373,14 @@ function ktc_hearing_approve_final_responses($hearing) {
 }
 
 /**
- * Get final response for a hearing.
+ * Get summary response for a hearing.
  */
-function ktc_hearing_get_final_response($hearing) {
-  // Find the final response for a hearing.
+function ktc_hearing_get_summary_response($hearing) {
+  // Find the summary response for a hearing.
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'hearing_responses')
-    ->fieldCondition('field_is_final', 'value', 1)
+    ->fieldCondition('field_is_summary', 'value', 1)
     ->fieldCondition('field_hearing_node', 'target_id', $hearing->nid);
   $result = $query->execute();
 
@@ -385,12 +393,12 @@ function ktc_hearing_get_final_response($hearing) {
 }
 
 /**
- * Approve final response form.
+ * Approve summary response form.
  */
-function ktc_hearing_approve_final_response_form($form, $form_state, $final_response) {
+function ktc_hearing_approve_summary_response_form($form, $form_state, $summary_response) {
   $form = array();
 
-  $hearing = _ktc_hearing_get_hearing_from_response($final_response);
+  $hearing = _ktc_hearing_get_hearing_from_response($summary_response);
 
   $form['hearing_nid'] = array(
     '#type' => 'hidden',
@@ -417,8 +425,8 @@ function ktc_hearing_approve_final_response_form($form, $form_state, $final_resp
  */
 function ktc_hearing_set_status_approval(&$form, &$form_state) {
   if ($form_state['clicked_button']['#parents'][0] == 'send_for_approval') {
-    $final_response = $form['#entity'];
-    $hearing = _ktc_hearing_get_hearing_from_response($final_response);
+    $summary_response = $form['#entity'];
+    $hearing = node_load(arg(1));
 
     $form = array();
     $values['values']['hearing_nid'] = $hearing->nid;
@@ -473,13 +481,14 @@ function ktc_hearing_responses($hearing) {
   $result = $query->execute();
 
   $type = 'hearing_responses';
+  $vars = array();
 
   global $user;
   if (isset($result['node'])) {
     foreach ($result['node'] as $item) {
       $node = node_load($item->nid);
 
-      if (_ktc_hearing_response_is_final($node)) {
+      if (_ktc_hearing_response_is_summary($node)) {
         continue;
       }
 
@@ -638,7 +647,7 @@ function ktc_hearing_notify_users($op, $hearing) {
       $author = user_load($hearing->uid);
       $token_data = array('user' => $author, 'node' => $hearing);
       $to = $author->mail;
-      $language = $user->language;
+      $language = $author->language;
       $role = 'creator';
 
       $mail_templates = ktc_hearing_generate_mail_templates($hearing, $op, array($role));
@@ -717,12 +726,12 @@ function _ktc_hearing_reference_permissions() {
     'chairman' => array(
       'view' => 'view',
       'update' => 'update',
-      'approve final response' => 'approve final response',
+      'approve summary response' => 'approve summary response',
     ),
     'responsible_foreman' => array(
       'view' => 'view',
       'update' => 'update',
-      'approve final response' => 'approve final response',
+      'approve summary response' => 'approve summary response',
     ),
     'responsible_admin' => array(
       'view' => 'view',
@@ -730,7 +739,7 @@ function _ktc_hearing_reference_permissions() {
     ),
     'coordinator' => array(
       'view' => 'view',
-      'final response' => 'final response',
+      'summary response' => 'summary response',
       'view responses' => 'view responses',
       'respond' => 'respond',
       'update' => 'update',
@@ -762,11 +771,11 @@ function _ktc_hearing_account_in_field($uid, $field) {
 }
 
 /**
- * Is response final.
+ * Is response summary.
  */
-function _ktc_hearing_response_is_final($response) {
-  if ($final_field = field_get_items('node', $response, 'field_is_final')) {
-    return $final_field[0]['value'];
+function _ktc_hearing_response_is_summary($response) {
+  if ($summary_field = field_get_items('node', $response, 'field_is_summary')) {
+    return $summary_field[0]['value'];
   }
   return FALSE;
 }
