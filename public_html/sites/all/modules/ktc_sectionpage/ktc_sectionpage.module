@@ -301,7 +301,7 @@ function _ktc_user_comments_content() {
   // Get contents with comments from user's contents, comments, and subscripted contents.
   $ids = _ktc_sectionpage_get_user_related_node_id($user->uid);
 
-  $view = views_get_view('user_content_with_comment');
+  $view = views_get_view('comments');
 
   $view->set_display('panel_pane_1');
   $view->set_arguments(array($ids));
