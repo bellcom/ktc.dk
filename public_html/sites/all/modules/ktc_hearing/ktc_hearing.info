@@ -16,6 +16,7 @@ dependencies[] = list
 dependencies[] = media
 dependencies[] = node
 dependencies[] = number
+dependencies[] = og
 dependencies[] = og_ui
 dependencies[] = options
 dependencies[] = strongarm

@@ -1,45 +1,348 @@
 <?php
 
 function ktc_sectionpage_menu() {
-  $items['ajax/%/view/%/%/%'] = array(
+  $items['ajax/%/view/%/%/%/%/%/%'] = array(
     'page callback' => 'ktc_sectionpage_ajax_view',
     'access arguments' => array('access content'),
-    'page arguments' => array(1, 3, 4, 5),
+    'page arguments' => array(1, 3, 4, 5, 6, 7, 8),
+  );
+
+  $items['my_groups/%/%/%/%'] = array(
+    'page callback' => 'ktc_sectionpage_ajax_my_group_view',
+    'access arguments' => array('access content'),
+    'page arguments' => array(1, 2, 3, 4),
+  );
+
+  $items['all_groups/%/%/%/%'] = array(
+    'page callback' => 'ktc_sectionpage_ajax_all_groups_view',
+    'access arguments' => array('access content'),
+    'page arguments' => array(1, 2, 3, 4),
   );
   return $items;
 }
-function ktc_sectionpage_ajax_view($page, $term1_id, $term2_id = 'all', $term3_id = 'all') {
 
-  switch ($page) {
-    case 'nyheder':
-      $type = 'os2web_base_news';
+function ktc_sectionpage_ajax_my_group_view($f1, $f2, $f3, $f4) {
+  global $user;
+  $term_type = _ktc_sectionpage_filter_helper($f1);
+  $emner = _ktc_sectionpage_filter_helper($f2);
+  $tags = _ktc_sectionpage_filter_helper($f3);
+  $regioner = _ktc_sectionpage_filter_helper($f4);
+  $view = views_get_view('ktc_og_user_groups');
+
+  $view->set_display('panel_pane_2');
+  $view->set_arguments(array($user->uid, $term_type, $emner, $tags, $regioner));
+  $view->pre_execute();
+  $view->execute();
+
+  print $view->render('panel_pane_2');
+}
+
+function ktc_sectionpage_ajax_all_groups_view($f1, $f2, $f3, $f4) {
+  $term_type = _ktc_sectionpage_filter_helper($f1);
+  $emner = _ktc_sectionpage_filter_helper($f2);
+  $tags = _ktc_sectionpage_filter_helper($f3);
+  $regioner = _ktc_sectionpage_filter_helper($f4);
+  $view = views_get_view('section_page_filter_extra');
+
+  $view->set_display('panel_pane_3');
+  $view->set_arguments(array($term_type, $emner, $tags, $regioner));
+  $view->pre_execute();
+  $view->execute();
+
+  print $view->render('panel_pane_3');
+
+}
+
+function ktc_sectionpage_ajax_view($page, $f1, $f2, $f3, $f4, $f5, $gid) {
+
+  $output = _ktc_content_filter_view($page, $f1, $f2, $f3, $f4, $f5, $gid);
+  print $output;
+
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function ktc_sectionpage_block_info() {
+  $blocks = array();
+
+  $blocks['arrangement_page_block'] = array(
+    'info' => t('Aktiviteter page block'),
+  );
+
+  $blocks['hearing_page_block'] = array(
+    'info' => t('Høring page block'),
+  );
+
+  $blocks['netvaerk_invite_links'] = array(
+    'info' => t('Netvaerk invite links'),
+  );
+
+  $blocks['section_default_content'] = array(
+    'info' => t('KTC sectionpage standard indhold'),
+  );
+
+  return $blocks;
+}
+/**
+ * Implements hook_block_view().
+ */
+function ktc_sectionpage_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+
+    case 'arrangement_page_block':
+      $block['subject'] = '';
+      $block['content'] = _ktc_section_block_arrangement_content();
       break;
 
-    case 'netvaerk':
-      $type = 'group';
+    case 'hearing_page_block':
+      $block['subject'] = '';
+      $block['content'] = _ktc_section_block_hearing_content();
       break;
 
-    case 'aktiviteter':
-      $type = 'arrangement';
+    case 'netvaerk_invite_links':
+      $block['subject'] = '';
+      $block['content'] = _ktc_section_block_netvaerk_invite_links_content();
       break;
 
-    case 'hoeringer':
-      $type = 'hearing';
-      break;
-
-    case 'teksnik-miljoe':
-      $type = 'all';
+    case 'section_default_content':
+      $block['subject'] = '';
+      $block['content'] = _ktc_content_filter_view();
       break;
   }
+  return $block;
+}
 
+function _ktc_section_block_arrangement_content($filter_value = '') {
+  $filter_ar = explode(',', $filter_value);
+  $filter = '';
+  if (empty($filter_ar)) {
+    return '';
+  }
+  foreach ($filter_ar as $value) {
+    if ($value == 'all' || $value == '') {
+      continue;
+    }
+    if (is_numeric($tid = str_replace('tid-', '', $value))) {
+      if ($term = taxonomy_term_load($tid)) {
+        if ($filter == '') {
+          $filter = $tid;
+        }
+        else {
+          $filter .= '+' . $tid;
+        }
+      }
+    }
+    // TODO :Here commes "kommende, afholdte" string filter.
+
+  }
+  if ($filter == '') {
+    $filter = 'all';
+  }
   $view = views_get_view('indhold_m_filter');
-  $view->set_display('panel_pane_1');
-
-  $view->set_arguments(array($type, $term1_id, $term2_id, $term3_id));
-  /*if ($item) {
-    $view->set_items_per_page($item);
-  }*/
+  $view->set_display('panel_pane_5');
+  $view->set_arguments(array('arrangement', $filter));
+  $view->pre_execute();
   $view->execute();
-  print $view->render('panel_pane_1');
+  return $view->render('panel_pane_5');
+}
 
+function _ktc_section_block_hearing_content($filter_value = '') {
+  return '';
+}
+
+function _ktc_section_block_netvaerk_invite_links_content() {
+  $nid = arg(1);
+  $html = '';
+  if (is_numeric($nid)) {
+    if ($access = og_user_access('node', $nid, 'invite any user')) {
+      $node = node_load($nid);
+      $html .= '<div class="col-md-12 col-sm-12 col-xs-12">
+  <a class="btn filter-link btn-blacknblue" href="/group/node/' . $nid . '/admin/people/invite-users?destination=node/' . $nid . '">' . t('Inviter') . '</a>
+  </div>';
+
+    }
+  }
+  return $html;
+}
+
+function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 = '', $f5 = '', $gid = '') {
+  $content_type = _ktc_sectionpage_filter_helper($f1);
+  $term_type = _ktc_sectionpage_filter_helper($f2);
+  $emner = _ktc_sectionpage_filter_helper($f3);
+  $tags = _ktc_sectionpage_filter_helper($f4);
+  $regioner = _ktc_sectionpage_filter_helper($f5);
+  $gid = _ktc_sectionpage_group_filter_helper($gid);
+
+  if (strpos($content_type, 'document') === FALSE) {
+    if (strpos($content_type, 'all') === FALSE) {
+      $term_type = _ktc_sectionpage_check_document_term($term_type);
+    }
+  }
+  if ($page == '') {
+    $page = arg(0);
+  }
+
+  $display = 'panel_pane_4';
+  if ($page == 'hoeringer' || arg(0) == 'hoeringer') {
+    $content_type = 'hearing';
+    $display = 'panel_pane_5';
+  }
+
+  if ($page == 'nyheder' || arg(0) == 'nyheder') {
+    $content_type = 'os2web_base_news';
+    $display = 'panel_pane_5';
+  }
+  if ($page == 'netvaerk' || arg(0) == 'netvaerk') {
+    if ($gids_netvaerk_type = _ktc_sectionpage_get_gids_from_group_types($term_type)) {
+      $gid = $gids_netvaerk_type;
+    }
+    $term_type = 'all';
+    $display = 'panel_pane_5';
+  }
+
+  if ($page != 'new_content') {
+    $view = views_get_view('indhold_m_filter');
+
+    $view->set_display($display);
+    $view->set_arguments(
+            array($content_type, $term_type, $emner, $tags, $regioner, $gid)
+          );
+    $view->pre_execute();
+    $view->execute();
+    return $view->render($display);
+  }
+  // New content page under user profile. Get new (unreaded) content from user group
+  else {
+    if ($gid == 'all') {
+      $ids = og_get_groups_by_user();
+      if (!empty($ids)) {
+        $ids = $ids['node'];
+        $gid = implode('+', array_keys($ids));
+      }
+    }
+    $view = views_get_view('new_content_from_group');
+
+    $view->set_display('panel_pane_1');
+    $view->set_arguments(array($gid, $content_type));
+    $view->pre_execute();
+    $view->execute();
+    return $view->render('panel_pane_1');
+  }
+
+}
+
+function _ktc_sectionpage_filter_helper($filter) {
+  $filter_value = '';
+  $filter_ar = explode(',', $filter);
+  $is_term = TRUE;
+  if (count($filter_ar) < 1) {
+    return $filter_value = 'all';
+  }
+  foreach ($filter_ar as $value) {
+    if (!is_numeric($value)) {
+      $is_term = FALSE;
+    }
+    if ($value == 'all' || $value == '') {
+      continue;
+    }
+
+    if ($filter_value == '') {
+      $filter_value = $value;
+    }
+    else {
+      $filter_value .= '+' . $value;
+    }
+  }
+  if ($filter_value == '') {
+    $filter_value = 'all';
+  }
+  if (!$is_term && $filter_value == '') {
+    $filter_value = 'os2web_base_news+document+hearing+forum_post+arrangement+meeting_doodle';
+  }
+  return $filter_value;
+}
+
+function _ktc_sectionpage_check_document_term($term_type) {
+  if ($term_type == 'all') {
+    return $term_type;
+  }
+  $filter_ar = explode('+', $term_type);
+  foreach ($filter_ar as $tid) {
+    $term = taxonomy_term_load($tid);
+    if ($term->vocabulary_machine_name == 'dokument') {
+      $filter_ar = array_pop($filter_ar);
+    }
+  }
+  $term_type = implode('+', $filter_ar);
+  if (!$term_type) {
+    $term_type = 'all';
+  }
+  return $term_type;
+}
+
+function _ktc_sectionpage_group_filter_helper($gid) {
+  $filter_value = '';
+
+  if ($gid == 'all,') {
+    return $filter_value = 'all';
+  }
+  if ($gid == 'my,') {
+    // Get user's group IDs.
+    $ids = og_get_groups_by_user();
+    if (!empty($ids)) {
+      $ids = $ids['node'];
+      $filter_value = implode('+', array_keys($ids));
+    }
+    return $filter_value;
+  }
+  $filter_ar = explode(',', $gid);
+  foreach ($filter_ar as $value) {
+    if ($value == '') {
+      continue;
+    }
+    if (is_numeric($value)) {
+      if ($filter_value == '') {
+        $filter_value = $value;
+      }
+      else {
+        $filter_value .= '+' . $value;
+      }
+    }
+  }
+  if ($filter_value == '') {
+    $filter_value = 'all';
+  }
+  return $filter_value;
+}
+
+function _ktc_sectionpage_get_gids_from_group_types($term_type) {
+  $gids_ar = array();
+  $gids = FALSE;
+  if ($term_type == 'all') {
+    return FALSE;
+  }
+
+  $tids = explode('+', $term_type);
+
+  if (!empty($tids)) {
+    foreach ($tids as $tid) {
+      $query = db_select('field_data_field_netvaerkstype', 'n')
+        ->fields('n', array('entity_id'))
+        ->condition('field_netvaerkstype_tid', $tid, '=')
+        ->condition('bundle', 'group', '=');
+      $result = $query->execute();
+      if ($result->rowCount() > 0) {
+        while ($record = $result->fetchAssoc()) {
+          $gids_ar[] = $record['entity_id'];
+        }
+      }
+    }
+  }
+
+  if (!empty($gids_ar)) {
+    $gids = implode('+', $gids_ar);
+  }
+  return $gids;
 }

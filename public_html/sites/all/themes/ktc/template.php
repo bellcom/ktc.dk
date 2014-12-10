@@ -395,6 +395,16 @@ function ktc_menu_link(array $variables) {
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
+
+function ktc_menu_link__menu_user_profile_menu(array $variables) {
+
+  $element = $variables['element'];
+
+  $element['#attributes']['class'][] = 'col-md-6 col-sm-6 col-xs-12';
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . "</li>\n";
+
+}
 /**
  * Theme function to output tablinks for classic Quicktabs style tabs.
  *

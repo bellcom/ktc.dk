@@ -5,6 +5,508 @@
  */
 
 /**
+ * Implements hook_default_page_manager_handlers().
+ */
+function ktc_netvaerk_default_page_manager_handlers() {
+  $export = array();
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view_panel_context_3';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 2;
+  $handler->conf = array(
+    'title' => 'Netvaerk',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'group' => 'group',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'ktcstd';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+      'bottom' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title';
+  $display->uuid = '8b19db21-bf99-47f2-82bd-fc5c89829235';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-ed4b7fb2-fc52-40b8-a3f8-fae4fd66294c';
+    $pane->panel = 'left';
+    $pane->type = 'node_title';
+    $pane->subtype = 'node_title';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'link' => 0,
+      'markup' => 'h2',
+      'id' => '',
+      'class' => '',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ed4b7fb2-fc52-40b8-a3f8-fae4fd66294c';
+    $display->content['new-ed4b7fb2-fc52-40b8-a3f8-fae4fd66294c'] = $pane;
+    $display->panels['left'][0] = 'new-ed4b7fb2-fc52-40b8-a3f8-fae4fd66294c';
+    $pane = new stdClass();
+    $pane->pid = 'new-d0b8119a-9d09-489b-a153-b01f52a8420a';
+    $pane->panel = 'left';
+    $pane->type = 'node_create_links';
+    $pane->subtype = 'node_create_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'types' => array(
+        'arrangement' => 'arrangement',
+        'forum_post' => 'forum_post',
+        'os2web_base_news' => 'os2web_base_news',
+        'hearing' => 'hearing',
+        'document' => 'document',
+        'meeting_doodle' => 'meeting_doodle',
+      ),
+      'field_name' => 'og_group_ref',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '+ Opret indhold',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-8 col-sm-8 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'd0b8119a-9d09-489b-a153-b01f52a8420a';
+    $display->content['new-d0b8119a-9d09-489b-a153-b01f52a8420a'] = $pane;
+    $display->panels['left'][1] = 'new-d0b8119a-9d09-489b-a153-b01f52a8420a';
+    $pane = new stdClass();
+    $pane->pid = 'new-69eedfb2-c333-4fb7-9822-0c0f95673afb';
+    $pane->panel = 'left';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_groupimage';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'slideshow',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'slideshow_image_style' => '',
+        'slideshow_link' => '',
+        'slideshow_caption' => '',
+        'slideshow_caption_link' => '',
+        'slideshow_fx' => 'fade',
+        'slideshow_speed' => '1000',
+        'slideshow_timeout' => '4000',
+        'slideshow_order' => '',
+        'slideshow_controls' => 0,
+        'slideshow_controls_pause' => 0,
+        'slideshow_controls_position' => 'after',
+        'slideshow_pause' => 0,
+        'slideshow_start_on_hover' => 0,
+        'slideshow_pager' => '',
+        'slideshow_pager_position' => 'after',
+        'slideshow_pager_image_style' => '',
+        'slideshow_carousel_image_style' => '',
+        'slideshow_carousel_visible' => '3',
+        'slideshow_carousel_scroll' => '1',
+        'slideshow_carousel_speed' => '500',
+        'slideshow_carousel_vertical' => 0,
+        'slideshow_carousel_circular' => 0,
+        'slideshow_carousel_follow' => 0,
+        'slideshow_carousel_skin' => '',
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-4 col-sm-4 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '69eedfb2-c333-4fb7-9822-0c0f95673afb';
+    $display->content['new-69eedfb2-c333-4fb7-9822-0c0f95673afb'] = $pane;
+    $display->panels['left'][2] = 'new-69eedfb2-c333-4fb7-9822-0c0f95673afb';
+    $pane = new stdClass();
+    $pane->pid = 'new-c2075e66-4122-4e9d-9d23-b7cc17d69f09';
+    $pane->panel = 'left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'indhold_m_filter-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'items_per_page' => '20',
+      'arguments' => array(
+        'type' => 'os2web_base_news+document+hearing+forum_post+arrangement+meeting_doodle',
+        'term_node_tid_depth_1' => 'all',
+        'term_node_tid_depth' => 'all',
+        'term_node_tid_depth_2' => 'all',
+        'term_node_tid_depth_3' => 'all',
+        'og_group_ref_target_id' => '%node:nid',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'section-page-with-filter',
+      'css_class' => 'col-md-8 col-sm-8 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'c2075e66-4122-4e9d-9d23-b7cc17d69f09';
+    $display->content['new-c2075e66-4122-4e9d-9d23-b7cc17d69f09'] = $pane;
+    $display->panels['left'][3] = 'new-c2075e66-4122-4e9d-9d23-b7cc17d69f09';
+    $pane = new stdClass();
+    $pane->pid = 'new-4772cfee-5c44-4a17-ade4-2409b8379417';
+    $pane->panel = 'left';
+    $pane->type = 'node_body';
+    $pane->subtype = 'node_body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-4 col-sm-4 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '4772cfee-5c44-4a17-ade4-2409b8379417';
+    $display->content['new-4772cfee-5c44-4a17-ade4-2409b8379417'] = $pane;
+    $display->panels['left'][4] = 'new-4772cfee-5c44-4a17-ade4-2409b8379417';
+    $pane = new stdClass();
+    $pane->pid = 'new-84c9f392-3e5f-4384-831f-49ea35b8c69f';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_sectionpage-netvaerk_invite_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-2 col-xs-2 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '84c9f392-3e5f-4384-831f-49ea35b8c69f';
+    $display->content['new-84c9f392-3e5f-4384-831f-49ea35b8c69f'] = $pane;
+    $display->panels['left'][5] = 'new-84c9f392-3e5f-4384-831f-49ea35b8c69f';
+    $pane = new stdClass();
+    $pane->pid = 'new-27587b2e-89d8-487b-82d3-8f96c536f03b';
+    $pane->panel = 'left';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:group_group';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'og_group_subscribe',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'field_name' => '0',
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-2 col-sm-2 col-xs-6',
+    );
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '27587b2e-89d8-487b-82d3-8f96c536f03b';
+    $display->content['new-27587b2e-89d8-487b-82d3-8f96c536f03b'] = $pane;
+    $display->panels['left'][6] = 'new-27587b2e-89d8-487b-82d3-8f96c536f03b';
+    $pane = new stdClass();
+    $pane->pid = 'new-35abb797-3fee-48e9-be76-e150a6c69f17';
+    $pane->panel = 'left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ktc_og_members-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Administratorer af dette netværk ',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-4 col-sm-4 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = '35abb797-3fee-48e9-be76-e150a6c69f17';
+    $display->content['new-35abb797-3fee-48e9-be76-e150a6c69f17'] = $pane;
+    $display->panels['left'][7] = 'new-35abb797-3fee-48e9-be76-e150a6c69f17';
+    $pane = new stdClass();
+    $pane->pid = 'new-31085aa1-df03-4a1d-96af-6ecbcd990abd';
+    $pane->panel = 'left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'og_members-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Medlemmer af dette netværk',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-4 col-sm-4 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 8;
+    $pane->locks = array();
+    $pane->uuid = '31085aa1-df03-4a1d-96af-6ecbcd990abd';
+    $display->content['new-31085aa1-df03-4a1d-96af-6ecbcd990abd'] = $pane;
+    $display->panels['left'][8] = 'new-31085aa1-df03-4a1d-96af-6ecbcd990abd';
+    $pane = new stdClass();
+    $pane->pid = 'new-b6f26677-5782-4ef8-800c-9ebfb7fb8497';
+    $pane->panel = 'right';
+    $pane->type = 'page_tabs';
+    $pane->subtype = 'page_tabs';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'type' => 'primary',
+      'id' => 'edit-tabs',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b6f26677-5782-4ef8-800c-9ebfb7fb8497';
+    $display->content['new-b6f26677-5782-4ef8-800c-9ebfb7fb8497'] = $pane;
+    $display->panels['right'][0] = 'new-b6f26677-5782-4ef8-800c-9ebfb7fb8497';
+    $pane = new stdClass();
+    $pane->pid = 'new-6dafa2df-80bf-49e5-9fd0-23c5528fcb38';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter_extra-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer indholdet i gruppen',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'content_type',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '6dafa2df-80bf-49e5-9fd0-23c5528fcb38';
+    $display->content['new-6dafa2df-80bf-49e5-9fd0-23c5528fcb38'] = $pane;
+    $display->panels['right'][1] = 'new-6dafa2df-80bf-49e5-9fd0-23c5528fcb38';
+    $pane = new stdClass();
+    $pane->pid = 'new-6d7c5aa8-a32f-4342-acf5-16ff47e29f49';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '9',
+      'offset' => '0',
+      'arguments' => array(
+        'vid' => '10',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Dokumenttype',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'term_type',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '6d7c5aa8-a32f-4342-acf5-16ff47e29f49';
+    $display->content['new-6d7c5aa8-a32f-4342-acf5-16ff47e29f49'] = $pane;
+    $display->panels['right'][2] = 'new-6d7c5aa8-a32f-4342-acf5-16ff47e29f49';
+    $pane = new stdClass();
+    $pane->pid = 'new-48c40320-de83-4c7a-94d1-ebdb120fe697';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '9',
+      'offset' => '0',
+      'arguments' => array(
+        'vid' => '4',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer på emne',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'emner',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '48c40320-de83-4c7a-94d1-ebdb120fe697';
+    $display->content['new-48c40320-de83-4c7a-94d1-ebdb120fe697'] = $pane;
+    $display->panels['right'][3] = 'new-48c40320-de83-4c7a-94d1-ebdb120fe697';
+    $pane = new stdClass();
+    $pane->pid = 'new-432c93cb-91e2-4f95-a1e1-827cf78be611';
+    $pane->panel = 'right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '%node:nid',
+      'format' => 'plain_text',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'content_id',
+      'css_class' => 'hidden',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '432c93cb-91e2-4f95-a1e1-827cf78be611';
+    $display->content['new-432c93cb-91e2-4f95-a1e1-827cf78be611'] = $pane;
+    $display->panels['right'][4] = 'new-432c93cb-91e2-4f95-a1e1-827cf78be611';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view_panel_context_3'] = $handler;
+
+  return $export;
+}
+
+/**
  * Implements hook_default_page_manager_pages().
  */
 function ktc_netvaerk_default_page_manager_pages() {
@@ -68,20 +570,62 @@ function ktc_netvaerk_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-ca0e33d2-ca38-48a9-8f4d-41b8b85eb73b';
+    $pane->pid = 'new-ea15f9c9-765a-44d7-90b8-23d2e188ad34';
     $pane->panel = 'left';
     $pane->type = 'views_panes';
-    $pane->subtype = 'indhold_m_filter-panel_pane_1';
+    $pane->subtype = 'ktc_og_user_groups-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'section-page-with-filter-my-groups',
+      'css_class' => 'col-md-6 col-s-6 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ea15f9c9-765a-44d7-90b8-23d2e188ad34';
+    $display->content['new-ea15f9c9-765a-44d7-90b8-23d2e188ad34'] = $pane;
+    $display->panels['left'][0] = 'new-ea15f9c9-765a-44d7-90b8-23d2e188ad34';
+    $pane = new stdClass();
+    $pane->pid = 'new-fa007e67-f170-4084-a1f9-6341dc668521';
+    $pane->panel = 'left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter_extra-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'arguments' => array(
-        'type' => 'os2web_base_news+forum_post+page+arrangement+meeting_doodle+document',
-        'term_node_tid_depth' => 'all',
-        'term_node_tid_depth_1' => 'all',
-        'term_node_tid_depth_2' => 'all',
-      ),
-      'items_per_page' => '20',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'section-page-with-filter-all-groups',
+      'css_class' => 'col-md-6 col-s-6 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'fa007e67-f170-4084-a1f9-6341dc668521';
+    $display->content['new-fa007e67-f170-4084-a1f9-6341dc668521'] = $pane;
+    $display->panels['left'][1] = 'new-fa007e67-f170-4084-a1f9-6341dc668521';
+    $pane = new stdClass();
+    $pane->pid = 'new-d74d4c00-3b60-4ef8-afce-e543d8bd0f3a';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_sectionpage-section_default_content';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -89,14 +633,65 @@ function ktc_netvaerk_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
+      'css_class' => 'col-md-12 col-sm-12 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'd74d4c00-3b60-4ef8-afce-e543d8bd0f3a';
+    $display->content['new-d74d4c00-3b60-4ef8-afce-e543d8bd0f3a'] = $pane;
+    $display->panels['left'][2] = 'new-d74d4c00-3b60-4ef8-afce-e543d8bd0f3a';
+    $pane = new stdClass();
+    $pane->pid = 'new-71d180bd-301f-436e-a2e5-ad4589321508';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ktc_og_user_groups-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'items_per_page' => '6',
+      'override_title' => 1,
+      'override_title_text' => 'Netværk',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'groups',
       'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'ca0e33d2-ca38-48a9-8f4d-41b8b85eb73b';
-    $display->content['new-ca0e33d2-ca38-48a9-8f4d-41b8b85eb73b'] = $pane;
-    $display->panels['left'][0] = 'new-ca0e33d2-ca38-48a9-8f4d-41b8b85eb73b';
+    $pane->uuid = '71d180bd-301f-436e-a2e5-ad4589321508';
+    $display->content['new-71d180bd-301f-436e-a2e5-ad4589321508'] = $pane;
+    $display->panels['right'][0] = 'new-71d180bd-301f-436e-a2e5-ad4589321508';
+    $pane = new stdClass();
+    $pane->pid = 'new-ad5de7f6-c231-465e-97a5-915771f30a4b';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter_extra-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer på type',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'content_type',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'ad5de7f6-c231-465e-97a5-915771f30a4b';
+    $display->content['new-ad5de7f6-c231-465e-97a5-915771f30a4b'] = $pane;
+    $display->panels['right'][1] = 'new-ad5de7f6-c231-465e-97a5-915771f30a4b';
     $pane = new stdClass();
     $pane->pid = 'new-7a795114-b3b8-469b-b134-d29e5edb9f3f';
     $pane->panel = 'right';
@@ -113,22 +708,86 @@ function ktc_netvaerk_default_page_manager_pages() {
         'vid' => '4',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Filtrer på faglige emner',
+      'override_title_text' => 'Filtrer på emner',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => 'filter-1',
+      'css_id' => 'emner',
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '7a795114-b3b8-469b-b134-d29e5edb9f3f';
     $display->content['new-7a795114-b3b8-469b-b134-d29e5edb9f3f'] = $pane;
-    $display->panels['right'][0] = 'new-7a795114-b3b8-469b-b134-d29e5edb9f3f';
+    $display->panels['right'][2] = 'new-7a795114-b3b8-469b-b134-d29e5edb9f3f';
+    $pane = new stdClass();
+    $pane->pid = 'new-bde1ec35-344e-4376-8dd8-fc5bcb421a1e';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '9',
+      'offset' => '0',
+      'arguments' => array(
+        'vid' => '11',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer på netværkstyper',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'term_type',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'bde1ec35-344e-4376-8dd8-fc5bcb421a1e';
+    $display->content['new-bde1ec35-344e-4376-8dd8-fc5bcb421a1e'] = $pane;
+    $display->panels['right'][3] = 'new-bde1ec35-344e-4376-8dd8-fc5bcb421a1e';
+    $pane = new stdClass();
+    $pane->pid = 'new-4a5bbdb0-e94c-4d85-b903-10cdff053bcc';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '9',
+      'offset' => '0',
+      'arguments' => array(
+        'vid' => '2',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer på regioner',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'regioner',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '4a5bbdb0-e94c-4d85-b903-10cdff053bcc';
+    $display->content['new-4a5bbdb0-e94c-4d85-b903-10cdff053bcc'] = $pane;
+    $display->panels['right'][4] = 'new-4a5bbdb0-e94c-4d85-b903-10cdff053bcc';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
