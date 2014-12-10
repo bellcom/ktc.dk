@@ -1,5 +1,12 @@
 <?php
+/**
+ * @file
+ * Code for the KTC sectionpage module.
+ */
 
+/**
+ * Implements hook_menu().
+ */
 function ktc_sectionpage_menu() {
   $items['ajax/%/view/%/%/%/%/%/%'] = array(
     'page callback' => 'ktc_sectionpage_ajax_view',
@@ -21,6 +28,9 @@ function ktc_sectionpage_menu() {
   return $items;
 }
 
+/**
+ * My groups ajax view call back.
+ */
 function ktc_sectionpage_ajax_my_group_view($f1, $f2, $f3, $f4) {
   global $user;
   $term_type = _ktc_sectionpage_filter_helper($f1);
@@ -37,6 +47,9 @@ function ktc_sectionpage_ajax_my_group_view($f1, $f2, $f3, $f4) {
   print $view->render('panel_pane_2');
 }
 
+/**
+ * All groups ajax view call back.
+ */
 function ktc_sectionpage_ajax_all_groups_view($f1, $f2, $f3, $f4) {
   $term_type = _ktc_sectionpage_filter_helper($f1);
   $emner = _ktc_sectionpage_filter_helper($f2);
@@ -53,6 +66,18 @@ function ktc_sectionpage_ajax_all_groups_view($f1, $f2, $f3, $f4) {
 
 }
 
+/**
+ * Default ajax view call back.
+ *
+ * @param string $page
+ *   last part in the url.
+ *        string $f1 content_type
+ *        string $f2: term_type (like document type, group type, news type ...)
+ *        string $f3: emner (field_topics)
+ *        string $f4: tags (field_tags)
+ *        string $f5: regioner
+ *        string $gid: group ids.
+ */
 function ktc_sectionpage_ajax_view($page, $f1, $f2, $f3, $f4, $f5, $gid) {
 
   $output = _ktc_content_filter_view($page, $f1, $f2, $f3, $f4, $f5, $gid);
@@ -82,6 +107,9 @@ function ktc_sectionpage_block_info() {
     'info' => t('KTC sectionpage standard indhold'),
   );
 
+  $blocks['user_comments_block'] = array(
+    'info' => t('KTC user comments block'),
+  );
   return $blocks;
 }
 /**
@@ -110,10 +138,17 @@ function ktc_sectionpage_block_view($delta = '') {
       $block['subject'] = '';
       $block['content'] = _ktc_content_filter_view();
       break;
+
+    case 'user_comments_block':
+      $block['subject'] = '';
+      $block['content'] = _ktc_user_comments_content();
+      break;
   }
   return $block;
 }
-
+/**
+ * Arrangement block_view call back.
+ */
 function _ktc_section_block_arrangement_content($filter_value = '') {
   $filter_ar = explode(',', $filter_value);
   $filter = '';
@@ -148,10 +183,15 @@ function _ktc_section_block_arrangement_content($filter_value = '') {
   return $view->render('panel_pane_5');
 }
 
+/**
+ * Hearing block_view call back.
+ */
 function _ktc_section_block_hearing_content($filter_value = '') {
   return '';
 }
-
+/**
+ * Group invite link block_view call back.
+ */
 function _ktc_section_block_netvaerk_invite_links_content() {
   $nid = arg(1);
   $html = '';
@@ -167,6 +207,9 @@ function _ktc_section_block_netvaerk_invite_links_content() {
   return $html;
 }
 
+/**
+ * Default filter block_view call back.
+ */
 function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 = '', $f5 = '', $gid = '') {
   $content_type = _ktc_sectionpage_filter_helper($f1);
   $term_type = _ktc_sectionpage_filter_helper($f2);
@@ -175,33 +218,48 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
   $regioner = _ktc_sectionpage_filter_helper($f5);
   $gid = _ktc_sectionpage_group_filter_helper($gid);
 
+  // If the content type:document does not included in the content_type,
+  // remove the document type from term_type filter value.
   if (strpos($content_type, 'document') === FALSE) {
     if (strpos($content_type, 'all') === FALSE) {
       $term_type = _ktc_sectionpage_check_document_term($term_type);
     }
   }
+
   if ($page == '') {
     $page = arg(0);
   }
 
+  // Default content_pane from view "indhold_m_filter".
+  // Content displays in two columns.
   $display = 'panel_pane_4';
+
   if ($page == 'hoeringer' || arg(0) == 'hoeringer') {
     $content_type = 'hearing';
+    // Content displays in one columns.
     $display = 'panel_pane_5';
   }
 
   if ($page == 'nyheder' || arg(0) == 'nyheder') {
     $content_type = 'os2web_base_news';
-    $display = 'panel_pane_5';
-  }
-  if ($page == 'netvaerk' || arg(0) == 'netvaerk') {
-    if ($gids_netvaerk_type = _ktc_sectionpage_get_gids_from_group_types($term_type)) {
-      $gid = $gids_netvaerk_type;
-    }
-    $term_type = 'all';
+    // Content displays in one columns.
     $display = 'panel_pane_5';
   }
 
+  if ($page == 'netvaerk' || arg(0) == 'netvaerk') {
+    // Netvaerk section includes a group type filter.
+    // Get the group ids from group type(s).
+    if ($gids_netvaerk_type = _ktc_sectionpage_get_gids_from_group_types($term_type)) {
+      $gid = $gids_netvaerk_type;
+    }
+    // So there are no other term_type filters,
+    // set value to all to exclude context filter in view.
+    $term_type = 'all';
+    // Content displays in one columns.
+    $display = 'panel_pane_5';
+  }
+
+  // Excluede profile subpage user/group/new_content.
   if ($page != 'new_content') {
     $view = views_get_view('indhold_m_filter');
 
@@ -213,7 +271,8 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
     $view->execute();
     return $view->render($display);
   }
-  // New content page under user profile. Get new (unreaded) content from user group
+  // Profile subpage user/group/new_content.
+  // Get new (unreaded/updated) content from user's groups.
   else {
     if ($gid == 'all') {
       $ids = og_get_groups_by_user();
@@ -233,13 +292,36 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
 
 }
 
+/**
+ * User comments block_view call back.
+ */
+function _ktc_user_comments_content() {
+  global $user;
+  // Profile subpage user/user_comments.
+  // Get contents with comments from user's contents, comments, and subscripted contents.
+  $ids = _ktc_sectionpage_get_user_related_node_id($user->uid);
+
+  $view = views_get_view('user_content_with_comment');
+
+  $view->set_display('panel_pane_1');
+  $view->set_arguments(array($ids));
+  $view->pre_execute();
+  $view->execute();
+  return $view->render('panel_pane_1');
+}
+/**
+ * Filter helper.
+ */
 function _ktc_sectionpage_filter_helper($filter) {
   $filter_value = '';
   $filter_ar = explode(',', $filter);
   $is_term = TRUE;
+
+  // Default filer value = all.
   if (count($filter_ar) < 1) {
     return $filter_value = 'all';
   }
+
   foreach ($filter_ar as $value) {
     if (!is_numeric($value)) {
       $is_term = FALSE;
@@ -255,15 +337,21 @@ function _ktc_sectionpage_filter_helper($filter) {
       $filter_value .= '+' . $value;
     }
   }
+
+  // Default filer value = all.
   if ($filter_value == '') {
     $filter_value = 'all';
   }
+
+  // Default content_type value.
   if (!$is_term && $filter_value == '') {
     $filter_value = 'os2web_base_news+document+hearing+forum_post+arrangement+meeting_doodle';
   }
   return $filter_value;
 }
-
+/**
+ * Remove document type (term) from the term_type.
+ */
 function _ktc_sectionpage_check_document_term($term_type) {
   if ($term_type == 'all') {
     return $term_type;
@@ -281,7 +369,9 @@ function _ktc_sectionpage_check_document_term($term_type) {
   }
   return $term_type;
 }
-
+/**
+ * Group filter helper.
+ */
 function _ktc_sectionpage_group_filter_helper($gid) {
   $filter_value = '';
 
@@ -297,6 +387,7 @@ function _ktc_sectionpage_group_filter_helper($gid) {
     }
     return $filter_value;
   }
+
   $filter_ar = explode(',', $gid);
   foreach ($filter_ar as $value) {
     if ($value == '') {
@@ -316,7 +407,9 @@ function _ktc_sectionpage_group_filter_helper($gid) {
   }
   return $filter_value;
 }
-
+/**
+ * Get gids from group types.
+ */
 function _ktc_sectionpage_get_gids_from_group_types($term_type) {
   $gids_ar = array();
   $gids = FALSE;
@@ -345,4 +438,21 @@ function _ktc_sectionpage_get_gids_from_group_types($term_type) {
     $gids = implode('+', $gids_ar);
   }
   return $gids;
+}
+
+function _ktc_sectionpage_get_user_related_node_id($uid) {
+  $id = '';
+  $ids = array();
+  $query = 'SELECT n.nid FROM {node} n,{comment} c WHERE n.uid = :uid AND n.nid = c.nid
+              UNION SELECT c2.nid FROM {comment} c2 WHERE c2.uid = :uid
+              UNION SELECT cast(s.value as UNSIGNED) AS nid FROM subscriptions s
+              WHERE s.field = :nid AND s.recipient_uid = :uid';
+  $result = db_query($query, array('uid' => $uid, 'nid' => 'nid'))->fetchAll();
+  if ($result) {
+    foreach ($result as $node) {
+      $ids[] = $node->nid;
+    }
+    $id = implode('+', $ids);
+  }
+  return $id;
 }
