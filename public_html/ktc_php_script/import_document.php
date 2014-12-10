@@ -68,7 +68,18 @@ function getDocmentElements($type, $filename) {
           $node->field_tags[LANGUAGE_NONE][$key]['tid'] = $value;
         }
       }
-      // <forfatteruid> <body> <nid> Get from feeds import.
+      // <forfatteruid>
+      if (is_numeric($data->children('forfatteruid')->text())) {
+        $node->field_news_author[LANGUAGE_NONE][0]['value'] = $data->children('forfatteruid')->text();
+        if ($uid = get_new_uid($data->children('forfatteruid')->text())) {
+          $node->uid = $uid;
+        }
+        else {
+          $node->uid = 1;
+
+        }
+      }
+      //<body> <nid> Get from feeds import.
 
       // <group_content_access>
       if (isset($node->group_content_access) && is_numeric($data->children('group_content_access')->text())) {
@@ -76,7 +87,7 @@ function getDocmentElements($type, $filename) {
       }
 
       // Files, documents.
-
+      /*
       if (isset($node->field_os2web_base_field_media)) {
         $files = $data->children('fil')->text();
         $files_ar = explode(',', $files);
@@ -106,7 +117,8 @@ function getDocmentElements($type, $filename) {
             }
           }
         }
-      }
+      }*/
+      $node->changed = strtotime($data->children('opdateret')->text());
       node_save($node);
     }
     $count++;
