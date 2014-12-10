@@ -752,6 +752,58 @@ function ktc_hearing_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hearing-field_missing_files'
+  $field_instances['node-hearing-field_missing_files'] = array(
+    'bundle' => 'hearing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Høring Fil(er) mangler fra Typo3',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 24,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_missing_files',
+    'label' => 'Mangler Fil(er)',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-hearing-field_official_date'
   $field_instances['node-hearing-field_official_date'] = array(
     'bundle' => 'hearing',
@@ -2278,11 +2330,13 @@ function ktc_hearing_field_default_field_instances() {
   t('Gruppe/Netværk');
   t('Har ikke svaret');
   t('Høring');
+  t('Høring Fil(er) mangler fra Typo3');
   t('Høringssvar type');
   t('Høringstype');
   t('Impression');
   t('Indmeldelsesfrister');
   t('Konsekvenser');
+  t('Mangler Fil(er)');
   t('Myndighed');
   t('Officiel');
   t('Officiel svardato');
