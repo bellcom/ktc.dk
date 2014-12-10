@@ -393,6 +393,111 @@ function ktc_user_profile_default_page_manager_pages() {
   $page->default_handlers[$handler->name] = $handler;
   $pages['new_content'] = $page;
 
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'user_comments';
+  $page->task = 'page';
+  $page->admin_title = 'User comments';
+  $page->admin_description = '';
+  $page->path = 'user/user_comments';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_user_comments_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'user_comments';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'User comments',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+  );
+  $display = new panels_display();
+  $display->layout = 'ktcstd';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+      'bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '350031fb-1f4e-4521-a1ca-d47351bebdc6';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-4a5ab92d-4ba9-452e-8a6f-789416a69f5a';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_sectionpage-user_comments_block';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '4a5ab92d-4ba9-452e-8a6f-789416a69f5a';
+    $display->content['new-4a5ab92d-4ba9-452e-8a6f-789416a69f5a'] = $pane;
+    $display->panels['left'][0] = 'new-4a5ab92d-4ba9-452e-8a6f-789416a69f5a';
+    $pane = new stdClass();
+    $pane->pid = 'new-ea7ceb5b-a10d-4420-8ea0-d1a0c71c6b9e';
+    $pane->panel = 'right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<div class="col-md-12 col-sm-12 col-xs-12">
+	<a class="btn filter-link col-md-12 col-sm-12 col-xs-12 btn-blacknblue" href="/user">Min profil</a></div>',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ea7ceb5b-a10d-4420-8ea0-d1a0c71c6b9e';
+    $display->content['new-ea7ceb5b-a10d-4420-8ea0-d1a0c71c6b9e'] = $pane;
+    $display->panels['right'][0] = 'new-ea7ceb5b-a10d-4420-8ea0-d1a0c71c6b9e';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['user_comments'] = $page;
+
   return $pages;
 
 }
