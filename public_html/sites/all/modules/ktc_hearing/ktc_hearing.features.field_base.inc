@@ -666,6 +666,33 @@ function ktc_hearing_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_missing_files'
+  $field_bases['field_missing_files'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_missing_files',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_official_date'
   $field_bases['field_official_date'] = array(
     'active' => 1,
