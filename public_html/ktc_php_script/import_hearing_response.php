@@ -32,6 +32,7 @@ function create_hearing_response_nodes() {
     $node->language = LANGUAGE_NONE;
     $node->type = 'hearing_responses';
     $node->created = $element['crdate'];
+    $node->modified = $element['tstamp'];
     $node->status = $element['hidden'] ? 0 : 1;
 
     $hearing_id = get_id_by_typo3_uid($element['proposal_id'], 'hearing');

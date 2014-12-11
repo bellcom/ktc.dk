@@ -7,15 +7,17 @@ function create_hearing_nodes() {
   $elements = get_hearing_elements_from_db_table('tx_ktchoringdb_proposal');
   foreach ($elements as $element) {
 
-    if ($nid = get_id_by_typo3_uid($element['uid'], 'hearing')) {
+    if ($nid = get_id_by_typo3_uid($element['uid'], 'hearing') && is_numeric($nid)) {
       $node = node_load($nid);
     }
     else {
       $node = new stdClass();
     }
+
     $node->language = LANGUAGE_NONE;
     $node->type = 'hearing';
     $node->created = $element['crdate'];
+    $node->modified = $element['tstamp'];
     $node->status = $element['hidden'] ? 0 : 1;
     if (strlen($element['title']) > 255) {
       $node->field_titel_lang[LANGUAGE_NONE][0]['value'] = $element['title'];
@@ -48,7 +50,7 @@ function create_hearing_nodes() {
     $node->field_message[LANGUAGE_NONE][0]['safe_value'] = convert_char($element['message']);
     $node->field_message[LANGUAGE_NONE][0]['format'] = 'full_html';
 
-    $type_tid = get_term_tid(get_type_name($element['type']), 22);
+    $type_tid = get_term_tid(get_type_name($element['type']), 30);
     if (is_numeric($type_tid)) {
       $node->field_hearing_type[LANGUAGE_NONE][0]['tid'] = $type_tid;
     }
@@ -61,6 +63,7 @@ function create_hearing_nodes() {
         }
       }
     }
+
     if ($element['official_start_date'] > 0) {
       $node->field_official_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', $element['official_start_date']);
       $node->field_official_date[LANGUAGE_NONE][0]['timezone'] = 'Europe/Copenhagen';
@@ -129,7 +132,7 @@ function create_hearing_nodes() {
     }
 
     if (is_numeric($element['state'])) {
-      $term_id = get_term_tid(get_state_name($element['state']), 18);
+      $term_id = get_term_tid(get_state_name($element['state']), 28);
       if (is_numeric($term_id)) {
         $node->field_status[LANGUAGE_NONE][0]['tid'] = $term_id;
       }

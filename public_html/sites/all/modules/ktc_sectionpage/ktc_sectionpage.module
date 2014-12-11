@@ -456,3 +456,9 @@ function _ktc_sectionpage_get_user_related_node_id($uid) {
   }
   return $id;
 }
+
+function ktc_sectionpage_node_presave($node) {
+  if (isset($node->modified)) {
+    $node->changed = $node->modified;
+  }
+}

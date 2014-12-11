@@ -1,10 +1,10 @@
 <?php
 include 'functions.php';
-// changeUpdatedDate('group', 'node-export-group.xml');
-// changeUpdatedDate('arrangement', 'node-export-arrangement.xml');
+ changeUpdatedDate('group', 'node-export-group.xml');
+ changeUpdatedDate('arrangement', 'node-export-arrangement.xml');
 
-// changeUpdatedDate('forum_post', 'node-export-diskussion.xml');
-// changeUpdatedDate('os2web_base_news' , 'node-export-nyhed.xml');
+ changeUpdatedDate('forum_post', 'node-export-diskussion.xml');
+ changeUpdatedDate('os2web_base_news' , 'node-export-nyhed.xml');
 
 function changeUpdatedDate($type, $filename) {
   $path = 'private://xml';
@@ -19,13 +19,7 @@ function changeUpdatedDate($type, $filename) {
   foreach (qp($content, 'node') as $data) {
     $old_nid = $data->children('nid')->text();
     if ($node = node_load_by_old_nid($old_nid)) {
-      if ($type != 'document') {
-        // <updated>
-        $node->changed = strtotime($data->children('updated')->text());
-      }
-      else {
-        $node->changed = strtotime($data->children('opdateret')->text());
-      }
+      $node->modified = strtotime($data->children('opdateret')->text());
       node_save($node);
     }
     $count++;

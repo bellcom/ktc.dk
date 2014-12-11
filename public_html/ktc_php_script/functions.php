@@ -155,8 +155,8 @@ function get_state_name($tid) {
 }
 
 function convert_char($string) {
-  $find = array('Ã†', 'Ã¸', 'Ã¦', 'Ã¥', 'Ã˜', 'Ã…');
-  $replace = array('Æ', 'ø', 'æ', 'å', 'Ø', 'Å');
+  $find = array("Ã†", "Ã¸", "Ã¦", "Ã¥", "Ã˜", "Ã…", "&#39;", "Ã©", );
+  $replace = array("Æ", "ø", "æ", "å", "Ø", "Å", "'", "é", );
   $string = str_replace($find, $replace, $string);
   return $string;
 }

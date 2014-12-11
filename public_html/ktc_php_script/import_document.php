@@ -10,16 +10,16 @@ include 'functions.php';
 // getDocmentElements('document', 'node-export-dokument_7.xml');
 // getDocmentElements('document', 'node-export-dokument_8.xml');
 // getDocmentElements('document', 'node-export-dokument_9.xml');
-// getDocmentElements('document', 'node-export-dokument_10.xml');
-// getDocmentElements('document', 'node-export-dokument_11.xml');
-// getDocmentElements('document', 'node-export-dokument_12.xml');
-// getDocmentElements('document', 'node-export-dokument_13.xml');
-// getDocmentElements('document', 'node-export-dokument_14.xml');
-// getDocmentElements('document', 'node-export-dokument_15.xml');
-// getDocmentElements('document', 'node-export-dokument_16.xml');
-// getDocmentElements('document', 'node-export-dokument_17.xml');
-// getDocmentElements('document', 'node-export-dokument_18.xml');
-// getDocmentElements('document', 'node-export-dokument_19.xml');
+ getDocmentElements('document', 'node-export-dokument_10.xml');
+ getDocmentElements('document', 'node-export-dokument_11.xml');
+ getDocmentElements('document', 'node-export-dokument_12.xml');
+ getDocmentElements('document', 'node-export-dokument_13.xml');
+ getDocmentElements('document', 'node-export-dokument_14.xml');
+ getDocmentElements('document', 'node-export-dokument_15.xml');
+ getDocmentElements('document', 'node-export-dokument_16.xml');
+ getDocmentElements('document', 'node-export-dokument_17.xml');
+ getDocmentElements('document', 'node-export-dokument_18.xml');
+ getDocmentElements('document', 'node-export-dokument_19.xml');
 
 function getDocmentElements($type, $filename) {
   $path = 'private://xml';
@@ -118,7 +118,7 @@ function getDocmentElements($type, $filename) {
           }
         }
       }*/
-      $node->changed = strtotime($data->children('opdateret')->text());
+      $node->modified = strtotime($data->children('opdateret')->text());
       node_save($node);
     }
     $count++;
