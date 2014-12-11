@@ -218,10 +218,12 @@ function ktc_hearing_node_presave($node) {
       $node->field_status[$language][0]['tid'] = KTC_HEARING_STATUS_OPEN;
     }
 
-    $original_status = ktc_hearing_get_status($node->original);
+    if (isset($node->original)) {
+      $original_status = ktc_hearing_get_status($node->original);
 
-    if ($hearing_status == KTC_HEARING_STATUS_APPROVED && $original_status != KTC_HEARING_STATUS_APPROVED) {
-      ktc_hearing_notify_users('approved', $node);
+      if ($hearing_status == KTC_HEARING_STATUS_APPROVED && $original_status != KTC_HEARING_STATUS_APPROVED) {
+        ktc_hearing_notify_users('approved', $node);
+      }
     }
   }
 }
@@ -627,18 +629,20 @@ function ktc_hearing_notify_users($op, $hearing) {
 
       $tokens = array();
 
-      foreach ($users as $role => $role_users) {
-        foreach ($role_users as $_user) {
-          $user = user_load($_user['target_id']);
+      if (isset($users)) {
+        foreach ($users as $role => $role_users) {
+          foreach ($role_users as $_user) {
+            $user = user_load($_user['target_id']);
 
-          $token_data = array('user' => $user, 'node' => $hearing);
-          $to = $user->mail;
-          $language = $user->language;
+            $token_data = array('user' => $user, 'node' => $hearing);
+            $to = $user->mail;
+            $language = $user->language;
 
-          $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
-          $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
+            $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
+            $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
 
-          drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
+            drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
+          }
         }
       }
       break;
