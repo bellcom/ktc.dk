@@ -796,7 +796,7 @@ function ktc_hearing_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 7,
     ),
   );
 
@@ -927,6 +927,130 @@ function ktc_hearing_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-hearing-field_os2web_base_field_ext_link'
+  $field_instances['node-hearing-field_os2web_base_field_ext_link'] = array(
+    'bundle' => 'hearing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 26,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_ext_link',
+    'label' => 'Ekstern links',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-hearing-field_os2web_base_field_hidlinks'
+  $field_instances['node-hearing-field_os2web_base_field_hidlinks'] = array(
+    'bundle' => 'hearing',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 25,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_hidlinks',
+    'label' => 'Skjul auto relaterede links',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 2,
     ),
   );
 
@@ -1246,7 +1370,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -1298,7 +1422,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 6,
     ),
   );
 
@@ -1362,7 +1486,7 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 4,
     ),
     'widget_type' => 'options_select',
   );
@@ -2313,6 +2437,7 @@ function ktc_hearing_field_default_field_instances() {
   t('Deltagere');
   t('Deltagers frist');
   t('Detaljerede kommentar');
+  t('Ekstern links');
   t('Emner');
   t('Endeligt svar');
   t('Er sammenfatning');
@@ -2334,6 +2459,7 @@ function ktc_hearing_field_default_field_instances() {
   t('Officiel svardato');
   t('Officiel udsendelsesdato');
   t('Resumé');
+  t('Skjul auto relaterede links');
   t('Status');
   t('Synlighed');
   t('Titel lang');

@@ -246,6 +246,28 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->uuid = '9067a27e-7b7c-4019-a149-3527eeba2558';
     $display->content['new-9067a27e-7b7c-4019-a149-3527eeba2558'] = $pane;
     $display->panels['right'][0] = 'new-9067a27e-7b7c-4019-a149-3527eeba2558';
+    $pane = new stdClass();
+    $pane->pid = 'new-77c8ff1f-1df0-41c4-aa75-76f647ad37b9';
+    $pane->panel = 'right';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_related_links-related_links_block';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '77c8ff1f-1df0-41c4-aa75-76f647ad37b9';
+    $display->content['new-77c8ff1f-1df0-41c4-aa75-76f647ad37b9'] = $pane;
+    $display->panels['right'][1] = 'new-77c8ff1f-1df0-41c4-aa75-76f647ad37b9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-fb1117bc-1528-490e-acde-d1b517b0cd7b';
   $handler->conf['display'] = $display;
