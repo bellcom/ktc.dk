@@ -256,3 +256,21 @@ body.page-taxonomy-term.term-is-not-top {
     }
   }
 }
+
+.panel-pane {
+  &.pane-hearing-node-view-panel-pane-1 {
+    .views-field-field-hearing-materials {
+
+
+        .file-icon {
+          // This overrides the file-icon and replaces it with an download icon.
+          .sprite(@download-icon);
+          padding-left: @download-icon-width;
+        }
+        a {
+          margin-left: 10px;
+          color: @brand-blacknblue;
+        }
+    }
+  }
+}
