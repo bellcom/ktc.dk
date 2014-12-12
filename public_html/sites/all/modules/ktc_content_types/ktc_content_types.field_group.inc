@@ -23,8 +23,8 @@ function ktc_content_types_field_group_info() {
     'label' => 'Meta data',
     'weight' => '15',
     'children' => array(
-      0 => 'field_os2web_base_field_edi_tags',
-      1 => 'field_os2web_base_field_kle_ref',
+      0 => 'field_os2web_base_field_kle_ref',
+      1 => 'field_os2web_base_field_edi_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -80,6 +80,8 @@ function ktc_content_types_field_group_info() {
     'children' => array(
       0 => 'field_os2web_base_field_promote',
       1 => 'field_news_author',
+      2 => 'field_os2web_base_field_hidlinks',
+      3 => 'field_os2web_base_field_ext_link',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
