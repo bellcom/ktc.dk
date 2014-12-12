@@ -354,6 +354,8 @@ h6,
 .h4,
 .h5,
 .h6,
+body.page-node .field-name-field-hearing-materials .field-label,
+body.page-taxonomy-term.term-is-not-top .field-name-field-hearing-materials .field-label,
 body.page-node .field-name-field-os2web-base-field-media .field-label,
 body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
   font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
@@ -418,6 +420,8 @@ h5,
 .h5,
 h6,
 .h6,
+body.page-node .field-name-field-hearing-materials .field-label,
+body.page-taxonomy-term.term-is-not-top .field-name-field-hearing-materials .field-label,
 body.page-node .field-name-field-os2web-base-field-media .field-label,
 body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
   margin-top: 10px;
@@ -451,6 +455,8 @@ h3,
 }
 h4,
 .h4,
+body.page-node .field-name-field-hearing-materials .field-label,
+body.page-taxonomy-term.term-is-not-top .field-name-field-hearing-materials .field-label,
 body.page-node .field-name-field-os2web-base-field-media .field-label,
 body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
   font-size: 1.2em;
@@ -8029,15 +8035,21 @@ body.page-node .nav-tabs,
 body.page-taxonomy-term.term-is-not-top .nav-tabs {
   margin-bottom: 0;
 }
+body.page-node .field-name-field-hearing-materials .field-label,
+body.page-taxonomy-term.term-is-not-top .field-name-field-hearing-materials .field-label,
 body.page-node .field-name-field-os2web-base-field-media .field-label,
 body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
   text-transform: none;
 }
+body.page-node .field-name-field-hearing-materials .field-item,
+body.page-taxonomy-term.term-is-not-top .field-name-field-hearing-materials .field-item,
 body.page-node .field-name-field-os2web-base-field-media .field-item,
 body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-item {
   border-top: 1px solid #dfded7;
   padding: 5px 0;
 }
+body.page-node .field-name-field-hearing-materials .field-item .file-icon,
+body.page-taxonomy-term.term-is-not-top .field-name-field-hearing-materials .field-item .file-icon,
 body.page-node .field-name-field-os2web-base-field-media .field-item .file-icon,
 body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-item .file-icon {
   background-image: url(../images/sprites.png);
@@ -8046,6 +8058,8 @@ body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-medi
   height: 26px;
   padding-left: 26px;
 }
+body.page-node .field-name-field-hearing-materials .field-item a,
+body.page-taxonomy-term.term-is-not-top .field-name-field-hearing-materials .field-item a,
 body.page-node .field-name-field-os2web-base-field-media .field-item a,
 body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-item a {
   margin-left: 10px;
