@@ -1,0 +1,192 @@
+<?php
+/**
+ * @file
+ * Code for the KTC related links.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function ktc_related_links_block_info() {
+  $blocks = array();
+
+  $blocks['related_links_block'] = array(
+    'info' => t('Relaterede links block'),
+  );
+
+  return $blocks;
+}
+/**
+ * Implements hook_block_view().
+ */
+function ktc_related_links_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+
+    case 'related_links_block':
+      $block['subject'] = t('Relaterede sider');
+      $block['content'] = _ktc_related_links_block_content();
+      break;
+  }
+  return $block;
+
+}
+/**
+ * KTC block view content callback.
+ */
+function _ktc_related_links_block_content() {
+
+  $node = FALSE;
+  $nid = arg(1);
+  $output = '';
+  if (is_numeric($nid)) {
+    $node = node_load($nid);
+  }
+  $related_links = array();
+  // Get all related links related to the KLE number on the node,
+  // term number topic, tags. Only get
+  // these if the checkbox "Skjul relaterede links" isn't checked.
+  if (($node && (!$hide_link = field_get_items('node', $node, 'field_os2web_base_field_hidlinks')))
+      || ($node && ($hide_link = field_get_items('node', $node, 'field_os2web_base_field_hidlinks')) && !$hide_link[0]['value'])) {
+    if ($kle_items = field_get_items('node', $node, 'field_os2web_base_field_kle_ref')) {
+      foreach ($kle_items as $kle) {
+        // Get all nodes which have the same KLE number as this node.
+        $query = new EntityFieldQuery();
+        $result = $query->entityCondition('entity_type', 'node')
+          ->propertyCondition('status', 1)
+          ->fieldCondition('field_os2web_base_field_kle_ref', 'tid', $kle['tid'])
+          ->propertyOrderBy('created', 'ASC')
+          ->execute();
+        if (isset($result['node'])) {
+          foreach ($result['node'] as $link) {
+            // Be sure to skip links which already is in list, or links to
+            // current node.
+            if (isset($related_links[$link->nid]) || ($node && $node->nid == $link->nid)) {
+              continue;
+            }
+            if ($node->type == 'document') {
+              continue;
+            }
+            $link_node = node_load($link->nid);
+            if ($link_node) {
+              $related_links[$link->nid] = array(
+                'nid' => $link->nid,
+                'title' => $link_node->title,
+                'class' => 'kle-link',
+              );
+            }
+
+          }
+        }
+      }
+    }
+
+    // Get topic nodes.
+    if ($topic_items = field_get_items('node', $node, 'field_topics')) {
+      foreach ($topic_items as $item) {
+        // Get all nodes which have the same KLE number as this node.
+        $query = new EntityFieldQuery();
+        $result = $query->entityCondition('entity_type', 'node')
+          ->propertyCondition('status', 1)
+          ->fieldCondition('field_topics', 'tid', $item['tid'])
+          ->propertyOrderBy('created', 'ASC')
+          ->execute();
+        if (isset($result['node'])) {
+          foreach ($result['node'] as $link) {
+            // Be sure to skip links which already is in list, or links to
+            // current node.
+            if (isset($related_links[$link->nid]) || ($node && $node->nid == $link->nid)) {
+              continue;
+            }
+            if ($node->type == 'document') {
+              continue;
+            }
+            $link_node = node_load($link->nid);
+            if ($link_node) {
+              $related_links[$link->nid] = array(
+                'nid' => $link->nid,
+                'title' => $link_node->title,
+                'class' => 'emne-link',
+              );
+            }
+
+          }
+        }
+      }
+    }
+
+    // Get tags nodes.
+    if ($tags_items = field_get_items('node', $node, 'field_tags')) {
+      foreach ($tags_items as $item) {
+        // Get all nodes which have the same KLE number as this node.
+        $query = new EntityFieldQuery();
+        $result = $query->entityCondition('entity_type', 'node')
+          ->propertyCondition('status', 1)
+          ->fieldCondition('field_tags', 'tid', $item['tid'])
+          ->propertyOrderBy('created', 'ASC')
+          ->execute();
+        if (isset($result['node'])) {
+          foreach ($result['node'] as $link) {
+            // Be sure to skip links which already is in list, or links to
+            // current node.
+            if (isset($related_links[$link->nid]) || ($node && $node->nid == $link->nid)) {
+              continue;
+            }
+            if ($node->type == 'document') {
+              continue;
+            }
+            $link_node = node_load($link->nid);
+            if ($link_node) {
+              $related_links[$link->nid] = array(
+                'nid' => $link->nid,
+                'title' => $link_node->title,
+                'class' => 'tags-link',
+              );
+            }
+
+          }
+        }
+      }
+    }
+  }
+  // Only show 10 items. TODO: admin setting form for content type and max iterms.
+  if (count($related_links) > 10) {
+    $related_links = array_slice($related_links, 0, 10);
+  }
+  // External related links.
+  if ($node && $ext_links = field_get_items('node', $node, 'field_os2web_base_field_ext_link')) {
+    foreach ($ext_links as $link) {
+      $related_links[] = array(
+        'url' => $link['url'],
+        'title' => $link['title'],
+        'class' => 'ext-link',
+      );
+    }
+  }
+
+  if (!empty($related_links)) {
+    $output = ktc_related_links_make_markup($related_links);
+  }
+  return $output;
+}
+/**
+ * Make block links markup.
+ */
+function ktc_related_links_make_markup($related_links) {
+  $output = '<ul class="related-links">';
+
+  foreach ($related_links as $key => $link) {
+    $output .= '<li>';
+    if (isset($link['url'])) {
+      $output .= l($link['title'], $link['url'], array('attributes' => array('class' => $link['class'])));
+    }
+    else {
+      $output .= l($link['title'], drupal_get_path_alias('node/' . $link['nid']), array('attributes' => array('class' => $link['class'])));
+    }
+    $output .= '</li>';
+
+  }
+  $output .= '</ul>';
+
+  return $output;
+}
