@@ -1,15 +1,15 @@
 <?php
 include 'functions.php';
 
-// getDocmentElements('document', 'node-export-dokument_1.xml');
-// getDocmentElements('document', 'node-export-dokument_2.xml');
-// getDocmentElements('document', 'node-export-dokument_3.xml');
-// getDocmentElements('document', 'node-export-dokument_4.xml');
-// getDocmentElements('document', 'node-export-dokument_5.xml');
-// getDocmentElements('document', 'node-export-dokument_6.xml');
-// getDocmentElements('document', 'node-export-dokument_7.xml');
-// getDocmentElements('document', 'node-export-dokument_8.xml');
-// getDocmentElements('document', 'node-export-dokument_9.xml');
+ getDocmentElements('document', 'node-export-dokument_1.xml');
+ getDocmentElements('document', 'node-export-dokument_2.xml');
+ getDocmentElements('document', 'node-export-dokument_3.xml');
+ getDocmentElements('document', 'node-export-dokument_4.xml');
+ getDocmentElements('document', 'node-export-dokument_5.xml');
+ getDocmentElements('document', 'node-export-dokument_6.xml');
+ getDocmentElements('document', 'node-export-dokument_7.xml');
+ getDocmentElements('document', 'node-export-dokument_8.xml');
+ getDocmentElements('document', 'node-export-dokument_9.xml');
  getDocmentElements('document', 'node-export-dokument_10.xml');
  getDocmentElements('document', 'node-export-dokument_11.xml');
  getDocmentElements('document', 'node-export-dokument_12.xml');
@@ -34,7 +34,7 @@ function getDocmentElements($type, $filename) {
   foreach (qp($content, 'node') as $data) {
     $old_nid = $data->children('nid')->text();
     if ($node = node_load_by_old_nid($old_nid)) {
-
+    /*
       // <field_dokument>
       if (is_numeric($data->children('field_dokument')->text())) {
         $node->field_document_type[LANGUAGE_NONE][0]['tid'] = $data->children('field_dokument')->text();
