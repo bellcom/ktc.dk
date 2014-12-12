@@ -76,62 +76,7 @@ function ktc_preprocess_page(&$variables) {
       }
     }
   }
-  // 2. Get all related links related to the KLE number on the node. Only get
-  // these if the checkbox "Skjul relaterede links" isn't checked.
-  if (($node &&
-        (!isset($node->field_os2web_base_field_hidlinks['und'][0]['value']) ||
-        $node->field_os2web_base_field_hidlinks['und'][0]['value'] == '0') &&
-        $kle_items = field_get_items('node', $node, 'field_os2web_base_field_kle_ref')) ||
-      ($term &&
-        (!isset($term->field_os2web_base_field_hidlinks['und'][0]['value']) ||
-        $term->field_os2web_base_field_hidlinks['und'][0]['value'] == '0') &&
-        $kle_items = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_kle_ref'))) {
 
-    foreach ($kle_items as $kle) {
-      // Get all nodes which have the same KLE number as this node.
-      $query = new EntityFieldQuery();
-      $result = $query->entityCondition('entity_type', 'node')
-        ->propertyCondition('status', 1)
-        ->fieldCondition('field_os2web_base_field_kle_ref', 'tid', $kle['tid'])
-        ->propertyOrderBy('title', 'ASC')
-        ->execute();
-      if (isset($result['node'])) {
-        foreach ($result['node'] as $link) {
-          // Be sure to skip links which already is in list, or links to current
-          // node.
-          if (isset($related_links[$link->nid]) || ($node && $node->nid == $link->nid)) {
-            continue;
-          }
-          $link_node = node_load($link->nid);
-          if ($link_node) {
-            $related_links[$link->nid] = array(
-              'nid' => $link->nid,
-              'title' => $link_node->title,
-              'class' => 'kle-link',
-            );
-          }
-
-        }
-      }
-    }
-  }
-
-  // External related links.
-  if (($node && $ext_links = field_get_items('node', $node, 'field_os2web_base_field_ext_link')) ||
-      ($term && $ext_links = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_ext_link'))) {
-    foreach ($ext_links as $link) {
-      $related_links[] = array(
-        'url' => $link['url'],
-        'title' => $link['title'],
-        'class' => 'ext-link',
-      );
-    }
-  }
-
-  if (!empty($related_links)) {
-    // Provide the related links to the templates.
-    $variables['page']['related_links'] = $related_links;
-  }
 
   // When a node's menu link is deaktivated and has no siblings, menu_block is
   // empty, and then sidebar_first are hidden. We want to force the
@@ -149,17 +94,7 @@ function ktc_preprocess_page(&$variables) {
     );
   }
 
-  // Hack to force the sidebar_second to be rendered if we have anything to put
-  // in it.
-  if (!$sidebar_second_hidden && empty($variables['page']['sidebar_second']) && (!empty($variables['page']['related_links']) || !empty($variables['page']['os2web_selfservicelinks']))) {
-    $variables['page']['sidebar_second'] = array(
-      '#theme_wrappers' => array('region'),
-      '#region' => 'sidebar_second',
-      'dummy_content' => array(
-        '#markup' => ' ',
-      ),
-    );
-  }
+
 
   // On taxonomy pages, add a news list in second sidebar.
   if ($term) {
