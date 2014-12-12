@@ -498,6 +498,28 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->uuid = '432c93cb-91e2-4f95-a1e1-827cf78be611';
     $display->content['new-432c93cb-91e2-4f95-a1e1-827cf78be611'] = $pane;
     $display->panels['right'][4] = 'new-432c93cb-91e2-4f95-a1e1-827cf78be611';
+    $pane = new stdClass();
+    $pane->pid = 'new-63dd3165-b724-4f8e-b8b0-2b339fd5d462';
+    $pane->panel = 'right';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_related_links-related_links_block';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '63dd3165-b724-4f8e-b8b0-2b339fd5d462';
+    $display->content['new-63dd3165-b724-4f8e-b8b0-2b339fd5d462'] = $pane;
+    $display->panels['right'][5] = 'new-63dd3165-b724-4f8e-b8b0-2b339fd5d462';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
