@@ -232,7 +232,5 @@
       $(this).css('display', 'none');
     });
 
-    $('.pane-content #edit-tabs li').addClass('col-md-6 col-sm-6 col-xs-12');
-    $('.pane-content #edit-tabs li a').addClass('col-md-12 col-sm-12 col-xs-12');
   });
 })( jQuery );

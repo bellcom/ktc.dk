@@ -52,7 +52,7 @@ function create_hearing_response_nodes() {
       $node->field_hearing_node[LANGUAGE_NONE][$key]['target_id'] = $hearing_id;
     }
 
-    if ($uid = get_id_by_typo3_uid($element['author'], 'user')) {
+    if ($uid = get_old_user_info_from_typo3($element['author'])) {
       $node->uid = $uid;
     }
     else {

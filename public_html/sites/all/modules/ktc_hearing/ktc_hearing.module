@@ -68,8 +68,8 @@ function ktc_hearing_menu() {
   $items['node/%node/hearing_invite'] = array(
     'type' => MENU_LOCAL_TASK,
     'title' => 'Invite',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('ktc_hearing_invite', 1),
+    'page callback' => 'ktc_hearing_invite_page',
+    'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
     'access arguments' => array(1, 'invite'),
     'weight' => 20,
@@ -251,7 +251,14 @@ function ktc_hearing_access($node, $op) {
     return TRUE;
   }
 }
-
+/**
+ * KTC hearing invite page callback.
+ */
+function ktc_hearing_invite_page($nid) {
+  $invite_form = drupal_get_form('ktc_hearing_invite', $nid);
+  $vars['preface'] = render($invite_form);
+  return theme('hearing_answer', $vars);
+}
 /**
  * Invite user to hearing, form.
  */
@@ -304,9 +311,9 @@ function ktc_hearing_invite_submit(&$form, &$form_state) {
  */
 function ktc_hearing_summary_responses($hearing) {
   if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
-    $preface = 'Tryk "Ok" herunder for at skifte høringsstatus til "Under sammenskrivning" og påbegynde sammenskrivning af høringssvar.<br/>';
-
-    return $preface . render(drupal_get_form('ktc_hearing_set_status', KTC_HEARING_STATUS_RECAP));
+    $vars['preface'] = 'Tryk "Ok" herunder for at skifte høringsstatus til "Under sammenskrivning" og påbegynde sammenskrivning af høringssvar.<br/>';
+    $set_status_form = drupal_get_form('ktc_hearing_set_status', KTC_HEARING_STATUS_RECAP);
+    $vars['set_status_form'] = render($set_status_form);
   }
 
   if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_RECAP) {
@@ -347,11 +354,12 @@ function ktc_hearing_summary_responses($hearing) {
 
     $vars['answer_form'] = render(drupal_get_form($type . '_node_form', $node));
 
-    return theme('hearing_answer', $vars);
   }
   else {
-    return 'Høringens status tillader ikke sammenskrivning af høringssvar.';
+    $vars['preface'] = 'Høringens status tillader ikke sammenskrivning af høringssvar.';
   }
+  return theme('hearing_answer', $vars);
+
 }
 
 /**
@@ -359,19 +367,24 @@ function ktc_hearing_summary_responses($hearing) {
  */
 function ktc_hearing_approve_summary_responses($hearing) {
   $summary_response = ktc_hearing_get_summary_response($hearing);
-
-  if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVAL) {
-    return '<h1>' . t('Godkend endeligt svar') . '</h1>' .
-      render(node_view($summary_response)) .
-      render(drupal_get_form('ktc_hearing_approve_summary_response_form', $summary_response));
-  }
-  if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVED) {
-    return render(node_view($summary_response)) .
-      'Det endelige høringssvar er godkendt.';
+  if ($summary_response) {
+    if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVAL) {
+      $vars['preface'] = '<h1>' . t('Godkend endeligt svar') . '</h1>' .
+        render(node_view($summary_response)) .
+        render(drupal_get_form('ktc_hearing_approve_summary_response_form', $summary_response));
+    }
+    if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVED) {
+      $vars['preface'] = render(node_view($summary_response)) .
+        'Det endelige høringssvar er godkendt.';
+    }
+    else {
+      $vars['preface'] = 'Det endelige høringssvar er endnu ikke klar til godkendelse.';
+    }
   }
   else {
-    return 'Det endelige høringssvar er endnu ikke klar til godkendelse.';
+    $vars['preface'] = 'Der er ikke et endelige høringssvar.';
   }
+  return theme('hearing_answer', $vars);
 }
 
 /**
@@ -514,7 +527,8 @@ function ktc_hearing_responses($hearing) {
   }
 
   if (ktc_hearing_access($hearing, 'respond') && ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
-    $vars['answer_form'] = render(drupal_get_form($type . '_node_form', $node));
+    $node_form = drupal_get_form($type . '_node_form', $node);
+    $vars['answer_form'] = render($node_form);
   }
 
   return theme('hearing_answer', $vars);

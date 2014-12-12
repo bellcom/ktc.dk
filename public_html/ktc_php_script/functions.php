@@ -132,7 +132,7 @@ function get_state_name($tid) {
       break;
 
     case 1:
-      $name = 'Åben';
+      $name = 'Åben';
       break;
 
     case 2:
@@ -281,4 +281,42 @@ function rebuild_array($array) {
     }
   }
   return $array_2;
+}
+
+function get_email_from_fe_users($typo3_uid) {
+  if (is_numeric($typo3_uid)) {
+    $query = db_select('fe_users', 'g')
+      ->fields('g', array('email'))
+      ->condition('uid', $typo3_uid, '=');
+    $result = $query->execute()->fetchAssoc();
+    if ($result) {
+      if ($result['email'] != '' && strpos($result['email'], '@') !== FALSE) {
+        return $result['email'];
+      }
+      else {
+        return FALSE;
+      }
+    }
+    else {
+      return FALSE;
+    }
+  }
+}
+
+function get_old_user_info_from_typo3($typo3_uid) {
+  if (is_numeric($typo3_uid)) {
+    $query = db_select('fe_users', 'g')
+      ->fields('g', array('email'))
+      ->condition('uid', $typo3_uid, '=');
+    $result = $query->execute()->fetchAssoc();
+    if ($result) {
+      $user = user_load_by_mail($result['email']);
+      if ($user) {
+        return $user->uid;
+      }
+      else {
+        return FALSE;
+      }
+    }
+  }
 }

@@ -218,7 +218,7 @@ function ktc_preprocess_page(&$variables) {
     'meta_keywords'
   );
 
-
+  $variables['page']['sidebar_first'] = array();
   // Pass the theme path to js.
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
 
@@ -570,8 +570,36 @@ function ktc_file_formatter_table($variables) {
   }
   return empty($rows) ? '' : theme('table', array('header' => $header, 'rows' => $rows));
 }
-/**
- * Retrieve front page big menu buttons.
+/*
+ * Override theme_menu_local_task.
  */
+function ktc_menu_local_task($variables) {
+  $link = $variables['element']['#link'];
+  $link_text = $link['title'];
 
+  if (!empty($variables['element']['#active'])) {
+    // Add text to indicate active tab for non-visual users.
+    $active = '<span class="element-invisible">' . t('(active tab)') . '</span>';
 
+    // If the link does not contain HTML already, check_plain() it now.
+    // After we set 'html'=TRUE the link will not be sanitized by l().
+    if (empty($link['localized_options']['html'])) {
+      $link['title'] = check_plain($link['title']);
+    }
+    $link['localized_options']['html'] = TRUE;
+    $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
+  }
+
+  return '<li' . (!empty($variables['element']['#active']) ? ' class="active col-md-6 col-sm-6 col-xs-12"' : ' class="col-md-6 col-sm-6 col-xs-12"') . '>' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n";
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter();
+ */
+function ktc_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  if (isset($data['tabs'][0]['output'])) {
+    foreach ($data['tabs'][0]['output'] as $key => &$item) {
+      $item['#link']['localized_options']['attributes']['class'][] = 'col-md-12 col-sm-12 col-xs-12';
+    }
+  }
+}
