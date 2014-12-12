@@ -636,6 +636,8 @@ function ktc_hearing_notify_users($op, $hearing) {
 
             $token_data = array('user' => $user, 'node' => $hearing);
             $to = $user->mail;
+            // Testing
+            $to = 'tth@bellcom.dk';
             $language = $user->language;
 
             $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
@@ -651,6 +653,8 @@ function ktc_hearing_notify_users($op, $hearing) {
       $author = user_load($hearing->uid);
       $token_data = array('user' => $author, 'node' => $hearing);
       $to = $author->mail;
+      // Testing
+      $to = 'tth@bellcom.dk';
       $language = $author->language;
       $role = 'creator';
 
