@@ -462,6 +462,8 @@ function ktc_arrangement_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'left' => NULL,
+      'right' => NULL,
     ),
   );
   $display->cache = array();
@@ -470,28 +472,62 @@ function ktc_arrangement_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-26b10c11-d202-445d-845c-10b758076dbd';
+    $pane->pid = 'new-f2a164e6-e4d2-4896-83e8-36d479eda349';
     $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'indhold_m_filter-panel_pane_1';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_sectionpage-arrangement_page_block';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'arguments' => array(
-        'type' => 'arrangement',
-      ),
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'section-page-with-filter',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '26b10c11-d202-445d-845c-10b758076dbd';
-    $display->content['new-26b10c11-d202-445d-845c-10b758076dbd'] = $pane;
-    $display->panels['left'][0] = 'new-26b10c11-d202-445d-845c-10b758076dbd';
+    $pane->uuid = 'f2a164e6-e4d2-4896-83e8-36d479eda349';
+    $display->content['new-f2a164e6-e4d2-4896-83e8-36d479eda349'] = $pane;
+    $display->panels['left'][0] = 'new-f2a164e6-e4d2-4896-83e8-36d479eda349';
+    $pane = new stdClass();
+    $pane->pid = 'new-fbc410b6-6f73-4ad0-89f2-0ec941000bd7';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '9',
+      'offset' => '0',
+      'arguments' => array(
+        'vid' => '5',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer på aktiviteter',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'term_type',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'fbc410b6-6f73-4ad0-89f2-0ec941000bd7';
+    $display->content['new-fbc410b6-6f73-4ad0-89f2-0ec941000bd7'] = $pane;
+    $display->panels['right'][0] = 'new-fbc410b6-6f73-4ad0-89f2-0ec941000bd7';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

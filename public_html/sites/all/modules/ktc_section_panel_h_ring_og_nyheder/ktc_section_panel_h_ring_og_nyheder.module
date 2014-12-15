@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KTC section panel - Høring og Nyheder feature.
+ */
+
+include_once 'ktc_section_panel_h_ring_og_nyheder.features.inc';

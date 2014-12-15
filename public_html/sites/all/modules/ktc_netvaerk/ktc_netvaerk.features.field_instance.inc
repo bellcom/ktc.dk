@@ -79,7 +79,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -102,7 +102,7 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_gammel_gid',
-    'label' => 'Gammel gid',
+    'label' => 'Gammel drupal gid',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -130,7 +130,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -167,6 +167,64 @@ function ktc_netvaerk_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance: 'node-group-field_gammel_typo3_id'
+  $field_instances['node-group-field_gammel_typo3_id'] = array(
+    'bundle' => 'group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 7,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_gammel_typo3_id',
+    'label' => 'Gammel typo3 id',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 35,
     ),
   );
 
@@ -212,7 +270,7 @@ function ktc_netvaerk_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 22411,
       'file_directory' => 'netvaerk',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '5 MB',
@@ -225,22 +283,6 @@ function ktc_netvaerk_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'imce' => 'imce',
-            'reference' => 0,
-            'remote' => 0,
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'copy',
-            'path' => 'file_attach',
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
-        ),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -473,7 +515,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -535,9 +577,12 @@ function ktc_netvaerk_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
+        'module' => 'og_ui',
+        'settings' => array(
+          'field_name' => FALSE,
+        ),
+        'type' => 'og_group_subscribe',
+        'weight' => 6,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -603,7 +648,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -660,8 +705,9 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Determine if this is an OG group.');
   t('Emner');
   t('Flere emner');
-  t('Gammel gid');
+  t('Gammel drupal gid');
   t('Gammel nid');
+  t('Gammel typo3 id');
   t('Gruppe');
   t('Gruppens roller og tilladelser');
   t('Indhold');

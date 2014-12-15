@@ -45,7 +45,7 @@ body.page-taxonomy-term.term-is-not-top {
     header h2 {
       margin: 0;
       margin-top: 14px;
-      font-size: @font-size-h1;
+      //font-size: @font-size-h1;
       font-family: @headings-font-family;
       text-transform: initial;
       color: @text-color;
@@ -54,7 +54,7 @@ body.page-taxonomy-term.term-is-not-top {
         color: @text-color;
         text-transform: initial;
         font-family: @headings-font-family;
-        font-size: @font-size-h1;
+        //font-size: @font-size-h1;
         @media (max-width:460px) {
           font-size: 1.3em;
         }
@@ -232,9 +232,27 @@ body.page-taxonomy-term.term-is-not-top {
 }
 
 .view-bladintro-node {
-	img { margin-bottom: 20px;}
+  img { margin-bottom: 20px;}
 }
 
 .view-id-bladintro_nyheder {
-	.field-type-image { float: right; margin-left: 20px; margin-bottom: 20px;}
+  .field-type-image { float: right; margin-left: 20px; margin-bottom: 20px;}
+}
+.node-type-group {
+  .panel-pane {
+
+    .field-name-group-group {
+
+      a {
+        .btn();
+        .btn-blacknblue();
+      }
+    }
+    &.pane-og-members-panel-pane-1,
+    &.pane-node-body,
+    &.pane-node-field-groupimage {
+      float: right;
+      clear: right;
+    }
+  }
 }
