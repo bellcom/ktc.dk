@@ -22,7 +22,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 15,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -79,7 +79,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -131,7 +131,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 12,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -188,7 +188,7 @@ function ktc_content_types_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -248,7 +248,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -299,7 +299,7 @@ function ktc_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 23,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -350,7 +350,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -407,7 +407,7 @@ function ktc_content_types_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 25,
+        'weight' => 11,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -457,10 +457,9 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
+        'type' => 'hidden',
+        'weight' => 25,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -509,10 +508,9 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 14,
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -564,7 +562,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -633,7 +631,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -702,7 +700,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -771,7 +769,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 22,
+        'weight' => 1,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -819,10 +817,9 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 16,
+        'type' => 'hidden',
+        'weight' => 26,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -871,10 +868,9 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 26,
+        'type' => 'hidden',
+        'weight' => 20,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -944,10 +940,9 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 27,
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -997,7 +992,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_table',
-        'weight' => 20,
+        'weight' => 18,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -1068,7 +1063,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 17,
+        'weight' => 14,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -1124,7 +1119,7 @@ function ktc_content_types_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -1184,7 +1179,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 21,
+        'weight' => 0,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -1238,7 +1233,7 @@ function ktc_content_types_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 24,
+        'weight' => 19,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -1291,7 +1286,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'weight' => 17,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -1344,7 +1339,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -1396,7 +1391,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 18,
+        'weight' => 16,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -1448,10 +1443,9 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 23,
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -1840,7 +1834,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -1894,9 +1888,8 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 9,
       ),
       'listevisning' => array(
@@ -1946,9 +1939,8 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 7,
       ),
       'listevisning' => array(
@@ -1998,9 +1990,8 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'listevisning' => array(
@@ -2052,7 +2043,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_table',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -2122,7 +2113,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 0,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -2174,7 +2165,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -2227,7 +2218,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -2279,9 +2270,8 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 6,
       ),
       'listevisning' => array(
@@ -2345,7 +2335,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3529,12 +3519,9 @@ function ktc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 15,
       ),
       'listevisning' => array(
@@ -3586,9 +3573,8 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 12,
       ),
       'listevisning' => array(
@@ -3688,9 +3674,8 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 6,
       ),
       'listevisning' => array(
@@ -4021,9 +4006,8 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
+        'type' => 'hidden',
         'weight' => 18,
       ),
       'listevisning' => array(
@@ -4094,9 +4078,8 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 17,
       ),
       'listevisning' => array(
@@ -4593,9 +4576,8 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 16,
       ),
       'listevisning' => array(
@@ -4752,9 +4734,8 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 13,
       ),
       'listevisning' => array(
@@ -4961,7 +4942,7 @@ function ktc_content_types_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 14,
+        'weight' => 0,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -5034,10 +5015,9 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 16,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -5107,10 +5087,9 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 15,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'listevisning' => array(
         'label' => 'above',

@@ -830,6 +830,9 @@ function ktc_content_types_strongarm() {
       'listevisning' => array(
         'custom_settings' => TRUE,
       ),
+      'listevisningstor' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'display' => array(),
@@ -864,6 +867,15 @@ function ktc_content_types_strongarm() {
         'custom_settings' => FALSE,
       ),
       'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'listevisning' => array(
+        'custom_settings' => TRUE,
+      ),
+      'listevisningstor' => array(
+        'custom_settings' => TRUE,
+      ),
+      'token' => array(
         'custom_settings' => FALSE,
       ),
     ),
