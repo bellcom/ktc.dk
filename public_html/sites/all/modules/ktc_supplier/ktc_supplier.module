@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KTC Leverandører feature.
+ */
+
+include_once 'ktc_supplier.features.inc';
