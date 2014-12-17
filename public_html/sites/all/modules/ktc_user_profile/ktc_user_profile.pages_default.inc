@@ -230,7 +230,7 @@ function ktc_user_profile_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'New content';
   $page->admin_description = '';
-  $page->path = 'user/group/new_content';
+  $page->path = 'user/%user/group/new_content';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -244,8 +244,26 @@ function ktc_user_profile_default_page_manager_pages() {
     ),
     'logic' => 'and',
   );
-  $page->menu = array();
-  $page->arguments = array();
+  $page->menu = array(
+    'type' => 'tab',
+    'title' => 'Nyt indhold',
+    'name' => 'navigation',
+    'weight' => '2',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'user' => array(
+      'id' => 1,
+      'identifier' => 'Bruger: ID',
+      'name' => 'entity_id:user',
+      'settings' => array(),
+    ),
+  );
   $page->conf = array(
     'admin_paths' => FALSE,
   );
@@ -311,19 +329,17 @@ function ktc_user_profile_default_page_manager_pages() {
     $display->content['new-9065c081-2583-44db-8c41-3c14c76a53c5'] = $pane;
     $display->panels['left'][0] = 'new-9065c081-2583-44db-8c41-3c14c76a53c5';
     $pane = new stdClass();
-    $pane->pid = 'new-fa8a59ce-b16b-4406-a7d2-16ffd7d64235';
+    $pane->pid = 'new-691d03da-f3e3-4c3c-93cd-7e081bdd7aaa';
     $pane->panel = 'right';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'page_tabs';
+    $pane->subtype = 'page_tabs';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<div class="col-md-12 col-sm-12 col-xs-12"><a class="btn filter-link col-md-12 col-sm-12 col-xs-12 btn-blacknblue" href="/user">Min profil</a></div>
-',
-      'format' => 'full_html',
-      'substitute' => TRUE,
+      'type' => 'both',
+      'id' => 'tabs',
+      'override_title' => 1,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -333,9 +349,31 @@ function ktc_user_profile_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'fa8a59ce-b16b-4406-a7d2-16ffd7d64235';
-    $display->content['new-fa8a59ce-b16b-4406-a7d2-16ffd7d64235'] = $pane;
-    $display->panels['right'][0] = 'new-fa8a59ce-b16b-4406-a7d2-16ffd7d64235';
+    $pane->uuid = '691d03da-f3e3-4c3c-93cd-7e081bdd7aaa';
+    $display->content['new-691d03da-f3e3-4c3c-93cd-7e081bdd7aaa'] = $pane;
+    $display->panels['right'][0] = 'new-691d03da-f3e3-4c3c-93cd-7e081bdd7aaa';
+    $pane = new stdClass();
+    $pane->pid = 'new-b97d9368-4e27-41a6-a4c4-6ddd3526e506';
+    $pane->panel = 'right';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-user-profile-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'b97d9368-4e27-41a6-a4c4-6ddd3526e506';
+    $display->content['new-b97d9368-4e27-41a6-a4c4-6ddd3526e506'] = $pane;
+    $display->panels['right'][1] = 'new-b97d9368-4e27-41a6-a4c4-6ddd3526e506';
     $pane = new stdClass();
     $pane->pid = 'new-980fdfdd-8c0e-4334-8ee9-0d4961073d2a';
     $pane->panel = 'right';
@@ -356,11 +394,11 @@ function ktc_user_profile_default_page_manager_pages() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '980fdfdd-8c0e-4334-8ee9-0d4961073d2a';
     $display->content['new-980fdfdd-8c0e-4334-8ee9-0d4961073d2a'] = $pane;
-    $display->panels['right'][1] = 'new-980fdfdd-8c0e-4334-8ee9-0d4961073d2a';
+    $display->panels['right'][2] = 'new-980fdfdd-8c0e-4334-8ee9-0d4961073d2a';
     $pane = new stdClass();
     $pane->pid = 'new-2d064e08-f9f7-4ac2-94e0-9dc24ed8e686';
     $pane->panel = 'right';
@@ -382,11 +420,11 @@ function ktc_user_profile_default_page_manager_pages() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '2d064e08-f9f7-4ac2-94e0-9dc24ed8e686';
     $display->content['new-2d064e08-f9f7-4ac2-94e0-9dc24ed8e686'] = $pane;
-    $display->panels['right'][2] = 'new-2d064e08-f9f7-4ac2-94e0-9dc24ed8e686';
+    $display->panels['right'][3] = 'new-2d064e08-f9f7-4ac2-94e0-9dc24ed8e686';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -400,10 +438,28 @@ function ktc_user_profile_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'User comments';
   $page->admin_description = '';
-  $page->path = 'user/user_comments';
+  $page->path = 'user/%user/user_comments';
   $page->access = array();
-  $page->menu = array();
-  $page->arguments = array();
+  $page->menu = array(
+    'type' => 'tab',
+    'title' => 'Kommentarer',
+    'name' => 'navigation',
+    'weight' => '3',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'user' => array(
+      'id' => 1,
+      'identifier' => 'Bruger: ID',
+      'name' => 'entity_id:user',
+      'settings' => array(),
+    ),
+  );
   $page->conf = array(
     'admin_paths' => FALSE,
   );
@@ -467,19 +523,17 @@ function ktc_user_profile_default_page_manager_pages() {
     $display->content['new-4a5ab92d-4ba9-452e-8a6f-789416a69f5a'] = $pane;
     $display->panels['left'][0] = 'new-4a5ab92d-4ba9-452e-8a6f-789416a69f5a';
     $pane = new stdClass();
-    $pane->pid = 'new-ea7ceb5b-a10d-4420-8ea0-d1a0c71c6b9e';
+    $pane->pid = 'new-ba48d5ef-ffda-4de0-89af-9eb22ccc4177';
     $pane->panel = 'right';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'page_tabs';
+    $pane->subtype = 'page_tabs';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<div class="col-md-12 col-sm-12 col-xs-12">
-	<a class="btn filter-link col-md-12 col-sm-12 col-xs-12 btn-blacknblue" href="/user">Min profil</a></div>',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
+      'type' => 'both',
+      'id' => 'tabs',
+      'override_title' => 1,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -489,9 +543,31 @@ function ktc_user_profile_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'ea7ceb5b-a10d-4420-8ea0-d1a0c71c6b9e';
-    $display->content['new-ea7ceb5b-a10d-4420-8ea0-d1a0c71c6b9e'] = $pane;
-    $display->panels['right'][0] = 'new-ea7ceb5b-a10d-4420-8ea0-d1a0c71c6b9e';
+    $pane->uuid = 'ba48d5ef-ffda-4de0-89af-9eb22ccc4177';
+    $display->content['new-ba48d5ef-ffda-4de0-89af-9eb22ccc4177'] = $pane;
+    $display->panels['right'][0] = 'new-ba48d5ef-ffda-4de0-89af-9eb22ccc4177';
+    $pane = new stdClass();
+    $pane->pid = 'new-eb30f21d-6315-4808-86c3-74137f587843';
+    $pane->panel = 'right';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-user-profile-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'eb30f21d-6315-4808-86c3-74137f587843';
+    $display->content['new-eb30f21d-6315-4808-86c3-74137f587843'] = $pane;
+    $display->panels['right'][1] = 'new-eb30f21d-6315-4808-86c3-74137f587843';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
