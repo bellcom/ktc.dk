@@ -708,6 +708,19 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
   $handler->display->display_options['arguments']['type']['break_phrase'] = TRUE;
+  /* Filterkriterie: Indhold: Opdateringsdato */
+  $handler->display->display_options['filters']['changed']['id'] = 'changed';
+  $handler->display->display_options['filters']['changed']['table'] = 'node';
+  $handler->display->display_options['filters']['changed']['field'] = 'changed';
+  $handler->display->display_options['filters']['changed']['operator'] = '>';
+  $handler->display->display_options['filters']['changed']['value']['value'] = '-60 day';
+  $handler->display->display_options['filters']['changed']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['changed']['group'] = 1;
+  /* Filterkriterie: Indhold: Har nyt indhold */
+  $handler->display->display_options['filters']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['filters']['timestamp']['table'] = 'history';
+  $handler->display->display_options['filters']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['filters']['timestamp']['group'] = 1;
   /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -728,10 +741,14 @@ function ktc_user_profile_views_default_views() {
     'hearing_responses' => 'hearing_responses',
     'os2web_base_news' => 'os2web_base_news',
   );
-  /* Filterkriterie: Indhold: Har nyt indhold */
-  $handler->display->display_options['filters']['timestamp']['id'] = 'timestamp';
-  $handler->display->display_options['filters']['timestamp']['table'] = 'history';
-  $handler->display->display_options['filters']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterie: Indhold: Oprettelsesdato */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'node';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['operator'] = '>=';
+  $handler->display->display_options['filters']['created']['value']['value'] = '-60 day';
+  $handler->display->display_options['filters']['created']['value']['type'] = 'offset';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -826,7 +843,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_usertype']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_usertype']['alter']['text'] = 'Brugertype: [field_usertype]';
   $handler->display->display_options['fields']['field_usertype']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Direkte telefon */
+  /* Felt: Felt: Direkte telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
@@ -890,14 +907,14 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_zipcode']['label'] = '';
   $handler->display->display_options['fields']['field_zipcode']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_zipcode']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: By */
+  /* Felt: Felt: By */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['label'] = '';
   $handler->display->display_options['fields']['field_city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_city']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Adresse */
+  /* Felt: Felt: Adresse */
   $handler->display->display_options['fields']['field_adresse']['id'] = 'field_adresse';
   $handler->display->display_options['fields']['field_adresse']['table'] = 'field_data_field_adresse';
   $handler->display->display_options['fields']['field_adresse']['field'] = 'field_adresse';
@@ -1015,7 +1032,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_usertype']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_usertype']['alter']['text'] = 'Brugertype: [field_usertype]';
   $handler->display->display_options['fields']['field_usertype']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Direkte telefon */
+  /* Felt: Felt: Direkte telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
@@ -1079,14 +1096,14 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_zipcode']['label'] = '';
   $handler->display->display_options['fields']['field_zipcode']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_zipcode']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: By */
+  /* Felt: Felt: By */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['label'] = '';
   $handler->display->display_options['fields']['field_city']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_city']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Adresse */
+  /* Felt: Felt: Adresse */
   $handler->display->display_options['fields']['field_adresse']['id'] = 'field_adresse';
   $handler->display->display_options['fields']['field_adresse']['table'] = 'field_data_field_adresse';
   $handler->display->display_options['fields']['field_adresse']['field'] = 'field_adresse';
