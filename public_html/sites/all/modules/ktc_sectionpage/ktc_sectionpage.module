@@ -278,8 +278,8 @@ function _ktc_custom_filter_on_hearing() {
       </div>';
 
   }
-
-  if (!empty($years = _ktc_sectionpage_get_hearing_years())) {
+  $years = _ktc_sectionpage_get_hearing_years();
+  if (!empty($years)) {
     foreach ($years as $key => $year) {
       $html .= '
         <div class="col-md-6 col-sm-12 col-xs-12">
