@@ -72,15 +72,28 @@ function ktc_sectionpage_ajax_all_groups_view($f1, $f2, $f3, $f4) {
  * @param string $page
  *   last part in the url.
  *        string $f1 content_type
- *        string $f2: term_type (like document type, group type, news type ...)
- *        string $f3: emner (field_topics)
- *        string $f4: tags (field_tags)
+ *        string $f2: term_type (like document type, group type, news type ...) (arrangement type)
+ *        string $f3: emner (field_topics) (period in arrangement page)
+ *        string $f4: tags (field_tags) (date in arrangement page)
  *        string $f5: regioner
  *        string $gid: group ids.
  */
 function ktc_sectionpage_ajax_view($page, $f1, $f2, $f3, $f4, $f5, $gid) {
 
   $output = _ktc_content_filter_view($page, $f1, $f2, $f3, $f4, $f5, $gid);
+
+  if ($page == 'aktiviteter' || arg(0) == 'aktiviteter') {
+    // $f2 in "aktiviteter" page is arrangement type term,
+    // $f3 in "aktiviteter" page is period, as "fulture" or "old"
+    // $4 is date, like 2014-12-16.
+    $output = _ktc_section_block_arrangement_content($f2, $f3, $f4);
+  }
+
+  if ($page == 'hoeringer' || arg(0) == 'hoeringer') {
+    $output =_ktc_section_block_hearing_content($f1,$f2, $f3, $f4, $f5, $gid);
+    //if ($output == '')
+    //$output = 'sth';
+  }
   print $output;
 
 }
@@ -109,6 +122,10 @@ function ktc_sectionpage_block_info() {
 
   $blocks['user_comments_block'] = array(
     'info' => t('KTC user comments block'),
+  );
+
+  $blocks['custom_filter_on_hearing'] = array(
+    'info' => t('KTC filtrer på høringer block'),
   );
   return $blocks;
 }
@@ -143,18 +160,21 @@ function ktc_sectionpage_block_view($delta = '') {
       $block['subject'] = '';
       $block['content'] = _ktc_user_comments_content();
       break;
+
+    case 'custom_filter_on_hearing':
+      $block['subject'] = t('Filtrer på høringer');
+      $block['content'] = _ktc_custom_filter_on_hearing();
+      break;
   }
   return $block;
 }
 /**
  * Arrangement block_view call back.
  */
-function _ktc_section_block_arrangement_content($filter_value = '') {
-  $filter_ar = explode(',', $filter_value);
+function _ktc_section_block_arrangement_content($f2 = 'all', $f3 = 'fulture', $f4 = 'all') {
+  $filter_ar = explode(',', $f2);
   $filter = '';
-  if (empty($filter_ar)) {
-    return '';
-  }
+
   foreach ($filter_ar as $value) {
     if ($value == 'all' || $value == '') {
       continue;
@@ -169,25 +189,56 @@ function _ktc_section_block_arrangement_content($filter_value = '') {
         }
       }
     }
-    // TODO :Here commes "kommende, afholdte" string filter.
 
   }
   if ($filter == '') {
     $filter = 'all';
   }
-  $view = views_get_view('indhold_m_filter');
-  $view->set_display('panel_pane_5');
-  $view->set_arguments(array('arrangement', $filter));
+
+  $view = views_get_view('arrangement');
+  if ($f3 == 'old') {
+    $view->set_display('block_4');
+  }
+  else {
+    $view->set_display('block_3');
+  }
+
+  $view->set_arguments(array($filter, $f4));
   $view->pre_execute();
   $view->execute();
-  return $view->render('panel_pane_5');
+  if ($f3 == 'old') {
+    return $view->render('block_4');
+  }
+  else {
+    return $view->render('block_3');
+  }
+
 }
 
 /**
  * Hearing block_view call back.
+ * @param String $f1 term_type (hearing_type)
+ *  $f2 emner
+ *  $f3 user (all or mine)
+ *  $4 hearing_status (open or 1840)
+ *  $f5 year (all or year nummbers.)
  */
-function _ktc_section_block_hearing_content($filter_value = '') {
-  return '';
+function _ktc_section_block_hearing_content($type = 'hearing', $f1 = '', $f2 = '', $f3 = '', $f4 ='all' , $f5 = 'all') {
+  global $user;
+  $term_type = _ktc_sectionpage_filter_helper($f1);
+  $emner = _ktc_sectionpage_filter_helper($f2);
+  $uid = ($f3 == 'mine') ? $user->uid : 'all';
+  $status = (is_numeric($f4)) ? $f4 : 'all';
+  $nids = _ktc_sectionpage_years_filter_helper($f5);
+
+  $view = views_get_view('indhold_m_filter');
+
+  $view->set_display('panel_pane_3');
+  $view->set_arguments(array('all', $nids, $uid, $status, $term_type, $emner));
+  $view->pre_execute();
+  $view->execute();
+  return $view->render('panel_pane_3');
+
 }
 /**
  * Group invite link block_view call back.
@@ -204,6 +255,39 @@ function _ktc_section_block_netvaerk_invite_links_content() {
 
     }
   }
+  return $html;
+}
+
+function _ktc_custom_filter_on_hearing() {
+  global $user;
+  $html = '';
+  if ($user->uid != 0) {
+    $html .= '
+    <div id="filter-box-hearing-extra">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">All</div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="btn btn-blacknblue filter-link filter-status col-md-12 col-sm-12 col-xs-12" id="filter-status" data-filter="1837">Åbne</div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-mine" data-filter="mine">Mine</div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="btn btn-blacknblue filter-link filter-status col-md-12 col-sm-12 col-xs-12" id="filter-status" data-filter="1840">Lukkede</div>
+      </div>';
+
+  }
+
+  if (!empty($years = _ktc_sectionpage_get_hearing_years())) {
+    foreach ($years as $key => $year) {
+      $html .= '
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-year" data-filter="' . $key . '">' . $key . '</div>
+        </div>';
+    }
+  }
+  $html .= '</div>';
   return $html;
 }
 
@@ -231,21 +315,20 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
   }
 
   // Default content_pane from view "indhold_m_filter".
-  // Content displays in two columns.
+  // Content displays in one columns.
   $display = 'panel_pane_4';
+
+  if ($page == 'nyheder' || arg(0) == 'nyheder') {
+    $content_type = 'os2web_base_news';
+    // Content displays in two columns.
+    $display = 'panel_pane_5';
+  }
 
   if ($page == 'hoeringer' || arg(0) == 'hoeringer') {
     $content_type = 'hearing';
     // Content displays in one columns.
     $display = 'panel_pane_5';
   }
-
-  if ($page == 'nyheder' || arg(0) == 'nyheder') {
-    $content_type = 'os2web_base_news';
-    // Content displays in one columns.
-    $display = 'panel_pane_5';
-  }
-
   if ($page == 'netvaerk' || arg(0) == 'netvaerk') {
     // Netvaerk section includes a group type filter.
     // Get the group ids from group type(s).
@@ -255,7 +338,7 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
     // So there are no other term_type filters,
     // set value to all to exclude context filter in view.
     $term_type = 'all';
-    // Content displays in one columns.
+    // Content displays in two columns.
     $display = 'panel_pane_5';
   }
 
@@ -461,4 +544,54 @@ function ktc_sectionpage_node_presave($node) {
   if (isset($node->modified)) {
     $node->changed = $node->modified;
   }
+}
+
+function _ktc_sectionpage_get_hearing_years() {
+  $nodes = node_load_multiple(array(), array('type' => 'hearing'));
+  $years = array();
+  $nids = array();
+  foreach ($nodes as $node) {
+    if ($date = field_get_items('node', $node, 'field_enrollment_deadlines')) {
+      $year = date('Y', strtotime($date[0]['value']));
+      if ($year == '1970') {
+        continue;
+      }
+      $nids[$year][] = $node->nid;
+    }
+  }
+  foreach ($nids as $key => $items) {
+
+    $years[$key] = implode('+', $items);
+  }
+
+  ksort($years);
+
+  return $years;
+}
+
+function _ktc_sectionpage_years_filter_helper($f5) {
+  $filter_value = '';
+
+  if ($f5 == 'all,') {
+    return $filter_value = 'all';
+  }
+  $years = _ktc_sectionpage_get_hearing_years();
+  $filter_ar = explode(',', $f5);
+  foreach ($filter_ar as $value) {
+    if ($value == '') {
+      continue;
+    }
+    if (is_numeric($value)) {
+      if ($filter_value == '') {
+        $filter_value = $years[$value];
+      }
+      else {
+        $filter_value .= '+' . $years[$value];
+      }
+    }
+  }
+  if ($filter_value == '') {
+    $filter_value = 'all';
+  }
+  return $filter_value;
 }
