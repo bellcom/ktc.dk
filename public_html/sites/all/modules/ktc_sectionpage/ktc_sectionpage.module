@@ -25,6 +25,7 @@ function ktc_sectionpage_menu() {
     'access arguments' => array('access content'),
     'page arguments' => array(1, 2, 3, 4),
   );
+
   return $items;
 }
 
@@ -72,7 +73,8 @@ function ktc_sectionpage_ajax_all_groups_view($f1, $f2, $f3, $f4) {
  * @param string $page
  *   last part in the url.
  *        string $f1 content_type
- *        string $f2: term_type (like document type, group type, news type ...) (arrangement type)
+ *        string $f2: term_type (like document type, group type, news type ...)
+ *        (arrangement type)
  *        string $f3: emner (field_topics) (period in arrangement page)
  *        string $f4: tags (field_tags) (date in arrangement page)
  *        string $f5: regioner
@@ -90,9 +92,7 @@ function ktc_sectionpage_ajax_view($page, $f1, $f2, $f3, $f4, $f5, $gid) {
   }
 
   if ($page == 'hoeringer' || arg(0) == 'hoeringer') {
-    $output =_ktc_section_block_hearing_content($f1,$f2, $f3, $f4, $f5, $gid);
-    //if ($output == '')
-    //$output = 'sth';
+    $output = _ktc_section_block_hearing_content($f1, $f2, $f3, $f4, $f5, $gid);
   }
   print $output;
 
@@ -105,11 +105,11 @@ function ktc_sectionpage_block_info() {
   $blocks = array();
 
   $blocks['arrangement_page_block'] = array(
-    'info' => t('Aktiviteter page block'),
+    'info' => t('Aktiviteter side block'),
   );
 
   $blocks['hearing_page_block'] = array(
-    'info' => t('Høring page block'),
+    'info' => t('Høringer side block'),
   );
 
   $blocks['netvaerk_invite_links'] = array(
@@ -117,16 +117,17 @@ function ktc_sectionpage_block_info() {
   );
 
   $blocks['section_default_content'] = array(
-    'info' => t('KTC sectionpage standard indhold'),
+    'info' => t('KTC sektionsside standard indhold'),
   );
 
   $blocks['user_comments_block'] = array(
-    'info' => t('KTC user comments block'),
+    'info' => t('KTC brugere kommentarter blok'),
   );
 
   $blocks['custom_filter_on_hearing'] = array(
-    'info' => t('KTC filtrer på høringer block'),
+    'info' => t('KTC filtrer på høringer blok'),
   );
+
   return $blocks;
 }
 /**
@@ -217,13 +218,15 @@ function _ktc_section_block_arrangement_content($f2 = 'all', $f3 = 'fulture', $f
 
 /**
  * Hearing block_view call back.
- * @param String $f1 term_type (hearing_type)
- *  $f2 emner
- *  $f3 user (all or mine)
- *  $4 hearing_status (open or 1840)
- *  $f5 year (all or year nummbers.)
+ *
+ * @param string $f1
+ *   term_type (hearing_type)
+ *    $f2 emner
+ *    $f3 user (all or mine)
+ *    $4 hearing_status (open or 1840)
+ *    $f5 year (all or year nummbers.)
  */
-function _ktc_section_block_hearing_content($type = 'hearing', $f1 = '', $f2 = '', $f3 = '', $f4 ='all' , $f5 = 'all') {
+function _ktc_section_block_hearing_content($type = 'hearing', $f1 = '', $f2 = '', $f3 = '', $f4 = 'all', $f5 = 'all') {
   global $user;
   $term_type = _ktc_sectionpage_filter_helper($f1);
   $emner = _ktc_sectionpage_filter_helper($f2);
@@ -257,7 +260,9 @@ function _ktc_section_block_netvaerk_invite_links_content() {
   }
   return $html;
 }
-
+/**
+ * Custom filter block on hearing section page.
+ */
 function _ktc_custom_filter_on_hearing() {
   global $user;
   $html = '';
@@ -381,7 +386,8 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
 function _ktc_user_comments_content() {
   global $user;
   // Profile subpage user/user_comments.
-  // Get contents with comments from user's contents, comments, and subscripted contents.
+  // Get contents with comments from user's contents,
+  // comments, and subscripted contents.
   $ids = _ktc_sectionpage_get_user_related_node_id($user->uid);
 
   $view = views_get_view('comments');
@@ -392,6 +398,7 @@ function _ktc_user_comments_content() {
   $view->execute();
   return $view->render('panel_pane_1');
 }
+
 /**
  * Filter helper.
  */
@@ -522,7 +529,9 @@ function _ktc_sectionpage_get_gids_from_group_types($term_type) {
   }
   return $gids;
 }
-
+/**
+ * Get node ids that related to a user.
+ */
 function _ktc_sectionpage_get_user_related_node_id($uid) {
   $id = '';
   $ids = array();
@@ -539,13 +548,17 @@ function _ktc_sectionpage_get_user_related_node_id($uid) {
   }
   return $id;
 }
-
+/**
+ * Implements hook_node_presave().
+ */
 function ktc_sectionpage_node_presave($node) {
   if (isset($node->modified)) {
     $node->changed = $node->modified;
   }
 }
-
+/**
+ * Group hearing nodes by years.
+ */
 function _ktc_sectionpage_get_hearing_years() {
   $nodes = node_load_multiple(array(), array('type' => 'hearing'));
   $years = array();
@@ -568,7 +581,9 @@ function _ktc_sectionpage_get_hearing_years() {
 
   return $years;
 }
-
+/**
+ * Get nids for view context filter by years-nids array.
+ */
 function _ktc_sectionpage_years_filter_helper($f5) {
   $filter_value = '';
 
