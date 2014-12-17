@@ -31,6 +31,10 @@
           $(this).closest('.filter-box').find('.filter-link').not(this).removeClass(button_class);
           $(this).closest('.filter-box').find('.filter-link').not(this).addClass(button_normal);
         }
+        else if ($(this).attr('id') == 'filter-status') {
+          $(this).closest('#filter-box-hearing-extra').find('.filter-status').not(this).addClass(button_normal);
+          $(this).closest('#filter-box-hearing-extra').find('.filter-status').not(this).removeClass(button_class);
+        }
         else {
           $(this).closest('.filter-box').find('#filter-all').removeClass(button_class);
           $(this).closest('.filter-box').find('#filter-all').addClass(button_normal);
@@ -63,8 +67,8 @@
       else {
         gid += ',' + check_gid_filter_value();
       }
+
       var link = '/ajax/' + type +'/view/'+filter_value[0]+'/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4]+'/'+gid;
-      console.log(link);
       if (type == 'netvaerk' && (filter_value[1] != 'all,' || filter_value[2] != 'all,' || filter_value[3] != 'all,' || filter_value[4] != 'all,')) {
         var link_2 = '/my_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4];
         var link_3 = '/all_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4];
@@ -78,11 +82,25 @@
           add_pager_ajax();
         });
       }
+      var substr = type.match(/aktiviteter/g);
+      if (type == 'aktiviteter' || substr == 'aktiviteter') {
+        var period = $('#period').find('.btn-primary').attr('data-filter');
 
+
+        link = '/ajax/aktiviteter/view/all/'+filter_value[1]+'/'+period+'/all/'+filter_value[4]+'/'+gid;
+      }
+
+      if (type == 'hoeringer') {
+        var hearing_filter_value = check_hearing_extra_filter_value();
+        link = '/ajax/hoeringer/view/hearing/'+filter_value[1]+'/'+filter_value[2]+'/'+hearing_filter_value[0]+'/'+hearing_filter_value[1]+'/'+hearing_filter_value[2];
+      }
+
+      console.log(link);
       jQuery.get(link, function(data){
 
         $('#section-page-with-filter').html(data);
         load_content();
+        add_pager_ajax();
       });
     });
 
@@ -94,6 +112,7 @@
         });
         return false;
       });
+
       $('#section-page-with-filter-all-groups .pager-previous a').click(function(event) {
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter-all-groups').html(data);
@@ -111,6 +130,20 @@
       $('#section-page-with-filter-my-groups .pager-previous a').click(function(event) {
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter-my-groups').html(data);
+          add_pager_ajax();
+        });
+        return false;
+      });
+      $('#section-page-with-filter .pager-next a').click(function(event) {
+        jQuery.get($(this).attr('href'), function(data){
+          $('#section-page-with-filter').html(data);
+          add_pager_ajax();
+        });
+        return false;
+      });
+      $('#section-page-with-filter .pagination a').click(function(event) {
+        jQuery.get($(this).attr('href'), function(data){
+          $('#section-page-with-filter').html(data);
           add_pager_ajax();
         });
         return false;
@@ -175,6 +208,49 @@
       }
       return gid;
     }
+
+    function check_hearing_extra_filter_value() {
+      var hearing_filter_value = [];
+      var user = '', hearing_status = '', year = '';
+
+      $('.filter-box #filter-box-hearing-extra').each(function(){
+
+        $(this).find('.btn-primary').each(function() {
+          var filter_id = $(this).attr('id');
+          if (filter_id == 'filter-status') {
+            hearing_status = $(this).attr('data-filter');
+          }
+
+          if (filter_id == 'filter-year') {
+            year += $(this).attr('data-filter') + ',';
+          }
+
+          if (filter_id == 'filter-all') {
+            user = $(this).attr('data-filter');
+          }
+
+          if (filter_id == 'filter-mine') {
+            user = $(this).attr('data-filter');
+          }
+
+        });
+      });
+
+      if (user == '') {
+        user = 'all';
+      }
+      if (hearing_status == '') {
+        hearing_status = 'all';
+      }
+      if (year == '') {
+        year = 'all';
+      }
+      hearing_filter_value.push(user);
+      hearing_filter_value.push(hearing_status);
+      hearing_filter_value.push(year);
+      return hearing_filter_value;
+    }
+
     $container = $("#section-page-with-filter .view-content");
 
     // Initial masonry
@@ -189,7 +265,7 @@
         $container.masonry({
           columnWidth: '.switch-elements',
         });
-
+        /*
         $container.infinitescroll({
           state : {
             currPage: 0
@@ -215,9 +291,9 @@
           });
             /*setTimeout(function() {
               $container.masonry( 'insert', $newElems);
-            }, 500);*/
+            }, 500);
         }
-        );
+        );*/
       });
     }
     $('<div class="filter-foldout"> + </div>').insertBefore($('.col-md-3 .pane-views-panes .pane-content'));
@@ -230,6 +306,31 @@
     $('.filter-foldout').click(function() {
       $(this).closest('.pane-views-panes').find('.pane-content').css('display','block');
       $(this).css('display', 'none');
+    });
+    $('.view-id-arrangement.view-display-id-panel_pane_1 .calendar-calendar table.mini td.mini a').click(function(event) {
+      var date = $(this).attr('href').split('/');
+      date = date[date.length-1];
+      var time = new Date(date + ' 00:00:00');
+      $('.filter-box').find('.filter-link').not("[id*='filter-all']").removeClass(button_class);
+      $('.filter-box').find('.filter-link').not("[id*='filter-all']").addClass(button_normal);
+      $('.filter-box').find('#filter-all').removeClass(button_normal);
+      $('.filter-box').find('#filter-all').addClass(button_class);
+      filter_value = check_filter_value();
+      if (time.getTime() > $.now()) {
+        link = '/ajax/aktiviteter/view/all/'+filter_value[1]+'/fulture/'+date+'/'+filter_value[4]+'/all';
+      }
+      else {
+        link = '/ajax/aktiviteter/view/all/'+filter_value[1]+'/old/'+date+'/'+filter_value[4]+'/all';
+      }
+
+      jQuery.get(link, function(data){
+
+        $('#section-page-with-filter').html(data);
+        load_content();
+        add_pager_ajax();
+      });
+      return false;
+
     });
 
   });

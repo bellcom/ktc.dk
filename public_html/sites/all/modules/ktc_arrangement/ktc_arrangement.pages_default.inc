@@ -574,6 +574,61 @@ function ktc_arrangement_default_page_manager_pages() {
     $pane->uuid = 'fbc410b6-6f73-4ad0-89f2-0ec941000bd7';
     $display->content['new-fbc410b6-6f73-4ad0-89f2-0ec941000bd7'] = $pane;
     $display->panels['right'][0] = 'new-fbc410b6-6f73-4ad0-89f2-0ec941000bd7';
+    $pane = new stdClass();
+    $pane->pid = 'new-820aa0ab-0867-411c-9cd3-a62f1bd5bd1f';
+    $pane->panel = 'right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<div class="col-md-6 col-sm-12 col-xs-12">
+	<div class="btn btn-primary filter-link col-md-12 col-sm-12 col-xs-12" data-filter="future" id="filter-all">
+		Kommende</div>
+</div>
+<div class="col-md-6 col-sm-12 col-xs-12">
+	<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" data-filter="old" id="filter-old">
+		Afholdte</div>
+</div>
+',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'period',
+      'css_class' => 'filter-box',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '820aa0ab-0867-411c-9cd3-a62f1bd5bd1f';
+    $display->content['new-820aa0ab-0867-411c-9cd3-a62f1bd5bd1f'] = $pane;
+    $display->panels['right'][1] = 'new-820aa0ab-0867-411c-9cd3-a62f1bd5bd1f';
+    $pane = new stdClass();
+    $pane->pid = 'new-dc251f72-95b3-4ac0-82a0-8c8ff4dd7273';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'arrangement-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'dc251f72-95b3-4ac0-82a0-8c8ff4dd7273';
+    $display->content['new-dc251f72-95b3-4ac0-82a0-8c8ff4dd7273'] = $pane;
+    $display->panels['right'][2] = 'new-dc251f72-95b3-4ac0-82a0-8c8ff4dd7273';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
