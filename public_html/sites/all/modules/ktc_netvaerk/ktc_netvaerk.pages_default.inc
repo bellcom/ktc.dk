@@ -355,6 +355,28 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $display->content['new-31085aa1-df03-4a1d-96af-6ecbcd990abd'] = $pane;
     $display->panels['left'][8] = 'new-31085aa1-df03-4a1d-96af-6ecbcd990abd';
     $pane = new stdClass();
+    $pane->pid = 'new-12883d21-eb53-4dbe-9fff-4155339206a6';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'subscriptions_ui-0';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 9;
+    $pane->locks = array();
+    $pane->uuid = '12883d21-eb53-4dbe-9fff-4155339206a6';
+    $display->content['new-12883d21-eb53-4dbe-9fff-4155339206a6'] = $pane;
+    $display->panels['left'][9] = 'new-12883d21-eb53-4dbe-9fff-4155339206a6';
+    $pane = new stdClass();
     $pane->pid = 'new-b6f26677-5782-4ef8-800c-9ebfb7fb8497';
     $pane->panel = 'right';
     $pane->type = 'page_tabs';

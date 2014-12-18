@@ -89,6 +89,28 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $display->content['new-0fc5bb30-8c53-4ece-a07e-94648731ebf0'] = $pane;
     $display->panels['left'][0] = 'new-0fc5bb30-8c53-4ece-a07e-94648731ebf0';
     $pane = new stdClass();
+    $pane->pid = 'new-66eb01af-f405-4b95-89bd-69e0805c663c';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'subscriptions_ui-0';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '66eb01af-f405-4b95-89bd-69e0805c663c';
+    $display->content['new-66eb01af-f405-4b95-89bd-69e0805c663c'] = $pane;
+    $display->panels['left'][1] = 'new-66eb01af-f405-4b95-89bd-69e0805c663c';
+    $pane = new stdClass();
     $pane->pid = 'new-11372e84-edac-4d1d-bb67-9b83107af265';
     $pane->panel = 'right';
     $pane->type = 'page_tabs';

@@ -184,6 +184,28 @@ function ktc_arrangement_default_page_manager_handlers() {
     $display->content['new-8058484a-0e6a-429e-8ee2-48f3d5f18ea9'] = $pane;
     $display->panels['left'][3] = 'new-8058484a-0e6a-429e-8ee2-48f3d5f18ea9';
     $pane = new stdClass();
+    $pane->pid = 'new-870fd62a-737e-48c6-866e-18c74791a0dc';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'subscriptions_ui-0';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '870fd62a-737e-48c6-866e-18c74791a0dc';
+    $display->content['new-870fd62a-737e-48c6-866e-18c74791a0dc'] = $pane;
+    $display->panels['left'][4] = 'new-870fd62a-737e-48c6-866e-18c74791a0dc';
+    $pane = new stdClass();
     $pane->pid = 'new-e939b038-3cb8-4c74-91e8-e371a195e62f';
     $pane->panel = 'right';
     $pane->type = 'page_tabs';

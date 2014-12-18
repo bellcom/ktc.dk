@@ -246,7 +246,7 @@ function ktc_hearing_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-md-4 col-sm-4 col-xs',
+      'css_class' => 'col-md-4 col-sm-4 col-xs-12',
     );
     $pane->extras = array();
     $pane->position = 3;
@@ -254,6 +254,31 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->uuid = 'ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69';
     $display->content['new-ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69'] = $pane;
     $display->panels['left'][3] = 'new-ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69';
+    $pane = new stdClass();
+    $pane->pid = 'new-9cf58d6e-0388-4ed1-b9d8-7e24b16ea83c';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'subscriptions_ui-0';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-8 col-sm-8 col-xs-12',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '9cf58d6e-0388-4ed1-b9d8-7e24b16ea83c';
+    $display->content['new-9cf58d6e-0388-4ed1-b9d8-7e24b16ea83c'] = $pane;
+    $display->panels['left'][4] = 'new-9cf58d6e-0388-4ed1-b9d8-7e24b16ea83c';
     $pane = new stdClass();
     $pane->pid = 'new-9067a27e-7b7c-4019-a149-3527eeba2558';
     $pane->panel = 'right';
