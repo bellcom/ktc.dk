@@ -373,6 +373,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
@@ -408,6 +409,10 @@ function ktc_hearing_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Forbindelse: Filbrug: Fil */
+  $handler->display->display_options['relationships']['node_to_file']['id'] = 'node_to_file';
+  $handler->display->display_options['relationships']['node_to_file']['table'] = 'file_usage';
+  $handler->display->display_options['relationships']['node_to_file']['field'] = 'node_to_file';
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -428,6 +433,14 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  /* Felt: Fil: Navn */
+  $handler->display->display_options['fields']['filename']['id'] = 'filename';
+  $handler->display->display_options['fields']['filename']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['filename']['field'] = 'filename';
+  $handler->display->display_options['fields']['filename']['relationship'] = 'node_to_file';
+  $handler->display->display_options['fields']['filename']['label'] = '';
+  $handler->display->display_options['fields']['filename']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['filename']['element_label_colon'] = FALSE;
   /* Sorteringskriterie: Indhold: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -453,6 +466,29 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['filters']['field_missing_files_value']['field'] = 'field_missing_files_value';
   $handler->display->display_options['filters']['field_missing_files_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_missing_files_value']['value'] = '0';
+  /* Filterkriterie: Global: Kombinér felter filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Søg';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'title' => 'title',
+    'filename' => 'filename',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -473,9 +509,11 @@ function ktc_hearing_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
+    t('Fil'),
     t('Mangler Fil(er)'),
     t('View resultattæller'),
     t('Redigér-link'),
+    t('Søg'),
     t('Page'),
   );
   $export['hearings_missing_files'] = $view;
