@@ -1,0 +1,258 @@
+<?php
+/**
+ * @file
+ * Code for the KTC invite arrangement module.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function ktc_invite_arrangement_permission() {
+  return array(
+    'send arrangement invitation' => array(
+      'title' => t('Send arrangement invitation'),
+      'description' => t('Vis send invitation link under arrangement'),
+      'restrict access' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_invite_arrangement_menu() {
+  $menu = array();
+
+  $menu['node/%/arrangement/invite-users'] = array(
+    'title'            => 'Inviter bruger',
+    'page callback'    => 'ktc_invite_arrangement_page',
+    'page arguments'   => array(1),
+    'access callback'  => '_ktc_invite_arrangement_access',
+    'access arguments' => array(1),
+    'type'             => MENU_LOCAL_TASK,
+    'weight'           => 4,
+  );
+
+  return $menu;
+}
+
+/**
+ * Invitation access callback.
+ */
+function _ktc_invite_arrangement_access($nid) {
+  if (is_numeric($nid)) {
+    if ($node = node_load($nid)) {
+      if ($node->type == 'arrangement' && user_access('send arrangement invitation')) {
+        return TRUE;
+      }
+    }
+  }
+
+  return FALSE;
+}
+
+/**
+ * Invite page callback.
+ */
+function ktc_invite_arrangement_page($nid) {
+  $invite_form = drupal_get_form('_ktc_invite_arrangement_form', $nid);
+  $vars['preface'] = render($invite_form);
+  return theme('ktc_invite_theme', $vars);
+}
+/**
+ * Implements hook_theme().
+ */
+function ktc_invite_arrangement_theme() {
+  return array(
+    'ktc_invite_theme' => array(
+      'template' => 'ktc-invite-arrangement',
+    ),
+  );
+}
+/**
+ * Invitation form callback.
+ */
+function _ktc_invite_arrangement_form($form, &$form_state, $nid) {
+  $form = array();
+  if (!is_numeric($nid)) {
+    drupal_set_message(t('Der er ikke en arrangement.'), 'warning');
+    return $form;
+  }
+  $node = FALSE;
+  $node = node_load($nid);
+  if ($node) {
+
+    $form['ktc_arrangement_invitee'] = array(
+      '#type'               => 'textfield',
+      '#title'              => t('Bruger'),
+      '#description'        => NULL,
+      '#default_value'      => NULL,
+      '#required'           => TRUE,
+      '#autocomplete_path'  => 'user/autocomplete',
+    );
+
+    $form['ktc_arrangement_message'] = array(
+      '#type'               => 'textarea',
+      '#title'              => t('Message'),
+      '#description'        => t('Give these potential members a good reason to signup the event.'),
+      '#default_value'      => '',
+    );
+
+    $form['actions'] = array('#type' => 'actions');
+    $form['ktc_arrangement_nid'] = array(
+      '#type'               => 'hidden',
+      '#value' => $nid,
+    );
+    $form['actions']['submit'] = array('#type' => 'submit', '#value' => t('Inviter'));
+
+    return $form;
+
+  }
+  else {
+    drupal_set_message(t('Der er ikke en arrangement.'), 'warning');
+    return $form;
+  }
+}
+
+/**
+ * Invitation form submit callback.
+ */
+function _ktc_invite_arrangement_form_submit($form, &$form_state) {
+
+  $message = check_plain($form_state['values']['ktc_arrangement_message']);
+  $nid = $form_state['values']['ktc_arrangement_nid'];
+
+  if ($invitee = user_load_by_name($form_state['values']['ktc_arrangement_invitee'])) {
+
+    $result = ktc_invite_arrangement_invite($nid, $invitee->uid, $message);
+
+    if ($result) {
+      drupal_set_message(t('Invitation has been sent to <em>@user</em>.', array('@user' => $invitee->name)));
+    }
+    else {
+      drupal_set_message(t('An error happened while inviting <em>@user</em>', array('@user' => $invitee->name)), 'error');
+    }
+  }
+  else {
+    drupal_set_message(t('Brugeren <em>@user</em> kan ikke findes', array('@user' => $invitee->name)), 'error');
+
+  }
+  drupal_goto('node/' . $nid);
+}
+/**
+ * Implements hook_block_info().
+ */
+function ktc_invite_arrangement_block_info() {
+  $blocks = array();
+
+  $blocks['arrangement_invite_block'] = array(
+    'info' => t('Aktivitet invitere link  blok'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ktc_invite_arrangement_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+
+    case 'arrangement_invite_block':
+      $block['subject'] = '';
+      $block['content'] = _ktc_invite_arrangement_invite_link_block();
+      break;
+  }
+  return $block;
+}
+/**
+ * Invite link block call back.
+ */
+function _ktc_invite_arrangement_invite_link_block() {
+  $nid = arg(1);
+  $html = '';
+  if (is_numeric($nid)) {
+    if ($access = _ktc_invite_arrangement_access($nid) && $node = node_load($nid)) {
+      $html .= '<div class="col-md-6 col-sm-6 col-xs-6">
+  <a class="btn btn-blacknblue" href="/node/' . $nid . '/arrangement/invite-users?destination=node/' . $nid . '">' . t('Inviter') . '</a>
+  </div>';
+
+    }
+  }
+  return $html;
+}
+/**
+ * Send an invitation to an user.
+ */
+function ktc_invite_arrangement_invite($nid, $uid, $message = '', $inviter = NULL) {
+  if (empty($inviter)) {
+    global $user;
+    $inviter = $user;
+  }
+  $invitee = user_load($uid);
+
+  // Force realnames loading.
+  if (module_exists('realname')) {
+    realname_user_load(array(
+      $inviter->uid => $inviter,
+      $invitee->uid => $invitee,
+    ));
+  }
+
+  if ($node = node_load($nid)) {
+    global $base_url;
+    // Send an invitation message.
+    $params = array(
+      'inviter' => $inviter,
+      'invitee' => $invitee,
+      'node_link' => url($base_url . '/' . drupal_get_path_alias('node/' . $nid)),
+      'message' => $message,
+    );
+    // Else send the invitation by mail.
+    $result = drupal_mail('ktc_invite_arrangement', 'send_invitation', $invitee->mail, $invitee->language, $params);
+    if ($result['result'] == TRUE) {
+      return TRUE;
+    }
+    else {
+      return FALSE;
+    }
+
+  }
+  else {
+    return FALSE;
+  }
+
+}
+
+/**
+ * Implements hook_mail().
+ */
+function ktc_invite_arrangement_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'send_invitation':
+
+      $message['subject'] .= t('Invitation til arrangement på') . ' ' . variable_get('site_name', 'ktc.dk');
+
+      // Prepare body.
+      $body_params = array(
+        '@sitename' => variable_get('site_name', 'ktc.dk'),
+        '@inviter' => module_exists('realname') ? $params['inviter']->realname : $params['inviter']->name,
+        '@message' => $params['message'],
+        '!node_link' => $params['node_link'],
+      );
+      $message['body'][] = t('Der er en invitation til dig på @sitename fra @inviter.
+
+Besked:
+
+"@message"
+
+Se indhold og tilmeld dig på:
+
+  !node_link
+
+
+Med venlig hilsen
+@sitename', $body_params);
+      break;
+  }
+}
