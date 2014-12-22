@@ -143,17 +143,11 @@ function _ktc_signup_block_get_signup_link($node) {
  * Implements hook_form_alter().
  */
 function ktc_signup_block_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'signup_node_admin_summary_form') {
+  if ($form_id == 'signup_node_admin_summary_form'
+      || $form_id == 'signup_form'
+      || $form_id == 'signup_node_settings_form'
+      || $form_id == 'signup_broadcast_form') {
     $form['#theme'] = array('ktc_signup_admin_form');
-  }
-  if ($form_id == 'signup_form') {
-    $form['#theme'] = array('ktc_signup_admin_add_form');
-  }
-  if ($form_id == 'signup_node_settings_form') {
-    $form['#theme'] = array('ktc_signup_node_setting_form');
-  }
-  if ($form_id == 'signup_broadcast_form') {
-    $form['#theme'] = array('ktc_signup_broadcast_form');
   }
 }
 
@@ -166,18 +160,6 @@ function ktc_signup_block_theme($existing, $type, $theme, $path) {
     'ktc_signup_admin_form' => array(
       'render element' => 'form',
       'template' => $path . 'ktc-signup-admin-form',
-    ),
-    'ktc_signup_admin_add_form' => array(
-      'render element' => 'form',
-      'template' => $path . 'ktc-signup-admin-add-form',
-    ),
-    'ktc_signup_node_setting_form' => array(
-      'render element' => 'form',
-      'template' => $path . 'ktc-signup-node-setting-form',
-    ),
-    'ktc_signup_broadcast_form' => array(
-      'render element' => 'form',
-      'template' => $path . 'ktc-signup-broadcast-form',
     ),
   );
 }
