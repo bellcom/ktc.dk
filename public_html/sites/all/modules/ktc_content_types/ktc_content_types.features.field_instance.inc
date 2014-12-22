@@ -63,7 +63,7 @@ function ktc_content_types_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -102,7 +102,7 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_arrangement_address',
-    'label' => 'Sted',
+    'label' => 'Adresse',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -115,7 +115,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -167,7 +167,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -330,18 +330,16 @@ function ktc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_arrangement_period',
     'label' => 'Visningsperiode',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
+      'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -393,7 +391,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 20,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -451,7 +449,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -502,7 +500,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -553,7 +551,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -622,7 +620,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -662,7 +660,7 @@ function ktc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_link_to_arrangement',
     'label' => 'Direkte link til program',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
@@ -691,7 +689,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -731,7 +729,7 @@ function ktc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_link_to_signup',
     'label' => 'Direkte link til tilmelding',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
@@ -760,7 +758,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -811,7 +809,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -862,7 +860,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -984,7 +982,7 @@ function ktc_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 29,
+      'weight' => 28,
     ),
   );
 
@@ -1054,7 +1052,7 @@ function ktc_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -1105,7 +1103,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -1150,9 +1148,9 @@ function ktc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_registration_deadline',
     'label' => 'Tilmeldingsfrist',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -1170,7 +1168,7 @@ function ktc_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -1277,7 +1275,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 25,
+      'weight' => 26,
     ),
   );
 
@@ -1330,7 +1328,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -1382,7 +1380,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 100,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -1433,7 +1431,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1497,7 +1495,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 24,
+      'weight' => 25,
     ),
     'widget_type' => 'options_select',
   );
@@ -1583,7 +1581,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -5371,6 +5369,7 @@ function ktc_content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Adresse');
   t('Afholdelsessted');
   t('Antal pladser');
   t('Arrangementets dato');
@@ -5417,7 +5416,6 @@ function ktc_content_types_field_default_field_instances() {
   t('Regioner');
   t('Resume (maks 2 linier!)');
   t('Skjul auto relaterede links');
-  t('Sted');
   t('Stikord');
   t('Synlighed');
   t('Søgeord');
