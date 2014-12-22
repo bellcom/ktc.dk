@@ -8084,6 +8084,15 @@ body.page-node .region-content.col-md-6 div.node-os2web-base-news .field-name-fi
 body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
   border-radius: 4px 4px 0 0;
 }
+body.page-node.no-sidebars .pane-ktc-signup-block-ktc-signup-link-block ul.tabs--primary,
+body.page-taxonomy-term.term-is-not-top.no-sidebars .pane-ktc-signup-block-ktc-signup-link-block ul.tabs--primary,
+body.page-node .region-content.col-sm-12 .pane-ktc-signup-block-ktc-signup-link-block ul.tabs--primary,
+body.page-taxonomy-term.term-is-not-top .region-content.col-sm-12 .pane-ktc-signup-block-ktc-signup-link-block ul.tabs--primary,
+body.page-node .region-content.col-md-12 .pane-ktc-signup-block-ktc-signup-link-block ul.tabs--primary,
+body.page-taxonomy-term.term-is-not-top .region-content.col-md-12 .pane-ktc-signup-block-ktc-signup-link-block ul.tabs--primary {
+  display: none;
+  visibility: hidden;
+}
 .page-taxonomy .region-content.col-sm-9 article .wrap,
 .page-node .region-content.col-sm-9 article .wrap,
 .page-taxonomy .region-content.col-md-9 article .wrap,
