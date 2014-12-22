@@ -9353,10 +9353,12 @@ fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li a.active {
   border-bottom: none;
 }
 .col-md-3 .tabs--primary,
+.col-md-3 .tabs--secondary,
 .col-md-3 .pane-menu-menu-user-profile-menu {
   padding-top: 10px;
 }
 .col-md-3 .tabs--primary li.active > a,
+.col-md-3 .tabs--secondary li.active > a,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a {
   background-color: #589000;
   border-color: #487700;
@@ -9368,72 +9370,100 @@ fieldset[disabled] .col-md-3 .panel-pane .pane-content #edit-tabs li a.active {
   border: none;
 }
 .col-md-3 .tabs--primary li.active > a:hover,
+.col-md-3 .tabs--secondary li.active > a:hover,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:hover,
 .col-md-3 .tabs--primary li.active > a:focus,
+.col-md-3 .tabs--secondary li.active > a:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:focus,
 .col-md-3 .tabs--primary li.active > a:active,
+.col-md-3 .tabs--secondary li.active > a:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:active,
 .col-md-3 .tabs--primary li.active > a.active,
+.col-md-3 .tabs--secondary li.active > a.active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active,
 .open .dropdown-toggle.col-md-3 .tabs--primary li.active > a,
+.open .dropdown-toggle.col-md-3 .tabs--secondary li.active > a,
 .open .dropdown-toggle.col-md-3 .pane-menu-menu-user-profile-menu li.active > a {
   color: #ffffff;
   background-color: #3f6700;
   border-color: #233900;
 }
 .col-md-3 .tabs--primary li.active > a:active,
+.col-md-3 .tabs--secondary li.active > a:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:active,
 .col-md-3 .tabs--primary li.active > a.active,
+.col-md-3 .tabs--secondary li.active > a.active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active,
 .open .dropdown-toggle.col-md-3 .tabs--primary li.active > a,
+.open .dropdown-toggle.col-md-3 .tabs--secondary li.active > a,
 .open .dropdown-toggle.col-md-3 .pane-menu-menu-user-profile-menu li.active > a {
   background-image: none;
 }
 .col-md-3 .tabs--primary li.active > a.disabled,
+.col-md-3 .tabs--secondary li.active > a.disabled,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.disabled,
 .col-md-3 .tabs--primary li.active > a[disabled],
+.col-md-3 .tabs--secondary li.active > a[disabled],
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a[disabled],
 fieldset[disabled] .col-md-3 .tabs--primary li.active > a,
+fieldset[disabled] .col-md-3 .tabs--secondary li.active > a,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a,
 .col-md-3 .tabs--primary li.active > a.disabled:hover,
+.col-md-3 .tabs--secondary li.active > a.disabled:hover,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.disabled:hover,
 .col-md-3 .tabs--primary li.active > a[disabled]:hover,
+.col-md-3 .tabs--secondary li.active > a[disabled]:hover,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a[disabled]:hover,
 fieldset[disabled] .col-md-3 .tabs--primary li.active > a:hover,
+fieldset[disabled] .col-md-3 .tabs--secondary li.active > a:hover,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:hover,
 .col-md-3 .tabs--primary li.active > a.disabled:focus,
+.col-md-3 .tabs--secondary li.active > a.disabled:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.disabled:focus,
 .col-md-3 .tabs--primary li.active > a[disabled]:focus,
+.col-md-3 .tabs--secondary li.active > a[disabled]:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a[disabled]:focus,
 fieldset[disabled] .col-md-3 .tabs--primary li.active > a:focus,
+fieldset[disabled] .col-md-3 .tabs--secondary li.active > a:focus,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:focus,
 .col-md-3 .tabs--primary li.active > a.disabled:active,
+.col-md-3 .tabs--secondary li.active > a.disabled:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.disabled:active,
 .col-md-3 .tabs--primary li.active > a[disabled]:active,
+.col-md-3 .tabs--secondary li.active > a[disabled]:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a[disabled]:active,
 fieldset[disabled] .col-md-3 .tabs--primary li.active > a:active,
+fieldset[disabled] .col-md-3 .tabs--secondary li.active > a:active,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:active,
 .col-md-3 .tabs--primary li.active > a.disabled.active,
+.col-md-3 .tabs--secondary li.active > a.disabled.active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.disabled.active,
 .col-md-3 .tabs--primary li.active > a[disabled].active,
+.col-md-3 .tabs--secondary li.active > a[disabled].active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a[disabled].active,
 fieldset[disabled] .col-md-3 .tabs--primary li.active > a.active,
+fieldset[disabled] .col-md-3 .tabs--secondary li.active > a.active,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active {
   background-color: #589000;
   border-color: #487700;
 }
 .col-md-3 .tabs--primary li.active > a .badge,
+.col-md-3 .tabs--secondary li.active > a .badge,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a .badge {
   color: #589000;
   background-color: #ffffff;
 }
 .col-md-3 .tabs--primary li.active > a:hover,
+.col-md-3 .tabs--secondary li.active > a:hover,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:hover,
 .col-md-3 .tabs--primary li.active > a:focus,
+.col-md-3 .tabs--secondary li.active > a:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:focus,
 .col-md-3 .tabs--primary li.active > a:active,
+.col-md-3 .tabs--secondary li.active > a:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:active,
 .col-md-3 .tabs--primary li.active > a.active,
+.col-md-3 .tabs--secondary li.active > a.active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active {
   background-image: -webkit-linear-gradient(top, #589000 0%, #85c500 100%);
   background-image: linear-gradient(to bottom, #589000 0%, #85c500 100%);
@@ -9442,38 +9472,54 @@ fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.act
   color: #ffffff;
 }
 .col-md-3 .tabs--primary li.active > a.disabled,
+.col-md-3 .tabs--secondary li.active > a.disabled,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.disabled,
 .col-md-3 .tabs--primary li.active > a[disabled],
+.col-md-3 .tabs--secondary li.active > a[disabled],
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a[disabled],
 fieldset[disabled] .col-md-3 .tabs--primary li.active > a,
+fieldset[disabled] .col-md-3 .tabs--secondary li.active > a,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a,
 .col-md-3 .tabs--primary li.active > a.disabled:hover,
+.col-md-3 .tabs--secondary li.active > a.disabled:hover,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.disabled:hover,
 .col-md-3 .tabs--primary li.active > a[disabled]:hover,
+.col-md-3 .tabs--secondary li.active > a[disabled]:hover,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a[disabled]:hover,
 fieldset[disabled] .col-md-3 .tabs--primary li.active > a:hover,
+fieldset[disabled] .col-md-3 .tabs--secondary li.active > a:hover,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:hover,
 .col-md-3 .tabs--primary li.active > a.disabled:focus,
+.col-md-3 .tabs--secondary li.active > a.disabled:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.disabled:focus,
 .col-md-3 .tabs--primary li.active > a[disabled]:focus,
+.col-md-3 .tabs--secondary li.active > a[disabled]:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a[disabled]:focus,
 fieldset[disabled] .col-md-3 .tabs--primary li.active > a:focus,
+fieldset[disabled] .col-md-3 .tabs--secondary li.active > a:focus,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:focus,
 .col-md-3 .tabs--primary li.active > a.disabled:active,
+.col-md-3 .tabs--secondary li.active > a.disabled:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.disabled:active,
 .col-md-3 .tabs--primary li.active > a[disabled]:active,
+.col-md-3 .tabs--secondary li.active > a[disabled]:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a[disabled]:active,
 fieldset[disabled] .col-md-3 .tabs--primary li.active > a:active,
+fieldset[disabled] .col-md-3 .tabs--secondary li.active > a:active,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a:active,
 .col-md-3 .tabs--primary li.active > a.disabled.active,
+.col-md-3 .tabs--secondary li.active > a.disabled.active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.disabled.active,
 .col-md-3 .tabs--primary li.active > a[disabled].active,
+.col-md-3 .tabs--secondary li.active > a[disabled].active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a[disabled].active,
 fieldset[disabled] .col-md-3 .tabs--primary li.active > a.active,
+fieldset[disabled] .col-md-3 .tabs--secondary li.active > a.active,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active {
   background-color: #589000;
 }
 .col-md-3 .tabs--primary li a,
+.col-md-3 .tabs--secondary li a,
 .col-md-3 .pane-menu-menu-user-profile-menu li a {
   display: inline-block;
   margin-bottom: 0;
@@ -9503,25 +9549,32 @@ fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.act
   margin-bottom: 10px;
 }
 .col-md-3 .tabs--primary li a:focus,
+.col-md-3 .tabs--secondary li a:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li a:focus,
 .col-md-3 .tabs--primary li a:active:focus,
+.col-md-3 .tabs--secondary li a:active:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li a:active:focus,
 .col-md-3 .tabs--primary li a.active:focus,
+.col-md-3 .tabs--secondary li a.active:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li a.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 .col-md-3 .tabs--primary li a:hover,
+.col-md-3 .tabs--secondary li a:hover,
 .col-md-3 .pane-menu-menu-user-profile-menu li a:hover,
 .col-md-3 .tabs--primary li a:focus,
+.col-md-3 .tabs--secondary li a:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li a:focus {
   color: #ffffff;
   text-decoration: none;
 }
 .col-md-3 .tabs--primary li a:active,
+.col-md-3 .tabs--secondary li a:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li a:active,
 .col-md-3 .tabs--primary li a.active,
+.col-md-3 .tabs--secondary li a.active,
 .col-md-3 .pane-menu-menu-user-profile-menu li a.active {
   outline: 0;
   background-image: none;
@@ -9530,10 +9583,13 @@ fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.act
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .col-md-3 .tabs--primary li a.disabled,
+.col-md-3 .tabs--secondary li a.disabled,
 .col-md-3 .pane-menu-menu-user-profile-menu li a.disabled,
 .col-md-3 .tabs--primary li a[disabled],
+.col-md-3 .tabs--secondary li a[disabled],
 .col-md-3 .pane-menu-menu-user-profile-menu li a[disabled],
 fieldset[disabled] .col-md-3 .tabs--primary li a,
+fieldset[disabled] .col-md-3 .tabs--secondary li a,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a {
   cursor: not-allowed;
   pointer-events: none;
@@ -9544,12 +9600,16 @@ fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a {
   box-shadow: none;
 }
 .col-md-3 .tabs--primary li a:hover,
+.col-md-3 .tabs--secondary li a:hover,
 .col-md-3 .pane-menu-menu-user-profile-menu li a:hover,
 .col-md-3 .tabs--primary li a:focus,
+.col-md-3 .tabs--secondary li a:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li a:focus,
 .col-md-3 .tabs--primary li a:active,
+.col-md-3 .tabs--secondary li a:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li a:active,
 .col-md-3 .tabs--primary li a.active,
+.col-md-3 .tabs--secondary li a.active,
 .col-md-3 .pane-menu-menu-user-profile-menu li a.active {
   background-image: -webkit-linear-gradient(top, #36525e 0%, #496e7e 100%);
   background-image: linear-gradient(to bottom, #36525e 0%, #496e7e 100%);
@@ -9558,36 +9618,55 @@ fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a {
   color: #ffffff;
 }
 .col-md-3 .tabs--primary li a.disabled,
+.col-md-3 .tabs--secondary li a.disabled,
 .col-md-3 .pane-menu-menu-user-profile-menu li a.disabled,
 .col-md-3 .tabs--primary li a[disabled],
+.col-md-3 .tabs--secondary li a[disabled],
 .col-md-3 .pane-menu-menu-user-profile-menu li a[disabled],
 fieldset[disabled] .col-md-3 .tabs--primary li a,
+fieldset[disabled] .col-md-3 .tabs--secondary li a,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a,
 .col-md-3 .tabs--primary li a.disabled:hover,
+.col-md-3 .tabs--secondary li a.disabled:hover,
 .col-md-3 .pane-menu-menu-user-profile-menu li a.disabled:hover,
 .col-md-3 .tabs--primary li a[disabled]:hover,
+.col-md-3 .tabs--secondary li a[disabled]:hover,
 .col-md-3 .pane-menu-menu-user-profile-menu li a[disabled]:hover,
 fieldset[disabled] .col-md-3 .tabs--primary li a:hover,
+fieldset[disabled] .col-md-3 .tabs--secondary li a:hover,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a:hover,
 .col-md-3 .tabs--primary li a.disabled:focus,
+.col-md-3 .tabs--secondary li a.disabled:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li a.disabled:focus,
 .col-md-3 .tabs--primary li a[disabled]:focus,
+.col-md-3 .tabs--secondary li a[disabled]:focus,
 .col-md-3 .pane-menu-menu-user-profile-menu li a[disabled]:focus,
 fieldset[disabled] .col-md-3 .tabs--primary li a:focus,
+fieldset[disabled] .col-md-3 .tabs--secondary li a:focus,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a:focus,
 .col-md-3 .tabs--primary li a.disabled:active,
+.col-md-3 .tabs--secondary li a.disabled:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li a.disabled:active,
 .col-md-3 .tabs--primary li a[disabled]:active,
+.col-md-3 .tabs--secondary li a[disabled]:active,
 .col-md-3 .pane-menu-menu-user-profile-menu li a[disabled]:active,
 fieldset[disabled] .col-md-3 .tabs--primary li a:active,
+fieldset[disabled] .col-md-3 .tabs--secondary li a:active,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a:active,
 .col-md-3 .tabs--primary li a.disabled.active,
+.col-md-3 .tabs--secondary li a.disabled.active,
 .col-md-3 .pane-menu-menu-user-profile-menu li a.disabled.active,
 .col-md-3 .tabs--primary li a[disabled].active,
+.col-md-3 .tabs--secondary li a[disabled].active,
 .col-md-3 .pane-menu-menu-user-profile-menu li a[disabled].active,
 fieldset[disabled] .col-md-3 .tabs--primary li a.active,
+fieldset[disabled] .col-md-3 .tabs--secondary li a.active,
 fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a.active {
   background-color: #36525e;
+}
+.col-md-3 .tabs--secondary {
+  border-top: 2px solid #c3c3c3;
+  border-radius: 0;
 }
 .col-md-3 .view .date-nav-wrapper .date-prev {
   left: 0;
