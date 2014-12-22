@@ -1,0 +1,7 @@
+name = KTC Signup node block
+description = Signup/cancel signup links block for authorized users.
+package = KTC
+project = ktc_signup_block
+dependencies[] = signup
+core = 7.x
+version = "7.x-1.0"
