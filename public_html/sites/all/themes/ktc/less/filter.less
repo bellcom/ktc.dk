@@ -1,10 +1,10 @@
-.col-md-3 {
+.col-md-3,
+.col-md-4 {
   .panel-separator {
     clear: both;
   }
   .panel-pane {
     position: relative;
-    border-bottom: 1px solid #dfded7;
     .pane-content {
       display: block;
       position: relative;
@@ -24,7 +24,7 @@
       #filter-all,
       .filter-link {
         //font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 3px;
       }
       .filter-foldin {
         cursor: pointer;
@@ -32,23 +32,6 @@
         position: absolute;
         top: -40px;
         right: 15px;
-      }
-      .menu.nav,
-      #tabs,
-      #edit-tabs {
-        li {
-          &.active-trail a,
-          &.active > a{
-            .btn-primary();
-          }
-          a {
-            .btn();
-            .btn-blacknblue();
-            margin-right: 0px;
-            margin-bottom: 10px;
-
-          }
-        }
       }
     }
   }
@@ -69,14 +52,18 @@
     padding-top: 10px;
     li {
       &.active > a{
-        .btn-primary();
+        &.active {
+          background-color: #fff !important;
+          .box-shadow(none);
+          .btn-primary();
+        }
       }
       a {
         .btn();
         .btn-blacknblue();
         width: 100%;
         margin-right: 0px;
-        margin-bottom: 10px;
+        margin-bottom: 3px;
       }
     }
   }

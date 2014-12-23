@@ -7,66 +7,25 @@
 //
 // If you want to simulate the heading of an panel in your own element use the
 // classes .like-panel and which type of panel with .like-panel-primary.
-
-.panel {
+.panel-pane,
+.panels-ipe-region {
   border: none;
 
   box-shadow: none;
   &:last-child {
     margin-bottom: 18px;
   }
-  & > .panel-heading {
-    color: white;
-    border: none;
-    padding: 14px 19px;
-
-    h3 {
-      text-transform: none;
-      font-size: @font-size-h2;
+  h3 {
+    &.pane-title {
+      border: none;
+      padding: 2px 0px 2px 8px;
+      font-size: @font-size-h5;
       font-weight: normal;
+      text-transform: uppercase;
     }
-
-    a.rss-icon {
-      display: block;
-      float: right;
-    }
-  }
-
-  &.with-arrow > .panel-body {
-    position: relative;
-    padding-top: @panel-arrow-blue-height + 3px;
-    &:before {
-      // Add an arrow to all panels bodies.
-
-      content: " ";
-      display: table;
-
-      position: absolute;
-      top: 0;
-      left: 50%;
-
-      margin-left: -@panel-arrow-blue-width / 2;
-
-      .sprite(@panel-arrow-blue);
-
-    }
-  }
-  &.with-big-arrow > .panel-body {
-    position: relative;
-    padding-top: @panel-arrow-blue-height + 3px;
-    &:before {
-      // Add an arrow to all panels bodies.
-      content: " ";
-      display: table;
-
-      position: absolute;
-      top: 0;
-      left: 48%;
-
-      margin-left: -@panel-arrow-blue-width / 2;
-
-      .sprite(@panel-arrow-green-big);
-
+    &.filter-pane-title {
+      background-color: @gray-darker;
+      color: #fff;
     }
   }
 
@@ -124,14 +83,10 @@
 }
 .panel-primary.with-arrow > .panel-body {
   .large-arrow& {
-    padding-top: @panel-arrow-green-big-height + 3px;
   }
   &:before {
-    .sprite(@panel-arrow-green-big);
 
     .large-arrow& {
-      margin-left: -@panel-arrow-green-big-width / 2;
-      .sprite(@panel-arrow-green-big);
     }
   }
 }
@@ -143,39 +98,34 @@
 
 .panel.panel-blacknblue .panel-body .panel-body-inner { padding-bottom: 19px;}
 .panel-blacknblue.with-arrow > .panel-body:before {
-  .sprite(@panel-arrow-darkblue);
 }
 
 .panel-success > .panel-heading,
 .like-panel.like-panel-success {
-  #gradient > .vertical(lighten(@panel-success-heading-bg, 5%), darken(@panel-success-heading-bg, 5%), 0%, 100%);
+  //#gradient > .vertical(lighten(@panel-success-heading-bg, 5%), darken(@panel-success-heading-bg, 5%), 0%, 100%);
 }
 .panel-success.with-arrow > .panel-body:before {
-  // .sprite(@panel-arrow-blue);
 }
 
 .panel-info > .panel-heading,
 .like-panel.like-panel-info {
-  #gradient > .vertical(lighten(@panel-info-heading-bg, 5%), darken(@panel-info-heading-bg, 5%), 0%, 100%);
+ // #gradient > .vertical(lighten(@panel-info-heading-bg, 5%), darken(@panel-info-heading-bg, 5%), 0%, 100%);
 }
 .panel-info.with-arrow > .panel-body:before {
-  // .sprite(@panel-arrow-blue);
 }
 
 .panel-warning > .panel-heading,
 .like-panel.like-panel-warning {
-  #gradient > .vertical(lighten(@panel-warning-heading-bg, 5%), darken(@panel-warning-heading-bg, 5%), 0%, 100%);
+  //#gradient > .vertical(lighten(@panel-warning-heading-bg, 5%), darken(@panel-warning-heading-bg, 5%), 0%, 100%);
 }
 .panel-warning.with-arrow > .panel-body:before {
-  // .sprite(@panel-arrow-blue);
 }
 
 .panel-danger > .panel-heading,
 .like-panel.like-panel-danger {
-  #gradient > .vertical(lighten(@panel-danger-heading-bg, 5%), darken(@panel-danger-heading-bg, 5%), 0%, 100%);
+ // #gradient > .vertical(lighten(@panel-danger-heading-bg, 5%), darken(@panel-danger-heading-bg, 5%), 0%, 100%);
 }
 .panel-danger.with-arrow > .panel-body:before {
-  // .sprite(@panel-arrow-blue);
 }
 
 .like-panel {
@@ -214,7 +164,6 @@
       text-align: center;
       border-radius: 0 4px 4px 0;
       i {
-        .sprite(@dropdown-arrow-down);
         margin: 0 auto;
         margin-top: 0.8em;
         display: block;

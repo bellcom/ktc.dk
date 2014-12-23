@@ -99,7 +99,7 @@
       text-align: center;
       vertical-align: middle;
       white-space: normal;
-      .pretty-buttons(@btn-primary-color, @gradient-light, darken(@gradient-light, 10%));
+      //.pretty-buttons(@btn-primary-color, @gradient-light, darken(@gradient-light, 10%));
       &.active {
           #gradient > .vertical(@brand-lightgreen, @brand-darkgreen, 0%, 100%);
           &:after {
@@ -111,8 +111,6 @@
             bottom: -15px;
             left: 50%;
 
-            margin-left: -@spotbox-arrow-width / 2;
-            .sprite(@panel-arrow-green-big);
           }
       }
       &.tab-0 {

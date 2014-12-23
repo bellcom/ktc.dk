@@ -296,7 +296,6 @@
         );*/
       });
     }
-    $('<div class="filter-foldout"> + </div>').insertBefore($('.col-md-3 .pane-views-panes .pane-content'));
     $('.filter-foldin').click(function() {
       if ($(this).closest('.pane-content').css('display') == 'block') {
         $(this).closest('.pane-content').css('display','none');
