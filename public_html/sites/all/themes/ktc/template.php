@@ -46,88 +46,10 @@ function ktc_preprocess_page(&$variables) {
   $sidebar_second_hidden = FALSE;
   $sidebar_first_hidden = FALSE;
 
-  // If node has hidden the sidebar, set content to null.
-  if ($node && $hide_sidebar_field = field_get_items('node', $node, 'field_svendborg_hide_sidebar')) {
-    if ($hide_sidebar_field[0]['value'] == '1') {
-      $variables['page']['sidebar_second'] = array();
-      $sidebar_second_hidden = TRUE;
-    }
-  }
-
   // Get all the nodes selvbetjeningslinks and give them to the template.
   if (($node && $links = field_get_items('node', $node, 'field_os2web_base_field_selfserv')) ||
       ($term && $links = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_selfserv'))) {
     $variables['page']['os2web_selfservicelinks'] = _ktc_get_selfservicelinks($links);
-  }
-
-  // Get all related links to this node.
-  // 1. Get all unique related links from the node.
-  $related_links = array();
-  if (($node && $links = field_get_items('node', $node, 'field_os2web_base_field_related')) ||
-      ($term && $links = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_related'))) {
-    foreach ($links as $link) {
-      $link_node = node_load($link['nid']);
-      if ($link_node) {
-        $related_links[$link['nid']] = array(
-          'nid' => $link['nid'],
-          'title' => $link_node->title,
-          'class' => 'int-link',
-        );
-      }
-    }
-  }
-
-
-  // When a node's menu link is deaktivated and has no siblings, menu_block is
-  // empty, and then sidebar_first are hidden. We want to force the
-  // sidebar_first to still be shown.
-  $active_trail = menu_get_active_trail();
-  $current_trail = end($active_trail);
-
-  if (isset($current_trail['hidden']) && $current_trail['hidden'] && empty($variables['page']['sidebar_first'])) {
-    $variables['page']['sidebar_first'] = array(
-      '#theme_wrappers' => array('region'),
-      '#region' => 'sidebar_first',
-      'dummy_content' => array(
-        '#markup' => ' ',
-      ),
-    );
-  }
-
-
-
-  // On taxonomy pages, add a news list in second sidebar.
-  if ($term) {
-
-    if ($term_is_top && $term->vocabulary_machine_name == "os2web_base_tax_site_structure") {
-      $variables['page']['sidebar_first'] = array();
-    }
-    if ($term && strtolower($term->name) === "nyheder") {
-      $variables['page']['sidebar_second'] = array();
-    }
-  }
-
-  // Spotbox handling. Find all spotboxes for this node, and add them to
-  // content_bottom.
-  if (($node && $spotboxes = field_get_items('node', $node, 'field_os2web_base_field_spotbox')) ||
-      ($term && !$term_is_top && $spotboxes = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_spotbox'))) {
-
-    if (empty($variables['page']['sidebar_second'])) {
-      $spotbox_render = drupal_render(_ktc_get_spotboxes($spotboxes));
-    }
-    else {
-      $spotbox_render = drupal_render(_ktc_get_spotboxes($spotboxes, 'col-xs-6 col-sm-6 col-md-6 col-lg-6'));
-    }
-
-    $variables['page']['content']['os2web_spotbox'] = array(
-      'os2web_spotbox' => array(
-        '#markup' => $spotbox_render,
-      ),
-      '#theme_wrappers' => array('container'),
-      '#attributes' => array(
-        'class' => array('row', 'spotboxes'),
-      ),
-    );
   }
 
   // Add out fonts from Google Fonts API.
@@ -140,25 +62,26 @@ function ktc_preprocess_page(&$variables) {
     ),
   ), 'google_font_ktc');
 
-
-  // Add google site verification
-  drupal_add_html_head(array(
-    '#tag' => 'meta',
-    '#type' => 'html_tag',
-    '#attributes' => array(
+  // Add google site verification.
+  drupal_add_html_head(
+    array(
+      '#tag' => 'meta',
+      '#type' => 'html_tag',
+      '#attributes' => array(
         'name' => 'google-site-verification',
-        'content' => 'RERf3yjIX_1JFNkt2dpPZvqH_XeG8eum3P4PHXIpqqM'
-      )
+        'content' => 'RERf3yjIX_1JFNkt2dpPZvqH_XeG8eum3P4PHXIpqqM',
+      ),
     ),
     'meta_keywords'
   );
 
-  $variables['page']['sidebar_first'] = array();
   // Pass the theme path to js.
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
 
 }
-
+/**
+ * Implements template_process_page().
+ */
 function ktc_process_page(&$variables) {
   // Primary menu.
   $variables['primary_nav'] = array();
@@ -175,28 +98,6 @@ function ktc_process_page(&$variables) {
  */
 function ktc_preprocess_taxonomy_term(&$variables) {
 
-  $term = taxonomy_term_load($variables['tid']);
-  $variables['term_display_alternative'] = FALSE;
-  // Get wether this is a top term, and provide a variable for the templates.
-  $term_is_top = _ktc_term_is_top($term->tid);
-  $variables['term_is_top'] = $term_is_top;
-
-  // Provide the spotboxes to Nyheder page or top terms. These pages does not
-  // use the right sidebar so we need them in taxonomy-term.tpl
-  if (isset($term->tid) && (strtolower($term->name) === 'nyheder' || $term_is_top)) {
-    $spotboxes = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_spotbox');
-    if (strtolower($term->name) === 'nyheder') {
-      $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $term->tid;
-      $variables['os2web_spotboxes'] = _ktc_get_spotboxes($spotboxes, 'col-xs-6 col-sm-4 col-md-4 col-lg-4');
-    }
-    else {
-      $variables['os2web_spotboxes'] = _ktc_get_spotboxes($spotboxes, 'col-xs-6 col-sm-4 col-md-4 col-lg-4');
-    }
-  }
-  if (isset($term->field_alternative_display['und'][0]['value']) &&
-        $term->field_alternative_display['und'][0]['value'] == 1) {
-    $variables['term_display_alternative'] = TRUE;
-  }
 }
 
 /**
@@ -210,18 +111,6 @@ function ktc_preprocess_html(&$variables) {
     'preprocess' => FALSE,
     'weight' => 115,
   ));
-
-  if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
-    // Add wether the term is top to the classes array.
-    $term_is_top = _ktc_term_is_top(arg(2));
-
-    if ($term_is_top) {
-      $variables['classes_array'][] = 'term-is-top';
-    }
-    else {
-      $variables['classes_array'][] = 'term-is-not-top';
-    }
-  }
 
   // Setup IE meta tag to force IE rendering mode.
   $meta_ie_render_engine = array(
@@ -240,14 +129,7 @@ function ktc_preprocess_html(&$variables) {
  * Implements hook_preprocess_node().
  */
 function ktc_preprocess_node(&$vars) {
-  
-/*  $vars['billede_lead_liste_stor'] = 
-  		field_view_field('node', $node, 'field_os2web_base_field_lead_img',
-			 array(	'label'=>'hidden',
-			 		'settings' => array('image_style' => 'listevisning_stor')
-			 	)
-			 );
-  */
+
   // Add css class "node--NODETYPE--VIEWMODE" to nodes.
   $vars['classes_array'][] = 'node--' . $vars['type'] . '--' . $vars['view_mode'];
 
@@ -329,8 +211,9 @@ function ktc_menu_link(array $variables) {
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
-
-
+/**
+ * Override menu link menu user profile menu.
+ */
 function ktc_menu_link__menu_user_profile_menu(array $variables) {
 
   $element = $variables['element'];
@@ -339,39 +222,6 @@ function ktc_menu_link__menu_user_profile_menu(array $variables) {
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . "</li>\n";
 
-}
-/**
- * Theme function to output tablinks for classic Quicktabs style tabs.
- *
- * @ingroup themeable
- */
-function ktc_qt_quicktabs_tabset($vars) {
-  $variables = array(
-    'attributes' => array(
-      'class' => 'quicktabs-tabs quicktabs-style-' . $vars['tabset']['#options']['style'],
-    ),
-    'items' => array(),
-  );
-  foreach (element_children($vars['tabset']['tablinks']) as $key) {
-    $item = array();
-    if (is_array($vars['tabset']['tablinks'][$key])) {
-      $tab = $vars['tabset']['tablinks'][$key];
-
-      $class = "";
-      if ($key == (count($vars['tabset']['tablinks']) - 1)) {
-        $class = "last";
-      }
-      if ($key == $vars['tabset']['#options']['active']) {
-        $item['class'] = array('active','tab-' . $key, $class);
-      }
-      else {
-        $item['class'] = array('tab-' . $key, $class);
-      }
-      $item['data'] = "<div><span>" . drupal_render($tab) . "</span></div>";
-      $variables['items'][] = $item;
-    }
-  }
-  return theme('item_list', $variables);
 }
 
 /**
@@ -389,58 +239,6 @@ function ktc_form_element(&$variables) {
     $variables['element']['#field_suffix'] = $variables['element']['#description'];
   }
   return bootstrap_form_element($variables);
-}
-
-/**
- * Helper function to get a rendeable array of spotboxes.
- *
- * @param array $spotboxes
- *   Array of spotboxe nodes with nids.
- *
- * @return array
- *   The renderable array.
- */
-function _ktc_get_spotboxes($spotboxes, $classes = 'col-xs-6 col-sm-6 col-md-4 col-lg-4') {
-  $spotbox_nids = array();
-  foreach ($spotboxes as $spotbox) {
-    $spotbox_nids[$spotbox['nid']] = $spotbox['nid'];
-  }
-  $spotbox_array = os2web_spotbox_render_spotboxes($spotbox_nids, NULL, NULL, NULL, 'svendborg_spotbox');
-
-  foreach ($spotbox_array['node'] as &$spotbox) {
-    if (is_array($spotbox)) {
-      $spotbox['#prefix'] = '<div class="' . $classes . '">';
-      $spotbox['#suffix'] = '</div>';
-    }
-  }
-  return $spotbox_array;
-}
-
-/**
- * Helper function to retrive the correct array to display selfservicelinks.
- *
- * @param array $links
- *   Associated array of links with indexes 'nid'.
- *
- * @return array
- *   Array of links with URL and Title.
- */
-function _ktc_get_selfservicelinks($links) {
-  $selfservicelinks = array();
-  foreach ($links as $link) {
-    $selfservicelink = node_load($link['nid']);
-    if ($selfservicelink) {
-      $link_fields = field_get_items('node', $selfservicelink, 'field_spot_link');
-      if (!empty($link_fields)) {
-        $link_field = array_shift($link_fields);
-        $selfservicelinks[$link['nid']] = array(
-          'url' => $link_field['url'],
-          'title' => $link_field['title'],
-        );
-      }
-    }
-  }
-  return $selfservicelinks;
 }
 
 /**
@@ -505,7 +303,7 @@ function ktc_file_formatter_table($variables) {
   }
   return empty($rows) ? '' : theme('table', array('header' => $header, 'rows' => $rows));
 }
-/*
+/**
  * Override theme_menu_local_task.
  */
 function ktc_menu_local_task($variables) {
@@ -529,7 +327,7 @@ function ktc_menu_local_task($variables) {
 }
 
 /**
- * Implements hook_menu_local_tasks_alter();
+ * Implements hook_menu_local_tasks_alter().
  */
 function ktc_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   if (isset($data['tabs'][0]['output'])) {
@@ -540,7 +338,7 @@ function ktc_menu_local_tasks_alter(&$data, $router_item, $root_path) {
 }
 
 /**
- * Theme the calendar title
+ * Theme the calendar title.
  */
 function ktc_date_nav_title($params) {
   $granularity = $params['granularity'];
@@ -555,21 +353,28 @@ function ktc_date_nav_title($params) {
       $title = $date_info->year;
       $date_arg = $date_info->year;
       break;
+
     case 'month':
       $format = !empty($format) ? $format : (empty($date_info->mini) ? 'F Y' : 'F');
       $title = date_format_date($date_info->min_date, 'custom', $format);
       $date_arg = $date_info->year . '-' . date_pad($date_info->month);
       break;
+
     case 'day':
       $format = !empty($format) ? $format : (empty($date_info->mini) ? 'D, j. M Y' : 'l, F j');
       $title = date_format_date($date_info->min_date, 'custom', $format);
       $date_arg = $date_info->year . '-' . date_pad($date_info->month) . '-' . date_pad($date_info->day);
       break;
+
     case 'week':
       $format = !empty($format) ? $format : (empty($date_info->mini) ? 'W, Y' : 'M j');
-      $title = t('Week of @date', array('@date' => date_format_date($date_info->min_date, 'custom', $format)));
+      $title = t('Week of @date',
+                array(
+                  '@date' => date_format_date($date_info->min_date, 'custom', $format),
+                ));
       $date_arg = $date_info->year . '-W' . date_pad($date_info->week);
       break;
+
   }
   if (!empty($date_info->mini) || $link) {
     // Month navigation titles are used as links in the mini view.
@@ -581,4 +386,17 @@ function ktc_date_nav_title($params) {
   else {
     return $title;
   }
+}
+/**
+ * Override template_preprocess_panels_pane.
+ */
+function ktc_preprocess_panels_pane(&$vars) {
+
+  if ($vars['id'] === ' id="regioner"' || $vars['id'] === ' id="groups"'
+      || $vars['id'] === ' id="content_type"' || $vars['id'] === ' id="term_type"'
+      || $vars['id'] === ' id="emner"' || $vars['id'] === ' id="tags"') {
+    $vars['panel_is_filter'] = TRUE;
+    $vars['title_attributes_array']['class'][] = 'filter-pane-title';
+  }
+
 }
