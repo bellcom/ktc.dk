@@ -56,7 +56,12 @@ function ktc_preprocess_page(&$variables) {
   drupal_add_html_head(array(
     '#tag' => 'link',
     '#attributes' => array(
-      'href' => 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic|Bree+Serif',
+	    
+
+      'href' => 'http://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:300italic,400italic,400,700,300,800',
+      // font-family: 'Lato', sans-serif;
+      // font-family: 'Open Sans', sans-serif;
+
       'rel' => 'stylesheet',
       'type' => 'text/css',
     ),
