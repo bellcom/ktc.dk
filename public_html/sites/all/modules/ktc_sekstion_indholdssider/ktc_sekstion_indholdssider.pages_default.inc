@@ -45,7 +45,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'ktcstd';
+  $display->layout = 'ktcpage';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
