@@ -582,3 +582,12 @@ function ktc_date_nav_title($params) {
     return $title;
   }
 }
+
+/**
+ * Implements hook_preprocess_summary_hearing_answer().
+ */
+function ktc_preprocess_summary_hearing_answer(&$vars) {
+  global $base_url;
+  $vars['style_sheet_url'] = $base_url . '/' . drupal_get_path('theme', 'ktc') . '/css/summary-hearing-answer.css';
+  $vars['logo_path'] = $base_url . '/' . drupal_get_path('theme', 'ktc') . '/logo.png';
+}
