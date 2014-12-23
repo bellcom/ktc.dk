@@ -75,6 +75,13 @@ function ktc_hearing_menu() {
     'weight' => 20,
   );
 
+  $items['node/%node/hearing_summary_answer_pdf_preview'] = array(
+    'page callback' => 'ktc_hearing_generate_hearing_summary_preview',
+    'page arguments' => array(1),
+    'access arguments' => array('administer ktc hearings'),
+    'weight' => 20,
+  );
+
   return $items;
 }
 
@@ -85,6 +92,9 @@ function ktc_hearing_theme() {
   return array(
     'hearing_answer' => array(
       'template' => 'hearing-answer',
+    ),
+    'summary_hearing_answer' => array(
+      'template' => 'summary-hearing-answer',
     ),
   );
 }
@@ -650,7 +660,7 @@ function ktc_hearing_notify_users($op, $hearing) {
 
             $token_data = array('user' => $user, 'node' => $hearing);
             $to = $user->mail;
-            // Testing
+            // Testing.
             $to = 'tth@bellcom.dk';
             $language = $user->language;
 
@@ -667,7 +677,7 @@ function ktc_hearing_notify_users($op, $hearing) {
       $author = user_load($hearing->uid);
       $token_data = array('user' => $author, 'node' => $hearing);
       $to = $author->mail;
-      // Testing
+      // Testing.
       $to = 'tth@bellcom.dk';
       $language = $author->language;
       $role = 'creator';
@@ -676,6 +686,24 @@ function ktc_hearing_notify_users($op, $hearing) {
 
       $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
       $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
+
+      $summary_markup = _ktc_hearing_generate_hearing_summary_view($hearing);
+
+      $pdf_attachment = array(
+        'filepath' => _ktc_hearing_generate_pdf($summary_markup),
+        'filename' => 'høringssvar.pdf',
+        'filemime' => 'application/pdf',
+      );
+
+      $params['attachments'][] = $pdf_attachment;
+
+      $plain_attachment = array(
+        'filepath' => _ktc_hearing_generate_markdown($summary_markup),
+        'filename' => 'høringssvar.txt',
+        'filemime' => 'text/plain',
+      );
+
+      $params['attachments'][] = $plain_attachment;
 
       drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
       break;
@@ -810,4 +838,46 @@ function _ktc_hearing_get_hearing_from_response($response) {
     return node_load($hearing_field[0]['target_id']);
   }
   return FALSE;
+}
+
+/**
+ * Helper, generate pdf from hearing node.
+ */
+function _ktc_hearing_generate_pdf($markup) {
+  $dompdf = new DOMPDF();
+  $dompdf->load_html($markup);
+  $dompdf->render();
+  return file_unmanaged_save_data($dompdf->output(), NULL, FILE_EXISTS_RENAME);
+}
+
+/**
+ * Page preview, for summary answer pdf.
+ */
+function ktc_hearing_generate_hearing_summary_preview($hearing) {
+  $markup = _ktc_hearing_generate_hearing_summary_view($hearing);
+  print file_get_contents(_ktc_hearing_generate_markdown($markup));
+}
+
+/**
+ * Generate markdown, "clear text" from html.
+ */
+function _ktc_hearing_generate_markdown($markup) {
+  $markup = new HTML_To_Markdown($markup, array('strip_tags' => TRUE));
+  return file_unmanaged_save_data(strip_tags($markup->output()), NULL, FILE_EXISTS_RENAME);
+}
+
+/**
+ * Gnerate markup of hearing summary answer.
+ */
+function _ktc_hearing_generate_hearing_summary_view($hearing) {
+  $vars = array();
+
+  global $base_url;
+  $module_path = drupal_get_path('module', 'ktc_hearing');
+  $vars['style_sheet_url'] = $base_url . '/' . $module_path . '/css/summary_hearing_answer.css';
+  $summary = ktc_hearing_get_summary_response($hearing);
+  $vars['hearing_node'] = $hearing;
+  $vars['summary_node'] = $summary;
+
+  return theme('summary_hearing_answer', $vars);
 }

@@ -23,6 +23,9 @@ class ComposerAutoloaderInitComposerManager
         self::$loader = $loader = new \Composer\Autoload\ClassLoader();
         spl_autoload_unregister(array('ComposerAutoloaderInitComposerManager', 'loadClassLoader'));
 
+        $vendorDir = dirname(__DIR__);
+        $baseDir = dirname($vendorDir);
+
         $map = require __DIR__ . '/autoload_namespaces.php';
         foreach ($map as $namespace => $path) {
             $loader->set($namespace, $path);
@@ -40,16 +43,6 @@ class ComposerAutoloaderInitComposerManager
 
         $loader->register(true);
 
-        $includeFiles = require __DIR__ . '/autoload_files.php';
-        foreach ($includeFiles as $file) {
-            composerRequireComposerManager($file);
-        }
-
         return $loader;
     }
-}
-
-function composerRequireComposerManager($file)
-{
-    require $file;
 }
