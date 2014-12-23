@@ -376,24 +376,28 @@ function ktc_hearing_summary_responses($hearing) {
  * Page callback allowing the hearing response to be approved.
  */
 function ktc_hearing_approve_summary_responses($hearing) {
-  $summary_response = ktc_hearing_get_summary_response($hearing);
-  if ($summary_response) {
-    if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVAL) {
-      $vars['preface'] = '<h1>' . t('Godkend endeligt svar') . '</h1>' .
-        render(node_view($summary_response)) .
-        render(drupal_get_form('ktc_hearing_approve_summary_response_form', $summary_response));
-    }
-    if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVED) {
-      $vars['preface'] = render(node_view($summary_response)) .
-        'Det endelige høringssvar er godkendt.';
-    }
-    else {
-      $vars['preface'] = 'Det endelige høringssvar er endnu ikke klar til godkendelse.';
+  if ($summary_response = ktc_hearing_get_summary_response($hearing)) {
+    switch (ktc_hearing_get_status($hearing)) {
+      case KTC_HEARING_STATUS_APPROVAL:
+        $vars['preface'] = '<h1>' . t('Godkend endeligt svar') . '</h1>' .
+          render(node_view($summary_response)) .
+          render(drupal_get_form('ktc_hearing_approve_summary_response_form', $summary_response));
+        break;
+
+      case KTC_HEARING_STATUS_APPROVED:
+        $vars['preface'] = render(node_view($summary_response)) .
+          'Det endelige høringssvar er godkendt.';
+        break;
+
+      default:
+        $vars['preface'] = 'Det endelige høringssvar er endnu ikke klar til godkendelse.';
+        break;
     }
   }
   else {
-    $vars['preface'] = 'Der er ikke et endelige høringssvar.';
+    $vars['preface'] = 'Der er ikke et endeligt høringssvar.';
   }
+
   return theme('hearing_answer', $vars);
 }
 
