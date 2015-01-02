@@ -17,9 +17,10 @@ define('KTC_HEARING_STATUS_CLOSED', variable_get('ktc_hearing_status_closed', 6)
  * Implements hook_menu().
  */
 function ktc_hearing_menu() {
-  $items['admin/people/ktc_hearings'] = array(
-    'type' => MENU_LOCAL_TASK,
+  $items['admin/config/content/ktc_hearings'] = array(
+    'type' => MENU_NORMAL_ITEM,
     'title' => 'KTC Hearings',
+    'description' => 'Configure KTC Hearing module',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_hearing_permission_settings'),
     'access arguments' => array('administer ktc hearings'),
@@ -75,7 +76,7 @@ function ktc_hearing_menu() {
     'weight' => 20,
   );
 
-  $items['node/%node/hearing_summary_answer_pdf_preview'] = array(
+  $items['node/%node/hearing_summary_answer_pdf'] = array(
     'page callback' => 'ktc_hearing_generate_hearing_summary_preview',
     'page arguments' => array(1),
     'access arguments' => array('administer ktc hearings'),
@@ -97,6 +98,16 @@ function ktc_hearing_theme() {
       'template' => 'summary-hearing-answer',
     ),
   );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
+  // Don't redirect hearing response node form submits.
+  if (strstr($form_id, '_node_form') && strstr($form_id, 'hearing')) {
+    $form['actions']['submit']['#submit'][] = '_ktc_hearings_node_no_redirect';
+  }
 }
 
 /**
@@ -159,6 +170,7 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
   $form['options']['#access'] = 0;
   $form['revision_information']['#access'] = 0;
   $form['actions']['preview_changes']['#access'] = 0;
+  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($form['actions']['submit'], 1));
 }
 
 /**
@@ -242,10 +254,7 @@ function ktc_hearing_node_presave($node) {
  * Access callback function.
  */
 function ktc_hearing_access($node, $op) {
-  // Hmm, don't allow access to 'view responses' if the node type sent with the
-  // menu item is a hearin_response. Otherwise we would see a "Respond" tab on
-  // responses.
-  if (arg(0) == 'node' && $op == 'view responses' && $node->type == 'hearing_responses') {
+  if ($node->type != 'hearing') {
     return FALSE;
   }
 
@@ -542,6 +551,8 @@ function ktc_hearing_responses($hearing) {
 
   if (ktc_hearing_access($hearing, 'respond') && ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
     $node_form = drupal_get_form($type . '_node_form', $node);
+    $node_form['actions']['submit']['#submit'][] = '_ktc_hearings_node_no_redirect';
+
     $vars['answer_form'] = render($node_form);
   }
 
@@ -860,8 +871,6 @@ function _ktc_hearing_generate_pdf($markup) {
 function ktc_hearing_generate_hearing_summary_preview($hearing) {
   $markup = _ktc_hearing_generate_hearing_summary_view($hearing);
 
-  //print $markup;
-
   $dompdf = new DOMPDF();
   $dompdf->load_html($markup);
   $dompdf->render();
@@ -893,4 +902,11 @@ function _ktc_hearing_generate_hearing_summary_view($hearing) {
   $vars['summary_node'] = $summary;
 
   return theme('summary_hearing_answer', $vars);
+}
+
+/**
+ * Don't redirect node forms.
+ */
+function _ktc_hearings_node_no_redirect(&$form, &$form_state) {
+  $form_state['redirect'] = $_SERVER['HTTP_REFERER'];
 }
