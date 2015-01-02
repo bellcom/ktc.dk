@@ -15,38 +15,35 @@
   </head>
 
   <body>
-
     <script type="text/php">
-
+    // This is php code, eval'd by dompdf. Generating a footer on each page,
+    // with specific text and a pager.
     if ( isset($pdf) ) {
-
-
       // Open the object: all drawing commands will
       // go to the object instead of the current page
       $footer = $pdf->open_object();
 
       $w = $pdf->get_width();
       $h = $pdf->get_height();
-
-
-      // Add an initals box
-      $font = Font_Metrics::get_font("helvetica", "bold");
-      $text = " {PAGE_NUM} / {PAGE_COUNT}";
-      $width = Font_Metrics::get_text_width($text, $font, $size);
+      $size = 8;
       $margin = 38;
       $y = $h - $margin;
 
-      $pdf->page_text($w - 16 - $width - $margin, $y, $text, $font, 8, $color);
+      $font = Font_Metrics::get_font("helvetica", "bold");
+      $text = "Side {PAGE_NUM} / {PAGE_COUNT}";
+
+      // Font_metricts are probarbly calculated with strlen of text
+      // and {PAGE_NUM} is translated to a single digit:
+      $width = Font_Metrics::get_text_width('Side x/x', $font, $size);
+
+      $pdf->page_text($w - $width - $margin, $y, $text, $font, $size, $color);
 
       $text = "KTC - Kommunalteknisk Chefforening | Sekretariatet | Papirfabrikken 24 | 8600 Silkeborg";
 
-      $pdf->page_text($margin, $y, $text, $font, 8, array(0, 0, 0));
+      $pdf->page_text($margin, $y, $text, $font, $size, array(0, 0, 0));
 
-      // Close the object (stop capture)
+      // Close the object (stop capture) and add to all pages.
       $pdf->close_object();
-
-      // Add the object to every page. You can
-      // also specify "odd" or "even"
       $pdf->add_object($footer, "all");
     }
 
