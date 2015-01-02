@@ -1,21 +1,21 @@
 // Button overrides-
 
 .btn-default {
-  // The blue button.
-  .pretty-buttons(@btn-default-color, @btn-default-bg, @brand-lightblue);
+  // The default button.
+  .pretty-buttons(@gray-darker, @gray-lighter);
 }
 .btn-primary {
-  // The green button.
-  .pretty-buttons(@btn-primary-color, @brand-lightgreen, @btn-primary-bg);
+  // The active button.
+  .pretty-buttons(@gray-darker, @gray-darker);
 }
 
 // Our own button names.
 
 .btn-blacknblue {
-  .pretty-buttons(@btn-primary-color, @gradient-light, darken(@gradient-light, 10%));
+  .btn-default();
 }
 
-
+/*
 .btn-success {
   .pretty-buttons(@btn-success-color, @btn-success-bg, darken(@btn-success-bg, 10%));
 }
@@ -34,4 +34,4 @@
 
 .btn-orange {
   .pretty-buttons(#EE9727, #F19C2E, darken(#F19C2E, 10%));
-}
+}*/

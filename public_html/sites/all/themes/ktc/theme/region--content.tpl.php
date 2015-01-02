@@ -38,7 +38,6 @@
 
     <?php print render($page['title_suffix']); ?>
     <?php print render($page['messages']); ?>
-    <?php print render($page['tabs']); ?>
     <?php print render($page['page']['help']); ?>
     <?php print render($page['action_links']); ?>
     <?php print $content; ?>
