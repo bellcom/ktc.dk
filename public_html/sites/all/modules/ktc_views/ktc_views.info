@@ -9,6 +9,7 @@ dependencies[] = views_bulk_operations
 dependencies[] = views_content
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
+features[views_view][] = comments_in_teaser
 features[views_view][] = ktc_og_members
 features[views_view][] = ktc_og_members_admin
 features[views_view][] = ktc_og_user_groups

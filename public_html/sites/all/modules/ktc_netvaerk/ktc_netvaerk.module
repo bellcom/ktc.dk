@@ -5,3 +5,40 @@
  */
 
 include_once 'ktc_netvaerk.features.inc';
+
+function ktc_netvaerk_get_node_group_info($nid) {
+  $group_info = array('name' => '', 'class' => '');
+  if (is_numeric($nid)) {
+    $node = node_load($nid);
+    if ($gid = field_get_items('node', $node, 'og_group_ref')) {
+      $gid = $gid[0]['target_id'];
+      $group = node_load($gid);
+      $class = ktc_netvaerk_check_my_groups($gid);
+      /*$tid = '';
+      if ($group_type = field_get_items('node', $group, 'field_netvaerkstype')) {
+        $tid = $group_type[0]['tid'];
+
+      }*/
+      $group_info = array('name' => $group->title, 'class' => $class);
+    }
+
+    // If node type is magazine, so there is no group,
+    // return class is blue.
+    if ($node->type == 'magazine') {
+      $group_info = array('name' => 'magazine', 'class' => 'ktc-blue');
+    }
+  }
+  return $group_info;
+
+}
+
+function ktc_netvaerk_check_my_groups($nid) {
+  $class = 'ktc-yellow';
+
+  if ($gids = og_get_groups_by_user()) {
+    if (in_array($nid, $gids['node'])) {
+      $class = 'ktc-red';
+    }
+  }
+  return $class;
+}

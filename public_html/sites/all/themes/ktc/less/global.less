@@ -23,16 +23,16 @@ body {
     color: black;
     padding: 0px 12px;
   }
+  background-color: @gray-lighter;
 }
 
 .main-container {
   border-bottom: 1px solid white;
   border-left: 1px solid rgba(255, 255, 255, 0.8);
   border-right: 1px solid rgba(255, 255, 255, 0.8);
+  background-color: @gray-lighter;
 }
-.not-front .main-container {
-  background-color: @body-bg;
-}
+
 .main-container,
 .header_svendborg .region-navigation.container {
   border-left: none; // Default on non-rgba browsers.
@@ -48,4 +48,9 @@ body {
   input:focus {
     border: 4px solid @brand-darkgreen;
   }
+}
+
+.field-slideshow {
+  overflow: hidden;
+  max-width: 100%;
 }
