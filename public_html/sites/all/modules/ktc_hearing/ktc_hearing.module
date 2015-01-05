@@ -394,7 +394,8 @@ function ktc_hearing_approve_summary_responses($hearing) {
         break;
 
       case KTC_HEARING_STATUS_APPROVED:
-        $vars['preface'] = render(node_view($summary_response)) .
+        $answer = node_view($summary_response);
+        $vars['preface'] = render($answer) .
           'Det endelige høringssvar er godkendt.';
         break;
 
