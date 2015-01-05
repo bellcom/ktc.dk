@@ -109,7 +109,6 @@
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter-all-groups').html(data);
           add_pager_ajax();
-          load_content();
         });
         return false;
       });
@@ -118,7 +117,6 @@
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter-all-groups').html(data);
           add_pager_ajax();
-          load_content();
         });
         return false;
       });
@@ -126,7 +124,6 @@
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter-my-groups').html(data);
           add_pager_ajax();
-          load_content();
         });
         return false;
       });
@@ -134,7 +131,6 @@
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter-my-groups').html(data);
           add_pager_ajax();
-          load_content();
         });
         return false;
       });
