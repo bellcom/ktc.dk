@@ -449,16 +449,24 @@ function ktc_date_nav_title($params) {
     return $title;
   }
 }
+
+/**
+ * Implements hook_preprocess_summary_hearing_answer().
+ */
+function ktc_preprocess_summary_hearing_answer(&$vars) {
+  global $base_url;
+  $vars['style_sheet_url'] = $base_url . '/' . drupal_get_path('theme', 'ktc') . '/css/summary-hearing-answer.css';
+  $vars['logo_path'] = $base_url . '/' . drupal_get_path('theme', 'ktc') . '/logo.png';
+}
+
 /**
  * Override template_preprocess_panels_pane.
  */
 function ktc_preprocess_panels_pane(&$vars) {
-
   if ($vars['id'] === ' id="regioner"' || $vars['id'] === ' id="groups"'
       || $vars['id'] === ' id="content_type"' || $vars['id'] === ' id="term_type"'
       || $vars['id'] === ' id="emner"' || $vars['id'] === ' id="tags"') {
     $vars['panel_is_filter'] = TRUE;
     $vars['title_attributes_array']['class'][] = 'filter-pane-title';
   }
-
 }

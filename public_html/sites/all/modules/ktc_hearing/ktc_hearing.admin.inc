@@ -93,6 +93,7 @@ function ktc_hearing_permission_settings() {
   $form['mail_templates'][$role]['ktc_hearing_mail_body_' . $op . '_' . $role] = array(
     '#type' => 'textarea',
     '#default_value' => variable_get('ktc_hearing_mail_body_' . $op . '_' . $role, ''),
+    '#description' => 'Vedhæftet denne mail, vil være høringssvaret som pdf og ren tekst. Pdf for høring kan ses på: ' . l('node/%/hearing_summary_answer_pdf', 'node/%/hearing_summary_answer_pdf') . '(erstat "%" med nid)',
   );
 
   return system_settings_form($form);

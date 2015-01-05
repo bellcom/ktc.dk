@@ -17,9 +17,10 @@ define('KTC_HEARING_STATUS_CLOSED', variable_get('ktc_hearing_status_closed', 6)
  * Implements hook_menu().
  */
 function ktc_hearing_menu() {
-  $items['admin/people/ktc_hearings'] = array(
-    'type' => MENU_LOCAL_TASK,
+  $items['admin/config/content/ktc_hearings'] = array(
+    'type' => MENU_NORMAL_ITEM,
     'title' => 'KTC Hearings',
+    'description' => 'Configure KTC Hearing module',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_hearing_permission_settings'),
     'access arguments' => array('administer ktc hearings'),
@@ -75,6 +76,13 @@ function ktc_hearing_menu() {
     'weight' => 20,
   );
 
+  $items['node/%node/hearing_summary_answer_pdf'] = array(
+    'page callback' => 'ktc_hearing_generate_hearing_summary_preview',
+    'page arguments' => array(1),
+    'access arguments' => array('administer ktc hearings'),
+    'weight' => 20,
+  );
+
   return $items;
 }
 
@@ -86,7 +94,20 @@ function ktc_hearing_theme() {
     'hearing_answer' => array(
       'template' => 'hearing-answer',
     ),
+    'summary_hearing_answer' => array(
+      'template' => 'summary-hearing-answer',
+    ),
   );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
+  // Don't redirect hearing response node form submits.
+  if (strstr($form_id, '_node_form') && strstr($form_id, 'hearing')) {
+    $form['actions']['submit']['#submit'][] = '_ktc_hearings_node_no_redirect';
+  }
 }
 
 /**
@@ -149,6 +170,7 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
   $form['options']['#access'] = 0;
   $form['revision_information']['#access'] = 0;
   $form['actions']['preview_changes']['#access'] = 0;
+  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($form['actions']['submit'], 1));
 }
 
 /**
@@ -232,10 +254,7 @@ function ktc_hearing_node_presave($node) {
  * Access callback function.
  */
 function ktc_hearing_access($node, $op) {
-  // Hmm, don't allow access to 'view responses' if the node type sent with the
-  // menu item is a hearin_response. Otherwise we would see a "Respond" tab on
-  // responses.
-  if (arg(0) == 'node' && $op == 'view responses' && $node->type == 'hearing_responses') {
+  if ($node->type != 'hearing') {
     return FALSE;
   }
 
@@ -366,24 +385,29 @@ function ktc_hearing_summary_responses($hearing) {
  * Page callback allowing the hearing response to be approved.
  */
 function ktc_hearing_approve_summary_responses($hearing) {
-  $summary_response = ktc_hearing_get_summary_response($hearing);
-  if ($summary_response) {
-    if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVAL) {
-      $vars['preface'] = '<h1>' . t('Godkend endeligt svar') . '</h1>' .
-        render(node_view($summary_response)) .
-        render(drupal_get_form('ktc_hearing_approve_summary_response_form', $summary_response));
-    }
-    if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVED) {
-      $vars['preface'] = render(node_view($summary_response)) .
-        'Det endelige høringssvar er godkendt.';
-    }
-    else {
-      $vars['preface'] = 'Det endelige høringssvar er endnu ikke klar til godkendelse.';
+  if ($summary_response = ktc_hearing_get_summary_response($hearing)) {
+    switch (ktc_hearing_get_status($hearing)) {
+      case KTC_HEARING_STATUS_APPROVAL:
+        $vars['preface'] = '<h1>' . t('Godkend endeligt svar') . '</h1>' .
+          render(node_view($summary_response)) .
+          render(drupal_get_form('ktc_hearing_approve_summary_response_form', $summary_response));
+        break;
+
+      case KTC_HEARING_STATUS_APPROVED:
+        $answer = node_view($summary_response);
+        $vars['preface'] = render($answer) .
+          'Det endelige høringssvar er godkendt.';
+        break;
+
+      default:
+        $vars['preface'] = 'Det endelige høringssvar er endnu ikke klar til godkendelse.';
+        break;
     }
   }
   else {
-    $vars['preface'] = 'Der er ikke et endelige høringssvar.';
+    $vars['preface'] = 'Der er ikke et endeligt høringssvar.';
   }
+
   return theme('hearing_answer', $vars);
 }
 
@@ -528,6 +552,8 @@ function ktc_hearing_responses($hearing) {
 
   if (ktc_hearing_access($hearing, 'respond') && ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
     $node_form = drupal_get_form($type . '_node_form', $node);
+    $node_form['actions']['submit']['#submit'][] = '_ktc_hearings_node_no_redirect';
+
     $vars['answer_form'] = render($node_form);
   }
 
@@ -650,7 +676,7 @@ function ktc_hearing_notify_users($op, $hearing) {
 
             $token_data = array('user' => $user, 'node' => $hearing);
             $to = $user->mail;
-            // Testing
+            // Testing.
             $to = 'tth@bellcom.dk';
             $language = $user->language;
 
@@ -667,7 +693,7 @@ function ktc_hearing_notify_users($op, $hearing) {
       $author = user_load($hearing->uid);
       $token_data = array('user' => $author, 'node' => $hearing);
       $to = $author->mail;
-      // Testing
+      // Testing.
       $to = 'tth@bellcom.dk';
       $language = $author->language;
       $role = 'creator';
@@ -676,6 +702,24 @@ function ktc_hearing_notify_users($op, $hearing) {
 
       $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
       $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
+
+      $summary_markup = _ktc_hearing_generate_hearing_summary_view($hearing);
+
+      $pdf_attachment = array(
+        'filepath' => _ktc_hearing_generate_pdf($summary_markup),
+        'filename' => 'høringssvar.pdf',
+        'filemime' => 'application/pdf',
+      );
+
+      $params['attachments'][] = $pdf_attachment;
+
+      $plain_attachment = array(
+        'filepath' => _ktc_hearing_generate_markdown($summary_markup),
+        'filename' => 'høringssvar.txt',
+        'filemime' => 'text/plain',
+      );
+
+      $params['attachments'][] = $plain_attachment;
 
       drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
       break;
@@ -810,4 +854,60 @@ function _ktc_hearing_get_hearing_from_response($response) {
     return node_load($hearing_field[0]['target_id']);
   }
   return FALSE;
+}
+
+/**
+ * Helper, generate pdf from hearing node.
+ */
+function _ktc_hearing_generate_pdf($markup) {
+  $dompdf = new DOMPDF();
+  $dompdf->load_html($markup);
+  $dompdf->render();
+  return file_unmanaged_save_data($dompdf->output(), NULL, FILE_EXISTS_RENAME);
+}
+
+/**
+ * Page preview, for summary answer pdf.
+ */
+function ktc_hearing_generate_hearing_summary_preview($hearing) {
+  $markup = _ktc_hearing_generate_hearing_summary_view($hearing);
+
+  $dompdf = new DOMPDF();
+  $dompdf->load_html($markup);
+  $dompdf->render();
+
+  $dompdf->stream('test.pdf', array("Attachment" => 0));
+}
+
+/**
+ * Generate markdown, "clear text" from html.
+ */
+function _ktc_hearing_generate_markdown($markup) {
+  $markdown = new HTML_To_Markdown(nl2br($markup));
+  $markdown = utf8_decode(strip_tags($markdown->output()));
+  return file_unmanaged_save_data($markdown, NULL, FILE_EXISTS_RENAME);
+}
+
+/**
+ * Gnerate markup of hearing summary answer.
+ */
+function _ktc_hearing_generate_hearing_summary_view($hearing) {
+  $vars = array();
+
+  global $base_url;
+  $module_path = drupal_get_path('module', 'ktc_hearing');
+  $summary = ktc_hearing_get_summary_response($hearing);
+
+  $vars['style_sheet_url'] = $base_url . '/' . $module_path . '/css/summary_hearing_answer.css';
+  $vars['hearing_node'] = $hearing;
+  $vars['summary_node'] = $summary;
+
+  return theme('summary_hearing_answer', $vars);
+}
+
+/**
+ * Don't redirect node forms.
+ */
+function _ktc_hearings_node_no_redirect(&$form, &$form_state) {
+  $form_state['redirect'] = $_SERVER['HTTP_REFERER'];
 }
