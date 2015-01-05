@@ -586,7 +586,28 @@ function ktc_content_types_strongarm() {
           'weight' => '20',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'teasercomments' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+        ),
+        'subscriptions_ui' => array(
+          'teaser' => array(
+            'weight' => '4',
+            'visible' => TRUE,
+          ),
+          'teasercomments' => array(
+            'weight' => '4',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__arrangement'] = $strongarm;
@@ -658,7 +679,28 @@ function ktc_content_types_strongarm() {
           'weight' => '2',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'teasercomments' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'subscriptions_ui' => array(
+          'teaser' => array(
+            'weight' => '100',
+            'visible' => TRUE,
+          ),
+          'teasercomments' => array(
+            'weight' => '100',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__document'] = $strongarm;
@@ -730,7 +772,28 @@ function ktc_content_types_strongarm() {
           'weight' => '7',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'teasercomments' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+        ),
+        'subscriptions_ui' => array(
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'teasercomments' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__forum_post'] = $strongarm;
@@ -783,7 +846,28 @@ function ktc_content_types_strongarm() {
           'weight' => '3',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'teasercomments' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'subscriptions_ui' => array(
+          'teaser' => array(
+            'weight' => '100',
+            'visible' => TRUE,
+          ),
+          'teasercomments' => array(
+            'weight' => '100',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__meeting_doodle'] = $strongarm;
@@ -835,7 +919,28 @@ function ktc_content_types_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'teasercomments' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'subscriptions_ui' => array(
+          'teaser' => array(
+            'weight' => '100',
+            'visible' => TRUE,
+          ),
+          'teasercomments' => array(
+            'weight' => '100',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
       'form' => array(
         'title' => array(
           'weight' => '0',

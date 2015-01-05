@@ -56,7 +56,6 @@ function ktc_preprocess_page(&$variables) {
   drupal_add_html_head(array(
     '#tag' => 'link',
     '#attributes' => array(
-
       'href' => 'http://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:300italic,400italic,400,700,300,800',
       // font-family: 'Lato', sans-serif;
       // font-family: 'Open Sans', sans-serif;
@@ -137,8 +136,67 @@ function ktc_preprocess_node(&$vars) {
   // Add css class "node--NODETYPE--VIEWMODE" to nodes.
   $vars['classes_array'][] = 'node--' . $vars['type'] . '--' . $vars['view_mode'];
 
+  if($vars['elements']['#view_mode'] == 'teaser'){
+    $vars['theme_hook_suggestions'][]= 'node__teaser';
+  }
+  if($vars['elements']['#view_mode'] == 'teasercomments'){
+    $vars['theme_hook_suggestions'][]= 'node__teasercomments';
+  }
+
+  if($vars['elements']['#view_mode'] == 'listevisning'){
+    $vars['theme_hook_suggestions'][]= 'node__listevisning';
+  }
   // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes.
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
+
+  // Get node group info: name and class.
+  // Function ktc_netvaerk_get_node_group_info is in ktc_netvaerk.module
+  $group_info = ktc_netvaerk_get_node_group_info($vars['nid']);
+  $vars['group_info'] = $group_info;
+  $vars['classes_array'][] = $group_info['class'];
+  $user = user_load($vars['uid']);
+  $vars['user_object'] = $user;
+  if ($name = field_get_items('user', $user, 'field_navn')) {
+    $vars['user_name'] = l($name[0]['value'], 'user/' . $user->uid);
+  }
+  else {
+    $vars['user_name'] = l($user->name, 'user/' . $user->uid);
+  }
+
+  if (isset($vars['content']['links']['statistics'])) {
+    $vars['statistics_count'] = (int) $vars['content']['links']['statistics']['#links']['statistics_counter']['title'];
+  }
+  else {
+    $vars['statistics_count'] = 0;
+  }
+
+
+  if ($vars['type'] == 'arrangement') {
+    if (isset($vars['field_arrangement_date']['und'])) {
+      $day = $vars['field_arrangement_date']['und'][0]['value'];
+      $month = date('M', strtotime($vars['field_arrangement_date']['und'][0]['value']));
+    }
+    else {
+      $day = $vars['field_arrangement_date'][0]['value'];
+      $month = date('M', strtotime($vars['field_arrangement_date'][0]['value']));
+    }
+    $vars['arrangement_day'] = date('d', strtotime($day));
+    $vars['arrangement_month'] = t($month);
+  }
+
+  $view = views_get_view('comments_in_teaser');
+  if ($view && $view->access('block')) {
+    // it has a 'block' display
+    $view->set_display('block');
+    $view->set_arguments(array($vars['nid']));
+    $view->pre_execute();
+    $view->execute();
+    if (!empty($view->result)) {
+      $vars['comments_view'] = $view->render('block');
+    }
+  }
+  $vars['num_comments'] = db_query("SELECT COUNT(cid) AS count FROM {comment}
+                                   WHERE nid =:nid",array(":nid"=>$vars['nid']))->fetchField();
 }
 
 /**

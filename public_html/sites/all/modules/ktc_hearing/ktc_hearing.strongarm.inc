@@ -151,7 +151,28 @@ function ktc_hearing_strongarm() {
           'weight' => '1',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'teasercomments' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'subscriptions_ui' => array(
+          'teasercomments' => array(
+            'weight' => '100',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '100',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__hearing'] = $strongarm;
