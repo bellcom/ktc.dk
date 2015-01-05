@@ -6,13 +6,13 @@
     var button = 'filter-all';
     var button_class = "btn-primary";
     var button_normal = "btn-blacknblue";
-    var $container = $("#section-page-with-filter .view-content");
+    var $container = $("#section-page-with-filter").find(".view-content:first");
 
     $('.filter-box #filter-all').addClass(button_class);
     $('.filter-box #filter-all').removeClass(button_normal);
 
     $('.filter-link').click(function(event){
-      $container = $("#section-page-with-filter .view-content");
+      $container = $("#section-page-with-filter").find(".view-content:first");
       $container.infinitescroll('unbind');
       if (!$(this).hasClass(button_class)) {
         $(this).addClass(button_class);
@@ -109,6 +109,7 @@
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter-all-groups').html(data);
           add_pager_ajax();
+          load_content();
         });
         return false;
       });
@@ -117,6 +118,7 @@
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter-all-groups').html(data);
           add_pager_ajax();
+          load_content();
         });
         return false;
       });
@@ -124,6 +126,7 @@
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter-my-groups').html(data);
           add_pager_ajax();
+          load_content();
         });
         return false;
       });
@@ -131,6 +134,7 @@
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter-my-groups').html(data);
           add_pager_ajax();
+          load_content();
         });
         return false;
       });
@@ -138,6 +142,15 @@
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter').html(data);
           add_pager_ajax();
+          load_content();
+        });
+        return false;
+      });
+      $('#section-page-with-filter .pager-previous a').click(function(event) {
+        jQuery.get($(this).attr('href'), function(data){
+          $('#section-page-with-filter').html(data);
+          add_pager_ajax();
+          load_content();
         });
         return false;
       });
@@ -145,6 +158,7 @@
         jQuery.get($(this).attr('href'), function(data){
           $('#section-page-with-filter').html(data);
           add_pager_ajax();
+          load_content();
         });
         return false;
       });
@@ -251,14 +265,14 @@
       return hearing_filter_value;
     }
 
-    $container = $("#section-page-with-filter .view-content");
+    $container = $("#section-page-with-filter").find(".view-content:first");
 
     // Initial masonry
     if ($container.length) {
       load_content();
     }
     function load_content() {
-      $container = $("#section-page-with-filter .view-content");
+      $container = $("#section-page-with-filter").find(".view-content:first");
 
 
       $container.imagesLoaded(function(){

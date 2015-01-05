@@ -79,76 +79,83 @@
  * @ingroup themeable
  */
 ?>
-<?php if($page) : ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <header>
-    
-    <?php if ($type == 'os2web_base_news') : ?>
-      <?php if(isset($content['field_os2web_base_field_video'])) : ?>
-        <?php hide($content['field_os2web_base_field_lead_img']); ?>
-        <?php print render($content['field_os2web_base_field_video']); ?>
-      <?php else: ?>
-        <?php print render($content['field_os2web_base_field_lead_img']); ?>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes . " all"; ?> clearfix bg-white node-teaser node-teaser_comments"<?php print $attributes; ?>>
+  <?php if (!$page) : ?>
+  <div class="margin-bottom-20 col-md-12 col-sm-12 col-xs-12">
+    <div class="">
+      <?php if (isset($content['field_image'])) : ?>
+        <div class="node-teaser-item-img">
+          <?php print render($content['field_image']); ?>
+        </div>
       <?php endif; ?>
-    <?php else : ?>
-      <?php print render($content['field_os2web_base_field_image']); ?>
-    <?php endif; ?>
-    <?php if ($node->type != 'os2web_base_contentpage' &&  $node->type != 'os2web_borger_dk_article'): ?>
-    <time pubdate="pubdate">
-      <i></i><?php print format_date($created, 'custom', 'j. F'); ?>
-    </time>
-    <?php endif; ?>
-    <?php print render($title_prefix); ?>
-    <?php if (!empty($title)): ?>
-    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
-
-
-    <?php if ($type == 'arrangement') : ?>
-    <div class="row">
-  	<div class="col-md-8"><?php print render($content['field_arrangement_date']); ?></div>
- 	<div class="col-md-4 panel-info">
- 	 <div class="panel-heading">Tilmelding</div>
- 	<div class="panle-body bg-white padding-10">
- 	<?php print render($content['field_link_to_signup']); ?>
- 	<?php print render($content['field_link_to_arrangement']); ?>
- 	</div>
-
-
- 	</div>
-	</div>
-
-    <?php endif; ?>
-    
-  </header>
-  <div class="wrap">
-    <?php
-      // Hide comments, tags, and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      hide($content['field_tags']);
-      hide($content['field_os2web_base_field_image']);
-      hide($content['field_os2web_base_field_lead_img']);
-      hide($content['field_svendborg_hide_sidebar']);
-      hide($content['field_svendborg_hide_contact']);
-      hide($content['field_arrangement_period']);
-            
-
-      print render($content['field_os2web_base_field_summary']);
-      print render($content['body']);
-      print render($content);
-
-    ?>
-
+      <div class="row">
+        <div class="node-teaser-user clearfix col-md-12 col-sm-12 col-xs-12">
+          <?php if (isset($user_name)): ?>
+            <div class="user_link col-md-6 left"><?php print $user_name; ?></div>
+          <?php endif; ?>
+          <div class="col-md-6 right">
+            <?php print  t(format_interval(time()-$node->created)) . ' ' . t('ago'); ?>
+          </div>
+        </div>
+        <div class="node-teaser-hr clearfix col-md-12 col-sm-12 col-xs-12">
+          <div class="node-teaser-hr-inner clearfix col-md-12 col-sm-12 col-xs-12"></div>
+        </div>
+        <div class="node-teaser-text clearfix col-md-12 col-sm-12 col-xs-12">
+          <div class="col-md-3 col-sm-3 col-xs-12 left">
+          <?php if (isset($arrangement_day) && isset($arrangement_month)): ?>
+          <span class="icon-calendar">
+            <span class="calendar-day">
+              <?php print $arrangement_day; ?>
+            </span>
+            <span class="calendar-month">
+              <?php print $arrangement_month; ?>
+            </span>
+          </span>
+          <?php endif; ?>
+          </div>
+          <div class="col-md-9 col-sm-9 col-xs-12">
+            <h2>
+              <a class="news-title" href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a>
+            </h2>
+            <div>
+                <p>
+                <?php if (isset($content['field_short'])): ?>
+                  <?php print render($content['field_short']); ?>
+                <?php else: ?>
+                  <?php print render($content['body']); ?>
+                <?php endif; ?>
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row node-comments clearfix">
+        <?php if (isset($comments_view)): ?>
+          <?php print $comments_view; ?>
+        <?php endif; ?>
+      </div>
+    </div>
   </div>
-  <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
-  <footer>
-    <?php print render($content['field_tags']); ?>
-    <?php print render($content['links']); ?>
-  </footer>
+  <div class="node-teaser-bottom clearfix col-md-12 col-sm-12 col-xs-12">
+    <div class="col-md-6 col-sm-6 col-xs-6 left">
+      <span><a href="<?php global $base_url; print $base_url . $node_url; ?>#comments"><i class="icon-comment"></i>  <?php print $num_comments; ?></a></span>
+      <span class="span-right"><i class="icon-statistics"></i>  <?php print $statistics_count; ?></span>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 right"><i class="node-type"></i><?php print node_type_get_name($type); ?></div>
+  </div>
   <?php endif; ?>
-  <?php print render($content['comments']); ?>
+
+  <?php
+    // Hide comments, tags, and links now so that we can render them later.
+    hide($content['comments']);
+    hide($content['links']);
+    hide($content['field_tags']);
+    hide($content['field_os2web_base_field_image']);
+    hide($content['field_os2web_base_field_lead_img']);
+  ?>
+
+  <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
+    <?php hide($content['field_tags']); ?>
+    <?php hide($content['links']); ?>
+  <?php endif; ?>
 </article>
-<?php endif; ?>

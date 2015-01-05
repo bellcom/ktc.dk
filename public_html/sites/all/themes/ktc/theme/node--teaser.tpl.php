@@ -1,3 +1,4 @@
+<?php if ($teaser): ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes . " all"; ?> clearfix bg-white node-teaser"<?php print $attributes; ?>>
   <?php if (!$page) : ?>
   <div class="margin-bottom-20 col-md-12 col-sm-12 col-xs-12">
@@ -5,9 +6,9 @@
       <?php if (isset($group_info)) : ?>
         <i class="icon-group-<?php print $group_info['class']; ?>"></i><h6 class="<?php print $group_info['class']; ?>"><?php print $group_info['name']; ?></h6>
       <?php endif;?>
-      <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
+      <?php if (isset($content['field_image'])) : ?>
         <div class="node-teaser-item-img">
-          <?php print render($content['field_os2web_base_field_lead_img']); ?>
+          <?php print render($content['field_image']); ?>
         </div>
       <?php endif; ?>
       <div class="row">
@@ -16,7 +17,13 @@
             <a class="news-title" href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a>
           </h2>
           <div>
-              <p><?php print render($content['field_os2web_base_field_summary']); ?></p>
+              <p>
+              <?php if (isset($content['field_short'])): ?>
+                <?php print render($content['field_short']); ?>
+              <?php else: ?>
+                <?php print render($content['body']); ?>
+              <?php endif; ?>
+              </p>
           </div>
         </div>
       </div>
@@ -63,3 +70,5 @@
     <?php hide($content['links']); ?>
   <?php endif; ?>
 </article>
+
+<?php endif; ?>
