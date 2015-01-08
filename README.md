@@ -23,3 +23,5 @@
 * drush en elasticsearch_connector_search_api
 * Setup a server on /admin/config/search/search_api
 * Use search_api_pages (https://www.drupal.org/project/search_api_page) for a search page or use another search_api way
+
+### Authcache
