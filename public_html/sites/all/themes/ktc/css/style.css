@@ -7516,11 +7516,10 @@ fieldset[disabled] .btn-blacknblue.active {
   padding-left: 0px;
 }
 .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li {
-  padding: 10px 10px;
+  padding: 2px 10px;
 }
 .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a {
   padding: 5px 10px;
-  font-size: 15px;
   font-weight: 700;
 }
 .page-node-edit .region-content section,
@@ -9187,7 +9186,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   margin: 0 0 10px 0;
 }
 .page-leverandoerlist .main-container,
-.page-search .main-container,
 .page-user .main-container,
 .node-type-page .main-container,
 .page-leverandoerer .main-container {
@@ -9195,14 +9193,12 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   padding-bottom: 20px;
 }
 .page-leverandoerlist .views-field .term-name a,
-.page-search .views-field .term-name a,
 .page-user .views-field .term-name a,
 .node-type-page .views-field .term-name a,
 .page-leverandoerer .views-field .term-name a {
   color: #2c353a;
 }
 .page-leverandoerlist .views-field .term-name a .icon-blue,
-.page-search .views-field .term-name a .icon-blue,
 .page-user .views-field .term-name a .icon-blue,
 .node-type-page .views-field .term-name a .icon-blue,
 .page-leverandoerer .views-field .term-name a .icon-blue {
@@ -9212,4 +9208,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   width: 17px;
   height: 17px;
   vertical-align: bottom;
+}
+.page-search .view-id-Search .views-row {
+  margin-bottom: 20px;
 }
