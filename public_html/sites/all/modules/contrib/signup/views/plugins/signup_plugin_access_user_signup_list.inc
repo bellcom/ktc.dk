@@ -20,7 +20,7 @@ class signup_plugin_access_user_signup_list extends views_plugin_access {
     $this->view->init_handlers();
     $user_arg = $this->options['signup_user_argument'];
     $argument = $this->view->argument[$user_arg];
-    return $account->uid == (is_object($argument)) ? $argument->get_value() : FALSE;
+    return (is_object($argument)) ? $argument->get_value() : FALSE;
   }
 
   function get_access_callback() {
