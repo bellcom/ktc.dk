@@ -80,7 +80,7 @@
  */
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> $comment_count clearfix"<?php print $attributes; ?>>
-	<header><h4><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h4>  </header>
-	<p><?php  print render($content); ?></p>
+  <div class="created"><?php print date('d. F Y', $node->created); ?></div>
+  <h5><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h5>
 </article>
 
