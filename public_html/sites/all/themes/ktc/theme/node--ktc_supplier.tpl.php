@@ -118,11 +118,17 @@
           <div>
             <?php print render($content['field_fax_no']); ?>
           </div>
-          <div>
-            <?php print render($content['field_e_mail']); ?>
+          <div class="field field-e-mail field-label-inline">
+            <?php if ($mail = field_get_items('node', $node, 'field_e_mail')): ?>
+              <div class="field-label">Email:&nbsp;</div>
+              <?php print l($mail[0]['value'], 'mailto:' . $mail[0]['value']); ?>
+            <?php endif; ?>
           </div>
-          <div>
-            <?php print render($content['field_link']); ?>
+          <div class="field field-link field-label-inline">
+            <?php if ($link = field_get_items('node', $node, 'field_link')): ?>
+              <div class="field-label">Hjemmeside:&nbsp;</div>
+              <?php print l($link[0]['value'], $link[0]['value']); ?>
+            <?php endif; ?>
           </div>
         </div>
       </div>

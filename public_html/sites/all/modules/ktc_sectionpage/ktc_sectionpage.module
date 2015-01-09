@@ -26,6 +26,17 @@ function ktc_sectionpage_menu() {
     'page arguments' => array(1, 2, 3, 4),
   );
 
+  $items['user/group/new_content'] = array(
+    'page callback' => 'ktc_sectionpage_redirect_link',
+    'access callback' => 'user_is_logged_in',
+    'page arguments' => array(2),
+  );
+
+  $items['user/user_comments'] = array(
+    'page callback' => 'ktc_sectionpage_redirect_link',
+    'access callback' => 'user_is_logged_in',
+    'page arguments' => array(1),
+  );
   return $items;
 }
 
@@ -622,4 +633,22 @@ function _ktc_sectionpage_years_filter_helper($f5) {
     $filter_value = 'all';
   }
   return $filter_value;
+}
+
+function ktc_sectionpage_redirect_link($page) {
+  global $user;
+  $goto = FALSE;
+  switch ($page) {
+    case 'new_content':
+      $goto = 'user/' . $user->uid . '/group/new_content';
+      break;
+
+    case 'user_comments':
+      $goto = 'user/' . $user->uid . '/user_comments';
+      break;
+  }
+
+  if ($goto) {
+    drupal_goto($goto);
+  }
 }

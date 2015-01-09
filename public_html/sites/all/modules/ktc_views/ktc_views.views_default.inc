@@ -1173,7 +1173,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/netværk">Se flere</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/netvaerk">Se flere</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Titel */
@@ -1252,7 +1252,7 @@ function ktc_views_views_default_views() {
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alt</div>
 </div>'),
     t('Blok'),
-    t('<a href="/netværk">Se flere</a>'),
+    t('<a href="/netvaerk">Se flere</a>'),
     t('Dine netværk'),
   );
   $export['ktc_og_user_groups'] = $view;
