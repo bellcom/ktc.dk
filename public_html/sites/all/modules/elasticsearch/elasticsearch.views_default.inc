@@ -22,7 +22,7 @@ function elasticsearch_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Elasticsearch';
+  $handler->display->display_options['title'] = 'Søg';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'none';
@@ -53,13 +53,13 @@ function elasticsearch_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['label'] = 'No results';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'No results matched your search.';
+  $handler->display->display_options['empty']['area']['content'] = 'Ingen resultater matchede din søgning.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Felt: Indexed Indholdselement: Indholdselement ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  /* Sorteringskriterie: Søg: Relevance */
+  /* Sorteringskriterie: Søg: Relevans */
   $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
@@ -87,9 +87,8 @@ function elasticsearch_views_default_views() {
   $handler->display->display_options['path'] = 'search';
   $translatables['Search'] = array(
     t('Master'),
-    t('Elasticsearch'),
-    t('mere'),
     t('Søg'),
+    t('mere'),
     t('Gendan'),
     t('Sortér efter'),
     t('Stigende'),
@@ -102,7 +101,7 @@ function elasticsearch_views_default_views() {
     t('næste ›'),
     t('sidste »'),
     t('No results'),
-    t('No results matched your search.'),
+    t('Ingen resultater matchede din søgning.'),
     t('Indholdselement ID'),
     t('.'),
     t(','),
