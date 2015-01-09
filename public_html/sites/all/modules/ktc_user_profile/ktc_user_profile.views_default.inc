@@ -191,7 +191,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="user">Se flere</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/user/user_comments">Se flere</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Titel */
@@ -266,7 +266,7 @@ function ktc_user_profile_views_default_views() {
     t('Content pane'),
     t('View panes'),
     t('Blok'),
-    t('<a href="user">Se flere</a>'),
+    t('<a href="/user/user_comments">Se flere</a>'),
   );
   $export['comments'] = $view;
 
@@ -837,7 +837,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/netvaerk">Se flere</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/user/group/new_content">Se flere</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* Opførsel ved ingen resultater: Global: Tekstområde */
@@ -929,7 +929,7 @@ function ktc_user_profile_views_default_views() {
     t('Alle'),
     t('Block'),
     t('Se flere'),
-    t('<a href="/netvaerk">Se flere</a>'),
+    t('<a href="/user/group/new_content">Se flere</a>'),
     t('Der findes ikke noget nyt'),
     t('OG membership from node'),
     t('node from OG membership'),
