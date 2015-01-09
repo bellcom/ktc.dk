@@ -90,7 +90,8 @@ function ktc_preprocess_page(&$variables) {
   }
 
   // Prepare user node/add access.
-  if (!empty($menu = ktc_get_node_create_link())) {
+  $menu = $menu = ktc_get_node_create_link();
+  if (!empty($menu)) {
     $variables['create_link'] = TRUE;
     $variables['create_menu'] = '<ul class="create_content">';
     foreach ($menu as $type => $link) {
