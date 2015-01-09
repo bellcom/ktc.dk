@@ -29,7 +29,7 @@ function ktc_preprocess_page(&$variables) {
       $view->pre_execute();
       $view->execute();
       $variables['page']['content']['system_main'] = array(
-        '#markup' => '<h2>' . $term->name . '</h2>' . $view->render(),
+        '#markup' => '<h1>' . $term->name . '</h1>' . $view->render(),
       );
     }
 
@@ -77,6 +77,27 @@ function ktc_preprocess_page(&$variables) {
     ),
     'meta_keywords'
   );
+  // Prepare user object for region-header_top.tpl.php
+  if (isset($variables['user']->uid)) {
+    $user = user_load($variables['user']->uid);
+    if ($name = field_get_items('user', $user, 'field_navn')) {
+      $variables['user_name'] = l($name[0]['value'], 'user/' . $user->uid);
+    }
+    else {
+      $variables['user_name'] = l($user->name, 'user/' . $user->uid);
+    }
+    $variables['user_image'] = theme('user_picture', array('account' => $user));
+  }
+
+  // Prepare user node/add access.
+  if (!empty($menu = ktc_get_node_create_link())) {
+    $variables['create_link'] = TRUE;
+    $variables['create_menu'] = '<ul class="create_content">';
+    foreach ($menu as $type => $link) {
+      $variables['create_menu'] .= '<li>' . l($link, 'node/add/' . $type) . '</li>';
+    }
+    $variables['create_menu'] .= '</ul>';
+  }
 
   // Pass the theme path to js.
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
@@ -128,6 +149,7 @@ function ktc_preprocess_html(&$variables) {
   // Add header meta tag for IE to head.
   drupal_add_html_head($meta_ie_render_engine, 'meta_ie_render_engine');
 }
+
 /**
  * Implements hook_preprocess_node().
  */
@@ -136,15 +158,17 @@ function ktc_preprocess_node(&$vars) {
   // Add css class "node--NODETYPE--VIEWMODE" to nodes.
   $vars['classes_array'][] = 'node--' . $vars['type'] . '--' . $vars['view_mode'];
 
-  if($vars['elements']['#view_mode'] == 'teaser'){
-    $vars['theme_hook_suggestions'][]= 'node__teaser';
+  // Node--teaser.tpl.php.
+  if ($vars['elements']['#view_mode'] == 'teaser') {
+    $vars['theme_hook_suggestions'][] = 'node__teaser';
   }
-  if($vars['elements']['#view_mode'] == 'teasercomments'){
-    $vars['theme_hook_suggestions'][]= 'node__teasercomments';
+  // Node--teasercomments.tpl.php.
+  if ($vars['elements']['#view_mode'] == 'teasercomments') {
+    $vars['theme_hook_suggestions'][] = 'node__teasercomments';
   }
-
-  if($vars['elements']['#view_mode'] == 'listevisning'){
-    $vars['theme_hook_suggestions'][]= 'node__listevisning';
+  // Node--listevisning.tpl.php.
+  if ($vars['elements']['#view_mode'] == 'listevisning') {
+    $vars['theme_hook_suggestions'][] = 'node__listevisning';
   }
   // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes.
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
@@ -154,6 +178,8 @@ function ktc_preprocess_node(&$vars) {
   $group_info = ktc_netvaerk_get_node_group_info($vars['nid']);
   $vars['group_info'] = $group_info;
   $vars['classes_array'][] = $group_info['class'];
+
+  // Added user_name and user_object for node--teaser/teasercomments templates.
   $user = user_load($vars['uid']);
   $vars['user_object'] = $user;
   if ($name = field_get_items('user', $user, 'field_navn')) {
@@ -163,6 +189,7 @@ function ktc_preprocess_node(&$vars) {
     $vars['user_name'] = l($user->name, 'user/' . $user->uid);
   }
 
+  // Added statistics_count for node--teaser and node-teasercomments templates.
   if (isset($vars['content']['links']['statistics'])) {
     $vars['statistics_count'] = (int) $vars['content']['links']['statistics']['#links']['statistics_counter']['title'];
   }
@@ -170,7 +197,7 @@ function ktc_preprocess_node(&$vars) {
     $vars['statistics_count'] = 0;
   }
 
-
+  // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
   if ($vars['type'] == 'arrangement') {
     if (isset($vars['field_arrangement_date']['und'])) {
       $day = $vars['field_arrangement_date']['und'][0]['value'];
@@ -181,12 +208,13 @@ function ktc_preprocess_node(&$vars) {
       $month = date('M', strtotime($vars['field_arrangement_date'][0]['value']));
     }
     $vars['arrangement_day'] = date('d', strtotime($day));
-    $vars['arrangement_month'] = t($month);
+    $vars['arrangement_month'] = $month;
   }
 
+  // Added comments_view and num_comments for node--teasecomments.tpl.php.
   $view = views_get_view('comments_in_teaser');
   if ($view && $view->access('block')) {
-    // it has a 'block' display
+    // It has a 'block' display.
     $view->set_display('block');
     $view->set_arguments(array($vars['nid']));
     $view->pre_execute();
@@ -196,7 +224,8 @@ function ktc_preprocess_node(&$vars) {
     }
   }
   $vars['num_comments'] = db_query("SELECT COUNT(cid) AS count FROM {comment}
-                                   WHERE nid =:nid",array(":nid"=>$vars['nid']))->fetchField();
+                                   WHERE nid = :nid", array(":nid" => $vars['nid']))->fetchField();
+
 }
 
 /**
@@ -469,4 +498,63 @@ function ktc_preprocess_panels_pane(&$vars) {
     $vars['panel_is_filter'] = TRUE;
     $vars['title_attributes_array']['class'][] = 'filter-pane-title';
   }
+}
+
+/**
+ * Implements hook_form_ID_alter().
+ */
+function ktc_form_user_login_block_alter(&$form, &$form_state, $form_id) {
+  unset($form['actions']['submit']['#value']);
+  unset($form['links']);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-Search-page') {
+    unset($form['submit']['#value']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function ktc_preprocess_block(&$vars) {
+  $block_id = $vars['block']->delta;
+  $classes = &$vars['classes_array'];
+  // Add classes based on the block delta.
+  switch ($block_id) {
+    /* Add .badge class to block #14 */
+    case 'menu-nyttige-links':
+      $classes[] = 'col-md-3 col-sm-4 col-xs-12';
+      break;
+
+    case 'footer_contact_persons-block':
+      $classes[] = 'col-md-4 col-sm-4 col-xs-12';
+      break;
+
+  }
+  if ($vars['block']->region == 'footer_4') {
+    $classes[] = 'col-md-5 col-sm-4 col-xs-12';
+  }
+  if ($vars['block']->region == 'footer') {
+    $classes[] = 'col-md-3 col-sm-3 col-xs-12';
+  }
+  if ($vars['block']->region == 'header') {
+    $classes[] = 'col-sm-6 col-xs-12';
+  }
+}
+/**
+ * Get node create links.
+ */
+function ktc_get_node_create_link() {
+  $menu = array();
+  foreach (node_type_get_types() as $type) {
+    $item = menu_get_item('node/add/' . $type->type);
+    if ($item['access']) {
+      $menu[$type->type] = t('Opret') . ' ' . $type->name;
+    }
+  }
+  return $menu;
 }
