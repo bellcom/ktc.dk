@@ -7522,6 +7522,11 @@ fieldset[disabled] .btn-blacknblue.active {
   padding: 5px 10px;
   font-weight: 700;
 }
+.region-sidebar-second section.block-facetapi .facetapi-limit-link {
+  display: block;
+  padding: 10px 10px;
+  text-align: right;
+}
 .page-node-edit .region-content section,
 .page-node-add .region-content section {
   background-color: #F5F5F5;
