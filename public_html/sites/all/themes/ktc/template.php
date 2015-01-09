@@ -171,6 +171,11 @@ function ktc_preprocess_node(&$vars) {
   if ($vars['elements']['#view_mode'] == 'listevisning') {
     $vars['theme_hook_suggestions'][] = 'node__listevisning';
   }
+
+  // Node--listevisningstor.tpl.php.
+  if ($vars['elements']['#view_mode'] == 'listevisningstor') {
+    $vars['theme_hook_suggestions'][] = 'node__listevisningstor';
+  }
   // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes.
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
 
