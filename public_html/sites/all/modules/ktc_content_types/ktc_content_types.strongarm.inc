@@ -596,6 +596,10 @@ function ktc_content_types_strongarm() {
             'weight' => '3',
             'visible' => TRUE,
           ),
+          'listevisningstor' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
         ),
         'subscriptions_ui' => array(
           'teaser' => array(
@@ -605,6 +609,10 @@ function ktc_content_types_strongarm() {
           'teasercomments' => array(
             'weight' => '4',
             'visible' => TRUE,
+          ),
+          'listevisningstor' => array(
+            'weight' => '3',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -689,6 +697,10 @@ function ktc_content_types_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'listevisningstor' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'subscriptions_ui' => array(
           'teaser' => array(
@@ -698,6 +710,10 @@ function ktc_content_types_strongarm() {
           'teasercomments' => array(
             'weight' => '100',
             'visible' => TRUE,
+          ),
+          'listevisningstor' => array(
+            'weight' => '100',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -782,6 +798,10 @@ function ktc_content_types_strongarm() {
             'weight' => '2',
             'visible' => TRUE,
           ),
+          'listevisningstor' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
         ),
         'subscriptions_ui' => array(
           'teaser' => array(
@@ -791,6 +811,10 @@ function ktc_content_types_strongarm() {
           'teasercomments' => array(
             'weight' => '3',
             'visible' => TRUE,
+          ),
+          'listevisningstor' => array(
+            'weight' => '2',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -929,6 +953,10 @@ function ktc_content_types_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'listevisningstor' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'subscriptions_ui' => array(
           'teaser' => array(
@@ -938,6 +966,10 @@ function ktc_content_types_strongarm() {
           'teasercomments' => array(
             'weight' => '100',
             'visible' => TRUE,
+          ),
+          'listevisningstor' => array(
+            'weight' => '100',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -993,7 +1025,20 @@ function ktc_content_types_strongarm() {
           'weight' => '5',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'listevisningstor' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'subscriptions_ui' => array(
+          'listevisningstor' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__page'] = $strongarm;

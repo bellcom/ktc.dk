@@ -15,6 +15,7 @@ dependencies[] = field_slideshow
 dependencies[] = file
 dependencies[] = filter
 dependencies[] = image
+dependencies[] = ktc_hearing
 dependencies[] = link
 dependencies[] = list
 dependencies[] = makemeeting
