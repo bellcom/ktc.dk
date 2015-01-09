@@ -33,26 +33,9 @@
  */
 ?>
 <section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <?php print render($title_prefix); ?>
-  <?php if ($title && $block_html_id == "block-views-news-filter-block"): ?>
-  <div class="panel panel-primary with-big-arrow">
-    <div class="panel-heading">
+  <?php print render($title_suffix); ?>
+    <div class="block-heading">
       <h3 class="panel-title"><?php print $title; ?></h3>
     </div>
-
- 
-    <?php if ($block_html_id == "block-views-news-filter-block"): ?>
-    <div class="panel-body">
-    <?php endif;?>
-        <?php print render($title_suffix); ?>
-        <?php print $content ?>
-    <?php if ($block_html_id == "block-views-news-filter-block"): ?>
-    </div>
-    <?php endif;?>
-  </div>
-  <?php else: ?>
-  <?php print render($title_suffix); ?>
-        <?php print $content ?>
-  <?php endif;?>
+  <?php print $content ?>
 </section>

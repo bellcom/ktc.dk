@@ -73,10 +73,24 @@
  * @ingroup themeable
  */
 ?>
-<?php /* region--navigation.tpl.php */ ?>
-<?php if ($page['navigation']): ?>
-  <?php print render($page['navigation']); ?>
-<?php endif; ?>
+<div class="header-region">
+  <div class="top_header">
+  <div class="container">
+    <?php /* region--header_top.tpl.php */ ?>
+    <?php if ($page['header_top']): ?>
+      <?php print render($page['header_top']); ?>
+    <?php endif; ?>
+  </div>
+  </div>
+  <div class="navigation">
+  <div class="container">
+    <?php /* region--navigation.tpl.php */ ?>
+    <?php if ($page['navigation']): ?>
+      <?php print render($page['navigation']); ?>
+    <?php endif; ?>
+  </div>
+  </div>
+</div>
 
 <div class="main-container container">
 
@@ -113,3 +127,7 @@
 </div>
 <?php /* region--footer.tpl.php */ ?>
 <?php print render($page['footer']); ?>
+<?php print render($page['footer_2']); ?>
+<?php print render($page['footer_3']); ?>
+<?php print render($page['footer_4']); ?>
+<?php print render($page['footer_5']); ?>

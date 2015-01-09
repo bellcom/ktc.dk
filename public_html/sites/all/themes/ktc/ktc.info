@@ -9,6 +9,7 @@ php = 5.3.0
 ;; Regions
 ;;;;;;;;;;;;;;;;;;;;;
 
+regions[header_top]     = 'Header top'
 regions[navigation]     = 'Navigation'
 regions[header]         = 'Top Bar'
 regions[highlighted]    = 'Highlighted'
@@ -16,7 +17,11 @@ regions[help]           = 'Help'
 regions[content]        = 'Content'
 regions[sidebar_first]  = 'Primary'
 regions[sidebar_second] = 'Secondary'
-regions[footer]         = 'Footer'
+regions[footer]         = 'Footer 1'
+regions[footer_2]       = 'Footer 2'
+regions[footer_3]       = 'Footer 3'
+regions[footer_4]       = 'Footer 4'
+regions[footer_5]       = 'Footer 5'
 regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
 regions[content_bottom] = 'Content bottom'

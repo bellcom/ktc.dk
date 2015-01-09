@@ -1,9 +1,9 @@
 <?php
 /**
  * @file
- * region--content.tpl.php
+ * region--header_top.tpl.php
  *
- * Default theme implementation to display the "content" region.
+ * Default theme implementation to display the "Header top" region.
  *
  * Available variables:
  * - $content: The content for this region, typically blocks.
@@ -25,25 +25,25 @@
  * @ingroup themeable
  */
 ?>
-<?php if ($content): ?>
-  <div<?php print $attributes; ?>>
-    <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
-    <?php print render($page['page']['highlighted']); ?>
-    <a id="main-content"></a>
-    <?php print render($page['title_prefix']); ?>
-
-    <?php if (!empty($page['title'])): ?>
-      <h1 class="page-header"><?php print $page['title']; ?></h1>
+<?php if ($page['logo'] || $page['site_name'] || $page['primary_nav'] || $page['secondary_nav'] || $content): ?>
+<div class="header_top" id="header_top">
+  <div class="row">
+  <div class="col-md-2 col-sm-3 col-xs-4">
+    <?php if ($page['logo']): ?>
+      <a class="logo pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
+        <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
+      </a>
     <?php endif; ?>
-
-    <?php print render($page['title_suffix']); ?>
-    <?php print render($page['messages']); ?>
-    <?php if (!$logged_in): ?>
-      <?php print render($page['tabs']); ?>
-    <?php endif; ?>
-    <?php print render($page['page']['help']); ?>
-    <?php print render($page['action_links']); ?>
-    <?php print $content; ?>
-    <?php if ($content_attributes): ?></div><?php endif; ?>
   </div>
+  <div class="col-md-10 col-sm-9 col-xs-8 header_top_content">
+    <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
+    <div class="header-add-content"><i class="icon-add-content"></i><span>OPRET INDHOLD</span>
+      <?php print $page['create_menu']; ?>
+    </div>
+
+    <?php endif; ?>
+    <?php print $content; ?>
+  </div>
+  </div>
+</div>
 <?php endif; ?>

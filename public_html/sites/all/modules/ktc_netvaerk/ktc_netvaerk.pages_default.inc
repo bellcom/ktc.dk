@@ -835,7 +835,7 @@ function ktc_netvaerk_default_page_manager_pages() {
     $pane->uuid = '4a5bbdb0-e94c-4d85-b903-10cdff053bcc';
     $display->content['new-4a5bbdb0-e94c-4d85-b903-10cdff053bcc'] = $pane;
     $display->panels['right'][4] = 'new-4a5bbdb0-e94c-4d85-b903-10cdff053bcc';
-  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;

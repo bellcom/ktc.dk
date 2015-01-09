@@ -26,9 +26,8 @@
  * @ingroup themeable
  */
 ?>
-  <footer class="region region_footer footer_1 lcontainer-fluid">
-    <?php if ($content): ?>
-    <div class="lcontainer-fluid clearfix footer_1">
+  <footer class="region region_footer footer_2 lcontainer-fluid">
+    <div class="lcontainer-fluid clearfix footer_2">
       <div class="container">
         <div class="row">
       <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
@@ -37,5 +36,4 @@
       </div>
       </div>
     </div>
-    <?php endif; ?>
   </footer>

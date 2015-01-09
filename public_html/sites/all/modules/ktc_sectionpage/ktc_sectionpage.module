@@ -123,7 +123,9 @@ function ktc_sectionpage_block_info() {
   $blocks['user_comments_block'] = array(
     'info' => t('KTC brugere kommentarter blok'),
   );
-
+  $blocks['user_comments_block_2'] = array(
+    'info' => t('KTC lille kommentarter blok'),
+  );
   $blocks['custom_filter_on_hearing'] = array(
     'info' => t('KTC filtrer på høringer blok'),
   );
@@ -159,7 +161,12 @@ function ktc_sectionpage_block_view($delta = '') {
 
     case 'user_comments_block':
       $block['subject'] = '';
-      $block['content'] = _ktc_user_comments_content();
+      $block['content'] = _ktc_user_comments_content(TRUE);
+      break;
+
+    case 'user_comments_block_2':
+      $block['subject'] = '';
+      $block['content'] = _ktc_user_comments_content(FALSE);
       break;
 
     case 'custom_filter_on_hearing':
@@ -383,7 +390,7 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
 /**
  * User comments block_view call back.
  */
-function _ktc_user_comments_content() {
+function _ktc_user_comments_content($page = TRUE) {
   global $user;
   // Profile subpage user/user_comments.
   // Get contents with comments from user's contents,
@@ -391,12 +398,18 @@ function _ktc_user_comments_content() {
   $ids = _ktc_sectionpage_get_user_related_node_id($user->uid);
 
   $view = views_get_view('comments');
+  if ($page) {
+    $display = 'panel_pane_1';
+  }
+  else {
+    $display = 'block_1';
+  }
 
-  $view->set_display('panel_pane_1');
+  $view->set_display($display);
   $view->set_arguments(array($ids));
   $view->pre_execute();
   $view->execute();
-  return $view->render('panel_pane_1');
+  return $view->render($display);
 }
 
 /**
