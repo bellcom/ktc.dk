@@ -7497,6 +7497,32 @@ fieldset[disabled] .btn-blacknblue.active {
 .main-container .region-header section .panel-body h5 {
   margin-top: 2px;
 }
+.region-sidebar-second {
+  margin-top: 10px;
+}
+.region-sidebar-second section.block-facetapi {
+  background-color: #fff;
+}
+.region-sidebar-second section.block-facetapi h3 {
+  border: none;
+  padding: 5px 0px 5px 20px;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #000;
+}
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links {
+  padding-left: 0px;
+}
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li {
+  padding: 10px 10px;
+}
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a {
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
 .page-node-edit .region-content section,
 .page-node-add .region-content section {
   background-color: #F5F5F5;
