@@ -9161,6 +9161,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   margin: 0 0 10px 0;
 }
 .page-leverandoerlist .main-container,
+.page-search .main-container,
 .page-user .main-container,
 .node-type-page .main-container,
 .page-leverandoerer .main-container {
@@ -9168,12 +9169,14 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   padding-bottom: 20px;
 }
 .page-leverandoerlist .views-field .term-name a,
+.page-search .views-field .term-name a,
 .page-user .views-field .term-name a,
 .node-type-page .views-field .term-name a,
 .page-leverandoerer .views-field .term-name a {
   color: #2c353a;
 }
 .page-leverandoerlist .views-field .term-name a .icon-blue,
+.page-search .views-field .term-name a .icon-blue,
 .page-user .views-field .term-name a .icon-blue,
 .node-type-page .views-field .term-name a .icon-blue,
 .page-leverandoerer .views-field .term-name a .icon-blue {
