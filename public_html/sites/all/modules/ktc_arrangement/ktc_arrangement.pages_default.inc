@@ -701,7 +701,7 @@ function ktc_arrangement_default_page_manager_pages() {
     $pane->uuid = 'dc251f72-95b3-4ac0-82a0-8c8ff4dd7273';
     $display->content['new-dc251f72-95b3-4ac0-82a0-8c8ff4dd7273'] = $pane;
     $display->panels['right'][2] = 'new-dc251f72-95b3-4ac0-82a0-8c8ff4dd7273';
-  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
