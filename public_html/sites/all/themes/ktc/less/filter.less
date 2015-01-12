@@ -2,19 +2,20 @@
 .col-md-4 {
   .panel-separator {
     clear: both;
+    margin-bottom: 20px;
+  }
+  &.pane-sidebar {
+    .pane-content {
+      padding-bottom: 10px;
+    }
   }
   .panel-pane {
     position: relative;
+    .pane-title {
+      .filter-title();
+    }
     .pane-content {
-      display: block;
-      position: relative;
-      &:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      margin-bottom: 0;
-      border-radius: 4px 4px 0 0;
+      .pane-content();
 
       //filter buttons
       .filter-box {
