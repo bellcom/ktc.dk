@@ -125,10 +125,19 @@
       });
 
       // Search facetapi.
-      var li_text = $('ul.facetapi-facetapi-links li');
-      if (li_text != '') {
-        $(this).find('a').append(li_text);
-      }
+      $('ul.facetapi-facetapi-links li').each(function(){
+        var li_text = $(this).clone() //clone the element
+                      .children() //select all the children
+                      .remove()   //remove all the children
+                      .end()  //again go back to selected element
+                      .text();
+        if (li_text != '') {
+          $(this).find('a').append(li_text);
+          $(this).contents().filter(function () {
+            return this.nodeType === 3 && $.trim(this.nodeValue).length;
+          }).replaceWith('');
+        }
+      });
 
       // nav header login
       $('.header_top #block-user-login button#edit-submit').click(function(){
