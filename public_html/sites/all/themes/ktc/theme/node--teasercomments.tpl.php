@@ -14,7 +14,7 @@
             <div class="user_link col-md-6 left"><?php print $user_name; ?></div>
           <?php endif; ?>
           <div class="col-md-6 right">
-            <?php print  t(format_interval(time()-$node->created)) . ' ' . t('ago'); ?>
+            <?php print $created_ago . ' ' . t('ago'); ?>
           </div>
         </div>
         <div class="node-teaser-hr clearfix col-md-12 col-sm-12 col-xs-12">

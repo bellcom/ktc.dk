@@ -96,7 +96,20 @@ function ktc_supplier_strongarm() {
           'weight' => '10',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'subscriptions_ui' => array(
+          'teaser' => array(
+            'weight' => '100',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__ktc_supplier'] = $strongarm;
