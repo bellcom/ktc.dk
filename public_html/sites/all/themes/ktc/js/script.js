@@ -124,6 +124,12 @@
         }
       });
 
+      // Search facetapi.
+      var li_text = $('ul.facetapi-facetapi-links li');
+      if (li_text != '') {
+        $(this).find('a').append(li_text);
+      }
+
       // nav header login
       $('.header_top #block-user-login button#edit-submit').click(function(){
         if (!$(this).hasClass('login_open')) {
