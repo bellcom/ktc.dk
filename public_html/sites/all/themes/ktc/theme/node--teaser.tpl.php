@@ -4,7 +4,9 @@
   <div class="margin-bottom-20 col-md-12 col-sm-12 col-xs-12">
     <div class="">
       <?php if (isset($group_info)) : ?>
-        <i class="icon-group-<?php print $group_info['class']; ?>"></i><h6 class="<?php print $group_info['class']; ?>"><?php print $group_info['name']; ?></h6>
+        <i class="icon-group-<?php print $group_info['class']; ?>"></i>
+        <h6 class="<?php print $group_info['class']; ?>"><?php print l($group_info['name'], 'node/' . $group_info['gid']); ?></h6>
+        <i class="icon-locker"></i>
       <?php endif;?>
       <?php if (isset($content['field_image'])) : ?>
         <div class="node-teaser-item-img">
@@ -40,7 +42,7 @@
               <span class="user_link"><?php print $user_name; ?></span><br />
             <?php endif; ?>
             <div>
-              <?php print  t(format_interval(time()-$node->created)) . ' ' . t('ago'); ?>
+              <?php print $created_ago . ' ' . t('ago'); ?>
             </div>
           </div>
         </div>

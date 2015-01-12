@@ -7172,7 +7172,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .region-header #block-views-exp-search-page .views-submit-button .form-submit#edit-submit-search,
 .header-region .top_header .header_top #block-views-exp-search-page .views-submit-button .form-submit#edit-submit-search {
   background-image: url(../images/sprites.png);
-  background-position: 0px -224px;
+  background-position: 0px -185px;
   width: 28px;
   height: 28px;
   border: none;
@@ -7200,7 +7200,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .region-header #block-user-login #edit-actions button,
 .header-region .top_header .header_top #block-user-login #edit-actions button {
   background-image: url(../images/sprites.png);
-  background-position: 0px -196px;
+  background-position: 0px -213px;
   width: 28px;
   height: 28px;
   border: none;
@@ -7209,7 +7209,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .region-header #block-user-login #edit-actions button.login_open,
 .header-region .top_header .header_top #block-user-login #edit-actions button.login_open {
   background-image: url(../images/sprites.png);
-  background-position: 0px -140px;
+  background-position: 0px -241px;
   width: 28px;
   height: 28px;
 }
@@ -7244,7 +7244,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .header_top_content .header-add-content .icon-add-content {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -168px;
+  background-position: 0px -157px;
   width: 28px;
   height: 28px;
 }
@@ -9024,6 +9024,16 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser h6 {
   font-size: 11px;
   margin-bottom: 3px;
+  display: inline-block;
+}
+.node-teaser.private-content .icon-locker {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -123px;
+  width: 15px;
+  height: 17px;
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
 }
 .node-teaser h2 {
   margin-top: 10px;
@@ -9209,7 +9219,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerer .views-field .term-name a .icon-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -89px;
+  background-position: 0px -55px;
   width: 17px;
   height: 17px;
   vertical-align: bottom;

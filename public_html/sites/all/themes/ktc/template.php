@@ -195,6 +195,11 @@ function ktc_preprocess_node(&$vars) {
     $vars['user_name'] = l($user->name, 'user/' . $user->uid);
   }
 
+  // Created time.
+  $created_ago = format_interval(time() - $vars['created'], 2, 'da');
+  $time_ar = explode(' ', $created_ago);
+  $vars['created_ago'] = ktc_date_translate($time_ar);
+
   // Added statistics_count for node--teaser and node-teasercomments templates.
   if (isset($vars['content']['links']['statistics'])) {
     $vars['statistics_count'] = (int) $vars['content']['links']['statistics']['#links']['statistics_counter']['title'];
@@ -232,6 +237,57 @@ function ktc_preprocess_node(&$vars) {
   $vars['num_comments'] = db_query("SELECT COUNT(cid) AS count FROM {comment}
                                    WHERE nid = :nid", array(":nid" => $vars['nid']))->fetchField();
 
+}
+/**
+ * Date to danish.
+ */
+function ktc_date_translate($time_ar) {
+  $time = array();
+  foreach ($time_ar as $item) {
+    switch ($item) {
+      case 'year':
+        $item = 'år';
+        break;
+
+      case 'years':
+        $item = 'år';
+        break;
+
+      case 'month':
+        $item = 'måned';
+        break;
+
+      case 'months':
+        $item = 'måneder';
+        break;
+
+      case 'week':
+        $item = 'uge';
+        break;
+
+      case 'weeks':
+        $item = 'uger';
+        break;
+
+      case 'day':
+        $item = 'dag';
+        break;
+
+      case 'days':
+        $item = 'dage';
+        break;
+
+      case 'hour':
+        $item = 'time';
+        break;
+
+      case 'hours':
+        $item = 'timer';
+        break;
+    }
+    $time[] = $item;
+  }
+  return implode(' ', $time);
 }
 
 /**
