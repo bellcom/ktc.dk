@@ -7528,9 +7528,9 @@ fieldset[disabled] .btn-blacknblue.active {
   padding: 0px 10px;
   font-weight: 700;
   background-color: #ffffff;
-  border-color: #2c353a;
+  border-color: #e9edee;
   color: #2c353a;
-  border: 2px solid #2c353a;
+  border: 2px solid #e9edee;
   padding: 1px 8px;
   border-radius: 14px;
   text-decoration: none;
@@ -7545,7 +7545,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .open .dropdown-toggle.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a {
   color: #2c353a;
   background-color: #ebebeb;
-  border-color: #121517;
+  border-color: #c6d1d3;
 }
 .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:active,
 .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.active,
@@ -7568,7 +7568,7 @@ fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-fac
 .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled].active,
 fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.active {
   background-color: #ffffff;
-  border-color: #2c353a;
+  border-color: #e9edee;
 }
 .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a .badge {
   color: #ffffff;
