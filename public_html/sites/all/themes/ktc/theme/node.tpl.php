@@ -83,7 +83,6 @@
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <header>
-    
     <?php if ($type == 'os2web_base_news') : ?>
       <?php if(isset($content['field_os2web_base_field_video'])) : ?>
         <?php hide($content['field_os2web_base_field_lead_img']); ?>
@@ -99,12 +98,6 @@
       <i></i><?php print format_date($created, 'custom', 'j. F'); ?>
     </time>
     <?php endif; ?>
-    <?php print render($title_prefix); ?>
-    <?php if (!empty($title)): ?>
-    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
-
 
     <?php if ($type == 'arrangement') : ?>
     <div class="row">
