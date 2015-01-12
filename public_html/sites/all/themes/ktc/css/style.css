@@ -7453,22 +7453,27 @@ fieldset[disabled] .btn-blacknblue.active {
   background-color: #2c353a;
   color: #fff;
 }
+.main-container .region-header section .view-empty,
 .main-container .region-header section .view-content {
   padding: 10px 10px;
 }
 @media (min-width: 768px) {
+  .main-container .region-header section .view-empty,
   .main-container .region-header section .view-content {
     height: 300px;
     overflow-y: scroll;
   }
 }
+.main-container .region-header section .view-empty h5,
 .main-container .region-header section .view-content h5 {
   margin-top: 2px;
   margin-bottom: 2px;
 }
+.main-container .region-header section .view-empty .views-row,
 .main-container .region-header section .view-content .views-row {
   margin-bottom: 10px;
 }
+.main-container .region-header section .view-empty .views-row .views-field-subject,
 .main-container .region-header section .view-content .views-row .views-field-subject {
   color: #2c353a;
   font-weight: 700;
@@ -7517,10 +7522,80 @@ fieldset[disabled] .btn-blacknblue.active {
 }
 .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li {
   padding: 2px 10px;
+  overflow: hidden;
 }
 .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a {
-  padding: 5px 10px;
+  padding: 0px 10px;
   font-weight: 700;
+  background-color: #ffffff;
+  border-color: #2c353a;
+  color: #2c353a;
+  border: 2px solid #2c353a;
+  padding: 1px 8px;
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  float: right;
+}
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:hover,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:focus,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:active,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.active,
+.open .dropdown-toggle.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a {
+  color: #2c353a;
+  background-color: #ebebeb;
+  border-color: #121517;
+}
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:active,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.active,
+.open .dropdown-toggle.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a {
+  background-image: none;
+}
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.disabled,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled],
+fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.disabled:hover,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled]:hover,
+fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:hover,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.disabled:focus,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled]:focus,
+fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:focus,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.disabled:active,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled]:active,
+fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:active,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.disabled.active,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled].active,
+fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.active {
+  background-color: #ffffff;
+  border-color: #2c353a;
+}
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a .badge {
+  color: #ffffff;
+  background-color: #2c353a;
+}
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:hover,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:focus,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:active,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.active {
+  color: #2c353a;
+}
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.disabled,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled],
+fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.disabled:hover,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled]:hover,
+fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:hover,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.disabled:focus,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled]:focus,
+fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:focus,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.disabled:active,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled]:active,
+fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a:active,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.disabled.active,
+.region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a[disabled].active,
+fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-facetapi-links li a.active {
+  background-color: #fff;
 }
 .region-sidebar-second section.block-facetapi .facetapi-limit-link {
   display: block;
