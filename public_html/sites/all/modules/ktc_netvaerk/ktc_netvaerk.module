@@ -6,8 +6,43 @@
 
 include_once 'ktc_netvaerk.features.inc';
 
+/**
+ * Implements hook_menu().
+ */
+function ktc_netvaerk_menu() {
+  $items['admin/netvaerk_setting'] = array(
+    'type' => MENU_LOCAL_TASK,
+    'title' => 'Netværk settings',
+    'description' => 'Configure group settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_netvaerk_settings'),
+    'access arguments' => array('access administration pages'),
+  );
+
+  return $items;
+}
+/**
+ * KTC netvaerk setting form.
+ */
+function ktc_netvaerk_settings() {
+  $form = array();
+
+  $form['group_owner'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Grupper ejer'),
+    '#description' => t('Global grupper ejer'),
+    '#size' => 30,
+    '#default_value' => variable_get('group_owner', ''),
+    '#autocomplete_path' => 'user/autocomplete',
+  );
+
+  return system_settings_form($form);
+}
+/**
+ * KTC netvaerk get node group info.
+ */
 function ktc_netvaerk_get_node_group_info($nid) {
-  $group_info = array('name' => '', 'class' => '');
+  $group_info = array('name' => '', 'class' => '', 'gid' => '');
   if (is_numeric($nid)) {
     $node = node_load($nid);
     if ($gid = field_get_items('node', $node, 'og_group_ref')) {
@@ -15,11 +50,15 @@ function ktc_netvaerk_get_node_group_info($nid) {
       $group = node_load($gid);
       $class = ktc_netvaerk_check_my_groups($gid);
       /*$tid = '';
-      if ($group_type = field_get_items('node', $group, 'field_netvaerkstype')) {
-        $tid = $group_type[0]['tid'];
+      if ($group_type = field_get_items('node', $group, 'field_netvaerkstype')){
+      $tid = $group_type[0]['tid'];
 
       }*/
-      $group_info = array('name' => $group->title, 'class' => $class);
+      $group_info = array(
+        'name' => $group->title,
+        'class' => $class,
+        'gid' => $gid
+      );
     }
 
     // If node type is magazine, so there is no group,
@@ -31,14 +70,61 @@ function ktc_netvaerk_get_node_group_info($nid) {
   return $group_info;
 
 }
-
+/**
+ * Check group, add classes.
+ */
 function ktc_netvaerk_check_my_groups($nid) {
+  // Yellow is the genernal group.
   $class = 'ktc-yellow';
 
   if ($gids = og_get_groups_by_user()) {
     if (in_array($nid, $gids['node'])) {
+      // Red is my group.
       $class = 'ktc-red';
     }
   }
+
+  // Check group content visibility.
+  $node = node_load($nid);
+  if ($visible = field_get_items('node', $node, 'og_roles_permissions')) {
+    if ($visible[0]['value']) {
+      $class .= ' private-content';
+    }
+  }
   return $class;
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function ktc_netvaerk_node_insert($node) {
+  if ($node->type == 'group') {
+    $old_uid = $node->uid;
+    // Auto add user membership.
+    $account = user_load($old_uid);
+    // Add the user to the group.
+    og_group('node', $node->nid, array(
+                "entity type"       => "user",
+                "entity"        => $account,
+                "membership type"   => OG_MEMBERSHIP_TYPE_DEFAULT,
+            ));
+    // Changes the users role in the group
+    // (1 = non-member, 2 = member, 3 = administrator member).
+    og_role_grant('node', $node->nid, $account->uid, 3);
+
+    // Update node: add global owner to group.
+    ktc_netvaerk_change_own($node);
+  }
+}
+
+/**
+ * Chang group owner.
+ */
+function ktc_netvaerk_change_own($node) {
+  if ($node->type == 'group') {
+    $name = variable_get('group_owner', 'netvaerk@ktc.dk');
+    $owner = user_load_by_name($name);
+
+    db_update('node')->fields(array('uid' => $owner->uid))->condition('nid', $node->nid)->execute();
+  }
 }
