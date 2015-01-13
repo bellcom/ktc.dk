@@ -8152,6 +8152,25 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   margin-left: 0px;
   margin-right: 0px;
 }
+.front .main-container.container .pane-content {
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+.front .main-container.container .pane-content .view-content {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+.front .main-container.container .pane-content .view-content article.bg-white {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.front .main-container.container .pane-content .view-content .views-row {
+  overflow: hidden;
+}
+.front .main-container.container .pane-content .view-content .views-row h5 {
+  margin-top: 0px;
+}
 .front .main-container.container h3.pane-title {
   border: none;
   padding: 5px 0px 5px 20px;
@@ -8162,13 +8181,6 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   background-color: #2c353a;
   margin-bottom: 0px;
   margin-top: 0px;
-}
-.front .main-container.container .col-md-4 article {
-  margin-bottom: 0px;
-}
-.front .main-container.container .col-md-4 .view-content {
-  padding-left: 10px;
-  padding-right: 10px;
 }
 .col-md-3 .panel-separator,
 .col-md-4 .panel-separator {
