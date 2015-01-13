@@ -11,7 +11,7 @@ define('KTC_HEARING_STATUS_OPEN', variable_get('ktc_hearing_status_open', 1837))
 define('KTC_HEARING_STATUS_RECAP', variable_get('ktc_hearing_status_recap', 1838));
 define('KTC_HEARING_STATUS_APPROVAL', variable_get('ktc_hearing_status_approval', 1839));
 define('KTC_HEARING_STATUS_APPROVED', variable_get('ktc_hearing_status_approved', 1840));
-define('KTC_HEARING_STATUS_CLOSED', variable_get('ktc_hearing_status_closed', 6));
+define('KTC_HEARING_STATUS_CLOSED', variable_get('ktc_hearing_status_closed', 1892));
 
 /**
  * Implements hook_menu().
@@ -310,7 +310,9 @@ function ktc_hearing_access($node, $op) {
  */
 function ktc_hearing_invite_page($nid) {
   $invite_form = drupal_get_form('ktc_hearing_invite', $nid);
+  $vars['hearing'] = node_load($nid);
   $vars['preface'] = render($invite_form);
+
   return theme('hearing_answer', $vars);
 }
 /**
@@ -412,6 +414,8 @@ function ktc_hearing_summary_responses($hearing) {
   else {
     $vars['preface'] = 'Høringens status tillader ikke sammenskrivning af høringssvar.';
   }
+  $vars['hearing'] = $hearing;
+
   return theme('hearing_answer', $vars);
 
 }
@@ -442,6 +446,7 @@ function ktc_hearing_approve_summary_responses($hearing) {
   else {
     $vars['preface'] = 'Der er ikke et endeligt høringssvar.';
   }
+  $vars['hearing'] = $hearing;
 
   return theme('hearing_answer', $vars);
 }
@@ -513,28 +518,41 @@ function ktc_hearing_set_status_approval(&$form, &$form_state) {
 /**
  * Change hearing status.
  */
-function ktc_hearing_set_status($form, $form_state, $status = NULL) {
-  $form['status'] = array(
-    '#type' => 'hidden',
-    '#value' => $status,
+function ktc_hearing_set_status($form, $form_state, $arg = NULL) {
+  if ($arg == NULL) {
+    $arg = node_load(arg(1));
+  }
+  if (is_object($arg)) {
+    $status = ktc_hearing_get_status($arg);
+    $nid = $arg->nid;
+  }
+  else {
+    $status = $arg;
+    $nid = arg(1);
+  }
+
+  $hearing_states = array(
+    KTC_HEARING_STATUS_OPEN,
+    KTC_HEARING_STATUS_RECAP,
+    KTC_HEARING_STATUS_APPROVAL,
+    KTC_HEARING_STATUS_APPROVED,
+    KTC_HEARING_STATUS_CLOSED,
   );
+
+  foreach ($hearing_states as $state) {
+    $state_options[$state] = _ktc_hearing_state_label($state);
+  }
 
   $form['status'] = array(
     '#type' => 'select',
     '#title' => t('Opdater status'),
     '#default_value' => $status,
-    '#options' => array(
-      KTC_HEARING_STATUS_OPEN => t('Open'),
-      KTC_HEARING_STATUS_RECAP => t('Summary response'),
-      KTC_HEARING_STATUS_APPROVAL => t('For approval'),
-      KTC_HEARING_STATUS_APPROVED => t('Approved'),
-      KTC_HEARING_STATUS_CLOSED => t('Closed'),
-    ),
+    '#options' => $state_options,
   );
 
   $form['hearing_nid'] = array(
     '#type' => 'hidden',
-    '#value' => arg(1),
+    '#value' => $nid,
   );
 
   $form['submit'] = array(
@@ -604,6 +622,7 @@ function ktc_hearing_responses($hearing) {
 
     $vars['answer_form'] = render($node_form);
   }
+  $vars['hearing'] = $hearing;
 
   return theme('hearing_answer', $vars);
 }
@@ -987,4 +1006,12 @@ function _ktc_hearing_get_unresponded($user = FALSE) {
   }
 
   return $unresponded_hearings;
+}
+
+/**
+ * Get state label from taxonomy term.
+ */
+function _ktc_hearing_state_label($term_id) {
+  $term = taxonomy_term_load($term_id);
+  return $term->name;
 }
