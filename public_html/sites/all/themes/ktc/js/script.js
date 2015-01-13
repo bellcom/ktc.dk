@@ -46,7 +46,7 @@
       }
       else {
         $('.region-header').css('display', 'none');
-        $(this).text('ÅBEN BRUGERBOKS');
+        $(this).text('ÅBN BRUGERBOKS');
         $('.main-container').addClass('margin-fixed');
 
       }

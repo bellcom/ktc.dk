@@ -9182,3 +9182,11 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   margin-left: 0px;
   margin-right: 0px;
 }
+.page-aktiviteter .main-container.container .region-content .pane-content,
+.page-hoeringer .main-container.container .region-content .pane-content,
+.page-netvaerk .main-container.container .region-content .pane-content,
+.page-nyheder .main-container.container .region-content .pane-content,
+.page-teksnik-miljoe .main-container.container .region-content .pane-content {
+  padding-left: 0px;
+  padding-right: 0px;
+}
