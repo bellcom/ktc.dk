@@ -949,7 +949,7 @@ function _ktc_hearing_generate_pdf($markup) {
  * Page preview, for summary answer pdf.
  */
 function ktc_hearing_generate_hearing_summary_preview($hearing) {
-  $markup = _ktc_hearing_generate_hearing_summary_view($hearing);
+  $markup = _ktc_hearing_generate_hearing_summary_view($hearing, TRUE);
 
   $dompdf = new DOMPDF();
   $dompdf->load_html($markup);
@@ -970,7 +970,7 @@ function _ktc_hearing_generate_markdown($markup) {
 /**
  * Gnerate markup of hearing summary answer.
  */
-function _ktc_hearing_generate_hearing_summary_view($hearing) {
+function _ktc_hearing_generate_hearing_summary_view($hearing, $php_script = FALSE) {
   $vars = array();
 
   global $base_url;
@@ -980,6 +980,7 @@ function _ktc_hearing_generate_hearing_summary_view($hearing) {
   $vars['style_sheet_url'] = $base_url . '/' . $module_path . '/css/summary_hearing_answer.css';
   $vars['hearing_node'] = $hearing;
   $vars['summary_node'] = $summary;
+  $vars['php_script'] = $php_script;
 
   return theme('summary_hearing_answer', $vars);
 }
