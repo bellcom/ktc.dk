@@ -16,21 +16,9 @@
  */
 ?>
 <div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-  <div class="col-md-12 col-sm-12 col-xs-12 pane-top">
-    <div class="row">
-      <?php print $content['top']; ?>
+  <div class="col-md-12 col-sm-12 col-xs-12 panel-content">
+    <div class="row" id="panel-pane-content">
+      <?php print $content['content']; ?>
     </div>
-  </div>
-  <div class="col-md-4 col-sm-4 col-xs-12 pane-left">
-    <?php print $content['left']; ?>
-  </div>
-  <div class="col-md-4 col-sm-4 col-xs-12 pane-center">
-    <?php print $content['center']; ?>
-  </div>
-  <div class="col-md-4 col-sm-4 col-xs-12 pane-right">
-    <?php print $content['right']; ?>
-  </div>
-  <div class="col-md-12 col-sm-12 col-xs-12 pane-bottom">
-    <?php print $content['bottom']; ?>
   </div>
 </div>
