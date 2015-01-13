@@ -967,7 +967,7 @@ function _ktc_hearing_get_unresponded($user = FALSE) {
       // Has the user responded already.
       if (ktc_hearing_access($hearing, 'respond') && !ktc_hearing_user_has_responded($hearing, $user)) {
         $node_author = user_load($hearing->uid);
-        $hearing->user_mail = views_trim_text(array(), $node_author->mail);
+        $hearing->user_mail = $node_author->mail;
         $unresponded_hearings[] = $hearing;
       }
     }

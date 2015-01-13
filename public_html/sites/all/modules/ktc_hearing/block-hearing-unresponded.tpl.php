@@ -2,6 +2,8 @@
 /**
  * @file
  * Template for unresponded hearings block.
+ *
+ * Basic views markup is used, for theming reasons.
  */
 ?>
 <!-- block-hearing-unresponded.tpl.php -->
