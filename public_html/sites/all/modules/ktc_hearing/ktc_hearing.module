@@ -91,6 +91,9 @@ function ktc_hearing_menu() {
  */
 function ktc_hearing_theme() {
   return array(
+    'block_hearing_unresponded' => array(
+      'template' => 'block-hearing-unresponded',
+    ),
     'hearing_answer' => array(
       'template' => 'hearing-answer',
     ),
@@ -170,7 +173,6 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
   $form['options']['#access'] = 0;
   $form['revision_information']['#access'] = 0;
   $form['actions']['preview_changes']['#access'] = 0;
-  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($form['actions']['submit'], 1));
 }
 
 /**
@@ -185,33 +187,35 @@ function ktc_hearing_mail($key, &$message, $params) {
  * Implements hook_node_access().
  */
 function ktc_hearing_node_access($node, $op, $account) {
-  if ($node->uid == $account->uid) {
-    return NODE_ACCESS_IGNORE;
-  }
-
-  // Determine if it's a hearing.
-  if ($node->type == 'hearing') {
-    $hearing = $node;
-
-    $access = ktc_hearing_user_has_access($hearing, $account);
-
-    if (in_array($op, $access)) {
-      return NODE_ACCESS_ALLOW;
+  if (is_object($node)) {
+    if ($node->uid == $account->uid) {
+      return NODE_ACCESS_IGNORE;
     }
 
-    // This is a hearing, if no other access is returned, deny.
-    return NODE_ACCESS_DENY;
-  }
+    // Determine if it's a hearing.
+    if ($node->type == 'hearing') {
+      $hearing = $node;
 
-  if ($node->type == 'hearing_responses') {
-    if ($hearing = _ktc_hearing_get_hearing_from_response($node)) {
       $access = ktc_hearing_user_has_access($hearing, $account);
 
-      if ($op == 'view' && in_array($op, $access)) {
+      if (in_array($op, $access)) {
         return NODE_ACCESS_ALLOW;
       }
 
+      // This is a hearing, if no other access is returned, deny.
       return NODE_ACCESS_DENY;
+    }
+
+    if ($node->type == 'hearing_responses') {
+      if ($hearing = _ktc_hearing_get_hearing_from_response($node)) {
+        $access = ktc_hearing_user_has_access($hearing, $account);
+
+        if ($op == 'view' && in_array($op, $access)) {
+          return NODE_ACCESS_ALLOW;
+        }
+
+        return NODE_ACCESS_DENY;
+      }
     }
   }
 
@@ -251,6 +255,34 @@ function ktc_hearing_node_presave($node) {
 }
 
 /**
+ * Implements hook_block_info().
+ */
+function ktc_hearing_block_info() {
+  $blocks['ktc_hearing_unresponded'] = array(
+    'info' => t('Users unresponded hearings'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ktc_hearing_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'ktc_hearing_unresponded':
+      $vars['unresponded_hearings'] = _ktc_hearing_get_unresponded();
+
+      $block['subject'] = t('Hearings');
+      $block['content'] = theme('block_hearing_unresponded', $vars);
+      break;
+  }
+  return $block;
+}
+
+/**
  * Access callback function.
  */
 function ktc_hearing_access($node, $op) {
@@ -269,6 +301,9 @@ function ktc_hearing_access($node, $op) {
   if (in_array($op, $access)) {
     return TRUE;
   }
+
+  // Catch all.
+  return FALSE;
 }
 /**
  * KTC hearing invite page callback.
@@ -563,12 +598,9 @@ function ktc_hearing_responses($hearing) {
 /**
  * Has the user responded to the hearing.
  */
-function ktc_hearing_user_has_responded($hearing, $account = FALSE) {
-  if (!$account) {
+function ktc_hearing_user_has_responded($hearing, $user = FALSE) {
+  if (!$user) {
     global $user;
-  }
-  else {
-    $user = $account;
   }
 
   $query = new EntityFieldQuery();
@@ -910,4 +942,36 @@ function _ktc_hearing_generate_hearing_summary_view($hearing) {
  */
 function _ktc_hearings_node_no_redirect(&$form, &$form_state) {
   $form_state['redirect'] = $_SERVER['HTTP_REFERER'];
+}
+
+/**
+ * Get a users unresponded hearings.
+ */
+function _ktc_hearing_get_unresponded($user = FALSE) {
+  if (!$user) {
+    global $user;
+  }
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'hearing')
+    ->fieldCondition('field_status', 'tid', KTC_HEARING_STATUS_OPEN);
+  $result = $query->execute();
+
+  $unresponded_hearings = array();
+
+  if (isset($result['node'])) {
+    foreach (node_load_multiple(array_keys($result['node'])) as $hearing) {
+
+      // Does the user have the correct permissions?
+      // Has the user responded already.
+      if (ktc_hearing_access($hearing, 'respond') && !ktc_hearing_user_has_responded($hearing, $user)) {
+        $node_author = user_load($hearing->uid);
+        $hearing->user_mail = views_trim_text(array(), $node_author->mail);
+        $unresponded_hearings[] = $hearing;
+      }
+    }
+  }
+
+  return $unresponded_hearings;
 }
