@@ -513,10 +513,23 @@ function ktc_hearing_set_status_approval(&$form, &$form_state) {
 /**
  * Change hearing status.
  */
-function ktc_hearing_set_status($form, $form_state, $status) {
+function ktc_hearing_set_status($form, $form_state, $status = NULL) {
   $form['status'] = array(
     '#type' => 'hidden',
     '#value' => $status,
+  );
+
+  $form['status'] = array(
+    '#type' => 'select',
+    '#title' => t('Opdater status'),
+    '#default_value' => $status,
+    '#options' => array(
+      KTC_HEARING_STATUS_OPEN => t('Open'),
+      KTC_HEARING_STATUS_RECAP => t('Summary response'),
+      KTC_HEARING_STATUS_APPROVAL => t('For approval'),
+      KTC_HEARING_STATUS_APPROVED => t('Approved'),
+      KTC_HEARING_STATUS_CLOSED => t('Closed'),
+    ),
   );
 
   $form['hearing_nid'] = array(

@@ -26,5 +26,7 @@
   </div>
   <div class="col-md-3 col-sm-3 col-xs-12">
     <?php $menu = menu_local_tabs(); print render($menu); ?>
+
+    <?php print render(drupal_get_form('ktc_hearing_set_status')); ?>
   </div>
 </div>
