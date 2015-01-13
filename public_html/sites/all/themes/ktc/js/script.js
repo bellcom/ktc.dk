@@ -161,10 +161,11 @@
 
     // Frontpage.
     var $container = $('#panel-pane-content');
-    console.log($container.width());
     $container.imagesLoaded(function(){
+      $container.append('<div class="panel-pane col-md-1"></div>');
       $container.masonry({
-        columnWidth: '.panel-pane.col-md-4',
+        itemSelector: '.panel-pane',
+        columnWidth: '.col-md-1',
       });
     });
 
