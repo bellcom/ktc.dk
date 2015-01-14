@@ -19,7 +19,7 @@ define('KTC_HEARING_STATUS_CLOSED', variable_get('ktc_hearing_status_closed', 18
 function ktc_hearing_menu() {
   $items['admin/config/content/ktc_hearings'] = array(
     'type' => MENU_NORMAL_ITEM,
-    'title' => 'KTC Hearings',
+    'title' => 'KTC Høringer',
     'description' => 'Configure KTC Hearing module',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_hearing_permission_settings'),
@@ -29,7 +29,7 @@ function ktc_hearing_menu() {
 
   $items['node/%node/hearing_response'] = array(
     'type' => MENU_LOCAL_TASK,
-    'title' => 'Answer',
+    'title' => 'Svar',
     'page callback' => 'ktc_hearing_responses',
     'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
@@ -42,7 +42,7 @@ function ktc_hearing_menu() {
 
   $items['node/%node/summary_hearing_response'] = array(
     'type' => MENU_LOCAL_TASK,
-    'title' => 'Summary answer',
+    'title' => 'Skriv sammenfatning',
     'page callback' => 'ktc_hearing_summary_responses',
     'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
@@ -55,7 +55,7 @@ function ktc_hearing_menu() {
 
   $items['node/%node/approve_summary_hearing_response'] = array(
     'type' => MENU_LOCAL_TASK,
-    'title' => 'Approve summary answer',
+    'title' => 'Godkend sammenfatning',
     'page callback' => 'ktc_hearing_approve_summary_responses',
     'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
@@ -66,9 +66,19 @@ function ktc_hearing_menu() {
     'file path' => drupal_get_path('module', 'node'),
   );
 
+  $items['node/%node/view_summary_hearing_response'] = array(
+    'type' => MENU_LOCAL_TASK,
+    'title' => 'Sammenfatning',
+    'page callback' => 'ktc_hearing_view_summary_responses',
+    'page arguments' => array(1),
+    'access callback' => 'ktc_hearing_access',
+    'access arguments' => array(1, 'view summary response'),
+    'weight' => 16,
+  );
+
   $items['node/%node/hearing_invite'] = array(
     'type' => MENU_LOCAL_TASK,
-    'title' => 'Invite',
+    'title' => 'Inviter',
     'page callback' => 'ktc_hearing_invite_page',
     'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
@@ -192,7 +202,7 @@ function ktc_hearing_mail($key, &$message, $params) {
 function ktc_hearing_node_access($node, $op, $account) {
   if (is_object($node)) {
     if ($node->uid == $account->uid) {
-      return NODE_ACCESS_IGNORE;
+      return NODE_ACCESS_ALLOW;
     }
 
     // Determine if it's a hearing.
@@ -288,7 +298,7 @@ function ktc_hearing_block_view($delta = '') {
 
     case 'ktc_hearing_set_status_form':
       $hearing = node_load(arg(1));
-      if (ktc_hearing_access($hearing, 'edit')) {
+      if (ktc_hearing_access($hearing, 'update')) {
         $block['content'] = drupal_get_form('ktc_hearing_set_status');
       }
       break;
@@ -381,12 +391,10 @@ function ktc_hearing_invite_submit(&$form, &$form_state) {
  */
 function ktc_hearing_summary_responses($hearing) {
   if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
-    $vars['preface'] = 'Tryk "Ok" herunder for at skifte høringsstatus til "Under sammenskrivning" og påbegynde sammenskrivning af høringssvar.<br/>';
-    $set_status_form = drupal_get_form('ktc_hearing_set_status', KTC_HEARING_STATUS_RECAP);
-    $vars['set_status_form'] = render($set_status_form);
+    $vars['preface'] = 'Ønsker du at starte sammenskrivning skal du ændre status til "Under sammenskrivning" i blokken til højre.';
   }
 
-  if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_RECAP) {
+  elseif (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_RECAP) {
 
     module_load_include('inc', 'node', 'node.pages');
 
@@ -430,7 +438,24 @@ function ktc_hearing_summary_responses($hearing) {
   }
 
   return theme('hearing_answer', $vars);
+}
 
+/**
+ * Page callback for viewing hearing response.
+ */
+function ktc_hearing_view_summary_responses($hearing) {
+  if ($summary_response = ktc_hearing_get_summary_response($hearing)) {
+    if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_APPROVED) {
+
+      $vars['preface'] = '<span class="hearing-pdf-link">' . l(t('Hent pdf-udgave'), 'node/' . $hearing->nid . '/hearing_summary_answer_pdf') . '</span>';
+      $vars['preface'] .= render(node_view($summary_response));
+    }
+  }
+  else {
+    $vars['preface'] = "Sammenfatningen er ikke skrevet";
+  }
+
+  return theme('hearing_answer', $vars);
 }
 
 /**
@@ -899,6 +924,7 @@ function _ktc_hearing_reference_permissions() {
       'view' => 'view',
       'update' => 'update',
       'view responses' => 'view responses',
+      'view summary response' => 'view summary response',
     ),
   );
 }
@@ -953,9 +979,13 @@ function ktc_hearing_generate_hearing_summary_preview($hearing) {
 
   $dompdf = new DOMPDF();
   $dompdf->load_html($markup);
+
   $dompdf->render();
 
   $dompdf->stream('test.pdf', array("Attachment" => 0));
+  // If we don't call drupal_exit, something makes drupal think that the
+  // HTTP headers were modified, and that results in an error message.
+  drupal_exit();
 }
 
 /**
