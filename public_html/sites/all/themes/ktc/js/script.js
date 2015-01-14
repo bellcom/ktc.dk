@@ -46,117 +46,128 @@
       }
       else {
         $('.region-header').css('display', 'none');
-        $(this).text('ÅBEN BRUGERBOKS');
+        $(this).text('ÅBN BRUGERBOKS');
         $('.main-container').addClass('margin-fixed');
 
       }
     });
     // borger.dk articles
-      $('div.mArticle').hide();
-      $('.microArticle a.gplus').click(function() {
-        var article = $(this).parent().find('h2');
-        var myid = article.attr('id');
-        var style = $('div.' + myid).css('display');
-        var path = $(this).css('background-image');
-        if (style == 'none') {
-          $('div.' + myid).show('500');
-          $(this).addClass('gminus');
-          $(this).removeClass('gplus');
-        }
-        else {
-          $('div.' + myid).hide('500');
-          $(this).addClass('gplus');
-          $(this).removeClass('gminus');
-        }
-        return false;
-      });
-      $('.gplus_all').click(function() {
-        if ($('.microArticle a').hasClass('gminus')) {
-          $('div.mArticle').hide();
-          $('.microArticle a.gminus').addClass('gplus');
-          $('.microArticle a.gminus').removeClass('gminus');
-        }
-        else {
-          $('div.mArticle').show();
-          $('.microArticle a.gplus').addClass('gminus');
-          $('.microArticle a.gplus').removeClass('gplus');
-        }
+    $('div.mArticle').hide();
+    $('.microArticle a.gplus').click(function() {
+      var article = $(this).parent().find('h2');
+      var myid = article.attr('id');
+      var style = $('div.' + myid).css('display');
+      var path = $(this).css('background-image');
+      if (style == 'none') {
+        $('div.' + myid).show('500');
+        $(this).addClass('gminus');
+        $(this).removeClass('gplus');
+      }
+      else {
+        $('div.' + myid).hide('500');
+        $(this).addClass('gplus');
+        $(this).removeClass('gminus');
+      }
+      return false;
+    });
 
-        return false;
-      });
-      $('.gminus_all').click(function() {
-        if ($('.microArticle a').hasClass('gminus')) {
-          $('div.mArticle').hide();
-          $('.microArticle a.gminus').addClass('gplus');
-          $('.microArticle a.gminus').removeClass('gminus');
-        }
-        else {
-          $('div.mArticle').show();
-          $('.microArticle a.gplus').addClass('gminus');
-          $('.microArticle a.gplus').removeClass('gplus');
-        }
-
-        return false;
-      });
-
-      // Open search bar if there is text in input.
-      if ($('.header_top .views-widget-filter-search_api_views_fulltext input').val()) {
-        $(this).addClass('search_open');
-        $( '.header_top .views-widget-filter-search_api_views_fulltext' ).css('display', 'inline-block');
+    $('.gplus_all').click(function() {
+      if ($('.microArticle a').hasClass('gminus')) {
+        $('div.mArticle').hide();
+        $('.microArticle a.gminus').addClass('gplus');
+        $('.microArticle a.gminus').removeClass('gminus');
+      }
+      else {
+        $('div.mArticle').show();
+        $('.microArticle a.gplus').addClass('gminus');
+        $('.microArticle a.gplus').removeClass('gplus');
       }
 
-      // nav header search_form button
-      $('.header_top button#edit-submit-search').click(function(){
+      return false;
+    });
+    $('.gminus_all').click(function() {
+      if ($('.microArticle a').hasClass('gminus')) {
+        $('div.mArticle').hide();
+        $('.microArticle a.gminus').addClass('gplus');
+        $('.microArticle a.gminus').removeClass('gminus');
+      }
+      else {
+        $('div.mArticle').show();
+        $('.microArticle a.gplus').addClass('gminus');
+        $('.microArticle a.gplus').removeClass('gplus');
+      }
 
-        if (!$(this).hasClass('search_open')) {
-          $(this).addClass('search_open');
-          $( '.header_top .views-widget-filter-search_api_views_fulltext' ).css('display', 'inline-block');
-          $( '.header_top .views-widget-filter-search_api_views_fulltext' ).focus();
-          return false;
+      return false;
+    });
 
-        }
-        else {
-          if (!$('.header_top .views-widget-filter-search_api_views_fulltext input').val()) {
-            $(this).removeClass('search_open');
-            $( '.header_top .views-widget-filter-search_api_views_fulltext' ).css('display', 'none');
-            return false;
-          }
-        }
-      });
+    // Open search bar if there is text in input.
+    if ($('.header_top .views-widget-filter-search_api_views_fulltext input').val()) {
+      $(this).addClass('search_open');
+      $( '.header_top .views-widget-filter-search_api_views_fulltext' ).css('display', 'inline-block');
+    }
 
-      // Search facetapi.
-      $('ul.facetapi-facetapi-links li').each(function(){
-        var li_text = $(this).clone() //clone the element
-                      .children() //select all the children
-                      .remove()   //remove all the children
-                      .end()  //again go back to selected element
-                      .text();
-        if (li_text != '') {
-          $(this).find('a').append(li_text);
-          $(this).contents().filter(function () {
-            return this.nodeType === 3 && $.trim(this.nodeValue).length;
-          }).replaceWith('');
-        }
-      });
+    // nav header search_form button
+    $('.header_top button#edit-submit-search').click(function(){
 
-      // nav header login
-      $('.header_top #block-user-login button#edit-submit').click(function(){
-        if (!$(this).hasClass('login_open')) {
-          $(this).addClass('login_open');
-          $( '.header_top #block-user-login .form-type-textfield' ).css('display', 'inline-block');
-          $( '.header_top #block-user-login .form-type-password' ).css('display', 'inline-block');
-          $( '.header_top .views-widget-filter-search_api_views_fulltext' ).focus();
+      if (!$(this).hasClass('search_open')) {
+        $(this).addClass('search_open');
+        $( '.header_top .views-widget-filter-search_api_views_fulltext' ).css('display', 'inline-block');
+        $( '.header_top .views-widget-filter-search_api_views_fulltext' ).focus();
+        return false;
+
+      }
+      else {
+        if (!$('.header_top .views-widget-filter-search_api_views_fulltext input').val()) {
+          $(this).removeClass('search_open');
+          $( '.header_top .views-widget-filter-search_api_views_fulltext' ).css('display', 'none');
           return false;
         }
-        else {
-          if (!$('.header_top #block-user-login .form-type-textfield input').val()) {
-            $(this).removeClass('login_open');
-            $( '.header_top #block-user-login .form-type-textfield' ).css('display', 'none');
-            $( '.header_top #block-user-login .form-type-password' ).css('display', 'none');
-            return false;
-          }
+      }
+    });
+
+    // Search facetapi.
+    $('ul.facetapi-facetapi-links li').each(function(){
+      var li_text = $(this).clone() //clone the element
+                    .children() //select all the children
+                    .remove()   //remove all the children
+                    .end()  //again go back to selected element
+                    .text();
+      if (li_text != '') {
+        $(this).find('a').append(li_text);
+        $(this).contents().filter(function () {
+          return this.nodeType === 3 && $.trim(this.nodeValue).length;
+        }).replaceWith('');
+      }
+    });
+
+    // nav header login
+    $('.header_top #block-user-login button#edit-submit').click(function(){
+      if (!$(this).hasClass('login_open')) {
+        $(this).addClass('login_open');
+        $( '.header_top #block-user-login .form-type-textfield' ).css('display', 'inline-block');
+        $( '.header_top #block-user-login .form-type-password' ).css('display', 'inline-block');
+        $( '.header_top .views-widget-filter-search_api_views_fulltext' ).focus();
+        return false;
+      }
+      else {
+        if (!$('.header_top #block-user-login .form-type-textfield input').val()) {
+          $(this).removeClass('login_open');
+          $( '.header_top #block-user-login .form-type-textfield' ).css('display', 'none');
+          $( '.header_top #block-user-login .form-type-password' ).css('display', 'none');
+          return false;
         }
+      }
+    });
+
+    // Frontpage.
+    var $container = $('#panel-pane-content');
+    $container.imagesLoaded(function(){
+      $container.append('<div class="panel-pane col-md-1"></div>');
+      $container.masonry({
+        itemSelector: '.panel-pane',
+        columnWidth: '.col-md-1',
       });
+    });
 
     $('#feedback-submit').addClass('btn-primary');
 

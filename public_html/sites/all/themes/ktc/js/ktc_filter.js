@@ -6,13 +6,13 @@
     var button = 'filter-all';
     var button_class = "btn-primary";
     var button_normal = "btn-blacknblue";
-    var $container = $("#section-page-with-filter").find(".view-content:first");
+    var $container = $('#section-page-with-filter').find('.view-content:first');
 
     $('.filter-box #filter-all').addClass(button_class);
     $('.filter-box #filter-all').removeClass(button_normal);
 
     $('.filter-link').click(function(event){
-      $container = $("#section-page-with-filter").find(".view-content:first");
+      $container = $('#section-page-with-filter').find('.view-content:first');
       $container.infinitescroll('unbind');
       if (!$(this).hasClass(button_class)) {
         $(this).addClass(button_class);
@@ -104,7 +104,7 @@
       });
     });
 
-    $container = $("#section-page-with-filter").find(".view-content:first");
+    $container = $('#section-page-with-filter').find('.view-content:first');
 
     // Initial masonry
     if ($container.length) {
@@ -155,7 +155,7 @@
   });
 
   function load_content() {
-    $container = $("#section-page-with-filter").find(".view-content:first");
+    $container = $('#section-page-with-filter').find('.view-content:first');
 
     $container.imagesLoaded(function(){
       $container.masonry({

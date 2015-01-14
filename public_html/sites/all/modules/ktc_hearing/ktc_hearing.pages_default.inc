@@ -146,33 +146,6 @@ function ktc_hearing_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-fb1117bc-1528-490e-acde-d1b517b0cd7b';
-    $pane->panel = 'left';
-    $pane->type = 'node_title';
-    $pane->subtype = 'node_title';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'link' => 0,
-      'markup' => 'h2',
-      'id' => '',
-      'class' => '',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'fb1117bc-1528-490e-acde-d1b517b0cd7b';
-    $display->content['new-fb1117bc-1528-490e-acde-d1b517b0cd7b'] = $pane;
-    $display->panels['left'][0] = 'new-fb1117bc-1528-490e-acde-d1b517b0cd7b';
-    $pane = new stdClass();
     $pane->pid = 'new-a2876f4c-61a7-434e-ba15-6b55c661e0aa';
     $pane->panel = 'left';
     $pane->type = 'views_panes';
@@ -192,11 +165,11 @@ function ktc_hearing_default_page_manager_handlers() {
       'css_class' => 'col-md-8 col-sm-8 col-xs-12',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'a2876f4c-61a7-434e-ba15-6b55c661e0aa';
     $display->content['new-a2876f4c-61a7-434e-ba15-6b55c661e0aa'] = $pane;
-    $display->panels['left'][1] = 'new-a2876f4c-61a7-434e-ba15-6b55c661e0aa';
+    $display->panels['left'][0] = 'new-a2876f4c-61a7-434e-ba15-6b55c661e0aa';
     $pane = new stdClass();
     $pane->pid = 'new-179549f2-12d2-4336-808f-02c96d065857';
     $pane->panel = 'left';
@@ -224,11 +197,11 @@ function ktc_hearing_default_page_manager_handlers() {
       'css_class' => 'col-md-4 col-sm-4 col-xs',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '179549f2-12d2-4336-808f-02c96d065857';
     $display->content['new-179549f2-12d2-4336-808f-02c96d065857'] = $pane;
-    $display->panels['left'][2] = 'new-179549f2-12d2-4336-808f-02c96d065857';
+    $display->panels['left'][1] = 'new-179549f2-12d2-4336-808f-02c96d065857';
     $pane = new stdClass();
     $pane->pid = 'new-ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69';
     $pane->panel = 'left';
@@ -249,11 +222,11 @@ function ktc_hearing_default_page_manager_handlers() {
       'css_class' => 'col-md-4 col-sm-4 col-xs-12',
     );
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69';
     $display->content['new-ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69'] = $pane;
-    $display->panels['left'][3] = 'new-ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69';
+    $display->panels['left'][2] = 'new-ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69';
     $pane = new stdClass();
     $pane->pid = 'new-9cf58d6e-0388-4ed1-b9d8-7e24b16ea83c';
     $pane->panel = 'left';
@@ -274,11 +247,11 @@ function ktc_hearing_default_page_manager_handlers() {
       'css_class' => 'col-md-8 col-sm-8 col-xs-12',
     );
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '9cf58d6e-0388-4ed1-b9d8-7e24b16ea83c';
     $display->content['new-9cf58d6e-0388-4ed1-b9d8-7e24b16ea83c'] = $pane;
-    $display->panels['left'][4] = 'new-9cf58d6e-0388-4ed1-b9d8-7e24b16ea83c';
+    $display->panels['left'][3] = 'new-9cf58d6e-0388-4ed1-b9d8-7e24b16ea83c';
     $pane = new stdClass();
     $pane->pid = 'new-9067a27e-7b7c-4019-a149-3527eeba2558';
     $pane->panel = 'right';
@@ -290,7 +263,7 @@ function ktc_hearing_default_page_manager_handlers() {
       'type' => 'primary',
       'id' => 'edit-tabs',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Faner',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -351,7 +324,7 @@ function ktc_hearing_default_page_manager_handlers() {
     $display->content['new-77c8ff1f-1df0-41c4-aa75-76f647ad37b9'] = $pane;
     $display->panels['right'][2] = 'new-77c8ff1f-1df0-41c4-aa75-76f647ad37b9';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-fb1117bc-1528-490e-acde-d1b517b0cd7b';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_4'] = $handler;
 

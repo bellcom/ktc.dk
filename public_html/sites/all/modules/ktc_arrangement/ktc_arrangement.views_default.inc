@@ -350,6 +350,7 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_arrangement_date.field_arrangement_date_value' => 'field_data_field_arrangement_date.field_arrangement_date_value',
     'field_data_field_arrangement_date.field_arrangement_date_value2' => 'field_data_field_arrangement_date.field_arrangement_date_value2',
@@ -407,6 +408,7 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_arrangement_date.field_arrangement_date_value' => 'field_data_field_arrangement_date.field_arrangement_date_value',
     'field_data_field_arrangement_date.field_arrangement_date_value2' => 'field_data_field_arrangement_date.field_arrangement_date_value2',
@@ -478,6 +480,7 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_arrangement_date.field_arrangement_date_value' => 'field_data_field_arrangement_date.field_arrangement_date_value',
     'field_data_field_arrangement_date.field_arrangement_date_value2' => 'field_data_field_arrangement_date.field_arrangement_date_value2',

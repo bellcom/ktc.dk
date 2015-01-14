@@ -148,7 +148,7 @@ function ktc_supplier_default_page_manager_handlers() {
     $pane->uuid = '8ea2400e-7420-45cf-bed7-e73a0a34eae7';
     $display->content['new-8ea2400e-7420-45cf-bed7-e73a0a34eae7'] = $pane;
     $display->panels['right'][2] = 'new-8ea2400e-7420-45cf-bed7-e73a0a34eae7';
-  $display->hide_title = PANELS_TITLE_PANE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-471ef9f7-eb7f-47b4-8d19-c1556b487066';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_6'] = $handler;
