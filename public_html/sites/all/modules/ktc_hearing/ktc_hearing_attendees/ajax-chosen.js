@@ -14,8 +14,8 @@
       minTermLength: 2,
       afterTypeDelay: 500,
       jsonTermKey: "term",
-      keepTypingMsg: "Keep typing...",
-      lookingForMsg: "Looking for"
+      keepTypingMsg: "Skriv mere..",
+      lookingForMsg: "Forsøger at finde"
     };
     settings['keepTypingMsg'] = settings['typing_placeholder'];
     settings['lookingForMsg'] = settings['searching_placeholder'];

@@ -7418,6 +7418,27 @@ fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-fac
 .page-node-add .form-control {
   color: black;
 }
+.page-node-edit .hierarchical-select-wrapper td,
+.page-node-add .hierarchical-select-wrapper td {
+  padding: 5px;
+}
+.page-node-edit .hierarchical-select-wrapper .hierarchical-select select,
+.page-node-add .hierarchical-select-wrapper .hierarchical-select select {
+  width: inherit;
+}
+.page-node-edit .chosen-container,
+.page-node-add .chosen-container {
+  border: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  width: 100%!important;
+}
+.page-node-edit .chosen-container-multi .chosen-choices,
+.page-node-add .chosen-container-multi .chosen-choices {
+  border-radius: 4px;
+}
 body.page-node article,
 body.page-taxonomy-term.term-is-not-top article,
 body.page-node div.node-os2web-base-news,

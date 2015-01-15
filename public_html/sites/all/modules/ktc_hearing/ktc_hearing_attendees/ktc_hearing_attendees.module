@@ -5,16 +5,14 @@
  */
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_init().
  */
-function ktc_hearing_attendees_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'hearing_node_form') {
-
+function ktc_hearing_attendees_init() {
+  if (current_path() == 'node/add/hearing' || (arg(0) == 'node' && arg(2) == 'edit')) {
     $path = drupal_get_path('module', 'ktc_hearing_attendees');
     drupal_add_js($path . '/ktc_hearing_attendees.js');
     drupal_add_css($path . '/chosen_ajax.css');
     drupal_add_js($path . '/ajax-chosen.js');
-
   }
 }
 
@@ -26,10 +24,12 @@ function ktc_hearing_attendees_field_widget_form_alter(&$element, &$form_state, 
     'field_attendees',
     'field_chairman',
     'field_coordinator',
+    'field_responsible_foreman',
+    'field_responsible_admin',
   );
 
   if (in_array($element['#field_name'], $show_for_fields)) {
-    $element['#suffix'] = '<div class="chosen-entityreference-container"><select class="form-control chosen-entityreference" multiple data-autocomplete-path="' . url($element['#autocomplete_path'], array('absolute' => TRUE)) . '">' . _ktc_hearing_attendees_selected($element) . '</select></div>';
+    $element['#suffix'] = '<div class="chosen-entityreference-container"><select data-placeholder="Vælg" class="form-control chosen-entityreference" multiple data-autocomplete-path="' . url($element['#autocomplete_path'], array('absolute' => TRUE)) . '">' . _ktc_hearing_attendees_selected($element) . '</select></div>';
   }
 }
 

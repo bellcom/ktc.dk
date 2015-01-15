@@ -33,13 +33,35 @@ jQuery(document).ready(function($){
 
   var selected_groups = $('#edit-og-group-ref-und').val();
 
+  // Handle adding/removing groups
   $('#edit-og-group-ref-und').change(function(event){
     var change_groups = $('#edit-og-group-ref-und').val();
 
+    // group removed
+    if (selected_groups) {
+      $.each(selected_groups, function(i, val) {
+        if ( change_groups === null || change_groups.indexOf(val) == -1) {
+          $.getJSON('/ktc_hearing_attendees/get_group_members/' + val, function(data) {
+
+            $.each(data, function (field, attendees) {
+              $.each(attendees, function (i, val) {
+
+                $('#edit-field-'+field+' .chosen-entityreference-container select option[value="' + i + '"]').remove();
+              });
+            });
+
+            $(".chosen-entityreference-container select").trigger("chosen:updated");
+          });
+        }
+      });
+      selected_groups = change_groups;
+    }
+
+    // group added
     if (change_groups) {
       $.each(change_groups, function(i, val) {
 
-        if (selected_groups.indexOf(val) == -1) {
+        if (selected_groups === null || selected_groups.indexOf(val) == -1) {
           $.getJSON('/ktc_hearing_attendees/get_group_members/' + val, function(data) {
 
             $.each(data, function (field, attendees) {
@@ -52,12 +74,50 @@ jQuery(document).ready(function($){
                   }).attr('selected', 'selected'));
               });
             });
-            console.log('hst');
+
+            $(".chosen-entityreference-container select").trigger("chosen:updated");
           });
         }
       });
-
       selected_groups = change_groups;
     }
+  });
+
+  // Handle data in form, on form error.
+  $('.chosen-entityreference').each(function(){
+    var $chosen_select = $(this);
+    var $closest = $(this).closest('.form-group');
+    var val = $closest.find('.form-text').val();
+
+    $chosen_select.children().remove();
+
+    data = val.split(',');
+
+    $.each(data, function (i, val) {
+      var text = val.replace(/\ \(\d+\)/g,'');
+
+      $chosen_select.append(
+        $('<option/>', {
+          value: val,
+          text: text
+        }).attr('selected', 'selected'));
+    });
+    $(".chosen-entityreference-container select").trigger("chosen:updated");
+  });
+
+  // Handle updating original field.
+  $(".chosen-entityreference-container select").on("chosen:updated", function(){
+    var $chosen_select = $(this);
+    var $closest = $(this).closest('.form-group');
+    var val = [];
+    $closest.find('.form-text').val('');
+
+    $chosen_select.find('option:selected').each(function(){
+      if ($(this).val()) {
+        val.push($(this).val());
+      }
+    });
+
+    $closest.find('.form-text').val(val.join(','));
   });
 });
