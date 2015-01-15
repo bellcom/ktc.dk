@@ -145,7 +145,7 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
     $user_name = $name_field[0]['value'];
   }
 
-  $form['title']['#default_value'] = t('Hearing response') . ': ' . $user_name;
+  $form['title']['#default_value'] = t('Høringssvar') . ': ' . $user_name;
 
   // Add reference to the hearing.
   $language = $form['field_hearing_node']['#language'];
@@ -158,7 +158,7 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
   if (arg(2) == 'summary_hearing_response') {
     $language = $form['field_is_summary']['#language'];
     $form['field_is_summary'][$language]['#default_value'] = 1;
-    $form['title']['#default_value'] = t('Summary response') . ': ' . $user_name;
+    $form['title']['#default_value'] = t('Endeligt høringssvar') . ': ' . $user_name;
 
     $form['actions']['send_for_approval'] = array(
       '#type' => 'submit',
