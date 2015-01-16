@@ -169,6 +169,16 @@
       });
     });
 
+    // Search page.
+    var $search_container = $('.view-Search.view-id-Search')
+
+    $search_container.imagesLoaded(function(){
+      $search_container.masonry({
+        itemSelector: '.select-element',
+        columnWidth: '.select-element',
+      });
+    });
+
     $('#feedback-submit').addClass('btn-primary');
 
     var links = $('.region-content a');
