@@ -209,6 +209,7 @@ function ktc_hearing_field_default_field_instances() {
   $field_instances['node-hearing-field_attendees'] = array(
     'bundle' => 'hearing',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -251,17 +252,33 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Deltagere',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'advanced' => array(
+          'pattern' => '/(.+) \\((\\d+)\\)/',
+          'replacement' => '${1}',
+        ),
+        'apply_chosen' => 1,
+        'fix_display' => 0,
         'match_operator' => 'CONTAINS',
         'path' => '',
+        'pattern' => '/(.+) \\((\\d+)\\)/',
+        'placeholder_text' => 'Vælg',
+        'replacement' => '${1}',
+        'searching_placeholder' => '',
         'size' => 60,
+        'typing_placeholder' => '',
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'entityreference_autocomplete_tags',
       'weight' => 6,
     ),
   );
@@ -270,6 +287,7 @@ function ktc_hearing_field_default_field_instances() {
   $field_instances['node-hearing-field_chairman'] = array(
     'bundle' => 'hearing',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -312,17 +330,33 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Formand',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'advanced' => array(
+          'pattern' => '/(.+) \\((\\d+)\\)/',
+          'replacement' => '${1}',
+        ),
+        'apply_chosen' => '',
+        'fix_display' => 1,
         'match_operator' => 'CONTAINS',
         'path' => '',
+        'pattern' => '/(.+) \\((\\d+)\\)/',
+        'placeholder_text' => 'Choose an option',
+        'replacement' => '${1}',
+        'searching_placeholder' => 'Looking for ',
         'size' => 60,
+        'typing_placeholder' => 'Keep typing...',
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'entityreference_autocomplete_tags',
       'weight' => 2,
     ),
   );
@@ -379,11 +413,18 @@ function ktc_hearing_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'apply_chosen' => 0,
+        'fix_display' => 0,
         'match_operator' => 'CONTAINS',
         'path' => '',
+        'pattern' => '/(.+) \\((\\d+)\\)/',
+        'placeholder_text' => 'Choose an option',
+        'replacement' => '${1}',
+        'searching_placeholder' => 'Looking for ',
         'size' => 60,
+        'typing_placeholder' => 'Keep typing...',
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'entityreference_autocomplete_tags',
       'weight' => 3,
     ),
   );
@@ -764,6 +805,7 @@ function ktc_hearing_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -1221,7 +1263,7 @@ function ktc_hearing_field_default_field_instances() {
         'path' => '',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'entityreference_autocomplete_tags',
       'weight' => 5,
     ),
   );
@@ -1282,7 +1324,7 @@ function ktc_hearing_field_default_field_instances() {
         'path' => '',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'entityreference_autocomplete_tags',
       'weight' => 4,
     ),
   );
@@ -1341,6 +1383,7 @@ function ktc_hearing_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -1454,11 +1497,11 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'hs_taxonomy',
       'settings' => array(
         'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_hs',
       'weight' => 9,
     ),
   );
@@ -1642,6 +1685,7 @@ function ktc_hearing_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -1734,9 +1778,18 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+        'fix_display' => 0,
+        'pattern' => '/(.+) \\((\\d+)\\)/',
+        'placeholder_text' => 'Choose an option',
+        'replacement' => '${1}',
+        'searching_placeholder' => 'Looking for ',
+        'typing_placeholder' => 'Keep typing...',
+      ),
+      'type' => 'options_select',
       'weight' => 1,
     ),
   );
@@ -2164,6 +2217,7 @@ function ktc_hearing_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -2590,6 +2644,7 @@ function ktc_hearing_field_default_field_instances() {
     'widget' => array(
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',

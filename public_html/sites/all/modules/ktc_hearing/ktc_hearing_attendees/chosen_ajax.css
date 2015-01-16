@@ -1,0 +1,18 @@
+select.form-chosen-ajax {
+  min-width: 100%;
+}
+
+li.search-field{
+  width: 100%;
+}
+li.search-choice + li.search-field{
+  width: 20%;
+}
+
+li.search-field input {
+  width: 100%!important;
+}
+
+.chosen-entityreference-container {
+  margin-top: -20px;
+}
