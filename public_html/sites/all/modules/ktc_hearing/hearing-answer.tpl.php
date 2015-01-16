@@ -7,12 +7,16 @@
 <div class="row final-answer">
   <div class="col-md-6">
     <div class="responses-container">
-      <?php foreach ($responses as $response): ?>
-        <?php print render($response); ?>
-      <?php endforeach; ?>
+      <?php if (isset($responses)): ?>
+        <?php foreach ($responses as $response): ?>
+          <?php print render($response); ?>
+        <?php endforeach; ?>
+      <?php endif; ?>
     </div>
   </div>
   <div class="col-md-6">
-    <?php print $answer_form ?>
+    <?php if (isset($answer_form)): ?>
+      <?php print $answer_form ?>
+    <?php endif; ?>
   </div>
 </div>

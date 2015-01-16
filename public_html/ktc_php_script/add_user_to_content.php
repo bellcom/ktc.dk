@@ -1,14 +1,14 @@
 <?php
 include 'functions.php';
 
- //addUidToContent('group');
- //addUidToContent('arrangement');
- //addUidToContent('forum_post');
+ addUidToContent('group');
+ addUidToContent('arrangement');
+ addUidToContent('forum_post');
  //addUidToContent('os2web_base_news');
-// addUidToContent('document');
+ //addUidToContent('document');
 // addUidToContent('meeting_doodle');
-//  addUidToHoering('hearing');
-  addUidToHoering('hearing_responses');
+  //addUidToHoering('hearing');
+ // addUidToHoering('hearing_responses');
 
 function addUidToContent($type) {
   $count = 0;
@@ -20,9 +20,9 @@ function addUidToContent($type) {
       }
       else {
         $node->uid = 1;
-        print "\n" . $forfatter[0]['value'] . "\n";
         $count++;
       }
+      $node->modified = $node->changed;
       node_save($node);
     }
   }
@@ -53,6 +53,7 @@ function addUidToHoering($type) {
           }
         }
       }
+      $node->modified = $node->changed;
       node_save($node);
     }
     else {
@@ -63,6 +64,7 @@ function addUidToHoering($type) {
       }
       elseif ($responsible_forman = field_get_items('node', $node, 'field_responsible_foreman')) {
         $node->uid = $responsible_forman[0]['target_id'];
+        $node->modified = $node->changed;
         node_save($node);
       }
     }
@@ -70,7 +72,7 @@ function addUidToHoering($type) {
   print "\n count is "  . $count . "\n\n";
   print_r($missing);
 }
-
+/*
 function get_old_user_info_from_typo3($typo3_uid) {
   if (is_numeric($typo3_uid)) {
     $query = db_select('fe_users', 'g')
@@ -108,3 +110,4 @@ function get_email_from_fe_users($typo3_uid) {
     }
   }
 }
+*/

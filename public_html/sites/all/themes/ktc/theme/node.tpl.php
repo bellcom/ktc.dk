@@ -79,26 +79,10 @@
  * @ingroup themeable
  */
 ?>
+<?php if($page) : ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php if ((!$page && !empty($title)) || !empty($title_prefix) || !empty($title_suffix) || $display_submitted): ?>
-    <?php if (!$page && !empty($title)): ?>
-  		<header>
-    		<?php print render($title_prefix); ?>
-    		<h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-    		<?php print render($title_suffix); ?>
-    			<?php if ($display_submitted): ?>
-    				<span class="submitted">
-      					<?php print $user_picture; ?>
-      					<?php print $submitted; ?>
-    				</span>
-  				<?php endif; ?>
-  		</header>
-    <?php endif; ?>
-  <?php endif; ?>
 
-  <?php if($page) : ?>
   <header>
-    
     <?php if ($type == 'os2web_base_news') : ?>
       <?php if(isset($content['field_os2web_base_field_video'])) : ?>
         <?php hide($content['field_os2web_base_field_lead_img']); ?>
@@ -114,13 +98,7 @@
       <i></i><?php print format_date($created, 'custom', 'j. F'); ?>
     </time>
     <?php endif; ?>
-    <?php print render($title_prefix); ?>
-    <?php if (!empty($title)): ?>
-    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
-    
-    
+
     <?php if ($type == 'arrangement') : ?>
     <div class="row">
   	<div class="col-md-8"><?php print render($content['field_arrangement_date']); ?></div>
@@ -130,16 +108,14 @@
  	<?php print render($content['field_link_to_signup']); ?>
  	<?php print render($content['field_link_to_arrangement']); ?>
  	</div>
- 	
- 	
+
+
  	</div>
 	</div>
-    
+
     <?php endif; ?>
     
   </header>
-  <?php endif; ?>
-
   <div class="wrap">
     <?php
       // Hide comments, tags, and links now so that we can render them later.
@@ -168,4 +144,4 @@
   <?php endif; ?>
   <?php print render($content['comments']); ?>
 </article>
-
+<?php endif; ?>

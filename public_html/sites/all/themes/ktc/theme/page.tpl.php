@@ -73,34 +73,29 @@
  * @ingroup themeable
  */
 ?>
-<?php /* region--navigation.tpl.php */ ?>
-<?php if ($page['navigation']): ?>
-  <?php print render($page['navigation']); ?>
-<?php endif; ?>
+<div class="header-region">
+  <div class="top_header">
+  <div class="container">
+    <?php /* region--header_top.tpl.php */ ?>
+    <?php if ($page['header_top']): ?>
+      <?php print render($page['header_top']); ?>
+    <?php endif; ?>
+  </div>
+  </div>
+  <div class="navigation">
+  <div class="container">
+    <?php /* region--navigation.tpl.php */ ?>
+    <?php if ($page['navigation']): ?>
+      <?php print render($page['navigation']); ?>
+    <?php endif; ?>
+  </div>
+  </div>
+</div>
 
 <div class="main-container container">
 
   <?php /* region--header.tpl.php */ ?>
   <?php print render($page['header']); ?>
-
-  <div class="row">
-    <?php if (isset($page['term_is_top']) && $page['term_is_top'] && !empty($page['os2web_selfservicelinks'])) : ?>
-      <?php
-        // Only show the selvbetjening as a dropdown on top level terms. ?>
-      <div class="col-sm-12 col-md-8 col-md-offset-2">
-        <div class="dropdown like-panel like-panel-default">
-          <a href="#" data-toggle="dropdown"><?php print t('Nem og hurtig selvbetjening'); ?> <span class="caret-background"><i></i></span></a>
-          <ul class="dropdown-menu">
-          <?php foreach ($page['os2web_selfservicelinks'] as $link) : ?>
-            <li>
-              <a href="<?php print $link['url']; ?>"><?php print $link['title']; ?></a>
-            </li>
-          <?php endforeach; ?>
-         </ul>
-        </div>
-      </div>
-    <?php endif; ?>
-  </div>
 
   <div class="row">
 
@@ -132,3 +127,7 @@
 </div>
 <?php /* region--footer.tpl.php */ ?>
 <?php print render($page['footer']); ?>
+<?php print render($page['footer_2']); ?>
+<?php print render($page['footer_3']); ?>
+<?php print render($page['footer_4']); ?>
+<?php print render($page['footer_5']); ?>

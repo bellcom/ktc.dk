@@ -26,44 +26,12 @@
  */
 ?>
 <?php if ($page['logo'] || $page['site_name'] || $page['primary_nav'] || $page['secondary_nav'] || $content): ?>
-<div class="header_svendborg">
-  <div id="top_menu">
-  <div class="container">
-    <div class="row">
-    <?php
-      $tree = menu_tree_all_data('menu-top-navigation-venstre', $link = NULL, $max_depth = 2);
-      if($tree) {
-        print "<div class='menu-top-navigation-venstre col-md-3 col-sm-3 col-xs-3'>";
-        menu_tree_trim_active_path($tree);
-        $tree_display = menu_tree_output($tree);
-        print render($tree_display);
-        print "</div>";
-      }
-      $tree_1 = menu_tree_all_data('menu-top-navigation-hoejre', $link = NULL, $max_depth = 2);
-      if($tree_1) {
-        print "<div class='menu-top-navigation-hoejre col-md-9 col-sm-9 col-xs-9'>";
-        menu_tree_trim_active_path($tree_1);
-        $tree_display = menu_tree_output($tree_1);
-        print render($tree_display);
-        print "</div>";
-      }
-    ?>
-    </div>
-  </div>
-  </div>
-  <header class="region region-navigation header_fixed container"<?php //print $attributes; ?>>
-  <div class="row">
+<div class="header_bottom">
+
+  <header class="region region-navigation header_fixed"<?php //print $attributes; ?>>
     <?php if ($content_attributes): ?><div class="header_fixed_inner navbar-default"<?php //print $content_attributes; ?>><?php endif; ?>
     <div id="fixed-navbar">
-    <div class="navbar-header col-md-3 col-sm-3 col-xs-12">
-      <?php if ($page['logo']): ?>
-        <a class="logo navbar-btn pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
-          <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
-      <?php if ($page['site_name']): ?>
-        <a class="name navbar-brand" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>"><?php print $page['site_name']; ?></a>
-      <?php endif; ?>
+    <div class="navbar-header col-md-2 col-sm-0 col-xs-12">
       <?php if ($page['primary_nav'] || $page['secondary_nav'] || $content): ?>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
@@ -74,29 +42,35 @@
       <?php endif; ?>
     </div>
     <?php if ($page['primary_nav'] || $page['secondary_nav'] || $content): ?>
-    <div class="col-md-9 col-sm-9 col-xs-12 navbar-collapse collapse navbar-default header_main_menu">
+    <div class="col-md-7 col-sm-8 col-xs-12 navbar-collapse collapse navbar-default header_main_menu">
 
       <nav role="navigation">
-        <?php 
-                
-                $menu_classes = "col-md-9 col-sm-8 col-xs-12";
-                $search_classes = "col-md-3 col-sm-4 col-xs-12";
-				
-        ?>
-        <div class="<?php print $menu_classes; ?> nav_main_menu">
+        <div class="col-md-12 col-sm-12 col-xs-12 nav_main_menu">
           <?php print render($page['primary_nav']); ?>
-        </div>
-        <?php //print render($page['secondary_nav']); ?>
-        <div class="user_box">
-          <?php print $content; ?>
         </div>
       </nav>
     </div>
 
     <?php endif; ?>
-
+    <?php if (!$logged_in): ?>
+      <div class="new_user_link">
+        <i class="new_user"></i><a href="/user/register">Opret Bruger</a>
+      </div>
+    <?php elseif (isset($page['user_name'])): ?>
+      <div class="header-user col-md-3 col-sm-4 col-xs-12">
+        <div class="row">
+          <div class="header-user-name col-md-8 col-sm-8 col-xs-6">
+            <?php print render($page['user_name']); ?><span class="icon-arrow-down"></span><br />
+            <?php print theme('links', array('links' => menu_navigation_links('user-menu'), 'attributes' => array('class'=> array('header-user-menu')) ));?>
+            <button class="btn-primary header-user-blocks">ÅBN BRUGERBOKS</button>
+          </div>
+          <div class="header-user-image col-md-4 col-sm-4 col-xs-6">
+            <?php print $page['user_image'] ?>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
     <?php if ($content_attributes): ?></div><?php endif; ?>
-    </div>
     </div>
   </header>
 </div>

@@ -8,3 +8,5 @@ production-to-preprod.sh
 public_html/sites/ktc.dk.local
 public_html/sites/sites.php
 public_html/sites/all/translations
+public_html/sites/ktc.dk.spint5.local
+ktcdkfs.sql

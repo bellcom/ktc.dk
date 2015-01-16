@@ -40,7 +40,16 @@ function ktc_hearing_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 600,
+          'trim_length' => 300,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 300,
         ),
         'type' => 'text_summary_or_trimmed',
         'weight' => 0,
@@ -99,6 +108,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_abstract',
@@ -134,7 +149,6 @@ function ktc_hearing_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 12,
@@ -152,6 +166,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -177,7 +197,6 @@ function ktc_hearing_field_default_field_instances() {
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -215,6 +234,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -275,6 +300,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_chairman',
@@ -330,6 +361,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_coordinator',
@@ -366,7 +403,6 @@ function ktc_hearing_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 11,
@@ -384,6 +420,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -409,7 +451,6 @@ function ktc_hearing_field_default_field_instances() {
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -449,6 +490,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -505,6 +552,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_hearing_authority',
@@ -531,10 +584,10 @@ function ktc_hearing_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'file',
         'settings' => array(),
-        'type' => 'file_default',
+        'type' => 'file_table',
         'weight' => 8,
       ),
       'listevisning' => array(
@@ -550,6 +603,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -630,6 +689,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_hearing_official',
@@ -676,6 +741,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -732,6 +803,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_message',
@@ -739,6 +816,64 @@ function ktc_hearing_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-hearing-field_missing_files'
+  $field_instances['node-hearing-field_missing_files'] = array(
+    'bundle' => 'hearing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Høring Fil(er) mangler fra Typo3',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 24,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_missing_files',
+    'label' => 'Mangler Fil(er)',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -767,7 +902,6 @@ function ktc_hearing_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 9,
@@ -785,6 +919,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -810,7 +950,6 @@ function ktc_hearing_field_default_field_instances() {
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -834,7 +973,6 @@ function ktc_hearing_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 10,
@@ -852,6 +990,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -877,12 +1021,147 @@ function ktc_hearing_field_default_field_instances() {
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-hearing-field_os2web_base_field_ext_link'
+  $field_instances['node-hearing-field_os2web_base_field_ext_link'] = array(
+    'bundle' => 'hearing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 26,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_ext_link',
+    'label' => 'Ekstern links',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-hearing-field_os2web_base_field_hidlinks'
+  $field_instances['node-hearing-field_os2web_base_field_hidlinks'] = array(
+    'bundle' => 'hearing',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 25,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_hidlinks',
+    'label' => 'Skjul auto relaterede links',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 2,
     ),
   );
 
@@ -915,6 +1194,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -970,6 +1255,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1032,6 +1323,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_status',
@@ -1078,6 +1375,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1135,6 +1438,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
@@ -1185,6 +1494,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_typo3_uid',
@@ -1202,7 +1517,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -1237,6 +1552,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_typo3_user_id',
@@ -1254,7 +1575,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 6,
     ),
   );
 
@@ -1293,6 +1614,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'group_content_access',
@@ -1318,7 +1645,7 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 4,
     ),
     'widget_type' => 'options_select',
   );
@@ -1351,6 +1678,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1443,6 +1776,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'text_summary_or_trimmed',
         'weight' => 1,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
@@ -1492,6 +1831,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1549,6 +1894,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_further_action',
@@ -1601,6 +1952,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_general_comments',
@@ -1628,10 +1985,10 @@ function ktc_hearing_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'file',
         'settings' => array(),
-        'type' => 'file_default',
+        'type' => 'file_table',
         'weight' => 5,
       ),
       'listevisning' => array(
@@ -1647,6 +2004,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1724,6 +2087,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_hearing_node',
@@ -1777,6 +2146,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_hearing_response_type',
@@ -1823,6 +2198,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1884,6 +2265,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_is_final',
@@ -1934,6 +2321,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1994,6 +2387,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_is_summary',
@@ -2039,6 +2438,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2096,6 +2501,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_typo3_user_id',
@@ -2147,6 +2558,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2213,6 +2630,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
@@ -2269,6 +2692,7 @@ function ktc_hearing_field_default_field_instances() {
   t('Deltagere');
   t('Deltagers frist');
   t('Detaljerede kommentar');
+  t('Ekstern links');
   t('Emner');
   t('Endeligt svar');
   t('Er sammenfatning');
@@ -2278,16 +2702,19 @@ function ktc_hearing_field_default_field_instances() {
   t('Gruppe/Netværk');
   t('Har ikke svaret');
   t('Høring');
+  t('Høring Fil(er) mangler fra Typo3');
   t('Høringssvar type');
   t('Høringstype');
   t('Impression');
   t('Indmeldelsesfrister');
   t('Konsekvenser');
+  t('Mangler Fil(er)');
   t('Myndighed');
   t('Officiel');
   t('Officiel svardato');
   t('Officiel udsendelsesdato');
   t('Resumé');
+  t('Skjul auto relaterede links');
   t('Status');
   t('Synlighed');
   t('Titel lang');

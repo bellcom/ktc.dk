@@ -1,0 +1,165 @@
+<?php
+/**
+ * @file
+ * Code for the KTC signup block module.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function ktc_signup_block_block_info() {
+  $blocks = array();
+
+  $blocks['ktc_signup_link_block'] = array(
+    'info' => t('KTC signup link blok'),
+  );
+
+  return $blocks;
+}
+/**
+ * Implements hook_block_view().
+ */
+function ktc_signup_block_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+
+    case 'ktc_signup_link_block':
+      $block['subject'] = '';
+      $block['content'] = ktc_signup_block_link_content();
+      break;
+  }
+  return $block;
+}
+
+/**
+ * KTC signup block link block callback.
+ */
+function ktc_signup_block_link_content() {
+  global $user;
+  $output = '';
+  $nid = arg(1);
+  $node = FALSE;
+  if (is_numeric($nid)) {
+    $node = node_load($nid);
+  }
+  if (isset($node->signup_status)) {
+    // The node has been closed for signups, and the user has
+    // signup permissions.  Let them know it's closed.
+    if ($node && !$node->signup_status && !$direct_link = field_get_items('node', $node, 'field_link_to_signup')) {
+      if (user_access('sign up for content')) {
+        $output .= '<div class="col-md-12 col-sm-12 col-xs-12">
+                    <h2>Tilmelding til arrangementet</h2>';
+        // If they're logged in and already signed up, show their current
+        // signup info and give them the option to cancel.
+        if ($user->uid) {
+          $signup = db_query("SELECT sl.*, n.title, u.name FROM {signup_log} sl INNER JOIN {node} n ON sl.nid = n.nid INNER JOIN {users} u ON sl.uid = u.uid WHERE sl.uid = :uid AND sl.nid = :nid", array(':uid' => $user->uid, ':nid' => $node->nid))->fetchObject();
+          if (!empty($signup)) {
+            $output .= _ktc_signup_block_get_cancel_link($signup);
+
+          }
+        }
+        $output .= '<h4>' . t('Tilmelding er lukket') . '</h4>';
+        $output .= '</div>';
+      }
+    }
+    elseif ($node && $node->signup_status && !$direct_link = field_get_items('node', $node, 'field_link_to_signup')) {
+
+      if ($user->uid == 0) {
+        // This is an anonymous user.
+        if ($access = node_access('view', $node)) {
+          $output .= '<div class="col-md-12 col-sm-12 col-xs-12">
+                        <h2>Tilmelding til arrangementet</h2>
+                        <h4>For medlem | <a href="/user?destination=node/' . $nid . '">Klik her </a>for at login og tilmelde dig</h4>
+                      </div>';
+
+        }
+      }
+      else {
+        // An authenticated user.
+
+        // See if the user is already signed up for this node.
+        $signup = db_query("SELECT sl.*, n.title, u.name, u.mail FROM {signup_log} sl INNER JOIN {node} n ON sl.nid = n.nid INNER JOIN {users} u ON sl.uid = u.uid WHERE sl.uid = :uid AND sl.nid = :nid", array(':uid' => $user->uid, ':nid' => $node->nid))->fetchObject();
+        if (empty($signup)) {
+          // Not yet signed up.
+          if (user_access('sign up for content')) {
+            $output .= '<div class="col-md-12 col-sm-12 col-xs-12">
+                        <h2>Tilmelding til arrangementet</h2>';
+            $output .= _ktc_signup_block_get_signup_link($node);
+            $output .= '</div>';
+          }
+        }
+        else {
+          // Already signed up, display cancel link.
+          $output .= '<div class="col-md-12 col-sm-12 col-xs-12">
+                        <h2>Tilmelding til arrangementet</h2>';
+          $output .= _ktc_signup_block_get_cancel_link($signup);
+
+          $output .= '</div>';
+        }
+      }
+    }
+  }
+  return $output;
+}
+
+/**
+ * KTC signup block cancel link callback.
+ */
+function _ktc_signup_block_get_cancel_link($signup) {
+  global $user;
+  $output = '';
+  $node = node_load($signup->nid);
+
+  // Check permissions.
+
+  $admin = _signup_menu_access($node, 'admin');
+  $own = !empty($user->uid) && $user->uid == $signup->uid;
+  $can_cancel = $admin || (user_access('cancel own signups') && $own);
+  if ($can_cancel) {
+    $destination = array('destination' => 'node/' . $signup->nid);
+    $signup_token = signup_get_token($signup->sid, 'cancel');
+
+    $output .= l(t('Frameld'), "signup/cancel/$signup->sid/$signup_token",
+                array(
+                  'query' => $destination,
+                  'attributes' => array('class' => array('btn', 'btn-blacknblue')),
+                ));
+  }
+  return $output;
+}
+
+/**
+ * KTC signup block get signup link callback.
+ */
+function _ktc_signup_block_get_signup_link($node) {
+  $output = '';
+  module_load_include('inc', 'signup', 'includes/signup_form');
+  $form = drupal_get_form('signup_form', $node, 'auth', FALSE);
+  $output .= drupal_render($form);
+  return $output;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_signup_block_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'signup_node_admin_summary_form'
+      || $form_id == 'signup_form'
+      || $form_id == 'signup_node_settings_form'
+      || $form_id == 'signup_broadcast_form') {
+    $form['#theme'] = array('ktc_signup_admin_form');
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ktc_signup_block_theme($existing, $type, $theme, $path) {
+  $path = 'theme/';
+  return array(
+    'ktc_signup_admin_form' => array(
+      'render element' => 'form',
+      'template' => $path . 'ktc-signup-admin-form',
+    ),
+  );
+}

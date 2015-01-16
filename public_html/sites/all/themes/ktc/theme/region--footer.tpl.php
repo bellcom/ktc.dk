@@ -26,9 +26,10 @@
  * @ingroup themeable
  */
 ?>
-  <footer class="region region_footer lcontainer-fluid">
-    <div class="lcontainer-fluid clearfix"  id="footer-menu">
-      <div class="container footer-menu">
+  <footer class="region region_footer footer_1 lcontainer-fluid">
+    <?php if ($content): ?>
+    <div class="lcontainer-fluid clearfix footer_1">
+      <div class="container">
         <div class="row">
       <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
       <?php print $content; ?>
@@ -36,19 +37,5 @@
       </div>
       </div>
     </div>
-    <!-- footer contacts social-icons -->
-    <div class="lcontainer-fluid clearfix" id="footer-contacts">
-      <div class="container">
-        <div class="row">
-        <div class="col-md-3 col-xs-12 col-sm-6 col-md-push-9 col-sm-push-6">
-        </div>
-        <div class="col-md-9 col-sm-6 col-xs-12 col-md-pull-3 col-sm-pull-6">
-          <div class='footer-logo'>
-            <img id="footer-logo" src="/<?php print drupal_get_path('theme','ktc'); ?>/images/footer_logo.png" title="<?php print $page['site_name'] ?>" />
-
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
+    <?php endif; ?>
   </footer>

@@ -2,17 +2,19 @@
 
 // Pretty Buttons
 // Borrrowed from : https://gist.github.com/claviska/6117193
-.pretty-buttons(@color, @background-from, @background-to) {
+.pretty-buttons(@color, @border-color) {
 
   color: @color;
-  #gradient > .vertical(@background-from, @background-to, 0%, 100%);
-  border: none;
+  border: 2px solid @border-color;
+  padding: 1px 8px;
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: center;
 
   &:hover,
   &:focus,
   &:active,
   &.active {
-    #gradient > .vertical(@background-to, @background-from, 0%, 100%);
     color: @color;
   }
 
@@ -24,7 +26,7 @@
     &:focus,
     &:active,
     &.active {
-      background-color: @background-to;
+      background-color: #fff;
     }
   }
 }
@@ -91,9 +93,9 @@ a {
   i {
     position: absolute;
     right: 20px;
-    top: @call-to-action-height / 2 - @nav-arrow-right-green-height / 2;
+    //top: @call-to-action-height / 2 - @nav-arrow-right-green-height / 2;
 
-    .sprite(@nav-arrow-right-green);
+    //.sprite(@nav-arrow-right-green);
   }
 }
 
@@ -170,54 +172,6 @@ a {
   }
 }
 
-.front-s-news-item-img {
-  position: relative;
-  &:before {
-    content: " ";
-    display: table;
-    z-index: 40;
-
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-
-    margin-left: -@spotbox-arrow-width / 2;
-
-    .sprite(@spotbox-arrow);
-  }
-  img {
-    max-width: 100%;
-  }
-}
-.front-s-news-item {
-  padding: 10px 10px;
-  background-color: #fff;
-  border-radius: 3px 3px;
-}
-.news-text-date{
-  text-align: center;
-  color: #fff;
-  .sprite(@date);
-  .news-date-inner {
-    width: 20px;
-  }
-  .news-date-day {
-    font-weight: bold;
-    font-size: 17px;
-    float: right;
-    width: 100%;
-    padding-left: 1px;
-    margin-top: 12px;
-    line-height: 12px;
-  }
-  .news-date-month {
-    text-transform: uppercase;
-    font-size: 12px;
-    float: right;
-    width: 100%;
-  }
-
-}
 
 .bubble(@top,@height) {
   position: absolute;
@@ -238,12 +192,11 @@ a {
   min-height: @height;
 }
 .rss-icon {
-  .sprite(@rss);
+
 }
 
 .bg-white {
   background: white;
-  border-radius:4px 4px;
   margin-bottom: 20px;
 }
 .view.bg-white {
@@ -276,15 +229,33 @@ a {
     }
   }
 }
-.node-postliste_import-form #edit-feeds .help,
-.node-postliste_import-form #edit-feeds .form-item-feeds-FeedsExcelParser-no-headers,
-.node-postliste_import-form #edit-feeds .form-item-feeds-FeedsExcelParser-all-worksheets,
-.node-postliste_import-form #edit-feeds .panel-heading,
-.page-nypostliste .view-grouping-header,
-.node-postliste_import-form .vertical-tabs
- { display: none; }
+
 
 .addthis_sharing_toolbox {
   text-align: right;
   padding: 10px 10px;
+}
+.no-padding {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.filter-title() {
+  border: none;
+  padding: 5px 0px 5px 20px;
+  font-size: @font-size-h5;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: @gray-darker;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.pane-content() {
+  padding-top: 10px;
+  display: block;
+  position: relative;
+  margin-bottom: 0;
+  background-color: #fff;
+  overflow: hidden;
 }

@@ -4,7 +4,7 @@ function get_hearing_elements_from_db_table($table, $condition = NULL) {
   $elements = array();
   $query = db_select($table, 'tx')
     ->fields('tx');
-    //->range(0,4);
+    //->range(0, 4);
 
   if (isset($condition)) {
     $query->condition($condition, '', '<>');
@@ -132,7 +132,7 @@ function get_state_name($tid) {
       break;
 
     case 1:
-      $name = 'Åben';
+      $name = 'Åben';
       break;
 
     case 2:
@@ -155,8 +155,8 @@ function get_state_name($tid) {
 }
 
 function convert_char($string) {
-  $find = array('Ã†', 'Ã¸', 'Ã¦', 'Ã¥', 'Ã˜', 'Ã…');
-  $replace = array('Æ', 'ø', 'æ', 'å', 'Ø', 'Å');
+  $find = array("Ã†", "Ã¸", "Ã¦", "Ã¥", "Ã˜", "Ã…", "&#39;", "Ã©", );
+  $replace = array("Æ", "ø", "æ", "å", "Ø", "Å", "'", "é", );
   $string = str_replace($find, $replace, $string);
   return $string;
 }
@@ -226,7 +226,12 @@ function get_images_or_files($url, $file_dir, $name = NULL, $real_name = NULL) {
     // Now get Drupal to copy it.
     $mydir = 'private://' . $file_dir;
     file_prepare_directory($mydir, FILE_CREATE_DIRECTORY);
-    $drupalfile = file_copy($dfile, 'private://' . $file_dir . '/' . $name, FILE_EXISTS_RENAME);
+    if (!isset($real_name)) {
+      $drupalfile = file_copy($dfile, 'private://' . $file_dir . '/' . $name, FILE_EXISTS_RENAME);
+    }
+    else {
+      $drupalfile = file_copy($dfile, 'private://' . $file_dir . '/' . $real_name, FILE_EXISTS_RENAME);
+    }
   }
   return $drupalfile;
 }
@@ -261,8 +266,9 @@ function get_file_md5filename($file_no) {
 }
 
 function check_title_name($str) {
-  if (strlen($str) > 240) {
-    $str = substr($str, 0, 235);
+  $text = explode('.', $str);
+  if (strlen($text[0]) > 220) {
+    $str = substr($text[0], 0, 100) . '.' . $text[1];
   }
   return $str;
 }
@@ -275,4 +281,42 @@ function rebuild_array($array) {
     }
   }
   return $array_2;
+}
+
+function get_email_from_fe_users($typo3_uid) {
+  if (is_numeric($typo3_uid)) {
+    $query = db_select('fe_users', 'g')
+      ->fields('g', array('email'))
+      ->condition('uid', $typo3_uid, '=');
+    $result = $query->execute()->fetchAssoc();
+    if ($result) {
+      if ($result['email'] != '' && strpos($result['email'], '@') !== FALSE) {
+        return $result['email'];
+      }
+      else {
+        return FALSE;
+      }
+    }
+    else {
+      return FALSE;
+    }
+  }
+}
+
+function get_old_user_info_from_typo3($typo3_uid) {
+  if (is_numeric($typo3_uid)) {
+    $query = db_select('fe_users', 'g')
+      ->fields('g', array('email'))
+      ->condition('uid', $typo3_uid, '=');
+    $result = $query->execute()->fetchAssoc();
+    if ($result) {
+      $user = user_load_by_mail($result['email']);
+      if ($user) {
+        return $user->uid;
+      }
+      else {
+        return FALSE;
+      }
+    }
+  }
 }

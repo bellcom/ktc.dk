@@ -2,7 +2,9 @@
     "require": {
         "php": ">=5.3.0",
         "elasticsearch/elasticsearch": "~1.0.2",
-        "querypath/QueryPath": ">=3.0.0"
+        "querypath/QueryPath": ">=3.0.0",
+        "dompdf/dompdf": "0.6.*",
+        "nickcernis/html-to-markdown": "dev-master"
     },
     "config": {
         "autoloader-suffix": "ComposerManager",

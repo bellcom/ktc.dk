@@ -1,51 +1,38 @@
-.col-md-3 {
+.col-md-3,
+.col-md-4 {
   .panel-separator {
     clear: both;
+    margin-bottom: 20px;
+  }
+  &.pane-sidebar {
+    .pane-content {
+      padding-bottom: 10px;
+    }
   }
   .panel-pane {
     position: relative;
-    border-bottom: 1px solid #dfded7;
+    .pane-title {
+      .filter-title();
+    }
     .pane-content {
-      display: block;
-      position: relative;
-      &:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      margin-bottom: 0;
-      border-radius: 4px 4px 0 0;
+      .pane-content();
 
       //filter buttons
       .filter-box {
         padding: 0 0;
         margin: 0px 0 20px 0;
-        #filter-all,
-        .filter-link {
-          //font-weight: bold;
-          margin-bottom: 10px;
-        }
-        .filter-foldin {
-          cursor: pointer;
-          text-align: right;
-          position: absolute;
-          top: -40px;
-          right: 15px;
-        }
       }
-      #edit-tabs {
-        li {
-          &.active > a{
-            .btn-primary();
-          }
-          a {
-            .btn();
-            .btn-blacknblue();
-            margin-right: 0px;
-            margin-bottom: 10px;
-
-          }
-        }
+      #filter-all,
+      .filter-link {
+        //font-weight: bold;
+        margin-bottom: 3px;
+      }
+      .filter-foldin {
+        cursor: pointer;
+        text-align: right;
+        position: absolute;
+        top: -40px;
+        right: 15px;
       }
     }
   }
@@ -60,19 +47,33 @@
   ul.nav-tabs {
     border-bottom: none;
   }
+  .tabs--primary,
+  .tabs--secondary,
   .pane-menu-menu-user-profile-menu {
     padding-top: 10px;
     li {
       &.active > a{
-        .btn-primary();
+        &.active {
+          background-color: #fff !important;
+          .box-shadow(none);
+          .btn-primary();
+        }
       }
       a {
         .btn();
         .btn-blacknblue();
         width: 100%;
         margin-right: 0px;
-        margin-bottom: 10px;
+        margin-bottom: 3px;
       }
     }
+  }
+  .tabs--secondary {
+    border-top: 2px solid #c3c3c3;
+    border-radius: 0;
+  }
+  .view .date-nav-wrapper .date-prev {
+    left: 0;
+    right: auto;
   }
 }

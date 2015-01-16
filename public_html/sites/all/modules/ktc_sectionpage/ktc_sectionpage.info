@@ -1,6 +1,6 @@
-name = KTC Section page functions
+name = KTC Ajax filter and blocks
 core = 7.x
 package = KTC
 version = 7.x-1.0
 project = ktc_sectionpage
-description = Includes ajax function.
+description = Includes ajax functions and ktc blocks, ktc_filter js is in ktc theme js fold. User profile panel page use this filter function as well.

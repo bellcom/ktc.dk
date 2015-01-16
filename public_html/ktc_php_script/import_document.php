@@ -1,25 +1,25 @@
 <?php
 include 'functions.php';
 
-// getDocmentElements('document', 'node-export-dokument_1.xml');
-// getDocmentElements('document', 'node-export-dokument_2.xml');
-// getDocmentElements('document', 'node-export-dokument_3.xml');
-// getDocmentElements('document', 'node-export-dokument_4.xml');
-// getDocmentElements('document', 'node-export-dokument_5.xml');
-// getDocmentElements('document', 'node-export-dokument_6.xml');
-// getDocmentElements('document', 'node-export-dokument_7.xml');
-// getDocmentElements('document', 'node-export-dokument_8.xml');
-// getDocmentElements('document', 'node-export-dokument_9.xml');
-// getDocmentElements('document', 'node-export-dokument_10.xml');
-// getDocmentElements('document', 'node-export-dokument_11.xml');
-// getDocmentElements('document', 'node-export-dokument_12.xml');
-// getDocmentElements('document', 'node-export-dokument_13.xml');
-// getDocmentElements('document', 'node-export-dokument_14.xml');
-// getDocmentElements('document', 'node-export-dokument_15.xml');
-// getDocmentElements('document', 'node-export-dokument_16.xml');
-// getDocmentElements('document', 'node-export-dokument_17.xml');
-// getDocmentElements('document', 'node-export-dokument_18.xml');
-// getDocmentElements('document', 'node-export-dokument_19.xml');
+ getDocmentElements('document', 'node-export-dokument_1.xml');
+ getDocmentElements('document', 'node-export-dokument_2.xml');
+ getDocmentElements('document', 'node-export-dokument_3.xml');
+ getDocmentElements('document', 'node-export-dokument_4.xml');
+ getDocmentElements('document', 'node-export-dokument_5.xml');
+ getDocmentElements('document', 'node-export-dokument_6.xml');
+ getDocmentElements('document', 'node-export-dokument_7.xml');
+ getDocmentElements('document', 'node-export-dokument_8.xml');
+ getDocmentElements('document', 'node-export-dokument_9.xml');
+ getDocmentElements('document', 'node-export-dokument_10.xml');
+ getDocmentElements('document', 'node-export-dokument_11.xml');
+ getDocmentElements('document', 'node-export-dokument_12.xml');
+ getDocmentElements('document', 'node-export-dokument_13.xml');
+ getDocmentElements('document', 'node-export-dokument_14.xml');
+ getDocmentElements('document', 'node-export-dokument_15.xml');
+ getDocmentElements('document', 'node-export-dokument_16.xml');
+ getDocmentElements('document', 'node-export-dokument_17.xml');
+ getDocmentElements('document', 'node-export-dokument_18.xml');
+ getDocmentElements('document', 'node-export-dokument_19.xml');
 
 function getDocmentElements($type, $filename) {
   $path = 'private://xml';
@@ -34,7 +34,7 @@ function getDocmentElements($type, $filename) {
   foreach (qp($content, 'node') as $data) {
     $old_nid = $data->children('nid')->text();
     if ($node = node_load_by_old_nid($old_nid)) {
-
+    /*
       // <field_dokument>
       if (is_numeric($data->children('field_dokument')->text())) {
         $node->field_document_type[LANGUAGE_NONE][0]['tid'] = $data->children('field_dokument')->text();
@@ -68,7 +68,18 @@ function getDocmentElements($type, $filename) {
           $node->field_tags[LANGUAGE_NONE][$key]['tid'] = $value;
         }
       }
-      // <forfatteruid> <body> <nid> Get from feeds import.
+      // <forfatteruid>
+      if (is_numeric($data->children('forfatteruid')->text())) {
+        $node->field_news_author[LANGUAGE_NONE][0]['value'] = $data->children('forfatteruid')->text();
+        if ($uid = get_new_uid($data->children('forfatteruid')->text())) {
+          $node->uid = $uid;
+        }
+        else {
+          $node->uid = 1;
+
+        }
+      }
+      //<body> <nid> Get from feeds import.
 
       // <group_content_access>
       if (isset($node->group_content_access) && is_numeric($data->children('group_content_access')->text())) {
@@ -76,7 +87,7 @@ function getDocmentElements($type, $filename) {
       }
 
       // Files, documents.
-
+      /*
       if (isset($node->field_os2web_base_field_media)) {
         $files = $data->children('fil')->text();
         $files_ar = explode(',', $files);
@@ -106,7 +117,8 @@ function getDocmentElements($type, $filename) {
             }
           }
         }
-      }
+      }*/
+      $node->modified = strtotime($data->children('opdateret')->text());
       node_save($node);
     }
     $count++;

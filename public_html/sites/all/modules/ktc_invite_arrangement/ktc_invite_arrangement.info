@@ -1,0 +1,6 @@
+name = KTC invite arrangement
+description = Send mail til en bruger med arrangement link.
+core = 7.x
+package = KTC
+version = 7.x-1.0
+project = ktc_invite_arrangement

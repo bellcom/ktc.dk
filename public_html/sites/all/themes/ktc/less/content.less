@@ -19,7 +19,6 @@
 body.page-node,
 body.page-taxonomy-term.term-is-not-top {
   h1.page-header {
-    display: none;
   }
   article,
   div.node-os2web-base-news {
@@ -78,7 +77,6 @@ body.page-taxonomy-term.term-is-not-top {
         zoom: 1;
         *display: inline;
         margin-right: 5px;
-        .sprite(@node-created-at-icon);
       }
     }
 
@@ -110,7 +108,7 @@ body.page-taxonomy-term.term-is-not-top {
   .nav-tabs {
     margin-bottom: 0;
   }
-
+  .field-name-field-hearing-materials,
   .field-name-field-os2web-base-field-media {
     .field-label {
       &:extend(h4);
@@ -122,8 +120,6 @@ body.page-taxonomy-term.term-is-not-top {
 
       .file-icon {
         // This overrides the file-icon and replaces it with an download icon.
-        .sprite(@download-icon);
-        padding-left: @download-icon-width;
       }
 
       a {
@@ -170,47 +166,27 @@ body.page-taxonomy-term.term-is-not-top {
     div.node-os2web-base-news {
       // .no-sidebars
     }
+    .pane-ktc-signup-block-ktc-signup-link-block {
+      ul.tabs--primary {
+        display: none;
+        visibility: hidden;
+      }
+    }
   }
 }
 
 // Overrides for the node display.
-.page-taxonomy,
-.page-node {
-  .region-content.col-sm-9,
-  .region-content.col-md-9,
-  .region-content.col-sm-12,
-  .region-content.col-md-12 {
-
-    article {
-      .wrap,
-      header {
-        margin: 0 auto;
-      }
-
-      .field-name-field-os2web-base-field-image {
-        padding: 0 15px;
-      }
-    }
+.page-taxonomy {
+  .main-container {
+    background-color: #fff;
   }
-
-  // With left sidebar
-  .region-content.col-sm-9,
-  .region-content.col-md-9 {
-
-    article {
-      .wrap,
-      header {
-        width: 77.77777776%;
-      }
-    }
-  }
-
 }
 .region-content {
+  margin-top: 10px;
   .taxonomy-term-description a,
   .field-name-body a {
     font-weight: 400;
-    color: @brand-lightblue;
+    color: @brand-blue-icon;
     &:hover,
     &:active {
       color: @brand-darkblue;
@@ -224,11 +200,6 @@ body.page-taxonomy-term.term-is-not-top {
   hr {
     border-color: @brand-blacknblue;
   }
-}
-.link_here {
-  padding-top: 135px;
-  margin-top: -135px;
-  display: block;
 }
 
 .view-bladintro-node {
@@ -253,6 +224,56 @@ body.page-taxonomy-term.term-is-not-top {
     &.pane-node-field-groupimage {
       float: right;
       clear: right;
+    }
+  }
+}
+
+.panel-pane {
+  &.pane-hearing-node-view-panel-pane-1 {
+    .views-field-field-hearing-materials {
+
+
+        .file-icon {
+          // This overrides the file-icon and replaces it with an download icon.
+        }
+        a {
+          margin-left: 10px;
+          color: @brand-blacknblue;
+        }
+    }
+  }
+}
+body.node-type-ktc-supplier {
+  .region-content {
+    article {
+      h5 {
+          background-color: @brand-darkblue;
+          color: #fff;
+          margin-bottom: 0px;
+          margin-top: 0px;
+          padding: 3px 10px;
+      }
+      h5.supplier-body-header {
+        background-color: @brand-userlink-red;
+      }
+      .supplier-logo {
+        background-color: #fff;
+        margin-bottom: 20px;
+        .field-name-field-image {
+          padding: 10px;
+        }
+      }
+      .contact-info {
+        background-color: #fff;
+        margin-bottom: 20px;
+        .contact-info-content {
+          padding: 10px;
+        }
+      }
+      .field-name-body {
+        padding: 10px;
+        background-color: #fff;
+      }
     }
   }
 }

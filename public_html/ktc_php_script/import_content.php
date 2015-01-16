@@ -180,6 +180,9 @@ function getNodeElements($type, $filename) {
           }
         }
       }
+      // <updated>
+      $node->changed = strtotime($data->children('updated')->text());
+
       node_save($node);
     }
     $count++;
