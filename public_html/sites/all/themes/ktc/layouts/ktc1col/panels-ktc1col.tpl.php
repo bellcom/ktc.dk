@@ -16,6 +16,11 @@
  */
 ?>
 <div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+  <div class="col-md-12 col-sm-12 col-xs-12 panel-top">
+    <div class="row" id="panel-pane-top">
+      <?php print $content['top']; ?>
+    </div>
+  </div>
   <div class="col-md-12 col-sm-12 col-xs-12 panel-content">
     <div class="row" id="panel-pane-content">
       <?php print $content['content']; ?>

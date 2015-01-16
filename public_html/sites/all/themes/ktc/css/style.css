@@ -7261,7 +7261,7 @@ fieldset[disabled] .btn-blacknblue.active {
   .main-container .region-header section .view-empty,
   .main-container .region-header section .view-content {
     height: 300px;
-    overflow-y: scroll;
+    overflow: hidden;
   }
 }
 .main-container .region-header section .view-empty h5,
@@ -8151,6 +8151,11 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .front .main-container.container .region-header {
   margin-left: 0px;
   margin-right: 0px;
+}
+.front .main-container.container .panel-top #panel-pane-top {
+  max-height: 140px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 .front .main-container.container .pane-content {
   margin-bottom: 20px;
@@ -9161,8 +9166,16 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   height: 17px;
   vertical-align: bottom;
 }
-.page-search .view-id-Search .views-row {
-  margin-bottom: 32px;
+.page-search .view-id-Search .view-content:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  font-size: 0px;
+}
+.page-search .view-id-Search .view-content .views-row {
+  margin-bottom: 20px;
 }
 @media (min-width: 992px) {
   .page-aktiviteter .main-container.container,

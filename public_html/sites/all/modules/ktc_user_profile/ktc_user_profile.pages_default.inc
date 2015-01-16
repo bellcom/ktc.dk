@@ -40,7 +40,7 @@ function ktc_user_profile_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%user:field-navn';
   $display->uuid = '716dee15-d670-4fed-9f47-8da198d75d4e';
   $display->content = array();
   $display->panels = array();
