@@ -170,7 +170,7 @@
     });
 
     // Search page.
-    var $search_container = $('.page-search #block-system-main');
+    var $search_container = $('.view-Search.view-id-Search')
 
     $search_container.imagesLoaded(function(){
       $search_container.masonry({

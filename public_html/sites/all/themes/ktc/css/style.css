@@ -9161,8 +9161,16 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   height: 17px;
   vertical-align: bottom;
 }
-.page-search .view-id-Search .views-row {
-  margin-bottom: 32px;
+.page-search .view-id-Search .view-content:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  font-size: 0px;
+}
+.page-search .view-id-Search .view-content .views-row {
+  margin-bottom: 20px;
 }
 @media (min-width: 992px) {
   .page-aktiviteter .main-container.container,
