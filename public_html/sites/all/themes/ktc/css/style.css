@@ -8152,6 +8152,11 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   margin-left: 0px;
   margin-right: 0px;
 }
+.front .main-container.container .panel-top #panel-pane-top {
+  max-height: 140px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
 .front .main-container.container .pane-content {
   margin-bottom: 20px;
   background-color: #fff;

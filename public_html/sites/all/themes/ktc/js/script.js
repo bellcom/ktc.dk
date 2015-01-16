@@ -54,7 +54,7 @@
     if ($('.header-user-name a.user-name').width() > 130) {
       $('.header-user-name a.user-name').css('font-size', '14px');
     }
-    if ($('.header-user-name a.user-name').width() > 180) {
+    if ($('.header-user-name a.user-name').width() > 165) {
       $('.header-user-name a.user-name').css('font-size', '13px');
     }
     // borger.dk articles
