@@ -7261,7 +7261,7 @@ fieldset[disabled] .btn-blacknblue.active {
   .main-container .region-header section .view-empty,
   .main-container .region-header section .view-content {
     height: 300px;
-    overflow-y: scroll;
+    overflow: hidden;
   }
 }
 .main-container .region-header section .view-empty h5,
