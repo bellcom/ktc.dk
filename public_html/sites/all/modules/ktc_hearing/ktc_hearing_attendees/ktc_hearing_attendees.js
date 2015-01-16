@@ -54,7 +54,6 @@ jQuery(document).ready(function($){
           });
         }
       });
-      selected_groups = change_groups;
     }
 
     // group added
@@ -79,8 +78,8 @@ jQuery(document).ready(function($){
           });
         }
       });
-      selected_groups = change_groups;
     }
+    selected_groups = change_groups;
   });
 
   // Handle data in form, on form error.
