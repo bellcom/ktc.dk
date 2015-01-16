@@ -28,7 +28,7 @@ function ktc_hearing_attendees_field_widget_form_alter(&$element, &$form_state, 
     'field_responsible_admin',
   );
 
-  if (in_array($element['#field_name'], $show_for_fields)) {
+  if (isset($element['#field_name']) && in_array($element['#field_name'], $show_for_fields)) {
     $element['#suffix'] = '<div class="chosen-entityreference-container"><select data-placeholder="Vælg" class="form-control chosen-entityreference" multiple data-autocomplete-path="' . url($element['#autocomplete_path'], array('absolute' => TRUE)) . '">' . _ktc_hearing_attendees_selected($element) . '</select></div>';
   }
 }
