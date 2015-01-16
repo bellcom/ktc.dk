@@ -25,6 +25,13 @@
     <?php endif; ?>
   </div>
   <div class="col-md-3 col-sm-3 col-xs-12">
-    <?php $menu = menu_local_tabs(); print render($menu); ?>
+    <div class="row">
+      <?php $menu = menu_local_tabs(); print render($menu); ?>
+    </div>
+
+<?php
+    $block = module_invoke('ktc_hearing', 'block_view', 'ktc_hearing_set_status_form');
+    print render($block['content']);
+?>
   </div>
 </div>
