@@ -159,7 +159,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['row_options']['relationship'] = 'field_ekstra_artikler_target_id';
   $handler->display->display_options['row_options']['view_mode'] = 'listevisningstor';
   $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Forbindelse: Entity Reference: Referenced Entity */
+  /* Forbindelse: Entity Reference: Refereret entity */
   $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['id'] = 'field_ekstra_artikler_target_id';
   $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['table'] = 'field_data_field_ekstra_artikler';
   $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['field'] = 'field_ekstra_artikler_target_id';
@@ -211,11 +211,11 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: Entity Reference: Referenced Entity */
+  /* Forbindelse: Entity Reference: Refereret entity */
   $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['id'] = 'field_ekstra_artikler_target_id';
   $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['table'] = 'field_data_field_ekstra_artikler';
   $handler->display->display_options['relationships']['field_ekstra_artikler_target_id']['field'] = 'field_ekstra_artikler_target_id';
-  /* Forbindelse: Entity Reference: Referenced Entity */
+  /* Forbindelse: Entity Reference: Refereret entity */
   $handler->display->display_options['relationships']['field_top_artikel_target_id']['id'] = 'field_top_artikel_target_id';
   $handler->display->display_options['relationships']['field_top_artikel_target_id']['table'] = 'field_data_field_top_artikel';
   $handler->display->display_options['relationships']['field_top_artikel_target_id']['field'] = 'field_top_artikel_target_id';
@@ -246,11 +246,11 @@ function teknik_og_miljoe_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('Indhold entity referenced from field_ekstra_artikler'),
+    t('Indhold entity refereret fra field_ekstra_artikler'),
     t('Titel'),
     t('Alle'),
     t('Top artikel'),
-    t('Indhold entity referenced from field_top_artikel'),
+    t('Indhold entity refereret fra field_top_artikel'),
     t('Ekstra artikler'),
   );
   $export['bladintro_nyheder'] = $view;
