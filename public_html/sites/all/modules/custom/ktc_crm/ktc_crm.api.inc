@@ -65,17 +65,103 @@ function ktc_crm_update_user(\KTC\WebUser\WebUserDto $webuserdto) {
   }
   catch (\Exception $e) {
     error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
-    return FALSE;
   }
 
   return FALSE;
 }
 
 /**
+ * Fetch subscriptions from Webservice.
+ */
+function ktc_crm_fetch_subscriptions($options = array()) {
+  $url = variable_get('ktc_crm_url', '');
+
+  $wsdl_url = $url . '/' . KTC_CRM_SUBSCRIPTION_WSDL;
+
+  try {
+    $subscription = new KTC\Subscription\Subscription(array(), $wsdl_url);
+
+    $request = new KTC\Subscription\Request();
+
+    $retrievesubscriptions = new KTC\Subscription\RetrieveSubscriptions($request);
+
+    $result = $subscription->RetrieveSubscriptions($retrievesubscriptions);
+
+    if (is_object($result) && isset($result->RetrieveSubscriptionsResult)) {
+      return $result->RetrieveSubscriptionsResult;
+    }
+
+  }
+  catch (\Exception $e) {
+    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+  }
+
+  return FALSE;
+}
+
+/**
+ * Update a user subscription using the Webservice.
+ */
+function ktc_crm_update_user_subscription(\KTC\Subscription\SubscriptionDto $subscriptiondto) {
+  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($subscriptiondto, 1));
+  //return;
+
+  $url = variable_get('ktc_crm_url', '');
+
+  $wsdl_url = $url . '/' . KTC_CRM_SUBSCRIPTION_WSDL;
+
+  try {
+    $subscription = new KTC\Subscription\Subscription(array(), $wsdl_url);
+
+    $createupdatesubscriptions = new KTC\Subscription\CreateUpdateSubscription($subscriptiondto);
+
+    $result = $subscription->CreateUpdateSubscription($createupdatesubscriptions);
+
+    if (is_object($result) && isset($result->CreateUpdateSubscriptionResponse)) {
+      return $result->CreateUpdateSubscriptionResponse;
+    }
+
+  }
+  catch (\Exception $e) {
+    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+  }
+
+  return FALSE;
+}
+
+/**
+ * Fetch a users subscriptions from Webservice.
+ */
+function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
+  if (!$user) {
+    global $user;
+  }
+
+  $account = user_load($user->uid);
+
+  if ($crm_uuid_field = field_get_items('user', $account, 'field_crm_uuid')) {
+    $user_uuid = strtolower($crm_uuid_field[0]['value']);
+  }
+  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($user_uuid, 1));
+
+  $subscriptions = ktc_crm_fetch_subscriptions();
+
+  $user_subscriptions = array();
+
+  foreach ($subscriptions->Results->SubscriptionDto as $subscription) {
+    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($subscription->RecipientId, 1));
+    if ($subscription->RecipientId == $user_uuid) {
+      $user_subscriptions[] = $subscription;
+    }
+  }
+
+  return $user_subscriptions;
+}
+
+/**
  * Update user account in drupal, from WebUserDto.
  */
 function ktc_crm_update_account_from_webuserdto(\KTC\WebUser\WebUserDto $webuserdto) {
-  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($webuserdto, 1));
   $uuid = $webuserdto->CrmId;
 
   if ($account = ktc_crm_load_account_from_crm_uuid($uuid)) {

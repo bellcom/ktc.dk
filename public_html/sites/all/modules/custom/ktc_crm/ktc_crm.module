@@ -25,8 +25,35 @@ function ktc_crm_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_crm_settings'),
   );
+  $items['user/%user/abonnementer'] = array(
+    'title' => 'Mine abonnementer',
+    'description' => 'Håndter abonnementer',
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'ktc_crm_subscriptions_page',
+    'file' => 'ktc_crm.subscription.inc',
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['user/%user/abonnementer/%/opret-rediger'] = array(
+    'title' => 'Mine abonnementer',
+    'description' => 'Håndter abonnementer',
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_crm_subscriptions_form', 3),
+    'file' => 'ktc_crm.subscription.inc',
+  );
 
   return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ktc_crm_theme() {
+  return array(
+    'ktc_crm_subscriptions_page' => array(
+      'template' => 'ktc-crm-subscriptions-page',
+    ),
+  );
 }
 
 /**
@@ -50,7 +77,6 @@ function ktc_crm_settings() {
 function ktc_crm_cron() {
   $lastupdate = variable_get('ktc_crm_lastupdate');
 
-  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($lastupdate, 1));
   if ($webusers = ktc_crm_fetch_webusers(array('UpdatedSince' => $lastupdate))) {
 
     foreach ($webusers as $webuserdto) {
@@ -76,6 +102,9 @@ function ktc_crm_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_user_presave().
  */
 function ktc_crm_user_presave(&$edit, $account, $category) {
+  // Only update user if $_POST['form_id'] is correct. Presave is also called
+  // when a user is updated programmatically, so this could turn into an
+  // unwanted loop otherwise.
   if (isset($_POST['form_id']) && $_POST['form_id'] == 'user_profile_form') {
     // ktc_crm_map_account_to_webuserdto() takes a normal drupal user
     // account object. Since the $account object is not populated with the
@@ -106,7 +135,7 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
  * Map account values to webuser object.
  */
 function ktc_crm_map_account_to_webuserdto($account) {
-  $webuserdto = new \KTC\WebUser\WebUserDto();
+  $webuserdto = new \KTC\WebUser\WebUserDto(NULL);
 
   if ($uuid_field = field_get_items('user', $account, 'field_crm_uuid')) {
     $uuid = $uuid_field[0]['value'];
@@ -172,4 +201,12 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
   $edit['field_cell'][LANGUAGE_NONE][0]['value'] = $webuserdto->MobilePhone;
 
   return $edit;
+}
+
+/**
+ * Get users address
+ */
+function ktc_crm_get_user_address($user, $type) {
+
+  return $type . ' Adresse...';
 }
