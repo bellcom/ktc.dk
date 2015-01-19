@@ -101,11 +101,11 @@ function ktc_crm_fetch_subscriptions($options = array()) {
 
 /**
  * Update a user subscription using the Webservice.
+ *
+ * @todo figure out how the user is related to the subscription.
+ * @todo chosen address switch is not updated in crm
  */
 function ktc_crm_update_user_subscription(\KTC\Subscription\SubscriptionDto $subscriptiondto) {
-  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($subscriptiondto, 1));
-  //return;
-
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_SUBSCRIPTION_WSDL;
@@ -131,6 +131,8 @@ function ktc_crm_update_user_subscription(\KTC\Subscription\SubscriptionDto $sub
 
 /**
  * Fetch a users subscriptions from Webservice.
+ *
+ * @todo figure out how the users subscriptions are fetched.
  */
 function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
   if (!$user) {
@@ -156,6 +158,87 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
   }
 
   return $user_subscriptions;
+}
+
+/**
+ * Fetch groups from the webservice.
+ */
+function ktc_crm_fetch_groups($options = array()) {
+  $url = variable_get('ktc_crm_url', '');
+
+  $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
+
+  try {
+    $groupservice = new \KTC\GroupService\GroupService(array(), $wsdl_url);
+
+    $request = new \KTC\GroupService\Request();
+    $retrivegroups = new \KTC\GroupService\RetrieveGroups($request);
+
+    $result = $groupservice->RetrieveGroups($retrivegroups);
+
+    if (is_object($result) && isset($result->RetrieveGroupsResult)) {
+      return $result->RetrieveGroupsResult;
+    }
+  }
+  catch (\Exception $e) {
+    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+  }
+
+  return FALSE;
+}
+
+/**
+ * Fetch group userroles from the webservice.
+ */
+function ktc_crm_fetch_grouproles() {
+  $url = variable_get('ktc_crm_url', '');
+
+  $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
+
+  try {
+    $groupservice = new \KTC\GroupService\GroupService(array(), $wsdl_url);
+
+    $request = new \KTC\GroupService\Request();
+    $retrivegroups = new \KTC\GroupService\RetrieveGroupRoles($request);
+
+    $result = $groupservice->RetrieveGroupRoles($retrivegroups);
+
+    if (is_object($result) && isset($result->RetrieveGroupRolesResult)) {
+      return $result->RetrieveGroupRolesResult;
+    }
+  }
+  catch (\Exception $e) {
+    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+  }
+
+  return FALSE;
+}
+
+/**
+ * Fetch group users from the webservice.
+ */
+function ktc_crm_fetch_groupmembers() {
+  $url = variable_get('ktc_crm_url', '');
+
+  $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
+
+  try {
+    $groupservice = new \KTC\GroupService\GroupService(array(), $wsdl_url);
+
+    $request = new \KTC\GroupService\Request();
+    $retrivegroups = new \KTC\GroupService\RetrieveGroupMembers($request);
+
+    $result = $groupservice->RetrieveGroupMembers($retrivegroups);
+
+    if (is_object($result) && isset($result->RetrieveGroupMembersResult)) {
+      return $result->RetrieveGroupMembersResult;
+    }
+  }
+  catch (\Exception $e) {
+    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+  }
+
+  return FALSE;
 }
 
 /**

@@ -7,8 +7,10 @@
 // Load webservice classes.
 module_load_include('php', 'ktc_crm', 'includes/KTC/WebUser/WebUser');
 module_load_include('php', 'ktc_crm', 'includes/KTC/Subscription/Subscription');
+module_load_include('php', 'ktc_crm', 'includes/KTC/GroupService/GroupService');
 
 module_load_include('inc', 'ktc_crm', 'ktc_crm.api');
+module_load_include('inc', 'ktc_crm', 'ktc_crm.group');
 
 define('KTC_CRM_WEBUSER_WSDL', 'WebUser.svc?wsdl');
 define('KTC_CRM_SUBSCRIPTION_WSDL', 'Subscription.svc?wsdl');
@@ -204,7 +206,7 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
 }
 
 /**
- * Get users address
+ * Get users address.
  */
 function ktc_crm_get_user_address($user, $type) {
 
