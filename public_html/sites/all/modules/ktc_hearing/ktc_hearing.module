@@ -154,23 +154,40 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
     unset($form['field_hearing_node'][$language][0]['target_id']['#element_validate']);
   }
 
-  // If this is a response, act a bit differently.
-  if (arg(2) == 'summary_hearing_response') {
-    $language = $form['field_is_summary']['#language'];
-    $form['field_is_summary'][$language]['#default_value'] = 1;
-    $form['title']['#default_value'] = t('Endeligt høringssvar') . ': ' . $user_name;
+  // These two steps, allows the user to move the hearing foward in the
+  // workflow. To ease the process. An extra submit button is added.
+  switch (arg(2)) {
+    case 'summary_hearing_response':
+      $language = $form['field_is_summary']['#language'];
+      $form['field_is_summary'][$language]['#default_value'] = 1;
+      $form['title']['#default_value'] = t('Endeligt høringssvar') . ': ' . $user_name;
 
-    $form['actions']['send_for_approval'] = array(
-      '#type' => 'submit',
-      '#value' => t('Gem og send til godkendelse'),
-      '#weight' => 50,
-    );
-    // Execute all normal submit callbacks.
-    $form['actions']['send_for_approval']['#submit'] = $form['actions']['submit']['#submit'];
-    // And update the status for the node.
-    $form['actions']['send_for_approval']['#submit'][] = 'ktc_hearing_set_status_approval';
+      $form['actions']['send_for_approval'] = array(
+        '#type' => 'submit',
+        '#value' => t('Gem og send til godkendelse'),
+        '#weight' => 50,
+      );
+      // Execute all normal submit callbacks.
+      $form['actions']['send_for_approval']['#submit'] = $form['actions']['submit']['#submit'];
+      // And update the status for the node.
+      $form['actions']['send_for_approval']['#submit'][] = 'ktc_hearing_set_status_approval';
 
-    $form['field_is_no_answer']['#access'] = 0;
+      $form['field_is_no_answer']['#access'] = 0;
+      break;
+
+    case 'approve_summary_hearing_response':
+      $form['actions']['set_approved'] = array(
+        '#type' => 'submit',
+        '#value' => t('Gem og godkend'),
+        '#weight' => 50,
+      );
+      // Execute all normal submit callbacks.
+      $form['actions']['set_approved']['#submit'] = $form['actions']['submit']['#submit'];
+      // And update the status for the node.
+      $form['actions']['set_approved']['#submit'][] = 'ktc_hearing_set_status_approved';
+
+      $form['field_is_no_answer']['#access'] = 0;
+      break;
   }
 
   // Hide fields.
@@ -329,6 +346,7 @@ function ktc_hearing_access($node, $op) {
   // Catch all.
   return FALSE;
 }
+
 /**
  * KTC hearing invite page callback.
  */
@@ -339,6 +357,7 @@ function ktc_hearing_invite_page($nid) {
 
   return theme('hearing_answer', $vars);
 }
+
 /**
  * Invite user to hearing, form.
  */
@@ -395,7 +414,6 @@ function ktc_hearing_summary_responses($hearing) {
   }
 
   elseif (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_RECAP) {
-
     module_load_include('inc', 'node', 'node.pages');
 
     $query = new EntityFieldQuery();
@@ -437,6 +455,7 @@ function ktc_hearing_summary_responses($hearing) {
     $vars['preface'] = 'Høringens status tillader ikke sammenskrivning af høringssvar.';
   }
 
+  drupal_set_title('Skriv sammenfatning: ' . drupal_get_title());
   return theme('hearing_answer', $vars);
 }
 
@@ -452,7 +471,7 @@ function ktc_hearing_view_summary_responses($hearing) {
     }
   }
   else {
-    $vars['preface'] = "Sammenfatningen er ikke skrevet";
+    $vars['preface'] = 'Der er endnu ikke skrevet og godkendt sammenfatning på denne høring.';
   }
 
   return theme('hearing_answer', $vars);
@@ -465,26 +484,47 @@ function ktc_hearing_approve_summary_responses($hearing) {
   if ($summary_response = ktc_hearing_get_summary_response($hearing)) {
     switch (ktc_hearing_get_status($hearing)) {
       case KTC_HEARING_STATUS_APPROVAL:
-        $vars['preface'] = '<h1>' . t('Godkend endeligt svar') . '</h1>' .
-          render(node_view($summary_response)) .
-          render(drupal_get_form('ktc_hearing_approve_summary_response_form', $summary_response));
+
+        module_load_include('inc', 'node', 'node.pages');
+
+        $query = new EntityFieldQuery();
+        $query->entityCondition('entity_type', 'node')
+          ->entityCondition('bundle', 'hearing_responses')
+          ->fieldCondition('field_hearing_node', 'target_id', $hearing->nid);
+        $result = $query->execute();
+
+        if (isset($result['node'])) {
+          foreach ($result['node'] as $item) {
+            $node = node_load($item->nid);
+
+            if (_ktc_hearing_response_is_summary($node)) {
+              continue;
+            }
+
+            $vars['responses'][] = node_view($node, 'full');
+          }
+        }
+
+        $type = 'hearing_responses';
+        $vars['answer_form'] = render(drupal_get_form($type . '_node_form', $summary_response));
         break;
 
       case KTC_HEARING_STATUS_APPROVED:
         $answer = node_view($summary_response);
         $vars['preface'] = render($answer) .
-          'Det endelige høringssvar er godkendt.';
+          'Sammenfatningen er blevet godkendt.';
         break;
 
       default:
-        $vars['preface'] = 'Det endelige høringssvar er endnu ikke klar til godkendelse.';
+        $vars['preface'] = 'Sammenfatningen er endnu ikke sendt til godkendelse.';
         break;
     }
   }
   else {
-    $vars['preface'] = 'Der er ikke et endeligt høringssvar.';
+    $vars['preface'] = 'Der er ikke skrevet nogen sammenfatning.';
   }
 
+  drupal_set_title('Godkend sammenfatning: ' . drupal_get_title());
   return theme('hearing_answer', $vars);
 }
 
@@ -544,10 +584,26 @@ function ktc_hearing_set_status_approval(&$form, &$form_state) {
     $summary_response = $form['#entity'];
     $hearing = node_load(arg(1));
 
-    $form = array();
     $values['values']['hearing_nid'] = $hearing->nid;
     $values['values']['status'] = KTC_HEARING_STATUS_APPROVAL;
 
+    $form = array();
+    ktc_hearing_set_status_submit($form, $values);
+  }
+}
+
+/**
+ * Extra submit handler for sending a response for approval.
+ */
+function ktc_hearing_set_status_approved(&$form, &$form_state) {
+  if ($form_state['clicked_button']['#parents'][0] == 'set_approved') {
+    $summary_response = $form['#entity'];
+    $hearing = node_load(arg(1));
+
+    $values['values']['hearing_nid'] = $hearing->nid;
+    $values['values']['status'] = KTC_HEARING_STATUS_APPROVED;
+
+    $form = array();
     ktc_hearing_set_status_submit($form, $values);
   }
 }
