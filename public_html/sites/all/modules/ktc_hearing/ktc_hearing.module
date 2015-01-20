@@ -309,7 +309,7 @@ function ktc_hearing_block_view($delta = '') {
     case 'ktc_hearing_unresponded':
       $vars['unresponded_hearings'] = _ktc_hearing_get_unresponded();
 
-      $block['subject'] = t('Hearings');
+      $block['subject'] = t('Dine høringer der mangler svar');
       $block['content'] = theme('block_hearing_unresponded', $vars);
       break;
 
