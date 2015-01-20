@@ -242,6 +242,31 @@ function ktc_crm_fetch_groupmembers() {
 }
 
 /**
+ * Update groupmembership.
+ */
+function ktc_crm_update_groupmember(\KTC\GroupService\GroupMemberDto $groupmemberdto) {
+  $url = variable_get('ktc_crm_url', '');
+
+  $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
+
+  try {
+    $groupservice = new \KTC\GroupService\GroupService(array(), $wsdl_url);
+
+    $createupdategroupmember = new \KTC\GroupService\CreateUpdateGroupMember($groupmemberdto);
+
+    $result = $groupservice->CreateUpdateGroupMember($createupdategroupmember);
+
+    if (is_object($result) && isset($result->CreateUpdateGroupMemberResult)) {
+      return $result->CreateUpdateGroupMemberResult;
+    }
+  }
+  catch (\Exception $e) {
+    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+  }
+
+  return FALSE;
+}
+/**
  * Update user account in drupal, from WebUserDto.
  */
 function ktc_crm_update_account_from_webuserdto(\KTC\WebUser\WebUserDto $webuserdto) {

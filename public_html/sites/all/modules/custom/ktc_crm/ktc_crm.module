@@ -212,3 +212,25 @@ function ktc_crm_get_user_address($user, $type) {
 
   return $type . ' Adresse...';
 }
+
+/**
+ * Helper, fetch enity crm uuid.
+ */
+function _ktc_crm_get_uuid($type, $entity) {
+  if ($crm_uuid_field = field_get_items($type, $entity, 'field_crm_uuid')) {
+    $crm_uuid = $crm_uuid_field[0]['value'];
+
+    return $crm_uuid_field[0]['value'];
+  }
+  return FALSE;
+}
+
+/**
+ * Helper, get users uuid.
+ */
+function _ktc_crm_user_get_user_uuid($uid) {
+  if ($account = user_load($uid)) {
+    return _ktc_crm_get_uuid('user', $account);
+  }
+  return FALSE;
+}
