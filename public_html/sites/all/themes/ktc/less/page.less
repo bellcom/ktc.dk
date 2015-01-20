@@ -24,8 +24,18 @@
 }
 .page-search {
   .view-id-Search {
-    .views-row {
-      margin-bottom: 32px;
+    .view-content {
+      &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+        font-size: 0px;
+      }
+      .views-row {
+        margin-bottom: 20px;
+      }
     }
   }
 }

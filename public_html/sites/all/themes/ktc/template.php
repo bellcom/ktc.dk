@@ -81,10 +81,10 @@ function ktc_preprocess_page(&$variables) {
   if (isset($variables['user']->uid)) {
     $user = user_load($variables['user']->uid);
     if ($name = field_get_items('user', $user, 'field_navn')) {
-      $variables['user_name'] = l($name[0]['value'], 'user/' . $user->uid);
+      $variables['user_name'] = l($name[0]['value'], 'user/' . $user->uid, array('attributes' => array('class' => array('user-name'))));
     }
     else {
-      $variables['user_name'] = l($user->name, 'user/' . $user->uid);
+      $variables['user_name'] = l($user->name, 'user/' . $user->uid, array('attributes' => array('class' => array('user-name'))));
     }
     $variables['user_image'] = theme('user_picture', array('account' => $user));
   }
