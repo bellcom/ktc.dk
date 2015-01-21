@@ -9630,6 +9630,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-teksnik-miljoe .main-container.container .region-content .pane-sidebar #period {
   margin-top: -20px;
 }
+.page-user.not-logged-in ul.tabs--primary li {
+  width: 25%;
+}
 .page-user .pane-sidebar .pane-page-tabs .pane-content {
   padding-bottom: 5px;
 }

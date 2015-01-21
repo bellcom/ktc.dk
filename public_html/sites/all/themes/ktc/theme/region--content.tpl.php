@@ -38,7 +38,7 @@
 
     <?php print render($page['title_suffix']); ?>
     <?php print render($page['messages']); ?>
-    <?php if (!$logged_in): ?>
+    <?php if (!$logged_in && arg(0) == 'user'): ?>
       <?php print render($page['tabs']); ?>
     <?php endif; ?>
     <?php print render($page['page']['help']); ?>
