@@ -35,7 +35,15 @@
 <section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print render($title_suffix); ?>
     <div class="block-heading">
-      <h3 class="panel-title"><?php print $title; ?></h3>
+      <?php if ($block->region == 'header' || $block->region == 'footer'): ?>
+        <i class="title-left"></i>
+      <?php endif; ?>
+      <h3 class="panel-title">
+        <?php if ($block->region == 'header'): ?>
+          <?php //$title = substr(0, 18, $title) . '...'; ?>
+        <?php endif; ?>
+        <?php print $title; ?>
+      </h3>
     </div>
   <?php print $content ?>
 </section>

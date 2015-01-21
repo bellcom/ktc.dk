@@ -26,12 +26,12 @@
  */
 ?>
 <?php if ($page['logo'] || $page['site_name'] || $page['primary_nav'] || $page['secondary_nav'] || $content): ?>
+<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="header_bottom">
 
   <header class="region region-navigation header_fixed"<?php //print $attributes; ?>>
     <?php if ($content_attributes): ?><div class="header_fixed_inner navbar-default"<?php //print $content_attributes; ?>><?php endif; ?>
-    <div id="fixed-navbar">
-    <div class="navbar-header col-md-2 col-sm-0 col-xs-12">
+    <div class="navbar-header col-md-2 hidden-sm col-xs-12">
       <?php if ($page['primary_nav'] || $page['secondary_nav'] || $content): ?>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
@@ -71,7 +71,7 @@
       </div>
     <?php endif; ?>
     <?php if ($content_attributes): ?></div><?php endif; ?>
-    </div>
   </header>
+</div>
 </div>
 <?php endif; ?>

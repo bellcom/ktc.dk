@@ -418,7 +418,6 @@ function indholdsliste_m_filter_views_default_views() {
     'forum_post' => 'forum_post',
     'document' => 'document',
     'hearing' => 'hearing',
-    'hearing_responses' => 'hearing_responses',
     'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -613,7 +612,6 @@ function indholdsliste_m_filter_views_default_views() {
     'forum_post' => 'forum_post',
     'document' => 'document',
     'hearing' => 'hearing',
-    'hearing_responses' => 'hearing_responses',
     'os2web_base_news' => 'os2web_base_news',
   );
   $handler->display->display_options['allow']['use_pager'] = 0;

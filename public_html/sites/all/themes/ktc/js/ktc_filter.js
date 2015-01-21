@@ -111,16 +111,19 @@
       load_content();
     }
 
-    $('.filter-foldin').click(function() {
-      if ($(this).closest('.pane-content').css('display') == 'block') {
-        $(this).closest('.pane-content').css('display','none');
-        $(this).closest('.pane-views-panes').find('.filter-foldout').css('display', 'block');
+    $('.filter-fold').click(function() {
+      if ($(this).hasClass('filter-foldin')) {
+        $(this).closest('.pane-views-panes').find('.pane-content').css('display', 'none');
+        $(this).removeClass('filter-foldin');
+        $(this).addClass('filter-foldout');
+      }
+      else {
+        $(this).closest('.pane-views-panes').find('.pane-content').css('display','block');
+        $(this).removeClass('filter-foldout');
+        $(this).addClass('filter-foldin');
       }
     });
-    $('.filter-foldout').click(function() {
-      $(this).closest('.pane-views-panes').find('.pane-content').css('display','block');
-      $(this).css('display', 'none');
-    });
+
     $('.view-id-arrangement.view-display-id-panel_pane_1 .calendar-calendar table.mini td.mini a').click(function(event) {
       var date = $(this).attr('href').split('/');
       date = date[date.length-1];

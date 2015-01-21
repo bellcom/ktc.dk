@@ -259,3 +259,31 @@ a {
   background-color: #fff;
   overflow: hidden;
 }
+
+.view-bruger {
+  .title-left {
+    .title-left(@brand-red);
+  }
+}
+.view-ktc {
+  .title-left {
+    .title-left(@brand-darkgreen);
+  }
+}
+.view-netvaerk {
+  .title-left {
+    .title-left(@brand-gold);
+  }
+}
+.view-teknik-miljoe {
+  .title-left {
+    .title-left(@brand-blue-icon);
+  }
+}
+.title-left(@bg-color) {
+  display: inline-block;
+  background-color: @bg-color;
+  width: 11px;
+  height: 35px;
+  vertical-align: middle;
+}

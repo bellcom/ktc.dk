@@ -3,7 +3,7 @@
   <div class="margin-bottom-20 col-md-12 col-sm-12 col-xs-12">
     <div class="">
       <?php if (isset($group_info)) : ?>
-        <i class="icon-group-<?php print $group_info['class']; ?>"></i><h6 class="<?php print $group_info['class']; ?>"><?php print l($group_info['name'], 'node/' . $group_info['gid']); ?></h6>
+        <h6 class="<?php print $group_info['class']; ?>"><i class="icon-group-<?php print $group_info['class']; ?>"></i><?php print l($group_info['name'], 'node/' . $group_info['gid']); ?></h6>
         <i class="icon-locker"></i>
       <?php endif;?>
       <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
@@ -46,7 +46,7 @@
       <span><a href="<?php global $base_url; print $base_url . $node_url; ?>#comments"><i class="icon-comment"></i>  <?php print $num_comments; ?></a></span>
       <span class="span-right"><i class="icon-statistics"></i>  <?php print $statistics_count; ?></span>
     </div>
-    <div class="col-md-6 col-sm-6 col-xs-6 right"><i class="node-type"></i><?php print node_type_get_name($type); ?></div>
+    <div class="col-md-6 col-sm-6 col-xs-6 right"><i class="node-type-<?php print $type; ?>"></i><?php print node_type_get_name($type); ?></div>
   </div>
   <?php endif; ?>
 

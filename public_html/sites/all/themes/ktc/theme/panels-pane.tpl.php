@@ -29,7 +29,7 @@
   <?php if ($title): ?>
     <h3<?php print $title_attributes; ?>><?php print $title; ?></h3>
     <?php if(isset($panel_is_filter) && $panel_is_filter): ?>
-      <div class="filter-foldout"> + </div>
+      <div class="filter-foldin filter-fold"> - </div>
     <?php endif; ?>
   <?php endif; ?>
   <?php print render($title_suffix); ?>

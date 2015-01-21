@@ -14,6 +14,18 @@
     .pane-title {
       .filter-title();
     }
+    &.pane-ktc-related-links-related-links-block {
+      h3.pane-title {
+        background-color: @brand-gold;
+      }
+      ul {
+        padding-left: 15px;
+        li {
+          list-style: none;
+          margin-bottom: 8px;
+        }
+      }
+    }
     .pane-content {
       .pane-content();
 
@@ -27,22 +39,20 @@
         //font-weight: bold;
         margin-bottom: 3px;
       }
-      .filter-foldin {
-        cursor: pointer;
-        text-align: right;
-        position: absolute;
-        top: -40px;
-        right: 15px;
-      }
     }
   }
   .filter-foldout {
+    .sprite(@ikon-pilgrey);
+  }
+  .filter-foldin {
+    .sprite(@ikon-pilgrey-ned);
+  }
+  .filter-fold {
     cursor: pointer;
     text-align: right;
     position: absolute;
-    top: 3px;
-    right: 15px;
-    display: none;
+    top: 5px;
+    right: 5px;
   }
   ul.nav-tabs {
     border-bottom: none;
