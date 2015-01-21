@@ -243,6 +243,9 @@
       .view-comments-in-teaser {
         padding-top: 10px;
         .left {
+          @media (min-width: 992px) {
+            padding-left: 10px;
+          }
           padding-left: 0px;
           .user-picture {
             border: 2px solid #fff;
@@ -258,8 +261,11 @@
         }
         .node-teaser-hr-inner {
           border-bottom: 2px solid #fff;
-          margin-top: 10px;
+          padding-top: 10px;
           margin-bottom: 10px;
+          margin-left: 15px;
+          margin-right: 15px;
+          clear: both
         }
         .views-row-last {
           .node-teaser-hr-inner {
