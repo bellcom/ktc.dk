@@ -107,7 +107,7 @@ function ktc_views_views_default_views() {
   [subject]
  [comment_body]
   </div>
- <div class="node-teaser-hr-inner clearfix col-md-12 col-sm-12 col-xs-12"></div>
+ <div class="node-teaser-hr-inner clearfix"></div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sorteringskriterie: Kommentar: Oprettelsesdato */
@@ -164,7 +164,7 @@ function ktc_views_views_default_views() {
   [subject]
  [comment_body]
   </div>
- <div class="node-teaser-hr-inner clearfix col-md-12 col-sm-12 col-xs-12"></div>
+ <div class="node-teaser-hr-inner clearfix"></div>
 </div>'),
     t('Alle'),
     t('Block'),
@@ -1059,8 +1059,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="filter-foldin"> - </div>
-<div class="col-md-12 col-sm-12 col-xs-12">
+  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alt</div>
 </div>
 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -1119,8 +1118,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="filter-foldin"> - </div>
-<div class="col-md-12 col-sm-12 col-xs-12">
+  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alt</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -1236,8 +1234,7 @@ function ktc_views_views_default_views() {
     t('<h2>Mine netværk</h2>'),
     t('Mine netværk'),
     t('KTC users filter groups'),
-    t('<div class="filter-foldin"> - </div>
-<div class="col-md-12 col-sm-12 col-xs-12">
+    t('<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alt</div>
 </div>
 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -1247,8 +1244,7 @@ function ktc_views_views_default_views() {
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="gid-[nid]" data-filter="[nid]" name="filter-gid">[title]</div>
 </div>'),
     t('Nyt indhold filtrer grupper'),
-    t('<div class="filter-foldin"> - </div>
-<div class="col-md-12 col-sm-12 col-xs-12">
+    t('<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alt</div>
 </div>'),
     t('Blok'),
@@ -1386,8 +1382,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="filter-foldin"> - </div>
-<div class="col-md-6 col-sm-12 col-xs-12">
+  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-6 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -1510,8 +1505,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="filter-foldin"> - </div>
-<div class="col-md-12 col-sm-12 col-xs-12">
+  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -1630,8 +1624,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="filter-foldin"> - </div>
-<div class="col-md-12 col-sm-12 col-xs-12">
+  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -1695,8 +1688,7 @@ function ktc_views_views_default_views() {
     t('Sortér efter'),
     t('Stigende'),
     t('Faldende'),
-    t('<div class="filter-foldin"> - </div>
-<div class="col-md-6 col-sm-12 col-xs-12">
+    t('<div class="col-md-6 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
 </div>'),
     t('Overordnet element'),
@@ -1709,8 +1701,7 @@ function ktc_views_views_default_views() {
     t('Term first level'),
     t('View panes'),
     t('Term first level with chosen ids'),
-    t('<div class="filter-foldin"> - </div>
-<div class="col-md-12 col-sm-12 col-xs-12">
+    t('<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
 </div>'),
     t('<div class="col-md-12 col-sm-12 col-xs-12">
@@ -1828,8 +1819,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="filter-foldin"> - </div>
-<div class="col-md-6 col-sm-12 col-xs-12">
+  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-6 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -2018,8 +2008,7 @@ function ktc_views_views_default_views() {
     t('Group node from OG membership'),
     t('View panes'),
     t('Content types in group'),
-    t('<div class="filter-foldin"> - </div>
-<div class="col-md-6 col-sm-12 col-xs-12">
+    t('<div class="col-md-6 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
 </div>'),
     t('<div class="col-md-6 col-sm-12 col-xs-12">
