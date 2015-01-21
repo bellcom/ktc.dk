@@ -6692,7 +6692,7 @@ h6 {
   font-weight: bold;
 }
 body {
-  background-color: #e9edee;
+  background-color: #fff;
 }
 body .form-control {
   color: black;
@@ -7033,7 +7033,7 @@ fieldset[disabled] .btn-blacknblue.active {
 }
 .header-region .top_header .region-header .logo img,
 .header-region .top_header .header_top .logo img {
-  max-width: 90%;
+  max-width: 157px;
 }
 .header-region .top_header .header_top_content {
   margin-top: 13px;
@@ -7076,21 +7076,16 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .header_top_content .header-add-content ul.create_content li:hover {
   background-color: #e9edee;
 }
-.header-region .navigation {
-  overflow: hidden;
-}
 @media (max-width: 767px) {
   .header-region .navigation {
     background-color: #293134;
   }
 }
-.header-region .navigation .header_bottom {
-  overflow: hidden;
-}
-@media (min-width: 78px) {
+@media (min-width: 784px) {
   .header-region .navigation .header_bottom {
     margin-left: -32px;
     margin-right: -32px;
+    margin-top: -10px;
   }
 }
 @media (max-width: 783px) {
@@ -7132,15 +7127,14 @@ fieldset[disabled] .btn-blacknblue.active {
 }
 @media all and (min-width: 751px) {
   .header-region .navigation .header_bottom .header_fixed .header_main_menu {
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-top: 12px;
   }
 }
 @media all and (min-width: 768px) {
   .header-region .navigation .header_bottom .header_fixed .new_user_link {
     position: absolute;
     right: 5px;
-    top: 35px;
+    top: 15px;
     padding: 10px;
     z-index: 900;
   }
@@ -7156,7 +7150,6 @@ fieldset[disabled] .btn-blacknblue.active {
 }
 .header-region .navigation .header_bottom .header_fixed .header-user {
   position: relative;
-  margin-top: 20px;
 }
 .header-region .navigation .header_bottom .header_fixed .header-user .header-user-name {
   position: relative;
@@ -7168,7 +7161,7 @@ fieldset[disabled] .btn-blacknblue.active {
 }
 .header-region .navigation .header_bottom .header_fixed .header-user .header-user-name a {
   color: #e75311;
-  font-size: 19px;
+  font-size: 18px;
 }
 .header-region .navigation .header_bottom .header_fixed .header-user .header-user-name .icon-arrow-down {
   background-image: url(../images/sprites.png);
@@ -8119,7 +8112,7 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   border-top: 10px solid #d5dcde;
 }
 .region_footer.footer_1 .footer_1 {
-  background-color: #fff;
+  background-color: #e9edee;
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -9060,6 +9053,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   border-radius: 50%;
   border: 3px solid #fff;
 }
+.node-teaser.ktc-red {
+  background-color: #fff5f2;
+}
 .node-teaser.ktc-red .icon-group-ktc-red {
   display: inline-block;
   background-image: url(../images/sprites.png);
@@ -9076,6 +9072,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   color: #d54621;
   font-size: 16px;
   font-weight: 600;
+}
+.node-teaser.ktc-yellow {
+  background-color: #fff9e2;
 }
 .node-teaser.ktc-yellow .icon-group-ktc-yellow {
   display: inline-block;
@@ -9094,6 +9093,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   font-size: 16px;
   font-weight: 600;
 }
+.node-teaser.ktc-blue {
+  background-color: #e8f8ff;
+}
 .node-teaser.ktc-blue .icon-group-ktc-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
@@ -9110,6 +9112,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   color: #1f9bd7;
   font-size: 16px;
   font-weight: 600;
+}
+.node-teaser.ktc-green {
+  background-color: #effff1;
 }
 .node-teaser.ktc-green .icon-group-ktc-green {
   display: inline-block;
@@ -9208,6 +9213,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   height: 16px;
   vertical-align: top;
   margin-right: 5px;
+}
+.node-type-group .node-teaser_comments {
+  background-color: #fff;
 }
 .node-type-group .node-teaser_comments .node-teaser-hr {
   margin-bottom: 10px;

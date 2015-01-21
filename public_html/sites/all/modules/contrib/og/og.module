@@ -3503,7 +3503,8 @@ function og_node_create_links($group_type, $gid, $field_name, $destination = NUL
   foreach ($names as $type => $name) {
     // theme_item_list's 'data' items isn't a render element, so use l().
     // http://drupal.org/node/891112
-    $items[] = array('data' => l($name, 'node/add/' . str_replace('_', '-', $type), $options));
+    $items[] = array('data' => '<a href="' . url('node/add/' . str_replace('_', '-', $type), $options) . '">' .
+                     '<i class="group-add-' . $type . '"></i>' . $name . '</a>', 'class' => 'col-md-4 col-sm-12 col-xs-12');
   }
 
   $element = array();

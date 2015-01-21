@@ -81,6 +81,9 @@ function ktc_preprocess_page(&$variables) {
   if (isset($variables['user']->uid)) {
     $user = user_load($variables['user']->uid);
     if ($name = field_get_items('user', $user, 'field_navn')) {
+      if (strlen($name[0]['value']) > 13) {
+        $name[0]['value'] = substr($name[0]['value'], 0, 12) . '...';
+      }
       $variables['user_name'] = l($name[0]['value'], 'user/' . $user->uid, array('attributes' => array('class' => array('user-name'))));
     }
     else {
