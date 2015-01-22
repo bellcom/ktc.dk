@@ -8,13 +8,13 @@
  * This funcition calls all nessecary functions in order to update groups.
  */
 function ktc_crm_group_update_groups($lastupdate) {
+  $grouproles = ktc_crm_fetch_grouproles();
+  ktc_crm_group_update_userroles($grouproles);
+
   $groups = ktc_crm_fetch_groupmembers(array('UpdatedSince' => $lastupdate));
   $group_members = ktc_crm_group_create_array($groups);
   ktc_crm_group_parse_memberships($group_members);
   ktc_crm_group_remove_old_memberships($group_members);
-
-  $grouproles = ktc_crm_fetch_grouproles();
-  ktc_crm_group_update_userroles($grouproles);
 }
 
 /**
