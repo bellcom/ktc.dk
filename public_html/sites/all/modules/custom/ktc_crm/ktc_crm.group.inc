@@ -5,10 +5,24 @@
  */
 
 /**
+ * This funcition calls all nessecary functions in order to update groups.
+ */
+function ktc_crm_group_update_groups($lastupdate) {
+  $groups = ktc_crm_fetch_groupmembers(array('UpdatedSince' => $lastupdate));
+  $group_members = ktc_crm_group_create_array($groups);
+  ktc_crm_group_parse_memberships($group_members);
+  ktc_crm_group_remove_old_memberships($group_members);
+
+  $grouproles = ktc_crm_fetch_grouproles();
+  ktc_crm_group_update_userroles($grouproles);
+}
+
+/**
  * Implements hook_og_membership_delete().
  */
 function ktc_crm_og_membership_delete($og_membership) {
-  if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_delete_membership') {
+  if ((isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_delete_membership') ||
+    (isset($_GET['q']) && $_GET['q'] == 'batch')) {
     // Send changes for membership to CRM.
     if ($crm_uuid = _ktc_crm_get_uuid('og_membership', $og_membership)) {
       ktc_crm_group_membership_delete($crm_uuid);
@@ -37,7 +51,8 @@ function ktc_crm_og_membership_insert($og_membership) {
  * Implements hook_og_role_grant().
  */
 function ktc_crm_og_role_grant($group_type, $gid, $uid, $rid) {
-  if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_edit_membership') {
+  if ((isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_add_users') ||
+    (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_edit_membership')) {
     $og_membership = og_get_membership($group_type, $gid, 'user', $uid);
 
     _ktc_crm_group_grant_user_role($og_membership, $rid);

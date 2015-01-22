@@ -1,7 +1,5 @@
 <?php
 
-_ktc_crm_group_get_group_info();
-return;
 //$groups = ktc_crm_fetch_groups();
 
 

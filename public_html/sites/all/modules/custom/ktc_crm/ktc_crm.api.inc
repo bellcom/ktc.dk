@@ -144,14 +144,12 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
   if ($crm_uuid_field = field_get_items('user', $account, 'field_crm_uuid')) {
     $user_uuid = strtolower($crm_uuid_field[0]['value']);
   }
-  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($user_uuid, 1));
 
   $subscriptions = ktc_crm_fetch_subscriptions();
 
   $user_subscriptions = array();
 
   foreach ($subscriptions->Results->SubscriptionDto as $subscription) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($subscription->RecipientId, 1));
     if ($subscription->RecipientId == $user_uuid) {
       $user_subscriptions[] = $subscription;
     }
@@ -172,6 +170,11 @@ function ktc_crm_fetch_groups($options = array()) {
     $groupservice = new \KTC\GroupService\GroupService(array(), $wsdl_url);
 
     $request = new \KTC\GroupService\Request();
+
+    foreach ($options as $key => $value) {
+      $request->$key = $value;
+    }
+
     $retrivegroups = new \KTC\GroupService\RetrieveGroups($request);
 
     $result = $groupservice->RetrieveGroups($retrivegroups);
@@ -190,7 +193,7 @@ function ktc_crm_fetch_groups($options = array()) {
 /**
  * Fetch group userroles from the webservice.
  */
-function ktc_crm_fetch_grouproles() {
+function ktc_crm_fetch_grouproles($options = array()) {
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
@@ -199,6 +202,11 @@ function ktc_crm_fetch_grouproles() {
     $groupservice = new \KTC\GroupService\GroupService(array(), $wsdl_url);
 
     $request = new \KTC\GroupService\Request();
+
+    foreach ($options as $key => $value) {
+      $request->$key = $value;
+    }
+
     $retrivegroups = new \KTC\GroupService\RetrieveGroupRoles($request);
 
     $result = $groupservice->RetrieveGroupRoles($retrivegroups);
@@ -229,7 +237,6 @@ function ktc_crm_fetch_groupmembers() {
     $retrivegroups = new \KTC\GroupService\RetrieveGroupMembers($request);
 
     $result = $groupservice->RetrieveGroupMembers($retrivegroups);
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($result, 1));
 
     if (is_object($result) && isset($result->RetrieveGroupMembersResult)) {
       return $result->RetrieveGroupMembersResult;
