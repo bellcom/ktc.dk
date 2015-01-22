@@ -1,0 +1,155 @@
+<?php
+/**
+ * @file
+ * Code for the KTC autocomplete module.
+ */
+
+/**
+ * Implements hook_form_ID_alter().
+ */
+function ktc_autocomplete_form_og_ui_add_users_alter(&$form, &$form_state, $form_id) {
+  $form['og_user']['name']['#title'] = t('Bruger');
+  $form['og_user']['name']['#autocomplete_path'] = 'ktc_autocomplete/user/user/name';
+}
+/**
+ * Implements hook_form_ID_alter().
+ */
+function ktc_autocomplete_form__og_invite_form_alter(&$form, &$form_state, $form_id) {
+  $form['invitee']['#autocomplete_path'] = 'ktc_autocomplete/user/user/name';
+}
+/**
+ * Implements hook_menu().
+ */
+function ktc_autocomplete_menu() {
+  $items['ktc_autocomplete/%/%/%'] = array(
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+    'page arguments' => array(1,2,3,4),
+    'page callback' => 'ktc_autocomplete_autocomplete',
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * KTC autocomplete path callback function.
+ *
+ * @param entity $reference_type
+ *   entity type
+ * @param string $bundle
+ *   bundle in db
+ * @param string $key_field
+ *   the field that is returned to the form on submission
+ * @param string $string
+ *   the string to search for
+ */
+function ktc_autocomplete_autocomplete($reference_type, $bundle, $key_field, $string) {
+  $string = db_like($string);
+
+  $limit = 0;
+
+  switch ('contains') {
+    case 'begins_with':
+      $string = $string . '%';
+      break;
+
+    case 'contains':
+      $string = '%' . $string . '%';
+      break;
+
+  }
+
+  switch ($reference_type) {
+    case 'user':
+      // TODO : move these two lists to an admin config form,
+      // to make them configurable on an entity_type-bundle basis.
+      $search_fields = array('field_navn', 'mail', 'field_employer_name');
+      $show_fields = array('field_navn', 'field_employer_name');
+      // $show_fields = '[user:field_navn]';
+
+      $join = '';
+      $where = '(0';
+      $concat = array();
+      foreach ($search_fields as $field) {
+        if (in_array($field, array('name', 'mail'))) {
+          $where .= ' or ' . db_escape_field($field) . ' like \'' . $string . '\'';
+        }
+        else {
+          // TODO : this works for fields having 'value'
+          // column only - check field type here.
+          $join .= ' left join field_data_' . db_escape_table($field) . ' on field_data_' . db_escape_field($field) . '.entity_id=uid and field_data_' . db_escape_table($field) . '.entity_type=\'user\'';
+          $where .= ' or field_data_' . db_escape_table($field) . '.' . db_escape_field($field) . '_value like \'' . $string . '\'';
+
+        }
+      }
+
+      $where .= ')';
+
+      if (is_array($show_fields)) {
+        foreach ($show_fields as $field) {
+          if (in_array($field, array('name', 'mail'))) {
+            $concat[] = $field;
+          }
+          else {
+            $concat[] = 'field_data_' . db_escape_table($field) . '.' . db_escape_field($field) . '_value';
+          }
+        }
+        $sql = 'select users.uid as id, ' . db_escape_field($key_field) . ' as k, concat_ws(\',  \', ' . implode(',', $concat) . ') as title from users ' . $join . ' where ' . $where;
+      }
+      else {
+        $sql = 'select users.uid as id, ' . db_escape_field($key_field) . ' as k from users ' . $join . ' where ' . $where;
+      }
+
+      if ($limit > 0) {
+        $sql .= ' limit ' . $limit;
+      }
+
+      // $sql = 'select concat(name, \' [uid:\', uid, \']\') as id,
+      // concat(' . implode(',\' - \',', $concat) . ')
+      // as title from users ' . $join . ' where ' . $where . ' limit ' . $limit;
+      // {"lars [uid:6]":"\u003Cdiv class=\u0022reference-autocomplete\u0022\u003Elars\u003C\/div\u003E"}
+
+      break;
+
+    case 'node':
+      $result = db_query('select nid as id, title as title from node where title like :q', array(':q' => $string . '%'));
+      break;
+
+  }
+
+  try {
+    if (isset($_GET['debug'])) {
+      print ($sql);
+    }
+    $result = db_query($sql);
+  }
+  catch(Exception $e) {
+    $result = array();
+    die($sql . ' - ' . $e);
+  }
+
+  $items = array();
+  foreach ($result as $obj) {
+
+    if (is_array($show_fields)) {
+      $title = $obj->title;
+    }
+    else {
+      $entities = entity_load($reference_type, array($obj->id));
+      $entity = $entities[$obj->id];
+      $data = array($reference_type => $entity);
+      $title = token_replace($show_fields, $data);
+
+    }
+    if (!trim($title)) {
+      $title = $obj->k;
+    }
+
+    $items[$obj->k] = check_plain($title);
+
+  }
+
+  drupal_json_output($items);
+  exit();
+}
