@@ -104,6 +104,9 @@ function ktc_hearing_theme() {
     'block_hearing_unresponded' => array(
       'template' => 'block-hearing-unresponded',
     ),
+    'block_hearing_unresponded_sectionpage' => array(
+      'template' => 'block-hearing-unresponded-sectionpage',
+    ),
     'hearing_answer' => array(
       'template' => 'hearing-answer',
     ),
@@ -292,6 +295,10 @@ function ktc_hearing_block_info() {
     'info' => t('Users unresponded hearings'),
     'cache' => DRUPAL_NO_CACHE,
   );
+  $blocks['ktc_hearing_unresponded_section'] = array(
+    'info' => t('Users unresponded hearings (for sectionpage)'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
   $blocks['ktc_hearing_set_status_form'] = array(
     'info' => t('Set hearing status'),
     'cache' => DRUPAL_NO_CACHE,
@@ -311,6 +318,13 @@ function ktc_hearing_block_view($delta = '') {
 
       $block['subject'] = t('Dine høringer der mangler svar');
       $block['content'] = theme('block_hearing_unresponded', $vars);
+      break;
+
+    case 'ktc_hearing_unresponded_section':
+      $vars['unresponded_hearings'] = _ktc_hearing_get_unresponded();
+
+      $block['subject'] = t('Dine høringer der mangler svar');
+      $block['content'] = theme('block_hearing_unresponded_sectionpage', $vars);
       break;
 
     case 'ktc_hearing_set_status_form':

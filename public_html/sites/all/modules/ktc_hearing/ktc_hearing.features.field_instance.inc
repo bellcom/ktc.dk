@@ -1211,6 +1211,7 @@ function ktc_hearing_field_default_field_instances() {
   $field_instances['node-hearing-field_responsible_admin'] = array(
     'bundle' => 'hearing',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1250,9 +1251,14 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_responsible_admin',
-    'label' => 'Ansvarlig admin',
+    'label' => 'Ansvarlig tovholder',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1272,6 +1278,7 @@ function ktc_hearing_field_default_field_instances() {
   $field_instances['node-hearing-field_responsible_foreman'] = array(
     'bundle' => 'hearing',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1311,9 +1318,14 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_responsible_foreman',
-    'label' => 'Ansvarlig forman',
+    'label' => 'Ansvarlig formand',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2738,8 +2750,8 @@ function ktc_hearing_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Ansvarlig admin');
-  t('Ansvarlig forman');
+  t('Ansvarlig formand');
+  t('Ansvarlig tovholder');
   t('Arkiveret');
   t('Besked');
   t('Beskrivelse');
