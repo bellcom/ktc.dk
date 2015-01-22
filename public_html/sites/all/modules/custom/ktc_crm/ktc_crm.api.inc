@@ -229,6 +229,7 @@ function ktc_crm_fetch_groupmembers() {
     $retrivegroups = new \KTC\GroupService\RetrieveGroupMembers($request);
 
     $result = $groupservice->RetrieveGroupMembers($retrivegroups);
+    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($result, 1));
 
     if (is_object($result) && isset($result->RetrieveGroupMembersResult)) {
       return $result->RetrieveGroupMembersResult;
