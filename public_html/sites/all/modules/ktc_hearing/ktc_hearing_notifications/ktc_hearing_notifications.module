@@ -44,6 +44,51 @@ function ktc_hearing_notifications_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
+ * Implements hook_cron().
+ */
+function ktc_hearing_notifications_cron() {
+  // Only notify once a day.
+  $cron_time = variable_get('ktc_hearing_notifications_cron_time', 1);
+
+  $time_now = date('Ymd');
+
+  if ($cron_time < $time_now) {
+    $due_days = array(2, 12);
+
+    foreach ($due_days as $days) {
+      $hearings = _ktc_hearing_notifications_get_hearings_due($days);
+
+      foreach ($hearings as $hearing_nid) {
+        ktc_hearing_notifications_notify_users('notify', node_load($hearing_nid));
+      }
+    }
+  }
+
+  variable_set('ktc_hearing_notifications_cron_time', $time_now);
+}
+
+/**
+ * Get a list of hearings due in a specified number of days.
+ */
+function _ktc_hearing_notifications_get_hearings_due($days) {
+  $date = date('Y-m-d', strtotime('+' . $days . 'day')) . '%';
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'hearing')
+    ->fieldCondition('field_status', 'tid', KTC_HEARING_STATUS_OPEN)
+    ->fieldCondition('field_attendee_deadlines', 'value', $date, 'LIKE');
+  $result = $query->execute();
+
+
+  if (isset($result['node'])) {
+    return array_keys($result['node']);
+  }
+
+  return array();
+}
+
+/**
  * Implements hook_node_presave().
  */
 function ktc_hearing_notifications_node_presave($node) {
