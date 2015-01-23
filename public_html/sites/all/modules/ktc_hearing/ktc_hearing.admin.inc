@@ -56,19 +56,26 @@ function ktc_hearing_permission_settings() {
   );
 
   $ops = array(
-    'new',
+    'KTC_HEARING_STATUS_OPEN' => 'Ny',
+    'KTC_HEARING_STATUS_RECAP' => 'Sammenfatning',
+    'KTC_HEARING_STATUS_APPROVAL' => 'Godkendelse',
+    'KTC_HEARING_STATUS_APPROVED' => 'Godekendt',
   );
 
   foreach ($attendee_roles as $role) {
     $form['mail_templates'][$role] = array(
       '#type' => 'fieldset',
       '#title' => $role,
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
     );
-    foreach ($ops as $op) {
+
+    foreach ($ops as $op => $title) {
 
       $form['mail_templates'][$role]['ktc_hearing_mail_subj_' . $op . '_' . $role] = array(
         '#type' => 'textfield',
         '#default_value' => variable_get('ktc_hearing_mail_subj_' . $op . '_' . $role, ''),
+        '#prefix' => '<b>' . $title . '</b>',
       );
 
       $form['mail_templates'][$role]['ktc_hearing_mail_body_' . $op . '_' . $role] = array(

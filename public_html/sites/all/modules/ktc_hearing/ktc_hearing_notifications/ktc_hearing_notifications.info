@@ -1,0 +1,3 @@
+name = KTC Hearing notifications
+descriptions = Notification module for KTC Hearings
+core = 7.x

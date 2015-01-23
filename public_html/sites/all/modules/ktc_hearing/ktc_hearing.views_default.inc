@@ -270,11 +270,10 @@ function ktc_hearing_views_default_views() {
     'link' => 1,
   );
   $handler->display->display_options['fields']['field_chairman']['delta_offset'] = '0';
-  /* Felt: Indhold: Ansvarlig forman */
+  /* Felt: Indhold: Ansvarlig formand */
   $handler->display->display_options['fields']['field_responsible_foreman']['id'] = 'field_responsible_foreman';
   $handler->display->display_options['fields']['field_responsible_foreman']['table'] = 'field_data_field_responsible_foreman';
   $handler->display->display_options['fields']['field_responsible_foreman']['field'] = 'field_responsible_foreman';
-  $handler->display->display_options['fields']['field_responsible_foreman']['label'] = 'Ansvarlig formand';
   $handler->display->display_options['fields']['field_responsible_foreman']['element_class'] = 'col-md-6 col-sm-6 col-xm-12';
   $handler->display->display_options['fields']['field_responsible_foreman']['element_label_class'] = 'col-md-6 col-sm-6 col-xm-12';
   $handler->display->display_options['fields']['field_responsible_foreman']['element_wrapper_class'] = 'clearfix ';
@@ -292,7 +291,7 @@ function ktc_hearing_views_default_views() {
     'link' => 1,
   );
   $handler->display->display_options['fields']['field_coordinator']['delta_offset'] = '0';
-  /* Felt: Indhold: Ansvarlig admin */
+  /* Felt: Indhold: Ansvarlig tovholder */
   $handler->display->display_options['fields']['field_responsible_admin']['id'] = 'field_responsible_admin';
   $handler->display->display_options['fields']['field_responsible_admin']['table'] = 'field_data_field_responsible_admin';
   $handler->display->display_options['fields']['field_responsible_admin']['field'] = 'field_responsible_admin';
@@ -347,7 +346,7 @@ function ktc_hearing_views_default_views() {
     t('Formand'),
     t('Ansvarlig formand'),
     t('Tovholder'),
-    t('Ansvarlig admin'),
+    t('Ansvarlig tovholder'),
     t('Deltagere'),
     t('Høring deltagere/datoer'),
   );

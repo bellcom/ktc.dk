@@ -15,6 +15,7 @@
   </head>
 
   <body>
+    <?php if ($php_script): ?>
     <script type="text/php">
     // This is php code, eval'd by dompdf. Generating a footer on each page,
     // with specific text and a pager.
@@ -36,7 +37,7 @@
       // and {PAGE_NUM} is translated to a single digit:
       $width = Font_Metrics::get_text_width('Side x/x', $font, $size);
 
-      $pdf->page_text($w - $width - $margin, $y, $text, $font, $size, $color);
+      $pdf->page_text($w - $width - $margin, $y, $text, $font, $size, array(0, 0, 0));
 
       $text = "KTC - Kommunalteknisk Chefforening | Sekretariatet | Papirfabrikken 24 | 8600 Silkeborg";
 
@@ -48,6 +49,7 @@
     }
 
     </script>
+    <?php endif;?>
     <img src="<?php print $logo_path; ?>">
     <h1><?php print $hearing_node->title; ?></h1>
 

@@ -11,6 +11,7 @@ dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = file
+dependencies[] = hs_taxonomy
 dependencies[] = ktc_content_types
 dependencies[] = link
 dependencies[] = list
