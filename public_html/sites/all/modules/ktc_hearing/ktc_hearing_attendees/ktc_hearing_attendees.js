@@ -66,6 +66,14 @@ jQuery(document).ready(function($){
             $.each(data, function (field, attendees) {
               $.each(attendees, function (i, val) {
 
+                // Special conditions for responsible-admin/responsible-forman
+                // fields.
+                if (field == 'responsible-admin' || field == 'responsible-foreman') {
+                  if ($('#edit-field-'+field+' .chosen-entityreference-container select').val() !== null) {
+                    return;
+                  }
+                }
+
                 $('#edit-field-'+field+' .chosen-entityreference-container select').append(
                   $('<option/>', {
                     value: i,
