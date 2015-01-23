@@ -8,12 +8,21 @@
  * This funcition calls all nessecary functions in order to update groups.
  */
 function ktc_crm_group_update_groups($lastupdate) {
+  $logger = KtcCrmLogger::getInstance();
+  $logger->log->addInfo('cron', 'start group sync');
+
   $grouproles = ktc_crm_fetch_grouproles();
+
+  $logger->log->addInfo('cron group', 'update userroles');
   ktc_crm_group_update_userroles($grouproles);
 
+  $logger->log->addInfo('cron group', 'update memberhips');
   $groups = ktc_crm_fetch_groupmembers(array('UpdatedSince' => $lastupdate));
+
   $group_members = ktc_crm_group_create_array($groups);
   ktc_crm_group_parse_memberships($group_members);
+
+  $logger->log->addInfo('cron group', 'remove old memberships');
   ktc_crm_group_remove_old_memberships($group_members);
 }
 
@@ -23,6 +32,9 @@ function ktc_crm_group_update_groups($lastupdate) {
 function ktc_crm_og_membership_delete($og_membership) {
   if ((isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_delete_membership') ||
     (isset($_GET['q']) && $_GET['q'] == 'batch')) {
+    $logger = KtcCrmLogger::getInstance();
+    $logger->log->addInfo('group delete membership', array('crm_uuid' => $crm_uuid));
+
     // Send changes for membership to CRM.
     if ($crm_uuid = _ktc_crm_get_uuid('og_membership', $og_membership)) {
       ktc_crm_group_membership_delete($crm_uuid);
@@ -37,7 +49,11 @@ function ktc_crm_og_membership_insert($og_membership) {
   if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_add_users') {
     // If a users is added to a group send this info to CRM.
     if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
+      $logger = KtcCrmLogger::getInstance();
+
       $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
+
+      $logger->log->addInfo('group add membership', array('crm_uuid' => $crm_uuid));
 
       // Set the membership uuid on the og_membership entity.
       $og_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
@@ -53,6 +69,14 @@ function ktc_crm_og_membership_insert($og_membership) {
 function ktc_crm_og_role_grant($group_type, $gid, $uid, $rid) {
   if ((isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_add_users') ||
     (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_edit_membership')) {
+
+    $logger = KtcCrmLogger::getInstance();
+    $logger->log->addInfo('group grant role', array(
+      'uid' => $uid,
+      'gid' => $gid,
+      'rid' => $rid,
+    ));
+
     $og_membership = og_get_membership($group_type, $gid, 'user', $uid);
 
     _ktc_crm_group_grant_user_role($og_membership, $rid);
@@ -64,6 +88,13 @@ function ktc_crm_og_role_grant($group_type, $gid, $uid, $rid) {
  */
 function ktc_crm_og_role_revoke($group_type, $gid, $uid, $rid) {
   if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_edit_membership') {
+    $logger = KtcCrmLogger::getInstance();
+    $logger->log->addInfo('group revoke role', array(
+      'uid' => $uid,
+      'gid' => $gid,
+      'rid' => $rid,
+    ));
+
     $og_membership = og_get_membership($group_type, $gid, 'user', $uid);
 
     _ktc_crm_group_revoke_user_role($og_membership, $rid);

@@ -8,6 +8,7 @@
  * Fetch all webusers from Webservice.
  */
 function ktc_crm_fetch_webusers($options = array()) {
+  $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_WEBUSER_WSDL;
@@ -25,6 +26,8 @@ function ktc_crm_fetch_webusers($options = array()) {
 
     $result = $webuser->RetrieveWebUsers($retrievewebusers);
 
+    $logger->log->addDebug('RetrieveWebUsers result', $result);
+
     $webusers = $result->RetrieveWebUsersResult->Results->WebUserDto;
 
     if ($webusers) {
@@ -38,7 +41,10 @@ function ktc_crm_fetch_webusers($options = array()) {
     }
   }
   catch (\Exception $e) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'RetrieveWebUsers',
+    ));
   }
 
   return FALSE;
@@ -48,6 +54,7 @@ function ktc_crm_fetch_webusers($options = array()) {
  * Update user in CRM.
  */
 function ktc_crm_update_user(\KTC\WebUser\WebUserDto $webuserdto) {
+  $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_WEBUSER_WSDL;
@@ -59,12 +66,17 @@ function ktc_crm_update_user(\KTC\WebUser\WebUserDto $webuserdto) {
 
     $result = $webuser->CreateUpdateWebUser($createupdate);
 
+    $logger->log->addDebug('CreateUpdateWebUser result', $result);
+
     if (is_object($result) && isset($result->CreateUpdateWebUserResult)) {
       return $result->CreateUpdateWebUserResult;
     }
   }
   catch (\Exception $e) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'CreateUpdateWebUser',
+    ));
   }
 
   return FALSE;
@@ -74,6 +86,7 @@ function ktc_crm_update_user(\KTC\WebUser\WebUserDto $webuserdto) {
  * Fetch subscriptions from Webservice.
  */
 function ktc_crm_fetch_subscriptions($options = array()) {
+  $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_SUBSCRIPTION_WSDL;
@@ -87,13 +100,18 @@ function ktc_crm_fetch_subscriptions($options = array()) {
 
     $result = $subscription->RetrieveSubscriptions($retrievesubscriptions);
 
+    $logger->log->addDebug('RetrieveSubscriptions result', $result);
+
     if (is_object($result) && isset($result->RetrieveSubscriptionsResult)) {
       return $result->RetrieveSubscriptionsResult;
     }
 
   }
   catch (\Exception $e) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'RetrieveSubscriptions',
+    ));
   }
 
   return FALSE;
@@ -106,6 +124,7 @@ function ktc_crm_fetch_subscriptions($options = array()) {
  * @todo chosen address switch is not updated in crm
  */
 function ktc_crm_update_user_subscription(\KTC\Subscription\SubscriptionDto $subscriptiondto) {
+  $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_SUBSCRIPTION_WSDL;
@@ -117,13 +136,18 @@ function ktc_crm_update_user_subscription(\KTC\Subscription\SubscriptionDto $sub
 
     $result = $subscription->CreateUpdateSubscription($createupdatesubscriptions);
 
+    $logger->log->addDebug('CreateUpdateSubscription result', $result);
+
     if (is_object($result) && isset($result->CreateUpdateSubscriptionResponse)) {
       return $result->CreateUpdateSubscriptionResponse;
     }
 
   }
   catch (\Exception $e) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'CreateUpdateSubscription',
+    ));
   }
 
   return FALSE;
@@ -162,6 +186,7 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
  * Fetch groups from the webservice.
  */
 function ktc_crm_fetch_groups($options = array()) {
+  $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
@@ -179,12 +204,17 @@ function ktc_crm_fetch_groups($options = array()) {
 
     $result = $groupservice->RetrieveGroups($retrivegroups);
 
+    $logger->log->addDebug('RetrieveGroups result', $result);
+
     if (is_object($result) && isset($result->RetrieveGroupsResult)) {
       return $result->RetrieveGroupsResult;
     }
   }
   catch (\Exception $e) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'RetrieveGroups',
+    ));
   }
 
   return FALSE;
@@ -194,6 +224,7 @@ function ktc_crm_fetch_groups($options = array()) {
  * Fetch group userroles from the webservice.
  */
 function ktc_crm_fetch_grouproles($options = array()) {
+  $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
@@ -211,12 +242,17 @@ function ktc_crm_fetch_grouproles($options = array()) {
 
     $result = $groupservice->RetrieveGroupRoles($retrivegroups);
 
+    $logger->log->addDebug('RetrieveGroupRoles result', $result);
+
     if (is_object($result) && isset($result->RetrieveGroupRolesResult)) {
       return $result->RetrieveGroupRolesResult;
     }
   }
   catch (\Exception $e) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'RetrieveGroupRoles',
+    ));
   }
 
   return FALSE;
@@ -226,6 +262,7 @@ function ktc_crm_fetch_grouproles($options = array()) {
  * Fetch group users from the webservice.
  */
 function ktc_crm_fetch_groupmembers() {
+  $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
@@ -238,12 +275,17 @@ function ktc_crm_fetch_groupmembers() {
 
     $result = $groupservice->RetrieveGroupMembers($retrivegroups);
 
+    $logger->log->addDebug('RetrieveGroupMembers result', $result);
+
     if (is_object($result) && isset($result->RetrieveGroupMembersResult)) {
       return $result->RetrieveGroupMembersResult;
     }
   }
   catch (\Exception $e) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'RetrieveGroupMembers',
+    ));
   }
 
   return FALSE;
@@ -253,6 +295,7 @@ function ktc_crm_fetch_groupmembers() {
  * Update groupmembership.
  */
 function ktc_crm_update_groupmember(\KTC\GroupService\GroupMemberDto $groupmemberdto) {
+  $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
@@ -264,12 +307,17 @@ function ktc_crm_update_groupmember(\KTC\GroupService\GroupMemberDto $groupmembe
 
     $result = $groupservice->CreateUpdateGroupMember($createupdategroupmember);
 
+    $logger->log->addDebug('CreateUpdateGroupMember result', $result);
+
     if (is_object($result) && isset($result->CreateUpdateGroupMemberResult)) {
       return $result->CreateUpdateGroupMemberResult;
     }
   }
   catch (\Exception $e) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($e, 1));
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'CreateUpdateGroupMember',
+    ));
   }
 
   return FALSE;

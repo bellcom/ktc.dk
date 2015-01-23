@@ -77,8 +77,12 @@ function ktc_crm_settings() {
  * Implements hook_cron().
  */
 function ktc_crm_cron() {
+  $logger = KtcCrmLogger::getInstance();
+  $logger->log->addInfo('cron', 'run started');
+
   $lastupdate = variable_get('ktc_crm_lastupdate');
 
+  $logger->log->addInfo('cron webuser', 'fetch webusers');
   if ($webusers = ktc_crm_fetch_webusers(array('UpdatedSince' => $lastupdate))) {
 
     foreach ($webusers as $webuserdto) {
@@ -89,6 +93,7 @@ function ktc_crm_cron() {
   ktc_crm_group_update_groups($lastupdate);
 
   variable_set('ktc_crm_lastupdate', date('Y-m-d\TH:i:s', strtotime('-1 hour')));
+  $logger->log->addInfo('cron', 'run completed');
 }
 
 /**
@@ -211,7 +216,6 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
  * Get users address.
  */
 function ktc_crm_get_user_address($user, $type) {
-
   return $type . ' Adresse...';
 }
 
@@ -235,4 +239,40 @@ function _ktc_crm_user_get_user_uuid($uid) {
     return _ktc_crm_get_uuid('user', $account);
   }
   return FALSE;
+}
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+class KtcCrmLogger {
+
+  private static $instance;
+
+  public $log;
+
+  /**
+   * Create instance of logger.
+   */
+  private function __construct() {
+    $log_path = variable_get('ktc_crm_sync_log_path', '/var/www/logs/crm_sync.log');
+    $log_level = Logger::INFO;
+
+    if (variable_get('ktc_crm_sync_log_verbose', FALSE)) {
+      $log_level = Logger::DEBUG;
+    }
+
+    $this->log = new Logger('ktc_crm_sync');
+    $this->log->pushHandler(new StreamHandler($log_path, $log_level));
+  }
+
+  /**
+   * Return instance of logger.
+   */
+  public static function getInstance() {
+    if (empty(self::$instance)) {
+      $class = __CLASS__;
+      self::$instance = new $class();
+    }
+
+    return self::$instance;
+  }
 }
