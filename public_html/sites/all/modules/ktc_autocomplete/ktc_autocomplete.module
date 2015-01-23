@@ -15,7 +15,10 @@ function ktc_autocomplete_form_og_ui_add_users_alter(&$form, &$form_state, $form
  * Implements hook_form_ID_alter().
  */
 function ktc_autocomplete_form__og_invite_form_alter(&$form, &$form_state, $form_id) {
+
   $form['invitee']['#autocomplete_path'] = 'ktc_autocomplete/user/user/name';
+  $form['#validate'][0] = 'ktc_autocomplete_form_og_invite_form_validte';
+  $form['#submit'][0] = 'ktc_autocomplete_form_og_invite_form_submit';
 }
 /**
  * Implements hook_menu().
@@ -32,6 +35,123 @@ function ktc_autocomplete_menu() {
   return $items;
 }
 
+/**
+ * Override _og_invite_form_validate().
+ */
+function ktc_autocomplete_form_og_invite_form_validte($form, &$form_state) {
+  global $user;
+
+  $group_type = $form_state['values']['group_type'];
+  $gid = $form_state['values']['gid'];
+  $invitees = explode(',', str_replace(', ', ',', $form_state['values']['invitee']));
+
+  $unrelated = array();
+  $unexisting = array();
+  $in_group = array();
+  $good = array();
+  foreach ($invitees as $invitee) {
+    if (empty($invitee)) {
+      continue;
+    }
+
+    $invitee_obj = user_load_by_name($invitee);
+    $name = $invitee_obj->name;
+    $uid = $invitee_obj->uid;
+    // Check if the user exists.
+    $exists = db_select('users', 'u')
+      ->fields('u', array('uid'))
+      ->condition('uid', $uid)
+      ->execute()
+      ->fetchField();
+    if (empty($exists)) {
+      $unexisting[] = check_plain($name);
+    }
+    // If the user exist and if needed check
+    // if it is related to the current user.
+    elseif (module_exists('user_relationships') && !og_user_access($group_type, $gid, 'invite any user')) {
+      $related = db_select('user_relationships', 'ur')
+        ->fields('ur', array('rid'))
+        ->condition('ur.approved', 1)
+        ->condition('ur.requester_id', $user->uid)
+        ->condition('ur.requestee_id', $uid)
+        ->execute()
+        ->fetchField();
+      if (empty($related)) {
+        $unrelated[] = check_plain($name);
+      }
+      else {
+        $exists_in_group = db_select('og_membership', 'og')
+          ->fields('og', array('gid'))
+          ->condition('etid', $uid)
+          ->condition('entity_type', 'user')
+          ->condition('gid', $gid)
+          ->execute()
+          ->fetchField();
+        if (empty($exists_in_group)) {
+          $good[] = $invitee;
+        }
+      }
+    }
+    // If the user exists and no relation check is needed.
+    else {
+      $exists_in_group = db_select('og_membership', 'og')
+        ->fields('og', array('gid'))
+        ->condition('etid', $uid)
+        ->condition('entity_type', 'user')
+        ->condition('gid', $gid)
+        ->execute()
+        ->fetchField();
+      if (empty($exists_in_group)) {
+        $good[] = $invitee;
+      }
+    }
+  }
+
+  // Only keep existing and related users.
+  $form_state['values']['invitee'] = implode(',', $good);
+
+  // Display error messages for unexisting and unrelated users.
+  if (!empty($unexisting)) {
+    drupal_set_message(t('The following users do not exist.'), 'warning');
+  }
+  if (!empty($unrelated)) {
+    drupal_set_message(t('You cannot invite the following users because they are not in relation with you:')
+      . ' ' . implode(', ', $unrelated), 'warning');
+  }
+  if (!empty($exists_in_group)) {
+    drupal_set_message(t('You cannot invite the following users because they are already invited or a member.'), 'warning');
+  }
+}
+/**
+ * Override _og_invite_form_submit().
+ */
+function ktc_autocomplete_form_og_invite_form_submit($form, &$form_state) {
+  $group_type = $form_state['values']['group_type'];
+  $gid = $form_state['values']['gid'];
+  $message = check_plain($form_state['values']['message']);
+  $invitees = explode(',', str_replace(', ', ',', $form_state['values']['invitee']));
+
+  $entity = entity_load_single($group_type, $gid);
+  $label = entity_label($group_type, $entity);
+  $field_name = key(og_get_group_audience_fields());
+  foreach ($invitees as $invitee) {
+    if (empty($invitee)) {
+      continue;
+    }
+    $invitee_obj = user_load_by_name($invitee);
+    $name = ($field = field_get_items('user', $invitee_obj, 'field_navn')) ?
+            $field[0]['value'] : $invitee_obj->name;
+    $uid = $invitee_obj->uid;
+    $result = og_invite_invite($group_type, $gid, $field_name, $uid, $message);
+
+    if (!empty($result)) {
+      drupal_set_message(t('<em>@user</em> has been invited to the group <em>@label</em>.', array('@user' => $name, '@label' => $label)));
+    }
+    else {
+      drupal_set_message(t('An error happened while inviting <em>@user</em> to the group <em>@label</em>', array('@user' => $name, '@label' => $label)), 'error');
+    }
+  }
+}
 /**
  * KTC autocomplete path callback function.
  *
