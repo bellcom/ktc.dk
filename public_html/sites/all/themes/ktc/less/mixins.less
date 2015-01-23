@@ -287,3 +287,34 @@ a {
   height: 35px;
   vertical-align: middle;
 }
+
+.user-picture(@border-color, @img-border-px, @img-border-color, @size) {
+  border: 2px solid @border-color;
+  height: @size;
+  width: @size;
+  border-radius: 50%;
+  img {
+    height: auto;
+    width: @size;
+    border-radius: 50%;
+    border: @img-border-px solid @img-border-color;
+  }
+}
+
+.user-teaser {
+  .user-picture {
+    .user-picture(@gray-lighter, 3px, #fff, 52px);
+
+  }
+  .user-body {
+    .user-name a {
+      font-weight: 700;
+      color: @gray-darker;
+    }
+    .employer {
+      min-height: 18px;
+      min-width: 10px;
+    }
+  }
+  margin-bottom: 10px;
+}

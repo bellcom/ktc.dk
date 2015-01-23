@@ -91,6 +91,25 @@
             .filter-title();
             background-color: @brand-gold;
           }
+          .view-id-ktc_og_members,
+          .view-og-members {
+            .view-content {
+              overflow: hidden;
+              .user-image {
+                &.ktc-red {
+                  .user-picture {
+                    border-color: @brand-userlink-red;
+                  }
+                }
+                .user-picture {
+                  .user-picture(@gray-lighter, 3px, #fff, 52px);
+                }
+              }
+            }
+            .pager {
+              margin-top: 0;
+            }
+          }
         }
       }
       .pane-right {
