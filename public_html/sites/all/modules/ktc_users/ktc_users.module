@@ -5,3 +5,16 @@
  */
 
 include_once 'ktc_users.features.inc';
+
+/* Add custom view modes */
+/**
+ * Implements hook_entity_info_alter().
+ * The first attribute in the array defines an arbitrary label for the view mode machine name.
+ * 'custom settings' => TRUE displays the view mode as a default at the top of the display modes settings screen
+ */
+function ktc_users_entity_info_alter(&$entity_info) {
+  $entity_info['user']['view modes']['teaser'] = array(
+    'label' => t('User teaser'),
+    'custom settings' => TRUE,
+  );
+}

@@ -128,7 +128,11 @@ function ktc_user_profile_default_page_manager_handlers() {
     $pane->subtype = 'ktc_og_user_groups-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'etid' => '%user:uid',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,

@@ -6712,6 +6712,29 @@ a:hover {
   height: 35px;
   vertical-align: middle;
 }
+.user-teaser {
+  margin-bottom: 10px;
+}
+.user-teaser .user-picture {
+  border: 2px solid #e9edee;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+}
+.user-teaser .user-picture img {
+  height: auto;
+  width: 52px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+}
+.user-teaser .user-body .user-name a {
+  font-weight: 700;
+  color: #2c353a;
+}
+.user-teaser .user-body .employer {
+  min-height: 18px;
+  min-width: 10px;
+}
 /**
  * This file is only for really global styles. None specific styles.
  */
@@ -7207,14 +7230,14 @@ fieldset[disabled] .btn-blacknblue.active {
 }
 .header-region .navigation .header_bottom .header_fixed .header-user .user-picture {
   border: 2px solid #e75311;
-  height: 64px;
-  width: 64px;
+  height: 66px;
+  width: 66px;
   border-radius: 50%;
   float: right;
 }
 .header-region .navigation .header_bottom .header_fixed .header-user .user-picture img {
   height: auto;
-  width: 64px;
+  width: 66px;
   border-radius: 50%;
   border: 4px solid #282f33;
 }
@@ -9079,15 +9102,16 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   padding: 10px 0px;
 }
 .node-teaser .user-picture {
-  height: 64px;
-  width: 64px;
+  border: 2px solid #ffffff;
+  height: 52px;
+  width: 52px;
   border-radius: 50%;
 }
 .node-teaser .user-picture img {
   height: auto;
-  width: 64px;
+  width: 52px;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 3px solid #ffffff;
 }
 .node-teaser.ktc-red {
   background-color: #fff5f2;
@@ -9509,6 +9533,72 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   margin-bottom: 0px;
   margin-top: 0px;
   background-color: #d3a900;
+}
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
+.page-user.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
+.page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
+.page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
+.page-node.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content {
+  overflow: hidden;
+}
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
+.page-user.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
+.page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
+.page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
+.page-node.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture {
+  border-color: #e75311;
+}
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
+.page-user.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
+.page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
+.page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
+.page-node.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture {
+  border: 2px solid #e9edee;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+}
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
+.page-user.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
+.page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
+.page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
+.page-node.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img {
+  height: auto;
+  width: 52px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+}
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
+.page-user.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
+.page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
+.page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
+.page-node.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager {
+  margin-top: 0;
 }
 .page-leverandoerlist.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
 .page-user.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,

@@ -340,7 +340,8 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   /* Forbindelse: OG membership: OG membership from Bruger */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
@@ -1045,6 +1046,48 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['break_phrase'] = TRUE;
   $handler->display->display_options['pane_title'] = 'Mine netværk';
+  $handler->display->display_options['argument_input'] = array(
+    'etid' => array(
+      'type' => 'user',
+      'context' => 'entity:user.field-adresse',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'We pass the user ID as the Entity ID.',
+    ),
+    'term_node_tid_depth' => array(
+      'type' => 'none',
+      'context' => 'entity:user.field-adresse',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'term_type',
+    ),
+    'term_node_tid_depth_1' => array(
+      'type' => 'none',
+      'context' => 'entity:user.field-adresse',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'emner',
+    ),
+    'term_node_tid_depth_2' => array(
+      'type' => 'none',
+      'context' => 'entity:user.field-adresse',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'tags',
+    ),
+    'term_node_tid_depth_3' => array(
+      'type' => 'none',
+      'context' => 'entity:user.field-adresse',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'regioner',
+    ),
+  );
 
   /* Display: KTC users filter groups */
   $handler = $view->new_display('panel_pane', 'KTC users filter groups', 'panel_pane_3');

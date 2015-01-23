@@ -623,3 +623,44 @@ function ktc_get_node_create_link() {
   }
   return $menu;
 }
+/**
+* Implements HOOK_preprocess_user_profile()
+* Adds theme suggestions for the user view mode teaser
+*/
+function ktc_preprocess_user_profile(&$vars) {
+  if ($vars['elements']['#view_mode'] == 'teaser') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__teaser';
+  }
+  $user_obj = $vars['elements']['#account'];
+
+  // User real name in field_navn.
+  if ($name = field_get_items('user', $user_obj, 'field_navn')) {
+    if (strlen($name[0]['value']) > 16) {
+      $name[0]['value'] = substr($name[0]['value'], 0, 15) . '...';
+    }
+    $vars['user_name'] = l($name[0]['value'], 'user/' . $user_obj->uid);
+  }
+  else {
+    $vars['user_name'] = l($user_obj->name, 'user/' . $user_obj->uid);
+  }
+  // User employer.
+  if ($employer = field_get_items('user', $user_obj, 'field_employer_name')) {
+    if (strlen($employer[0]['value']) > 16) {
+      $employer[0]['value'] = substr($employer[0]['value'], 0, 15) . '...';
+    }
+    $vars['employer'] = $employer[0]['value'];
+  }
+  else {
+    $vars['employer'] = '';
+  }
+  // User job title.
+  if ($job_title = field_get_items('user', $user_obj, 'field_jobposition')) {
+    if (strlen($job_title[0]['value']) > 16) {
+      $job_title[0]['value'] = substr($job_title[0]['value'], 0, 15) . '...';
+    }
+    $vars['job_title'] = $job_title[0]['value'];
+  }
+  else {
+    $vars['job_title'] = '';
+  }
+}
