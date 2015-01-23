@@ -1,0 +1,3 @@
+name = KTC Hearing Attendee form
+description = Special form for adding users to a hearing
+core = 7.x

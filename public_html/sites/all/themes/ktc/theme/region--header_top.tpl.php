@@ -26,6 +26,7 @@
  */
 ?>
 <?php if ($page['logo'] || $page['site_name'] || $page['primary_nav'] || $page['secondary_nav'] || $content): ?>
+<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="header_top" id="header_top">
   <div class="row">
   <div class="col-md-2 col-sm-3 col-xs-4">
@@ -45,5 +46,6 @@
     <?php print $content; ?>
   </div>
   </div>
+</div>
 </div>
 <?php endif; ?>

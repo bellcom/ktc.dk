@@ -121,7 +121,7 @@
       <span><a href="<?php global $base_url; print $base_url . $node_url; ?>#comments"><i class="icon-comment"></i>  <?php print $num_comments; ?></a></span>
       <span class="span-right"><i class="icon-statistics"></i>  <?php print $statistics_count; ?></span>
     </div>
-    <div class="col-md-6 col-sm-6 col-xs-6 right"><i class="node-type"></i><?php print node_type_get_name($type); ?></div>
+    <div class="col-md-6 col-sm-6 col-xs-6 right"><i class="node-type-<?php print $type; ?>"></i><?php print node_type_get_name($type); ?></div>
   </div>
   <?php endif; ?>
 

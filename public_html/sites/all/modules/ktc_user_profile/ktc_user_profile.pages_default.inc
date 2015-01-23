@@ -128,7 +128,11 @@ function ktc_user_profile_default_page_manager_handlers() {
     $pane->subtype = 'ktc_og_user_groups-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'etid' => '%user:uid',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -175,8 +179,8 @@ function ktc_user_profile_default_page_manager_handlers() {
     $pane->configuration = array(
       'type' => 'primary',
       'id' => 'edit-tabs',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Faner',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -482,7 +486,7 @@ function ktc_user_profile_default_page_manager_pages() {
       'type' => 'both',
       'id' => 'tabs',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Faner',
     );
     $pane->cache = array();
     $pane->style = array(

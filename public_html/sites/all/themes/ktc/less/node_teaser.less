@@ -53,6 +53,9 @@
         left: 19px;
       }
     }
+    p {
+      word-break: break-word;
+    }
   }
   .node-teaser-user-profile {
     margin-top: 10px;
@@ -64,50 +67,78 @@
     }
   }
   .user-picture {
-    height: 64px;
-    width: 64px;
+    .user-picture(#fff, 3px, #fff, 52px);
     border-radius: 50%;
-
-    img {
-      height: auto;
-      width: 64px;
-      border-radius: 50%;
-      border: 3px solid #fff;
+  }
+  &.ktc-red {
+    background-color: @brand-lightred;
+    .icon-group-ktc-red {
+      display: inline-block;
+      .sprite(@ikon-pin-red);
+      vertical-align: bottom;
+      margin-right: 5px;
+    }
+    .user-picture {
+      border: 2px solid @brand-red;
+    }
+    .user_link a{
+      color: @brand-red;
+      font-size: 16px;
+      font-weight: 600;
     }
   }
-  &.ktc-red .user-picture {
-    border: 2px solid @brand-red;
+  &.ktc-yellow {
+    background-color: @brand-lightgold;
+    .icon-group-ktc-yellow {
+      display: inline-block;
+      .sprite(@ikon-pin-yellow);
+      vertical-align: bottom;
+      margin-right: 5px;
+    }
+    .user-picture {
+      border: 2px solid @brand-gold;
+    }
+    .user_link a{
+      color: @brand-gold;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  &.ktc-blue {
+    background-color: @brand-lightblue;
+    .icon-group-ktc-blue {
+      display: inline-block;
+      .sprite(@ikon-pin-blue);
+      vertical-align: bottom;
+      margin-right: 5px;
+    }
+    .user-picture {
+      border: 2px solid @brand-darkblue;
+    }
+    .user_link a{
+      color: @brand-darkblue;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  &.ktc-green {
+    background-color: @brand-lightgreen;
+    .icon-group-ktc-green {
+      display: inline-block;
+      .sprite(@ikon-pin);
+      vertical-align: bottom;
+      margin-right: 5px;
+    }
+    .user-picture {
+      border: 2px solid @brand-darkgreen;
+    }
+    .user_link a {
+      color: brand-darkgreen;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
 
-  }
-  &.ktc-yellow .user-picture {
-    border: 2px solid @brand-gold;
-  }
-  &.ktc-blue .user-picture {
-    border: 2px solid @brand-darkblue;
-  }
-  &.ktc-green .user-picture {
-    border: 2px solid @brand-darkgreen;
-  }
-  &.ktc-red .user_link a{
-    color: @brand-red;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  &.ktc-yellow .user_link a{
-    color: @brand-gold;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  &.ktc-blue .user_link a{
-    color: @brand-darkblue;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  &.ktc-green .user_link a {
-    color: brand-darkgreen;
-    font-size: 16px;
-    font-weight: 600;
-  }
   .node-teaser-bottom {
     clear: both;
     background-color: @gray-darker;
@@ -129,12 +160,49 @@
     }
     .right {
       text-align: right;
+      .node-type-forum_post {
+        display: inline-block;
+        .sprite(@ikon-debat2);
+        vertical-align: top;
+        margin-right: 5px;
+      }
+      .node-type-meeting_doodle {
+        display: inline-block;
+        .sprite(@ikon-afstemning);
+        vertical-align: top;
+        margin-right: 5px;
+      }
+      .node-type-arrangement {
+        display: inline-block;
+        .sprite(@ikon-arrangement);
+        vertical-align: top;
+        margin-right: 5px;
+      }
+      .node-type-hearing {
+        display: inline-block;
+        .sprite(@ikon-hoering);
+        vertical-align: top;
+        margin-right: 5px;
+      }
+      .node-type-document {
+        display: inline-block;
+        .sprite(@ikon-dok);
+        vertical-align: top;
+        margin-right: 5px;
+      }
+      .node-type-os2web_base_news {
+        display: inline-block;
+        .sprite(@ikon-nyhed);
+        vertical-align: top;
+        margin-right: 5px;
+      }
     }
   }
 }
 
 .node-type-group {
   .node-teaser_comments {
+    background-color: #fff;
     .node-teaser-hr {
       margin-bottom: 10px;
       .node-teaser-hr-inner {
@@ -167,6 +235,9 @@
       .view-comments-in-teaser {
         padding-top: 10px;
         .left {
+          @media (min-width: 992px) {
+            padding-left: 10px;
+          }
           padding-left: 0px;
           .user-picture {
             border: 2px solid #fff;
@@ -182,8 +253,11 @@
         }
         .node-teaser-hr-inner {
           border-bottom: 2px solid #fff;
-          margin-top: 10px;
+          padding-top: 10px;
           margin-bottom: 10px;
+          margin-left: 15px;
+          margin-right: 15px;
+          clear: both
         }
         .views-row-last {
           .node-teaser-hr-inner {

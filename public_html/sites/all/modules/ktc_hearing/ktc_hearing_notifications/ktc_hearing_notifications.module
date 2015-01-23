@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * KTC Hearing notifications module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_hearing_notifications_menu() {
+  $items['admin/config/content/ktc_hearings_notifications'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => 'KTC Høringer, notifikationer',
+    'description' => 'Configure KTC Hearing notifications module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_hearing_notifications_settings'),
+    'access arguments' => array('administer ktc hearings'),
+    'file' => 'ktc_hearing_notifications.admin.inc',
+  );
+
+  return $items;
+}
