@@ -293,7 +293,7 @@ function ktc_hearing_invite($form, $form_state, $hearing) {
     '#title' => t('Invite'),
     '#description' => t('Here you can invite another user to attend the hearing.'),
     '#size' => 30,
-    '#autocomplete_path' => 'user/autocomplete',
+    '#autocomplete_path' => 'ktc_autocomplete/user/user/name',
   );
 
   $form['submit'] = array(
