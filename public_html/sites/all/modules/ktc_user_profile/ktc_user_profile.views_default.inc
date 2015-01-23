@@ -178,7 +178,7 @@ function ktc_user_profile_views_default_views() {
   $handler = $view->new_display('block', 'Blok', 'block_1');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -996,7 +996,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_usertype']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_usertype']['alter']['text'] = 'Brugertype: [field_usertype]';
   $handler->display->display_options['fields']['field_usertype']['element_label_colon'] = FALSE;
-  /* Felt: Felt: Direkte telefon */
+  /* Felt: Felt: Telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
@@ -1060,7 +1060,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_zipcode']['label'] = '';
   $handler->display->display_options['fields']['field_zipcode']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_zipcode']['element_label_colon'] = FALSE;
-  /* Felt: Felt: By */
+  /* Felt: Felt: Postnummer / By */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -1185,7 +1185,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_usertype']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_usertype']['alter']['text'] = 'Brugertype: [field_usertype]';
   $handler->display->display_options['fields']['field_usertype']['element_label_colon'] = FALSE;
-  /* Felt: Felt: Direkte telefon */
+  /* Felt: Felt: Telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
@@ -1249,7 +1249,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_zipcode']['label'] = '';
   $handler->display->display_options['fields']['field_zipcode']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_zipcode']['element_label_colon'] = FALSE;
-  /* Felt: Felt: By */
+  /* Felt: Felt: Postnummer / By */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';

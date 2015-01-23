@@ -51,6 +51,7 @@
 
       }
     });
+
     // borger.dk articles
     $('div.mArticle').hide();
     $('.microArticle a.gplus').click(function() {
@@ -166,6 +167,16 @@
       $container.masonry({
         itemSelector: '.panel-pane',
         columnWidth: '.col-md-1',
+      });
+    });
+
+    // Search page.
+    var $search_container = $('.view-Search.view-id-Search .view-content')
+
+    $search_container.imagesLoaded(function(){
+      $search_container.masonry({
+        itemSelector: '.select-element',
+        columnWidth: '.select-element',
       });
     });
 

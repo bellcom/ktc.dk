@@ -1,10 +1,138 @@
 .page-leverandoerlist,
 .page-user,
 .page-node,
+.page-hoering-mangler-filer,
 .page-leverandoerer {
   &.node-type-group {
     .main-container {
+      h1.page-header {
+        background-color: #fff;
+        padding-left: 15px;
+      }
       background: none;
+      .pane-center {
+        h3.pane-title {
+          .filter-title();
+          background-color: @brand-userlink-red;
+        }
+        h2 {
+          word-break: break-word;
+        }
+        .pane-node-create-links {
+          .pane-content {
+            background-color: @gray-darker;
+            ul {
+              margin-bottom: 20px;
+              padding: 10px 10px;
+              overflow: hidden;
+              li {
+                list-style: none;
+                padding: 5px 10px;
+                .group-add-arrangement {
+                  display: inline-block;
+                  .sprite(@ikon-arrangement2);
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+                .group-add-os2web_base_news {
+                  display: inline-block;
+                  .sprite(@ikon-nyhed2);
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+                .group-add-forum_post {
+                  display: inline-block;
+                  .sprite(@ikon-debat);
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+                .group-add-document {
+                  display: inline-block;
+                  .sprite(@ikon-dokument);
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+                .group-add-hearing {
+                  display: inline-block;
+                  .sprite(@ikon-hoering2);
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+                a {
+                  color: #fff;
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+        }
+        .view-content {
+          margin-left: -10px;
+          margin-right: -10px;
+        }
+      }
+      .pane-left {
+        .panel-pane {
+          &.pane-node-field-groupimage {
+            .pane-content {
+              padding: 15px 15px;
+            }
+          }
+          &.pane-ktc-sectionpage-netvaerk-invite-links,
+          &.pane-node-group-group,
+          &.pane-node-body {
+            margin-top: -20px;
+          }
+          .pane-content {
+            padding: 10px 15px;
+          }
+          width: 100%;
+          h3.pane-title {
+            .filter-title();
+            background-color: @brand-gold;
+          }
+          .view-id-ktc_og_members,
+          .view-og-members {
+            .view-content {
+              overflow: hidden;
+              .user-image {
+                &.ktc-red {
+                  .user-picture {
+                    border-color: @brand-userlink-red;
+                  }
+                }
+                .user-picture {
+                  .user-picture(@gray-lighter, 3px, #fff, 52px);
+                }
+              }
+            }
+            .pager {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+      .pane-right {
+        .pane-page-tabs {
+          h3.pane-title {
+            background-color: @brand-userlink-red;
+          }
+          .pane-content {
+            background-color: @gray-darker;
+            ul {
+              padding-bottom: 10px;
+              li>a {
+                color: #fff;
+                background-color: @gray-darker;
+                border-color: #848e92;
+                &.active {
+                  color: @gray-darker;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
   .main-container {
@@ -24,8 +152,18 @@
 }
 .page-search {
   .view-id-Search {
-    .views-row {
-      margin-bottom: 32px;
+    .view-content {
+      &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+        font-size: 0px;
+      }
+      .views-row {
+        margin-bottom: 20px;
+      }
     }
   }
 }
@@ -49,6 +187,36 @@
         padding-left: 0px;
         padding-right: 0px;
       }
+      .pane-sidebar {
+        .pane-menu-menu-user-profile-menu,
+        .view-display-id-panel_pane_1 {
+          padding: 10px 10px;
+        }
+        #period {
+          margin-top: -20px;
+        }
+      }
     }
   }
+}
+
+.page-user {
+  &.not-logged-in ul.tabs--primary {
+    li {
+      width: 25%;
+    }
+  }
+  .pane-sidebar {
+    .pane-page-tabs {
+      .pane-content {
+        padding-bottom: 5px;
+      }
+    }
+        .pane-menu-menu-user-profile-menu {
+          margin-top: -45px;
+          .pane-content {
+            padding-top: 0px;
+          }
+        }
+      }
 }

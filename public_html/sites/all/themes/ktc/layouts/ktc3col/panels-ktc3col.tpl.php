@@ -21,13 +21,13 @@
       <?php print $content['top']; ?>
     </div>
   </div>
-  <div class="col-md-4 col-sm-4 col-xs-12 pane-left">
+  <div class="col-md-3 col-sm-4 col-xs-12 pane-left">
     <?php print $content['left']; ?>
   </div>
-  <div class="col-md-4 col-sm-4 col-xs-12 pane-center">
+  <div class="col-md-6 col-sm-4 col-xs-12 pane-center">
     <?php print $content['center']; ?>
   </div>
-  <div class="col-md-4 col-sm-4 col-xs-12 pane-right">
+  <div class="col-md-3 col-sm-4 col-xs-12 pane-right">
     <?php print $content['right']; ?>
   </div>
   <div class="col-md-12 col-sm-12 col-xs-12 pane-bottom">

@@ -271,7 +271,7 @@ function _ktc_section_block_netvaerk_invite_links_content() {
     if ($access = og_user_access('node', $nid, 'invite any user')) {
       $node = node_load($nid);
       $html .= '<div class="col-md-12 col-sm-12 col-xs-12">
-  <a class="btn filter-link btn-blacknblue" href="/group/node/' . $nid . '/admin/people/invite-users?destination=node/' . $nid . '">' . t('Inviter') . '</a>
+  <a class="btn btn-blacknblue" href="/group/node/' . $nid . '/admin/people/invite-users?destination=node/' . $nid . '">' . t('Inviter') . '</a>
   </div>';
 
     }
