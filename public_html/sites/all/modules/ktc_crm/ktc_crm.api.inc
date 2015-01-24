@@ -292,6 +292,38 @@ function ktc_crm_fetch_groupmembers() {
 }
 
 /**
+ * Update group.
+ */
+function ktc_crm_update_group(\KTC\GroupService\GroupDto $groupdto) {
+  $logger = KtcCrmLogger::getInstance();
+  $url = variable_get('ktc_crm_url', '');
+
+  $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
+
+  try {
+    $groupservice = new \KTC\GroupService\GroupService(array(), $wsdl_url);
+
+    $createupdategroup = new \KTC\GroupService\CreateUpdateGroup($groupdto);
+
+    $result = $groupservice->CreateUpdateGroup($createupdategroup);
+
+    $logger->log->addDebug('CreateUpdateGroup result', $result);
+
+    if (is_object($result) && isset($result->CreateUpdateGroupResult)) {
+      return $result->CreateUpdateGroupResult;
+    }
+  }
+  catch (\Exception $e) {
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'CreateUpdateGroupMember',
+    ));
+  }
+
+  return FALSE;
+}
+
+/**
  * Update groupmembership.
  */
 function ktc_crm_update_groupmember(\KTC\GroupService\GroupMemberDto $groupmemberdto) {
@@ -322,6 +354,7 @@ function ktc_crm_update_groupmember(\KTC\GroupService\GroupMemberDto $groupmembe
 
   return FALSE;
 }
+
 /**
  * Update user account in drupal, from WebUserDto.
  */

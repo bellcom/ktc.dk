@@ -11,19 +11,51 @@ function ktc_crm_group_update_groups($lastupdate) {
   $logger = KtcCrmLogger::getInstance();
   $logger->log->addInfo('cron', 'start group sync');
 
-  $grouproles = ktc_crm_fetch_grouproles();
+  $logger->log->addInfo('cron group', 'update groups');
+  $groups = ktc_crm_fetch_groups();
+  ktc_crm_group_process_groups($groups);
+
+  $logger->log->addInfo('cron group', 'remove old groups');
+  ktc_crm_group_remove_old_groups($groups);
 
   $logger->log->addInfo('cron group', 'update userroles');
+  $grouproles = ktc_crm_fetch_grouproles();
   ktc_crm_group_update_userroles($grouproles);
 
   $logger->log->addInfo('cron group', 'update memberhips');
-  $groups = ktc_crm_fetch_groupmembers(array('UpdatedSince' => $lastupdate));
+  $groups = ktc_crm_fetch_groupmembers();
 
   $group_members = ktc_crm_group_create_array($groups);
-  ktc_crm_group_parse_memberships($group_members);
+  ktc_crm_group_process_memberships($group_members);
 
   $logger->log->addInfo('cron group', 'remove old memberships');
   ktc_crm_group_remove_old_memberships($group_members);
+}
+
+/**
+ * Process groups from CRM.
+ */
+function ktc_crm_group_process_groups($groups) {
+  foreach($groups->Results->GroupDto as $groupdto) {
+    if ($groupdto->Active) {
+      ktc_crm_group_update_from_groupdto($groupdto);
+    }
+  }
+}
+
+/**
+ * Implements hook_node_delete().
+ */
+function ktc_crm_node_delete($node) {
+  if ((isset($_POST['form_id']) && $_POST['form_id'] == 'node_admin_content') ||
+    (isset($_POST['form_id']) && $_POST['form_id'] == 'node_delete_confirm')) {
+    $groupdto = ktc_crm_group_map_group_to_groupdto($node);
+
+    $groupdto->GroupName = 'Skal slettes';
+    $groupdto->Active = 0;
+
+    ktc_crm_update_group($groupdto);
+  }
 }
 
 /**
@@ -106,7 +138,64 @@ function ktc_crm_og_role_revoke($group_type, $gid, $uid, $rid) {
  */
 function ktc_crm_node_presave($node) {
   if (isset($_POST['form_id']) && $_POST['form_id'] == 'group_node_form') {
+    // Create groupdto from group node.
+    $groupdto = ktc_crm_group_map_group_to_groupdto($node);
+
+    // Send the groupdto to CRM.
+    $result = ktc_crm_update_group($groupdto);
+
+    $node->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $result;
   }
+}
+
+/**
+ * Map group values to group object.
+ */
+function ktc_crm_group_map_group_to_groupdto($group) {
+  $group_uuid = _ktc_crm_get_uuid('node', $group);
+  if ($group_uuid === FALSE) {
+   $group_uuid = NULL;
+  }
+
+  $groupdto = new \KTC\GroupService\GroupDto($group_uuid);
+
+  $groupdto->Active = $group->status;
+
+  if ($field = field_get_items('node', $group, 'body')) {
+    $groupdto->Description = $field[0]['value'];
+  }
+
+  $groupdto->GroupName = $group->title;
+
+  if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
+    $tid = $field[0]['tid'];
+    $type = taxonomy_term_load($tid);
+
+    if ($grouptype_uuid = _ktc_crm_get_uuid('taxonomy_term', $type)) {
+      $grouptype = new \KTC\GroupService\ReferenceDto($grouptype_uuid);
+      $grouptype->Name = $type->name;
+
+      $groupdto->GroupType = $grouptype;
+    }
+  }
+
+  if ($field = field_get_items('node', $group, 'field_regioner')) {
+    $tid = $field[0]['tid'];
+    $region = taxonomy_term_load($tid);
+    $groupdto->Region = $region->name;
+  }
+
+  if ($field = field_get_items('node', $group, 'field_parentgroup')) {
+    $parent_group = node_load($field[0]['target_id']);
+
+    $parent_group_uuid = _ktc_crm_get_uuid('node', $parent_group);
+
+    $parent_group = new \KTC\GroupService\ReferenceDto($parent_group_uuid);
+
+    $groupdto->ParentGroup = $parent_group;
+  }
+
+  return $groupdto;
 }
 
 /**
@@ -116,13 +205,48 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
   $group_node = ktc_crm_group_load_from_uuid($groupdto->CrmId);
 
   if (!$group_node) {
-    return FALSE;
+    $group_node = ktc_crm_group_new_group();
+
+    $language = field_language('node', $group_node, 'field_crm_uuid');
+
+    $group_node->field_crm_uuid[$language]['0']['value'] = $groupdto->CrmId;
   }
 
+  $group_node->title = $groupdto->GroupName;
+
   $language = field_language('node', $group_node, 'field_regioner');
-  if ($region_tid = _ktc_group_get_region_tid($groupdto->Region)) {
+  if ($region_tid = _ktc_crm_group_get_region_tid($groupdto->Region)) {
     $group_node->field_regioner[$language]['0']['tid'] = $region_tid;
   }
+
+  if ($grouptype_tid = _ktc_crm_group_get_grouptype_tid($groupdto->GroupType->CrmId, $groupdto->GroupType->Name)) {
+    $group_node->field_netvaerkstype[$language]['0']['tid'] = $grouptype_tid;
+  }
+
+  $group_node->body[$language][0]['value'] = $groupdto->Description;
+
+  if (!empty($groupdto->ParentGroup)) {
+    if ($parent_group = ktc_crm_group_load_from_uuid($groupdto->ParentGroup->CrmId)) {
+      $group_node->field_parentgroup[$language]['0']['target_id'] = $parent_group->nid;
+    }
+  }
+
+  node_save($group_node);
+}
+
+/**
+ * Greate a new group object.
+ */
+function ktc_crm_group_new_group() {
+  $node = new stdClass();
+  $node->type = "group";
+
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 1;
+  $node->status = 1;
+
+  return $node;
 }
 
 /**
@@ -151,7 +275,7 @@ function ktc_crm_group_update_userroles($grouproles) {
 /**
  * Update users memberships.
  */
-function ktc_crm_group_parse_memberships($memberships) {
+function ktc_crm_group_process_memberships($memberships) {
   foreach ($memberships as $user_uuid => $groups) {
     if ($account = ktc_crm_load_account_from_crm_uuid($user_uuid)) {
       ktc_crm_group_update_users_memberships($account, $groups);
@@ -205,7 +329,40 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
 }
 
 /**
+ * Remove all old groups.
+ *
+ * This will delete all group nodes, that have a value in the crm_uuid field,
+ * and that are not in the group data retrieved from the webservice.
+ */
+function ktc_crm_group_remove_old_groups($groups) {
+  $all_group_uuid = array();
+
+  // List of all group uuids.
+  foreach($groups->Results->GroupDto as $groupdto) {
+    $all_group_uuid[] = $groupdto->CrmId;
+  }
+
+  if (!empty($all_group_uuid)) {
+    // All groups, with UUID, no longer in CRM.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'group')
+      ->fieldCondition('field_crm_uuid', 'value', $all_group_uuid, 'NOT IN');
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      foreach ($result['node'] as $node_id => $info) {
+        node_delete($node_id);
+      }
+    }
+  }
+}
+
+/**
  * Remove all old memberships.
+ *
+ * This will remove all memberships with a value in the crm_uuid field, that
+ * are no longer in the data from the webservice.
  */
 function ktc_crm_group_remove_old_memberships($memberships) {
   $all_membership_uuid = array();
@@ -284,7 +441,7 @@ function ktc_crm_group_membership_delete($crm_uuid) {
 /**
  * Helper, get tid for at region.
  */
-function _ktc_group_get_region_tid($region) {
+function _ktc_crm_group_get_region_tid($region) {
   $vocabulary = taxonomy_vocabulary_machine_name_load('regioner');
 
   $query = new EntityFieldQuery();
@@ -298,6 +455,38 @@ function _ktc_group_get_region_tid($region) {
   }
   return FALSE;
 }
+
+/**
+ * Get a term id for a GroupType.
+ */
+function _ktc_crm_group_get_grouptype_tid($crm_uuid, $name) {
+  if (!$crm_uuid && !$name) {
+    return FALSE;
+  }
+
+  $vocabulary = taxonomy_vocabulary_machine_name_load('netv_rkstype');
+
+  $query = new EntityFieldQuery();
+  $result = $query->entityCondition('entity_type', 'taxonomy_term')
+    ->propertyCondition('vid', $vocabulary->vid)
+    ->fieldCondition('field_crm_uuid', 'value', $crm_uuid)
+    ->execute();
+
+  if (isset($result['taxonomy_term'])) {
+    return key($result['taxonomy_term']);
+  }
+
+  $term = new stdClass();
+  $term->vid = $vocabulary->vid;
+  $term->name = $name;
+
+  $term->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $crm_uuid;
+
+  if (taxonomy_term_save($term)) {
+    return $term->tid;
+  }
+}
+
 
 /**
  * Helper, get group uuid from group nid.
@@ -315,7 +504,6 @@ function _ktc_crm_group_get_group_uuid($group_nid) {
  * Helper, remove a users role in CRM.
  */
 function _ktc_crm_group_revoke_user_role($og_membership, $rid) {
-  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($rid, 1));
   if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
 
     $roles = _ktc_crm_group_get_group_info();
