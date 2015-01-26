@@ -9621,6 +9621,44 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager {
   margin-top: 0;
 }
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all,
+.page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all,
+.page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all,
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
+.page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
+.page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide {
+  clear: both;
+  text-align: center;
+}
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
+.page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
+.page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
+.page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
+.page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
+.page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
+.page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
+.page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
+.page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
+.page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
+.page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
+.page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover {
+  text-decoration: none;
+}
 .page-leverandoerlist.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
 .page-user.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
 .page-node.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
