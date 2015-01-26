@@ -437,11 +437,12 @@ function _ktc_user_comments_content($page = TRUE) {
  */
 function _ktc_section_block_netvaerk_content_types() {
   $nid = arg(1);
-  $html = '';
+  $html = '<div class="filter-box">';
+  //$html = '';
   if (is_numeric($nid)) {
     $types = ktc_netvaerk_get_group_content_types($nid);
     if (!empty($types)) {
-      $html = '<div class="col-md-6 col-sm-12 col-xs-12">
+      $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
         <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
         </div>';
       foreach ($types as $type) {
@@ -453,6 +454,7 @@ function _ktc_section_block_netvaerk_content_types() {
       }
     }
   }
+  $html .= '</div>';
   return $html;
 }
 /**
