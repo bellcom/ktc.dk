@@ -17,7 +17,7 @@ function elasticsearch_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@default_node_index';
   $facet->realm = 'block';
   $facet->facet = 'author';
-  $facet->enabled = TRUE;
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -305,7 +305,7 @@ function elasticsearch_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@default_node_index';
   $facet->realm = 'block';
   $facet->facet = 'sticky';
-  $facet->enabled = TRUE;
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -341,7 +341,7 @@ function elasticsearch_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@default_node_index';
   $facet->realm = 'block';
   $facet->facet = 'title';
-  $facet->enabled = TRUE;
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -377,7 +377,7 @@ function elasticsearch_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@default_node_index';
   $facet->realm = 'block';
   $facet->facet = 'type';
-  $facet->enabled = FALSE;
+  $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',

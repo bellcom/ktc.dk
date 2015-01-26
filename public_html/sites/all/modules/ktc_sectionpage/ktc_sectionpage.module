@@ -140,6 +140,9 @@ function ktc_sectionpage_block_info() {
   $blocks['custom_filter_on_hearing'] = array(
     'info' => t('KTC filtrer på høringer blok'),
   );
+  $blocks['netvaerk_content_types'] = array(
+    'info' => t('KTC filtrer netværk indholdstyper'),
+  );
 
   return $blocks;
 }
@@ -183,6 +186,11 @@ function ktc_sectionpage_block_view($delta = '') {
     case 'custom_filter_on_hearing':
       $block['subject'] = t('Filtrer på høringer');
       $block['content'] = _ktc_custom_filter_on_hearing();
+      break;
+
+    case 'netvaerk_content_types':
+      $block['subject'] = '';
+      $block['content'] = _ktc_section_block_netvaerk_content_types();
       break;
   }
   return $block;
@@ -423,6 +431,32 @@ function _ktc_user_comments_content($page = TRUE) {
   return $view->render($display);
 }
 
+
+/**
+ * Netvaerk content type filtre block callback.
+ */
+function _ktc_section_block_netvaerk_content_types() {
+  $nid = arg(1);
+  $html = '<div class="filter-box">';
+  //$html = '';
+  if (is_numeric($nid)) {
+    $types = ktc_netvaerk_get_group_content_types($nid);
+    if (!empty($types)) {
+      $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
+        </div>';
+      foreach ($types as $type) {
+
+        $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="' . $type . '"
+          data-filter="' . $type . '" name="filter-content-type">' . node_type_get_name($type) . '</div>
+        </div>';
+      }
+    }
+  }
+  $html .= '</div>';
+  return $html;
+}
 /**
  * Filter helper.
  */
@@ -634,7 +668,9 @@ function _ktc_sectionpage_years_filter_helper($f5) {
   }
   return $filter_value;
 }
-
+/**
+ * User menus callback.
+ */
 function ktc_sectionpage_redirect_link($page) {
   global $user;
   $goto = FALSE;

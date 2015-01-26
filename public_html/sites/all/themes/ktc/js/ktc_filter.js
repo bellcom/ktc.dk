@@ -60,7 +60,8 @@
       var path = window.location.href.split('/');
       var type = path[path.length-1];
 
-      var gid = $('#content_id').find('.pane-content').text();
+      var gid = $('#content_id').find('.pane-content p').text();
+      console.log(gid);
       if (gid == '') {
         gid = check_gid_filter_value();
       }
@@ -262,7 +263,7 @@
 
       $(this).find('.btn-primary').each(function() {
 
-        var filter_id = $(this).closest('.pane-views-panes').attr('id');
+        var filter_id = $(this).closest('.pane-block').attr('id');
         if (filter_id == 'content_type') {
           content_type += $(this).attr('data-filter') + ',';
         }
@@ -301,7 +302,7 @@
   }
 
   function check_gid_filter_value() {
-    var filter_value = '', gid = '';
+    var gid = '';
     $('#groups .btn-primary').each(function() {
       gid += $(this).attr('data-filter') + ',';
     });

@@ -302,7 +302,7 @@ function ktc_user_profile_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%user:field_navn';
   $display->uuid = '9c79ef42-646b-4230-a1c1-a797d1812e4a';
   $display->content = array();
   $display->panels = array();
@@ -449,7 +449,7 @@ function ktc_user_profile_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%user:field_navn';
   $display->uuid = '350031fb-1f4e-4521-a1ca-d47351bebdc6';
   $display->content = array();
   $display->panels = array();

@@ -372,6 +372,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -566,6 +567,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -681,6 +683,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_opt_groups' => FALSE,
         'size' => 60,
