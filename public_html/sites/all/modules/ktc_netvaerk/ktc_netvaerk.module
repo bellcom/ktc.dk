@@ -57,7 +57,7 @@ function ktc_netvaerk_get_node_group_info($nid) {
       $group_info = array(
         'name' => $group->title,
         'class' => $class,
-        'gid' => $gid
+        'gid' => $gid,
       );
     }
 
@@ -127,4 +127,25 @@ function ktc_netvaerk_change_own($node) {
 
     db_update('node')->fields(array('uid' => $owner->uid))->condition('nid', $node->nid)->execute();
   }
+}
+/**
+ * Get group content types.
+ */
+function ktc_netvaerk_get_group_content_types($nid) {
+  $types = array();
+  if (is_numeric($nid)) {
+    $query = db_select('og_membership', 'ogm');
+    $query->join('node', 'n', 'n.nid = ogm.etid');
+    $query->distinct()
+          ->fields('n', array('type'))
+          ->condition('ogm.gid', $nid, '=')
+          ->condition('ogm.entity_type', 'node', '=');
+    $result = $query->execute();
+    if ($result->rowCount() > 0) {
+      while ($record = $result->fetchAssoc()) {
+        $types[] = $record['type'];
+      }
+    }
+  }
+  return $types;
 }

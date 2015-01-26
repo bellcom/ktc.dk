@@ -408,15 +408,15 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $display->content['new-b6f26677-5782-4ef8-800c-9ebfb7fb8497'] = $pane;
     $display->panels['right'][0] = 'new-b6f26677-5782-4ef8-800c-9ebfb7fb8497';
     $pane = new stdClass();
-    $pane->pid = 'new-6dafa2df-80bf-49e5-9fd0-23c5528fcb38';
+    $pane->pid = 'new-7d657bce-e67d-45d8-a446-c63432531bc6';
     $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'section_page_filter_extra-panel_pane_2';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_sectionpage-netvaerk_content_types';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Filtrer indholdet i gruppen',
+      'override_title_text' => 'Filtrer på indhold',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -429,9 +429,9 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '6dafa2df-80bf-49e5-9fd0-23c5528fcb38';
-    $display->content['new-6dafa2df-80bf-49e5-9fd0-23c5528fcb38'] = $pane;
-    $display->panels['right'][1] = 'new-6dafa2df-80bf-49e5-9fd0-23c5528fcb38';
+    $pane->uuid = '7d657bce-e67d-45d8-a446-c63432531bc6';
+    $display->content['new-7d657bce-e67d-45d8-a446-c63432531bc6'] = $pane;
+    $display->panels['right'][1] = 'new-7d657bce-e67d-45d8-a446-c63432531bc6';
     $pane = new stdClass();
     $pane->pid = 'new-6d7c5aa8-a32f-4342-acf5-16ff47e29f49';
     $pane->panel = 'right';
