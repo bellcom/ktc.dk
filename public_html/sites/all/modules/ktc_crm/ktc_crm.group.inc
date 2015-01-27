@@ -187,12 +187,14 @@ function ktc_crm_group_map_group_to_groupdto($group) {
 
   if ($field = field_get_items('node', $group, 'field_parentgroup')) {
     $parent_group = node_load($field[0]['target_id']);
-
     $parent_group_uuid = _ktc_crm_get_uuid('node', $parent_group);
 
-    $parent_group = new \KTC\GroupService\ReferenceDto($parent_group_uuid);
+    $parentgroupdto = new \KTC\GroupService\ReferenceDto($parent_group_uuid);
+    $groupdto->ParentGroup = $parentgroupdto;
+  }
 
-    $groupdto->ParentGroup = $parent_group;
+  if ($field = field_get_items('node', $group, 'field_os2web_base_field_ext_link')) {
+    $groupdto->WebSite = $field[1]['url'];
   }
 
   return $groupdto;
@@ -224,6 +226,8 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
   }
 
   $group_node->body[$language][0]['value'] = $groupdto->Description;
+
+  $group_node->field_os2web_base_field_ext_link[$language][0]['url'] = $groupdto->WebSite;
 
   if (!empty($groupdto->ParentGroup)) {
     if ($parent_group = ktc_crm_group_load_from_uuid($groupdto->ParentGroup->CrmId)) {
