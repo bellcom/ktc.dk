@@ -6963,9 +6963,6 @@ fieldset[disabled] .btn-blacknblue.active {
     height: 396px;
   }
 }
-.header-region .top_header {
-  height: 50px;
-}
 @media (max-width: 767px) {
   .header-region .top_header {
     background-color: #fff;
@@ -6974,10 +6971,16 @@ fieldset[disabled] .btn-blacknblue.active {
   }
 }
 @media (min-width: 992px) {
+  .header-region .top_header .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (min-width: 992px) {
   .header-region .top_header .region-header,
   .header-region .top_header .header_top {
-    margin-left: -32px;
-    margin-right: -32px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 @media (max-width: 767px) {
@@ -7166,28 +7169,41 @@ fieldset[disabled] .btn-blacknblue.active {
   background: none;
   border: none;
 }
-@media all and (max-width: 750px) {
-  .header-region .navigation .header_bottom .header_fixed .navbar-default.header_main_menu {
-    background-color: #e3e3e3;
-    border-radius: 2px 2px 2px 2px;
-    z-index: 900;
+@media (min-width: 750px) {
+  .header-region .navigation .header_bottom .header_fixed .navbar-default.header_main_menu ul li {
+    margin-left: 18px;
   }
 }
-.header-region .navigation .header_bottom .header_fixed .navbar-default.header_main_menu ul li {
-  margin-left: 18px;
+.header-region .navigation .header_bottom .header_fixed .navbar-default .navbar-toggle {
+  margin-right: -10px;
 }
-@media all and (min-width: 751px) {
+@media all and (min-width: 785px) {
   .header-region .navigation .header_bottom .header_fixed .header_main_menu {
     margin-top: 12px;
   }
 }
-@media all and (min-width: 768px) {
+@media (min-width: 768px) {
   .header-region .navigation .header_bottom .header_fixed .new_user_link {
     position: absolute;
-    right: 5px;
+    right: 10px;
     top: 15px;
     padding: 10px;
     z-index: 900;
+  }
+  .header-region .navigation .header_bottom .header_fixed .new_user_link a {
+    background-color: #e75311;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 14px;
+    text-transform: uppercase;
+    padding: 5px 15px 5px 35px;
+  }
+}
+@media (max-width: 767px) {
+  .header-region .navigation .header_bottom .header_fixed .new_user_link {
+    position: absolute;
+    top: 17px;
   }
   .header-region .navigation .header_bottom .header_fixed .new_user_link a {
     background-color: #e75311;
@@ -7206,6 +7222,11 @@ fieldset[disabled] .btn-blacknblue.active {
   position: relative;
   padding: 5px;
   text-align: right;
+}
+@media (max-width: 767px) {
+  .header-region .navigation .header_bottom .header_fixed .header-user .header-user-name {
+    text-align: left;
+  }
 }
 .header-region .navigation .header_bottom .header_fixed .header-user .header-user-name li > a {
   font-size: 12px;
@@ -8228,9 +8249,19 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   margin-right: 0px;
 }
 .front .main-container.container .panel-top #panel-pane-top {
-  max-height: 140px;
   overflow: hidden;
   margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .front .main-container.container .panel-top #panel-pane-top {
+    max-height: 140px;
+  }
+}
+.front .main-container.container .panel-top #panel-pane-top .pane-content {
+  padding: 10px 10px;
+}
+.front .main-container.container .panel-top #panel-pane-top .pane-content img {
+  max-width: 100%;
 }
 .front .main-container.container .pane-content {
   margin-bottom: 20px;
@@ -9361,6 +9392,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container,
 .page-user.node-type-group .main-container,
 .page-node.node-type-group .main-container,
+.page-comment.node-type-group .main-container,
 .page-hoering-mangler-filer.node-type-group .main-container,
 .page-leverandoerer.node-type-group .main-container {
   background: none;
@@ -9368,6 +9400,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container h1.page-header,
 .page-user.node-type-group .main-container h1.page-header,
 .page-node.node-type-group .main-container h1.page-header,
+.page-comment.node-type-group .main-container h1.page-header,
 .page-hoering-mangler-filer.node-type-group .main-container h1.page-header,
 .page-leverandoerer.node-type-group .main-container h1.page-header {
   background-color: #fff;
@@ -9376,6 +9409,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center h3.pane-title,
 .page-user.node-type-group .main-container .pane-center h3.pane-title,
 .page-node.node-type-group .main-container .pane-center h3.pane-title,
+.page-comment.node-type-group .main-container .pane-center h3.pane-title,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center h3.pane-title,
 .page-leverandoerer.node-type-group .main-container .pane-center h3.pane-title {
   border: none;
@@ -9392,6 +9426,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center h2,
 .page-user.node-type-group .main-container .pane-center h2,
 .page-node.node-type-group .main-container .pane-center h2,
+.page-comment.node-type-group .main-container .pane-center h2,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center h2,
 .page-leverandoerer.node-type-group .main-container .pane-center h2 {
   word-break: break-word;
@@ -9399,6 +9434,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center .pane-node-create-links .pane-content,
 .page-user.node-type-group .main-container .pane-center .pane-node-create-links .pane-content,
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content,
+.page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content {
   background-color: #2c353a;
@@ -9406,6 +9442,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul,
 .page-user.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul,
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul,
+.page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul {
   margin-bottom: 20px;
@@ -9415,6 +9452,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li,
 .page-user.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li,
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li,
+.page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li {
   list-style: none;
@@ -9423,6 +9461,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement,
 .page-user.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement,
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement,
+.page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement {
   display: inline-block;
@@ -9436,6 +9475,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news,
 .page-user.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news,
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news,
+.page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news {
   display: inline-block;
@@ -9449,6 +9489,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post,
 .page-user.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post,
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post,
+.page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post {
   display: inline-block;
@@ -9462,6 +9503,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document,
 .page-user.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document,
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document,
+.page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document {
   display: inline-block;
@@ -9475,6 +9517,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing,
 .page-user.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing,
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing,
+.page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing {
   display: inline-block;
@@ -9488,6 +9531,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a,
 .page-user.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a,
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a,
+.page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a {
   color: #fff;
@@ -9496,6 +9540,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-center .view-content,
 .page-user.node-type-group .main-container .pane-center .view-content,
 .page-node.node-type-group .main-container .pane-center .view-content,
+.page-comment.node-type-group .main-container .pane-center .view-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .view-content,
 .page-leverandoerer.node-type-group .main-container .pane-center .view-content {
   margin-left: -10px;
@@ -9504,6 +9549,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane,
 .page-user.node-type-group .main-container .pane-left .panel-pane,
 .page-node.node-type-group .main-container .pane-left .panel-pane,
+.page-comment.node-type-group .main-container .pane-left .panel-pane,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane {
   width: 100%;
@@ -9511,6 +9557,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content,
 .page-user.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content,
 .page-node.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content,
+.page-comment.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content {
   padding: 15px 15px;
@@ -9518,16 +9565,19 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
 .page-user.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
 .page-node.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
+.page-comment.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
 .page-user.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
 .page-node.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
+.page-comment.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
 .page-user.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
 .page-node.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
+.page-comment.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane.pane-node-body {
   margin-top: -20px;
@@ -9535,6 +9585,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .pane-content,
 .page-user.node-type-group .main-container .pane-left .panel-pane .pane-content,
 .page-node.node-type-group .main-container .pane-left .panel-pane .pane-content,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .pane-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .pane-content,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .pane-content {
   padding: 10px 15px;
@@ -9542,6 +9593,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane h3.pane-title,
 .page-user.node-type-group .main-container .pane-left .panel-pane h3.pane-title,
 .page-node.node-type-group .main-container .pane-left .panel-pane h3.pane-title,
+.page-comment.node-type-group .main-container .pane-left .panel-pane h3.pane-title,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane h3.pane-title,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane h3.pane-title {
   border: none;
@@ -9558,11 +9610,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content {
   overflow: hidden;
@@ -9570,11 +9624,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture {
   border-color: #e75311;
@@ -9582,11 +9638,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture {
   border: 2px solid #e9edee;
@@ -9597,11 +9655,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img {
   height: auto;
@@ -9612,11 +9672,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager {
   margin-top: 0;
@@ -9624,11 +9686,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all,
 .page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all,
 .page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
 .page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
 .page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide {
   clear: both;
@@ -9637,11 +9701,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
 .page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
 .page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
 .page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
 .page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a {
   text-transform: uppercase;
@@ -9650,11 +9716,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
 .page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
 .page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
 .page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
 .page-node.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
+.page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover {
   text-decoration: none;
@@ -9662,6 +9730,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
 .page-user.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
 .page-node.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
+.page-comment.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
 .page-leverandoerer.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title {
   background-color: #e75311;
@@ -9669,6 +9738,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-right .pane-page-tabs .pane-content,
 .page-user.node-type-group .main-container .pane-right .pane-page-tabs .pane-content,
 .page-node.node-type-group .main-container .pane-right .pane-page-tabs .pane-content,
+.page-comment.node-type-group .main-container .pane-right .pane-page-tabs .pane-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content,
 .page-leverandoerer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content {
   background-color: #2c353a;
@@ -9676,6 +9746,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul,
 .page-user.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul,
 .page-node.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul,
+.page-comment.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul,
 .page-leverandoerer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul {
   padding-bottom: 10px;
@@ -9683,6 +9754,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a,
 .page-user.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a,
 .page-node.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a,
+.page-comment.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a,
 .page-leverandoerer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a {
   color: #fff;
@@ -9692,6 +9764,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active,
 .page-user.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active,
 .page-node.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active,
+.page-comment.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active,
 .page-leverandoerer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active {
   color: #2c353a;
@@ -9699,6 +9772,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist .main-container,
 .page-user .main-container,
 .page-node .main-container,
+.page-comment .main-container,
 .page-hoering-mangler-filer .main-container,
 .page-leverandoerer .main-container {
   background-color: #fff;
@@ -9707,6 +9781,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist .views-field .term-name a,
 .page-user .views-field .term-name a,
 .page-node .views-field .term-name a,
+.page-comment .views-field .term-name a,
 .page-hoering-mangler-filer .views-field .term-name a,
 .page-leverandoerer .views-field .term-name a {
   color: #2c353a;
@@ -9714,6 +9789,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-leverandoerlist .views-field .term-name a .icon-blue,
 .page-user .views-field .term-name a .icon-blue,
 .page-node .views-field .term-name a .icon-blue,
+.page-comment .views-field .term-name a .icon-blue,
 .page-hoering-mangler-filer .views-field .term-name a .icon-blue,
 .page-leverandoerer .views-field .term-name a .icon-blue {
   display: inline-block;

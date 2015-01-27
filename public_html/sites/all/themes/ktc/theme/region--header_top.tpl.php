@@ -29,14 +29,14 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
 <div class="header_top" id="header_top">
   <div class="row">
-  <div class="col-md-2 col-sm-3 col-xs-4">
+  <div class="col-md-2 col-sm-3 col-xs-12">
     <?php if ($page['logo']): ?>
       <a class="logo pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
         <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
       </a>
     <?php endif; ?>
   </div>
-  <div class="col-md-10 col-sm-9 col-xs-8 header_top_content">
+  <div class="col-md-10 col-sm-9 col-xs-12 header_top_content">
     <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
     <div class="header-add-content"><i class="icon-add-content"></i><span>OPRET INDHOLD</span>
       <?php print $page['create_menu']; ?>
