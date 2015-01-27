@@ -10,9 +10,17 @@
     }
     .panel-top {
       #panel-pane-top {
-        max-height: 140px;
+        @media (min-width: 768px) {
+          max-height: 140px;
+        }
         overflow: hidden;
         margin-bottom: 20px;
+        .pane-content {
+          padding: 10px 10px;
+          img {
+            max-width: 100%;
+          }
+        }
       }
     }
     .pane-content {

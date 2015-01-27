@@ -629,7 +629,8 @@ function ktc_arrangement_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<div class="col-md-6 col-sm-12 col-xs-12">
+      'body' => '<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="col-md-6 col-sm-12 col-xs-12">
 	<div class="btn btn-primary filter-link col-md-12 col-sm-12 col-xs-12" data-filter="future" id="filter-all">
 		Kommende</div>
 </div>
@@ -637,7 +638,7 @@ function ktc_arrangement_default_page_manager_pages() {
 	<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" data-filter="old" id="filter-old">
 		Afholdte</div>
 </div>
-',
+</div>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

@@ -291,10 +291,9 @@ function _ktc_section_block_netvaerk_invite_links_content() {
  */
 function _ktc_custom_filter_on_hearing() {
   global $user;
-  $html = '';
+  $html = '<div id="filter-box-hearing-extra" class="col-md-12 col-sm-12 col-xs-12">';
   if ($user->uid != 0) {
     $html .= '
-    <div id="filter-box-hearing-extra">
       <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">All</div>
       </div>
@@ -437,7 +436,7 @@ function _ktc_user_comments_content($page = TRUE) {
  */
 function _ktc_section_block_netvaerk_content_types() {
   $nid = arg(1);
-  $html = '<div class="filter-box">';
+  $html = '<div class="filter-box col-md-12 col-sm-12 col-xs-12">';
   //$html = '';
   if (is_numeric($nid)) {
     $types = ktc_netvaerk_get_group_content_types($nid);
@@ -593,10 +592,12 @@ function _ktc_sectionpage_get_gids_from_group_types($term_type) {
 function _ktc_sectionpage_get_user_related_node_id($uid) {
   $id = '';
   $ids = array();
-  $query = 'SELECT n.nid FROM {node} n,{comment} c WHERE n.uid = :uid AND n.nid = c.nid
+  /*$query = 'SELECT n.nid FROM {node} n,{comment} c WHERE n.uid = :uid AND n.nid = c.nid
               UNION SELECT c2.nid FROM {comment} c2 WHERE c2.uid = :uid
               UNION SELECT cast(s.value as UNSIGNED) AS nid FROM subscriptions s
-              WHERE s.field = :nid AND s.recipient_uid = :uid';
+              WHERE s.field = :nid AND s.recipient_uid = :uid';*/
+  $query = 'SELECT n.nid FROM {node} n,{comment} c WHERE n.uid = :uid AND n.nid = c.nid
+              UNION SELECT c2.nid FROM {comment} c2 WHERE c2.uid = :uid';
   $result = db_query($query, array('uid' => $uid, 'nid' => 'nid'))->fetchAll();
   if ($result) {
     foreach ($result as $node) {

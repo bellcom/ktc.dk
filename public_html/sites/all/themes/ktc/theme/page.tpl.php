@@ -76,10 +76,12 @@
 <div class="header-region">
   <div class="top_header">
   <div class="container">
+    <div class="row">
     <?php /* region--header_top.tpl.php */ ?>
     <?php if ($page['header_top']): ?>
       <?php print render($page['header_top']); ?>
     <?php endif; ?>
+    </div>
   </div>
   </div>
   <div class="navigation">
