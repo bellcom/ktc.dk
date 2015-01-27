@@ -6966,7 +6966,6 @@ fieldset[disabled] .btn-blacknblue.active {
 @media (max-width: 767px) {
   .header-region .top_header {
     background-color: #fff;
-    overflow: hidden;
     height: auto;
   }
 }
@@ -9119,7 +9118,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   margin-right: -15px;
 }
 .node-teaser .node-teaser-text .left {
-  padding: 0px 0px 0px 5px;
+  padding: 0px 0px 0px 0px;
 }
 .node-teaser .node-teaser-text .icon-calendar {
   background-image: url('../images/sprites/calendar.png');
@@ -9127,19 +9126,19 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   height: 80px;
   background-repeat: no-repeat;
   position: relative;
-  background-size: 57px 60px;
+  background-size: 50px 60px;
 }
 .node-teaser .node-teaser-text .icon-calendar .calendar-day {
   font-size: 24px;
   position: absolute;
   top: 8px;
-  left: 15px;
+  left: 11px;
 }
 .node-teaser .node-teaser-text .icon-calendar .calendar-month {
   position: absolute;
   top: 42px;
   text-transform: uppercase;
-  left: 19px;
+  left: 15px;
 }
 .node-teaser .node-teaser-text p {
   word-break: break-word;
