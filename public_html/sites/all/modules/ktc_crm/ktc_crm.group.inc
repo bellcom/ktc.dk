@@ -36,7 +36,7 @@ function ktc_crm_group_update_groups($lastupdate) {
  * Process groups from CRM.
  */
 function ktc_crm_group_process_groups($groups) {
-  foreach($groups->Results->GroupDto as $groupdto) {
+  foreach ($groups->Results->GroupDto as $groupdto) {
     if ($groupdto->Active) {
       ktc_crm_group_update_from_groupdto($groupdto);
     }
@@ -154,7 +154,7 @@ function ktc_crm_node_presave($node) {
 function ktc_crm_group_map_group_to_groupdto($group) {
   $group_uuid = _ktc_crm_get_uuid('node', $group);
   if ($group_uuid === FALSE) {
-   $group_uuid = NULL;
+    $group_uuid = NULL;
   }
 
   $groupdto = new \KTC\GroupService\GroupDto($group_uuid);
@@ -306,22 +306,21 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
       }
 
       $user_roles = og_get_user_roles('node', $group->nid, $account->uid);
-
       // Handle if the user has more than one role in OG and none set from
       // CRM.
-      if (count($user_roles) > 1 && !$role_id) {
+      if (count($user_roles) > 1) {
         $default_roles = og_get_default_roles();
 
         // Remove all non-default (CRM), roles from the user.
         foreach ($user_roles as $id => $role) {
-          if (!in_array($role, $default_roles)) {
+          if (!in_array($role, $default_roles) && $id != $role_id) {
             og_role_revoke('node', $group->nid, $account->uid, $id);
           }
         }
       }
 
-      // Grant user role from CRM.
-      if ($role_id) {
+      // Grant user role from CRM. If the user doesn't already have it.
+      if ($role_id && !in_array($role_id, array_flip($user_roles))) {
         og_role_grant('node', $group->nid, $account->uid, $role_id);
       }
     }
@@ -338,11 +337,13 @@ function ktc_crm_group_remove_old_groups($groups) {
   $all_group_uuid = array();
 
   // List of all group uuids.
-  foreach($groups->Results->GroupDto as $groupdto) {
+  foreach ($groups->Results->GroupDto as $groupdto) {
     $all_group_uuid[] = $groupdto->CrmId;
   }
 
   if (!empty($all_group_uuid)) {
+    $logger = KtcCrmLogger::getInstance();
+
     // All groups, with UUID, no longer in CRM.
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
@@ -352,6 +353,7 @@ function ktc_crm_group_remove_old_groups($groups) {
 
     if (isset($result['node'])) {
       foreach ($result['node'] as $node_id => $info) {
+        $logger->log->addInfo('Removing old group', $node);
         node_delete($node_id);
       }
     }

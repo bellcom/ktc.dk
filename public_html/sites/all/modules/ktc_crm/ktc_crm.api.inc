@@ -59,6 +59,7 @@ function ktc_crm_update_user(\KTC\WebUser\WebUserDto $webuserdto) {
 
   $wsdl_url = $url . '/' . KTC_CRM_WEBUSER_WSDL;
 
+  $logger->log->addInfo('CreateUpdateWebUser', $webuserdto);
   try {
     $webuser = new KTC\WebUser\WebUser(array(), $wsdl_url);
 
@@ -352,34 +353,5 @@ function ktc_crm_update_groupmember(\KTC\GroupService\GroupMemberDto $groupmembe
     ));
   }
 
-  return FALSE;
-}
-
-/**
- * Update user account in drupal, from WebUserDto.
- */
-function ktc_crm_update_account_from_webuserdto(\KTC\WebUser\WebUserDto $webuserdto) {
-  $uuid = $webuserdto->CrmId;
-
-  if ($account = ktc_crm_load_account_from_crm_uuid($uuid)) {
-
-    $edit = ktc_crm_map_webuserdto_to_edit_array($webuserdto);
-
-    user_save($account, $edit);
-  }
-}
-
-/**
- * Load a user with the supplied crm UUID.
- */
-function ktc_crm_load_account_from_crm_uuid($uuid) {
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'user')
-     ->fieldCondition('field_crm_uuid', 'value', $uuid);
-  $result = $query->execute();
-
-  if (isset($result['user'])) {
-    return user_load(key($result['user']));
-  }
   return FALSE;
 }

@@ -11,6 +11,7 @@ module_load_include('php', 'ktc_crm', 'includes/KTC/GroupService/GroupService');
 
 module_load_include('inc', 'ktc_crm', 'ktc_crm.api');
 module_load_include('inc', 'ktc_crm', 'ktc_crm.group');
+module_load_include('inc', 'ktc_crm', 'ktc_crm.webuser');
 
 define('KTC_CRM_WEBUSER_WSDL', 'WebUser.svc?wsdl');
 define('KTC_CRM_SUBSCRIPTION_WSDL', 'Subscription.svc?wsdl');
@@ -83,8 +84,8 @@ function ktc_crm_cron() {
   $lastupdate = variable_get('ktc_crm_lastupdate');
 
   $logger->log->addInfo('cron webuser', 'fetch webusers');
-  if ($webusers = ktc_crm_fetch_webusers(array('UpdatedSince' => $lastupdate))) {
-
+  //if ($webusers = ktc_crm_fetch_webusers(array('UpdatedSince' => $lastupdate))) {
+  if ($webusers = ktc_crm_fetch_webusers()) {
     foreach ($webusers as $webuserdto) {
       ktc_crm_update_account_from_webuserdto($webuserdto);
     }
@@ -108,118 +109,6 @@ function ktc_crm_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * Implements hook_user_presave().
- */
-function ktc_crm_user_presave(&$edit, $account, $category) {
-  // Only update user if $_POST['form_id'] is correct. Presave is also called
-  // when a user is updated programmatically, so this could turn into an
-  // unwanted loop otherwise.
-  if (isset($_POST['form_id']) && $_POST['form_id'] == 'user_profile_form') {
-    // ktc_crm_map_account_to_webuserdto() takes a normal drupal user
-    // account object. Since the $account object is not populated with the
-    // new values at this point, we create a temporary one, where we do this
-    // in order to be able to send all updated values to CRM.
-    $tmp_account = clone $account;
-    foreach ($edit as $key => $value) {
-      $tmp_account->$key = $value;
-    }
-
-    if ($account->is_new) {
-      $webuserdto = ktc_crm_map_account_to_webuserdto($tmp_account);
-      if ($crm_uuid = ktc_crm_update_user($webuserdto)) {
-        $edit['field_crm_uuid'][LANGUAGE_NONE][1]['value'] = $crm_uuid;
-      }
-    }
-    else {
-      // Only send the user to CRM if a UUID is set.
-      if ($uuid_field = field_get_items('user', $account, 'field_crm_uuid')) {
-        $webuserdto = ktc_crm_map_account_to_webuserdto($tmp_account);
-        ktc_crm_update_user($webuserdto);
-      }
-    }
-  }
-}
-
-/**
- * Map account values to webuser object.
- */
-function ktc_crm_map_account_to_webuserdto($account) {
-  $webuserdto = new \KTC\WebUser\WebUserDto(NULL);
-
-  if ($uuid_field = field_get_items('user', $account, 'field_crm_uuid')) {
-    $uuid = $uuid_field[0]['value'];
-    $webuserdto = new \KTC\WebUser\WebUserDto($uuid);
-  }
-
-  $webuserdto->EMail = $account->mail;
-  $webuserdto->UserName = $account->mail;
-  $webuserdto->DrupalId = $account->uid;
-
-  if ($name_field = field_get_items('user', $account, 'field_navn')) {
-    $name_array = explode(' ', $name_field[0]['value']);
-    $firstname = $name_array[0];
-
-    array_shift($name_array);
-
-    $lastname = implode(' ', $name_array);
-
-    $webuserdto->FirstName = 'TEST BELLCOM ' . $firstname;
-    $webuserdto->LastName = $lastname;
-  }
-
-  if ($field = field_get_items('user', $account, 'field_jobposition')) {
-    $webuserdto->Salutation = $field[0]['value'];
-  }
-
-  if ($field = field_get_items('user', $account, 'field_phone')) {
-    $webuserdto->Phone = $field[0]['value'];
-  }
-
-  if ($field = field_get_items('user', $account, 'field_cell')) {
-    $webuserdto->MobilePhone = $field[0]['value'];
-  }
-
-  if ($field = field_get_items('user', $account, 'field_dob')) {
-
-    $birthday = str_replace(' ', 'T', $field[0]['value']);
-    $webuserdto->Birthday = $birthday;
-  }
-
-  $webuserdto->Active = $account->status;
-
-  if ($account->access) {
-    $webuserdto->LastLogin = date('Y-m-d\TH:i:s', $account->access);
-  }
-
-  return $webuserdto;
-}
-
-/**
- * Map WebUserDto to edit array for user object.
- */
-function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
-  $edit = array();
-
-  $edit['mail'] = $webuserdto->EMail;
-  $edit['name'] = $webuserdto->EMail;
-
-  $edit['field_navn'][LANGUAGE_NONE][0]['value'] = $webuserdto->FirstName . ' ' . $webuserdto->LastName;
-  $edit['field_jobposition'][LANGUAGE_NONE][0]['value'] = $webuserdto->Salutation;
-  $edit['field_dob'][LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($webuserdto->Birthday));
-  $edit['field_phone'][LANGUAGE_NONE][0]['value'] = $webuserdto->Phone;
-  $edit['field_cell'][LANGUAGE_NONE][0]['value'] = $webuserdto->MobilePhone;
-
-  return $edit;
-}
-
-/**
- * Get users address.
- */
-function ktc_crm_get_user_address($user, $type) {
-  return $type . ' Adresse...';
-}
-
-/**
  * Helper, fetch enity crm uuid.
  */
 function _ktc_crm_get_uuid($type, $entity) {
@@ -232,11 +121,11 @@ function _ktc_crm_get_uuid($type, $entity) {
 }
 
 /**
- * Helper, get users uuid.
+ * Helper, fetch term name from tid.
  */
-function _ktc_crm_user_get_user_uuid($uid) {
-  if ($account = user_load($uid)) {
-    return _ktc_crm_get_uuid('user', $account);
+function _ktc_crm_get_term_name($tid) {
+  if ($term = taxonomy_term_load($tid)) {
+    return $term->name;
   }
   return FALSE;
 }
