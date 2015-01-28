@@ -7,14 +7,14 @@ class RetrieveWebUsersResponse
 
   /**
    * 
-   * @var RetrieveResponseOfWebUserDtowsdCoMqt $RetrieveWebUsersResult
+   * @var WebUserRetrieveResponse $RetrieveWebUsersResult
    * @access public
    */
   public $RetrieveWebUsersResult = null;
 
   /**
    * 
-   * @param RetrieveResponseOfWebUserDtowsdCoMqt $RetrieveWebUsersResult
+   * @param WebUserRetrieveResponse $RetrieveWebUsersResult
    * @access public
    */
   public function __construct($RetrieveWebUsersResult)

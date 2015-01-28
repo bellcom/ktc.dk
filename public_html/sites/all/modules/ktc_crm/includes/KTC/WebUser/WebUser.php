@@ -7,6 +7,7 @@ include_once('PingResponse.php');
 include_once('RetrieveWebUsers.php');
 include_once('Request.php');
 include_once('RetrieveWebUsersResponse.php');
+include_once('WebUserRetrieveResponse.php');
 include_once('RetrieveResponseOfWebUserDtowsdCoMqt.php');
 include_once('WebUserDto.php');
 include_once('CrmEntityDto.php');
@@ -35,6 +36,7 @@ class WebUser extends \SoapClient
     'RetrieveWebUsers' => 'KTC\WebUser\RetrieveWebUsers',
     'Request' => 'KTC\WebUser\Request',
     'RetrieveWebUsersResponse' => 'KTC\WebUser\RetrieveWebUsersResponse',
+    'WebUserRetrieveResponse' => 'KTC\WebUser\WebUserRetrieveResponse',
     'RetrieveResponseOfWebUserDtowsdCoMqt' => 'KTC\WebUser\RetrieveResponseOfWebUserDtowsdCoMqt',
     'WebUserDto' => 'KTC\WebUser\WebUserDto',
     'CrmEntityDto' => 'KTC\WebUser\CrmEntityDto',

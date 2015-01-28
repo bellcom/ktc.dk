@@ -149,6 +149,20 @@ class WebUserDto extends CrmEntityDto
 
   /**
    * 
+   * @var guid $TopLevelAccountId
+   * @access public
+   */
+  public $TopLevelAccountId = null;
+
+  /**
+   * 
+   * @var string $TopLevelAccountName
+   * @access public
+   */
+  public $TopLevelAccountName = null;
+
+  /**
+   * 
    * @var string $Typo3Id
    * @access public
    */
