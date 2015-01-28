@@ -24,11 +24,11 @@
   <div class="col-md-3 col-sm-4 col-xs-12 pane-left">
     <?php print $content['left']; ?>
   </div>
-  <div class="col-md-6 col-sm-4 col-xs-12 pane-center">
-    <?php print $content['center']; ?>
-  </div>
-  <div class="col-md-3 col-sm-4 col-xs-12 pane-right">
+  <div class="col-md-3 col-sm-4 col-xs-12 col-md-push-6 col-sm-push-4  pane-right">
     <?php print $content['right']; ?>
+  </div>
+  <div class="col-md-6 col-sm-4 col-xs-12 col-md-pull-3 col-sm-pull-4 pane-center">
+    <?php print $content['center']; ?>
   </div>
   <div class="col-md-12 col-sm-12 col-xs-12 pane-bottom">
     <?php print $content['bottom']; ?>
