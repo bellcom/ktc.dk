@@ -8,14 +8,17 @@
 module_load_include('php', 'ktc_crm', 'includes/KTC/WebUser/WebUser');
 module_load_include('php', 'ktc_crm', 'includes/KTC/Subscription/Subscription');
 module_load_include('php', 'ktc_crm', 'includes/KTC/GroupService/GroupService');
+module_load_include('php', 'ktc_crm', 'includes/KTC/AccountService/AccountService');
 
 module_load_include('inc', 'ktc_crm', 'ktc_crm.api');
 module_load_include('inc', 'ktc_crm', 'ktc_crm.group');
 module_load_include('inc', 'ktc_crm', 'ktc_crm.webuser');
+module_load_include('inc', 'ktc_crm', 'ktc_crm.account');
 
 define('KTC_CRM_WEBUSER_WSDL', 'WebUser.svc?wsdl');
 define('KTC_CRM_SUBSCRIPTION_WSDL', 'Subscription.svc?wsdl');
 define('KTC_CRM_GROUPSERVICE_WSDL', 'GroupService.svc?wsdl');
+define('KTC_CRM_ACCOUNTSERVICE_WSDL', 'AccountService.svc?wsdl');
 
 /**
  * Implements hook_menu().
@@ -84,7 +87,6 @@ function ktc_crm_cron() {
   $lastupdate = variable_get('ktc_crm_lastupdate');
 
   $logger->log->addInfo('cron webuser', 'fetch webusers');
-  //if ($webusers = ktc_crm_fetch_webusers(array('UpdatedSince' => $lastupdate))) {
   if ($webusers = ktc_crm_fetch_webusers()) {
     foreach ($webusers as $webuserdto) {
       ktc_crm_update_account_from_webuserdto($webuserdto);

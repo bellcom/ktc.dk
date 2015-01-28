@@ -355,3 +355,49 @@ function ktc_crm_update_groupmember(\KTC\GroupService\GroupMemberDto $groupmembe
 
   return FALSE;
 }
+
+/**
+ * Fetch all accounts from Webservice.
+ */
+function ktc_crm_fetch_accounts($options = array()) {
+  $logger = KtcCrmLogger::getInstance();
+  $url = variable_get('ktc_crm_url', '');
+
+  $wsdl_url = $url . '/' . KTC_CRM_ACCOUNTSERVICE_WSDL;
+
+  try {
+    $webuser = new \KTC\AccountService\AccountService(array(), $wsdl_url);
+
+    $request = new \KTC\AccountService\Request();
+
+    foreach ($options as $key => $value) {
+      $request->$key = $value;
+    }
+
+    $retrieveaccounts = new \KTC\AccountService\RetrieveAccounts($request);
+
+    $result = $webuser->RetrieveAccounts($retrieveaccounts);
+
+    $logger->log->addDebug('RetrieveAccounts result', $result);
+
+    $accounts = $result->RetrieveAccountsResult->Results->AccountDto;
+
+    if ($accounts) {
+      if (is_array($accounts)) {
+        return $accounts;
+      }
+      // If there is only one, it won't be returned as an array.
+      else {
+        return array($accounts);
+      }
+    }
+  }
+  catch (\Exception $e) {
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'RetrieveAccounts',
+    ));
+  }
+
+  return FALSE;
+}
