@@ -18,7 +18,6 @@ function ktc_netvaerk_menu() {
     'page arguments' => array('ktc_netvaerk_settings'),
     'access arguments' => array('access administration pages'),
   );
-
   return $items;
 }
 /**
@@ -228,6 +227,36 @@ function ktc_netvaerk_permission() {
     'create ktc top group' => array(
       'title' => t('Opret ktc top netværk'),
       'description' => t('Opret ktc top netværk som ktc admin.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function ktc_netvaerk_menu_alter(&$items) {
+  // Change theme these pages.
+  $items['node/add/group']['theme callback'] = 'ktc_netvaerk_get_default_theme';
+  $items['group/%/%/admin/people/invite-users']['theme callback'] = 'ktc_netvaerk_get_default_theme';
+  $items['node/%/group']['theme callback'] = 'ktc_netvaerk_get_default_theme';
+  $items['group/%/%/admin/people/add-user']['theme callback'] = 'ktc_netvaerk_get_default_theme';
+}
+/**
+ * Get default theme callback.
+ */
+function ktc_netvaerk_get_default_theme() {
+  return variable_get('theme_default', '0');
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ktc_netvaerk_theme($existing, $type, $theme, $path) {
+  $path = 'theme/';
+  return array(
+    'ktc_netvaerk_invite_form' => array(
+      'render element' => 'form',
+      'template' => $path . 'ktc-netvaerk-invite-form',
     ),
   );
 }
