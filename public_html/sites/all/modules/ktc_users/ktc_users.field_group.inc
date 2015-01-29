@@ -69,6 +69,8 @@ function ktc_users_field_group_info() {
       13 => 'field_tags',
       14 => 'field_topics',
       15 => 'field_zipcode',
+      16 => 'field_account',
+      17 => 'field_adresse_2',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
