@@ -49,6 +49,7 @@ features[field_instance][] = node-group-group_access
 features[field_instance][] = node-group-group_group
 features[field_instance][] = node-group-og_group_ref
 features[field_instance][] = node-group-og_roles_permissions
+features[field_instance][] = og_membership-og_membership_type_default-field_crm_uuid
 features[field_instance][] = taxonomy_term-netv_rkstype-field_crm_uuid
 features[node][] = group
 features[page_manager_handlers][] = node_view_panel_context_3

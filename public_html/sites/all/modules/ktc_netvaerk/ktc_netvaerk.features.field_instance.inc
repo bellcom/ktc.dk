@@ -1128,6 +1128,40 @@ function ktc_netvaerk_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
+  // Exported field_instance: 'og_membership-og_membership_type_default-field_crm_uuid'
+  $field_instances['og_membership-og_membership_type_default-field_crm_uuid'] = array(
+    'bundle' => 'og_membership_type_default',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'og_membership',
+    'field_name' => 'field_crm_uuid',
+    'label' => 'CRM UUID',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-netv_rkstype-field_crm_uuid'
   $field_instances['taxonomy_term-netv_rkstype-field_crm_uuid'] = array(
     'bundle' => 'netv_rkstype',

@@ -413,6 +413,45 @@ function ktc_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_crm_uuid'
+  $field_instances['user-user-field_crm_uuid'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 31,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_crm_uuid',
+    'label' => 'CRM UUID',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 34,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_department'
   $field_instances['user-user-field_department'] = array(
     'bundle' => 'user',
@@ -1550,6 +1589,7 @@ function ktc_users_field_default_field_instances() {
   t('Arbejdsgiver');
   t('Brugertype');
   t('By');
+  t('CRM UUID');
   t('Direkte telefon');
   t('Ekspertise');
   t('Emner');

@@ -41,7 +41,46 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
  * Get users address.
  */
 function ktc_crm_get_user_address($user, $type) {
-  return $type . ' Adresse...';
+  switch ($type) {
+    case 'Work':
+      if ($field = field_get_items('user', $user, 'field_account')) {
+        if ($account = taxonomy_term_load($field[0]['tid'])) {
+          $address = _ktc_crm_get_formatted_address($account, 'taxonomy_term');
+        }
+      }
+      break;
+
+    case 'Private':
+      $address = _ktc_crm_get_formatted_address($user, 'user');
+      break;
+  }
+
+  return $address;
+}
+
+/**
+ * Get formatted address from entity.
+ */
+function _ktc_crm_get_formatted_address($entity, $type) {
+  $address = '';
+
+  if ($field = field_get_items($type, $entity, 'field_adresse')) {
+    $address = $field[0]['value'] . '<br />';
+  }
+  if ($field = field_get_items($type, $entity, 'field_adresse_2')) {
+    $address .= $field[0]['value'] . '<br />';
+  }
+  if ($field = field_get_items($type, $entity, 'field_zipcode')) {
+    $address .= $field[0]['value'] . ' ';
+  }
+  if ($field = field_get_items($type, $entity, 'field_city')) {
+    $address .= $field[0]['value'] . '<br />';
+  }
+  if ($field = field_get_items($type, $entity, 'field_country')) {
+    $address .= $field[0]['value'];
+  }
+
+  return $address;
 }
 
 /**
@@ -108,6 +147,10 @@ function ktc_crm_map_account_to_webuserdto($account) {
     $eanaddressdto->AddressLine1 = $field[0]['value'];
   }
 
+  if ($field = field_get_items('user', $account, 'field_adresse_2')) {
+    $eanaddressdto->AddressLine2 = $field[0]['value'];
+  }
+
   if ($field = field_get_items('user', $account, 'field_city')) {
     $eanaddressdto->City = $field[0]['value'];
   }
@@ -129,6 +172,13 @@ function ktc_crm_map_account_to_webuserdto($account) {
 
   $webuserdto->Adresses = new stdClass();
   $webuserdto->Adresses->EANAddressDto = $eanaddressdto;
+
+  if ($field = field_get_items('user', $account, 'field_account')) {
+    if ($account = taxonomy_term_load($field[0]['tid'])) {
+      $account_uuid = _ktc_crm_get_uuid('taxonomy_term', $account);
+      $webuserdto->DepartmentId = $account_uuid;
+    }
+  }
 
   $webuserdto->Active = $account->status;
 
@@ -169,9 +219,14 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
   $edit['field_cell'][LANGUAGE_NONE][0]['value'] = $webuserdto->MobilePhone;
 
   $edit['field_adresse'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->AddressLine1;
+  $edit['field_adresse_2'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->AddressLine2;
   $edit['field_country'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->Country;
   $edit['field_city'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->City;
   $edit['field_zipcode'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->PostalCode;
+
+  if ($account = ktc_crm_account_load_from_uuid($webuserdto->DepartmentId)) {
+    $edit['field_account'][LANGUAGE_NONE][0]['tid'] = $account->tid;
+  }
 
   if ($region_tid = _ktc_crm_group_get_region_tid($webuserdto->Adresses->EANAddressDto[1]->Region)) {
     $edit['field_regioner'][LANGUAGE_NONE][0]['tid'] = $region_tid;

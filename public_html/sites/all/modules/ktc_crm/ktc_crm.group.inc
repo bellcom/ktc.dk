@@ -22,9 +22,9 @@ function ktc_crm_group_update_groups($lastupdate) {
   $grouproles = ktc_crm_fetch_grouproles();
   ktc_crm_group_update_userroles($grouproles);
 
-  $logger->log->addInfo('cron group', 'update memberhips');
   $groups = ktc_crm_fetch_groupmembers();
 
+  $logger->log->addInfo('cron group', 'update memberhips');
   $group_members = ktc_crm_group_create_array($groups);
   ktc_crm_group_process_memberships($group_members);
 
@@ -185,7 +185,7 @@ function ktc_crm_group_map_group_to_groupdto($group) {
     $groupdto->Region = $region->name;
   }
 
-  if ($field = field_get_items('node', $group, 'field_parentgroup')) {
+  if ($field = field_get_items('node', $group, 'og_group_ref')) {
     $parent_group = node_load($field[0]['target_id']);
     $parent_group_uuid = _ktc_crm_get_uuid('node', $parent_group);
 
@@ -229,9 +229,15 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
 
   $group_node->field_os2web_base_field_ext_link[$language][0]['url'] = $groupdto->WebSite;
 
+  $group_node->field_subgroup[$language][0]['value'] = 0;
+
+  $group_node->field_start_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->StartDate));
+  $group_node->field_end_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->EndDate));
+
   if (!empty($groupdto->ParentGroup)) {
     if ($parent_group = ktc_crm_group_load_from_uuid($groupdto->ParentGroup->CrmId)) {
-      $group_node->field_parentgroup[$language]['0']['target_id'] = $parent_group->nid;
+      $group_node->og_group_ref[$language][0]['target_id'] = $parent_group->nid;
+      $group_node->field_subgroup[$language][0]['value'] = 1;
     }
   }
 
@@ -309,7 +315,7 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
         $status = og_group('node', $group->nid, $values);
       }
 
-      $user_roles = og_get_user_roles($group->type, $group->nid, $account->uid);
+      $user_roles = og_get_user_roles('node', $group->nid, $account->uid);
       // Handle if the user has more than one role in OG and none set from
       // CRM.
       if (count($user_roles) > 1) {

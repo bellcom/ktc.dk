@@ -10,8 +10,23 @@
 function ktc_crm_account_update_accounts() {
   $accounts = ktc_crm_fetch_accounts();
 
+  $vocab = taxonomy_vocabulary_machine_name_load('accounts');
+
+  // Set all terms as updated = 0.
+  db_update('taxonomy_term_data')
+    ->fields(array('updated' => 0))
+    ->condition('vid', $vocab->vid)
+    ->execute();
+
   foreach ($accounts as $accountdto) {
     ktc_crm_account_create_update($accountdto);
+  }
+
+  // Fetch all accounts not updated, and remove them.
+  $result = db_query('SELECT * FROM {taxonomy_term_data} WHERE updated = 0 AND vid = :vid', array(':vid' => $vocab->vid));
+  foreach ($result as $record) {
+    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($record, 1));
+    taxonomy_term_delete($record->tid);
   }
 }
 
@@ -65,6 +80,12 @@ function ktc_crm_account_create_update(\KTC\AccountService\AccountDto $accountdt
   $account->field_cvr[LANGUAGE_NONE][0]['value'] = $accountdto->Cvr;
 
   taxonomy_term_save($account);
+
+  // Set status updated = 1
+  db_update('taxonomy_term_data')
+    ->fields(array('updated' => 1))
+    ->condition('tid', $account->tid)
+    ->execute();
 }
 
 /**
