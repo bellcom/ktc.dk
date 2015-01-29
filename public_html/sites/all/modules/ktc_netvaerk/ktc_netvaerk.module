@@ -18,7 +18,6 @@ function ktc_netvaerk_menu() {
     'page arguments' => array('ktc_netvaerk_settings'),
     'access arguments' => array('access administration pages'),
   );
-
   return $items;
 }
 /**
@@ -148,4 +147,116 @@ function ktc_netvaerk_get_group_content_types($nid) {
     }
   }
   return $types;
+}
+
+/**
+ * Implements hook_node_validate().
+ */
+function ktc_netvaerk_node_validate($node, $form, &$form_state) {
+
+  if ($node->type == 'group') {
+    // Get users groups.
+    $gids = og_get_groups_by_user();
+
+    // Check if user has 'create top group' permission.
+    $create_top_group = user_access('create ktc top group');
+    // Top group field.
+    $og_group_ref = isset($form_state['values']['og_group_ref']) ? $form_state['values']['og_group_ref'] : FALSE;
+    if (!$create_top_group) {
+      // If the user cannot create top group,
+      // so the og_group_ref field cannot be empty.
+      if (!$og_group_ref) {
+        form_set_error('og_group_ref', t('Du skal vælge et overstående netværk.'));
+      }
+      if (isset($og_group_ref['und'][0]['target_id'])) {
+        // Check if user is a member of the chosen group.
+        if (!in_array($og_group_ref['und'][0]['target_id'], $gids['node'])) {
+          form_set_error('og_group_ref', t('Du er ikke medlem af det netværk.'));
+        }
+      }
+      else {
+        form_set_error('og_group_ref', t('Du skal vælge et overstående netværk.'));
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function ktc_netvaerk_node_presave($node) {
+  if ($node->type == 'group') {
+    if ($parent_group = field_get_items('node', $node, 'og_group_ref')) {
+      // Set to subgroup.
+      $node->field_subgroup['und'][0]['value'] = 1;
+
+      // Get subgroup's members.
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'user')
+        ->fieldCondition('og_user_node', 'target_id', $node->nid, '=');
+
+      $results = $query->execute();
+
+      $uids = array_keys($results['user']);
+      if (!empty($uids)) {
+        foreach ($uids as $uid) {
+          $account = user_load($uid);
+          // Add the user to the parent group.
+          og_group('node', $parent_group[0]['target_id'], array(
+                      "entity type"       => "user",
+                      "entity"        => $account,
+                      "membership type"   => OG_MEMBERSHIP_TYPE_DEFAULT,
+                  ));
+          // Changes the users role in the group
+          // (1 = non-member, 2 = member, 3 = administrator member).
+          og_role_grant('node', $parent_group[0]['target_id'], $uid, 2);
+        }
+        // Loop for all the top groups.
+        $parent_obj = node_load($parent_group[0]['target_id']);
+        node_save($parent_obj);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function ktc_netvaerk_permission() {
+  return array(
+    'create ktc top group' => array(
+      'title' => t('Opret ktc top netværk'),
+      'description' => t('Opret ktc top netværk som ktc admin.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function ktc_netvaerk_menu_alter(&$items) {
+  // Change theme these pages.
+  $items['node/add/group']['theme callback'] = 'ktc_netvaerk_get_default_theme';
+  $items['group/%/%/admin/people/invite-users']['theme callback'] = 'ktc_netvaerk_get_default_theme';
+  $items['node/%/group']['theme callback'] = 'ktc_netvaerk_get_default_theme';
+  $items['group/%/%/admin/people/add-user']['theme callback'] = 'ktc_netvaerk_get_default_theme';
+}
+/**
+ * Get default theme callback.
+ */
+function ktc_netvaerk_get_default_theme() {
+  return variable_get('theme_default', '0');
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ktc_netvaerk_theme($existing, $type, $theme, $path) {
+  $path = 'theme/';
+  return array(
+    'ktc_netvaerk_invite_form' => array(
+      'render element' => 'form',
+      'template' => $path . 'ktc-netvaerk-invite-form',
+    ),
+  );
 }

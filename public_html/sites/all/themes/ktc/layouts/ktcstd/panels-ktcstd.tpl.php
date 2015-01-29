@@ -15,11 +15,10 @@
  */
 ?>
 <div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-  <div class="col-md-8 col-sm-8 col-xs-12 pane-content">
-    <?php print $content['left']; ?>
-  </div>
-
-  <div class="col-md-4 col-sm-4 col-xs-12 pane-sidebar">
+  <div class="col-md-4 col-sm-4 col-xs-12 col-md-push-8 col-sm-push-8 pane-sidebar">
     <?php print $content['right']; ?>
+  </div>
+  <div class="col-md-8 col-sm-8 col-xs-12 col-md-pull-4 col-sm-pull-4 pane-content">
+    <?php print $content['left']; ?>
   </div>
 </div>

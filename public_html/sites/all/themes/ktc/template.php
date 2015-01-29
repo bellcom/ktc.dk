@@ -106,6 +106,20 @@ function ktc_preprocess_page(&$variables) {
   // Pass the theme path to js.
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
 
+  // Add information about the number of sidebars.
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['page']['content']['#content_column_class'] = array(4);
+  }
+  elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['sidebar_second'])) {
+    $variables['page']['content']['#content_column_class'] = array(8);
+  }
+  else {
+    $variables['page']['content']['#content_column_class'] = array(12);
+    if (isset($variables['page']['content']['ktc_sectionpage_ktc_page_menu_tabs'])) {
+      $variables['page']['content']['system_main']['#block']->css_class = 'col-md-8 col-sm-8 col-md-pull-4 col-sm-pull-4';
+      $variables['page']['content']['ktc_sectionpage_ktc_page_menu_tabs']['#block']->css_class = 'col-md-4 col-sm-4 col-md-push-8 col-sm-push-8';
+    }
+  }
 }
 /**
  * Implements template_process_page().
@@ -559,7 +573,8 @@ function ktc_preprocess_summary_hearing_answer(&$vars) {
 function ktc_preprocess_panels_pane(&$vars) {
   if ($vars['id'] === ' id="regioner"' || $vars['id'] === ' id="groups"'
       || $vars['id'] === ' id="content_type"' || $vars['id'] === ' id="term_type"'
-      || $vars['id'] === ' id="emner"' || $vars['id'] === ' id="tags"') {
+      || $vars['id'] === ' id="emner"' || $vars['id'] === ' id="tags"'
+      || $vars['id'] === ' id="edit-tabs"') {
     $vars['panel_is_filter'] = TRUE;
     $vars['title_attributes_array']['class'][] = 'filter-pane-title';
   }
@@ -662,5 +677,55 @@ function ktc_preprocess_user_profile(&$vars) {
   }
   else {
     $vars['job_title'] = '';
+  }
+}
+
+function ktc_field($variables) {
+  $output = '';
+  // Render the label, if it's not hidden.
+  if (!$variables['label_hidden']) {
+    $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
+  }
+  // Render the items.
+  $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
+  foreach ($variables['items'] as $delta => $item) {
+    $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+    $output .= '<div class="' . $classes . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
+  }
+  if ($variables['element']['#field_name'] == 'body' && $variables['element']['#bundle'] == 'group') {
+    $node = $variables['element']['#object'];
+    if ($parent_group = field_get_items('node', $node, 'og_group_ref')) {
+      $node_2 = node_load($parent_group[0]['target_id']);
+      $link = l($node_2->title, 'node/' . $node_2->nid);
+      $output .= '<p></p><p></p><div class="parent-group"><span>Er en del of overstående netværk</span><h5>' . $link . '</h5></div>';
+    }
+  }
+  $output .= '</div>';
+  // Render the top-level DIV.
+  $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
+
+  return $output;
+}
+
+/**
+ * Implements hook_preprocess_region().
+ */
+function ktc_preprocess_region(&$variables, $hook) {
+  if($variables['region'] == "sidebar_second"){
+    $variables['classes_array'][] = 'col-md-4 col-xs-12 col-md-push-8 col-sm-push-8';
+  }
+  if($variables['region'] == "content"){
+    $class = '';
+    switch ($variables['elements']['#content_column_class'][0]) {
+      case 8:
+        $class = 'col-md-pull-4 col-sm-pull-4';
+        break;
+
+      case 4:
+        $class = 'col-md-pull-4 col-sm-pull-4';
+        break;
+
+    }
+    $variables['classes_array'][] = $class;
   }
 }

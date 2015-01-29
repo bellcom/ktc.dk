@@ -94,7 +94,7 @@
   </div>
 </div>
 
-<div class="main-container container">
+<div class="main-container container margin-fixed">
 
   <?php /* region--header.tpl.php */ ?>
   <?php print render($page['header']); ?>
@@ -106,13 +106,13 @@
         <?php print render($page['sidebar_first']); ?>
       <?php endif; ?>
 
-      <?php /* region--content.tpl.php */ ?>
-      <?php print render($page['content']); ?>
-
       <?php /* region--sidebar.tpl.php */ ?>
       <?php if ($page['sidebar_second']): ?>
         <?php print render($page['sidebar_second']); ?>
       <?php endif; ?>
+
+      <?php /* region--content.tpl.php */ ?>
+      <?php print render($page['content']); ?>
 
   </div>
   <?php if ($page['content_bottom']): ?>

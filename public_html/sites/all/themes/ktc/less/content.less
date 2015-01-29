@@ -40,7 +40,7 @@
 
 // Default show for a node with 3 columns.
 body.page-node,
-body.page-taxonomy-term.term-is-not-top {
+body.page-taxonomy-term {
   h1.page-header {
   }
   article,
@@ -242,11 +242,26 @@ body.page-taxonomy-term.term-is-not-top {
         .btn-blacknblue();
       }
     }
-    &.pane-og-members-panel-pane-1,
-    &.pane-node-body,
-    &.pane-node-field-groupimage {
-      float: right;
-      clear: right;
+
+    &.pane-node-body {
+      .parent-group {
+        a {
+          color: @gray-darker;
+          font-weight: 700;
+        }
+      }
+    }
+    &.pane-subgroups-panel-pane-1 {
+      article {
+        .group-region {
+          .field-name-field-regioner,
+          .group-region-dash {
+            display: inline-block;
+            margin-right: 5px;
+          }
+        }
+        margin-bottom: 0px;
+      }
     }
   }
 }
