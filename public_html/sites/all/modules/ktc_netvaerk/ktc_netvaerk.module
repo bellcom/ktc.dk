@@ -197,7 +197,7 @@ function ktc_netvaerk_node_presave($node) {
 
       $results = $query->execute();
 
-      $uids = array_keys($results['user']);
+      $uids = isset($results['user']) ? array_keys($results['user']) : array();
       if (!empty($uids)) {
         foreach ($uids as $uid) {
           $account = user_load($uid);
