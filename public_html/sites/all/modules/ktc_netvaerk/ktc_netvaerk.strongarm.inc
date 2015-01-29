@@ -50,10 +50,17 @@ function ktc_netvaerk_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '14',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'listevisning' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__group'] = $strongarm;

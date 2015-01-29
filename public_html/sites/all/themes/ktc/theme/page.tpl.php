@@ -76,10 +76,12 @@
 <div class="header-region">
   <div class="top_header">
   <div class="container">
+    <div class="row">
     <?php /* region--header_top.tpl.php */ ?>
     <?php if ($page['header_top']): ?>
       <?php print render($page['header_top']); ?>
     <?php endif; ?>
+    </div>
   </div>
   </div>
   <div class="navigation">
@@ -92,7 +94,7 @@
   </div>
 </div>
 
-<div class="main-container container">
+<div class="main-container container margin-fixed">
 
   <?php /* region--header.tpl.php */ ?>
   <?php print render($page['header']); ?>
@@ -104,13 +106,13 @@
         <?php print render($page['sidebar_first']); ?>
       <?php endif; ?>
 
-      <?php /* region--content.tpl.php */ ?>
-      <?php print render($page['content']); ?>
-
       <?php /* region--sidebar.tpl.php */ ?>
       <?php if ($page['sidebar_second']): ?>
         <?php print render($page['sidebar_second']); ?>
       <?php endif; ?>
+
+      <?php /* region--content.tpl.php */ ?>
+      <?php print render($page['content']); ?>
 
   </div>
   <?php if ($page['content_bottom']): ?>

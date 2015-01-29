@@ -14,6 +14,8 @@
     $('.filter-link').click(function(event){
       $container = $('#section-page-with-filter').find('.view-content:first');
       $container.infinitescroll('unbind');
+
+      // Change the buttons class.
       if (!$(this).hasClass(button_class)) {
         $(this).addClass(button_class);
         $(this).removeClass(button_normal);
@@ -55,12 +57,14 @@
         }
 
       }
+      // Get all the filter values.
       var filter_value = check_filter_value();
 
       var path = window.location.href.split('/');
       var type = path[path.length-1];
 
-      var gid = $('#content_id').find('.pane-content').text();
+      // Get the group id.
+      var gid = $('#content_id').find('.pane-content p').text();
       if (gid == '') {
         gid = check_gid_filter_value();
       }
@@ -69,6 +73,8 @@
       }
 
       var link = '/ajax/' + type +'/view/'+filter_value[0]+'/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4]+'/'+gid;
+
+      // Netvaerk section page my groups and all groups filter.
       if (type == 'netvaerk' && (filter_value[1] != 'all,' || filter_value[2] != 'all,' || filter_value[3] != 'all,' || filter_value[4] != 'all,')) {
         var link_2 = '/my_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4];
         var link_3 = '/all_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4];
@@ -82,10 +88,11 @@
           add_pager_ajax();
         });
       }
+
+      // Arrangement/aktiviteter section page: filter events on period (furture/old).
       var substr = type.match(/aktiviteter/g);
       if (type == 'aktiviteter' || substr == 'aktiviteter') {
         var period = $('#period').find('.btn-primary').attr('data-filter');
-
 
         link = '/ajax/aktiviteter/view/all/'+filter_value[1]+'/'+period+'/all/'+filter_value[4]+'/'+gid;
       }
@@ -149,6 +156,10 @@
       return false;
 
     });
+    $( window ).resize(function() {
+      filter_on_mobile();
+    });
+    filter_on_mobile();
 
   });
 
@@ -157,6 +168,36 @@
     load_content();
   });
 
+  function filter_on_mobile() {
+    if ($(window).width() < 768) {
+      $('.filter-fold').each(function() {
+        $(this).closest('.panel-pane').find('.pane-content').css('display', 'none');
+        $(this).removeClass('filter-foldin');
+        $(this).addClass('filter-foldout');
+        $(this).closest('.panel-pane').find('.filter-pane-title').click(function() {
+          var foldout = $(this).closest('.panel-pane').find('.pane-content').css('display');
+          var icon = $(this).closest('.panel-pane').find('.filter-fold');
+          if (foldout == 'block') {
+            $(this).closest('.pane-views-panes').find('.pane-content').css('display', 'none');
+            icon.removeClass('filter-foldin');
+            icon.addClass('filter-foldout');
+          }
+          else {
+            $(this).closest('.pane-views-panes').find('.pane-content').css('display','block');
+            icon.removeClass('filter-foldout');
+            icon.addClass('filter-foldin');
+          }
+        });
+      })
+    }
+    else {
+      $('.filter-fold').each(function() {
+        $(this).closest('.panel-pane').find('.pane-content').css('display', 'block');
+        $(this).removeClass('filter-foldout');
+        $(this).addClass('filter-foldin');
+      })
+    }
+  }
   function load_content() {
     $container = $('#section-page-with-filter').find('.view-content:first');
 
@@ -262,7 +303,7 @@
 
       $(this).find('.btn-primary').each(function() {
 
-        var filter_id = $(this).closest('.pane-views-panes').attr('id');
+        var filter_id = $(this).closest('.panel-pane').attr('id');
         if (filter_id == 'content_type') {
           content_type += $(this).attr('data-filter') + ',';
         }
@@ -301,7 +342,7 @@
   }
 
   function check_gid_filter_value() {
-    var filter_value = '', gid = '';
+    var gid = '';
     $('#groups .btn-primary').each(function() {
       gid += $(this).attr('data-filter') + ',';
     });

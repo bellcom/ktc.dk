@@ -80,7 +80,10 @@
  */
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="created"><?php print date('d. F Y', $node->created); ?></div>
-  <h5><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h5>
+  <h5>
+    <a href="<?php print $node_url; ?>"><i class="icon-yellow-arrow"></i><?php print $title; ?></a></h5>
+  <?php if ($content['field_regioner']): ?>
+    <div class="group-region"> <?php print '<span class="group-region-dash"> - </span>' . render($content['field_regioner']); ?></div>
+  <?php endif; ?>
 </article>
 

@@ -1,15 +1,20 @@
 .page-leverandoerlist,
 .page-user,
 .page-node,
+.page-comment,
 .page-hoering-mangler-filer,
+.page-group-node-admin,
 .page-leverandoerer {
   &.node-type-group {
     .main-container {
+      background: none;
+      padding-left: 0px;
+      padding-right: 0px;
+
       h1.page-header {
         background-color: #fff;
         padding-left: 15px;
       }
-      background: none;
       .pane-center {
         h3.pane-title {
           .filter-title();
@@ -43,6 +48,12 @@
                 .group-add-forum_post {
                   display: inline-block;
                   .sprite(@ikon-debat);
+                  vertical-align: middle;
+                  margin-right: 5px;
+                }
+                .group-add-group{
+                  display: inline-block;
+                  .sprite(@ikon-netvaerk2);
                   vertical-align: middle;
                   margin-right: 5px;
                 }
@@ -110,7 +121,25 @@
               margin-top: 0;
             }
           }
+          .og-members-all,
+          .og-members-all-hide {
+            clear: both;
+            text-align: center;
+            a {
+              text-transform: uppercase;
+              font-weight: 700;
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+          &.pane-subgroups-panel-pane-1 {
+            .view-id-subgroups {
+
+            }
+          }
         }
+
       }
       .pane-right {
         .pane-page-tabs {
@@ -212,11 +241,16 @@
         padding-bottom: 5px;
       }
     }
-        .pane-menu-menu-user-profile-menu {
-          margin-top: -45px;
-          .pane-content {
-            padding-top: 0px;
-          }
-        }
+    .pane-menu-menu-user-profile-menu {
+      margin-top: -45px;
+      .pane-content {
+        padding-top: 0px;
       }
+    }
+  }
+}
+body.page-node-edit.node-type-group {
+  .main-container {
+    background-color: #fff
+  }
 }

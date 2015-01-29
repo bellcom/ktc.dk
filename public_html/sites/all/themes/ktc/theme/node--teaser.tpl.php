@@ -31,12 +31,12 @@
       <div class="row">
         <div class="node-teaser-user-profile clearfix col-md-12 col-sm-12 col-xs-12">
 
-          <div class="col-md-4 col-sm-4 col-xs-4 left">
+          <div class="col-md-3 col-sm-4 col-xs-4 left">
             <?php if (isset($user_object)): ?>
               <?php print $image = theme('user_picture', array('account' => $user_object));?>
             <?php endif; ?>
           </div>
-          <div class="col-md-8 col-sm-8 col-xs-8 right">
+          <div class="col-md-9 col-sm-8 col-xs-8">
             <?php if (isset($user_name)): ?>
               <span class="user_link"><?php print $user_name; ?></span><br />
             <?php endif; ?>
