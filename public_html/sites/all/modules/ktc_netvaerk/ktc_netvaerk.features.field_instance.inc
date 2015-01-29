@@ -74,6 +74,64 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-group-field_crm_uuid'
+  $field_instances['node-group-field_crm_uuid'] = array(
+    'bundle' => 'group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_crm_uuid',
+    'label' => 'CRM UUID',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'node-group-field_gammel_gid'
   $field_instances['node-group-field_gammel_gid'] = array(
     'bundle' => 'group',
@@ -1070,9 +1128,43 @@ function ktc_netvaerk_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
+  // Exported field_instance: 'taxonomy_term-netv_rkstype-field_crm_uuid'
+  $field_instances['taxonomy_term-netv_rkstype-field_crm_uuid'] = array(
+    'bundle' => 'netv_rkstype',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_crm_uuid',
+    'label' => 'CRM UUID',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 32,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Billede');
+  t('CRM UUID');
   t('Determine if this is an OG group.');
   t('Ekstern links');
   t('Emner');
