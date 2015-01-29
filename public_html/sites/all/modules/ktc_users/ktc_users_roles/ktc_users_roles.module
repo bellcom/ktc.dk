@@ -84,6 +84,15 @@ function ktc_users_roles_page() {
     );
   }
 
+  unset($drupal_role_options[0]);
+  $form['ktc_users_roles_never_remove'] = array(
+    '#title' => t('Fjern aldrig disse roller.'),
+    '#options' => $drupal_role_options,
+    '#multiple' => TRUE,
+    '#type' => 'checkboxes',
+    '#default_value' => variable_get('ktc_users_roles_never_remove', array()),
+  );
+
   $form['submit'] = array(
     '#value' => t('Gem'),
     '#type' => 'submit',
@@ -139,8 +148,11 @@ function ktc_users_roles_select_group(&$form, &$form_state) {
  */
 function ktc_users_roles_page_submit(&$form, &$form_state) {
   $role_map = $form_state['values']['role_map'];
-
   variable_set('ktc_users_roles_map', $role_map);
+
+  $never_remove = $form_state['values']['ktc_users_roles_never_remove'];
+  variable_set('ktc_users_roles_never_remove', $never_remove);
+
   drupal_set_message(t('Indstillingerne er blevet gemt'));
 
 }
@@ -191,6 +203,37 @@ function ktc_users_roles_process_group_role_map($group_nid, $group_role_map) {
 }
 
 /**
+ * Process users accumulated roles according to the assigned group roles.
+ */
+function ktc_users_roles_process_user($uid) {
+  $role_map = variable_get('ktc_users_roles_map', array());
+
+  $user_roles = array();
+
+  foreach ($role_map as $group_nid => $group_role_map) {
+    $query = db_select('og_users_roles', 'ogur');
+    $query->rightJoin('og_membership', 'ogm', 'ogm.etid = ogur.uid');
+    $query->fields('ogm')
+      ->fields('ogur')
+      ->condition('ogm.gid', $group_nid, '=')
+      ->condition('ogm.etid', $uid, '=');
+    $result = $query->execute()->fetchAll();
+
+    foreach ($group_role_map as $og_role_id => $drupal_role_id) {
+      if (is_numeric($drupal_role_id) && $drupal_role_id) {
+        foreach ($result as $current_role_info) {
+          if ($current_role_info->rid == $og_role_id) {
+            $user_roles[$drupal_role_id] = $drupal_role_id;
+          }
+        }
+      }
+    }
+  }
+
+  return $user_roles;
+}
+
+/**
  * Implements hook_og_role_grant().
  */
 function ktc_users_roles_og_role_grant($group_type, $gid, $uid, $rid) {
@@ -210,9 +253,35 @@ function ktc_users_roles_og_role_revoke($group_type, $gid, $uid, $rid) {
   $role_map = variable_get('ktc_users_roles_map', array());
   $group_role_map = $role_map[$gid];
 
-  if ($group_role_map[$rid]) {
+  // This is far from optimal, and could probarbly be optimised a bit.
+  // Since the user can be member of several groups, that all grant a site
+  // wide role, we need to make sure that we do not remove any of the roles
+  // that the user is entitled to.
+  $all_user_roles = ktc_users_roles_process_user($uid);
+
+  // If the group role revoked has a corresponding drupal role, and
+  // the user is not entitled to it from another group.
+  if ($group_role_map[$rid] && !in_array($group_role_map[$rid], $all_user_roles)) {
     ktc_users_roles_role($uid, $group_role_map[$rid], 'revoke');
   }
+}
+
+/**
+ * Implements hook_og_membership_delete().
+ */
+function ktc_users_roles_og_membership_delete($og_membership) {
+  $account = user_load($uid);
+  $edit['roles'] = $account->roles;
+
+  $never_remove = variable_get('ktc_users_roles_never_remove', array());
+
+  foreach ($edit['roles'] as $rid) {
+    if (!in_array($rid, $never_remove)) {
+      unset($edit['roles'][$rid]);
+    }
+  }
+
+  user_save($account, $edit);
 }
 
 /**

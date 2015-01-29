@@ -309,7 +309,7 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
         $status = og_group('node', $group->nid, $values);
       }
 
-      $user_roles = og_get_user_roles('node', $group->nid, $account->uid);
+      $user_roles = og_get_user_roles($group->type, $group->nid, $account->uid);
       // Handle if the user has more than one role in OG and none set from
       // CRM.
       if (count($user_roles) > 1) {
