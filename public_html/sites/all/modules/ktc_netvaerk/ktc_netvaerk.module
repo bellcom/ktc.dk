@@ -60,6 +60,17 @@ function ktc_netvaerk_get_node_group_info($nid) {
       );
     }
 
+    // If the node type is a group.
+    if ($node->type == 'group') {
+      // Check user is a member or not.
+      $class = ktc_netvaerk_check_my_groups($nid);
+      $group_info = array(
+        'name' => $group->title,
+        'class' => $class,
+        'gid' => $gid,
+      );
+      // TODO: the forengingen(green).
+    }
     // If node type is magazine, so there is no group,
     // return class is blue.
     if ($node->type == 'magazine') {
@@ -130,7 +141,7 @@ function ktc_netvaerk_change_own($node) {
 /**
  * Get group content types.
  */
-function ktc_netvaerk_get_group_content_types($nid) {
+function ktc_netvaerk_get_group_content_types($nid = 'all') {
   $types = array();
   if (is_numeric($nid)) {
     $query = db_select('og_membership', 'ogm');
@@ -143,6 +154,18 @@ function ktc_netvaerk_get_group_content_types($nid) {
     if ($result->rowCount() > 0) {
       while ($record = $result->fetchAssoc()) {
         $types[] = $record['type'];
+      }
+    }
+  }
+  if ($nid == 'all') {
+    $node_types = node_type_get_types();
+    foreach ($node_types as $obj) {
+      // Skip hearing_responses type.
+      if ($obj->type == 'hearing_responses') {
+        continue;
+      }
+      if (og_is_group_content_type('node', $obj->type)) {
+        $types[] = $obj->type;
       }
     }
   }
