@@ -65,7 +65,7 @@ function ktc_netvaerk_get_node_group_info($nid) {
       // Check user is a member or not.
       $class = ktc_netvaerk_check_my_groups($nid);
       $group_info = array(
-        'name' => $group->title,
+        'name' => $node->title,
         'class' => $class,
         'gid' => $gid,
       );
