@@ -10,23 +10,25 @@
 function ktc_crm_account_update_accounts() {
   $accounts = ktc_crm_fetch_accounts();
 
-  $vocab = taxonomy_vocabulary_machine_name_load('accounts');
+  if ($accounts) {
+    $vocab = taxonomy_vocabulary_machine_name_load('accounts');
 
-  // Set all terms as updated = 0.
-  db_update('taxonomy_term_data')
-    ->fields(array('updated' => 0))
-    ->condition('vid', $vocab->vid)
-    ->execute();
+    // Set all terms as updated = 0.
+    db_update('taxonomy_term_data')
+      ->fields(array('updated' => 0))
+      ->condition('vid', $vocab->vid)
+      ->execute();
 
-  foreach ($accounts as $accountdto) {
-    ktc_crm_account_create_update($accountdto);
-  }
+    foreach ($accounts as $accountdto) {
+      ktc_crm_account_create_update($accountdto);
+    }
 
-  // Fetch all accounts not updated, and remove them.
-  $result = db_query('SELECT * FROM {taxonomy_term_data} WHERE updated = 0 AND vid = :vid', array(':vid' => $vocab->vid));
-  foreach ($result as $record) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($record, 1));
-    taxonomy_term_delete($record->tid);
+    // Fetch all accounts not updated, and remove them.
+    $result = db_query('SELECT * FROM {taxonomy_term_data} WHERE updated = 0 AND vid = :vid', array(':vid' => $vocab->vid));
+
+    foreach ($result as $record) {
+      taxonomy_term_delete($record->tid);
+    }
   }
 }
 
@@ -81,11 +83,53 @@ function ktc_crm_account_create_update(\KTC\AccountService\AccountDto $accountdt
 
   taxonomy_term_save($account);
 
+  if ($accountdto->CustomerTypeName) {
+    ktc_crm_account_set_type($account, $accountdto->CustomerTypeName, $accountdto->TopLevelAccountId);
+  }
+
   // Set status updated = 1
   db_update('taxonomy_term_data')
     ->fields(array('updated' => 1))
     ->condition('tid', $account->tid)
     ->execute();
+}
+
+/**
+ * Set the top level account type for toplevelaccount term.
+ */
+function ktc_crm_account_set_type($account, $type, $toplevelaccountid) {
+  // The account type determine the parent term for the toplevelaccount.
+  // This creates a term, for the type set on the account.
+  $vocab = taxonomy_vocabulary_machine_name_load('accounts');
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+     ->propertyCondition('name', $type)
+     ->propertyCondition('vid', $vocab->vid);
+  $result = $query->execute();
+
+  if (!empty($result['taxonomy_term'])) {
+    $type_term = taxonomy_term_load(key($result['taxonomy_term']));
+  }
+  else {
+    $type_term = new StdClass();
+    $type_term->vid = $vocab->vid;
+    $type_term->name = $type;
+    taxonomy_term_save($type_term);
+  }
+
+  if ($toplevelaccountid) {
+    $toplevelaccount = ktc_crm_account_load_from_uuid($toplevelaccountid);
+  }
+  else {
+    // The account is toplevel.
+    $toplevelaccount = $account;
+  }
+
+  if (is_object($toplevelaccount)) {
+    $toplevelaccount->parent = array($type_term->tid);
+
+    taxonomy_term_save($toplevelaccount);
+  }
 }
 
 /**
