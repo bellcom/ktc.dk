@@ -12,6 +12,7 @@ define('KTC_HEARING_STATUS_RECAP', variable_get('ktc_hearing_status_recap', 1838
 define('KTC_HEARING_STATUS_APPROVAL', variable_get('ktc_hearing_status_approval', 1839));
 define('KTC_HEARING_STATUS_APPROVED', variable_get('ktc_hearing_status_approved', 1840));
 define('KTC_HEARING_STATUS_CLOSED', variable_get('ktc_hearing_status_closed', 1892));
+define('KTC_HEARING_STATUS_KL_ANSWER', variable_get('ktc_hearing_status_kl_answer', 1892));
 
 /**
  * Implements hook_menu().
@@ -160,6 +161,20 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
   // These two steps, allows the user to move the hearing foward in the
   // workflow. To ease the process. An extra submit button is added.
   switch (arg(2)) {
+    case 'hearing_response':
+      $form['actions']['submit']['#value'] = t('Gem kladde');
+      $form['actions']['save_and_publish'] = array(
+        '#type' => 'submit',
+        '#value' => t('Afgiv svar'),
+        '#weight' => 50,
+      );
+
+      // Execute all normal submit callbacks.
+      $form['actions']['save_and_publish']['#submit'] = $form['actions']['submit']['#submit'];
+      // And update the status for the node.
+      $form['actions']['save_and_publish']['#submit'][] = 'ktc_hearing_response_publish';
+      break;
+
     case 'summary_hearing_response':
       $language = $form['field_is_summary']['#language'];
       $form['field_is_summary'][$language]['#default_value'] = 1;
@@ -257,31 +272,6 @@ function ktc_hearing_node_access($node, $op, $account) {
     if ($op == 'create') {
       if (_ktc_hearing_user_can_create_hearing($account)) {
         return NODE_ACCESS_ALLOW;
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_node_presave().
- */
-function ktc_hearing_node_presave($node) {
-  if ($node->type == 'hearing') {
-    $hearing_status = ktc_hearing_get_status($node);
-
-    if ($hearing_status == KTC_HEARING_STATUS_NEW) {
-      ktc_hearing_notify_users('new', $node);
-
-      // Set status to open.
-      $language = field_language('node', $node, 'field_status');
-      $node->field_status[$language][0]['tid'] = KTC_HEARING_STATUS_OPEN;
-    }
-
-    if (isset($node->original)) {
-      $original_status = ktc_hearing_get_status($node->original);
-
-      if ($hearing_status == KTC_HEARING_STATUS_APPROVED && $original_status != KTC_HEARING_STATUS_APPROVED) {
-        ktc_hearing_notify_users('approved', $node);
       }
     }
   }
@@ -432,6 +422,7 @@ function ktc_hearing_summary_responses($hearing) {
 
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('status', 1)
       ->entityCondition('bundle', 'hearing_responses')
       ->fieldCondition('field_hearing_node', 'target_id', $hearing->nid);
     $result = $query->execute();
@@ -492,6 +483,16 @@ function ktc_hearing_view_summary_responses($hearing) {
 }
 
 /**
+ * Get a hearing from the response.
+ */
+function ktc_hearing_get_hearing_from_response($hearing_response) {
+  if ($hearing_field = field_get_items('node', $hearing_response, 'field_hearing_node')) {
+    return node_load($hearing_field[0]['target_id']);
+  }
+  return FALSE;
+}
+
+/**
  * Page callback allowing the hearing response to be approved.
  */
 function ktc_hearing_approve_summary_responses($hearing) {
@@ -503,6 +504,7 @@ function ktc_hearing_approve_summary_responses($hearing) {
 
         $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'node')
+          ->propertyCondition('status', 1)
           ->entityCondition('bundle', 'hearing_responses')
           ->fieldCondition('field_hearing_node', 'target_id', $hearing->nid);
         $result = $query->execute();
@@ -591,6 +593,19 @@ function ktc_hearing_approve_summary_response_form($form, $form_state, $summary_
 }
 
 /**
+ * Extra submit handler, publish the hearing answer.
+ */
+function ktc_hearing_response_publish(&$form, &$form_state) {
+  // At this point the node is updated. The entity on the otherhand
+  // isn't. We reload id and set the status to published.
+  $summary_response = node_load($form['#entity']->nid);
+
+  $summary_response->status = 1;
+
+  node_save($summary_response);
+}
+
+/**
  * Extra submit handler for sending a response for approval.
  */
 function ktc_hearing_set_status_approval(&$form, &$form_state) {
@@ -644,6 +659,7 @@ function ktc_hearing_set_status($form, $form_state, $arg = NULL) {
     KTC_HEARING_STATUS_APPROVAL,
     KTC_HEARING_STATUS_APPROVED,
     KTC_HEARING_STATUS_CLOSED,
+    KTC_HEARING_STATUS_KL_ANSWER,
   );
 
   foreach ($hearing_states as $state) {
@@ -692,6 +708,7 @@ function ktc_hearing_set_status_submit(&$form, &$form_state) {
 function ktc_hearing_responses($hearing) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
+    ->propertyCondition('status', 1)
     ->entityCondition('bundle', 'hearing_responses')
     ->fieldCondition('field_hearing_node', 'target_id', $hearing->nid);
   $result = $query->execute();
@@ -721,6 +738,7 @@ function ktc_hearing_responses($hearing) {
     'name' => (isset($user->name) ? $user->name : ''),
     'type' => $type,
     'language' => LANGUAGE_NONE,
+    'status' => 0,
   );
 
   if (isset($users_response)) {
@@ -747,6 +765,7 @@ function ktc_hearing_user_has_responded($hearing, $user = FALSE) {
 
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
+    ->propertyCondition('status', 1)
     ->entityCondition('bundle', 'hearing_responses')
     ->fieldCondition('field_hearing_node', 'target_id', $hearing->nid)
     ->propertyCondition('uid', $user->uid);
@@ -817,105 +836,6 @@ function ktc_hearing_user_has_access($hearing, $account = FALSE) {
   }
 
   return $access;
-}
-
-/**
- * Notify users on hearing.
- */
-function ktc_hearing_notify_users($op, $hearing) {
-  switch ($op) {
-    case 'new':
-      $attendee_roles = array(
-        'chairman',
-        'responsible_foreman',
-        'responsible_admin',
-        'coordinator',
-        'attendees',
-      );
-
-      foreach ($attendee_roles as $field_name) {
-        if ($field = field_get_items('node', $hearing, 'field_' . $field_name)) {
-          $users[$field_name] = $field;
-        }
-      }
-
-      $mail_templates = ktc_hearing_generate_mail_templates($hearing, $op, $attendee_roles);
-
-      $tokens = array();
-
-      if (isset($users)) {
-        foreach ($users as $role => $role_users) {
-          foreach ($role_users as $_user) {
-            $user = user_load($_user['target_id']);
-
-            $token_data = array('user' => $user, 'node' => $hearing);
-            $to = $user->mail;
-            // Testing.
-            $to = 'tth@bellcom.dk';
-            $language = $user->language;
-
-            $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
-            $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
-
-            drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
-          }
-        }
-      }
-      break;
-
-    case 'approved':
-      $author = user_load($hearing->uid);
-      $token_data = array('user' => $author, 'node' => $hearing);
-      $to = $author->mail;
-      // Testing.
-      $to = 'tth@bellcom.dk';
-      $language = $author->language;
-      $role = 'creator';
-
-      $mail_templates = ktc_hearing_generate_mail_templates($hearing, $op, array($role));
-
-      $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
-      $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
-
-      $summary_markup = _ktc_hearing_generate_hearing_summary_view($hearing);
-
-      $pdf_attachment = array(
-        'filepath' => _ktc_hearing_generate_pdf($summary_markup),
-        'filename' => 'høringssvar.pdf',
-        'filemime' => 'application/pdf',
-      );
-
-      $params['attachments'][] = $pdf_attachment;
-
-      $plain_attachment = array(
-        'filepath' => _ktc_hearing_generate_markdown($summary_markup),
-        'filename' => 'høringssvar.txt',
-        'filemime' => 'text/plain',
-      );
-
-      $params['attachments'][] = $plain_attachment;
-
-      drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
-      break;
-  }
-}
-
-/**
- * Generate mail templates for the different roles.
- */
-function ktc_hearing_generate_mail_templates($hearing, $op, $attendee_roles) {
-  $templates = array();
-
-  foreach ($attendee_roles as $role) {
-    $subject = variable_get('ktc_hearing_mail_subj_' . $op . '_' . $role, '');
-    $body = variable_get('ktc_hearing_mail_body_' . $op . '_' . $role, '');
-    $templates[$role] = array(
-      'subject' => $subject,
-      'body' => $body,
-    );
-  }
-
-  return $templates;
 }
 
 /**
@@ -1034,7 +954,7 @@ function _ktc_hearing_get_hearing_from_response($response) {
 /**
  * Helper, generate pdf from hearing node.
  */
-function _ktc_hearing_generate_pdf($markup) {
+function ktc_hearing_generate_pdf($markup) {
   $dompdf = new DOMPDF();
   $dompdf->load_html($markup);
   $dompdf->render();
@@ -1045,7 +965,7 @@ function _ktc_hearing_generate_pdf($markup) {
  * Page preview, for summary answer pdf.
  */
 function ktc_hearing_generate_hearing_summary_preview($hearing) {
-  $markup = _ktc_hearing_generate_hearing_summary_view($hearing, TRUE);
+  $markup = ktc_hearing_generate_hearing_summary_view($hearing, TRUE);
 
   $dompdf = new DOMPDF();
   $dompdf->load_html($markup);
@@ -1061,7 +981,7 @@ function ktc_hearing_generate_hearing_summary_preview($hearing) {
 /**
  * Generate markdown, "clear text" from html.
  */
-function _ktc_hearing_generate_markdown($markup) {
+function ktc_hearing_generate_markdown($markup) {
   $markdown = new HTML_To_Markdown(nl2br($markup));
   $markdown = utf8_decode(strip_tags($markdown->output()));
   return file_unmanaged_save_data($markdown, NULL, FILE_EXISTS_RENAME);
@@ -1070,7 +990,7 @@ function _ktc_hearing_generate_markdown($markup) {
 /**
  * Gnerate markup of hearing summary answer.
  */
-function _ktc_hearing_generate_hearing_summary_view($hearing, $php_script = FALSE) {
+function ktc_hearing_generate_hearing_summary_view($hearing, $php_script = FALSE) {
   $vars = array();
 
   global $base_url;

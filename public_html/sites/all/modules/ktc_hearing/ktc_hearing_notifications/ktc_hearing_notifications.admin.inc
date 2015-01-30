@@ -8,89 +8,84 @@
  * Form callback for admin settings.
  */
 function ktc_hearing_notifications_settings() {
-  if (!$vocabulary = taxonomy_vocabulary_machine_name_load('hearing_status')) {
-    drupal_set_message('Vocabulary with machinename "hearing_status" is missing', 'error');
+  $values = variable_get('ktc_hearing_notification_settings', array());
+
+  $template_options = array(t('Ingen'));
+
+  $mail_nodes = node_load_multiple(array(), array('type' => 'ktc_hearings_notification'));
+
+  foreach ($mail_nodes as $mail_node) {
+    $template_options[$mail_node->nid] = $mail_node->title;
+
+    $edit_links[] = $mail_node->title . l(t('- rediger'), 'node/' . $mail_node->nid . '/edit', array('query' => array('destination' => current_path())));
   }
 
   // Mail settings.
   $form['mail_templates'] = array(
     '#type' => 'fieldset',
     '#title' => t('Email templates'),
+    '#tree' => TRUE,
   );
 
-  $form['mail_templates']['tokens'] = array(
-    '#theme' => 'token_tree',
-    '#token_types' => array('user', 'node'),
-    '#global_types' => FALSE,
-    '#click_insert' => FALSE,
+  $form['mail_templates']['create_new'] = array(
+    '#type' => 'item',
+    '#markup' => '<h3>' . l(t('Opret ny skabelon'), 'node/add/ktc-hearings-notification', array('query' => array('destination' => current_path())))  . '</h3>',
+  );
+
+  $form['mail_templates']['existing'] = array(
+    '#type' => 'item',
+    '#markup' => implode($edit_links, '<br />'),
   );
 
   $attendee_roles = array(
-    'chairman',
-    'responsible_foreman',
-    'responsible_admin',
-    'coordinator',
-    'attendees',
+    'chairman' => 'Formand',
+    'responsible_foreman' => 'Ansvarlig Formand',
+    'responsible_admin' => 'Ansvarlig Tovholder',
+    'coordinator' => 'Tovholder',
+    'attendees' => 'Deltagere',
+    'creator' => 'Opretter',
   );
 
   $ops = array(
-    'KTC_HEARING_STATUS_OPEN' => 'Ny høring udsendt',
-    'Ændring af ansvarlig tovholder',
-    'Ændring af ansvarlig formand',
-    'Påmindelser',
-    'Svar sammenskrevet (handling "Send til godkendelse")',
-    'Status sat til "Godkendt og lukket"',
-    'Status sat til "KL høringssvar uploadet"',
+    'new_hearing' => 'Ny høring udsendt',
+    'change_coordinator' => 'Ændring af ansvarlig tovholder',
+    'change_chairman' => 'Ændring af ansvarlig formand',
+    'notify' => 'Påmindelser',
+    'approval' => 'Svar sammenskrevet (handling "Send til godkendelse")',
+    'approved' => 'Status sat til "Godkendt og lukket"',
+    'kl_answer' => 'Status sat til "KL høringssvar uploadet"',
   );
 
-  $ops = array(
-    'KTC_HEARING_STATUS_OPEN' => 'Ny',
-    'KTC_HEARING_STATUS_RECAP' => 'Sammenfatning',
-    'KTC_HEARING_STATUS_APPROVAL' => 'Godkendelse',
-    'KTC_HEARING_STATUS_APPROVED' => 'Godekendt',
-  );
-
-  foreach ($attendee_roles as $role) {
+  foreach ($attendee_roles as $role => $title) {
     $form['mail_templates'][$role] = array(
       '#type' => 'fieldset',
-      '#title' => $role,
-      '#collapsible' => TRUE,
-      '#collapsed' => TRUE,
+      '#title' => $title,
     );
 
     foreach ($ops as $op => $title) {
-
-      $form['mail_templates'][$role]['ktc_hearing_mail_subj_' . $op . '_' . $role] = array(
-        '#type' => 'textfield',
-        '#default_value' => variable_get('ktc_hearing_mail_subj_' . $op . '_' . $role, ''),
-        '#prefix' => '<b>' . $title . '</b>',
-      );
-
-      $form['mail_templates'][$role]['ktc_hearing_mail_body_' . $op . '_' . $role] = array(
-        '#type' => 'textarea',
-        '#default_value' => variable_get('ktc_hearing_mail_body_' . $op . '_' . $role, ''),
+      $form['mail_templates'][$role][$op] = array(
+        '#type' => 'select',
+        '#title' => $title,
+        '#options' => $template_options,
+        '#default_value' => !empty($values) ? $values[$role][$op] : 0,
       );
     }
   }
 
-  $op = 'approved';
-  $role = 'creator';
-
-  $form['mail_templates'][$role] = array(
-    '#type' => 'fieldset',
-    '#title' => $role,
-  );
-  $form['mail_templates'][$role]['ktc_hearing_mail_subj_' . $op . '_' . $role] = array(
-    '#type' => 'textfield',
-    '#default_value' => variable_get('ktc_hearing_mail_subj_' . $op . '_' . $role, ''),
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Gem'),
   );
 
-  $form['mail_templates'][$role]['ktc_hearing_mail_body_' . $op . '_' . $role] = array(
-    '#type' => 'textarea',
-    '#default_value' => variable_get('ktc_hearing_mail_body_' . $op . '_' . $role, ''),
-    '#description' => 'Vedhæftet denne mail, vil være høringssvaret som pdf og ren tekst. Pdf for høring kan ses på: ' . l('node/%/hearing_summary_answer_pdf', 'node/%/hearing_summary_answer_pdf') . '(erstat "%" med nid)',
-  );
-
-  return system_settings_form($form);
+  return $form;
 }
 
+/**
+ * Submit handler for ktc_hearing_notifications_settings().
+ */
+function ktc_hearing_notifications_settings_submit(&$form, &$form_state) {
+  $values = $form_state['values']['mail_templates'];
+  variable_set('ktc_hearing_notification_settings', $values);
+
+  drupal_set_message(t('Indstillingerne er blevet gemt'));
+}

@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the KTC Hearing notifications feature.
+ */
+
+include_once 'ktc_hearing_notifications.features.inc';
+/**
+ * @file
  * KTC Hearing notifications module.
  */
 
@@ -19,4 +25,205 @@ function ktc_hearing_notifications_menu() {
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_hearing_notifications_form_alter(&$form, &$form_state, $form_id) {
+  // Show token form in the node edit form for notifications.
+  if ($form_id == 'ktc_hearings_notification_node_form') {
+    $form['tokens'] = array(
+      '#theme' => 'token_tree',
+      '#token_types' => array('user', 'node'),
+      '#global_types' => FALSE,
+      '#click_insert' => FALSE,
+      '#weight' => 50,
+    );
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function ktc_hearing_notifications_cron() {
+  // Only notify once a day.
+  $cron_time = variable_get('ktc_hearing_notifications_cron_time', 1);
+
+  $time_now = date('Ymd');
+
+  if ($cron_time < $time_now) {
+    $due_days = array(2, 12);
+
+    foreach ($due_days as $days) {
+      $hearings = _ktc_hearing_notifications_get_hearings_due($days);
+
+      foreach ($hearings as $hearing_nid) {
+        ktc_hearing_notifications_notify_users('notify', node_load($hearing_nid));
+      }
+    }
+  }
+
+  variable_set('ktc_hearing_notifications_cron_time', $time_now);
+}
+
+/**
+ * Get a list of hearings due in a specified number of days.
+ */
+function _ktc_hearing_notifications_get_hearings_due($days) {
+  $date = date('Y-m-d', strtotime('+' . $days . 'day')) . '%';
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'hearing')
+    ->fieldCondition('field_status', 'tid', KTC_HEARING_STATUS_OPEN)
+    ->fieldCondition('field_attendee_deadlines', 'value', $date, 'LIKE');
+  $result = $query->execute();
+
+
+  if (isset($result['node'])) {
+    return array_keys($result['node']);
+  }
+
+  return array();
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function ktc_hearing_notifications_node_presave($node) {
+  if ($node->type == 'hearing') {
+    $hearing_status = ktc_hearing_get_status($node);
+
+    if ($hearing_status == KTC_HEARING_STATUS_NEW) {
+      ktc_hearing_notifications_notify_users('new_hearing', $node);
+
+      // Set status to open.
+      $language = field_language('node', $node, 'field_status');
+      $node->field_status[$language][0]['tid'] = KTC_HEARING_STATUS_OPEN;
+    }
+
+    if (isset($node->original)) {
+      $original_status = ktc_hearing_get_status($node->original);
+
+      // Notifications on state change -->
+      if ($hearing_status == KTC_HEARING_STATUS_APPROVAL && $original_status != KTC_HEARING_STATUS_APPROVAL) {
+        ktc_hearing_notifications_notify_users('approval', $node);
+      }
+
+      if ($hearing_status == KTC_HEARING_STATUS_APPROVED && $original_status != KTC_HEARING_STATUS_APPROVED) {
+        ktc_hearing_notifications_notify_users('approved', $node);
+      }
+
+      if ($hearing_status == KTC_HEARING_STATUS_KL_ANSWER && $original_status != KTC_HEARING_STATUS_KL_ANSWER) {
+        ktc_hearing_notifications_notify_users('kl_answer', $node);
+      }
+      // <-- End notifications on state change.
+
+      // Notifications on coordinator/chairman change -->
+      if (serialize($node->original->field_responsible_admin) != serialize($node->field_responsible_admin)) {
+        ktc_hearing_notifications_notify_users('change_coordinator', $node);
+      }
+
+      if (serialize($node->original->field_responsible_foreman) != serialize($node->field_responsible_foreman)) {
+        ktc_hearing_notifications_notify_users('change_chairman', $node);
+      }
+      // <-- End notifications on coordinator/chairman change.
+    }
+  }
+}
+
+/**
+ * Notify users on hearing.
+ */
+function ktc_hearing_notifications_notify_users($op, $hearing) {
+  $attendee_roles = array(
+    'chairman',
+    'responsible_foreman',
+    'responsible_admin',
+    'coordinator',
+    'attendees',
+  );
+
+  foreach ($attendee_roles as $field_name) {
+    if ($field = field_get_items('node', $hearing, 'field_' . $field_name)) {
+      $users[$field_name] = $field;
+    }
+  }
+
+  $users['creator'][]['target_id'] = $hearing->uid;
+
+  $mail_templates = ktc_hearing_generate_mail_templates($hearing, $op, $attendee_roles);
+
+  $tokens = array();
+
+  if ($op == 'approved') {
+    $summary_markup = ktc_hearing_generate_hearing_summary_view($hearing);
+
+    $pdf_attachment = array(
+      'filepath' => ktc_hearing_generate_pdf($summary_markup),
+      'filename' => 'høringssvar.pdf',
+      'filemime' => 'application/pdf',
+    );
+
+    $params['attachments'][] = $pdf_attachment;
+
+    $plain_attachment = array(
+      'filepath' => ktc_hearing_generate_markdown($summary_markup),
+      'filename' => 'høringssvar.txt',
+      'filemime' => 'text/plain',
+    );
+
+    $params['attachments'][] = $plain_attachment;
+  }
+
+  if (isset($users)) {
+    foreach ($users as $role => $role_users) {
+
+      if (isset($mail_templates[$role])) {
+        foreach ($role_users as $_user) {
+          $user = user_load($_user['target_id']);
+
+          $token_data = array('user' => $user, 'node' => $hearing);
+          $to = $user->mail;
+          // Testing.
+          $to = 'tth@bellcom.dk';
+          $language = $user->language;
+
+          $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
+          $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
+
+          drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Generate mail templates for the different roles.
+ */
+function ktc_hearing_generate_mail_templates($hearing, $op, $attendee_roles) {
+  $templates = array();
+
+  $values = variable_get('ktc_hearing_notification_settings', array());
+
+  if (!empty($values)) {
+    foreach ($attendee_roles as $role) {
+      if ($mail = node_load($values[$role][$op])) {
+
+        $subject_field = field_get_items('node', $mail, 'field_subject');
+        $body = field_get_items('node', $mail, 'body');
+
+        if ($subject_field && $body) {
+          $templates[$role] = array(
+            'subject' => $subject_field[0]['value'],
+            'body' => $body[0]['value'],
+          );
+        }
+      }
+    }
+  }
+
+  return $templates;
 }
