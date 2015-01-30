@@ -90,10 +90,12 @@ function ktc_hearing_attendees_get_group_members($id = NULL) {
 
         if (in_array('Formand', $roles)) {
           $members['chairman'][$member_value] = $account->name;
+          $members['responsible-foreman'][$member_value] = $account->name;
         }
 
-        if (in_array('Tovholder', $roles)) {
+        if (in_array('Høringstovholder', $roles)) {
           $members['coordinator'][$member_value] = $account->name;
+          $members['responsible-admin'][$member_value] = $account->name;
         }
       }
     }
