@@ -108,10 +108,19 @@ function ktc_crm_cron() {
  * Implements hook_form_alter().
  */
 function ktc_crm_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'user_profile_form') {
-    // We have no interest in lettings users edit this. Maybe it should be
-    // hidden aswell.
-    $form['field_crm_uuid']['#disabled'] = TRUE;
+  // We have no interest in lettings users edit this.
+  if (!user_access('administer ktc_crm uuid')) {
+    if ($form_id == 'user_profile_form') {
+      $form['field_crm_uuid']['#access'] = FALSE;
+    }
+
+    if ($form_id == 'og_ui_add_users') {
+      $form['membership_fields']['field_crm_uuid']['#access'] = FALSE;
+    }
+
+    if ($form_id == 'group_node_form') {
+      $form['field_crm_uuid']['#access'] = FALSE;
+    }
   }
 }
 
