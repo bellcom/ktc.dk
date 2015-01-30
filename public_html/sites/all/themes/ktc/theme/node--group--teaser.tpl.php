@@ -81,9 +81,6 @@
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <h5>
-    <a href="<?php print $node_url; ?>"><i class="icon-yellow-arrow"></i><?php print $title; ?></a></h5>
-  <?php if (isset($content['field_regioner'])): ?>
-    <div class="group-region"> <?php print '<span class="group-region-dash"> - </span>' . render($content['field_regioner']); ?></div>
-  <?php endif; ?>
+    <a href="<?php print $node_url; ?>"><i class="<?php if (isset($group_info)) print $group_info['class']; ?>"></i><span><?php print $title; ?></span></a></h5>
 </article>
 

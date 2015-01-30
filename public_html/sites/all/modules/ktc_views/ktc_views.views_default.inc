@@ -948,12 +948,30 @@ function ktc_views_views_default_views() {
   $handler = $view->new_display('panel_pane', 'KTC users groups', 'panel_pane_2');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 col-sm-12 col-xs-12';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Overskrift: Global: Tekstområde */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Mine netværk</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: We pass the user ID as the Entity ID. */
@@ -1103,10 +1121,15 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alt</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">ALLE</div>
 </div>
-<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="my">Mine netværk</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="my">MINE</div>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="newest">NYESTE</div>
+</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -1133,9 +1156,6 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="gid-[nid]" data-filter="[nid]" name="filter-gid">[title]</div>
-</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
@@ -1274,21 +1294,25 @@ function ktc_views_views_default_views() {
     t('KTC OG user\'s groups'),
     t('View panes'),
     t('KTC users groups'),
-    t('<h2>Mine netværk</h2>'),
     t('Mine netværk'),
     t('KTC users filter groups'),
     t('<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alt</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">ALLE</div>
 </div>
-<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="my">Mine netværk</div>
-</div>'),
-    t('<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="gid-[nid]" data-filter="[nid]" name="filter-gid">[title]</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="my">MINE</div>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="newest">NYESTE</div>
+</div>
 </div>'),
     t('Nyt indhold filtrer grupper'),
     t('<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alt</div>
+</div>'),
+    t('<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="gid-[nid]" data-filter="[nid]" name="filter-gid">[title]</div>
 </div>'),
     t('Blok'),
     t('<a href="/netvaerk">Se flere</a>'),
@@ -1461,7 +1485,8 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-6 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-[tid]" data-filter="[tid]">[name]</div>
-</div>';
+</div>
+';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Kontekstuelt filter: Ordforråd: Ordforråd ID */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
@@ -1520,6 +1545,18 @@ function ktc_views_views_default_views() {
 
   /* Display: Term first level */
   $handler = $view->new_display('panel_pane', 'Term first level', 'panel_pane_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'filter-box col-md-12 col-sm-12 col-xs-12';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-6 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
+</div>
+';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 'offset';
@@ -1549,7 +1586,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12 all" id="filter-all" data-filter="all">Alle</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -1668,7 +1705,9 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12 all" id="filter-all" data-filter="all">Alle</div>
+</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -1738,19 +1777,32 @@ function ktc_views_views_default_views() {
     t('.'),
     t('<div class="col-md-6 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-[tid]" data-filter="[tid]">[name]</div>
-</div>'),
+</div>
+'),
     t('Alle'),
     t('Block'),
+    t('<div class="col-md-6 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-[tid]" data-filter="[tid]">[name]</div>
+</div>'),
     t('Term first level'),
+    t('<div class="col-md-6 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
+</div>
+'),
     t('View panes'),
     t('Term first level with chosen ids'),
     t('<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12 all" id="filter-all" data-filter="all">Alle</div>
 </div>'),
     t('<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-[tid]" data-filter="[tid]">[name]</div>
 </div>'),
     t('Term 1. level width'),
+    t('<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12 all" id="filter-all" data-filter="all">Alle</div>
+</div>
+</div>'),
   );
   $export['section_page_filter'] = $view;
 
@@ -1819,91 +1871,6 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'section-page-filter-extra';
-
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
-  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
-  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
-  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'group' => 'group',
-  );
-
-  /* Display: Content types in group */
-  $handler = $view->new_display('panel_pane', 'Content types in group', 'panel_pane_2');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Overskrift: Global: Tekstområde */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
-</div>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Global: Tilpasset tekst */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="os2web_base_news" data-filter="os2web_base_news" name="filter-content-type">Nyhed</div>
-</div>
-
-<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="document" data-filter="document" name="filter-content-type">Dokument</div>
-</div>
-<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="hearing" data-filter="hearing" name="filter-content-type">Høring</div>
-</div>
-<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="forum_post" data-filter="forum_post" name="filter-content-type">Debat</div>
-</div>
-<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="arrangement" data-filter="arrangement" name="filter-content-type">Arrangement</div>
-</div>
-
-<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="meeting_doodle" data-filter="meeting_doodle" name="filter-content-type">Afstemning</div>
-</div>
-';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['items_per_page'] = 0;
-  $handler->display->display_options['allow']['offset'] = 0;
-  $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
-  $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 'title_override';
-  $handler->display->display_options['allow']['exposed_form'] = 0;
-  $handler->display->display_options['allow']['fields_override'] = 0;
-
   /* Display: Group list */
   $handler = $view->new_display('panel_pane', 'Group list', 'panel_pane_3');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
@@ -1917,16 +1884,47 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 col-sm-6 col-sx-12';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Overskrift: Global: Tekstområde */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Netværk list</h2>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="all-group-block">
+  <ul>
+    <li><i class="red-dot"></i>Netværk du følger</li>
+    <li><i class="yellow-dot"></i>Netværk generelt</li>
+    <li><i class="green-dot"></i>Foreningen</li>
+    <li><i class="blue-dot"></i>Magasinet</li>
+  </ul>
+</div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Sidefod: Global: Resumé af resultat */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['content'] = 'I AlT @total STK';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sorteringskriterie: Indhold: Titel */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: term_type */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
@@ -2000,6 +1998,170 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['break_phrase'] = TRUE;
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'group' => 'group',
+  );
+  $handler->display->display_options['pane_title'] = 'All Group list';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Group list newest */
+  $handler = $view->new_display('panel_pane', 'Group list newest', 'panel_pane_1');
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 col-sm-6 col-sx-12';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="all-group-block">
+  <ul>
+    <li><i class="red-dot"></i>Netværk du følger</li>
+    <li><i class="yellow-dot"></i>Netværk generelt</li>
+    <li><i class="green-dot"></i>Foreningen</li>
+    <li><i class="blue-dot"></i>Magasinet</li>
+  </ul>
+</div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Sidefod: Global: Resumé af resultat */
+  $handler->display->display_options['footer']['result']['id'] = 'result';
+  $handler->display->display_options['footer']['result']['table'] = 'views';
+  $handler->display->display_options['footer']['result']['field'] = 'result';
+  $handler->display->display_options['footer']['result']['content'] = 'I AlT @total STK';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontekstuelt filter: term_type */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['ui_name'] = 'term_type';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['vocabularies'] = array(
+    'netv_rkstype' => 'netv_rkstype',
+  );
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '6';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
+  /* Kontekstuelt filter: emner */
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['id'] = 'term_node_tid_depth_1';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['ui_name'] = 'emner';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['validate_options']['vocabularies'] = array(
+    'emner_faste_' => 'emner_faste_',
+  );
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['depth'] = '6';
+  $handler->display->display_options['arguments']['term_node_tid_depth_1']['break_phrase'] = TRUE;
+  /* Kontekstuelt filter: tags */
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['id'] = 'term_node_tid_depth_2';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['ui_name'] = 'tags';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['validate_options']['vocabularies'] = array(
+    'emner' => 'emner',
+  );
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['depth'] = '6';
+  $handler->display->display_options['arguments']['term_node_tid_depth_2']['break_phrase'] = TRUE;
+  /* Kontekstuelt filter: regioner */
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['id'] = 'term_node_tid_depth_3';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['ui_name'] = 'regioner';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate_options']['vocabularies'] = array(
+    'regioner' => 'regioner',
+  );
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['depth'] = '6';
+  $handler->display->display_options['arguments']['term_node_tid_depth_3']['break_phrase'] = TRUE;
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterie: Indhold: Udgivet */
@@ -2046,39 +2208,20 @@ function ktc_views_views_default_views() {
 <div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
 </div>'),
-    t('Page'),
-    t('Content pane'),
-    t('Group node from OG membership'),
-    t('View panes'),
-    t('Content types in group'),
-    t('<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
-</div>'),
-    t('<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="os2web_base_news" data-filter="os2web_base_news" name="filter-content-type">Nyhed</div>
-</div>
-
-<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="document" data-filter="document" name="filter-content-type">Dokument</div>
-</div>
-<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="hearing" data-filter="hearing" name="filter-content-type">Høring</div>
-</div>
-<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="forum_post" data-filter="forum_post" name="filter-content-type">Debat</div>
-</div>
-<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="arrangement" data-filter="arrangement" name="filter-content-type">Arrangement</div>
-</div>
-
-<div class="col-md-6 col-sm-12 col-xs-12">
-<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="meeting_doodle" data-filter="meeting_doodle" name="filter-content-type">Afstemning</div>
-</div>
-'),
     t('Group list'),
-    t('<h2>Netværk list</h2>'),
+    t('<div class="all-group-block">
+  <ul>
+    <li><i class="red-dot"></i>Netværk du følger</li>
+    <li><i class="yellow-dot"></i>Netværk generelt</li>
+    <li><i class="green-dot"></i>Foreningen</li>
+    <li><i class="blue-dot"></i>Magasinet</li>
+  </ul>
+</div>'),
+    t('I AlT @total STK'),
     t('Alle'),
     t('All Group list'),
+    t('View panes'),
+    t('Group list newest'),
   );
   $export['section_page_filter_extra'] = $view;
 
