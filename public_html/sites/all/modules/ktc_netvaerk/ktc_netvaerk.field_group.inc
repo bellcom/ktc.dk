@@ -21,7 +21,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjul',
-    'weight' => '20',
+    'weight' => '21',
     'children' => array(
       0 => 'field_gammel_gid',
       1 => 'field_gammel_nid',
@@ -32,7 +32,7 @@ function ktc_netvaerk_field_group_info() {
       'label' => 'Skjul',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'group-hidden field-group-fieldset hidden',
+        'classes' => 'hidden group-hidden field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsed',

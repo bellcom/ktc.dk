@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * Install for ktc_crm module.
+ */
+
+/**
+ * Implements hook_schema_alter().
+ */
+function ktc_crm_schema_alter(&$schema) {
+  $schema['taxonomy_term_data']['fields']['updated'] = array(
+    'description' => 'Updated state',
+    'type' => 'int',
+    'not null' => TRUE,
+    'default' => 0,
+  );
+}
+
+/**
+ * Implements hook_install().
+ */
+function ktc_crm_install() {
+  $schema = array();
+  ktc_crm_schema_alter($schema);
+  // Altering the {taxonomy_term_data} table.
+  db_add_field('taxonomy_term_data', 'updated', $schema['taxonomy_term_data']['fields']['updated']);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function YOUR_MODULE_uninstall() {
+  // Delete the additional columns from the {taxonomy_term_data} table.
+  db_drop_field('taxonomy_term_data', 'updated');
+}

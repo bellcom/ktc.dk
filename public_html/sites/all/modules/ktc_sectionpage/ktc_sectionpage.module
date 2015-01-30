@@ -145,6 +145,7 @@ function ktc_sectionpage_block_info() {
 
   $blocks['netvaerk_invite_links'] = array(
     'info' => t('Netvaerk invite links'),
+    'cache' => DRUPAL_NO_CACHE,
   );
 
   $blocks['section_default_content'] = array(
@@ -154,12 +155,15 @@ function ktc_sectionpage_block_info() {
   $blocks['user_comments_block'] = array(
     'info' => t('KTC brugere kommentarter blok'),
   );
+
   $blocks['user_comments_block_2'] = array(
     'info' => t('KTC lille kommentarter blok'),
   );
+
   $blocks['custom_filter_on_hearing'] = array(
     'info' => t('KTC filtrer på høringer blok'),
   );
+
   $blocks['netvaerk_content_types'] = array(
     'info' => t('KTC filtrer netværk indholdstyper'),
   );
@@ -316,14 +320,14 @@ function _ktc_section_block_netvaerk_invite_links_content() {
     }
     // Check if the user is a member,
     // print out subscrib/unsubscrib link.
-    if ($group_link = field_get_items('node', $node, 'group_group')) {
+    if (og_is_member($nid)) {
       $html .= '<div class="col-md-6 col-sm-12 col-xs-12">';
-      $html .= l('Afmeld', 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' =>$link_class)));
+      $html .= l('Afmeld', 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' => $link_class)));
       $html .= '</div>';
     }
     else {
       $html .= '<div class="col-md-12 col-sm-12 col-xs-12">';
-      $html .= l('Tilmeld', 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' =>$link_class)));
+      $html .= l('Tilmeld', 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
       $html .= '</div>';
     }
     $html .= '</div>';

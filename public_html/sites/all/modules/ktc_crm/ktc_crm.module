@@ -1,0 +1,183 @@
+<?php
+/**
+ * @file
+ * KTC CRM integration module.
+ */
+
+// Load webservice classes.
+module_load_include('php', 'ktc_crm', 'includes/KTC/WebUser/WebUser');
+module_load_include('php', 'ktc_crm', 'includes/KTC/Subscription/Subscription');
+module_load_include('php', 'ktc_crm', 'includes/KTC/GroupService/GroupService');
+module_load_include('php', 'ktc_crm', 'includes/KTC/AccountService/AccountService');
+
+module_load_include('inc', 'ktc_crm', 'ktc_crm.api');
+module_load_include('inc', 'ktc_crm', 'ktc_crm.group');
+module_load_include('inc', 'ktc_crm', 'ktc_crm.webuser');
+module_load_include('inc', 'ktc_crm', 'ktc_crm.account');
+
+define('KTC_CRM_WEBUSER_WSDL', 'WebUser.svc?wsdl');
+define('KTC_CRM_SUBSCRIPTION_WSDL', 'Subscription.svc?wsdl');
+define('KTC_CRM_GROUPSERVICE_WSDL', 'GroupService.svc?wsdl');
+define('KTC_CRM_ACCOUNTSERVICE_WSDL', 'AccountService.svc?wsdl');
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_crm_menu() {
+  $items['admin/config/services/ktc-crm'] = array(
+    'title' => 'KTC CRM',
+    'description' => 'Configure CRM integration',
+    'access arguments' => array('administer site'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_crm_settings'),
+  );
+  $items['user/%user/abonnementer'] = array(
+    'title' => 'Mine abonnementer',
+    'description' => 'Håndter abonnementer',
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'ktc_crm_subscriptions_page',
+    'file' => 'ktc_crm.subscription.inc',
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['user/%user/abonnementer/%/opret-rediger'] = array(
+    'title' => 'Mine abonnementer',
+    'description' => 'Håndter abonnementer',
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_crm_subscriptions_form', 3),
+    'file' => 'ktc_crm.subscription.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ktc_crm_theme() {
+  return array(
+    'ktc_crm_subscriptions_page' => array(
+      'template' => 'ktc-crm-subscriptions-page',
+    ),
+  );
+}
+
+/**
+ * Form callback for settings.
+ */
+function ktc_crm_settings() {
+  $form = array();
+
+  $form['ktc_crm_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Endpoint url'),
+    '#default_value' => variable_get('ktc_crm_url', ''),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_cron().
+ */
+function ktc_crm_cron() {
+  // Disable cron on ktc server for now.
+  if (gethostname() == 'ktc') {
+    return;
+  }
+
+  $logger = KtcCrmLogger::getInstance();
+  $logger->log->addInfo('cron', 'run started');
+
+  $lastupdate = variable_get('ktc_crm_lastupdate');
+
+  $logger->log->addInfo('cron webuser', 'fetch webusers');
+  if ($webusers = ktc_crm_fetch_webusers()) {
+    foreach ($webusers as $webuserdto) {
+      ktc_crm_update_account_from_webuserdto($webuserdto);
+    }
+  }
+
+  ktc_crm_group_update_groups($lastupdate);
+
+  variable_set('ktc_crm_lastupdate', date('Y-m-d\TH:i:s', strtotime('-1 hour')));
+  $logger->log->addInfo('cron', 'run completed');
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_crm_form_alter(&$form, &$form_state, $form_id) {
+  // We have no interest in lettings users edit this.
+  if (!user_access('administer ktc_crm uuid')) {
+    if ($form_id == 'user_profile_form') {
+      $form['field_crm_uuid']['#access'] = FALSE;
+    }
+
+    if ($form_id == 'og_ui_add_users') {
+      $form['membership_fields']['field_crm_uuid']['#access'] = FALSE;
+    }
+
+    if ($form_id == 'group_node_form' || $form_id == 'og_ui_confirm_subscribe') {
+      $form['field_crm_uuid']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Helper, fetch enity crm uuid.
+ */
+function _ktc_crm_get_uuid($type, $entity) {
+  if ($crm_uuid_field = field_get_items($type, $entity, 'field_crm_uuid')) {
+    $crm_uuid = $crm_uuid_field[0]['value'];
+
+    return $crm_uuid_field[0]['value'];
+  }
+  return FALSE;
+}
+
+/**
+ * Helper, fetch term name from tid.
+ */
+function _ktc_crm_get_term_name($tid) {
+  if ($term = taxonomy_term_load($tid)) {
+    return $term->name;
+  }
+  return FALSE;
+}
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+class KtcCrmLogger {
+
+  private static $instance;
+
+  public $log;
+
+  /**
+   * Create instance of logger.
+   */
+  private function __construct() {
+    $log_path = variable_get('ktc_crm_sync_log_path', '/var/www/logs/crm_sync.log');
+    $log_level = Logger::INFO;
+
+    if (variable_get('ktc_crm_sync_log_verbose', FALSE)) {
+      $log_level = Logger::DEBUG;
+    }
+
+    $this->log = new Logger('ktc_crm_sync');
+    $this->log->pushHandler(new StreamHandler($log_path, $log_level));
+  }
+
+  /**
+   * Return instance of logger.
+   */
+  public static function getInstance() {
+    if (empty(self::$instance)) {
+      $class = __CLASS__;
+      self::$instance = new $class();
+    }
+
+    return self::$instance;
+  }
+}
