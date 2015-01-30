@@ -4,9 +4,48 @@
     clear: both;
     margin-bottom: 20px;
   }
+  &.pane-right,
   &.pane-sidebar {
     .pane-content {
       padding-bottom: 10px;
+      .col-md-12.filter-link.all {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width:992px) {
+          width: 30%;
+          margin-left: 35%;
+        }
+        @media (min-width:768px) and (max-width:991px) {
+          width: 100%;
+        }
+        @media (max-width:767px) {
+          width: 100%;
+        }
+      }
+      .field-content {
+        .col-md-12 {
+          .col-md-12.filter-link.btn-blacknblue {
+            text-align: left;
+            border: none;
+            background-image: url('../images/sprites/rundt.png');
+            background-repeat: no-repeat;
+            background-position: 0px 100%;
+            padding-left: 22px;
+            margin-left: 10px;
+          }
+          .col-md-12.filter-link.btn-primary {
+            text-align: left;
+            border: none;
+            background-image: url('../images/sprites/tick.png');
+            background-repeat: no-repeat;
+            background-position: 0px 100%;
+            padding-left: 22px;
+            margin-left: 10px;
+          }
+        }
+      }
+
     }
   }
   .panel-pane {
@@ -31,7 +70,6 @@
 
       //filter buttons
       .filter-box {
-        padding: 0 0;
         margin: 0px 0 20px 0;
       }
       #filter-all,
@@ -40,6 +78,9 @@
         margin-bottom: 3px;
       }
     }
+  }
+  .filter-link {
+    margin-bottom: 3px;
   }
   .filter-foldout {
     .sprite(@ikon-pilgrey);

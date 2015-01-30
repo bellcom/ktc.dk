@@ -14,16 +14,10 @@ function ktc_sectionpage_menu() {
     'page arguments' => array(1, 3, 4, 5, 6, 7, 8),
   );
 
-  $items['my_groups/%/%/%/%'] = array(
-    'page callback' => 'ktc_sectionpage_ajax_my_group_view',
-    'access arguments' => array('access content'),
-    'page arguments' => array(1, 2, 3, 4),
-  );
-
-  $items['all_groups/%/%/%/%'] = array(
+  $items['all_groups/%/%/%/%/%'] = array(
     'page callback' => 'ktc_sectionpage_ajax_all_groups_view',
     'access arguments' => array('access content'),
-    'page arguments' => array(1, 2, 3, 4),
+    'page arguments' => array(1, 2, 3, 4, 5),
   );
 
   $items['user/group/new_content'] = array(
@@ -41,40 +35,62 @@ function ktc_sectionpage_menu() {
 }
 
 /**
- * My groups ajax view call back.
+ * User menus callback.
  */
-function ktc_sectionpage_ajax_my_group_view($f1, $f2, $f3, $f4) {
+function ktc_sectionpage_redirect_link($page) {
   global $user;
-  $term_type = _ktc_sectionpage_filter_helper($f1);
-  $emner = _ktc_sectionpage_filter_helper($f2);
-  $tags = _ktc_sectionpage_filter_helper($f3);
-  $regioner = _ktc_sectionpage_filter_helper($f4);
-  $view = views_get_view('ktc_og_user_groups');
+  $goto = FALSE;
+  switch ($page) {
+    case 'new_content':
+      $goto = 'user/' . $user->uid . '/group/new_content';
+      break;
 
-  $view->set_display('panel_pane_2');
-  $view->set_arguments(array($user->uid, $term_type, $emner, $tags, $regioner));
-  $view->pre_execute();
-  $view->execute();
+    case 'user_comments':
+      $goto = 'user/' . $user->uid . '/user_comments';
+      break;
+  }
 
-  print $view->render('panel_pane_2');
+  if ($goto) {
+    drupal_goto($goto);
+  }
 }
 
 /**
  * All groups ajax view call back.
  */
-function ktc_sectionpage_ajax_all_groups_view($f1, $f2, $f3, $f4) {
+function ktc_sectionpage_ajax_all_groups_view($f1, $f2, $f3, $f4, $f5 = 'all') {
   $term_type = _ktc_sectionpage_filter_helper($f1);
   $emner = _ktc_sectionpage_filter_helper($f2);
   $tags = _ktc_sectionpage_filter_helper($f3);
   $regioner = _ktc_sectionpage_filter_helper($f4);
   $view = views_get_view('section_page_filter_extra');
 
-  $view->set_display('panel_pane_3');
-  $view->set_arguments(array($term_type, $emner, $tags, $regioner));
-  $view->pre_execute();
-  $view->execute();
+  switch ($f5) {
+    case 'my,':
+      $view->set_display('panel_pane_3');
+      $f5_value = _ktc_sectionpage_group_filter_helper($f5);
+      $view->set_arguments(array($term_type, $emner, $tags, $regioner, $f5_value));
+      break;
 
-  print $view->render('panel_pane_3');
+    case 'all,':
+      $view->set_display('panel_pane_3');
+      $f5_value = _ktc_sectionpage_group_filter_helper($f5);
+      $view->set_arguments(array($term_type, $emner, $tags, $regioner, $f5_value));
+      break;
+  }
+
+  if ($f5 == 'newest') {
+    $view->set_display('panel_pane_1');
+    $view->set_arguments(array($term_type, $emner, $tags, $regioner, 'all'));
+    $view->pre_execute();
+    $view->execute();
+    print $view->render('panel_pane_1');
+  }
+  else {
+    $view->pre_execute();
+    $view->execute();
+    print $view->render('panel_pane_3');
+  }
 
 }
 
@@ -108,6 +124,10 @@ function ktc_sectionpage_ajax_view($page, $f1, $f2, $f3, $f4, $f5, $gid) {
   print $output;
 
 }
+
+
+
+/****************  ktc_sectionpage.module blocks *********************/
 
 /**
  * Implements hook_block_info().
@@ -285,13 +305,28 @@ function _ktc_section_block_netvaerk_invite_links_content() {
   $nid = arg(1);
   $html = '';
   if (is_numeric($nid)) {
+    $html .= '<div class="row">';
+    $link_class = 'col-md-12 col-sm-12 col-xs-12 filter-link btn btn-blacknblue';
+    $node = node_load($nid);
+    // If user has access to invite user to group.
     if ($access = og_user_access('node', $nid, 'invite any user')) {
-      $node = node_load($nid);
-      $html .= '<div class="col-md-12 col-sm-12 col-xs-12">
-  <a class="btn btn-blacknblue" href="/group/node/' . $nid . '/admin/people/invite-users?destination=node/' . $nid . '">' . t('Inviter') . '</a>
-  </div>';
-
+      $html .= '<div class="col-md-6 col-sm-12 col-xs-12">';
+      $html .= l('Invitér', '/group/node/' . $nid . '/admin/people/invite-users?destination=node/' . $nid, array('attributes' => array('class' => $link_class)));
+      $html .= '</div>';
     }
+    // Check if the user is a member,
+    // print out subscrib/unsubscrib link.
+    if ($group_link = field_get_items('node', $node, 'group_group')) {
+      $html .= '<div class="col-md-6 col-sm-12 col-xs-12">';
+      $html .= l('Afmeld', 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' =>$link_class)));
+      $html .= '</div>';
+    }
+    else {
+      $html .= '<div class="col-md-12 col-sm-12 col-xs-12">';
+      $html .= l('Tilmeld', 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' =>$link_class)));
+      $html .= '</div>';
+    }
+    $html .= '</div>';
   }
   return $html;
 }
@@ -445,27 +480,78 @@ function _ktc_user_comments_content($page = TRUE) {
  */
 function _ktc_section_block_netvaerk_content_types() {
   $nid = arg(1);
+  $types = array();
   $html = '<div class="filter-box col-md-12 col-sm-12 col-xs-12">';
   if (is_numeric($nid)) {
+    // Se function ktc_netvaerk_get_group_content_types in ktc_netvaerk.module.
     $types = ktc_netvaerk_get_group_content_types($nid);
-    if (!empty($types)) {
-      $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
-        </div>';
-      foreach ($types as $type) {
+  }
+  elseif (arg(0) == 'netvaerk') {
+    $types = ktc_netvaerk_get_group_content_types('all');
+  }
 
-        $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
-          <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="' . $type . '"
-          data-filter="' . $type . '" name="filter-content-type">' . node_type_get_name($type) . '</div>
-        </div>';
-      }
+  if (!empty($types)) {
+    $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
+      <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
+      </div>';
+    foreach ($types as $type) {
+      $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="' . $type . '"
+        data-filter="' . $type . '" name="filter-content-type">' . node_type_get_name($type) . '</div>
+      </div>';
     }
   }
   $html .= '</div>';
   return $html;
 }
+
 /**
- * Filter helper.
+ * Page menu local tabs callback.
+ */
+function _ktc_section_block_page_menu_tabs() {
+  $menu = '';
+  if (arg(1) == 'node' && arg(3) == 'admin' && arg(4) == 'people') {
+    $nid = arg(2);
+    if (is_numeric($nid)) {
+      $group_menu = '<div>';
+
+      $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
+      $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-blacknblue filter-link">';
+      $group_menu .= l('Vis', 'node/' . $nid);
+      $group_menu .= '</div></div>';
+
+      $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
+      $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-blacknblue filter-link">';
+      $group_menu .= l('Redigér', 'node/' . $nid . '/edit');
+      $group_menu .= '</div></div>';
+
+      $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
+      $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-primary filter-link">';
+      $group_menu .= l('Gruppe', 'node/' . $nid . '/group');
+      $group_menu .= '</div></div>';
+
+      $group_menu .= '</div>';
+      $menu .= $group_menu;
+    }
+  }
+
+  $menu .= render(menu_local_tabs());
+  return $menu;
+}
+/**
+ * Implements hook_node_presave().
+ */
+function ktc_sectionpage_node_presave($node) {
+  if (isset($node->modified)) {
+    $node->changed = $node->modified;
+  }
+}
+/****************** End of blocks. *******************************/
+
+/****************** ktc_sectionpage.module helper functions. *****/
+
+/**
+ * Helper function: Filter helper.
  */
 function _ktc_sectionpage_filter_helper($filter) {
   $filter_value = '';
@@ -525,7 +611,7 @@ function _ktc_sectionpage_check_document_term($term_type) {
   return $term_type;
 }
 /**
- * Group filter helper.
+ * Helper function: Group filter helper.
  */
 function _ktc_sectionpage_group_filter_helper($gid) {
   $filter_value = '';
@@ -615,14 +701,7 @@ function _ktc_sectionpage_get_user_related_node_id($uid) {
   }
   return $id;
 }
-/**
- * Implements hook_node_presave().
- */
-function ktc_sectionpage_node_presave($node) {
-  if (isset($node->modified)) {
-    $node->changed = $node->modified;
-  }
-}
+
 /**
  * Group hearing nodes by years.
  */
@@ -649,7 +728,7 @@ function _ktc_sectionpage_get_hearing_years() {
   return $years;
 }
 /**
- * Get nids for view context filter by years-nids array.
+ * Helper function: Get nids for view context filter by years-nids array.
  */
 function _ktc_sectionpage_years_filter_helper($f5) {
   $filter_value = '';
@@ -676,32 +755,4 @@ function _ktc_sectionpage_years_filter_helper($f5) {
     $filter_value = 'all';
   }
   return $filter_value;
-}
-/**
- * User menus callback.
- */
-function ktc_sectionpage_redirect_link($page) {
-  global $user;
-  $goto = FALSE;
-  switch ($page) {
-    case 'new_content':
-      $goto = 'user/' . $user->uid . '/group/new_content';
-      break;
-
-    case 'user_comments':
-      $goto = 'user/' . $user->uid . '/user_comments';
-      break;
-  }
-
-  if ($goto) {
-    drupal_goto($goto);
-  }
-}
-
-/**
- * Page menu local tabs callback.
- */
-function _ktc_section_block_page_menu_tabs() {
-  $menu = menu_local_tabs();
-  return $menu;
 }
