@@ -210,7 +210,9 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
   $edit = array();
 
   $edit['mail'] = $webuserdto->EMail;
-  $edit['name'] = $webuserdto->EMail;
+  // Username is generated from firstname, lastname and toplevelaccount name.
+  $edit['name'] = $webuserdto->FirstName . ' ' . $webuserdto->LastName . ' - '
+    . str_replace(array(','), '', $webuserdto->TopLevelAccountName);
 
   $edit['field_navn'][LANGUAGE_NONE][0]['value'] = $webuserdto->FirstName . ' ' . $webuserdto->LastName;
   $edit['field_jobposition'][LANGUAGE_NONE][0]['value'] = $webuserdto->Salutation;
@@ -227,6 +229,7 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
   if ($account = ktc_crm_account_load_from_uuid($webuserdto->DepartmentId)) {
     $edit['field_account'][LANGUAGE_NONE][0]['tid'] = $account->tid;
   }
+  $edit['field_employer_name'][LANGUAGE_NONE][0]['value'] = $webuserdto->TopLevelAccountName;
 
   if ($region_tid = _ktc_crm_group_get_region_tid($webuserdto->Adresses->EANAddressDto[1]->Region)) {
     $edit['field_regioner'][LANGUAGE_NONE][0]['tid'] = $region_tid;
