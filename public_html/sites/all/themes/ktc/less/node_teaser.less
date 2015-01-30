@@ -138,7 +138,43 @@
       font-weight: 600;
     }
   }
+  &.node-group {
+    background: none !important;
 
+    h5 {
+      font-size: 12px;
+      a {
+        color: #fff;
+      }
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+    .ktc-yellow {
+      display: inline-block;
+      .sprite(@arrow_yellow);
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .ktc-red {
+      display: inline-block;
+      .sprite(@arrow_red);
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .ktc-green {
+      display: inline-block;
+      .sprite(@arrow_green);
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .ktc-blue {
+      display: inline-block;
+      .sprite(@arrow_blue);
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+  }
   .node-teaser-bottom {
     clear: both;
     background-color: @gray-darker;
@@ -199,7 +235,7 @@
     }
   }
 }
-
+.page-netvaerk,
 .node-type-group {
   .node-teaser_comments {
     background-color: #fff;
@@ -268,6 +304,7 @@
       }
     }
   }
+
   .node--group--listevisning {
     .icon-yellow-arrow {
       display: inline-block;

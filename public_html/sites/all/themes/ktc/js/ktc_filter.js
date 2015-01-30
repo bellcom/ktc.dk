@@ -76,17 +76,21 @@
 
       // Netvaerk section page my groups and all groups filter.
       if (type == 'netvaerk' && (filter_value[1] != 'all,' || filter_value[2] != 'all,' || filter_value[3] != 'all,' || filter_value[4] != 'all,')) {
-        var link_2 = '/my_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4];
-        var link_3 = '/all_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4];
-        jQuery.get(link_2, function(data){
-          $('#section-page-with-filter-my-groups').html(data);
-            add_pager_ajax();
-          });
+        var link_2 = '/all_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4]+'/all,';
+        var block = $('#section-page-with-filter-all-groups');
 
-        jQuery.get(link_3, function(data){
-          $('#section-page-with-filter-all-groups').html(data);
+        if (gid == 'my,') {
+          link_2 = '/all_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4]+'/my,';
+        }
+        else if (gid == 'newest,') {
+          link_2 = '/all_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4]+'/newest';
+        }
+
+        jQuery.get(link_2, function(data){
+          block.find('.pane-content').html(data);
           add_pager_ajax();
         });
+
       }
 
       // Arrangement/aktiviteter section page: filter events on period (furture/old).
@@ -156,10 +160,29 @@
       return false;
 
     });
+
+    $('.filter-pane-title').css('cursor', 'pointer');
+
+    $('.filter-pane-title').click(function() {
+      var foldout = $(this).parent('.panel-pane').find('.pane-content').css('display');
+      console.log(foldout);
+      var icon = $(this).closest('.panel-pane').find('.filter-fold');
+      if (foldout == 'block') {
+        $(this).closest('.pane-views-panes').find('.pane-content').css('display', 'none');
+        icon.removeClass('filter-foldin');
+        icon.addClass('filter-foldout');
+      }
+      else {
+        $(this).closest('.pane-views-panes').find('.pane-content').css('display','block');
+        icon.removeClass('filter-foldout');
+        icon.addClass('filter-foldin');
+      }
+    });
+    filter_on_mobile();
     $( window ).resize(function() {
       filter_on_mobile();
     });
-    filter_on_mobile();
+
 
   });
 
@@ -171,24 +194,10 @@
   function filter_on_mobile() {
     if ($(window).width() < 768) {
       $('.filter-fold').each(function() {
-        $(this).closest('.panel-pane').find('.pane-content').css('display', 'none');
+        $(this).parent('.panel-pane').find('.pane-content').css('display', 'none');
         $(this).removeClass('filter-foldin');
         $(this).addClass('filter-foldout');
-        $(this).closest('.panel-pane').find('.filter-pane-title').click(function() {
-          var foldout = $(this).closest('.panel-pane').find('.pane-content').css('display');
-          var icon = $(this).closest('.panel-pane').find('.filter-fold');
-          if (foldout == 'block') {
-            $(this).closest('.pane-views-panes').find('.pane-content').css('display', 'none');
-            icon.removeClass('filter-foldin');
-            icon.addClass('filter-foldout');
-          }
-          else {
-            $(this).closest('.pane-views-panes').find('.pane-content').css('display','block');
-            icon.removeClass('filter-foldout');
-            icon.addClass('filter-foldin');
-          }
-        });
-      })
+      });
     }
     else {
       $('.filter-fold').each(function() {
@@ -240,7 +249,7 @@
   function add_pager_ajax() {
     $('#section-page-with-filter-all-groups .pager-next a').click(function(event) {
       jQuery.get($(this).attr('href'), function(data){
-        $('#section-page-with-filter-all-groups').html(data);
+        $('#section-page-with-filter-all-groups .pane-content').html(data);
         add_pager_ajax();
       });
       return false;
@@ -248,21 +257,21 @@
 
     $('#section-page-with-filter-all-groups .pager-previous a').click(function(event) {
       jQuery.get($(this).attr('href'), function(data){
-        $('#section-page-with-filter-all-groups').html(data);
+        $('#section-page-with-filter-all-groups .pane-content').html(data);
         add_pager_ajax();
       });
       return false;
     });
     $('#section-page-with-filter-my-groups .pager-next a').click(function(event) {
       jQuery.get($(this).attr('href'), function(data){
-        $('#section-page-with-filter-my-groups').html(data);
+        $('#section-page-with-filter-my-groups .pane-content').html(data);
         add_pager_ajax();
       });
       return false;
     });
     $('#section-page-with-filter-my-groups .pager-previous a').click(function(event) {
       jQuery.get($(this).attr('href'), function(data){
-        $('#section-page-with-filter-my-groups').html(data);
+        $('#section-page-with-filter-my-groups .pane-content').html(data);
         add_pager_ajax();
       });
       return false;
