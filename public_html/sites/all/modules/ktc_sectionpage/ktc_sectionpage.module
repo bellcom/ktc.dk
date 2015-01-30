@@ -320,7 +320,7 @@ function _ktc_section_block_netvaerk_invite_links_content() {
     }
     // Check if the user is a member,
     // print out subscrib/unsubscrib link.
-    if (og_is_member($nid)) {
+    if (og_is_member('node', $nid)) {
       $html .= '<div class="col-md-6 col-sm-12 col-xs-12">';
       $html .= l('Afmeld', 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' => $link_class)));
       $html .= '</div>';
