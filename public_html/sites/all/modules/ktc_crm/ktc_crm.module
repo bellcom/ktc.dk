@@ -118,7 +118,7 @@ function ktc_crm_form_alter(&$form, &$form_state, $form_id) {
       $form['membership_fields']['field_crm_uuid']['#access'] = FALSE;
     }
 
-    if ($form_id == 'group_node_form') {
+    if ($form_id == 'group_node_form' || $form_id == 'og_ui_confirm_subscribe') {
       $form['field_crm_uuid']['#access'] = FALSE;
     }
   }
