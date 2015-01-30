@@ -81,6 +81,11 @@ function ktc_crm_settings() {
  * Implements hook_cron().
  */
 function ktc_crm_cron() {
+  // Disable cron on ktc server for now.
+  if (gethostname() == 'ktc') {
+    return;
+  }
+
   $logger = KtcCrmLogger::getInstance();
   $logger->log->addInfo('cron', 'run started');
 
