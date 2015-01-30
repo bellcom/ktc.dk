@@ -199,7 +199,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -772,7 +772,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
