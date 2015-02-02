@@ -204,6 +204,31 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $display->content['new-a51d2798-11b4-4986-9d49-84c5138cbf14'] = $pane;
     $display->panels['left'][5] = 'new-a51d2798-11b4-4986-9d49-84c5138cbf14';
     $pane = new stdClass();
+    $pane->pid = 'new-618d8280-47e0-492f-af3f-4098545b83f7';
+    $pane->panel = 'left';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'node:field_magasin_indhold';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_node_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '618d8280-47e0-492f-af3f-4098545b83f7';
+    $display->content['new-618d8280-47e0-492f-af3f-4098545b83f7'] = $pane;
+    $display->panels['left'][6] = 'new-618d8280-47e0-492f-af3f-4098545b83f7';
+    $pane = new stdClass();
     $pane->pid = 'new-6873f290-8908-4999-8b48-152bb967be8f';
     $pane->panel = 'right';
     $pane->type = 'node_form_buttons';
@@ -505,7 +530,7 @@ function teknik_og_miljoe_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'ktcstd';
+  $display->layout = 'flexible';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -518,29 +543,6 @@ function teknik_og_miljoe_default_page_manager_pages() {
   $display->uuid = 'fc8db645-71bb-4842-97da-cf780c863813';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-6b5a61e2-1042-4a98-bbd7-e40877c03567';
-    $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'indhold_m_filter-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'type' => 'magazine',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '6b5a61e2-1042-4a98-bbd7-e40877c03567';
-    $display->content['new-6b5a61e2-1042-4a98-bbd7-e40877c03567'] = $pane;
-    $display->panels['left'][0] = 'new-6b5a61e2-1042-4a98-bbd7-e40877c03567';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
