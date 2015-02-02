@@ -204,6 +204,31 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $display->content['new-a51d2798-11b4-4986-9d49-84c5138cbf14'] = $pane;
     $display->panels['left'][5] = 'new-a51d2798-11b4-4986-9d49-84c5138cbf14';
     $pane = new stdClass();
+    $pane->pid = 'new-618d8280-47e0-492f-af3f-4098545b83f7';
+    $pane->panel = 'left';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'node:field_magasin_indhold';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_node_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '618d8280-47e0-492f-af3f-4098545b83f7';
+    $display->content['new-618d8280-47e0-492f-af3f-4098545b83f7'] = $pane;
+    $display->panels['left'][6] = 'new-618d8280-47e0-492f-af3f-4098545b83f7';
+    $pane = new stdClass();
     $pane->pid = 'new-6873f290-8908-4999-8b48-152bb967be8f';
     $pane->panel = 'right';
     $pane->type = 'node_form_buttons';
