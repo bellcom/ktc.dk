@@ -145,71 +145,6 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-artikler-field_magasin_reference'
-  $field_instances['node-artikler-field_magasin_reference'] = array(
-    'bundle' => 'artikler',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 7,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_magasin_reference',
-    'label' => 'Magasin reference',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 45,
-    ),
-  );
-
   // Exported field_instance: 'node-artikler-field_news_author'
   $field_instances['node-artikler-field_news_author'] = array(
     'bundle' => 'artikler',
@@ -650,7 +585,6 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Flere emner');
   t('Forfatter');
   t('Magasin');
-  t('Magasin reference');
   t('Manchet');
   t('Primære billede');
 
