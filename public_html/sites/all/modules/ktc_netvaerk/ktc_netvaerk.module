@@ -210,8 +210,6 @@ function ktc_netvaerk_node_validate($node, $form, &$form_state) {
 function ktc_netvaerk_node_presave($node) {
   if ($node->type == 'group') {
     if ($parent_group = field_get_items('node', $node, 'og_group_ref')) {
-      // Set to subgroup.
-      $node->field_subgroup['und'][0]['value'] = 1;
 
       // Get subgroup's members.
       $query = new EntityFieldQuery();

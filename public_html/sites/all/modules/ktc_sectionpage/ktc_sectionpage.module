@@ -315,7 +315,7 @@ function _ktc_section_block_netvaerk_invite_links_content() {
     // If user has access to invite user to group.
     if ($access = og_user_access('node', $nid, 'invite any user')) {
       $html .= '<div class="col-md-6 col-sm-12 col-xs-12">';
-      $html .= l('Invitér', '/group/node/' . $nid . '/admin/people/invite-users?destination=node/' . $nid, array('attributes' => array('class' => $link_class)));
+      $html .= l('Invitér', 'group/node/' . $nid . '/admin/people/invite-users', array('attributes' => array('class' => $link_class), 'query' => array('destination' => 'node/' . $nid)));
       $html .= '</div>';
     }
     // Check if the user is a member,
