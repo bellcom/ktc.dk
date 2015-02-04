@@ -132,7 +132,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
-      'formatter' => 'slideshow',
+      'formatter' => 'image',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
@@ -161,6 +161,8 @@ function ktc_netvaerk_default_page_manager_handlers() {
         'slideshow_carousel_circular' => 0,
         'slideshow_carousel_follow' => 0,
         'slideshow_carousel_skin' => '',
+        'image_style' => 'square_thumbnail',
+        'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,

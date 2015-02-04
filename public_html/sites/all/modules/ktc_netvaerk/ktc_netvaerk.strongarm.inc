@@ -43,6 +43,9 @@ function ktc_netvaerk_strongarm() {
       'listevisningstor' => array(
         'custom_settings' => TRUE,
       ),
+      'teasercomments' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -58,6 +61,10 @@ function ktc_netvaerk_strongarm() {
           'listevisning' => array(
             'weight' => '10',
             'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
       ),

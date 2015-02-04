@@ -83,9 +83,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 14,
       ),
       'listevisning' => array(
@@ -326,14 +325,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 7,
       ),
       'listevisning' => array(
@@ -597,9 +590,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 12,
       ),
       'listevisning' => array(
@@ -773,67 +765,6 @@ function ktc_netvaerk_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 19,
-    ),
-  );
-
-  // Exported field_instance: 'node-group-field_subgroup'
-  $field_instances['node-group-field_subgroup'] = array(
-    'bundle' => 'group',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Er et undernetværk ?',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 15,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_subgroup',
-    'label' => 'Undernetværk',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 2,
     ),
   );
 
@@ -1344,7 +1275,6 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Determine if this is an OG group.');
   t('Ekstern links');
   t('Emner');
-  t('Er et undernetværk ?');
   t('Flere emner');
   t('Gammel drupal gid');
   t('Gammel nid');
@@ -1358,7 +1288,6 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Skjul auto relaterede links');
   t('Slut dato');
   t('Start dato');
-  t('Undernetværk');
   t('Åbent/Privat');
 
   return $field_instances;
