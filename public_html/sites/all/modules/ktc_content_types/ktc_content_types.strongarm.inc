@@ -583,7 +583,7 @@ function ktc_content_types_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '20',
+          'weight' => '8',
         ),
       ),
       'display' => array(
@@ -684,7 +684,7 @@ function ktc_content_types_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '2',
         ),
       ),
       'display' => array(
@@ -840,6 +840,18 @@ function ktc_content_types_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'listevisning' => array(
+        'custom_settings' => TRUE,
+      ),
+      'listevisningstor' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teasercomments' => array(
+        'custom_settings' => TRUE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -850,7 +862,20 @@ function ktc_content_types_strongarm() {
           'weight' => '13',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'default' => array(
+            'weight' => '15',
+            'visible' => TRUE,
+          ),
+        ),
+        'subscriptions_ui' => array(
+          'default' => array(
+            'weight' => '17',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__magazine'] = $strongarm;
@@ -978,7 +1003,7 @@ function ktc_content_types_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '10',
         ),
         'workbench_access' => array(
           'weight' => '0',

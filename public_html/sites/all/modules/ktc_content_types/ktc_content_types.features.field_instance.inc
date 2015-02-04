@@ -10,6 +10,149 @@
 function ktc_content_types_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_filer'
+  $field_instances['field_collection_item-field_magasin_indhold-field_magasin_filer'] = array(
+    'bundle' => 'field_magasin_indhold',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_table',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magasin_filer',
+    'label' => 'Filer',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt doc docx pdf tif tiff psd jpg zip',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_side_nr'
+  $field_instances['field_collection_item-field_magasin_indhold-field_magasin_side_nr'] = array(
+    'bundle' => 'field_magasin_indhold',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magasin_side_nr',
+    'label' => 'Side nr',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_side_status'
+  $field_instances['field_collection_item-field_magasin_indhold-field_magasin_side_status'] = array(
+    'bundle' => 'field_magasin_indhold',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magasin_side_status',
+    'label' => 'Status',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_tema'
+  $field_instances['field_collection_item-field_magasin_indhold-field_magasin_tema'] = array(
+    'bundle' => 'field_magasin_indhold',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magasin_tema',
+    'label' => 'Tema',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-arrangement-body'
   $field_instances['node-arrangement-body'] = array(
     'bundle' => 'arrangement',
@@ -63,7 +206,29 @@ function ktc_content_types_field_default_field_instances() {
     'label' => 'Beskrivelse',
     'required' => 1,
     'settings' => array(
-      'display_summary' => 1,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -75,7 +240,7 @@ function ktc_content_types_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
@@ -133,7 +298,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -191,7 +356,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 5,
     ),
   );
 
@@ -276,7 +441,7 @@ function ktc_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 8,
     ),
   );
 
@@ -334,7 +499,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -388,7 +553,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 19,
+      'weight' => 12,
     ),
   );
 
@@ -434,7 +599,7 @@ function ktc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_arrangement_price',
     'label' => 'Pris (inkl./ ekskl. moms)',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -446,7 +611,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 20,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -510,7 +675,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 8,
+      'weight' => 19,
     ),
   );
 
@@ -567,7 +732,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 9,
     ),
   );
 
@@ -624,7 +789,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 10,
     ),
   );
 
@@ -699,7 +864,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 10,
+      'weight' => 6,
     ),
   );
 
@@ -774,7 +939,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -849,7 +1014,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 20,
     ),
   );
 
@@ -903,11 +1068,10 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -964,7 +1128,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 11,
     ),
   );
 
@@ -1038,7 +1202,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 27,
+      'weight' => 13,
     ),
   );
 
@@ -1098,7 +1262,7 @@ function ktc_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 28,
+      'weight' => 13,
     ),
   );
 
@@ -1174,7 +1338,7 @@ function ktc_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 24,
+      'weight' => 10,
     ),
   );
 
@@ -1228,11 +1392,10 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 12,
     ),
   );
 
@@ -1303,7 +1466,7 @@ function ktc_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 9,
     ),
   );
 
@@ -1364,7 +1527,7 @@ function ktc_content_types_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => 10,
     ),
   );
 
@@ -1425,7 +1588,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 26,
+      'weight' => 21,
     ),
   );
 
@@ -1477,16 +1640,14 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
-        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_autocomplete_new_terms' => 'allow',
-        'content_taxonomy_opt_groups' => FALSE,
         'size' => 60,
       ),
-      'type' => 'options_select',
-      'weight' => 13,
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 4,
     ),
   );
 
@@ -1544,7 +1705,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 100,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 11,
     ),
   );
 
@@ -1596,13 +1757,12 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'hs_taxonomy',
+      'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'taxonomy_hs',
-      'weight' => 12,
+      'type' => 'options_select',
+      'weight' => 3,
     ),
   );
 
@@ -1669,11 +1829,10 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 25,
+      'weight' => 11,
     ),
     'widget_type' => 'options_select',
   );
@@ -1762,13 +1921,10 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 15,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 13,
     ),
   );
 
@@ -2031,7 +2187,6 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -2161,7 +2316,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 14,
     ),
   );
 
@@ -2218,7 +2373,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 10,
     ),
   );
 
@@ -2275,7 +2430,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
@@ -2462,15 +2617,13 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
-        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_autocomplete_new_terms' => 'allow',
-        'content_taxonomy_opt_groups' => FALSE,
         'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 6,
     ),
   );
@@ -2523,12 +2676,11 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'hs_taxonomy',
+      'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'taxonomy_hs',
+      'type' => 'options_select',
       'weight' => 5,
     ),
   );
@@ -2596,7 +2748,6 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -2689,12 +2840,9 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
       'weight' => 4,
     ),
   );
@@ -2711,7 +2859,7 @@ function ktc_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -2770,11 +2918,11 @@ function ktc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 12,
+        'weight' => 11,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -2851,7 +2999,7 @@ function ktc_content_types_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -2927,11 +3075,11 @@ function ktc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 13,
+        'weight' => 12,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3081,6 +3229,7 @@ function ktc_content_types_field_default_field_instances() {
   $field_instances['node-magazine-field_ekstra_artikler'] = array(
     'bundle' => 'magazine',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3091,7 +3240,7 @@ function ktc_content_types_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3127,14 +3276,17 @@ function ktc_content_types_field_default_field_instances() {
     'label' => 'Ekstra artikler',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
+      'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 7,
     ),
@@ -3236,7 +3388,7 @@ function ktc_content_types_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3320,7 +3472,7 @@ function ktc_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 18,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3374,11 +3526,11 @@ function ktc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3438,6 +3590,67 @@ function ktc_content_types_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-magazine-field_magasin_indhold'
+  $field_instances['node-magazine-field_magasin_indhold'] = array(
+    'bundle' => 'magazine',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Tilføj',
+          'delete' => 'Slet',
+          'description' => TRUE,
+          'edit' => 'Redigér',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 16,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_magasin_indhold',
+    'label' => 'Magasin indhold',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 18,
     ),
   );
 
@@ -3507,11 +3720,11 @@ function ktc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 15,
+        'weight' => 14,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3586,11 +3799,11 @@ function ktc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 14,
+        'weight' => 13,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3639,6 +3852,7 @@ function ktc_content_types_field_default_field_instances() {
   $field_instances['node-magazine-field_top_artikel'] = array(
     'bundle' => 'magazine',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3649,7 +3863,7 @@ function ktc_content_types_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3681,13 +3895,17 @@ function ktc_content_types_field_default_field_instances() {
     'label' => 'Top artikel',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -3703,11 +3921,11 @@ function ktc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 0,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3760,7 +3978,7 @@ function ktc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -3770,7 +3988,7 @@ function ktc_content_types_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 5,
+        'weight' => 1,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -3908,65 +4126,6 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_base_news-field_forfrem_til'
-  $field_instances['node-os2web_base_news-field_forfrem_til'] = array(
-    'bundle' => 'os2web_base_news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_forfrem_til',
-    'label' => 'Forfrem til',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 14,
-    ),
-  );
-
   // Exported field_instance: 'node-os2web_base_news-field_gammel_gid'
   $field_instances['node-os2web_base_news-field_gammel_gid'] = array(
     'bundle' => 'os2web_base_news',
@@ -4019,7 +4178,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 12,
     ),
   );
 
@@ -4076,7 +4235,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 11,
     ),
   );
 
@@ -4133,147 +4292,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'node-os2web_base_news-field_magasin'
-  $field_instances['node-os2web_base_news-field_magasin'] = array(
-    'bundle' => 'os2web_base_news',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 12,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_magasin',
-    'label' => 'Magasin',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance: 'node-os2web_base_news-field_magasin_reference'
-  $field_instances['node-os2web_base_news-field_magasin_reference'] = array(
-    'bundle' => 'os2web_base_news',
-    'default_value' => NULL,
-    'default_value_function' => 'entityreference_prepopulate_field_default_value',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 14,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_magasin_reference',
-    'label' => 'Magasin reference',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'action' => 'disable',
-          'action_on_edit' => 1,
-          'fallback' => 'hide',
-          'providers' => array(
-            'og_context' => FALSE,
-            'url' => 1,
-          ),
-          'skip_perm' => 'create magazine content',
-          'status' => 1,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 14,
     ),
   );
 
@@ -4330,7 +4349,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 10,
     ),
   );
 
@@ -4389,6 +4408,70 @@ function ktc_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-os2web_base_news-field_os2web_base_field_edi_tags'
+  $field_instances['node-os2web_base_news-field_os2web_base_field_edi_tags'] = array(
+    'bundle' => 'os2web_base_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_edi_tags',
+    'label' => 'Stikord',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 8,
     ),
   );
 
@@ -4579,15 +4662,13 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
-        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'content_taxonomy_opt_groups' => FALSE,
         'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 7,
     ),
   );
@@ -4918,7 +4999,7 @@ function ktc_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -5068,7 +5149,11 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-os2web_base_news-field_os2web_news_page_type'
   $field_instances['node-os2web_base_news-field_os2web_news_page_type'] = array(
     'bundle' => 'os2web_base_news',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 1848,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -5114,7 +5199,6 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -5170,15 +5254,13 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
-        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_autocomplete_new_terms' => 'allow',
-        'content_taxonomy_opt_groups' => FALSE,
         'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 7,
     ),
   );
@@ -5231,11 +5313,11 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'hs_taxonomy',
+      'module' => 'options',
       'settings' => array(
         'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'taxonomy_hs',
+      'type' => 'options_select',
       'weight' => 6,
     ),
   );
@@ -5303,11 +5385,10 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 13,
     ),
     'widget_type' => 'options_select',
   );
@@ -5396,12 +5477,9 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
       'weight' => 11,
     ),
   );
@@ -5992,9 +6070,8 @@ function ktc_content_types_field_default_field_instances() {
   t('Link til arrangørs hjemmeside');
   t('Link til bladreversion');
   t('Lovhenvisninger');
-  t('Magasin');
+  t('Magasin indhold');
   t('Magasin leder');
-  t('Magasin reference');
   t('Manchet');
   t('Målgruppe');
   t('Nyhedstype');
@@ -6004,9 +6081,13 @@ function ktc_content_types_field_default_field_instances() {
   t('Pris (inkl./ ekskl. moms)');
   t('Regioner');
   t('Resume (maks 2 linier!)');
+  t('Side nr');
   t('Skjul auto relaterede links');
+  t('Status');
+  t('Stikord');
   t('Synlighed');
   t('Søgeord');
+  t('Tema');
   t('Tilmeldingsfrist');
   t('Tilmeldte');
   t('Top artikel');
