@@ -559,6 +559,13 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'listevisning';
   $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Du har ingen ubesvarede høringer.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -575,6 +582,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
@@ -605,6 +613,7 @@ function ktc_hearing_views_default_views() {
     t('Forskydning'),
     t('« første'),
     t('sidste »'),
+    t('Du har ingen ubesvarede høringer.'),
     t('Alle'),
     t('Content pane'),
     t('View panes'),

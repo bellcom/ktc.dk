@@ -6773,6 +6773,11 @@ body .form-control {
   overflow: hidden;
   max-width: 100%;
 }
+.filter-box .view-empty {
+  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  padding: 10px 20px;
+}
 .btn-default {
   color: #2c353a;
   border: 2px solid #e9edee;

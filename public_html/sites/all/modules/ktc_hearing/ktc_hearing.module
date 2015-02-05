@@ -1026,7 +1026,7 @@ function _ktc_hearings_node_no_redirect(&$form, &$form_state) {
 /**
  * Get a users unresponded hearings.
  */
-function _ktc_hearing_get_unresponded_nids($user = FALSE) {
+function _ktc_hearing_get_unresponded($user = FALSE) {
   if (!$user) {
     global $user;
   }
@@ -1040,28 +1040,26 @@ function _ktc_hearing_get_unresponded_nids($user = FALSE) {
   $unresponded_hearings = array();
 
   if (isset($result['node'])) {
-    return array_keys($result['node']);
-  }
-  return array();
-}
-/**
- * Get a users unresponded hearings.
- */
-function _ktc_hearing_get_unresponded($user = FALSE) {
-  if ($nids = _ktc_hearing_get_unresponded_nids($user)) {
-    foreach (node_load_multiple($nids) as $hearing) {
-
+    foreach (node_load_multiple(array_keys($result['node'])) as $hearing) {
       // Does the user have the correct permissions?
       // Has the user responded already.
       if (ktc_hearing_access($hearing, 'respond') && !ktc_hearing_user_has_responded($hearing, $user)) {
         $node_author = user_load($hearing->uid);
         $hearing->user_mail = $node_author->mail;
-        $unresponded_hearings[] = $hearing;
+        $unresponded_hearings[$hearing->nid] = $hearing;
       }
     }
   }
-
   return $unresponded_hearings;
+}
+/**
+ * Get a users unresponded hearings.
+ */
+function _ktc_hearing_get_unresponded_nids($user = FALSE) {
+  if ($hearings = _ktc_hearing_get_unresponded($user)) {
+    return array_keys(_ktc_hearing_get_unresponded($user));
+  }
+  return array(0);
 }
 
 /**
