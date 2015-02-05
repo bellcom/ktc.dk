@@ -70,7 +70,7 @@
                 }
                 .group-add-hearing {
                   display: inline-block;
-                  .sprite(@ikon-hoering2);
+                  .sprite(@ikon-hoering);
                   vertical-align: middle;
                   margin-right: 5px;
                 }
@@ -228,86 +228,6 @@
         padding-left: 0px;
         padding-right: 0px;
         // page-netvaerk my groups and all groups views panes.
-        #section-page-with-filter-all-groups {
-          position: relative;
-          margin-bottom: 20px;
-          h3 {
-            .filter-title();
-          }
-          .pane-content {
-            background-color: @gray-darker;
-            position: relative;
-            .view-header {
-              text-align: center;
-              li {
-                display: inline-block;
-                list-style-type:
-                circle;
-                margin-right: 10px;
-                i {
-                  display: inline-block;
-                  margin-right: 4px;
-                  &.red-dot {
-                    .sprite(@red-dot);
-                  }
-                  &.yellow-dot {
-                    .sprite(@yellow-dot);
-                  }
-                  &.green-dot {
-                    .sprite(@green-dot);
-                  }
-                  &.blue-dot {
-                    .sprite(@blue-dot);
-                  }
-                }
-              }
-            }
-            .view-content {
-              padding: 20px 10px;
-              &:after {
-                content: "";
-                clear: both;
-                display: table;
-              }
-            }
-            ul.pager {
-              position: absolute;
-              top: -32px;
-              right: 0px;
-              margin: 10px 5px;
-              .pager-current {
-                display: none;
-              }
-              .pager-previous {
-
-                margin-right: 5px;
-                a {
-                  .sprite(@ikon-pilgrey-left);
-                  background-color: @gray-darker;
-                  border: none;
-                  padding: 2px 2px;
-
-                }
-              }
-
-              .pager-next a {
-                .sprite(@ikon-pilgrey);
-                background-color: @gray-darker;
-                border: none;
-                padding: 2px 2px;
-              }
-            }
-            .view-footer {
-              position: absolute;
-              top: -23px;
-              left: 140px;
-              color: #fff;
-              text-transform: uppercase;
-              font-size: 15px;
-            }
-          }
-
-        }
       }
       .pane-sidebar {
         .pane-menu-menu-user-profile-menu,
@@ -347,9 +267,90 @@ body.page-node-edit.node-type-group {
     background-color: #fff
   }
 }
+.page-hoeringer,
 .page-netvaerk {
   #section-page-with-filter {
     padding-left: 0px;
     padding-right: 0px;
   }
+}
+#section-page-with-filter-all-groups {
+  position: relative;
+  margin-bottom: 20px;
+  h3 {
+    .filter-title();
+  }
+  .pane-content {
+    background-color: @gray-darker;
+    position: relative;
+    .view-header {
+      text-align: center;
+      li {
+        display: inline-block;
+        list-style-type:
+        circle;
+        margin-right: 10px;
+        i {
+          display: inline-block;
+          margin-right: 4px;
+          &.red-dot {
+            .sprite(@red-dot);
+          }
+          &.yellow-dot {
+            .sprite(@yellow-dot);
+          }
+          &.green-dot {
+            .sprite(@green-dot);
+          }
+          &.blue-dot {
+            .sprite(@blue-dot);
+          }
+        }
+      }
+    }
+    .view-content {
+      padding: 20px 10px;
+      &:after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    }
+    ul.pager {
+      position: absolute;
+      top: -32px;
+      right: 0px;
+      margin: 10px 5px;
+      .pager-current {
+        display: none;
+      }
+      .pager-previous {
+
+        margin-right: 5px;
+        a {
+          .sprite(@ikon-pilgrey-left);
+          background-color: @gray-darker;
+          border: none;
+          padding: 2px 2px;
+
+        }
+      }
+
+      .pager-next a {
+        .sprite(@ikon-pilgrey);
+        background-color: @gray-darker;
+        border: none;
+        padding: 2px 2px;
+      }
+    }
+    .view-footer {
+      position: absolute;
+      top: -23px;
+      left: 140px;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+  }
+
 }
