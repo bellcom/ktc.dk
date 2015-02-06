@@ -147,3 +147,13 @@ function ktc_crm_account_load_from_uuid($uuid) {
 
   return FALSE;
 }
+
+/**
+ * Get users account term.
+ */
+function _ktc_crm_account_get_users_account($account) {
+  if ($field = field_get_items('user', $account, 'field_account')) {
+    return taxonomy_term_load($field[0]['tid']);
+  }
+  return FALSE;
+}

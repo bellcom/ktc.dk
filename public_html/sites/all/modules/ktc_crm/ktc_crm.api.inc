@@ -147,7 +147,7 @@ function ktc_crm_update_user_subscription(\KTC\Subscription\SubscriptionDto $sub
   catch (\Exception $e) {
     $logger->log->addError('soap error', array(
       'message' => $e->getMessage(),
-      'method' => 'CreateUpdateSubscription',
+      'method' => __FUNCTION__,
     ));
   }
 
@@ -170,17 +170,45 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
     $user_uuid = strtolower($crm_uuid_field[0]['value']);
   }
 
-  $subscriptions = ktc_crm_fetch_subscriptions();
+  $logger = KtcCrmLogger::getInstance();
+  $url = variable_get('ktc_crm_url', '');
 
-  $user_subscriptions = array();
+  $wsdl_url = $url . '/' . KTC_CRM_SUBSCRIPTION_WSDL;
 
-  foreach ($subscriptions->Results->SubscriptionDto as $subscription) {
-    if ($subscription->RecipientId == $user_uuid) {
-      $user_subscriptions[] = $subscription;
+  try {
+    $subscription = new KTC\Subscription\Subscription(array(), $wsdl_url);
+
+    $retrievesubscriptionsforsubscriber = new KTC\Subscription\RetrieveSubscriptionsForSubscriber($user_uuid);
+
+    $result = $subscription->RetrieveSubscriptionsForSubscriber($retrievesubscriptionsforsubscriber);
+
+    $user_subscriptions = array();
+    if (is_object($result) && isset($result->RetrieveSubscriptionsForSubscriberResult)) {
+      foreach ($result->RetrieveSubscriptionsForSubscriberResult as $subscription) {
+        $subscription->is_active = TRUE;
+
+        if ($subscription->EndDate) {
+          $end = strtotime($subscription->EndDate);
+
+          if (time() > $end) {
+            $subscription->is_active = FALSE;
+          }
+        }
+        $user_subscriptions[$subscription->ProductId] = $subscription;
+      }
+
+      return $user_subscriptions;
     }
+
+  }
+  catch (\Exception $e) {
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => __FUNCTION__,
+    ));
   }
 
-  return $user_subscriptions;
+  return FALSE;
 }
 
 /**

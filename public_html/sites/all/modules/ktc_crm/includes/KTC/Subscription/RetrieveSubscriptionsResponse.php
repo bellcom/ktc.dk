@@ -7,14 +7,14 @@ class RetrieveSubscriptionsResponse
 
   /**
    * 
-   * @var RetrieveResponseOfSubscriptionDtowsdCoMqt $RetrieveSubscriptionsResult
+   * @var SubscriptionRetrieveResponse $RetrieveSubscriptionsResult
    * @access public
    */
   public $RetrieveSubscriptionsResult = null;
 
   /**
    * 
-   * @param RetrieveResponseOfSubscriptionDtowsdCoMqt $RetrieveSubscriptionsResult
+   * @param SubscriptionRetrieveResponse $RetrieveSubscriptionsResult
    * @access public
    */
   public function __construct($RetrieveSubscriptionsResult)
