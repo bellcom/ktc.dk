@@ -9,6 +9,20 @@ class SubscriptionDto extends CrmEntityDto
 
   /**
    * 
+   * @var guid $Abonnementsansvarlig
+   * @access public
+   */
+  public $Abonnementsansvarlig = null;
+
+  /**
+   * 
+   * @var string $EAN
+   * @access public
+   */
+  public $EAN = null;
+
+  /**
+   * 
    * @var dateTime $EndDate
    * @access public
    */
@@ -16,10 +30,38 @@ class SubscriptionDto extends CrmEntityDto
 
   /**
    * 
+   * @var guid $InvoiceAccountId
+   * @access public
+   */
+  public $InvoiceAccountId = null;
+
+  /**
+   * 
    * @var EANAddressDto $InvoiceAddress
    * @access public
    */
   public $InvoiceAddress = null;
+
+  /**
+   * 
+   * @var string $KundensReference
+   * @access public
+   */
+  public $KundensReference = null;
+
+  /**
+   * 
+   * @var dateTime $LastOrderDate
+   * @access public
+   */
+  public $LastOrderDate = null;
+
+  /**
+   * 
+   * @var dateTime $NextOrderDate
+   * @access public
+   */
+  public $NextOrderDate = null;
 
   /**
    * 
