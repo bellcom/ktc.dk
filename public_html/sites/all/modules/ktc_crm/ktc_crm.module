@@ -163,6 +163,13 @@ function _ktc_crm_get_term_name($tid) {
   return FALSE;
 }
 
+/**
+ * Helper, is the user a KTC member.
+ */
+function _ktc_crm_is_ktc_member() {
+  return FALSE;
+}
+
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 class KtcCrmLogger {
