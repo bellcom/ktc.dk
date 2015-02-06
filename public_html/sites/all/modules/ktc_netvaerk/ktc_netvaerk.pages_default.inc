@@ -75,7 +75,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
       'field_name' => 'og_group_ref',
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'OPRET INDLÆG',
+      'override_title_text' => 'Opret nyt indhold i %node:title',
     );
     $pane->cache = array();
     $pane->style = array(
