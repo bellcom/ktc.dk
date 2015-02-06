@@ -93,9 +93,9 @@
 
       }
 
-      // Arrangement/aktiviteter section page: filter events on period (furture/old).
-      var substr = type.match(/aktiviteter/g);
-      if (type == 'aktiviteter' || substr == 'aktiviteter') {
+      // Arrangement/kalender section page: filter events on period (furture/old).
+      var substr = type.match(/kalender/g);
+      if (type == 'kalender' || substr == 'kalender') {
         var period = $('#period').find('.btn-primary').attr('data-filter');
 
         link = '/ajax/aktiviteter/view/all/'+filter_value[1]+'/'+period+'/all/'+filter_value[4]+'/'+gid;
