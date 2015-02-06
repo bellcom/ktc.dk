@@ -20,6 +20,11 @@ function ktc_crm_subscriptions_page($account) {
  * Form callback for creating/editing a subscription.
  */
 function ktc_crm_subscriptions_form($form, &$form_state, $account, $product_nid) {
+  $css = '
+      #edit-invoiceaccount-hierarchical-select-selects-0 {display: none;}
+      #edit-invoiceaccount-hierarchical-select-selects-1 option:first-child {display: none;}
+    ';
+  drupal_add_css($css, 'inline');
 
   $form = array();
 
@@ -62,7 +67,6 @@ function ktc_crm_subscriptions_form($form, &$form_state, $account, $product_nid)
           'params' => array(
             'vid' => $vocab->vid,
           ),
-          'enforce_deepest' => 1,
         ),
         '#default_value' => $invoiceaccount->tid,
       );
@@ -176,6 +180,10 @@ function ktc_crm_subscriptions_form_submit(&$form, &$form_state) {
  * Form callback for cancelling a subscription.
  */
 function ktc_crm_subscription_cancel_form($form, &$form_state, $account, $product_nid) {
+  if (_ktc_crm_is_ktc_member()) {
+    return array();
+  }
+
   $form = array();
 
   if ($product = node_load($product_nid)) {
