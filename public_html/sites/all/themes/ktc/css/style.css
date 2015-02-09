@@ -9520,12 +9520,12 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   border: none;
   margin: 0 0 10px 0;
 }
-.page-netvaerk .node--group--listevisning .icon-yellow-arrow,
-.node-type-group .node--group--listevisning .icon-yellow-arrow {
+.page-netvaerk .node--group--listevisning .icon-subgroup,
+.node-type-group .node--group--listevisning .icon-subgroup {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -389px;
-  width: 17px;
+  background-position: 0px -406px;
+  width: 15px;
   height: 17px;
   vertical-align: bottom;
   margin-right: 5px;
