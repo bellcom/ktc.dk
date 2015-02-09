@@ -13,6 +13,36 @@ function ktc_users_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_hidden|user|user|form';
+  $field_group->group_name = 'group_hidden';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Skjul',
+    'weight' => '55',
+    'children' => array(
+      0 => 'field_gammel_uid',
+      1 => 'field_typo3_uid',
+      2 => 'field_crm_uuid',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Skjul',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-hidden field-group-fieldset hidden',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_hidden|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_personal|user|user|form';
   $field_group->group_name = 'group_personal';
   $field_group->entity_type = 'user';

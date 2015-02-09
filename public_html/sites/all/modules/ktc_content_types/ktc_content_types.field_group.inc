@@ -108,14 +108,14 @@ function ktc_content_types_field_group_info() {
     'label' => 'Form',
     'weight' => '1',
     'children' => array(
-      0 => 'group_arrangement',
-      1 => 'group_arrangementsted',
-      2 => 'group_arrangementbesk',
-      3 => 'group_arrangementtildm',
-      4 => 'group_groups',
-      5 => 'group_arrangementfiles',
-      6 => 'group_arrangementemner',
-      7 => 'group_arrangementsynlighed',
+      0 => 'group_arrangementbesk',
+      1 => 'group_arrangementemner',
+      2 => 'group_arrangementfiles',
+      3 => 'group_arrangementsted',
+      4 => 'group_arrangementsynlighed',
+      5 => 'group_arrangementtildm',
+      6 => 'group_arrangement',
+      7 => 'group_groups',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -351,7 +351,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjul',
-    'weight' => '16',
+    'weight' => '15',
     'children' => array(
       0 => 'field_news_author',
       1 => 'field_gammel_gid',
@@ -439,9 +439,8 @@ function ktc_content_types_field_group_info() {
     'weight' => '17',
     'children' => array(
       0 => 'field_os2web_base_field_promote',
-      1 => 'field_news_author',
-      2 => 'field_os2web_base_field_ext_link',
-      3 => 'field_os2web_base_field_hidlinks',
+      1 => 'field_os2web_base_field_ext_link',
+      2 => 'field_os2web_base_field_hidlinks',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
