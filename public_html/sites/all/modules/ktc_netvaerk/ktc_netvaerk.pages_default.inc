@@ -161,7 +161,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
         'slideshow_carousel_circular' => 0,
         'slideshow_carousel_follow' => 0,
         'slideshow_carousel_skin' => '',
-        'image_style' => 'square_thumbnail',
+        'image_style' => 'netvaerks_logo',
         'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',
