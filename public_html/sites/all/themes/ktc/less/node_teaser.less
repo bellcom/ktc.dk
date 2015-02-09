@@ -144,7 +144,7 @@
     h5 {
       font-size: 12px;
       a {
-        color: #fff;
+        color: @font-title-color;
       }
       margin-bottom: 5px;
       margin-top: 5px;
@@ -306,14 +306,21 @@
   }
 
   .node--group--listevisning {
-    .icon-yellow-arrow {
+    .icon-subgroup {
       display: inline-block;
-      .sprite(@arrow_yellow);
+      .sprite(@ikon-netvaerk);
       vertical-align: bottom;
       margin-right: 5px;
     }
     .group-region {
       margin-left: 20px;
+    }
+  }
+  article.node--group--teaser {
+    h5 {
+      a {
+        color: #fff;
+      }
     }
   }
 }

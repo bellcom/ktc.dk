@@ -48,6 +48,7 @@ function ktc_netvaerk_get_node_group_info($nid) {
       $gid = $gid[0]['target_id'];
       $group = node_load($gid);
       $class = ktc_netvaerk_check_my_groups($gid);
+      // TODO: get class green for some specific group type.
       /*$tid = '';
       if ($group_type = field_get_items('node', $group, 'field_netvaerkstype')){
       $tid = $group_type[0]['tid'];
@@ -153,6 +154,9 @@ function ktc_netvaerk_get_group_content_types($nid = 'all') {
     $result = $query->execute();
     if ($result->rowCount() > 0) {
       while ($record = $result->fetchAssoc()) {
+        if ($record['type'] == 'group') {
+          continue;
+        }
         $types[] = $record['type'];
       }
     }
@@ -161,7 +165,7 @@ function ktc_netvaerk_get_group_content_types($nid = 'all') {
     $node_types = node_type_get_types();
     foreach ($node_types as $obj) {
       // Skip hearing_responses type.
-      if ($obj->type == 'hearing_responses') {
+      if ($obj->type == 'hearing_responses' || $obj->type == 'group') {
         continue;
       }
       if (og_is_group_content_type('node', $obj->type)) {
@@ -280,4 +284,12 @@ function ktc_netvaerk_theme($existing, $type, $theme, $path) {
       'template' => $path . 'ktc-netvaerk-invite-form',
     ),
   );
+}
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'group_node_form' && isset($form_state['entityreference_prepopulate'])) {
+    drupal_set_title('Opret Undernetværk');
+  }
 }
