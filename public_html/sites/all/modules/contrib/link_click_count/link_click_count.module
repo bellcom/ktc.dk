@@ -1,0 +1,219 @@
+<?php
+
+/**
+ * @file
+ * link click count module file.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function link_click_count_menu() {
+  $items['link_click_count'] = array(
+    'page callback' => 'link_click_count_callback',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function link_click_count_views_api() {
+  return array(
+    'api' => 2,
+    'path' => drupal_get_path('module', 'link_click_count'),
+  );
+}
+
+/**
+ * Callback function, to save clicks.
+ */
+function link_click_count_callback() {
+  db_insert('link_click_count')->fields(array(
+    'url' => $_GET["url"],
+    'nid' => $_GET["nid"],
+    'uid' => $GLOBALS['user']->uid,
+    'date' => time(),
+  ))->execute();
+  $page_redirect = '';
+  $pos = strpos($_GET["url"], "http://");
+  $pos_ = strpos($_GET["url"], "https://");
+  if ($pos === FALSE || $pos_ === FALSE) {
+    $page_redirect = "http://" . $_GET["url"];
+  }
+  else {
+    $page_redirect = $_GET["url"];
+  }
+  drupal_goto($page_redirect);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function link_click_count_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == "field_ui_field_edit_form" && $form["#field"]["type"] == "link_field") {
+    $key_exist = array_key_exists("createdby_link_click_count", $form["#field"]["settings"]);
+    if (empty($key_exist)) {
+      $form['link_click_count_fieldset'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Link Clicks Count Configuration'),
+      );
+      $form['link_click_count_fieldset']['link_click_count'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Save the clicks happened on this link.'),
+        '#default_value' => variable_get("link_click_count_checkbox" . $form["#field"]["field_name"]),
+      );
+      $form["#submit"][] = "link_click_count_form_submit";
+      $form["#submit"] = array_merge(array(key($form["#submit"]) => array_pop($form["#submit"])), $form["#submit"]);
+    }
+    else {
+      $form['link_click_count_fieldset'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Link Clicks Count Configuration'),
+      );
+      $form['link_click_count_fieldset']['link_click_count'] = array(
+        '#markup' => t('This field is created by link_click_count module.'),
+      );
+    }
+  }
+  $field_exist = array_key_exists("field", $form_state);
+  if ($field_exist) {
+    foreach ($form_state["field"] as $key => $field) {
+      $key_exist = array_key_exists("parent_link_field", $field["und"]["field"]["settings"]);
+      if ($key_exist) {
+        $parent_field = $field["und"]["field"]["settings"]["parent_link_field"];
+        $class = "#edit-" . str_replace("_", "-", $parent_field) . " { display: none; }";
+        drupal_add_css($class, 'inline');
+      }
+    }
+  }
+  if ($form_id == "simply_course_node_form") {
+    $css = "#edit-field-course-registration-url { display: none; }";
+    drupal_add_css($css, 'inline');
+  }
+}
+
+/**
+ * Submit function, handles link click fields.
+ */
+function link_click_count_form_submit($form, $form_state) {
+  $var_status = variable_get("link_click_count_checkbox" . $form["#field"]["field_name"]);
+  $link_checked = $form["link_click_count_fieldset"]["link_click_count"]["#value"];
+  if ( !(empty($var_status) && !$link_checked) && !(!empty($var_status) && $link_checked) ) {
+    $field_name = $form["#field"]["field_name"] . "_c";
+    $instance_update = $form["#instance"];
+    if (empty($var_status) && $link_checked) {
+      variable_set("link_click_count_checkbox" . $form["#field"]["field_name"], $link_checked);
+      $field = array(
+        'field_name' => $field_name,
+        'type' => 'link_field',
+        'cardinality' => 1,
+        'settings' => array(
+          'createdby_link_click_count' => 'createdby_link_click_count',
+          'parent_link_field' => $form["#field"]["field_name"],
+        ),
+      );
+      field_create_field($field);
+      $instance = array(
+        'field_name' => $field_name,
+        'entity_type' => 'node',
+        'bundle' => $form["#instance"]["bundle"],
+        'display' => array(
+          'default' => array(
+            'label' => $instance_update["display"]["default"]["label"],
+            'type' => 'hidden'),
+          ),
+        'label' => $form["#instance"]["label"] . " Original",
+      );
+      field_create_instance($instance);
+      update_existing_content_links($instance_update["bundle"], $form["#field"]["field_name"], $field_name);
+    }
+    elseif (!empty($var_status) && !$link_checked) {
+      variable_del("link_click_count_checkbox" . $form["#field"]["field_name"]);
+      field_delete_field($field_name);
+    }
+  }
+}
+
+/**
+ * Implements hook_field_delete_field().
+ */
+function link_click_count_field_delete_field($field) {
+  if ($field["type"] == "link_field") {
+    $key_exist = array_key_exists("parent_link_field", $field["settings"]);
+    if ($key_exist) {
+      $field_info = field_info_field($field["settings"]["parent_link_field"]);
+      restore_existing_content_links($field_info["bundles"]["node"][0], $field["settings"]["parent_link_field"]);
+      variable_del("link_click_count_checkbox" . $field["settings"]["parent_link_field"]);
+    }
+    variable_del("link_click_count_checkbox" . $field["field_name"]);
+    field_delete_field($field["field_name"] . "_c");
+  }
+}
+
+/**
+ * Implements hook_form_node_form_alter().
+ */
+function link_click_count_form_node_form_alter(&$form, &$form_state, $form_id) {
+  foreach ($form_state["field"] as $key => $field) {
+    $key_exist = array_key_exists("parent_link_field", $field["und"]["field"]["settings"]);
+    $form['actions']['submit']['#submit'][] = 'link_click_count_form_node_form_alter_submit';
+    break;
+  }
+}
+
+/**
+ * Handles node update on each node save.
+ */
+function link_click_count_form_node_form_alter_submit($form, $form_state) {
+  foreach ($form_state["field"] as $key => $field) {
+    $key_exist = array_key_exists("parent_link_field", $field["und"]["field"]["settings"]);
+    if ($key_exist) {
+      $parent_field = $field["und"]["field"]["settings"]["parent_link_field"];
+      $child_field = $key;
+      $node = node_load($form_state["node"]->nid);
+      $child_field_value = $form_state["node"]->$child_field;
+      $url = $child_field_value["und"][0]["url"];
+      $parent_field_value = $child_field_value;
+      $parent_field_value["und"][0]["url"] = "link_click_count?url=" . urlencode($url) . "&nid=" . $node->nid;
+      $node->$parent_field = $parent_field_value;
+      $node->$child_field = $child_field_value;
+      node_save($node);
+    }
+  }
+}
+
+/**
+ * Handles node update on link activated to count clicks.
+ */
+function update_existing_content_links($type, $parent_field, $child_field) {
+  $nodes = node_load_multiple(array(), array('type' => $type));
+  foreach ($nodes as $nid => $node) {
+    $parent_field_value = $node->$parent_field;
+    $child_field_value = $parent_field_value;
+    $url = $parent_field_value["und"][0]["url"];
+    $parent_field_value["und"][0]["url"] = "link_click_count?url=" . urlencode($url) . "&nid=" . $node->nid;
+    $node->$parent_field = $parent_field_value;
+    $node->$child_field = $child_field_value;
+    node_save($node);
+  }
+}
+
+/**
+ * Handles node update on link de-activated to count clicks.
+ */
+function restore_existing_content_links($type, $parent_field) {
+  $nodes = node_load_multiple(array(), array('type' => $type));
+  foreach ($nodes as $nid => $node) {
+    $parent_field_value = $node->$parent_field;
+    $url_exist = $parent_field_value["und"][0]["url"];
+    $url_parts = parse_url($url_exist);
+    parse_str($url_parts['query'], $query);
+    $parent_field_value["und"][0]["url"] = $query["url"];
+    $node->$parent_field = $parent_field_value;
+    node_save($node);
+  }
+}
+

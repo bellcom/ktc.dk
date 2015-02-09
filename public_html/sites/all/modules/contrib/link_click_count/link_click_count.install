@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * @file
+ * Install file.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function link_click_count_schema() {
+  $schema = array();
+  $schema['link_click_count'] = array(
+    'description' => t('Table to store every click detail.'),
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'url' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length'  => '2048',
+      ),
+      'nid' => array(
+        'type' => 'int',
+        'length' => '10',
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'length' => '10',
+        'not null' => TRUE,
+      ),
+      'date' => array(
+        'type' => 'int',
+        'length' => '11',
+        'not null' => TRUE,
+      ),
+
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'nid_url' => array(
+        0 => 'nid',
+        1 => 'url',
+      ),
+      'date' => array(
+        0 => 'date',
+      ),
+    ),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function link_click_count_uninstall() {
+  drupal_uninstall_schema('link_click_count');
+
+  $fields = field_info_fields();
+  foreach ($fields as $field => $field_value) {
+    $key_exist = array_key_exists("parent_link_field", $field_value["settings"]);
+    if ($key_exist) {
+      $type = $field_value["bundles"]["node"][0];
+      $parent_field = $field_value["settings"]["parent_link_field"];
+      $nodes = node_load_multiple(array(), array('type' => $type));
+      foreach ($nodes as $nid => $node) {
+        $parent_field_value = $node->$parent_field;
+        $url_exist = $parent_field_value["und"][0]["url"];
+        $url_parts = parse_url($url_exist);
+        parse_str($url_parts['query'], $query);
+        $parent_field_value["und"][0]["url"] = $query["url"];
+        $node->$parent_field = $parent_field_value;
+        node_save($node);
+      }
+      variable_del("link_click_count_checkbox" . $parent_field);
+      field_delete_field($field_value["field_name"]);
+    }
+  }
+
+}
+
+
