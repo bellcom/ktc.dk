@@ -7921,6 +7921,9 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .node-type-page .pane-sektionsside-footer {
   margin-top: 20px;
 }
+.node-type-page .pane-sektionsside-footer .pane-custom h3.pane-title {
+  padding: 10px 10px;
+}
 .node-type-page .pane-sektionsside-footer h3.pane-title {
   padding: 0 0 0 0;
 }
