@@ -1,4 +1,4 @@
-name = KTC Sekstion - Indholdssider
+name = KTC Sektion - Indholdssider
 core = 7.x
 package = KTC
 dependencies[] = ctools
