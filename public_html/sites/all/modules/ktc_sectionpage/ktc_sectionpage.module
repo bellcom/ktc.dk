@@ -308,12 +308,12 @@ function _ktc_section_block_hearing_content($type = 'hearing', $f1 = '', $f2 = '
 function _ktc_section_block_netvaerk_invite_links_content() {
   $nid = arg(1);
   $html = '';
-  if (is_numeric($nid)) {
+  if (is_numeric($nid) && user_is_logged_in()) {
     $html .= '<div class="row">';
     $link_class = 'col-md-12 col-sm-12 col-xs-12 filter-link btn btn-blacknblue';
     $node = node_load($nid);
     // If user has access to invite user to group.
-    if ($access = og_user_access('node', $nid, 'invite any user')) {
+    if ($access = og_user_access('node', $nid, 'invite any user') && og_is_member('node', $nid)) {
       $html .= '<div class="col-md-6 col-sm-12 col-xs-12">';
       $html .= l('Invitér', 'group/node/' . $nid . '/admin/people/invite-users', array('attributes' => array('class' => $link_class), 'query' => array('destination' => 'node/' . $nid)));
       $html .= '</div>';
@@ -524,15 +524,19 @@ function _ktc_section_block_page_menu_tabs() {
       $group_menu .= l('Vis', 'node/' . $nid);
       $group_menu .= '</div></div>';
 
-      $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
-      $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-blacknblue filter-link">';
-      $group_menu .= l('Redigér', 'node/' . $nid . '/edit');
-      $group_menu .= '</div></div>';
+      if (drupal_valid_path('node/' . $nid . '/edit')) {
+        $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
+        $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-blacknblue filter-link">';
+        $group_menu .= l('Redigér', 'node/' . $nid . '/edit');
+        $group_menu .= '</div></div>';
+      }
 
-      $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
-      $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-primary filter-link">';
-      $group_menu .= l('Gruppe', 'node/' . $nid . '/group');
-      $group_menu .= '</div></div>';
+      if (drupal_valid_path('node/' . $nid . '/group')) {
+        $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
+        $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-primary filter-link">';
+        $group_menu .= l('Gruppe', 'node/' . $nid . '/group');
+        $group_menu .= '</div></div>';
+      }
 
       $group_menu .= '</div>';
       $menu .= $group_menu;

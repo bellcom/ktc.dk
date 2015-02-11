@@ -112,6 +112,7 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -1068,6 +1069,7 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -1392,6 +1394,7 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -1640,13 +1643,15 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'content_taxonomy_opt_groups' => FALSE,
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 4,
     ),
   );
@@ -1757,11 +1762,12 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'hs_taxonomy',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_hs',
       'weight' => 3,
     ),
   );
@@ -1829,6 +1835,7 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -1921,9 +1928,12 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
       'weight' => 13,
     ),
   );
@@ -2187,6 +2197,7 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -2617,13 +2628,15 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'content_taxonomy_opt_groups' => FALSE,
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 6,
     ),
   );
@@ -2676,11 +2689,12 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'hs_taxonomy',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_hs',
       'weight' => 5,
     ),
   );
@@ -2748,6 +2762,7 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -2840,9 +2855,12 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
       'weight' => 4,
     ),
   );
@@ -3906,6 +3924,7 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -4464,13 +4483,15 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'content_taxonomy_opt_groups' => FALSE,
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 8,
     ),
   );
@@ -4656,19 +4677,18 @@ function ktc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_kle_ref',
     'label' => 'KL Emneord',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 7,
     ),
   );
@@ -5199,6 +5219,7 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -5254,13 +5275,15 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'content_taxonomy_opt_groups' => FALSE,
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 7,
     ),
   );
@@ -5313,11 +5336,12 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'hs_taxonomy',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_hs',
       'weight' => 6,
     ),
   );
@@ -5385,6 +5409,7 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -5477,9 +5502,12 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
       'weight' => 11,
     ),
   );
