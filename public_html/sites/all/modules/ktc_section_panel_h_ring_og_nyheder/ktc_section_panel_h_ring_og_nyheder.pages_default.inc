@@ -242,8 +242,8 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => 'section-page-with-filter-all-groups',
-      'css_class' => 'col-md-12 col-sm-12 col-xs-12',
+      'css_id' => '',
+      'css_class' => 'col-md-12 col-sm-12 col-xs-12 darkgray-box',
     );
     $pane->extras = array();
     $pane->position = 0;
