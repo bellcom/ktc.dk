@@ -10120,10 +10120,12 @@ body.page-node-edit.node-type-group .main-container {
   padding-left: 0px;
   padding-right: 0px;
 }
+.darkgray-box,
 #section-page-with-filter-all-groups {
   position: relative;
   margin-bottom: 20px;
 }
+.darkgray-box h3,
 #section-page-with-filter-all-groups h3 {
   border: none;
   padding: 5px 0px 5px 20px;
@@ -10135,66 +10137,80 @@ body.page-node-edit.node-type-group .main-container {
   margin-bottom: 0px;
   margin-top: 0px;
 }
+.darkgray-box .pane-content,
 #section-page-with-filter-all-groups .pane-content {
   background-color: #2c353a;
   position: relative;
 }
+.darkgray-box .pane-content .view-header,
 #section-page-with-filter-all-groups .pane-content .view-header {
   text-align: center;
 }
+.darkgray-box .pane-content .view-header li,
 #section-page-with-filter-all-groups .pane-content .view-header li {
   display: inline-block;
   list-style-type: circle;
   margin-right: 10px;
 }
+.darkgray-box .pane-content .view-header li i,
 #section-page-with-filter-all-groups .pane-content .view-header li i {
   display: inline-block;
   margin-right: 4px;
 }
+.darkgray-box .pane-content .view-header li i.red-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.red-dot {
   background-image: url(../images/sprites.png);
   background-position: 0px -24px;
   width: 8px;
   height: 8px;
 }
+.darkgray-box .pane-content .view-header li i.yellow-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.yellow-dot {
   background-image: url(../images/sprites.png);
   background-position: 0px 0px;
   width: 8px;
   height: 8px;
 }
+.darkgray-box .pane-content .view-header li i.green-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.green-dot {
   background-image: url(../images/sprites.png);
   background-position: 0px -16px;
   width: 8px;
   height: 8px;
 }
+.darkgray-box .pane-content .view-header li i.blue-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.blue-dot {
   background-image: url(../images/sprites.png);
   background-position: 0px -8px;
   width: 8px;
   height: 8px;
 }
+.darkgray-box .pane-content .view-content,
 #section-page-with-filter-all-groups .pane-content .view-content {
   padding: 20px 10px;
 }
+.darkgray-box .pane-content .view-content:after,
 #section-page-with-filter-all-groups .pane-content .view-content:after {
   content: "";
   clear: both;
   display: table;
 }
+.darkgray-box .pane-content ul.pager,
 #section-page-with-filter-all-groups .pane-content ul.pager {
   position: absolute;
   top: -32px;
   right: 0px;
   margin: 10px 5px;
 }
+.darkgray-box .pane-content ul.pager .pager-current,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-current {
   display: none;
 }
+.darkgray-box .pane-content ul.pager .pager-previous,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-previous {
   margin-right: 5px;
 }
+.darkgray-box .pane-content ul.pager .pager-previous a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-previous a {
   background-image: url(../images/sprites.png);
   background-position: 0px -241px;
@@ -10204,6 +10220,7 @@ body.page-node-edit.node-type-group .main-container {
   border: none;
   padding: 2px 2px;
 }
+.darkgray-box .pane-content ul.pager .pager-next a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-next a {
   background-image: url(../images/sprites.png);
   background-position: 0px -166px;
@@ -10213,6 +10230,7 @@ body.page-node-edit.node-type-group .main-container {
   border: none;
   padding: 2px 2px;
 }
+.darkgray-box .pane-content .view-footer,
 #section-page-with-filter-all-groups .pane-content .view-footer {
   position: absolute;
   top: -23px;
