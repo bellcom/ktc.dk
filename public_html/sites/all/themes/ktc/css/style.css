@@ -7894,6 +7894,30 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   padding: 10px;
   background-color: #fff;
 }
+.node-type-page .indholdsmenu ul li {
+  display: block;
+  float: left;
+  border-bottom: none;
+}
+.node-type-page .indholdsmenu ul li a {
+  box-shadow: none;
+  color: #2C353A;
+  border: 2px solid #2C353A;
+  padding: 1px 8px;
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 90%;
+}
+.node-type-page .indholdsmenu ul li.last a {
+  margin-right: 0px;
+}
+.node-type-page .indholdsmenu ul li.active a {
+  background-color: #36a145;
+  color: #FFF;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
