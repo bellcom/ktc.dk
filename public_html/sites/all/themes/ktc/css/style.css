@@ -7918,6 +7918,34 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   background-color: #36a145;
   color: #FFF;
 }
+.node-type-page .pane-sektionsside-footer {
+  margin-top: 20px;
+}
+.node-type-page .pane-sektionsside-footer h3.pane-title {
+  padding: 0 0 0 0;
+}
+.node-type-page .pane-sektionsside-footer h3.pane-title a {
+  color: #FFF;
+  background-color: #2c353a;
+  padding: 10px 10px;
+  display: block;
+}
+.node-type-page .pane-sektionsside-footer h3.pane-title a.active-trail {
+  background-color: #36a145;
+}
+.node-type-page .pane-sektionsside-footer ul {
+  padding: 0 10px;
+}
+.node-type-page .pane-sektionsside-footer ul li {
+  border-bottom: none;
+}
+.node-type-page .pane-sektionsside-footer ul li a {
+  padding: 0 0;
+  font-size: 95%;
+}
+.node-type-page .pane-sektionsside-footer ul li a.active {
+  color: #36a145;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
