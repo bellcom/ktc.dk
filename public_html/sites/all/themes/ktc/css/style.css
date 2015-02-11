@@ -7914,7 +7914,7 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .node-type-page .indholdsmenu ul li.last a {
   margin-right: 0px;
 }
-.node-type-page .indholdsmenu ul li.active a {
+.node-type-page .indholdsmenu ul li.active a.active {
   background-color: #36a145;
   color: #FFF;
 }
