@@ -645,7 +645,7 @@ function ktc_content_types_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '4',
         ),
       ),
       'display' => array(),
