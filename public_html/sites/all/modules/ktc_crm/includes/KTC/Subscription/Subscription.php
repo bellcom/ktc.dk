@@ -16,7 +16,12 @@ include_once('CreateUpdateSubscriptionResponse.php');
 include_once('RetrieveSubscriptions.php');
 include_once('Request.php');
 include_once('RetrieveSubscriptionsResponse.php');
+include_once('SubscriptionRetrieveResponse.php');
 include_once('RetrieveResponseOfSubscriptionDtowsdCoMqt.php');
+include_once('RetrieveSubscriptionsForSubscriber.php');
+include_once('RetrieveSubscriptionsForSubscriberResponse.php');
+include_once('RetrieveSubscriptionsById.php');
+include_once('RetrieveSubscriptionsByIdResponse.php');
 
 
 /**
@@ -42,7 +47,12 @@ class Subscription extends \SoapClient
     'RetrieveSubscriptions' => 'KTC\Subscription\RetrieveSubscriptions',
     'Request' => 'KTC\Subscription\Request',
     'RetrieveSubscriptionsResponse' => 'KTC\Subscription\RetrieveSubscriptionsResponse',
-    'RetrieveResponseOfSubscriptionDtowsdCoMqt' => 'KTC\Subscription\RetrieveResponseOfSubscriptionDtowsdCoMqt');
+    'SubscriptionRetrieveResponse' => 'KTC\Subscription\SubscriptionRetrieveResponse',
+    'RetrieveResponseOfSubscriptionDtowsdCoMqt' => 'KTC\Subscription\RetrieveResponseOfSubscriptionDtowsdCoMqt',
+    'RetrieveSubscriptionsForSubscriber' => 'KTC\Subscription\RetrieveSubscriptionsForSubscriber',
+    'RetrieveSubscriptionsForSubscriberResponse' => 'KTC\Subscription\RetrieveSubscriptionsForSubscriberResponse',
+    'RetrieveSubscriptionsById' => 'KTC\Subscription\RetrieveSubscriptionsById',
+    'RetrieveSubscriptionsByIdResponse' => 'KTC\Subscription\RetrieveSubscriptionsByIdResponse');
 
   /**
    * 
@@ -92,6 +102,28 @@ class Subscription extends \SoapClient
   public function RetrieveSubscriptions(RetrieveSubscriptions $parameters)
   {
     return $this->__soapCall('RetrieveSubscriptions', array($parameters));
+  }
+
+  /**
+   * 
+   * @param RetrieveSubscriptionsForSubscriber $parameters
+   * @access public
+   * @return RetrieveSubscriptionsForSubscriberResponse
+   */
+  public function RetrieveSubscriptionsForSubscriber(RetrieveSubscriptionsForSubscriber $parameters)
+  {
+    return $this->__soapCall('RetrieveSubscriptionsForSubscriber', array($parameters));
+  }
+
+  /**
+   * 
+   * @param RetrieveSubscriptionsById $parameters
+   * @access public
+   * @return RetrieveSubscriptionsByIdResponse
+   */
+  public function RetrieveSubscriptionsById(RetrieveSubscriptionsById $parameters)
+  {
+    return $this->__soapCall('RetrieveSubscriptionsById', array($parameters));
   }
 
 }
