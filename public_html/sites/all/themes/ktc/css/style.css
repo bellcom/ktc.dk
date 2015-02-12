@@ -7911,6 +7911,61 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   padding: 10px;
   background-color: #fff;
 }
+.node-type-page .indholdsmenu ul li {
+  display: block;
+  float: left;
+  border-bottom: none;
+}
+.node-type-page .indholdsmenu ul li a {
+  box-shadow: none;
+  color: #2C353A;
+  border: 2px solid #2C353A;
+  padding: 1px 8px;
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 90%;
+}
+.node-type-page .indholdsmenu ul li.last a {
+  margin-right: 0px;
+}
+.node-type-page .indholdsmenu ul li.active a.active {
+  background-color: #36a145;
+  color: #FFF;
+}
+.node-type-page .pane-sektionsside-footer {
+  margin-top: 20px;
+}
+.node-type-page .pane-sektionsside-footer .pane-custom h3.pane-title {
+  padding: 10px 10px;
+}
+.node-type-page .pane-sektionsside-footer h3.pane-title {
+  padding: 0 0 0 0;
+}
+.node-type-page .pane-sektionsside-footer h3.pane-title a {
+  color: #FFF;
+  background-color: #2c353a;
+  padding: 10px 10px;
+  display: block;
+}
+.node-type-page .pane-sektionsside-footer h3.pane-title a.active-trail {
+  background-color: #36a145;
+}
+.node-type-page .pane-sektionsside-footer ul {
+  padding: 0 10px;
+}
+.node-type-page .pane-sektionsside-footer ul li {
+  border-bottom: none;
+}
+.node-type-page .pane-sektionsside-footer ul li a {
+  padding: 0 0;
+  font-size: 95%;
+}
+.node-type-page .pane-sektionsside-footer ul li a.active {
+  color: #36a145;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
@@ -9338,7 +9393,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   margin-top: 5px;
 }
 .node-teaser.node-group h5 a {
-  color: #fff;
+  color: #2c353a;
 }
 .node-teaser.node-group .ktc-yellow {
   display: inline-block;
@@ -9457,72 +9512,88 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   vertical-align: top;
   margin-right: 5px;
 }
+.page-hoeringer .node-teaser_comments,
 .page-netvaerk .node-teaser_comments,
 .node-type-group .node-teaser_comments {
   background-color: #fff;
 }
+.page-hoeringer .node-teaser_comments .node-teaser-hr,
 .page-netvaerk .node-teaser_comments .node-teaser-hr,
 .node-type-group .node-teaser_comments .node-teaser-hr {
   margin-bottom: 10px;
 }
+.page-hoeringer .node-teaser_comments .node-teaser-hr .node-teaser-hr-inner,
 .page-netvaerk .node-teaser_comments .node-teaser-hr .node-teaser-hr-inner,
 .node-type-group .node-teaser_comments .node-teaser-hr .node-teaser-hr-inner {
   border: 2px solid #e9edee;
 }
+.page-hoeringer .node-teaser_comments.node-teaser .user_link a,
 .page-netvaerk .node-teaser_comments.node-teaser .user_link a,
 .node-type-group .node-teaser_comments.node-teaser .user_link a {
   color: #d3a900;
   font-size: 16px;
 }
+.page-hoeringer .node-teaser_comments.node-teaser .margin-bottom-20,
 .page-netvaerk .node-teaser_comments.node-teaser .margin-bottom-20,
 .node-type-group .node-teaser_comments.node-teaser .margin-bottom-20 {
   margin-bottom: 5px;
 }
+.page-hoeringer .node-teaser_comments .node-teaser-user,
 .page-netvaerk .node-teaser_comments .node-teaser-user,
 .node-type-group .node-teaser_comments .node-teaser-user {
   margin: 7px 0;
   vertical-align: middle;
 }
+.page-hoeringer .node-teaser_comments .node-teaser-user .left,
 .page-netvaerk .node-teaser_comments .node-teaser-user .left,
 .node-type-group .node-teaser_comments .node-teaser-user .left {
   padding-left: 0px;
 }
+.page-hoeringer .node-teaser_comments .node-teaser-user .right,
 .page-netvaerk .node-teaser_comments .node-teaser-user .right,
 .node-type-group .node-teaser_comments .node-teaser-user .right {
   text-align: right;
   padding-top: 2px;
   padding-right: 0px;
 }
+.page-hoeringer .node-teaser_comments .node-comments,
 .page-netvaerk .node-teaser_comments .node-comments,
 .node-type-group .node-teaser_comments .node-comments {
   background-color: #e9edee;
 }
+.page-hoeringer .node-teaser_comments .node-comments .view-comments-in-teaser,
 .page-netvaerk .node-teaser_comments .node-comments .view-comments-in-teaser,
 .node-type-group .node-teaser_comments .node-comments .view-comments-in-teaser {
   padding-top: 10px;
 }
+.page-hoeringer .node-teaser_comments .node-comments .view-comments-in-teaser .left,
 .page-netvaerk .node-teaser_comments .node-comments .view-comments-in-teaser .left,
 .node-type-group .node-teaser_comments .node-comments .view-comments-in-teaser .left {
   padding-left: 0px;
 }
 @media (min-width: 992px) {
+  .page-hoeringer .node-teaser_comments .node-comments .view-comments-in-teaser .left,
   .page-netvaerk .node-teaser_comments .node-comments .view-comments-in-teaser .left,
   .node-type-group .node-teaser_comments .node-comments .view-comments-in-teaser .left {
     padding-left: 10px;
   }
 }
+.page-hoeringer .node-teaser_comments .node-comments .view-comments-in-teaser .left .user-picture,
 .page-netvaerk .node-teaser_comments .node-comments .view-comments-in-teaser .left .user-picture,
 .node-type-group .node-teaser_comments .node-comments .view-comments-in-teaser .left .user-picture {
   border: 2px solid #fff;
 }
+.page-hoeringer .node-teaser_comments .node-comments .view-comments-in-teaser .right a,
 .page-netvaerk .node-teaser_comments .node-comments .view-comments-in-teaser .right a,
 .node-type-group .node-teaser_comments .node-comments .view-comments-in-teaser .right a,
+.page-hoeringer .node-teaser_comments .node-comments .view-comments-in-teaser .right .user_link a,
 .page-netvaerk .node-teaser_comments .node-comments .view-comments-in-teaser .right .user_link a,
 .node-type-group .node-teaser_comments .node-comments .view-comments-in-teaser .right .user_link a {
   color: #2c353a;
   font-size: 12px;
   font-weight: 700;
 }
+.page-hoeringer .node-teaser_comments .node-comments .view-comments-in-teaser .node-teaser-hr-inner,
 .page-netvaerk .node-teaser_comments .node-comments .view-comments-in-teaser .node-teaser-hr-inner,
 .node-type-group .node-teaser_comments .node-comments .view-comments-in-teaser .node-teaser-hr-inner {
   border-bottom: 2px solid #fff;
@@ -9532,24 +9603,35 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   margin-right: 15px;
   clear: both;
 }
+.page-hoeringer .node-teaser_comments .node-comments .view-comments-in-teaser .views-row-last .node-teaser-hr-inner,
 .page-netvaerk .node-teaser_comments .node-comments .view-comments-in-teaser .views-row-last .node-teaser-hr-inner,
 .node-type-group .node-teaser_comments .node-comments .view-comments-in-teaser .views-row-last .node-teaser-hr-inner {
   border: none;
   margin: 0 0 10px 0;
 }
-.page-netvaerk .node--group--listevisning .icon-yellow-arrow,
-.node-type-group .node--group--listevisning .icon-yellow-arrow {
+.page-hoeringer .node--group--listevisning .icon-subgroup,
+.page-netvaerk .node--group--listevisning .icon-subgroup,
+.node-type-group .node--group--listevisning .icon-subgroup {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -389px;
-  width: 17px;
+  background-position: 0px -406px;
+  width: 15px;
   height: 17px;
   vertical-align: bottom;
   margin-right: 5px;
 }
+.page-hoeringer .node--group--listevisning .group-region,
 .page-netvaerk .node--group--listevisning .group-region,
 .node-type-group .node--group--listevisning .group-region {
   margin-left: 20px;
+}
+.page-hoeringer article.node--hearing--listevisning h5 a,
+.page-netvaerk article.node--hearing--listevisning h5 a,
+.node-type-group article.node--hearing--listevisning h5 a,
+.page-hoeringer article.node--group--teaser h5 a,
+.page-netvaerk article.node--group--teaser h5 a,
+.node-type-group article.node--group--teaser h5 a {
+  color: #fff;
 }
 .page-leverandoerlist.node-type-group .main-container,
 .page-user.node-type-group .main-container,
@@ -9557,6 +9639,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container,
 .page-hoering-mangler-filer.node-type-group .main-container,
 .page-group-node-admin.node-type-group .main-container,
+.page-group-node-unsubscribe.node-type-group .main-container,
+.page-group-node-subscribe.node-type-group .main-container,
 .page-leverandoerer.node-type-group .main-container {
   background: none;
 }
@@ -9567,6 +9651,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   .page-comment.node-type-group .main-container,
   .page-hoering-mangler-filer.node-type-group .main-container,
   .page-group-node-admin.node-type-group .main-container,
+  .page-group-node-unsubscribe.node-type-group .main-container,
+  .page-group-node-subscribe.node-type-group .main-container,
   .page-leverandoerer.node-type-group .main-container {
     padding-left: 0px;
     padding-right: 0px;
@@ -9578,6 +9664,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container h1.page-header,
 .page-hoering-mangler-filer.node-type-group .main-container h1.page-header,
 .page-group-node-admin.node-type-group .main-container h1.page-header,
+.page-group-node-unsubscribe.node-type-group .main-container h1.page-header,
+.page-group-node-subscribe.node-type-group .main-container h1.page-header,
 .page-leverandoerer.node-type-group .main-container h1.page-header {
   background-color: #fff;
   padding-left: 15px;
@@ -9588,6 +9676,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center h3.pane-title,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center h3.pane-title,
 .page-group-node-admin.node-type-group .main-container .pane-center h3.pane-title,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center h3.pane-title,
+.page-group-node-subscribe.node-type-group .main-container .pane-center h3.pane-title,
 .page-leverandoerer.node-type-group .main-container .pane-center h3.pane-title {
   border: none;
   padding: 5px 0px 5px 20px;
@@ -9606,6 +9696,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center h2,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center h2,
 .page-group-node-admin.node-type-group .main-container .pane-center h2,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center h2,
+.page-group-node-subscribe.node-type-group .main-container .pane-center h2,
 .page-leverandoerer.node-type-group .main-container .pane-center h2 {
   word-break: break-word;
 }
@@ -9615,6 +9707,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content,
 .page-group-node-admin.node-type-group .main-container .pane-center .pane-node-create-links .pane-content,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content {
   background-color: #2c353a;
 }
@@ -9624,6 +9718,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul,
 .page-group-node-admin.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul {
   margin-bottom: 20px;
   padding: 10px 10px;
@@ -9635,6 +9731,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li,
 .page-group-node-admin.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li {
   list-style: none;
   padding: 5px 10px;
@@ -9645,6 +9743,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement,
 .page-group-node-admin.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
@@ -9660,6 +9760,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news,
 .page-group-node-admin.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
@@ -9675,6 +9777,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post,
 .page-group-node-admin.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
@@ -9690,6 +9794,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group,
 .page-group-node-admin.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group {
   display: inline-block;
   background-image: url(../images/sprites.png);
@@ -9705,6 +9811,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document,
 .page-group-node-admin.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
@@ -9720,6 +9828,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing,
 .page-group-node-admin.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
@@ -9735,6 +9845,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a,
 .page-group-node-admin.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a,
 .page-leverandoerer.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a {
   color: #fff;
   font-weight: 700;
@@ -9745,6 +9857,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-center .view-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-center .view-content,
 .page-group-node-admin.node-type-group .main-container .pane-center .view-content,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-center .view-content,
+.page-group-node-subscribe.node-type-group .main-container .pane-center .view-content,
 .page-leverandoerer.node-type-group .main-container .pane-center .view-content {
   margin-left: -10px;
   margin-right: -10px;
@@ -9755,6 +9869,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane {
   width: 100%;
 }
@@ -9764,6 +9880,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane.pane-node-field-groupimage .pane-content {
   padding: 15px 15px;
 }
@@ -9773,6 +9891,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane.pane-ktc-sectionpage-netvaerk-invite-links,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
 .page-user.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
@@ -9780,6 +9900,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane.pane-node-group-group,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
 .page-user.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
@@ -9787,6 +9909,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane.pane-node-body {
   margin-top: -20px;
 }
@@ -9796,6 +9920,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .pane-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .pane-content,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .pane-content,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .pane-content,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .pane-content,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .pane-content {
   padding: 10px 15px;
 }
@@ -9805,6 +9931,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane h3.pane-title,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane h3.pane-title,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane h3.pane-title,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane h3.pane-title,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane h3.pane-title,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane h3.pane-title {
   border: none;
   padding: 5px 0px 5px 20px;
@@ -9823,6 +9951,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
@@ -9830,6 +9960,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content {
   overflow: hidden;
 }
@@ -9839,6 +9971,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image.ktc-red .user-picture,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
@@ -9846,6 +9980,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image.ktc-red .user-picture {
   border-color: #e75311;
 }
@@ -9855,6 +9991,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
@@ -9862,6 +10000,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture {
   border: 2px solid #e9edee;
   height: 52px;
@@ -9874,6 +10014,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content .user-image .user-picture img,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
@@ -9881,6 +10023,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .view-content .user-image .user-picture img {
   height: auto;
   width: 52px;
@@ -9893,6 +10037,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .pager,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
 .page-user.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
@@ -9900,6 +10046,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .view-og-members .pager {
   margin-top: 0;
 }
@@ -9909,6 +10057,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .og-members-all,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
 .page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
@@ -9916,6 +10066,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide {
   clear: both;
   text-align: center;
@@ -9926,6 +10078,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all a,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
 .page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
@@ -9933,6 +10087,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a {
   text-transform: uppercase;
   font-weight: 700;
@@ -9943,6 +10099,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all a:hover,
 .page-leverandoerlist.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
 .page-user.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
@@ -9950,6 +10108,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
 .page-group-node-admin.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
+.page-group-node-subscribe.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover,
 .page-leverandoerer.node-type-group .main-container .pane-left .panel-pane .og-members-all-hide a:hover {
   text-decoration: none;
 }
@@ -9959,6 +10119,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
 .page-group-node-admin.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
+.page-group-node-subscribe.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title,
 .page-leverandoerer.node-type-group .main-container .pane-right .pane-page-tabs h3.pane-title {
   background-color: #e75311;
 }
@@ -9968,6 +10130,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-right .pane-page-tabs .pane-content,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content,
 .page-group-node-admin.node-type-group .main-container .pane-right .pane-page-tabs .pane-content,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-right .pane-page-tabs .pane-content,
+.page-group-node-subscribe.node-type-group .main-container .pane-right .pane-page-tabs .pane-content,
 .page-leverandoerer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content {
   background-color: #2c353a;
 }
@@ -9977,6 +10141,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul,
 .page-group-node-admin.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul,
+.page-group-node-subscribe.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul,
 .page-leverandoerer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul {
   padding-bottom: 10px;
   padding-left: 10px;
@@ -9988,6 +10154,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a,
 .page-group-node-admin.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a,
+.page-group-node-subscribe.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a,
 .page-leverandoerer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a {
   color: #fff;
   background-color: #2c353a;
@@ -9999,6 +10167,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active,
 .page-hoering-mangler-filer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active,
 .page-group-node-admin.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active,
+.page-group-node-unsubscribe.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active,
+.page-group-node-subscribe.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active,
 .page-leverandoerer.node-type-group .main-container .pane-right .pane-page-tabs .pane-content ul li > a.active {
   color: #2c353a;
 }
@@ -10008,6 +10178,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment .main-container,
 .page-hoering-mangler-filer .main-container,
 .page-group-node-admin .main-container,
+.page-group-node-unsubscribe .main-container,
+.page-group-node-subscribe .main-container,
 .page-leverandoerer .main-container {
   background-color: #fff;
   padding-bottom: 20px;
@@ -10018,6 +10190,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment .views-field .term-name a,
 .page-hoering-mangler-filer .views-field .term-name a,
 .page-group-node-admin .views-field .term-name a,
+.page-group-node-unsubscribe .views-field .term-name a,
+.page-group-node-subscribe .views-field .term-name a,
 .page-leverandoerer .views-field .term-name a {
   color: #2c353a;
 }
@@ -10027,6 +10201,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-comment .views-field .term-name a .icon-blue,
 .page-hoering-mangler-filer .views-field .term-name a .icon-blue,
 .page-group-node-admin .views-field .term-name a .icon-blue,
+.page-group-node-unsubscribe .views-field .term-name a .icon-blue,
+.page-group-node-subscribe .views-field .term-name a .icon-blue,
 .page-leverandoerer .views-field .term-name a .icon-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
@@ -10047,7 +10223,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   margin-bottom: 20px;
 }
 @media (min-width: 992px) {
-  .page-aktiviteter .main-container.container,
+  .page-kalender .main-container.container,
   .page-hoeringer .main-container.container,
   .page-netvaerk .main-container.container,
   .page-nyheder .main-container.container,
@@ -10056,7 +10232,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
     padding-right: 0px;
   }
 }
-.page-aktiviteter .main-container.container .region-header,
+.page-kalender .main-container.container .region-header,
 .page-hoeringer .main-container.container .region-header,
 .page-netvaerk .main-container.container .region-header,
 .page-nyheder .main-container.container .region-header,
@@ -10064,7 +10240,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   margin-left: 0px;
   margin-right: 0px;
 }
-.page-aktiviteter .main-container.container .region-content .pane-content,
+.page-kalender .main-container.container .region-content .pane-content,
 .page-hoeringer .main-container.container .region-content .pane-content,
 .page-netvaerk .main-container.container .region-content .pane-content,
 .page-nyheder .main-container.container .region-content .pane-content,
@@ -10073,7 +10249,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   padding-right: 0px;
 }
 @media (max-width: 767px) {
-  .page-aktiviteter .main-container.container .region-content .pane-content.col-sm-pull-4,
+  .page-kalender .main-container.container .region-content .pane-content.col-sm-pull-4,
   .page-hoeringer .main-container.container .region-content .pane-content.col-sm-pull-4,
   .page-netvaerk .main-container.container .region-content .pane-content.col-sm-pull-4,
   .page-nyheder .main-container.container .region-content .pane-content.col-sm-pull-4,
@@ -10081,19 +10257,19 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
     margin-top: 20px;
   }
 }
-.page-aktiviteter .main-container.container .region-content .pane-sidebar .pane-menu-menu-user-profile-menu,
+.page-kalender .main-container.container .region-content .pane-sidebar .pane-menu-menu-user-profile-menu,
 .page-hoeringer .main-container.container .region-content .pane-sidebar .pane-menu-menu-user-profile-menu,
 .page-netvaerk .main-container.container .region-content .pane-sidebar .pane-menu-menu-user-profile-menu,
 .page-nyheder .main-container.container .region-content .pane-sidebar .pane-menu-menu-user-profile-menu,
 .page-teksnik-miljoe .main-container.container .region-content .pane-sidebar .pane-menu-menu-user-profile-menu,
-.page-aktiviteter .main-container.container .region-content .pane-sidebar .view-display-id-panel_pane_1,
+.page-kalender .main-container.container .region-content .pane-sidebar .view-display-id-panel_pane_1,
 .page-hoeringer .main-container.container .region-content .pane-sidebar .view-display-id-panel_pane_1,
 .page-netvaerk .main-container.container .region-content .pane-sidebar .view-display-id-panel_pane_1,
 .page-nyheder .main-container.container .region-content .pane-sidebar .view-display-id-panel_pane_1,
 .page-teksnik-miljoe .main-container.container .region-content .pane-sidebar .view-display-id-panel_pane_1 {
   padding: 10px 10px;
 }
-.page-aktiviteter .main-container.container .region-content .pane-sidebar #period,
+.page-kalender .main-container.container .region-content .pane-sidebar #period,
 .page-hoeringer .main-container.container .region-content .pane-sidebar #period,
 .page-netvaerk .main-container.container .region-content .pane-sidebar #period,
 .page-nyheder .main-container.container .region-content .pane-sidebar #period,
@@ -10120,10 +10296,12 @@ body.page-node-edit.node-type-group .main-container {
   padding-left: 0px;
   padding-right: 0px;
 }
+.darkgray-box,
 #section-page-with-filter-all-groups {
   position: relative;
   margin-bottom: 20px;
 }
+.darkgray-box h3,
 #section-page-with-filter-all-groups h3 {
   border: none;
   padding: 5px 0px 5px 20px;
@@ -10135,66 +10313,80 @@ body.page-node-edit.node-type-group .main-container {
   margin-bottom: 0px;
   margin-top: 0px;
 }
+.darkgray-box .pane-content,
 #section-page-with-filter-all-groups .pane-content {
   background-color: #2c353a;
   position: relative;
 }
+.darkgray-box .pane-content .view-header,
 #section-page-with-filter-all-groups .pane-content .view-header {
   text-align: center;
 }
+.darkgray-box .pane-content .view-header li,
 #section-page-with-filter-all-groups .pane-content .view-header li {
   display: inline-block;
   list-style-type: circle;
   margin-right: 10px;
 }
+.darkgray-box .pane-content .view-header li i,
 #section-page-with-filter-all-groups .pane-content .view-header li i {
   display: inline-block;
   margin-right: 4px;
 }
+.darkgray-box .pane-content .view-header li i.red-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.red-dot {
   background-image: url(../images/sprites.png);
   background-position: 0px -24px;
   width: 8px;
   height: 8px;
 }
+.darkgray-box .pane-content .view-header li i.yellow-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.yellow-dot {
   background-image: url(../images/sprites.png);
   background-position: 0px 0px;
   width: 8px;
   height: 8px;
 }
+.darkgray-box .pane-content .view-header li i.green-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.green-dot {
   background-image: url(../images/sprites.png);
   background-position: 0px -16px;
   width: 8px;
   height: 8px;
 }
+.darkgray-box .pane-content .view-header li i.blue-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.blue-dot {
   background-image: url(../images/sprites.png);
   background-position: 0px -8px;
   width: 8px;
   height: 8px;
 }
+.darkgray-box .pane-content .view-content,
 #section-page-with-filter-all-groups .pane-content .view-content {
   padding: 20px 10px;
 }
+.darkgray-box .pane-content .view-content:after,
 #section-page-with-filter-all-groups .pane-content .view-content:after {
   content: "";
   clear: both;
   display: table;
 }
+.darkgray-box .pane-content ul.pager,
 #section-page-with-filter-all-groups .pane-content ul.pager {
   position: absolute;
   top: -32px;
   right: 0px;
   margin: 10px 5px;
 }
+.darkgray-box .pane-content ul.pager .pager-current,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-current {
   display: none;
 }
+.darkgray-box .pane-content ul.pager .pager-previous,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-previous {
   margin-right: 5px;
 }
+.darkgray-box .pane-content ul.pager .pager-previous a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-previous a {
   background-image: url(../images/sprites.png);
   background-position: 0px -241px;
@@ -10204,6 +10396,7 @@ body.page-node-edit.node-type-group .main-container {
   border: none;
   padding: 2px 2px;
 }
+.darkgray-box .pane-content ul.pager .pager-next a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-next a {
   background-image: url(../images/sprites.png);
   background-position: 0px -166px;
@@ -10213,6 +10406,7 @@ body.page-node-edit.node-type-group .main-container {
   border: none;
   padding: 2px 2px;
 }
+.darkgray-box .pane-content .view-footer,
 #section-page-with-filter-all-groups .pane-content .view-footer {
   position: absolute;
   top: -23px;

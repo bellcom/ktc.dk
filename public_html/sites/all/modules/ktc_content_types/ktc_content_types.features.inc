@@ -46,7 +46,7 @@ function ktc_content_types_node_info() {
       'help' => '',
     ),
     'forum_post' => array(
-      'name' => t('Debatindlæg'),
+      'name' => t('Diskussion'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

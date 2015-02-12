@@ -75,7 +75,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
       'field_name' => 'og_group_ref',
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'OPRET INDLÆG',
+      'override_title_text' => 'Opret nyt indhold i %node:title',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -161,7 +161,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
         'slideshow_carousel_circular' => 0,
         'slideshow_carousel_follow' => 0,
         'slideshow_carousel_skin' => '',
-        'image_style' => 'square_thumbnail',
+        'image_style' => 'netvaerks_logo',
         'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',

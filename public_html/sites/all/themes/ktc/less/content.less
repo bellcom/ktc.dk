@@ -315,3 +315,42 @@ body.node-type-ktc-supplier {
     }
   }
 }
+.node-type-page {
+	.indholdsmenu {
+		ul {
+			li { display: block; float: left;
+				border-bottom: none;
+				
+				a {	box-shadow: none;
+					color: #2C353A; 
+					border: 2px solid #2C353A;
+					padding: 1px 8px;
+					border-radius: 14px;
+					text-decoration: none;
+					text-align: center;
+					margin-right: 10px; 
+					margin-bottom: 10px;
+					font-size: 90%;
+				}
+			}
+			li.last a {margin-right: 0px; }
+			li.active a.active { background-color: @brand-primary; color: #FFF;}
+		}
+	}
+	.pane-sektionsside-footer { margin-top: 20px;
+		.pane-custom h3.pane-title { padding: 10px 10px;}
+		h3.pane-title { padding: 0 0 0 0;
+			a { color: #FFF; background-color:  @gray-darker; padding: 10px 10px; display: block;
+				&.active-trail { background-color:  @brand-primary;}
+			}
+		}
+		ul { padding: 0 10px;
+			li { border-bottom: none;
+				a { padding: 0 0; font-size: 95%;
+					&.active { color: @brand-primary ;}
+				}
+				
+			}
+		}
+	}
+}

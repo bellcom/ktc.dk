@@ -508,11 +508,11 @@ function ktc_arrangement_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Aktiviteter';
   $page->admin_description = '';
-  $page->path = 'aktiviteter';
+  $page->path = 'kalender';
   $page->access = array();
   $page->menu = array(
     'type' => 'normal',
-    'title' => 'Aktiviteter',
+    'title' => 'Kalender',
     'name' => 'main-menu',
     'weight' => '0',
     'parent' => array(

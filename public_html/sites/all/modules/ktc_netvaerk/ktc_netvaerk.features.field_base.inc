@@ -207,8 +207,8 @@ function ktc_netvaerk_field_default_field_bases() {
     'no_ui' => TRUE,
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Åben - Alle brugere kan frit melde sig ind i netværket.',
-        1 => 'Privat - Gruppens admin inviterer og tilføjer selv medlemmer.',
+        0 => 'Offentlig  - Synlig for alle',
+        1 => 'Privat - vises kun for medlemmer af gruppen',
       ),
       'allowed_values_function' => '',
     ),
@@ -264,8 +264,8 @@ function ktc_netvaerk_field_default_field_bases() {
     'no_ui' => TRUE,
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Synligt - Alle brugere kan se netværkets indhold',
-        1 => 'Usynligt - Netværkets indhold er kun synligt for dets bekræftede medlemmer',
+        0 => 'Brug standard roller og tilladelser',
+        1 => 'Overskriv standarder for roller og tilladelser',
       ),
       'allowed_values_function' => '',
     ),
