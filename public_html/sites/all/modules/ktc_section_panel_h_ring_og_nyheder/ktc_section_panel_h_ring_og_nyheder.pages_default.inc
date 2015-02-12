@@ -230,27 +230,27 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-404c05da-3a3f-44a7-805c-4a25b4faac05';
+    $pane->pid = 'new-d68ba3d2-555b-4b93-bcb2-1b9d4697742f';
     $pane->panel = 'left';
-    $pane->type = 'block';
-    $pane->subtype = 'ktc_hearing-ktc_hearing_unresponded_section';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ktc_hearings_sectionpage_block-panel_pane';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-12 col-sm-12 col-xs-12 darkgray-box',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '404c05da-3a3f-44a7-805c-4a25b4faac05';
-    $display->content['new-404c05da-3a3f-44a7-805c-4a25b4faac05'] = $pane;
-    $display->panels['left'][0] = 'new-404c05da-3a3f-44a7-805c-4a25b4faac05';
+    $pane->uuid = 'd68ba3d2-555b-4b93-bcb2-1b9d4697742f';
+    $display->content['new-d68ba3d2-555b-4b93-bcb2-1b9d4697742f'] = $pane;
+    $display->panels['left'][0] = 'new-d68ba3d2-555b-4b93-bcb2-1b9d4697742f';
     $pane = new stdClass();
     $pane->pid = 'new-bacda143-d7ce-4d30-94ea-1f15399d0332';
     $pane->panel = 'left';
@@ -268,7 +268,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
-      'css_class' => '',
+      'css_class' => 'col-md-12 col-sm-12 col-xs-12',
     );
     $pane->extras = array();
     $pane->position = 1;

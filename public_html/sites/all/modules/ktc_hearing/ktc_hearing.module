@@ -328,6 +328,17 @@ function ktc_hearing_block_view($delta = '') {
 }
 
 /**
+ * Implements views_pre_view().
+ */
+function ktc_hearing_views_pre_view(&$view, &$display_id, &$args) {
+  // Set the arguments for the sectionpage block.
+  if ($view->name == 'ktc_hearings_sectionpage_block') {
+    $hearings = implode(',', array_values(_ktc_hearing_get_unresponded_nids()));
+    $view->args = array($hearings);
+  }
+}
+
+/**
  * Access callback function.
  */
 function ktc_hearing_access($node, $op) {
@@ -1030,18 +1041,25 @@ function _ktc_hearing_get_unresponded($user = FALSE) {
 
   if (isset($result['node'])) {
     foreach (node_load_multiple(array_keys($result['node'])) as $hearing) {
-
       // Does the user have the correct permissions?
       // Has the user responded already.
       if (ktc_hearing_access($hearing, 'respond') && !ktc_hearing_user_has_responded($hearing, $user)) {
         $node_author = user_load($hearing->uid);
         $hearing->user_mail = $node_author->mail;
-        $unresponded_hearings[] = $hearing;
+        $unresponded_hearings[$hearing->nid] = $hearing;
       }
     }
   }
-
   return $unresponded_hearings;
+}
+/**
+ * Get a users unresponded hearings.
+ */
+function _ktc_hearing_get_unresponded_nids($user = FALSE) {
+  if ($hearings = _ktc_hearing_get_unresponded($user)) {
+    return array_keys(_ktc_hearing_get_unresponded($user));
+  }
+  return array(0);
 }
 
 /**
