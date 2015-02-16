@@ -4539,6 +4539,7 @@ function ktc_content_types_field_default_field_instances() {
   $field_instances['node-os2web_base_news-field_forfrem_til'] = array(
     'bundle' => 'os2web_base_news',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -4579,6 +4580,9 @@ function ktc_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
         'taxonomy-index' => array(
           'status' => TRUE,
         ),
