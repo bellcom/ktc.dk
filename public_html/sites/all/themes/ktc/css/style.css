@@ -750,12 +750,12 @@ pre code {
 }
 @media (min-width: 992px) {
   .container {
-    width: 1004px;
+    width: 960px;
   }
 }
 @media (min-width: 1300px) {
   .container {
-    width: 1204px;
+    width: 1160px;
   }
 }
 .container-fluid {
@@ -5895,8 +5895,8 @@ body #admin-menu .dropdown li {
 }
 @media screen and (min-width: 992px) {
   .container {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 .navbar.container {
@@ -5909,12 +5909,12 @@ body #admin-menu .dropdown li {
 }
 @media screen and (min-width: 992px) {
   .navbar.container {
-    max-width: 984px;
+    max-width: 940px;
   }
 }
 @media screen and (min-width: 1300px) {
   .navbar.container {
-    max-width: 1184px;
+    max-width: 1140px;
   }
 }
 .navbar.container > .container {
@@ -7680,6 +7680,33 @@ body.page-taxonomy-term .field-type-text-long img {
   max-width: 100%;
   height: auto;
 }
+.icon-calendar {
+  background-image: url('../images/sprites/calendar.png');
+  display: block;
+  height: 80px;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 50px 60px;
+}
+.icon-calendar .calendar-day {
+  font-size: 24px;
+  position: absolute;
+  top: 8px;
+  left: 11px;
+}
+.icon-calendar .calendar-month {
+  position: absolute;
+  top: 42px;
+  text-transform: uppercase;
+  left: 15px;
+}
+.node-info-boks {
+  background-color: #2C353A;
+  padding: 10px 10px;
+}
+.node-type-arrangement .node-info-boks {
+  margin-bottom: 20px;
+}
 body.page-node.two-sidebars article .field-name-field-os2web-base-field-image img,
 body.page-taxonomy-term.term-is-not-top.two-sidebars article .field-name-field-os2web-base-field-image img,
 body.page-node .region-content.col-sm-6 article .field-name-field-os2web-base-field-image img,
@@ -9242,26 +9269,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 }
 .node-teaser .node-teaser-text .left {
   padding: 0px 0px 0px 0px;
-}
-.node-teaser .node-teaser-text .icon-calendar {
-  background-image: url('../images/sprites/calendar.png');
-  display: block;
-  height: 80px;
-  background-repeat: no-repeat;
-  position: relative;
-  background-size: 50px 60px;
-}
-.node-teaser .node-teaser-text .icon-calendar .calendar-day {
-  font-size: 24px;
-  position: absolute;
-  top: 8px;
-  left: 11px;
-}
-.node-teaser .node-teaser-text .icon-calendar .calendar-month {
-  position: absolute;
-  top: 42px;
-  text-transform: uppercase;
-  left: 15px;
 }
 .node-teaser .node-teaser-text p {
   word-break: break-word;
