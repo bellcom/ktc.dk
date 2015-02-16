@@ -303,6 +303,74 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-arrangement-field_arrangement_billede'
+  $field_instances['node-arrangement-field_arrangement_billede'] = array(
+    'bundle' => 'arrangement',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 28,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_arrangement_billede',
+    'label' => 'Billede',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '460x174',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'ktc_content_image',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 28,
+    ),
+  );
+
   // Exported field_instance: 'node-arrangement-field_arrangement_categories'
   $field_instances['node-arrangement-field_arrangement_categories'] = array(
     'bundle' => 'arrangement',
@@ -442,7 +510,7 @@ function ktc_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 8,
+      'weight' => 25,
     ),
   );
 
@@ -501,6 +569,74 @@ function ktc_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-arrangement-field_arrangement_logo'
+  $field_instances['node-arrangement-field_arrangement_logo'] = array(
+    'bundle' => 'arrangement',
+    'deleted' => 0,
+    'description' => 'Skal gerne være 256x256px',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 29,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_arrangement_logo',
+    'label' => 'Logo',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '256x256',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'netvaerks_logo',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 29,
     ),
   );
 
@@ -1015,7 +1151,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -1073,7 +1209,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 24,
     ),
   );
 
@@ -1204,7 +1340,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1469,7 +1605,7 @@ function ktc_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 9,
+      'weight' => 26,
     ),
   );
 
@@ -1530,7 +1666,7 @@ function ktc_content_types_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 27,
     ),
   );
 
@@ -1591,7 +1727,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -1708,7 +1844,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 100,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 30,
     ),
   );
 
@@ -6690,6 +6826,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Link');
   t('Link til arrangørs hjemmeside');
   t('Link til bladreversion');
+  t('Logo');
   t('Lovhenvisninger');
   t('Magasin');
   t('Magasin indhold');
@@ -6706,6 +6843,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Regioner');
   t('Resume (maks 2 linier!)');
   t('Side nr');
+  t('Skal gerne være 256x256px');
   t('Skjul auto relaterede links');
   t('Status');
   t('Stikord');

@@ -233,6 +233,8 @@ function ktc_content_types_field_group_info() {
       2 => 'field_target_group',
       3 => 'field_meeting_type',
       4 => 'field_short',
+      5 => 'field_arrangement_billede',
+      6 => 'field_arrangement_logo',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
