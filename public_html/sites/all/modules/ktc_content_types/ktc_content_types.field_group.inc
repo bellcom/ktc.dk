@@ -13,6 +13,36 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_annoncer|node|magazine|form';
+  $field_group->group_name = 'group_annoncer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'magazine';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_generelst';
+  $field_group->data = array(
+    'label' => 'Annoncer',
+    'weight' => '22',
+    'children' => array(
+      0 => 'field_banner_1_tekst_og_link',
+      1 => 'field_banner_2',
+      2 => 'field_banner_2_tekst_og_link',
+      3 => 'field_bannere',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-annoncer field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_annoncer|node|magazine|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_arrangementbesk|node|arrangement|form';
   $field_group->group_name = 'group_arrangementbesk';
   $field_group->entity_type = 'node';
@@ -251,6 +281,63 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_featured|node|magazine|form';
+  $field_group->group_name = 'group_featured';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'magazine';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_generelst';
+  $field_group->data = array(
+    'label' => 'Features',
+    'weight' => '21',
+    'children' => array(
+      0 => 'field_ekstra_artikler',
+      1 => 'field_top_artikel',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-featured field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_featured|node|magazine|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_generelst|node|magazine|form';
+  $field_group->group_name = 'group_generelst';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'magazine';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Generelst',
+    'weight' => '3',
+    'children' => array(
+      0 => 'group_udgave',
+      1 => 'group_annoncer',
+      2 => 'group_sider',
+      3 => 'group_featured',
+      4 => 'group_hidden',
+    ),
+    'format_type' => 'tabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-generelst field-group-tabs',
+      ),
+    ),
+  );
+  $export['group_generelst|node|magazine|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_groups|node|arrangement|form';
   $field_group->group_name = 'group_groups';
   $field_group->entity_type = 'node';
@@ -341,6 +428,37 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_hidden|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_hidden|node|magazine|form';
+  $field_group->group_name = 'group_hidden';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'magazine';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_generelst';
+  $field_group->data = array(
+    'label' => 'Skjult',
+    'weight' => '24',
+    'children' => array(
+      0 => 'field_image',
+      1 => 'field_internt_link_url_',
+      2 => 'field_os2web_base_field_ext_link',
+      3 => 'field_os2web_base_field_hidlinks',
+      4 => 'path',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_hidden|node|magazine|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -459,6 +577,33 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_sider|node|magazine|form';
+  $field_group->group_name = 'group_sider';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'magazine';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_generelst';
+  $field_group->data = array(
+    'label' => 'Sider',
+    'weight' => '23',
+    'children' => array(
+      0 => 'field_magasin_indhold',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-sider field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_sider|node|magazine|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_tabs|node|os2web_base_news|form';
   $field_group->group_name = 'group_tabs';
   $field_group->entity_type = 'node';
@@ -482,6 +627,39 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_tabs|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_udgave|node|magazine|form';
+  $field_group->group_name = 'group_udgave';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'magazine';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_generelst';
+  $field_group->data = array(
+    'label' => 'Udgave',
+    'weight' => '20',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_forside_billede_',
+      2 => 'field_linkbladreversion',
+      3 => 'field_magasin_leder',
+      4 => 'field_udgave',
+      5 => 'field_udgivelsesdato',
+      6 => 'title',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-udgave field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_udgave|node|magazine|form'] = $field_group;
 
   return $export;
 }
