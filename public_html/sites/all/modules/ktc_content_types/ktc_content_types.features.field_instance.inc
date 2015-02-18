@@ -46,6 +46,51 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_side_artikel'
+  $field_instances['field_collection_item-field_magasin_indhold-field_magasin_side_artikel'] = array(
+    'bundle' => 'field_magasin_indhold',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magasin_side_artikel',
+    'label' => 'Artikel',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'options_select',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_side_nr'
   $field_instances['field_collection_item-field_magasin_indhold-field_magasin_side_nr'] = array(
     'bundle' => 'field_magasin_indhold',
@@ -3694,8 +3739,11 @@ function ktc_content_types_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
       'weight' => 7,
     ),
   );
@@ -4010,15 +4058,13 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection',
+        'module' => 'field_collection_views',
         'settings' => array(
           'add' => 'Tilføj',
-          'delete' => 'Slet',
-          'description' => TRUE,
-          'edit' => 'Redigér',
-          'view_mode' => 'full',
+          'display_id' => 'default',
+          'name' => 'magasin_sider',
         ),
-        'type' => 'field_collection_view',
+        'type' => 'field_collection_views_view',
         'weight' => 16,
       ),
       'listevisning' => array(
@@ -4191,7 +4237,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 16,
+      'weight' => 6,
     ),
   );
 
@@ -4252,7 +4298,7 @@ function ktc_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 17,
+      'weight' => 7,
     ),
   );
 
@@ -6796,6 +6842,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Annoncør');
   t('Antal pladser');
   t('Arrangementets dato');
+  t('Artikel');
   t('Banner');
   t('Banner 1');
   t('Banner 1 tekst og link');
