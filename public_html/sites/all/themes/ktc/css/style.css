@@ -7993,6 +7993,43 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .node-type-page .pane-sektionsside-footer ul li a.active {
   color: #36a145;
 }
+.magasinflow .magasinsider .inner {
+  padding: 10px;
+  background-color: #FFF;
+  border: 1px solid #dedede;
+  margin-bottom: 15px;
+  display: block;
+}
+.magasinflow .magasinsider .btn-danger {
+  margin-right: 10px;
+}
+.magasinflow .planlagt .inner {
+  background-color: #ffff00;
+}
+.magasinflow .faerdig .inner {
+  background-color: #008000;
+}
+.magasinflow .views-row-first {
+  width: 100%;
+  display: block;
+  float: none;
+}
+.magasinflow .views-row-first::after {
+  clear: both;
+}
+.magasinflow .views-row-even {
+  clear: both;
+}
+.magasinflow .view-footer {
+  clear: both;
+  margin-top: 20px;
+}
+.magasinflow .sidenummer {
+  float: left;
+  height: 30px;
+  font-size: 24px;
+  margin-right: 5px;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
