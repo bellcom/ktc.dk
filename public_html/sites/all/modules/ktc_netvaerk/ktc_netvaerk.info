@@ -52,6 +52,7 @@ features[field_instance][] = node-group-field_start_date
 features[field_instance][] = node-group-field_tags
 features[field_instance][] = node-group-field_topics
 features[field_instance][] = node-group-group_access
+features[field_instance][] = node-group-group_content_access
 features[field_instance][] = node-group-group_group
 features[field_instance][] = node-group-og_group_ref
 features[field_instance][] = node-group-og_roles_permissions
