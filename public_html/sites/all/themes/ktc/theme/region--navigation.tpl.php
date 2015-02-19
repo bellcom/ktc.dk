@@ -62,7 +62,7 @@
           <div class="header-user-name col-md-8 col-sm-8 col-xs-6">
             <?php print render($page['user_name']); ?><span class="icon-arrow-down"></span><br />
             <?php print theme('links', array('links' => menu_navigation_links('user-menu'), 'attributes' => array('class'=> array('header-user-menu')) ));?>
-            <button class="btn-primary header-user-blocks">ÅBN BRUGERBOKS</button>
+            <button class="btn-primary header-user-blocks">ÅBN DINE GENVEJE</button>
           </div>
           <div class="header-user-image col-md-4 col-sm-4 col-xs-6">
             <?php print $page['user_image'] ?>
