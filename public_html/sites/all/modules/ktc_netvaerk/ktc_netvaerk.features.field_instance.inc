@@ -958,6 +958,78 @@ function ktc_netvaerk_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
+  // Exported field_instance: 'node-group-group_content_access'
+  $field_instances['node-group-group_content_access'] = array(
+    'bundle' => 'group',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 18,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 21,
+    ),
+    'widget_type' => 'options_select',
+  );
+
   // Exported field_instance: 'node-group-group_group'
   $field_instances['node-group-group_group'] = array(
     'bundle' => 'group',
@@ -1279,6 +1351,7 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Gammel drupal gid');
   t('Gammel nid');
   t('Gammel typo3 id');
+  t('Group content visibility');
   t('Gruppens roller og tilladelser');
   t('Indhold');
   t('Netværk');

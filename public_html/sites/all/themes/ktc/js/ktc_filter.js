@@ -15,6 +15,9 @@
       $container = $('#section-page-with-filter').find('.view-content:first');
       $container.infinitescroll('unbind');
 
+      // Group node page, hide OG members view pane.
+      $('.pane-og-members-panel-pane-2').addClass('hidden');
+
       // Change the buttons class.
       if (!$(this).hasClass(button_class)) {
         $(this).addClass(button_class);
@@ -109,7 +112,7 @@
       console.log(link);
       jQuery.get(link, function(data){
 
-        $('#section-page-with-filter').html(data);
+        $('#section-page-with-filter .pane-content').html(data);
         load_content();
         add_pager_ajax();
       });

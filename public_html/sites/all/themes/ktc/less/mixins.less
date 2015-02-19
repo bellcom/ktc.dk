@@ -240,16 +240,33 @@ a {
   padding-left: 0px;
 }
 
-.filter-title() {
+.filter-title(@bg-color:@gray-darker) {
   border: none;
   padding: 5px 0px 5px 20px;
   font-size: @font-size-h5;
   font-weight: normal;
   text-transform: uppercase;
   color: #fff;
-  background-color: @gray-darker;
+  background-color: @bg-color;
   margin-bottom: 0px;
   margin-top: 0px;
+}
+.red-title h3.pane-title,
+.view-bruger h3.pane-title {
+  .filter-title(@brand-red);
+}
+.view-netvaerk h3.pane-title,
+.gold-title h3.pane-title {
+  .filter-title(@brand-gold);
+}
+.view-ktc h3.pane-title {
+  .filter-title(@brand-darkgreen);
+}
+.view-teknik-miljoe h3.pane-title {
+  .filter-title(@brand-blue-icon);
+}
+h3.pane-title {
+  .filter-title();
 }
 .pane-content() {
   padding-top: 10px;

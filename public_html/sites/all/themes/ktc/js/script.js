@@ -41,46 +41,24 @@
     $('.header-user .header-user-blocks').click(function() {
       if ($('.region-header').css('display') == 'none') {
         $('.region-header').css('display', 'block');
-        $(this).text('SKJUL BRUGERBOKS');
+        $(this).text('SKJUL DINE GENVEJE');
         $('.main-container').removeClass('margin-fixed');
       }
       else {
         $('.region-header').css('display', 'none');
-        $(this).text('ÅBN BRUGERBOKS');
+        $(this).text('ÅBN DINE GENVEJE');
         $('.main-container').addClass('margin-fixed');
 
       }
     });
 
     // OG members view add show all members and close links.
-    var users = $('.pane-og-members-panel-pane-1 .view-content .views-row');
-    if (users.length > 3) {
-      $('<div class="og-members-all" id="og-members-all"><a href="#">Se alle medlemmer</a></div>').insertAfter($('.pane-og-members-panel-pane-1 .view-content .views-row:eq(2)'));
-      users.each(function() {
-        if ($(this).index() > 2) {
-          $(this).hide();
-        }
-      });
-      $('<div class="og-members-all-hide hidden"><a href="#">Luk</a></div>').insertAfter(users.last());
-    }
+    var users = $('.pane-og-members-panel-pane-2');
 
     // Show all members link.
     $('.og-members-all a').click(function() {
-      users.show();
-      $('.og-members-all-hide').removeClass('hidden');
-      $('.og-members-all').addClass('hidden');
-      return false;
-    });
-
-    // Close all members link.
-    $('.og-members-all-hide a').click(function() {
-      users.hide();
-      users.eq(0).show();
-      users.eq(1).show();
-      users.eq(2).show();
-      $('.og-members-all').removeClass('hidden');
-      $('.og-members-all-hide').addClass('hidden');
-      $(window).scrollTop($("#og-members-all").offset().top - 300);
+      users.removeClass('hidden');
+      $('#section-page-with-filter .pane-content .view').hide();
       return false;
     });
 

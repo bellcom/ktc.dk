@@ -1,12 +1,4 @@
-.page-leverandoerlist,
-.page-user,
-.page-node,
-.page-comment,
-.page-hoering-mangler-filer,
-.page-group-node-admin,
-.page-group-node-unsubscribe,
-.page-group-node-subscribe,
-.page-leverandoerer {
+.page-node {
   &.node-type-group {
     .main-container {
       background: none;
@@ -21,10 +13,7 @@
         padding-left: 15px;
       }
       .pane-center {
-        h3.pane-title {
-          .filter-title();
-          background-color: @brand-userlink-red;
-        }
+
         h2 {
           word-break: break-word;
         }
@@ -70,7 +59,7 @@
                 }
                 .group-add-hearing {
                   display: inline-block;
-                  .sprite(@ikon-hoering);
+                  .sprite(@ikon-hoering2);
                   vertical-align: middle;
                   margin-right: 5px;
                 }
@@ -103,10 +92,7 @@
             padding: 10px 15px;
           }
           width: 100%;
-          h3.pane-title {
-            .filter-title();
-            background-color: @brand-gold;
-          }
+
           .view-id-ktc_og_members,
           .view-og-members {
             .view-content {
@@ -171,10 +157,7 @@
       }
     }
   }
-  .main-container {
-    background-color: #fff;
-    padding-bottom: 20px;
-  }
+
   .views-field {
     .term-name a {
       .icon-blue {
@@ -210,6 +193,7 @@
 .page-nyheder,
 .page-teksnik-miljoe {
   .main-container.container {
+    background: none;
     @media (min-width: 992px) {
       padding-left: 0px;
       padding-right: 0px;
@@ -262,11 +246,7 @@
     }
   }
 }
-body.page-node-edit.node-type-group {
-  .main-container {
-    background-color: #fff
-  }
-}
+
 .page-hoeringer,
 .page-netvaerk {
   #section-page-with-filter {
@@ -315,6 +295,14 @@ body.page-node-edit.node-type-group {
         content: "";
         clear: both;
         display: table;
+      }
+      article.node--hearing--listevisning,
+      article.node--group--teaser {
+        h5 {
+          a {
+            color: #fff;
+          }
+        }
       }
     }
     ul.pager {
