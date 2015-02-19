@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-  $('.chosen-entityreference').each(function(){
+  $('.chosen-entityreference.ajax').each(function(){
     var $closest = $(this).closest('.form-group');
     $closest.find('.input-group').hide();
 
@@ -31,6 +31,25 @@ jQuery(document).ready(function($){
     });
   });
 
+  $('.chosen-entityreference.no-ajax').each(function(){
+    var $closest = $(this).closest('.form-group');
+    $closest.find('.input-group').hide();
+
+    $(this).chosen().change(function(event){
+      var val = $(this).val();
+
+      if (val === null) {
+        val = '';
+      }
+
+      restrictOptions($(this), val);
+
+      var $closest = $(this).closest('.form-group');
+      $closest.find('.form-text').val(val);
+    });
+
+  });
+
   var selected_groups = $('#edit-og-group-ref-und').val();
 
   // Handle adding/removing groups
@@ -45,7 +64,6 @@ jQuery(document).ready(function($){
 
             $.each(data, function (field, attendees) {
               $.each(attendees, function (i, val) {
-
                 $('#edit-field-'+field+' .chosen-entityreference-container select option[value="' + i + '"]').remove();
               });
             });
@@ -61,34 +79,81 @@ jQuery(document).ready(function($){
       $.each(change_groups, function(i, val) {
 
         if (selected_groups === null || selected_groups.indexOf(val) == -1) {
-          $.getJSON('/ktc_hearing_attendees/get_group_members/' + val, function(data) {
-
-            $.each(data, function (field, attendees) {
-              $.each(attendees, function (i, val) {
-
-                // Special conditions for responsible-admin/responsible-forman
-                // fields.
-                if (field == 'responsible-admin' || field == 'responsible-foreman') {
-                  if ($('#edit-field-'+field+' .chosen-entityreference-container select').val() !== null) {
-                    return;
-                  }
-                }
-
-                $('#edit-field-'+field+' .chosen-entityreference-container select').append(
-                  $('<option/>', {
-                    value: i,
-                    text: val
-                  }).attr('selected', 'selected'));
-              });
-            });
-
-            $(".chosen-entityreference-container select").trigger("chosen:updated");
-          });
+          addGroupMembers(val, 'selected');
         }
       });
     }
     selected_groups = change_groups;
   });
+
+  function restrictOptions($select, val) {
+    var closestClass = $select.closest('.form-group').attr('class');
+
+    var field = '';
+    var otherField = '';
+
+    if (closestClass.indexOf('chairman') > 0) {
+      field = 'chairman';
+      otherField = 'responsible-foreman';
+    }
+    else if (closestClass.indexOf('coordinator') > 0) {
+      field = 'coordinator';
+      otherField = 'responsible-admin';
+    }
+
+    if (field !== '') {
+      var $otherSelect = $('#edit-field-'+otherField+' .chosen-entityreference-container select');
+      $otherSelect.children().remove();
+
+      $('#edit-field-'+field+' .chosen-entityreference-container select option').each(function(){
+        if($(this).attr('selected') !== undefined) {
+          var text = $(this).text();
+          var val = $(this).val();
+
+          $otherSelect.append(
+            $('<option/>', {
+              value: val,
+              text: text
+            }));
+          }
+      });
+
+
+      $(".chosen-entityreference-container select").trigger("chosen:updated");
+    }
+  }
+
+  function optionExists($select, val) {
+    exists = false;
+    $select.find('option').each(function() {
+      if (this.value == val) {
+        exists = true;
+      }
+    });
+    return exists;
+  }
+
+  function addGroupMembers(group_id, selected) {
+    $.getJSON('/ktc_hearing_attendees/get_group_members/' + group_id, function(data) {
+
+      $.each(data, function (field, attendees) {
+        $.each(attendees, function (i, val) {
+
+          var $select = $('#edit-field-'+field+' .chosen-entityreference-container select');
+
+          if (!optionExists($select, i)) {
+            $select.append(
+              $('<option/>', {
+                value: i,
+                text: val
+              }).attr(selected, selected));
+          }
+        });
+      });
+
+      $(".chosen-entityreference-container select").trigger("chosen:updated");
+    });
+  }
 
   // Handle data in form, on form error.
   $('.chosen-entityreference').each(function(){
@@ -110,6 +175,10 @@ jQuery(document).ready(function($){
         }).attr('selected', 'selected'));
     });
     $(".chosen-entityreference-container select").trigger("chosen:updated");
+  });
+
+  $.each($('#edit-og-group-ref-und').val(), function (i, val) {
+    addGroupMembers(val);
   });
 
   // Handle updating original field.
