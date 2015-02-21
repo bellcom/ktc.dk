@@ -134,7 +134,11 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_side_status'
   $field_instances['field_collection_item-field_magasin_indhold-field_magasin_side_status'] = array(
     'bundle' => 'field_magasin_indhold',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'opstart',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -182,9 +186,35 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_magasin_tema',
-    'label' => 'Tema',
+    'label' => 'Sektion / Tema',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -6893,6 +6923,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Pris (inkl./ ekskl. moms)');
   t('Regioner');
   t('Resume (maks 2 linier!)');
+  t('Sektion / Tema');
   t('Side nr');
   t('Skal gerne være 256x256px');
   t('Skjul auto relaterede links');
@@ -6900,7 +6931,6 @@ function ktc_content_types_field_default_field_instances() {
   t('Stikord');
   t('Synlighed');
   t('Søgeord');
-  t('Tema');
   t('Tilmeldingsfrist');
   t('Tilmeldte');
   t('Top artikel');
