@@ -23,7 +23,7 @@ function ktc_hearing_default_page_manager_handlers() {
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
+    'body_classes_to_add' => 'opret indhold',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),

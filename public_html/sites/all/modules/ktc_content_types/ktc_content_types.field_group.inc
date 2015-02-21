@@ -281,6 +281,34 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_billede|node|os2web_base_news|form';
+  $field_group->group_name = 'group_billede';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_tabs';
+  $field_group->data = array(
+    'label' => 'Billede og filer',
+    'weight' => '12',
+    'children' => array(
+      0 => 'field_os2web_base_field_lead_img',
+      1 => 'field_os2web_base_field_media',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-billede field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_billede|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_featured|node|magazine|form';
   $field_group->group_name = 'group_featured';
   $field_group->entity_type = 'node';
@@ -334,6 +362,37 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_generelst|node|magazine|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_generelt|node|os2web_base_news|form';
+  $field_group->group_name = 'group_generelt';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_tabs';
+  $field_group->data = array(
+    'label' => 'Generelt',
+    'weight' => '11',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_os2web_base_field_summary',
+      2 => 'field_news_category',
+      3 => 'field_os2web_news_page_type',
+      4 => 'title',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-generelt field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_generelt|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -471,11 +530,13 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjul',
-    'weight' => '15',
+    'weight' => '4',
     'children' => array(
       0 => 'field_news_author',
       1 => 'field_gammel_gid',
       2 => 'field_gammel_nid',
+      3 => 'field_link',
+      4 => 'path',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -501,10 +562,13 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_tabs';
   $field_group->data = array(
     'label' => 'Meta data',
-    'weight' => '15',
+    'weight' => '13',
     'children' => array(
       0 => 'field_os2web_base_field_kle_ref',
-      1 => 'field_os2web_base_field_edi_tags',
+      1 => 'field_topics',
+      2 => 'field_tags',
+      3 => 'field_os2web_base_field_edi_tags',
+      4 => 'field_os2web_base_field_hidlinks',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -529,9 +593,10 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_tabs';
   $field_group->data = array(
     'label' => 'Netværk',
-    'weight' => '16',
+    'weight' => '14',
     'children' => array(
       0 => 'og_group_ref',
+      1 => 'group_content_access',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -556,11 +621,10 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_tabs';
   $field_group->data = array(
     'label' => 'Redaktion',
-    'weight' => '17',
+    'weight' => '15',
     'children' => array(
       0 => 'field_os2web_base_field_promote',
       1 => 'field_os2web_base_field_ext_link',
-      2 => 'field_os2web_base_field_hidlinks',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -612,11 +676,13 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Nyheder',
-    'weight' => '8',
+    'weight' => '0',
     'children' => array(
       0 => 'group_metadata',
       1 => 'group_networkngroups',
       2 => 'group_redaktion',
+      3 => 'group_generelt',
+      4 => 'group_billede',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
