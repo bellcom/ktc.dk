@@ -6336,6 +6336,7 @@ a .glyphicon-spin {
   border: 1px solid #dddddd;
   overflow: hidden;
   padding: 10px 15px;
+  background-color: #FFF;
 }
 .tabs-left > .nav-tabs {
   float: left;
@@ -7454,6 +7455,9 @@ fieldset[disabled] .btn-blacknblue.active {
 .main-container .region-header section .panel-body h5 {
   margin-top: 2px;
 }
+.opret.indhold .main-container {
+  margin-top: -250px;
+}
 .region-sidebar-second {
   margin-top: 10px;
 }
@@ -8107,6 +8111,14 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .magasinflow .sidenr {
   display: block;
   min-height: 30px;
+}
+.filter-wrapper,
+.ckeditor_links {
+  display: none;
+}
+.admin-menu .filter-wrapper,
+.admin-menu .ckeditor_links {
+  display: block;
 }
 #nyheder-carousel-large {
   background-color: #fff;
