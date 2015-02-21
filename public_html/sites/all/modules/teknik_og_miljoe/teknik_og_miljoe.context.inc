@@ -27,6 +27,9 @@ function teknik_og_miljoe_context_default_contexts() {
   $context->reactions = array(
     'template_suggestions' => 'page_fluid
 page__fluid',
+    'theme_html' => array(
+      'class' => 'kontekst-magasinstatus',
+    ),
   );
   $context->condition_mode = 0;
   $export['magasinstatus'] = $context;
