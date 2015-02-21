@@ -7368,6 +7368,11 @@ fieldset[disabled] .btn-blacknblue.active {
     margin-top: -200px;
   }
 }
+@media (min-width: 768px) {
+  .main-container.margin-fixed.container-fluid {
+    margin-top: -250px;
+  }
+}
 .main-container .region-header {
   display: none;
   margin-bottom: 5px;
@@ -8054,20 +8059,28 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   color: #36a145;
 }
 .magasinflow .magasinsider .inner {
-  padding: 10px;
-  background-color: #FFF;
-  border: 1px solid #dedede;
+  padding: 4px 8px;
+  background-color: #ffffff;
+  border: 1px solid #e9edee;
   margin-bottom: 15px;
   display: block;
+  color: #2c353a;
+}
+.magasinflow .magasinsider .inner H3 {
+  margin-top: 0;
+  margin-bottom: 4px;
 }
 .magasinflow .magasinsider .btn-danger {
   margin-right: 10px;
 }
 .magasinflow .planlagt .inner {
-  background-color: #ffff00;
+  background-color: #fcf8e3;
+}
+.magasinflow .ommer .inner {
+  background-color: #f2dede;
 }
 .magasinflow .faerdig .inner {
-  background-color: #008000;
+  background-color: #dff0d8;
 }
 .magasinflow .views-row-first {
   width: 100%;
@@ -8089,6 +8102,11 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   height: 30px;
   font-size: 24px;
   margin-right: 5px;
+  margin-top: -5px;
+}
+.magasinflow .sidenr {
+  display: block;
+  min-height: 30px;
 }
 #nyheder-carousel-large {
   background-color: #fff;

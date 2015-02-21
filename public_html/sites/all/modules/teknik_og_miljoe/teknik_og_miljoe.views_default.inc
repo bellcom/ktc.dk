@@ -499,6 +499,16 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['counter']['exclude'] = TRUE;
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  /* Felt: Field collection item: Sektion / Tema */
+  $handler->display->display_options['fields']['field_magasin_tema']['id'] = 'field_magasin_tema';
+  $handler->display->display_options['fields']['field_magasin_tema']['table'] = 'field_data_field_magasin_tema';
+  $handler->display->display_options['fields']['field_magasin_tema']['field'] = 'field_magasin_tema';
+  $handler->display->display_options['fields']['field_magasin_tema']['label'] = '';
+  $handler->display->display_options['fields']['field_magasin_tema']['alter']['text'] = 'Tema: [field_magasin_tema]';
+  $handler->display->display_options['fields']['field_magasin_tema']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_magasin_tema']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['field_magasin_tema']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_magasin_tema']['hide_empty'] = TRUE;
   /* Felt: Field collection item: Status */
   $handler->display->display_options['fields']['field_magasin_side_status']['id'] = 'field_magasin_side_status';
   $handler->display->display_options['fields']['field_magasin_side_status']['table'] = 'field_data_field_magasin_side_status';
@@ -524,15 +534,6 @@ function teknik_og_miljoe_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Felt: Field collection item: Tema */
-  $handler->display->display_options['fields']['field_magasin_tema']['id'] = 'field_magasin_tema';
-  $handler->display->display_options['fields']['field_magasin_tema']['table'] = 'field_data_field_magasin_tema';
-  $handler->display->display_options['fields']['field_magasin_tema']['field'] = 'field_magasin_tema';
-  $handler->display->display_options['fields']['field_magasin_tema']['label'] = '';
-  $handler->display->display_options['fields']['field_magasin_tema']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_magasin_tema']['alter']['text'] = 'Tema: [field_magasin_tema]';
-  $handler->display->display_options['fields']['field_magasin_tema']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_magasin_tema']['hide_empty'] = TRUE;
   /* Felt: Field collection item: Filer */
   $handler->display->display_options['fields']['field_magasin_filer']['id'] = 'field_magasin_filer';
   $handler->display->display_options['fields']['field_magasin_filer']['table'] = 'field_data_field_magasin_filer';
@@ -596,9 +597,9 @@ function teknik_og_miljoe_views_default_views() {
     t('Redigér'),
     t('Slet'),
     t('Tilføj'),
+    t('Tema: [field_magasin_tema]'),
     t('Status: [field_magasin_side_status]'),
     t('<div class="sidenummer">[field_magasin_side_nr]</div>([counter]) [field_magasin_side_status]'),
-    t('Tema: [field_magasin_tema]'),
     t('Artikler'),
     t('Alle'),
   );
@@ -616,8 +617,8 @@ function teknik_og_miljoe_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'magasinstatus';
-  $handler->display->display_options['css_class'] = 'well well-sm magasinflow';
+  $handler->display->display_options['title'] = 'Magasinstatus';
+  $handler->display->display_options['css_class'] = 'magasinflow';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -866,9 +867,15 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sorteringskriterie: Indhold: Udgivelsesdato (field_udgivelsesdato) */
+  $handler->display->display_options['sorts']['field_udgivelsesdato_value']['id'] = 'field_udgivelsesdato_value';
+  $handler->display->display_options['sorts']['field_udgivelsesdato_value']['table'] = 'field_data_field_udgivelsesdato';
+  $handler->display->display_options['sorts']['field_udgivelsesdato_value']['field'] = 'field_udgivelsesdato_value';
+  $handler->display->display_options['sorts']['field_udgivelsesdato_value']['order'] = 'DESC';
   $translatables['magasinstatus'] = array(
     t('Master'),
-    t('magasinstatus'),
+    t('Magasinstatus'),
     t('mere'),
     t('Udfør'),
     t('Gendan'),
