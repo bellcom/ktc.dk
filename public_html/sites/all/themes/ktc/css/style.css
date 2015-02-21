@@ -7368,6 +7368,11 @@ fieldset[disabled] .btn-blacknblue.active {
     margin-top: -200px;
   }
 }
+@media (min-width: 768px) {
+  .main-container.margin-fixed.container-fluid {
+    margin-top: -250px;
+  }
+}
 .main-container .region-header {
   display: none;
   margin-bottom: 5px;
