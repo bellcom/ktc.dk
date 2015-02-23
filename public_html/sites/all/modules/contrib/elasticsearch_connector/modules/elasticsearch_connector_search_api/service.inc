@@ -32,6 +32,29 @@ class SearchApiElasticsearchConnectorMissing extends SearchApiAbstractService {
     return array();
   }
 
+  /**
+   * Overrides supportsFeature().
+   *
+   * <tth@bellcom.dk>: see https://www.drupal.org/node/2374609
+   */
+  public function supportsFeature($feature) {
+    // First, check the features we always support.
+    $supported = drupal_map_assoc(array(
+      'search_api_autocomplete',
+      'search_api_facets',
+      'search_api_facets_operator_or',
+      'search_api_mlt',
+      'search_api_spellcheck',
+      'search_api_data_type_location',
+      // TODO: Implement the rest of the features available!
+      // 'search_api_grouping',
+      // 'search_api_multi',
+      // 'search_api_service_extra',
+      // 'search_api_data_type_geohash',
+    ));
+    return isset($supported[$feature]);
+  }
+
 }
 
 /**
