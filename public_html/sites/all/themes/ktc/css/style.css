@@ -8120,6 +8120,9 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .admin-menu .ckeditor_links {
   display: block;
 }
+.node-type-hearing .region-content h3.pane-title {
+  background-color: #36a145;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
