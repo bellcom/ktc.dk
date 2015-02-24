@@ -442,7 +442,7 @@ function ktc_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 28,
+      'weight' => 5,
     ),
   );
 
@@ -585,7 +585,7 @@ function ktc_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 25,
+      'weight' => 2,
     ),
   );
 
@@ -711,7 +711,7 @@ function ktc_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 29,
+      'weight' => 6,
     ),
   );
 
@@ -1284,7 +1284,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 24,
+      'weight' => 1,
     ),
   );
 
@@ -1680,7 +1680,7 @@ function ktc_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 26,
+      'weight' => 3,
     ),
   );
 
@@ -1741,7 +1741,7 @@ function ktc_content_types_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 27,
+      'weight' => 4,
     ),
   );
 
@@ -1919,7 +1919,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 100,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 7,
     ),
   );
 
@@ -3464,7 +3464,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 13,
     ),
   );
 
@@ -3621,7 +3621,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 15,
+      'weight' => 14,
     ),
   );
 
@@ -3774,7 +3774,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 17,
     ),
   );
 
@@ -3857,93 +3857,6 @@ function ktc_content_types_field_default_field_instances() {
       ),
       'type' => 'media_generic',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-magazine-field_image'
-  $field_instances['node-magazine-field_image'] = array(
-    'bundle' => 'magazine',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 3,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'magazinethumb',
-        ),
-        'type' => 'image',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_image',
-    'label' => 'Billede',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'alt_field_required' => 0,
-      'default_image' => 0,
-      'file_directory' => 'magazine',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'title_field_required' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'upload' => 'upload',
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 3,
     ),
   );
 
@@ -4138,19 +4051,22 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-magazine-field_magasin_leder'
-  $field_instances['node-magazine-field_magasin_leder'] = array(
+  // Exported field_instance: 'node-magazine-field_magasinleder'
+  $field_instances['node-magazine-field_magasinleder'] = array(
     'bundle' => 'magazine',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 19,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -4168,7 +4084,7 @@ function ktc_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -4178,21 +4094,27 @@ function ktc_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_magasin_leder',
-    'label' => 'Magasin leder',
+    'field_name' => 'field_magasinleder',
+    'label' => 'Leder',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 1,
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'entityreference',
       'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
         'size' => 60,
       ),
-      'type' => 'text_textfield',
-      'weight' => 10,
+      'type' => 'entityreference_autocomplete',
+      'weight' => 15,
     ),
   );
 
@@ -4394,7 +4316,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 16,
     ),
   );
 
@@ -6701,13 +6623,13 @@ function ktc_content_types_field_default_field_instances() {
   t('KLE stikord');
   t('Kategori');
   t('Kort beskrivende tekst');
+  t('Leder');
   t('Link');
   t('Link til arrangørs hjemmeside');
   t('Link til bladreversion');
   t('Logo');
   t('Lovhenvisninger');
   t('Magasin indhold');
-  t('Magasin leder');
   t('Manchet');
   t('Målgruppe');
   t('Nyhedstype');

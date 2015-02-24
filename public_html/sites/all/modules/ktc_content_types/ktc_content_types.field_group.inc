@@ -13,6 +13,35 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_andet|node|magazine|form';
+  $field_group->group_name = 'group_andet';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'magazine';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_generelst';
+  $field_group->data = array(
+    'label' => 'Andet',
+    'weight' => '24',
+    'children' => array(
+      0 => 'field_os2web_base_field_ext_link',
+      1 => 'field_os2web_base_field_hidlinks',
+      2 => 'path',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-andet field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_andet|node|magazine|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_annoncer|node|magazine|form';
   $field_group->group_name = 'group_annoncer';
   $field_group->entity_type = 'node';
@@ -265,6 +294,7 @@ function ktc_content_types_field_group_info() {
       4 => 'field_short',
       5 => 'field_arrangement_billede',
       6 => 'field_arrangement_logo',
+      7 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -321,6 +351,7 @@ function ktc_content_types_field_group_info() {
     'children' => array(
       0 => 'field_ekstra_artikler',
       1 => 'field_top_artikel',
+      2 => 'field_magasinleder',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -352,6 +383,7 @@ function ktc_content_types_field_group_info() {
       2 => 'group_sider',
       3 => 'group_featured',
       4 => 'group_hidden',
+      5 => 'group_andet',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -499,13 +531,10 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_generelst';
   $field_group->data = array(
     'label' => 'Skjult',
-    'weight' => '24',
+    'weight' => '25',
     'children' => array(
       0 => 'field_image',
       1 => 'field_internt_link_url_',
-      2 => 'field_os2web_base_field_ext_link',
-      3 => 'field_os2web_base_field_hidlinks',
-      4 => 'path',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -710,10 +739,9 @@ function ktc_content_types_field_group_info() {
       0 => 'body',
       1 => 'field_forside_billede_',
       2 => 'field_linkbladreversion',
-      3 => 'field_magasin_leder',
-      4 => 'field_udgave',
-      5 => 'field_udgivelsesdato',
-      6 => 'title',
+      3 => 'field_udgave',
+      4 => 'field_udgivelsesdato',
+      5 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
