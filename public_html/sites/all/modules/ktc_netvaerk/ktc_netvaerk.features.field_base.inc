@@ -186,6 +186,32 @@ function ktc_netvaerk_field_default_field_bases() {
     'type' => 'datetime',
   );
 
+  // Exported field_base: 'field_subgroup'
+  $field_bases['field_subgroup'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_subgroup',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Er ikke et underværk',
+        1 => 'Undernetværk',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
   // Exported field_base: 'group_access'
   $field_bases['group_access'] = array(
     'active' => 1,

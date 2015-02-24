@@ -105,6 +105,43 @@ function teknik_og_miljoe_views_default_views() {
   /* Display: Side */
   $handler = $view->new_display('page', 'Side', 'page_1');
   $handler->display->display_options['path'] = 'artikler';
+
+  /* Display: Entity Reference - Leder */
+  $handler = $view->new_display('entityreference', 'Entity Reference - Leder', 'entityreference_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'artikler' => 'artikler',
+  );
+  /* Filterkriterie: Indhold: Artikel type (field_artikel_type) */
+  $handler->display->display_options['filters']['field_artikel_type_value']['id'] = 'field_artikel_type_value';
+  $handler->display->display_options['filters']['field_artikel_type_value']['table'] = 'field_data_field_artikel_type';
+  $handler->display->display_options['filters']['field_artikel_type_value']['field'] = 'field_artikel_type_value';
+  $handler->display->display_options['filters']['field_artikel_type_value']['value'] = array(
+    'leder' => 'leder',
+  );
   $translatables['artikler'] = array(
     t('Master'),
     t('mere'),
@@ -124,8 +161,273 @@ function teknik_og_miljoe_views_default_views() {
     t('Alle'),
     t('Entity Reference'),
     t('Side'),
+    t('Entity Reference - Leder'),
   );
   $export['artikler'] = $view;
+
+  $view = new view();
+  $view->name = 'bladintro_artikler';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Bladintro artikler';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Her er intet';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'artikler' => 'artikler',
+  );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:user.field-adresse',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
+  $translatables['bladintro_artikler'] = array(
+    t('Master'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Antal elementer'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('« første'),
+    t('‹ forrige'),
+    t('næste ›'),
+    t('sidste »'),
+    t('Her er intet'),
+    t('Alle'),
+    t('Content pane'),
+    t('View panes'),
+  );
+  $export['bladintro_artikler'] = $view;
+
+  $view = new view();
+  $view->name = 'bladintro_artikler_liste';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'field_collection_item';
+  $view->human_name = 'Bladintro artikler liste';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_magasin_side_nr',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Forbindelse: Field collection item: Entity with the Magasin indhold (field_magasin_indhold) */
+  $handler->display->display_options['relationships']['field_magasin_indhold_node']['id'] = 'field_magasin_indhold_node';
+  $handler->display->display_options['relationships']['field_magasin_indhold_node']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_magasin_indhold_node']['field'] = 'field_magasin_indhold_node';
+  /* Forbindelse: Entity Reference: Refererende entity */
+  $handler->display->display_options['relationships']['reverse_field_magasin_side_artikel_field_collection_item']['id'] = 'reverse_field_magasin_side_artikel_field_collection_item';
+  $handler->display->display_options['relationships']['reverse_field_magasin_side_artikel_field_collection_item']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_magasin_side_artikel_field_collection_item']['field'] = 'reverse_field_magasin_side_artikel_field_collection_item';
+  $handler->display->display_options['relationships']['reverse_field_magasin_side_artikel_field_collection_item']['relationship'] = 'field_magasin_indhold_node';
+  /* Forbindelse: Entity Reference: Refererende entity */
+  $handler->display->display_options['relationships']['reverse_field_magasin_side_artikel_field_collection_item_1']['id'] = 'reverse_field_magasin_side_artikel_field_collection_item_1';
+  $handler->display->display_options['relationships']['reverse_field_magasin_side_artikel_field_collection_item_1']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_magasin_side_artikel_field_collection_item_1']['field'] = 'reverse_field_magasin_side_artikel_field_collection_item';
+  $handler->display->display_options['relationships']['reverse_field_magasin_side_artikel_field_collection_item_1']['relationship'] = 'field_magasin_indhold_node';
+  /* Felt: Field collection item: Field collection item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['label'] = '';
+  $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
+  /* Felt: Field collection item: Artikel */
+  $handler->display->display_options['fields']['field_magasin_side_artikel']['id'] = 'field_magasin_side_artikel';
+  $handler->display->display_options['fields']['field_magasin_side_artikel']['table'] = 'field_data_field_magasin_side_artikel';
+  $handler->display->display_options['fields']['field_magasin_side_artikel']['field'] = 'field_magasin_side_artikel';
+  $handler->display->display_options['fields']['field_magasin_side_artikel']['label'] = '';
+  $handler->display->display_options['fields']['field_magasin_side_artikel']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_magasin_side_artikel']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_magasin_side_artikel']['settings'] = array(
+    'view_mode' => 'listevisning',
+    'links' => 0,
+  );
+  $handler->display->display_options['fields']['field_magasin_side_artikel']['delta_offset'] = '0';
+  /* Felt: Field collection item: Side nr */
+  $handler->display->display_options['fields']['field_magasin_side_nr']['id'] = 'field_magasin_side_nr';
+  $handler->display->display_options['fields']['field_magasin_side_nr']['table'] = 'field_data_field_magasin_side_nr';
+  $handler->display->display_options['fields']['field_magasin_side_nr']['field'] = 'field_magasin_side_nr';
+  $handler->display->display_options['fields']['field_magasin_side_nr']['label'] = 'Side';
+  $handler->display->display_options['fields']['field_magasin_side_nr']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_magasin_side_nr']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Sorteringskriterie: Field collection item: Side nr (field_magasin_side_nr) */
+  $handler->display->display_options['sorts']['field_magasin_side_nr_value']['id'] = 'field_magasin_side_nr_value';
+  $handler->display->display_options['sorts']['field_magasin_side_nr_value']['table'] = 'field_data_field_magasin_side_nr';
+  $handler->display->display_options['sorts']['field_magasin_side_nr_value']['field'] = 'field_magasin_side_nr_value';
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_magasin_indhold_node';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Kontekstuelt filter: Indhold: Titel */
+  $handler->display->display_options['arguments']['title']['id'] = 'title';
+  $handler->display->display_options['arguments']['title']['table'] = 'node';
+  $handler->display->display_options['arguments']['title']['field'] = 'title';
+  $handler->display->display_options['arguments']['title']['relationship'] = 'field_magasin_indhold_node';
+  $handler->display->display_options['arguments']['title']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['title']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['title']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['title']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['title']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['title']['limit'] = '0';
+  /* Filterkriterie: Field collection item: Artikel (field_magasin_side_artikel) */
+  $handler->display->display_options['filters']['field_magasin_side_artikel_target_id']['id'] = 'field_magasin_side_artikel_target_id';
+  $handler->display->display_options['filters']['field_magasin_side_artikel_target_id']['table'] = 'field_data_field_magasin_side_artikel';
+  $handler->display->display_options['filters']['field_magasin_side_artikel_target_id']['field'] = 'field_magasin_side_artikel_target_id';
+  $handler->display->display_options['filters']['field_magasin_side_artikel_target_id']['operator'] = 'not empty';
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:user.field-adresse',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
+  $translatables['bladintro_artikler_liste'] = array(
+    t('Master'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Antal elementer'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('« første'),
+    t('‹ forrige'),
+    t('næste ›'),
+    t('sidste »'),
+    t('field_magasin_indhold'),
+    t('Field collection item refererer til Indhold fra field_magasin_side_artikel'),
+    t('.'),
+    t(','),
+    t('Side'),
+    t('Alle'),
+    t('Content pane'),
+    t('View panes'),
+  );
+  $export['bladintro_artikler_liste'] = $view;
 
   $view = new view();
   $view->name = 'bladintro_link';
@@ -735,10 +1037,11 @@ function teknik_og_miljoe_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
-  /* Felt: Indhold: Magasin leder */
+  /* Felt: Handler mangler eller er i stykker */
   $handler->display->display_options['fields']['field_magasin_leder']['id'] = 'field_magasin_leder';
   $handler->display->display_options['fields']['field_magasin_leder']['table'] = 'field_data_field_magasin_leder';
   $handler->display->display_options['fields']['field_magasin_leder']['field'] = 'field_magasin_leder';
+  $handler->display->display_options['fields']['field_magasin_leder']['label'] = 'Magasin leder';
   /* Felt: Indhold: Top artikel */
   $handler->display->display_options['fields']['field_top_artikel']['id'] = 'field_top_artikel';
   $handler->display->display_options['fields']['field_top_artikel']['table'] = 'field_data_field_top_artikel';

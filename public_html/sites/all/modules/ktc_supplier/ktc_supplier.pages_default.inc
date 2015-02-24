@@ -17,7 +17,7 @@ function ktc_supplier_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 5;
+  $handler->weight = -23;
   $handler->conf = array(
     'title' => 'Leverandører',
     'no_blocks' => 0,
@@ -28,6 +28,21 @@ function ktc_supplier_default_page_manager_handlers() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'ktc_supplier' => 'ktc_supplier',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'ktcstd';
