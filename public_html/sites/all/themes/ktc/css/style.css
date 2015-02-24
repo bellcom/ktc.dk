@@ -8123,6 +8123,14 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .node-type-hearing .region-content h3.pane-title {
   background-color: #36a145;
 }
+.toggle-pane-content .short-description .field {
+  height: 115px;
+  overflow: hidden;
+}
+.toggle-pane-content .short-description > a {
+  padding: 10px 0;
+  display: block;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;

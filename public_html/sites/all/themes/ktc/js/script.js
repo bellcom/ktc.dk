@@ -199,6 +199,22 @@
       }
     });
 
+    // Toggle description length
+    $('.toggle-pane-content').each(function(){
+      if ($(this).find('.pane-content').height() > 115) {
+        $(this).find('.pane-content').append('<a href="#" class="js-toggle-description-length short">Vis mere</a>');
+        $(this).find('.pane-content').append('<a href="#" class="js-toggle-description-length hide long">Skjul</a>');
+
+        $('.js-toggle-description-length').click(function(){
+          $(this).parent().find('.js-toggle-description-length').toggleClass('hide');
+          $(this).closest('.pane-content').toggleClass('short-description');
+          return false;
+        });
+
+        $(this).find('.pane-content').addClass('short-description');
+      }
+    });
+
   });
 
 Drupal.behaviors.feedbackForm = {
