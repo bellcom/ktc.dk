@@ -50,10 +50,10 @@ function ktc_netvaerk_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '2',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '2',
         ),
       ),
       'display' => array(

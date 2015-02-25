@@ -70,7 +70,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -127,7 +127,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 3,
     ),
   );
 
@@ -198,7 +198,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 20,
+      'weight' => 8,
     ),
   );
 
@@ -255,7 +255,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 3,
     ),
   );
 
@@ -312,7 +312,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 2,
     ),
   );
 
@@ -370,7 +370,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 17,
+      'weight' => 4,
     ),
   );
 
@@ -439,7 +439,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -498,7 +498,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -573,7 +573,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 10,
+      'weight' => 4,
     ),
   );
 
@@ -633,7 +633,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 5,
     ),
   );
 
@@ -764,7 +764,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 19,
+      'weight' => 7,
     ),
   );
 
@@ -825,7 +825,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -885,7 +885,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 4,
     ),
   );
 
@@ -945,7 +945,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_hs',
-      'weight' => 8,
+      'weight' => 3,
     ),
   );
 
@@ -1014,7 +1014,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 12,
+      'weight' => 5,
     ),
     'widget_type' => 'options_select',
   );
@@ -1086,7 +1086,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 21,
+      'weight' => 7,
     ),
     'widget_type' => 'options_select',
   );
@@ -1258,7 +1258,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -1329,7 +1329,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 13,
+      'weight' => 6,
     ),
     'widget_type' => 'options_select',
   );
