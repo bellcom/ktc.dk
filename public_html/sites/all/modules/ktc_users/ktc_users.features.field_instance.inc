@@ -13,7 +13,11 @@ function ktc_users_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_account'
   $field_instances['user-user-field_account'] = array(
     'bundle' => 'user',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 10277,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -22,27 +26,9 @@ function ktc_users_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 24,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 32,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -52,16 +38,18 @@ function ktc_users_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_account',
     'label' => 'Firma',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
-      'user_register_form' => 0,
+      'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'hs_taxonomy',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'taxonomy_hs',
-      'weight' => 35,
+      'weight' => 19,
     ),
   );
 
@@ -77,13 +65,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 11,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'inline',
@@ -99,12 +81,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 7,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -127,7 +103,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 38,
+      'weight' => 14,
     ),
   );
 
@@ -143,27 +119,9 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 25,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 33,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -185,7 +143,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 39,
+      'weight' => 15,
     ),
   );
 
@@ -204,13 +162,7 @@ function ktc_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 28,
       ),
       'full' => array(
         'label' => 'inline',
@@ -226,12 +178,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 6,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -253,7 +199,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => -5,
+      'weight' => -1,
     ),
   );
 
@@ -269,13 +215,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'inline',
@@ -296,20 +236,14 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'token' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_cell',
     'label' => 'Mobil',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'text_processing' => 0,
-      'user_register_form' => 0,
+      'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -318,7 +252,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 42,
+      'weight' => 9,
     ),
   );
 
@@ -334,13 +268,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'inline',
@@ -356,12 +284,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 22,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -384,7 +306,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 44,
+      'weight' => 17,
     ),
   );
 
@@ -404,13 +326,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 23,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
       'full' => array(
         'label' => 'inline',
@@ -426,12 +342,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 4,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -453,7 +363,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => -7,
+      'weight' => -3,
     ),
   );
 
@@ -468,13 +378,7 @@ function ktc_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 26,
       ),
       'full' => array(
         'label' => 'above',
@@ -489,12 +393,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 28,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -517,7 +415,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 45,
+      'weight' => 18,
     ),
   );
 
@@ -530,29 +428,12 @@ function ktc_users_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 31,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -573,7 +454,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
+      'weight' => 11,
     ),
   );
 
@@ -589,13 +470,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'inline',
@@ -611,12 +486,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 20,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -639,7 +508,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 52,
+      'weight' => 5,
     ),
   );
 
@@ -655,13 +524,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'inline',
@@ -682,21 +545,15 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'token' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_directe_telefon',
     'label' => 'Direkte telefon',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'text_processing' => 0,
-      'user_register_form' => 0,
+      'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -705,7 +562,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 41,
+      'weight' => 10,
     ),
   );
 
@@ -726,13 +583,7 @@ function ktc_users_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 21,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
       'full' => array(
         'label' => 'inline',
@@ -754,12 +605,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 23,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -790,7 +635,47 @@ function ktc_users_field_default_field_instances() {
         'year_range' => '-70:-16',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_efternavn'
+  $field_instances['user-user-field_efternavn'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 34,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_efternavn',
+    'label' => 'Efternavn',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
     ),
   );
 
@@ -806,13 +691,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
       'full' => array(
         'label' => 'inline',
@@ -828,12 +707,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 12,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -855,7 +728,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 37,
+      'weight' => 7,
     ),
   );
 
@@ -871,13 +744,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 19,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'full' => array(
         'label' => 'inline',
@@ -893,12 +760,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 17,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -921,7 +782,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 49,
+      'weight' => 6,
     ),
   );
 
@@ -936,13 +797,7 @@ function ktc_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 29,
       ),
       'full' => array(
         'label' => 'above',
@@ -951,12 +806,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 29,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -979,7 +828,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 32,
+      'weight' => 9,
     ),
   );
 
@@ -998,13 +847,7 @@ function ktc_users_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1014,12 +857,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 23,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1040,7 +877,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => -1,
+      'weight' => 0,
     ),
   );
 
@@ -1056,13 +893,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1078,12 +909,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1106,7 +931,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 51,
+      'weight' => 7,
     ),
   );
 
@@ -1122,13 +947,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 9,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1144,12 +963,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 18,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1172,7 +985,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 50,
+      'weight' => 4,
     ),
   );
 
@@ -1188,13 +1001,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1210,12 +1017,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 10,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1237,7 +1038,391 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_membership_appointments'
+  $field_instances['user-user-field_membership_appointments'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 45,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_membership_appointments',
+    'label' => 'Udpegninger i foreninger, udvalg og nævn',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 60,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_membership_dabyfo'
+  $field_instances['user-user-field_membership_dabyfo'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 40,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_membership_dabyfo',
+    'label' => 'Medlemskab af DABYFO',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 54,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_membership_dp'
+  $field_instances['user-user-field_membership_dp'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 37,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_membership_dp',
+    'label' => 'Medlemskab af Danske Planchefer',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 51,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_membership_envina'
+  $field_instances['user-user-field_membership_envina'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 39,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_membership_envina',
+    'label' => 'Medlemskab af ENVINA',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 53,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_membership_ffuk'
+  $field_instances['user-user-field_membership_ffuk'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 43,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_membership_ffuk',
+    'label' => 'Medlemskab af FFUK',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 58,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_membership_kef'
+  $field_instances['user-user-field_membership_kef'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 47,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_membership_kef',
+    'label' => 'Medlemskab af KEF (Kommunalt entrepenørforum)',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 56,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_membership_kpn'
+  $field_instances['user-user-field_membership_kpn'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 41,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_membership_kpn',
+    'label' => 'Medlemskab af KPN (Kommunale park- og naturforvaltere)',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 55,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_membership_ktc'
+  $field_instances['user-user-field_membership_ktc'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 36,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_membership_ktc',
+    'label' => 'Medlemskab af KTC',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 50,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_membership_kvf'
+  $field_instances['user-user-field_membership_kvf'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 38,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_membership_kvf',
+    'label' => 'Medlemskab af KVF (Kommunal Vejteknisk Forening)',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 52,
     ),
   );
 
@@ -1253,13 +1438,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1280,17 +1459,11 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'token' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_memberships_text',
-    'label' => 'Andre medlemsskaber',
+    'label' => 'Andre medlemskaber af foreninger (skriv her)',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -1303,7 +1476,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 59,
     ),
   );
 
@@ -1322,13 +1495,7 @@ function ktc_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 27,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1344,12 +1511,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1387,13 +1548,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1415,17 +1570,11 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'token' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_navn',
-    'label' => 'Navn',
+    'label' => 'Fornavn + mellemnavn',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -1438,7 +1587,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -1454,13 +1603,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1476,12 +1619,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 8,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1504,7 +1641,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 40,
+      'weight' => 8,
     ),
   );
 
@@ -1520,13 +1657,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1542,12 +1673,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 13,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1569,7 +1694,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 46,
+      'weight' => -4,
     ),
   );
 
@@ -1585,13 +1710,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 22,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1607,12 +1726,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 25,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1635,7 +1748,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 50,
     ),
   );
 
@@ -1651,13 +1764,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 18,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1678,12 +1785,6 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'token' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_tags',
@@ -1694,15 +1795,13 @@ function ktc_users_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
-        'apply_chosen' => '',
         'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_opt_groups' => FALSE,
         'size' => 60,
       ),
-      'type' => 'options_select',
-      'weight' => 48,
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 3,
     ),
   );
 
@@ -1717,13 +1816,7 @@ function ktc_users_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1743,7 +1836,41 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'token' => array(
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_topics',
+    'label' => 'Emner',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 47,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_twitter_brugernavn'
+  $field_instances['user-user-field_twitter_brugernavn'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 35,
+      ),
+      'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1751,21 +1878,21 @@ function ktc_users_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'user',
-    'field_name' => 'field_topics',
-    'label' => 'Emner',
+    'field_name' => 'field_twitter_brugernavn',
+    'label' => 'Twitter brugernavn',
     'required' => 0,
     'settings' => array(
+      'text_processing' => 0,
       'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'text',
       'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => FALSE,
+        'size' => 60,
       ),
-      'type' => 'options_select',
-      'weight' => 47,
+      'type' => 'text_textfield',
+      'weight' => 14,
     ),
   );
 
@@ -1780,13 +1907,7 @@ function ktc_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 30,
       ),
       'full' => array(
         'label' => 'above',
@@ -1795,12 +1916,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 30,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1823,7 +1938,47 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 33,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_uddannelser_og_kurser'
+  $field_instances['user-user-field_uddannelser_og_kurser'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 46,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_uddannelser_og_kurser',
+    'label' => 'Uddannelser og kurser',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 49,
     ),
   );
 
@@ -1839,13 +1994,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 20,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1861,12 +2010,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 19,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1905,13 +2048,7 @@ function ktc_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
-      ),
-      'diff_standard' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1927,12 +2064,6 @@ function ktc_users_field_default_field_instances() {
         'weight' => 21,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'token' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1955,7 +2086,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 43,
+      'weight' => 16,
     ),
   );
 
@@ -1964,23 +2095,32 @@ function ktc_users_field_default_field_instances() {
   t('Adresse');
   t('Adresse 2');
   t('Afdeling');
-  t('Andre medlemsskaber');
+  t('Andre medlemskaber af foreninger (skriv her)');
   t('Arbejdsgiver');
   t('Brugertype');
   t('By');
   t('CRM UUID');
   t('Direkte telefon');
+  t('Efternavn');
   t('Ekspertise');
   t('Emner');
   t('Firma');
   t('Flere emner');
+  t('Fornavn + mellemnavn');
   t('Fødselsdato');
   t('Gammel uid');
   t('Kommune');
   t('Land');
   t('LinkedIn');
+  t('Medlemskab af DABYFO');
+  t('Medlemskab af Danske Planchefer');
+  t('Medlemskab af ENVINA');
+  t('Medlemskab af FFUK');
+  t('Medlemskab af KEF (Kommunalt entrepenørforum)');
+  t('Medlemskab af KPN (Kommunale park- og naturforvaltere)');
+  t('Medlemskab af KTC');
+  t('Medlemskab af KVF (Kommunal Vejteknisk Forening)');
   t('Mobil');
-  t('Navn');
   t('Postnr');
   t('Regioner');
   t('Send besked når andre brugere kommenterer mine indlæg (inkl. mine egne kommentarer)');
@@ -1990,7 +2130,10 @@ function ktc_users_field_default_field_instances() {
   t('Stilling/titel');
   t('Særlige kompetencer');
   t('Tlf.');
+  t('Twitter brugernavn');
   t('Typo3 uid(fe_users)');
+  t('Uddannelser og kurser');
+  t('Udpegninger i foreninger, udvalg og nævn');
 
   return $field_instances;
 }
