@@ -112,23 +112,19 @@ function ktc_crm_map_account_to_webuserdto($account) {
   $webuserdto->UserName = $account->mail;
   $webuserdto->DrupalId = $account->uid;
 
-  if ($name_field = field_get_items('user', $account, 'field_navn')) {
-    $name_array = explode(' ', $name_field[0]['value']);
-    $firstname = $name_array[0];
+  if ($field = field_get_items('user', $account, 'field_navn')) {
+    $webuserdto->FirstName = $field[0]['value'];
+  }
 
-    array_shift($name_array);
-
-    $lastname = implode(' ', $name_array);
-
-    $webuserdto->FirstName = $firstname;
-    $webuserdto->LastName = $lastname;
+  if ($field = field_get_items('user', $account, 'field_efternavn')) {
+    $webuserdto->LastName = $field[0]['value'];
   }
 
   if ($field = field_get_items('user', $account, 'field_jobposition')) {
     $webuserdto->Salutation = $field[0]['value'];
   }
 
-  if ($field = field_get_items('user', $account, 'field_phone')) {
+  if ($field = field_get_items('user', $account, 'field_directe_telefon')) {
     $webuserdto->Phone = $field[0]['value'];
   }
 
@@ -174,10 +170,55 @@ function ktc_crm_map_account_to_webuserdto($account) {
   $webuserdto->Adresses->EANAddressDto = $eanaddressdto;
 
   if ($field = field_get_items('user', $account, 'field_account')) {
-    if ($account = taxonomy_term_load($field[0]['tid'])) {
-      $account_uuid = _ktc_crm_get_uuid('taxonomy_term', $account);
+    if ($company = taxonomy_term_load($field[0]['tid'])) {
+      $account_uuid = _ktc_crm_get_uuid('taxonomy_term', $company);
       $webuserdto->DepartmentId = $account_uuid;
     }
+  }
+
+  $extra_fields = array(
+    'field_special_skills' => 'AndreKompetencer',
+    'field_twitter_brugernavn' => 'TwitterBrugernavn',
+    'field_linkedin' => 'LinkedInBrugernavn',
+    'field_uddannelser_og_kurser' => 'UddannelseOgKurser',
+    'field_memberships_text' => 'MemberOther',
+    'field_membership_appointments' => 'UdpegningerIForeningerUdvalgOgNaevn',
+  );
+
+  foreach ($extra_fields as $field_name => $crm_field) {
+    if ($field = field_get_items('user', $account, $field_name)) {
+      $webuserdto->{$crm_field} = $field[0]['value'];
+    }
+  }
+
+  $memberships = array(
+    'field_membership_kef' => 'KefMember',
+    'field_membership_ktc' => 'KtcMember',
+    'field_membership_dp' => 'DpMember',
+    'field_membership_kvf' => 'KvfMember',
+    'field_membership_envina' => 'EnvinaMember',
+    'field_membership_dabyfo' => 'DabyfoMember',
+    'field_membership_kpn' => 'KpnMember',
+    'field_membership_ffuk' => 'FfukMember',
+  );
+
+  foreach ($memberships as $field_name => $crm_field) {
+    if ($field = field_get_items('user', $account, $field_name)) {
+      $webuserdto->{$crm_field} = (bool) $field[0]['value'];
+    }
+  }
+
+  // Topics is a text field in CRM.
+  if ($field_topics = field_get_items('user', $account, 'field_topics')) {
+    $topics = '';
+
+    foreach ($field_topics as $field) {
+      $term = taxonomy_term_load($field['tid']);
+
+      $topics .= $term->name . "\n";
+    }
+
+    $webuserdto->EmnerFraWeb = $topics;
   }
 
   $webuserdto->Active = $account->status;
@@ -212,9 +253,10 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
   $edit['mail'] = $webuserdto->EMail;
   // Username is generated from firstname, lastname and toplevelaccount name.
   $edit['name'] = $webuserdto->FirstName . ' ' . $webuserdto->LastName . ' - '
-    . str_replace(array(','), '', $webuserdto->TopLevelAccountName);
+    . str_replace(array(',', '/'), array('', '-'), $webuserdto->TopLevelAccountName);
 
-  $edit['field_navn'][LANGUAGE_NONE][0]['value'] = $webuserdto->FirstName . ' ' . $webuserdto->LastName;
+  $edit['field_navn'][LANGUAGE_NONE][0]['value'] = $webuserdto->FirstName;
+  $edit['field_efternavn'][LANGUAGE_NONE][0]['value'] = $webuserdto->LastName;
   $edit['field_jobposition'][LANGUAGE_NONE][0]['value'] = $webuserdto->Salutation;
   $edit['field_dob'][LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($webuserdto->Birthday));
   $edit['field_phone'][LANGUAGE_NONE][0]['value'] = $webuserdto->Phone;
@@ -233,6 +275,34 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
 
   if ($region_tid = _ktc_crm_group_get_region_tid($webuserdto->Adresses->EANAddressDto[1]->Region)) {
     $edit['field_regioner'][LANGUAGE_NONE][0]['tid'] = $region_tid;
+  }
+
+  $extra_fields = array(
+    'field_special_skills' => 'AndreKompetencer',
+    'field_twitter_brugernavn' => 'TwitterBrugernavn',
+    'field_linkedin' => 'LinkedInBrugernavn',
+    'field_uddannelser_og_kurser' => 'UddannelseOgKurser',
+    'field_memberships_text' => 'MemberOther',
+    'field_membership_appointments' => 'UdpegningerIForeningerUdvalgOgNaevn',
+  );
+
+  foreach ($extra_fields as $field_name => $crm_field) {
+    $edit[$field_name][LANGUAGE_NONE][0]['value'] = $webuserdto->{$crm_field};
+  }
+
+  $memberships = array(
+    'field_membership_kef' => 'KefMember',
+    'field_membership_ktc' => 'KtcMember',
+    'field_membership_dp' => 'DpMember',
+    'field_membership_kvf' => 'KvfMember',
+    'field_membership_envina' => 'EnvinaMember',
+    'field_membership_dabyfo' => 'DabyfoMember',
+    'field_membership_kpn' => 'KpnMember',
+    'field_membership_ffuk' => 'FfukMember',
+  );
+
+  foreach ($memberships as $field_name => $crm_field) {
+    $edit[$field_name][LANGUAGE_NONE][0]['value'] = (int) $webuserdto->{$crm_field};
   }
 
   return $edit;
