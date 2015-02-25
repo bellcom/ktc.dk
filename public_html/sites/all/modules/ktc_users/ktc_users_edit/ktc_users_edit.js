@@ -14,7 +14,6 @@
         $.get('/ktc_users_edit/get_account_address/' + account_tid, function(data) {
           $('.account-address .address').html(data);
         });
-
       });
 
       /**
@@ -22,6 +21,31 @@
        * selected usertype.
        */
       $('#edit-field-account-und-hierarchical-select-selects-0').hide();
+
+      function limitMembershipFieldsTo(usertypeTid) {
+        var hidefields = settings.ktcUsersEdit.membershipMap[usertypeTid];
+
+        if (hidefields) {
+          $('#edit-field-membership-ktc').hide();
+          $('#edit-field-membership-kef').hide();
+          $('#edit-field-membership-dp').hide();
+          $('#edit-field-membership-kvf').hide();
+          $('#edit-field-membership-kpn').hide();
+          $('#edit-field-membership-dabyfo').hide();
+          $('#edit-field-membership-envina').hide();
+          $('#edit-field-membership-ffuk').hide();
+        }
+        else {
+          $('#edit-field-membership-ktc').show();
+          $('#edit-field-membership-kef').show();
+          $('#edit-field-membership-dp').show();
+          $('#edit-field-membership-kvf').show();
+          $('#edit-field-membership-kpn').show();
+          $('#edit-field-membership-dabyfo').show();
+          $('#edit-field-membership-envina').show();
+          $('#edit-field-membership-ffuk').show();
+        }
+      }
 
       function limitCompaniesTo(usertypeTid) {
         var usertypeMap = [];
@@ -37,8 +61,11 @@
         }, 500);
       }
 
+      limitMembershipFieldsTo($('#edit-field-usertype-und').val());
+
       $('#edit-field-usertype-und').change(function(){
         limitCompaniesTo($(this).val());
+        limitMembershipFieldsTo($(this).val());
       });
     }
   };

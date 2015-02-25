@@ -9,7 +9,7 @@
  */
 function ktc_users_edit_menu() {
   $items['admin/config/people/ktc_users_edit'] = array(
-    'title' => 'Settings for ktc_users_edit',
+    'title' => 'Settings for redigering af KTC brugere',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_users_edit_settings_form'),
     'access arguments' => array('administer site'),
@@ -198,12 +198,13 @@ function ktc_users_edit_settings_form() {
   $ktc_users_edit_type_company_map = variable_get('ktc_users_edit_type_company_map', array());
 
   foreach ($usertypes as $usertype) {
-
     $form['ktc_users_edit_type_company_map'][$usertype->tid] = array(
       '#title' => 'Start top niveau tid for: ' . $usertype->name,
       '#type' => 'textfield',
       '#default_value' => !empty($ktc_users_edit_type_company_map) ? $ktc_users_edit_type_company_map[$usertype->tid] : FALSE,
     );
+
+    $usertypes_options[$usertype->tid] = $usertype->name;
   }
 
   $form['ktc_users_edit_company_message'] = array(
@@ -225,6 +226,14 @@ function ktc_users_edit_settings_form() {
     '#markup' => variable_get('ktc_users_edit_company_form_mail', ''),
   );
 
+  $form['ktc_users_edit_limitmembershipfields'] = array(
+    '#title' => 'Begræns medlemsskabsfelter på',
+    '#options' => $usertypes_options,
+    '#type' => 'select',
+    '#multiple' => TRUE,
+    '#default_value' => variable_get('ktc_users_edit_limitmembershipfields', array()),
+  );
+
   return system_settings_form($form);
 }
 
@@ -235,8 +244,10 @@ function ktc_users_edit_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'user_profile_form') {
 
     $usertype_map = variable_get('ktc_users_edit_type_company_map', array());
+    $membership_map = variable_get('ktc_users_edit_limitmembershipfields', array());
 
     drupal_add_js(array('ktcUsersEdit' => array('usertypeMap' => $usertype_map)), 'setting');
+    drupal_add_js(array('ktcUsersEdit' => array('membershipMap' => $membership_map)), 'setting');
     drupal_add_js(drupal_get_path('module', 'ktc_users_edit') . '/ktc_users_edit.js');
     $edit = variable_get('ktc_users_edit_company_message', '');
     $form['field_account']['#suffix'] = '<div class="account-address"><div class="address"></div>' . $edit . '</div>';
