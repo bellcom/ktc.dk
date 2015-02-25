@@ -9,20 +9,92 @@
  */
 function ktc_users_roles_menu() {
   $items['admin/people/permissions/ktc_users_roles'] = array(
-    'title' => 'KTC Users roles',
+    'title' => 'KTC Users grouptype roles',
     'descripiton' => '',
     'type' => MENU_LOCAL_TASK,
     'access arguments' => array('administer user permissions'),
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('ktc_users_roles_page'),
+    'page arguments' => array('ktc_users_roles_group_page'),
+  );
+
+  $items['admin/people/permissions/ktc_usertype_roles'] = array(
+    'title' => 'KTC Users usertype roles',
+    'descripiton' => '',
+    'type' => MENU_LOCAL_TASK,
+    'access arguments' => array('administer user permissions'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_users_roles_usertype_page'),
   );
   return $items;
 }
 
 /**
+ * Implements hook_user_presave().
+ */
+function ktc_users_roles_user_presave(&$edit, $account, $category) {
+  $usertype_map = variable_get('ktc_users_roles_usertype_map', array());
+
+  $edit_new_usertype = FALSE;
+  if (!empty($edit['field_usertype']) && $edit['field_usertype'][LANGUAGE_NONE][0]['tid']) {
+    $edit_new_usertype = $edit['field_usertype'][LANGUAGE_NONE][0]['tid'];
+  }
+
+  $account_old_usertype = FALSE;
+  if (!empty($account->field_usertype) && $account->field_usertype[LANGUAGE_NONE][0]['tid']) {
+    $account_old_usertype = $account->field_usertype[LANGUAGE_NONE][0]['tid'];
+  }
+
+  // If a usertype was set, and a role rule is set for it. We want to remove it
+  // from the user.
+  if ($account_old_usertype && $usertype_map[$account_old_usertype]) {
+    $role_id = $usertype_map[$account_old_usertype];
+    // Remove the role.
+    $edit['roles'][$role_id] = 0;
+  }
+
+  // If a new usertype is set, and a role rule is set for it. The new role
+  // should be added to the user.
+  if ($edit_new_usertype && $usertype_map[$edit_new_usertype]) {
+    $role_id = $usertype_map[$edit_new_usertype];
+    // Add the role.
+    $edit['roles'][$role_id] = $role_id;
+  }
+}
+
+/**
+ * Page callback for usertype settings.
+ */
+function ktc_users_roles_usertype_page() {
+  $form = array();
+
+  $usertype_vocab = taxonomy_vocabulary_machine_name_load('brugertyper');
+  $usertypes = taxonomy_term_load_multiple(array(), array('vid' => $usertype_vocab->vid));
+
+  $drupal_role_options[0] = t('Ingen');
+  $drupal_role_options = array_merge($drupal_role_options, user_roles());
+
+  $form['ktc_users_roles_usertype_map'] = array(
+    '#tree' => TRUE,
+  );
+
+  $ktc_users_roles_usertype_map = variable_get('ktc_users_roles_usertype_map', array());
+
+  foreach ($usertypes as $type) {
+    $form['ktc_users_roles_usertype_map'][$type->tid] = array(
+      '#type' => 'select',
+      '#prefix' => '<span style="float:left; width: 15%">' . $type->name . '</span>',
+      '#default_value' => !empty($ktc_users_roles_usertype_map) ? $ktc_users_roles_usertype_map[$type->tid] : FALSE,
+      '#options' => $drupal_role_options,
+    );
+  }
+
+  return system_settings_form($form);
+}
+
+/**
  * Page callback for settings.
  */
-function ktc_users_roles_page() {
+function ktc_users_roles_group_page() {
   $grouptype_vocab = taxonomy_vocabulary_machine_name_load('netv_rkstype');
   $grouptypes = taxonomy_term_load_multiple(array(), array('vid' => $grouptype_vocab->vid));
 
@@ -132,7 +204,7 @@ function ktc_users_roles_select_grouptype(&$form, &$form_state) {
 /**
  * Submit handler for settings.
  */
-function ktc_users_roles_page_submit(&$form, &$form_state) {
+function ktc_users_roles_group_page_submit(&$form, &$form_state) {
   $role_map = $form_state['values']['role_map'];
   variable_set('ktc_users_roles_map', $role_map);
 

@@ -21,7 +21,7 @@ function ktc_users_signup_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_users_signup_settings_form'),
     'access arguments' => array('administer site'),
-    'type' => MENU_LOCAL_TASK,
+    'type' => MENU_NORMAL_ITEM,
   );
 
   return $items;
