@@ -38,13 +38,11 @@ class GroupMemberDto extends CrmEntityDto
   /**
    * 
    * @param guid $CrmId
-   * @param boolean $IsActiveMember
    * @access public
    */
-  public function __construct($CrmId, $IsActiveMember)
+  public function __construct($CrmId)
   {
     parent::__construct($CrmId);
-    $this->IsActiveMember = $IsActiveMember;
   }
 
 }

@@ -9,6 +9,13 @@ class GroupDto extends CrmEntityDto
 
   /**
    * 
+   * @var AabenPrivat $AabenPrivat
+   * @access public
+   */
+  public $AabenPrivat = null;
+
+  /**
+   * 
    * @var boolean $Active
    * @access public
    */
@@ -48,6 +55,20 @@ class GroupDto extends CrmEntityDto
    * @access public
    */
   public $GroupType = null;
+
+  /**
+   * 
+   * @var guid $GroupTypeId
+   * @access public
+   */
+  public $GroupTypeId = null;
+
+  /**
+   * 
+   * @var GruppensRollerOgTilladelser $GruppensRollerOgTilladelser
+   * @access public
+   */
+  public $GruppensRollerOgTilladelser = null;
 
   /**
    * 
