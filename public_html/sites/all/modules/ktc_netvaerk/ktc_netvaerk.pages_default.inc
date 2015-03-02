@@ -17,7 +17,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -27;
+  $handler->weight = 2;
   $handler->conf = array(
     'title' => 'Netvaerk',
     'no_blocks' => 0,
@@ -37,6 +37,12 @@ function ktc_netvaerk_default_page_manager_handlers() {
               'group' => 'group',
             ),
           ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'og_is_node_group',
+          'settings' => NULL,
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
         ),
