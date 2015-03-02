@@ -314,15 +314,17 @@ function ktc_users_roles_og_membership_delete($og_membership) {
   $account = user_load($uid);
   $edit['roles'] = $account->roles;
 
-  $never_remove = variable_get('ktc_users_roles_never_remove', array());
+  if ($edit['roles']) {
+    $never_remove = variable_get('ktc_users_roles_never_remove', array());
 
-  foreach ($edit['roles'] as $rid) {
-    if (!in_array($rid, $never_remove)) {
-      unset($edit['roles'][$rid]);
+    foreach ($edit['roles'] as $rid) {
+      if (!in_array($rid, $never_remove)) {
+        unset($edit['roles'][$rid]);
+      }
     }
-  }
 
-  user_save($account, $edit);
+    user_save($account, $edit);
+  }
 }
 
 /**

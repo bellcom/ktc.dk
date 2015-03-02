@@ -4,7 +4,9 @@ namespace KTC\GroupService;
 
 include_once('GroupDto.php');
 include_once('CrmEntityDto.php');
+include_once('AabenPrivat.php');
 include_once('ReferenceDto.php');
+include_once('GruppensRollerOgTilladelser.php');
 include_once('Region.php');
 include_once('Request.php');
 include_once('GroupRetrieveResponse.php');

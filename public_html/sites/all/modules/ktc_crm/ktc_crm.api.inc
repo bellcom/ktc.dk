@@ -250,6 +250,44 @@ function ktc_crm_fetch_groups($options = array()) {
 }
 
 /**
+ * Fetch grouptypes from the webservice.
+ */
+function ktc_crm_fetch_grouptypess($options = array()) {
+  $logger = KtcCrmLogger::getInstance();
+  $url = variable_get('ktc_crm_url', '');
+
+  $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
+
+  try {
+    $groupservice = new \KTC\GroupService\GroupService(array(), $wsdl_url);
+
+    $request = new \KTC\GroupService\Request();
+
+    foreach ($options as $key => $value) {
+      $request->$key = $value;
+    }
+
+    $retrivegrouptypes = new \KTC\GroupService\RetrieveGroupTypes($request);
+
+    $result = $groupservice->RetrieveGroupTypes($retrivegrouptypes);
+
+    $logger->log->addDebug('RetrieveGroupTypess result', $result);
+
+    if (is_object($result) && isset($result->RetrieveGroupTypesResult)) {
+      return $result->RetrieveGroupTypesResult;
+    }
+  }
+  catch (\Exception $e) {
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => __FUNCTION__,
+    ));
+  }
+
+  return FALSE;
+}
+
+/**
  * Fetch group userroles from the webservice.
  */
 function ktc_crm_fetch_grouproles($options = array()) {

@@ -1,0 +1,270 @@
+<?php
+/**
+ * @file
+ * KTC Users edit module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_users_edit_menu() {
+  $items['admin/config/people/ktc_users_edit'] = array(
+    'title' => 'Settings for redigering af KTC brugere',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_users_edit_settings_form'),
+    'access arguments' => array('administer site'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['ktc_users_edit/company_form'] = array(
+    'title' => 'Virksomhedsoplysninger',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_users_edit_company_form'),
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['ktc_users_edit/get_account_address'] = array(
+    'page callback' => 'ktc_users_edit_account_address',
+    'access callback'   => 'user_is_logged_in',
+    'delivery callback' => 'drupal_json_output',
+  );
+  return $items;
+}
+
+/**
+ * Company edit form.
+ */
+function ktc_users_edit_company_form() {
+  $form = array();
+
+  global $user;
+  $account = user_load($user->uid);
+
+  $vocab = taxonomy_vocabulary_machine_name_load('accounts');
+
+  $invoiceaccount = _ktc_crm_account_get_users_account($account);
+
+  $css = '
+      #edit-account-hierarchical-select-selects-0 {display: none;}
+    ';
+
+  drupal_add_css($css, 'inline');
+
+  $form['prefix'] = array(
+    '#type' => 'item',
+    '#markup' => variable_get('ktc_users_edit_company_form_message', ''),
+  );
+
+  $form['account'] = array(
+    '#type' => 'hierarchical_select',
+    '#title' => t('Organisatorisk placering'),
+    '#required' => TRUE,
+    '#config' => array(
+      'module' => 'hs_taxonomy',
+      'params' => array(
+        'vid' => $vocab->vid,
+      ),
+    ),
+    '#default_value' => $invoiceaccount->tid,
+  );
+
+  $form['company_name'] = array(
+    '#title' => t('Firma/afdelingsnavn'),
+    '#type' => 'textfield',
+  );
+
+  $form['address_line_1'] = array(
+    '#title' => t('Adresse 1'),
+    '#type' => 'textfield',
+  );
+
+  $form['address_line_2'] = array(
+    '#title' => t('Adresse 2'),
+    '#type' => 'textfield',
+  );
+
+  $form['postal_code'] = array(
+    '#title' => t('Postnummer'),
+    '#type' => 'textfield',
+  );
+
+  $form['city'] = array(
+    '#title' => t('By'),
+    '#type' => 'textfield',
+  );
+
+  $form['comment'] = array(
+    '#title' => t('Kommentar'),
+    '#type' => 'textarea',
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Send'),
+  );
+
+  return $form;
+}
+
+/**
+ * Submit handler for company edit form.
+ */
+function ktc_users_edit_company_form_submit(&$form, &$form_state) {
+  $fields = array(
+    'account',
+    'company_name',
+    'address_line_1',
+    'address_line_2',
+    'postal_code',
+    'city',
+    'comment',
+  );
+
+  foreach ($fields as $field) {
+    $label = $form[$field]['#title'];
+    $value = $form_state['values'][$field];
+
+    if ($field == 'account') {
+      $term = taxonomy_term_load(reset($value));
+
+      $terms = array_reverse(taxonomy_get_parents($term->tid));
+
+      foreach ($terms as $_term) {
+        $_value .= "$_term->name -> \n";
+      }
+
+      $_value .= "$term->name \n";
+      $value = $_value;
+    }
+
+    $lines[] = "$label: \n$value";
+  }
+
+  $reply = implode($lines, "\n\n");
+
+  global $user;
+  global $base_url;
+  $account = user_load($user->uid);
+
+  $message = <<<EOL
+En bruger, $account->mail, har sendt en opdatering til sine virksomhedsinformationer.
+
+  $base_url/user/$account->uid
+
+Udfyldt formular:
+$reply
+
+EOL;
+
+  $params['subject'] = 'Formular for virksomhedsinformationer indsendt.';
+  $params['body'] = $message;
+  $language = $user->language;
+  $to = variable_get('ktc_users_edit_company_form_recipient', variable_get('site_mail', ''));
+
+  drupal_mail('ktc_users_edit', 'notify_new', $to, $language, $params);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function ktc_users_edit_mail($key, &$message, $params) {
+  $message['subject'] = $params['subject'];
+  $message['body'][] = $params['body'];
+}
+
+/**
+ * Get account address AJAX callback.
+ */
+function ktc_users_edit_account_address($account_tid) {
+  if ($account = taxonomy_term_load($account_tid)) {
+    return array(_ktc_crm_get_formatted_address($account, 'taxonomy_term'));
+  }
+}
+
+/**
+ * Form callback for settings.
+ */
+function ktc_users_edit_settings_form() {
+  $form = array();
+
+  $usertype_vocab = taxonomy_vocabulary_machine_name_load('brugertyper');
+  $usertypes = taxonomy_term_load_multiple(array(), array('vid' => $usertype_vocab->vid));
+
+  $form['ktc_users_edit_type_company_map'] = array(
+    '#tree' => TRUE,
+  );
+
+  $ktc_users_edit_type_company_map = variable_get('ktc_users_edit_type_company_map', array());
+
+  foreach ($usertypes as $usertype) {
+    $form['ktc_users_edit_type_company_map'][$usertype->tid] = array(
+      '#title' => 'Start top niveau tid for: ' . $usertype->name,
+      '#type' => 'textfield',
+      '#default_value' => !empty($ktc_users_edit_type_company_map) ? $ktc_users_edit_type_company_map[$usertype->tid] : FALSE,
+    );
+
+    $usertypes_options[$usertype->tid] = $usertype->name;
+  }
+
+  $form['ktc_users_edit_company_message'] = array(
+    '#title' => 'Besked ved firma adresse info',
+    '#type' => 'textarea',
+    '#default_value' => variable_get('ktc_users_edit_company_message', ''),
+    '#suffix' => 'Link til formular:<pre>&#x3C;a href=&#x22;/ktc_users_edit/company_form&#x22;&#x3E;Link tekst&#x3C;/a&#x3E;</pre>',
+  );
+
+  $form['ktc_users_edit_company_form_message'] = array(
+    '#title' => 'Besked på virksomhedsoplysningsside',
+    '#type' => 'textarea',
+    '#markup' => variable_get('ktc_users_edit_company_form_message', ''),
+  );
+
+  $form['ktc_users_edit_company_form_mail'] = array(
+    '#title' => 'E-mail modtager',
+    '#type' => 'textfield',
+    '#markup' => variable_get('ktc_users_edit_company_form_mail', ''),
+  );
+
+  $form['ktc_users_edit_limitmembershipfields'] = array(
+    '#title' => 'Begræns medlemsskabsfelter på',
+    '#options' => $usertypes_options,
+    '#type' => 'select',
+    '#multiple' => TRUE,
+    '#default_value' => variable_get('ktc_users_edit_limitmembershipfields', array()),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_users_edit_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_profile_form') {
+
+    $usertype_map = variable_get('ktc_users_edit_type_company_map', array());
+    $membership_map = variable_get('ktc_users_edit_limitmembershipfields', array());
+
+    drupal_add_js(array('ktcUsersEdit' => array('usertypeMap' => $usertype_map)), 'setting');
+    drupal_add_js(array('ktcUsersEdit' => array('membershipMap' => $membership_map)), 'setting');
+    drupal_add_js(drupal_get_path('module', 'ktc_users_edit') . '/ktc_users_edit.js');
+    $edit = variable_get('ktc_users_edit_company_message', '');
+    $form['field_account']['#suffix'] = '<div class="account-address"><div class="address"></div>' . $edit . '</div>';
+  }
+}
+
+/**
+ * Implements hook_webform_component_info().
+ */
+function ktc_users_edit_webform_component_info() {
+  $components = array();
+
+  $components['account_ref'] = array(
+    'label' => t('Company account reference'),
+    'description' => t('Reference the users company account'),
+    'file' => 'components/account_ref.inc',
+  );
+
+  return $components;
+}
