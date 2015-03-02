@@ -6197,6 +6197,7 @@ div.password-suggestions ul {
 }
 .form-autocomplete .input-group-addon {
   background-color: #ffffff;
+  padding: 2px 11px;
 }
 .ajax-progress .glyphicon {
   font-size: 90%;

@@ -22,14 +22,30 @@ function ktc_hearing_attendees_init() {
 function ktc_hearing_attendees_field_widget_form_alter(&$element, &$form_state, $context) {
   $show_for_fields = array(
     'field_attendees',
+  );
+
+  if (isset($element['#field_name']) && in_array($element['#field_name'], $show_for_fields)) {
+    $url = url($element['#autocomplete_path'], array('absolute' => TRUE));
+
+    $element['#suffix'] = '<div class="chosen-entityreference-container"><select data-placeholder="Vælg" class="form-control chosen-entityreference ajax" multiple data-autocomplete-path="' . $url . '">' . _ktc_hearing_attendees_selected($element) . '</select></div>';
+  }
+
+  $show_for_fields = array(
     'field_chairman',
     'field_coordinator',
+  );
+
+  if (isset($element['#field_name']) && in_array($element['#field_name'], $show_for_fields)) {
+    $element['#suffix'] = '<div class="chosen-entityreference-container"><select data-placeholder="Vælg" class="form-control chosen-entityreference no-ajax" multiple>' . _ktc_hearing_attendees_selected($element) . '</select></div>';
+  }
+
+  $show_for_fields = array(
     'field_responsible_foreman',
     'field_responsible_admin',
   );
 
   if (isset($element['#field_name']) && in_array($element['#field_name'], $show_for_fields)) {
-    $element['#suffix'] = '<div class="chosen-entityreference-container"><select data-placeholder="Vælg" class="form-control chosen-entityreference" multiple data-autocomplete-path="' . url($element['#autocomplete_path'], array('absolute' => TRUE)) . '">' . _ktc_hearing_attendees_selected($element) . '</select></div>';
+    $element['#suffix'] = '<div class="chosen-entityreference-container"><select data-placeholder="Vælg" class="form-control chosen-entityreference no-ajax">' . _ktc_hearing_attendees_selected($element) . '</select></div>';
   }
 }
 
@@ -61,6 +77,12 @@ function ktc_hearing_attendees_menu() {
   $items['ktc_hearing_attendees/get_group_members'] = array(
     'access callback'   => 'user_is_logged_in',
     'page callback'     => 'ktc_hearing_attendees_get_group_members',
+    'delivery callback' => 'drupal_json_output',
+  );
+
+  $items['ktc_hearing_attendees/get_group_foremen'] = array(
+    'access callback'   => 'user_is_logged_in',
+    'page callback'     => 'ktc_hearing_attendees_get_group_foremen',
     'delivery callback' => 'drupal_json_output',
   );
   return $items;
@@ -96,6 +118,43 @@ function ktc_hearing_attendees_get_group_members($id = NULL) {
         if (in_array('Høringstovholder', $roles)) {
           $members['coordinator'][$member_value] = $account->name;
           $members['responsible-admin'][$member_value] = $account->name;
+        }
+      }
+    }
+
+    return $members;
+  }
+  return FALSE;
+}
+
+/**
+ * Page callback, get foremen members for group.
+ */
+function ktc_hearing_attendees_get_group_foremen($id = NULL) {
+  if ($group = node_load($id)) {
+    $members = array();
+    if ($member_uids = og_get_group_members_properties($group, array(), 'members', 'node')) {
+      foreach ($member_uids as $member_uid) {
+        $roles = og_get_user_roles('node', $id, $member_uid, $include = TRUE);
+
+        if (in_array($member_uid, array(1, 1974))) {
+          continue;
+        }
+
+        $account = user_load($member_uid);
+
+        $member_value = $account->name . ' (' . $member_uid . ')';
+
+        if (in_array('member', $roles)) {
+          $members['attendees'][$member_value] = $account->name;
+        }
+
+        if (in_array('Formand', $roles)) {
+          $members['chairman'][$member_value] = $account->name;
+        }
+
+        if (in_array('Høringstovholder', $roles)) {
+          $members['coordinator'][$member_value] = $account->name;
         }
       }
     }

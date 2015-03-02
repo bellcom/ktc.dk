@@ -422,7 +422,7 @@ function ktc_netvaerk_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 22411,
+      'default_image' => 23711,
       'file_directory' => 'netvaerk',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '5 MB',
