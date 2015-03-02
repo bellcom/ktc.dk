@@ -1,0 +1,3 @@
+name = KTC Users signup
+description = Custom signup flow for ktc users
+core = 7.x

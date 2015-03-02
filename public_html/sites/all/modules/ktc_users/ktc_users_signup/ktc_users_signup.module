@@ -1,0 +1,210 @@
+<?php
+/**
+ * @file
+ * KTC Users signup module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_users_signup_menu() {
+  $items['user/signup'] = array(
+    'title' => 'Opret bruger',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_users_signup_form'),
+    'access callback' => TRUE,
+  );
+
+  $items['admin/config/people/ktc_users_signup'] = array(
+    'title' => 'KTC Opret bruger',
+    'description' => 'Indstillinger for KTC opret bruger',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_users_signup_settings_form'),
+    'access arguments' => array('administer site'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Settings for ktc users signup.
+ */
+function ktc_users_signup_settings_form() {
+  $form['ktc_users_signup_preface'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Forord'),
+    '#default_value' => variable_get('ktc_users_signup_preface', ''),
+  );
+
+  $form['ktc_users_signup_pre_usertype'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Før brugertyper'),
+    '#default_value' => variable_get('ktc_users_signup_pre_usertype', ''),
+  );
+
+  $form['ktc_users_signup_suffix'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Efterord'),
+    '#default_value' => variable_get('ktc_users_signup_suffix', ''),
+  );
+
+  $form['ktc_users_signup_completed'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Bruger oprettet'),
+    '#default_value' => variable_get('ktc_users_signup_completed', ''),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Signup form.
+ */
+function ktc_users_signup_form($form, &$form_state) {
+  $form = array();
+
+  global $user;
+  if ($user->uid) {
+    drupal_goto('user');
+  }
+
+  if ($form_state['rebuild']) {
+    $form['completed'] = array(
+      '#type' => 'item',
+      '#markup' => variable_get('ktc_users_signup_completed', ''),
+    );
+    return $form;
+  }
+
+  $usertype_vocab = taxonomy_vocabulary_machine_name_load('brugertyper');
+
+  $usertypes = taxonomy_term_load_multiple(array(), array('vid' => $usertype_vocab->vid));
+
+  $usertype_options = array();
+
+  foreach ($usertypes as $usertype) {
+    $usertype_options[$usertype->tid] = array(
+      $usertype->name,
+      $usertype->description,
+    );
+  }
+
+  $form['preface'] = array(
+    '#type' => 'item',
+    '#markup' => variable_get('ktc_users_signup_preface', ''),
+  );
+
+  $form['name'] = array(
+    '#title' => t('Navn'),
+    '#required' => TRUE,
+    '#type' => 'textfield',
+  );
+
+  $form['mail'] = array(
+    '#title' => t('E-mail'),
+    '#required' => TRUE,
+    '#type' => 'textfield',
+  );
+
+  $form['pass'] = array(
+    '#title' => t('Adgangkode'),
+    '#required' => TRUE,
+    '#type' => 'password',
+  );
+
+  $form['pass_repeat'] = array(
+    '#title' => t('Gentag adgangkode'),
+    '#required' => TRUE,
+    '#type' => 'password',
+  );
+
+  $form['pre_usertype'] = array(
+    '#markup' => variable_get('ktc_users_signup_pre_usertype', ''),
+    '#required' => TRUE,
+    '#type' => 'item',
+  );
+
+  $form['usertype'] = array(
+    '#header' => array('Brugertype', 'Beskrivelse'),
+    '#multiple' => FALSE,
+    '#options' => $usertype_options,
+    '#type' => 'tableselect',
+  );
+
+  $form['suffix'] = array(
+    '#type' => 'item',
+    '#markup' => variable_get('ktc_users_signup_suffix', ''),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Opret',
+  );
+
+  return $form;
+}
+
+/**
+ * Implements hook_FORM_ID_validate().
+ */
+function ktc_users_signup_form_validate($form, $form_state) {
+  if (!$form_state['values']['usertype']) {
+    form_set_error('usertype', t('Du skal angive en brugertype.'));
+  }
+
+  if ($form_state['values']['pass'] != $form_state['values']['pass_repeat']) {
+    form_set_error('pass_repeat', t('De indtastede adgangkoder er ikke ens.'));
+  }
+
+  if ($message = user_validate_mail($form_state['values']['mail'])) {
+    form_set_error('mail', $message);
+  }
+
+  $mail = $form_state['values']['mail'];
+  if (db_query("SELECT mail FROM {users} WHERE LOWER(:mail) = LOWER(mail)",
+    array(':mail' => $mail))->fetchField()) {
+    form_set_error('mail', t('E-mail adressen er allerede i brug, hvis du har glemt din kode, kan du trykke <a href="@link">her</a> for at nulstille den.', array('@link' => 'user/password')));
+  }
+}
+
+/**
+ * Implements hook_FORM_ID_submit().
+ */
+function ktc_users_signup_form_submit(&$form, &$form_state) {
+  $name = $form_state['values']['name'];
+  $mail = $form_state['values']['mail'];
+  $pass = $form_state['values']['pass'];
+  $usertype = $form_state['values']['usertype'];
+
+  $fields = array(
+    'name' => $mail,
+    'field_navn' => array(LANGUAGE_NONE => array(array('value' => $name))),
+    'field_usertype' => array(LANGUAGE_NONE => array(array('tid' => $usertype))),
+    'mail' => $mail,
+    'pass' => $pass,
+    'status' => 1,
+    'init' => 'mail address',
+    'roles' => array(
+      DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+    ),
+  );
+
+  $account = user_save('', $fields);
+
+  $op = 'register_no_approval_required';
+  // Send an email.
+  _user_mail_notify($op, $account);
+
+  $form_state['rebuild'] = TRUE;
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function ktc_users_user_login(&$edit, $account) {
+  if ($account->access == 0) {
+    global $user;
+    drupal_goto('user/' . $user->uid . '/edit');
+  }
+}
