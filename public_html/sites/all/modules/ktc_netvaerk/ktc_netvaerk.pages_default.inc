@@ -289,7 +289,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'toggle-pane-content',
     );
     $pane->extras = array();
     $pane->position = 3;
