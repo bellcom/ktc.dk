@@ -11,6 +11,7 @@ include_once('AccountRetrieveResponse.php');
 include_once('RetrieveResponseOfAccountDtowsdCoMqt.php');
 include_once('AccountDto.php');
 include_once('CrmEntityDto.php');
+include_once('EANAddressDto.php');
 include_once('AddressDto.php');
 include_once('AddressType.php');
 include_once('Region.php');
@@ -19,7 +20,6 @@ include_once('RetrieveAccountByIdResponse.php');
 include_once('RetrieveContactsForAccountById.php');
 include_once('RetrieveContactsForAccountByIdResponse.php');
 include_once('WebUserDto.php');
-include_once('EANAddressDto.php');
 
 
 /**
@@ -43,13 +43,13 @@ class AccountService extends \SoapClient
     'RetrieveResponseOfAccountDtowsdCoMqt' => 'KTC\AccountService\RetrieveResponseOfAccountDtowsdCoMqt',
     'AccountDto' => 'KTC\AccountService\AccountDto',
     'CrmEntityDto' => 'KTC\AccountService\CrmEntityDto',
+    'EANAddressDto' => 'KTC\AccountService\EANAddressDto',
     'AddressDto' => 'KTC\AccountService\AddressDto',
     'RetrieveAccountById' => 'KTC\AccountService\RetrieveAccountById',
     'RetrieveAccountByIdResponse' => 'KTC\AccountService\RetrieveAccountByIdResponse',
     'RetrieveContactsForAccountById' => 'KTC\AccountService\RetrieveContactsForAccountById',
     'RetrieveContactsForAccountByIdResponse' => 'KTC\AccountService\RetrieveContactsForAccountByIdResponse',
-    'WebUserDto' => 'KTC\AccountService\WebUserDto',
-    'EANAddressDto' => 'KTC\AccountService\EANAddressDto');
+    'WebUserDto' => 'KTC\AccountService\WebUserDto');
 
   /**
    * 

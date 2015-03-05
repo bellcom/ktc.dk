@@ -156,6 +156,13 @@ class WebUserDto extends CrmEntityDto
 
   /**
    * 
+   * @var string $LastSavedByDrupalName
+   * @access public
+   */
+  public $LastSavedByDrupalName = null;
+
+  /**
+   * 
    * @var string $LinkedInBrugernavn
    * @access public
    */
