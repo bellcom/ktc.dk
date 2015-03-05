@@ -20,3 +20,14 @@ function ktc_content_types_entity_info_alter(&$entity_info) {
     'custom settings' => TRUE,
   );
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_content_types_form_alter(&$form, &$form_state, $form_id) {
+  // On node comment forms, hide the notify settings. Don't allow the user
+  // to decide wether og not to recieve notifications.
+  if (strstr($form_id, 'comment_node_')) {
+    unset($form['notify_settings']);
+  }
+}
