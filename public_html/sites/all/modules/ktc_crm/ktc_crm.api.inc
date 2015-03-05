@@ -169,6 +169,9 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
   if ($crm_uuid_field = field_get_items('user', $account, 'field_crm_uuid')) {
     $user_uuid = strtolower($crm_uuid_field[0]['value']);
   }
+  else {
+    return FALSE;
+  }
 
   $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
@@ -184,7 +187,7 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
 
     $user_subscriptions = array();
     if (is_object($result) && isset($result->RetrieveSubscriptionsForSubscriberResult)) {
-      foreach ($result->RetrieveSubscriptionsForSubscriberResult as $subscription) {
+      foreach ($result->RetrieveSubscriptionsForSubscriberResult->SubscriptionDto as $subscription) {
         $subscription->is_active = TRUE;
 
         if ($subscription->EndDate) {
