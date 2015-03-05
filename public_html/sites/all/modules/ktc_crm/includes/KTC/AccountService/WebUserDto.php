@@ -23,6 +23,13 @@ class WebUserDto extends CrmEntityDto
 
   /**
    * 
+   * @var string $AndreKompetencer
+   * @access public
+   */
+  public $AndreKompetencer = null;
+
+  /**
+   * 
    * @var dateTime $Birthday
    * @access public
    */
@@ -72,6 +79,13 @@ class WebUserDto extends CrmEntityDto
 
   /**
    * 
+   * @var string $EmnerFraWeb
+   * @access public
+   */
+  public $EmnerFraWeb = null;
+
+  /**
+   * 
    * @var boolean $EnvinaMember
    * @access public
    */
@@ -107,6 +121,13 @@ class WebUserDto extends CrmEntityDto
 
   /**
    * 
+   * @var boolean $KtcMember
+   * @access public
+   */
+  public $KtcMember = null;
+
+  /**
+   * 
    * @var boolean $KvfMember
    * @access public
    */
@@ -125,6 +146,34 @@ class WebUserDto extends CrmEntityDto
    * @access public
    */
   public $LastName = null;
+
+  /**
+   * 
+   * @var string $LastSavedByCrmName
+   * @access public
+   */
+  public $LastSavedByCrmName = null;
+
+  /**
+   * 
+   * @var string $LastSavedByDrupalName
+   * @access public
+   */
+  public $LastSavedByDrupalName = null;
+
+  /**
+   * 
+   * @var string $LinkedInBrugernavn
+   * @access public
+   */
+  public $LinkedInBrugernavn = null;
+
+  /**
+   * 
+   * @var string $MemberOther
+   * @access public
+   */
+  public $MemberOther = null;
 
   /**
    * 
@@ -163,10 +212,31 @@ class WebUserDto extends CrmEntityDto
 
   /**
    * 
+   * @var string $TwitterBrugernavn
+   * @access public
+   */
+  public $TwitterBrugernavn = null;
+
+  /**
+   * 
    * @var string $Typo3Id
    * @access public
    */
   public $Typo3Id = null;
+
+  /**
+   * 
+   * @var string $UddannelseOgKurser
+   * @access public
+   */
+  public $UddannelseOgKurser = null;
+
+  /**
+   * 
+   * @var string $UdpegningerIForeningerUdvalgOgNaevn
+   * @access public
+   */
+  public $UdpegningerIForeningerUdvalgOgNaevn = null;
 
   /**
    * 
@@ -181,62 +251,6 @@ class WebUserDto extends CrmEntityDto
    * @access public
    */
   public $Website = null;
-
-  /**
-   * 
-   * @var boolean $WorkAreaAdministration
-   * @access public
-   */
-  public $WorkAreaAdministration = null;
-
-  /**
-   * 
-   * @var boolean $WorkAreaAdvisory
-   * @access public
-   */
-  public $WorkAreaAdvisory = null;
-
-  /**
-   * 
-   * @var boolean $WorkAreaCaseworker
-   * @access public
-   */
-  public $WorkAreaCaseworker = null;
-
-  /**
-   * 
-   * @var boolean $WorkAreaConsultancy
-   * @access public
-   */
-  public $WorkAreaConsultancy = null;
-
-  /**
-   * 
-   * @var boolean $WorkAreaDevelopment
-   * @access public
-   */
-  public $WorkAreaDevelopment = null;
-
-  /**
-   * 
-   * @var boolean $WorkAreaManagement
-   * @access public
-   */
-  public $WorkAreaManagement = null;
-
-  /**
-   * 
-   * @var boolean $WorkAreaOther
-   * @access public
-   */
-  public $WorkAreaOther = null;
-
-  /**
-   * 
-   * @var boolean $WorkAreaPolitics
-   * @access public
-   */
-  public $WorkAreaPolitics = null;
 
   /**
    * 
