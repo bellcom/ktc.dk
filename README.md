@@ -14,7 +14,7 @@
 * drush vset composer_manager_vendor_dir ../vendor
 * drush vset composer_manager_file_dir ../
 * cd ..
-* drush -r '<path_to_public_html>' composer-rebuild
+* drush -r \<path_to_public_html\> composer-rebuild
 * composer install
 * cd public_html
 * drush en elasticsearch_connector # y, y, y
