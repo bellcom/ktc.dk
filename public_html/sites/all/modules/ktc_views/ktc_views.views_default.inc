@@ -2666,6 +2666,8 @@ function ktc_views_views_default_views() {
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
@@ -3062,7 +3064,7 @@ function ktc_views_views_default_views() {
     7 => 0,
     8 => 0,
   );
-  $handler->display->display_options['path'] = 'admin/user_search';
+  $handler->display->display_options['path'] = 'search/brugersoegning';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Personsøgning';
   $handler->display->display_options['menu']['name'] = 'management';
