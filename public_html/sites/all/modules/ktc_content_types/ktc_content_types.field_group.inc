@@ -346,7 +346,7 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_generelst';
   $field_group->data = array(
-    'label' => 'Features',
+    'label' => 'Intro',
     'weight' => '21',
     'children' => array(
       0 => 'field_ekstra_artikler',
@@ -355,12 +355,13 @@ function ktc_content_types_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Intro',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-featured field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-featured field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_featured|node|magazine|form'] = $field_group;
@@ -382,8 +383,6 @@ function ktc_content_types_field_group_info() {
       1 => 'group_annoncer',
       2 => 'group_sider',
       3 => 'group_featured',
-      4 => 'group_hidden',
-      5 => 'group_andet',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(

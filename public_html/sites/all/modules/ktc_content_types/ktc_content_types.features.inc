@@ -54,7 +54,7 @@ function ktc_content_types_node_info() {
       'help' => '',
     ),
     'magazine' => array(
-      'name' => t('Bladintro'),
+      'name' => t('Magasin'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
