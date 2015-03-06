@@ -852,7 +852,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_magasin_side_artikel']['label'] = 'Artikler';
   $handler->display->display_options['fields']['field_magasin_side_artikel']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_magasin_side_artikel']['settings'] = array(
-    'link' => 0,
+    'link' => 1,
   );
   $handler->display->display_options['fields']['field_magasin_side_artikel']['delta_offset'] = '0';
   /* Felt: Field collection item: Status */
@@ -966,21 +966,22 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'panels_fields';
+  $handler->display->display_options['row_options']['layout'] = 'ktcstd';
   $handler->display->display_options['row_options']['regions'] = array(
-    'title' => 'left',
-    'field_bannere' => 'left',
-    'field_banner_1_tekst_og_link' => 'left',
-    'field_banner_2' => 'left',
-    'field_banner_2_tekst_og_link' => 'left',
-    'field_ekstra_artikler' => 'left',
-    'field_forside_billede_' => 'left',
-    'field_linkbladreversion' => 'left',
-    'field_magasin_indhold' => 'right',
-    'delta' => 'right',
-    'field_magasin_leder' => 'left',
-    'field_top_artikel' => 'left',
-    'field_udgave' => 'left',
-    'field_udgivelsesdato' => 'left',
+    'title' => 'right',
+    'field_udgivelsesdato' => 'right',
+    'field_udgave' => 'right',
+    'field_forside_billede_' => 'right',
+    'field_top_artikel' => 'right',
+    'field_ekstra_artikler' => 'right',
+    'field_bannere' => 'right',
+    'field_banner_1_tekst_og_link' => 'right',
+    'field_banner_2' => 'right',
+    'field_banner_2_tekst_og_link' => 'right',
+    'field_linkbladreversion' => 'right',
+    'delta' => 'left',
+    'field_magasin_indhold' => 'left',
+    'edit_node' => 'right',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
@@ -1031,17 +1032,13 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_forside_billede_']['id'] = 'field_forside_billede_';
   $handler->display->display_options['fields']['field_forside_billede_']['table'] = 'field_data_field_forside_billede_';
   $handler->display->display_options['fields']['field_forside_billede_']['field'] = 'field_forside_billede_';
-  $handler->display->display_options['fields']['field_forside_billede_']['label'] = 'Forside';
+  $handler->display->display_options['fields']['field_forside_billede_']['label'] = '';
+  $handler->display->display_options['fields']['field_forside_billede_']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_forside_billede_']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_forside_billede_']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'netvaerks_logo',
     'image_link' => '',
   );
-  /* Felt: Handler mangler eller er i stykker */
-  $handler->display->display_options['fields']['field_magasin_leder']['id'] = 'field_magasin_leder';
-  $handler->display->display_options['fields']['field_magasin_leder']['table'] = 'field_data_field_magasin_leder';
-  $handler->display->display_options['fields']['field_magasin_leder']['field'] = 'field_magasin_leder';
-  $handler->display->display_options['fields']['field_magasin_leder']['label'] = 'Magasin leder';
   /* Felt: Indhold: Top artikel */
   $handler->display->display_options['fields']['field_top_artikel']['id'] = 'field_top_artikel';
   $handler->display->display_options['fields']['field_top_artikel']['table'] = 'field_data_field_top_artikel';
@@ -1188,8 +1185,6 @@ function teknik_og_miljoe_views_default_views() {
     t('Page'),
     t('Udgivelsesdato'),
     t('Udgave'),
-    t('Forside'),
-    t('Magasin leder'),
     t('Top artikel'),
     t('Ekstra artikler'),
     t('Banner 1'),
