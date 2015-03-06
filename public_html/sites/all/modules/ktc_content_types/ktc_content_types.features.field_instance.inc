@@ -80,11 +80,8 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
         'content_taxonomy_opt_groups' => FALSE,
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
       ),
       'type' => 'options_select',
       'weight' => 6,

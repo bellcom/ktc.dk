@@ -101,6 +101,51 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Artikel type */
+  $handler->display->display_options['fields']['field_artikel_type']['id'] = 'field_artikel_type';
+  $handler->display->display_options['fields']['field_artikel_type']['table'] = 'field_data_field_artikel_type';
+  $handler->display->display_options['fields']['field_artikel_type']['field'] = 'field_artikel_type';
+  $handler->display->display_options['fields']['field_artikel_type']['exclude'] = TRUE;
+  /* Felt: Indhold: Nyhedstype */
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['id'] = 'field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['table'] = 'field_data_field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['field'] = 'field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['exclude'] = TRUE;
+  /* Felt: Indhold: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[title] [field_artikel_type] [field_os2web_news_page_type] - [type]
+';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'artikler' => 'artikler',
+    'os2web_base_news' => 'os2web_base_news',
+  );
 
   /* Display: Side */
   $handler = $view->new_display('page', 'Side', 'page_1');
@@ -142,6 +187,82 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['filters']['field_artikel_type_value']['value'] = array(
     'leder' => 'leder',
   );
+
+  /* Display: Artikler og Nyheder - m type */
+  $handler = $view->new_display('entityreference', 'Artikler og Nyheder - m type', 'entityreference_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: Entity Reference: Refereret entity */
+  $handler->display->display_options['relationships']['field_magasin_target_id']['id'] = 'field_magasin_target_id';
+  $handler->display->display_options['relationships']['field_magasin_target_id']['table'] = 'field_data_field_magasin';
+  $handler->display->display_options['relationships']['field_magasin_target_id']['field'] = 'field_magasin_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Artikel type */
+  $handler->display->display_options['fields']['field_artikel_type']['id'] = 'field_artikel_type';
+  $handler->display->display_options['fields']['field_artikel_type']['table'] = 'field_data_field_artikel_type';
+  $handler->display->display_options['fields']['field_artikel_type']['field'] = 'field_artikel_type';
+  $handler->display->display_options['fields']['field_artikel_type']['exclude'] = TRUE;
+  /* Felt: Indhold: Nyhedstype */
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['id'] = 'field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['table'] = 'field_data_field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['field'] = 'field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['exclude'] = TRUE;
+  /* Felt: Indhold: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  /* Felt: Indhold: Magasin */
+  $handler->display->display_options['fields']['field_magasin']['id'] = 'field_magasin';
+  $handler->display->display_options['fields']['field_magasin']['table'] = 'field_data_field_magasin';
+  $handler->display->display_options['fields']['field_magasin']['field'] = 'field_magasin';
+  $handler->display->display_options['fields']['field_magasin']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_magasin']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_magasin']['alter']['text'] = '- [field_magasin] ';
+  $handler->display->display_options['fields']['field_magasin']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_magasin']['settings'] = array(
+    'link' => 0,
+  );
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[title] [field_artikel_type] [field_os2web_news_page_type] - [type] [field_magasin]
+';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'artikler' => 'artikler',
+    'os2web_base_news' => 'os2web_base_news',
+  );
   $translatables['artikler'] = array(
     t('Master'),
     t('mere'),
@@ -160,8 +281,18 @@ function teknik_og_miljoe_views_default_views() {
     t('Indhold entity refereret fra field_magasin'),
     t('Alle'),
     t('Entity Reference'),
+    t('Artikel type'),
+    t('Nyhedstype'),
+    t('Type'),
+    t('[title] [field_artikel_type] [field_os2web_news_page_type] - [type]
+'),
     t('Side'),
     t('Entity Reference - Leder'),
+    t('Artikler og Nyheder - m type'),
+    t('Magasin'),
+    t('- [field_magasin] '),
+    t('[title] [field_artikel_type] [field_os2web_news_page_type] - [type] [field_magasin]
+'),
   );
   $export['artikler'] = $view;
 

@@ -1025,6 +1025,9 @@ function ktc_content_types_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_magasin_side_artikel',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'node' => array(
         'columns' => array(
@@ -1050,7 +1053,7 @@ function ktc_content_types_field_default_field_bases() {
         ),
         'view' => array(
           'args' => array(),
-          'display_name' => 'entityreference_1',
+          'display_name' => 'entityreference_3',
           'view_name' => 'artikler',
         ),
       ),

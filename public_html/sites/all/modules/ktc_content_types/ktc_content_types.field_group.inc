@@ -359,7 +359,7 @@ function ktc_content_types_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-featured field-group-tab',
-        'description' => '',
+        'description' => 'Månedens forside',
       ),
       'formatter' => 'closed',
     ),
@@ -683,12 +683,13 @@ function ktc_content_types_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Sider',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-sider field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-sider field-group-tab hidden',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_sider|node|magazine|form'] = $field_group;
