@@ -16,10 +16,17 @@ class AccountDto extends CrmEntityDto
 
   /**
    * 
-   * @var AddressDto $Address
+   * @var EANAddressDto $Address
    * @access public
    */
   public $Address = null;
+
+  /**
+   * 
+   * @var string $CustomerTypeName
+   * @access public
+   */
+  public $CustomerTypeName = null;
 
   /**
    * 

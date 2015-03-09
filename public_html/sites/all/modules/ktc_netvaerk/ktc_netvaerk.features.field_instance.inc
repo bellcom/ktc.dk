@@ -502,6 +502,63 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-group-field_open_group'
+  $field_instances['node-group-field_open_group'] = array(
+    'bundle' => 'group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 19,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_open_group',
+    'label' => 'Åben',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 22,
+    ),
+  );
+
   // Exported field_instance: 'node-group-field_os2web_base_field_ext_link'
   $field_instances['node-group-field_os2web_base_field_ext_link'] = array(
     'bundle' => 'group',
@@ -1424,6 +1481,7 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Slut dato');
   t('Start dato');
   t('Undernetværk');
+  t('Åben');
   t('Åbent/Privat');
 
   return $field_instances;

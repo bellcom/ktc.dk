@@ -99,6 +99,7 @@ function ktc_crm_og_membership_insert($og_membership) {
  * Implements hook_og_role_grant().
  */
 function ktc_crm_og_role_grant($group_type, $gid, $uid, $rid) {
+  // Send group role to CRM.
   if ((isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_add_users') ||
     (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_edit_membership')) {
 
@@ -119,6 +120,7 @@ function ktc_crm_og_role_grant($group_type, $gid, $uid, $rid) {
  * Implements hook_og_role_revoke().
  */
 function ktc_crm_og_role_revoke($group_type, $gid, $uid, $rid) {
+  // Send revoked group role to CRM.
   if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_edit_membership') {
     $logger = KtcCrmLogger::getInstance();
     $logger->log->addInfo('group revoke role', array(
@@ -197,6 +199,14 @@ function ktc_crm_group_map_group_to_groupdto($group) {
     $groupdto->WebSite = $field[1]['url'];
   }
 
+  if ($field = field_get_items('node', $group, 'field_open_group')) {
+    $groupdto->AabenPrivat = _ktc_crm_group_transform_open($field[0]['value']);
+  }
+
+  if ($field = field_get_items('node', $group, 'group_content_access')) {
+    $groupdto->GruppensRollerOgTilladelser = _ktc_crm_group_transform_content_access($field[0]['value']);
+  }
+
   return $groupdto;
 }
 
@@ -211,25 +221,23 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
 
     $language = field_language('node', $group_node, 'field_crm_uuid');
 
-    $group_node->field_crm_uuid[$language]['0']['value'] = $groupdto->CrmId;
+    $group_node->field_crm_uuid[$language][0]['value'] = $groupdto->CrmId;
   }
 
   $group_node->title = $groupdto->GroupName;
 
   $language = field_language('node', $group_node, 'field_regioner');
   if ($region_tid = _ktc_crm_group_get_region_tid($groupdto->Region)) {
-    $group_node->field_regioner[$language]['0']['tid'] = $region_tid;
+    $group_node->field_regioner[$language][0]['tid'] = $region_tid;
   }
 
   if ($grouptype_tid = _ktc_crm_group_get_grouptype_tid($groupdto->GroupType->CrmId, $groupdto->GroupType->Name)) {
-    $group_node->field_netvaerkstype[$language]['0']['tid'] = $grouptype_tid;
+    $group_node->field_netvaerkstype[$language][0]['tid'] = $grouptype_tid;
   }
 
   $group_node->body[$language][0]['value'] = $groupdto->Description;
 
   $group_node->field_os2web_base_field_ext_link[$language][0]['url'] = $groupdto->WebSite;
-
-  $group_node->field_subgroup[$language][0]['value'] = 0;
 
   $group_node->field_start_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->StartDate));
   $group_node->field_end_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->EndDate));
@@ -237,9 +245,11 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
   if (!empty($groupdto->ParentGroup)) {
     if ($parent_group = ktc_crm_group_load_from_uuid($groupdto->ParentGroup->CrmId)) {
       $group_node->og_group_ref[$language][0]['target_id'] = $parent_group->nid;
-      $group_node->field_subgroup[$language][0]['value'] = 1;
     }
   }
+
+  $group_node->field_open_group[$language][0]['value'] = _ktc_crm_group_transform_open($groupdto->AabenPrivat);
+  $group_node->group_content_access[$language][0]['value'] = _ktc_crm_group_transform_content_access($groupdto->GruppensRollerOgTilladelser);
 
   node_save($group_node);
 }
@@ -597,4 +607,24 @@ function _ktc_crm_group_groupmemberdto_from_og_membership($og_membership) {
   }
 
   return FALSE;
+}
+
+/**
+ * Helper, transform open status to/from CRM <> bool.
+ */
+function _ktc_crm_group_transform_open($status) {
+  if (is_numeric($status)) {
+    return $status == 1 ? "Open" : "Closed";
+  }
+  return $status == "Open" ? 1 : 0;
+}
+
+/**
+ * Helper, transform visibility status to/from CRM <> bool.
+ */
+function _ktc_crm_group_transform_content_access($status) {
+  if (is_numeric($status)) {
+    return $status == 1 ? "Visible" : "Invisible";
+  }
+  return $status == "Visible" ? 1 : 2;
 }

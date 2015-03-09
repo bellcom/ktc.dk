@@ -25,8 +25,8 @@ function ktc_netvaerk_field_group_info() {
     'children' => array(
       0 => 'group_access',
       1 => 'og_roles_permissions',
-      2 => 'field_end_date',
-      3 => 'field_start_date',
+      2 => 'field_start_date',
+      3 => 'field_end_date',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -82,10 +82,10 @@ function ktc_netvaerk_field_group_info() {
     'label' => 'Generelt',
     'weight' => '0',
     'children' => array(
-      0 => 'group_netvaerk',
-      1 => 'group_indhold',
-      2 => 'group_emner',
-      3 => 'group_administration',
+      0 => 'group_administration',
+      1 => 'group_emner',
+      2 => 'group_indhold',
+      3 => 'group_netvaerk',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
