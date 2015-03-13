@@ -1752,16 +1752,6 @@ function ktc_hearing_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
-        'og_widget' => array(
-          'access_override' => 0,
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
         'prepopulate' => array(
           'action' => 'none',
           'action_on_edit' => 0,
@@ -1789,17 +1779,11 @@ function ktc_hearing_field_default_field_instances() {
       ),
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
-        'fix_display' => 0,
-        'pattern' => '/(.+) \\((\\d+)\\)/',
-        'placeholder_text' => 'Choose an option',
-        'replacement' => '${1}',
-        'searching_placeholder' => 'Looking for ',
-        'typing_placeholder' => 'Keep typing...',
       ),
       'type' => 'options_select',
       'weight' => 1,
