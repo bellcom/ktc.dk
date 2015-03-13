@@ -368,13 +368,17 @@ function ktc_crm_group_remove_old_groups($groups) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'group')
+      ->propertyCondition('status', 1)
       ->fieldCondition('field_crm_uuid', 'value', $all_group_uuid, 'NOT IN');
     $result = $query->execute();
 
     if (isset($result['node'])) {
       foreach ($result['node'] as $node_id => $info) {
-        $logger->log->addInfo('Removing old group', $node);
-        node_delete($node_id);
+        $logger->log->addInfo('Unpublish old group', $node_id);
+
+        $node = node_load($node_id);
+        $node->status = 0;
+        node_save($node);
       }
     }
   }
