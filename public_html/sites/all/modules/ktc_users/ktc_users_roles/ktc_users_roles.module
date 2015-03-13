@@ -70,8 +70,8 @@ function ktc_users_roles_usertype_page() {
   $usertype_vocab = taxonomy_vocabulary_machine_name_load('brugertyper');
   $usertypes = taxonomy_term_load_multiple(array(), array('vid' => $usertype_vocab->vid));
 
+  $drupal_role_options = user_roles();
   $drupal_role_options[0] = t('Ingen');
-  $drupal_role_options = array_merge($drupal_role_options, user_roles());
 
   $form['prefix'] = array(
     '#type' => 'item',
@@ -115,8 +115,8 @@ function ktc_users_roles_group_page() {
 
   asort($grouptype_options);
 
+  $drupal_role_options = user_roles();
   $drupal_role_options[0] = t('Ingen');
-  $drupal_role_options = array_merge($drupal_role_options, user_roles());
 
   $form['grouptype'] = array(
     '#title' => t('Gruppetype'),
