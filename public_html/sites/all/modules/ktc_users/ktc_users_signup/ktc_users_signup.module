@@ -164,7 +164,7 @@ function ktc_users_signup_form_validate($form, $form_state) {
   $mail = $form_state['values']['mail'];
   if (db_query("SELECT mail FROM {users} WHERE LOWER(:mail) = LOWER(mail)",
     array(':mail' => $mail))->fetchField()) {
-    form_set_error('mail', t('E-mail adressen er allerede i brug, hvis du har glemt din kode, kan du trykke <a href="@link">her</a> for at nulstille den.', array('@link' => 'user/password')));
+    form_set_error('mail', t('E-mail adressen er allerede i brug, hvis du har glemt din kode, kan du trykke <a href="@link">her</a> for at nulstille den.', array('@link' => '/user/password')));
   }
 }
 

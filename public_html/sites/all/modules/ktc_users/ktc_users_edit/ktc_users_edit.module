@@ -9,7 +9,7 @@
  */
 function ktc_users_edit_menu() {
   $items['admin/config/people/ktc_users_edit'] = array(
-    'title' => 'Settings for redigering af KTC brugere',
+    'title' => 'Redigering af KTC brugere',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_users_edit_settings_form'),
     'access arguments' => array('administer site'),
@@ -50,6 +50,7 @@ function ktc_users_edit_company_form() {
     ';
 
   drupal_add_css($css, 'inline');
+  drupal_add_js(drupal_get_path('module', 'ktc_users_edit') . '/company_form.js');
 
   $form['prefix'] = array(
     '#type' => 'item',
@@ -65,8 +66,17 @@ function ktc_users_edit_company_form() {
       'params' => array(
         'vid' => $vocab->vid,
       ),
+      'require_entity' => 0,
+      'render_flat_select' => 0,
+      'save_lineage' => 0,
+      'entity_count' => 0,
+      'enforce_deepest' => 0,
+      'editability' => array('status' => 0),
+      'dropbox' => array('status' => 0),
+      'level_labels' => array('status' => 0),
     ),
     '#default_value' => $invoiceaccount->tid,
+    '#suffix' => '<b>Nuværende informationer:</b><div id="company-address"></div><br />',
   );
 
   $form['company_name'] = array(
@@ -94,9 +104,19 @@ function ktc_users_edit_company_form() {
     '#type' => 'textfield',
   );
 
+  $form['region'] = array(
+    '#title' => t('Region'),
+    '#type' => 'textfield',
+  );
+
   $form['comment'] = array(
     '#title' => t('Kommentar'),
     '#type' => 'textarea',
+  );
+
+  $form['goto'] = array(
+    '#type' => 'hidden',
+    '#value' => $_SERVER['HTTP_REFERER'],
   );
 
   $form['submit'] = array(
@@ -118,6 +138,7 @@ function ktc_users_edit_company_form_submit(&$form, &$form_state) {
     'address_line_2',
     'postal_code',
     'city',
+    'region',
     'comment',
   );
 
@@ -130,6 +151,7 @@ function ktc_users_edit_company_form_submit(&$form, &$form_state) {
 
       $terms = array_reverse(taxonomy_get_parents($term->tid));
 
+      $_value = '';
       foreach ($terms as $_term) {
         $_value .= "$_term->name -> \n";
       }
@@ -163,6 +185,9 @@ EOL;
   $to = variable_get('ktc_users_edit_company_form_recipient', variable_get('site_mail', ''));
 
   drupal_mail('ktc_users_edit', 'notify_new', $to, $language, $params);
+  drupal_set_message(variable_get('ktc_users_edit_company_form_submit_message', ''));
+
+  drupal_goto($form_state['values']['goto']);
 }
 
 /**
@@ -218,6 +243,12 @@ function ktc_users_edit_settings_form() {
     '#title' => 'Besked på virksomhedsoplysningsside',
     '#type' => 'textarea',
     '#markup' => variable_get('ktc_users_edit_company_form_message', ''),
+  );
+
+  $form['ktc_users_edit_company_form_submit_message'] = array(
+    '#title' => 'Besked ved indsendelse virksomhedsoplysninger',
+    '#type' => 'textarea',
+    '#markup' => variable_get('ktc_users_edit_company_form_submit_message', ''),
   );
 
   $form['ktc_users_edit_company_form_mail'] = array(
