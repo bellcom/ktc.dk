@@ -21,15 +21,14 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_genral';
   $field_group->data = array(
     'label' => 'Netværkets indstillinger',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'group_access',
       1 => 'field_os2web_base_field_hidlinks',
-      2 => 'field_subgroup',
-      3 => 'og_group_ref',
-      4 => 'group_content_access',
-      5 => 'field_open_group',
-      6 => 'group_dates',
+      2 => 'field_open_group',
+      3 => 'group_dates',
+      4 => 'group_underdiv',
+      5 => 'group_synlighedsdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -55,7 +54,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_administration';
   $field_group->data = array(
     'label' => 'Datoer',
-    'weight' => '12',
+    'weight' => '11',
     'children' => array(
       0 => 'field_end_date',
       1 => 'field_start_date',
@@ -122,7 +121,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_genral';
   $field_group->data = array(
     'label' => 'Faglige emner',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_tags',
       1 => 'field_topics',
@@ -324,6 +323,73 @@ function ktc_netvaerk_field_group_info() {
     ),
   );
   $export['group_netvaerk|node|group|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_synlighedsdiv|node|group|form';
+  $field_group->group_name = 'group_synlighedsdiv';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'group';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_administration';
+  $field_group->data = array(
+    'label' => 'Synlighed for netværkets indhold',
+    'weight' => '8',
+    'children' => array(
+      0 => 'group_content_access',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Synlighed for netværkets indhold',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-synlighedsdiv field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_synlighedsdiv|node|group|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_underdiv|node|group|form';
+  $field_group->group_name = 'group_underdiv';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'group';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_administration';
+  $field_group->data = array(
+    'label' => 'Undernetværk',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_subgroup',
+      1 => 'og_group_ref',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Undernetværk',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-underdiv field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_underdiv|node|group|form'] = $field_group;
 
   return $export;
 }
