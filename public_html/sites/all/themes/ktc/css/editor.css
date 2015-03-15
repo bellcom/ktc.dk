@@ -540,10 +540,10 @@ a.bg-success:hover {
   background-color: #68cc74;
 }
 .bg-info {
-  background-color: #82c0c6;
+  background-color: #a2f1fb;
 }
 a.bg-info:hover {
-  background-color: #5faeb6;
+  background-color: #71eaf9;
 }
 .bg-warning {
   background-color: #ffeeab;
@@ -1529,13 +1529,13 @@ table th[class*="col-"] {
 .table > thead > tr.info > th,
 .table > tbody > tr.info > th,
 .table > tfoot > tr.info > th {
-  background-color: #82c0c6;
+  background-color: #a2f1fb;
 }
 .table-hover > tbody > tr > td.info:hover,
 .table-hover > tbody > tr > th.info:hover,
 .table-hover > tbody > tr.info:hover > td,
 .table-hover > tbody > tr.info:hover > th {
-  background-color: #70b7be;
+  background-color: #8aedfa;
 }
 .table > thead > tr > td.warning,
 .table > tbody > tr > td.warning,
@@ -4457,12 +4457,12 @@ a.thumbnail.active {
   color: #2b542c;
 }
 .alert-info {
-  background-color: #82c0c6;
-  border-color: #69bbb4;
+  background-color: #a2f1fb;
+  border-color: #80faf3;
   color: #31708f;
 }
 .alert-info hr {
-  border-top-color: #58b3ac;
+  border-top-color: #67f8f1;
 }
 .alert-info .alert-link {
   color: #245269;
@@ -4673,7 +4673,7 @@ a.list-group-item-success.active:focus {
 }
 .list-group-item-info {
   color: #31708f;
-  background-color: #82c0c6;
+  background-color: #a2f1fb;
 }
 a.list-group-item-info {
   color: #31708f;
@@ -4684,7 +4684,7 @@ a.list-group-item-info .list-group-item-heading {
 a.list-group-item-info:hover,
 a.list-group-item-info:focus {
   color: #31708f;
-  background-color: #70b7be;
+  background-color: #8aedfa;
 }
 a.list-group-item-info.active,
 a.list-group-item-info.active:hover,
@@ -4985,18 +4985,18 @@ a.list-group-item-danger.active:focus {
   border-bottom-color: #7fd37b;
 }
 .panel-info {
-  border-color: #69bbb4;
+  border-color: #80faf3;
 }
 .panel-info > .panel-heading {
   color: #31708f;
-  background-color: #82c0c6;
-  border-color: #69bbb4;
+  background-color: #a2f1fb;
+  border-color: #80faf3;
 }
 .panel-info > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #69bbb4;
+  border-top-color: #80faf3;
 }
 .panel-info > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #69bbb4;
+  border-bottom-color: #80faf3;
 }
 .panel-warning {
   border-color: #ffd791;
