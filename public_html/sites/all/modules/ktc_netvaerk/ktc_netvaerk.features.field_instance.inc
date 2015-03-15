@@ -15,7 +15,7 @@ function ktc_netvaerk_field_default_field_instances() {
     'bundle' => 'group',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Lav en beskrivelse af netværket, dets formål og målgruppe',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -55,9 +55,35 @@ function ktc_netvaerk_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Indhold',
+    'label' => 'Beskrivelse og formål',
     'required' => 1,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -70,7 +96,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 1,
     ),
   );
 
@@ -127,7 +153,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 15,
     ),
   );
 
@@ -198,7 +224,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 8,
+      'weight' => 13,
     ),
   );
 
@@ -255,7 +281,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 13,
     ),
   );
 
@@ -312,7 +338,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 12,
     ),
   );
 
@@ -370,7 +396,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 4,
+      'weight' => 14,
     ),
   );
 
@@ -378,7 +404,7 @@ function ktc_netvaerk_field_default_field_instances() {
   $field_instances['node-group-field_groupimage'] = array(
     'bundle' => 'group',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Billedet vil automatisk blive beskåret til 220x220 pixels.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -418,16 +444,16 @@ function ktc_netvaerk_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_groupimage',
-    'label' => 'Billede',
+    'label' => 'Logo',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 23711,
+      'default_image' => 0,
       'file_directory' => 'netvaerk',
       'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '5 MB',
-      'max_resolution' => '220x220',
-      'min_resolution' => '',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '220x220',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -435,11 +461,11 @@ function ktc_netvaerk_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'medium',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -448,7 +474,7 @@ function ktc_netvaerk_field_default_field_instances() {
     'bundle' => 'group',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Hvilken type er dit netværk? Vælg den type der passer bedst til dit netværk',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -495,10 +521,10 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => FALSE,
+        'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -555,7 +581,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 22,
+      'weight' => 5,
     ),
   );
 
@@ -630,7 +656,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 4,
+      'weight' => 7,
     ),
   );
 
@@ -643,7 +669,7 @@ function ktc_netvaerk_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Du kan vælge om der automatisk skal vises relateret indhold i højrespalten i netværket.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -690,7 +716,67 @@ function ktc_netvaerk_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 5,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-group-field_os2web_base_field_media'
+  $field_instances['node-group-field_os2web_base_field_media'] = array(
+    'bundle' => 'group',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 20,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_media',
+    'label' => 'Bilag',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 6,
     ),
   );
 
@@ -699,7 +785,7 @@ function ktc_netvaerk_field_default_field_instances() {
     'bundle' => 'group',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Angiv hvilken region dit netværk tilhører. Angiv landsdækkende, hvis det ikke tilhører en specifik region',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -737,7 +823,7 @@ function ktc_netvaerk_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_regioner',
-    'label' => 'Regioner',
+    'label' => 'Region',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -750,7 +836,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -821,7 +907,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 7,
+      'weight' => 12,
     ),
   );
 
@@ -834,7 +920,7 @@ function ktc_netvaerk_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Er et undernetværk ?',
+    'description' => 'Er dette netværk et undernetværk til et andet netværk?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -882,7 +968,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 7,
     ),
   );
 
@@ -927,22 +1013,104 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Flere emner',
+    'label' => 'Tags',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_opt_groups' => FALSE,
-        'size' => 60,
+        'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-group-field_target_group'
+  $field_instances['node-group-field_target_group'] = array(
+    'bundle' => 'group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Beskriv målgruppen for dette netværk',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 21,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_target_group',
+    'label' => 'Målgruppe',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
     ),
   );
 
@@ -1015,7 +1183,7 @@ function ktc_netvaerk_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => '<p class="well well-sm">Her skal du angive om netværket er åbent for alle registrerede brugere på ktc.dk, så de frit kan melde sig ind, eller om du selv vil invitere og tilføje medlemmer. Selvom netværket er lukket, er det muligt for alle at se titel, billede og beskrivelse og alle kan ansøge om medlemskab. Det er op til dig, eller andre af netværkets administratorer at give adgang.</p>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1071,7 +1239,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 8,
     ),
     'widget_type' => 'options_select',
   );
@@ -1085,7 +1253,7 @@ function ktc_netvaerk_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Du kan vælge om alle brugere der er logget på, må se netværkets indhold, eller om det skal være usynligt. Når brugere i dit netværk laver indhold, kan de selv vælge om indholdet må vises til andre der ikke er medlemmer af netværket.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1122,7 +1290,7 @@ function ktc_netvaerk_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'group_content_access',
     'label' => 'Group content visibility',
-    'required' => TRUE,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -1137,13 +1305,14 @@ function ktc_netvaerk_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 9,
     ),
     'widget_type' => 'options_select',
   );
@@ -1221,7 +1390,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'og_hide' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 1,
+      'weight' => 11,
     ),
   );
 
@@ -1231,7 +1400,7 @@ function ktc_netvaerk_field_default_field_instances() {
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Hvis dette er et undernetværk, så skal du vælge hvilket netværk i listen der er dets overnetværk.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1271,16 +1440,6 @@ function ktc_netvaerk_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
-        'og_widget' => array(
-          'access_override' => 0,
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
         'prepopulate' => array(
           'action' => 'none',
           'action_on_edit' => 0,
@@ -1308,14 +1467,14 @@ function ktc_netvaerk_field_default_field_instances() {
       ),
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -1386,7 +1545,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 10,
     ),
     'widget_type' => 'options_select',
   );
@@ -1460,26 +1619,37 @@ function ktc_netvaerk_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Billede');
+  t('<p class="well well-sm">Her skal du angive om netværket er åbent for alle registrerede brugere på ktc.dk, så de frit kan melde sig ind, eller om du selv vil invitere og tilføje medlemmer. Selvom netværket er lukket, er det muligt for alle at se titel, billede og beskrivelse og alle kan ansøge om medlemskab. Det er op til dig, eller andre af netværkets administratorer at give adgang.</p>');
+  t('Angiv hvilken region dit netværk tilhører. Angiv landsdækkende, hvis det ikke tilhører en specifik region');
+  t('Beskriv målgruppen for dette netværk');
+  t('Beskrivelse og formål');
+  t('Bilag');
+  t('Billedet vil automatisk blive beskåret til 220x220 pixels.');
   t('CRM UUID');
   t('Determine if this is an OG group.');
+  t('Du kan vælge om alle brugere der er logget på, må se netværkets indhold, eller om det skal være usynligt. Når brugere i dit netværk laver indhold, kan de selv vælge om indholdet må vises til andre der ikke er medlemmer af netværket.');
+  t('Du kan vælge om der automatisk skal vises relateret indhold i højrespalten i netværket.');
   t('Ekstern links');
   t('Emner');
-  t('Er et undernetværk ?');
-  t('Flere emner');
+  t('Er dette netværk et undernetværk til et andet netværk?');
   t('Gammel drupal gid');
   t('Gammel nid');
   t('Gammel typo3 id');
   t('Group content visibility');
   t('Gruppens roller og tilladelser');
-  t('Indhold');
+  t('Hvilken type er dit netværk? Vælg den type der passer bedst til dit netværk');
+  t('Hvis dette er et undernetværk, så skal du vælge hvilket netværk i listen der er dets overnetværk.');
+  t('Lav en beskrivelse af netværket, dets formål og målgruppe');
+  t('Logo');
+  t('Målgruppe');
   t('Netværk');
   t('Netværkstype');
   t('Overstående netværk');
-  t('Regioner');
+  t('Region');
   t('Skjul auto relaterede links');
   t('Slut dato');
   t('Start dato');
+  t('Tags');
   t('Undernetværk');
   t('Åben');
   t('Åbent/Privat');
