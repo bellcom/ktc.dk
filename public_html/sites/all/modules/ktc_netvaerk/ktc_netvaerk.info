@@ -41,6 +41,7 @@ features[field_base][] = group_group
 features[field_base][] = og_roles_permissions
 features[field_group][] = group_administration|node|group|form
 features[field_group][] = group_dates|node|group|form
+features[field_group][] = group_ekstlinks|node|group|form
 features[field_group][] = group_emner|node|group|form
 features[field_group][] = group_genral|node|group|form
 features[field_group][] = group_hidden|node|group|form

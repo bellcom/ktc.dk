@@ -81,6 +81,39 @@ function ktc_netvaerk_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_ekstlinks|node|group|form';
+  $field_group->group_name = 'group_ekstlinks';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'group';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_media';
+  $field_group->data = array(
+    'label' => 'Eksterne links',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_os2web_base_field_ext_link',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Eksterne links',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-ekstlinks field-group-div well well-sm',
+        'description' => 'Tilføj evt. eksterne links der vises på netværkts hovedside.',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_ekstlinks|node|group|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_emner|node|group|form';
   $field_group->group_name = 'group_emner';
   $field_group->entity_type = 'node';
@@ -244,9 +277,9 @@ function ktc_netvaerk_field_group_info() {
     'label' => 'Logo, bilag og links',
     'weight' => '1',
     'children' => array(
-      0 => 'field_os2web_base_field_ext_link',
-      1 => 'field_os2web_base_field_media',
-      2 => 'group_logodiv',
+      0 => 'field_os2web_base_field_media',
+      1 => 'group_logodiv',
+      2 => 'group_ekstlinks',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
