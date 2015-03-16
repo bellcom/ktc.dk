@@ -785,10 +785,13 @@ function ktc_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '2',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '3',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '5',
         ),
       ),
       'display' => array(

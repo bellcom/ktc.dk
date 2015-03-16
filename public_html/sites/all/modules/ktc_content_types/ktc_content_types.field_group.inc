@@ -311,6 +311,36 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_bilag|node|forum_post|form';
+  $field_group->group_name = 'group_bilag';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'forum_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_group';
+  $field_group->data = array(
+    'label' => 'Bilag og links',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_os2web_base_field_media',
+      1 => 'field_os2web_base_field_ext_link',
+      2 => '_add_new_field',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Bilag og links',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-bilag field-group-tab',
+        'description' => '<div class="well well-sm">Du kan sætte bilag og eksterne links på din Diskussion</div>',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_bilag|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_billede|node|os2web_base_news|form';
   $field_group->group_name = 'group_billede';
   $field_group->entity_type = 'node';
@@ -335,6 +365,64 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_billede|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_diskussion|node|forum_post|form';
+  $field_group->group_name = 'group_diskussion';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'forum_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_group';
+  $field_group->data = array(
+    'label' => 'Diskussion',
+    'weight' => '0',
+    'children' => array(
+      0 => 'body',
+      1 => 'title',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Diskussion',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-diskussion field-group-tab',
+        'description' => '<div class="well well-sm">Du kan her starte en diskussion i dine netværk. De andre medlemmer af dit netværk kan kommentere på dine og de andres deltageres svar. </div>',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_diskussion|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_emner|node|forum_post|form';
+  $field_group->group_name = 'group_emner';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'forum_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_group';
+  $field_group->data = array(
+    'label' => 'Faglige emner',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_tags',
+      1 => 'field_topics',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Faglige emner',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-emner field-group-tab',
+        'description' => '<div class="well well-sm">Hvilke faglige emner behandles i denne diskussion? Når du vælger emner, så vær grundig og præcis, så systemet kan matche dine diskussioner med andet indhold med samme emner</div>',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_emner|node|forum_post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -456,6 +544,34 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_group|node|forum_post|form';
+  $field_group->group_name = 'group_group';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'forum_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'group',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_diskussion',
+      1 => 'group_bilag',
+      2 => 'group_emner',
+      3 => 'group_publicering',
+    ),
+    'format_type' => 'tabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-group field-group-tabs',
+      ),
+    ),
+  );
+  $export['group_group|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_hidden|node|arrangement|form';
   $field_group->group_name = 'group_hidden';
   $field_group->entity_type = 'node';
@@ -500,7 +616,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjul',
-    'weight' => '9',
+    'weight' => '1',
     'children' => array(
       0 => 'field_gammel_gid',
       1 => 'field_gammel_nid',
@@ -641,6 +757,38 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_publicering|node|forum_post|form';
+  $field_group->group_name = 'group_publicering';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'forum_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_group';
+  $field_group->data = array(
+    'label' => 'Publicering',
+    'weight' => '3',
+    'children' => array(
+      0 => 'og_group_ref',
+      1 => 'field_udgivelsesdato',
+      2 => 'field_os2web_base_field_promote',
+      3 => 'scheduler_settings',
+      4 => 'group_synlighedsdiv',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Publicering',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-publicering field-group-tab',
+        'description' => '<div class="well well-sm">Vælg netværk som Diskussionen skal publiceres i.</div>',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_publicering|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_redaktion|node|os2web_base_news|form';
   $field_group->group_name = 'group_redaktion';
   $field_group->entity_type = 'node';
@@ -693,6 +841,39 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_sider|node|magazine|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_synlighedsdiv|node|forum_post|form';
+  $field_group->group_name = 'group_synlighedsdiv';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'forum_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_publicering';
+  $field_group->data = array(
+    'label' => 'Synlighed for netværkets indhold',
+    'weight' => '2',
+    'children' => array(
+      0 => 'group_content_access',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Synlighed for netværkets indhold',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-synlighedsdiv field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_synlighedsdiv|node|forum_post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
