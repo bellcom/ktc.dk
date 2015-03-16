@@ -50,7 +50,7 @@ function ktc_content_types_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Titel'),
+      'title_label' => t('Overskrift'),
       'help' => '',
     ),
     'magazine' => array(
