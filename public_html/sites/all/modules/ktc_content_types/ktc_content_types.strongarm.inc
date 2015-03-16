@@ -1618,5 +1618,75 @@ function ktc_content_types_strongarm() {
   $strongarm->value = 1;
   $export['node_submitted_webform'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_expand_fieldset_forum_post';
+  $strongarm->value = '1';
+  $export['scheduler_expand_fieldset_forum_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_enable_forum_post';
+  $strongarm->value = 1;
+  $export['scheduler_publish_enable_forum_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_past_date_forum_post';
+  $strongarm->value = 'publish';
+  $export['scheduler_publish_past_date_forum_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_forum_post';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_forum_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_revision_forum_post';
+  $strongarm->value = 0;
+  $export['scheduler_publish_revision_forum_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_forum_post';
+  $strongarm->value = 0;
+  $export['scheduler_publish_touch_forum_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_enable_forum_post';
+  $strongarm->value = 1;
+  $export['scheduler_unpublish_enable_forum_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_forum_post';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_forum_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_forum_post';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_revision_forum_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_use_vertical_tabs_forum_post';
+  $strongarm->value = '0';
+  $export['scheduler_use_vertical_tabs_forum_post'] = $strongarm;
+
   return $export;
 }
