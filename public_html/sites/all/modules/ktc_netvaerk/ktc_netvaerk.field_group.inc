@@ -23,12 +23,11 @@ function ktc_netvaerk_field_group_info() {
     'label' => 'Netværkets indstillinger',
     'weight' => '3',
     'children' => array(
-      0 => 'group_access',
-      1 => 'field_os2web_base_field_hidlinks',
-      2 => 'field_open_group',
-      3 => 'group_dates',
-      4 => 'group_underdiv',
-      5 => 'group_synlighedsdiv',
+      0 => 'field_os2web_base_field_hidlinks',
+      1 => 'field_open_group',
+      2 => 'group_dates',
+      3 => 'group_underdiv',
+      4 => 'group_synlighedsdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -36,7 +35,7 @@ function ktc_netvaerk_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-administration field-group-tab',
-        'description' => 'Her skal du angive netværkets indstillinger som f.eks. rettigheder og medlemmer',
+        'description' => '<h5>Her skal du angive netværkets indstillinger som f.eks. rettigheder og medlemmer</h5>',
       ),
       'formatter' => 'closed',
     ),
@@ -54,7 +53,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_administration';
   $field_group->data = array(
     'label' => 'Datoer',
-    'weight' => '11',
+    'weight' => '9',
     'children' => array(
       0 => 'field_end_date',
       1 => 'field_start_date',
@@ -183,10 +182,11 @@ function ktc_netvaerk_field_group_info() {
       0 => 'group_group',
       1 => 'field_gammel_gid',
       2 => 'field_gammel_nid',
-      3 => 'og_roles_permissions',
-      4 => 'field_gammel_typo3_id',
-      5 => 'field_crm_uuid',
-      6 => 'path',
+      3 => 'group_access',
+      4 => 'og_roles_permissions',
+      5 => 'field_gammel_typo3_id',
+      6 => 'field_crm_uuid',
+      7 => 'path',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -335,7 +335,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_administration';
   $field_group->data = array(
     'label' => 'Synlighed for netværkets indhold',
-    'weight' => '8',
+    'weight' => '6',
     'children' => array(
       0 => 'group_content_access',
     ),
@@ -368,7 +368,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_administration';
   $field_group->data = array(
     'label' => 'Undernetværk',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_subgroup',
       1 => 'og_group_ref',
@@ -380,7 +380,7 @@ function ktc_netvaerk_field_group_info() {
         'required_fields' => 1,
         'id' => '',
         'classes' => 'group-underdiv field-group-div well well-sm',
-        'description' => '',
+        'description' => 'Dette vises hvor?',
         'show_label' => '1',
         'label_element' => 'h3',
         'effect' => 'none',

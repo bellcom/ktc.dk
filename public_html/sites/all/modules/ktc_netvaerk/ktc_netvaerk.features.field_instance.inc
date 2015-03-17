@@ -153,7 +153,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 16,
     ),
   );
 
@@ -281,7 +281,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 28,
+      'weight' => 14,
     ),
   );
 
@@ -338,7 +338,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 27,
+      'weight' => 13,
     ),
   );
 
@@ -396,7 +396,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 29,
+      'weight' => 15,
     ),
   );
 
@@ -720,7 +720,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 
@@ -1243,7 +1243,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 10,
     ),
     'widget_type' => 'options_select',
   );
@@ -1394,7 +1394,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'og_hide' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 26,
+      'weight' => 12,
     ),
   );
 
@@ -1549,7 +1549,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 25,
+      'weight' => 11,
     ),
     'widget_type' => 'options_select',
   );
