@@ -8139,6 +8139,12 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   padding: 10px 0;
   display: block;
 }
+.field-group-tab h3 {
+  margin-top: 0px;
+}
+.field-group-tab h3 span {
+  font-size: 15px;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
