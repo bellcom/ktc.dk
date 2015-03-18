@@ -9,6 +9,9 @@ Drupal.FieldGroup.Effects = Drupal.FieldGroup.Effects || {};
 Drupal.FieldGroup.groupWithfocus = null;
 
 Drupal.FieldGroup.setGroupWithfocus = function(element) {
+  if (Drupal.FieldGroup.groupWithfocus) {
+    Drupal.FieldGroup.groupWithfocus.hide();
+  }
   element.css({display: 'block'});
   Drupal.FieldGroup.groupWithfocus = element;
 }
@@ -115,6 +118,10 @@ Drupal.FieldGroup.Effects.processTabs = {
       $('fieldset.vertical-tabs-pane', context).once('fieldgroup-effects', function(i) {
         if ($(this).is('.required-fields') && $(this).find('.form-required').length > 0) {
           $(this).data('verticalTab').link.find('strong:first').after($('.form-required').eq(0).clone()).after(' ');
+          // Add form required marker on bootstrap based themes
+          if (Drupal.behaviors.bootstrap && $(context).find('.tabbable').length > 0) {
+            $(this).data('verticalTab').link.find('span:first').after($('.form-required').eq(0).clone()).after(' ');
+          }
         }
         if ($('.error', $(this)).length) {
           $(this).data('verticalTab').link.parent().addClass('error');
