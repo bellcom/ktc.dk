@@ -895,25 +895,27 @@ function _ktc_hearing_user_can_create_hearing($account) {
 function _ktc_hearing_reference_permissions() {
   return array(
     'chairman' => array(
-      'view' => 'view',
-      'update' => 'update',
       'approve summary response' => 'approve summary response',
+      'summary response' => 'summary response',
+      'update' => 'update',
+      'view' => 'view',
     ),
     'responsible_foreman' => array(
-      'view' => 'view',
-      'update' => 'update',
       'approve summary response' => 'approve summary response',
+      'summary response' => 'summary response',
+      'update' => 'update',
+      'view' => 'view',
     ),
     'responsible_admin' => array(
-      'view' => 'view',
       'update' => 'update',
+      'view' => 'view',
     ),
     'coordinator' => array(
-      'view' => 'view',
-      'summary response' => 'summary response',
-      'view responses' => 'view responses',
       'respond' => 'respond',
+      'summary response' => 'summary response',
       'update' => 'update',
+      'view responses' => 'view responses',
+      'view' => 'view',
     ),
     'attendees' => array(
       'invite' => 'invite',
@@ -922,10 +924,10 @@ function _ktc_hearing_reference_permissions() {
       'view' => 'view',
     ),
     'creator' => array(
-      'view' => 'view',
       'update' => 'update',
       'view responses' => 'view responses',
       'view summary response' => 'view summary response',
+      'view' => 'view',
     ),
   );
 }
