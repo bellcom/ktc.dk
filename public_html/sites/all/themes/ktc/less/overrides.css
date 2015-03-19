@@ -218,7 +218,7 @@ select,
 }
 input.error {
   color: #a94442;
-  border-color: #ebccd1;
+  border-color: #ff938e;
 }
 fieldset legend.panel-heading {
   float: left;
@@ -279,7 +279,7 @@ a.tabledrag-handle .handle {
 }
 div.error,
 table tr.error {
-  background-color: #f2dede;
+  background-color: #ffbaa8;
   color: #a94442;
 }
 .control-group.error {
@@ -389,6 +389,7 @@ div.password-suggestions ul {
 }
 .form-autocomplete .input-group-addon {
   background-color: #ffffff;
+  padding: 2px 11px;
 }
 .ajax-progress .glyphicon {
   font-size: 90%;
@@ -694,4 +695,33 @@ div.features-export-list .form-type-checkbox {
 fieldset.features-export-component .component-select .form-type-checkbox input[type=checkbox],
 div.features-export-list .form-type-checkbox input[type=checkbox] {
   margin-top: 0;
+}
+.well.bg-info {
+  background-color: #c6eef8;
+  border: 1px solid #a6f1f4;
+  color: #31708f;
+}
+.well.bg-success {
+  background-color: #b0dfb7;
+  border: 1px solid #9fd89e;
+  color: #3c763d;
+}
+.well.bg-warning {
+  background-color: #fff8dc;
+  border: 1px solid #ffe9c3;
+  color: #8a6d3b;
+}
+.well.bg-danger {
+  background-color: #ffbaa8;
+  border: 1px solid #ff938e;
+  color: #a94442;
+}
+.file-widget .form-control {
+  padding: 0;
+  width: 100%;
+}
+.image-widget input[type="file"] {
+  padding: 0;
+  width: auto;
+  display: inline-block;
 }

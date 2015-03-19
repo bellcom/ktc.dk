@@ -780,3 +780,27 @@ div.features-export-list {
     }
   }
 }
+
+
+.well {
+  &.bg-info
+  {background-color: @state-info-bg;
+  border: 1px solid @state-info-border;
+  color: @state-info-text}
+  &.bg-success
+  {background-color: @state-success-bg;
+  border: 1px solid @state-success-border;
+  color: @state-success-text}  
+  &.bg-warning
+  {background-color: @state-warning-bg;
+  border: 1px solid @state-warning-border;
+  color: @state-warning-text}
+  &.bg-danger
+  {background-color: @state-danger-bg;
+  border: 1px solid @state-danger-border;
+  color: @state-danger-text}
+}
+
+
+.file-widget .form-control { padding: 0; width: 100%;}
+.image-widget input[type="file"] { padding: 0; width: auto; display: inline-block}

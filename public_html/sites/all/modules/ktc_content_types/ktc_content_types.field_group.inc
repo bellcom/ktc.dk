@@ -341,6 +341,34 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_bilag|node|os2web_base_news|form';
+  $field_group->group_name = 'group_bilag';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_tabs';
+  $field_group->data = array(
+    'label' => 'Bilag og links',
+    'weight' => '13',
+    'children' => array(
+      0 => 'field_os2web_base_field_media',
+      1 => 'group_ekstlinks',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-bilag field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_bilag|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_billede|node|os2web_base_news|form';
   $field_group->group_name = 'group_billede';
   $field_group->entity_type = 'node';
@@ -348,20 +376,21 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_tabs';
   $field_group->data = array(
-    'label' => 'Billede og filer',
+    'label' => 'Billeder',
     'weight' => '12',
     'children' => array(
       0 => 'field_os2web_base_field_lead_img',
-      1 => 'field_os2web_base_field_media',
+      1 => 'field_flere_billeder',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Billeder',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-billede field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-billede field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_billede|node|os2web_base_news|form'] = $field_group;
@@ -394,6 +423,39 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_diskussion|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_ekstlinks|node|os2web_base_news|form';
+  $field_group->group_name = 'group_ekstlinks';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_bilag';
+  $field_group->data = array(
+    'label' => 'Eksterne links',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_os2web_base_field_ext_link',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Eksterne links',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-ekstlinks field-group-div well well-sm',
+        'description' => 'Tilføj evt. eksterne links der vises på sammen med nyheden.',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_ekstlinks|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -497,9 +559,8 @@ function ktc_content_types_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_os2web_base_field_summary',
-      2 => 'field_news_category',
-      3 => 'field_os2web_news_page_type',
-      4 => 'title',
+      2 => 'field_os2web_news_page_type',
+      3 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -698,6 +759,39 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_kle|node|os2web_base_news|form';
+  $field_group->group_name = 'group_kle';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_metadata';
+  $field_group->data = array(
+    'label' => 'KLE',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_os2web_base_field_kle_ref',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'KLE',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-kle field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_kle|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_metadata|node|os2web_base_news|form';
   $field_group->group_name = 'group_metadata';
   $field_group->entity_type = 'node';
@@ -705,23 +799,23 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_tabs';
   $field_group->data = array(
-    'label' => 'Meta data',
-    'weight' => '13',
+    'label' => 'Faglige emner',
+    'weight' => '14',
     'children' => array(
-      0 => 'field_os2web_base_field_kle_ref',
-      1 => 'field_topics',
-      2 => 'field_tags',
-      3 => 'field_os2web_base_field_edi_tags',
-      4 => 'field_os2web_base_field_hidlinks',
+      0 => 'field_topics',
+      1 => 'field_os2web_base_field_hidlinks',
+      2 => 'group_kle',
+      3 => 'group_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Faglige emner',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_metadata|node|os2web_base_news|form'] = $field_group;
@@ -736,20 +830,23 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_tabs';
   $field_group->data = array(
-    'label' => 'Netværk',
-    'weight' => '14',
+    'label' => 'Publicering',
+    'weight' => '15',
     'children' => array(
-      0 => 'og_group_ref',
-      1 => 'group_content_access',
+      0 => 'field_os2web_base_field_promote',
+      1 => 'og_group_ref',
+      2 => 'scheduler_settings',
+      3 => 'group_synlighedsdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Publicering',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_networkngroups|node|os2web_base_news|form'] = $field_group;
@@ -878,6 +975,39 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_synlighedsdiv|node|os2web_base_news|form';
+  $field_group->group_name = 'group_synlighedsdiv';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_networkngroups';
+  $field_group->data = array(
+    'label' => 'Synlighed for nyhed',
+    'weight' => '12',
+    'children' => array(
+      0 => 'group_content_access',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Synlighed for nyhed',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-synlighedsdiv field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_synlighedsdiv|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_tabs|node|os2web_base_news|form';
   $field_group->group_name = 'group_tabs';
   $field_group->entity_type = 'node';
@@ -890,9 +1020,9 @@ function ktc_content_types_field_group_info() {
     'children' => array(
       0 => 'group_metadata',
       1 => 'group_networkngroups',
-      2 => 'group_redaktion',
-      3 => 'group_generelt',
-      4 => 'group_billede',
+      2 => 'group_generelt',
+      3 => 'group_billede',
+      4 => 'group_bilag',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -903,6 +1033,39 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_tabs|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|os2web_base_news|form';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_metadata';
+  $field_group->data = array(
+    'label' => 'Tags',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_tags',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Tags',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-tags field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_tags|node|os2web_base_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

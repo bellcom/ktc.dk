@@ -657,6 +657,39 @@ function ktc_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_flere_billeder'
+  $field_bases['field_flere_billeder'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_flere_billeder',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
   // Exported field_base: 'field_forside_billede_'
   $field_bases['field_forside_billede_'] = array(
     'active' => 1,
@@ -1247,68 +1280,6 @@ function ktc_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_news_category'
-  $field_bases['field_news_category'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_news_category',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_os2web_base_field_edi_tags'
-  $field_bases['field_os2web_base_field_edi_tags'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2web_base_field_edi_tags',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'os2web_taxonomies_tax_editor_tag',
-          'parent' => 0,
-        ),
-      ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_os2web_base_field_ext_link'
   $field_bases['field_os2web_base_field_ext_link'] = array(
     'active' => 1,
@@ -1378,6 +1349,9 @@ function ktc_content_types_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_os2web_base_field_kle_ref',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -1398,6 +1372,7 @@ function ktc_content_types_field_default_field_bases() {
         0 => array(
           'vocabulary' => 'os2web_taxonomies_tax_kle',
           'parent' => 0,
+          'depth' => '',
         ),
       ),
       'options_list_callback' => 'content_taxonomy_allowed_values',
@@ -1409,10 +1384,13 @@ function ktc_content_types_field_default_field_bases() {
   // Exported field_base: 'field_os2web_base_field_lead_img'
   $field_bases['field_os2web_base_field_lead_img'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_os2web_base_field_lead_img',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(
@@ -1516,6 +1494,9 @@ function ktc_content_types_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_os2web_base_field_summary',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -1543,6 +1524,9 @@ function ktc_content_types_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_os2web_news_page_type',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -1695,7 +1679,7 @@ function ktc_content_types_field_default_field_bases() {
   // Exported field_base: 'field_regioner'
   $field_bases['field_regioner'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_regioner',
@@ -1865,7 +1849,6 @@ function ktc_content_types_field_default_field_bases() {
         0 => array(
           'vocabulary' => 'emner',
           'parent' => 0,
-          'depth' => '',
         ),
       ),
       'options_list_callback' => 'content_taxonomy_allowed_values',
@@ -2057,7 +2040,7 @@ function ktc_content_types_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'group_content_access',
     'field_permissions' => array(
-      'type' => 0,
+      'type' => 1,
     ),
     'foreign keys' => array(),
     'indexes' => array(

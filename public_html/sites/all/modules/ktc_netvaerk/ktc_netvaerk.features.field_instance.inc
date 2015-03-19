@@ -153,7 +153,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 16,
     ),
   );
 
@@ -206,7 +206,7 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Slut dato',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -281,7 +281,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 28,
+      'weight' => 14,
     ),
   );
 
@@ -338,7 +338,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 27,
+      'weight' => 13,
     ),
   );
 
@@ -396,7 +396,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 29,
+      'weight' => 15,
     ),
   );
 
@@ -673,7 +673,7 @@ function ktc_netvaerk_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Du kan vælge om der automatisk skal vises relateret indhold i højrespalten i netværket.',
+    'description' => 'Systemet genererer automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -720,7 +720,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 
@@ -908,7 +908,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '1980:+3',
       ),
       'type' => 'date_popup',
       'weight' => 20,
@@ -1243,7 +1243,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 10,
     ),
     'widget_type' => 'options_select',
   );
@@ -1394,7 +1394,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'og_hide' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 26,
+      'weight' => 12,
     ),
   );
 
@@ -1549,7 +1549,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 25,
+      'weight' => 11,
     ),
     'widget_type' => 'options_select',
   );
@@ -1632,7 +1632,6 @@ function ktc_netvaerk_field_default_field_instances() {
   t('CRM UUID');
   t('Determine if this is an OG group.');
   t('Du kan vælge om alle brugere der er logget på, må se netværkets indhold, eller om det skal være usynligt. Når brugere i dit netværk laver indhold, kan de selv vælge om indholdet må vises til andre der ikke er medlemmer af netværket.');
-  t('Du kan vælge om der automatisk skal vises relateret indhold i højrespalten i netværket.');
   t('Ekstern links');
   t('Emner');
   t('Er dette netværk et undernetværk til et andet netværk?');
@@ -1654,6 +1653,7 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Skjul auto relaterede links');
   t('Slut dato');
   t('Start dato');
+  t('Systemet genererer automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt.');
   t('Tags');
   t('Undernetværk');
   t('Åben');
