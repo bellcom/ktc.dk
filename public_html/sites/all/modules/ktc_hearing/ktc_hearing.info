@@ -148,6 +148,7 @@ features[variable][] = node_submitted_hearing
 features[variable][] = node_submitted_hearing_responses
 features[views_view][] = hearing_node_view
 features[views_view][] = hearings_missing_files
+features[views_view][] = ktc_hearing_group_select
 features[views_view][] = ktc_hearings_sectionpage_block
 features_exclude[field_base][body] = body
 features_exclude[field_base][og_group_ref] = og_group_ref

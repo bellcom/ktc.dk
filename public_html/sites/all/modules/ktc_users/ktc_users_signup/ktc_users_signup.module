@@ -28,6 +28,19 @@ function ktc_users_signup_menu() {
 }
 
 /**
+ * Implements hook_init().
+ */
+function ktc_users_signup_init() {
+  if (arg(0) == 'user' && arg(1) == 'reset') {
+    $account = user_load(arg(2));
+
+    if (!$account->access) {
+      drupal_set_title('Velkommen til ' . variable_get('site_name', ''));
+    }
+  }
+}
+
+/**
  * Settings for ktc users signup.
  */
 function ktc_users_signup_settings_form() {
@@ -164,7 +177,7 @@ function ktc_users_signup_form_validate($form, $form_state) {
   $mail = $form_state['values']['mail'];
   if (db_query("SELECT mail FROM {users} WHERE LOWER(:mail) = LOWER(mail)",
     array(':mail' => $mail))->fetchField()) {
-    form_set_error('mail', t('E-mail adressen er allerede i brug, hvis du har glemt din kode, kan du trykke <a href="@link">her</a> for at nulstille den.', array('@link' => 'user/password')));
+    form_set_error('mail', t('E-mail adressen er allerede i brug, hvis du har glemt din kode, kan du trykke <a href="@link">her</a> for at nulstille den.', array('@link' => '/user/password')));
   }
 }
 

@@ -70,8 +70,18 @@ function ktc_users_roles_usertype_page() {
   $usertype_vocab = taxonomy_vocabulary_machine_name_load('brugertyper');
   $usertypes = taxonomy_term_load_multiple(array(), array('vid' => $usertype_vocab->vid));
 
+  $drupal_role_options = user_roles();
   $drupal_role_options[0] = t('Ingen');
-  $drupal_role_options = array_merge($drupal_role_options, user_roles());
+
+  $form['prefix'] = array(
+    '#type' => 'item',
+    '#prefix' => t('I kolonnen til venstre står de taksonomi ord der findes i ordforrådet %vocab
+       I kolonnen til højre kan der vælges hvilken rolle brugere af denne type skal have.',
+      array(
+        '%vocab' => $usertype_vocab->name,
+      )
+    ),
+  );
 
   $form['ktc_users_roles_usertype_map'] = array(
     '#tree' => TRUE,
@@ -105,8 +115,8 @@ function ktc_users_roles_group_page() {
 
   asort($grouptype_options);
 
+  $drupal_role_options = user_roles();
   $drupal_role_options[0] = t('Ingen');
-  $drupal_role_options = array_merge($drupal_role_options, user_roles());
 
   $form['grouptype'] = array(
     '#title' => t('Gruppetype'),
@@ -140,11 +150,16 @@ function ktc_users_roles_group_page() {
     $og_roles = og_roles('node', 'group');
 
     foreach ($og_roles as $og_role_id => $og_role_name) {
+      $default_value = 0;
+      if (!empty($role_map) && isset($role_map[$grouptype_tid]) && isset ($role_map[$grouptype_tid][$og_role_id])) {
+        $default_value = $role_map[$grouptype_tid][$og_role_id];
+      }
+
       $form['role_map'][$grouptype_tid][$og_role_id] = array(
         '#type' => 'select',
         '#prefix' => '<span style="float:left; width: 15%">' . $og_role_name . '</span>',
         '#options' => $drupal_role_options,
-        '#default_value' => !empty($role_map) ? $role_map[$grouptype_tid][$og_role_id] : 0,
+        '#default_value' => $default_value,
       );
     }
 
@@ -182,7 +197,7 @@ function ktc_users_roles_select_grouptype(&$form, &$form_state) {
   if (isset($form_state['clicked_button']['#grouptype_tid'])) {
     $selected_grouptype = $form_state['clicked_button']['#grouptype_tid'];
 
-    unset($ktc_users_roles_groups[$selected_grouptype]);
+    unset($ktc_users_roles_grouptypes[$selected_grouptype]);
 
     // Unset from map aswell.
     $role_map = variable_get('ktc_users_roles_map', array());
