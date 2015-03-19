@@ -149,5 +149,40 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'group',
+    'dependent' => 'field_open_group',
+    'dependee' => 'field_netvaerkstype',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'values_set' => 1,
+      'value' => array(),
+      'values' => array(),
+      'value_form' => array(),
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(),
+      'element_edit' => array(
+        1 => 1,
+        2 => 0,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(),
+      'selector' => '',
+    ),
+  );
+
   return $items;
 }

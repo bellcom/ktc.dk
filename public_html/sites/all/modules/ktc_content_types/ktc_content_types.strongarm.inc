@@ -898,7 +898,10 @@ function ktc_content_types_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '2',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '7',
         ),
       ),
       'display' => array(
@@ -1013,6 +1016,9 @@ function ktc_content_types_strongarm() {
         ),
         'workbench_access' => array(
           'weight' => '0',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '14',
         ),
       ),
     ),

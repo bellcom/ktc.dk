@@ -4351,15 +4351,9 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-os2web_base_news-body'
   $field_instances['node-os2web_base_news-body'] = array(
     'bundle' => 'os2web_base_news',
-    'default_value' => array(
-      0 => array(
-        'summary' => '',
-        'value' => '',
-        'format' => 'filtered_html',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Indtast din nyhed her. Adskil gerne med afsnit og typografier',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -4416,6 +4410,32 @@ function ktc_content_types_field_default_field_instances() {
     'label' => 'Indhold',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -4429,6 +4449,74 @@ function ktc_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-os2web_base_news-field_flere_billeder'
+  $field_instances['node-os2web_base_news-field_flere_billeder'] = array(
+    'bundle' => 'os2web_base_news',
+    'deleted' => 0,
+    'description' => 'Du kan sætte flere billeder ind i din nyhed. Disse vises som billedgalleri',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 19,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_flere_billeder',
+    'label' => 'Flere billeder',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '800x300',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'billede_preview',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 7,
     ),
   );
 
@@ -4659,128 +4747,6 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2web_base_news-field_news_category'
-  $field_instances['node-os2web_base_news-field_news_category'] = array(
-    'bundle' => 'os2web_base_news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_category',
-    'label' => 'Kategori',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 2,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-os2web_base_news-field_os2web_base_field_edi_tags'
-  $field_instances['node-os2web_base_news-field_os2web_base_field_edi_tags'] = array(
-    'bundle' => 'os2web_base_news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-      'related_block' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_os2web_base_field_edi_tags',
-    'label' => 'Stikord',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'allow',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 9,
-    ),
-  );
-
   // Exported field_instance: 'node-os2web_base_news-field_os2web_base_field_ext_link'
   $field_instances['node-os2web_base_news-field_os2web_base_field_ext_link'] = array(
     'bundle' => 'os2web_base_news',
@@ -4851,7 +4817,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 
@@ -4864,7 +4830,7 @@ function ktc_content_types_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Systemet genererer automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -4920,7 +4886,7 @@ function ktc_content_types_field_default_field_instances() {
     'bundle' => 'os2web_base_news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Du kan også tilvælge KL Emneord til nyheden',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -4967,14 +4933,13 @@ function ktc_content_types_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'deny',
-        'size' => 60,
+        'apply_chosen' => 1,
+        'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 8,
     ),
   );
@@ -4983,7 +4948,7 @@ function ktc_content_types_field_default_field_instances() {
   $field_instances['node-os2web_base_news-field_os2web_base_field_lead_img'] = array(
     'bundle' => 'os2web_base_news',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Sæt et billede på din nyhed for at gøre den mere opsigtsvækkende og interessant for læseren. Du må kun bruge billeder du har rettighederne til',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -5190,46 +5155,27 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_lead_img',
-    'label' => 'Primære billede',
+    'label' => 'Primært billede',
     'required' => 1,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
-      'epsacrop' => array(
-        'styles' => array(
-          'ktc_content_image' => 'ktc_content_image',
-        ),
-      ),
       'file_directory' => 'news',
       'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '10 MB',
-      'max_resolution' => '800x600',
-      'min_resolution' => '500x300',
-      'title_field' => 0,
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '800x300',
+      'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'image',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          0 => 0,
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'upload' => 'upload',
-        ),
+        'preview_image_style' => 'listevisning_stor',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
+      'type' => 'image_image',
       'weight' => 5,
     ),
   );
@@ -5274,7 +5220,7 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_media',
-    'label' => 'Filer',
+    'label' => 'Bilag',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -5285,9 +5231,10 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'file',
       'settings' => array(
         'allowed_schemes' => array(
+          'private' => 0,
           'public' => 'public',
         ),
         'allowed_types' => array(
@@ -5304,7 +5251,7 @@ function ktc_content_types_field_default_field_instances() {
         ),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
+      'type' => 'file_generic',
       'weight' => 6,
     ),
   );
@@ -5365,7 +5312,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 13,
     ),
   );
 
@@ -5374,7 +5321,7 @@ function ktc_content_types_field_default_field_instances() {
     'bundle' => 'os2web_base_news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Skriv et kort resume af din nyhed som du ønsker det skal vises i lister og oversigter. Du kan udelade dette, så i stedet vises de første sætninger i din tekst som resume',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -5433,9 +5380,35 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_summary',
-    'label' => 'Resume (maks 2 linier!)',
+    'label' => 'Manchet',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'display_summary' => 0,
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -5455,13 +5428,9 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-os2web_base_news-field_os2web_news_page_type'
   $field_instances['node-os2web_base_news-field_os2web_news_page_type'] = array(
     'bundle' => 'os2web_base_news',
-    'default_value' => array(
-      0 => array(
-        'tid' => 1848,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Angiv hvilken type din nyhed er',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -5554,7 +5523,7 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Flere emner',
+    'label' => 'Tags',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -5564,11 +5533,10 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -5577,7 +5545,7 @@ function ktc_content_types_field_default_field_instances() {
     'bundle' => 'os2web_base_news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Vælg hvilke emner der arbejdes med i netværket. Vælg gerne 3-7 emner og underemner - og vær så specifik som muligt. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -5613,19 +5581,18 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
-    'label' => 'Emner',
+    'label' => 'Faglige emner',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'hs_taxonomy',
       'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => 0,
+        'apply_chosen' => 1,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_hs',
       'weight' => 6,
     ),
   );
@@ -5639,7 +5606,7 @@ function ktc_content_types_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Vælg om nyheden skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, nyheden er publiceret i)',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -5697,7 +5664,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 13,
     ),
     'widget_type' => 'options_select',
   );
@@ -6487,6 +6454,7 @@ function ktc_content_types_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Adresse');
   t('Afholdelsessted');
+  t('Angiv hvilken type din nyhed er');
   t('Annoncør');
   t('Antal pladser');
   t('Arrangementets dato');
@@ -6503,12 +6471,16 @@ function ktc_content_types_field_default_field_instances() {
   t('Bredt banner');
   t('Direkte link til program');
   t('Direkte link til tilmelding');
+  t('Du kan også tilvælge KL Emneord til nyheden');
+  t('Du kan sætte flere billeder ind i din nyhed. Disse vises som billedgalleri');
   t('Ekstern links');
   t('Ekstra artikler');
   t('Ekstra tekst');
   t('Emner');
+  t('Faglige emner');
   t('Fil');
   t('Filer');
+  t('Flere billeder');
   t('Flere emner');
   t('Forfatter');
   t('Forfrem til');
@@ -6519,10 +6491,10 @@ function ktc_content_types_field_default_field_instances() {
   t('Her kan du indtastse stikord til din diskussion (tags)');
   t('Her kan du vælge om du vil publicere Diskussionen på andre platforme (kræver særlige rettigheder)');
   t('Indhold');
+  t('Indtast din nyhed her. Adskil gerne med afsnit og typografier');
   t('Indtast dit oplæg til diskussion her');
   t('KL Emneord');
   t('KLE stikord');
-  t('Kategori');
   t('Kort beskrivende tekst');
   t('Leder');
   t('Link til arrangørs hjemmeside');
@@ -6536,17 +6508,18 @@ function ktc_content_types_field_default_field_instances() {
   t('Nøgleord/ kategorier (max 5 stk.)');
   t('Original link');
   t('Periode');
-  t('Primære billede');
+  t('Primært billede');
   t('Pris (inkl./ ekskl. moms)');
   t('Regioner');
-  t('Resume (maks 2 linier!)');
   t('Sektion / Tema');
   t('Side nr');
   t('Skal gerne være 256x256px');
   t('Skjul auto relaterede links');
+  t('Skriv et kort resume af din nyhed som du ønsker det skal vises i lister og oversigter. Du kan udelade dette, så i stedet vises de første sætninger i din tekst som resume');
   t('Status');
-  t('Stikord');
   t('Synlighed');
+  t('Systemet genererer automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt');
+  t('Sæt et billede på din nyhed for at gøre den mere opsigtsvækkende og interessant for læseren. Du må kun bruge billeder du har rettighederne til');
   t('Søgeord');
   t('Tags');
   t('Tilmeldingsfrist');
@@ -6562,7 +6535,9 @@ function ktc_content_types_field_default_field_instances() {
   t('Visningsperiode');
   t('Vælg de netværk som Diskussionen skal publiceres i.');
   t('Vælg gerne 3-7 emner og underemner - og vær så specifik som muligt. ');
+  t('Vælg hvilke emner der arbejdes med i netværket. Vælg gerne 3-7 emner og underemner - og vær så specifik som muligt. ');
   t('Vælg om Diskussionen skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, Diskussionen er publiceret i)');
+  t('Vælg om nyheden skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, nyheden er publiceret i)');
 
   return $field_instances;
 }
