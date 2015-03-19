@@ -6,7 +6,7 @@
 .page-node-edit,
 .page-node-add {
 
-  .region-content section {
+  .region-content section#block-system-main {
     background-color: #F5F5F5;
     padding: 10px;
   }
@@ -41,7 +41,7 @@
     border-radius: 4px;
   }
 }
-
+#block-system-help section { background-color: transparent;}
 // Default show for a node with 3 columns.
 body.page-node,
 body.page-taxonomy-term {
@@ -448,3 +448,14 @@ body.node-type-ktc-supplier {
 
 .field-group-tab h3 { margin-top: 0px;
 	span { font-size: @font-size-h5; }}
+	
+.container-inline-date {
+	.form-item { display: block;}
+	.date-padding { float: none; padding-left: 0;}
+	/*label[for="edit-publish-on"] {text-transform: }*/
+	 }
+	 
+div.field-group-tabs-wrapper div.field-widget-image-image fieldset.panel,
+div.field-group-tabs-wrapper div.field-type-file.field-widget-file-generic fieldset.panel,
+div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel { padding: 0px 0px 0px 0px}
+
