@@ -107,7 +107,7 @@ function ktc_content_types_node_info() {
       'description' => '',
       'has_title' => '1',
       'title_label' => t('Overskrift'),
-      'help' => '',
+      'help' => t('Du kan her starte en diskussion i dine netværk. De andre medlemmer af dit netværk kan kommentere på dine og de andres deltageres svar. '),
     ),
     'magazine' => array(
       'name' => t('Magasin'),

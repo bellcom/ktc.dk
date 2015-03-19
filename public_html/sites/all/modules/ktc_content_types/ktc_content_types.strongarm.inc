@@ -585,6 +585,9 @@ function ktc_content_types_strongarm() {
         'path' => array(
           'weight' => '8',
         ),
+        'scheduler_settings' => array(
+          'weight' => '16',
+        ),
       ),
       'display' => array(
         'signup' => array(
@@ -684,10 +687,13 @@ function ktc_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '3',
         ),
         'path' => array(
           'weight' => '2',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '23',
         ),
       ),
       'display' => array(
@@ -1670,7 +1676,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_enable_forum_post';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['scheduler_unpublish_enable_forum_post'] = $strongarm;
 
   $strongarm = new stdClass();

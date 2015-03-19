@@ -79,21 +79,23 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
-    'label' => 'Beskrivelse',
-    'weight' => '34',
+    'label' => 'Fra arrangementet',
+    'weight' => '33',
     'children' => array(
-      0 => 'body',
-      1 => 'field_link_to_arrangement',
-      2 => 'field_os2web_base_field_ext_link',
+      0 => 'field_flere_billeder',
+      1 => 'field_arrangement_pressentations',
+      2 => 'field_arrangement_referat',
+      3 => 'field_artikel_reference',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Fra arrangementet',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_arrangementbesk|node|arrangement|form'] = $field_group;
@@ -108,21 +110,23 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
-    'label' => 'Emner',
-    'weight' => '40',
+    'label' => 'Faglige emner',
+    'weight' => '30',
     'children' => array(
       0 => 'field_arrangement_categories',
       1 => 'field_tags',
       2 => 'field_topics',
+      3 => 'field_os2web_base_field_hidlinks',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Faglige emner',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_arrangementemner|node|arrangement|form'] = $field_group;
@@ -137,19 +141,23 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
-    'label' => 'Filer',
-    'weight' => '39',
+    'label' => 'Bilag og links',
+    'weight' => '28',
     'children' => array(
-      0 => 'field_os2web_base_field_media',
+      0 => 'field_link_arrangement_organizer',
+      1 => 'field_link_to_arrangement',
+      2 => 'field_os2web_base_field_media',
+      3 => 'field_os2web_base_field_ext_link',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Bilag og links',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_arrangementfiles|node|arrangement|form'] = $field_group;
@@ -171,10 +179,10 @@ function ktc_content_types_field_group_info() {
       1 => 'group_arrangementemner',
       2 => 'group_arrangementfiles',
       3 => 'group_arrangementsted',
-      4 => 'group_arrangementsynlighed',
-      5 => 'group_arrangementtildm',
-      6 => 'group_arrangement',
-      7 => 'group_groups',
+      4 => 'group_arrangementtildm',
+      5 => 'group_arrangement',
+      6 => 'group_groups',
+      7 => 'group_hvemerdu',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -196,21 +204,22 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
-    'label' => 'Sted',
-    'weight' => '33',
+    'label' => 'Tid og sted',
+    'weight' => '27',
     'children' => array(
       0 => 'field_arrangement_address',
-      1 => 'field_arrangement_location',
-      2 => 'field_link_arrangement_organizer',
+      1 => 'field_arrangement_date',
+      2 => 'field_arrangement_location',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Tid og sted',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_arrangementsted|node|arrangement|form'] = $field_group;
@@ -255,12 +264,13 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Tilmelding',
-    'weight' => '35',
+    'weight' => '29',
     'children' => array(
       0 => 'field_arrangement_price',
       1 => 'field_link_to_signup',
-      2 => 'field_event_seats',
-      3 => 'field_submission',
+      2 => 'field_registration_deadline',
+      3 => 'field_event_seats',
+      4 => 'field_submission',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -284,26 +294,25 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
-    'label' => 'Arrangement',
-    'weight' => '32',
+    'label' => 'Beskriv arrangement',
+    'weight' => '26',
     'children' => array(
-      0 => 'field_arrangement_date',
-      1 => 'field_registration_deadline',
-      2 => 'field_target_group',
-      3 => 'field_meeting_type',
-      4 => 'field_short',
-      5 => 'field_arrangement_billede',
-      6 => 'field_arrangement_logo',
-      7 => 'title',
+      0 => 'body',
+      1 => 'field_target_group',
+      2 => 'field_meeting_type',
+      3 => 'title',
+      4 => 'group_mediabilllederdiv',
+      5 => 'group_logodiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Beskriv arrangement',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_arrangement|node|arrangement|form'] = $field_group;
@@ -417,7 +426,7 @@ function ktc_content_types_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-diskussion field-group-tab',
-        'description' => '<div class="well well-sm">Du kan her starte en diskussion i dine netværk. De andre medlemmer af dit netværk kan kommentere på dine og de andres deltageres svar. </div>',
+        'description' => '',
       ),
       'formatter' => 'closed',
     ),
@@ -470,8 +479,10 @@ function ktc_content_types_field_group_info() {
     'label' => 'Faglige emner',
     'weight' => '2',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_topics',
+      0 => 'field_topics',
+      1 => 'field_os2web_base_field_hidlinks',
+      2 => 'group_kle',
+      3 => 'group_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -584,20 +595,23 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
-    'label' => 'Netværk',
-    'weight' => '37',
+    'label' => 'Publicering',
+    'weight' => '31',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'field_regioner',
+      2 => 'scheduler_settings',
+      3 => 'group_visn',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Publicering',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_groups|node|arrangement|form'] = $field_group;
@@ -759,6 +773,71 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_hvemerdu|node|arrangement|form';
+  $field_group->group_name = 'group_hvemerdu';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'arrangement';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_arrangementform';
+  $field_group->data = array(
+    'label' => 'Dine oplysninger',
+    'weight' => '25',
+    'children' => array(
+      0 => 'field_arrangement_fornavn',
+      1 => 'field_arrangement_efternavn',
+      2 => 'field_arrangement_stilling_titel',
+      3 => 'field_arrangement_virksomhed',
+      4 => 'field_arrangement_opretteremail',
+      5 => 'field_arrangement_direkte_tele',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-hvemerdu field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_hvemerdu|node|arrangement|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_kle|node|forum_post|form';
+  $field_group->group_name = 'group_kle';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'forum_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_emner';
+  $field_group->data = array(
+    'label' => 'KLE',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_os2web_base_field_kle_ref',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'KLE',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-kle field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_kle|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_kle|node|os2web_base_news|form';
   $field_group->group_name = 'group_kle';
   $field_group->entity_type = 'node';
@@ -788,6 +867,72 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_kle|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_logodiv|node|arrangement|form';
+  $field_group->group_name = 'group_logodiv';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'arrangement';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_arrangement';
+  $field_group->data = array(
+    'label' => 'logo',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_arrangement_logo',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'logo',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-logodiv field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_logodiv|node|arrangement|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_mediabilllederdiv|node|arrangement|form';
+  $field_group->group_name = 'group_mediabilllederdiv';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'arrangement';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_arrangement';
+  $field_group->data = array(
+    'label' => 'mediabilleder',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_arrangement_billede',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'mediabilleder',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-mediabilllederdiv field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_mediabilllederdiv|node|arrangement|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -865,10 +1010,9 @@ function ktc_content_types_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'og_group_ref',
-      1 => 'field_udgivelsesdato',
-      2 => 'field_os2web_base_field_promote',
-      3 => 'scheduler_settings',
-      4 => 'group_synlighedsdiv',
+      1 => 'field_os2web_base_field_promote',
+      2 => 'scheduler_settings',
+      3 => 'group_synlighedsdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -950,7 +1094,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_publicering';
   $field_group->data = array(
     'label' => 'Synlighed for netværkets indhold',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'group_content_access',
     ),
@@ -1037,6 +1181,39 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|forum_post|form';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'forum_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_emner';
+  $field_group->data = array(
+    'label' => 'Tags',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_tags',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Tags',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-tags field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_tags|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_tags|node|os2web_base_news|form';
   $field_group->group_name = 'group_tags';
   $field_group->entity_type = 'node';
@@ -1098,6 +1275,39 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_udgave|node|magazine|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_visn|node|arrangement|form';
+  $field_group->group_name = 'group_visn';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'arrangement';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_groups';
+  $field_group->data = array(
+    'label' => 'Visning',
+    'weight' => '14',
+    'children' => array(
+      0 => 'group_content_access',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Visning',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-visn field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_visn|node|arrangement|form'] = $field_group;
 
   return $export;
 }
