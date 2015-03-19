@@ -313,7 +313,7 @@ function ktc_content_types_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 11,
+      'weight' => 1,
     ),
   );
 
@@ -371,7 +371,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 27,
     ),
   );
 
@@ -439,7 +439,7 @@ function ktc_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -497,7 +497,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -582,7 +582,259 @@ function ktc_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 24,
+    ),
+  );
+
+  // Exported field_instance: 'node-arrangement-field_arrangement_direkte_tele'
+  $field_instances['node-arrangement-field_arrangement_direkte_tele'] = array(
+    'bundle' => 'arrangement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 35,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_arrangement_direkte_tele',
+    'label' => 'Direkte telefon',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 30,
+    ),
+  );
+
+  // Exported field_instance: 'node-arrangement-field_arrangement_efternavn'
+  $field_instances['node-arrangement-field_arrangement_efternavn'] = array(
+    'bundle' => 'arrangement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 31,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_arrangement_efternavn',
+    'label' => 'Efternavn',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 26,
+    ),
+  );
+
+  // Exported field_instance: 'node-arrangement-field_arrangement_fornavn'
+  $field_instances['node-arrangement-field_arrangement_fornavn'] = array(
+    'bundle' => 'arrangement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 30,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_arrangement_fornavn',
+    'label' => 'Fornavn',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 25,
     ),
   );
 
@@ -640,7 +892,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 25,
     ),
   );
 
@@ -708,12 +960,12 @@ function ktc_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-arrangement-field_arrangement_period'
-  $field_instances['node-arrangement-field_arrangement_period'] = array(
+  // Exported field_instance: 'node-arrangement-field_arrangement_opretteremail'
+  $field_instances['node-arrangement-field_arrangement_opretteremail'] = array(
     'bundle' => 'arrangement',
     'default_value' => NULL,
     'deleted' => 0,
@@ -721,9 +973,10 @@ function ktc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 23,
+        'type' => 'text_default',
+        'weight' => 34,
       ),
       'listevisning' => array(
         'label' => 'above',
@@ -735,34 +988,123 @@ function ktc_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 0,
       ),
       'teasercomments' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_arrangement_period',
-    'label' => 'Visningsperiode',
+    'field_name' => 'field_arrangement_opretteremail',
+    'label' => 'Email',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 12,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 29,
+    ),
+  );
+
+  // Exported field_instance: 'node-arrangement-field_arrangement_pressentations'
+  $field_instances['node-arrangement-field_arrangement_pressentations'] = array(
+    'bundle' => 'arrangement',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 37,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_arrangement_pressentations',
+    'label' => 'Præsentationer',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'presentations',
+      'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 33,
     ),
   );
 
@@ -821,6 +1163,324 @@ function ktc_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'node-arrangement-field_arrangement_referat'
+  $field_instances['node-arrangement-field_arrangement_referat'] = array(
+    'bundle' => 'arrangement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 38,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_arrangement_referat',
+    'label' => 'Referat',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 34,
+    ),
+  );
+
+  // Exported field_instance: 'node-arrangement-field_arrangement_stilling_titel'
+  $field_instances['node-arrangement-field_arrangement_stilling_titel'] = array(
+    'bundle' => 'arrangement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 32,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_arrangement_stilling_titel',
+    'label' => 'Stilling / titel',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 27,
+    ),
+  );
+
+  // Exported field_instance: 'node-arrangement-field_arrangement_virksomhed'
+  $field_instances['node-arrangement-field_arrangement_virksomhed'] = array(
+    'bundle' => 'arrangement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 33,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_arrangement_virksomhed',
+    'label' => 'Kommune / virksomhed',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 28,
+    ),
+  );
+
+  // Exported field_instance: 'node-arrangement-field_artikel_reference'
+  $field_instances['node-arrangement-field_artikel_reference'] = array(
+    'bundle' => 'arrangement',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 39,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_artikel_reference',
+    'label' => 'Artikel reference',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 35,
     ),
   );
 
@@ -884,7 +1544,75 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 19,
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance: 'node-arrangement-field_flere_billeder'
+  $field_instances['node-arrangement-field_flere_billeder'] = array(
+    'bundle' => 'arrangement',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 36,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_flere_billeder',
+    'label' => 'Billeder fra arrangementet',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 32,
     ),
   );
 
@@ -1073,7 +1801,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 15,
     ),
   );
 
@@ -1148,7 +1876,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 12,
+      'weight' => 14,
     ),
   );
 
@@ -1223,7 +1951,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -1281,7 +2009,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 4,
     ),
   );
 
@@ -1412,7 +2140,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 16,
     ),
   );
 
@@ -1472,7 +2200,7 @@ function ktc_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 13,
+      'weight' => 7,
     ),
   );
 
@@ -1516,97 +2244,23 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_media',
-    'label' => 'Fil',
+    'label' => 'Bilag',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
       'file_directory' => 'arrangement',
-      'file_extensions' => 'txt pdf doc xml ppt docx',
+      'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'file',
       'settings' => array(
-        'allowed_schemes' => array(
-          'private' => 'private',
-          'public' => 0,
-        ),
-        'allowed_types' => array(
-          0 => 0,
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'upload' => 'upload',
-        ),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'node-arrangement-field_regioner'
-  $field_instances['node-arrangement-field_regioner'] = array(
-    'bundle' => 'arrangement',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 14,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_regioner',
-    'label' => 'Regioner',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 12,
+      'type' => 'file_generic',
+      'weight' => 13,
     ),
   );
 
@@ -1677,68 +2331,7 @@ function ktc_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-arrangement-field_short'
-  $field_instances['node-arrangement-field_short'] = array(
-    'bundle' => 'arrangement',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_short',
-    'label' => 'Manchet',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 19,
     ),
   );
 
@@ -1799,7 +2392,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -1916,7 +2509,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 100,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -1987,7 +2580,7 @@ function ktc_content_types_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Vælg om arrangementet skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, arrangementet er publiceret i)',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2045,7 +2638,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 15,
     ),
     'widget_type' => 'options_select',
   );
@@ -6565,6 +7158,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Antal pladser');
   t('Arrangementets dato');
   t('Artikel');
+  t('Artikel reference');
   t('Banner');
   t('Banner 1');
   t('Banner 1 tekst og link');
@@ -6574,22 +7168,26 @@ function ktc_content_types_field_default_field_instances() {
   t('Beskrivelse');
   t('Bilag');
   t('Billede');
+  t('Billeder fra arrangementet');
   t('Bredt banner');
   t('Direkte link til program');
   t('Direkte link til tilmelding');
+  t('Direkte telefon');
   t('Du kan også tilvælge KL Emneord til nyheden');
   t('Du kan sætte flere billeder ind i din nyhed. Disse vises som billedgalleri');
+  t('Efternavn');
   t('Ekstern links');
   t('Ekstra artikler');
   t('Ekstra tekst');
+  t('Email');
   t('Emner');
   t('Faglige emner');
-  t('Fil');
   t('Filer');
   t('Flere billeder');
   t('Flere emner');
   t('Forfatter');
   t('Forfrem til');
+  t('Fornavn');
   t('Forside (billede)');
   t('Gammel gid');
   t('Gammel nid');
@@ -6601,6 +7199,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Indtast dit oplæg til diskussion her');
   t('KL Emneord');
   t('KLE stikord');
+  t('Kommune / virksomhed');
   t('Kort beskrivende tekst');
   t('Leder');
   t('Link til arrangørs hjemmeside');
@@ -6616,13 +7215,15 @@ function ktc_content_types_field_default_field_instances() {
   t('Periode');
   t('Primært billede');
   t('Pris (inkl./ ekskl. moms)');
-  t('Regioner');
+  t('Præsentationer');
+  t('Referat');
   t('Sektion / Tema');
   t('Side nr');
   t('Skal gerne være 256x256px');
   t('Skjul auto relaterede links');
   t('Skriv et kort resume af din nyhed som du ønsker det skal vises i lister og oversigter. Du kan udelade dette, så i stedet vises de første sætninger i din tekst som resume');
   t('Status');
+  t('Stilling / titel');
   t('Synlighed');
   t('Systemet genererer automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt');
   t('Sæt et billede på din nyhed for at gøre den mere opsigtsvækkende og interessant for læseren. Du må kun bruge billeder du har rettighederne til');
@@ -6638,11 +7239,11 @@ function ktc_content_types_field_default_field_instances() {
   t('Udgivelsesdato');
   t('Udgået');
   t('Vises i højre spalte');
-  t('Visningsperiode');
   t('Vælg de netværk som Diskussionen skal publiceres i.');
   t('Vælg gerne 3-7 emner og underemner - og vær så specifik som muligt. ');
   t('Vælg hvilke emner der arbejdes med i netværket. Vælg gerne 3-7 emner og underemner - og vær så specifik som muligt. ');
   t('Vælg om Diskussionen skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, Diskussionen er publiceret i)');
+  t('Vælg om arrangementet skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, arrangementet er publiceret i)');
   t('Vælg om nyheden skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, nyheden er publiceret i)');
 
   return $field_instances;

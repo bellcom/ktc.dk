@@ -585,6 +585,9 @@ function ktc_content_types_strongarm() {
         'path' => array(
           'weight' => '8',
         ),
+        'scheduler_settings' => array(
+          'weight' => '16',
+        ),
       ),
       'display' => array(
         'signup' => array(
