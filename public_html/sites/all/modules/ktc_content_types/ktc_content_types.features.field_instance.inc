@@ -3013,6 +3013,125 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-forum_post-field_os2web_base_field_hidlinks'
+  $field_instances['node-forum_post-field_os2web_base_field_hidlinks'] = array(
+    'bundle' => 'forum_post',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Systemet genererer automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_hidlinks',
+    'label' => 'Skjul auto relaterede links',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-forum_post-field_os2web_base_field_kle_ref'
+  $field_instances['node-forum_post-field_os2web_base_field_kle_ref'] = array(
+    'bundle' => 'forum_post',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_kle_ref',
+    'label' => 'KL Emneord',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+        'content_taxonomy_opt_groups' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-forum_post-field_os2web_base_field_media'
   $field_instances['node-forum_post-field_os2web_base_field_media'] = array(
     'bundle' => 'forum_post',
@@ -3053,7 +3172,7 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_media',
-    'label' => 'Filer',
+    'label' => 'Bilag',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -3064,26 +3183,11 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'file',
       'settings' => array(
-        'allowed_schemes' => array(
-          'private' => 'private',
-          'public' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'upload' => 'upload',
-        ),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
+      'type' => 'file_generic',
       'weight' => 5,
     ),
   );
@@ -3139,7 +3243,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -3191,13 +3295,15 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
+        'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_opt_groups' => 0,
+        'size' => 60,
       ),
-      'type' => 'options_select',
-      'weight' => 4,
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 6,
     ),
   );
 
@@ -3249,12 +3355,12 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'hs_taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
         'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_hs',
       'weight' => 3,
     ),
   );

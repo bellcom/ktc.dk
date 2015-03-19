@@ -417,7 +417,7 @@ function ktc_content_types_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-diskussion field-group-tab',
-        'description' => '<div class="well well-sm">Du kan her starte en diskussion i dine netværk. De andre medlemmer af dit netværk kan kommentere på dine og de andres deltageres svar. </div>',
+        'description' => '',
       ),
       'formatter' => 'closed',
     ),
@@ -470,8 +470,10 @@ function ktc_content_types_field_group_info() {
     'label' => 'Faglige emner',
     'weight' => '2',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_topics',
+      0 => 'field_topics',
+      1 => 'field_os2web_base_field_hidlinks',
+      2 => 'group_kle',
+      3 => 'group_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -759,6 +761,39 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_kle|node|forum_post|form';
+  $field_group->group_name = 'group_kle';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'forum_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_emner';
+  $field_group->data = array(
+    'label' => 'KLE',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_os2web_base_field_kle_ref',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'KLE',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-kle field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_kle|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_kle|node|os2web_base_news|form';
   $field_group->group_name = 'group_kle';
   $field_group->entity_type = 'node';
@@ -865,10 +900,9 @@ function ktc_content_types_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'og_group_ref',
-      1 => 'field_udgivelsesdato',
-      2 => 'field_os2web_base_field_promote',
-      3 => 'scheduler_settings',
-      4 => 'group_synlighedsdiv',
+      1 => 'field_os2web_base_field_promote',
+      2 => 'scheduler_settings',
+      3 => 'group_synlighedsdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -950,7 +984,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_publicering';
   $field_group->data = array(
     'label' => 'Synlighed for netværkets indhold',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'group_content_access',
     ),
@@ -1033,6 +1067,39 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_tabs|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|forum_post|form';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'forum_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_emner';
+  $field_group->data = array(
+    'label' => 'Tags',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_tags',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Tags',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-tags field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_tags|node|forum_post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
