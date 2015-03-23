@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the KTC Subscriptions UI feature.
+ */
+
+include_once 'ktc_subscription_ui.features.inc';
+/**
+ * @file
  * KTC Subscription UI module.
  */
 
