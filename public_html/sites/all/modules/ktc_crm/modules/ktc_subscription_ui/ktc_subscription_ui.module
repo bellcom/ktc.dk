@@ -1,0 +1,323 @@
+<?php
+/**
+ * @file
+ * KTC Subscription UI module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_subscription_ui_menu() {
+  $items['user/%user/abonnementer'] = array(
+    'title' => 'Mine abonnementer',
+    'description' => 'Håndter abonnementer',
+    'access callback' => 'user_is_logged_in',
+    'page arguments' => array(1),
+    'page callback' => 'ktc_subscription_ui_page',
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['user/%user/abonnementer/%/edit'] = array(
+    'title' => 'Mine abonnementer',
+    'description' => 'Håndter abonnementer',
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_subscription_ui_form', 1, 3),
+  );
+
+  $items['user/%user/abonnementer/%/add'] = array(
+    'title' => 'Mine abonnementer',
+    'description' => 'Håndter abonnementer',
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_subscription_ui_form', 1, 3),
+  );
+
+  $items['user/%user/abonnementer/%/cancel'] = array(
+    'title' => 'Mine abonnementer',
+    'description' => 'Håndter abonnementer',
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_crm_subscription_cancel_form', 1, 3),
+  );
+
+  $items['abonnementer'] = array(
+    'access callback' => TRUE,
+    'page callback' => 'ktc_subscription_ui_redirect',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ktc_subscription_ui_theme() {
+  return array(
+    'ktc_subscription_ui_page' => array(
+      'template' => 'ktc-crm-subscriptions-page',
+    ),
+  );
+}
+
+/**
+ * Redirect to current users subscription for specified product.
+ */
+function ktc_subscription_ui_redirect($product_id = '') {
+  global $user;
+
+  // If the user is logged in, redirect to the subscription page.
+  if ($user->uid) {
+    drupal_goto("user/$user->uid/abonnementer/$product_id");
+  }
+  else {
+    drupal_set_message('Du skal logge ind for at kunne se dine abonnementer');
+    drupal_goto('user/login', array('query' => array('destination' => "abonnementer/$product_id")));
+  }
+}
+
+/**
+ * Page callback, user subscriptions overview.
+ */
+function ktc_subscription_ui_page($account) {
+  $args = array();
+
+  $args['subscription_nodes'] = ktc_subscription_ui_get_product_list('subscription');
+  $args['user_subscriptions'] = ktc_crm_subscriptions_fetch_user_subscriptions($account);
+
+  return theme('ktc_subscription_ui_page', $args);
+}
+
+/**
+ * Form callback for creating/editing a subscription.
+ */
+function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
+  $css = '
+      #edit-invoiceaccount-hierarchical-select-selects-0 {display: none;}
+      #edit-invoiceaccount-hierarchical-select-selects-1 option:first-child {display: none;}
+    ';
+  drupal_add_css($css, 'inline');
+
+  $form = array();
+
+  if ($product = node_load($product_nid)) {
+
+    $form['text'] = array(
+      '#type' => 'item',
+      '#markup' => render(field_view_field('node', $product, 'body', array('label' => 'hidden'))),
+    );
+
+    if ($product_uuid = _ktc_crm_get_uuid('node', $product)) {
+      $user_uuid = _ktc_crm_get_uuid('user', $account);
+
+      $subscriptions = ktc_crm_subscriptions_fetch_user_subscriptions($account);
+      if (isset($subscriptions[$product_uuid])) {
+        $form_state['subscriptiondto'] = $subscriptions[$product_uuid];
+        $is_new = FALSE;
+      }
+      else {
+        $form_state['subscriptiondto'] = new \KTC\Subscription\SubscriptionDto(NULL);
+        $form_state['subscriptiondto']->ProductId = $product_uuid;
+        $form_state['subscriptiondto']->RecipientId = $user_uuid;
+        $form_state['subscriptiondto']->OtherAddress = new \KTC\Subscription\AddressDto();
+        $is_new = TRUE;
+      }
+
+      $vocab = taxonomy_vocabulary_machine_name_load('accounts');
+      $invoiceaccount = ktc_crm_account_load_from_uuid($form_state['subscriptiondto']->InvoiceAccountId);
+
+      if (!$invoiceaccount) {
+        $invoiceaccount = _ktc_crm_account_get_users_account($account);
+      }
+
+      $form['invoiceaccount'] = array(
+        '#type' => 'hierarchical_select',
+        '#title' => t('Firma'),
+        '#required' => TRUE,
+        '#config' => array(
+          'module' => 'hs_taxonomy',
+          'params' => array(
+            'vid' => $vocab->vid,
+          ),
+          'require_entity' => 0,
+          'render_flat_select' => 0,
+          'save_lineage' => 0,
+          'entity_count' => 0,
+          'enforce_deepest' => 0,
+          'editability' => array('status' => 0),
+          'dropbox' => array('status' => 0),
+          'level_labels' => array('status' => 0),
+        ),
+        '#default_value' => $invoiceaccount->tid,
+      );
+
+      $recipient_addresses['Work'] = array(
+        'Arbejde',
+        ktc_crm_get_user_address($account, 'Work'),
+        l(t('ret'), 'user/' . $account->uid . '/edit'),
+      );
+
+      $recipient_addresses['Private'] = array(
+        'Privat',
+        ktc_crm_get_user_address($account, 'Private'),
+        l(t('ret'), 'user/' . $account->uid . '/edit'),
+      );
+
+      $recipient_addresses['Other'] = array(
+        'Anden leveringsadresse',
+        'Udfyldes herunder.',
+        '',
+      );
+
+      $form['recipient_address'] = array(
+        '#type' => 'tableselect',
+        '#multiple' => FALSE,
+        '#header' => array('Levering', 'Adresse', ''),
+        '#required' => TRUE,
+        '#options' => $recipient_addresses,
+        '#default_value' => $form_state['subscriptiondto']->RecipientAddress,
+      );
+
+      $form['other_address'] = array(
+        '#type' => 'fieldset',
+        '#title' => 'Anden leveringsadresse',
+        '#description' => 'Udfyldes kun, hvis "Anden leveringsadresse" vælges ovenfor.',
+        '#tree' => FALSE,
+      );
+
+      $form['other_address']['address_line_1'] = array(
+        '#title' => t('Vejnavn'),
+        '#type' => 'textfield',
+        '#default_value' => $form_state['subscriptiondto']->OtherAddress->AddressLine1,
+      );
+
+      $form['other_address']['address_line_2'] = array(
+        '#title' => t('Vejnavn 2'),
+        '#type' => 'textfield',
+        '#default_value' => $form_state['subscriptiondto']->OtherAddress->AddressLine2,
+      );
+
+      $form['other_address']['postal_code'] = array(
+        '#title' => t('Postnummer'),
+        '#type' => 'textfield',
+        '#default_value' => $form_state['subscriptiondto']->OtherAddress->PostalCode,
+      );
+
+      $form['other_address']['city'] = array(
+        '#title' => t('By'),
+        '#type' => 'textfield',
+        '#default_value' => $form_state['subscriptiondto']->OtherAddress->City,
+      );
+
+      $form['ean'] = array(
+        '#title' => 'EAN',
+        '#type' => 'textfield',
+        '#default_value' => $form_state['subscriptiondto']->EAN,
+      );
+
+      $form['submit'] = array(
+        '#value' => $is_new ? t('Opret') : t('Gem'),
+        '#type' => 'submit',
+      );
+    }
+  }
+
+  return $form;
+}
+
+/**
+ * Submit handler for create/update subscription form.
+ */
+function ktc_subscription_ui_form_submit(&$form, &$form_state) {
+
+  $subscriptiondto = $form_state['subscriptiondto'];
+
+  $invoiceaccount = taxonomy_term_load($form_state['values']['invoiceaccount'][0]);
+
+  $invoiceaccountid = _ktc_crm_get_uuid('taxonomy_term', $invoiceaccount);
+
+  $subscriptiondto->InvoiceAccountId = $invoiceaccountid;
+
+  $subscriptiondto->RecipientAddress = $form_state['values']['recipient_address'];
+
+  $addressdto = new KTC\Subscription\AddressDto($form_state['values']['crm_uuid']);
+
+  $addressdto->AddressLine1 = $form_state['values']['address_line_1'];
+  $addressdto->AddressLine2 = $form_state['values']['address_line_2'];
+  $addressdto->City = $form_state['values']['city'];
+  $addressdto->PostalCode = $form_state['values']['postal_code'];
+
+  $subscriptiondto->OtherAddress = $addressdto;
+  $subscriptiondto->EndDate = date('Y-m-d\TH:i:s', strtotime("+100 years"));
+
+  ktc_crm_update_user_subscription($subscriptiondto);
+
+  global $user;
+  drupal_goto('user/' . $user->uid . '/abonnementer');
+}
+
+/**
+ * Form callback for cancelling a subscription.
+ */
+function ktc_crm_subscription_cancel_form($form, &$form_state, $account, $product_nid) {
+  if (_ktc_crm_is_ktc_member()) {
+    return array();
+  }
+
+  $form = array();
+
+  if ($product = node_load($product_nid)) {
+    if ($product_uuid = _ktc_crm_get_uuid('node', $product)) {
+      $user_uuid = _ktc_crm_get_uuid('user', $account);
+
+      $subscriptions = ktc_subscription_ui_fetch_user_subscriptions($account);
+      if (isset($subscriptions[$product_uuid])) {
+        $form_state['subscriptiondto'] = $subscriptions[$product_uuid];
+      }
+    }
+  }
+
+  $form['message'] = array(
+    '#type' => 'item',
+    '#markup' => 'advarsel',
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Opsig'),
+    '#suffix' => l(t('Annullér'), $_SERVER['HTTP_REFERER']),
+    '#attributes' => array('class' => array('btn-warning')),
+  );
+
+  return $form;
+}
+
+/**
+ * Form callback for cancelling a subscription.
+ */
+function ktc_crm_subscription_cancel_form_submit($form, &$form_state) {
+  $subscriptiondto = $form_state['subscriptiondto'];
+  $subscriptiondto->EndDate = date('Y-m-d\TH:i:s', time());
+
+  ktc_crm_update_user_subscription($subscriptiondto);
+
+  global $user;
+  drupal_goto('user/' . $user->uid . '/abonnementer');
+}
+
+/**
+ * Get a list of products.
+ */
+function ktc_subscription_ui_get_product_list($type) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'product')
+    ->fieldCondition('field_product_type', 'value', $type);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    return node_load_multiple(array_keys($result['node']));
+  }
+
+  return array();
+}
