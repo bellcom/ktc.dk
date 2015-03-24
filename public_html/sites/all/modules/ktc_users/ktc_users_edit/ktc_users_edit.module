@@ -242,19 +242,19 @@ function ktc_users_edit_settings_form() {
   $form['ktc_users_edit_company_form_message'] = array(
     '#title' => 'Besked på virksomhedsoplysningsside',
     '#type' => 'textarea',
-    '#markup' => variable_get('ktc_users_edit_company_form_message', ''),
+    '#default_value' => variable_get('ktc_users_edit_company_form_message', ''),
   );
 
   $form['ktc_users_edit_company_form_submit_message'] = array(
     '#title' => 'Besked ved indsendelse virksomhedsoplysninger',
     '#type' => 'textarea',
-    '#markup' => variable_get('ktc_users_edit_company_form_submit_message', ''),
+    '#default_value' => variable_get('ktc_users_edit_company_form_submit_message', ''),
   );
 
   $form['ktc_users_edit_company_form_mail'] = array(
     '#title' => 'E-mail modtager',
     '#type' => 'textfield',
-    '#markup' => variable_get('ktc_users_edit_company_form_mail', ''),
+    '#default_value' => variable_get('ktc_users_edit_company_form_mail', ''),
   );
 
   $form['ktc_users_edit_limitmembershipfields'] = array(
