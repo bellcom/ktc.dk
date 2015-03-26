@@ -9,9 +9,6 @@ Drupal.FieldGroup.Effects = Drupal.FieldGroup.Effects || {};
 Drupal.FieldGroup.groupWithfocus = null;
 
 Drupal.FieldGroup.setGroupWithfocus = function(element) {
-  if (Drupal.FieldGroup.groupWithfocus) {
-    Drupal.FieldGroup.groupWithfocus.hide();
-  }
   element.css({display: 'block'});
   Drupal.FieldGroup.groupWithfocus = element;
 }
