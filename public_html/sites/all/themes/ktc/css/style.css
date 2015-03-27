@@ -8163,6 +8163,9 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .node-type-hearing .region-content h3.pane-title {
   background-color: #36a145;
 }
+.pane-content {
+  background: white;
+}
 .toggle-pane-content .short-description .field {
   height: 115px;
   overflow: hidden;
@@ -8806,6 +8809,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-bottom: 0;
   background-color: #fff;
   overflow: hidden;
+  background: white;
 }
 .col-md-3 .panel-pane .pane-content .filter-box,
 .col-md-4 .panel-pane .pane-content .filter-box {
