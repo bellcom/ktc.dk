@@ -88,7 +88,7 @@ function _ktc_invite_arrangement_form($form, &$form_state, $nid) {
       '#description'        => NULL,
       '#default_value'      => NULL,
       '#required'           => TRUE,
-      '#autocomplete_path'  => 'ktc_autocomplete/user/user/name',
+      '#autocomplete_path' => 'user/autocomplete',
     );
 
     $form['ktc_arrangement_message'] = array(

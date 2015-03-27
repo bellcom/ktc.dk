@@ -6,9 +6,9 @@
 
 include_once 'ktc_users.features.inc';
 
-/* Add custom view modes */
 /**
  * Implements hook_entity_info_alter().
+ *
  * The first attribute in the array defines an arbitrary label for the view mode machine name.
  * 'custom settings' => TRUE displays the view mode as a default at the top of the display modes settings screen
  */
@@ -26,6 +26,38 @@ function ktc_users_form_alter(&$form, &$form_state, $form_id) {
   // Hide hidden form field_group.
   if ($form_id == 'user_profile_form') {
     ktc_users_field_group_hide_field_groups($form, array('group_hidden'));
+  }
+}
+
+/**
+ * Implements hook_user_presave().
+ */
+function ktc_users_user_presave(&$edit, $account, $category) {
+  // Only update user if $_POST['form_id'] is correct. Presave is also called
+  // when a user is updated programmatically, so this could turn into an
+  // unwanted loop otherwise.
+  if (isset($_POST['form_id']) && $_POST['form_id'] == 'user_profile_form') {
+    $tmp_account = clone $account;
+    foreach ($edit as $key => $value) {
+      $tmp_account->$key = $value;
+    }
+
+    if ($field = field_get_items('user', $tmp_account, 'field_navn')) {
+      $name = $field[0]['value'];
+    }
+
+    if ($field = field_get_items('user', $tmp_account, 'field_efternavn')) {
+      $name .= ' ' . $field[0]['value'];
+    }
+
+    if ($field = field_get_items('user', $tmp_account, 'field_account')) {
+      $term = taxonomy_term_load($field[0]['tid']);
+      $employer = $term->name;
+    }
+
+    $username = ktc_users_generate_username($name, $employer, $email);
+
+    $edit['name'] = $username;
   }
 }
 
@@ -48,4 +80,45 @@ function ktc_users_field_group_hide_field_groups(&$element, $group_names) {
       }
     }
   }
+}
+
+/**
+ * Generate a pretty username for the user.
+ */
+function ktc_users_generate_username($name, $employer, $email = '') {
+  // If name is empty, use the email. This is only a temporary solution
+  // until the user edits his userprofile the first time.
+  if (!$name) {
+    $name = $email;
+  }
+
+  // The actual username. We replace some of the illegal username characters.
+  $username = trim($name . ' - ' . str_replace(array(',', '/'), array('', '-'), $employer));
+
+  // Drupal only allows the users to have a 60 character long username.
+  if (strlen($username) > 60) {
+    if (strlen($name) > 27) {
+      $name = substr($name, 0, 27) . '..';
+    }
+
+    if (strlen($employer) > 27) {
+      $employer = substr($employer, 0, 27) . '..';
+    }
+    return ktc_users_generate_username($name, $employer);
+  }
+
+  // Check just to be sure, that the username is not already taken.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'user')
+     ->propertyCondition('name', $username);
+  $result = $query->execute();
+
+  if (isset($result['user'])) {
+    // This is a non-solution. We append a "." to the employername if the
+    // username is already taken. This should only happen due to old incorrect
+    // data.
+    return ktc_users_generate_username($name, $employer . '.');
+  }
+
+  return $username;
 }
