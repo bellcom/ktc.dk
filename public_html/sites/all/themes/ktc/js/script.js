@@ -53,11 +53,11 @@
     });
 
     // OG members view add show all members and close links.
-    var users = $('.pane-og-members-panel-pane-2');
+    var users = $('.pane-ktc-og-members');
 
     // Show all members link.
     $('.og-members-all a').click(function() {
-      users.removeClass('hidden');
+      users.addClass('in');
       $('#section-page-with-filter .pane-content .view').hide();
       return false;
     });
