@@ -215,6 +215,12 @@
       }
     });
 
+    // Remove css attributes from fieldgroups. Bootstrap themes handling of
+    // fieldgroups conflicts with the functionality from the fieldgroup module,
+    // Resulting in forms with a lot of unnessecary whitespace when there are
+    // errors.
+    $('fieldset.tab-pane').removeAttr('style');
+
   });
 
 Drupal.behaviors.feedbackForm = {

@@ -18,3 +18,34 @@ function ktc_users_entity_info_alter(&$entity_info) {
     'custom settings' => TRUE,
   );
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_users_form_alter(&$form, &$form_state, $form_id) {
+  // Hide hidden form field_group.
+  if ($form_id == 'user_profile_form') {
+    ktc_users_field_group_hide_field_groups($form, array('group_hidden'));
+  }
+}
+
+/**
+ * Hides field groups including children in a render array.
+ *
+ * @param array $element
+ *   A render array. Can be a form, node, user, ...
+ * @param array $group_names
+ *   An array of field group names that should be hidden.
+ */
+function ktc_users_field_group_hide_field_groups(&$element, $group_names) {
+  foreach ($group_names as $group_name) {
+    if (isset($element['#fieldgroups'][$group_name]) && isset($element['#group_children'])) {
+      // Hide the field group.
+      $element['#fieldgroups'][$group_name]->format_type = 'hidden';
+      // Hide the elements inside the field group.
+      foreach (array_keys($element['#group_children'], $group_name) as $field_name) {
+        $element[$field_name]['#access'] = FALSE;
+      }
+    }
+  }
+}

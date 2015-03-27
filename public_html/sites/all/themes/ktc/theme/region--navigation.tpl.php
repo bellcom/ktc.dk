@@ -54,7 +54,7 @@
     <?php endif; ?>
     <?php if (!$logged_in): ?>
       <div class="new_user_link">
-        <i class="new_user"></i><a href="/user/register">Opret Bruger</a>
+        <i class="new_user"></i><a href="/user/signup">Opret Bruger</a>
       </div>
     <?php elseif (isset($page['user_name'])): ?>
       <div class="header-user col-md-3 col-sm-4 col-xs-12">
