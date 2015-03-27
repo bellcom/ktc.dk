@@ -261,20 +261,22 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
   $edit['field_phone'][LANGUAGE_NONE][0]['value'] = $webuserdto->Phone;
   $edit['field_cell'][LANGUAGE_NONE][0]['value'] = $webuserdto->MobilePhone;
 
-  $edit['field_adresse'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->AddressLine1;
-  $edit['field_adresse_2'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->AddressLine2;
-  $edit['field_country'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->Country;
-  $edit['field_city'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->City;
-  $edit['field_zipcode'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->PostalCode;
+  if (is_array($webuserdto->Adresses->EANAddressDto)) {
+    $edit['field_adresse'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->AddressLine1;
+    $edit['field_adresse_2'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->AddressLine2;
+    $edit['field_country'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->Country;
+    $edit['field_city'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->City;
+    $edit['field_zipcode'][LANGUAGE_NONE][0]['value'] = $webuserdto->Adresses->EANAddressDto[1]->PostalCode;
+
+    if ($region_tid = _ktc_crm_group_get_region_tid($webuserdto->Adresses->EANAddressDto[1]->Region)) {
+      $edit['field_regioner'][LANGUAGE_NONE][0]['tid'] = $region_tid;
+    }
+  }
 
   if ($account = ktc_crm_account_load_from_uuid($webuserdto->DepartmentId)) {
     $edit['field_account'][LANGUAGE_NONE][0]['tid'] = $account->tid;
   }
   $edit['field_employer_name'][LANGUAGE_NONE][0]['value'] = $webuserdto->TopLevelAccountName;
-
-  if ($region_tid = _ktc_crm_group_get_region_tid($webuserdto->Adresses->EANAddressDto[1]->Region)) {
-    $edit['field_regioner'][LANGUAGE_NONE][0]['tid'] = $region_tid;
-  }
 
   $extra_fields = array(
     'field_special_skills' => 'AndreKompetencer',
