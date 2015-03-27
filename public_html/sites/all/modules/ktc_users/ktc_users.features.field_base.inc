@@ -36,7 +36,6 @@ function ktc_users_field_default_field_bases() {
       'allowed_values' => array(
         0 => array(
           'vocabulary' => 'accounts',
-          'parent' => 10277,
           'depth' => '',
         ),
       ),

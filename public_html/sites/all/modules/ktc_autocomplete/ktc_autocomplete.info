@@ -1,7 +1,0 @@
-name = KTC autocomplete
-description = KTC autocomplete: brug rigtig navn + arbejdsgiver til 'user/autocomplete'.
-version = VERSION
-core = 7.x
-version = 7.x-1.0
-package = KTC
-files[] = ktc_autocomplete.module
