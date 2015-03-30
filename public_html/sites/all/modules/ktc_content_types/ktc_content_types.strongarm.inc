@@ -91,7 +91,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_arrangement';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['comment_arrangement'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -378,7 +378,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_os2web_base_news';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['comment_os2web_base_news'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1174,9 +1174,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_arrangement';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_arrangement'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1438,7 +1436,6 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'node_options_os2web_base_news';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'revision',
   );
   $export['node_options_os2web_base_news'] = $strongarm;
 
@@ -1448,7 +1445,6 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'node_options_page';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'revision',
   );
   $export['node_options_page'] = $strongarm;
 
@@ -1613,14 +1609,14 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_os2web_base_news';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_submitted_os2web_base_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_page';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_page'] = $strongarm;
 
   $strongarm = new stdClass();
