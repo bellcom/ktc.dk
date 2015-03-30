@@ -9962,6 +9962,15 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   vertical-align: middle;
   margin-right: 5px;
 }
+.page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-meeting_doodle {
+  display: inline-block;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -66px;
+  width: 16px;
+  height: 13px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
