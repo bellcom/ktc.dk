@@ -8317,6 +8317,9 @@ div.field-group-tabs-wrapper div.field-type-file.field-widget-file-generic field
 div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   padding: 0px 0px 0px 0px;
 }
+.view-section-page-filter-extra h5 a {
+  font-weight: normal;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
@@ -9970,7 +9973,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 }
 .page-node.node-type-group .main-container .pane-center .pane-node-create-links .pane-content ul li a {
   color: #fff;
-  font-weight: 700;
+  font-weight: normal;
 }
 .page-node.node-type-group .main-container .pane-center .view-content {
   margin-left: -10px;
