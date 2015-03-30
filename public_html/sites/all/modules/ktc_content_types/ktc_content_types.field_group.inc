@@ -13,6 +13,33 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_afstemning|node|meeting_doodle|form';
+  $field_group->group_name = 'group_afstemning';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'meeting_doodle';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Afstemning',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_indhold',
+      1 => 'group_doodle',
+      2 => 'group_netvaerk',
+    ),
+    'format_type' => 'tabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-afstemning field-group-tabs',
+      ),
+    ),
+  );
+  $export['group_afstemning|node|meeting_doodle|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_andet|node|magazine|form';
   $field_group->group_name = 'group_andet';
   $field_group->entity_type = 'node';
@@ -320,6 +347,40 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_bilag|node|document|form';
+  $field_group->group_name = 'group_bilag';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_filer';
+  $field_group->data = array(
+    'label' => 'Bilag',
+    'weight' => '16',
+    'children' => array(
+      0 => 'field_dokument',
+      1 => 'field_tekst_til_bilaget',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Bilag',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-bilag field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_bilag|node|document|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_bilag|node|forum_post|form';
   $field_group->group_name = 'group_bilag';
   $field_group->entity_type = 'node';
@@ -436,6 +497,66 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_dokument|node|document|form';
+  $field_group->group_name = 'group_dokument';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_general';
+  $field_group->data = array(
+    'label' => 'Dokument',
+    'weight' => '0',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_document_type',
+      2 => 'title',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-dokument field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_dokument|node|document|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_doodle|node|meeting_doodle|form';
+  $field_group->group_name = 'group_doodle';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'meeting_doodle';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_afstemning';
+  $field_group->data = array(
+    'label' => 'Publicering',
+    'weight' => '14',
+    'children' => array(
+      0 => 'og_group_ref',
+      1 => 'field_os2web_base_field_promote',
+      2 => 'scheduler_settings',
+      3 => 'group_synlighedsdiv',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Publicering',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-doodle field-group-tab',
+        'description' => '<div class="well well-sm">Vælg de netværk som afstemningen skal publiceres i</div>',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_doodle|node|meeting_doodle|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_ekstlinks|node|os2web_base_news|form';
   $field_group->group_name = 'group_ekstlinks';
   $field_group->entity_type = 'node';
@@ -465,6 +586,36 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_ekstlinks|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_emner|node|document|form';
+  $field_group->group_name = 'group_emner';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_general';
+  $field_group->data = array(
+    'label' => 'Faglige emner',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_topics',
+      1 => 'field_os2web_base_field_hidlinks',
+      2 => 'group_tags',
+      3 => 'group_kle',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-emner field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_emner|node|document|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -526,6 +677,62 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_featured|node|magazine|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_filer|node|document|form';
+  $field_group->group_name = 'group_filer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_general';
+  $field_group->data = array(
+    'label' => 'Upload filer',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_os2web_base_field_media',
+      1 => 'group_bilag',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-filer field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_filer|node|document|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_general|node|document|form';
+  $field_group->group_name = 'group_general';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Generelt',
+    'weight' => '1',
+    'children' => array(
+      0 => 'group_dokument',
+      1 => 'group_filer',
+      2 => 'group_emner',
+      3 => 'group_publicering',
+    ),
+    'format_type' => 'tabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-general field-group-tabs',
+      ),
+    ),
+  );
+  $export['group_general|node|document|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -805,6 +1012,68 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_indhold|node|meeting_doodle|form';
+  $field_group->group_name = 'group_indhold';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'meeting_doodle';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_afstemning';
+  $field_group->data = array(
+    'label' => 'Doodle',
+    'weight' => '13',
+    'children' => array(
+      0 => 'field_doodle',
+      1 => 'field_registration_deadline',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Doodle',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-indhold field-group-tab',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_indhold|node|meeting_doodle|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_kle|node|document|form';
+  $field_group->group_name = 'group_kle';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_emner';
+  $field_group->data = array(
+    'label' => 'KLE',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_os2web_base_field_kle_ref',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'KLE',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-kle field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_kle|node|document|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_kle|node|forum_post|form';
   $field_group->group_name = 'group_kle';
   $field_group->entity_type = 'node';
@@ -968,6 +1237,35 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_netvaerk|node|meeting_doodle|form';
+  $field_group->group_name = 'group_netvaerk';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'meeting_doodle';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_afstemning';
+  $field_group->data = array(
+    'label' => 'Afstemning / Doodle',
+    'weight' => '12',
+    'children' => array(
+      0 => 'body',
+      1 => 'title',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Afstemning / Doodle',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-netvaerk field-group-tab',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_netvaerk|node|meeting_doodle|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_networkngroups|node|os2web_base_news|form';
   $field_group->group_name = 'group_networkngroups';
   $field_group->entity_type = 'node';
@@ -995,6 +1293,36 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_networkngroups|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_publicering|node|document|form';
+  $field_group->group_name = 'group_publicering';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_general';
+  $field_group->data = array(
+    'label' => 'Publicering',
+    'weight' => '3',
+    'children' => array(
+      0 => 'og_group_ref',
+      1 => 'field_os2web_base_field_promote',
+      2 => 'scheduler_settings',
+      3 => 'group_synlighedsdiv',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-publicering field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_publicering|node|document|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1086,6 +1414,109 @@ function ktc_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_skjult|node|document|form';
+  $field_group->group_name = 'group_skjult';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Skjult',
+    'weight' => '11',
+    'children' => array(
+      0 => 'field_gammel_gid',
+      1 => 'field_gammel_nid',
+      2 => 'field_news_author',
+      3 => 'path',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Skjult',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'hidden',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_skjult|node|document|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_skjult|node|meeting_doodle|form';
+  $field_group->group_name = 'group_skjult';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'meeting_doodle';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Skjult',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_gammel_nid',
+      1 => 'field_news_author',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Skjult',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'hidden',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_skjult|node|meeting_doodle|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_synlighedsdiv|node|document|form';
+  $field_group->group_name = 'group_synlighedsdiv';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_publicering';
+  $field_group->data = array(
+    'label' => 'Synlighed',
+    'weight' => '21',
+    'children' => array(
+      0 => 'group_content_access',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Synlighed',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_synlighedsdiv|node|document|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_synlighedsdiv|node|forum_post|form';
   $field_group->group_name = 'group_synlighedsdiv';
   $field_group->entity_type = 'node';
@@ -1115,6 +1546,39 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_synlighedsdiv|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_synlighedsdiv|node|meeting_doodle|form';
+  $field_group->group_name = 'group_synlighedsdiv';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'meeting_doodle';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_doodle';
+  $field_group->data = array(
+    'label' => 'Synlighed',
+    'weight' => '5',
+    'children' => array(
+      0 => 'group_content_access',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Synlighed',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-synlighedsdiv field-group-div well well-sm',
+        'description' => 'Vælg om afstemningen skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, afstemningen er publiceret i)',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_synlighedsdiv|node|meeting_doodle|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1177,6 +1641,39 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_tabs|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|document|form';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_emner';
+  $field_group->data = array(
+    'label' => 'Tags',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_tags',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Tags',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-tags field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_tags|node|document|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
