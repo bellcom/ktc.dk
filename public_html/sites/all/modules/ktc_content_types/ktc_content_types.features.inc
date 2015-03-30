@@ -93,6 +93,14 @@ function ktc_content_types_node_info() {
       'title_label' => t('Titel'),
       'help' => '',
     ),
+    'document' => array(
+      'name' => t('Dokument'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Overskrift'),
+      'help' => t('Du kan uploade én eller flere dokumenter og filer til denne indholdstype.'),
+    ),
     'factbox' => array(
       'name' => t('Faktaboks'),
       'base' => 'node_content',
@@ -116,6 +124,14 @@ function ktc_content_types_node_info() {
       'has_title' => '1',
       'title_label' => t('Titel'),
       'help' => '',
+    ),
+    'meeting_doodle' => array(
+      'name' => t('Afstemning'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Overskrift'),
+      'help' => t('Du kan bruge afstemninger til f.eks. at foreslå mødetidspunkter i dine netværk.'),
     ),
     'os2web_base_news' => array(
       'name' => t('Nyhed'),
