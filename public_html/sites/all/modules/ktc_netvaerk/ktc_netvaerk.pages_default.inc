@@ -409,6 +409,43 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $display->content['new-12883d21-eb53-4dbe-9fff-4155339206a6'] = $pane;
     $display->panels['left'][7] = 'new-12883d21-eb53-4dbe-9fff-4155339206a6';
     $pane = new stdClass();
+    $pane->pid = 'new-ac288c6f-55cc-4e78-b57b-282d5afe44c5';
+    $pane->panel = 'left';
+    $pane->type = 'views';
+    $pane->subtype = 'og_extras_members';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 1,
+      'feed_icons' => 0,
+      'panel_args' => 1,
+      'link_to_view' => 1,
+      'args' => '',
+      'url' => 'node/%/members',
+      'display' => 'block_1',
+      'context' => array(
+        0 => '',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 8;
+    $pane->locks = array();
+    $pane->uuid = 'ac288c6f-55cc-4e78-b57b-282d5afe44c5';
+    $display->content['new-ac288c6f-55cc-4e78-b57b-282d5afe44c5'] = $pane;
+    $display->panels['left'][8] = 'new-ac288c6f-55cc-4e78-b57b-282d5afe44c5';
+    $pane = new stdClass();
     $pane->pid = 'new-b6f26677-5782-4ef8-800c-9ebfb7fb8497';
     $pane->panel = 'right';
     $pane->type = 'page_tabs';
@@ -574,6 +611,48 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->uuid = '63dd3165-b724-4f8e-b8b0-2b339fd5d462';
     $display->content['new-63dd3165-b724-4f8e-b8b0-2b339fd5d462'] = $pane;
     $display->panels['right'][5] = 'new-63dd3165-b724-4f8e-b8b0-2b339fd5d462';
+    $pane = new stdClass();
+    $pane->pid = 'new-5a9c23ff-85e7-4206-ae3e-3c6dd813c8e2';
+    $pane->panel = 'top';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'og_member',
+          'settings' => array(
+            'state' => array(
+              1 => '1',
+            ),
+          ),
+          'context' => array(
+            0 => 'logged-in-user',
+            1 => 'argument_entity_id:node_1',
+          ),
+          'not' => TRUE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Vises kun for ikke medlemmer',
+      'title' => 'Vises kun for ikke medlemmer',
+      'body' => '<p>Vises kun for ikke medlemmer</p>
+',
+      'format' => 'filtered_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '5a9c23ff-85e7-4206-ae3e-3c6dd813c8e2';
+    $display->content['new-5a9c23ff-85e7-4206-ae3e-3c6dd813c8e2'] = $pane;
+    $display->panels['top'][0] = 'new-5a9c23ff-85e7-4206-ae3e-3c6dd813c8e2';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
