@@ -44,6 +44,27 @@ function ktc_users_entity_info_alter(&$entity_info) {
 
 }
 
+function ktc_users_preprocess_user_profile(&$vars) {
+  if ($vars['elements']['#view_mode'] == 'teaser2') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__teaser2';
+  }
+  if ($vars['elements']['#view_mode'] == 'list1') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list1';
+  }
+  if ($vars['elements']['#view_mode'] == 'list2') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list2';
+  }
+  if ($vars['elements']['#view_mode'] == 'list3') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list3';
+  }
+  if ($vars['elements']['#view_mode'] == 'list4') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list4';
+  }
+  if ($vars['elements']['#view_mode'] == 'list5') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list5';
+  }
+}
+
 /**
  * Implements hook_form_alter().
  */
