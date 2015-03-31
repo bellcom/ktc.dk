@@ -16,7 +16,6 @@ function configure_comment_form(&$form) {
   return $form;
 }
 
-
 function ktc_preprocess_page(&$variables) {
   // Remove all Taxonomy auto listings here.
   $term = NULL;
