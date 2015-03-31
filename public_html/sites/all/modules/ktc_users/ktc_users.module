@@ -17,6 +17,31 @@ function ktc_users_entity_info_alter(&$entity_info) {
     'label' => t('User teaser'),
     'custom settings' => TRUE,
   );
+    $entity_info['user']['view modes']['teaser2'] = array(
+    'label' => t('User teaser 2'),
+    'custom settings' => TRUE,
+  );
+    $entity_info['user']['view modes']['list1'] = array(
+    'label' => t('User List 1'),
+    'custom settings' => TRUE,
+  );
+    $entity_info['user']['view modes']['list2'] = array(
+    'label' => t('User List 2'),
+    'custom settings' => TRUE,
+  );
+    $entity_info['user']['view modes']['list3'] = array(
+    'label' => t('User List 3'),
+    'custom settings' => TRUE,
+  );
+    $entity_info['user']['view modes']['list4'] = array(
+    'label' => t('User List 4'),
+    'custom settings' => TRUE,
+  );
+    $entity_info['user']['view modes']['list5'] = array(
+    'label' => t('User List 5'),
+    'custom settings' => TRUE,
+  );
+
 }
 
 /**
