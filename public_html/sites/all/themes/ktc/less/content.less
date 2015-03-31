@@ -463,4 +463,33 @@ div.field-group-tabs-wrapper div.field-widget-image-image fieldset.panel,
 div.field-group-tabs-wrapper div.field-type-file.field-widget-file-generic fieldset.panel,
 div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel { padding: 0px 0px 0px 0px}
 
-.view-section-page-filter-extra h5 a { font-weight: normal;}
+.view-section-page-filter-extra h5 a,
+.view-ktc-hearings-sectionpage-block h5 a { font-weight: normal;}
+
+.view-ktc-hearings-sectionpage-block .item-list {
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0 10px;
+		
+		li {
+			position: relative;
+			display: block;
+			padding: 5px 20px;
+			padding-left: 10px;
+			div {display: inline-block;}			
+			&:before {
+				display: inline-block;
+				position: absolute;
+				margin-left: -15px;
+				content: ' ';
+				.sprite(@ikon-hoering);
+			}
+			a { color: #FFF;}
+		}
+		
+		li:before {
+		}
+	}
+}

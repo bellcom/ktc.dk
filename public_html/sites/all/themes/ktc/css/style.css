@@ -8317,8 +8317,36 @@ div.field-group-tabs-wrapper div.field-type-file.field-widget-file-generic field
 div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   padding: 0px 0px 0px 0px;
 }
-.view-section-page-filter-extra h5 a {
+.view-section-page-filter-extra h5 a,
+.view-ktc-hearings-sectionpage-block h5 a {
   font-weight: normal;
+}
+.view-ktc-hearings-sectionpage-block .item-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+}
+.view-ktc-hearings-sectionpage-block .item-list ul li {
+  position: relative;
+  display: block;
+  padding: 5px 20px;
+  padding-left: 10px;
+}
+.view-ktc-hearings-sectionpage-block .item-list ul li div {
+  display: inline-block;
+}
+.view-ktc-hearings-sectionpage-block .item-list ul li:before {
+  display: inline-block;
+  position: absolute;
+  margin-left: -15px;
+  content: ' ';
+  background-image: url(../images/sprites.png);
+  background-position: 0px -272px;
+  width: 9px;
+  height: 16px;
+}
+.view-ktc-hearings-sectionpage-block .item-list ul li a {
+  color: #FFF;
 }
 #nyheder-carousel-large {
   background-color: #fff;
