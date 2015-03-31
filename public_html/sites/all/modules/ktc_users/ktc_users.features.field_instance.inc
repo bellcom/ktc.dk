@@ -199,7 +199,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => -1,
+      'weight' => 65,
     ),
   );
 
@@ -252,7 +252,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -363,7 +363,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => -3,
+      'weight' => 64,
     ),
   );
 
@@ -454,7 +454,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 79,
     ),
   );
 
@@ -508,7 +508,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 71,
     ),
   );
 
@@ -562,7 +562,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -635,7 +635,7 @@ function ktc_users_field_default_field_instances() {
         'year_range' => '-70:-16',
       ),
       'type' => 'date_popup',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -718,7 +718,33 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Ekspertise',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -728,7 +754,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 52,
     ),
   );
 
@@ -782,7 +808,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 72,
     ),
   );
 
@@ -828,7 +854,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 9,
+      'weight' => 76,
     ),
   );
 
@@ -877,7 +903,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 0,
+      'weight' => 67,
     ),
   );
 
@@ -985,7 +1011,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 69,
     ),
   );
 
@@ -1038,7 +1064,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
@@ -1121,7 +1147,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 54,
+      'weight' => 55,
     ),
   );
 
@@ -1164,7 +1190,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 51,
+      'weight' => 52,
     ),
   );
 
@@ -1207,7 +1233,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 53,
+      'weight' => 54,
     ),
   );
 
@@ -1293,7 +1319,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 56,
+      'weight' => 57,
     ),
   );
 
@@ -1336,7 +1362,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 55,
+      'weight' => 56,
     ),
   );
 
@@ -1422,7 +1448,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 52,
+      'weight' => 53,
     ),
   );
 
@@ -1532,7 +1558,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => -6,
+      'weight' => 62,
     ),
   );
 
@@ -1641,7 +1667,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 75,
     ),
   );
 
@@ -1694,7 +1720,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => -4,
+      'weight' => 63,
     ),
   );
 
@@ -1735,10 +1761,36 @@ function ktc_users_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_special_skills',
-    'label' => 'Særlige kompetencer',
+    'label' => 'Andre kompetencer',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -1748,7 +1800,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 50,
+      'weight' => 51,
     ),
   );
 
@@ -1795,13 +1847,13 @@ function ktc_users_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
+        'apply_chosen' => 1,
+        'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 3,
+      'type' => 'options_select',
+      'weight' => 48,
     ),
   );
 
@@ -1846,12 +1898,12 @@ function ktc_users_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'hs_taxonomy',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
         'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_hs',
       'weight' => 47,
     ),
   );
@@ -1892,7 +1944,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 13,
     ),
   );
 
@@ -1938,7 +1990,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 10,
+      'weight' => 77,
     ),
   );
 
@@ -1968,7 +2020,33 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Uddannelser og kurser',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2032,7 +2110,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => -8,
+      'weight' => -9,
     ),
   );
 
@@ -2095,6 +2173,7 @@ function ktc_users_field_default_field_instances() {
   t('Adresse');
   t('Adresse 2');
   t('Afdeling');
+  t('Andre kompetencer');
   t('Andre medlemskaber af foreninger (skriv her)');
   t('Arbejdsgiver');
   t('Brugertype');
@@ -2128,7 +2207,6 @@ function ktc_users_field_default_field_instances() {
   t('Send nyt fra "Mine netværk" (når der er nye indlæg, arrangementer, dokumenter, diskussioner mm.)');
   t('Skjult i lister');
   t('Stilling/titel');
-  t('Særlige kompetencer');
   t('Tlf.');
   t('Twitter brugernavn');
   t('Typo3 uid(fe_users)');
