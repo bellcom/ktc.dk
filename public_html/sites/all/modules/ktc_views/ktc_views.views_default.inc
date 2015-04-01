@@ -3018,9 +3018,9 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['rid']['value'] = array(
-    7 => '7',
-    8 => '8',
+    5 => '5',
   );
   $handler->display->display_options['filters']['rid']['group'] = 1;
   $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
