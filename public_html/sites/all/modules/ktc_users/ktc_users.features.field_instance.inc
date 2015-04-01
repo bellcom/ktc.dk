@@ -28,42 +28,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 32,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 32,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 32,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 32,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 32,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 32,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -109,40 +110,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 9,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -151,6 +147,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 7,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -191,42 +193,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 33,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 33,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 33,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 33,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 33,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 33,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -276,35 +279,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 28,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -313,6 +316,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 6,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -359,40 +368,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -401,6 +405,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 9,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -447,40 +457,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 11,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -489,6 +494,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 22,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -540,40 +551,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 22,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'list',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 22,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'list',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 22,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'list',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 22,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'list',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 22,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'list',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 22,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -582,6 +588,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 4,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -626,35 +638,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 26,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -663,6 +675,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 28,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -703,42 +721,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 31,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 31,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 31,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 31,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 31,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 31,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -784,40 +803,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 8,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -826,6 +840,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 20,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -873,40 +893,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -915,6 +930,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 26,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -973,70 +994,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 20,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'ugedag_dato_m_ned_r',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 20,
+      'list1' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'ugedag_dato_m_ned_r',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 20,
+      'list2' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'ugedag_dato_m_ned_r',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 20,
+      'list3' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'ugedag_dato_m_ned_r',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 20,
+      'list4' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'ugedag_dato_m_ned_r',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 20,
+      'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -1045,6 +1031,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 23,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1093,42 +1085,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 34,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 34,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 34,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 34,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 34,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 34,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1175,40 +1168,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 15,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -1217,6 +1205,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 12,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1289,40 +1283,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 18,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 18,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 18,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 18,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 18,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 18,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -1331,6 +1320,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 17,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1376,37 +1371,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 29,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1457,37 +1458,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 23,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1533,40 +1540,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -1575,6 +1577,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1622,40 +1630,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 7,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -1664,6 +1667,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 18,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1711,40 +1720,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 13,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -1753,6 +1757,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 10,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1792,42 +1802,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 45,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 45,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 45,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 45,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 45,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 45,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1871,42 +1882,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 40,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 40,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 40,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 40,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 40,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 40,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1949,42 +1961,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 37,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 37,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 37,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 37,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 37,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 37,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2027,42 +2040,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 39,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 39,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 39,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 39,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 39,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 39,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2105,42 +2119,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 43,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 43,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 43,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 43,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 43,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 43,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2183,42 +2198,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 47,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 47,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 47,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 47,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 47,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 47,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2261,42 +2277,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 41,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 41,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 41,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 41,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 41,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 41,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2339,42 +2356,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 36,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 36,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 36,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 36,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 36,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 36,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2417,42 +2435,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 38,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 38,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 38,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 38,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 38,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 38,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2498,40 +2517,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 12,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -2540,6 +2554,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 24,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2590,35 +2610,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 27,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -2627,6 +2647,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2673,40 +2699,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'hidden',
@@ -2716,6 +2737,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2763,40 +2790,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -2805,6 +2827,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 8,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2852,40 +2880,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 6,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -2894,6 +2917,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 13,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2940,40 +2969,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 21,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 21,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 21,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 21,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 21,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 21,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -2982,6 +3006,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 25,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3055,40 +3085,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 17,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 17,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 17,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 17,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 17,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 17,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -3097,6 +3122,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 16,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3141,35 +3172,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 24,
       ),
-      'personvisning_1' => array(
-        'label' => 'hidden',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'hidden',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'hidden',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'hidden',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'hidden',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -3178,6 +3209,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 15,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3217,42 +3254,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 35,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 35,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 35,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 35,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 35,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 35,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3297,37 +3335,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 30,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3368,42 +3412,43 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 46,
       ),
-      'personvisning_1' => array(
+      'list1' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 46,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
+      'list2' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 46,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
+      'list3' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 46,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
+      'list4' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 46,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
+      'list5' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 46,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3476,40 +3521,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 19,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -3518,6 +3558,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 19,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3565,40 +3611,35 @@ function ktc_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 10,
       ),
-      'personvisning_1' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list1' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_2' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list2' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_3' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list3' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_4' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list4' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'personvisning_5' => array(
-        'label' => 'inline',
-        'module' => 'text',
+      'list5' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'show_full_name' => array(
         'label' => 'above',
@@ -3607,6 +3648,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 21,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
