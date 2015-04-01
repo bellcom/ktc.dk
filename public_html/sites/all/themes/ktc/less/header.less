@@ -337,16 +337,17 @@
       .block-heading {
         background-color: @gray-dark;
         color: @gray-lighter;
-        margin-bottom: 20px;
+        margin: 0 10px 10px;
         .panel-title {
           padding: 10px 10px 10px 20px;
           vertical-align: middle;
           display: inline-block;
+          font-size: 13px;
         }
       }
       .view-empty,
       .view-content {
-        @media (min-width: 768px) {
+        @media (min-width: @screen-sm-min) {
           height: 300px;
           overflow: hidden;
         }
@@ -367,16 +368,16 @@
         text-align: right;
         font-weight: 700;
       }
-      @media (min-width: 768px){
+      &.fem-kolonner { 
+	      @media (min-width: @screen-md-min) {
+		      width: 20%; float: left;}}
+      @media (min-width:@screen-sm-min) and (max-width: @screen-sm-max){
         width: 50%;
         float: left;
       }
-      @media (max-width: 767px){
+      @media (max-width: @screen-sm-max){
         float: none;
         width: 100%;
-      }
-      @media (min-width: 990px){
-        width: 20%;
       }
       .panel-body {
         h5 {

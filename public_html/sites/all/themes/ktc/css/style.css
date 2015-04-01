@@ -7429,12 +7429,13 @@ fieldset[disabled] .btn-blacknblue.active {
 .main-container .region-header section .block-heading {
   background-color: #222b2f;
   color: #e9edee;
-  margin-bottom: 20px;
+  margin: 0 10px 10px;
 }
 .main-container .region-header section .block-heading .panel-title {
   padding: 10px 10px 10px 20px;
   vertical-align: middle;
   display: inline-block;
+  font-size: 13px;
 }
 .main-container .region-header section .view-empty,
 .main-container .region-header section .view-content {
@@ -7465,21 +7466,22 @@ fieldset[disabled] .btn-blacknblue.active {
   text-align: right;
   font-weight: 700;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+  .main-container .region-header section.fem-kolonner {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
   .main-container .region-header section {
     width: 50%;
     float: left;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .main-container .region-header section {
     float: none;
     width: 100%;
-  }
-}
-@media (min-width: 990px) {
-  .main-container .region-header section {
-    width: 20%;
   }
 }
 .main-container .region-header section .panel-body h5 {

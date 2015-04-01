@@ -16,6 +16,18 @@ function configure_comment_form(&$form) {
   return $form;
 }
 
+/**
+ * Override or insert variables into the block templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+ 
+
+
+
 function ktc_preprocess_page(&$variables) {
   // Remove all Taxonomy auto listings here.
   $term = NULL;
@@ -630,10 +642,54 @@ function ktc_preprocess_block(&$vars) {
   if ($vars['block']->region == 'footer') {
     $classes[] = 'col-md-3 col-sm-3 col-xs-12';
   }
-  if ($vars['block']->region == 'header') {
-    $classes[] = 'col-sm-6 col-xs-12';
+
+  // add grid class dependant upon number of blocks in a region
+  if ($vars['block']->region == 'header')
+  {
+      // Get the count of blocks
+      $allBlocks = block_list($vars['block']->region);
+      $count = count($allBlocks);
+      
+      // take the count and convert the number to a word.
+      switch ($count) {
+        case 0:
+          $count = 'empty';
+          break;
+          
+        case 1:
+          $count = 'col-md-12 col-sm-12 col-xs-12';
+          break;
+          
+        case 2:
+          $count = 'col-md-6 col-sm-6 col-xs-12';
+          break;
+
+        case 3:
+          $count = 'col-md-4 col-sm-4 col-xs-6';
+          break;
+          
+        case 4:
+          $count = 'col-md-3 col-sm-3 col-xs-6';
+          break;
+          
+        case 5:
+          $count = 'fem-kolonner';
+          break;
+          
+        case 6:
+          $count = 'col-md-2 col-sm-2 col-xs-6';
+          break;
+
+        default:
+          $count = 'default';
+      }
+      // add class to style responsive layout
+      $vars['classes_array'][] = ''. ($count);
   }
 }
+
+
+
 /**
  * Get node create links.
  */
