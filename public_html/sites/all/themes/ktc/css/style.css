@@ -8348,6 +8348,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .view-ktc-hearings-sectionpage-block .item-list ul li a {
   color: #FFF;
 }
+.user-picture.green img {
+  border-color: #36a145;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;

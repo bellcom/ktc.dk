@@ -35,7 +35,6 @@
  */
 ?>
 <section class="user-teaser col-md-12 no-padding clearfix">
-  <div><h2>gduygsdygqd8ygdg</h2></div>
   
   <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
     <?php global $user; $account = $elements['#account']; ?>
