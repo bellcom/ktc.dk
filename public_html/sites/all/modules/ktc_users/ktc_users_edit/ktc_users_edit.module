@@ -269,19 +269,26 @@ function ktc_users_edit_settings_form() {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_init().
  */
-function ktc_users_edit_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'user_profile_form') {
-
+function ktc_users_edit_init() {
+  if (arg(0) == 'user' && arg(2) == 'edit') {
     $usertype_map = variable_get('ktc_users_edit_type_company_map', array());
     $membership_map = variable_get('ktc_users_edit_limitmembershipfields', array());
 
     drupal_add_js(array('ktcUsersEdit' => array('usertypeMap' => $usertype_map)), 'setting');
     drupal_add_js(array('ktcUsersEdit' => array('membershipMap' => $membership_map)), 'setting');
     drupal_add_js(drupal_get_path('module', 'ktc_users_edit') . '/ktc_users_edit.js');
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_users_edit_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_profile_form') {
     $edit = variable_get('ktc_users_edit_company_message', '');
-    $form['field_account']['#suffix'] = '<div class="account-address"><div class="address"></div>' . $edit . '</div>';
+    $form['field_account']['#suffix'] = '<div class="account-address"><div class="address"></div><br />' . $edit . '</div>';
   }
 }
 
