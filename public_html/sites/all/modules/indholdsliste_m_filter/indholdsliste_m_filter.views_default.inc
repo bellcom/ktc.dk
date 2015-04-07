@@ -286,6 +286,8 @@ function indholdsliste_m_filter_views_default_views() {
 
   /* Display: one col */
   $handler = $view->new_display('panel_pane', 'one col', 'panel_pane_4');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'section-content-ajax row';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;

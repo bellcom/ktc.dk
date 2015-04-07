@@ -10036,11 +10036,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   color: #fff;
   font-weight: normal;
 }
-.page-node.node-type-group .main-container .pane-center .view-content,
-.page-node.node-type-arrangement .main-container .pane-center .view-content {
-  margin-left: -10px;
-  margin-right: -10px;
-}
 .page-node.node-type-group .main-container .pane-left .panel-pane,
 .page-node.node-type-arrangement .main-container .pane-left .panel-pane {
   width: 100%;
