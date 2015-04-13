@@ -37,6 +37,43 @@ function ktc_netvaerk_settings() {
 
   return system_settings_form($form);
 }
+
+/**
+ * Implements hook_token_info().
+ */
+function ktc_netvaerk_token_info() {
+  $info['tokens']['node']['ktc-netvaerk-url'] = array(
+    'name' => t('OG Group-url'),
+    'description' => t('URL for og group reference.'),
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function ktc_netvaerk_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $replacements = array();
+  $sanitize = !empty($options['sanitize']);
+
+  if ($type == 'node' && !empty($data['node'])) {
+    $node = $data['node'];
+
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'ktc-netvaerk-url':
+          if ($field = field_get_items('node', $node, 'og_group_ref')) {
+            $options = array('absolute' => TRUE);
+            $replacements[$original] = url('node/' . reset($field)['target_id'], $options);
+          }
+          break;
+      }
+    }
+  }
+
+  return $replacements;
+}
+
 /**
  * KTC netvaerk get node group info.
  */
