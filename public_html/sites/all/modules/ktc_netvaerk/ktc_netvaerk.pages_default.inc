@@ -579,12 +579,27 @@ function ktc_netvaerk_default_page_manager_handlers() {
           ),
           'not' => TRUE,
         ),
+        1 => array(
+          'name' => 'entity_field_value:node:group:field_open_group',
+          'settings' => array(
+            'field_open_group' => array(
+              'und' => array(
+                0 => array(
+                  'value' => 1,
+                ),
+              ),
+            ),
+            'field_open_group_value' => '1',
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
       ),
     );
     $pane->configuration = array(
       'admin_title' => 'Vises kun for ikke medlemmer',
       'title' => 'Vises kun for ikke medlemmer',
-      'body' => '<p>Vises kun for ikke medlemmer</p>
+      'body' => '<p>Dette er et åbent netværk - hvilket betyder, at alle kan melde sig ind i netværket. Brug "Meld mig ind" knappen.</p>
 ',
       'format' => 'filtered_html',
       'substitute' => 1,
