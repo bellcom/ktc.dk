@@ -20,28 +20,8 @@ var jRes = jRespond([
 // Modify the Search field for module filter.
 Drupal.behaviors.adminimal_module_filter_box = {
   attach: function (context, settings) {
-    //code starts
-	  $('input#edit-module-filter-name').each(function(){
-
-	    var defaultVal = Drupal.t('Search');
-	    
-	    $(this).focus(function(){
-	      if ($(this).val() == defaultVal){
-	        $(this).val('');
-	      }
-	      $(this).removeClass('empty');
-	    })
-
-	    .blur(function(){
-	      if ($(this).val() == ''){
-	        $(this).addClass('empty').val(defaultVal);
-	      }
-	    })
-
-	    .blur().addClass('empty');
-
-	  });
-    //code ends
+    //Add default hint value using the HTML5 placeholder attribute.
+    $('input#edit-module-filter-name').attr( "placeholder", Drupal.t('Search') );
   }
 };
 
@@ -97,11 +77,11 @@ Drupal.behaviors.adminimal_move_active_primary_tab = {
 			breakpoint: 'mobile',
 				enter: function() {
 					$( "ul.tabs.primary li.active" ).clone().appendTo( "ul.tabs.primary" ).removeClass( "active" ).addClass( "current" );
-					$( "ul.tabs.primary li.active" ).hide();
+					$( "ul.tabs.primary li.active" ).css("display", "none");
 				},
 				exit: function() {
-					$( "ul.tabs.primary li.active" ).show();
-					$( "ul.tabs.primary li.current" ).hide();
+					$( "ul.tabs.primary li.active" ).css("display", "table");
+					$( "ul.tabs.primary li.current" ).css("display", "none");
 				}
 		});
 	}
