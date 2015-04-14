@@ -68,10 +68,13 @@ function teknik_og_miljoe_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '1',
+          'weight' => '9',
         ),
         'path' => array(
           'weight' => '11',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '22',
         ),
       ),
       'display' => array(),
