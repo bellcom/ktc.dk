@@ -197,7 +197,7 @@ function ktc_content_types_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'arrangement';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_side2';
   $field_group->data = array(
     'label' => 'Form',
     'weight' => '1',
@@ -209,7 +209,6 @@ function ktc_content_types_field_group_info() {
       4 => 'group_arrangementtildm',
       5 => 'group_arrangement',
       6 => 'group_groups',
-      7 => 'group_hvemerdu',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -326,10 +325,9 @@ function ktc_content_types_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_target_group',
-      2 => 'field_meeting_type',
-      3 => 'title',
-      4 => 'group_mediabilllederdiv',
-      5 => 'group_logodiv',
+      2 => 'title',
+      3 => 'group_mediabilllederdiv',
+      4 => 'group_logodiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -806,9 +804,8 @@ function ktc_content_types_field_group_info() {
     'weight' => '31',
     'children' => array(
       0 => 'og_group_ref',
-      1 => 'field_regioner',
-      2 => 'scheduler_settings',
-      3 => 'group_visn',
+      1 => 'scheduler_settings',
+      2 => 'group_visn',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -985,26 +982,20 @@ function ktc_content_types_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'arrangement';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_arrangementform';
+  $field_group->parent_name = 'group_side1';
   $field_group->data = array(
-    'label' => 'Dine oplysninger',
-    'weight' => '25',
-    'children' => array(
-      0 => 'field_arrangement_fornavn',
-      1 => 'field_arrangement_efternavn',
-      2 => 'field_arrangement_stilling_titel',
-      3 => 'field_arrangement_virksomhed',
-      4 => 'field_arrangement_opretteremail',
-      5 => 'field_arrangement_direkte_tele',
-    ),
-    'format_type' => 'tab',
+    'label' => '',
+    'weight' => '33',
+    'children' => array(),
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => '',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-hvemerdu field-group-tab',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_hvemerdu|node|arrangement|form'] = $field_group;
@@ -1148,7 +1139,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangement';
   $field_group->data = array(
     'label' => 'logo',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_arrangement_logo',
     ),
@@ -1181,7 +1172,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangement';
   $field_group->data = array(
     'label' => 'mediabilleder',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_arrangement_billede',
     ),
@@ -1382,6 +1373,98 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_redaktion|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_side1|node|arrangement|form';
+  $field_group->group_name = 'group_side1';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'arrangement';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_sider';
+  $field_group->data = array(
+    'label' => 'Side 1',
+    'weight' => '40',
+    'children' => array(
+      0 => 'field_meeting_type',
+      1 => 'field_arrangement_fornavn',
+      2 => 'field_arrangement_efternavn',
+      3 => 'field_arrangement_stilling_titel',
+      4 => 'field_arrangement_virksomhed',
+      5 => 'field_arrangement_opretteremail',
+      6 => 'field_arrangement_direkte_tele',
+      7 => 'group_hvemerdu',
+    ),
+    'format_type' => 'multipage',
+    'format_settings' => array(
+      'label' => 'Side 1',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-side1',
+        'description' => '',
+      ),
+      'formatter' => 'start',
+    ),
+  );
+  $export['group_side1|node|arrangement|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_side2|node|arrangement|form';
+  $field_group->group_name = 'group_side2';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'arrangement';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_sider';
+  $field_group->data = array(
+    'label' => 'Side 2',
+    'weight' => '41',
+    'children' => array(
+      0 => 'group_arrangementform',
+    ),
+    'format_type' => 'multipage',
+    'format_settings' => array(
+      'formatter' => 'no-start',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-side2',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_side2|node|arrangement|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sider|node|arrangement|form';
+  $field_group->group_name = 'group_sider';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'arrangement';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Sider',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_side1',
+      1 => 'group_side2',
+    ),
+    'format_type' => 'multipage-group',
+    'format_settings' => array(
+      'label' => 'Sider',
+      'instance_settings' => array(
+        'classes' => 'group-sider field-group-multipage-group',
+        'page_header' => '2',
+        'page_counter' => '2',
+        'move_button' => '1',
+        'move_additional' => '1',
+      ),
+    ),
+  );
+  $export['group_sider|node|arrangement|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
