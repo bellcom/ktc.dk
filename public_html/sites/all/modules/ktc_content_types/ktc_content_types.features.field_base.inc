@@ -1586,6 +1586,9 @@ function ktc_content_types_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_meeting_type',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -2120,6 +2123,9 @@ function ktc_content_types_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_short',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -2213,6 +2219,7 @@ function ktc_content_types_field_default_field_bases() {
         0 => array(
           'vocabulary' => 'emner',
           'parent' => 0,
+          'depth' => '',
         ),
       ),
       'options_list_callback' => 'content_taxonomy_allowed_values',

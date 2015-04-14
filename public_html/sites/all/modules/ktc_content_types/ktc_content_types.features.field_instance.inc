@@ -589,7 +589,12 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_direkte_tele'
   $field_instances['node-arrangement-field_arrangement_direkte_tele'] = array(
     'bundle' => 'arrangement',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '[current-user:field-directe-telefon]',
+      ),
+    ),
+    'default_value_function' => 'field_default_token_default_value_function',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -666,14 +671,19 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 32,
     ),
   );
 
   // Exported field_instance: 'node-arrangement-field_arrangement_efternavn'
   $field_instances['node-arrangement-field_arrangement_efternavn'] = array(
     'bundle' => 'arrangement',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '[current-user:field_efternavn]',
+      ),
+    ),
+    'default_value_function' => 'field_default_token_default_value_function',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -750,14 +760,19 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 26,
+      'weight' => 28,
     ),
   );
 
   // Exported field_instance: 'node-arrangement-field_arrangement_fornavn'
   $field_instances['node-arrangement-field_arrangement_fornavn'] = array(
     'bundle' => 'arrangement',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '[current-user:field_navn]',
+      ),
+    ),
+    'default_value_function' => 'field_default_token_default_value_function',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -834,7 +849,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 25,
+      'weight' => 27,
     ),
   );
 
@@ -967,7 +982,12 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_opretteremail'
   $field_instances['node-arrangement-field_arrangement_opretteremail'] = array(
     'bundle' => 'arrangement',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '[current-user:mail]',
+      ),
+    ),
+    'default_value_function' => 'field_default_token_default_value_function',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1044,7 +1064,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 29,
+      'weight' => 31,
     ),
   );
 
@@ -1213,7 +1233,7 @@ function ktc_content_types_field_default_field_instances() {
       'better_formats' => array(
         'allowed_formats' => array(
           'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
+          'full_html' => 0,
           'mailchimp_campaign' => 0,
           'plain_text' => 0,
         ),
@@ -1253,7 +1273,12 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_stilling_titel'
   $field_instances['node-arrangement-field_arrangement_stilling_titel'] = array(
     'bundle' => 'arrangement',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '[current-user:field-jobposition]',
+      ),
+    ),
+    'default_value_function' => 'field_default_token_default_value_function',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1330,14 +1355,19 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 27,
+      'weight' => 29,
     ),
   );
 
   // Exported field_instance: 'node-arrangement-field_arrangement_virksomhed'
   $field_instances['node-arrangement-field_arrangement_virksomhed'] = array(
     'bundle' => 'arrangement',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '[current-user:field-account]',
+      ),
+    ),
+    'default_value_function' => 'field_default_token_default_value_function',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1414,7 +1444,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 28,
+      'weight' => 30,
     ),
   );
 
@@ -1801,7 +1831,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 15,
+      'weight' => 7,
     ),
   );
 
@@ -1876,7 +1906,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 6,
     ),
   );
 
@@ -1959,8 +1989,9 @@ function ktc_content_types_field_default_field_instances() {
   $field_instances['node-arrangement-field_meeting_type'] = array(
     'bundle' => 'arrangement',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Hvilken type er dit arrangement?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1996,8 +2027,8 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_meeting_type',
-    'label' => 'Type af møde',
-    'required' => 0,
+    'label' => 'Arrangementstype',
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -2009,7 +2040,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 26,
     ),
   );
 
@@ -2140,7 +2171,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 16,
+      'weight' => 8,
     ),
   );
 
@@ -2260,7 +2291,7 @@ function ktc_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 13,
+      'weight' => 5,
     ),
   );
 
@@ -2451,7 +2482,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -2517,6 +2548,7 @@ function ktc_content_types_field_default_field_instances() {
   $field_instances['node-arrangement-field_topics'] = array(
     'bundle' => 'arrangement',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2563,7 +2595,7 @@ function ktc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -8676,6 +8708,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Annoncør');
   t('Antal pladser');
   t('Arrangementets dato');
+  t('Arrangementstype');
   t('Artikel');
   t('Artikel reference');
   t('Banner');
@@ -8719,6 +8752,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Her kan du indtastse stikord til din diskussion (tags)');
   t('Her kan du indtastse stikord til dit dokument (tags)');
   t('Her kan du vælge om du vil publicere Diskussionen på andre platforme (kræver særlige rettigheder)');
+  t('Hvilken type er dit arrangement?');
   t('Indhold');
   t('Indtast din nyhed her. Adskil gerne med afsnit og typografier');
   t('Indtast dit oplæg til diskussion her');
@@ -8761,7 +8795,6 @@ function ktc_content_types_field_default_field_instances() {
   t('Tilmeldte');
   t('Top artikel');
   t('Type');
-  t('Type af møde');
   t('Typo3 uid(pages)');
   t('Udgave');
   t('Udgivelsesdato');
