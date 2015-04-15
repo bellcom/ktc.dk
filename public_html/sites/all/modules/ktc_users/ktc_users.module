@@ -139,7 +139,11 @@ function ktc_users_generate_username($name, $employer, $email = '') {
   }
 
   // The actual username. We replace some of the illegal username characters.
-  $username = trim($name . ' - ' . $employer);
+  $username = trim($name);
+
+  if ($employer) {
+    $username .= ' - ' . trim($employer);
+  }
 
   $username = str_replace(array(',', '/', '+'), array('', '-', ''), $username);
 
