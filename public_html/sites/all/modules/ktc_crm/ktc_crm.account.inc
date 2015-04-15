@@ -117,6 +117,12 @@ function ktc_crm_account_set_type($account, $type, $toplevelaccountid) {
     taxonomy_term_save($type_term);
   }
 
+  // Set status updated = 1
+  db_update('taxonomy_term_data')
+    ->fields(array('updated' => 1))
+    ->condition('tid', $type_term->tid)
+    ->execute();
+
   if ($toplevelaccountid) {
     $toplevelaccount = ktc_crm_account_load_from_uuid($toplevelaccountid);
   }
