@@ -6533,6 +6533,11 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   width: auto;
   display: inline-block;
 }
+@media (min-width: 992px) {
+  .modal-xl {
+    width: 960px;
+  }
+}
 /*
 LESS variables are information about icon's compiled state, stored under its original file name
 
