@@ -173,6 +173,5 @@ function ktc_users_generate_username($name, $employer, $email, $uid) {
     return ktc_users_generate_username($name, $employer . '.', $email, $uid);
   }
 
-  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($username, 1));
   return $username;
 }
