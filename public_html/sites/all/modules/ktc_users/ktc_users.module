@@ -89,11 +89,11 @@ function ktc_users_user_presave(&$edit, $account, $category) {
     }
 
     if ($field = field_get_items('user', $tmp_account, 'field_navn')) {
-      $name = $field[0]['value'];
+      $name = trim($field[0]['value']);
     }
 
     if ($field = field_get_items('user', $tmp_account, 'field_efternavn')) {
-      $name .= ' ' . $field[0]['value'];
+      $name .= ' ' . trim($field[0]['value']);
     }
 
     if ($field = field_get_items('user', $tmp_account, 'field_account')) {
