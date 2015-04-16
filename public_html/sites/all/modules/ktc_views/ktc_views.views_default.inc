@@ -2870,6 +2870,10 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['relationships']['og_users_roles']['id'] = 'og_users_roles';
   $handler->display->display_options['relationships']['og_users_roles']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_users_roles']['field'] = 'og_users_roles';
+  /* Forbindelse: Bruger: Firma (field_account) */
+  $handler->display->display_options['relationships']['field_account_tid']['id'] = 'field_account_tid';
+  $handler->display->display_options['relationships']['field_account_tid']['table'] = 'field_data_field_account';
+  $handler->display->display_options['relationships']['field_account_tid']['field'] = 'field_account_tid';
   /* Felt: Bruger: Aktiv */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'users';
@@ -3005,7 +3009,14 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_kommune']['id'] = 'field_kommune';
   $handler->display->display_options['fields']['field_kommune']['table'] = 'field_data_field_kommune';
   $handler->display->display_options['fields']['field_kommune']['field'] = 'field_kommune';
+  $handler->display->display_options['fields']['field_kommune']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_kommune']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Bruger: Firma */
+  $handler->display->display_options['fields']['field_account']['id'] = 'field_account';
+  $handler->display->display_options['fields']['field_account']['table'] = 'field_data_field_account';
+  $handler->display->display_options['fields']['field_account']['field'] = 'field_account';
+  $handler->display->display_options['fields']['field_account']['empty'] = '[field_kommune]';
+  $handler->display->display_options['fields']['field_account']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
   /* Felt: Bruger: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
@@ -3249,6 +3260,7 @@ function ktc_views_views_default_views() {
     t('Group node from OG membership'),
     t('node from OG membership'),
     t('OG Roles from OG membership'),
+    t('term fra field_account'),
     t('Aktiv'),
     t('Fornavn + mellemnavn'),
     t('Kommune'),
@@ -3263,6 +3275,8 @@ function ktc_views_views_default_views() {
     t('Uid'),
     t('[field_navn] [field_efternavn]'),
     t('Stilling/titel'),
+    t('Firma'),
+    t('[field_kommune]'),
     t('Mobil'),
     t('Telefon / mobil'),
     t('<a href="tel:[field_directe_telefon]" title="Ring til direkte telefon">[field_directe_telefon]</a><a href="tel:[field_cell]" class="andcell" title="Ring til mobil"> [field_cell]</a>'),
