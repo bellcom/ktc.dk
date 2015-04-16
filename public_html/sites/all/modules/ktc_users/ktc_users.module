@@ -101,7 +101,7 @@ function ktc_users_user_presave(&$edit, $account, $category) {
       $employer = $term->name;
     }
 
-    $username = ktc_users_generate_username($name, $employer, $email);
+    $username = ktc_users_generate_username($name, $employer, $email, $tmp_account->uid);
 
     $edit['name'] = $username;
   }
@@ -131,7 +131,7 @@ function ktc_users_field_group_hide_field_groups(&$element, $group_names) {
 /**
  * Generate a pretty username for the user.
  */
-function ktc_users_generate_username($name, $employer, $email = '') {
+function ktc_users_generate_username($name, $employer, $email, $uid) {
   // If name is empty, use the email. This is only a temporary solution
   // until the user edits his userprofile the first time.
   if (!$name) {
@@ -156,21 +156,23 @@ function ktc_users_generate_username($name, $employer, $email = '') {
     if (strlen($employer) > 27) {
       $employer = substr($employer, 0, 27) . '..';
     }
-    return ktc_users_generate_username($name, $employer);
+    return ktc_users_generate_username($name, $employer, $email, $uid);
   }
 
   // Check just to be sure, that the username is not already taken.
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'user')
-     ->propertyCondition('name', $username);
+    ->propertyCondition('name', $username)
+    ->propertyCondition('uid', $uid, '!=');
   $result = $query->execute();
 
   if (isset($result['user'])) {
     // This is a non-solution. We append a "." to the employername if the
     // username is already taken. This should only happen due to old incorrect
     // data.
-    return ktc_users_generate_username($name, $employer . '.');
+    return ktc_users_generate_username($name, $employer . '.', $email, $uid);
   }
 
+  error_log(__FILE__ . ' : ' . __LINE__ . ': ' .  print_r($username, 1));
   return $username;
 }

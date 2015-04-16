@@ -32,7 +32,7 @@ foreach ($result['user'] as $uid => $info) {
   }
 
   // We rely on the function ktc_users uses to generate the username.
-  $username = ktc_users_generate_username($name, $employer, $user->mail);
+  $username = ktc_users_generate_username($name, $employer, $user->mail, $user->uid);
 
   if (!in_array($username, $usernames)) {
     // Save user with new username.

@@ -238,7 +238,7 @@ function ktc_crm_update_account_from_webuserdto(\KTC\WebUser\WebUserDto $webuser
 
   if ($account = ktc_crm_load_account_from_crm_uuid($uuid)) {
 
-    $edit = ktc_crm_map_webuserdto_to_edit_array($webuserdto);
+    $edit = ktc_crm_map_webuserdto_to_edit_array($webuserdto, $account->uid);
 
     user_save($account, $edit);
   }
@@ -247,12 +247,12 @@ function ktc_crm_update_account_from_webuserdto(\KTC\WebUser\WebUserDto $webuser
 /**
  * Map WebUserDto to edit array for user object.
  */
-function ktc_crm_map_webuserdto_to_edit_array($webuserdto) {
+function ktc_crm_map_webuserdto_to_edit_array($webuserdto, $uid) {
   $edit = array();
 
   $edit['mail'] = $webuserdto->EMail;
   // Username is generated from firstname, lastname and toplevelaccount name.
-  $edit['name'] = ktc_users_generate_username($webuserdto->FirstName . $webuserdto->LastName, $webuserdto->TopLevelAccountName);
+  $edit['name'] = ktc_users_generate_username($webuserdto->FirstName . $webuserdto->LastName, $webuserdto->TopLevelAccountName, $webuserdto->EMail, $uid);
 
   $edit['field_navn'][LANGUAGE_NONE][0]['value'] = $webuserdto->FirstName;
   $edit['field_efternavn'][LANGUAGE_NONE][0]['value'] = $webuserdto->LastName;
