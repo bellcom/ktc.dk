@@ -57,8 +57,7 @@
 
     // Show all members link.
     $('.og-members-all a').click(function() {
-      users.addClass('in');
-      $('#section-page-with-filter .pane-content .view').hide();
+      $('#member-modal').modal();
       return false;
     });
 

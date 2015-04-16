@@ -70,6 +70,28 @@ function ktc_netvaerk_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-e1f48d19-844d-44be-9bad-1e75b747d0da';
+    $pane->panel = 'bottom';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_netvaerk-group-members';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e1f48d19-844d-44be-9bad-1e75b747d0da';
+    $display->content['new-e1f48d19-844d-44be-9bad-1e75b747d0da'] = $pane;
+    $display->panels['bottom'][0] = 'new-e1f48d19-844d-44be-9bad-1e75b747d0da';
+    $pane = new stdClass();
     $pane->pid = 'new-d0b8119a-9d09-489b-a153-b01f52a8420a';
     $pane->panel = 'center';
     $pane->type = 'node_create_links';
@@ -129,46 +151,6 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->uuid = 'c2075e66-4122-4e9d-9d23-b7cc17d69f09';
     $display->content['new-c2075e66-4122-4e9d-9d23-b7cc17d69f09'] = $pane;
     $display->panels['center'][1] = 'new-c2075e66-4122-4e9d-9d23-b7cc17d69f09';
-    $pane = new stdClass();
-    $pane->pid = 'new-3a2e1109-5299-456e-8b05-edb72b1ad1b9';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'ktc_og_members';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 1,
-      'nodes_per_page' => '10',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 1,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'block_2',
-      'context' => array(
-        0 => '',
-      ),
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'fade',
-    );
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '3a2e1109-5299-456e-8b05-edb72b1ad1b9';
-    $display->content['new-3a2e1109-5299-456e-8b05-edb72b1ad1b9'] = $pane;
-    $display->panels['center'][2] = 'new-3a2e1109-5299-456e-8b05-edb72b1ad1b9';
     $pane = new stdClass();
     $pane->pid = 'new-69eedfb2-c333-4fb7-9822-0c0f95673afb';
     $pane->panel = 'left';
@@ -365,10 +347,10 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $display->content['new-35abb797-3fee-48e9-be76-e150a6c69f17'] = $pane;
     $display->panels['left'][5] = 'new-35abb797-3fee-48e9-be76-e150a6c69f17';
     $pane = new stdClass();
-    $pane->pid = 'new-31085aa1-df03-4a1d-96af-6ecbcd990abd';
+    $pane->pid = 'new-b164890e-1556-45d0-89ae-8c60d0846911';
     $pane->panel = 'left';
     $pane->type = 'views_panes';
-    $pane->subtype = 'og_members-panel_pane_1';
+    $pane->subtype = 'ktc_og_members-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -376,7 +358,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
         0 => 'argument_entity_id:node_1',
       ),
       'override_title' => 0,
-      'override_title_text' => 'Medlemmer af dette netværk',
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -389,9 +371,9 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 6;
     $pane->locks = array();
-    $pane->uuid = '31085aa1-df03-4a1d-96af-6ecbcd990abd';
-    $display->content['new-31085aa1-df03-4a1d-96af-6ecbcd990abd'] = $pane;
-    $display->panels['left'][6] = 'new-31085aa1-df03-4a1d-96af-6ecbcd990abd';
+    $pane->uuid = 'b164890e-1556-45d0-89ae-8c60d0846911';
+    $display->content['new-b164890e-1556-45d0-89ae-8c60d0846911'] = $pane;
+    $display->panels['left'][6] = 'new-b164890e-1556-45d0-89ae-8c60d0846911';
     $pane = new stdClass();
     $pane->pid = 'new-b6f26677-5782-4ef8-800c-9ebfb7fb8497';
     $pane->panel = 'right';

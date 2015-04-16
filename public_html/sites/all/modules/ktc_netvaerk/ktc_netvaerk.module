@@ -75,6 +75,54 @@ function ktc_netvaerk_tokens($type, $tokens, array $data = array(), array $optio
 }
 
 /**
+ * Implements hook_block_info().
+ */
+function ktc_netvaerk_block_info() {
+  $blocks['group-members'] = array(
+    'info' => t('KTC Netværk, Gruppe medlemmer modal'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ktc_netvaerk_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'group-members':
+      $view = views_get_view('ktc_og_members');
+      $view->set_display('block_2');
+      $view->set_arguments(array(arg(1)));
+      $view->pre_execute();
+      $view->execute();
+      $view_markup = $view->render();
+
+      $modal_markup = <<<EOL
+<div class="modal fade" id="member-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Medlemmer af gruppen</h4>
+      </div>
+      <div class="modal-body">
+        $view_markup
+      </div>
+    </div>
+  </div>
+</div>
+EOL;
+
+      $block['content'] = $modal_markup;
+      break;
+  }
+  return $block;
+}
+
+/**
  * KTC netvaerk get node group info.
  */
 function ktc_netvaerk_get_node_group_info($nid) {
