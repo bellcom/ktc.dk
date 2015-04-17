@@ -184,7 +184,7 @@ function ktc_crm_group_map_group_to_groupdto($group) {
   if ($field = field_get_items('node', $group, 'field_regioner')) {
     $tid = $field[0]['tid'];
     $region = taxonomy_term_load($tid);
-    $groupdto->Region = $region->name;
+    $groupdto->Region = _ktc_crm_translitterate($region->name);
   }
 
   if ($field = field_get_items('node', $group, 'og_group_ref')) {
