@@ -131,6 +131,13 @@ function _ktc_crm_get_term_name($tid) {
 }
 
 /**
+ * Helper, translitterate stings.
+ */
+function _ktc_crm_translitterate($text) {
+  return str_replace(array('æ', 'ø', 'å'), array('ae', 'oe', 'aa'), $text);
+}
+
+/**
  * Helper, is the user a KTC member.
  */
 function _ktc_crm_is_ktc_member() {

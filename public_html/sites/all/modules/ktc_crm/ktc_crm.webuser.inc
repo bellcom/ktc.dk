@@ -161,6 +161,7 @@ function ktc_crm_map_account_to_webuserdto($account) {
 
   if ($field = field_get_items('user', $account, 'field_regioner')) {
     $term_name = _ktc_crm_get_term_name($field[0]['tid']);
+    $term_name = _ktc_crm_translitterate($term_name);
     $eanaddressdto->Region = $term_name;
   }
 
@@ -218,7 +219,8 @@ function ktc_crm_map_account_to_webuserdto($account) {
       $topics .= $term->name . "\n";
     }
 
-    $webuserdto->EmnerFraWeb = $topics;
+    // CRM can only handle 2000 characters in this field.
+    $webuserdto->EmnerFraWeb = substr($topics, 0, 1999);
   }
 
   $webuserdto->Active = $account->status;
