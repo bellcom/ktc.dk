@@ -35,7 +35,7 @@ function teknik_og_miljoe_views_api($module = NULL, $api = NULL) {
 function teknik_og_miljoe_node_info() {
   $items = array(
     'artikler' => array(
-      'name' => t('Artikler'),
+      'name' => t('Artikel'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

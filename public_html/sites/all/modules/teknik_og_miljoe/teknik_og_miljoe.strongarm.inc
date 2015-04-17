@@ -68,7 +68,7 @@ function teknik_og_miljoe_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '9',
+          'weight' => '6',
         ),
         'path' => array(
           'weight' => '11',
