@@ -518,6 +518,137 @@ function ktc_hearing_views_default_views() {
   $export['hearings_missing_files'] = $view;
 
   $view = new view();
+  $view->name = 'hearings_ubehandlede_hoeringer';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Hearings - Ubehandlede høringer';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Hearings - Ubehandlede høringer';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    21 => '21',
+    9 => '9',
+    5 => '5',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'hearing' => 'hearing',
+  );
+  /* Filterkriterie: Indhold: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_tid']['id'] = 'field_status_tid';
+  $handler->display->display_options['filters']['field_status_tid']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_tid']['field'] = 'field_status_tid';
+  $handler->display->display_options['filters']['field_status_tid']['value'] = array(
+    1839 => '1839',
+  );
+  $handler->display->display_options['filters']['field_status_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_status_tid']['expose']['operator_id'] = 'field_status_tid_op';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['operator'] = 'field_status_tid_op';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['identifier'] = 'field_status_tid';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    17 => 0,
+    15 => 0,
+    16 => 0,
+    14 => 0,
+    18 => 0,
+    10 => 0,
+    9 => 0,
+    5 => 0,
+    3 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+  );
+  $handler->display->display_options['filters']['field_status_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_status_tid']['vocabulary'] = 'hearing_status';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['hearings_ubehandlede_hoeringer'] = array(
+    t('Master'),
+    t('Hearings - Ubehandlede høringer'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Antal elementer'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('« første'),
+    t('‹ forrige'),
+    t('næste ›'),
+    t('sidste »'),
+    t('Titel'),
+    t('Status'),
+    t('Block'),
+  );
+  $export['hearings_ubehandlede_hoeringer'] = $view;
+
+  $view = new view();
   $view->name = 'ktc_hearing_group_select';
   $view->description = '';
   $view->tag = 'default';
