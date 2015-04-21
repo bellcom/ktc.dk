@@ -559,12 +559,105 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_hearing_type' => 'field_hearing_type',
+    'field_hearing_authority' => 'field_hearing_authority',
+    'field_hearing_official' => 'field_hearing_official',
+    'title' => 'title',
+    'field_responsible_foreman' => 'field_responsible_foreman',
+    'field_enrollment_deadlines' => 'field_enrollment_deadlines',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_hearing_type' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_hearing_authority' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_hearing_official' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_responsible_foreman' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_enrollment_deadlines' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Felt: Indhold: Høringstype */
+  $handler->display->display_options['fields']['field_hearing_type']['id'] = 'field_hearing_type';
+  $handler->display->display_options['fields']['field_hearing_type']['table'] = 'field_data_field_hearing_type';
+  $handler->display->display_options['fields']['field_hearing_type']['field'] = 'field_hearing_type';
+  $handler->display->display_options['fields']['field_hearing_type']['label'] = 'Type';
+  $handler->display->display_options['fields']['field_hearing_type']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Indhold: Myndighed */
+  $handler->display->display_options['fields']['field_hearing_authority']['id'] = 'field_hearing_authority';
+  $handler->display->display_options['fields']['field_hearing_authority']['table'] = 'field_data_field_hearing_authority';
+  $handler->display->display_options['fields']['field_hearing_authority']['field'] = 'field_hearing_authority';
+  /* Felt: Indhold: Officiel */
+  $handler->display->display_options['fields']['field_hearing_official']['id'] = 'field_hearing_official';
+  $handler->display->display_options['fields']['field_hearing_official']['table'] = 'field_data_field_hearing_official';
+  $handler->display->display_options['fields']['field_hearing_official']['field'] = 'field_hearing_official';
+  $handler->display->display_options['fields']['field_hearing_official']['label'] = '';
+  $handler->display->display_options['fields']['field_hearing_official']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_hearing_official']['element_label_colon'] = FALSE;
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[title] ([field_hearing_official])
+';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Felt: Indhold: Ansvarlig formand */
+  $handler->display->display_options['fields']['field_responsible_foreman']['id'] = 'field_responsible_foreman';
+  $handler->display->display_options['fields']['field_responsible_foreman']['table'] = 'field_data_field_responsible_foreman';
+  $handler->display->display_options['fields']['field_responsible_foreman']['field'] = 'field_responsible_foreman';
+  $handler->display->display_options['fields']['field_responsible_foreman']['label'] = 'Formand';
+  $handler->display->display_options['fields']['field_responsible_foreman']['settings'] = array(
+    'link' => 1,
+  );
+  /* Felt: Indhold: Indmeldelsesfrister */
+  $handler->display->display_options['fields']['field_enrollment_deadlines']['id'] = 'field_enrollment_deadlines';
+  $handler->display->display_options['fields']['field_enrollment_deadlines']['table'] = 'field_data_field_enrollment_deadlines';
+  $handler->display->display_options['fields']['field_enrollment_deadlines']['field'] = 'field_enrollment_deadlines';
+  $handler->display->display_options['fields']['field_enrollment_deadlines']['label'] = 'Frist';
+  $handler->display->display_options['fields']['field_enrollment_deadlines']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Sorteringskriterie: Indhold: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -642,7 +735,13 @@ function ktc_hearing_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
+    t('Type'),
+    t('Myndighed'),
     t('Titel'),
+    t('[title] ([field_hearing_official])
+'),
+    t('Formand'),
+    t('Frist'),
     t('Status'),
     t('Block'),
   );
