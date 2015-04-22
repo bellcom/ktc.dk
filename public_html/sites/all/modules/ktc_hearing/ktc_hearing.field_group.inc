@@ -13,6 +13,40 @@ function ktc_hearing_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_advanced|node|hearing|form';
+  $field_group->group_name = 'group_advanced';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'hearing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_hearing_letter';
+  $field_group->data = array(
+    'label' => 'Avanceret',
+    'weight' => '21',
+    'children' => array(
+      0 => 'field_status',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Avanceret',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-advanced field-group-div advanced bg-warning form-inline well well-sm',
+        'description' => '<p>Hvis denne ændres under oprettelse af ny høring, vil ingen blive informeret om høringen.</p>
+<p></p>',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_advanced|node|hearing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_attendee|node|hearing|form';
   $field_group->group_name = 'group_attendee';
   $field_group->entity_type = 'node';
@@ -21,7 +55,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Deltagere',
-    'weight' => '2',
+    'weight' => '4',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'field_attendees',
@@ -30,18 +64,99 @@ function ktc_hearing_field_group_info() {
       4 => 'field_responsible_admin',
       5 => 'field_responsible_foreman',
     ),
-    'format_type' => 'htab',
+    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-attendee field-group-htab',
+        'classes' => '',
         'required_fields' => 1,
-        'id' => '',
       ),
     ),
   );
   $export['group_attendee|node|hearing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_besked|node|hearing|form';
+  $field_group->group_name = 'group_besked';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'hearing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_hearing_fields';
+  $field_group->data = array(
+    'label' => 'Besked til faggruppe',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_message',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-besked field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_besked|node|hearing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_bilag|node|hearing|form';
+  $field_group->group_name = 'group_bilag';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'hearing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_hearing_fields';
+  $field_group->data = array(
+    'label' => 'Bilag',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_hearing_materials',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-bilag field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_bilag|node|hearing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_emner|node|hearing|form';
+  $field_group->group_name = 'group_emner';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'hearing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_hearing_fields';
+  $field_group->data = array(
+    'label' => 'Emner',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_topics',
+      1 => 'field_tags',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-emner field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_emner|node|hearing|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -54,21 +169,21 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Datoer og frister',
-    'weight' => '3',
+    'weight' => '6',
     'children' => array(
       0 => 'field_attendee_deadlines',
       1 => 'field_enrollment_deadlines',
       2 => 'field_official_date',
       3 => 'field_official_responsedate',
+      4 => 'field_hearing_archived',
     ),
-    'format_type' => 'htab',
+    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
         'required_fields' => 1,
-        'id' => '',
       ),
     ),
   );
@@ -90,8 +205,13 @@ function ktc_hearing_field_group_info() {
       0 => 'group_attendee',
       1 => 'group_hearing_dates',
       2 => 'group_hearing_letter',
+      3 => 'group_emner',
+      4 => 'group_publicering',
+      5 => 'group_bilag',
+      6 => 'group_besked',
+      7 => 'group_klhoeringssvar',
     ),
-    'format_type' => 'htabs',
+    'format_type' => 'tabs',
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
@@ -115,30 +235,158 @@ function ktc_hearing_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'body',
-      1 => 'field_hearing_materials',
-      2 => 'field_status',
-      3 => 'field_hearing_type',
-      4 => 'field_abstract',
-      5 => 'field_hearing_archived',
-      6 => 'field_topics',
-      7 => 'field_hearing_authority',
-      8 => 'field_hearing_official',
-      9 => 'field_message',
-      10 => 'field_titel_lang',
-      11 => 'title',
+      1 => 'field_titel_kort',
+      2 => 'title',
+      3 => 'group_indstillinger',
+      4 => 'group_advanced',
+      5 => 'group_officiel',
     ),
-    'format_type' => 'htab',
+    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
         'required_fields' => 1,
-        'id' => '',
       ),
     ),
   );
   $export['group_hearing_letter|node|hearing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_hidden|node|hearing|form';
+  $field_group->group_name = 'group_hidden';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'hearing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Skjult',
+    'weight' => '3',
+    'children' => array(
+      0 => 'group_content_access',
+      1 => 'field_titel_lang',
+      2 => 'field_typo3_uid',
+      3 => 'field_typo3_user_id',
+      4 => 'field_missing_files',
+      5 => 'field_os2web_base_field_hidlinks',
+      6 => 'path',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Skjult',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-hidden field-group-div hidden',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_hidden|node|hearing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_indstillinger|node|hearing|form';
+  $field_group->group_name = 'group_indstillinger';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'hearing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_hearing_letter';
+  $field_group->data = array(
+    'label' => 'Indstillinger',
+    'weight' => '19',
+    'children' => array(
+      0 => 'field_hearing_type',
+      1 => 'field_hearing_authority',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Indstillinger',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-indstillinger field-group-div well well-sm bg-success',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_indstillinger|node|hearing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_klhoeringssvar|node|hearing|form';
+  $field_group->group_name = 'group_klhoeringssvar';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'hearing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_hearing_fields';
+  $field_group->data = array(
+    'label' => 'KL Høringssvar / Eksterne links',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_os2web_base_field_ext_link',
+      1 => 'field_link_kl_hoeringssvar',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'KL Høringssvar / Eksterne links',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-klhoeringssvar field-group-tab',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_klhoeringssvar|node|hearing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_officiel|node|hearing|form';
+  $field_group->group_name = 'group_officiel';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'hearing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_hearing_letter';
+  $field_group->data = array(
+    'label' => 'Officiel eller intern høring',
+    'weight' => '20',
+    'children' => array(
+      0 => 'field_hearing_official',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Officiel eller intern høring',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-officiel field-group-div well well-sm bg-warning',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_officiel|node|hearing|form'] = $field_group;
 
   return $export;
 }

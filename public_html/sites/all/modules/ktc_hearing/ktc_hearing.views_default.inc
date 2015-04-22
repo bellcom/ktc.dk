@@ -78,7 +78,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_hearing_authority']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_hearing_authority']['alter']['text'] = 'Myndighed: [field_hearing_authority]';
   $handler->display->display_options['fields']['field_hearing_authority']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Besked */
+  /* Felt: Indhold: Besked til faggruppen */
   $handler->display->display_options['fields']['field_message']['id'] = 'field_message';
   $handler->display->display_options['fields']['field_message']['table'] = 'field_data_field_message';
   $handler->display->display_options['fields']['field_message']['field'] = 'field_message';
@@ -179,7 +179,7 @@ function ktc_hearing_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Indmeldelsesfrister */
+  /* Felt: Indhold: KTC høringsfrist */
   $handler->display->display_options['fields']['field_enrollment_deadlines']['id'] = 'field_enrollment_deadlines';
   $handler->display->display_options['fields']['field_enrollment_deadlines']['table'] = 'field_data_field_enrollment_deadlines';
   $handler->display->display_options['fields']['field_enrollment_deadlines']['field'] = 'field_enrollment_deadlines';
@@ -221,7 +221,7 @@ function ktc_hearing_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Besked */
+  /* Felt: Indhold: Besked til faggruppen */
   $handler->display->display_options['fields']['field_message']['id'] = 'field_message';
   $handler->display->display_options['fields']['field_message']['table'] = 'field_data_field_message';
   $handler->display->display_options['fields']['field_message']['field'] = 'field_message';
@@ -333,12 +333,12 @@ function ktc_hearing_views_default_views() {
     t('Høringstype: [field_hearing_type]'),
     t('Status: [field_status]'),
     t('Myndighed: [field_hearing_authority]'),
-    t('Besked'),
+    t('Besked til faggruppen'),
     t('Alle'),
     t('Block'),
     t('Content pane'),
     t('Officiel udsendelsesdato'),
-    t('Indmeldelsesfrister'),
+    t('KTC høringsfrist'),
     t('Deltagers frist'),
     t('Officiel svardato'),
     t('View panes'),
@@ -646,7 +646,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_responsible_foreman']['settings'] = array(
     'link' => 1,
   );
-  /* Felt: Indhold: Indmeldelsesfrister */
+  /* Felt: Indhold: KTC høringsfrist */
   $handler->display->display_options['fields']['field_enrollment_deadlines']['id'] = 'field_enrollment_deadlines';
   $handler->display->display_options['fields']['field_enrollment_deadlines']['table'] = 'field_data_field_enrollment_deadlines';
   $handler->display->display_options['fields']['field_enrollment_deadlines']['field'] = 'field_enrollment_deadlines';
