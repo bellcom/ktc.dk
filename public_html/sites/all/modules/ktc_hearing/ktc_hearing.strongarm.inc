@@ -145,10 +145,13 @@ function ktc_hearing_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '3',
+          'weight' => '16',
         ),
         'path' => array(
-          'weight' => '1',
+          'weight' => '2',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(

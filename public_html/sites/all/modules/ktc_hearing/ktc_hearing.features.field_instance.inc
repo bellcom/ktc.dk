@@ -15,7 +15,7 @@ function ktc_hearing_field_default_field_instances() {
     'bundle' => 'hearing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Indsæt det officielle høringsbrev i feltet',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -57,10 +57,32 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Beskrivelse',
-    'required' => 0,
+    'label' => 'Høringsbrev/ beskrivelse',
+    'required' => 1,
     'settings' => array(
-      'display_summary' => 1,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -72,65 +94,7 @@ function ktc_hearing_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-hearing-field_abstract'
-  $field_instances['node-hearing-field_abstract'] = array(
-    'bundle' => 'hearing',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_abstract',
-    'label' => 'Resumé',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 18,
     ),
   );
 
@@ -328,11 +292,58 @@ function ktc_hearing_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_chairman',
     'label' => 'Formand',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
           'status' => 0,
+        ),
+      ),
+      'nodeaccess_userreference' => array(
+        'all' => array(
+          'view' => 0,
+        ),
+        'all_published' => 0,
+        'author' => array(
+          'delete' => 0,
+          'update' => 0,
+          'view' => 0,
+        ),
+        'author_published' => 0,
+        'create' => array(
+          'arrangement' => 0,
+          'artikler' => 0,
+          'banner' => 0,
+          'document' => 0,
+          'factbox' => 0,
+          'forum_post' => 0,
+          'group' => 0,
+          'hearing' => 0,
+          'hearing_responses' => 0,
+          'intern_side' => 0,
+          'ktc_hearings_notification' => 0,
+          'ktc_supplier' => 0,
+          'magazine' => 0,
+          'meeting_doodle' => 0,
+          'os2web_base_news' => 0,
+          'page' => 0,
+          'product' => 0,
+          'webform' => 0,
+        ),
+        'priority' => 0,
+        'referenced' => array(
+          'delete' => 0,
+          'deny_delete' => 0,
+          'deny_update' => 0,
+          'deny_view' => 0,
+          'update' => 0,
+          'view' => 0,
+        ),
+        'referenced_published' => 0,
+        'unused' => 0,
+        'views' => array(
+          'view' => '',
+          'view_args' => '',
         ),
       ),
       'user_register_form' => FALSE,
@@ -341,20 +352,10 @@ function ktc_hearing_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
-        'advanced' => array(
-          'pattern' => '/(.+) \\((\\d+)\\)/',
-          'replacement' => '${1}',
-        ),
         'apply_chosen' => '',
-        'fix_display' => 1,
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'pattern' => '/(.+) \\((\\d+)\\)/',
-        'placeholder_text' => 'Choose an option',
-        'replacement' => '${1}',
-        'searching_placeholder' => 'Looking for ',
         'size' => 60,
-        'typing_placeholder' => 'Keep typing...',
       ),
       'type' => 'entityreference_autocomplete_tags',
       'weight' => 2,
@@ -365,6 +366,7 @@ function ktc_hearing_field_default_field_instances() {
   $field_instances['node-hearing-field_coordinator'] = array(
     'bundle' => 'hearing',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -405,8 +407,60 @@ function ktc_hearing_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_coordinator',
     'label' => 'Tovholder',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'nodeaccess_userreference' => array(
+        'all' => array(
+          'view' => 0,
+        ),
+        'all_published' => 0,
+        'author' => array(
+          'delete' => 0,
+          'update' => 0,
+          'view' => 0,
+        ),
+        'author_published' => 0,
+        'create' => array(
+          'arrangement' => 0,
+          'artikler' => 0,
+          'banner' => 0,
+          'document' => 0,
+          'factbox' => 0,
+          'forum_post' => 0,
+          'group' => 0,
+          'hearing' => 0,
+          'hearing_responses' => 0,
+          'intern_side' => 0,
+          'ktc_hearings_notification' => 0,
+          'ktc_supplier' => 0,
+          'magazine' => 0,
+          'meeting_doodle' => 0,
+          'os2web_base_news' => 0,
+          'page' => 0,
+          'product' => 0,
+          'webform' => 0,
+        ),
+        'priority' => 0,
+        'referenced' => array(
+          'delete' => 0,
+          'deny_delete' => 0,
+          'deny_update' => 0,
+          'deny_view' => 0,
+          'update' => 0,
+          'view' => 0,
+        ),
+        'referenced_published' => 0,
+        'unused' => 0,
+        'views' => array(
+          'view' => '',
+          'view_args' => '',
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -414,15 +468,9 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => 0,
-        'fix_display' => 0,
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'pattern' => '/(.+) \\((\\d+)\\)/',
-        'placeholder_text' => 'Choose an option',
-        'replacement' => '${1}',
-        'searching_placeholder' => 'Looking for ',
         'size' => 60,
-        'typing_placeholder' => 'Keep typing...',
       ),
       'type' => 'entityreference_autocomplete_tags',
       'weight' => 3,
@@ -475,7 +523,7 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_enrollment_deadlines',
-    'label' => 'Indmeldelsesfrister',
+    'label' => 'KTC høringsfrist',
     'required' => 0,
     'settings' => array(
       'default_value' => 'now',
@@ -557,7 +605,7 @@ function ktc_hearing_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 12,
+      'weight' => 7,
     ),
   );
 
@@ -603,18 +651,41 @@ function ktc_hearing_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_hearing_authority',
     'label' => 'Myndighed',
-    'required' => FALSE,
+    'required' => 1,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 26,
     ),
   );
 
@@ -672,8 +743,8 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 0,
-          'public' => 'public',
+          'private' => 'private',
+          'public' => 0,
         ),
         'allowed_types' => array(
           0 => 0,
@@ -683,14 +754,14 @@ function ktc_hearing_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'upload' => 'upload',
         ),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 20,
     ),
   );
 
@@ -703,7 +774,7 @@ function ktc_hearing_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Er høringen officiel (udsendt af myndighed), eller uofficiel (intern høring)',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -751,7 +822,7 @@ function ktc_hearing_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 28,
     ),
   );
 
@@ -797,7 +868,7 @@ function ktc_hearing_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_hearing_type',
     'label' => 'Høringstype',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -809,7 +880,82 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 27,
+    ),
+  );
+
+  // Exported field_instance: 'node-hearing-field_link_kl_hoeringssvar'
+  $field_instances['node-hearing-field_link_kl_hoeringssvar'] = array(
+    'bundle' => 'hearing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 29,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link_kl_hoeringssvar',
+    'label' => 'Link til KL høringssvar',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => 'nofollow',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 0,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 8,
     ),
   );
 
@@ -818,7 +964,7 @@ function ktc_hearing_field_default_field_instances() {
     'bundle' => 'hearing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Skriv evt. en besked til faggruppen vedrørende høringen',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -854,9 +1000,31 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_message',
-    'label' => 'Besked',
+    'label' => 'Besked til faggruppen',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -925,7 +1093,7 @@ function ktc_hearing_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -1142,7 +1310,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 3,
+      'weight' => 9,
     ),
   );
 
@@ -1203,7 +1371,7 @@ function ktc_hearing_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -1252,11 +1420,58 @@ function ktc_hearing_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_responsible_admin',
     'label' => 'Ansvarlig tovholder',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
           'status' => 0,
+        ),
+      ),
+      'nodeaccess_userreference' => array(
+        'all' => array(
+          'view' => 0,
+        ),
+        'all_published' => 0,
+        'author' => array(
+          'delete' => 0,
+          'update' => 0,
+          'view' => 0,
+        ),
+        'author_published' => 0,
+        'create' => array(
+          'arrangement' => 0,
+          'artikler' => 0,
+          'banner' => 0,
+          'document' => 0,
+          'factbox' => 0,
+          'forum_post' => 0,
+          'group' => 0,
+          'hearing' => 0,
+          'hearing_responses' => 0,
+          'intern_side' => 0,
+          'ktc_hearings_notification' => 0,
+          'ktc_supplier' => 0,
+          'magazine' => 0,
+          'meeting_doodle' => 0,
+          'os2web_base_news' => 0,
+          'page' => 0,
+          'product' => 0,
+          'webform' => 0,
+        ),
+        'priority' => 0,
+        'referenced' => array(
+          'delete' => 0,
+          'deny_delete' => 0,
+          'deny_update' => 0,
+          'deny_view' => 0,
+          'update' => 0,
+          'view' => 0,
+        ),
+        'referenced_published' => 0,
+        'unused' => 0,
+        'views' => array(
+          'view' => '',
+          'view_args' => '',
         ),
       ),
       'user_register_form' => FALSE,
@@ -1319,11 +1534,58 @@ function ktc_hearing_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_responsible_foreman',
     'label' => 'Ansvarlig formand',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
           'status' => 0,
+        ),
+      ),
+      'nodeaccess_userreference' => array(
+        'all' => array(
+          'view' => 0,
+        ),
+        'all_published' => 0,
+        'author' => array(
+          'delete' => 0,
+          'update' => 0,
+          'view' => 0,
+        ),
+        'author_published' => 0,
+        'create' => array(
+          'arrangement' => 0,
+          'artikler' => 0,
+          'banner' => 0,
+          'document' => 0,
+          'factbox' => 0,
+          'forum_post' => 0,
+          'group' => 0,
+          'hearing' => 0,
+          'hearing_responses' => 0,
+          'intern_side' => 0,
+          'ktc_hearings_notification' => 0,
+          'ktc_supplier' => 0,
+          'magazine' => 0,
+          'meeting_doodle' => 0,
+          'os2web_base_news' => 0,
+          'page' => 0,
+          'product' => 0,
+          'webform' => 0,
+        ),
+        'priority' => 0,
+        'referenced' => array(
+          'delete' => 0,
+          'deny_delete' => 0,
+          'deny_update' => 0,
+          'deny_view' => 0,
+          'update' => 0,
+          'view' => 0,
+        ),
+        'referenced_published' => 0,
+        'unused' => 0,
+        'views' => array(
+          'view' => '',
+          'view_args' => '',
         ),
       ),
       'user_register_form' => FALSE,
@@ -1399,7 +1661,145 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-hearing-field_tags'
+  $field_instances['node-hearing-field_tags'] = array(
+    'bundle' => 'hearing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Indtast evt. stikord/ tags til høringen',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 28,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Stikord / tags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+        'content_taxonomy_opt_groups' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 22,
+    ),
+  );
+
+  // Exported field_instance: 'node-hearing-field_titel_kort'
+  $field_instances['node-hearing-field_titel_kort'] = array(
+    'bundle' => 'hearing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Indtast gerne en forkortet titel til høringen hvis den er meget lang',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 27,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_titel_kort',
+    'label' => 'Titel kort',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 17,
     ),
   );
 
@@ -1457,7 +1857,7 @@ function ktc_hearing_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 9,
     ),
   );
 
@@ -1503,18 +1903,16 @@ function ktc_hearing_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_topics',
     'label' => 'Emner',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'hs_taxonomy',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => 0,
-      ),
+      'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 9,
+      'weight' => 21,
     ),
   );
 
@@ -1572,7 +1970,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1630,7 +2028,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1701,7 +2099,7 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
     'widget_type' => 'options_select',
   );
@@ -1749,7 +2147,7 @@ function ktc_hearing_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
     'label' => 'Gruppe/Netværk',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
@@ -1757,7 +2155,7 @@ function ktc_hearing_field_default_field_instances() {
           'action_on_edit' => 0,
           'fallback' => 'none',
           'providers' => array(
-            'og_context' => FALSE,
+            'og_context' => 0,
             'url' => 1,
           ),
           'skip_perm' => 0,
@@ -2737,8 +3135,7 @@ function ktc_hearing_field_default_field_instances() {
   t('Ansvarlig formand');
   t('Ansvarlig tovholder');
   t('Arkiveret');
-  t('Besked');
-  t('Beskrivelse');
+  t('Besked til faggruppen');
   t('Bilag');
   t('Deltagere');
   t('Deltagers frist');
@@ -2746,6 +3143,7 @@ function ktc_hearing_field_default_field_instances() {
   t('Ekstern links');
   t('Emner');
   t('Endeligt svar');
+  t('Er høringen officiel (udsendt af myndighed), eller uofficiel (intern høring)');
   t('Er sammenfatning');
   t('Formand');
   t('Generelle kommentarer');
@@ -2754,20 +3152,27 @@ function ktc_hearing_field_default_field_instances() {
   t('Har ikke svaret');
   t('Høring');
   t('Høring Fil(er) mangler fra Typo3');
+  t('Høringsbrev/ beskrivelse');
   t('Høringssvar type');
   t('Høringstype');
   t('Impression');
-  t('Indmeldelsesfrister');
+  t('Indsæt det officielle høringsbrev i feltet');
+  t('Indtast evt. stikord/ tags til høringen');
+  t('Indtast gerne en forkortet titel til høringen hvis den er meget lang');
+  t('KTC høringsfrist');
   t('Konsekvenser');
+  t('Link til KL høringssvar');
   t('Mangler Fil(er)');
   t('Myndighed');
   t('Officiel');
   t('Officiel svardato');
   t('Officiel udsendelsesdato');
-  t('Resumé');
   t('Skjul auto relaterede links');
+  t('Skriv evt. en besked til faggruppen vedrørende høringen');
   t('Status');
+  t('Stikord / tags');
   t('Synlighed');
+  t('Titel kort');
   t('Titel lang');
   t('Tovholder');
   t('Typo3 originator user id');
