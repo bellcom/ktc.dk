@@ -31,7 +31,7 @@ function ktc_hearing_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'id' => '',
-        'classes' => 'group-advanced field-group-div advanced bg-warning form-inline well well-sm',
+        'classes' => 'group-advanced field-group-div advanced form-inline well well-sm',
         'description' => '<p>Hvis denne ændres under oprettelse af ny høring, vil ingen blive informeret om høringen.</p>
 <p></p>',
         'show_label' => '0',
@@ -55,7 +55,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Deltagere',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'field_attendees',
@@ -87,7 +87,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Besked til faggruppe',
-    'weight' => '5',
+    'weight' => '2',
     'children' => array(
       0 => 'field_message',
     ),
@@ -114,7 +114,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Bilag',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_hearing_materials',
     ),
@@ -141,10 +141,11 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Emner',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_topics',
       1 => 'field_tags',
+      2 => 'field_os2web_base_field_kle_ref',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -231,7 +232,7 @@ function ktc_hearing_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
-    'label' => 'Høringsbrev og bilag',
+    'label' => 'Høringsbrev',
     'weight' => '1',
     'children' => array(
       0 => 'body',
@@ -243,12 +244,13 @@ function ktc_hearing_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Høringsbrev',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_hearing_letter|node|hearing|form'] = $field_group;
@@ -314,7 +316,7 @@ function ktc_hearing_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'id' => '',
-        'classes' => 'group-indstillinger field-group-div well well-sm bg-success',
+        'classes' => 'group-indstillinger field-group-div well well-sm',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -376,9 +378,9 @@ function ktc_hearing_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'id' => '',
-        'classes' => 'group-officiel field-group-div well well-sm bg-warning',
+        'classes' => 'group-officiel field-group-div well well-sm',
         'description' => '',
-        'show_label' => '1',
+        'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',

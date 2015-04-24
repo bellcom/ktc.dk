@@ -93,6 +93,7 @@ features[field_instance][] = node-hearing-field_official_date
 features[field_instance][] = node-hearing-field_official_responsedate
 features[field_instance][] = node-hearing-field_os2web_base_field_ext_link
 features[field_instance][] = node-hearing-field_os2web_base_field_hidlinks
+features[field_instance][] = node-hearing-field_os2web_base_field_kle_ref
 features[field_instance][] = node-hearing-field_responsible_admin
 features[field_instance][] = node-hearing-field_responsible_foreman
 features[field_instance][] = node-hearing-field_status

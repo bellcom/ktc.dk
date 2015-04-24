@@ -622,7 +622,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_hearing_authority']['id'] = 'field_hearing_authority';
   $handler->display->display_options['fields']['field_hearing_authority']['table'] = 'field_data_field_hearing_authority';
   $handler->display->display_options['fields']['field_hearing_authority']['field'] = 'field_hearing_authority';
-  /* Felt: Indhold: Officiel */
+  /* Felt: Indhold: Officiel eller intern høring */
   $handler->display->display_options['fields']['field_hearing_official']['id'] = 'field_hearing_official';
   $handler->display->display_options['fields']['field_hearing_official']['table'] = 'field_data_field_hearing_official';
   $handler->display->display_options['fields']['field_hearing_official']['field'] = 'field_hearing_official';

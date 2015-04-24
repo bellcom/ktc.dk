@@ -82,6 +82,8 @@ function ktc_hearing_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -147,6 +149,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Deltagers frist',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -221,6 +225,8 @@ function ktc_hearing_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -299,6 +305,8 @@ function ktc_hearing_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'nodeaccess_userreference' => array(
         'all' => array(
           'view' => 0,
@@ -414,6 +422,8 @@ function ktc_hearing_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'nodeaccess_userreference' => array(
         'all' => array(
           'view' => 0,
@@ -526,6 +536,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'KTC høringsfrist',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -596,6 +608,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Arkiveret',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -675,6 +689,8 @@ function ktc_hearing_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -692,6 +708,8 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-field_hearing_materials'
   $field_instances['node-hearing-field_hearing_materials'] = array(
     'bundle' => 'hearing',
+    'custom_add_another' => 'Tilføj endnu et bilag',
+    'custom_remove' => 'Fjern bilag',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -732,10 +750,13 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Bilag',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'description_field' => 0,
       'file_directory' => 'hearing_files',
       'file_extensions' => 'txt pdf doc xml ppt docx',
       'max_filesize' => '',
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -747,18 +768,17 @@ function ktc_hearing_field_default_field_instances() {
           'public' => 0,
         ),
         'allowed_types' => array(
-          0 => 0,
           'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
+          'document' => 'document',
+          'image' => 0,
           'video' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'upload' => 'upload',
         ),
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 20,
@@ -768,11 +788,7 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-field_hearing_official'
   $field_instances['node-hearing-field_hearing_official'] = array(
     'bundle' => 'hearing',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Er høringen officiel (udsendt af myndighed), eller uofficiel (intern høring)',
     'display' => array(
@@ -810,18 +826,18 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_hearing_official',
-    'label' => 'Officiel',
-    'required' => 0,
+    'label' => 'Officiel eller intern høring',
+    'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
+      'settings' => array(),
+      'type' => 'options_buttons',
       'weight' => 28,
     ),
   );
@@ -870,6 +886,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Høringstype',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -937,6 +955,8 @@ function ktc_hearing_field_default_field_instances() {
         'target' => '_blank',
         'title' => '',
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -1025,6 +1045,8 @@ function ktc_hearing_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -1083,6 +1105,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Mangler Fil(er)',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1146,6 +1170,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Officiel udsendelsesdato',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -1217,6 +1243,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Officiel svardato',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -1280,7 +1308,7 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_ext_link',
-    'label' => 'Ekstern links',
+    'label' => 'Eksterne links',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -1292,6 +1320,8 @@ function ktc_hearing_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -1362,6 +1392,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Skjul auto relaterede links',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1372,6 +1404,66 @@ function ktc_hearing_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-hearing-field_os2web_base_field_kle_ref'
+  $field_instances['node-hearing-field_os2web_base_field_kle_ref'] = array(
+    'bundle' => 'hearing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 30,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_kle_ref',
+    'label' => 'KL Emneord',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+        'content_taxonomy_opt_groups' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 23,
     ),
   );
 
@@ -1427,6 +1519,8 @@ function ktc_hearing_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'nodeaccess_userreference' => array(
         'all' => array(
           'view' => 0,
@@ -1541,6 +1635,8 @@ function ktc_hearing_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'nodeaccess_userreference' => array(
         'all' => array(
           'view' => 0,
@@ -1651,6 +1747,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Status',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1709,6 +1807,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Stikord / tags',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1789,6 +1889,8 @@ function ktc_hearing_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1847,6 +1949,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Titel lang',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1905,6 +2009,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Emner',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1959,6 +2065,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Typo3 unik id(tx_ktchoringdb_proposal)',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -2017,6 +2125,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Typo3 originator user id',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -2079,6 +2189,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Synlighed',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -2162,6 +2274,8 @@ function ktc_hearing_field_default_field_instances() {
           'status' => 1,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -2235,6 +2349,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Detaljerede kommentar',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -2295,6 +2411,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Konsekvenser',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2353,6 +2471,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Yderligere foranstaltninger',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2411,6 +2531,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Generelle kommentarer',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -2468,10 +2590,13 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Bilag',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'description_field' => 0,
       'file_directory' => 'hearing_response',
       'file_extensions' => 'txt pdf doc docx jpg png jpeg gif dotx ppt xls xlsx ics',
       'max_filesize' => '',
+      'media_library_include_in_library' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2546,6 +2671,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Høring',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2605,6 +2732,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Høringssvar type',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2663,6 +2792,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Impression',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -2725,6 +2856,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Endeligt svar',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2786,6 +2919,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Har ikke svaret',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2847,6 +2982,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Er sammenfatning',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2903,6 +3040,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Typo3 unik id(answer)',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -2961,6 +3100,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Typo3 originator user id',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -3023,6 +3164,8 @@ function ktc_hearing_field_default_field_instances() {
     'label' => 'Group content visibility',
     'required' => TRUE,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -3103,6 +3246,8 @@ function ktc_hearing_field_default_field_instances() {
           'status' => TRUE,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -3140,7 +3285,7 @@ function ktc_hearing_field_default_field_instances() {
   t('Deltagere');
   t('Deltagers frist');
   t('Detaljerede kommentar');
-  t('Ekstern links');
+  t('Eksterne links');
   t('Emner');
   t('Endeligt svar');
   t('Er høringen officiel (udsendt af myndighed), eller uofficiel (intern høring)');
@@ -3159,12 +3304,13 @@ function ktc_hearing_field_default_field_instances() {
   t('Indsæt det officielle høringsbrev i feltet');
   t('Indtast evt. stikord/ tags til høringen');
   t('Indtast gerne en forkortet titel til høringen hvis den er meget lang');
+  t('KL Emneord');
   t('KTC høringsfrist');
   t('Konsekvenser');
   t('Link til KL høringssvar');
   t('Mangler Fil(er)');
   t('Myndighed');
-  t('Officiel');
+  t('Officiel eller intern høring');
   t('Officiel svardato');
   t('Officiel udsendelsesdato');
   t('Skjul auto relaterede links');

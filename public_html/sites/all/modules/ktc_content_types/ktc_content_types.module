@@ -25,6 +25,10 @@ function ktc_content_types_entity_info_alter(&$entity_info) {
  * Implements hook_form_FORM_ID_alter().
  */
 function ktc_content_types_form_node_form_alter(&$form, $form_state, $form_id) {
+
+  // Remove n/a from radio
+  unset($form['field_hearing_official']['und']['#options']['_none']); 
+
   $node = $form_state['node'];
 
   $vocabulary = taxonomy_vocabulary_machine_name_load('os2web_news_page_newstypes');
