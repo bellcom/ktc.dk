@@ -92,6 +92,31 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $display->content['new-e1f48d19-844d-44be-9bad-1e75b747d0da'] = $pane;
     $display->panels['bottom'][0] = 'new-e1f48d19-844d-44be-9bad-1e75b747d0da';
     $pane = new stdClass();
+    $pane->pid = 'new-82e42e52-930f-40f9-878a-617305a58b9f';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_netvaerk-group-not-member-message';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '%node:title',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'darkgray-box red-title',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '82e42e52-930f-40f9-878a-617305a58b9f';
+    $display->content['new-82e42e52-930f-40f9-878a-617305a58b9f'] = $pane;
+    $display->panels['center'][0] = 'new-82e42e52-930f-40f9-878a-617305a58b9f';
+    $pane = new stdClass();
     $pane->pid = 'new-d0b8119a-9d09-489b-a153-b01f52a8420a';
     $pane->panel = 'center';
     $pane->type = 'node_create_links';
@@ -114,11 +139,11 @@ function ktc_netvaerk_default_page_manager_handlers() {
       'css_class' => 'red-title',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'd0b8119a-9d09-489b-a153-b01f52a8420a';
     $display->content['new-d0b8119a-9d09-489b-a153-b01f52a8420a'] = $pane;
-    $display->panels['center'][0] = 'new-d0b8119a-9d09-489b-a153-b01f52a8420a';
+    $display->panels['center'][1] = 'new-d0b8119a-9d09-489b-a153-b01f52a8420a';
     $pane = new stdClass();
     $pane->pid = 'new-c2075e66-4122-4e9d-9d23-b7cc17d69f09';
     $pane->panel = 'center';
@@ -146,11 +171,11 @@ function ktc_netvaerk_default_page_manager_handlers() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'c2075e66-4122-4e9d-9d23-b7cc17d69f09';
     $display->content['new-c2075e66-4122-4e9d-9d23-b7cc17d69f09'] = $pane;
-    $display->panels['center'][1] = 'new-c2075e66-4122-4e9d-9d23-b7cc17d69f09';
+    $display->panels['center'][2] = 'new-c2075e66-4122-4e9d-9d23-b7cc17d69f09';
     $pane = new stdClass();
     $pane->pid = 'new-69eedfb2-c333-4fb7-9822-0c0f95673afb';
     $pane->panel = 'left';
@@ -540,48 +565,6 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->uuid = '63dd3165-b724-4f8e-b8b0-2b339fd5d462';
     $display->content['new-63dd3165-b724-4f8e-b8b0-2b339fd5d462'] = $pane;
     $display->panels['right'][5] = 'new-63dd3165-b724-4f8e-b8b0-2b339fd5d462';
-    $pane = new stdClass();
-    $pane->pid = 'new-5a9c23ff-85e7-4206-ae3e-3c6dd813c8e2';
-    $pane->panel = 'top';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'og_member',
-          'settings' => array(
-            'state' => array(
-              1 => '1',
-            ),
-          ),
-          'context' => array(
-            0 => 'logged-in-user',
-            1 => 'argument_entity_id:node_1',
-          ),
-          'not' => TRUE,
-        ),
-      ),
-    );
-    $pane->configuration = array(
-      'admin_title' => 'Vises kun for ikke medlemmer',
-      'title' => 'Vises kun for ikke medlemmer',
-      'body' => '<p>Vises kun for ikke medlemmer</p>
-',
-      'format' => 'filtered_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '5a9c23ff-85e7-4206-ae3e-3c6dd813c8e2';
-    $display->content['new-5a9c23ff-85e7-4206-ae3e-3c6dd813c8e2'] = $pane;
-    $display->panels['top'][0] = 'new-5a9c23ff-85e7-4206-ae3e-3c6dd813c8e2';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
