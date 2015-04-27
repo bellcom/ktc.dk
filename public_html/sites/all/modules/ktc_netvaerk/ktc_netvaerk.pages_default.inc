@@ -196,7 +196,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'hide ktc-group-members',
     );
     $pane->extras = array();
     $pane->position = 3;
