@@ -152,6 +152,34 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $display->content['new-c2075e66-4122-4e9d-9d23-b7cc17d69f09'] = $pane;
     $display->panels['center'][1] = 'new-c2075e66-4122-4e9d-9d23-b7cc17d69f09';
     $pane = new stdClass();
+    $pane->pid = 'new-194ee512-8fdb-45b8-b9ca-001d01f96f82';
+    $pane->panel = 'center';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ktc_og_members-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '194ee512-8fdb-45b8-b9ca-001d01f96f82';
+    $display->content['new-194ee512-8fdb-45b8-b9ca-001d01f96f82'] = $pane;
+    $display->panels['center'][2] = 'new-194ee512-8fdb-45b8-b9ca-001d01f96f82';
+    $pane = new stdClass();
     $pane->pid = 'new-69eedfb2-c333-4fb7-9822-0c0f95673afb';
     $pane->panel = 'left';
     $pane->type = 'entity_field';

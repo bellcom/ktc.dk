@@ -713,8 +713,8 @@ function ktc_views_views_default_views() {
     ),
   );
 
-  /* Display: Content pane admin */
-  $handler = $view->new_display('panel_pane', 'Content pane admin', 'panel_pane_2');
+  /* Display: Medlemsliste gruppe venstre */
+  $handler = $view->new_display('panel_pane', 'Medlemsliste gruppe venstre', 'panel_pane_2');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: OG membership: OG membership from Bruger */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
@@ -769,8 +769,8 @@ function ktc_views_views_default_views() {
     ),
   );
 
-  /* Display: Netværksside Block */
-  $handler = $view->new_display('block', 'Netværksside Block', 'block_2');
+  /* Display: Medlemsliste til modal */
+  $handler = $view->new_display('block', 'Medlemsliste til modal', 'block_2');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -947,6 +947,42 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
+
+  /* Display: Medlemsliste gruppe center */
+  $handler = $view->new_display('panel_pane', 'Medlemsliste gruppe center', 'panel_pane_3');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'fade pane-ktc-og-members';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="og-members-modal"><a href="#" >Hent medlemsliste</a></div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['pane_title'] = 'KTC OG members';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'gid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'OG membership: Group ID',
+    ),
+  );
   $translatables['ktc_og_members'] = array(
     t('Defaults'),
     t('mere'),
@@ -970,10 +1006,10 @@ function ktc_views_views_default_views() {
     t('<div class="og-members-all"><a href="#" >Se alle medlemmer</a></div>'),
     t('KTC OG members'),
     t('View panes'),
-    t('Content pane admin'),
+    t('Medlemsliste gruppe venstre'),
     t('OG Roles from OG membership'),
     t('KTC OG members admin'),
-    t('Netværksside Block'),
+    t('Medlemsliste til modal'),
     t('term fra field_account'),
     t('Overordnet element'),
     t('Billede'),
@@ -989,6 +1025,8 @@ function ktc_views_views_default_views() {
     t('[field_account]'),
     t('Rolle'),
     t('%1 medlemmer'),
+    t('Medlemsliste gruppe center'),
+    t('<div class="og-members-modal"><a href="#" >Hent medlemsliste</a></div>'),
   );
   $export['ktc_og_members'] = $view;
 
