@@ -507,7 +507,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Fornavn + mellemnavn */
+  /* Felt: Felt: Fornavn + mellemnavn */
   $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
   $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
@@ -879,12 +879,12 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['picture']['table'] = 'users';
   $handler->display->display_options['fields']['picture']['field'] = 'picture';
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  /* Felt: Bruger: Fornavn + mellemnavn */
+  /* Felt: Felt: Fornavn + mellemnavn */
   $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
   $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['exclude'] = TRUE;
-  /* Felt: Bruger: Efternavn */
+  /* Felt: Felt: Efternavn */
   $handler->display->display_options['fields']['field_efternavn']['id'] = 'field_efternavn';
   $handler->display->display_options['fields']['field_efternavn']['table'] = 'field_data_field_efternavn';
   $handler->display->display_options['fields']['field_efternavn']['field'] = 'field_efternavn';
@@ -3025,6 +3025,45 @@ function ktc_views_views_default_views() {
       'empty_column' => 1,
     ),
   );
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<nav>
+  <ul class="pagination">
+    <li><a href="/search/brugersoegning/">Alle</a></li>
+    <li><a href="/search/brugersoegning/a">A</a></li>
+    <li><a href="/search/brugersoegning/b">B</a></li>
+    <li><a href="/search/brugersoegning/c">C</a></li>
+    <li><a href="/search/brugersoegning/d">D</a></li>
+    <li><a href="/search/brugersoegning/e">E</a></li>
+    <li><a href="/search/brugersoegning/f">F</a></li>
+    <li><a href="/search/brugersoegning/g">G</a></li>
+    <li><a href="/search/brugersoegning/h">H</a></li>
+    <li><a href="/search/brugersoegning/i">I</a></li>
+    <li><a href="/search/brugersoegning/j">J</a></li>
+    <li><a href="/search/brugersoegning/k">K</a></li>
+    <li><a href="/search/brugersoegning/l">L</a></li>
+    <li><a href="/search/brugersoegning/m">M</a></li>
+    <li><a href="/search/brugersoegning/n">N</a></li>
+    <li><a href="/search/brugersoegning/o">O</a></li>
+    <li><a href="/search/brugersoegning/p">P</a></li>
+    <li><a href="/search/brugersoegning/q">Q</a></li>
+    <li><a href="/search/brugersoegning/r">R</a></li>
+    <li><a href="/search/brugersoegning/s">S</a></li>
+    <li><a href="/search/brugersoegning/t">T</a></li>
+    <li><a href="/search/brugersoegning/u">U</a></li>
+    <li><a href="/search/brugersoegning/v">V</a></li>
+    <li><a href="/search/brugersoegning/w">W</a></li>
+    <li><a href="/search/brugersoegning/x">X</a></li>
+    <li><a href="/search/brugersoegning/y">Y</a></li>
+    <li><a href="/search/brugersoegning/z">Z</a></li>
+    <li><a href="/search/brugersoegning/æ">Æ</a></li>
+    <li><a href="/search/brugersoegning/ø">Ø</a></li>
+    <li><a href="/search/brugersoegning/å">Å</a></li>
+  </ul>
+</nav>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Forbindelse: OG membership: Group Indholdselement from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
@@ -3046,7 +3085,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['status']['table'] = 'users';
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Felt: Bruger: Fornavn + mellemnavn */
+  /* Felt: Felt: Fornavn + mellemnavn */
   $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
   $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
@@ -3074,7 +3113,20 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_hidden']['id'] = 'field_hidden';
   $handler->display->display_options['fields']['field_hidden']['table'] = 'field_data_field_hidden';
   $handler->display->display_options['fields']['field_hidden']['field'] = 'field_hidden';
-  /* Filterkriterie: Bruger: Fornavn + mellemnavn (field_navn) */
+  /* Kontekstuelt filter: Bruger: Navn */
+  $handler->display->display_options['arguments']['name']['id'] = 'name';
+  $handler->display->display_options['arguments']['name']['table'] = 'users';
+  $handler->display->display_options['arguments']['name']['field'] = 'name';
+  $handler->display->display_options['arguments']['name']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['name']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['name']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['name']['glossary'] = TRUE;
+  $handler->display->display_options['arguments']['name']['limit'] = '1';
+  $handler->display->display_options['arguments']['name']['case'] = 'upper';
+  $handler->display->display_options['arguments']['name']['break_phrase'] = TRUE;
+  /* Filterkriterie: Felt: Fornavn + mellemnavn (field_navn) */
   $handler->display->display_options['filters']['field_navn_value']['id'] = 'field_navn_value';
   $handler->display->display_options['filters']['field_navn_value']['table'] = 'field_data_field_navn';
   $handler->display->display_options['filters']['field_navn_value']['field'] = 'field_navn_value';
@@ -3150,14 +3202,14 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Felt: Bruger: Efternavn */
+  /* Felt: Felt: Efternavn */
   $handler->display->display_options['fields']['field_efternavn']['id'] = 'field_efternavn';
   $handler->display->display_options['fields']['field_efternavn']['table'] = 'field_data_field_efternavn';
   $handler->display->display_options['fields']['field_efternavn']['field'] = 'field_efternavn';
   $handler->display->display_options['fields']['field_efternavn']['label'] = '';
   $handler->display->display_options['fields']['field_efternavn']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_efternavn']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Fornavn + mellemnavn */
+  /* Felt: Felt: Fornavn + mellemnavn */
   $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
   $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
@@ -3168,7 +3220,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_navn']['alter']['path'] = 'user/[uid_1]';
   $handler->display->display_options['fields']['field_navn']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_navn']['hide_alter_empty'] = FALSE;
-  /* Felt: Bruger: Stilling/titel */
+  /* Felt: Felt: Stilling/titel */
   $handler->display->display_options['fields']['field_jobposition']['id'] = 'field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['table'] = 'field_data_field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['field'] = 'field_jobposition';
@@ -3230,7 +3282,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_topics']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sorteringskriterie: Bruger: Fornavn + mellemnavn (field_navn) */
+  /* Sorteringskriterie: Felt: Fornavn + mellemnavn (field_navn) */
   $handler->display->display_options['sorts']['field_navn_value']['id'] = 'field_navn_value';
   $handler->display->display_options['sorts']['field_navn_value']['table'] = 'field_data_field_navn';
   $handler->display->display_options['sorts']['field_navn_value']['field'] = 'field_navn_value';
@@ -3368,7 +3420,7 @@ function ktc_views_views_default_views() {
     7 => 0,
     8 => 0,
   );
-  /* Filterkriterie: Bruger: Fornavn + mellemnavn (field_navn) */
+  /* Filterkriterie: Felt: Fornavn + mellemnavn (field_navn) */
   $handler->display->display_options['filters']['field_navn_value_1']['id'] = 'field_navn_value_1';
   $handler->display->display_options['filters']['field_navn_value_1']['table'] = 'field_data_field_navn';
   $handler->display->display_options['filters']['field_navn_value_1']['field'] = 'field_navn_value';
@@ -3424,6 +3476,40 @@ function ktc_views_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
+    t('<nav>
+  <ul class="pagination">
+    <li><a href="/search/brugersoegning/">Alle</a></li>
+    <li><a href="/search/brugersoegning/a">A</a></li>
+    <li><a href="/search/brugersoegning/b">B</a></li>
+    <li><a href="/search/brugersoegning/c">C</a></li>
+    <li><a href="/search/brugersoegning/d">D</a></li>
+    <li><a href="/search/brugersoegning/e">E</a></li>
+    <li><a href="/search/brugersoegning/f">F</a></li>
+    <li><a href="/search/brugersoegning/g">G</a></li>
+    <li><a href="/search/brugersoegning/h">H</a></li>
+    <li><a href="/search/brugersoegning/i">I</a></li>
+    <li><a href="/search/brugersoegning/j">J</a></li>
+    <li><a href="/search/brugersoegning/k">K</a></li>
+    <li><a href="/search/brugersoegning/l">L</a></li>
+    <li><a href="/search/brugersoegning/m">M</a></li>
+    <li><a href="/search/brugersoegning/n">N</a></li>
+    <li><a href="/search/brugersoegning/o">O</a></li>
+    <li><a href="/search/brugersoegning/p">P</a></li>
+    <li><a href="/search/brugersoegning/q">Q</a></li>
+    <li><a href="/search/brugersoegning/r">R</a></li>
+    <li><a href="/search/brugersoegning/s">S</a></li>
+    <li><a href="/search/brugersoegning/t">T</a></li>
+    <li><a href="/search/brugersoegning/u">U</a></li>
+    <li><a href="/search/brugersoegning/v">V</a></li>
+    <li><a href="/search/brugersoegning/w">W</a></li>
+    <li><a href="/search/brugersoegning/x">X</a></li>
+    <li><a href="/search/brugersoegning/y">Y</a></li>
+    <li><a href="/search/brugersoegning/z">Z</a></li>
+    <li><a href="/search/brugersoegning/æ">Æ</a></li>
+    <li><a href="/search/brugersoegning/ø">Ø</a></li>
+    <li><a href="/search/brugersoegning/å">Å</a></li>
+  </ul>
+</nav>'),
     t('Group node from OG membership'),
     t('node from OG membership'),
     t('OG Roles from OG membership'),
@@ -3436,6 +3522,7 @@ function ktc_views_views_default_views() {
     t('Handlinger'),
     t('<a href="/user/[uid]/edit">rediger</a>'),
     t('Skjult i lister'),
+    t('Alle'),
     t('Navn'),
     t('Kombinér felter filter'),
     t('Page'),
