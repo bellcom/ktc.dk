@@ -45,7 +45,7 @@ function ktc_content_types_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'magazine';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_generelst';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Andet',
     'weight' => '24',
@@ -660,8 +660,9 @@ function ktc_content_types_field_group_info() {
     'weight' => '21',
     'children' => array(
       0 => 'field_ekstra_artikler',
-      1 => 'field_top_artikel',
-      2 => 'field_magasinleder',
+      1 => 'field_magasin_leder',
+      2 => 'field_top_artikel',
+      3 => 'field_magasinleder',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -745,10 +746,10 @@ function ktc_content_types_field_group_info() {
     'label' => 'Generelst',
     'weight' => '3',
     'children' => array(
-      0 => 'group_udgave',
-      1 => 'group_annoncer',
+      0 => 'group_annoncer',
+      1 => 'group_featured',
       2 => 'group_sider',
-      3 => 'group_featured',
+      3 => 'group_udgave',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -922,7 +923,7 @@ function ktc_content_types_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'magazine';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_generelst';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjult',
     'weight' => '25',
@@ -1842,7 +1843,9 @@ function ktc_content_types_field_group_info() {
       2 => 'field_linkbladreversion',
       3 => 'field_udgave',
       4 => 'field_udgivelsesdato',
-      5 => 'title',
+      5 => 'field_topics',
+      6 => 'field_tags',
+      7 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
