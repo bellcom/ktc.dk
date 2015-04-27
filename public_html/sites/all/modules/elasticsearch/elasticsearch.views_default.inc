@@ -52,7 +52,7 @@ function elasticsearch_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['label'] = 'No results';
+  $handler->display->display_options['empty']['area']['label'] = 'Ingen resultater';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Ingen resultater matchede din søgning.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
@@ -71,23 +71,39 @@ function elasticsearch_views_default_views() {
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Søg';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    3 => 0,
     4 => 0,
-    5 => 0,
     6 => 0,
     7 => 0,
+    8 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    17 => 0,
+    15 => 0,
+    16 => 0,
+    14 => 0,
+    18 => 0,
+    10 => 0,
+    9 => 0,
+    5 => 0,
+    3 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
   );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'search';
   $translatables['Search'] = array(
     t('Master'),
@@ -104,7 +120,7 @@ function elasticsearch_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('No results'),
+    t('Ingen resultater'),
     t('Ingen resultater matchede din søgning.'),
     t('Indholdselement ID'),
     t('.'),

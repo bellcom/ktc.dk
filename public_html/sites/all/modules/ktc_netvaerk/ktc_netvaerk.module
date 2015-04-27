@@ -4,6 +4,13 @@
  * Code for the KTC netværk feature.
  */
 
+// Status of an open group.
+define('KTC_NETVAERK_GROUP_OPEN', 1);
+// Status of a closed group with visible content.
+define('KTC_NETVAERK_GROUP_CLOSED_VISIBLE', 2);
+// Status of a closed group with hidden content.
+define('KTC_NETVAERK_GROUP_CLOSED_HIDDEN', 3);
+
 include_once 'ktc_netvaerk.features.inc';
 
 /**
@@ -11,7 +18,7 @@ include_once 'ktc_netvaerk.features.inc';
  */
 function ktc_netvaerk_menu() {
   $items['admin/netvaerk_setting'] = array(
-    'type' => MENU_LOCAL_TASK,
+    'type' => MENU_NORMAL_ITEM,
     'title' => 'Netværk settings',
     'description' => 'Configure group settings',
     'page callback' => 'drupal_get_form',
@@ -33,6 +40,32 @@ function ktc_netvaerk_settings() {
     '#size' => 30,
     '#default_value' => variable_get('group_owner', ''),
     '#autocomplete_path' => 'user/autocomplete',
+  );
+
+  $form['netvaerk_not_member'] = array(
+    '#title' => t('Beskeder til brugere der ikke er medlem af netværket'),
+    '#type' => 'fieldset',
+  );
+
+  $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_OPEN;
+  $form['netvaerk_not_member'][$var_name] = array(
+    '#type' => 'textarea',
+    '#title' => t('Besked på åbent netværk'),
+    '#default_value' => variable_get($var_name),
+  );
+
+  $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_CLOSED_VISIBLE;
+  $form['netvaerk_not_member'][$var_name] = array(
+    '#type' => 'textarea',
+    '#title' => t('Besked på (lukket)netværk hvor der skal anmodes om medlemsskab'),
+    '#default_value' => variable_get($var_name),
+  );
+
+  $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_CLOSED_HIDDEN;
+  $form['netvaerk_not_member'][$var_name] = array(
+    '#type' => 'textarea',
+    '#title' => t('Besked på (lukket)netværk hvor der ikke kan anmodes om medlemsskab'),
+    '#default_value' => variable_get($var_name),
   );
 
   return system_settings_form($form);
@@ -82,6 +115,10 @@ function ktc_netvaerk_block_info() {
     'info' => t('KTC Netværk, Gruppe medlemmer modal'),
     'cache' => DRUPAL_NO_CACHE,
   );
+
+  $blocks['group-not-member-message'] = array(
+    'info' => t('KTC Netværk, Besked til besøgende der ikke er medlem af netværket'),
+  );
   return $blocks;
 }
 
@@ -118,8 +155,56 @@ EOL;
 
       $block['content'] = $modal_markup;
       break;
+
+    case 'group-not-member-message':
+      if (arg(0) == 'node' && is_numeric(arg(1))) {
+        $gid = arg(1);
+        if ($gid && !og_is_member('node', $gid)) {
+          $state = ktc_netvaerk_group_state($gid);
+          $message = ktc_netvaerk_state_message($state);
+          $block['content'] = $message;
+        }
+      }
+      break;
   }
   return $block;
+}
+
+/**
+ * Get netvaerk openess.
+ */
+function ktc_netvaerk_group_state($gid) {
+  $group_node = node_load($gid);
+
+  $open = 0;
+  $access = 0;
+
+  if ($field = field_get_items('node', $group_node, 'field_open_group')) {
+    error_log(__FILE__ . ' : ' . __LINE__ . ' : $field : ' .  print_r($field, 1));
+    $open = $field[0]['value'];
+  }
+  if ($field = field_get_items('node', $group_node, 'group_content_access')) {
+    $access = $field[0]['value'];
+  }
+
+  if ($open) {
+    return KTC_NETVAERK_GROUP_OPEN;
+  }
+  else {
+    if ($access == 1) {
+      return KTC_NETVAERK_GROUP_CLOSED_VISIBLE;
+    }
+    else {
+      return KTC_NETVAERK_GROUP_CLOSED_HIDDEN;
+    }
+  }
+}
+
+/**
+ * Get message for given state.
+ */
+function ktc_netvaerk_state_message($state) {
+  return variable_get('ktc_netvaerk_state_message-' . $state);
 }
 
 /**
