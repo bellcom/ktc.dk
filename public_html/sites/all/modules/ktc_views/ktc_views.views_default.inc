@@ -951,7 +951,7 @@ function ktc_views_views_default_views() {
   /* Display: Medlemsliste gruppe center */
   $handler = $view->new_display('panel_pane', 'Medlemsliste gruppe center', 'panel_pane_3');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'fade pane-ktc-og-members';
+  $handler->display->display_options['css_class'] = 'pane-ktc-og-members';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1256,6 +1256,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['og_membership_request']['table'] = 'field_data_og_membership_request';
   $handler->display->display_options['fields']['og_membership_request']['field'] = 'og_membership_request';
   $handler->display->display_options['fields']['og_membership_request']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['fields']['og_membership_request']['label'] = 'Besked';
   /* Felt: OG membership: Redigér-link */
   $handler->display->display_options['fields']['edit_membership']['id'] = 'edit_membership';
   $handler->display->display_options['fields']['edit_membership']['table'] = 'og_membership';
@@ -1352,7 +1353,7 @@ function ktc_views_views_default_views() {
     t('Status'),
     t('Roller'),
     t('Member since'),
-    t('Request message'),
+    t('Besked'),
     t('Alle'),
     t('Content pane'),
     t('View panes'),
