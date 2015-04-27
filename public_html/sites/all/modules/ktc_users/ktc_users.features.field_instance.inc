@@ -2769,6 +2769,87 @@ function ktc_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_netvaerk_notifications'
+  $field_instances['user-user-field_netvaerk_notifications'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => 'Afkryds de netværk hvorfra du ønsker at modtage notifikationer på nyt indhold.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 49,
+      ),
+      'list1' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list2' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list3' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list4' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_netvaerk_notifications',
+    'label' => 'Netværks notifikationer',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 81,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_phone'
   $field_instances['user-user-field_phone'] = array(
     'bundle' => 'user',
@@ -3685,6 +3766,7 @@ function ktc_users_field_default_field_instances() {
   t('Adresse');
   t('Adresse 2');
   t('Afdeling');
+  t('Afkryds de netværk hvorfra du ønsker at modtage notifikationer på nyt indhold.');
   t('Andre kompetencer');
   t('Andre medlemskaber af foreninger (skriv her)');
   t('Arbejdsgiver');
@@ -3712,6 +3794,7 @@ function ktc_users_field_default_field_instances() {
   t('Medlemskab af KTC');
   t('Medlemskab af KVF (Kommunal Vejteknisk Forening)');
   t('Mobil');
+  t('Netværks notifikationer');
   t('Postnr');
   t('Regioner');
   t('Send besked når andre brugere kommenterer mine indlæg (inkl. mine egne kommentarer)');

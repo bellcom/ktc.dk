@@ -1,0 +1,127 @@
+<?php
+/**
+ * @file
+ * ktc_netvaerk_notifications.module
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_netvaerk_notifications_menu() {
+  $items['admin/netvaerk_setting/notifications'] = array(
+    'title' => 'Notifikationer',
+    'description' => 'Configure group notifications',
+    'page_callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_netvaerk_notifications_settings'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_netvaerk_notifications_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_profile_form') {
+    // Unset groups the user is not member of.
+    // Get the users groups.
+    $options = og_get_groups_by_user($form['#entity'], 'node');
+
+    // Get the current selected options. We don't wan't to unset these.
+    $default_value = $form['field_netvaerk_notifications'][LANGUAGE_NONE]['#default_value'];
+    foreach ($default_value as $_val) {
+      $options[$_val] = $_val;
+    }
+
+    // The actual unsetting.
+    foreach ($form['field_netvaerk_notifications'][LANGUAGE_NONE]['#options'] as $gid => $value) {
+      if (!is_array($options) || !in_array($gid, $options)) {
+        unset($form['field_netvaerk_notifications'][LANGUAGE_NONE]['#options'][$gid]);
+      }
+    }
+  }
+}
+
+/**
+ * Admin settings form.
+ */
+function ktc_netvaerk_notifications_settings() {
+  $form = array();
+
+  $form['ktc_netvaerk_notifications_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Emne'),
+    '#default_value' => variable_get('ktc_netvaerk_notifications_subject'),
+  );
+
+  $form['ktc_netvaerk_notifications_body'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Besked'),
+    '#default_value' => variable_get('ktc_netvaerk_notifications_body'),
+  );
+
+  $form['tokens'] = array(
+    '#theme' => 'token_tree',
+    '#token_types' => array('user', 'node'),
+    '#global_types' => FALSE,
+    '#click_insert' => FALSE,
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function ktc_netvaerk_notifications_mail($key, &$message, $params) {
+  $message['subject'] = $params['subject'];
+  $message['body'][] = $params['body'];
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function ktc_netvaerk_notifications_node_insert($node) {
+  if (is_object($node) && $field = field_get_items('node', $node, 'og_group_ref')) {
+    $field = reset($field);
+    $group_id = $field['target_id'];
+
+    $uids = _ktc_netvaerk_notifications_get_users($group_id);
+    $uids = array(421);
+
+    foreach ($uids as $uid) {
+      $user = user_load($uid);
+
+      $token_data = array('user' => $user, 'node' => $node);
+      $to = $user->mail;
+
+      // Testing.
+      $to = 'tth@bellcom.dk';
+      $language = $user->language;
+
+      $params = array();
+      $params['subject'] = token_replace(variable_get('ktc_netvaerk_notifications_subject'), $token_data);
+      $params['body'] = token_replace(variable_get('ktc_netvaerk_notifications_body'), $token_data);
+
+      drupal_mail('ktc_netvaerk_notifications', 'notify_new', $to, $language, $params);
+    }
+  }
+}
+
+/**
+ * Get a list of users to notify.
+ */
+function _ktc_netvaerk_notifications_get_users($group_id) {
+  // Get a list of users who want notifications for this group.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'user')
+     ->fieldCondition('field_netvaerk_notifications', 'target_id', $group_id);
+  $result = $query->execute();
+
+  if (isset($result['user'])) {
+    return array_keys($result['user']);
+  }
+  return array();
+}
