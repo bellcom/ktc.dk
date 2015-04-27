@@ -8778,6 +8778,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .user-picture.green img {
   border-color: #36a145;
 }
+#edit-search-api-views-fulltext-wrapper {
+  margin-top: 1.6em;
+}
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;

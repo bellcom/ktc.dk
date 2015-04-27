@@ -610,15 +610,6 @@ function ktc_form_user_login_block_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * Implements hook_form_alter().
- */
-function ktc_form_alter(&$form, &$form_state, $form_id) {
-  if ($form['#id'] == 'views-exposed-form-Search-page') {
-    unset($form['submit']['#value']);
-  }
-}
-
-/**
  * Implements hook_preprocess_block().
  */
 function ktc_preprocess_block(&$vars) {
