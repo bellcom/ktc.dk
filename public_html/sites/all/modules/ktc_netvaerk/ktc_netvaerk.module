@@ -180,7 +180,6 @@ function ktc_netvaerk_group_state($gid) {
   $access = 0;
 
   if ($field = field_get_items('node', $group_node, 'field_open_group')) {
-    error_log(__FILE__ . ' : ' . __LINE__ . ' : $field : ' .  print_r($field, 1));
     $open = $field[0]['value'];
   }
   if ($field = field_get_items('node', $group_node, 'group_content_access')) {
