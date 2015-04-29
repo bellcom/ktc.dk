@@ -1,0 +1,3 @@
+name = KTC Netværk notifications
+description = Notification handling when new content is added to network
+core = 7.x
