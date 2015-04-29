@@ -1,0 +1,5 @@
+<?php
+
+$node = node_load(23108);
+
+ktc_netvaerk_notifications_node_insert($node);

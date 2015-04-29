@@ -79,6 +79,11 @@ function ktc_netvaerk_token_info() {
     'name' => t('OG Group-url'),
     'description' => t('URL for og group reference.'),
   );
+
+  $info['tokens']['node']['ktc-content'] = array(
+    'name' => t('Indhold'),
+    'description' => t('Indholdet af noden'),
+  );
   return $info;
 }
 
@@ -98,6 +103,19 @@ function ktc_netvaerk_tokens($type, $tokens, array $data = array(), array $optio
           if ($field = field_get_items('node', $node, 'og_group_ref')) {
             $options = array('absolute' => TRUE);
             $replacements[$original] = url('node/' . reset($field)['target_id'], $options);
+          }
+          break;
+
+        case 'ktc-content':
+          $replacements[$original] = '';
+
+          if ($field = field_get_items('node', $node, 'body')) {
+            if ($field[0]['summary']) {
+              $replacements[$original] = $field[0]['safe_summary'];
+            }
+            else {
+              $replacements[$original] = text_summary($field[0]['safe_value']);
+            }
           }
           break;
       }
