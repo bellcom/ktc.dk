@@ -218,7 +218,6 @@ features[field_instance][] = node-arrangement-field_news_author
 features[field_instance][] = node-arrangement-field_os2web_base_field_ext_link
 features[field_instance][] = node-arrangement-field_os2web_base_field_hidlinks
 features[field_instance][] = node-arrangement-field_os2web_base_field_media
-features[field_instance][] = node-arrangement-field_regioner
 features[field_instance][] = node-arrangement-field_registration_deadline
 features[field_instance][] = node-arrangement-field_submission
 features[field_instance][] = node-arrangement-field_tags
