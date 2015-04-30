@@ -117,18 +117,15 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $display->content['new-fc474105-d78f-4daa-ab05-18bcde73525b'] = $pane;
     $display->panels['center'][0] = 'new-fc474105-d78f-4daa-ab05-18bcde73525b';
     $pane = new stdClass();
-    $pane->pid = 'new-d0b8119a-9d09-489b-a153-b01f52a8420a';
+    $pane->pid = 'new-8a58d50b-6dd4-440f-a1db-076cec0566b2';
     $pane->panel = 'center';
-    $pane->type = 'node_create_links';
-    $pane->subtype = 'node_create_links';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_netvaerk-create-content';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'types' => array(),
-      'field_name' => 'og_group_ref',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'Opret nyt indhold i %node:title',
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -136,14 +133,14 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'red-title',
+      'css_class' => 'red-title pane-node-create-links',
     );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'd0b8119a-9d09-489b-a153-b01f52a8420a';
-    $display->content['new-d0b8119a-9d09-489b-a153-b01f52a8420a'] = $pane;
-    $display->panels['center'][1] = 'new-d0b8119a-9d09-489b-a153-b01f52a8420a';
+    $pane->uuid = '8a58d50b-6dd4-440f-a1db-076cec0566b2';
+    $display->content['new-8a58d50b-6dd4-440f-a1db-076cec0566b2'] = $pane;
+    $display->panels['center'][1] = 'new-8a58d50b-6dd4-440f-a1db-076cec0566b2';
     $pane = new stdClass();
     $pane->pid = 'new-c2075e66-4122-4e9d-9d23-b7cc17d69f09';
     $pane->panel = 'center';
