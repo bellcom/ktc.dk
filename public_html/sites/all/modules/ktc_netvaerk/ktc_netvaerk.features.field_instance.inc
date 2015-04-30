@@ -573,7 +573,7 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_open_group',
-    'label' => 'Åben',
+    'label' => 'Tilmelding',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -581,10 +581,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
+      'settings' => array(),
+      'type' => 'options_buttons',
       'weight' => 5,
     ),
   );
@@ -1655,8 +1653,8 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Start dato');
   t('Systemet genererer automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt.');
   t('Tags');
+  t('Tilmelding');
   t('Undernetværk');
-  t('Åben');
   t('Åbent/Privat');
 
   return $field_instances;

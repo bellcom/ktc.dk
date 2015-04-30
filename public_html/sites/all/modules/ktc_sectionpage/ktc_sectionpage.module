@@ -326,9 +326,16 @@ function _ktc_section_block_netvaerk_invite_links_content() {
       $html .= '</div>';
     }
     else {
-      $html .= '<div class="col-md-12 col-sm-12 col-xs-12">';
-      $html .= l('Tilmeld', 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
-      $html .= '</div>';
+      if (og_user_access('node', $nid, 'subscribe without approval')) {
+        $html .= '<div class="col-md-12 col-sm-12 col-xs-12">';
+        $html .= l('Ansøg om medlemskab', 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
+        $html .= '</div>';
+      }
+      else if (og_user_access('node', $nid, 'subscribe')) {
+        $html .= '<div class="col-md-12 col-sm-12 col-xs-12">';
+        $html .= l('Tilmeld', 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
+        $html .= '</div>';
+      }
     }
     $html .= '</div>';
   }

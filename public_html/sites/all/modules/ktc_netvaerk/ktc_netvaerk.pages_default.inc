@@ -613,7 +613,10 @@ function ktc_netvaerk_default_page_manager_pages() {
   $page->admin_title = 'Netværk';
   $page->admin_description = '';
   $page->path = 'netvaerk';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Netværk',
