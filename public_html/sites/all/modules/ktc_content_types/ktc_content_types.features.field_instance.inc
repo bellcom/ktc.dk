@@ -517,7 +517,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 43,
     ),
   );
 
@@ -2302,7 +2302,7 @@ function ktc_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 7,
+      'weight' => 44,
     ),
   );
 
@@ -2366,66 +2366,6 @@ function ktc_content_types_field_default_field_instances() {
       ),
       'type' => 'file_generic',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-arrangement-field_regioner'
-  $field_instances['node-arrangement-field_regioner'] = array(
-    'bundle' => 'arrangement',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 14,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_regioner',
-    'label' => 'Regioner',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 12,
     ),
   );
 
@@ -2622,7 +2562,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 5,
+      'weight' => 42,
     ),
   );
 
@@ -2743,7 +2683,7 @@ function ktc_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 41,
     ),
   );
 
@@ -9946,7 +9886,6 @@ function ktc_content_types_field_default_field_instances() {
   t('Pris (inkl./ ekskl. moms)');
   t('Præsentationer');
   t('Referat');
-  t('Regioner');
   t('Sektion / Tema');
   t('Side nr');
   t('Skal gerne være 256x256px');
