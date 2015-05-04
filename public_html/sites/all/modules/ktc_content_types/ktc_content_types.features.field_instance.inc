@@ -3560,6 +3560,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-document-field_dokument'
   $field_instances['node-document-field_dokument'] = array(
     'bundle' => 'document',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3602,20 +3604,39 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => 'documents',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 'prezi',
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 'image',
+          'presentation' => 'presentation',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 17,
     ),
   );
@@ -3926,6 +3947,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-document-field_os2web_base_field_media'
   $field_instances['node-document-field_os2web_base_field_media'] = array(
     'bundle' => 'document',
+    'custom_add_another' => 'Tilføj flere bilag',
+    'custom_remove' => 'Fjern bilag',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3972,16 +3995,35 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'file_directory' => 'documents',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 'prezi',
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 'audio',
+          'document' => 'document',
+          'image' => 'image',
+          'presentation' => 'presentation',
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 19,
     ),
   );
@@ -4544,6 +4586,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-forum_post-body'
   $field_instances['node-forum_post-body'] = array(
     'bundle' => 'forum_post',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Indtast dit oplæg til diskussion her',
@@ -4598,7 +4642,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'allowed_formats' => array(
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
-          'mailchimp_campaign' => 'mailchimp_campaign',
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -4611,9 +4654,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
             'full_html' => array(
               'weight' => 1,
             ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
-            ),
             'plain_text' => array(
               'weight' => 10,
             ),
@@ -4622,7 +4662,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       ),
       'custom_add_another' => '',
       'custom_remove' => '',
-      'display_summary' => 1,
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -4818,6 +4858,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-forum_post-field_os2web_base_field_ext_link'
   $field_instances['node-forum_post-field_os2web_base_field_ext_link'] = array(
     'bundle' => 'forum_post',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4856,7 +4898,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_ext_link',
-    'label' => 'Ekstern links',
+    'label' => 'Eksterne links',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -5018,6 +5060,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-forum_post-field_os2web_base_field_media'
   $field_instances['node-forum_post-field_os2web_base_field_media'] = array(
     'bundle' => 'forum_post',
+    'custom_add_another' => 'Tilføj flere bilag',
+    'custom_remove' => 'Fjern bilag',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -5060,20 +5104,39 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => 'discussion',
       'file_extensions' => 'txt pdf doc docx jpg png jpeg gif dotx ppt xls xlsx ics',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 'prezi',
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 'audio',
+          'document' => 'document',
+          'image' => 'image',
+          'presentation' => 'presentation',
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 5,
     ),
   );
@@ -9877,6 +9940,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Du kan sætte flere billeder ind i din nyhed. Disse vises som billedgalleri');
   t('Efternavn');
   t('Ekstern links');
+  t('Eksterne links');
   t('Eksternt link, start m. http://');
   t('Ekstra artikler');
   t('Ekstra tekst');
