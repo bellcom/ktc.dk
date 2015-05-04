@@ -81,31 +81,41 @@ function ktc_netvaerk_notifications_mail($key, &$message, $params) {
 }
 
 /**
- * Implements hook_node_insert().
+ * Implements hook_node_presave().
  */
-function ktc_netvaerk_notifications_node_insert($node) {
-  if (is_object($node) && $field = field_get_items('node', $node, 'og_group_ref')) {
-    $field = reset($field);
-    $group_id = $field['target_id'];
+function ktc_netvaerk_notifications_node_presave($node) {
+  if (is_object($node) && $node->status && $field = field_get_items('node', $node, 'og_group_ref')) {
+    $result = db_query('SELECT status FROM {ktc_netvaerk_notifications} WHERE nid = :nid', array(':nid' => $node->nid))->fetchAll();
 
-    $uids = _ktc_netvaerk_notifications_get_users($group_id);
-    $uids = array(421);
+    if (empty($result)) {
+      db_insert('ktc_netvaerk_notifications')
+        ->fields(array(
+          'nid' => $node->nid,
+          'status' => 1,
+        ))
+        ->execute();
 
-    foreach ($uids as $uid) {
-      $user = user_load($uid);
+      $field = reset($field);
+      $group_id = $field['target_id'];
 
-      $token_data = array('user' => $user, 'node' => $node);
-      $to = $user->mail;
+      $uids = _ktc_netvaerk_notifications_get_users($group_id);
 
-      // Testing.
-      $to = 'tth@bellcom.dk';
-      $language = $user->language;
+      foreach ($uids as $uid) {
+        $user = user_load($uid);
 
-      $params = array();
-      $params['subject'] = token_replace(variable_get('ktc_netvaerk_notifications_subject'), $token_data);
-      $params['body'] = token_replace(variable_get('ktc_netvaerk_notifications_body'), $token_data);
+        $token_data = array('user' => $user, 'node' => $node);
+        $to = $user->mail;
 
-      drupal_mail('ktc_netvaerk_notifications', 'notify_new', $to, $language, $params);
+        // Testing.
+        $to = 'tth@bellcom.dk';
+        $language = $user->language;
+
+        $params = array();
+        $params['subject'] = token_replace(variable_get('ktc_netvaerk_notifications_subject'), $token_data);
+        $params['body'] = token_replace(variable_get('ktc_netvaerk_notifications_body'), $token_data);
+
+        drupal_mail('ktc_netvaerk_notifications', 'notify_new', $to, $language, $params);
+      }
     }
   }
 }

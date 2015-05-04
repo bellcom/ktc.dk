@@ -80,7 +80,6 @@ function _ktc_hearing_notifications_get_hearings_due($days) {
     ->fieldCondition('field_attendee_deadlines', 'value', $date, 'LIKE');
   $result = $query->execute();
 
-
   if (isset($result['node'])) {
     return array_keys($result['node']);
   }
@@ -92,7 +91,7 @@ function _ktc_hearing_notifications_get_hearings_due($days) {
  * Implements hook_node_presave().
  */
 function ktc_hearing_notifications_node_presave($node) {
-  if ($node->type == 'hearing') {
+  if ($node->type == 'hearing' && $node->status) {
     $hearing_status = ktc_hearing_get_status($node);
 
     if ($hearing_status == KTC_HEARING_STATUS_NEW) {
