@@ -57,6 +57,7 @@ features[field_base][] = field_send_opdateringer_til_alle
 features[field_base][] = field_tema_trompet
 features[field_group][] = group_artikel|node|artikler|form
 features[field_group][] = group_bilag|node|artikler|form
+features[field_group][] = group_billede|node|artikler|form
 features[field_group][] = group_emner|node|artikler|form
 features[field_group][] = group_forfatterperm|node|artikler|form
 features[field_group][] = group_formular|node|artikler|form
