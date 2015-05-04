@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function ktc_netvaerk_notifications_schema() {
+  $schema['ktc_netvaerk_notifications'] = array(
+    'description' => 'Keep track of netvaerk content notification',
+    'fields' => array(
+      'nid' => array(
+        'description' => 'Nid of the content.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'status' => array(
+        'description' => 'Status - is notification sent',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+    ),
+    'primary key' => array('nid'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Add 'ktc_netvaerk_notifications' table to database.
+ */
+function ktc_netvaerk_notifications_update_7002() {
+  $schema = ktc_netvaerk_notifications_schema();
+
+  db_create_table('ktc_netvaerk_notifications', $schema['ktc_netvaerk_notifications']);
+}

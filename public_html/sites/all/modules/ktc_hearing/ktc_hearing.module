@@ -161,20 +161,6 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
   // These two steps, allows the user to move the hearing foward in the
   // workflow. To ease the process. An extra submit button is added.
   switch (arg(2)) {
-    case 'hearing_response':
-      $form['actions']['submit']['#value'] = t('Gem kladde');
-      $form['actions']['save_and_publish'] = array(
-        '#type' => 'submit',
-        '#value' => t('Afgiv svar'),
-        '#weight' => 50,
-      );
-
-      // Execute all normal submit callbacks.
-      $form['actions']['save_and_publish']['#submit'] = $form['actions']['submit']['#submit'];
-      // And update the status for the node.
-      $form['actions']['save_and_publish']['#submit'][] = 'ktc_hearing_response_publish';
-      break;
-
     case 'summary_hearing_response':
       $language = $form['field_is_summary']['#language'];
       $form['field_is_summary'][$language]['#default_value'] = 1;
@@ -604,19 +590,6 @@ function ktc_hearing_approve_summary_response_form($form, $form_state, $summary_
 }
 
 /**
- * Extra submit handler, publish the hearing answer.
- */
-function ktc_hearing_response_publish(&$form, &$form_state) {
-  // At this point the node is updated. The entity on the otherhand
-  // isn't. We reload id and set the status to published.
-  $summary_response = node_load($form['#entity']->nid);
-
-  $summary_response->status = 1;
-
-  node_save($summary_response);
-}
-
-/**
  * Extra submit handler for sending a response for approval.
  */
 function ktc_hearing_set_status_approval(&$form, &$form_state) {
@@ -749,7 +722,6 @@ function ktc_hearing_responses($hearing) {
     'name' => (isset($user->name) ? $user->name : ''),
     'type' => $type,
     'language' => LANGUAGE_NONE,
-    'status' => 0,
   );
 
   if (isset($users_response)) {
