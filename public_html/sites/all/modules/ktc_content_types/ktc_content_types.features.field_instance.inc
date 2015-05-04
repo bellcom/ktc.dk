@@ -393,8 +393,10 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_billede'
   $field_instances['node-arrangement-field_arrangement_billede'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Her kan du uploade det billede, som du ønsker der skal være artiklens primære billede. Husk at KTC skal have rettighed til at vise billedet. Billeder du finder på nettet, er normalt beskyttet af ophavsrettigheder, og må derfor ikke anvendes på KTC.dk.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -440,11 +442,17 @@ function ktc_content_types_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_artikel_billede' => 0,
+          'ktc_std_billede' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '460x174',
       'title_field' => 0,
       'user_register_form' => FALSE,
@@ -793,6 +801,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_fornavn'
   $field_instances['node-arrangement-field_arrangement_fornavn'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => array(
       0 => array(
         'value' => '[current-user:field_navn]',
@@ -843,7 +853,6 @@ function ktc_content_types_field_default_field_instances() {
         'allowed_formats' => array(
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
-          'mailchimp_campaign' => 'mailchimp_campaign',
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -855,9 +864,6 @@ function ktc_content_types_field_default_field_instances() {
             ),
             'full_html' => array(
               'weight' => 1,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -9856,6 +9862,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Grupper / Netværk');
   t('Her kan du indtastse stikord til din diskussion (tags)');
   t('Her kan du indtastse stikord til dit dokument (tags)');
+  t('Her kan du uploade det billede, som du ønsker der skal være artiklens primære billede. Husk at KTC skal have rettighed til at vise billedet. Billeder du finder på nettet, er normalt beskyttet af ophavsrettigheder, og må derfor ikke anvendes på KTC.dk.');
   t('Her kan du vælge om du vil publicere Diskussionen på andre platforme (kræver særlige rettigheder)');
   t('Hvilken type er dit arrangement?');
   t('Indhold');
