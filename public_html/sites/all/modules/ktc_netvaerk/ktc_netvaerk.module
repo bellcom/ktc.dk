@@ -57,18 +57,63 @@ function ktc_netvaerk_settings() {
   $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_CLOSED_VISIBLE;
   $form['netvaerk_not_member'][$var_name] = array(
     '#type' => 'textarea',
-    '#title' => t('Besked på (lukket)netværk hvor der skal anmodes om medlemsskab'),
+    '#title' => t('Besked på (lukket)netværk hvor indholdet er synligt'),
     '#default_value' => variable_get($var_name),
   );
 
   $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_CLOSED_HIDDEN;
   $form['netvaerk_not_member'][$var_name] = array(
     '#type' => 'textarea',
-    '#title' => t('Besked på (lukket)netværk hvor der ikke kan anmodes om medlemsskab'),
+    '#title' => t('Besked på (lukket)netværk hvor indholdet er skjult'),
     '#default_value' => variable_get($var_name),
   );
 
+  $group_types_vocab = taxonomy_vocabulary_machine_name_load('netv_rkstype');
+  $group_types = taxonomy_term_load_multiple(array(), array('vid' => $group_types_vocab->vid));
+
+  foreach ($group_types as $group_type) {
+    $group_types_options[$group_type->tid] = $group_type->name;
+  }
+
+  $form['ktc_netvaerk_type_closed'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Håndter netværk som "Lukket"'),
+    '#suffix' => t('Netværket vil altid blive gemt som "Lukket" og det vil ydermere ikke være muligt at tilmelde sig netværket som bruger.'),
+    '#options' => $group_types_options,
+    '#default_value' => variable_get('ktc_netvaerk_type_closed'),
+  );
+
   return system_settings_form($form);
+}
+
+/**
+ * Implements hook_og_user_access_alter().
+ */
+function ktc_netvaerk_og_user_access_alter(&$perm, $context) {
+  // We handle if the group is open/closed.
+  // @see ktc_netvaerk_settings()
+  if ($context['group_type'] == 'node') {
+    $group = $context['group'];
+
+    if (is_object($group)) {
+      // If the group is of the same type as the specified closed
+      // ones. Don't allow the user to subscribe.
+      if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
+        $type_closed = variable_get('ktc_netvaerk_type_closed', array());
+
+        if (in_array($field[0]['tid'], array_values($type_closed))) {
+          $perm['subscribe'] = FALSE;
+        }
+      }
+
+      // If the group is "open" allow users to subscribe without approval.
+      if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
+        if ($field[0]['value']) {
+          $perm['subscribe without approval'] = TRUE;
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -137,6 +182,10 @@ function ktc_netvaerk_block_info() {
   $blocks['group-not-member-message'] = array(
     'info' => t('KTC Netværk, Besked til besøgende der ikke er medlem af netværket'),
   );
+
+  $blocks['create-content'] = array(
+    'info' => t('KTC Netværk opret indhold'),
+  );
   return $blocks;
 }
 
@@ -184,8 +233,53 @@ EOL;
         }
       }
       break;
+
+    case 'create-content':
+      if (arg(0) == 'node' && is_numeric(arg(1))) {
+        if ($group = node_load(arg(1))) {
+          $block['subject'] = 'Opret nyt indhold i ' . $group->title;
+          $block['content'] = ktc_netvaerk_create_content_links($group);
+        }
+      }
+      break;
   }
   return $block;
+}
+
+/**
+ * Return an array of urls for nodes that can be created in a network.
+ */
+function ktc_netvaerk_create_content_links($group) {
+  global $user;
+
+  if (!$user->uid || !og_is_member('node', $group->nid)) {
+    return FALSE;
+  }
+
+  $nid = $group->nid;
+  $hearing_link = '';
+
+  // Link to adding hearings to a group is only added if it is a
+  // "faggruppe".
+  if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
+    if ($field[0]['tid'] == 1134) {
+      $hearing_link = '<li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/hearing?og_group_ref=' . $nid . '&amp;destination=node/' . $nid . '"><i class="group-add-hearing"></i>Høring</a></li>';
+    }
+  }
+
+  $links = <<<EOL
+<ul>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/meeting-doodle?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-meeting_doodle"></i>Afstemning</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/arrangement?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-arrangement"></i>Arrangement</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/forum-post?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-forum_post"></i>Diskussion</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/document?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-document"></i>Dokument</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/group?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-group"></i>Undernetværk</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/os2web-base-news?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-os2web_base_news"></i>Nyhed</a></li>
+  $hearing_link
+</ul>
+EOL;
+
+  return $links;
 }
 
 /**
@@ -321,9 +415,9 @@ function ktc_netvaerk_node_insert($node) {
 function ktc_netvaerk_change_own($node) {
   if ($node->type == 'group') {
     $name = variable_get('group_owner', 'netvaerk@ktc.dk');
-    $owner = user_load_by_name($name);
-
-    db_update('node')->fields(array('uid' => $owner->uid))->condition('nid', $node->nid)->execute();
+    if ($owner = user_load_by_name($name)) {
+      db_update('node')->fields(array('uid' => $owner->uid))->condition('nid', $node->nid)->execute();
+    }
   }
 }
 /**
@@ -400,6 +494,18 @@ function ktc_netvaerk_node_validate($node, $form, &$form_state) {
  */
 function ktc_netvaerk_node_presave($node) {
   if ($node->type == 'group') {
+    // Depending on the group type, we set the open status of the node to
+    // closed.
+    if ($field = field_get_items('node', $node, 'field_netvaerkstype')) {
+      $type_closed = variable_get('ktc_netvaerk_type_closed', array());
+
+      if (in_array($field[0]['tid'], array_values($type_closed))) {
+        // Set the value for the field.
+        $lang = field_language('node', $node, 'field_netvaerkstype');
+        $node->field_open_group[$lang][0]['value'] = 0;
+      }
+    }
+
     if ($parent_group = field_get_items('node', $node, 'og_group_ref')) {
 
       // Get subgroup's members.
@@ -476,7 +582,11 @@ function ktc_netvaerk_theme($existing, $type, $theme, $path) {
  * Implements hook_form_alter().
  */
 function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
-  if ($form_id == 'group_node_form' && isset($form_state['entityreference_prepopulate'])) {
-    drupal_set_title('Opret Undernetværk');
+  if ($form_id == 'group_node_form') {
+    unset($form['field_open_group'][LANGUAGE_NONE]['#options']['_none']);
+
+    if (isset($form_state['entityreference_prepopulate'])) {
+      drupal_set_title('Opret Undernetværk');
+    }
   }
 }
