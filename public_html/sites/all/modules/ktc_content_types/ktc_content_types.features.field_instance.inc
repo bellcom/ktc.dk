@@ -445,7 +445,7 @@ function ktc_content_types_field_default_field_instances() {
       'epsacrop' => array(
         'styles' => array(
           'ktc_artikel_billede' => 0,
-          'ktc_std_billede' => 0,
+          'ktc_std_billede' => 'ktc_std_billede',
         ),
       ),
       'file_directory' => '',
@@ -459,12 +459,26 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'preview_image_style' => 'ktc_content_image',
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 3,
     ),
   );
@@ -950,6 +964,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_logo'
   $field_instances['node-arrangement-field_arrangement_logo'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => 'Skal gerne være 256x256px',
     'display' => array(
@@ -997,11 +1013,18 @@ function ktc_content_types_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_artikel_billede' => 0,
+          'ktc_std_billede' => 0,
+          'netvaerks_logo' => 'netvaerks_logo',
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '256x256',
       'title_field' => 1,
       'user_register_form' => FALSE,
@@ -1112,6 +1135,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_pressentations'
   $field_instances['node-arrangement-field_arrangement_pressentations'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => 'Tilføj flere præsentationer',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1158,16 +1183,35 @@ function ktc_content_types_field_default_field_instances() {
       'file_directory' => 'presentations',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 'prezi',
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 'image',
+          'presentation' => 'presentation',
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 33,
     ),
   );
@@ -1637,6 +1681,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_flere_billeder'
   $field_instances['node-arrangement-field_flere_billeder'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => 'Tilføj flere billeder',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1684,23 +1730,48 @@ function ktc_content_types_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_artikel_billede' => 0,
+          'ktc_std_billede' => 0,
+          'netvaerks_logo' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 0,
+          'private' => 0,
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'presentation' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 32,
     ),
   );
@@ -1826,6 +1897,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_link_arrangement_organizer'
   $field_instances['node-arrangement-field_link_arrangement_organizer'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1865,7 +1938,7 @@ function ktc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_link_arrangement_organizer',
     'label' => 'Link til arrangørs hjemmeside',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
@@ -1903,9 +1976,12 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_link_to_arrangement'
   $field_instances['node-arrangement-field_link_to_arrangement'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Bruges hvis tilmeldingen ikke bruges på KTC.dk.
+Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -2315,6 +2391,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_os2web_base_field_media'
   $field_instances['node-arrangement-field_os2web_base_field_media'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => 'Tilføj flere bilag',
+    'custom_remove' => 'Fjern bilag',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2361,16 +2439,35 @@ function ktc_content_types_field_default_field_instances() {
       'file_directory' => 'arrangement',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 0,
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 0,
+          'presentation' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 5,
     ),
   );
@@ -2445,69 +2542,6 @@ function ktc_content_types_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 19,
-    ),
-  );
-
-  // Exported field_instance: 'node-arrangement-field_submission'
-  $field_instances['node-arrangement-field_submission'] = array(
-    'bundle' => 'arrangement',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 19,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_submission',
-    'label' => 'Tilmeldte',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 23,
     ),
   );
 
@@ -9831,6 +9865,8 @@ function ktc_content_types_field_default_field_instances() {
   t('Billede');
   t('Billeder fra arrangementet');
   t('Bredt banner');
+  t('Bruges hvis tilmeldingen ikke bruges på KTC.dk.
+Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Direkte link til program');
   t('Direkte link til tilmelding');
   t('Direkte telefon');
@@ -9909,7 +9945,6 @@ function ktc_content_types_field_default_field_instances() {
   t('Tags');
   t('Tekst til bilag');
   t('Tilmeldingsfrist');
-  t('Tilmeldte');
   t('Top artikel');
   t('Type');
   t('Typo3 uid(pages)');
