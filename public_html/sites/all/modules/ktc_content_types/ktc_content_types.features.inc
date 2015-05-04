@@ -49,22 +49,29 @@ function ktc_content_types_image_default_styles() {
   // Exported image style: netvaerks_logo.
   $styles['netvaerks_logo'] = array(
     'name' => 'netvaerks_logo',
-    'label' => 'netvaerks logo',
+    'label' => 'Logo / Profil',
     'effects' => array(
-      1 => array(
-        'label' => 'Skalér og beskær',
-        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
-        'name' => 'image_scale_and_crop',
+      6 => array(
+        'label' => 'EPSA Image Crop',
+        'help' => '',
+        'dimensions callback' => 'epsacrop_crop_dimensions',
+        'effect callback' => 'epsacrop_crop_image',
+        'form callback' => 'epsacrop_crop_image_form',
+        'module' => 'epsacrop',
+        'name' => 'epsacrop_crop',
         'data' => array(
           'width' => 256,
           'height' => 256,
+          'anchor' => 'center-center',
+          'disable_scale' => 0,
+          'jcrop_settings' => array(
+            'aspect_ratio' => '',
+            'bgcolor' => 'white',
+            'bgopacity' => 0.6,
+            'fallback' => 0,
+          ),
         ),
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
   );
@@ -118,7 +125,7 @@ function ktc_content_types_node_info() {
       'help' => t('Du kan her starte en diskussion i dine netværk. De andre medlemmer af dit netværk kan kommentere på dine og de andres deltageres svar. '),
     ),
     'magazine' => array(
-      'name' => t('Magasin'),
+      'name' => t('Udgivelse'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

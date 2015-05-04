@@ -23,10 +23,10 @@ function teknik_og_miljoe_field_group_info() {
     'label' => 'Titel og type',
     'weight' => '14',
     'children' => array(
-      0 => 'field_coforfattere',
-      1 => 'field_tema_trompet',
-      2 => 'field_artikeltype',
-      3 => 'title',
+      0 => 'field_tema_trompet',
+      1 => 'field_artikeltype',
+      2 => 'title',
+      3 => 'group_forfatters',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -69,6 +69,39 @@ function teknik_og_miljoe_field_group_info() {
     ),
   );
   $export['group_bilag|node|artikler|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_billede|node|artikler|form';
+  $field_group->group_name = 'group_billede';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'artikler';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_indhold';
+  $field_group->data = array(
+    'label' => 'Billede',
+    'weight' => '14',
+    'children' => array(
+      0 => 'field_os2web_base_field_lead_img',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Billede',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-billede field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_billede|node|artikler|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -135,6 +168,39 @@ function teknik_og_miljoe_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_forfatters|node|artikler|form';
+  $field_group->group_name = 'group_forfatters';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'artikler';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_artikel';
+  $field_group->data = array(
+    'label' => 'Viste forfattere',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_coforfattere',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Viste forfattere',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-forfatters field-group-div well well-sm',
+        'description' => '<strong>Visning/præsentation</strong> af forfattere og medforfattere vælges her. Hvis forfatteren allerede har en profil på KTC.dk, kan denne findes under "Eksisterende bruger". Når der vælges en "eksisterende bruger", er det ikke nødvendigt at udfylde da andre felter (Navn, foto og stilling).',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_forfatters|node|artikler|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_formular|node|artikler|form';
   $field_group->group_name = 'group_formular';
   $field_group->entity_type = 'node';
@@ -176,9 +242,9 @@ function teknik_og_miljoe_field_group_info() {
     'weight' => '15',
     'children' => array(
       0 => 'body',
-      1 => 'field_os2web_base_field_lead_img',
-      2 => 'field_short',
-      3 => 'field_artikel_afsnit',
+      1 => 'field_short',
+      2 => 'field_artikel_afsnit',
+      3 => 'group_billede',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -232,7 +298,7 @@ function teknik_og_miljoe_field_group_info() {
   $field_group->parent_name = 'group_emner';
   $field_group->data = array(
     'label' => 'Skjul autolinks',
-    'weight' => '39',
+    'weight' => '46',
     'children' => array(
       0 => 'field_os2web_base_field_hidlinks',
     ),
@@ -265,7 +331,7 @@ function teknik_og_miljoe_field_group_info() {
   $field_group->parent_name = 'group_emner';
   $field_group->data = array(
     'label' => 'Emner',
-    'weight' => '38',
+    'weight' => '45',
     'children' => array(
       0 => 'field_tags',
     ),

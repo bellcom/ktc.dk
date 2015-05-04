@@ -393,8 +393,10 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_billede'
   $field_instances['node-arrangement-field_arrangement_billede'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Her kan du uploade det billede, som du ønsker der skal være artiklens primære billede. Husk at KTC skal have rettighed til at vise billedet. Billeder du finder på nettet, er normalt beskyttet af ophavsrettigheder, og må derfor ikke anvendes på KTC.dk.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -440,23 +442,43 @@ function ktc_content_types_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_artikel_billede' => 0,
+          'ktc_std_billede' => 'ktc_std_billede',
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '460x174',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'preview_image_style' => 'ktc_content_image',
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 3,
     ),
   );
@@ -793,6 +815,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_fornavn'
   $field_instances['node-arrangement-field_arrangement_fornavn'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => array(
       0 => array(
         'value' => '[current-user:field_navn]',
@@ -843,7 +867,6 @@ function ktc_content_types_field_default_field_instances() {
         'allowed_formats' => array(
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
-          'mailchimp_campaign' => 'mailchimp_campaign',
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -855,9 +878,6 @@ function ktc_content_types_field_default_field_instances() {
             ),
             'full_html' => array(
               'weight' => 1,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -944,6 +964,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_logo'
   $field_instances['node-arrangement-field_arrangement_logo'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => 'Skal gerne være 256x256px',
     'display' => array(
@@ -991,11 +1013,18 @@ function ktc_content_types_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_artikel_billede' => 0,
+          'ktc_std_billede' => 0,
+          'netvaerks_logo' => 'netvaerks_logo',
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '256x256',
       'title_field' => 1,
       'user_register_form' => FALSE,
@@ -1106,6 +1135,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_pressentations'
   $field_instances['node-arrangement-field_arrangement_pressentations'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => 'Tilføj flere præsentationer',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1152,16 +1183,35 @@ function ktc_content_types_field_default_field_instances() {
       'file_directory' => 'presentations',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 'prezi',
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 'image',
+          'presentation' => 'presentation',
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 33,
     ),
   );
@@ -1631,6 +1681,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_flere_billeder'
   $field_instances['node-arrangement-field_flere_billeder'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => 'Tilføj flere billeder',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1678,23 +1730,48 @@ function ktc_content_types_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_artikel_billede' => 0,
+          'ktc_std_billede' => 0,
+          'netvaerks_logo' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 0,
+          'private' => 0,
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'presentation' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 32,
     ),
   );
@@ -1820,6 +1897,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_link_arrangement_organizer'
   $field_instances['node-arrangement-field_link_arrangement_organizer'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1859,7 +1938,7 @@ function ktc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_link_arrangement_organizer',
     'label' => 'Link til arrangørs hjemmeside',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
@@ -1897,9 +1976,12 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_link_to_arrangement'
   $field_instances['node-arrangement-field_link_to_arrangement'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Bruges hvis tilmeldingen ikke bruges på KTC.dk.
+Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -2309,6 +2391,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_os2web_base_field_media'
   $field_instances['node-arrangement-field_os2web_base_field_media'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => 'Tilføj flere bilag',
+    'custom_remove' => 'Fjern bilag',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2355,16 +2439,35 @@ function ktc_content_types_field_default_field_instances() {
       'file_directory' => 'arrangement',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 0,
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 0,
+          'presentation' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 5,
     ),
   );
@@ -2439,69 +2542,6 @@ function ktc_content_types_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 19,
-    ),
-  );
-
-  // Exported field_instance: 'node-arrangement-field_submission'
-  $field_instances['node-arrangement-field_submission'] = array(
-    'bundle' => 'arrangement',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 19,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_submission',
-    'label' => 'Tilmeldte',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 23,
     ),
   );
 
@@ -3520,6 +3560,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-document-field_dokument'
   $field_instances['node-document-field_dokument'] = array(
     'bundle' => 'document',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3562,20 +3604,39 @@ function ktc_content_types_field_default_field_instances() {
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => 'documents',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 'prezi',
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 'image',
+          'presentation' => 'presentation',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 17,
     ),
   );
@@ -3886,6 +3947,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-document-field_os2web_base_field_media'
   $field_instances['node-document-field_os2web_base_field_media'] = array(
     'bundle' => 'document',
+    'custom_add_another' => 'Tilføj flere bilag',
+    'custom_remove' => 'Fjern bilag',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3932,16 +3995,35 @@ function ktc_content_types_field_default_field_instances() {
       'file_directory' => 'documents',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 'prezi',
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 'audio',
+          'document' => 'document',
+          'image' => 'image',
+          'presentation' => 'presentation',
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 19,
     ),
   );
@@ -4504,6 +4586,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-forum_post-body'
   $field_instances['node-forum_post-body'] = array(
     'bundle' => 'forum_post',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Indtast dit oplæg til diskussion her',
@@ -4558,7 +4642,6 @@ function ktc_content_types_field_default_field_instances() {
         'allowed_formats' => array(
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
-          'mailchimp_campaign' => 'mailchimp_campaign',
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -4571,9 +4654,6 @@ function ktc_content_types_field_default_field_instances() {
             'full_html' => array(
               'weight' => 1,
             ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
-            ),
             'plain_text' => array(
               'weight' => 10,
             ),
@@ -4582,7 +4662,7 @@ function ktc_content_types_field_default_field_instances() {
       ),
       'custom_add_another' => '',
       'custom_remove' => '',
-      'display_summary' => 1,
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -4778,6 +4858,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-forum_post-field_os2web_base_field_ext_link'
   $field_instances['node-forum_post-field_os2web_base_field_ext_link'] = array(
     'bundle' => 'forum_post',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4816,7 +4898,7 @@ function ktc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_ext_link',
-    'label' => 'Ekstern links',
+    'label' => 'Eksterne links',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -4978,6 +5060,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-forum_post-field_os2web_base_field_media'
   $field_instances['node-forum_post-field_os2web_base_field_media'] = array(
     'bundle' => 'forum_post',
+    'custom_add_another' => 'Tilføj flere bilag',
+    'custom_remove' => 'Fjern bilag',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -5020,20 +5104,39 @@ function ktc_content_types_field_default_field_instances() {
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => 'discussion',
       'file_extensions' => 'txt pdf doc docx jpg png jpeg gif dotx ppt xls xlsx ics',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 'prezi',
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 'audio',
+          'document' => 'document',
+          'image' => 'image',
+          'presentation' => 'presentation',
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 5,
     ),
   );
@@ -5387,6 +5490,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-magazine-body'
   $field_instances['node-magazine-body'] = array(
     'bundle' => 'magazine',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -5431,9 +5536,31 @@ function ktc_content_types_field_default_field_instances() {
     'label' => 'Kort beskrivende tekst',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
-      'display_summary' => 1,
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -5522,7 +5649,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 23,
     ),
   );
 
@@ -5607,7 +5734,7 @@ function ktc_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 12,
+      'weight' => 23,
     ),
   );
 
@@ -5684,7 +5811,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 24,
     ),
   );
 
@@ -5770,7 +5897,7 @@ function ktc_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 11,
+      'weight' => 22,
     ),
   );
 
@@ -6214,7 +6341,7 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 18,
+      'weight' => 28,
     ),
   );
 
@@ -7409,6 +7536,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-os2web_base_news-field_flere_billeder'
   $field_instances['node-os2web_base_news-field_flere_billeder'] = array(
     'bundle' => 'os2web_base_news',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => 'Du kan sætte flere billeder ind i din nyhed. Disse vises som billedgalleri',
     'display' => array(
@@ -7456,23 +7585,48 @@ function ktc_content_types_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_artikel_billede' => 0,
+          'ktc_std_billede' => 'ktc_std_billede',
+          'netvaerks_logo' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '800x300',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'preview_image_style' => 'billede_preview',
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 0,
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'presentation' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 7,
     ),
   );
@@ -8253,6 +8407,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-os2web_base_news-field_os2web_base_field_lead_img'
   $field_instances['node-os2web_base_news-field_os2web_base_field_lead_img'] = array(
     'bundle' => 'os2web_base_news',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => 'Sæt et billede på din nyhed for at gøre den mere opsigtsvækkende og interessant for læseren. Du må kun bruge billeder du har rettighederne til',
     'display' => array(
@@ -8468,23 +8624,48 @@ function ktc_content_types_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_artikel_billede' => 0,
+          'ktc_std_billede' => 'ktc_std_billede',
+          'netvaerks_logo' => 0,
+        ),
+      ),
       'file_directory' => 'news',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '800x300',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'preview_image_style' => 'listevisning_stor',
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'prezi' => 0,
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'presentation' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 5,
     ),
   );
@@ -8492,6 +8673,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-os2web_base_news-field_os2web_base_field_media'
   $field_instances['node-os2web_base_news-field_os2web_base_field_media'] = array(
     'bundle' => 'os2web_base_news',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -8534,36 +8717,39 @@ function ktc_content_types_field_default_field_instances() {
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => 'news_files',
       'file_extensions' => 'pdf swf doc docx xlsx xls ppt pptx',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'prezi' => 'prezi',
           'private' => 0,
           'public' => 'public',
+          'youtube' => 'youtube',
         ),
         'allowed_types' => array(
-          0 => 0,
           'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
+          'document' => 'document',
+          'image' => 0,
+          'presentation' => 'presentation',
+          'video' => 'video',
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
           'upload' => 'upload',
         ),
-        'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 6,
     ),
   );
@@ -9157,6 +9343,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-page-field_image'
   $field_instances['node-page-field_image'] = array(
     'bundle' => 'page',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -9233,18 +9421,23 @@ function ktc_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'alt_field_required' => 0,
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_artikel_billede' => 'ktc_artikel_billede',
+          'ktc_std_billede' => 0,
+          'netvaerks_logo' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '',
       'title_field' => 0,
-      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -9252,21 +9445,25 @@ function ktc_content_types_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 0,
+          'prezi' => 0,
+          'private' => 'private',
           'public' => 'public',
+          'youtube' => 'youtube',
         ),
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
-          'video' => 0,
+          'presentation' => 0,
+          'video' => 'video',
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_2' => 'media_default--media_browser_2',
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
           'upload' => 'upload',
         ),
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 1,
@@ -9825,6 +10022,8 @@ function ktc_content_types_field_default_field_instances() {
   t('Billede');
   t('Billeder fra arrangementet');
   t('Bredt banner');
+  t('Bruges hvis tilmeldingen ikke bruges på KTC.dk.
+Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Direkte link til program');
   t('Direkte link til tilmelding');
   t('Direkte telefon');
@@ -9835,6 +10034,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Du kan sætte flere billeder ind i din nyhed. Disse vises som billedgalleri');
   t('Efternavn');
   t('Ekstern links');
+  t('Eksterne links');
   t('Eksternt link, start m. http://');
   t('Ekstra artikler');
   t('Ekstra tekst');
@@ -9856,6 +10056,7 @@ function ktc_content_types_field_default_field_instances() {
   t('Grupper / Netværk');
   t('Her kan du indtastse stikord til din diskussion (tags)');
   t('Her kan du indtastse stikord til dit dokument (tags)');
+  t('Her kan du uploade det billede, som du ønsker der skal være artiklens primære billede. Husk at KTC skal have rettighed til at vise billedet. Billeder du finder på nettet, er normalt beskyttet af ophavsrettigheder, og må derfor ikke anvendes på KTC.dk.');
   t('Her kan du vælge om du vil publicere Diskussionen på andre platforme (kræver særlige rettigheder)');
   t('Hvilken type er dit arrangement?');
   t('Indhold');
@@ -9902,7 +10103,6 @@ function ktc_content_types_field_default_field_instances() {
   t('Tags');
   t('Tekst til bilag');
   t('Tilmeldingsfrist');
-  t('Tilmeldte');
   t('Top artikel');
   t('Type');
   t('Typo3 uid(pages)');

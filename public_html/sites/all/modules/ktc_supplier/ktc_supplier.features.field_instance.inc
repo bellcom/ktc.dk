@@ -13,6 +13,8 @@ function ktc_supplier_field_default_field_instances() {
   // Exported field_instance: 'node-ktc_supplier-body'
   $field_instances['node-ktc_supplier-body'] = array(
     'bundle' => 'ktc_supplier',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -51,10 +53,34 @@ function ktc_supplier_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Kommentarer',
+    'label' => 'Beskrivelse',
     'required' => 0,
     'settings' => array(
-      'display_summary' => 1,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -115,6 +141,8 @@ function ktc_supplier_field_default_field_instances() {
     'label' => 'Adresse',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -174,6 +202,8 @@ function ktc_supplier_field_default_field_instances() {
     'label' => 'Postnummer / By',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -233,6 +263,8 @@ function ktc_supplier_field_default_field_instances() {
     'label' => 'Telefon',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -292,6 +324,8 @@ function ktc_supplier_field_default_field_instances() {
     'label' => 'E-mail',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -351,6 +385,8 @@ function ktc_supplier_field_default_field_instances() {
     'label' => 'Fax',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -368,6 +404,8 @@ function ktc_supplier_field_default_field_instances() {
   // Exported field_instance: 'node-ktc_supplier-field_image'
   $field_instances['node-ktc_supplier-field_image'] = array(
     'bundle' => 'ktc_supplier',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -416,11 +454,21 @@ function ktc_supplier_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_artikel_billede' => 0,
+          'ktc_std_billede' => 0,
+          'netvaerks_logo' => 'netvaerks_logo',
+        ),
+      ),
       'file_directory' => 'supplier_logo',
       'file_extensions' => 'png gif jpg jpeg svg',
       'max_filesize' => '',
       'max_resolution' => '200x84',
+      'media_library_include_in_library' => 0,
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
@@ -430,21 +478,25 @@ function ktc_supplier_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'prezi' => 0,
           'private' => 0,
           'public' => 'public',
+          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
+          'presentation' => 0,
           'video' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_2' => 0,
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
           'upload' => 'upload',
         ),
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 1,
@@ -496,6 +548,8 @@ function ktc_supplier_field_default_field_instances() {
     'label' => 'Hjemmeside',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -555,6 +609,8 @@ function ktc_supplier_field_default_field_instances() {
     'label' => 'Leverandører kategori',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -572,10 +628,10 @@ function ktc_supplier_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Adresse');
+  t('Beskrivelse');
   t('E-mail');
   t('Fax');
   t('Hjemmeside');
-  t('Kommentarer');
   t('Leverandører kategori');
   t('Logo');
   t('Postnummer / By');
