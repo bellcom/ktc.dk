@@ -125,7 +125,7 @@ function ktc_content_types_node_info() {
       'help' => t('Du kan her starte en diskussion i dine netværk. De andre medlemmer af dit netværk kan kommentere på dine og de andres deltageres svar. '),
     ),
     'magazine' => array(
-      'name' => t('Magasin'),
+      'name' => t('Udgivelse'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

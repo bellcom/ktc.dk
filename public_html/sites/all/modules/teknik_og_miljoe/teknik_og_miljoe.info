@@ -60,6 +60,7 @@ features[field_group][] = group_bilag|node|artikler|form
 features[field_group][] = group_billede|node|artikler|form
 features[field_group][] = group_emner|node|artikler|form
 features[field_group][] = group_forfatterperm|node|artikler|form
+features[field_group][] = group_forfatters|node|artikler|form
 features[field_group][] = group_formular|node|artikler|form
 features[field_group][] = group_indhold|node|artikler|form
 features[field_group][] = group_publicering|node|artikler|form

@@ -23,10 +23,10 @@ function teknik_og_miljoe_field_group_info() {
     'label' => 'Titel og type',
     'weight' => '14',
     'children' => array(
-      0 => 'field_coforfattere',
-      1 => 'field_tema_trompet',
-      2 => 'field_artikeltype',
-      3 => 'title',
+      0 => 'field_tema_trompet',
+      1 => 'field_artikeltype',
+      2 => 'title',
+      3 => 'group_forfatters',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -164,6 +164,39 @@ function teknik_og_miljoe_field_group_info() {
     ),
   );
   $export['group_forfatterperm|node|artikler|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_forfatters|node|artikler|form';
+  $field_group->group_name = 'group_forfatters';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'artikler';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_artikel';
+  $field_group->data = array(
+    'label' => 'Viste forfattere',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_coforfattere',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Viste forfattere',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-forfatters field-group-div well well-sm',
+        'description' => '<strong>Visning/præsentation</strong> af forfattere og medforfattere vælges her. Hvis forfatteren allerede har en profil på KTC.dk, kan denne findes under "Eksisterende bruger". Når der vælges en "eksisterende bruger", er det ikke nødvendigt at udfylde da andre felter (Navn, foto og stilling).',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_forfatters|node|artikler|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
