@@ -166,7 +166,7 @@ function ktc_content_types_default_page_manager_handlers() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'ktc3col';
+  $display->layout = 'ktcpage';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -185,7 +185,7 @@ function ktc_content_types_default_page_manager_handlers() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-3b089f24-e1e3-456a-b6b5-cf2133fd8ca1';
-    $pane->panel = 'center';
+    $pane->panel = 'left';
     $pane->type = 'form';
     $pane->subtype = 'form';
     $pane->shown = TRUE;
@@ -205,7 +205,7 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '3b089f24-e1e3-456a-b6b5-cf2133fd8ca1';
     $display->content['new-3b089f24-e1e3-456a-b6b5-cf2133fd8ca1'] = $pane;
-    $display->panels['center'][0] = 'new-3b089f24-e1e3-456a-b6b5-cf2133fd8ca1';
+    $display->panels['left'][0] = 'new-3b089f24-e1e3-456a-b6b5-cf2133fd8ca1';
     $pane = new stdClass();
     $pane->pid = 'new-d02a76f0-82a9-4168-b28b-674e5d8e1441';
     $pane->panel = 'right';
