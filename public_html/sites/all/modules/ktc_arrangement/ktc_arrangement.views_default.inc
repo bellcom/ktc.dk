@@ -391,7 +391,7 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Indhold: Type af møde (field_meeting_type) */
+  /* Kontekstuelt filter: Indhold: Arrangementstype (field_meeting_type) */
   $handler->display->display_options['arguments']['field_meeting_type_tid']['id'] = 'field_meeting_type_tid';
   $handler->display->display_options['arguments']['field_meeting_type_tid']['table'] = 'field_data_field_meeting_type';
   $handler->display->display_options['arguments']['field_meeting_type_tid']['field'] = 'field_meeting_type_tid';
@@ -463,7 +463,7 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['sorts']['field_arrangement_date_value']['field'] = 'field_arrangement_date_value';
   $handler->display->display_options['sorts']['field_arrangement_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Indhold: Type af møde (field_meeting_type) */
+  /* Kontekstuelt filter: Indhold: Arrangementstype (field_meeting_type) */
   $handler->display->display_options['arguments']['field_meeting_type_tid']['id'] = 'field_meeting_type_tid';
   $handler->display->display_options['arguments']['field_meeting_type_tid']['table'] = 'field_data_field_meeting_type';
   $handler->display->display_options['arguments']['field_meeting_type_tid']['field'] = 'field_meeting_type_tid';

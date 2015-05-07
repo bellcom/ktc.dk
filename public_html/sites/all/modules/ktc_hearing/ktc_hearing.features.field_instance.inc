@@ -103,8 +103,10 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-field_attendee_deadlines'
   $field_instances['node-hearing-field_attendee_deadlines'] = array(
     'bundle' => 'hearing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Hvornår er deltagernes høringsfrist? Husk at give tid til tovholder og formand til at sammenskrive og færdigbehandle KTCs endelige høringssvar.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -490,8 +492,10 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-field_enrollment_deadlines'
   $field_instances['node-hearing-field_enrollment_deadlines'] = array(
     'bundle' => 'hearing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Hvornår skal KTC have færdigbehandlet høringen',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1124,8 +1128,10 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-field_official_date'
   $field_instances['node-hearing-field_official_date'] = array(
     'bundle' => 'hearing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Hvornår er høringen officielt udsendt fra myndigheden?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1197,8 +1203,10 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-field_official_responsedate'
   $field_instances['node-hearing-field_official_responsedate'] = array(
     'bundle' => 'hearing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Hvornår skal myndigheden have sit høringssvar?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -3295,6 +3303,10 @@ function ktc_hearing_field_default_field_instances() {
   t('Group content visibility');
   t('Gruppe/Netværk');
   t('Har ikke svaret');
+  t('Hvornår er deltagernes høringsfrist? Husk at give tid til tovholder og formand til at sammenskrive og færdigbehandle KTCs endelige høringssvar.');
+  t('Hvornår er høringen officielt udsendt fra myndigheden?');
+  t('Hvornår skal KTC have færdigbehandlet høringen');
+  t('Hvornår skal myndigheden have sit høringssvar?');
   t('Høring');
   t('Høring Fil(er) mangler fra Typo3');
   t('Høringsbrev/ beskrivelse');
