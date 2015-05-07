@@ -785,3 +785,16 @@ function ktc_preprocess_region(&$variables, $hook) {
     $variables['classes_array'][] = $class;
   }
 }
+
+/**
+ * Implements ktc_preprocess_user_picture().
+ */
+function ktc_preprocess_user_picture(&$variables) {
+  // When a suer has the role "KTC VIP" there must be a green ring around the
+  // user picture.
+  if (is_array($variables['account']->roles)) {
+    if (in_array('KTC VIP', $variables['account']->roles)) {
+      $variables['role_class'] = 'green';
+    }
+  }
+}
