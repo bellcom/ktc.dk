@@ -213,25 +213,6 @@ function ktc_arrangement_default_page_manager_handlers() {
     $display->content['new-0e40a650-7ace-490c-9878-89a818107e67'] = $pane;
     $display->panels['centerleft'][1] = 'new-0e40a650-7ace-490c-9878-89a818107e67';
     $pane = new stdClass();
-    $pane->pid = 'new-4cd9c805-db27-4640-a42c-5ac6da8dbfca';
-    $pane->panel = 'centerright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'ktc_arrangement-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '4cd9c805-db27-4640-a42c-5ac6da8dbfca';
-    $display->content['new-4cd9c805-db27-4640-a42c-5ac6da8dbfca'] = $pane;
-    $display->panels['centerright'][0] = 'new-4cd9c805-db27-4640-a42c-5ac6da8dbfca';
-    $pane = new stdClass();
     $pane->pid = 'new-8058484a-0e6a-429e-8ee2-48f3d5f18ea9';
     $pane->panel = 'centerright';
     $pane->type = 'entity_field';
@@ -255,11 +236,11 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '8058484a-0e6a-429e-8ee2-48f3d5f18ea9';
     $display->content['new-8058484a-0e6a-429e-8ee2-48f3d5f18ea9'] = $pane;
-    $display->panels['centerright'][1] = 'new-8058484a-0e6a-429e-8ee2-48f3d5f18ea9';
+    $display->panels['centerright'][0] = 'new-8058484a-0e6a-429e-8ee2-48f3d5f18ea9';
     $pane = new stdClass();
     $pane->pid = 'new-13ea8677-dca9-4ba1-9ba6-7db05176cbf8';
     $pane->panel = 'centerright';
@@ -284,11 +265,11 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '13ea8677-dca9-4ba1-9ba6-7db05176cbf8';
     $display->content['new-13ea8677-dca9-4ba1-9ba6-7db05176cbf8'] = $pane;
-    $display->panels['centerright'][2] = 'new-13ea8677-dca9-4ba1-9ba6-7db05176cbf8';
+    $display->panels['centerright'][1] = 'new-13ea8677-dca9-4ba1-9ba6-7db05176cbf8';
     $pane = new stdClass();
     $pane->pid = 'new-4054cac8-3c6a-4800-a96c-dfed661a1895';
     $pane->panel = 'centertop';
