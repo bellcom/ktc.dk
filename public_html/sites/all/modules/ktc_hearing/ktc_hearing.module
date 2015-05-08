@@ -108,6 +108,9 @@ function ktc_hearing_theme() {
     'block_hearing_unresponded_sectionpage' => array(
       'template' => 'block-hearing-unresponded-sectionpage',
     ),
+    'block_hearing_info' => array(
+      'template' => 'block-hearing-info',
+    ),
     'hearing_answer' => array(
       'template' => 'hearing-answer',
     ),
@@ -279,6 +282,10 @@ function ktc_hearing_block_info() {
     'info' => t('Set hearing status'),
     'cache' => DRUPAL_NO_CACHE,
   );
+  $blocks['ktc_hearing_info_block'] = array(
+    'info' => t('KTC Høring - info om aktuelle høring.'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
   return $blocks;
 }
 
@@ -308,6 +315,12 @@ function ktc_hearing_block_view($delta = '') {
       if (ktc_hearing_access($hearing, 'update')) {
         $block['content'] = drupal_get_form('ktc_hearing_set_status');
       }
+      break;
+
+    case 'ktc_hearing_info_block':
+      $vars = _ktc_hearing_get_info_vars();
+
+      $block['content'] = theme('block_hearing_info', $vars);
       break;
   }
   return $block;
@@ -647,7 +660,7 @@ function ktc_hearing_set_status($form, $form_state, $arg = NULL) {
   );
 
   foreach ($hearing_states as $state) {
-    $state_options[$state] = _ktc_hearing_state_label($state);
+    $state_options[$state] = _ktc_hearing_term_name($state);
   }
 
   $form['status'] = array(
@@ -1039,7 +1052,170 @@ function _ktc_hearing_get_unresponded_nids($user = FALSE) {
 /**
  * Get the label for the status form the taxonomy.
  */
-function _ktc_hearing_state_label($term_id) {
+function _ktc_hearing_term_name($term_id) {
   $term = taxonomy_term_load($term_id);
   return $term->name;
+}
+
+/**
+ * Generate an array containing info about the current hearing.
+ */
+function _ktc_hearing_get_info_vars() {
+  // Defines the following variables for the template.
+  //
+  // Titel                      => $title
+  // Myndighed                  => $authority
+  // Høringstype                => $type
+  // Status                     => $status
+  // Gruppe/Netværk             => $group
+  // Ansvarlig formand          => $responsible_foreman
+  // Ansvarlig tovholder        => $responsible_chairman
+  // Din svarfrist              => $answer_by (datetime)
+  // Løbenummer / id            => $nid
+  // Oprettet af                => $author
+  // Oprettet dato              => $created (unix timestamp)
+  // Antal deltagere            => $attendee_count
+  // Antal deltagere har svaret => $answer_count
+  // Din status i høringen      => $role
+  $vars = array();
+
+  $node = menu_get_object('node');
+  if ($node->type == 'hearing') {
+
+    // Titel og Løbenummer / id.
+    $vars['title'] = $node->title;
+    $vars['nid'] = $node->nid;
+
+    // Oprettet af.
+    $vars['author'] = _ktc_hearing_get_user_name($node->uid);
+
+    if ($field = field_get_items('node', $node, 'field_responsible_admin')) {
+      $vars['responsible_chairman'] = _ktc_hearing_get_user_name($field[0]['target_id']);
+    }
+
+    if ($field = field_get_items('node', $node, 'field_responsible_foreman')) {
+      $vars['responsible_foreman'] = _ktc_hearing_get_user_name($field[0]['target_id']);
+    }
+
+    $vars['created'] = $node->created;
+
+    if ($field = field_get_items('node', $node, 'field_hearing_type')) {
+      $vars['type'] = _ktc_hearing_term_name($field[0]['tid']);
+    }
+
+    if ($field = field_get_items('node', $node, 'field_status')) {
+      $vars['status'] = _ktc_hearing_term_name($field[0]['tid']);
+    }
+
+    if ($field = field_get_items('node', $node, 'field_attendees')) {
+      $vars['attendee_count'] = count($field);
+    }
+
+    if ($field = field_get_items('node', $node, 'field_hearing_authority')) {
+      $vars['authority'] = $field[0]['value'];
+    }
+
+    if ($field = field_get_items('node', $node, 'og_group_ref')) {
+      $group = node_load($field[0]['target_id']);
+      $vars['group'] = $group->title;
+    }
+
+    $role = _ktc_hearing_get_user_role($node);
+    $vars['role'] = reset($role);
+
+    $vars['answer_count'] = _ktc_hearing_count_answers($node);
+
+    $vars['answer_by'] = _ktc_hearing_user_answer_date($node, $role);
+  }
+
+  return $vars;
+}
+
+/**
+ * Get users real name.
+ */
+function _ktc_hearing_get_user_name($uid) {
+  $account = user_load($uid);
+  $name = array();
+
+  if ($field = field_get_items('user', $account, 'field_navn')) {
+    $name[] = trim($field[0]['value']);
+  }
+  if ($field = field_get_items('user', $account, 'field_efternavn')) {
+    $name[] = trim($field[0]['value']);
+  }
+  return implode(' ', $name);
+}
+
+/**
+ * Get the current users role in a hearing.
+ */
+function _ktc_hearing_get_user_role($node) {
+  global $user;
+
+  // Find out if user uid is in the fields data.
+  $uid_id_field = function($field, $uid) {
+    foreach ($field as $_val) {
+      if ($_val['target_id'] == $uid) {
+        return TRUE;
+      }
+    }
+  };
+
+  // Map of fieldnames to pretty role titles.
+  $field_map = array(
+    'field_responsible_foreman' => 'Ansvarlig formand',
+    'field_responsible_admin' => 'Ansvarlig tovholder',
+    'field_chairman' => 'Formand',
+    'field_coordinator' => 'Tovholder',
+    'field_attendees' => 'Deltager',
+  );
+
+  foreach ($field_map as $field_name => $role_title) {
+    if ($field = field_get_items('node', $node, $field_name)) {
+      if ($uid_id_field($field, $user->uid)) {
+        return array($field_name => $role_title);
+      }
+    }
+  }
+  return array('none' => 'Deltager ikke');
+}
+
+/**
+ * Get numbers of answeres given on a hearing.
+ */
+function _ktc_hearing_count_answers($node) {
+  // Query hearing_responses nodes referencing the hearing.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->propertyCondition('status', 1)
+    ->entityCondition('bundle', 'hearing_responses')
+    ->fieldCondition('field_hearing_node', 'target_id', $node->nid);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    return count($result['node']);
+  }
+}
+
+/**
+ * Get date the user should answer hearing by.
+ */
+function _ktc_hearing_user_answer_date($node, $role) {
+  // Don't return a date, if the user has no role.
+  if (key($role) == 'none') {
+    return '';
+  }
+
+  // Attendees have the normal deadline.
+  if (key($role) == 'field_attendees') {
+    if ($field = field_get_items('node', $node, 'field_attendee_deadlines')) {
+      return $field[0]['value'];
+    }
+  }
+
+  // Chairman and foreman have other deadlines.
+  if ($field = field_get_items('node', $node, 'field_enrollment_deadlines')) {
+    return $field[0]['value'];
+  }
 }
