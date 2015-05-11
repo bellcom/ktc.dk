@@ -18,9 +18,9 @@ function ktc_crm_group_update_groups($lastupdate) {
   $logger->log->addInfo('cron group', 'remove old groups');
   ktc_crm_group_remove_old_groups($groups);
 
-  $logger->log->addInfo('cron group', 'update userroles');
+  $logger->log->addInfo('cron group', 'update grouproles');
   $grouproles = ktc_crm_fetch_grouproles();
-  ktc_crm_group_update_userroles($grouproles);
+  ktc_crm_group_update_grouproles($grouproles);
 
   $groups = ktc_crm_fetch_groupmembers();
 
@@ -92,46 +92,6 @@ function ktc_crm_og_membership_insert($og_membership) {
       $og_membership->is_new = FALSE;
       og_membership_save($og_membership);
     }
-  }
-}
-
-/**
- * Implements hook_og_role_grant().
- */
-function ktc_crm_og_role_grant($group_type, $gid, $uid, $rid) {
-  // Send group role to CRM.
-  if ((isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_add_users') ||
-    (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_edit_membership')) {
-
-    $logger = KtcCrmLogger::getInstance();
-    $logger->log->addInfo('group grant role', array(
-      'uid' => $uid,
-      'gid' => $gid,
-      'rid' => $rid,
-    ));
-
-    $og_membership = og_get_membership($group_type, $gid, 'user', $uid);
-
-    _ktc_crm_group_grant_user_role($og_membership, $rid);
-  }
-}
-
-/**
- * Implements hook_og_role_revoke().
- */
-function ktc_crm_og_role_revoke($group_type, $gid, $uid, $rid) {
-  // Send revoked group role to CRM.
-  if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_edit_membership') {
-    $logger = KtcCrmLogger::getInstance();
-    $logger->log->addInfo('group revoke role', array(
-      'uid' => $uid,
-      'gid' => $gid,
-      'rid' => $rid,
-    ));
-
-    $og_membership = og_get_membership($group_type, $gid, 'user', $uid);
-
-    _ktc_crm_group_revoke_user_role($og_membership, $rid);
   }
 }
 
@@ -272,23 +232,9 @@ function ktc_crm_group_new_group() {
 /**
  * Update user roles from webservice.
  */
-function ktc_crm_group_update_userroles($grouproles) {
-  // Create group roles for users.
-  $query = db_select('og_role', 'ogr')
-    ->fields('ogr', array('rid', 'name'))
-    ->orderBy('rid', 'ASC');
-
-  $rids = $query
-    ->execute()
-    ->fetchAllkeyed();
-
+function ktc_crm_group_update_grouproles($grouproles) {
   foreach ($grouproles->Results->GroupRoleDto as $grouprole) {
-    $name = $grouprole->Name;
-
-    if (!in_array($name, $rids)) {
-      $new_role = og_role_create($name, 'node', 0, 'group');
-      og_role_save($new_role);
-    }
+    _ktc_crm_group_get_grouprole_tid($grouprole->CrmId, $grouprole->Name);
   }
 }
 
@@ -312,37 +258,30 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
     $membership_uuid = $membership_info['membership_uuid'];
 
     if ($group = ktc_crm_group_load_from_uuid($group_uuid)) {
-      $role_id = $membership_info['role_id'];
 
       $values = array(
         'entity_type' => 'user',
         'entity' => $account,
         'state' => OG_STATE_ACTIVE,
-        'field_crm_uuid' => $membership_uuid,
       );
 
-      if (!og_is_member('node', $group->nid, 'user', $account)) {
-        $status = og_group('node', $group->nid, $values);
-      }
+      $group_membership = og_group('node', $group->nid, $values);
 
-      $user_roles = og_get_user_roles('node', $group->nid, $account->uid);
-      // Handle if the user has more than one role in OG and none set from
-      // CRM.
-      if (count($user_roles) > 1) {
-        $default_roles = og_get_default_roles();
-
-        // Remove all non-default (CRM), roles from the user.
-        foreach ($user_roles as $id => $role) {
-          if (!in_array($role, $default_roles) && $id != $role_id) {
-            og_role_revoke('node', $group->nid, $account->uid, $id);
-          }
-        }
+      // If a grouprole_uuid is set, check to see what the tid is.
+      if ($membership_info['grouprole_uuid']) {
+        $grouprole_tid = _ktc_crm_group_get_grouprole_tid($membership_info['grouprole_uuid']);
       }
-
-      // Grant user role from CRM. If the user doesn't already have it.
-      if ($role_id && !in_array($role_id, array_flip($user_roles))) {
-        og_role_grant('node', $group->nid, $account->uid, $role_id);
+      // Update the membership to show the grouprole.
+      if ($grouprole_tid) {
+        $group_membership->field_grouprole[LANGUAGE_NONE][0]['target_id'] = $grouprole_tid;
       }
+      // Empty the field if the user has no grouprole.
+      else {
+        $group_membership->field_grouprole = array();
+      }
+      $group_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
+
+      og_membership_save($group_membership);
     }
   }
 }
@@ -419,20 +358,18 @@ function ktc_crm_group_remove_old_memberships($memberships) {
  * Helper, create an associative array of group memberships.
  */
 function ktc_crm_group_create_array($groupmembers) {
-  $og_roles = array_flip(og_roles('node', 'group'));
-
   $memberships = array();
   foreach ($groupmembers->Results->GroupMemberDto as $groupmember) {
 
     $group_uuid = $groupmember->Group->CrmId;
     $user_uuid = $groupmember->Member->CrmId;
     $membership_uuid = $groupmember->CrmId;
-    $role_name = $groupmember->Role->Name;
+    $grouprole_uuid = $groupmember->Role->CrmId;
 
     $memberships[$user_uuid][] = array(
       'group_uuid' => $group_uuid,
       'membership_uuid' => $membership_uuid,
-      'role_id' => $og_roles[$role_name],
+      'grouprole_uuid' => $grouprole_uuid,
     );
   }
 
@@ -513,7 +450,53 @@ function _ktc_crm_group_get_grouptype_tid($crm_uuid, $name) {
   }
 }
 
+/**
+ * Return the tid for a grouprole.
+ */
+function _ktc_crm_group_get_grouprole_tid($crm_uuid, $name = FALSE) {
+  return _ktc_crm_group_get_tid('ktc_netvaerk_grouproles', $crm_uuid, $name);
+}
 
+/**
+ * Get tid in the specified vocabulary for crm uuid.
+ *
+ * If a term does not exist with the specified crm_uuid a new one will
+ * be created with the specified name. If a new name is specified it will
+ * be updated.
+ */
+function _ktc_crm_group_get_tid($vocabulary, $crm_uuid, $name) {
+  if (!$crm_uuid && !$name) {
+    return FALSE;
+  }
+
+  $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary);
+
+  $query = new EntityFieldQuery();
+  $result = $query->entityCondition('entity_type', 'taxonomy_term')
+    ->propertyCondition('vid', $vocabulary->vid)
+    ->fieldCondition('field_crm_uuid', 'value', $crm_uuid)
+    ->execute();
+
+  if (isset($result['taxonomy_term'])) {
+    $term = taxonomy_term_load(key($result['taxonomy_term']));
+
+    $term->name = $name;
+  }
+  else {
+    $term = new stdClass();
+    $term->vid = $vocabulary->vid;
+    $term->name = $name;
+
+    $term->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $crm_uuid;
+  }
+
+  // Only update the name if one is specified.
+  if ($name) {
+    taxonomy_term_save($term);
+  }
+
+  return $term->tid ? $term->tid : FALSE;
+}
 /**
  * Helper, get group uuid from group nid.
  */
@@ -524,71 +507,6 @@ function _ktc_crm_group_get_group_uuid($group_nid) {
     }
   }
   return FALSE;
-}
-
-/**
- * Helper, remove a users role in CRM.
- */
-function _ktc_crm_group_revoke_user_role($og_membership, $rid) {
-  if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
-
-    $roles = _ktc_crm_group_get_group_info();
-
-    // Only update(remove) the role, if it exists in CRM.
-    if (isset($roles[$rid])) {
-      // @TODO This should not be hardcoded.
-      $grouproledto = new \KTC\GroupService\ReferenceDto('50c5655f-d09f-e411-91f9-005056a23404');
-      $groupmemberdto->Role = $grouproledto;
-
-      ktc_crm_update_groupmember($groupmemberdto);
-    }
-  }
-}
-
-/**
- * Helper, grant a users role in CRM.
- */
-function _ktc_crm_group_grant_user_role($og_membership, $rid) {
-  if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
-    $roles = _ktc_crm_group_get_group_info();
-
-    // Only update the role, if it exists in CRM.
-    if (isset($roles[$rid])) {
-      $role_uuid = $roles[$rid]['role_uuid'];
-      $role_name = $roles[$rid]['name'];
-
-      $grouproledto = new \KTC\GroupService\ReferenceDto($role_uuid);
-      $grouproledto->Name = $role_name;
-
-      $groupmemberdto->Role = $grouproledto;
-
-      ktc_crm_update_groupmember($groupmemberdto);
-    }
-  }
-}
-
-/**
- * Helper, create an array of all roles, with CRM UUIDs.
- */
-function _ktc_crm_group_get_group_info() {
-  // We need to create an array that contains the info from these 2 functions.
-  $og_roles = array_flip(og_roles('node', 'group'));
-  $grouproles = ktc_crm_fetch_grouproles();
-
-  $group_info = array();
-
-  foreach ($grouproles->Results->GroupRoleDto as $grouprole) {
-    $name = $grouprole->Name;
-
-    $rid = $og_roles[$name];
-
-    $group_info[$rid] = array(
-      'name' => $name,
-      'role_uuid' => $grouprole->CrmId,
-    );
-  }
-
-  return $group_info;
 }
 
 /**
