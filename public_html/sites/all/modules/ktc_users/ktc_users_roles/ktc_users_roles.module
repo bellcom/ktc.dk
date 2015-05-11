@@ -9,7 +9,7 @@
  */
 function ktc_users_roles_menu() {
   $items['admin/people/permissions/ktc_users_roles'] = array(
-    'title' => 'KTC Users grouptype roles',
+    'title' => 'KTC Brugere - gruppetype -> rolle',
     'descripiton' => '',
     'type' => MENU_LOCAL_TASK,
     'access arguments' => array('administer user permissions'),
@@ -18,12 +18,21 @@ function ktc_users_roles_menu() {
   );
 
   $items['admin/people/permissions/ktc_usertype_roles'] = array(
-    'title' => 'KTC Users usertype roles',
+    'title' => 'KTC Brugere - brugertype -> rolle',
     'descripiton' => '',
     'type' => MENU_LOCAL_TASK,
     'access arguments' => array('administer user permissions'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_users_roles_usertype_page'),
+  );
+
+  $items['admin/people/permissions/ktc_grouproles'] = array(
+    'title' => 'KTC Brugere - Netværksroller',
+    'descripiton' => '',
+    'type' => MENU_LOCAL_TASK,
+    'access arguments' => array('administer user permissions'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_users_grouproles_page'),
   );
   return $items;
 }
@@ -59,6 +68,49 @@ function ktc_users_roles_user_presave(&$edit, $account, $category) {
     // Add the role.
     $edit['roles'][$role_id] = $role_id;
   }
+}
+
+/**
+ * Page callback for grouproles settings.
+ */
+function ktc_users_grouproles_page() {
+  $form['info'] = array(
+    '#type' => 'item',
+    '#title' => 'Beskrivelse -> Grupperoller',
+    '#markup' => 'Den rolle der sættes på et gruppe/udvalgsmedlemsskab i CRM, kan oversættes til en grupperolle i netværket i Drupal.<br /> Således kan en "Formand" i CRM få en drupal specifik rolle når hans gruppe/udvalgsmedlemskab synkroniseres.',
+  );
+
+  // Save settings in an array.
+  $form['ktc_users_grouproles_map'] = array(
+    '#tree' => TRUE,
+    '#type' => 'fieldset',
+    '#title' => t('Her skal du vælge hvilken af de ovenfor valgte roller, CRM rollen skal oversættes til.'),
+  );
+
+  $grouproles_vocab = taxonomy_vocabulary_machine_name_load('ktc_netvaerk_grouproles');
+  $grouproles = taxonomy_term_load_multiple(array(), array('vid' => $grouproles_vocab->vid));
+
+  $grouprole_map = variable_get('ktc_users_grouproles_map', array());
+
+  // Available OG roles. Unset 'non-member' and 'member' as they are irrelevant
+  // for this.
+  $og_roles = og_roles('node', 'group');
+  unset($og_roles[1]);
+  unset($og_roles[2]);
+
+  $og_roles[0] = t('- None -');
+
+  foreach ($grouproles as $grouprole) {
+    $grid = $grouprole->tid;
+    $form['ktc_users_grouproles_map'][$grid] = array(
+      '#title' => $grouprole->name,
+      '#type' => 'select',
+      '#options' => $og_roles,
+      '#default_value' => isset($grouprole_map[$grid]) ? $grouprole_map[$grid] : 0,
+    );
+  }
+
+  return system_settings_form($form);
 }
 
 /**
@@ -277,11 +329,45 @@ function ktc_users_roles_process_user_groups($uid, $group_nid, $group_role_map) 
 }
 
 /**
+ * Implements hook_og_membership_presave().
+ */
+function ktc_users_roles_og_membership_presave($og_membership) {
+  // If the grouprole field is set, we check if the value triggers a group
+  // role assignment.
+  if ($field = field_get_items('og_membership', $og_membership, 'field_grouprole')) {
+    $group_role_map = variable_get('ktc_users_grouproles_map', array());
+    $grid = $field[0]['target_id'];
+
+    if (isset($group_role_map[$grid]) && $group_role_map[$grid]) {
+      $new_rid = $group_role_map[$grid];
+    }
+  }
+
+  if (is_object($og_membership->original) && $field = field_get_items('og_membership', $og_membership->original, 'field_grouprole')) {
+    $group_role_map = variable_get('ktc_users_grouproles_map', array());
+    $grid = $field[0]['target_id'];
+
+    if (isset($group_role_map[$grid]) && $group_role_map[$grid]) {
+      $old_rid = $group_role_map[$grid];
+    }
+  }
+
+  if ($old_rid == $new_rid) {
+    return;
+  }
+
+  og_role_revoke($og_membership->group_type, $og_membership->gid, $og_membership->etid, $old_rid);
+  og_role_grant($og_membership->group_type, $og_membership->gid, $og_membership->etid, $new_rid);
+}
+
+/**
  * Implements hook_og_role_grant().
  */
 function ktc_users_roles_og_role_grant($group_type, $gid, $uid, $rid) {
   $role_map = variable_get('ktc_users_roles_map', array());
 
+  // Determine if the user should be assigned a role, according to the
+  // membership of a specified network type.
   $group = node_load($gid);
 
   if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
@@ -303,6 +389,8 @@ function ktc_users_roles_og_role_revoke($group_type, $gid, $uid, $rid) {
 
   $group = node_load($gid);
 
+  // Determine if the user should be revoked a role, according to the
+  // membership of a specified network type.
   if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
     $grouptype_tid = $field[0]['tid'];
 
