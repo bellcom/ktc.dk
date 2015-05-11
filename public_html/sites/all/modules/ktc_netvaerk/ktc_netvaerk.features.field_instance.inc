@@ -453,6 +453,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
+      'media_library_include_in_library' => FALSE,
       'min_resolution' => '220x220',
       'title_field' => 0,
       'user_register_form' => FALSE,
@@ -769,6 +770,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'file_directory' => '',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
+      'media_library_include_in_library' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1586,6 +1588,104 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'og_membership-og_membership_type_default-field_grouprole'
+  $field_instances['og_membership-og_membership_type_default-field_grouprole'] = array(
+    'bundle' => 'og_membership_type_default',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'og_membership',
+    'field_name' => 'field_grouprole',
+    'label' => 'grouprole',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-ktc_netvaerk_grouproles-field_crm_uuid'
+  $field_instances['taxonomy_term-ktc_netvaerk_grouproles-field_crm_uuid'] = array(
+    'bundle' => 'ktc_netvaerk_grouproles',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_crm_uuid',
+    'label' => 'CRM UUID',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-netv_rkstype-field_crm_uuid'
   $field_instances['taxonomy_term-netv_rkstype-field_crm_uuid'] = array(
     'bundle' => 'netv_rkstype',
@@ -1655,6 +1755,7 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Tags');
   t('Tilmelding');
   t('Undernetværk');
+  t('grouprole');
   t('Åbent/Privat');
 
   return $field_instances;
