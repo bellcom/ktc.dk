@@ -80,11 +80,6 @@ function ktc_hearing_attendees_menu() {
     'delivery callback' => 'drupal_json_output',
   );
 
-  $items['ktc_hearing_attendees/get_group_foremen'] = array(
-    'access callback'   => 'user_is_logged_in',
-    'page callback'     => 'ktc_hearing_attendees_get_group_foremen',
-    'delivery callback' => 'drupal_json_output',
-  );
   return $items;
 }
 
@@ -93,72 +88,49 @@ function ktc_hearing_attendees_menu() {
  */
 function ktc_hearing_attendees_get_group_members($id = NULL) {
   if ($group = node_load($id)) {
+
+    // Figure out tids for Formand and Høringstovholder grouproles, we
+    // need this later on.
+    $grouproles_vocab = taxonomy_vocabulary_machine_name_load('ktc_netvaerk_grouproles');
+    $grouproles = taxonomy_term_load_multiple(array(), array('vid' => $grouproles_vocab->vid));
+
+    foreach ($grouproles as $grouprole) {
+      if ($grouprole->name == 'Formand') {
+        $foreman_tid = $grouprole->tid;
+      }
+      if ($grouprole->name == 'Høringstovholder') {
+        $coordinator_tid = $grouprole->tid;
+      }
+    }
+
+    $memberships = og_membership_load_multiple(FALSE, array('gid' => $id, 'entity_type' => 'user'));
     $members = array();
-    if ($member_uids = og_get_group_members_properties($group, array(), 'members', 'node')) {
-      foreach ($member_uids as $member_uid) {
-        $roles = og_get_user_roles('node', $id, $member_uid, $include = TRUE);
 
-        if (in_array($member_uid, array(1, 1974))) {
-          continue;
-        }
+    // Generate an array of members according to their grouprole.
+    foreach ($memberships as $membership) {
+      $member_uid = $membership->etid;
+      $account = user_load($member_uid);
 
-        $account = user_load($member_uid);
+      $member_value = $account->name . ' (' . $member_uid . ')';
 
-        $member_value = $account->name . ' (' . $member_uid . ')';
+      $user_grouprole_tid = FALSE;
+      if ($field = field_get_items('og_membership', $membership, 'field_grouprole')) {
+        $user_grouprole_tid = $field[0]['target_id'];
+      }
 
-        if (in_array('member', $roles)) {
-          $members['attendees'][$member_value] = $account->name;
-        }
-
-        if (in_array('Formand', $roles)) {
+      // The user should be foreman.
+      if ($user_grouprole_tid == $foreman_tid) {
           $members['chairman'][$member_value] = $account->name;
           $members['responsible-foreman'][$member_value] = $account->name;
-        }
-
-        if (in_array('Høringstovholder', $roles)) {
-          $members['coordinator'][$member_value] = $account->name;
-          $members['responsible-admin'][$member_value] = $account->name;
-        }
       }
-    }
-
-    return $members;
-  }
-  return FALSE;
-}
-
-/**
- * Page callback, get foremen members for group.
- */
-function ktc_hearing_attendees_get_group_foremen($id = NULL) {
-  if ($group = node_load($id)) {
-    $members = array();
-    if ($member_uids = og_get_group_members_properties($group, array(), 'members', 'node')) {
-      foreach ($member_uids as $member_uid) {
-        $roles = og_get_user_roles('node', $id, $member_uid, $include = TRUE);
-
-        if (in_array($member_uid, array(1, 1974))) {
-          continue;
-        }
-
-        $account = user_load($member_uid);
-
-        $member_value = $account->name . ' (' . $member_uid . ')';
-
-        if (in_array('member', $roles)) {
-          $members['attendees'][$member_value] = $account->name;
-        }
-
-        if (in_array('Formand', $roles)) {
-          $members['chairman'][$member_value] = $account->name;
-        }
-
-        if (in_array('Høringstovholder', $roles)) {
-          $members['coordinator'][$member_value] = $account->name;
-        }
+      // The user should be chairman.
+      if ($user_grouprole_tid == $coordinator_tid) {
+        $members['coordinator'][$member_value] = $account->name;
+        $members['responsible-admin'][$member_value] = $account->name;
       }
-    }
 
+      $members['attendees'][$member_value] = $account->name;
+    }
     return $members;
   }
   return FALSE;
