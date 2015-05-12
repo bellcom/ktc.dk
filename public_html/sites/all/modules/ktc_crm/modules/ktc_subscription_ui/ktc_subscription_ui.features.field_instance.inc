@@ -57,6 +57,8 @@ function ktc_subscription_ui_field_default_field_instances() {
     'label' => 'Body',
     'required' => FALSE,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => TRUE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -116,6 +118,8 @@ function ktc_subscription_ui_field_default_field_instances() {
     'label' => 'CRM UUID',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -174,6 +178,8 @@ function ktc_subscription_ui_field_default_field_instances() {
     'label' => 'Produkt type',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -232,6 +238,8 @@ function ktc_subscription_ui_field_default_field_instances() {
     'label' => 'Kort beskrivelse',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),

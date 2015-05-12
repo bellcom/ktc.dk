@@ -102,7 +102,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Handler mangler eller er i stykker */
+  /* Felt: Indhold: Artikel type */
   $handler->display->display_options['fields']['field_artikel_type']['id'] = 'field_artikel_type';
   $handler->display->display_options['fields']['field_artikel_type']['table'] = 'field_data_field_artikel_type';
   $handler->display->display_options['fields']['field_artikel_type']['field'] = 'field_artikel_type';
@@ -180,7 +180,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'artikler' => 'artikler',
   );
-  /* Filterkriterie: Handler mangler eller er i stykker */
+  /* Filterkriterie: Indhold: Artikel type (field_artikel_type) */
   $handler->display->display_options['filters']['field_artikel_type_value']['id'] = 'field_artikel_type_value';
   $handler->display->display_options['filters']['field_artikel_type_value']['table'] = 'field_data_field_artikel_type';
   $handler->display->display_options['filters']['field_artikel_type_value']['field'] = 'field_artikel_type_value';
@@ -207,7 +207,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['relationships']['field_magasin_target_id']['table'] = 'field_data_field_magasin';
   $handler->display->display_options['relationships']['field_magasin_target_id']['field'] = 'field_magasin_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Handler mangler eller er i stykker */
+  /* Felt: Indhold: Artikel type */
   $handler->display->display_options['fields']['field_artikel_type']['id'] = 'field_artikel_type';
   $handler->display->display_options['fields']['field_artikel_type']['table'] = 'field_data_field_artikel_type';
   $handler->display->display_options['fields']['field_artikel_type']['field'] = 'field_artikel_type';
@@ -281,7 +281,7 @@ function teknik_og_miljoe_views_default_views() {
     t('Indhold entity refereret fra field_magasin'),
     t('Alle'),
     t('Entity Reference'),
-    t('Handler i stykker field_data_field_artikel_type.field_artikel_type'),
+    t('Artikel type'),
     t('Nyhedstype'),
     t('Type'),
     t('[title] [field_artikel_type] [field_os2web_news_page_type] - [type]

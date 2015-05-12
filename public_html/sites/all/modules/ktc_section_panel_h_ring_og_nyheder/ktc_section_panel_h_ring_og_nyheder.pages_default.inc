@@ -154,7 +154,10 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
   $page->admin_title = 'Høringer';
   $page->admin_description = '';
   $page->path = 'hoeringer';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Høringer',
@@ -357,7 +360,10 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
   $page->admin_title = 'Nyheder';
   $page->admin_description = '';
   $page->path = 'nyheder';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Nyheder',

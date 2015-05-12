@@ -54,28 +54,7 @@ function ktc_content_types_image_default_styles() {
     'name' => 'netvaerks_logo',
     'label' => 'Logo / Profil',
     'effects' => array(
-      6 => array(
-        'label' => 'EPSA Image Crop',
-        'help' => '',
-        'dimensions callback' => 'epsacrop_crop_dimensions',
-        'effect callback' => 'epsacrop_crop_image',
-        'form callback' => 'epsacrop_crop_image_form',
-        'module' => 'epsacrop',
-        'name' => 'epsacrop_crop',
-        'data' => array(
-          'width' => 256,
-          'height' => 256,
-          'anchor' => 'center-center',
-          'disable_scale' => 0,
-          'jcrop_settings' => array(
-            'aspect_ratio' => '',
-            'bgcolor' => 'white',
-            'bgopacity' => 0.6,
-            'fallback' => 0,
-          ),
-        ),
-        'weight' => 2,
-      ),
+      6 => NULL,
     ),
   );
 

@@ -494,7 +494,10 @@ function teknik_og_miljoe_default_page_manager_pages() {
   $page->admin_title = 'Teknik og Miljø';
   $page->admin_description = '';
   $page->path = 'teksnik-miljoe';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Teknik og Miljø',

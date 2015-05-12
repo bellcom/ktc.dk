@@ -969,7 +969,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Felt: Bruger: Navn */
+  /* Felt: Felt: Fornavn + mellemnavn */
   $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
   $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
@@ -996,7 +996,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_usertype']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_usertype']['alter']['text'] = 'Brugertype: [field_usertype]';
   $handler->display->display_options['fields']['field_usertype']['element_label_colon'] = FALSE;
-  /* Felt: Felt: Telefon */
+  /* Felt: Felt: Direkte telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
@@ -1045,7 +1045,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_department']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_department']['alter']['text'] = 'Afdeling: [field_department]';
   $handler->display->display_options['fields']['field_department']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Stilling/titel */
+  /* Felt: Felt: Stilling/titel */
   $handler->display->display_options['fields']['field_jobposition']['id'] = 'field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['table'] = 'field_data_field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['field'] = 'field_jobposition';
@@ -1053,14 +1053,14 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_jobposition']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_jobposition']['alter']['text'] = 'Stilling/titel: [field_jobposition]';
   $handler->display->display_options['fields']['field_jobposition']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Postnr */
+  /* Felt: Felt: Postnr */
   $handler->display->display_options['fields']['field_zipcode']['id'] = 'field_zipcode';
   $handler->display->display_options['fields']['field_zipcode']['table'] = 'field_data_field_zipcode';
   $handler->display->display_options['fields']['field_zipcode']['field'] = 'field_zipcode';
   $handler->display->display_options['fields']['field_zipcode']['label'] = '';
   $handler->display->display_options['fields']['field_zipcode']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_zipcode']['element_label_colon'] = FALSE;
-  /* Felt: Felt: Postnummer / By */
+  /* Felt: Felt: By */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -1085,7 +1085,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_ekspertise']['id'] = 'field_ekspertise';
   $handler->display->display_options['fields']['field_ekspertise']['table'] = 'field_data_field_ekspertise';
   $handler->display->display_options['fields']['field_ekspertise']['field'] = 'field_ekspertise';
-  /* Felt: Bruger: Særlige kompetencer */
+  /* Felt: Bruger: Andre kompetencer */
   $handler->display->display_options['fields']['field_special_skills']['id'] = 'field_special_skills';
   $handler->display->display_options['fields']['field_special_skills']['table'] = 'field_data_field_special_skills';
   $handler->display->display_options['fields']['field_special_skills']['field'] = 'field_special_skills';
@@ -1123,7 +1123,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
   $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
   $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
-  /* Felt: Felt: Flere emner */
+  /* Felt: Felt: Tags */
   $handler->display->display_options['fields']['field_tags']['id'] = 'field_tags';
   $handler->display->display_options['fields']['field_tags']['table'] = 'field_data_field_tags';
   $handler->display->display_options['fields']['field_tags']['field'] = 'field_tags';
@@ -1158,7 +1158,7 @@ function ktc_user_profile_views_default_views() {
   /* Display: user profile left */
   $handler = $view->new_display('panel_pane', 'user profile left', 'panel_pane_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Bruger: Navn */
+  /* Felt: Felt: Fornavn + mellemnavn */
   $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
   $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
@@ -1185,7 +1185,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_usertype']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_usertype']['alter']['text'] = 'Brugertype: [field_usertype]';
   $handler->display->display_options['fields']['field_usertype']['element_label_colon'] = FALSE;
-  /* Felt: Felt: Telefon */
+  /* Felt: Felt: Direkte telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
@@ -1234,7 +1234,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_department']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_department']['alter']['text'] = 'Afdeling: [field_department]';
   $handler->display->display_options['fields']['field_department']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Stilling/titel */
+  /* Felt: Felt: Stilling/titel */
   $handler->display->display_options['fields']['field_jobposition']['id'] = 'field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['table'] = 'field_data_field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['field'] = 'field_jobposition';
@@ -1242,14 +1242,14 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_jobposition']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_jobposition']['alter']['text'] = 'Stilling/titel: [field_jobposition]';
   $handler->display->display_options['fields']['field_jobposition']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Postnr */
+  /* Felt: Felt: Postnr */
   $handler->display->display_options['fields']['field_zipcode']['id'] = 'field_zipcode';
   $handler->display->display_options['fields']['field_zipcode']['table'] = 'field_data_field_zipcode';
   $handler->display->display_options['fields']['field_zipcode']['field'] = 'field_zipcode';
   $handler->display->display_options['fields']['field_zipcode']['label'] = '';
   $handler->display->display_options['fields']['field_zipcode']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_zipcode']['element_label_colon'] = FALSE;
-  /* Felt: Felt: Postnummer / By */
+  /* Felt: Felt: By */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
@@ -1314,7 +1314,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_topics']['alter']['text'] = '[field_topics]';
   $handler->display->display_options['fields']['field_topics']['delta_limit'] = '30';
   $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
-  /* Felt: Felt: Flere emner */
+  /* Felt: Felt: Tags */
   $handler->display->display_options['fields']['field_tags']['id'] = 'field_tags';
   $handler->display->display_options['fields']['field_tags']['table'] = 'field_data_field_tags';
   $handler->display->display_options['fields']['field_tags']['field'] = 'field_tags';
@@ -1338,7 +1338,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_ekspertise']['alter']['text'] = 'Ekspertise: <br />
 [field_ekspertise]';
   $handler->display->display_options['fields']['field_ekspertise']['element_label_colon'] = FALSE;
-  /* Felt: Bruger: Særlige kompetencer */
+  /* Felt: Bruger: Andre kompetencer */
   $handler->display->display_options['fields']['field_special_skills']['id'] = 'field_special_skills';
   $handler->display->display_options['fields']['field_special_skills']['table'] = 'field_data_field_special_skills';
   $handler->display->display_options['fields']['field_special_skills']['field'] = 'field_special_skills';
@@ -1393,14 +1393,14 @@ function ktc_user_profile_views_default_views() {
 [field_zipcode] [field_city]'),
     t('LinkedIn'),
     t('Ekspertise'),
-    t('Særlige kompetencer'),
+    t('Andre kompetencer'),
     t('Fødselsdato'),
     t('Oprettelsesdato'),
     t('Send besked når andre brugere kommenterer mine indlæg (inkl. mine egne kommentarer)'),
     t('Send besked om alle nye kommentarer fra alle "Mine Netværk".'),
     t('Send nyt fra "Mine netværk" (når der er nye indlæg, arrangementer, dokumenter, diskussioner mm.)'),
     t('Emner'),
-    t('Flere emner'),
+    t('Tags'),
     t('Alle'),
     t('Block'),
     t('user profile left'),

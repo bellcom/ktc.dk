@@ -57,6 +57,8 @@ function ktc_hearing_notifications_field_default_field_instances() {
     'label' => 'Body',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => 0,
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -117,6 +119,8 @@ function ktc_hearing_notifications_field_default_field_instances() {
     'label' => 'Emne',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),

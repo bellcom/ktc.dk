@@ -76,6 +76,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Firma',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 1,
     ),
     'widget' => array(
@@ -165,6 +167,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Adresse',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -241,6 +245,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Adresse 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -334,6 +340,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Send besked om alle nye kommentarer fra alle "Mine Netværk".',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -422,6 +430,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Mobil',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -512,6 +522,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'By',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -606,6 +618,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Send nyt fra "Mine netværk" (når der er nye indlæg, arrangementer, dokumenter, diskussioner mm.)',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -693,6 +707,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Land',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -769,6 +785,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'CRM UUID',
     'required' => FALSE,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -858,6 +876,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Afdeling',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -948,6 +968,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Direkte telefon',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -1049,6 +1071,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Fødselsdato',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -1133,6 +1157,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Efternavn',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -1248,6 +1274,8 @@ function ktc_users_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => 0,
     ),
@@ -1338,6 +1366,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Arbejdsgiver',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -1419,6 +1449,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Gammel uid',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -1506,6 +1538,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Skjult i lister',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -1595,6 +1629,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Stilling/titel',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -1685,6 +1721,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Kommune',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 1,
     ),
     'widget' => array(
@@ -1774,6 +1812,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'LinkedIn',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -1850,6 +1890,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Udpegninger i foreninger, udvalg og nævn',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -1930,6 +1972,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Medlemskab af DABYFO',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2009,6 +2053,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Medlemskab af Danske Planchefer',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2088,6 +2134,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Medlemskab af ENVINA',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2167,6 +2215,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Medlemskab af FFUK',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2246,6 +2296,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Medlemskab af KEF (Kommunalt entrepenørforum)',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2325,6 +2377,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Medlemskab af KPN (Kommunale park- og naturforvaltere)',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2404,6 +2458,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Medlemskab af KTC',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2483,6 +2539,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Medlemskab af KVF (Kommunal Vejteknisk Forening)',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2572,6 +2630,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Andre medlemskaber af foreninger (skriv her)',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -2665,6 +2725,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Send besked når andre brugere kommenterer mine indlæg (inkl. mine egne kommentarer)',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2755,6 +2817,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Fornavn + mellemnavn',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -2839,6 +2903,8 @@ function ktc_users_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -2926,6 +2992,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Tlf.',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -3015,6 +3083,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Regioner',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -3131,6 +3201,8 @@ function ktc_users_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => 0,
     ),
@@ -3220,6 +3292,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Flere emner',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -3307,6 +3381,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Emner',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 1,
     ),
     'widget' => array(
@@ -3383,6 +3459,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Twitter brugernavn',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -3464,6 +3542,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Typo3 uid(fe_users)',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -3567,6 +3647,8 @@ function ktc_users_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => 0,
     ),
@@ -3657,6 +3739,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Brugertype',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 1,
     ),
     'widget' => array(
@@ -3747,6 +3831,8 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Postnr',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 1,
     ),

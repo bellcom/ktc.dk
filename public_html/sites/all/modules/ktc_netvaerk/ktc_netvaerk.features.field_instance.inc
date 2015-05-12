@@ -84,6 +84,8 @@ function ktc_netvaerk_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -143,6 +145,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'CRM UUID',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -206,6 +210,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Slut dato',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -271,6 +277,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Gammel drupal gid',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -328,6 +336,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Gammel nid',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -385,6 +395,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Gammel typo3 id',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -448,6 +460,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'file_directory' => 'netvaerk',
       'file_extensions' => 'png gif jpg jpeg',
@@ -515,6 +529,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Netværkstype',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -577,6 +593,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Tilmelding',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -641,6 +659,8 @@ function ktc_netvaerk_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -710,6 +730,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Skjul auto relaterede links',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -766,6 +788,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Bilag',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'description_field' => 0,
       'file_directory' => '',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
@@ -830,6 +854,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Region',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -893,6 +919,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Start dato',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -963,6 +991,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Undernetværk',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1020,6 +1050,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Tags',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1104,6 +1136,8 @@ function ktc_netvaerk_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1162,6 +1196,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Emner',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1226,6 +1262,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Åbent/Privat',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -1296,6 +1334,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Group content visibility',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -1372,6 +1412,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Netværk',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -1456,6 +1498,8 @@ function ktc_netvaerk_field_default_field_instances() {
           'status' => 1,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -1530,6 +1574,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'Gruppens roller og tilladelser',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -1574,6 +1620,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'CRM UUID',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1616,6 +1664,8 @@ function ktc_netvaerk_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1672,6 +1722,8 @@ function ktc_netvaerk_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1706,6 +1758,8 @@ function ktc_netvaerk_field_default_field_instances() {
     'label' => 'CRM UUID',
     'required' => FALSE,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
