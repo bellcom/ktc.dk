@@ -16,7 +16,7 @@
 */
 ?>
 <?php if ($user_picture): ?>
-<div class="user-picture mine-roller">
-<?php print $user_picture; ?>
+<div class="user-picture mine-roller <?php print isset($role_class) ? $role_class: ''?>">
+  <?php print $user_picture; ?>
 </div>
-<?php endif; ?> 
+<?php endif; ?>
