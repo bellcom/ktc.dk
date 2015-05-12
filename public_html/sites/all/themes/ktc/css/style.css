@@ -8776,7 +8776,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   color: #FFF;
 }
 .user-picture.green {
-  border-color: #36a145;
+  border-color: #36a145 !important;
 }
 .pane-ktc-netvaerk-group-not-member-message .pane-content {
   padding: 10px 20px;
