@@ -582,6 +582,11 @@ function ktc_netvaerk_theme($existing, $type, $theme, $path) {
  * Implements hook_form_alter().
  */
 function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
+  if (in_array($form_id, array('og_ui_edit_membership', 'og_ui_add_users'))) {
+    $form['membership_fields']['field_crm_uuid']['#access'] = FALSE;
+    $form['membership_fields']['field_membership_type']['#access'] = FALSE;
+  }
+
   if ($form_id == 'group_node_form') {
     unset($form['field_open_group'][LANGUAGE_NONE]['#options']['_none']);
 

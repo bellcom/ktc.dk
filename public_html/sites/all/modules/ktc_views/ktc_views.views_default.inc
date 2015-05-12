@@ -772,17 +772,8 @@ function ktc_views_views_default_views() {
   /* Display: Medlemsliste til modal */
   $handler = $view->new_display('block', 'Medlemsliste til modal', 'block_2');
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -795,7 +786,7 @@ function ktc_views_views_default_views() {
     'field_department' => 'field_department',
     'field_account' => 'field_account',
     'field_toplevelaccountname_1' => 'field_toplevelaccountname_1',
-    'og_roles' => 'og_roles',
+    'field_grouprole' => 'field_grouprole',
   );
   $handler->display->display_options['style_options']['default'] = 'field_navn';
   $handler->display->display_options['style_options']['info'] = array(
@@ -862,7 +853,9 @@ function ktc_views_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'og_roles' => array(
+    'field_grouprole' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -937,12 +930,15 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_toplevelaccountname_1']['relationship'] = 'field_account_tid';
   $handler->display->display_options['fields']['field_toplevelaccountname_1']['label'] = 'Kommune';
   $handler->display->display_options['fields']['field_toplevelaccountname_1']['empty'] = '[field_account]';
-  /* Felt: OG membership: OG user roles in group */
-  $handler->display->display_options['fields']['og_roles']['id'] = 'og_roles';
-  $handler->display->display_options['fields']['og_roles']['table'] = 'og_membership';
-  $handler->display->display_options['fields']['og_roles']['field'] = 'og_roles';
-  $handler->display->display_options['fields']['og_roles']['relationship'] = 'og_membership_rel';
-  $handler->display->display_options['fields']['og_roles']['label'] = 'Rolle';
+  /* Felt: OG membership: grouprole */
+  $handler->display->display_options['fields']['field_grouprole']['id'] = 'field_grouprole';
+  $handler->display->display_options['fields']['field_grouprole']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['fields']['field_grouprole']['field'] = 'field_grouprole';
+  $handler->display->display_options['fields']['field_grouprole']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['fields']['field_grouprole']['label'] = 'Rolle';
+  $handler->display->display_options['fields']['field_grouprole']['settings'] = array(
+    'link' => 0,
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: OG membership: Group ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
