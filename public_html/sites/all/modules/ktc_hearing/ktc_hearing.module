@@ -128,6 +128,26 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
   if (strstr($form_id, '_node_form') && strstr($form_id, 'hearing')) {
     $form['actions']['submit']['#submit'][] = '_ktc_hearings_node_no_redirect';
   }
+
+  // On the hearing node form. It should only be possible to select a
+  // 'faggruppe' in the og_group_ref field.
+  if ($form_id == 'hearing_node_form') {
+    // Fetch ids for all networks of this type.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->fieldCondition('field_netvaerkstype', 'tid', 1134);
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      $group_ids = array_keys($result['node']);
+      // Filter them out of the normal options.
+      foreach ($form['og_group_ref'][LANGUAGE_NONE]['#options'] as $tid => $options) {
+        if (!in_array($tid, $group_ids)) {
+          unset($form['og_group_ref'][LANGUAGE_NONE]['#options'][$key]);
+        }
+      }
+    }
+  }
 }
 
 /**
