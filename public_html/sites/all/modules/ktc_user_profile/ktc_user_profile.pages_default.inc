@@ -247,6 +247,8 @@ function ktc_user_profile_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'tab',
@@ -392,7 +394,10 @@ function ktc_user_profile_default_page_manager_pages() {
   $page->admin_title = 'User comments';
   $page->admin_description = '';
   $page->path = 'user/%user/user_comments';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'tab',
     'title' => 'Kommentarer',

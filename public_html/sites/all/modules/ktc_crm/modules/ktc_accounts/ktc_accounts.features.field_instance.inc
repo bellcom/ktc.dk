@@ -30,6 +30,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'Firma nummer',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -64,6 +66,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'Adresse',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -98,6 +102,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'Adresse 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -132,6 +138,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'By',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -166,6 +174,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'Land',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -200,6 +210,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'CRM UUID',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -234,6 +246,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'CVR',
     'required' => FALSE,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -267,6 +281,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'DepartmentId',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -301,6 +317,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'DepartmentName',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -335,6 +353,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'EAN',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -369,6 +389,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'Tlf.',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -403,6 +425,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'Regioner',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -437,6 +461,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'TopLevelAccountId',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -471,6 +497,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'TopLevelAccountName',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -505,6 +533,8 @@ function ktc_accounts_field_default_field_instances() {
     'label' => 'Postnr',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),

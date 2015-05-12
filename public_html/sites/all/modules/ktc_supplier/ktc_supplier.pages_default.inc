@@ -183,7 +183,10 @@ function ktc_supplier_default_page_manager_pages() {
   $page->admin_title = 'Leverandører';
   $page->admin_description = '';
   $page->path = 'leverandoerer';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
