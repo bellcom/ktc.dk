@@ -90,6 +90,7 @@ features[node][] = group
 features[page_manager_handlers][] = node_view_panel_context_3
 features[page_manager_pages][] = netvaerk
 features[panels_mini][] = netvaerks_kontekst
+features[taxonomy][] = ktc_netvaerk_grouproles
 features[taxonomy][] = netv_rkstype
 features[variable][] = field_bundle_settings_node__group
 features[views_view][] = og_ktc_kontekst
