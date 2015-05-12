@@ -4,6 +4,10 @@
  * Template for final answer page.
  */
 ?>
+<?php
+    $block = module_invoke('ktc_hearing', 'block_view', 'ktc_hearing_info_block');
+    print render($block['content']);
+?>
 <div class="row final-answer">
   <div class="col-md-4 col-sm-4 col-xs-12">
     <div class="hearing-preface">

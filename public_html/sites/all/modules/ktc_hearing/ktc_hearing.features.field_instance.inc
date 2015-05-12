@@ -2227,6 +2227,8 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-og_group_ref'
   $field_instances['node-hearing-og_group_ref'] = array(
     'bundle' => 'hearing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
