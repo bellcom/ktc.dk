@@ -21,7 +21,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjul',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_all_comment_notify',
       1 => 'field_content_type_notify',
@@ -36,8 +36,9 @@ function ktc_users_field_group_info() {
       10 => 'field_typo3_uid',
       11 => 'field_crm_uuid',
       12 => 'ckeditor',
-      13 => 'timezone',
-      14 => 'locale',
+      13 => 'metatags',
+      14 => 'timezone',
+      15 => 'locale',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -62,7 +63,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Privatadresse',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_adresse',
       1 => 'field_city',
@@ -93,7 +94,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Medlemskaber og udpegninger',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_memberships_text',
       1 => 'field_membership_appointments',
@@ -121,6 +122,69 @@ function ktc_users_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_navn|user|user|form';
+  $field_group->group_name = 'group_navn';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_personal';
+  $field_group->data = array(
+    'label' => 'Navn',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_navn',
+      1 => 'field_efternavn',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Navn',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-navn field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_navn|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_notifikationer|user|user|form';
+  $field_group->group_name = 'group_notifikationer';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Notifikationer',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_nyhedsbrev_ktc_update',
+      1 => 'field_netvaerk_notifications',
+      2 => 'mimemail',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_notifikationer|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_personal|user|user|form';
   $field_group->group_name = 'group_personal';
   $field_group->entity_type = 'user';
@@ -131,15 +195,12 @@ function ktc_users_field_group_info() {
     'label' => 'Kontaktoplysninger',
     'weight' => '1',
     'children' => array(
-      0 => 'field_cell',
-      1 => 'field_directe_telefon',
-      2 => 'field_dob',
-      3 => 'field_jobposition',
-      4 => 'field_linkedin',
-      5 => 'field_navn',
-      6 => 'field_efternavn',
-      7 => 'field_twitter_brugernavn',
-      8 => 'picture',
+      0 => 'field_dob',
+      1 => 'field_jobposition',
+      2 => 'picture',
+      3 => 'group_navn',
+      4 => 'group_sociale',
+      5 => 'group_telefon',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -165,7 +226,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Ansættelse',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_account',
     ),
@@ -184,6 +245,74 @@ function ktc_users_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_sociale|user|user|form';
+  $field_group->group_name = 'group_sociale';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_personal';
+  $field_group->data = array(
+    'label' => 'Sociale netværk',
+    'weight' => '12',
+    'children' => array(
+      0 => 'field_linkedin',
+      1 => 'field_twitter_brugernavn',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Sociale netværk',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-sociale field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_sociale|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_telefon|user|user|form';
+  $field_group->group_name = 'group_telefon';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_personal';
+  $field_group->data = array(
+    'label' => 'Telefon',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_cell',
+      1 => 'field_directe_telefon',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Telefon',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-telefon field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_telefon|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_website|user|user|form';
   $field_group->group_name = 'group_website';
   $field_group->entity_type = 'user';
@@ -195,8 +324,7 @@ function ktc_users_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_usertype',
-      1 => 'mimemail',
-      2 => 'account',
+      1 => 'account',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -221,7 +349,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dine kompetencer',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_ekspertise',
       1 => 'field_special_skills',
