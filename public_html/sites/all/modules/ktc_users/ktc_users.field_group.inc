@@ -156,6 +156,34 @@ function ktc_users_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_network|user|user|form';
+  $field_group->group_name = 'group_network';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Dine netværk på KTC.dk',
+    'weight' => '7',
+    'children' => array(
+      0 => 'og_user_node',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Dine netværk på KTC.dk',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-network field-group-tab',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_network|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_notifikationer|user|user|form';
   $field_group->group_name = 'group_notifikationer';
   $field_group->entity_type = 'user';
