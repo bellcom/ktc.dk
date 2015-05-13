@@ -65,6 +65,7 @@ features[field_group][] = group_hidden|user|user|form
 features[field_group][] = group_home_address|user|user|form
 features[field_group][] = group_memberships|user|user|form
 features[field_group][] = group_navn|user|user|form
+features[field_group][] = group_network|user|user|form
 features[field_group][] = group_notifikationer|user|user|form
 features[field_group][] = group_personal|user|user|form
 features[field_group][] = group_professional|user|user|form
