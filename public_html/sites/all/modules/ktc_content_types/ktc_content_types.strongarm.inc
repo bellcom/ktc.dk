@@ -576,6 +576,9 @@ function ktc_content_types_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'teasercomments' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -587,6 +590,9 @@ function ktc_content_types_strongarm() {
         ),
         'scheduler_settings' => array(
           'weight' => '16',
+        ),
+        'metatags' => array(
+          'weight' => '5',
         ),
       ),
       'display' => array(
@@ -602,6 +608,10 @@ function ktc_content_types_strongarm() {
           'listevisningstor' => array(
             'weight' => '2',
             'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
           ),
         ),
         'subscriptions_ui' => array(

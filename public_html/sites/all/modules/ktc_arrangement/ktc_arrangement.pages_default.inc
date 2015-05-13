@@ -738,6 +738,43 @@ function ktc_arrangement_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-cce39a44-010c-43cd-93eb-348d7c10cb78';
+    $pane->panel = 'left';
+    $pane->type = 'views';
+    $pane->subtype = 'opret_arrangement';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'darkgray-box',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'cce39a44-010c-43cd-93eb-348d7c10cb78';
+    $display->content['new-cce39a44-010c-43cd-93eb-348d7c10cb78'] = $pane;
+    $display->panels['left'][0] = 'new-cce39a44-010c-43cd-93eb-348d7c10cb78';
+    $pane = new stdClass();
     $pane->pid = 'new-f2a164e6-e4d2-4896-83e8-36d479eda349';
     $pane->panel = 'left';
     $pane->type = 'block';
@@ -757,11 +794,11 @@ function ktc_arrangement_default_page_manager_pages() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'f2a164e6-e4d2-4896-83e8-36d479eda349';
     $display->content['new-f2a164e6-e4d2-4896-83e8-36d479eda349'] = $pane;
-    $display->panels['left'][0] = 'new-f2a164e6-e4d2-4896-83e8-36d479eda349';
+    $display->panels['left'][1] = 'new-f2a164e6-e4d2-4896-83e8-36d479eda349';
     $pane = new stdClass();
     $pane->pid = 'new-fbc410b6-6f73-4ad0-89f2-0ec941000bd7';
     $pane->panel = 'right';

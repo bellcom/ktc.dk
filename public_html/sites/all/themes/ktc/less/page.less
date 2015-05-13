@@ -273,9 +273,11 @@
     .filter-title();
   }
   .pane-content {
-    color: white;
+    color: @gray-lighter;
     background-color: @gray-darker;
     position: relative;
+     a { color: @gray-lighter}
+     a:hover { color: #FFF }
     .view-header {
       text-align: center;
       li {
@@ -312,8 +314,9 @@
       article.node--group--teaser {
         h5 {
           a {
-            color: #fff;
+            color: @gray-lighter;
           }
+          a:hover {color: #FFF}
         }
       }
     }

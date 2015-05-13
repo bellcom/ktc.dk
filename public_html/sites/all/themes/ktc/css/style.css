@@ -10690,9 +10690,17 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 }
 .darkgray-box .pane-content,
 #section-page-with-filter-all-groups .pane-content {
-  color: white;
+  color: #e9edee;
   background-color: #2c353a;
   position: relative;
+}
+.darkgray-box .pane-content a,
+#section-page-with-filter-all-groups .pane-content a {
+  color: #e9edee;
+}
+.darkgray-box .pane-content a:hover,
+#section-page-with-filter-all-groups .pane-content a:hover {
+  color: #ffffff;
 }
 .darkgray-box .pane-content .view-header,
 #section-page-with-filter-all-groups .pane-content .view-header {
@@ -10751,7 +10759,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 #section-page-with-filter-all-groups .pane-content .view-content article.node--hearing--listevisning h5 a,
 .darkgray-box .pane-content .view-content article.node--group--teaser h5 a,
 #section-page-with-filter-all-groups .pane-content .view-content article.node--group--teaser h5 a {
-  color: #fff;
+  color: #e9edee;
+}
+.darkgray-box .pane-content .view-content article.node--hearing--listevisning h5 a:hover,
+#section-page-with-filter-all-groups .pane-content .view-content article.node--hearing--listevisning h5 a:hover,
+.darkgray-box .pane-content .view-content article.node--group--teaser h5 a:hover,
+#section-page-with-filter-all-groups .pane-content .view-content article.node--group--teaser h5 a:hover {
+  color: #ffffff;
 }
 .darkgray-box .pane-content ul.pager,
 #section-page-with-filter-all-groups .pane-content ul.pager {

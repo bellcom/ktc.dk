@@ -1460,6 +1460,7 @@ function ktc_content_types_field_group_info() {
       4 => 'field_arrangement_opretteremail',
       5 => 'field_arrangement_stilling_titel',
       6 => 'field_arrangement_virksomhed',
+      7 => 'field_arrangement_type',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1935,7 +1936,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_groups';
   $field_group->data = array(
     'label' => 'Visning',
-    'weight' => '14',
+    'weight' => '47',
     'children' => array(
       0 => 'group_content_access',
     ),

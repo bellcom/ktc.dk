@@ -17,7 +17,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
+  $handler->weight = -26;
   $handler->conf = array(
     'title' => 'Nyhed',
     'no_blocks' => 0,
