@@ -12,7 +12,7 @@ function ktc_users_roles_menu() {
     'title' => 'KTC Brugere - gruppetype -> rolle',
     'descripiton' => '',
     'type' => MENU_LOCAL_TASK,
-    'access arguments' => array('administer user permissions'),
+    'access arguments' => array('administer permissions'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_users_roles_group_page'),
   );
@@ -21,7 +21,7 @@ function ktc_users_roles_menu() {
     'title' => 'KTC Brugere - brugertype -> rolle',
     'descripiton' => '',
     'type' => MENU_LOCAL_TASK,
-    'access arguments' => array('administer user permissions'),
+    'access arguments' => array('administer permissions'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_users_roles_usertype_page'),
   );
@@ -30,7 +30,7 @@ function ktc_users_roles_menu() {
     'title' => 'KTC Brugere - Netværksroller',
     'descripiton' => '',
     'type' => MENU_LOCAL_TASK,
-    'access arguments' => array('administer user permissions'),
+    'access arguments' => array('administer permissions'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_users_grouproles_page'),
   );
