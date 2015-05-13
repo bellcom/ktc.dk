@@ -141,9 +141,9 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
     if (isset($result['node'])) {
       $group_ids = array_keys($result['node']);
       // Filter them out of the normal options.
-      foreach ($form['og_group_ref'][LANGUAGE_NONE]['#options'] as $tid => $options) {
-        if (!in_array($tid, $group_ids)) {
-          unset($form['og_group_ref'][LANGUAGE_NONE]['#options'][$key]);
+      foreach ($form['og_group_ref'][LANGUAGE_NONE]['#options'] as $nid => $options) {
+        if (!in_array($nid, $group_ids)) {
+          unset($form['og_group_ref'][LANGUAGE_NONE]['#options'][$nid]);
         }
       }
     }
