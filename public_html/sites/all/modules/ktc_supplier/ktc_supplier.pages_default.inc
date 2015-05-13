@@ -17,7 +17,7 @@ function ktc_supplier_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -23;
+  $handler->weight = -25;
   $handler->conf = array(
     'title' => 'Leverandører',
     'no_blocks' => 0,
