@@ -1148,6 +1148,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_intern_side';
+  $strongarm->value = '0';
+  $export['language_content_type_intern_side'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_magazine';
   $strongarm->value = '0';
   $export['language_content_type_magazine'] = $strongarm;
@@ -1240,6 +1247,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_intern_side';
+  $strongarm->value = array();
+  $export['menu_options_intern_side'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_magazine';
   $strongarm->value = array();
   $export['menu_options_magazine'] = $strongarm;
@@ -1324,6 +1338,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'menu_parent_group';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_group'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_intern_side';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_intern_side'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1427,6 +1448,15 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_intern_side';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_intern_side'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_magazine';
   $strongarm->value = array();
   $export['node_options_magazine'] = $strongarm;
@@ -1520,6 +1550,13 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_intern_side';
+  $strongarm->value = '0';
+  $export['node_preview_intern_side'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_magazine';
   $strongarm->value = '0';
   $export['node_preview_magazine'] = $strongarm;
@@ -1600,6 +1637,13 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'node_submitted_group';
   $strongarm->value = 0;
   $export['node_submitted_group'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_intern_side';
+  $strongarm->value = 1;
+  $export['node_submitted_intern_side'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
