@@ -105,7 +105,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Fra arrangementet',
-    'weight' => '34',
+    'weight' => '64',
     'children' => array(
       0 => 'field_arrangement_pressentations',
       1 => 'field_arrangement_referat',
@@ -136,7 +136,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Faglige emner',
-    'weight' => '32',
+    'weight' => '62',
     'children' => array(
       0 => 'field_arrangement_categories',
       1 => 'field_tags',
@@ -167,7 +167,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Bilag og links',
-    'weight' => '30',
+    'weight' => '60',
     'children' => array(
       0 => 'field_link_arrangement_organizer',
       1 => 'field_link_to_arrangement',
@@ -230,7 +230,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Tid og sted',
-    'weight' => '29',
+    'weight' => '59',
     'children' => array(
       0 => 'field_arrangement_address',
       1 => 'field_arrangement_date',
@@ -289,7 +289,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Tilmelding',
-    'weight' => '31',
+    'weight' => '61',
     'children' => array(
       0 => 'field_arrangement_price',
       1 => 'field_link_to_signup',
@@ -320,13 +320,14 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Beskriv arrangement',
-    'weight' => '28',
+    'weight' => '58',
     'children' => array(
       0 => 'body',
       1 => 'field_target_group',
-      2 => 'title',
-      3 => 'group_logodiv',
-      4 => 'group_mediabilllederdiv',
+      2 => 'field_meeting_type',
+      3 => 'title',
+      4 => 'group_logodiv',
+      5 => 'group_mediabilllederdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -529,6 +530,45 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_billede|node|os2web_base_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_dineoplysninger|node|arrangement|form';
+  $field_group->group_name = 'group_dineoplysninger';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'arrangement';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_side1';
+  $field_group->data = array(
+    'label' => 'Dine oplysninger',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_arrangement_logo',
+      1 => 'field_arrangement_direkte_tele',
+      2 => 'field_arrangement_efternavn',
+      3 => 'field_arrangement_fornavn',
+      4 => 'field_arrangement_opretteremail',
+      5 => 'field_arrangement_stilling_titel',
+      6 => 'field_arrangement_virksomhed',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Dine oplysninger',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => '',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_dineoplysninger|node|arrangement|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -868,7 +908,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Publicering',
-    'weight' => '33',
+    'weight' => '63',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'group_visn',
@@ -1451,16 +1491,10 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Opret arrangement',
-    'weight' => '27',
+    'weight' => '56',
     'children' => array(
-      0 => 'field_meeting_type',
-      1 => 'field_arrangement_direkte_tele',
-      2 => 'field_arrangement_efternavn',
-      3 => 'field_arrangement_fornavn',
-      4 => 'field_arrangement_opretteremail',
-      5 => 'field_arrangement_stilling_titel',
-      6 => 'field_arrangement_virksomhed',
-      7 => 'field_arrangement_type',
+      0 => 'field_arrangement_type',
+      1 => 'group_dineoplysninger',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

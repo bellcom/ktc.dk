@@ -17,7 +17,7 @@ function ktc_hearing_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 1;
+  $handler->weight = -29;
   $handler->conf = array(
     'title' => 'Hearing',
     'no_blocks' => 0,
