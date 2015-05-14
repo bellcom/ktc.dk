@@ -58,6 +58,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -137,6 +143,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -227,6 +239,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -310,6 +328,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -406,6 +430,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -492,6 +522,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -593,6 +629,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -677,6 +719,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -767,6 +815,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -846,6 +900,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -938,6 +998,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1046,6 +1112,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1139,6 +1211,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1219,6 +1297,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1341,6 +1425,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1426,6 +1516,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1520,6 +1616,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1599,6 +1701,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1696,6 +1804,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1788,6 +1902,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1867,6 +1987,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1954,6 +2080,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2030,6 +2162,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2116,6 +2254,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2192,6 +2336,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2278,6 +2428,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2354,6 +2510,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2440,6 +2602,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2516,6 +2684,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2600,6 +2774,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2700,6 +2880,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2786,6 +2972,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2880,6 +3072,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2962,6 +3160,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3059,6 +3263,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3145,6 +3355,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3268,6 +3484,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3357,6 +3579,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3436,6 +3664,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3524,6 +3758,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3598,6 +3838,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3714,6 +3960,12 @@ function ktc_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'show_full_name' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3801,6 +4053,12 @@ function ktc_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

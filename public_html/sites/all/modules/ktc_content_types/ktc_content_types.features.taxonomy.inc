@@ -9,6 +9,14 @@
  */
 function ktc_content_types_taxonomy_default_vocabularies() {
   return array(
+    'arrangementstyper' => array(
+      'name' => 'Arrangementstyper',
+      'machine_name' => 'arrangementstyper',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'dokument' => array(
       'name' => 'Dokument',
       'machine_name' => 'dokument',
