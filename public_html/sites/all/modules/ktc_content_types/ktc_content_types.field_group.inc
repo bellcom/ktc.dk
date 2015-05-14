@@ -1117,9 +1117,9 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_sider';
   $field_group->data = array(
     'label' => 'Magasinets indhold',
-    'weight' => '42',
+    'weight' => '45',
     'children' => array(
-      0 => 'field_antal_sider',
+      0 => 'field_magasin_indhold',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -1127,8 +1127,8 @@ function ktc_content_types_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'id' => '',
-        'classes' => 'group-indholdet field-group-div well',
-        'description' => 'Indholdet af magasinet bygges under "Magasinstatus" i den sorte top-menu. Kræver man har de rigtige rettigheder.',
+        'classes' => 'group-indholdet field-group-div hidden',
+        'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
         'effect' => 'none',
@@ -1613,7 +1613,7 @@ function ktc_content_types_field_group_info() {
     'weight' => '23',
     'children' => array(
       0 => 'field_os2web_base_field_ext_link',
-      1 => 'field_magasin_indhold',
+      1 => 'field_antal_sider',
       2 => 'group_indholdet',
     ),
     'format_type' => 'tab',
@@ -1621,8 +1621,8 @@ function ktc_content_types_field_group_info() {
       'label' => 'Sider',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'group-sider field-group-tab hidden',
-        'description' => 'Dette indhold kan først oprettes under magasinstatus.',
+        'classes' => 'group-sider field-group-tab ',
+        'description' => 'Indholdet af magasinet bygges under "Magasinstatus" i den sorte top-menu. Kræver man har de rigtige rettigheder.',
       ),
       'formatter' => 'closed',
     ),
