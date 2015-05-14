@@ -17,5 +17,21 @@ function teknik_og_miljoe_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'side_status' => array(
+      'name' => 'Side-status',
+      'machine_name' => 'side_status',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
+    'status' => array(
+      'name' => 'Status',
+      'machine_name' => 'status',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
   );
 }
