@@ -9217,7 +9217,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-os2web_base_news-field_os2web_news_page_type'
   $field_instances['node-os2web_base_news-field_os2web_news_page_type'] = array(
     'bundle' => 'os2web_base_news',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => 'Angiv hvilken type din nyhed er',
     'display' => array(
@@ -9265,7 +9268,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 0,
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
