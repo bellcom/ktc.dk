@@ -881,7 +881,10 @@ function ktc_content_types_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '3',
+        ),
+        'metatags' => array(
+          'weight' => '2',
         ),
       ),
       'display' => array(

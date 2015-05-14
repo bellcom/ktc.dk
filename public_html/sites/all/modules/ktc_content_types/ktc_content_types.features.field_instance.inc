@@ -5803,6 +5803,74 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
   );
 
+  // Exported field_instance: 'node-magazine-field_antal_sider'
+  $field_instances['node-magazine-field_antal_sider'] = array(
+    'bundle' => 'magazine',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 22,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_antal_sider',
+    'label' => 'Antal sider',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 43,
+    ),
+  );
+
   // Exported field_instance: 'node-magazine-field_banner_1_tekst_og_link'
   $field_instances['node-magazine-field_banner_1_tekst_og_link'] = array(
     'bundle' => 'magazine',
@@ -6285,155 +6353,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
   );
 
-  // Exported field_instance: 'node-magazine-field_image'
-  $field_instances['node-magazine-field_image'] = array(
-    'bundle' => 'magazine',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 3,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'magazinethumb',
-        ),
-        'type' => 'image',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_image',
-    'label' => 'Billede',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'alt_field_required' => 0,
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_image' => 0,
-      'file_directory' => 'magazine',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
-      'min_resolution' => '',
-      'title_field' => 0,
-      'title_field_required' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'upload' => 'upload',
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-magazine-field_internt_link_url_'
-  $field_instances['node-magazine-field_internt_link_url_'] = array(
-    'bundle' => 'magazine',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Eksternt link, start m. http://',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_internt_link_url_',
-    'label' => 'Link',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-magazine-field_linkbladreversion'
   $field_instances['node-magazine-field_linkbladreversion'] = array(
     'bundle' => 'magazine',
@@ -6568,67 +6487,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 28,
-    ),
-  );
-
-  // Exported field_instance: 'node-magazine-field_magasin_leder'
-  $field_instances['node-magazine-field_magasin_leder'] = array(
-    'bundle' => 'magazine',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_magasin_leder',
-    'label' => 'Magasin leder',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 44,
     ),
   );
 
@@ -6704,6 +6563,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-magazine-field_os2web_base_field_ext_link'
   $field_instances['node-magazine-field_os2web_base_field_ext_link'] = array(
     'bundle' => 'magazine',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -6742,7 +6603,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_ext_link',
-    'label' => 'Ekstern links',
+    'label' => 'Eksterne links',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -6774,70 +6635,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-magazine-field_os2web_base_field_hidlinks'
-  $field_instances['node-magazine-field_os2web_base_field_hidlinks'] = array(
-    'bundle' => 'magazine',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 13,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_os2web_base_field_hidlinks',
-    'label' => 'Skjul auto relaterede links',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 7,
+      'weight' => 43,
     ),
   );
 
@@ -10297,6 +10095,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   t('Angiv svarfrist for denne afstemning');
   t('Annoncør');
   t('Antal pladser');
+  t('Antal sider');
   t('Arrangementets dato');
   t('Arrangementstype');
   t('Artikel');
@@ -10326,7 +10125,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Efternavn');
   t('Ekstern links');
   t('Eksterne links');
-  t('Eksternt link, start m. http://');
   t('Ekstra artikler');
   t('Ekstra tekst');
   t('Email');
@@ -10359,14 +10157,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Kommune / virksomhed');
   t('Kort beskrivende tekst');
   t('Leder');
-  t('Link');
   t('Link til arrangørs hjemmeside');
   t('Link til bladreversion');
   t('Logo');
   t('Lovhenvisninger');
   t('Magasin');
   t('Magasin indhold');
-  t('Magasin leder');
   t('Magasin reference');
   t('Manchet');
   t('Målgruppe');
