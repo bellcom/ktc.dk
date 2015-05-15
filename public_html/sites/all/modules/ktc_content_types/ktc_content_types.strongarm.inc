@@ -1039,6 +1039,9 @@ function ktc_content_types_strongarm() {
         'scheduler_settings' => array(
           'weight' => '14',
         ),
+        'metatags' => array(
+          'weight' => '2',
+        ),
       ),
     ),
   );

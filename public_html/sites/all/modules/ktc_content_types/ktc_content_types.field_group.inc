@@ -1059,23 +1059,27 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjul',
-    'weight' => '4',
+    'weight' => '1',
     'children' => array(
       0 => 'field_news_author',
       1 => 'field_gammel_gid',
       2 => 'field_gammel_nid',
       3 => 'field_link',
-      4 => 'path',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Skjul',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'group-hidden field-group-fieldset hidden',
+        'id' => '',
+        'classes' => 'group-hidden field-group-div hidden',
         'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
       ),
-      'formatter' => 'collapsed',
+      'formatter' => 'open',
     ),
   );
   $export['group_hidden|node|os2web_base_news|form'] = $field_group;
@@ -1245,7 +1249,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_metadata';
   $field_group->data = array(
     'label' => 'KLE',
-    'weight' => '7',
+    'weight' => '14',
     'children' => array(
       0 => 'field_os2web_base_field_kle_ref',
     ),
@@ -1408,8 +1412,7 @@ function ktc_content_types_field_group_info() {
     'children' => array(
       0 => 'field_os2web_base_field_promote',
       1 => 'og_group_ref',
-      2 => 'scheduler_settings',
-      3 => 'group_synlighedsdiv',
+      2 => 'group_synlighedsdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1809,7 +1812,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_networkngroups';
   $field_group->data = array(
     'label' => 'Synlighed for nyhed',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'group_content_access',
     ),
@@ -1844,11 +1847,11 @@ function ktc_content_types_field_group_info() {
     'label' => 'Nyheder',
     'weight' => '0',
     'children' => array(
-      0 => 'group_metadata',
-      1 => 'group_networkngroups',
+      0 => 'group_bilag',
+      1 => 'group_billede',
       2 => 'group_generelt',
-      3 => 'group_billede',
-      4 => 'group_bilag',
+      3 => 'group_metadata',
+      4 => 'group_networkngroups',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -1937,7 +1940,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_metadata';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '8',
+    'weight' => '15',
     'children' => array(
       0 => 'field_tags',
     ),
