@@ -103,7 +103,7 @@ function ktc_users_grouproles_page() {
   foreach ($grouproles as $grouprole) {
     $grid = $grouprole->tid;
     $form['ktc_users_grouproles_map'][$grid] = array(
-      '#title' => $grouprole->name,
+      '#title' => $grouprole->name . $grouprole->tid,
       '#type' => 'select',
       '#options' => $og_roles,
       '#default_value' => isset($grouprole_map[$grid]) ? $grouprole_map[$grid] : 0,

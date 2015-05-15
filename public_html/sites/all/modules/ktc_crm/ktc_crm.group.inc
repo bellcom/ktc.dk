@@ -96,6 +96,21 @@ function ktc_crm_og_membership_insert($og_membership) {
 }
 
 /**
+ * Implements hook_og_membership_update().
+ */
+function ktc_crm_og_membership_update($og_membership) {
+  if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_edit_membership') {
+    if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
+      $logger = KtcCrmLogger::getInstance();
+
+      $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
+
+      $logger->log->addInfo('group update membership', array('crm_uuid' => $crm_uuid));
+    }
+  }
+}
+
+/**
  * Implements hook_node_presave().
  */
 function ktc_crm_node_presave($node) {
@@ -497,6 +512,7 @@ function _ktc_crm_group_get_tid($vocabulary, $crm_uuid, $name) {
 
   return $term->tid ? $term->tid : FALSE;
 }
+
 /**
  * Helper, get group uuid from group nid.
  */
@@ -510,12 +526,30 @@ function _ktc_crm_group_get_group_uuid($group_nid) {
 }
 
 /**
+ * Helper, get the grouprole UUID for a membership.
+ */
+function _ktc_crm_group_get_grouprole_uuid($og_membership) {
+  // Assume grouprole is member.
+  $grouprole_tid = KTC_NETVAERK_MEMBER_TID;
+
+  if ($field = field_get_items('og_membership', $og_membership, 'field_grouprole')) {
+    $grouprole_tid = $field[0]['target_id'];
+  }
+
+  if ($grouprole = taxonomy_term_load($grouprole_tid)) {
+    return _ktc_crm_get_uuid('taxonomy_term', $grouprole);
+  }
+}
+
+/**
  * Create GroupMemberDto from og_membership.
  */
 function _ktc_crm_group_groupmemberdto_from_og_membership($og_membership) {
   $group_uuid = _ktc_crm_group_get_group_uuid($og_membership->gid);
   $member_uuid = _ktc_crm_user_get_user_uuid($og_membership->etid);
+  $grouprole_uuid = _ktc_crm_group_get_grouprole_uuid($og_membership);
 
+  // Check if there is a UUID for this membership.
   $has_uuid = _ktc_crm_get_uuid('og_membership', $og_membership);
   $membership_uuid = $has_uuid ? $has_uuid : NULL;
 
@@ -524,6 +558,7 @@ function _ktc_crm_group_groupmemberdto_from_og_membership($og_membership) {
 
     $groupmemberdto->Group = new \KTC\GroupService\ReferenceDto($group_uuid);
     $groupmemberdto->Member = new \KTC\GroupService\ReferenceDto($member_uuid);
+    $groupmemberdto->Role = new \KTC\GroupService\ReferenceDto($grouprole_uuid);
 
     return $groupmemberdto;
   }
