@@ -11,6 +11,11 @@ define('KTC_NETVAERK_GROUP_CLOSED_VISIBLE', 2);
 // Status of a closed group with hidden content.
 define('KTC_NETVAERK_GROUP_CLOSED_HIDDEN', 3);
 
+// Grouprole tid for group member.
+define('KTC_NETVAERK_MEMBER_TID', variable_get('ktc_netvaerk_member_tid'));
+// Grouprole tid for group administrator.
+define('KTC_NETVAERK_ADMIN_TID', variable_get('ktc_netvaerk_admin_tid'));
+
 include_once 'ktc_netvaerk.features.inc';
 
 /**
@@ -81,6 +86,27 @@ function ktc_netvaerk_settings() {
     '#suffix' => t('Netværket vil altid blive gemt som "Lukket" og det vil ydermere ikke være muligt at tilmelde sig netværket som bruger.'),
     '#options' => $group_types_options,
     '#default_value' => variable_get('ktc_netvaerk_type_closed'),
+  );
+
+  $grouproles_vocab = taxonomy_vocabulary_machine_name_load('ktc_netvaerk_grouproles');
+  $grouproles = taxonomy_term_load_multiple(array(), array('vid' => $grouproles_vocab->vid));
+
+  foreach ($grouproles as $grouprole) {
+    $grouproles_options[$grouprole->tid] = $grouprole->name;
+  }
+
+  $form['ktc_netvaerk_admin_tid'] = array(
+    '#type' => 'select',
+    '#title' => t('Netværksadministrator grupperolle'),
+    '#options' => $grouproles_options,
+    '#default_value' => variable_get('ktc_netvaerk_admin_tid'),
+  );
+
+  $form['ktc_netvaerk_member_tid'] = array(
+    '#type' => 'select',
+    '#title' => t('Netværksmedlem grupperolle'),
+    '#options' => $grouproles_options,
+    '#default_value' => variable_get('ktc_netvaerk_member_tid'),
   );
 
   return system_settings_form($form);
@@ -583,8 +609,62 @@ function ktc_netvaerk_theme($existing, $type, $theme, $path) {
  */
 function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
   if (in_array($form_id, array('og_ui_edit_membership', 'og_ui_add_users'))) {
+    // The roles on the membership, are all set using ktc_users_roles.
+    // So we hide this form item.
+    $form['og_user']['roles']['#access'] = FALSE;
+
+    // These fields only contain data for display, we hide the fields
+    // because the user should not be able to change the data.
     $form['membership_fields']['field_crm_uuid']['#access'] = FALSE;
-    $form['membership_fields']['field_membership_type']['#access'] = FALSE;
+    $form['membership_fields']['field_grouprole']['#access'] = FALSE;
+
+    // Instead of letting the user set the role directly, we give them the
+    // oppurtunity to select a mock role. This will allow the editing user to
+    // set the members membershiptype to 'Netværksadministrator' which in turn
+    // will result in the user getting the role 'administrator member' in the
+    // group thanks to ktc_users_roles module.
+    $grouprole_tid = KTC_NETVAERK_MEMBER_TID;
+
+    if (og_user_access($form['group_type']['#value'], $form['gid']['#value'], 'administer group')) {
+      $disabled = FALSE;
+      $value = FALSE;
+
+      $grouprole_map = variable_get('ktc_users_grouproles_map', array());
+
+      if (isset($form['membership_fields']['field_grouprole'][LANGUAGE_NONE]['#default_value'][0])) {
+        $grouprole_tid = $form['membership_fields']['field_grouprole'][LANGUAGE_NONE]['#default_value'][0];
+
+        // Determine the default_value for the checkbox - if the current grouprole
+        // grants the "administrator member" role.
+        $value = (bool) ($grouprole_map[$grouprole_tid]);
+
+        // It is only the "Netværksadministrator" and "Member" grouptypes that
+        // are allowed updated from drupal.
+        if (!in_array($grouprole_tid, array(23221, 23224))) {
+          $disabled = TRUE;
+        }
+      }
+
+      $form['ktc_netvaerk_administrator'] = array(
+        '#type' => 'checkbox',
+        '#title' => 'Netværksadministrator',
+        '#description' => 'Denne bruger skal være netværksadministrator',
+        '#disabled' => $disabled,
+        '#default_value' => $value,
+      );
+
+      if ($disabled) {
+        $form['ktc_netvaerk_administrator']['#prefix'] = '<em>Medlemmet har en rolle der ikke tillader ændring.</em>';
+      }
+      $form['#validate'][] = 'ktc_netvaerk_og_membership_validate';
+    }
+
+    $grouprole = taxonomy_term_load($grouprole_tid);
+    $form['ktc_netvaerk_grouprole'] = array(
+      '#type' => 'item',
+      '#title' => t('Brugerens nuværende rolle'),
+      '#markup' => $grouprole->name,
+    );
   }
 
   if ($form_id == 'group_node_form') {
@@ -592,6 +672,30 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
 
     if (isset($form_state['entityreference_prepopulate'])) {
       drupal_set_title('Opret Undernetværk');
+    }
+  }
+}
+
+/**
+ * Extra validation handler for creating/editing an og_membership.
+ */
+function ktc_netvaerk_og_membership_validate(&$form, &$form_state) {
+  // Skip changing grouprole if there are other errors.
+  if (form_get_errors()) {
+    return;
+  }
+
+  // If the user has permissions to change the grouprole (the form item is
+  // shown). And the checkbox is not disabled.
+  if (isset($form['ktc_netvaerk_administrator']) && !$form['ktc_netvaerk_administrator']['#disabled']) {
+    if ($form_state['values']['ktc_netvaerk_administrator']) {
+      // The grouprole for the membership should be updated to
+      // "netvaerksadministrator".
+      $form_state['values']['membership_fields']['field_grouprole'][LANGUAGE_NONE][0]['target_id'] = KTC_NETVAERK_ADMIN_TID;
+    }
+    else {
+      // Otherwise it's just a normal Member.
+      $form_state['values']['membership_fields']['field_grouprole'][LANGUAGE_NONE][0]['target_id'] = KTC_NETVAERK_MEMBER_TID;
     }
   }
 }

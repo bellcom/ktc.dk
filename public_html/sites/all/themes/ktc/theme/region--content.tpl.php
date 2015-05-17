@@ -41,6 +41,7 @@
     <?php if (!$logged_in && arg(0) == 'user'): ?>
       <?php print render($page['tabs']); ?>
     <?php endif; ?>
+    <?php print render($page['node_publish']); ?>
     <?php print render($page['page']['help']); ?>
     <?php print render($page['action_links']); ?>
     <?php print $content; ?>
