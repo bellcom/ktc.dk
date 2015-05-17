@@ -45,6 +45,77 @@ function ktc_netvaerk_notifications_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
+ * Implements hook_block_info().
+ */
+function ktc_netvaerk_notifications_block_info() {
+  $blocks['current_groups'] = array(
+    'info' => t('KTC Netværk notifikationer - grupper'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ktc_netvaerk_notifications_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'current_groups':
+      $block['content'] = ktc_netvaerk_notifications_current_groups();
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Generate a list of the groups that the current user is subscribing to.
+ */
+function ktc_netvaerk_notifications_current_groups() {
+  if (arg(0) == 'user' && is_numeric(arg(1))) {
+    $account = user_load(arg(1));
+  }
+  else {
+    global $user;
+    $account = user_load($user->uid);
+  }
+
+  // Fetch users notification groups and group memberships.
+  $notify_groups = array();
+  $member_groups = array();
+  if ($field = field_get_items('user', $account, 'field_netvaerk_notifications')) {
+    foreach ($field as $delta => $value) {
+      $nid = $value['target_id'];
+      $notify_groups[$nid] = $nid;
+    }
+  }
+  if ($field = field_get_items('user', $account, 'og_user_node')) {
+    foreach ($field as $delta => $value) {
+      $nid = $value['target_id'];
+      $member_groups[$nid] = _ktc_netvaerk_notifications_get_node_title($nid);
+    }
+  }
+
+  // Sort and then mark the groups with notifications active.
+  asort($member_groups);
+  foreach ($member_groups as $nid => $title) {
+    if (in_array($nid, $notify_groups)) {
+      $class = 'glyphicon glyphicon-star';
+    }
+    else {
+      $class = 'glyphicon glyphicon-spacer';
+    }
+    $member_groups[$nid] = '<div class="list-item"><span class="' . $class . '"></span> ' . $title . '</div>';
+  }
+
+  $markup = implode('', $member_groups);
+  $markup .= '<p><a href="/user/' . $account->uid . '/edit" class="btn btn-default"><span class="glyphicon glyphicon-star"></span> Rediger netværks-notifikationer</a></p>';
+
+  return $markup;
+}
+
+/**
  * Admin settings form.
  */
 function ktc_netvaerk_notifications_settings() {
@@ -118,6 +189,13 @@ function ktc_netvaerk_notifications_node_presave($node) {
       }
     }
   }
+}
+
+/**
+ * Helper function to get the node title.
+ */
+function _ktc_netvaerk_notifications_get_node_title($nid) {
+  return db_query('SELECT title FROM {node} WHERE nid = :nid', array(':nid' => $nid))->fetchField();
 }
 
 /**
