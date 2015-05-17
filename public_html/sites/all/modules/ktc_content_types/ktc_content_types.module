@@ -96,3 +96,73 @@ function ktc_content_types_permission() {
   }
   return $permissions;
 }
+
+/**
+ * Publish/unpublish node form.
+ */
+function ktc_content_types_publish_node_form($form, $form_state, $nid, $status) {
+  $new_status = $status == 'publish' ? 1 : 0;
+
+  $form['status'] = array(
+    '#type' => 'value',
+    '#value' => $new_status,
+  );
+
+  $form['nid'] = array(
+    '#type' => 'value',
+    '#value' => $nid,
+  );
+
+  if ($new_status) {
+    $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => 'Udgiv',
+      '#attributes' => array('class' => array('btn-success')),
+    );
+  }
+  else {
+    $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => 'Træk tilbage',
+      '#attributes' => array('class' => array('btn-warning')),
+    );
+  }
+
+  return $form;
+}
+
+/**
+ * Submit handler, publish/unpublish node.
+ */
+function ktc_content_types_publish_node_form_submit(&$form, &$form_state) {
+  if ($node = node_load($form_state['values']['nid'])) {
+    $node->status = $form_state['values']['status'];
+
+    node_save($node);
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function ktc_content_types_preprocess_page(&$variables) {
+  if (isset($variables['node']) && is_object($variables['node'])) {
+    global $user;
+
+    if ($variables['node']->uid == $user->uid) {
+      if ($variables['node']->status) {
+        $output = drupal_render(drupal_get_form('ktc_content_types_publish_node_form', $variables['node']->nid, 'unpublish'));
+      }
+      else {
+        $output = '<div class="alert alert-danger" role="alert">';
+        $output .= 'Denne side er kun gemt som kladde, og er skjult for alle andre. Du kan redigere indholdet ved at klikke på rediger, eller udgive indholdet ved at klikke på Udgiv.';
+        $output .= drupal_render(drupal_get_form('ktc_content_types_publish_node_form', $variables['node']->nid, 'publish'));
+        $output .= '</div>';
+      }
+
+      $variables['node_publish'] = array(
+        '#markup' => $output,
+      );
+    }
+  }
+}
