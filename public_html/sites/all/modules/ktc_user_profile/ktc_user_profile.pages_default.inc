@@ -215,6 +215,28 @@ function ktc_user_profile_default_page_manager_handlers() {
     $pane->uuid = 'd250d87a-3551-4b58-8d22-d3771aa38dc6';
     $display->content['new-d250d87a-3551-4b58-8d22-d3771aa38dc6'] = $pane;
     $display->panels['right'][1] = 'new-d250d87a-3551-4b58-8d22-d3771aa38dc6';
+    $pane = new stdClass();
+    $pane->pid = 'new-16f2a7be-4329-4cf5-ae42-30b8b1c71a2f';
+    $pane->panel = 'right';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_netvaerk_notifications-current_groups';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '16f2a7be-4329-4cf5-ae42-30b8b1c71a2f';
+    $display->content['new-16f2a7be-4329-4cf5-ae42-30b8b1c71a2f'] = $pane;
+    $display->panels['right'][2] = 'new-16f2a7be-4329-4cf5-ae42-30b8b1c71a2f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
