@@ -192,6 +192,33 @@ function ktc_netvaerk_notifications_node_presave($node) {
 }
 
 /**
+ * Get a list of users to notify for the content node.
+ */
+function ktc_netvaerk_notifications_content_get_users($node) {
+  if (is_object($node) && $field = field_get_items('node', $node, 'og_group_ref')) {
+    $group_id = $field[0]['target_id'];
+    return _ktc_netvaerk_notifications_get_users($group_id);
+  }
+  return array();
+}
+
+/**
+ * Determine if the user should retrieve notifications for a given node.
+ */
+function ktc_netvaerk_notifications_notify_for_node($node, $uid) {
+  if ($field = field_get_items('node', $node, 'og_group_ref')) {
+    $group_id = $field[0]['target_id'];
+
+    $notify_uids = _ktc_netvaerk_notifications_get_users($group_id);
+
+    if (in_array($uid, $notify_uids)) {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
  * Helper function to get the node title.
  */
 function _ktc_netvaerk_notifications_get_node_title($nid) {
