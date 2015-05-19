@@ -289,18 +289,18 @@ function ktc_netvaerk_create_content_links($group) {
   // "faggruppe".
   if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
     if ($field[0]['tid'] == 1134) {
-      $hearing_link = '<li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/hearing?og_group_ref=' . $nid . '&amp;destination=node/' . $nid . '"><i class="group-add-hearing"></i>Høring</a></li>';
+      $hearing_link = '<li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/hearing?og_group_ref=' . $nid . '"><i class="group-add-hearing"></i>Høring</a></li>';
     }
   }
 
   $links = <<<EOL
 <ul>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/meeting-doodle?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-meeting_doodle"></i>Afstemning</a></li>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/arrangement?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-arrangement"></i>Arrangement</a></li>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/forum-post?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-forum_post"></i>Diskussion</a></li>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/document?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-document"></i>Dokument</a></li>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/group?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-group"></i>Undernetværk</a></li>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/os2web-base-news?og_group_ref=$nid&amp;destination=node/$nid"><i class="group-add-os2web_base_news"></i>Nyhed</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/meeting-doodle?og_group_ref=$nid"><i class="group-add-meeting_doodle"></i>Afstemning</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/arrangement?og_group_ref=$nid"><i class="group-add-arrangement"></i>Arrangement</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/forum-post?og_group_ref=$nid"><i class="group-add-forum_post"></i>Diskussion</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/document?og_group_ref=$nid"><i class="group-add-document"></i>Dokument</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/group?og_group_ref=$nid"><i class="group-add-group"></i>Undernetværk</a></li>
+  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/os2web-base-news?og_group_ref=$nid"><i class="group-add-os2web_base_news"></i>Nyhed</a></li>
   $hearing_link
 </ul>
 EOL;
@@ -404,7 +404,7 @@ function ktc_netvaerk_check_my_groups($nid) {
 
   // Check group content visibility.
   $node = node_load($nid);
-  if ($visible = field_get_items('node', $node, 'og_roles_permissions')) {
+  if (is_object($node) && $visible = field_get_items('node', $node, 'og_roles_permissions')) {
     if ($visible[0]['value']) {
       $class .= ' private-content';
     }
