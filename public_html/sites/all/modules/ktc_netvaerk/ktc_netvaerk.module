@@ -404,7 +404,7 @@ function ktc_netvaerk_check_my_groups($nid) {
 
   // Check group content visibility.
   $node = node_load($nid);
-  if ($visible = field_get_items('node', $node, 'og_roles_permissions')) {
+  if (is_object($node) && $visible = field_get_items('node', $node, 'og_roles_permissions')) {
     if ($visible[0]['value']) {
       $class .= ' private-content';
     }
