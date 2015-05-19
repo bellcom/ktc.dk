@@ -244,7 +244,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Logo',
+      'override_title_text' => 'Netværk',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -435,7 +435,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
       'type' => 'primary',
       'id' => 'edit-tabs',
       'override_title' => 1,
-      'override_title_text' => 'Faner',
+      'override_title_text' => 'Rediger',
     );
     $pane->cache = array();
     $pane->style = array(
