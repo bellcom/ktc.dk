@@ -21,7 +21,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjul',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_all_comment_notify',
       1 => 'field_content_type_notify',
@@ -196,9 +196,8 @@ function ktc_users_field_group_info() {
     'label' => 'Notifikationer',
     'weight' => '7',
     'children' => array(
-      0 => 'field_nyhedsbrev_ktc_update',
-      1 => 'field_netvaerk_notifications',
-      2 => 'mimemail',
+      0 => 'field_netvaerk_notifications',
+      1 => 'mimemail',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
