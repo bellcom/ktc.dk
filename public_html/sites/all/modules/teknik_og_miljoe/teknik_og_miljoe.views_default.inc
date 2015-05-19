@@ -43,7 +43,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Forbindelse: Entity Reference: Refereret entity */
+  /* Forbindelse: Handler mangler eller er i stykker */
   $handler->display->display_options['relationships']['field_magasin_target_id']['id'] = 'field_magasin_target_id';
   $handler->display->display_options['relationships']['field_magasin_target_id']['table'] = 'field_data_field_magasin';
   $handler->display->display_options['relationships']['field_magasin_target_id']['field'] = 'field_magasin_target_id';
@@ -202,7 +202,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: Entity Reference: Refereret entity */
+  /* Forbindelse: Handler mangler eller er i stykker */
   $handler->display->display_options['relationships']['field_magasin_target_id']['id'] = 'field_magasin_target_id';
   $handler->display->display_options['relationships']['field_magasin_target_id']['table'] = 'field_data_field_magasin';
   $handler->display->display_options['relationships']['field_magasin_target_id']['field'] = 'field_magasin_target_id';
@@ -222,7 +222,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
-  /* Felt: Indhold: Magasin */
+  /* Felt: Handler mangler eller er i stykker */
   $handler->display->display_options['fields']['field_magasin']['id'] = 'field_magasin';
   $handler->display->display_options['fields']['field_magasin']['table'] = 'field_data_field_magasin';
   $handler->display->display_options['fields']['field_magasin']['field'] = 'field_magasin';
@@ -230,9 +230,6 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_magasin']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_magasin']['alter']['text'] = '- [field_magasin] ';
   $handler->display->display_options['fields']['field_magasin']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_magasin']['settings'] = array(
-    'link' => 0,
-  );
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -278,7 +275,7 @@ function teknik_og_miljoe_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('Indhold entity refereret fra field_magasin'),
+    t('field_magasin_target_id'),
     t('Alle'),
     t('Entity Reference'),
     t('Handler i stykker field_data_field_artikel_type.field_artikel_type'),
@@ -289,7 +286,7 @@ function teknik_og_miljoe_views_default_views() {
     t('Side'),
     t('Entity Reference - Leder'),
     t('Artikler og Nyheder - m type'),
-    t('Magasin'),
+    t('Handler i stykker field_data_field_magasin.field_magasin'),
     t('- [field_magasin] '),
     t('[title] [field_artikel_type] [field_os2web_news_page_type] - [type] [field_magasin]
 '),
@@ -1050,7 +1047,7 @@ function teknik_og_miljoe_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Magasinstatus';
+  $handler->display->display_options['title'] = 'Udgivelser';
   $handler->display->display_options['css_class'] = 'magasinflow';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mere';
@@ -1264,9 +1261,9 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'magasinstatus';
+  $handler->display->display_options['path'] = 'udgivelser';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Magasinstatus';
+  $handler->display->display_options['menu']['title'] = 'Udgivelser';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
@@ -1292,7 +1289,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = 'magasinstatus/[nid]';
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'udgivelser/[nid]';
   $handler->display->display_options['fields']['title']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
@@ -1306,7 +1303,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['sorts']['field_udgivelsesdato_value']['order'] = 'DESC';
   $translatables['magasinstatus'] = array(
     t('Master'),
-    t('Magasinstatus'),
+    t('Udgivelser'),
     t('mere'),
     t('Udfør'),
     t('Gendan'),
