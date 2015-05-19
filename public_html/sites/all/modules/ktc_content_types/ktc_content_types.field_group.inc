@@ -1120,14 +1120,14 @@ function ktc_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_sider';
   $field_group->data = array(
-    'label' => 'Magasinets indhold',
+    'label' => 'Udgivelsens indhold',
     'weight' => '45',
     'children' => array(
       0 => 'field_magasin_indhold',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Magasinets indhold',
+      'label' => 'Udgivelsens indhold',
       'instance_settings' => array(
         'required_fields' => 1,
         'id' => '',
@@ -1625,7 +1625,7 @@ function ktc_content_types_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-sider field-group-tab ',
-        'description' => 'Indholdet af magasinet bygges under "Magasinstatus" i den sorte top-menu. Kræver man har de rigtige rettigheder.',
+        'description' => 'Indholdet af udgivelsen bygges under "Udgivelser" i den sorte top-menu. Kræver man har de rigtige rettigheder.',
       ),
       'formatter' => 'closed',
     ),
