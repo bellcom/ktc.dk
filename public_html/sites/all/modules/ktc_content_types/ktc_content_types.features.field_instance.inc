@@ -7420,6 +7420,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-meeting_doodle-og_group_ref'
   $field_instances['node-meeting_doodle-og_group_ref'] = array(
     'bundle' => 'meeting_doodle',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
@@ -7474,11 +7476,11 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 1,
           'fallback' => 'none',
           'providers' => array(
-            'og_context' => FALSE,
+            'og_context' => 0,
             'url' => 1,
           ),
           'skip_perm' => 0,
