@@ -16,7 +16,21 @@
 // Variables
 // --------------------------------------------------
 
+//== General
+@panel-left-right-padding: 10px;
+@panel-stacked-spacing: @grid-gutter-width;
+
+//== Heading
+@panel-heading-top-padding: 6px;
+@panel-heading-bottom-padding: @panel-heading-top-padding;
+
+//== Body
+@panel-body-top-padding: 15px;
+@panel-body-bottom-padding: @panel-body-top-padding;
+
 //== Footer
+@panel-footer-top-padding: 7px;
+@panel-footer-bottom-padding: @panel-footer-top-padding;
 @panel-footer-icon-spacing: 5px;
 
 //== Footer icons
@@ -61,7 +75,7 @@
 
 	// Heading
 	.panel-heading {
-		padding: 0;
+		padding: @panel-heading-top-padding @panel-left-right-padding @panel-heading-bottom-padding @panel-left-right-padding;
 		border: 0;
 		border-radius: 0; // BS3 override
 		&:extend(.clearfix all); // For icons with pull-right in header
@@ -70,11 +84,13 @@
 		.panel-title {
 			display: block;
 			font-family: @headings-font-family;
+			padding: 0;
 		}
 	}
 
 	// Body
 	.panel-body {
+		padding: @panel-body-top-padding @panel-left-right-padding @panel-body-bottom-padding @panel-left-right-padding;
 
 		// All headlines
 		h1,
@@ -112,6 +128,7 @@
 		background-color: @gray-darker;
 		border: 0;
 		border-radius: 0;
+		padding: @panel-footer-top-padding @panel-left-right-padding @panel-footer-bottom-padding @panel-left-right-padding;
 
 		// Button
 		.panel-footer-button {
@@ -242,6 +259,11 @@
 		// Clearfix
 		&:extend(.clearfix all);
 	}
+
+	// Elements stacked
+	+ .panel.panel-block {
+		margin-top: @panel-stacked-spacing;
+	}
 }
 
 // |--------------------------------------------------------------------------
@@ -262,6 +284,63 @@
 // Variables
 // --------------------------------------------------
 
+//== User profile
+@panel-user-profile-top-bottom-padding: 8px;
+@panel-user-profile-photo-content-spacing: 10px;
+@panel-user-profile-photo-border-width: 2px;
+@panel-user-profile-photo-border-distance: 3px;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Panel block
+.panel.panel-block {
+
+	// Body
+	.panel-body {
+
+		// User profile
+		.panel-user-profile {
+			display: table;
+			padding: @panel-user-profile-top-bottom-padding 0;
+
+			// Photo
+			.panel-user-profile-photo {
+				display: inherit;
+				float: left;
+				max-width: 48px;
+				max-height: 48px;
+				border-radius: 100%;
+				border-width: @panel-user-profile-photo-border-width;
+				border-style: solid;
+				border-color: @gray-darker;
+				background-color: transparent;
+				margin-right: @panel-user-profile-photo-content-spacing;
+				padding: @panel-user-profile-photo-border-distance;
+			}
+
+			// Content
+			.panel-user-profile-content {
+				display: inherit;
+
+				// Headlines
+				h1,h2,h3,h4,h5,h6 {
+					margin-top: 0;
+					padding-top: 0;
+				}
+			}
+
+			// Clearfix
+			&:extend(.clearfix all);
+		}
+	}
+}
+
+
+
+
+
 // |--------------------------------------------------------------------------
 // | Aside
 // |--------------------------------------------------------------------------
@@ -276,9 +355,6 @@
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
-
-//== General
-@panel-aside-left-right-inner-padding: 5px;
 
 //== Heading
 @panel-aside-heading-title-font-size: 15px;
@@ -341,13 +417,11 @@
 			color: @panel-aside-heading-title-font-color;
 			.line-height(@panel-aside-heading-title-font-size);
 			text-transform: uppercase;
-			padding: 4px @panel-aside-left-right-inner-padding; // BS3 override
 		}
 	}
 
 	// Body
 	.panel-body {
-		padding: 10px @panel-aside-left-right-inner-padding; // BS3 override
 	}
 
 	// Action
@@ -381,7 +455,7 @@
 			.panel-title {
 				cursor: pointer;
 				cursor: hand;
-				padding-right: floor( ( 2 * @panel-aside-left-right-inner-padding ) + @panel-aside-heading-icon-open-width );
+				padding-right: floor( ( 2 * @panel-left-right-padding ) + @panel-aside-heading-icon-open-width );
 				.user-select(none);
 
 				// Toggle icon
@@ -390,7 +464,7 @@
 					display: block;
 					content: "";
 					top: 50%;
-					right: @panel-aside-left-right-inner-padding;
+					right: @panel-left-right-padding;
 					margin-top: -(floor( @panel-aside-heading-icon-open-height / 2 ));
 					.sprite(@panel-aside-heading-icon-open);
 				}
@@ -402,7 +476,7 @@
 
 			// Title
 			.panel-title {
-				padding-right: floor( ( 2 * @panel-aside-left-right-inner-padding ) + @panel-aside-heading-icon-closed-width );
+				padding-right: floor( ( 2 * @panel-left-right-padding ) + @panel-aside-heading-icon-closed-width );
 
 				// Toggle icon
 				&:after {
@@ -471,9 +545,10 @@
 // Variables
 // --------------------------------------------------
 
-//== General
-
 //== Heading
+@panel-block-teaser-heading-font-size: 15px;
+
+//== Heading icons
 @panel-block-teaser-heading-icon-spacing: 5px;
 @panel-block-teaser-heading-icon-pin-green: @ikon-pin;
 @panel-block-teaser-heading-icon-pin-green-height: @ikon-pin-height;
@@ -487,8 +562,6 @@
 @panel-block-teaser-heading-icon-pin-red: @ikon-pin-red;
 @panel-block-teaser-heading-icon-pin-red-height: @ikon-pin-red-height;
 @panel-block-teaser-heading-icon-pin-red-width: @ikon-pin-red-width;
-
-//== Toggle
 
 // --------------------------------------------------
 // Mixins
@@ -579,10 +652,13 @@
 
 	// Heading
 	.panel-heading {
+		padding-bottom: 0;
 
 		// Title
 		.panel-title {
 			position: relative;
+			font-size: @panel-block-teaser-heading-font-size;
+			font-weight: normal;
 
 			// Pin icon
 			&:before {
@@ -597,7 +673,16 @@
 
 	// Body
 	.panel-body {
+		padding-top: 0;
+	}
+}
 
+// (green)
+.green {
+
+	// Teaser
+	.panel-block.panel-block-teaser {
+		.panel-block-teaser-green;
 	}
 }
 
@@ -620,7 +705,7 @@
 }
 
 // (red)
-.gold {
+.red {
 
 	// Teaser
 	.panel-block.panel-block-teaser {

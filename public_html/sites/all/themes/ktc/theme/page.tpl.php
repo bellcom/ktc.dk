@@ -135,8 +135,9 @@
 <!-- Begin - aside -->
 <div class="container">
     <div class="row">
+      <div class="col-xs-12">
         <h1>Aside examples</h1>
-        <hr />
+      </div>
     </div>
     <div class="row">
 
@@ -269,70 +270,180 @@
 
 <!-- Begin - teaser examples -->
 <div class="container">
-    <div class="row">
-        <h1>Teaser examples</h1>
-        <hr />
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Small teaser examples</h1>
     </div>
-    <div class="row">
+  </div>
+  <div class="row">
 
-        <div class="col-xs-12 col-sm-3">
-            <!-- Begin - teaser -->
-            <div class="panel panel-block panel-block-teaser">
-                <div class="panel-heading">
-                    <h4 class="panel-title">panel-block-teaser</h4>
-                </div>
-                <div class="panel-body">
-                    <h3><a href="#">Test headline</a></h3>
-                    <p>Kære Naturtema. Som aftalt kommer <a href="#">Danmarks Miljøportal</a> ud og underviser i Arealinformation, Naturappl </p>
-                </div>
-                <div class="panel-footer">
-                    <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
-                    <span class="panel-footer-button panel-footer-button-display">19</span>
-                    <span class="panel-footer-button panel-footer-button-hearing pull-right">1</span>
-                </div>
+    <div class="col-xs-12 col-sm-3">
+      <!-- Begin - teaser -->
+      <div class="blue">
+        <div class="panel panel-block panel-block-teaser">
+          <div class="panel-heading">
+            <h4 class="panel-title">Stacked blue</h4>
+          </div>
+          <div class="panel-body">
+            <h3><a href="#">Test headline</a></h3>
+            <p>Kære Naturtema. Som aftalt kommer <a href="#">Danmarks Miljøportal</a> ud og underviser i Arealinformation, Naturappl </p>
+            <div class="panel-user-profile">
+              <img class="panel-user-profile-photo" src="http://ktc.mn/sites/all/themes/ktc/images/user-icon.png" alt="Jesper Hedegaard Hedegaard - KTC Sekretariats billede" title="Jesper Hedegaard Hedegaard - KTC Sekretariats billede">
+              <div class="panel-user-profile-content">
+                <h4>Her er også en tekst</h4>
+                <p>Er der nogen der ligger inde med gode erfaringer mht. at få jeres badevandsprofiler opdateret?</p>
+              </div>
             </div>
-            <!-- End - teaser -->
+          </div>
+          <div class="panel-footer">
+            <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
+            <span class="panel-footer-button panel-footer-button-display">19</span>
+            <span class="panel-footer-button panel-footer-button-hearing pull-right">1</span>
+          </div>
         </div>
-
-        <div class="col-xs-12 col-sm-3">
-            <!-- Begin - teaser -->
-            <div class="panel panel-block panel-block-teaser">
-                <div class="panel-heading">
-                    <h3 class="panel-title">panel-block-teaser</h3>
-                </div>
-                <div class="panel-body">
-                    <p>Virker både som links og span</p>
-                </div>
-                <div class="panel-footer">
-                    <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
-                    <span class="panel-footer-button panel-footer-button-display">19</span>
-                    <span class="panel-footer-button panel-footer-button-hearing pull-right">1</span>
-                </div>
+        <div class="panel panel-block panel-block-teaser">
+          <div class="panel-heading">
+            <h4 class="panel-title">Stacked blue</h4>
+          </div>
+          <div class="panel-body">
+            <h3><a href="#">Test headline</a></h3>
+            <p>Kære Naturtema. Som aftalt kommer <a href="#">Danmarks Miljøportal</a> ud og underviser i Arealinformation, Naturappl </p>
+            <div class="panel-user-profile">
+              <img class="panel-user-profile-photo" src="http://ktc.mn/sites/all/themes/ktc/images/user-icon.png" alt="Jesper Hedegaard Hedegaard - KTC Sekretariats billede" title="Jesper Hedegaard Hedegaard - KTC Sekretariats billede">
+              <div class="panel-user-profile-content">
+                <h4>Her er også en tekst</h4>
+                <p>Er der nogen der ligger inde med gode erfaringer mht. at få jeres badevandsprofiler opdateret?</p>
+              </div>
             </div>
-            <!-- End - teaser -->
+          </div>
+          <div class="panel-footer">
+            <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
+            <span class="panel-footer-button panel-footer-button-display">19</span>
+            <span class="panel-footer-button panel-footer-button-hearing pull-right">1</span>
+          </div>
         </div>
+        <div class="panel panel-block panel-block-teaser">
+          <div class="panel-heading">
+            <h4 class="panel-title">Stacked blue</h4>
+          </div>
+          <div class="panel-body">
+            <h3><a href="#">Test headline</a></h3>
+            <p>Kære Naturtema. Som aftalt kommer <a href="#">Danmarks Miljøportal</a> ud og underviser i Arealinformation, Naturappl </p>
+            <div class="panel-user-profile">
+              <img class="panel-user-profile-photo" src="http://ktc.mn/sites/all/themes/ktc/images/user-icon.png" alt="Jesper Hedegaard Hedegaard - KTC Sekretariats billede" title="Jesper Hedegaard Hedegaard - KTC Sekretariats billede">
+              <div class="panel-user-profile-content">
+                <h4>Her er også en tekst</h4>
+                <p>Er der nogen der ligger inde med gode erfaringer mht. at få jeres badevandsprofiler opdateret?</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
+            <span class="panel-footer-button panel-footer-button-display">19</span>
+            <span class="panel-footer-button panel-footer-button-hearing pull-right">1</span>
+          </div>
+        </div>
+      </div>
+      <!-- End - teaser -->
+    </div>
 
-        <div class="col-xs-12 col-md-6">
-            <!-- Begin - teaser large -->
-            <div class="panel panel-block panel-block-teaser panel-block-teaser-large">
-                <div class="panel-heading">
-                    <h3 class="panel-title">panel-block-teaser-large</h3>
-                </div>
-                <div class="panel-body">
-                    <p>Kære Naturtema. Som aftalt kommer Danmarks Miljøportal ud og underviser i Arealinformation, Naturappl </p>
-                </div>
-                <div class="panel-footer">
+    <div class="col-xs-12 col-sm-3">
+      <!-- Begin - teaser -->
+      <div class="gold">
+        <div class="panel panel-block panel-block-teaser">
+          <div class="panel-heading">
+            <h3 class="panel-title">Gold</h3>
+          </div>
+          <div class="panel-body">
+            <h3><a href="#">Test headline</a></h3>
+            <p>Kære Naturtema. Som aftalt kommer <a href="#">Danmarks Miljøportal</a> ud og underviser i Arealinformation, Naturappl </p>
+          </div>
+          <div class="panel-footer">
+            <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
+            <span class="panel-footer-button panel-footer-button-display">19</span>
+            <span class="panel-footer-button panel-footer-button-hearing pull-right">1</span>
+          </div>
+        </div>
+      </div>
+      <!-- End - teaser -->
+    </div>
 
-                    <!-- Begin - left aligned -->
-                    <a href="#" class="panel-footer-button panel-footer-button-comment">
-                        1348
-                    </a>
+    <div class="col-xs-12 col-sm-3">
+      <!-- Begin - teaser -->
+      <div class="green">
+        <div class="panel panel-block panel-block-teaser">
+          <div class="panel-heading">
+            <h3 class="panel-title">Green</h3>
+          </div>
+          <div class="panel-body">
+            <h3><a href="#">Test headline</a></h3>
+            <p>Kære Naturtema. Som aftalt kommer <a href="#">Danmarks Miljøportal</a> ud og underviser i Arealinformation, Naturappl </p>
+          </div>
+          <div class="panel-footer">
+            <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
+            <span class="panel-footer-button panel-footer-button-display">19</span>
+            <span class="panel-footer-button panel-footer-button-hearing pull-right">1</span>
+          </div>
+        </div>
+      </div>
+      <!-- End - teaser -->
+    </div>
+
+    <div class="col-xs-12 col-sm-3">
+      <!-- Begin - teaser -->
+      <div class="red">
+        <div class="panel panel-block panel-block-teaser">
+          <div class="panel-heading">
+            <h3 class="panel-title">Red</h3>
+          </div>
+          <div class="panel-body">
+            <h3><a href="#">Test headline</a></h3>
+            <p>Kære Naturtema. Som aftalt kommer <a href="#">Danmarks Miljøportal</a> ud og underviser i Arealinformation, Naturappl </p>
+          </div>
+          <div class="panel-footer">
+            <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
+            <span class="panel-footer-button panel-footer-button-display">19</span>
+            <span class="panel-footer-button panel-footer-button-hearing pull-right">1</span>
+          </div>
+        </div>
+      </div>
+      <!-- End - teaser -->
+    </div>
+
+  </div>
+</div>
+<!-- End - teaser examples -->
+
+<!-- Begin - large teaser examples -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Large teaser examples</h1>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-xs-12 col-md-6">
+      <!-- Begin - teaser large -->
+      <div class="panel panel-block panel-block-teaser panel-block-teaser-large">
+        <div class="panel-heading">
+          <h3 class="panel-title">panel-block-teaser-large</h3>
+        </div>
+        <div class="panel-body">
+          <p>Kære Naturtema. Som aftalt kommer Danmarks Miljøportal ud og underviser i Arealinformation, Naturappl </p>
+        </div>
+        <div class="panel-footer">
+
+          <!-- Begin - left aligned -->
+          <a href="#" class="panel-footer-button panel-footer-button-comment">
+            1348
+          </a>
                     <span class="panel-footer-button panel-footer-button-display">
                         19
                     </span>
-                    <!-- End - left aligned -->
+          <!-- End - left aligned -->
 
-                    <!-- Begin - right aligned -->
+          <!-- Begin - right aligned -->
                     <span class="panel-footer-button panel-footer-button-hearing pull-right">
                         1
                     </span>
@@ -354,16 +465,16 @@
                     <span class="panel-footer-button panel-footer-button-private pull-right">
                         1
                     </span>
-                    <!-- End - right aligned -->
+          <!-- End - right aligned -->
 
-                </div>
-            </div>
-            <!-- End - teaser large -->
         </div>
-
+      </div>
+      <!-- End - teaser large -->
     </div>
+
+  </div>
 </div>
-<!-- End - teaser examples -->
+<!-- End - large teaser examples -->
 
 <!-- End - temp -->
 
