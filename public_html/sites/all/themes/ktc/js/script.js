@@ -4,8 +4,8 @@
   $(document).ready(function(){
 
       // Panel block toggle
-      $('.panel-block-toggle .panel-title').on('click', function(event) {
-          var $toggle = $(this).parents('.panel-block-toggle');
+      $('.panel-block-aside-toggle .panel-title').on('click', function(event) {
+          var $toggle = $(this).parents('.panel-block-aside-toggle');
           $toggle.toggleClass('closed');
       });
 
