@@ -10,6 +10,7 @@ class Region
   const Syddanmark = 'Syddanmark';
   const Midtjylland = 'Midtjylland';
   const Nordjylland = 'Nordjylland';
+  const Landsdaekkende = 'Landsdaekkende';
 
 
 }

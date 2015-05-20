@@ -247,6 +247,13 @@ class WebUserDto extends CrmEntityDto
 
   /**
    * 
+   * @var boolean $WebUser
+   * @access public
+   */
+  public $WebUser = null;
+
+  /**
+   * 
    * @var string $Website
    * @access public
    */
