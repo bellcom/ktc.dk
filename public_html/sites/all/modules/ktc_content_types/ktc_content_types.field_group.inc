@@ -136,7 +136,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Faglige emner',
-    'weight' => '62',
+    'weight' => '61',
     'children' => array(
       0 => 'field_arrangement_categories',
       1 => 'field_tags',
@@ -167,7 +167,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Bilag og links',
-    'weight' => '60',
+    'weight' => '59',
     'children' => array(
       0 => 'field_link_arrangement_organizer',
       1 => 'field_link_to_arrangement',
@@ -230,7 +230,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Tid og sted',
-    'weight' => '59',
+    'weight' => '58',
     'children' => array(
       0 => 'field_arrangement_address',
       1 => 'field_arrangement_date',
@@ -289,7 +289,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Tilmelding',
-    'weight' => '61',
+    'weight' => '60',
     'children' => array(
       0 => 'field_arrangement_price',
       1 => 'field_link_to_signup',
@@ -320,14 +320,13 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Beskriv arrangement',
-    'weight' => '58',
+    'weight' => '57',
     'children' => array(
       0 => 'body',
       1 => 'field_target_group',
       2 => 'field_meeting_type',
       3 => 'title',
-      4 => 'group_logodiv',
-      5 => 'group_mediabilllederdiv',
+      4 => 'group_mediabilllederdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -387,7 +386,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_annoncer';
   $field_group->data = array(
     'label' => 'Banner 2',
-    'weight' => '22',
+    'weight' => '23',
     'children' => array(
       0 => 'field_banner_2',
       1 => 'field_banner_2_tekst_og_link',
@@ -707,8 +706,8 @@ function ktc_content_types_field_group_info() {
     'children' => array(
       0 => 'field_topics',
       1 => 'field_os2web_base_field_hidlinks',
-      2 => 'group_tags',
-      3 => 'group_kle',
+      2 => 'group_kle',
+      3 => 'group_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -825,8 +824,8 @@ function ktc_content_types_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'group_dokument',
-      1 => 'group_filer',
-      2 => 'group_emner',
+      1 => 'group_emner',
+      2 => 'group_filer',
       3 => 'group_publicering',
     ),
     'format_type' => 'tabs',
@@ -908,10 +907,11 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_arrangementform';
   $field_group->data = array(
     'label' => 'Publicering',
-    'weight' => '63',
+    'weight' => '62',
     'children' => array(
       0 => 'og_group_ref',
-      1 => 'group_visn',
+      1 => 'scheduler_settings',
+      2 => 'group_visn',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -939,8 +939,8 @@ function ktc_content_types_field_group_info() {
     'label' => 'group',
     'weight' => '0',
     'children' => array(
-      0 => 'group_diskussion',
-      1 => 'group_bilag',
+      0 => 'group_bilag',
+      1 => 'group_diskussion',
       2 => 'group_emner',
       3 => 'group_publicering',
     ),
@@ -1412,7 +1412,8 @@ function ktc_content_types_field_group_info() {
     'children' => array(
       0 => 'field_os2web_base_field_promote',
       1 => 'og_group_ref',
-      2 => 'group_synlighedsdiv',
+      2 => 'scheduler_settings',
+      3 => 'group_synlighedsdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1812,7 +1813,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_networkngroups';
   $field_group->data = array(
     'label' => 'Synlighed for nyhed',
-    'weight' => '13',
+    'weight' => '12',
     'children' => array(
       0 => 'group_content_access',
     ),
@@ -1983,6 +1984,7 @@ function ktc_content_types_field_group_info() {
       5 => 'field_tags',
       6 => 'field_topics',
       7 => 'title',
+      8 => 'scheduler_settings',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
