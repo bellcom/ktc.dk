@@ -6199,6 +6199,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-magazine-field_ekstra_artikler'
   $field_instances['node-magazine-field_ekstra_artikler'] = array(
     'bundle' => 'magazine',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -6702,6 +6704,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-magazine-field_top_artikel'
   $field_instances['node-magazine-field_top_artikel'] = array(
     'bundle' => 'magazine',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -6759,7 +6763,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',

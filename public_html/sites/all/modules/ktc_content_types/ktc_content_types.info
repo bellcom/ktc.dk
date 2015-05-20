@@ -90,7 +90,6 @@ features[field_base][] = field_link_arrangement_organizer
 features[field_base][] = field_link_to_arrangement
 features[field_base][] = field_link_to_signup
 features[field_base][] = field_linkbladreversion
-features[field_base][] = field_magasin
 features[field_base][] = field_magasin_filer
 features[field_base][] = field_magasin_indhold
 features[field_base][] = field_magasin_side_artikel
