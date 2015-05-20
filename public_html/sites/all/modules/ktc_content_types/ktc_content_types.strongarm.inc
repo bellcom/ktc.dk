@@ -589,7 +589,7 @@ function ktc_content_types_strongarm() {
           'weight' => '8',
         ),
         'scheduler_settings' => array(
-          'weight' => '16',
+          'weight' => '48',
         ),
         'metatags' => array(
           'weight' => '5',
@@ -705,6 +705,9 @@ function ktc_content_types_strongarm() {
         'scheduler_settings' => array(
           'weight' => '23',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(
         'signup' => array(
@@ -809,6 +812,9 @@ function ktc_content_types_strongarm() {
         'scheduler_settings' => array(
           'weight' => '5',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(
         'signup' => array(
@@ -885,6 +891,9 @@ function ktc_content_types_strongarm() {
         ),
         'metatags' => array(
           'weight' => '2',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(
@@ -1037,7 +1046,7 @@ function ktc_content_types_strongarm() {
           'weight' => '0',
         ),
         'scheduler_settings' => array(
-          'weight' => '14',
+          'weight' => '13',
         ),
         'metatags' => array(
           'weight' => '2',

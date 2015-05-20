@@ -78,7 +78,6 @@ features[field_instance][] = field_collection_item-field_coforfattere-field_eksi
 features[field_instance][] = field_collection_item-field_coforfattere-field_foto_af_forfatter
 features[field_instance][] = field_collection_item-field_coforfattere-field_jobposition
 features[field_instance][] = field_collection_item-field_coforfattere-field_navn
-features[field_instance][] = node-artikler-body
 features[field_instance][] = node-artikler-field_annonce
 features[field_instance][] = node-artikler-field_antal_anslag
 features[field_instance][] = node-artikler-field_artikel_afsnit
