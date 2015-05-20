@@ -5640,7 +5640,11 @@ button.close {
 .panel-body:before,
 .panel-body:after,
 .modal-footer:before,
-.modal-footer:after {
+.modal-footer:after,
+.panel.panel-block .panel-heading:before,
+.panel.panel-block .panel-heading:after,
+.panel.panel-block .panel-footer:before,
+.panel.panel-block .panel-footer:after {
   content: " ";
   display: table;
 }
@@ -5657,7 +5661,9 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-footer:after {
+.modal-footer:after,
+.panel.panel-block .panel-heading:after,
+.panel.panel-block .panel-footer:after {
   clear: both;
 }
 .center-block {
@@ -7250,7 +7256,7 @@ h3.pane-title {
  */
 .icon-hearing-sm {
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -288px;
   width: 9px;
   height: 16px;
   vertical-align: middle;
@@ -7555,7 +7561,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .region-header #block-views-exp-search-page .views-submit-button .form-submit#edit-submit-search,
 .header-region .top_header .header_top #block-views-exp-search-page .views-submit-button .form-submit#edit-submit-search {
   background-image: url(../images/sprites.png);
-  background-position: 0px -723px;
+  background-position: 0px -741px;
   width: 28px;
   height: 28px;
   border: none;
@@ -7584,7 +7590,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .region-header #block-user-login #edit-actions button,
 .header-region .top_header .header_top #block-user-login #edit-actions button {
   background-image: url(../images/sprites.png);
-  background-position: 0px -695px;
+  background-position: 0px -713px;
   width: 28px;
   height: 28px;
   background-color: #fff;
@@ -7594,7 +7600,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .region-header #block-user-login #edit-actions button.login_open,
 .header-region .top_header .header_top #block-user-login #edit-actions button.login_open {
   background-image: url(../images/sprites.png);
-  background-position: 0px -667px;
+  background-position: 0px -685px;
   width: 28px;
   height: 28px;
 }
@@ -7629,7 +7635,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .header_top_content .header-add-content .icon-add-content {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -639px;
+  background-position: 0px -657px;
   width: 28px;
   height: 28px;
 }
@@ -7766,7 +7772,7 @@ fieldset[disabled] .btn-blacknblue.active {
 }
 .header-region .navigation .header_bottom .header_fixed .header-user .header-user-name .icon-arrow-down {
   background-image: url(../images/sprites.png);
-  background-position: 0px -181px;
+  background-position: 0px -196px;
   width: 15px;
   height: 15px;
   display: inline-block;
@@ -8768,7 +8774,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-left: -15px;
   content: ' ';
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -288px;
   width: 9px;
   height: 16px;
 }
@@ -9009,14 +9015,14 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .region_footer.footer_5 .footer-5 .footer_location {
   background-image: url(../images/sprites.png);
-  background-position: 0px -121px;
+  background-position: 0px -136px;
   width: 12px;
   height: 15px;
   display: inline-block;
   margin-right: 10px;
 }
 .region_footer.footer_4 .footer_4 {
-  background-color: #137c34;
+  background-color: #127c34;
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -9037,7 +9043,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   padding: 2px 0px;
 }
 .region_footer.footer_4 .footer_4 .container ul.menu li > a:hover {
-  color: #137c34;
+  color: #127c34;
 }
 .region_footer.footer_4 .footer_4 .container section {
   margin-bottom: 10px;
@@ -9292,14 +9298,14 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .col-md-3 .filter-foldout,
 .col-md-4 .filter-foldout {
   background-image: url(../images/sprites.png);
-  background-position: 0px -166px;
+  background-position: 0px -241px;
   width: 15px;
   height: 15px;
 }
 .col-md-3 .filter-foldin,
 .col-md-4 .filter-foldin {
   background-image: url(../images/sprites.png);
-  background-position: 0px -211px;
+  background-position: 0px -166px;
   width: 15px;
   height: 15px;
 }
@@ -10077,7 +10083,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.ktc-red .icon-group-ktc-red {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -226px;
+  background-position: 0px -121px;
   width: 12px;
   height: 15px;
   vertical-align: bottom;
@@ -10097,7 +10103,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.ktc-yellow .icon-group-ktc-yellow {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -196px;
+  background-position: 0px -181px;
   width: 12px;
   height: 15px;
   vertical-align: bottom;
@@ -10117,7 +10123,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.ktc-blue .icon-group-ktc-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -136px;
+  background-position: 0px -226px;
   width: 12px;
   height: 15px;
   vertical-align: bottom;
@@ -10165,7 +10171,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.node-group .ktc-yellow {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -389px;
+  background-position: 0px -372px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -10174,7 +10180,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.node-group .ktc-red {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -372px;
+  background-position: 0px -355px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -10183,7 +10189,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.node-group .ktc-green {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -355px;
+  background-position: 0px -338px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -10192,7 +10198,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.node-group .ktc-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -304px;
+  background-position: 0px -389px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -10255,7 +10261,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser .node-teaser-bottom .right .node-type-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -288px;
   width: 9px;
   height: 16px;
   vertical-align: top;
@@ -10264,7 +10270,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser .node-teaser-bottom .right .node-type-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -272px;
   width: 12px;
   height: 16px;
   vertical-align: top;
@@ -10273,7 +10279,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser .node-teaser-bottom .right .node-type-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -256px;
   width: 15px;
   height: 16px;
   vertical-align: top;
@@ -10393,7 +10399,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -531px;
+  background-position: 0px -549px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10403,7 +10409,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -450px;
+  background-position: 0px -495px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10413,7 +10419,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -423px;
+  background-position: 0px -630px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10423,7 +10429,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -585px;
+  background-position: 0px -576px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10433,7 +10439,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -477px;
+  background-position: 0px -468px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10443,7 +10449,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-meeting_doodle {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -504px;
+  background-position: 0px -522px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10453,7 +10459,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -612px;
+  background-position: 0px -441px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10574,7 +10580,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node .views-field .term-name a .icon-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -304px;
+  background-position: 0px -389px;
   width: 17px;
   height: 17px;
   vertical-align: bottom;
@@ -10785,7 +10791,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .darkgray-box .pane-content ul.pager .pager-previous a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-previous a {
   background-image: url(../images/sprites.png);
-  background-position: 0px -241px;
+  background-position: 0px -211px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -10795,7 +10801,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .darkgray-box .pane-content ul.pager .pager-next a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-next a {
   background-image: url(../images/sprites.png);
-  background-position: 0px -166px;
+  background-position: 0px -241px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -10813,4 +10819,273 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 }
 .personsoegning .andcell::before {
   content: " / ";
+}
+.panel.panel-block {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+}
+.panel.panel-block .panel-heading {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+.panel.panel-block .panel-heading .panel-title {
+  display: block;
+  font-family: 'Lato', Geneva, Verdana, sans-serif;
+}
+.panel.panel-block .panel-body h1,
+.panel.panel-block .panel-body h2,
+.panel.panel-block .panel-body h3,
+.panel.panel-block .panel-body h4,
+.panel.panel-block .panel-body h5,
+.panel.panel-block .panel-body h6,
+.panel.panel-block .panel-body h1 a,
+.panel.panel-block .panel-body h2 a,
+.panel.panel-block .panel-body h3 a,
+.panel.panel-block .panel-body h4 a,
+.panel.panel-block .panel-body h5 a,
+.panel.panel-block .panel-body h6 a {
+  color: #2c353a;
+}
+.panel.panel-block .panel-body h1 a,
+.panel.panel-block .panel-body h2 a,
+.panel.panel-block .panel-body h3 a,
+.panel.panel-block .panel-body h4 a,
+.panel.panel-block .panel-body h5 a,
+.panel.panel-block .panel-body h6 a {
+  text-decoration: none;
+}
+.panel.panel-block .panel-body a {
+  text-decoration: underline;
+}
+.panel.panel-block .panel-body p {
+  color: #848e92;
+}
+.panel.panel-block .panel-footer {
+  background-color: #2c353a;
+  border: 0;
+  border-radius: 0;
+}
+.panel.panel-block .panel-footer .panel-footer-button {
+  position: relative;
+  color: #fff;
+  float: left;
+}
+.panel.panel-block .panel-footer .panel-footer-button + .panel-footer-button {
+  margin-left: 10px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.pull-right {
+  float: right;
+}
+.panel.panel-block .panel-footer .panel-footer-button:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+  margin-right: 10px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-comment {
+  padding-left: 20px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-comment:before {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -107px;
+  width: 15px;
+  height: 14px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-display {
+  padding-left: 28px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-display:before {
+  margin-top: -5px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -32px;
+  width: 23px;
+  height: 11px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-hearing {
+  padding-left: 14px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-hearing:before {
+  margin-top: -8px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -288px;
+  width: 9px;
+  height: 16px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-forum {
+  padding-left: 20px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-forum:before {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -79px;
+  width: 15px;
+  height: 14px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-article {
+  padding-left: 16px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-article:before {
+  margin-top: -5px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -43px;
+  width: 11px;
+  height: 11px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-vote {
+  padding-left: 21px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-vote:before {
+  margin-top: -6px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -66px;
+  width: 16px;
+  height: 13px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-news {
+  padding-left: 20px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-news:before {
+  margin-top: -8px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -256px;
+  width: 15px;
+  height: 16px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-private {
+  padding-left: 16px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-private:before {
+  margin-top: -6px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -54px;
+  width: 11px;
+  height: 12px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-event {
+  padding-left: 19px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-event:before {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -93px;
+  width: 14px;
+  height: 14px;
+}
+.panel-block.panel-block-aside .panel-heading {
+  background-color: #2c353a;
+}
+.panel-block.panel-block-aside .panel-heading .panel-title {
+  font-size: 15px;
+  font-weight: normal;
+  color: #ffffff;
+  line-height: 21px;
+  text-transform: uppercase;
+  padding: 4px 5px;
+}
+.panel-block.panel-block-aside .panel-body {
+  padding: 10px 5px;
+}
+.panel-block.panel-block-aside.panel-block-aside-action {
+  background-color: #2c353a;
+}
+.panel-block.panel-block-aside.panel-block-aside-action .panel-heading {
+  background-color: #e75311;
+}
+.panel-block.panel-block-aside.panel-block-aside-action .panel-body,
+.panel-block.panel-block-aside.panel-block-aside-action .panel-body p {
+  color: #848e92;
+}
+.panel-block.panel-block-aside.panel-block-aside-toggle .panel-heading {
+  position: relative;
+}
+.panel-block.panel-block-aside.panel-block-aside-toggle .panel-heading .panel-title {
+  cursor: pointer;
+  cursor: hand;
+  padding-right: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.panel-block.panel-block-aside.panel-block-aside-toggle .panel-heading .panel-title:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 50%;
+  right: 5px;
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -166px;
+  width: 15px;
+  height: 15px;
+}
+.panel-block.panel-block-aside.panel-block-aside-toggle.closed .panel-title {
+  padding-right: 25px;
+}
+.panel-block.panel-block-aside.panel-block-aside-toggle.closed .panel-title:after {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -241px;
+  width: 15px;
+  height: 15px;
+}
+.panel-block.panel-block-aside.panel-block-aside-toggle.closed .panel-body {
+  display: none;
+}
+.tech-env .panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
+  background-color: #1f9bd7;
+}
+.network .panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
+  background-color: #d3a900;
+}
+.no-network .panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
+  background-color: #127c34;
+}
+.panel-block.panel-block-teaser .panel-heading .panel-title {
+  position: relative;
+}
+.panel-block.panel-block-teaser .panel-heading .panel-title:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+}
+.blue .panel-block.panel-block-teaser .panel-heading .panel-title {
+  padding-left: 17px;
+}
+.blue .panel-block.panel-block-teaser .panel-heading .panel-title:before {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -226px;
+  width: 12px;
+  height: 15px;
+}
+.gold .panel-block.panel-block-teaser .panel-heading .panel-title {
+  padding-left: 17px;
+}
+.gold .panel-block.panel-block-teaser .panel-heading .panel-title:before {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -181px;
+  width: 12px;
+  height: 15px;
+}
+.gold .panel-block.panel-block-teaser .panel-heading .panel-title {
+  padding-left: 17px;
+}
+.gold .panel-block.panel-block-teaser .panel-heading .panel-title:before {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -121px;
+  width: 12px;
+  height: 15px;
 }
