@@ -10644,9 +10644,22 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   border-radius: 0;
 }
 .panel.panel-block .panel-heading .panel-title {
+  position: relative;
   display: block;
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
   padding: 0;
+  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.panel.panel-block .panel-heading .panel-title,
+.panel.panel-block .panel-heading .panel-title > a,
+.panel.panel-block .panel-heading .panel-title:hover,
+.panel.panel-block .panel-heading .panel-title > a:hover,
+.panel.panel-block .panel-heading .panel-title:focus,
+.panel.panel-block .panel-heading .panel-title > a:focus,
+.panel.panel-block .panel-heading .panel-title:active,
+.panel.panel-block .panel-heading .panel-title > a:active {
+  text-decoration: none;
 }
 .panel.panel-block .panel-body {
   padding: 15px 10px 15px 10px;
@@ -10788,10 +10801,12 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   width: 11px;
   height: 12px;
 }
-.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-event {
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-event,
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-arrangement {
   padding-left: 19px;
 }
-.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-event:before {
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-event:before,
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-arrangement:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -93px;
@@ -10919,15 +10934,40 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6 > a {
   color: #36a145;
 }
+.panel.panel-block .panel-body h1 + .panel-date-simple,
+.panel.panel-block .panel-body h2 + .panel-date-simple,
+.panel.panel-block .panel-body h3 + .panel-date-simple,
+.panel.panel-block .panel-body h4 + .panel-date-simple,
+.panel.panel-block .panel-body h5 + .panel-date-simple,
+.panel.panel-block .panel-body h6 + .panel-date-simple {
+  margin-top: -8px;
+}
+.panel.panel-block .panel-body .panel-date-simple {
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 0;
+}
+.ktc-red .panel-body .panel-date-simple,
+.ktc-red.panel.panel-block .panel-body .panel-date-simple {
+  color: #e75311;
+}
+.ktc-gold .panel-body .panel-date-simple,
+.ktc-gold.panel.panel-block .panel-body .panel-date-simple {
+  color: #d3a900;
+}
+.ktc-blue .panel-body .panel-date-simple,
+.ktc-blue.panel.panel-block .panel-body .panel-date-simple {
+  color: #1f9bd7;
+}
+.ktc-green .panel-body .panel-date-simple,
+.ktc-green.panel.panel-block .panel-body .panel-date-simple {
+  color: #36a145;
+}
 .panel-block.panel-block-aside .panel-heading {
   background-color: #2c353a;
 }
 .panel-block.panel-block-aside .panel-heading .panel-title {
-  font-size: 15px;
-  font-weight: normal;
   color: #ffffff;
-  line-height: 21px;
-  text-transform: uppercase;
 }
 .panel-block.panel-block-aside.panel-block-aside-action {
   background-color: #2c353a;
@@ -10987,11 +11027,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 }
 .panel-block.panel-block-teaser .panel-heading {
   padding-bottom: 0;
-}
-.panel-block.panel-block-teaser .panel-heading .panel-title {
-  position: relative;
-  font-size: 15px;
-  font-weight: normal;
 }
 .panel-block.panel-block-teaser .panel-heading .panel-title:before {
   display: block;
