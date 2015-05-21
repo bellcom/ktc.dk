@@ -72,6 +72,7 @@
 	background-color: #fff;
 	border: 0; // BS3 override
 	border-radius: 0; // BS3 override
+	margin-bottom: @panel-stacked-spacing;
 
 	// Heading
 	.panel-heading {
@@ -219,7 +220,8 @@
 			}
 
 			// News
-			&.panel-footer-button-news {
+			&.panel-footer-button-news,
+			&.panel-footer-button-os2web_base_news {
 				padding-left: floor( @panel-footer-icon-news-width + @panel-footer-icon-spacing );
 
 				// Icon
