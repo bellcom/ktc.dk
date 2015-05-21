@@ -1155,7 +1155,10 @@ function ktc_netvaerk_field_default_field_instances() {
   // Exported field_instance: 'node-group-field_topics'
   $field_instances['node-group-field_topics'] = array(
     'bundle' => 'group',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1193,7 +1196,7 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
-    'label' => 'Emner',
+    'label' => 'Faglige emner',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -1205,9 +1208,6 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(
         'apply_chosen' => '',
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_opt_groups' => FALSE,
-        'size' => 60,
       ),
       'type' => 'taxonomy_hs',
       'weight' => 3,
@@ -1785,8 +1785,8 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Determine if this is an OG group.');
   t('Du kan vælge om alle brugere der er logget på, må se netværkets indhold, eller om det skal være usynligt. Når brugere i dit netværk laver indhold, kan de selv vælge om indholdet må vises til andre der ikke er medlemmer af netværket.');
   t('Ekstern links');
-  t('Emner');
   t('Er dette netværk et undernetværk til et andet netværk?');
+  t('Faglige emner');
   t('Gammel drupal gid');
   t('Gammel nid');
   t('Gammel typo3 id');

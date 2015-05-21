@@ -52,10 +52,12 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_side_artikel'
   $field_instances['field_collection_item-field_magasin_indhold-field_magasin_side_artikel'] = array(
     'bundle' => 'field_magasin_indhold',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<a href="/node/add/artikler">Opret artikel</a> | <a href="/node/add/os2web-base-news">Opret nyheder</a>',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -2828,6 +2830,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-arrangement-field_topics'
   $field_instances['node-arrangement-field_topics'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_label_token' => 0,
     'deleted' => 0,
@@ -2867,8 +2871,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
-    'label' => 'Emner',
-    'required' => 0,
+    'label' => 'Faglige emner',
+    'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -4393,7 +4397,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-document-field_topics'
   $field_instances['node-document-field_topics'] = array(
     'bundle' => 'document',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -4431,8 +4438,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
-    'label' => 'Emner',
-    'required' => 0,
+    'label' => 'Faglige emner',
+    'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -5424,7 +5431,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-forum_post-field_topics'
   $field_instances['node-forum_post-field_topics'] = array(
     'bundle' => 'forum_post',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => 'Vælg gerne 3-7 emner og underemner - og vær så specifik som muligt. ',
     'display' => array(
@@ -5462,8 +5472,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
-    'label' => 'Emner',
-    'required' => 0,
+    'label' => 'Faglige emner',
+    'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -5474,7 +5484,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'module' => 'hs_taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
-        'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'taxonomy_hs',
       'weight' => 3,
@@ -6199,6 +6208,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-magazine-field_ekstra_artikler'
   $field_instances['node-magazine-field_ekstra_artikler'] = array(
     'bundle' => 'magazine',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -6642,7 +6653,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-magazine-field_tags'
   $field_instances['node-magazine-field_tags'] = array(
     'bundle' => 'magazine',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -6680,7 +6694,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Tags',
+    'label' => 'Stikord (Tags)',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -6702,6 +6716,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-magazine-field_top_artikel'
   $field_instances['node-magazine-field_top_artikel'] = array(
     'bundle' => 'magazine',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -6759,7 +6775,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -6770,7 +6786,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-magazine-field_topics'
   $field_instances['node-magazine-field_topics'] = array(
     'bundle' => 'magazine',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -6808,8 +6827,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
-    'label' => 'Emner / Tema',
-    'required' => 0,
+    'label' => 'Faglige emner',
+    'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -7420,6 +7439,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-meeting_doodle-og_group_ref'
   $field_instances['node-meeting_doodle-og_group_ref'] = array(
     'bundle' => 'meeting_doodle',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
@@ -7474,11 +7495,11 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 1,
           'fallback' => 'none',
           'providers' => array(
-            'og_context' => FALSE,
+            'og_context' => 0,
             'url' => 1,
           ),
           'skip_perm' => 0,
@@ -8092,7 +8113,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-os2web_base_news-field_os2web_base_field_kle_ref'
   $field_instances['node-os2web_base_news-field_os2web_base_field_kle_ref'] = array(
     'bundle' => 'os2web_base_news',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => 'Du kan også tilvælge KL Emneord til nyheden',
     'display' => array(
@@ -8136,7 +8160,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_kle_ref',
     'label' => 'KL Emneord',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -8802,7 +8826,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-os2web_base_news-field_topics'
   $field_instances['node-os2web_base_news-field_topics'] = array(
     'bundle' => 'os2web_base_news',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => 'Vælg hvilke emner der arbejdes med i netværket. Vælg gerne 3-7 emner og underemner - og vær så specifik som muligt. ',
     'display' => array(
@@ -8841,7 +8868,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'entity_type' => 'node',
     'field_name' => 'field_topics',
     'label' => 'Faglige emner',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -9754,6 +9781,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<a href="/node/add/artikler">Opret artikel</a> | <a href="/node/add/os2web-base-news">Opret nyheder</a>');
   t('Adresse');
   t('Afholdelsessted');
   t('Angiv hvilken type din nyhed er');
@@ -9793,8 +9821,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Ekstra artikler');
   t('Ekstra tekst');
   t('Email');
-  t('Emner');
-  t('Emner / Tema');
   t('Faglige emner');
   t('Filer');
   t('Flere bilag');
@@ -9843,6 +9869,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Skjul auto relaterede links');
   t('Skriv et kort resume af din nyhed som du ønsker det skal vises i lister og oversigter. Du kan udelade dette, så i stedet vises de første sætninger i din tekst som resume');
   t('Status');
+  t('Stikord (Tags)');
   t('Stilling / titel');
   t('Svarfrist');
   t('Synlighed');

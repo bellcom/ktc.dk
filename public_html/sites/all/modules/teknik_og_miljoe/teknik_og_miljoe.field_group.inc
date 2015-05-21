@@ -117,8 +117,8 @@ function teknik_og_miljoe_field_group_info() {
     'weight' => '17',
     'children' => array(
       0 => 'field_topics',
-      1 => 'group_tags',
-      2 => 'group_skjulauto',
+      1 => 'group_skjulauto',
+      2 => 'group_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -366,14 +366,13 @@ function teknik_og_miljoe_field_group_info() {
     'label' => 'Redaktion',
     'weight' => '19',
     'children' => array(
-      0 => 'field_magasin',
-      1 => 'field_artikel_status',
-      2 => 'field_annonce',
-      3 => 'field_antal_anslag',
-      4 => 'field_deadline',
-      5 => 'field_highres_billeder',
-      6 => 'field_send_opdateringer_til_alle',
-      7 => 'group_forfatterperm',
+      0 => 'field_artikel_status',
+      1 => 'field_annonce',
+      2 => 'field_antal_anslag',
+      3 => 'field_deadline',
+      4 => 'field_highres_billeder',
+      5 => 'field_send_opdateringer_til_alle',
+      6 => 'group_forfatterperm',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

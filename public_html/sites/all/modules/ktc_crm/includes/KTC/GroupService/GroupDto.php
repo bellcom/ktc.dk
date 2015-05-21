@@ -100,6 +100,20 @@ class GroupDto extends CrmEntityDto
 
   /**
    * 
+   * @var boolean $SynchronizeWithKtcDk
+   * @access public
+   */
+  public $SynchronizeWithKtcDk = null;
+
+  /**
+   * 
+   * @var boolean $VisibleOnWeb
+   * @access public
+   */
+  public $VisibleOnWeb = null;
+
+  /**
+   * 
    * @var string $WebSite
    * @access public
    */

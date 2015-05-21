@@ -101,6 +101,9 @@ function teknik_og_miljoe_strongarm() {
         'scheduler_settings' => array(
           'weight' => '22',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(
         'signup' => array(

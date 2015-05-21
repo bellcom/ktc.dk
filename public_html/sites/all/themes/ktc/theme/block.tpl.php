@@ -32,18 +32,13 @@
  * @ingroup themeable
  */
 ?>
-<section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php print render($title_suffix); ?>
-    <div class="block-heading">
-      <?php if ($block->region == 'header' || $block->region == 'footer'): ?>
-        <i class="title-left"></i>
-      <?php endif; ?>
-      <h3 class="panel-title">
-        <?php if ($block->region == 'header'): ?>
-          <?php //$title = substr(0, 18, $title) . '...'; ?>
-        <?php endif; ?>
-        <?php print $title; ?>
-      </h3>
-    </div>
-  <?php print $content ?>
-</section>
+<aside id="<?php print $block_html_id; ?>" class="panel panel-block <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+  	<?php print render($title_prefix); ?>
+  	<?php if ($block->subject): ?>
+    	<div class="block-heading panel-heading">
+			<h3 class="panel-title"><?php print $block->subject ?> HEST</h3>
+		</div>
+	<?php endif;?>
+    <?php print render($title_suffix); ?>
+	<div class="panel-body"><?php print $content ?></div>
+</aside>

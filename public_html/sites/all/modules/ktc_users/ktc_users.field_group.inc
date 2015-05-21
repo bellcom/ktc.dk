@@ -26,19 +26,21 @@ function ktc_users_field_group_info() {
       0 => 'field_all_comment_notify',
       1 => 'field_content_type_notify',
       2 => 'field_department',
-      3 => 'field_employer_name',
-      4 => 'field_hidden',
-      5 => 'field_kommune',
-      6 => 'field_my_comment_notify',
-      7 => 'field_phone',
-      8 => 'field_regioner',
-      9 => 'field_gammel_uid',
-      10 => 'field_typo3_uid',
-      11 => 'field_crm_uuid',
-      12 => 'ckeditor',
-      13 => 'metatags',
-      14 => 'timezone',
-      15 => 'locale',
+      3 => 'field_ekspertise',
+      4 => 'field_employer_name',
+      5 => 'field_hidden',
+      6 => 'field_kommune',
+      7 => 'field_my_comment_notify',
+      8 => 'field_phone',
+      9 => 'field_regioner',
+      10 => 'field_tags',
+      11 => 'field_gammel_uid',
+      12 => 'field_typo3_uid',
+      13 => 'field_crm_uuid',
+      14 => 'ckeditor',
+      15 => 'metatags',
+      16 => 'timezone',
+      17 => 'locale',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -63,7 +65,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Privatadresse',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_adresse',
       1 => 'field_city',
@@ -94,7 +96,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Medlemskaber og udpegninger',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_memberships_text',
       1 => 'field_membership_appointments',
@@ -164,7 +166,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dine netværk på KTC.dk',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'og_user_node',
     ),
@@ -192,11 +194,10 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Notifikationer',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
-      0 => 'field_nyhedsbrev_ktc_update',
-      1 => 'field_netvaerk_notifications',
-      2 => 'mimemail',
+      0 => 'field_netvaerk_notifications',
+      1 => 'mimemail',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -254,7 +255,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Ansættelse',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_account',
     ),
@@ -377,13 +378,11 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dine kompetencer',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
-      0 => 'field_ekspertise',
-      1 => 'field_special_skills',
-      2 => 'field_tags',
-      3 => 'field_topics',
-      4 => 'field_uddannelser_og_kurser',
+      0 => 'field_special_skills',
+      1 => 'field_topics',
+      2 => 'field_uddannelser_og_kurser',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

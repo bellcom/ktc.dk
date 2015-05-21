@@ -375,7 +375,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 69,
+      'weight' => 70,
     ),
   );
 
@@ -671,7 +671,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 68,
+      'weight' => 69,
     ),
   );
 
@@ -850,7 +850,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 77,
+      'weight' => 79,
     ),
   );
 
@@ -948,7 +948,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 72,
+      'weight' => 73,
     ),
   );
 
@@ -1370,7 +1370,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 52,
+      'weight' => 75,
     ),
   );
 
@@ -1468,7 +1468,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 73,
+      'weight' => 74,
     ),
   );
 
@@ -1558,7 +1558,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 75,
+      'weight' => 77,
     ),
   );
 
@@ -1651,7 +1651,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 70,
+      'weight' => 71,
     ),
   );
 
@@ -1847,7 +1847,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 71,
+      'weight' => 72,
     ),
   );
 
@@ -2922,7 +2922,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 66,
+      'weight' => 67,
     ),
   );
 
@@ -3208,7 +3208,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 74,
+      'weight' => 76,
     ),
   );
 
@@ -3305,7 +3305,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 67,
+      'weight' => 68,
     ),
   );
 
@@ -3526,7 +3526,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 48,
+      'weight' => 80,
     ),
   );
 
@@ -3795,7 +3795,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 76,
+      'weight' => 78,
     ),
   );
 
