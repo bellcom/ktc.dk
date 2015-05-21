@@ -248,16 +248,15 @@ function ktc_preprocess_node(&$vars) {
 
   // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
   if ($vars['type'] == 'arrangement') {
+
     if (isset($vars['field_arrangement_date']['und'])) {
-      $day = $vars['field_arrangement_date']['und'][0]['value'];
-      $month = date('M', strtotime($vars['field_arrangement_date']['und'][0]['value']));
+      $dbDate = $vars['field_arrangement_date']['und'][0]['value'];
     }
     else {
-      $day = $vars['field_arrangement_date'][0]['value'];
-      $month = date('M', strtotime($vars['field_arrangement_date'][0]['value']));
+      $dbDate = $vars['field_arrangement_date'][0]['value'];
     }
-    $vars['arrangement_day'] = date('d', strtotime($day));
-    $vars['arrangement_month'] = $month;
+
+    $vars['arrangement_date'] = date('d\. M Y \k\l\. H:i', strtotime($dbDate));
   }
 
   // Added comments_view and num_comments for node--teasecomments.tpl.php.
