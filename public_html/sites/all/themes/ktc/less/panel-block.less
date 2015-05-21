@@ -21,6 +21,7 @@
 @panel-stacked-spacing: @grid-gutter-width;
 
 //== Heading
+@panel-heading-font-size: 12px;
 @panel-heading-top-padding: 6px;
 @panel-heading-bottom-padding: @panel-heading-top-padding;
 
@@ -83,9 +84,25 @@
 
 		// Title
 		.panel-title {
+			position: relative;
 			display: block;
-			font-family: @headings-font-family;
 			padding: 0;
+			font-family: @headings-font-family;
+			font-size: @panel-heading-font-size;
+			text-transform: uppercase;
+
+			// Link
+			&,
+			> a {
+
+				// States
+				&,
+				&:hover,
+				&:focus,
+				&:active {
+					text-decoration: none;
+				}
+			}
 		}
 	}
 
@@ -243,7 +260,8 @@
 			}
 
 			// Event
-			&.panel-footer-button-event {
+			&.panel-footer-button-event,
+			&.panel-footer-button-arrangement {
 				padding-left: floor( @panel-footer-icon-event-width + @panel-footer-icon-spacing );
 
 				// Icon
@@ -391,12 +409,6 @@
 	}
 }
 
-//==
-//blue = teknik & miljø
-//gold = fra netværk
-//grøn = standard
-//rød  = egen bruger har oprettet indholdet
-
 // Colouring
 .mixin-user-profile(@panel-user-profile-default-photo-headline-color, @panel-user-profile-default-photo-border-color);
 .ktc-red {
@@ -410,6 +422,69 @@
 }
 .ktc-green {
 	.mixin-user-profile(@panel-user-profile-green-photo-headline-color, @panel-user-profile-green-photo-border-color);
+}
+
+// --------------------------------------------------
+// Date - simple
+// --------------------------------------------------
+
+// Variables
+@panel-simple-date-red-font-color: @brand-userlink-red;
+@panel-simple-date-gold-font-color: @brand-gold;
+@panel-simple-date-blue-font-color: @brand-darkblue;
+@panel-simple-date-green-font-color: @brand-darkgreen;
+
+// Mixins
+.mixin-simple-date(@date-text-color) {
+
+	&,
+	&.panel.panel-block {
+
+		// Body
+		.panel-body {
+
+			// Date - simple
+			.panel-date-simple {
+				color: @date-text-color;
+			}
+		}
+	}
+}
+
+// Panel block
+.panel.panel-block {
+
+	// Body
+	.panel-body {
+
+		// Headlines
+		h1, h2, h3, h4, h5, h6 {
+			+ .panel-date-simple {
+				margin-top: -8px;
+			}
+		}
+
+		// Date simple
+		.panel-date-simple {
+			font-style: italic;
+			font-weight: normal;
+			margin-top: 0;
+		}
+	}
+}
+
+// Colouring
+.ktc-red {
+	.mixin-simple-date(@panel-simple-date-red-font-color);
+}
+.ktc-gold {
+	.mixin-simple-date(@panel-simple-date-gold-font-color);
+}
+.ktc-blue {
+	.mixin-simple-date(@panel-simple-date-blue-font-color);
+}
+.ktc-green {
+	.mixin-simple-date(@panel-simple-date-green-font-color);
 }
 
 // |--------------------------------------------------------------------------
@@ -428,7 +503,6 @@
 // --------------------------------------------------
 
 //== Heading
-@panel-aside-heading-title-font-size: 15px;
 @panel-aside-heading-title-font-color: #fff;
 
 //== Toggle
@@ -473,11 +547,7 @@
 
 		// Title
 		.panel-title {
-			font-size: @panel-aside-heading-title-font-size;
-			font-weight: normal;
 			color: @panel-aside-heading-title-font-color;
-			.line-height(@panel-aside-heading-title-font-size);
-			text-transform: uppercase;
 		}
 	}
 
@@ -583,7 +653,6 @@
 // --------------------------------------------------
 
 //== Heading
-@panel-block-teaser-heading-font-size: 15px;
 
 //== Heading icons
 @panel-block-teaser-heading-icon-spacing: 5px;
@@ -640,9 +709,6 @@
 
 		// Title
 		.panel-title {
-			position: relative;
-			font-size: @panel-block-teaser-heading-font-size;
-			font-weight: normal;
 
 			// Pin icon
 			&:before {
