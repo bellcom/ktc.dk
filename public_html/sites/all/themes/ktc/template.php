@@ -794,7 +794,7 @@ function ktc_preprocess_user_picture(&$variables) {
   // user picture.
   if (is_array($variables['account']->roles)) {
     if (in_array('KTC VIP', $variables['account']->roles)) {
-      $variables['role_class'] = 'green';
+      $variables['role_class'] = 'panel-user-photo-vip';
     }
   }
 }
