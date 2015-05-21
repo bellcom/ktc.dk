@@ -259,6 +259,13 @@ function ktc_preprocess_node(&$vars) {
     $vars['arrangement_date'] = date('d\. M Y \k\l\. H:i', strtotime($dbDate));
   }
 
+  // News
+  if ($vars['type'] == 'os2web_base_news') {
+    if (isset($vars['created'])) {
+        $vars['news_published_at'] = date('d\. M Y \k\l\. H:i', $vars['created']);
+    }
+  }
+
   // Added comments_view and num_comments for node--teasecomments.tpl.php.
   $view = views_get_view('comments_in_teaser');
   if ($view && $view->access('block')) {
