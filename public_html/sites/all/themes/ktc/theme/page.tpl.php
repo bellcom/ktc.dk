@@ -254,6 +254,13 @@
                 </div>
                 <div class="panel-body">
                     <p>Text</p>
+                    <div class="panel-user-profile">
+                        <img class="panel-user-profile-photo" src="http://ktc.mn/sites/all/themes/ktc/images/user-icon.png" alt="Jesper Hedegaard Hedegaard - KTC Sekretariats billede" title="Jesper Hedegaard Hedegaard - KTC Sekretariats billede">
+                        <div class="panel-user-profile-content">
+                            <h4>Her er også en tekst</h4>
+                            <p>Er der nogen der ligger inde med gode erfaringer mht. at få jeres badevandsprofiler opdateret?</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-footer">
                     <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
@@ -279,10 +286,10 @@
 
     <div class="col-xs-12 col-sm-3">
       <!-- Begin - teaser -->
-      <div class="blue">
+      <div class="ktc-blue">
         <div class="panel panel-block panel-block-teaser">
           <div class="panel-heading">
-            <h4 class="panel-title">Stacked blue</h4>
+            <a href="#" class="panel-title">Stacked blue</a>
           </div>
           <div class="panel-body">
             <h3><a href="#">Test headline</a></h3>
@@ -303,7 +310,7 @@
         </div>
         <div class="panel panel-block panel-block-teaser">
           <div class="panel-heading">
-            <h4 class="panel-title">Stacked blue</h4>
+            <a href="#" class="panel-title">Stacked blue</a>
           </div>
           <div class="panel-body">
             <h3><a href="#">Test headline</a></h3>
@@ -324,7 +331,7 @@
         </div>
         <div class="panel panel-block panel-block-teaser">
           <div class="panel-heading">
-            <h4 class="panel-title">Stacked blue</h4>
+            <a href="#" class="panel-title">Stacked blue</a>
           </div>
           <div class="panel-body">
             <h3><a href="#">Test headline</a></h3>
@@ -349,14 +356,21 @@
 
     <div class="col-xs-12 col-sm-3">
       <!-- Begin - teaser -->
-      <div class="gold">
+      <div class="ktc-gold">
         <div class="panel panel-block panel-block-teaser">
           <div class="panel-heading">
-            <h3 class="panel-title">Gold</h3>
+            <a href="#" class="panel-title">Gold</a>
           </div>
           <div class="panel-body">
             <h3><a href="#">Test headline</a></h3>
             <p>Kære Naturtema. Som aftalt kommer <a href="#">Danmarks Miljøportal</a> ud og underviser i Arealinformation, Naturappl </p>
+            <div class="panel-user-profile">
+              <img class="panel-user-profile-photo" src="http://ktc.mn/sites/all/themes/ktc/images/user-icon.png" alt="Jesper Hedegaard Hedegaard - KTC Sekretariats billede" title="Jesper Hedegaard Hedegaard - KTC Sekretariats billede">
+              <div class="panel-user-profile-content">
+                  <h4>Her er også en tekst</h4>
+                  <p>Er der nogen der ligger inde med gode erfaringer mht. at få jeres badevandsprofiler opdateret?</p>
+              </div>
+            </div>
           </div>
           <div class="panel-footer">
             <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
@@ -370,14 +384,21 @@
 
     <div class="col-xs-12 col-sm-3">
       <!-- Begin - teaser -->
-      <div class="green">
+      <div class="ktc-green">
         <div class="panel panel-block panel-block-teaser">
           <div class="panel-heading">
-            <h3 class="panel-title">Green</h3>
+            <a href="#" class="panel-title">Green</a>
           </div>
           <div class="panel-body">
             <h3><a href="#">Test headline</a></h3>
             <p>Kære Naturtema. Som aftalt kommer <a href="#">Danmarks Miljøportal</a> ud og underviser i Arealinformation, Naturappl </p>
+            <div class="panel-user-profile">
+              <img class="panel-user-profile-photo" src="http://ktc.mn/sites/all/themes/ktc/images/user-icon.png" alt="Jesper Hedegaard Hedegaard - KTC Sekretariats billede" title="Jesper Hedegaard Hedegaard - KTC Sekretariats billede">
+              <div class="panel-user-profile-content">
+                  <h4>Her er også en tekst</h4>
+                  <p>Er der nogen der ligger inde med gode erfaringer mht. at få jeres badevandsprofiler opdateret?</p>
+              </div>
+            </div>
           </div>
           <div class="panel-footer">
             <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>
@@ -391,14 +412,21 @@
 
     <div class="col-xs-12 col-sm-3">
       <!-- Begin - teaser -->
-      <div class="red">
+      <div class="ktc-red">
         <div class="panel panel-block panel-block-teaser">
           <div class="panel-heading">
-            <h3 class="panel-title">Red</h3>
+            <a href="#" class="panel-title">Red</a>
           </div>
           <div class="panel-body">
             <h3><a href="#">Test headline</a></h3>
             <p>Kære Naturtema. Som aftalt kommer <a href="#">Danmarks Miljøportal</a> ud og underviser i Arealinformation, Naturappl </p>
+            <div class="panel-user-profile">
+              <img class="panel-user-profile-photo" src="http://ktc.mn/sites/all/themes/ktc/images/user-icon.png" alt="Jesper Hedegaard Hedegaard - KTC Sekretariats billede" title="Jesper Hedegaard Hedegaard - KTC Sekretariats billede">
+              <div class="panel-user-profile-content">
+                  <h4>Her er også en tekst</h4>
+                  <p>Er der nogen der ligger inde med gode erfaringer mht. at få jeres badevandsprofiler opdateret?</p>
+              </div>
+            </div>
           </div>
           <div class="panel-footer">
             <a href="#" class="panel-footer-button panel-footer-button-comment">1348</a>

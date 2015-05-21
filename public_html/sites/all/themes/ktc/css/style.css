@@ -9983,142 +9983,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   left: 0;
   right: auto;
 }
-.node-teaser .margin-bottom-20 {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.node-teaser h6 {
-  font-size: 11px;
-  margin-bottom: 3px;
-  display: inline-block;
-}
-.node-teaser.private-content .icon-locker {
-  background-image: url(../images/sprites.png);
-  background-position: 0px -54px;
-  width: 11px;
-  height: 12px;
-  display: inline-block;
-  float: right;
-  margin-top: 10px;
-}
-.node-teaser h2 {
-  margin-top: 10px;
-  font-size: 18px;
-}
-.node-teaser h2 a {
-  color: #2c353a;
-}
-.node-teaser .node-teaser-item-img {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.node-teaser .node-teaser-text .left {
-  padding: 0px 0px 0px 0px;
-}
-.node-teaser .node-teaser-text p {
-  word-break: break-word;
-}
-.node-teaser .node-teaser-user-profile {
-  margin-top: 10px;
-}
-.node-teaser .node-teaser-user-profile .left {
-  padding: 0 10px 0 0;
-}
-.node-teaser .node-teaser-user-profile .right {
-  padding: 10px 0px;
-}
-.node-teaser .user-picture {
-  border: 2px solid #ffffff;
-  height: 52px;
-  width: 52px;
-  border-radius: 50%;
-}
-.node-teaser .user-picture img {
-  height: auto;
-  width: 52px;
-  border-radius: 50%;
-  border: 3px solid #ffffff;
-}
-.node-teaser.ktc-red {
-  background-color: #fff5f2;
-}
-.node-teaser.ktc-red .icon-group-ktc-red {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -121px;
-  width: 12px;
-  height: 15px;
-  vertical-align: bottom;
-  margin-right: 5px;
-}
-.node-teaser.ktc-red .user-picture {
-  border: 2px solid #d54621;
-}
-.node-teaser.ktc-red .user_link a {
-  color: #d54621;
-  font-size: 16px;
-  font-weight: 600;
-}
-.node-teaser.ktc-yellow {
-  background-color: #fff9e2;
-}
-.node-teaser.ktc-yellow .icon-group-ktc-yellow {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -181px;
-  width: 12px;
-  height: 15px;
-  vertical-align: bottom;
-  margin-right: 5px;
-}
-.node-teaser.ktc-yellow .user-picture {
-  border: 2px solid #d3a900;
-}
-.node-teaser.ktc-yellow .user_link a {
-  color: #d3a900;
-  font-size: 16px;
-  font-weight: 600;
-}
-.node-teaser.ktc-blue {
-  background-color: #e8f8ff;
-}
-.node-teaser.ktc-blue .icon-group-ktc-blue {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -226px;
-  width: 12px;
-  height: 15px;
-  vertical-align: bottom;
-  margin-right: 5px;
-}
-.node-teaser.ktc-blue .user-picture {
-  border: 2px solid #1f9bd7;
-}
-.node-teaser.ktc-blue .user_link a {
-  color: #1f9bd7;
-  font-size: 16px;
-  font-weight: 600;
-}
-.node-teaser.ktc-green {
-  background-color: #effff1;
-}
-.node-teaser.ktc-green .icon-group-ktc-green {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -151px;
-  width: 12px;
-  height: 15px;
-  vertical-align: bottom;
-  margin-right: 5px;
-}
-.node-teaser.ktc-green .user-picture {
-  border: 2px solid #36a145;
-}
-.node-teaser.ktc-green .user_link a {
-  color: #36a145;
-  font-size: 16px;
-  font-weight: 600;
-}
 .node-teaser.node-group {
   background: none !important;
 }
@@ -10869,10 +10733,12 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   width: 9px;
   height: 16px;
 }
-.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-forum {
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-forum,
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-forum_post {
   padding-left: 20px;
 }
-.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-forum:before {
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-forum:before,
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-forum_post:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -79px;
@@ -10936,18 +10802,22 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   display: table;
   padding: 8px 0;
 }
-.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-photo {
+.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
   display: inherit;
   float: left;
+  height: auto;
+  width: auto;
   max-width: 48px;
   max-height: 48px;
   border-radius: 100%;
   border-width: 2px;
   border-style: solid;
-  border-color: #2c353a;
   background-color: transparent;
   margin-right: 10px;
   padding: 3px;
+}
+.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container.panel-user-photo-vip img {
+  border-color: #36a145;
 }
 .panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content {
   display: inherit;
@@ -10960,6 +10830,91 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6 {
   margin-top: 0;
   padding-top: 0;
+}
+.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
+  border-color: #e9edee;
+}
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h4,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h5,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1 > a,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2 > a,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3 > a,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h4 > a,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h5 > a,
+.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6 > a {
+  color: #2c353a;
+}
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
+  border-color: #e75311;
+}
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h4,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h5,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1 > a,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2 > a,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3 > a,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h4 > a,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h5 > a,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6 > a {
+  color: #e75311;
+}
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
+  border-color: #d3a900;
+}
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h4,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h5,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1 > a,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2 > a,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3 > a,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h4 > a,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h5 > a,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6 > a {
+  color: #d3a900;
+}
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
+  border-color: #1f9bd7;
+}
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h4,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h5,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1 > a,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2 > a,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3 > a,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h4 > a,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h5 > a,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6 > a {
+  color: #1f9bd7;
+}
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
+  border-color: #36a145;
+}
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h4,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h5,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1 > a,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2 > a,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3 > a,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h4 > a,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h5 > a,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6 > a {
+  color: #36a145;
 }
 .panel-block.panel-block-aside .panel-heading {
   background-color: #2c353a;
@@ -11018,13 +10973,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel-block.panel-block-aside.panel-block-aside-toggle.closed .panel-body {
   display: none;
 }
-.tech-env .panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
+.tech-env.panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
   background-color: #1f9bd7;
 }
-.network .panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
+.network.panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
   background-color: #d3a900;
 }
-.no-network .panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
+.no-network.panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
   background-color: #137c34;
 }
 .panel-block.panel-block-teaser .panel-heading {
@@ -11045,40 +11000,40 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel-block.panel-block-teaser .panel-body {
   padding-top: 0;
 }
-.green .panel-block.panel-block-teaser .panel-heading .panel-title {
+.ktc-green.panel-block.panel-block-teaser .panel-heading .panel-title {
   padding-left: 17px;
 }
-.green .panel-block.panel-block-teaser .panel-heading .panel-title:before {
+.ktc-green.panel-block.panel-block-teaser .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -151px;
   width: 12px;
   height: 15px;
 }
-.blue .panel-block.panel-block-teaser .panel-heading .panel-title {
+.ktc-blue.panel-block.panel-block-teaser .panel-heading .panel-title {
   padding-left: 17px;
 }
-.blue .panel-block.panel-block-teaser .panel-heading .panel-title:before {
+.ktc-blue.panel-block.panel-block-teaser .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -226px;
   width: 12px;
   height: 15px;
 }
-.gold .panel-block.panel-block-teaser .panel-heading .panel-title {
+.ktc-gold.panel-block.panel-block-teaser .panel-heading .panel-title {
   padding-left: 17px;
 }
-.gold .panel-block.panel-block-teaser .panel-heading .panel-title:before {
+.ktc-gold.panel-block.panel-block-teaser .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -181px;
   width: 12px;
   height: 15px;
 }
-.red .panel-block.panel-block-teaser .panel-heading .panel-title {
+.ktc-red.panel-block.panel-block-teaser .panel-heading .panel-title {
   padding-left: 17px;
 }
-.red .panel-block.panel-block-teaser .panel-heading .panel-title:before {
+.ktc-red.panel-block.panel-block-teaser .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -121px;
