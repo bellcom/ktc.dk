@@ -93,12 +93,7 @@
 		padding: @panel-body-top-padding @panel-left-right-padding @panel-body-bottom-padding @panel-left-right-padding;
 
 		// All headlines
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
+		h1,h2,h3,h4,h5,h6 {
 
 			// Headline and link
 			&,
@@ -190,7 +185,8 @@
 			}
 
 			// Forum
-			&.panel-footer-button-forum {
+			&.panel-footer-button-forum,
+			&.panel-footer-button-forum_post {
 				padding-left: floor( @panel-footer-icon-forum-width + @panel-footer-icon-spacing );
 
 				// Icon
@@ -271,28 +267,70 @@
 // |--------------------------------------------------------------------------
 // |
 // | Contains the following:
-// | - .panel-block
-// | - .panel-block-black
-// | - .panel-block-gold
-// | - .panel-block-green
-// | - .panel-block-blue
-// | - .panel-block-action
-// | - .panel-block-toggle
+// | - .panel-user-profile
 // |
 
 // --------------------------------------------------
-// Variables
+// User profile
 // --------------------------------------------------
 
-//== User profile
+//== Variables
 @panel-user-profile-top-bottom-padding: 8px;
 @panel-user-profile-photo-content-spacing: 10px;
 @panel-user-profile-photo-border-width: 2px;
 @panel-user-profile-photo-border-distance: 3px;
 
-// --------------------------------------------------
-// Styling
-// --------------------------------------------------
+//== Colouring
+@panel-user-profile-default-photo-headline-color: @gray-darker;
+@panel-user-profile-default-photo-border-color: #e9edee;
+@panel-user-profile-gold-photo-headline-color: @brand-gold;
+@panel-user-profile-gold-photo-border-color: @panel-user-profile-gold-photo-headline-color;
+@panel-user-profile-green-photo-headline-color: @brand-darkgreen;
+@panel-user-profile-green-photo-border-color: @panel-user-profile-green-photo-headline-color;
+@panel-user-profile-blue-photo-headline-color: @brand-darkblue;
+@panel-user-profile-blue-photo-border-color: @panel-user-profile-blue-photo-headline-color;
+@panel-user-profile-red-photo-headline-color: @brand-userlink-red;
+@panel-user-profile-red-photo-border-color: @panel-user-profile-red-photo-headline-color;
+
+//== Mixins
+.mixin-user-profile(@headline-color, @profile-photo-border-color) {
+
+	// Panel block
+	&.panel.panel-block {
+
+		// Body
+		.panel-body {
+
+			// User profile
+			.panel-user-profile {
+
+				// Photo container
+				.panel-user-photo-container {
+
+					// Photo
+					img {
+						border-color: @profile-photo-border-color;
+					}
+				}
+
+
+				// Content
+				.panel-user-profile-content {
+
+					// Headlines
+					h1,h2,h3,h4,h5,h6 {
+
+						// Headline and link
+						&,
+						> a {
+							color: @headline-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 // Panel block
 .panel.panel-block {
@@ -305,19 +343,33 @@
 			display: table;
 			padding: @panel-user-profile-top-bottom-padding 0;
 
-			// Photo
-			.panel-user-profile-photo {
-				display: inherit;
-				float: left;
-				max-width: 48px;
-				max-height: 48px;
-				border-radius: 100%;
-				border-width: @panel-user-profile-photo-border-width;
-				border-style: solid;
-				border-color: @gray-darker;
-				background-color: transparent;
-				margin-right: @panel-user-profile-photo-content-spacing;
-				padding: @panel-user-profile-photo-border-distance;
+			// Photo container
+			.panel-user-photo-container {
+
+				// Photo
+				img {
+					display: inherit;
+					float: left;
+					height: auto;
+					width: auto;
+					max-width: 48px;
+					max-height: 48px;
+					border-radius: 100%;
+					border-width: @panel-user-profile-photo-border-width;
+					border-style: solid;
+					background-color: transparent;
+					margin-right: @panel-user-profile-photo-content-spacing;
+					padding: @panel-user-profile-photo-border-distance;
+				}
+
+				// VIP
+				&.panel-user-photo-vip {
+
+					// Photo
+					img {
+						border-color: @panel-user-profile-green-photo-border-color;
+					}
+				}
 			}
 
 			// Content
@@ -337,9 +389,26 @@
 	}
 }
 
+//==
+//blue = teknik & miljø
+//gold = fra netværk
+//grøn = standard
+//rød  = egen bruger har oprettet indholdet
 
-
-
+// Colouring
+.mixin-user-profile(@panel-user-profile-default-photo-headline-color, @panel-user-profile-default-photo-border-color);
+.ktc-red {
+	.mixin-user-profile(@panel-user-profile-red-photo-headline-color, @panel-user-profile-red-photo-border-color);
+}
+.ktc-gold {
+	.mixin-user-profile(@panel-user-profile-gold-photo-headline-color, @panel-user-profile-gold-photo-border-color);
+}
+.ktc-blue {
+	.mixin-user-profile(@panel-user-profile-blue-photo-headline-color, @panel-user-profile-blue-photo-border-color);
+}
+.ktc-green {
+	.mixin-user-profile(@panel-user-profile-green-photo-headline-color, @panel-user-profile-green-photo-border-color);
+}
 
 // |--------------------------------------------------------------------------
 // | Aside
@@ -372,30 +441,20 @@
 // Mixins
 // --------------------------------------------------
 
-// Gold
-.panel-block-aside-gold() {
+// Aside color
+.mixin-panel-block-aside-color(@heading-background-color) {
 
-	// Heading
-	.panel-heading {
-		background-color: @brand-gold;
-	}
-}
+	// Aside
+	&.panel-block.panel-block-aside {
 
-// Green
-.panel-block-aside-green() {
+		// Color
+		&.panel-block-aside-color {
 
-	// Heading
-	.panel-heading {
-		background-color: @brand-footergreen;
-	}
-}
-
-// Blue
-.panel-block-aside-blue() {
-
-	// Heading
-	.panel-heading {
-		background-color: @brand-darkblue;
+			// Heading
+			.panel-heading {
+				background-color: @heading-background-color;
+			}
+		}
 	}
 }
 
@@ -495,41 +554,17 @@
 
 // Technique and environment (blue)
 .tech-env {
-
-	// Aside
-	.panel-block.panel-block-aside {
-
-		// Color
-		&.panel-block-aside-color {
-			.panel-block-aside-blue;
-		}
-	}
+	.mixin-panel-block-aside-color(@brand-darkblue);
 }
 
 // Network (gold)
 .network {
-
-	// Aside
-	.panel-block.panel-block-aside {
-
-		// Color
-		&.panel-block-aside-color {
-			.panel-block-aside-gold;
-		}
-	}
+	.mixin-panel-block-aside-color(@brand-gold);
 }
 
 // Not network (green)
 .no-network {
-
-	// Aside
-	.panel-block.panel-block-aside {
-
-		// Color
-		&.panel-block-aside-color {
-			.panel-block-aside-green;
-		}
-	}
+	.mixin-panel-block-aside-color(@brand-footergreen);
 }
 
 // |--------------------------------------------------------------------------
@@ -567,77 +602,24 @@
 // Mixins
 // --------------------------------------------------
 
-// Blue
-.panel-block-teaser-blue() {
+// Teaser
+.mixin-panel-block-teaser(@icon-pin, @icon-pin-width, @icon-pin-height) {
 
-	// Heading
-	.panel-heading {
+	// Teaser
+	&.panel-block.panel-block-teaser {
 
-		// Title
-		.panel-title {
-			padding-left: floor( @panel-block-teaser-heading-icon-pin-blue-width + @panel-block-teaser-heading-icon-spacing );
+		// Heading
+		.panel-heading {
 
-			// Pin icon
-			&:before {
-				margin-top: -(floor( @panel-block-teaser-heading-icon-pin-blue-height / 2 ));
-				.sprite(@panel-block-teaser-heading-icon-pin-blue);
-			}
-		}
-	}
-}
+			// Title
+			.panel-title {
+				padding-left: floor(@icon-pin-width + @panel-block-teaser-heading-icon-spacing);
 
-// Gold
-.panel-block-teaser-green() {
-
-	// Heading
-	.panel-heading {
-
-		// Title
-		.panel-title {
-			padding-left: floor( @panel-block-teaser-heading-icon-pin-green-width + @panel-block-teaser-heading-icon-spacing );
-
-			// Pin icon
-			&:before {
-				margin-top: -(floor( @panel-block-teaser-heading-icon-pin-green-height / 2 ));
-				.sprite(@panel-block-teaser-heading-icon-pin-green);
-			}
-		}
-	}
-}
-
-// Red
-.panel-block-teaser-red() {
-
-	// Heading
-	.panel-heading {
-
-		// Title
-		.panel-title {
-			padding-left: floor( @panel-block-teaser-heading-icon-pin-red-width + @panel-block-teaser-heading-icon-spacing );
-
-			// Pin icon
-			&:before {
-				margin-top: -(floor( @panel-block-teaser-heading-icon-pin-red-height / 2 ));
-				.sprite(@panel-block-teaser-heading-icon-pin-red);
-			}
-		}
-	}
-}
-
-// Gold
-.panel-block-teaser-gold() {
-
-	// Heading
-	.panel-heading {
-
-		// Title
-		.panel-title {
-			padding-left: floor( @panel-block-teaser-heading-icon-pin-gold-width + @panel-block-teaser-heading-icon-spacing );
-
-			// Pin icon
-			&:before {
-				margin-top: -(floor( @panel-block-teaser-heading-icon-pin-gold-height / 2 ));
-				.sprite(@panel-block-teaser-heading-icon-pin-gold);
+				// Pin icon
+				&:before {
+					margin-top: -(floor( @icon-pin-height / 2 ));
+					.sprite(@icon-pin);
+				}
 			}
 		}
 	}
@@ -678,37 +660,21 @@
 }
 
 // (green)
-.green {
-
-	// Teaser
-	.panel-block.panel-block-teaser {
-		.panel-block-teaser-green;
-	}
+.ktc-green {
+	.mixin-panel-block-teaser(@panel-block-teaser-heading-icon-pin-green, @panel-block-teaser-heading-icon-pin-green-width, @panel-block-teaser-heading-icon-pin-green-height);
 }
 
 // (blue)
-.blue {
-
-	// Teaser
-	.panel-block.panel-block-teaser {
-		.panel-block-teaser-blue;
-	}
+.ktc-blue {
+	.mixin-panel-block-teaser(@panel-block-teaser-heading-icon-pin-blue, @panel-block-teaser-heading-icon-pin-blue-width, @panel-block-teaser-heading-icon-pin-blue-height);
 }
 
 // (gold)
-.gold {
-
-	// Teaser
-	.panel-block.panel-block-teaser {
-		.panel-block-teaser-gold;
-	}
+.ktc-gold {
+	.mixin-panel-block-teaser(@panel-block-teaser-heading-icon-pin-gold, @panel-block-teaser-heading-icon-pin-gold-width, @panel-block-teaser-heading-icon-pin-gold-height);
 }
 
 // (red)
-.red {
-
-	// Teaser
-	.panel-block.panel-block-teaser {
-		.panel-block-teaser-red;
-	}
+.ktc-red {
+	.mixin-panel-block-teaser(@panel-block-teaser-heading-icon-pin-red, @panel-block-teaser-heading-icon-pin-red-width, @panel-block-teaser-heading-icon-pin-red-height);
 }
