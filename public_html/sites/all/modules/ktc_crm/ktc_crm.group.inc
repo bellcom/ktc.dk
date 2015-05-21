@@ -211,6 +211,7 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
   }
 
   $group_node->body[$language][0]['value'] = $groupdto->Description;
+  $group_node->body[$language][0]['format'] = 'filtered_html';
 
   $group_node->field_os2web_base_field_ext_link[$language][0]['url'] = $groupdto->WebSite;
 
