@@ -10636,6 +10636,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   background-color: #fff;
   border: 0;
   border-radius: 0;
+  margin-bottom: 20px;
 }
 .panel.panel-block .panel-heading {
   padding: 6px 10px 6px 10px;
@@ -10765,10 +10766,12 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   width: 16px;
   height: 13px;
 }
-.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-news {
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-news,
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-os2web_base_news {
   padding-left: 20px;
 }
-.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-news:before {
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-news:before,
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-os2web_base_news:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
   background-position: 0px -256px;
