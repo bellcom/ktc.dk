@@ -26,7 +26,7 @@
                     <?php print $image = theme('user_picture', array('account' => $user_object));?>
                 <?php endif; ?>
                 <div class="panel-user-profile-content">
-                    <h4><?php print $user_name; ?></h4>
+                    <h5><?php print $user_name; ?></h5>
                     <p><?php print $created_ago . ' ' . t('ago'); ?></p>
                 </div>
             </div>
