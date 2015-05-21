@@ -17,6 +17,9 @@
 
         <div class="panel-body">
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
+            <?php if ($news_published_at): ?>
+                <p class="panel-date-simple"><?php print $news_published_at; ?></p>
+            <?php endif; ?>
             <p><?php print render($content['field_os2web_base_field_summary']); ?></p>
             <div class="panel-user-profile">
                 <?php if (isset($user_object)): ?>
