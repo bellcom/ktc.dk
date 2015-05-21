@@ -130,18 +130,16 @@ function ktc_crm_node_presave($node) {
  */
 function ktc_crm_group_map_group_to_groupdto($group) {
   $group_uuid = _ktc_crm_get_uuid('node', $group);
+  if ($group_uuid === FALSE) {
+    $group_uuid = NULL;
+  }
 
   $groupdto = new \KTC\GroupService\GroupDto($group_uuid);
-
-  // The Crm webservice stopped accepting objects with empty guid properties.
-  if ($group_uuid === FALSE) {
-    unset($groupdto->CrmId);
-  }
 
   $groupdto->Active = $group->status;
 
   if ($field = field_get_items('node', $group, 'body')) {
-    $groupdto->Description = $field[0]['value'];
+    $groupdto->Description = substr($field[0]['value'], 0, 1999);
   }
 
   $groupdto->GroupName = $group->title;
