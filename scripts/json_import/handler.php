@@ -64,7 +64,12 @@ function ktc_import_save_user($entity) {
   $access = $entity->access;
   $created = $entity->created;
 
-  user_save($entity, (array) $entity);
+  if (!$entity->uid) {
+    $entity = user_save('', (array) $entity);
+  }
+  else {
+    user_save($entity);
+  }
 
   db_update('users')
     ->fields(array(
