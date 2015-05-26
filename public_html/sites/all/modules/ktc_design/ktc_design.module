@@ -5,3 +5,15 @@
  */
 
 include_once 'ktc_design.features.inc';
+
+/**
+ * Implements hook_custom_admin_paths_alter().
+ */
+function ktc_design_admin_paths_alter(&$paths) {
+  // Use frontend theme for user pages.
+  $paths = array(
+    'user/*/cancel' => FALSE,
+    'user/*/edit' => FALSE,
+    'user/*/edit/*' => FALSE,
+  );
+}
