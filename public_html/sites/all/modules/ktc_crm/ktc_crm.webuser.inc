@@ -8,6 +8,8 @@
  * Update users with data from CRM.
  */
 function ktc_crm_webuser_update_users() {
+  $logger = KtcCrmLogger::getInstance();
+  $logger->log->addInfo('cron', 'start user sync');
   // The webservice complains about not using paging cookie.
   $fetch_users = TRUE;
   $amount = 100;

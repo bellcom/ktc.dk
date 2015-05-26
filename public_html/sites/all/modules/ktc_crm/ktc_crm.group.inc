@@ -85,7 +85,7 @@ function ktc_crm_og_membership_insert($og_membership) {
 
       $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
 
-      $logger->log->addInfo('group add membership', array('crm_uuid' => $crm_uuid));
+      $logger->log->addInfo('group add membership', array('crm_uuid' => $membership_uuid));
 
       // Set the membership uuid on the og_membership entity.
       $og_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
@@ -550,15 +550,21 @@ function _ktc_crm_group_groupmemberdto_from_og_membership($og_membership) {
   $member_uuid = _ktc_crm_user_get_user_uuid($og_membership->etid);
   $grouprole_uuid = _ktc_crm_group_get_grouprole_uuid($og_membership);
 
+  $group = node_load($og_membership->gid);
+  $account = user_load($og_membership->etid);
+
   // Check if there is a UUID for this membership.
   $has_uuid = _ktc_crm_get_uuid('og_membership', $og_membership);
   $membership_uuid = $has_uuid ? $has_uuid : NULL;
 
   if ($group_uuid && $member_uuid) {
     $groupmemberdto = new \KTC\GroupService\GroupMemberDto($membership_uuid, TRUE);
+    $groupmemberdto->IsActiveMember = TRUE;
 
     $groupmemberdto->Group = new \KTC\GroupService\ReferenceDto($group_uuid);
+    $groupmemberdto->Group->Name = $group->title;
     $groupmemberdto->Member = new \KTC\GroupService\ReferenceDto($member_uuid);
+    $groupmemberdto->Member->Name = $account->name;
     $groupmemberdto->Role = new \KTC\GroupService\ReferenceDto($grouprole_uuid);
 
     return $groupmemberdto;
