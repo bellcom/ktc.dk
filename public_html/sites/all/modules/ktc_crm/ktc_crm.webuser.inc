@@ -62,7 +62,7 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
     if ($account->is_new) {
       $webuserdto = ktc_crm_map_account_to_webuserdto($tmp_account);
       if ($crm_uuid = ktc_crm_update_user($webuserdto)) {
-        $edit['field_crm_uuid'][LANGUAGE_NONE][1]['value'] = $crm_uuid;
+        $edit['field_crm_uuid'][LANGUAGE_NONE][0]['value'] = $crm_uuid;
       }
     }
     else {
