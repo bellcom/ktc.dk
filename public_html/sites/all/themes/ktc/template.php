@@ -256,15 +256,42 @@ function ktc_preprocess_node(&$vars) {
       $dbDate = $vars['field_arrangement_date'][0]['value'];
     }
 
-    $vars['arrangement_date'] = date('d\. M Y \k\l\. H:i', strtotime($dbDate));
+    $vars['arrangement_date'] = _ktc_format_timestamp($dbDate);
   }
 
-  // News
-  if ($vars['type'] == 'os2web_base_news') {
-    if (isset($vars['created'])) {
-        $vars['news_published_at'] = date('d\. M Y \k\l\. H:i', $vars['created']);
+    // Document
+    if ($vars['type'] == 'document') {
+        $vars['num_attachments'] = 0;
+        if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
+            $vars['num_attachments'] = count($media);
+        }
     }
-  }
+
+    // Created (converted)
+    if (isset($vars['created'])) {
+        $vars['published_at'] = _ktc_format_timestamp($vars['created']);
+    }
+
+    // News
+    if ($vars['type'] == 'os2web_base_news') {
+        if($news_type = field_get_items('node', $vars['node'], 'field_os2web_news_page_type')) {
+            $news_type_term = taxonomy_term_load($news_type[0]['tid']);
+            $vars['news_type'] = $news_type_term->name;
+        }
+    }
+
+    // Arrangement
+    if ($vars['type'] == 'arrangement') {
+        if($arrangement_type = field_get_items('node', $vars['node'], 'field_arrangement_type')) {
+            $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['tid']);
+            $vars['arrangement_type'] = $arrangement_type_term->name;
+        }
+    }
+
+    // Network groups
+    if (isset($vars['og_group_ref']) && isset($vars['nid'])) {
+        $vars['network_groups'] = _ktc_get_network_groups($vars['nid']);
+    }
 
   // Added comments_view and num_comments for node--teasecomments.tpl.php.
   $view = views_get_view('comments_in_teaser');
@@ -803,4 +830,28 @@ function ktc_preprocess_user_picture(&$variables) {
       $variables['role_class'] = 'panel-user-photo-vip';
     }
   }
+}
+/*
+ * Format timestamp
+ */
+function _ktc_format_timestamp($timestamp) {
+    $date = new DateTime();
+    $date->setTimestamp($timestamp);
+
+    return $date->format('d\. M Y \k\l\. H:i');
+}
+
+// Get network group of node
+function _ktc_get_network_groups($nid) {
+    $groups = array();
+    $ktc_node = node_load($nid);
+
+    if($network_groups = field_get_items('node', $ktc_node, 'og_group_ref')) {
+
+        foreach($network_groups AS $network_group) {
+            $groups[] = node_load($network_group['target_id']);
+        }
+    }
+
+    return $groups;
 }
