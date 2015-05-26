@@ -62,6 +62,9 @@
 @panel-footer-icon-event: @ikon-arrangement;
 @panel-footer-icon-event-height: @ikon-arrangement-height;
 @panel-footer-icon-event-width: @ikon-arrangement-width;
+@panel-footer-icon-document: @ikon-dok;
+@panel-footer-icon-document-height: @ikon-dok-height;
+@panel-footer-icon-document-width: @ikon-dok-width;
 
 // --------------------------------------------------
 // Styling
@@ -268,6 +271,17 @@
 				&:before {
 					margin-top: -(floor( @panel-footer-icon-event-height / 2 ));
 					.sprite(@panel-footer-icon-event);
+				}
+			}
+
+			// Document
+			&.panel-footer-button-document {
+				padding-left: floor( @panel-footer-icon-document-width + @panel-footer-icon-spacing );
+
+				// Icon
+				&:before {
+					margin-top: -(floor( @panel-footer-icon-document-height / 2 ));
+					.sprite(@panel-footer-icon-document);
 				}
 			}
 		}

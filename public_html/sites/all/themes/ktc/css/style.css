@@ -10813,6 +10813,16 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   width: 14px;
   height: 14px;
 }
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-document {
+  padding-left: 17px;
+}
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-document:before {
+  margin-top: -8px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -272px;
+  width: 12px;
+  height: 16px;
+}
 .panel.panel-block + .panel.panel-block {
   margin-top: 20px;
 }
