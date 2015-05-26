@@ -209,10 +209,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
       if ($ktc_membership) {
         $form['invoiceaccount'] = array(
           '#type' => 'item',
-          '#markup' => 'Topniveau Firmanavn<br>
-Firma(afdelingsnanv)<br>
-Adresse 1<br>Adresse 2<br>
-Postnr, By',
+          '#markup' => 'Topniveau Firmanavn<br />Firma(afdelingsnanv)<br />Adresse 1<br />Adresse 2<br />Postnr, By',
           '#value' => $invoiceaccount->tid,
         );
       }
@@ -236,8 +233,7 @@ Postnr, By',
           '#type' => 'select',
           '#prefix' => $prefix,
           '#required' => TRUE,
-          '#options' => array(
-          ),
+          '#options' => array(),
         );
       }
 
@@ -266,9 +262,10 @@ Postnr, By',
       }
 
       $form['recipient_address'] = array(
+        '#prefix' => '<label>Vælg leveringsadresse</label>',
         '#type' => 'tableselect',
         '#multiple' => FALSE,
-        '#header' => array('Levering', 'Adresse', ''),
+        '#header' => array('Leveres til', 'Adresse', ''),
         '#required' => TRUE,
         '#options' => $recipient_addresses,
         '#default_value' => $form_state['subscriptiondto']->RecipientAddress,
@@ -291,35 +288,30 @@ Postnr, By',
         '#title' => t('Vejnavn'),
         '#type' => 'textfield',
         '#default_value' => $form_state['subscriptiondto']->OtherAddress->AddressLine1,
-        '#required' => TRUE,
       );
 
       $form['other_address']['address_line_2'] = array(
         '#title' => t('Vejnavn 2'),
         '#type' => 'textfield',
         '#default_value' => $form_state['subscriptiondto']->OtherAddress->AddressLine2,
-        '#required' => TRUE,
       );
 
       $form['other_address']['postal_code'] = array(
         '#title' => t('Postnummer'),
         '#type' => 'textfield',
         '#default_value' => $form_state['subscriptiondto']->OtherAddress->PostalCode,
-        '#required' => TRUE,
       );
 
       $form['other_address']['city'] = array(
         '#title' => t('By'),
         '#type' => 'textfield',
         '#default_value' => $form_state['subscriptiondto']->OtherAddress->City,
-        '#required' => TRUE,
       );
 
       $form['other_address']['country'] = array(
-        '#title' => t('By'),
+        '#title' => t('Land'),
         '#type' => 'textfield',
         '#default_value' => $form_state['subscriptiondto']->OtherAddress->Country,
-        '#required' => TRUE,
       );
 
       if ($field = field_get_items('node', $product, 'field_text_before_submit')) {
@@ -327,6 +319,59 @@ Postnr, By',
           '#type' => 'checkbox',
           '#title' => $field[0]['value'],
           '#required' => TRUE,
+        );
+      }
+
+      // Generate default value for date_popup.
+      $startdate = str_replace(array('T', 'Z'), array(' ', ''), $form_state['subscriptiondto']->StartDate);
+      // If there is no startdate, assume that this is a new subscription and
+      // prefill the value with 'now'.
+      if (!$startdate) {
+        $startdate = date('Y-m-d H:i:s', strtotime('now'));
+      }
+      $enddate = str_replace(array('T', 'Z'), array(' ', ''), $form_state['subscriptiondto']->EndDate);
+      // Same for enddate, if none is set, generate appropriate prefill values.
+      if (!$form_state['subscriptiondto']->EndDate) {
+        $enddate = date('Y-m-d H:i:s', strtotime('+1 year'));
+      }
+
+      // If the product allows showing a datepicker add that form item.
+      $field = field_get_items('node', $product, 'field_show_datepicker');
+      if ($field && $field[0]['value']) {
+
+        $form['startdate'] = array(
+          '#title' => 'Startdato',
+          '#type' => 'date_popup',
+          '#date_format' => 'd/m/Y',
+          '#date_year_range' => ':+20',
+          '#default_value' => $startdate,
+          '#date_label_position' => 'invisible',
+        );
+        $form['enddate'] = array(
+          '#title' => 'Slutdato',
+          '#type' => 'date_popup',
+          '#date_format' => 'd/m/Y',
+          '#date_year_range' => ':+20',
+          '#default_value' => $enddate,
+          '#date_label_position' => 'invisible',
+        );
+      }
+      else {
+        // If not, we just set the enddate to somewhere in the future.
+        $form['startdate'] = array(
+          '#type' => 'value',
+          '#value' => $startdate,
+        );
+
+        // If no enddate is set on the subscription object, set one well into
+        // the future.
+        if (!$form_state['subscriptiondto']->EndDate) {
+          $enddate = date('Y-m-d H:i:s', strtotime('+50 year'));
+        }
+
+        $form['enddate'] = array(
+          '#type' => 'value',
+          '#value' => '+20 years',
         );
       }
 
@@ -352,7 +397,7 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
   $invoiceaccountid = _ktc_crm_get_uuid('taxonomy_term', $invoiceaccount);
 
   $subscriptiondto->InvoiceAccountId = $invoiceaccountid;
-
+  $subscriptiondto->EAN = $form_state['values']['ean'];
   $subscriptiondto->RecipientAddress = $form_state['values']['recipient_address'];
 
   $addressdto = new KTC\Subscription\AddressDto($form_state['values']['crm_uuid']);
@@ -364,12 +409,26 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
   $addressdto->Country = $form_state['values']['country'];
 
   $subscriptiondto->OtherAddress = $addressdto;
-  $subscriptiondto->EndDate = date('Y-m-d\TH:i:s', strtotime("+100 years"));
+
+  $subscriptiondto->StartDate = date('Y-m-d\TH:i:s\Z', strtotime($form_state['values']['startdate']));
+  $subscriptiondto->EndDate = date('Y-m-d\TH:i:s\Z', strtotime($form_state['values']['enddate']));
 
   ktc_crm_update_user_subscription($subscriptiondto);
 
   global $user;
   drupal_goto('user/' . $user->uid . '/abonnementer');
+}
+
+/**
+ * Validation handler for create/update subscription form.
+ */
+function ktc_subscription_ui_form_validate(&$form, &$form_state) {
+  if (strtotime($form_state['values']['enddate']) < time()) {
+    form_set_error('enddate', t('Du skal vælge en dato i fremtiden'));
+  }
+  if (!ktc_subscription_ui_validate_ean($form_state['values']['ean'])) {
+    form_set_error('ean', t('Det indtastede EAN er ikke gyldigt.'));
+  }
 }
 
 /**
@@ -431,9 +490,45 @@ function ktc_subscription_ui_get_product_list($type) {
     ->fieldCondition('field_product_type', 'value', $type);
   $result = $query->execute();
 
+  $nodes = array();
+
   if (isset($result['node'])) {
-    return node_load_multiple(array_keys($result['node']));
+    foreach (node_load_multiple(array_keys($result['node'])) as $node) {
+      // Filter out products without crm uuid. And strtolower the value.
+      if ($field = field_get_items('node', $node, 'field_crm_uuid')) {
+        $node->field_crm_uuid[LANGUAGE_NONE][0]['value'] = strtolower($field[0]['value']);
+
+        $nodes[$node->nid] = $node;
+      }
+    }
   }
 
-  return array();
+  return $nodes;
+}
+
+/**
+ * Validate EAN numbers.
+ */
+function ktc_subscription_ui_validate_ean($ean) {
+  $get_ean_check_digit = function($param) {
+    $sum = 0;
+    $odd = TRUE;
+
+    for ($i = 11; $i >= 0; $i--) {
+      $val  = intval(substr($param, $i, 1));
+      $val *= ($odd ? 3 : 1);
+      $odd = !$odd;
+
+      $sum += $val;
+    }
+
+    $check = 10 - ($sum % 10);
+
+    return ($check == 10 ? 0 : $check);
+  };
+
+  $valid = preg_match("/^\d{13}$/", $ean);
+  $valid = $valid && (substr($ean, 12) == $get_ean_check_digit(substr($ean, 0, 12)));
+
+  return $valid;
 }

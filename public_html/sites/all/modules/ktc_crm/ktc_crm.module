@@ -116,7 +116,7 @@ function _ktc_crm_get_uuid($type, $entity) {
     $crm_uuid = $crm_uuid_field[0]['value'];
 
     if (strlen($crm_uuid)) {
-      return $crm_uuid;
+      return strtolower($crm_uuid);
     }
   }
   return FALSE;

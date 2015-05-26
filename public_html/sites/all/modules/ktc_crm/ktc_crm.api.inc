@@ -184,10 +184,16 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
     $retrievesubscriptionsforsubscriber = new KTC\Subscription\RetrieveSubscriptionsForSubscriber($user_uuid);
 
     $result = $subscription->RetrieveSubscriptionsForSubscriber($retrievesubscriptionsforsubscriber);
-
-    $user_subscriptions = array();
     if (is_object($result) && isset($result->RetrieveSubscriptionsForSubscriberResult)) {
-      foreach ($result->RetrieveSubscriptionsForSubscriberResult->SubscriptionDto as $subscription) {
+      $fetch_subscription = reset($result->RetrieveSubscriptionsForSubscriberResult);
+      if (is_object($fetch_subscription)) {
+        $fetch_subscription = array($fetch_subscription);
+      }
+    }
+
+   $user_subscriptions = array();
+    if (isset($fetch_subscription) && is_array($fetch_subscription)) {
+      foreach ($fetch_subscription as $subscription) {
         $subscription->is_active = TRUE;
 
         if ($subscription->EndDate) {
