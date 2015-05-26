@@ -7,7 +7,7 @@
 /**
  * This funcition calls all nessecary functions in order to update groups.
  */
-function ktc_crm_group_update_groups($lastupdate) {
+function ktc_crm_group_update_groups() {
   $logger = KtcCrmLogger::getInstance();
   $logger->log->addInfo('cron', 'start group sync');
 
