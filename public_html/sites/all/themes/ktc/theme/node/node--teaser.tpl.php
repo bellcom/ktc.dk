@@ -9,11 +9,16 @@
         </div>
         <?php endif; ?>
 
-        <div class="panel-heading">
-            <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print $node->title; ?></a>
-        </div>
+        <?php if (isset($network_groups)): ?>
+            <?php foreach($network_groups AS $network_group): ?>
+                <div class="panel-heading">
+                    <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print $network_group->title; ?></a>
+                </div>
+            <?php endforeach ?>
+        <?php endif ?>
 
         <div class="panel-body">
+            <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
             <p>
                 <?php if (isset($content['field_short'])): ?>
                     <?php print render($content['field_short']); ?>

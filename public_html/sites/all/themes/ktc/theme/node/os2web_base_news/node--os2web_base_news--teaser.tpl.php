@@ -3,23 +3,24 @@
     <!-- Begin - teaser -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> panel panel-block panel-block-teaser"<?php print $attributes; ?>>
 
-        <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
-            <div class="panel-image">
-                <?php print render($content['field_os2web_base_field_lead_img']); ?>
-            </div>
-        <?php endif; ?>
-
-        <div class="panel-heading">
-            <?php if (isset($group_info)) : ?>
-                <?php print l($group_info['name'], 'node/' . $group_info['gid'], array('attributes' => array('class' => 'panel-title ' . $group_info['class']))); ?>
-            <?php endif;?>
-        </div>
+        <?php if (isset($network_groups)): ?>
+            <?php foreach($network_groups AS $network_group): ?>
+                <div class="panel-heading">
+                    <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print $network_group->title; ?></a>
+                </div>
+            <?php endforeach ?>
+        <?php endif ?>
 
         <div class="panel-body">
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
-            <?php if ($news_published_at): ?>
-                <p class="panel-date-simple"><?php print $news_published_at; ?></p>
-            <?php endif; ?>
+            <?php if ($published_at): ?>
+                <p class="panel-date-simple"><?php print $published_at; ?></p>
+            <?php endif ?>
+
+            <?php if ($news_type): ?>
+                <p class="mute"><?php print $news_type; ?></p>
+            <?php endif ?>
+
             <p><?php print render($content['field_os2web_base_field_summary']); ?></p>
             <div class="panel-user-profile">
                 <?php if (isset($user_object)): ?>
