@@ -73,10 +73,10 @@
 // Default
 .panel.panel-block {
 	.box-shadow(none); // BS3 override
-	background-color: #fff;
 	border: 0; // BS3 override
 	border-radius: 0; // BS3 override
 	margin-bottom: @panel-stacked-spacing;
+	background: none;
 
 	// Heading
 	.panel-heading {
@@ -85,8 +85,9 @@
 		border-radius: 0; // BS3 override
 		&:extend(.clearfix all); // For icons with pull-right in header
 
-		// Title
-		.panel-title {
+		// Title and link
+		.panel-title,
+		> a {
 			position: relative;
 			display: block;
 			padding: 0;
@@ -126,11 +127,6 @@
 			a {
 				text-decoration: none;
 			}
-		}
-
-		// Link
-		a {
-			text-decoration: underline;
 		}
 
 		// Button
@@ -300,6 +296,12 @@
 	+ .panel.panel-block {
 		margin-top: @panel-stacked-spacing;
 	}
+
+	// Default
+	.panel.panel-block {
+		margin-left: -(@panel-left-right-padding); // Dirty ugly hack
+		margin-right: -(@panel-left-right-padding); // Dirty ugly hack
+	}
 }
 
 // |--------------------------------------------------------------------------
@@ -336,6 +338,7 @@
 .mixin-user-profile(@headline-color, @profile-photo-border-color) {
 
 	// Panel block
+	&,
 	&.panel.panel-block {
 
 		// Body
@@ -446,6 +449,97 @@
 }
 
 // --------------------------------------------------
+// User profile
+// --------------------------------------------------
+
+//== Variables
+@panel-user-comments-container-left-right-margin: 2px;
+@panel-user-comments-top-bottom-padding: 15px;
+@panel-user-comments-photo-content-spacing: 10px;
+@panel-user-comments-photo-border-width: 2px;
+@panel-user-comments-photo-border-distance: 3px;
+
+//== Colouring
+@panel-user-comments-default-photo-headline-color: @gray-darker;
+@panel-user-comments-default-photo-border-color: #fff;
+
+// Panel block
+.panel.panel-block {
+
+	// Body
+	.panel-body {
+
+		// User comments container
+		.panel-user-comments-container {
+			margin-left: -( @panel-left-right-padding - @panel-user-comments-container-left-right-margin );
+			margin-right: -( @panel-left-right-padding - @panel-user-comments-container-left-right-margin );
+			margin-bottom: -@panel-user-comments-container-left-right-margin;
+			padding-left: ( @panel-left-right-padding - @panel-user-comments-container-left-right-margin );
+			padding-right: ( @panel-left-right-padding - @panel-user-comments-container-left-right-margin );
+			background-color: @body-bg;
+
+			// User comments
+			.panel-user-comments {
+				display: table;
+				margin-top: -2px; // THIS IS UGLY
+				padding: @panel-user-comments-top-bottom-padding 0;
+				border-top: 2px solid #fff;
+
+				// Photo container
+				.panel-user-photo-container {
+					float: left;
+
+					// Photo
+					img {
+						display: inherit;
+						height: auto;
+						width: auto;
+						max-width: 48px;
+						max-height: 48px;
+						border-radius: 100%;
+						border-width: @panel-user-comments-photo-border-width;
+						border-style: solid;
+						border-color: @panel-user-comments-default-photo-border-color;
+						background-color: transparent;
+						margin-right: @panel-user-comments-photo-content-spacing;
+						padding: @panel-user-comments-photo-border-distance;
+					}
+				}
+
+				// Content
+				.panel-user-comments-content {
+					display: inherit;
+
+					// Headlines
+					h1, h2, h3, h4, h5, h6 {
+						font-family: @font-family-base;
+						font-size: @font-size-base;
+						margin-top: 0;
+						padding-top: 0;
+						margin-bottom: 1px;
+						color: @panel-user-comments-default-photo-headline-color;
+
+						// Date (span)
+						span {
+							font-weight: normal;
+							margin-left: 5px;
+
+							// EM
+							> em {
+								font-style: normal;
+							}
+						}
+					}
+				}
+
+				// Clearfix
+				&:extend(.clearfix all);
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
 // Call-to-action button
 // --------------------------------------------------
 
@@ -534,6 +628,19 @@
 	.mixin-simple-date(@panel-simple-date-green-font-color);
 }
 
+// --------------------------------------------------
+// User comments
+// --------------------------------------------------
+
+// Panel
+.panel-block {
+
+	// User comments
+	.panel-user-comments {
+
+	}
+}
+
 // |--------------------------------------------------------------------------
 // | Aside
 // |--------------------------------------------------------------------------
@@ -568,6 +675,7 @@
 .mixin-panel-block-aside-color(@heading-background-color) {
 
 	// Aside
+	.panel-block.panel-block-aside,
 	&.panel-block.panel-block-aside {
 
 		// Color
@@ -587,6 +695,7 @@
 
 // Aside
 .panel-block.panel-block-aside {
+	background-color: #fff;
 
 	// Heading
 	> .panel-heading {
@@ -696,7 +805,6 @@
 // |
 // | Contains the following:
 // | - .panel-block-teaser
-// | - .panel-block-teaser-large
 // |
 
 // --------------------------------------------------
@@ -728,7 +836,7 @@
 .mixin-panel-block-teaser(@icon-pin, @icon-pin-width, @icon-pin-height) {
 
 	// Teaser
-	&.panel-block.panel-block-teaser {
+	.panel-block.panel-block-teaser {
 
 		// Heading
 		> .panel-heading {
@@ -753,6 +861,7 @@
 
 // Teaser
 .panel-block.panel-block-teaser {
+	background-color: #fff;
 
 	// Heading
 	> .panel-heading {
@@ -796,4 +905,108 @@
 // (red)
 .ktc-red {
 	.mixin-panel-block-teaser(@panel-block-teaser-heading-icon-pin-red, @panel-block-teaser-heading-icon-pin-red-width, @panel-block-teaser-heading-icon-pin-red-height);
+}
+
+// |--------------------------------------------------------------------------
+// | Teaser large
+// |--------------------------------------------------------------------------
+// |
+// | Contains the following:
+// | - .panel-block-teaser
+// |
+
+//== Variables
+@panel-block-teaser-large-title-font-size: 15px;
+
+//== Colouring
+@panel-block-teaser-large-default-headline-color: @gray-darker;
+@panel-block-teaser-large-gold-headline-color: @brand-gold;
+@panel-block-teaser-large-green-headline-color: @brand-darkgreen;
+@panel-block-teaser-large-blue-headline-color: @brand-darkblue;
+@panel-block-teaser-large-red-headline-color: @brand-userlink-red;
+
+//== Styling
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Teaser large
+.mixin-panel-block-teaser-large(@headline-color) {
+
+	// Teaser large
+	.panel-block.panel-block-teaser-large {
+
+		// Heading
+		> .panel-heading {
+
+			// Title and link
+			.panel-title,
+			> a {
+
+				&,
+				&:hover {
+					color: @headline-color;
+				}
+			}
+		}
+	}
+}
+
+// Large
+.panel-block.panel-block-teaser-large {
+	background-color: #fff;
+
+	// Heading
+	> .panel-heading {
+		margin-left: @panel-left-right-padding;
+		margin-right: @panel-left-right-padding;
+		padding-left: 0;
+		padding-right: 0;
+		border-bottom: 2px solid #e0e4e5;
+
+		// Title and link
+		.panel-title,
+		> a {
+			display: inline-block;
+			font-size: @panel-block-teaser-large-title-font-size;
+			font-weight: bold;
+			text-transform: none;
+		}
+
+		// (days ago)
+		span {
+			float: right;
+			font-size: @panel-block-teaser-large-title-font-size;
+			color: @text-color;
+		}
+	}
+
+	// Body
+	> .panel-body {
+		padding-top: 0;
+	}
+}
+
+// Default
+.mixin-panel-block-teaser-large(@panel-block-teaser-large-default-headline-color);
+
+// (green)
+.ktc-green {
+	.mixin-panel-block-teaser-large(@panel-block-teaser-large-green-headline-color);
+}
+
+// (blue)
+.ktc-blue {
+	.mixin-panel-block-teaser-large(@panel-block-teaser-large-blue-headline-color);
+}
+
+// (gold)
+.ktc-gold {
+	.mixin-panel-block-teaser-large(@panel-block-teaser-large-gold-headline-color);
+}
+
+// (red)
+.ktc-red {
+	.mixin-panel-block-teaser-large(@panel-block-teaser-large-red-headline-color);
 }
