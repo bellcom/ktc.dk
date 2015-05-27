@@ -3,12 +3,6 @@
     <!-- Begin - teaser -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> panel panel-block panel-block-teaser-large"<?php print $attributes; ?>>
 
-        <?php if (isset($content['field_image'])) : ?>
-            <div class="panel-image">
-                <?php print render($content['field_image']); ?>
-            </div>
-        <?php endif ?>
-
         <div class="panel-heading">
             <span><?php print $created_ago . ' ' . t('siden'); ?></span>
             <?php print $user_name; ?>
@@ -18,7 +12,15 @@
 
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
 
+            <?php if (isset($signup_date_formatted)): ?>
+                <p class="panel-date-simple"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
+            <?php endif; ?>
+
             <p><?php print $body_shortened; ?></p>
+
+            <div class="panel-cta-button">
+                <a class="btn btn-blacknblue" href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print t('Afgiv stemme'); ?></a>
+            </div>
 
             <div class="panel-user-comments-container">
                 <?php if (isset($comments_view)): ?>
@@ -38,17 +40,17 @@
     <!-- End - teaser -->
 
     <?php
-        // Hide comments, tags, and links now so that we can render them later.
-        hide($content['comments']);
-        hide($content['links']);
-        hide($content['field_tags']);
-        hide($content['field_os2web_base_field_image']);
-        hide($content['field_os2web_base_field_lead_img']);
+    // Hide comments, tags, and links now so that we can render them later.
+    hide($content['comments']);
+    hide($content['links']);
+    hide($content['field_tags']);
+    hide($content['field_os2web_base_field_image']);
+    hide($content['field_os2web_base_field_lead_img']);
 
-        if (!empty($content['field_tags']) || !empty($content['links'])) {
-            hide($content['field_tags']);
-            hide($content['links']);
-        }
+    if (!empty($content['field_tags']) || !empty($content['links'])) {
+        hide($content['field_tags']);
+        hide($content['links']);
+    }
     ?>
 
 <?php endif; ?>
