@@ -10772,10 +10772,12 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   width: 11px;
   height: 11px;
 }
-.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-vote {
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-vote,
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-meeting_doodle {
   padding-left: 21px;
 }
-.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-vote:before {
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-vote:before,
+.panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-meeting_doodle:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
   background-position: 0px -66px;
