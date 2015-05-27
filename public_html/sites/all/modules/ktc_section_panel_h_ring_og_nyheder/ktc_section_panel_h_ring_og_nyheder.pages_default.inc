@@ -195,14 +195,14 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $display->content['new-023a351b-d90c-4e05-b3e9-7ebf28738193'] = $pane;
     $display->panels['center'][4] = 'new-023a351b-d90c-4e05-b3e9-7ebf28738193';
     $pane = new stdClass();
-    $pane->pid = 'new-4054cac8-3c6a-4800-a96c-dfed661a1895';
+    $pane->pid = 'new-8ae0c5ba-db5e-45d6-9560-7948908f7f75';
     $pane->panel = 'centertop';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_arrangement_billede';
+    $pane->subtype = 'node:field_os2web_base_field_lead_img';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'hidden',
+      'label' => 'title',
       'formatter' => 'image',
       'delta_limit' => 0,
       'delta_offset' => '0',
@@ -219,13 +219,16 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'panel-image',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '4054cac8-3c6a-4800-a96c-dfed661a1895';
-    $display->content['new-4054cac8-3c6a-4800-a96c-dfed661a1895'] = $pane;
-    $display->panels['centertop'][0] = 'new-4054cac8-3c6a-4800-a96c-dfed661a1895';
+    $pane->uuid = '8ae0c5ba-db5e-45d6-9560-7948908f7f75';
+    $display->content['new-8ae0c5ba-db5e-45d6-9560-7948908f7f75'] = $pane;
+    $display->panels['centertop'][0] = 'new-8ae0c5ba-db5e-45d6-9560-7948908f7f75';
     $pane = new stdClass();
     $pane->pid = 'new-41f71c3f-7841-4673-b295-4ffcd08ef6fe';
     $pane->panel = 'left';
