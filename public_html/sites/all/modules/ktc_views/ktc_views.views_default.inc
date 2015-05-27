@@ -385,17 +385,13 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="col-md-3 col-sm-3 col-xs-4 left">
-   [picture]
-  </div>
-  <div class="col-md-9 col-sm-9 col-xs-8 right">
-  <span class="user_link">[name] </span>[created]<br />
-  [subject]
- [comment_body]
-  </div>
- <div class="node-teaser-hr-inner clearfix"></div>
-</div>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="panel-user-comments">
+                [picture]
+                <div class="panel-user-comments-content">
+                    <h5>[name] <span>[created]</span></h5>
+                    <p>[comment_body]</p>
+                </div>
+            </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sorteringskriterie: Kommentar: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -442,17 +438,13 @@ function ktc_views_views_default_views() {
     t('Faldende'),
     t('Indhold'),
     t('forfatter'),
-    t('<div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="col-md-3 col-sm-3 col-xs-4 left">
-   [picture]
-  </div>
-  <div class="col-md-9 col-sm-9 col-xs-8 right">
-  <span class="user_link">[name] </span>[created]<br />
-  [subject]
- [comment_body]
-  </div>
- <div class="node-teaser-hr-inner clearfix"></div>
-</div>'),
+    t('<div class="panel-user-comments">
+                [picture]
+                <div class="panel-user-comments-content">
+                    <h5>[name] <span>[created]</span></h5>
+                    <p>[comment_body]</p>
+                </div>
+            </div>'),
     t('Alle'),
     t('Block'),
   );
@@ -3745,7 +3737,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['og_user_node']['delta_limit'] = '0';
   $handler->display->display_options['fields']['og_user_node']['delta_offset'] = '0';
   $handler->display->display_options['fields']['og_user_node']['multi_type'] = 'ul';
-  /* Felt: Felt: Emner */
+  /* Felt: Felt: Faglige emner */
   $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
   $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
   $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
@@ -4008,7 +4000,7 @@ function ktc_views_views_default_views() {
     t('<a href="tel:[field_directe_telefon]" title="Ring til direkte telefon">[field_directe_telefon]</a><a href="tel:[field_cell]" class="andcell" title="Ring til mobil"> [field_cell]</a>'),
     t('<a href="tel:[field_cell]" class="onlycell" title="Ring til mobil"> [field_cell]</a>'),
     t('Netværk'),
-    t('Emner'),
+    t('Faglige emner'),
     t('FE'),
     t('Søg'),
   );
