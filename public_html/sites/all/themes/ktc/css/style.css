@@ -10689,6 +10689,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel.panel-block .panel-body a {
   text-decoration: underline;
 }
+.panel.panel-block .panel-body .btn {
+  text-decoration: none;
+}
 .panel.panel-block .panel-body p {
   color: #848e92;
 }
@@ -10830,9 +10833,11 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   display: table;
   padding: 8px 0;
 }
+.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container {
+  float: left;
+}
 .panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
   display: inherit;
-  float: left;
   height: auto;
   width: auto;
   max-width: 48px;
@@ -10858,6 +10863,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6 {
   margin-top: 0;
   padding-top: 0;
+  margin-bottom: 3px;
 }
 .panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
   border-color: #e9edee;
@@ -10944,6 +10950,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h6 > a {
   color: #36a145;
 }
+.panel.panel-block .panel-body .panel-cta-button {
+  text-align: center;
+}
+.panel.panel-block .panel-body .panel-cta-button .btn {
+  min-width: 40%;
+  margin: 8px auto;
+}
 .panel.panel-block .panel-body h1 + .panel-date-simple,
 .panel.panel-block .panel-body h2 + .panel-date-simple,
 .panel.panel-block .panel-body h3 + .panel-date-simple,
@@ -10973,26 +10986,26 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-green.panel.panel-block .panel-body .panel-date-simple {
   color: #36a145;
 }
-.panel-block.panel-block-aside .panel-heading {
+.panel-block.panel-block-aside > .panel-heading {
   background-color: #2c353a;
 }
-.panel-block.panel-block-aside .panel-heading .panel-title {
+.panel-block.panel-block-aside > .panel-heading .panel-title {
   color: #ffffff;
 }
 .panel-block.panel-block-aside.panel-block-aside-action {
   background-color: #2c353a;
 }
-.panel-block.panel-block-aside.panel-block-aside-action .panel-heading {
+.panel-block.panel-block-aside.panel-block-aside-action > .panel-heading {
   background-color: #e75311;
 }
-.panel-block.panel-block-aside.panel-block-aside-action .panel-body,
-.panel-block.panel-block-aside.panel-block-aside-action .panel-body p {
+.panel-block.panel-block-aside.panel-block-aside-action > .panel-body,
+.panel-block.panel-block-aside.panel-block-aside-action > .panel-body p {
   color: #848e92;
 }
-.panel-block.panel-block-aside.panel-block-aside-toggle .panel-heading {
+.panel-block.panel-block-aside.panel-block-aside-toggle > .panel-heading {
   position: relative;
 }
-.panel-block.panel-block-aside.panel-block-aside-toggle .panel-heading .panel-title {
+.panel-block.panel-block-aside.panel-block-aside-toggle > .panel-heading .panel-title {
   cursor: pointer;
   cursor: hand;
   padding-right: 35px;
@@ -11001,29 +11014,29 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   -ms-user-select: none;
   user-select: none;
 }
-.panel-block.panel-block-aside.panel-block-aside-toggle .panel-heading .panel-title:after {
+.panel-block.panel-block-aside.panel-block-aside-toggle > .panel-heading .panel-title:after {
   position: absolute;
   display: block;
   content: "";
   top: 50%;
-  right: 10px;
+  right: 0;
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -166px;
   width: 15px;
   height: 15px;
 }
-.panel-block.panel-block-aside.panel-block-aside-toggle.closed .panel-title {
+.panel-block.panel-block-aside.panel-block-aside-toggle.closed > .panel-heading .panel-title {
   padding-right: 35px;
 }
-.panel-block.panel-block-aside.panel-block-aside-toggle.closed .panel-title:after {
+.panel-block.panel-block-aside.panel-block-aside-toggle.closed > .panel-heading .panel-title:after {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -241px;
   width: 15px;
   height: 15px;
 }
-.panel-block.panel-block-aside.panel-block-aside-toggle.closed .panel-body {
+.panel-block.panel-block-aside.panel-block-aside-toggle.closed > .panel-body {
   display: none;
 }
 .tech-env.panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
@@ -11035,53 +11048,53 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .no-network.panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
   background-color: #137c34;
 }
-.panel-block.panel-block-teaser .panel-heading {
+.panel-block.panel-block-teaser > .panel-heading {
   padding-bottom: 0;
 }
-.panel-block.panel-block-teaser .panel-heading .panel-title:before {
+.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   display: block;
   position: absolute;
   top: 50%;
   left: 0;
   content: "";
 }
-.panel-block.panel-block-teaser .panel-body {
+.panel-block.panel-block-teaser > .panel-body {
   padding-top: 0;
 }
-.ktc-green.panel-block.panel-block-teaser .panel-heading .panel-title {
+.ktc-green.panel-block.panel-block-teaser > .panel-heading .panel-title {
   padding-left: 17px;
 }
-.ktc-green.panel-block.panel-block-teaser .panel-heading .panel-title:before {
+.ktc-green.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -151px;
   width: 12px;
   height: 15px;
 }
-.ktc-blue.panel-block.panel-block-teaser .panel-heading .panel-title {
+.ktc-blue.panel-block.panel-block-teaser > .panel-heading .panel-title {
   padding-left: 17px;
 }
-.ktc-blue.panel-block.panel-block-teaser .panel-heading .panel-title:before {
+.ktc-blue.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -226px;
   width: 12px;
   height: 15px;
 }
-.ktc-gold.panel-block.panel-block-teaser .panel-heading .panel-title {
+.ktc-gold.panel-block.panel-block-teaser > .panel-heading .panel-title {
   padding-left: 17px;
 }
-.ktc-gold.panel-block.panel-block-teaser .panel-heading .panel-title:before {
+.ktc-gold.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -181px;
   width: 12px;
   height: 15px;
 }
-.ktc-red.panel-block.panel-block-teaser .panel-heading .panel-title {
+.ktc-red.panel-block.panel-block-teaser > .panel-heading .panel-title {
   padding-left: 17px;
 }
-.ktc-red.panel-block.panel-block-teaser .panel-heading .panel-title:before {
+.ktc-red.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -121px;
