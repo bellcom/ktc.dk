@@ -137,8 +137,10 @@ function ktc_subscription_ui_page($account) {
  */
 function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   $css = '
+      .container-inline-date {clear: none; float: left;}
       #edit-invoiceaccount-hierarchical-select-selects-0 {display: none;}
       #edit-invoiceaccount-hierarchical-select-selects-1 option:first-child {display: none;}
+      #edit-submit {display: block; clear: left; margin-top: 10px; float: left; margin-top: 10px;}
     ';
   drupal_add_css($css, 'inline');
 
@@ -240,13 +242,13 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
       $recipient_addresses['Work'] = array(
         'Arbejde',
         ktc_crm_get_user_address($account, 'Work'),
-        l(t('ret'), 'user/' . $account->uid . '/edit'),
+        l(t('ret'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
       );
 
       $recipient_addresses['Private'] = array(
         'Privat',
         ktc_crm_get_user_address($account, 'Private'),
-        l(t('ret'), 'user/' . $account->uid . '/edit'),
+        l(t('ret'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
       );
 
       $recipient_addresses['Other'] = array(
@@ -332,12 +334,18 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
       $enddate = str_replace(array('T', 'Z'), array(' ', ''), $form_state['subscriptiondto']->EndDate);
       // Same for enddate, if none is set, generate appropriate prefill values.
       if (!$form_state['subscriptiondto']->EndDate) {
-        $enddate = date('Y-m-d H:i:s', strtotime('+1 year'));
+        $enddate = '';
       }
 
       // If the product allows showing a datepicker add that form item.
       $field = field_get_items('node', $product, 'field_show_datepicker');
       if ($field && $field[0]['value']) {
+        if ($field = field_get_items('node', $product, 'field_text_before_date')) {
+          $form['text_date'] = array(
+            '#type' => 'item',
+            '#markup' => $field[0]['value'],
+          );
+        }
 
         $form['startdate'] = array(
           '#title' => 'Startdato',
@@ -366,12 +374,12 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
         // If no enddate is set on the subscription object, set one well into
         // the future.
         if (!$form_state['subscriptiondto']->EndDate) {
-          $enddate = date('Y-m-d H:i:s', strtotime('+50 year'));
+          $enddate = '';
         }
 
         $form['enddate'] = array(
           '#type' => 'value',
-          '#value' => '+20 years',
+          '#value' => $enddate,
         );
       }
 
@@ -417,7 +425,10 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
   $subscriptiondto->OtherAddress = $addressdto;
 
   $subscriptiondto->StartDate = date('Y-m-d\TH:i:s\Z', strtotime($form_state['values']['startdate']));
-  $subscriptiondto->EndDate = date('Y-m-d\TH:i:s\Z', strtotime($form_state['values']['enddate']));
+  // Only set enddate, if one is selected.
+  if ($form_state['values']['enddate']) {
+    $subscriptiondto->EndDate = date('Y-m-d\TH:i:s\Z', strtotime($form_state['values']['enddate']));
+  }
 
   ktc_crm_update_user_subscription($subscriptiondto);
 
@@ -429,7 +440,7 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
  * Validation handler for create/update subscription form.
  */
 function ktc_subscription_ui_form_validate(&$form, &$form_state) {
-  if (strtotime($form_state['values']['enddate']) < time()) {
+  if ($form_state['values']['enddate'] && strtotime($form_state['values']['enddate']) < time()) {
     form_set_error('enddate', t('Du skal vælge en dato i fremtiden'));
   }
   if (!ktc_subscription_ui_validate_ean($form_state['values']['ean'])) {
@@ -469,7 +480,7 @@ function ktc_crm_subscription_cancel_form($form, &$form_state, $account, $produc
 
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Opsig'),
+    '#value' => t('Opsig nu'),
     '#suffix' => l(t('Annullér'), $_SERVER['HTTP_REFERER']),
     '#attributes' => array('class' => array('btn-warning')),
   );
@@ -482,7 +493,7 @@ function ktc_crm_subscription_cancel_form($form, &$form_state, $account, $produc
  */
 function ktc_crm_subscription_cancel_form_submit($form, &$form_state) {
   $subscriptiondto = $form_state['subscriptiondto'];
-  $subscriptiondto->EndDate = date('Y-m-d\TH:i:s', time());
+  $subscriptiondto->EndDate = date('Y-m-d\TH:i:s\Z', time());
 
   ktc_crm_update_user_subscription($subscriptiondto);
 

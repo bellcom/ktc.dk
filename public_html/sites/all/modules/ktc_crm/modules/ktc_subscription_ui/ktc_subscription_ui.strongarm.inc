@@ -68,10 +68,13 @@ function ktc_subscription_ui_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '13',
+        ),
+        'metatags' => array(
+          'weight' => '14',
         ),
       ),
       'display' => array(),
