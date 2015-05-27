@@ -72,8 +72,9 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['label'] = '';
+  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'h4';
   $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['og_group_ref']['empty'] = '<span class="content-type-logo"></span>';
+  $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
     'link' => 1,
   );
@@ -114,6 +115,44 @@ function ktc_content_types_views_default_views() {
 
   /* Display: Logo, netværksnavn og forfatter */
   $handler = $view->new_display('panel_pane', 'Logo, netværksnavn og forfatter', 'panel_pane_1');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Logo */
+  $handler->display->display_options['fields']['field_arrangement_logo']['id'] = 'field_arrangement_logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['table'] = 'field_data_field_arrangement_logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['field'] = 'field_arrangement_logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_arrangement_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_logo']['empty'] = '<span class="content-type-logo"></span>';
+  $handler->display->display_options['fields']['field_arrangement_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_arrangement_logo']['settings'] = array(
+    'image_style' => 'netvaerks_logo',
+    'image_link' => '',
+  );
+  /* Felt: Indhold: Gruppe/Netværk */
+  $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['label'] = '';
+  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
+    'view_mode' => 'listevisning',
+    'links' => 0,
+  );
+  $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
+  /* Felt: Bruger: Rendered Bruger */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_user';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'list3';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
   $handler->display->display_options['pane_category']['name'] = 'KTC';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
