@@ -21,7 +21,7 @@
 
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
 
-            <p><?php print render($content['body_shortened']); ?></p>
+            <p><?php print $body_shortened; ?></p>
 
             <div class="panel-user-profile">
                 <?php if (isset($user_object)): ?>
