@@ -345,3 +345,8 @@ h3.pane-title {
   display: inline-block;
   margin-right: 5px;
 }
+
+// Line height
+.line-height(@font-size) {
+	line-height: floor((@font-size * @line-height-base));
+}

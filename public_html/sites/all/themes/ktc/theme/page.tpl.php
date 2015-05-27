@@ -126,6 +126,7 @@
 
     </div>
   </div>
+
 </div>
 <?php /* region--footer.tpl.php */ ?>
 <?php print render($page['footer']); ?>

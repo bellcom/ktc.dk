@@ -223,6 +223,13 @@ function ktc_preprocess_node(&$vars) {
   $vars['group_info'] = $group_info;
   $vars['classes_array'][] = $group_info['class'];
 
+    // Teaser
+    if ( $vars['elements']['#view_mode'] == 'teaser' ) {
+        if ($body_shortened = field_get_items('node', $vars['node'], 'body')) {
+            $vars['body_shortened'] = _ktc_text_shortener($body_shortened[0]['value'], 150);
+        }
+    }
+
   // Added user_name and user_object for node--teaser/teasercomments templates.
   $user = user_load($vars['uid']);
   $vars['user_object'] = $user;
@@ -246,19 +253,60 @@ function ktc_preprocess_node(&$vars) {
     $vars['statistics_count'] = 0;
   }
 
-  // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
-  if ($vars['type'] == 'arrangement') {
-    if (isset($vars['field_arrangement_date']['und'])) {
-      $day = $vars['field_arrangement_date']['und'][0]['value'];
-      $month = date('M', strtotime($vars['field_arrangement_date']['und'][0]['value']));
+    // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
+    if ($vars['type'] == 'arrangement') {
+
+        if (isset($vars['field_arrangement_date']['und'])) {
+            $dbDate = $vars['field_arrangement_date']['und'][0]['value'];
+        }
+        else {
+            $dbDate = $vars['field_arrangement_date'][0]['value'];
+        }
+
+        $vars['arrangement_date'] = _ktc_format_datetime($dbDate);
+
+        if($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
+            $vars['arrangement_signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
+        }
+
+        if($arrangement_type = field_get_items('node', $vars['node'], 'field_arrangement_type')) {
+            $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['tid']);
+            $vars['arrangement_type'] = $arrangement_type_term->name;
+        }
     }
-    else {
-      $day = $vars['field_arrangement_date'][0]['value'];
-      $month = date('M', strtotime($vars['field_arrangement_date'][0]['value']));
+
+    // Meeting_doodle
+    if ($vars['type'] == 'meeting_doodle') {
+        if($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
+            $vars['signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
+        }
     }
-    $vars['arrangement_day'] = date('d', strtotime($day));
-    $vars['arrangement_month'] = $month;
-  }
+
+    // Document
+    if ($vars['type'] == 'document') {
+        $vars['num_attachments'] = 0;
+        if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
+            $vars['num_attachments'] = count($media);
+        }
+    }
+
+    // Created (converted)
+    if (isset($vars['created'])) {
+        $vars['published_at'] = _ktc_format_timestamp($vars['created']);
+    }
+
+    // News
+    if ($vars['type'] == 'os2web_base_news') {
+        if($news_type = field_get_items('node', $vars['node'], 'field_os2web_news_page_type')) {
+            $news_type_term = taxonomy_term_load($news_type[0]['tid']);
+            $vars['news_type'] = $news_type_term->name;
+        }
+    }
+
+    // Network groups
+    if (isset($vars['og_group_ref']) && isset($vars['nid'])) {
+        $vars['network_groups'] = _ktc_get_network_groups($vars['nid']);
+    }
 
   // Added comments_view and num_comments for node--teasecomments.tpl.php.
   $view = views_get_view('comments_in_teaser');
@@ -794,7 +842,56 @@ function ktc_preprocess_user_picture(&$variables) {
   // user picture.
   if (is_array($variables['account']->roles)) {
     if (in_array('KTC VIP', $variables['account']->roles)) {
-      $variables['role_class'] = 'green';
+      $variables['role_class'] = 'panel-user-photo-vip';
     }
   }
+}
+
+/*
+ * Format timestamp
+ */
+function _ktc_format_timestamp($timestamp) {
+    $date = new DateTime();
+    $date->setTimestamp($timestamp);
+
+    return $date->format('d\. M Y \k\l\. H:i');
+}
+
+/*
+ * Format datetime
+ */
+function _ktc_format_datetime($datetime) {
+    $date = new DateTime($datetime);
+
+    return $date->format('d\. M Y \k\l\. H:i');
+}
+
+// Get network group of node
+function _ktc_get_network_groups($nid) {
+    $groups = array();
+    $ktc_node = node_load($nid);
+
+    if($network_groups = field_get_items('node', $ktc_node, 'og_group_ref')) {
+
+        foreach($network_groups AS $network_group) {
+            $groups[] = node_load($network_group['target_id']);
+        }
+    }
+
+    return $groups;
+}
+
+/*
+ * Text shortener
+ */
+function _ktc_text_shortener($text_string, $max_length) {
+    $alter = array(
+        'max_length' => $max_length,
+        'ellipsis' => TRUE,
+        'word_boundary' => TRUE,
+        'html' => TRUE,
+    );
+    $shortened_string = views_trim_text($alter, $text_string);
+
+    return $shortened_string;
 }
