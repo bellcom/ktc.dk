@@ -73,9 +73,6 @@ function ktc_subscription_ui_strongarm() {
         'path' => array(
           'weight' => '30',
         ),
-        'metatags' => array(
-          'weight' => '40',
-        ),
       ),
       'display' => array(),
     ),
