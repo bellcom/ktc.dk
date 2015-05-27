@@ -99,6 +99,7 @@ features[field_instance][] = node-artikler-field_tema_trompet
 features[field_instance][] = node-artikler-field_topics
 features[node][] = artikler
 features[page_manager_handlers][] = node_edit_panel_context
+features[page_manager_handlers][] = node_view_panel_context_11
 features[page_manager_pages][] = teksnik_miljoe
 features[taxonomy][] = artikeltyper
 features[taxonomy][] = side_status
