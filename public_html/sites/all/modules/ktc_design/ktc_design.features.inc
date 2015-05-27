@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function ktc_design_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function ktc_design_image_default_styles() {
