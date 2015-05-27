@@ -14,4 +14,5 @@ function ktc_design_admin_paths_alter(&$paths) {
   $paths['user/*/cancel'] = FALSE;
   $paths['user/*/edit'] = FALSE;
   $paths['user/*/edit/*'] = FALSE;
+  $paths['user/*/*/*/edit'] = FALSE;
 }
