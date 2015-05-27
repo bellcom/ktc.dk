@@ -252,7 +252,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'gold-title',
+      'css_class' => 'gold-title panel-image',
     );
     $pane->extras = array();
     $pane->position = 0;
