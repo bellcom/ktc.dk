@@ -30,8 +30,68 @@ function ktc_netvaerk_menu() {
     'page arguments' => array('ktc_netvaerk_settings'),
     'access arguments' => array('access administration pages'),
   );
+  $items['netvaerk/form/%/%/%'] = array(
+    'page callback' => 'ktc_netvaerk_get_form',
+    'page arguments' => array(2, 3, 4),
+    'access callback' => 'og_user_access',
+    'access arguments' => array('node', 2, 'administer group'),
+  );
   return $items;
 }
+
+/**
+ * Return form form embedding in group modal.
+ */
+function ktc_netvaerk_get_form($gid, $action, $membership_id) {
+  $og_membership = FALSE;
+  if ($membership_id) {
+    $og_membership = og_membership_load($membership_id);
+  }
+  $actions = array(
+    'add-user' => 'og_ui_add_users',
+    'edit-membership' => 'og_ui_edit_membership',
+    'delete-membership' => 'og_ui_delete_membership',
+    'approve-membership' => 'ktc_netvaerk_approve_membership',
+  );
+
+  $form = $actions[$action];
+  module_load_include('inc', 'og_ui', 'og_ui.admin');
+  $form = drupal_get_form($form, 'node', $gid, $og_membership);
+
+  die(drupal_render($form));
+}
+
+/**
+ * Aprove membership request.
+ */
+function ktc_netvaerk_approve_membership($form, &$form_state, $group_type, $gid, $og_membership) {
+  $group = entity_load_single($group_type, $gid);
+  $label = entity_label($group_type, $group);
+  $account = user_load($og_membership->etid);
+
+  $form_state['og_membership'] = $og_membership;
+
+  return confirm_form($form,
+    t('Godkend ansøgning om medlemskab i @group', array('@group' => $label)),
+    $group_type . '/' . $gid,
+    t('Er du sikker på at du vil godkende medlemskabet for @user', array('@user' => $account->name)),
+    t('Godkend'),
+    t('Cancel')
+  );
+}
+
+/**
+ * Submit handler; Approve membership request.
+ */
+function ktc_netvaerk_approve_membership_submit($form, &$form_state) {
+  $og_membership = $form_state['og_membership'];
+  $og_membership->state = 1;
+
+  og_membership_save($og_membership);
+  drupal_set_message(t('Medlemsskabet er blevet godkendt.'));
+}
+
+
 /**
  * KTC netvaerk setting form.
  */
@@ -223,30 +283,7 @@ function ktc_netvaerk_block_view($delta = '') {
 
   switch ($delta) {
     case 'group-members':
-      $view = views_get_view('ktc_og_members');
-      $view->set_display('block_2');
-      $view->set_arguments(array(arg(1)));
-      $view->pre_execute();
-      $view->execute();
-      $view_markup = $view->render();
-
-      $modal_markup = <<<EOL
-<div class="modal fade" id="member-modal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Netværkets medlemmer</h4>
-      </div>
-      <div class="modal-body">
-        $view_markup
-      </div>
-    </div>
-  </div>
-</div>
-EOL;
-
-      $block['content'] = $modal_markup;
+      $block['content'] = _ktc_netvaerk_og_members_list();
       break;
 
     case 'group-not-member-message':
@@ -698,4 +735,75 @@ function ktc_netvaerk_og_membership_validate(&$form, &$form_state) {
       $form_state['values']['membership_fields']['field_grouprole'][LANGUAGE_NONE][0]['target_id'] = KTC_NETVAERK_MEMBER_TID;
     }
   }
+}
+
+/**
+ * Generate block content for 'group-members'.
+ */
+function _ktc_netvaerk_og_members_list() {
+  module_load_include('inc', 'og_ui', 'og_ui.admin');
+  drupal_add_js(drupal_get_path('module', 'ktc_netvaerk') . '/js/ktc_netvaerk.group.js');
+
+  $gid = arg(1);
+
+  $view = views_get_view('ktc_og_members');
+  $view->set_display('block_2');
+  $view->set_arguments(array($gid));
+  $view->pre_execute();
+  $view->execute();
+  $view_markup = $view->render();
+
+  $add_users = '';
+  $view_markup_pending = '';
+
+  // Only show pending users and add form to users with administer group
+  // permissions.
+  if (og_user_access('node', $gid, 'administer group')) {
+    $view = views_get_view('ktc_og_members');
+    $view->set_display('block_3');
+    $view->set_arguments(array($gid));
+    $view->pre_execute();
+    $view->execute();
+    $_view = $view->render();
+
+    // Get og add user form.
+    $form = drupal_get_form('og_ui_add_users', 'node', $gid);
+    // Hide request message.
+    $form['membership_fields']['og_membership_request']['#access'] = FALSE;
+
+    $add_users = '<p><a href="#" class="js-form-add-user"><span class="glyphicon glyphicon-plus"></span> Tilføj nyt medlem</a></p>';
+    $add_users .= '<div id="form-add-user" class="well well-sm hide">' . drupal_render($form) . '</div>';
+
+    if ($_view) {
+      $view_markup_pending = '<p><b>Deaktiverede/Afventende medlemmer</b></p>' . $_view;
+    }
+  }
+
+  // Show messages in the modal.
+  $messages = theme('status_messages', drupal_get_messages(NULL, FALSE));
+
+  $modal_markup = <<<EOL
+<div class="modal fade" id="member-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Netværkets medlemmer</h4>
+      </div>
+      <div class="modal-body">
+        $messages
+        $add_users
+        <div class="content">
+          <div id="form-div" class="hide well well-sm"><center>...</center></div>
+          <p><b>Aktive medlemmer</b></p>
+          $view_markup
+          $view_markup_pending
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+EOL;
+
+  return $modal_markup;
 }
