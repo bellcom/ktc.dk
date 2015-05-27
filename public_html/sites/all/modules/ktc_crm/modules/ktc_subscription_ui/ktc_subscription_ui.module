@@ -450,17 +450,21 @@ function ktc_crm_subscription_cancel_form($form, &$form_state, $account, $produc
   if ($product = node_load($product_nid)) {
     if ($product_uuid = _ktc_crm_get_uuid('node', $product)) {
       $user_uuid = _ktc_crm_get_uuid('user', $account);
-
-      $subscriptions = ktc_subscription_ui_fetch_user_subscriptions($account);
+      $subscriptions = ktc_crm_subscriptions_fetch_user_subscriptions($account);
       if (isset($subscriptions[$product_uuid])) {
         $form_state['subscriptiondto'] = $subscriptions[$product_uuid];
       }
     }
   }
 
+  $warning = '';
+  if ($field = field_get_items('node', $product, 'field_cancel_warning')) {
+    $warning = $field[0]['value'];
+  }
+
   $form['message'] = array(
     '#type' => 'item',
-    '#markup' => 'advarsel',
+    '#markup' => $warning,
   );
 
   $form['submit'] = array(
