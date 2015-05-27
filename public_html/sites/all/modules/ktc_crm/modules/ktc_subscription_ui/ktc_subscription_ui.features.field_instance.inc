@@ -74,6 +74,94 @@ function ktc_subscription_ui_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-product-field_cancel_warning'
+  $field_instances['node-product-field_cancel_warning'] = array(
+    'bundle' => 'product',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Denne besked vises til brugeren når han/hun skal bekræfte at opsige abonnementet.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_cancel_warning',
+    'label' => 'Opsig advarsel',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 42,
+    ),
+  );
+
   // Exported field_instance: 'node-product-field_crm_uuid'
   $field_instances['node-product-field_crm_uuid'] = array(
     'bundle' => 'product',
@@ -324,7 +412,9 @@ function ktc_subscription_ui_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('CRM UUID');
+  t('Denne besked vises til brugeren når han/hun skal bekræfte at opsige abonnementet.');
   t('Kort beskrivelse');
+  t('Opsig advarsel');
   t('Produkt type');
   t('Vis datovælger');
   t('Vis datovælger på formularen for dette produkt. Tillad brugeren at vælge slutdato for abonnementet.');
