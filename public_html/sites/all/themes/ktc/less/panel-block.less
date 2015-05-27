@@ -133,6 +133,11 @@
 			text-decoration: underline;
 		}
 
+		// Button
+		.btn {
+			text-decoration: none;
+		}
+
 		// Paragraph
 		p {
 			color: @text-color;
@@ -379,11 +384,11 @@
 
 			// Photo container
 			.panel-user-photo-container {
+				float: left;
 
 				// Photo
 				img {
 					display: inherit;
-					float: left;
 					height: auto;
 					width: auto;
 					max-width: 48px;
@@ -411,9 +416,10 @@
 				display: inherit;
 
 				// Headlines
-				h1,h2,h3,h4,h5,h6 {
+				h1, h2, h3, h4, h5, h6 {
 					margin-top: 0;
 					padding-top: 0;
+					margin-bottom: 3px;
 				}
 			}
 
@@ -436,6 +442,32 @@
 }
 .ktc-green {
 	.mixin-user-profile(@panel-user-profile-green-photo-headline-color, @panel-user-profile-green-photo-border-color);
+}
+
+// --------------------------------------------------
+// Call-to-action button
+// --------------------------------------------------
+
+// Variables
+@panel-cta-button-spacing-top-bottom: 8px;
+
+// Panel block
+.panel.panel-block {
+
+	// Body
+	.panel-body {
+
+		// Call-to-action button
+		.panel-cta-button {
+			text-align: center;
+
+			// Button
+			.btn {
+				min-width: 40%;
+				margin: @panel-cta-button-spacing-top-bottom auto;
+			}
+		}
+	}
 }
 
 // --------------------------------------------------
@@ -556,7 +588,7 @@
 .panel-block.panel-block-aside {
 
 	// Heading
-	.panel-heading {
+	> .panel-heading {
 		background-color: @gray-darker;
 
 		// Title
@@ -566,7 +598,7 @@
 	}
 
 	// Body
-	.panel-body {
+	> .panel-body {
 	}
 
 	// Action
@@ -574,12 +606,12 @@
 		background-color: @gray-darker;
 
 		// Heading
-		.panel-heading {
+		> .panel-heading {
 			background-color: @brand-userlink-red;
 		}
 
 		// Body
-		.panel-body {
+		> .panel-body {
 
 			// Text (none given) and paragraph
 			&,
@@ -593,7 +625,7 @@
 	&.panel-block-aside-toggle {
 
 		// Heading
-		.panel-heading {
+		> .panel-heading {
 			position: relative;
 
 			// Title
@@ -609,7 +641,7 @@
 					display: block;
 					content: "";
 					top: 50%;
-					right: @panel-left-right-padding;
+					right: 0;
 					margin-top: -(floor( @panel-aside-heading-icon-open-height / 2 ));
 					.sprite(@panel-aside-heading-icon-open);
 				}
@@ -619,19 +651,23 @@
 		// Closed
 		&.closed {
 
-			// Title
-			.panel-title {
-				padding-right: floor( ( 2 * @panel-left-right-padding ) + @panel-aside-heading-icon-closed-width );
+			// Heading
+			> .panel-heading {
 
-				// Toggle icon
-				&:after {
-					margin-top: -(floor( @panel-aside-heading-icon-closed-height / 2 ));
-					.sprite(@panel-aside-heading-icon-closed);
+				// Title
+				.panel-title {
+					padding-right: floor( ( 2 * @panel-left-right-padding ) + @panel-aside-heading-icon-closed-width );
+
+					// Toggle icon
+					&:after {
+						margin-top: -(floor( @panel-aside-heading-icon-closed-height / 2 ));
+						.sprite(@panel-aside-heading-icon-closed);
+					}
 				}
 			}
 
 			// Body
-			.panel-body {
+			> .panel-body {
 				display: none;
 			}
 		}
@@ -694,7 +730,7 @@
 	&.panel-block.panel-block-teaser {
 
 		// Heading
-		.panel-heading {
+		> .panel-heading {
 
 			// Title
 			.panel-title {
@@ -718,7 +754,7 @@
 .panel-block.panel-block-teaser {
 
 	// Heading
-	.panel-heading {
+	> .panel-heading {
 		padding-bottom: 0;
 
 		// Title
@@ -736,7 +772,7 @@
 	}
 
 	// Body
-	.panel-body {
+	> .panel-body {
 		padding-top: 0;
 	}
 }
