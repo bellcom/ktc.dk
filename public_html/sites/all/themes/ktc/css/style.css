@@ -11193,40 +11193,48 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel-block.panel-block-teaser > .panel-body {
   padding-top: 0;
 }
-.ktc-green .panel-block.panel-block-teaser > .panel-heading .panel-title {
+.ktc-green .panel-block.panel-block-teaser > .panel-heading .panel-title,
+.ktc-green.panel-block.panel-block-teaser > .panel-heading .panel-title {
   padding-left: 17px;
 }
-.ktc-green .panel-block.panel-block-teaser > .panel-heading .panel-title:before {
+.ktc-green .panel-block.panel-block-teaser > .panel-heading .panel-title:before,
+.ktc-green.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -151px;
   width: 12px;
   height: 15px;
 }
-.ktc-blue .panel-block.panel-block-teaser > .panel-heading .panel-title {
+.ktc-blue .panel-block.panel-block-teaser > .panel-heading .panel-title,
+.ktc-blue.panel-block.panel-block-teaser > .panel-heading .panel-title {
   padding-left: 17px;
 }
-.ktc-blue .panel-block.panel-block-teaser > .panel-heading .panel-title:before {
+.ktc-blue .panel-block.panel-block-teaser > .panel-heading .panel-title:before,
+.ktc-blue.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -226px;
   width: 12px;
   height: 15px;
 }
-.ktc-gold .panel-block.panel-block-teaser > .panel-heading .panel-title {
+.ktc-gold .panel-block.panel-block-teaser > .panel-heading .panel-title,
+.ktc-gold.panel-block.panel-block-teaser > .panel-heading .panel-title {
   padding-left: 17px;
 }
-.ktc-gold .panel-block.panel-block-teaser > .panel-heading .panel-title:before {
+.ktc-gold .panel-block.panel-block-teaser > .panel-heading .panel-title:before,
+.ktc-gold.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -181px;
   width: 12px;
   height: 15px;
 }
-.ktc-red .panel-block.panel-block-teaser > .panel-heading .panel-title {
+.ktc-red .panel-block.panel-block-teaser > .panel-heading .panel-title,
+.ktc-red.panel-block.panel-block-teaser > .panel-heading .panel-title {
   padding-left: 17px;
 }
-.ktc-red .panel-block.panel-block-teaser > .panel-heading .panel-title:before {
+.ktc-red .panel-block.panel-block-teaser > .panel-heading .panel-title:before,
+.ktc-red.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -121px;
