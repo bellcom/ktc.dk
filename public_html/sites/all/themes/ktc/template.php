@@ -223,6 +223,13 @@ function ktc_preprocess_node(&$vars) {
   $vars['group_info'] = $group_info;
   $vars['classes_array'][] = $group_info['class'];
 
+    // Teaser
+    if ( $vars['elements']['#view_mode'] == 'teaser' ) {
+        if ($body_shortened = field_get_items('node', $vars['node'], 'body')) {
+            $vars['body_shortened'] = _ktc_text_shortener($body_shortened[0]['value'], 150);
+        }
+    }
+
   // Added user_name and user_object for node--teaser/teasercomments templates.
   $user = user_load($vars['uid']);
   $vars['user_object'] = $user;
@@ -257,6 +264,9 @@ function ktc_preprocess_node(&$vars) {
     }
 
     $vars['arrangement_date'] = _ktc_format_timestamp($dbDate);
+      if($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
+          $vars['arrangement_signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
+      }
   }
 
     // Document
@@ -831,12 +841,22 @@ function ktc_preprocess_user_picture(&$variables) {
     }
   }
 }
+
 /*
  * Format timestamp
  */
 function _ktc_format_timestamp($timestamp) {
     $date = new DateTime();
     $date->setTimestamp($timestamp);
+
+    return $date->format('d\. M Y \k\l\. H:i');
+}
+
+/*
+ * Format datetime
+ */
+function _ktc_format_datetime($datetime) {
+    $date = new DateTime($datetime);
 
     return $date->format('d\. M Y \k\l\. H:i');
 }
@@ -854,4 +874,19 @@ function _ktc_get_network_groups($nid) {
     }
 
     return $groups;
+}
+
+/*
+ * Text shortener
+ */
+function _ktc_text_shortener($text_string, $max_length) {
+    $alter = array(
+        'max_length' => $max_length,
+        'ellipsis' => TRUE,
+        'word_boundary' => TRUE,
+        'html' => TRUE,
+    );
+    $shortened_string = views_trim_text($alter, $text_string);
+
+    return $shortened_string;
 }
