@@ -20,27 +20,21 @@
 <?php if ($pane_prefix): ?>
   <?php print $pane_prefix; ?>
 <?php endif; ?>
-<div class="<?php print $classes; ?>" <?php print $id; ?> <?php print $attributes; ?>>
+
+<div class="panel panel-block panel-block-aside panel-block-aside-color <?php print $classes; ?> <?php if(isset($panel_is_filter) && $panel_is_filter) { print 'panel-block-aside-toggle'; } ?>" <?php print $id; ?> <?php print $attributes; ?>>
   <?php if ($admin_links): ?>
     <?php print $admin_links; ?>
   <?php endif; ?>
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
-    <h3<?php print $title_attributes; ?>><?php print $title; ?></h3>
-    <?php if(isset($panel_is_filter) && $panel_is_filter): ?>
-      <div class="filter-foldin filter-fold"> - </div>
-    <?php endif; ?>
+      <div class="panel-heading">
+          <h3 class="panel-title" <?php print $title_attributes; ?>><?php print $title; ?></h3>
+      </div>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
-  <?php if ($feeds): ?>
-    <div class="feed">
-      <?php print $feeds; ?>
-    </div>
-  <?php endif; ?>
-
-  <div class="pane-content">
+  <div class="panel-body pane-content">
     <?php print render($content); ?>
   </div>
 
@@ -55,6 +49,12 @@
       <?php print $more; ?>
     </div>
   <?php endif; ?>
+
+    <?php if ($feeds): ?>
+        <div class="feed">
+            <?php print $feeds; ?>
+        </div>
+    <?php endif; ?>
 </div>
 <?php if ($pane_suffix): ?>
   <?php print $pane_suffix; ?>
