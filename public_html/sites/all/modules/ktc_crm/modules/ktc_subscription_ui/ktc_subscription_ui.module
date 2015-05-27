@@ -375,8 +375,14 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
         );
       }
 
+      $submit = $is_new ? t('Opret abonnement') : t('Gem abonnement');
+      if ($ktc_membership) {
+        $submit = $is_new ? t('Opret medlemskab') : t('Gem medlemskab');
+      }
+
       $form['submit'] = array(
-        '#value' => $is_new ? t('Opret medlemskab') : t('Gem medlemskab'),
+        '#prefix' => '<br /><br /><br />',
+        '#value' => $submit,
         '#type' => 'submit',
       );
     }
