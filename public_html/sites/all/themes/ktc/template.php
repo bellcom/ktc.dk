@@ -253,27 +253,34 @@ function ktc_preprocess_node(&$vars) {
     $vars['statistics_count'] = 0;
   }
 
-  // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
-  if ($vars['type'] == 'arrangement') {
+    // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
+    if ($vars['type'] == 'arrangement') {
 
-    if (isset($vars['field_arrangement_date']['und'])) {
-      $dbDate = $vars['field_arrangement_date']['und'][0]['value'];
+        if (isset($vars['field_arrangement_date']['und'])) {
+            $dbDate = $vars['field_arrangement_date']['und'][0]['value'];
+        }
+        else {
+            $dbDate = $vars['field_arrangement_date'][0]['value'];
+        }
+
+        $vars['arrangement_date'] = _ktc_format_datetime($dbDate);
+
+        if($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
+            $vars['arrangement_signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
+        }
+
+        if($arrangement_type = field_get_items('node', $vars['node'], 'field_arrangement_type')) {
+            $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['tid']);
+            $vars['arrangement_type'] = $arrangement_type_term->name;
+        }
     }
-    else {
-      $dbDate = $vars['field_arrangement_date'][0]['value'];
+
+    // Meeting_doodle
+    if ($vars['type'] == 'meeting_doodle') {
+        if($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
+            $vars['signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
+        }
     }
-
-    $vars['arrangement_date'] = _ktc_format_datetime($dbDate);
-
-      if($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
-          $vars['arrangement_signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
-      }
-
-      if($arrangement_type = field_get_items('node', $vars['node'], 'field_arrangement_type')) {
-          $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['tid']);
-          $vars['arrangement_type'] = $arrangement_type_term->name;
-      }
-  }
 
     // Document
     if ($vars['type'] == 'document') {
