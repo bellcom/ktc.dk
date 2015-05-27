@@ -263,9 +263,15 @@ function ktc_preprocess_node(&$vars) {
       $dbDate = $vars['field_arrangement_date'][0]['value'];
     }
 
-    $vars['arrangement_date'] = _ktc_format_timestamp($dbDate);
+    $vars['arrangement_date'] = _ktc_format_datetime($dbDate);
+
       if($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
           $vars['arrangement_signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
+      }
+
+      if($arrangement_type = field_get_items('node', $vars['node'], 'field_arrangement_type')) {
+          $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['tid']);
+          $vars['arrangement_type'] = $arrangement_type_term->name;
       }
   }
 
@@ -287,14 +293,6 @@ function ktc_preprocess_node(&$vars) {
         if($news_type = field_get_items('node', $vars['node'], 'field_os2web_news_page_type')) {
             $news_type_term = taxonomy_term_load($news_type[0]['tid']);
             $vars['news_type'] = $news_type_term->name;
-        }
-    }
-
-    // Arrangement
-    if ($vars['type'] == 'arrangement') {
-        if($arrangement_type = field_get_items('node', $vars['node'], 'field_arrangement_type')) {
-            $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['tid']);
-            $vars['arrangement_type'] = $arrangement_type_term->name;
         }
     }
 
