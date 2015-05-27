@@ -223,10 +223,18 @@ function ktc_preprocess_node(&$vars) {
   $vars['group_info'] = $group_info;
   $vars['classes_array'][] = $group_info['class'];
 
-    // Teaser
-    if ( $vars['elements']['#view_mode'] == 'teaser' ) {
+    // Teaser and teaser comments
+    if ( $vars['elements']['#view_mode'] == 'teaser' || $vars['elements']['#view_mode'] == 'teasercomments' ) {
         if ($body_shortened = field_get_items('node', $vars['node'], 'body')) {
             $vars['body_shortened'] = _ktc_text_shortener($body_shortened[0]['value'], 150);
+        }
+    }
+
+    // Teaser comments
+    if ( $vars['elements']['#view_mode'] == 'teasercomments' ) {
+        // Attachments
+        if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
+            $vars['document_attachments'] = $media;
         }
     }
 
@@ -840,11 +848,13 @@ function ktc_preprocess_region(&$variables, $hook) {
 function ktc_preprocess_user_picture(&$variables) {
   // When a suer has the role "KTC VIP" there must be a green ring around the
   // user picture.
-  if (is_array($variables['account']->roles)) {
-    if (in_array('KTC VIP', $variables['account']->roles)) {
-      $variables['role_class'] = 'panel-user-photo-vip';
+    if(isset($variables['account']->roles)) {
+        if (is_array($variables['account']->roles)) {
+            if (in_array('KTC VIP', $variables['account']->roles)) {
+                $variables['role_class'] = 'panel-user-photo-vip';
+            }
+        }
     }
-  }
 }
 
 /*

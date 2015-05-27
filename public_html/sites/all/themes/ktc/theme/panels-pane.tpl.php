@@ -21,7 +21,7 @@
   <?php print $pane_prefix; ?>
 <?php endif; ?>
 
-<div class="panel panel-block panel-block-aside panel-block-aside-color <?php print $classes; ?> <?php if(isset($panel_is_filter) && $panel_is_filter) { print 'panel-block-aside-toggle'; } ?>" <?php print $id; ?> <?php print $attributes; ?>>
+<div class="panel panel-block <?php print $classes; ?> <?php if(isset($panel_is_filter) && $panel_is_filter) { print 'panel-block-aside panel-block-aside-toggle'; } ?>" <?php print $id; ?> <?php print $attributes; ?>>
   <?php if ($admin_links): ?>
     <?php print $admin_links; ?>
   <?php endif; ?>

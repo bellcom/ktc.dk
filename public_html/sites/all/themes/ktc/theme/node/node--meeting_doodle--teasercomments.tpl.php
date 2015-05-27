@@ -3,12 +3,6 @@
     <!-- Begin - teaser -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> panel panel-block panel-block-teaser-large"<?php print $attributes; ?>>
 
-        <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
-            <div class="panel-image">
-                <?php print render($content['field_os2web_base_field_lead_img']); ?>
-            </div>
-        <?php endif ?>
-
         <div class="panel-heading">
             <span><?php print $created_ago . ' ' . t('siden'); ?></span>
             <?php print $user_name; ?>
@@ -18,11 +12,15 @@
 
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
 
-            <?php if ($news_type): ?>
-                <p class="mute"><?php print $news_type; ?></p>
-            <?php endif ?>
+            <?php if (isset($signup_date_formatted)): ?>
+                <p class="panel-date-simple"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
+            <?php endif; ?>
 
             <p><?php print $body_shortened; ?></p>
+
+            <div class="panel-cta-button">
+                <a class="btn btn-blacknblue" href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print t('Afgiv stemme'); ?></a>
+            </div>
 
             <div class="panel-user-comments-container">
                 <?php if (isset($comments_view)): ?>
