@@ -22,6 +22,7 @@
             <?php endif ?>
 
             <p><?php print render($content['field_os2web_base_field_summary']); ?></p>
+
             <div class="panel-user-profile">
                 <?php if (isset($user_object)): ?>
                     <?php print $image = theme('user_picture', array('account' => $user_object));?>
@@ -31,6 +32,7 @@
                     <p><?php print $created_ago . ' ' . t('ago'); ?></p>
                 </div>
             </div>
+
         </div>
 
         <div class="panel-footer">

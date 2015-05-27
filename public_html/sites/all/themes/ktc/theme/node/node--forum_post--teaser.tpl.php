@@ -12,16 +12,23 @@
 
         <div class="panel-body">
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
+
             <?php if (isset($published_at)): ?>
                 <p class="panel-date-simple"><?php print $published_at; ?></p>
             <?php endif; ?>
-            <p>
-                <?php if (isset($content['field_short'])): ?>
-                    <?php print render($content['field_short']); ?>
-                <?php else: ?>
-                    <?php print render($content['body']); ?>
+
+            <p><?php print $body_shortened; ?></p>
+
+            <div class="panel-user-profile">
+                <?php if (isset($user_object)): ?>
+                    <?php print $image = theme('user_picture', array('account' => $user_object));?>
                 <?php endif; ?>
-            </p>
+                <div class="panel-user-profile-content">
+                    <h5><?php print $user_name; ?></h5>
+                    <p><?php print $created_ago . ' ' . t('ago'); ?></p>
+                </div>
+            </div>
+
         </div>
 
         <div class="panel-footer">

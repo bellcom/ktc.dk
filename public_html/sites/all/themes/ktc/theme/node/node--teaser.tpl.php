@@ -18,14 +18,11 @@
         <?php endif ?>
 
         <div class="panel-body">
+
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
-            <p>
-                <?php if (isset($content['field_short'])): ?>
-                    <?php print render($content['field_short']); ?>
-                <?php else: ?>
-                    <?php print render($content['body']); ?>
-                <?php endif; ?>
-            </p>
+
+            <p><?php print render($content['body_shortened']); ?></p>
+
             <div class="panel-user-profile">
                 <?php if (isset($user_object)): ?>
                     <?php print $image = theme('user_picture', array('account' => $user_object));?>
@@ -35,6 +32,7 @@
                     <p><?php print $created_ago . ' ' . t('ago'); ?></p>
                 </div>
             </div>
+
         </div>
 
         <div class="panel-footer">

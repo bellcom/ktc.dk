@@ -24,17 +24,20 @@
                 <h5 class="panel-date-simple"><?php print $arrangement_date; ?></h5>
             <?php endif; ?>
 
-            <?php if ($arrangement_type): ?>
+            <?php if (isset($arrangement_signup_date_formatted)): ?>
+                <p><?php print t('Tilmelding inden: ') . ' ' . $arrangement_signup_date_formatted; ?></p>
+            <?php endif ?>
+
+            <?php if (isset($arrangement_type)): ?>
                 <p class="mute"><?php print $arrangement_type; ?></p>
             <?php endif ?>
 
-            <p>
-                <?php if (isset($content['field_short'])): ?>
-                    <?php print render($content['field_short']); ?>
-                <?php else: ?>
-                    <?php print render($content['body']); ?>
-                <?php endif; ?>
-            </p>
+            <p><?php print $body_shortened; ?></p>
+
+            <div class="panel-cta-button">
+                <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="btn btn-blacknblue panel-cta-button"><?php print t('Tilmeld'); ?></a>
+            </div>
+
             <div class="panel-user-profile">
                 <?php if (isset($user_object)): ?>
                     <?php print $image = theme('user_picture', array('account' => $user_object));?>
@@ -44,6 +47,7 @@
                     <p><?php print $created_ago . ' ' . t('ago'); ?></p>
                 </div>
             </div>
+
         </div>
 
         <div class="panel-footer">
