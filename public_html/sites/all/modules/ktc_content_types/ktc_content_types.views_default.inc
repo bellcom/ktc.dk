@@ -253,6 +253,23 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_factbox_type']['label'] = '';
   $handler->display->display_options['fields']['field_factbox_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_factbox_type']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Indhold: Kommentarantal */
+  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['comment_count']['element_wrapper_class'] = 'panel-footer-button panel-footer-button-display';
+  $handler->display->display_options['fields']['comment_count']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['separator'] = ' ';
+  /* Felt: Indholdsstatistik: Totale visninger */
+  $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
+  $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['label'] = '';
+  $handler->display->display_options['fields']['totalcount']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['totalcount']['separator'] = ' ';
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -420,6 +437,8 @@ function ktc_content_types_views_default_views() {
     t('Logo, netværksnavn og forfatter'),
     t('KTC'),
     t('Titel, type og type'),
+    t('.'),
+    t(' '),
     t('Pladser, tid og pris'),
     t('Signup node'),
     t('/[close_signup_limit]'),
