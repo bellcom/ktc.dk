@@ -321,6 +321,21 @@ function ktc_preprocess_node(&$vars) {
         if($hearing_duedate = field_get_items('node', $vars['node'], 'field_official_responsedate')) {
             $vars['hearing_duedate'] = _ktc_format_datetime($hearing_duedate[0]['value']);
         }
+
+        // Status
+        if($hearing_status = field_get_items('node', $vars['node'], 'field_status')) {
+            $hearing_status_term = taxonomy_term_load($hearing_status[0]['tid']);
+            $vars['hearing_status'] = $hearing_status_term->name;
+        }
+
+        // Type
+        if($hearing_type = field_get_items('node', $vars['node'], 'field_hearing_type')) {
+            $hearing_type_term = taxonomy_term_load($hearing_type[0]['tid']);
+            $vars['hearing_type'] = $hearing_type_term->name;
+        }
+
+        // Title (shortened)
+        $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 50);
     }
 
     // Created (converted)
