@@ -1435,6 +1435,69 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-artikler-field_os2web_base_field_kle_ref'
+  $field_instances['node-artikler-field_os2web_base_field_kle_ref'] = array(
+    'bundle' => 'artikler',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_label_token' => 0,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 25,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_kle_ref',
+    'label' => 'KL Emneord',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 45,
+    ),
+  );
+
   // Exported field_instance: 'node-artikler-field_os2web_base_field_lead_img'
   $field_instances['node-artikler-field_os2web_base_field_lead_img'] = array(
     'bundle' => 'artikler',
@@ -1820,7 +1883,10 @@ function teknik_og_miljoe_field_default_field_instances() {
   // Exported field_instance: 'node-artikler-field_tags'
   $field_instances['node-artikler-field_tags'] = array(
     'bundle' => 'artikler',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => 'Her kan du indtaste stikord til artiklen (tags)',
     'display' => array(
@@ -1858,7 +1924,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Flere emner',
+    'label' => 'Stikord (Tags)',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -2003,7 +2069,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
-    'label' => 'Emner',
+    'label' => 'Faglige emner',
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
@@ -2038,8 +2104,7 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Eksisterende bruger');
   t('Eksterne links');
   t('Ekstratekst');
-  t('Emner');
-  t('Flere emner');
+  t('Faglige emner');
   t('Forfatter(e)');
   t('Forfattere');
   t('Forfrem til');
@@ -2049,6 +2114,7 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Her skal du angive deadline for artikel');
   t('Højtopløste billeder');
   t('Introtekst til artiklen');
+  t('KL Emneord');
   t('Manchet');
   t('Overskrift');
   t('Primært billede');
@@ -2056,6 +2122,7 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Send notifikation');
   t('Skjul auto relaterede links');
   t('Skriv et stikord eller tema for artiklen');
+  t('Stikord (Tags)');
   t('Stilling/titel');
   t('Systemet generere automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt.');
   t('Tekst');

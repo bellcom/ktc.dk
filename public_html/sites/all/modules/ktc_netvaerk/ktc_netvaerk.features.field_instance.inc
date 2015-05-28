@@ -602,7 +602,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 10,
     ),
   );
 
@@ -741,7 +741,70 @@ function ktc_netvaerk_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 8,
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-group-field_os2web_base_field_kle_ref'
+  $field_instances['node-group-field_os2web_base_field_kle_ref'] = array(
+    'bundle' => 'group',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_label_token' => 0,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 22,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_kle_ref',
+    'label' => 'KL Emneord',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
     ),
   );
 
@@ -1009,7 +1072,10 @@ function ktc_netvaerk_field_default_field_instances() {
   // Exported field_instance: 'node-group-field_tags'
   $field_instances['node-group-field_tags'] = array(
     'bundle' => 'group',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1047,7 +1113,7 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Tags',
+    'label' => 'Stikord (Tags)',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -1062,7 +1128,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -1795,6 +1861,7 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Her skal du angive om netværket er åbent for alle registrerede brugere på ktc.dk, så de frit kan melde sig ind, eller om du selv vil invitere og tilføje medlemmer. Selvom netværket er lukket, er det muligt for alle at se titel, billede og beskrivelse og alle kan ansøge om medlemskab. Det er op til dig, eller andre af netværkets administratorer at give adgang.');
   t('Hvilken type er dit netværk? Vælg den type der passer bedst til dit netværk');
   t('Hvis dette er et undernetværk, så skal du vælge hvilket netværk i listen der er dets overnetværk.');
+  t('KL Emneord');
   t('Lav en beskrivelse af netværket, dets formål og målgruppe');
   t('Logo');
   t('Målgruppe');
@@ -1805,8 +1872,8 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Skjul auto relaterede links');
   t('Slut dato');
   t('Start dato');
+  t('Stikord (Tags)');
   t('Systemet genererer automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt.');
-  t('Tags');
   t('Tilmelding');
   t('Undernetværk');
   t('grouprole');

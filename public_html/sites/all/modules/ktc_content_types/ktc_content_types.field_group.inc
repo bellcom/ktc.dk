@@ -138,10 +138,10 @@ function ktc_content_types_field_group_info() {
     'label' => 'Faglige emner',
     'weight' => '61',
     'children' => array(
-      0 => 'field_arrangement_categories',
-      1 => 'field_tags',
-      2 => 'field_topics',
-      3 => 'field_os2web_base_field_hidlinks',
+      0 => 'field_tags',
+      1 => 'field_topics',
+      2 => 'field_os2web_base_field_hidlinks',
+      3 => 'field_os2web_base_field_kle_ref',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -543,13 +543,12 @@ function ktc_content_types_field_group_info() {
     'label' => 'Dine oplysninger',
     'weight' => '3',
     'children' => array(
-      0 => 'field_arrangement_logo',
-      1 => 'field_arrangement_direkte_tele',
-      2 => 'field_arrangement_efternavn',
-      3 => 'field_arrangement_fornavn',
-      4 => 'field_arrangement_opretteremail',
-      5 => 'field_arrangement_stilling_titel',
-      6 => 'field_arrangement_virksomhed',
+      0 => 'field_arrangement_direkte_tele',
+      1 => 'field_arrangement_efternavn',
+      2 => 'field_arrangement_fornavn',
+      3 => 'field_arrangement_opretteremail',
+      4 => 'field_arrangement_stilling_titel',
+      5 => 'field_arrangement_virksomhed',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -1279,7 +1278,7 @@ function ktc_content_types_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'arrangement';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_arrangement';
+  $field_group->parent_name = 'group_side1';
   $field_group->data = array(
     'label' => 'logo',
     'weight' => '4',
@@ -1532,6 +1531,7 @@ function ktc_content_types_field_group_info() {
     'children' => array(
       0 => 'field_arrangement_type',
       1 => 'group_dineoplysninger',
+      2 => 'group_logodiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

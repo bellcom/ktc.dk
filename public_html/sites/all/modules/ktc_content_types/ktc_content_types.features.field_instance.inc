@@ -497,66 +497,6 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-arrangement-field_arrangement_categories'
-  $field_instances['node-arrangement-field_arrangement_categories'] = array(
-    'bundle' => 'arrangement',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_arrangement_categories',
-    'label' => 'Nøgleord/ kategorier (max 5 stk.)',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 50,
-    ),
-  );
-
   // Exported field_instance: 'node-arrangement-field_arrangement_date'
   $field_instances['node-arrangement-field_arrangement_date'] = array(
     'bundle' => 'arrangement',
@@ -2498,6 +2438,69 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
   );
 
+  // Exported field_instance: 'node-arrangement-field_os2web_base_field_kle_ref'
+  $field_instances['node-arrangement-field_os2web_base_field_kle_ref'] = array(
+    'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_label_token' => 0,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 42,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_kle_ref',
+    'label' => 'KL Emneord',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 49,
+    ),
+  );
+
   // Exported field_instance: 'node-arrangement-field_os2web_base_field_media'
   $field_instances['node-arrangement-field_os2web_base_field_media'] = array(
     'bundle' => 'arrangement',
@@ -2721,7 +2724,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-arrangement-field_tags'
   $field_instances['node-arrangement-field_tags'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2759,7 +2765,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Flere emner',
+    'label' => 'Stikord (Tags)',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -2771,11 +2777,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 49,
+      'weight' => 50,
     ),
   );
 
@@ -4263,7 +4268,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-document-field_tags'
   $field_instances['node-document-field_tags'] = array(
     'bundle' => 'document',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => 'Her kan du indtastse stikord til dit dokument (tags)',
     'display' => array(
@@ -4301,7 +4309,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Tags',
+    'label' => 'Stikord (Tags)',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -5381,7 +5389,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-forum_post-field_tags'
   $field_instances['node-forum_post-field_tags'] = array(
     'bundle' => 'forum_post',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => 'Her kan du indtastse stikord til din diskussion (tags)',
     'display' => array(
@@ -5419,7 +5430,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Tags',
+    'label' => 'Stikord (Tags)',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -5427,12 +5438,11 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
+      'active' => 0,
       'module' => 'taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
         'autocomplete_path' => 'taxonomy/autocomplete',
-        'content_taxonomy_opt_groups' => 0,
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -8841,7 +8851,10 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-os2web_base_news-field_tags'
   $field_instances['node-os2web_base_news-field_tags'] = array(
     'bundle' => 'os2web_base_news',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -8879,7 +8892,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Tags',
+    'label' => 'Stikord (Tags)',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -9898,7 +9911,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Filer');
   t('Flere bilag');
   t('Flere billeder');
-  t('Flere emner');
   t('Forfatter');
   t('Forfrem til');
   t('Fornavn');
@@ -9929,7 +9941,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Målgruppe');
   t('Mødetype');
   t('Nyhedstype');
-  t('Nøgleord/ kategorier (max 5 stk.)');
   t('Original link');
   t('Periode');
   t('Primært billede');
@@ -9949,7 +9960,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Systemet genererer automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt');
   t('Sæt et billede på din nyhed for at gøre den mere opsigtsvækkende og interessant for læseren. Du må kun bruge billeder du har rettighederne til');
   t('Søgeord');
-  t('Tags');
   t('Tekst til bilag');
   t('Tilmeldingsfrist');
   t('Tilmeldte');

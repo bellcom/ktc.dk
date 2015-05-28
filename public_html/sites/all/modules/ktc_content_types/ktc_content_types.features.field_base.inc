@@ -163,35 +163,6 @@ function ktc_content_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_arrangement_categories'
-  $field_bases['field_arrangement_categories'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_arrangement_categories',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_arrangement_date'
   $field_bases['field_arrangement_date'] = array(
     'active' => 1,
@@ -2267,7 +2238,6 @@ function ktc_content_types_field_default_field_bases() {
         0 => array(
           'vocabulary' => 'emner',
           'parent' => 0,
-          'depth' => '',
         ),
       ),
       'options_list_callback' => 'content_taxonomy_allowed_values',
