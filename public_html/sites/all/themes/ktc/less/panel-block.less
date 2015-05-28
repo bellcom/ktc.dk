@@ -364,8 +364,16 @@
 					img {
 						border-color: @profile-photo-border-color;
 					}
-				}
 
+					// VIP
+					&.panel-user-photo-vip {
+
+						// Photo
+						img {
+							border-color: @panel-user-profile-green-photo-border-color;
+						}
+					}
+				}
 
 				// Content
 				.panel-user-profile-content {
@@ -459,7 +467,7 @@
 }
 
 // --------------------------------------------------
-// User profile
+// User comments
 // --------------------------------------------------
 
 //== Variables
@@ -639,16 +647,102 @@
 }
 
 // --------------------------------------------------
-// User comments
+// Image
 // --------------------------------------------------
 
-// Panel
-.panel-block {
+// Variables
+@panel-image-minus-padding: @panel-left-right-padding;
 
-	// User comments
-	.panel-user-comments {
+// Panel block
+.panel.panel-block {
 
+	// Image
+	.panel-image {
+		margin-left: -(@panel-image-minus-padding);
+		margin-right: -(@panel-image-minus-padding);
 	}
+
+	// Body
+	.panel-body {
+
+		// Image
+		.panel-image {
+			margin-top: -(@panel-body-top-padding);
+		}
+	}
+}
+
+// --------------------------------------------------
+// Logo
+// --------------------------------------------------
+
+//== Mixin
+.mixin-panel-block-logo(@sprite) {
+
+	// Panel block
+	.panel.panel-block {
+
+		// Logo
+		.panel-block-logo {
+
+			// Image
+			.panel-block-logo-image {
+				.sprite(@sprite);
+			}
+		}
+	}
+}
+
+//== Styling
+.panel.panel-block {
+
+	// Logo
+	.panel-block-logo {
+		border: 2px solid #e9edee;
+		border-radius: 3px;
+		padding: 20px 0;
+
+		// Image
+		.panel-block-logo-image {
+			display: block;
+			margin: auto;
+		}
+	}
+}
+
+// News
+.node-type-os2web-base-news {
+	.mixin-panel-block-logo(@nyh);
+}
+
+// Hearing
+.node-type-hearing {
+	.mixin-panel-block-logo(@hor);
+}
+
+// Arrangement
+.node-type-arrangement {
+	.mixin-panel-block-logo(@arr);
+}
+
+// Document
+.node-type-document {
+	.mixin-panel-block-logo(@dok);
+}
+
+// Article
+.node-type-article {
+	.mixin-panel-block-logo(@ark);
+}
+
+// Group (network)
+.node-type-group {
+	.mixin-panel-block-logo(@net);
+}
+
+// Forum
+.node-type-forum_post {
+	.mixin-panel-block-logo(@deb);
 }
 
 // |--------------------------------------------------------------------------
@@ -685,8 +779,7 @@
 .mixin-panel-block-aside-color(@heading-background-color) {
 
 	// Aside
-	.panel-block.panel-block-aside,
-	&.panel-block.panel-block-aside {
+	.panel-block.panel-block-aside {
 
 		// Color
 		&.panel-block-aside-color {
@@ -715,10 +808,6 @@
 		.panel-title {
 			color: @panel-aside-heading-title-font-color;
 		}
-	}
-
-	// Body
-	> .panel-body {
 	}
 
 	// Action
@@ -800,11 +889,12 @@
 }
 
 // Network (gold)
-.network {
+.og-context.og-context-node {
 	.mixin-panel-block-aside-color(@brand-gold);
 }
 
 // Not network (green)
+&,
 .no-network {
 	.mixin-panel-block-aside-color(@brand-footergreen);
 }
@@ -936,8 +1026,6 @@
 @panel-block-teaser-large-blue-headline-color: @brand-darkblue;
 @panel-block-teaser-large-red-headline-color: @brand-userlink-red;
 
-//== Styling
-
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
@@ -964,6 +1052,10 @@
 		}
 	}
 }
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
 
 // Large
 .panel-block.panel-block-teaser-large {
@@ -1021,4 +1113,41 @@
 // (red)
 .ktc-red {
 	.mixin-panel-block-teaser-large(@panel-block-teaser-large-red-headline-color);
+}
+
+// |--------------------------------------------------------------------------
+// | Page
+// |--------------------------------------------------------------------------
+// |
+// | Contains the following:
+// | - .panel-block-page
+// |
+
+// Page
+.panel-block.panel-block-page {
+
+	// Header
+	.panel-heading {
+
+		// Title
+		.panel-title {
+
+		}
+	}
+}
+
+//== Content reset
+.panel-block.panel-block-page {
+	background-color: #fff;
+
+	// Reset content inside
+	.panel.panel-block {
+		margin-bottom: 0;
+		margin-left: 0; // Dirty ugly hack
+		margin-right: 0; // Dirty ugly hack
+
+		// Body
+		.panel-body {
+		}
+	}
 }

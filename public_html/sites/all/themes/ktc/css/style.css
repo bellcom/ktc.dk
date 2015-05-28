@@ -7250,7 +7250,7 @@ h3.pane-title {
  */
 .icon-hearing-sm {
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -272px;
   width: 9px;
   height: 16px;
   vertical-align: middle;
@@ -7578,7 +7578,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .region-header #block-user-login #edit-actions button,
 .header-region .top_header .header_top #block-user-login #edit-actions button {
   background-image: url(../images/sprites.png);
-  background-position: 0px -713px;
+  background-position: 0px -657px;
   width: 28px;
   height: 28px;
   background-color: #fff;
@@ -7588,7 +7588,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .region-header #block-user-login #edit-actions button.login_open,
 .header-region .top_header .header_top #block-user-login #edit-actions button.login_open {
   background-image: url(../images/sprites.png);
-  background-position: 0px -685px;
+  background-position: 0px -713px;
   width: 28px;
   height: 28px;
 }
@@ -7623,7 +7623,7 @@ fieldset[disabled] .btn-blacknblue.active {
 .header-region .top_header .header_top_content .header-add-content .icon-add-content {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -657px;
+  background-position: 0px -685px;
   width: 28px;
   height: 28px;
 }
@@ -7760,7 +7760,7 @@ fieldset[disabled] .btn-blacknblue.active {
 }
 .header-region .navigation .header_bottom .header_fixed .header-user .header-user-name .icon-arrow-down {
   background-image: url(../images/sprites.png);
-  background-position: 0px -196px;
+  background-position: 0px -226px;
   width: 15px;
   height: 15px;
   display: inline-block;
@@ -8049,13 +8049,6 @@ fieldset[disabled] .region-sidebar-second section.block-facetapi ul.facetapi-fac
 }
 #block-system-help section {
   background-color: transparent;
-}
-body.page-node article,
-body.page-taxonomy-term article,
-body.page-node div.node-os2web-base-news,
-body.page-taxonomy-term div.node-os2web-base-news {
-  border-radius: 0 0 4px 4px;
-  margin-bottom: 20px;
 }
 body.page-node article a[id]:before,
 body.page-taxonomy-term article a[id]:before,
@@ -8759,7 +8752,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-left: -15px;
   content: ' ';
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -272px;
   width: 9px;
   height: 16px;
 }
@@ -9258,7 +9251,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .col-md-3 .filter-foldout,
 .col-md-4 .filter-foldout {
   background-image: url(../images/sprites.png);
-  background-position: 0px -241px;
+  background-position: 0px -121px;
   width: 15px;
   height: 15px;
 }
@@ -9995,7 +9988,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.node-group .ktc-yellow {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -372px;
+  background-position: 0px -304px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -10004,7 +9997,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.node-group .ktc-red {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -355px;
+  background-position: 0px -406px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -10013,7 +10006,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.node-group .ktc-green {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -338px;
+  background-position: 0px -389px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -10022,7 +10015,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser.node-group .ktc-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -389px;
+  background-position: 0px -372px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -10035,7 +10028,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 }
 .node-teaser .node-teaser-bottom .left .icon-comment {
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -93px;
   width: 15px;
   height: 14px;
   display: inline-block;
@@ -10076,7 +10069,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser .node-teaser-bottom .right .node-type-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -107px;
   width: 14px;
   height: 14px;
   vertical-align: top;
@@ -10085,7 +10078,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser .node-teaser-bottom .right .node-type-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -272px;
   width: 9px;
   height: 16px;
   vertical-align: top;
@@ -10094,7 +10087,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser .node-teaser-bottom .right .node-type-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -256px;
   width: 12px;
   height: 16px;
   vertical-align: top;
@@ -10103,7 +10096,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node-teaser .node-teaser-bottom .right .node-type-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -288px;
   width: 15px;
   height: 16px;
   vertical-align: top;
@@ -10175,7 +10168,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .node--group--listevisning .icon-subgroup {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -406px;
+  background-position: 0px -338px;
   width: 15px;
   height: 17px;
   vertical-align: bottom;
@@ -10216,7 +10209,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -549px;
+  background-position: 0px -630px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10226,7 +10219,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -495px;
+  background-position: 0px -441px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10236,7 +10229,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -630px;
+  background-position: 0px -495px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10256,7 +10249,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -468px;
+  background-position: 0px -549px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10266,7 +10259,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-meeting_doodle {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -522px;
+  background-position: 0px -468px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10276,7 +10269,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -441px;
+  background-position: 0px -522px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -10302,10 +10295,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node.node-type-group .main-container .pane-left .panel-pane.pane-node-body,
 .page-node.node-type-arrangement .main-container .pane-left .panel-pane.pane-node-body {
   margin-top: -20px;
-}
-.page-node.node-type-group .main-container .pane-left .panel-pane .pane-content,
-.page-node.node-type-arrangement .main-container .pane-left .panel-pane .pane-content {
-  padding: 10px 15px;
 }
 .page-node.node-type-group .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
 .page-node.node-type-arrangement .main-container .pane-left .panel-pane .view-id-ktc_og_members .view-content,
@@ -10393,7 +10382,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .page-node .views-field .term-name a .icon-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -389px;
+  background-position: 0px -372px;
   width: 17px;
   height: 17px;
   vertical-align: bottom;
@@ -10594,7 +10583,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .darkgray-box .pane-content ul.pager .pager-previous a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-previous a {
   background-image: url(../images/sprites.png);
-  background-position: 0px -211px;
+  background-position: 0px -196px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -10604,7 +10593,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .darkgray-box .pane-content ul.pager .pager-next a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-next a {
   background-image: url(../images/sprites.png);
-  background-position: 0px -241px;
+  background-position: 0px -121px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -10726,7 +10715,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-comment:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -93px;
   width: 15px;
   height: 14px;
 }
@@ -10746,7 +10735,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-hearing:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -272px;
   width: 9px;
   height: 16px;
 }
@@ -10792,7 +10781,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-os2web_base_news:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -288px;
   width: 15px;
   height: 16px;
 }
@@ -10814,7 +10803,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-arrangement:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -107px;
   width: 14px;
   height: 14px;
 }
@@ -10824,7 +10813,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel.panel-block .panel-footer .panel-footer-button.panel-footer-button-document:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -256px;
   width: 12px;
   height: 16px;
 }
@@ -10878,6 +10867,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
   border-color: #e9edee;
 }
+.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container.panel-user-photo-vip img {
+  border-color: #36a145;
+}
 .panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1,
 .panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h2,
 .panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h3,
@@ -10895,6 +10887,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-red .panel-body .panel-user-profile .panel-user-photo-container img,
 .ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
   border-color: #e75311;
+}
+.ktc-red .panel-body .panel-user-profile .panel-user-photo-container.panel-user-photo-vip img,
+.ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container.panel-user-photo-vip img {
+  border-color: #36a145;
 }
 .ktc-red .panel-body .panel-user-profile .panel-user-profile-content h1,
 .ktc-red.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1,
@@ -10926,6 +10922,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
   border-color: #d3a900;
 }
+.ktc-gold .panel-body .panel-user-profile .panel-user-photo-container.panel-user-photo-vip img,
+.ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container.panel-user-photo-vip img {
+  border-color: #36a145;
+}
 .ktc-gold .panel-body .panel-user-profile .panel-user-profile-content h1,
 .ktc-gold.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1,
 .ktc-gold .panel-body .panel-user-profile .panel-user-profile-content h2,
@@ -10956,6 +10956,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
   border-color: #1f9bd7;
 }
+.ktc-blue .panel-body .panel-user-profile .panel-user-photo-container.panel-user-photo-vip img,
+.ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container.panel-user-photo-vip img {
+  border-color: #36a145;
+}
 .ktc-blue .panel-body .panel-user-profile .panel-user-profile-content h1,
 .ktc-blue.panel.panel-block .panel-body .panel-user-profile .panel-user-profile-content h1,
 .ktc-blue .panel-body .panel-user-profile .panel-user-profile-content h2,
@@ -10984,6 +10988,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 }
 .ktc-green .panel-body .panel-user-profile .panel-user-photo-container img,
 .ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container img {
+  border-color: #36a145;
+}
+.ktc-green .panel-body .panel-user-profile .panel-user-photo-container.panel-user-photo-vip img,
+.ktc-green.panel.panel-block .panel-body .panel-user-profile .panel-user-photo-container.panel-user-photo-vip img {
   border-color: #36a145;
 }
 .ktc-green .panel-body .panel-user-profile .panel-user-profile-content h1,
@@ -11112,6 +11120,64 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-green.panel.panel-block .panel-body .panel-date-simple {
   color: #36a145;
 }
+.panel.panel-block .panel-image {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.panel.panel-block .panel-body .panel-image {
+  margin-top: -15px;
+}
+.panel.panel-block .panel-block-logo {
+  border: 2px solid #e9edee;
+  border-radius: 3px;
+  padding: 20px 0;
+}
+.panel.panel-block .panel-block-logo .panel-block-logo-image {
+  display: block;
+  margin: auto;
+}
+.node-type-os2web-base-news .panel.panel-block .panel-block-logo .panel-block-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1280px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-hearing .panel.panel-block .panel-block-logo .panel-block-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1187px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-arrangement .panel.panel-block .panel-block-logo .panel-block-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1001px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-document .panel.panel-block .panel-block-logo .panel-block-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1094px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-article .panel.panel-block .panel-block-logo .panel-block-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1373px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-group .panel.panel-block .panel-block-logo .panel-block-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -815px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-forum_post .panel.panel-block .panel-block-logo .panel-block-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1466px;
+  width: 93px;
+  height: 93px;
+}
 .panel-block.panel-block-aside {
   background-color: #fff;
 }
@@ -11161,23 +11227,20 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .panel-block.panel-block-aside.panel-block-aside-toggle.closed > .panel-heading .panel-title:after {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -241px;
+  background-position: 0px -121px;
   width: 15px;
   height: 15px;
 }
 .panel-block.panel-block-aside.panel-block-aside-toggle.closed > .panel-body {
   display: none;
 }
-.tech-env .panel-block.panel-block-aside.panel-block-aside-color .panel-heading,
-.tech-env.panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
+.tech-env .panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
   background-color: #1f9bd7;
 }
-.network .panel-block.panel-block-aside.panel-block-aside-color .panel-heading,
-.network.panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
+.og-context.og-context-node .panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
   background-color: #d3a900;
 }
-.no-network .panel-block.panel-block-aside.panel-block-aside-color .panel-heading,
-.no-network.panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
+.no-network .panel-block.panel-block-aside.panel-block-aside-color .panel-heading {
   background-color: #137c34;
 }
 .panel-block.panel-block-teaser {
@@ -11204,7 +11267,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-green.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -151px;
+  background-position: 0px -211px;
   width: 12px;
   height: 15px;
 }
@@ -11216,7 +11279,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-blue.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -226px;
+  background-position: 0px -241px;
   width: 12px;
   height: 15px;
 }
@@ -11240,7 +11303,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-red.panel-block.panel-block-teaser > .panel-heading .panel-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -121px;
+  background-position: 0px -151px;
   width: 12px;
   height: 15px;
 }
@@ -11319,9 +11382,17 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-red .panel-block.panel-block-teaser-large > .panel-heading > a:hover {
   color: #e75311;
 }
+.panel-block.panel-block-page {
+  background-color: #fff;
+}
+.panel-block.panel-block-page .panel.panel-block {
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
 .listevisning {
   display: table;
-  padding: 8px 0;
+  margin-bottom: 15px;
 }
 .listevisning .listevisning-icon {
   float: left;
@@ -11335,25 +11406,25 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 }
 .listevisning .listevisning-icon.listevisning-icon-document {
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -256px;
   width: 12px;
   height: 16px;
 }
 .listevisning .listevisning-icon.listevisning-icon-os2web_base_news {
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -288px;
   width: 15px;
   height: 16px;
 }
 .listevisning .listevisning-icon.listevisning-icon-group {
   background-image: url(../images/sprites.png);
-  background-position: 0px -406px;
+  background-position: 0px -338px;
   width: 15px;
   height: 17px;
 }
 .listevisning .listevisning-icon.listevisning-icon-arrangement {
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -107px;
   width: 14px;
   height: 14px;
 }
@@ -11365,7 +11436,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 }
 .listevisning .listevisning-icon.listevisning-icon-hearing {
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -272px;
   width: 9px;
   height: 16px;
 }
@@ -11386,6 +11457,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .listevisning .listevisning-content .listevisning-date-simple {
   font-style: italic;
   font-size: 85%;
+}
+.listevisning .listevisning-content p {
+  margin-bottom: 3px;
 }
 .ktc-gold .listevisning .listevisning-content .listevisning-headline,
 .ktc-gold.listevisning .listevisning-content .listevisning-headline,
