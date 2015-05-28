@@ -1,4 +1,4 @@
-<?php xdebug_break(); if (!$page): ?>
+<?php if (!$page): ?>
 
     <!-- Begin - teaser -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> panel panel-block panel-block-teaser-large"<?php print $attributes; ?>>

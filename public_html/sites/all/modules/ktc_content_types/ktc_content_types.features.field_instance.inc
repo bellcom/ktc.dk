@@ -9281,9 +9281,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
-          'ktc_artikel_billede' => 'ktc_artikel_billede',
-          'ktc_std_billede' => 0,
-          'netvaerks_logo' => 0,
+          'ktc_article_prim' => 'ktc_article_prim',
         ),
       ),
       'file_directory' => '',

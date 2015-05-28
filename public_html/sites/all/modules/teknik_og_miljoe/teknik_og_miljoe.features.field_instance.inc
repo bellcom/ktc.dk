@@ -60,6 +60,8 @@ function teknik_og_miljoe_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_artikel_afsnit-field_artikelafsnit_billede'
   $field_instances['field_collection_item-field_artikel_afsnit-field_artikelafsnit_billede'] = array(
     'bundle' => 'field_artikel_afsnit',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -83,11 +85,17 @@ function teknik_og_miljoe_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'ktc_article_afsnit' => 'ktc_article_afsnit',
+          'ktc_article_prim' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
@@ -1481,8 +1489,7 @@ function teknik_og_miljoe_field_default_field_instances() {
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
-          'ktc_artikel_billede' => 'ktc_artikel_billede',
-          'ktc_std_billede' => 0,
+          'ktc_article_prim' => 'ktc_article_prim',
         ),
       ),
       'file_directory' => '',
@@ -1499,19 +1506,23 @@ function teknik_og_miljoe_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'prezi' => 0,
           'private' => 0,
           'public' => 'public',
+          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
+          'presentation' => 0,
           'video' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_2' => 'media_default--media_browser_2',
           'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
           'upload' => 'upload',
         ),
       ),
