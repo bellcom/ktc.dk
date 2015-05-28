@@ -30,13 +30,16 @@
     <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
     <?php print render($page['page']['highlighted']); ?>
     <a id="main-content"></a>
-    <?php print render($page['title_prefix']); ?>
 
-    <?php if (!empty($page['title'])): ?>
-      <h1 class="page-header"><?php print $page['title']; ?></h1>
-    <?php endif; ?>
+    <?php if ( !empty($node) ) 
+	    {
+		        print render($page['title_prefix']);
+				if (!empty($page['title'])): ?>
+				<h1 class="page-header"><?php print $page['title']; ?></h1>
+				<?php endif; ?>
+				<?php print render($page['title_suffix']); 
+		} ?>
 
-    <?php print render($page['title_suffix']); ?>
     <?php print render($page['messages']); ?>
     <?php if (!$logged_in && arg(0) == 'user'): ?>
       <?php print render($page['tabs']); ?>

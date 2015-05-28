@@ -18,7 +18,7 @@
   <div class="col-md-12">
     <?php print $content['top']; ?>
   </div>
-  <div class="col-md-9">
+  <div class="col-md-9 panel panel-block panel-block-fullpage">
     <?php print $content['left']; ?>
   </div>
 
