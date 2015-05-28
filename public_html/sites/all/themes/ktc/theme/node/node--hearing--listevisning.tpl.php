@@ -17,11 +17,11 @@
         <h3 class="listevisning-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
 
         <?php if (isset($hearing_duedate)): ?>
-            <p class="listevisning-date-simple"><?php print $hearing_duedate; ?></p>
+            <p class="listevisning-date-simple"><?php print t('Svarfrist:'); ?> <?php print $hearing_duedate; ?></p>
         <?php endif ?>
 
         <?php if (isset($hearing_status)): ?>
-            <p><strong><?php print t('Status'); ?></strong> <?php print $hearing_status; ?></p>
+            <p><strong><?php print t('Status:'); ?></strong> <?php print strtolower($hearing_status); ?></p>
         <?php endif ?>
 
     </div>
