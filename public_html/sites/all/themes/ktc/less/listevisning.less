@@ -1,0 +1,136 @@
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+//== Colouring
+@listevisning-default-headline-color: @gray-darker;
+@listevisning-gold-headline-color: @brand-gold;
+@listevisning-green-headline-color: @brand-darkgreen;
+@listevisning-blue-headline-color: @brand-darkblue;
+@listevisning-red-headline-color: @brand-userlink-red;
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Listevisning
+.mixin-listevisning-color(@headline-color) {
+
+	// Listevisning
+	.listevisning,
+	&.listevisning {
+
+		// Content
+		.listevisning-content {
+
+			// Headline
+			.listevisning-headline {
+
+				// Headline and link
+				&,
+				> a {
+
+					// Normal, hover and focus state
+					&,
+					&:hover,
+					&:focus {
+						color: @headline-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Listevisning
+.listevisning {
+	display: table;
+	padding: 8px 0;
+
+	// Icon
+	.listevisning-icon {
+		float: left;
+		min-width: 25px; // Bit of a hack to make sure all content is aligned since icon width is different
+
+		// Vote
+		&.listevisning-icon-meeting_doodle {
+			.sprite(@ikon-afstemning);
+		}
+
+		// Document
+		&.listevisning-icon-document {
+			.sprite(@ikon-dok);
+		}
+
+		// News
+		&.listevisning-icon-os2web_base_news {
+			.sprite(@ikon-nyhed);
+		}
+
+		// Network / group
+		&.listevisning-icon-group {
+			.sprite(@ikon-netvaerk);
+		}
+
+		// Arrangement
+		&.listevisning-icon-arrangement {
+			.sprite(@ikon-arrangement);
+		}
+
+		// Forum
+		&.listevisning-icon-forum_post {
+			.sprite(@ikon-debat2);
+		}
+
+		// Hearing
+		&.listevisning-icon-hearing {
+			.sprite(@ikon-hoering);
+		}
+	}
+
+	// Content
+	.listevisning-content {
+		display: inherit;
+
+		// Headline
+		.listevisning-headline {
+			font-family: @font-family-base;
+			font-size: @font-size-base;
+			margin: 0;
+			margin-bottom: 5px;
+			color: @listevisning-default-headline-color;
+		}
+
+		// Sub headline
+		.listevisning-subheadline {
+			.small; // Include small class
+			margin: 0;
+		}
+
+		// Simple date
+		.listevisning-date-simple {
+			font-style: italic;
+			.small; // Include small class
+		}
+	}
+}
+
+.ktc-gold {
+	.mixin-listevisning-color(@listevisning-gold-headline-color);
+}
+
+.ktc-green {
+	.mixin-listevisning-color(@listevisning-green-headline-color);
+}
+
+.ktc-red {
+	.mixin-listevisning-color(@listevisning-red-headline-color);
+}
+
+.ktc-blue {
+	.mixin-listevisning-color(@listevisning-blue-headline-color);
+}

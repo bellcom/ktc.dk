@@ -283,6 +283,22 @@ function ktc_preprocess_node(&$vars) {
         }
     }
 
+    // Network / group
+    if ($vars['type'] == 'group') {
+
+        // Network type
+        if($group_type = field_get_items('node', $vars['node'], 'field_netvaerkstype')) {
+            $group_type_term = taxonomy_term_load($group_type[0]['tid']);
+            $vars['group_type'] = $group_type_term->name;
+        }
+
+        // Region
+        if($region = field_get_items('node', $vars['node'], 'field_regioner')) {
+            $region_term = taxonomy_term_load($region[0]['tid']);
+            $vars['group_region'] = $region_term->name;
+        }
+    }
+
     // Meeting_doodle
     if ($vars['type'] == 'meeting_doodle') {
         if($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
@@ -295,6 +311,15 @@ function ktc_preprocess_node(&$vars) {
         $vars['num_attachments'] = 0;
         if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
             $vars['num_attachments'] = count($media);
+        }
+    }
+
+    // Hearing
+    if ($vars['type'] == 'hearing') {
+
+        // Duedate (response date)
+        if($hearing_duedate = field_get_items('node', $vars['node'], 'field_official_responsedate')) {
+            $vars['hearing_duedate'] = _ktc_format_datetime($hearing_duedate[0]['value']);
         }
     }
 

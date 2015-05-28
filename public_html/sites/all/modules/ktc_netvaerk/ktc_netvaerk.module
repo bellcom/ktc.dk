@@ -430,7 +430,7 @@ function ktc_netvaerk_get_node_group_info($nid) {
  */
 function ktc_netvaerk_check_my_groups($nid) {
   // Yellow is the genernal group.
-  $class = 'ktc-yellow';
+  $class = 'ktc-gold';
 
   if ($gids = og_get_groups_by_user()) {
     if (in_array($nid, $gids['node'])) {

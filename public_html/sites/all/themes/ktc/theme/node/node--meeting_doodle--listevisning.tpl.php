@@ -83,6 +83,7 @@
     <span class="listevisning-icon listevisning-icon-<?php print $type; ?>"></span>
     <div class="listevisning-content">
         <h3 class="listevisning-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-        <p class="listevisning-date-simple"><?php print $published_at; ?></p>
+        <p class="listevisning-date-simple"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
+        <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print t('Afgiv stemme'); ?></a>
     </div>
 </article>

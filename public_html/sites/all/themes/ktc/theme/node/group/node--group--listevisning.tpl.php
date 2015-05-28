@@ -79,11 +79,19 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <h5>
-    <a href="<?php print $node_url; ?>"><i class="icon-subgroup"></i><?php print $title; ?></a></h5>
-  <?php if (isset($content['field_regioner'])): ?>
-    <div class="group-region"> <?php print '<span class="group-region-dash"> - </span>' . render($content['field_regioner']); ?></div>
-  <?php endif; ?>
-</article>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> listevisning"<?php print $attributes; ?>>
+    <span class="listevisning-icon listevisning-icon-<?php print $type; ?>"></span>
+    <div class="listevisning-content">
 
+        <?php if (isset($group_type)): ?>
+            <p class="listevisning-subheadline"><?php print $group_type; ?></p>
+        <?php endif ?>
+
+        <h3 class="listevisning-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+
+        <?php if (isset($group_region)): ?>
+            <p>- <?php print $group_region; ?></p>
+        <?php endif ?>
+
+    </div>
+</article>
