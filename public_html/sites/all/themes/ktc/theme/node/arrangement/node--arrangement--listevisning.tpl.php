@@ -79,8 +79,22 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> $comment_count clearfix"<?php print $attributes; ?>>
-  <div class="created"><?php print date('d. F Y', $node->created); ?></div>
-  <h5><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h5>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> listevisning"<?php print $attributes; ?>>
+    <span class="listevisning-icon listevisning-icon-<?php print $type; ?>"></span>
+    <div class="listevisning-content">
+
+        <?php if (isset($network_groups)): ?>
+            <?php foreach($network_groups AS $network_group): ?>
+                <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="listevisning-title"><?php print $network_group->title; ?></a>
+            <?php endforeach ?>
+        <?php endif ?>
+
+        <?php if (isset($arrangement_type)): ?>
+            <p class="mute"><?php print $arrangement_type; ?></p>
+        <?php endif ?>
+
+        <h3 class="listevisning-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+        <p class="listevisning-date-simple"><?php $arrangement_date; ?></p>
+    </div>
 </article>
 
