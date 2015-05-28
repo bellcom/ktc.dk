@@ -1220,9 +1220,13 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['gid']['id'] = 'gid';
   $handler->display->display_options['fields']['gid']['table'] = 'og_membership';
   $handler->display->display_options['fields']['gid']['field'] = 'gid';
+  $handler->display->display_options['fields']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['fields']['gid']['label'] = '';
   $handler->display->display_options['fields']['gid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['gid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['gid']['alter']['text'] = '[gid]';
   $handler->display->display_options['fields']['gid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['gid']['separator'] = '';
   /* Felt: OG membership: Og membership ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'og_membership';
@@ -1230,7 +1234,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['fields']['id']['label'] = '';
   $handler->display->display_options['fields']['id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['id']['alter']['text'] = 'aktivér';
+  $handler->display->display_options['fields']['id']['alter']['text'] = 'godkend';
   $handler->display->display_options['fields']['id']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['id']['alter']['path'] = 'group/node/[gid]/admin/people/approve-membership/[id]';
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
@@ -1313,9 +1317,9 @@ function ktc_views_views_default_views() {
     t('Medlemsliste gruppe center'),
     t('<div class="og-members-modal"><a href="#" >Hent medlemsliste</a></div>'),
     t('Medlemsliste til modal - ansøgere'),
+    t('[gid]'),
     t('.'),
-    t(','),
-    t('aktivér'),
+    t('godkend'),
   );
   $export['ktc_og_members'] = $view;
 

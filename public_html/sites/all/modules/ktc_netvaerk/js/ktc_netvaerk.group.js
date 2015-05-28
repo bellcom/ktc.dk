@@ -15,7 +15,12 @@
       }
 
       $('#member-modal .js-form-add-user').click(function(){
-        $('#form-add-user').removeClass('hide');
+        $('#form-add-user').toggleClass('hide');
+      });
+
+      $('#form-div .close').click(function(){
+        $('#form-div').addClass('hide');
+        return false;
       });
 
       $('#member-modal .content a').click(function(){
@@ -23,7 +28,7 @@
         var pieces = url.split('/');
 
         // "", "group", "node", "650", "admin", "people", "edit-membership 
-        $('#form-div').load('/netvaerk/form/' + pieces[3] + '/' + pieces[6] + '/' + pieces[7] + '?destination=node/' + pieces[3]);
+        $('#form-div div').load('/netvaerk/form/' + pieces[3] + '/' + pieces[6] + '/' + pieces[7] + '?destination=node/' + pieces[3]);
         $('#form-div').removeClass('hide');
 
         return false;
