@@ -1118,7 +1118,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_content_type_notify']['id'] = 'field_content_type_notify';
   $handler->display->display_options['fields']['field_content_type_notify']['table'] = 'field_data_field_content_type_notify';
   $handler->display->display_options['fields']['field_content_type_notify']['field'] = 'field_content_type_notify';
-  /* Felt: Felt: Emner */
+  /* Felt: Felt: Faglige emner */
   $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
   $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
   $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
@@ -1306,7 +1306,7 @@ function ktc_user_profile_views_default_views() {
   /* Display: user profile right */
   $handler = $view->new_display('panel_pane', 'user profile right', 'panel_pane_2');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Felt: Emner */
+  /* Felt: Felt: Faglige emner */
   $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
   $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
   $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
@@ -1399,7 +1399,7 @@ function ktc_user_profile_views_default_views() {
     t('Send besked når andre brugere kommenterer mine indlæg (inkl. mine egne kommentarer)'),
     t('Send besked om alle nye kommentarer fra alle "Mine Netværk".'),
     t('Send nyt fra "Mine netværk" (når der er nye indlæg, arrangementer, dokumenter, diskussioner mm.)'),
-    t('Emner'),
+    t('Faglige emner'),
     t('Tags'),
     t('Alle'),
     t('Block'),

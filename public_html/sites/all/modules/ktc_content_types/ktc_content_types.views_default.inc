@@ -121,7 +121,12 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_logo']['table'] = 'field_data_field_arrangement_logo';
   $handler->display->display_options['fields']['field_arrangement_logo']['field'] = 'field_arrangement_logo';
   $handler->display->display_options['fields']['field_arrangement_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_arrangement_logo']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_arrangement_logo']['element_class'] = 'panel-block-logo-image';
   $handler->display->display_options['fields']['field_arrangement_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_logo']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_arrangement_logo']['element_wrapper_class'] = 'panel-block-logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_logo']['empty'] = '<span class="content-type-logo"></span>';
   $handler->display->display_options['fields']['field_arrangement_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_arrangement_logo']['settings'] = array(

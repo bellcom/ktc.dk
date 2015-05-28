@@ -31,8 +31,7 @@
     <?php print $content['right']; ?>
   </div>
 
-  <div class="col-md-6 col-sm-4 col-xs-12 col-md-pull-3 col-sm-pull-4 pane-center">
-    <div class="panel panel-block panel-block-page">
+  <div class="col-md-6 col-sm-4 col-xs-12 col-md-pull-3 col-sm-pull-4 pane-center white-bg">
 
         <?php print $content['centertop']; ?>
 
@@ -51,7 +50,6 @@
             </div>
             <?php endif ?>
 
-        </div>
         <?php endif ?>
 
         <div class="row">
