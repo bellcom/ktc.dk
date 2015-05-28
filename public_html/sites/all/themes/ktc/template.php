@@ -341,20 +341,6 @@ function ktc_preprocess_node(&$vars) {
         $vars['network_groups'] = _ktc_get_network_groups($vars['nid']);
     }
 
-//
-//    // Listevisning
-//    if ($vars['elements']['#view_mode'] == 'listevisning') {
-//xdebug_break();
-//        // Belongs to a network
-//        if (isset($vars['network_groups'])) {
-//            $vars['panel_color_class'] = 'ktc-gold';
-//        }
-//        // Does not belong to a network
-//        else {
-//            $vars['panel_color_class'] = 'ktc-green';
-//        }
-//    }
-
   // Added comments_view and num_comments for node--teasecomments.tpl.php.
   $view = views_get_view('comments_in_teaser');
   if ($view && $view->access('block')) {
