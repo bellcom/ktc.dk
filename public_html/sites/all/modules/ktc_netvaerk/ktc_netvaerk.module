@@ -57,6 +57,13 @@ function ktc_netvaerk_get_form($gid, $action, $membership_id) {
   $form = $actions[$action];
   module_load_include('inc', 'og_ui', 'og_ui.admin');
   $form = drupal_get_form($form, 'node', $gid, $og_membership);
+  // Hide request message.
+  $form['membership_fields']['og_membership_request']['#access'] = FALSE;
+  $form['og_user']['state']['#access'] = FALSE;
+
+  if (isset($form['actions']) && isset($form['actions']['delete'])) {
+    $form['actions']['delete']['#access'] = FALSE;
+  }
 
   die(drupal_render($form));
 }
@@ -764,7 +771,7 @@ function _ktc_netvaerk_og_members_list() {
     $view->set_arguments(array($gid));
     $view->pre_execute();
     $view->execute();
-    $_view = $view->render();
+    $view_markup_pending = $view->render();
 
     // Get og add user form.
     $form = drupal_get_form('og_ui_add_users', 'node', $gid);
@@ -774,8 +781,8 @@ function _ktc_netvaerk_og_members_list() {
     $add_users = '<p><a href="#" class="js-form-add-user"><span class="glyphicon glyphicon-plus"></span> Tilføj nyt medlem</a></p>';
     $add_users .= '<div id="form-add-user" class="well well-sm hide">' . drupal_render($form) . '</div>';
 
-    if ($_view) {
-      $view_markup_pending = '<p><b>Deaktiverede/Afventende medlemmer</b></p>' . $_view;
+    if ($view->result) {
+      $view_markup_pending = '<p><b>Afventer godkendelse</b></p>' . $view_markup_pending;
     }
   }
 
@@ -793,9 +800,15 @@ function _ktc_netvaerk_og_members_list() {
       <div class="modal-body">
         $messages
         $add_users
+        <div id="form-div" class="hide well well-sm">
+          <a class="close" data-dismiss="alert" href="#">×</a>
+          <div>
+            <center>...</center>
+          </div>
+        </div>
+
         <div class="content">
-          <div id="form-div" class="hide well well-sm"><center>...</center></div>
-          <p><b>Aktive medlemmer</b></p>
+          <p><b>Godkendte medlemmer</b></p>
           $view_markup
           $view_markup_pending
         </div>
