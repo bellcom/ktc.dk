@@ -7272,8 +7272,7 @@ body .form-control {
   padding: 0px 12px;
 }
 .main-container {
-  background-color: #e9edee;
-  padding-bottom: 140px;
+  padding-bottom: 40px;
 }
 .main-container,
 .header_svendborg .region-navigation.container {
@@ -10836,6 +10835,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   margin-left: -10px;
   margin-right: -10px;
 }
+.panel.panel-block.panel-pane .panel.panel-block {
+  margin-left: 0;
+  margin-right: 0;
+}
 .panel.panel-block .panel-body .panel-user-profile {
   display: table;
   padding: 8px 0;
@@ -11267,32 +11270,176 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   padding-top: 0;
 }
 .panel-block.panel-block-teaser-large > .panel-heading .panel-title,
+.panel-block.panel-block-teaser-large > .panel-heading .panel-title,
+.panel-block.panel-block-teaser-large > .panel-heading > a,
 .panel-block.panel-block-teaser-large > .panel-heading > a,
 .panel-block.panel-block-teaser-large > .panel-heading .panel-title:hover,
+.panel-block.panel-block-teaser-large > .panel-heading .panel-title:hover,
+.panel-block.panel-block-teaser-large > .panel-heading > a:hover,
 .panel-block.panel-block-teaser-large > .panel-heading > a:hover {
   color: #2c353a;
 }
+.ktc-green.panel-block.panel-block-teaser-large > .panel-heading .panel-title,
 .ktc-green .panel-block.panel-block-teaser-large > .panel-heading .panel-title,
+.ktc-green.panel-block.panel-block-teaser-large > .panel-heading > a,
 .ktc-green .panel-block.panel-block-teaser-large > .panel-heading > a,
+.ktc-green.panel-block.panel-block-teaser-large > .panel-heading .panel-title:hover,
 .ktc-green .panel-block.panel-block-teaser-large > .panel-heading .panel-title:hover,
+.ktc-green.panel-block.panel-block-teaser-large > .panel-heading > a:hover,
 .ktc-green .panel-block.panel-block-teaser-large > .panel-heading > a:hover {
   color: #36a145;
 }
+.ktc-blue.panel-block.panel-block-teaser-large > .panel-heading .panel-title,
 .ktc-blue .panel-block.panel-block-teaser-large > .panel-heading .panel-title,
+.ktc-blue.panel-block.panel-block-teaser-large > .panel-heading > a,
 .ktc-blue .panel-block.panel-block-teaser-large > .panel-heading > a,
+.ktc-blue.panel-block.panel-block-teaser-large > .panel-heading .panel-title:hover,
 .ktc-blue .panel-block.panel-block-teaser-large > .panel-heading .panel-title:hover,
+.ktc-blue.panel-block.panel-block-teaser-large > .panel-heading > a:hover,
 .ktc-blue .panel-block.panel-block-teaser-large > .panel-heading > a:hover {
   color: #1f9bd7;
 }
+.ktc-gold.panel-block.panel-block-teaser-large > .panel-heading .panel-title,
 .ktc-gold .panel-block.panel-block-teaser-large > .panel-heading .panel-title,
+.ktc-gold.panel-block.panel-block-teaser-large > .panel-heading > a,
 .ktc-gold .panel-block.panel-block-teaser-large > .panel-heading > a,
+.ktc-gold.panel-block.panel-block-teaser-large > .panel-heading .panel-title:hover,
 .ktc-gold .panel-block.panel-block-teaser-large > .panel-heading .panel-title:hover,
+.ktc-gold.panel-block.panel-block-teaser-large > .panel-heading > a:hover,
 .ktc-gold .panel-block.panel-block-teaser-large > .panel-heading > a:hover {
   color: #d3a900;
 }
+.ktc-red.panel-block.panel-block-teaser-large > .panel-heading .panel-title,
 .ktc-red .panel-block.panel-block-teaser-large > .panel-heading .panel-title,
+.ktc-red.panel-block.panel-block-teaser-large > .panel-heading > a,
 .ktc-red .panel-block.panel-block-teaser-large > .panel-heading > a,
+.ktc-red.panel-block.panel-block-teaser-large > .panel-heading .panel-title:hover,
 .ktc-red .panel-block.panel-block-teaser-large > .panel-heading .panel-title:hover,
+.ktc-red.panel-block.panel-block-teaser-large > .panel-heading > a:hover,
 .ktc-red .panel-block.panel-block-teaser-large > .panel-heading > a:hover {
   color: #e75311;
+}
+.listevisning {
+  display: table;
+  padding: 8px 0;
+}
+.listevisning .listevisning-icon {
+  float: left;
+  min-width: 25px;
+}
+.listevisning .listevisning-icon.listevisning-icon-meeting_doodle {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -66px;
+  width: 16px;
+  height: 13px;
+}
+.listevisning .listevisning-icon.listevisning-icon-document {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -272px;
+  width: 12px;
+  height: 16px;
+}
+.listevisning .listevisning-icon.listevisning-icon-os2web_base_news {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -256px;
+  width: 15px;
+  height: 16px;
+}
+.listevisning .listevisning-icon.listevisning-icon-group {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -406px;
+  width: 15px;
+  height: 17px;
+}
+.listevisning .listevisning-icon.listevisning-icon-arrangement {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -93px;
+  width: 14px;
+  height: 14px;
+}
+.listevisning .listevisning-icon.listevisning-icon-forum_post {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -79px;
+  width: 15px;
+  height: 14px;
+}
+.listevisning .listevisning-icon.listevisning-icon-hearing {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -288px;
+  width: 9px;
+  height: 16px;
+}
+.listevisning .listevisning-content {
+  display: inherit;
+}
+.listevisning .listevisning-content .listevisning-headline {
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  margin: 0;
+  margin-bottom: 5px;
+  color: #2c353a;
+}
+.listevisning .listevisning-content .listevisning-subheadline {
+  font-size: 85%;
+  margin: 0;
+}
+.listevisning .listevisning-content .listevisning-date-simple {
+  font-style: italic;
+  font-size: 85%;
+}
+.ktc-gold .listevisning .listevisning-content .listevisning-headline,
+.ktc-gold.listevisning .listevisning-content .listevisning-headline,
+.ktc-gold .listevisning .listevisning-content .listevisning-headline > a,
+.ktc-gold.listevisning .listevisning-content .listevisning-headline > a,
+.ktc-gold .listevisning .listevisning-content .listevisning-headline:hover,
+.ktc-gold.listevisning .listevisning-content .listevisning-headline:hover,
+.ktc-gold .listevisning .listevisning-content .listevisning-headline > a:hover,
+.ktc-gold.listevisning .listevisning-content .listevisning-headline > a:hover,
+.ktc-gold .listevisning .listevisning-content .listevisning-headline:focus,
+.ktc-gold.listevisning .listevisning-content .listevisning-headline:focus,
+.ktc-gold .listevisning .listevisning-content .listevisning-headline > a:focus,
+.ktc-gold.listevisning .listevisning-content .listevisning-headline > a:focus {
+  color: #d3a900;
+}
+.ktc-green .listevisning .listevisning-content .listevisning-headline,
+.ktc-green.listevisning .listevisning-content .listevisning-headline,
+.ktc-green .listevisning .listevisning-content .listevisning-headline > a,
+.ktc-green.listevisning .listevisning-content .listevisning-headline > a,
+.ktc-green .listevisning .listevisning-content .listevisning-headline:hover,
+.ktc-green.listevisning .listevisning-content .listevisning-headline:hover,
+.ktc-green .listevisning .listevisning-content .listevisning-headline > a:hover,
+.ktc-green.listevisning .listevisning-content .listevisning-headline > a:hover,
+.ktc-green .listevisning .listevisning-content .listevisning-headline:focus,
+.ktc-green.listevisning .listevisning-content .listevisning-headline:focus,
+.ktc-green .listevisning .listevisning-content .listevisning-headline > a:focus,
+.ktc-green.listevisning .listevisning-content .listevisning-headline > a:focus {
+  color: #36a145;
+}
+.ktc-red .listevisning .listevisning-content .listevisning-headline,
+.ktc-red.listevisning .listevisning-content .listevisning-headline,
+.ktc-red .listevisning .listevisning-content .listevisning-headline > a,
+.ktc-red.listevisning .listevisning-content .listevisning-headline > a,
+.ktc-red .listevisning .listevisning-content .listevisning-headline:hover,
+.ktc-red.listevisning .listevisning-content .listevisning-headline:hover,
+.ktc-red .listevisning .listevisning-content .listevisning-headline > a:hover,
+.ktc-red.listevisning .listevisning-content .listevisning-headline > a:hover,
+.ktc-red .listevisning .listevisning-content .listevisning-headline:focus,
+.ktc-red.listevisning .listevisning-content .listevisning-headline:focus,
+.ktc-red .listevisning .listevisning-content .listevisning-headline > a:focus,
+.ktc-red.listevisning .listevisning-content .listevisning-headline > a:focus {
+  color: #e75311;
+}
+.ktc-blue .listevisning .listevisning-content .listevisning-headline,
+.ktc-blue.listevisning .listevisning-content .listevisning-headline,
+.ktc-blue .listevisning .listevisning-content .listevisning-headline > a,
+.ktc-blue.listevisning .listevisning-content .listevisning-headline > a,
+.ktc-blue .listevisning .listevisning-content .listevisning-headline:hover,
+.ktc-blue.listevisning .listevisning-content .listevisning-headline:hover,
+.ktc-blue .listevisning .listevisning-content .listevisning-headline > a:hover,
+.ktc-blue.listevisning .listevisning-content .listevisning-headline > a:hover,
+.ktc-blue .listevisning .listevisning-content .listevisning-headline:focus,
+.ktc-blue.listevisning .listevisning-content .listevisning-headline:focus,
+.ktc-blue .listevisning .listevisning-content .listevisning-headline > a:focus,
+.ktc-blue.listevisning .listevisning-content .listevisning-headline > a:focus {
+  color: #1f9bd7;
 }

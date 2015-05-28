@@ -297,10 +297,20 @@
 		margin-top: @panel-stacked-spacing;
 	}
 
+
 	// Default
 	.panel.panel-block {
 		margin-left: -(@panel-left-right-padding); // Dirty ugly hack
 		margin-right: -(@panel-left-right-padding); // Dirty ugly hack
+	}
+
+	&.panel-pane {
+
+		// Default
+		.panel.panel-block {
+			margin-left: 0; // Dirty ugly hack
+			margin-right: 0; // Dirty ugly hack
+		}
 	}
 }
 
@@ -936,6 +946,7 @@
 .mixin-panel-block-teaser-large(@headline-color) {
 
 	// Teaser large
+	&.panel-block.panel-block-teaser-large,
 	.panel-block.panel-block-teaser-large {
 
 		// Heading
