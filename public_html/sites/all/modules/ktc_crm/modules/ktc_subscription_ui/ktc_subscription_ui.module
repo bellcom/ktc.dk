@@ -14,6 +14,14 @@ include_once 'ktc_subscription_ui.features.inc';
  * Implements hook_menu().
  */
 function ktc_subscription_ui_menu() {
+  $items['admin/ktc/subscription'] = array(
+    'title' => 'Abonnementer',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_subscription_ui_admin_form'),
+    'access arguments' => array('administer site'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
   $items['user/%user/abonnementer'] = array(
     'title' => 'Mine abonnementer',
     'description' => 'Håndter abonnementer',
@@ -123,7 +131,7 @@ function ktc_subscription_ui_page($account) {
 
   $type = 'subscription';
   if (arg(2) == 'medlemskab') {
-    $type = 'ktc-membership';
+    $type = 'ktc_membership';
   }
 
   $args['subscription_nodes'] = ktc_subscription_ui_get_product_list($type);
@@ -148,7 +156,8 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
 
   if ($product = node_load($product_nid)) {
     if ($field = field_get_items('node', $product, 'field_product_type')) {
-      $ktc_membership = ($field[0]['value'] == 'ktc-membership');
+      $ktc_membership = ($field[0]['value'] == 'ktc_membership');
+      $form_state['ktc_membership'] = $ktc_membership;
     }
 
     $form['text'] = array(
@@ -168,6 +177,8 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
         $form_state['subscriptiondto'] = new \KTC\Subscription\SubscriptionDto(NULL);
         $form_state['subscriptiondto']->ProductId = $product_uuid;
         $form_state['subscriptiondto']->RecipientId = $user_uuid;
+        $form_state['subscriptiondto']->Abonnementsansvarlig = $user_uuid;
+        $form_state['subscriptiondto']->KundensReference = $account->name;
         $form_state['subscriptiondto']->OtherAddress = new \KTC\Subscription\AddressDto();
         $is_new = TRUE;
       }
@@ -206,16 +217,6 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
         '#default_value' => $invoiceaccount->tid,
       );
 
-      // Don't let the user change the invoice account, if this is a
-      // ktc_membership.
-      if ($ktc_membership) {
-        $form['invoiceaccount'] = array(
-          '#type' => 'item',
-          '#markup' => 'Topniveau Firmanavn<br />Firma(afdelingsnanv)<br />Adresse 1<br />Adresse 2<br />Postnr, By',
-          '#value' => $invoiceaccount->tid,
-        );
-      }
-
       $form['ean'] = array(
         '#title' => 'EAN',
         '#type' => 'textfield',
@@ -223,19 +224,71 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
         '#default_value' => $form_state['subscriptiondto']->EAN,
       );
 
+      // Don't let the user change the invoice account, if this is a
+      // ktc_membership.
       if ($ktc_membership) {
+        $form['invoiceaccount'] = array(
+          '#type' => 'value',
+          '#prefix' => 'Topniveau Firmanavn<br />Firma(afdelingsnanv)<br />Adresse 1<br />Adresse 2<br />Postnr, By',
+          '#value' => array($invoiceaccount->tid),
+        );
+
+        if ($top_level_account = ktc_crm_account_load_top_level_account($invoiceaccount)) {
+          if ($field = field_get_items('taxonomy_term', $top_level_account, 'field_regioner')) {
+            $region_tid = $field[0]['tid'];
+
+            $ktc_membership_settings = variable_get('ktc_subscription_ktc_membership', array());
+
+            if (isset($ktc_membership_settings['region'][$region_tid])) {
+                $region_uuid = $ktc_membership_settings['region'][$region_tid]['uuid'];
+                $region_name = $ktc_membership_settings['region'][$region_tid]['name'];
+              }
+          }
+
+          $form['kreds'] = array(
+            '#tree' => FALSE,
+            '#type' => 'fieldset',
+          );
+
+          if ($field = field_get_items('node', $product, 'field_text_before_region')) {
+            $form['kreds']['text_before_region'] = array(
+              '#markup' => '<div>' . $field[0]['value'] . '</div><br />',
+            );
+          }
+
+          $form['kreds']['region'] = array(
+            '#type' => 'value',
+            '#prefix' => $region_name,
+            '#value' => $region_uuid,
+          );
+        }
+
         $prefix = '';
 
         if ($field = field_get_items('node', $product, 'field_text_before_membership')) {
           $prefix = '<div>' . $field[0]['value'] . '</div>';
         }
-
         $form['ktc_membership_type'] = array(
+          '#tree' => FALSE,
+          '#type' => 'fieldset',
+        );
+
+        $form['ktc_membership_type']['ktc_membership_type'] = array(
           '#title' => 'Vælg medlemsparagraf',
           '#type' => 'select',
           '#prefix' => $prefix,
           '#required' => TRUE,
-          '#options' => array(),
+          '#options' => array(
+            '3-1A' => '§3. Stk.1A - Direktør/direktionsmedlem',
+            '3-1A-sup' => '§3. Stk.1A-sup - Direktør/direktionsmedlem suppl.',
+            '3-1B' => '§3. Stk.1B - Andre chefer med ref. til 1a',
+            '3-1C' => '§3. Stk.1C - Direktør/øverste chef fælles kommunal selskab',
+            '3-1D' => '§3. Stk.1D - Andre chefer med ref. til 1c',
+            '3-1E' => '§3. Stk.1E - Direktør i 100% komm. ejet selskab',
+            '3-1F' => '§3. Stk.1F - Formand associeret forening',
+            '3-1G' => '§3. Stk.1G - Særlig fagkundskab eller ledende rolle',
+            'senior' => 'Senior',
+          ),
         );
       }
 
@@ -403,7 +456,6 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
  * Submit handler for create/update subscription form.
  */
 function ktc_subscription_ui_form_submit(&$form, &$form_state) {
-
   $subscriptiondto = $form_state['subscriptiondto'];
 
   $invoiceaccount = taxonomy_term_load($form_state['values']['invoiceaccount'][0]);
@@ -430,10 +482,29 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
     $subscriptiondto->EndDate = date('Y-m-d\TH:i:s\Z', strtotime($form_state['values']['enddate']));
   }
 
+  // Default redirect path.
+  $overview_path = 'abonnementer';
+
+  // If this is a ktc_membership, handle the extra products aswell.
+  if ($form_state['ktc_membership']) {
+    $ktc_membership_settings = variable_get('ktc_subscription_ktc_membership', array());
+
+    $region_subscriptiondto = clone $subscriptiondto;
+    $tm_subscriptiondto = clone $subscriptiondto;
+
+    $region_subscriptiondto->ProductId = $form_state['values']['region'];
+    $tm_subscriptiondto->ProductId = $ktc_membership_settings['tm_uuid'];
+    ktc_crm_update_user_subscription($region_subscriptiondto);
+    ktc_crm_update_user_subscription($tm_subscriptiondto);
+
+    // Redirect to membership overview.
+    $overview_path = 'medlemskab';
+  }
+
   ktc_crm_update_user_subscription($subscriptiondto);
 
   global $user;
-  drupal_goto('user/' . $user->uid . '/abonnementer');
+  drupal_goto('user/' . $user->uid . '/' . $overview_path);
 }
 
 /**
@@ -445,6 +516,9 @@ function ktc_subscription_ui_form_validate(&$form, &$form_state) {
   }
   if (!ktc_subscription_ui_validate_ean($form_state['values']['ean'])) {
     form_set_error('ean', t('Det indtastede EAN er ikke gyldigt.'));
+  }
+  if (!$form_state['values']['region']) {
+    form_set_error('region', t('Kredsmedlemsskabet kunne ikke bestemmes, da der ikke er nogen region tilknyttet tid firma. Kontakt KTC.'));
   }
 }
 
@@ -499,6 +573,47 @@ function ktc_crm_subscription_cancel_form_submit($form, &$form_state) {
 
   global $user;
   drupal_goto('user/' . $user->uid . '/abonnementer');
+}
+
+/**
+ * Admin form for subscription ui.
+ */
+function ktc_subscription_ui_admin_form($form, &$form_state) {
+  $form['#tree'] = TRUE;
+  $values = variable_get('ktc_subscription_ktc_membership', array());
+
+  $form['ktc_subscription_ktc_membership'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Indstillinger for KTC medlemsskab'),
+    '#description' => 'Her skal du angive UUIDer for de relevante produkter fra CRM. KTC Medlemskontingent UUIDet skal tilføjet til det produkt der oprettes som typen "KTC Medlemsskab"',
+  );
+
+  $form['ktc_subscription_ktc_membership']['tm_uuid'] = array(
+    '#type' => 'textfield',
+    '#title' => 'T&M produkt UUID',
+    '#default_value' => !empty($values) ? $values['tm_uuid'] : '',
+  );
+
+  $regions_vocab = taxonomy_vocabulary_machine_name_load('regioner');
+  $regions = taxonomy_term_load_multiple(array(), array('vid' => $regions_vocab->vid));
+
+  foreach ($regions as $region) {
+    $form['ktc_subscription_ktc_membership']['region'][$region->tid] = array(
+      '#type' => 'fieldset',
+    );
+    $form['ktc_subscription_ktc_membership']['region'][$region->tid]['uuid'] = array(
+      '#type' => 'textfield',
+      '#title' => 'Region ' . $region->name . ' produkt UUID',
+      '#default_value' => !empty($values) ? $values['region'][$region->tid]['uuid'] : '',
+    );
+    $form['ktc_subscription_ktc_membership']['region'][$region->tid]['name'] = array(
+      '#type' => 'textfield',
+      '#title' => 'Region ' . $region->name . ' kredsnavn',
+      '#default_value' => !empty($values) ? $values['region'][$region->tid]['name'] : '',
+    );
+  }
+
+  return system_settings_form($form);
 }
 
 /**
