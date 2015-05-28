@@ -18,7 +18,7 @@
 
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
 
-            <?php if ($news_type): ?>
+            <?php if (isset($news_type)): ?>
                 <p class="mute"><?php print $news_type; ?></p>
             <?php endif ?>
 
