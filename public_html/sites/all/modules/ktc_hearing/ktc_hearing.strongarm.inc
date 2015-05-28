@@ -153,6 +153,9 @@ function ktc_hearing_strongarm() {
         'scheduler_settings' => array(
           'weight' => '8',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(
         'signup' => array(

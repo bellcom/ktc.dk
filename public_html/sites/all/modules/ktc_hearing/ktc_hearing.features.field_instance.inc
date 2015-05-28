@@ -1471,7 +1471,7 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 23,
+      'weight' => 22,
     ),
   );
 
@@ -1774,7 +1774,10 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-field_tags'
   $field_instances['node-hearing-field_tags'] = array(
     'bundle' => 'hearing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => 'Indtast evt. stikord/ tags til høringen',
     'display' => array(
@@ -1812,7 +1815,7 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
-    'label' => 'Stikord / tags',
+    'label' => 'Stikord (Tags)',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -1827,7 +1830,7 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -1976,7 +1979,10 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-field_topics'
   $field_instances['node-hearing-field_topics'] = array(
     'bundle' => 'hearing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2014,7 +2020,7 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
-    'label' => 'Emner',
+    'label' => 'Faglige emner',
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
@@ -3296,10 +3302,10 @@ function ktc_hearing_field_default_field_instances() {
   t('Deltagers frist');
   t('Detaljerede kommentar');
   t('Eksterne links');
-  t('Emner');
   t('Endeligt svar');
   t('Er høringen officiel (udsendt af myndighed), eller uofficiel (intern høring)');
   t('Er sammenfatning');
+  t('Faglige emner');
   t('Formand');
   t('Generelle kommentarer');
   t('Group content visibility');
@@ -3330,7 +3336,7 @@ function ktc_hearing_field_default_field_instances() {
   t('Skjul auto relaterede links');
   t('Skriv evt. en besked til faggruppen vedrørende høringen');
   t('Status');
-  t('Stikord / tags');
+  t('Stikord (Tags)');
   t('Synlighed');
   t('Titel kort');
   t('Titel lang');

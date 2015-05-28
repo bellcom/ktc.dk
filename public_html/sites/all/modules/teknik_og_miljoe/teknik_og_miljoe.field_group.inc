@@ -113,21 +113,23 @@ function teknik_og_miljoe_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_formular';
   $field_group->data = array(
-    'label' => 'Emner',
+    'label' => 'Faglige emner',
     'weight' => '17',
     'children' => array(
       0 => 'field_topics',
-      1 => 'group_skjulauto',
-      2 => 'group_tags',
+      1 => 'field_os2web_base_field_kle_ref',
+      2 => 'group_skjulauto',
+      3 => 'group_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Faglige emner',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-emner field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-emner field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_emner|node|artikler|form'] = $field_group;
@@ -241,10 +243,9 @@ function teknik_og_miljoe_field_group_info() {
     'label' => 'Indhold',
     'weight' => '15',
     'children' => array(
-      0 => 'body',
-      1 => 'field_short',
-      2 => 'field_artikel_afsnit',
-      3 => 'group_billede',
+      0 => 'field_short',
+      1 => 'field_artikel_afsnit',
+      2 => 'group_billede',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -298,7 +299,7 @@ function teknik_og_miljoe_field_group_info() {
   $field_group->parent_name = 'group_emner';
   $field_group->data = array(
     'label' => 'Skjul autolinks',
-    'weight' => '46',
+    'weight' => '47',
     'children' => array(
       0 => 'field_os2web_base_field_hidlinks',
     ),
@@ -331,7 +332,7 @@ function teknik_og_miljoe_field_group_info() {
   $field_group->parent_name = 'group_emner';
   $field_group->data = array(
     'label' => 'Emner',
-    'weight' => '45',
+    'weight' => '46',
     'children' => array(
       0 => 'field_tags',
     ),

@@ -89,6 +89,7 @@ features[field_instance][] = node-artikler-field_deadline
 features[field_instance][] = node-artikler-field_highres_billeder
 features[field_instance][] = node-artikler-field_os2web_base_field_ext_link
 features[field_instance][] = node-artikler-field_os2web_base_field_hidlinks
+features[field_instance][] = node-artikler-field_os2web_base_field_kle_ref
 features[field_instance][] = node-artikler-field_os2web_base_field_lead_img
 features[field_instance][] = node-artikler-field_os2web_base_field_media
 features[field_instance][] = node-artikler-field_os2web_base_field_promote

@@ -26,8 +26,8 @@ function ktc_netvaerk_field_group_info() {
       0 => 'field_os2web_base_field_hidlinks',
       1 => 'field_open_group',
       2 => 'group_dates',
-      3 => 'group_underdiv',
-      4 => 'group_synlighedsdiv',
+      3 => 'group_synlighedsdiv',
+      4 => 'group_underdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -53,7 +53,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_administration';
   $field_group->data = array(
     'label' => 'Datoer',
-    'weight' => '9',
+    'weight' => '14',
     'children' => array(
       0 => 'field_end_date',
       1 => 'field_start_date',
@@ -122,8 +122,9 @@ function ktc_netvaerk_field_group_info() {
     'label' => 'Faglige emner',
     'weight' => '2',
     'children' => array(
-      0 => 'field_tags',
-      1 => 'field_topics',
+      0 => 'field_topics',
+      1 => 'field_os2web_base_field_kle_ref',
+      2 => 'group_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -153,8 +154,8 @@ function ktc_netvaerk_field_group_info() {
     'children' => array(
       0 => 'group_administration',
       1 => 'group_emner',
-      2 => 'group_netvaerk',
-      3 => 'group_media',
+      2 => 'group_media',
+      3 => 'group_netvaerk',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -277,8 +278,8 @@ function ktc_netvaerk_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_os2web_base_field_media',
-      1 => 'group_logodiv',
-      2 => 'group_ekstlinks',
+      1 => 'group_ekstlinks',
+      2 => 'group_logodiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -335,7 +336,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_administration';
   $field_group->data = array(
     'label' => 'Synlighed for netværkets indhold',
-    'weight' => '6',
+    'weight' => '11',
     'children' => array(
       0 => 'group_content_access',
     ),
@@ -360,6 +361,39 @@ function ktc_netvaerk_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|group|form';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'group';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_emner';
+  $field_group->data = array(
+    'label' => 'Tags',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_tags',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Tags',
+      'instance_settings' => array(
+        'required_fields' => 0,
+        'id' => '',
+        'classes' => 'group-tags field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_tags|node|group|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_underdiv|node|group|form';
   $field_group->group_name = 'group_underdiv';
   $field_group->entity_type = 'node';
@@ -368,7 +402,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_administration';
   $field_group->data = array(
     'label' => 'Undernetværk',
-    'weight' => '7',
+    'weight' => '12',
     'children' => array(
       0 => 'field_subgroup',
       1 => 'og_group_ref',
