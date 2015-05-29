@@ -128,6 +128,13 @@ class WebUserDto extends CrmEntityDto
 
   /**
    * 
+   * @var MemberCategory $KtcMemberCategory
+   * @access public
+   */
+  public $KtcMemberCategory = null;
+
+  /**
+   * 
    * @var boolean $KvfMember
    * @access public
    */
