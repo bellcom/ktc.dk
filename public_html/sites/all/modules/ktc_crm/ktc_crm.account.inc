@@ -155,6 +155,16 @@ function ktc_crm_account_load_from_uuid($uuid) {
 }
 
 /**
+ * Return top level account term for specified term.
+ */
+function ktc_crm_account_load_top_level_account($account) {
+  if ($field = field_get_items('taxonomy_term', $account, 'field_toplevelaccountid')) {
+    return ktc_crm_account_load_from_uuid($field[0]['value']); 
+  }
+  return FALSE;
+}
+
+/**
  * Get users account term.
  */
 function _ktc_crm_account_get_users_account($account) {

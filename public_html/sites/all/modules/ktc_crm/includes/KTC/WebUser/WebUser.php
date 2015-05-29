@@ -15,6 +15,7 @@ include_once('EANAddressDto.php');
 include_once('AddressDto.php');
 include_once('AddressType.php');
 include_once('Region.php');
+include_once('MemberCategory.php');
 include_once('CreateUpdateWebUser.php');
 include_once('CreateUpdateWebUserResponse.php');
 
