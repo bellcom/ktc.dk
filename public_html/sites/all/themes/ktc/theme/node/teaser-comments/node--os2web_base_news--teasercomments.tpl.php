@@ -1,7 +1,7 @@
 <?php if (!$page): ?>
 
     <!-- Begin - teaser -->
-    <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  panel-block-teaser-large"<?php print $attributes; ?>>
+    <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser-stor"<?php print $attributes; ?>>
 
         <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
             <div class="ktc-full-width-image">
