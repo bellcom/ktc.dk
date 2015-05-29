@@ -79,11 +79,12 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> listevisning"<?php print $attributes; ?>>
-    <span class="listevisning-icon listevisning-icon-<?php print $type; ?>"></span>
-    <div class="listevisning-content">
-        <h3 class="listevisning-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-        <p class="listevisning-date-simple"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
-        <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print t('Afgiv stemme'); ?></a>
-    </div>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> listevisning listevisning-stor"<?php print $attributes; ?>>
+  <span class="listevisning-icon listevisning-icon-<?php print $type; ?>"></span>
+  <div class="listevisning-content">
+    <h3 class="listevisning-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+    <p class="listevisning-date-simple"><?php print $published_at; ?></p>
+    <p><?php print render($content['field_image']); ?></p>
+    <p><?php print render($content['body']); ?></p>
+  </div>
 </article>

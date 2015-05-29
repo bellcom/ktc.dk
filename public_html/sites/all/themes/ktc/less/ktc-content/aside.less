@@ -1,0 +1,93 @@
+// |--------------------------------------------------------------------------
+// | Aside
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-aside
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Aside
+.ktc-aside {
+	background-color: @ktc-color-light-content-background;
+
+	// Heading
+	.ktc-aside-heading {
+		display: block;
+		background-color: @ktc-aside-heading-background-color;
+
+		// Title
+		.ktc-aside-title {
+			font-family: @ktc-aside-title-font-family;
+			font-size: @ktc-aside-title-font-size;
+			font-weight: @ktc-aside-title-font-weight;
+			color: @ktc-aside-title-font-color;
+			padding: @ktc-aside-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+		}
+	}
+
+	// Body
+	.ktc-aside-body {
+		padding: @ktc-aside-body-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+
+		// Full width image
+		.ktc-full-width-image {
+			margin-left: -(@ktc-default-left-right-inner-spacing);
+			margin-right: -(@ktc-default-left-right-inner-spacing);
+		}
+	}
+}
+
+// Toggle
+.ktc-aside-toggle {
+
+	// Heading
+	> .ktc-aside-heading {
+		position: relative;
+
+		// Title
+		.ktc-aside-title {
+			cursor: pointer;
+			cursor: hand;
+			padding-right: floor( @ktc-default-left-right-inner-spacing + @ktc-icon-toggle-open-width );
+			.user-select(none);
+
+			// Toggle icon
+			&:after {
+				position: absolute;
+				display: block;
+				content: "";
+				top: 50%;
+				right: 0;
+				margin-top: -(floor( @ktc-icon-toggle-open-height / 2 ));
+				.sprite(@ktc-icon-toggle-open);
+			}
+		}
+	}
+
+	// Closed
+	&.closed {
+
+		// Heading
+		> .ktc-aside-heading {
+
+			// Title
+			.ktc-aside-title {
+				padding-right: floor( @ktc-default-left-right-inner-spacing + @ktc-icon-toggle-closed-width );
+
+				// Toggle icon
+				&:after {
+					margin-top: -(floor( @ktc-icon-toggle-closed-height / 2 ));
+					.sprite(@ktc-icon-toggle-closed);
+				}
+			}
+		}
+
+		// Body
+		> .ktc-aside-body {
+			display: none;
+		}
+	}
+}

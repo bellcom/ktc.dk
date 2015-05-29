@@ -16,56 +16,6 @@
 // Variables
 // --------------------------------------------------
 
-//== General
-@panel-left-right-padding: 10px;
-@panel-stacked-spacing: @grid-gutter-width;
-
-//== Heading
-@panel-heading-font-size: 12px;
-@panel-heading-top-padding: 6px;
-@panel-heading-bottom-padding: @panel-heading-top-padding;
-
-//== Body
-@panel-body-top-padding: 15px;
-@panel-body-bottom-padding: @panel-body-top-padding;
-
-//== Footer
-@panel-footer-top-padding: 7px;
-@panel-footer-bottom-padding: @panel-footer-top-padding;
-@panel-footer-icon-spacing: 5px;
-
-//== Footer icons
-@panel-footer-icon-comment: @comment;
-@panel-footer-icon-comment-height: @comment-height;
-@panel-footer-icon-comment-width: @comment-width;
-@panel-footer-icon-display: @readed;
-@panel-footer-icon-display-height: @readed-height;
-@panel-footer-icon-display-width: @readed-width;
-@panel-footer-icon-hearing: @ikon-hoering;
-@panel-footer-icon-hearing-height: @ikon-hoering-height;
-@panel-footer-icon-hearing-width: @ikon-hoering-width;
-@panel-footer-icon-forum: @ikon-debat2;
-@panel-footer-icon-forum-height: @ikon-debat2-height;
-@panel-footer-icon-forum-width: @ikon-debat2-width;
-@panel-footer-icon-article: @ikon-artikkel;
-@panel-footer-icon-article-height: @ikon-artikkel-height;
-@panel-footer-icon-article-width: @ikon-artikkel-width;
-@panel-footer-icon-vote: @ikon-afstemning;
-@panel-footer-icon-vote-height: @ikon-afstemning-height;
-@panel-footer-icon-vote-width: @ikon-afstemning-width;
-@panel-footer-icon-news: @ikon-nyhed;
-@panel-footer-icon-news-height: @ikon-nyhed-height;
-@panel-footer-icon-news-width: @ikon-nyhed-width;
-@panel-footer-icon-private: @private;
-@panel-footer-icon-private-height: @private-height;
-@panel-footer-icon-private-width: @private-width;
-@panel-footer-icon-event: @ikon-arrangement;
-@panel-footer-icon-event-height: @ikon-arrangement-height;
-@panel-footer-icon-event-width: @ikon-arrangement-width;
-@panel-footer-icon-document: @ikon-dok;
-@panel-footer-icon-document-height: @ikon-dok-height;
-@panel-footer-icon-document-width: @ikon-dok-width;
-
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
@@ -323,267 +273,6 @@
 // |
 
 // --------------------------------------------------
-// User profile
-// --------------------------------------------------
-
-//== Variables
-@panel-user-profile-top-bottom-padding: 8px;
-@panel-user-profile-photo-content-spacing: 10px;
-@panel-user-profile-photo-border-width: 2px;
-@panel-user-profile-photo-border-distance: 3px;
-
-//== Colouring
-@panel-user-profile-default-photo-headline-color: @gray-darker;
-@panel-user-profile-default-photo-border-color: #e9edee;
-@panel-user-profile-gold-photo-headline-color: @brand-gold;
-@panel-user-profile-gold-photo-border-color: @panel-user-profile-gold-photo-headline-color;
-@panel-user-profile-green-photo-headline-color: @brand-darkgreen;
-@panel-user-profile-green-photo-border-color: @panel-user-profile-green-photo-headline-color;
-@panel-user-profile-blue-photo-headline-color: @brand-darkblue;
-@panel-user-profile-blue-photo-border-color: @panel-user-profile-blue-photo-headline-color;
-@panel-user-profile-red-photo-headline-color: @brand-userlink-red;
-@panel-user-profile-red-photo-border-color: @panel-user-profile-red-photo-headline-color;
-
-//== Mixins
-.mixin-user-profile(@headline-color, @profile-photo-border-color) {
-
-	// Panel block
-	&,
-	&.panel.panel-block {
-
-		// Body
-		.panel-body {
-
-			// User profile
-			.panel-user-profile {
-
-				// Photo container
-				.panel-user-photo-container {
-
-					// Photo
-					img {
-						border-color: @profile-photo-border-color;
-					}
-
-					// VIP
-					&.panel-user-photo-vip {
-
-						// Photo
-						img {
-							border-color: @panel-user-profile-green-photo-border-color;
-						}
-					}
-				}
-
-				// Content
-				.panel-user-profile-content {
-
-					// Headlines
-					h1,h2,h3,h4,h5,h6 {
-
-						// Headline and link
-						&,
-						> a {
-							color: @headline-color;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-// Panel block
-.panel.panel-block {
-
-	// Body
-	.panel-body {
-
-		// User profile
-		.panel-user-profile {
-			display: table;
-			padding: @panel-user-profile-top-bottom-padding 0;
-
-			// Photo container
-			.panel-user-photo-container {
-				float: left;
-
-				// Photo
-				img {
-					display: inherit;
-					height: auto;
-					width: auto;
-					max-width: 48px;
-					max-height: 48px;
-					border-radius: 100%;
-					border-width: @panel-user-profile-photo-border-width;
-					border-style: solid;
-					background-color: transparent;
-					margin-right: @panel-user-profile-photo-content-spacing;
-					padding: @panel-user-profile-photo-border-distance;
-				}
-
-				// VIP
-				&.panel-user-photo-vip {
-
-					// Photo
-					img {
-						border-color: @panel-user-profile-green-photo-border-color;
-					}
-				}
-			}
-
-			// Content
-			.panel-user-profile-content {
-				display: inherit;
-
-				// Headlines
-				h1, h2, h3, h4, h5, h6 {
-					margin-top: 0;
-					padding-top: 0;
-					margin-bottom: 3px;
-				}
-			}
-
-			// Clearfix
-			&:extend(.clearfix all);
-		}
-	}
-}
-
-// Colouring
-.mixin-user-profile(@panel-user-profile-default-photo-headline-color, @panel-user-profile-default-photo-border-color);
-.ktc-red {
-	.mixin-user-profile(@panel-user-profile-red-photo-headline-color, @panel-user-profile-red-photo-border-color);
-}
-.ktc-gold {
-	.mixin-user-profile(@panel-user-profile-gold-photo-headline-color, @panel-user-profile-gold-photo-border-color);
-}
-.ktc-blue {
-	.mixin-user-profile(@panel-user-profile-blue-photo-headline-color, @panel-user-profile-blue-photo-border-color);
-}
-.ktc-green {
-	.mixin-user-profile(@panel-user-profile-green-photo-headline-color, @panel-user-profile-green-photo-border-color);
-}
-
-// --------------------------------------------------
-// User comments
-// --------------------------------------------------
-
-//== Variables
-@panel-user-comments-container-left-right-margin: 2px;
-@panel-user-comments-top-bottom-padding: 15px;
-@panel-user-comments-photo-content-spacing: 10px;
-@panel-user-comments-photo-border-width: 2px;
-@panel-user-comments-photo-border-distance: 3px;
-
-//== Colouring
-@panel-user-comments-default-photo-headline-color: @gray-darker;
-@panel-user-comments-default-photo-border-color: #fff;
-
-// Panel block
-.panel.panel-block {
-
-	// Body
-	.panel-body {
-
-		// User comments container
-		.panel-user-comments-container {
-			margin-left: -( @panel-left-right-padding - @panel-user-comments-container-left-right-margin );
-			margin-right: -( @panel-left-right-padding - @panel-user-comments-container-left-right-margin );
-			margin-bottom: -@panel-user-comments-container-left-right-margin;
-			padding-left: ( @panel-left-right-padding - @panel-user-comments-container-left-right-margin );
-			padding-right: ( @panel-left-right-padding - @panel-user-comments-container-left-right-margin );
-			background-color: @body-bg;
-
-			// User comments
-			.panel-user-comments {
-				display: table;
-				margin-top: -2px; // THIS IS UGLY
-				padding: @panel-user-comments-top-bottom-padding 0;
-				border-top: 2px solid #fff;
-
-				// Photo container
-				.panel-user-photo-container {
-					float: left;
-
-					// Photo
-					img {
-						display: inherit;
-						height: auto;
-						width: auto;
-						max-width: 48px;
-						max-height: 48px;
-						border-radius: 100%;
-						border-width: @panel-user-comments-photo-border-width;
-						border-style: solid;
-						border-color: @panel-user-comments-default-photo-border-color;
-						background-color: transparent;
-						margin-right: @panel-user-comments-photo-content-spacing;
-						padding: @panel-user-comments-photo-border-distance;
-					}
-				}
-
-				// Content
-				.panel-user-comments-content {
-					display: inherit;
-
-					// Headlines
-					h1, h2, h3, h4, h5, h6 {
-						font-family: @font-family-base;
-						font-size: @font-size-base;
-						margin-top: 0;
-						padding-top: 0;
-						margin-bottom: 1px;
-						color: @panel-user-comments-default-photo-headline-color;
-
-						// Date (span)
-						span {
-							font-weight: normal;
-							margin-left: 5px;
-
-							// EM
-							> em {
-								font-style: normal;
-							}
-						}
-					}
-				}
-
-				// Clearfix
-				&:extend(.clearfix all);
-			}
-		}
-	}
-}
-
-// --------------------------------------------------
-// Call-to-action button
-// --------------------------------------------------
-
-// Variables
-@panel-cta-button-spacing-top-bottom: 8px;
-
-// Panel block
-.panel.panel-block {
-
-	// Body
-	.panel-body {
-
-		// Call-to-action button
-		.panel-cta-button {
-			text-align: center;
-
-			// Button
-			.btn {
-				min-width: 40%;
-				margin: @panel-cta-button-spacing-top-bottom auto;
-			}
-		}
-	}
-}
-
-// --------------------------------------------------
 // Date - simple
 // --------------------------------------------------
 
@@ -644,32 +333,6 @@
 }
 .ktc-green {
 	.mixin-simple-date(@panel-simple-date-green-font-color);
-}
-
-// --------------------------------------------------
-// Image
-// --------------------------------------------------
-
-// Variables
-@panel-image-minus-padding: @panel-left-right-padding;
-
-// Panel block
-.panel.panel-block {
-
-	// Image
-	.panel-image {
-		margin-left: -(@panel-image-minus-padding);
-		margin-right: -(@panel-image-minus-padding);
-	}
-
-	// Body
-	.panel-body {
-
-		// Image
-		.panel-image {
-			margin-top: -(@panel-body-top-padding);
-		}
-	}
 }
 
 // --------------------------------------------------
@@ -764,12 +427,6 @@
 @panel-aside-heading-title-font-color: #fff;
 
 //== Toggle
-@panel-aside-heading-icon-open: @ikon-pilgrey-ned;
-@panel-aside-heading-icon-open-height: @ikon-pilgrey-ned-height;
-@panel-aside-heading-icon-open-width: @ikon-pilgrey-ned-width;
-@panel-aside-heading-icon-closed: @ikon-pilgrey;
-@panel-aside-heading-icon-closed-height: @ikon-pilgrey-height;
-@panel-aside-heading-icon-closed-width: @ikon-pilgrey-width;
 
 // --------------------------------------------------
 // Mixins
@@ -833,53 +490,7 @@
 	// Toggle
 	&.panel-block-aside-toggle {
 
-		// Heading
-		> .panel-heading {
-			position: relative;
 
-			// Title
-			.panel-title {
-				cursor: pointer;
-				cursor: hand;
-				padding-right: floor( ( 2 * @panel-left-right-padding ) + @panel-aside-heading-icon-open-width );
-				.user-select(none);
-
-				// Toggle icon
-				&:after {
-					position: absolute;
-					display: block;
-					content: "";
-					top: 50%;
-					right: 0;
-					margin-top: -(floor( @panel-aside-heading-icon-open-height / 2 ));
-					.sprite(@panel-aside-heading-icon-open);
-				}
-			}
-		}
-
-		// Closed
-		&.closed {
-
-			// Heading
-			> .panel-heading {
-
-				// Title
-				.panel-title {
-					padding-right: floor( ( 2 * @panel-left-right-padding ) + @panel-aside-heading-icon-closed-width );
-
-					// Toggle icon
-					&:after {
-						margin-top: -(floor( @panel-aside-heading-icon-closed-height / 2 ));
-						.sprite(@panel-aside-heading-icon-closed);
-					}
-				}
-			}
-
-			// Body
-			> .panel-body {
-				display: none;
-			}
-		}
 	}
 }
 
@@ -907,106 +518,13 @@
 // | - .panel-block-teaser
 // |
 
-// --------------------------------------------------
-// Variables
-// --------------------------------------------------
 
-//== Heading
-
-//== Heading icons
-@panel-block-teaser-heading-icon-spacing: 5px;
-@panel-block-teaser-heading-icon-pin-green: @ikon-pin;
-@panel-block-teaser-heading-icon-pin-green-height: @ikon-pin-height;
-@panel-block-teaser-heading-icon-pin-green-width: @ikon-pin-width;
-@panel-block-teaser-heading-icon-pin-gold: @ikon-pin-yellow;
-@panel-block-teaser-heading-icon-pin-gold-height: @ikon-pin-yellow-height;
-@panel-block-teaser-heading-icon-pin-gold-width: @ikon-pin-yellow-width;
-@panel-block-teaser-heading-icon-pin-blue: @ikon-pin-blue;
-@panel-block-teaser-heading-icon-pin-blue-height: @ikon-pin-blue-height;
-@panel-block-teaser-heading-icon-pin-blue-width: @ikon-pin-blue-width;
-@panel-block-teaser-heading-icon-pin-red: @ikon-pin-red;
-@panel-block-teaser-heading-icon-pin-red-height: @ikon-pin-red-height;
-@panel-block-teaser-heading-icon-pin-red-width: @ikon-pin-red-width;
-
-// --------------------------------------------------
-// Mixins
-// --------------------------------------------------
-
-// Teaser
-.mixin-panel-block-teaser(@icon-pin, @icon-pin-width, @icon-pin-height) {
-
-	// Teaser
-	.panel-block.panel-block-teaser,
-	&.panel-block.panel-block-teaser {
-
-		// Heading
-		> .panel-heading {
-
-			// Title
-			.panel-title {
-				padding-left: floor(@icon-pin-width + @panel-block-teaser-heading-icon-spacing);
-
-				// Pin icon
-				&:before {
-					margin-top: -(floor( @icon-pin-height / 2 ));
-					.sprite(@icon-pin);
-				}
-			}
-		}
-	}
-}
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-// Teaser
-.panel-block.panel-block-teaser {
-	background-color: #fff;
 
-	// Heading
-	> .panel-heading {
-		padding-bottom: 0;
-
-		// Title
-		.panel-title {
-
-			// Pin icon
-			&:before {
-				display: block;
-				position: absolute;
-				top: 50%;
-				left: 0;
-				content: "";
-			}
-		}
-	}
-
-	// Body
-	> .panel-body {
-		padding-top: 0;
-	}
-}
-
-// (green)
-.ktc-green {
-	.mixin-panel-block-teaser(@panel-block-teaser-heading-icon-pin-green, @panel-block-teaser-heading-icon-pin-green-width, @panel-block-teaser-heading-icon-pin-green-height);
-}
-
-// (blue)
-.ktc-blue {
-	.mixin-panel-block-teaser(@panel-block-teaser-heading-icon-pin-blue, @panel-block-teaser-heading-icon-pin-blue-width, @panel-block-teaser-heading-icon-pin-blue-height);
-}
-
-// (gold)
-.ktc-gold {
-	.mixin-panel-block-teaser(@panel-block-teaser-heading-icon-pin-gold, @panel-block-teaser-heading-icon-pin-gold-width, @panel-block-teaser-heading-icon-pin-gold-height);
-}
-
-// (red)
-.ktc-red {
-	.mixin-panel-block-teaser(@panel-block-teaser-heading-icon-pin-red, @panel-block-teaser-heading-icon-pin-red-width, @panel-block-teaser-heading-icon-pin-red-height);
-}
 
 // |--------------------------------------------------------------------------
 // | Teaser large
@@ -1132,22 +650,6 @@
 		// Title
 		.panel-title {
 
-		}
-	}
-}
-
-//== Content reset
-.panel-block.panel-block-page {
-	background-color: #fff;
-
-	// Reset content inside
-	.panel.panel-block {
-		margin-bottom: 0;
-		margin-left: 0; // Dirty ugly hack
-		margin-right: 0; // Dirty ugly hack
-
-		// Body
-		.panel-body {
 		}
 	}
 }

@@ -79,9 +79,18 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes;?>  clearfix"<?php print $attributes; ?>>
-  <div class="created yani"><?php print date('d. F Y', $node->created); ?></div>
-  <h5><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h5>
-  <?php print render($content['field_image']); ?>
-  <?php print render($content['body']); ?>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-listevisning"<?php print $attributes; ?>>
+    <span class="ktc-listevisning-icon ktc-listevisning-icon-<?php print $type; ?>"></span>
+    <div class="ktc-listevisning-content">
+
+        <?php if (isset($news_type)): ?>
+            <p class="ktc-listevisning-subheadline"><?php print $news_type; ?></p>
+        <?php endif ?>
+
+        <h3 class="ktc-listevisning-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+
+        <p class="ktc-listevisning-date-simple"><?php print $published_at; ?></p>
+
+    </div>
 </article>
+

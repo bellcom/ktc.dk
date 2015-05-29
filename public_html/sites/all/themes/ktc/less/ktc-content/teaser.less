@@ -1,0 +1,88 @@
+// |--------------------------------------------------------------------------
+// | Teaser
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-teaser
+// |
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Teaser
+.ktc-mixin-teaser(@icon-pin, @icon-pin-width, @icon-pin-height) {
+
+	// Teaser
+	.ktc-teaser {
+
+		// Heading
+		> .ktc-teaser-heading {
+
+			// Title
+			.ktc-teaser-title {
+				padding-left: floor(@icon-pin-width + @ktc-icon-spacing);
+
+				// Pin icon
+				&:before {
+					margin-top: -(floor( @icon-pin-height / 2 ));
+					.sprite(@icon-pin);
+				}
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Teaser
+.ktc-teaser {
+
+	// Heading
+	.ktc-teaser-heading {
+
+		// Title
+		.ktc-teaser-title {
+
+			// Icon
+			&:before {
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				content: "";
+			}
+		}
+	}
+
+	// Body
+	.ktc-teaser-body {
+
+		// Full width image
+		.ktc-full-width-image {
+			margin-left: -(@ktc-default-left-right-inner-spacing);
+			margin-right: -(@ktc-default-left-right-inner-spacing);
+		}
+	}
+}
+
+// (green)
+.ktc-green {
+	.ktc-mixin-teaser(@ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
+}
+
+// (blue)
+.ktc-blue {
+	.ktc-mixin-teaser(@ktc-icon-pin-blue, @ktc-icon-pin-blue-width, @ktc-icon-pin-blue-height);
+}
+
+// (gold)
+.ktc-gold {
+	.ktc-mixin-teaser(@ktc-icon-pin-gold, @ktc-icon-pin-gold-width, @ktc-icon-pin-gold-height);
+}
+
+// (red)
+.ktc-red {
+	.ktc-mixin-teaser(@ktc-icon-pin-red, @ktc-icon-pin-red-width, @ktc-icon-pin-red-height);
+}

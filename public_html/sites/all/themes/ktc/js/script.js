@@ -3,9 +3,9 @@
 ( function ($) {
   $(document).ready(function(){
 
-      // Panel block toggle
-      $('.panel-block-aside-toggle .panel-title').on('click', function(event) {
-          var $toggle = $(this).parents('.panel-block-aside-toggle');
+      // Aside toggle
+      $('.ktc-aside-toggle .ktc-aside-title').on('click', function(event) {
+          var $toggle = $(this).parents('.ktc-aside-toggle');
           $toggle.toggleClass('closed');
       });
 

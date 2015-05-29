@@ -1,7 +1,13 @@
 <?php if (!$page): ?>
 
     <!-- Begin - teaser -->
-    <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> panel panel-block panel-block-teaser-large"<?php print $attributes; ?>>
+    <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  panel-block-teaser-large"<?php print $attributes; ?>>
+
+        <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
+            <div class="ktc-full-width-image">
+                <?php print render($content['field_os2web_base_field_lead_img']); ?>
+            </div>
+        <?php endif ?>
 
         <div class="panel-heading">
             <span><?php print $created_ago . ' ' . t('siden'); ?></span>
@@ -12,17 +18,13 @@
 
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
 
-            <?php if (isset($signup_date_formatted)): ?>
-                <p class="panel-date-simple"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
-            <?php endif; ?>
+            <?php if (isset($news_type)): ?>
+                <p class="mute"><?php print $news_type; ?></p>
+            <?php endif ?>
 
             <p><?php print $body_shortened; ?></p>
 
-            <div class="panel-cta-button">
-                <a class="btn btn-blacknblue" href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print t('Afgiv stemme'); ?></a>
-            </div>
-
-            <div class="panel-user-comments-container">
+            <div class="ktc-comments">
                 <?php if (isset($comments_view)): ?>
                     <?php print $comments_view; ?>
                 <?php endif ?>
@@ -32,7 +34,7 @@
 
         <div class="panel-footer">
             <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="panel-footer-button panel-footer-button-comment"><?php print $num_comments; ?></a>
-            <span class="panel-footer-button panel-footer-button-display"><?php print $statistics_count; ?></span>
+            <span class="panel-footer-button panel-footer-button-viewers"><?php print $statistics_count; ?></span>
             <span class="panel-footer-button panel-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
         </div>
 
