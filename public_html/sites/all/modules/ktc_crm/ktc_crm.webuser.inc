@@ -368,10 +368,27 @@ function ktc_crm_load_account_from_crm_uuid($uuid) {
  * Update the users membership category in CRM.
  */
 function ktc_crm_webuser_update_membership_category($account, $category) {
+  $edit['field_membership_ktc'][LANGUAGE_NONE][0]['value'] = 1;
+  $edit['field_membership_ktc_category'][LANGUAGE_NONE][0]['value'] = $category;
+  user_save($account, $edit);
+
+  $webuserdto = ktc_crm_map_account_to_webuserdto($account);
+  $webuserdto->KtcMemberCategory = $category;
+  $webuserdto->KtcMember = TRUE;
+  ktc_crm_update_user($webuserdto);
+}
+
+/**
+ * Cancel ktc membership set boolean to false.
+ */
+function ktc_crm_webuser_cancel_membership($account) {
   $webuserdto = ktc_crm_map_account_to_webuserdto($account);
 
-  $webuserdto->KtcMemberCategory = $category;
+  $webuserdto->KtcMember = FALSE;
 
+  $edit['field_membership_ktc'][LANGUAGE_NONE][0]['value'] = 0;
+
+  user_save($account, $edit);
   ktc_crm_update_user($webuserdto);
 }
 
