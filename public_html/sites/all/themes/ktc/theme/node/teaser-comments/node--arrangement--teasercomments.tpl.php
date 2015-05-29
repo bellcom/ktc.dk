@@ -18,7 +18,7 @@
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
 
             <?php if (isset($arrangement_date)): ?>
-                <h5 class="panel-date-simple"><?php print $arrangement_date; ?></h5>
+                <h5 class="ktc-date"><?php print $arrangement_date; ?></h5>
             <?php endif; ?>
 
             <?php if (isset($arrangement_signup_date_formatted)): ?>
@@ -43,11 +43,11 @@
 
         </div>
 
-        <div class="panel-footer">
-            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="panel-footer-button panel-footer-button-comment"><?php print $num_comments; ?></a>
-            <span class="panel-footer-button panel-footer-button-viewers"><?php print $statistics_count; ?></span>
-            <span class="panel-footer-button panel-footer-button-viewers"><?php print $signup_total; ?></span>
-            <span class="panel-footer-button panel-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
+        <div class="ktc-footer">
+            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+            <span class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+            <span class="ktc-footer-button ktc-footer-button-viewers"><?php print $signup_total; ?></span>
+            <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
         </div>
 
     </article>

@@ -10,9 +10,10 @@
 // --------------------------------------------------
 
 // Teaser
-.ktc-mixin-teaser(@icon-pin, @icon-pin-width, @icon-pin-height) {
+.ktc-mixin-teaser(@color-font, @icon-pin, @icon-pin-width, @icon-pin-height) {
 
 	// Teaser
+	&.ktc-teaser,
 	.ktc-teaser {
 
 		// Heading
@@ -20,12 +21,45 @@
 
 			// Title
 			.ktc-teaser-title {
-				padding-left: floor(@icon-pin-width + @ktc-icon-spacing);
+				padding-left: floor(@icon-pin-width + @ktc-teaser-title-icon-spacing + @ktc-default-left-right-inner-spacing);
 
 				// Pin icon
 				&:before {
 					margin-top: -(floor( @icon-pin-height / 2 ));
 					.sprite(@icon-pin);
+				}
+			}
+
+			// Link title
+			a.ktc-teaser-title {
+
+				// Hover and focus
+				&:hover,
+				&:focus {
+					color: @color-font;
+				}
+			}
+		}
+
+		// Body
+		.ktc-teaser-body {
+
+			// Link
+			a {
+
+				// Hover and focus
+				&:hover,
+				&:focus {
+					color: @color-font;
+				}
+			}
+
+			// Headlines
+			h1, h2, h3, h4, h5, h6 {
+
+				&,
+				a {
+					color: @ktc-default-color-headline;
 				}
 			}
 		}
@@ -38,19 +72,28 @@
 
 // Teaser
 .ktc-teaser {
+	margin-bottom: @ktc-teaser-outer-spacing-bottom;
 
 	// Heading
 	.ktc-teaser-heading {
 
 		// Title
 		.ktc-teaser-title {
+			position: relative;
+			display: block;
+			font-family: @ktc-teaser-title-font-family;
+			font-size: @ktc-teaser-title-font-size;
+			font-weight: @ktc-teaser-title-font-weight;
+			color: @ktc-teaser-title-font-color;
+			padding: @ktc-teaser-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			text-transform: uppercase;
 
 			// Icon
 			&:before {
 				display: block;
 				position: absolute;
 				top: 50%;
-				left: 0;
+				left: @ktc-default-left-right-inner-spacing;
 				content: "";
 			}
 		}
@@ -58,6 +101,7 @@
 
 	// Body
 	.ktc-teaser-body {
+		padding: 0 @ktc-default-left-right-inner-spacing @ktc-teaser-body-top-bottom-inner-spacing;
 
 		// Full width image
 		.ktc-full-width-image {
@@ -67,22 +111,25 @@
 	}
 }
 
-// (green)
+// Default
+.ktc-mixin-teaser(@ktc-color-green-font, @ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
+
+// Green
 .ktc-green {
-	.ktc-mixin-teaser(@ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
+	.ktc-mixin-teaser(@ktc-color-green-font, @ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
 }
 
-// (blue)
+// Blue
 .ktc-blue {
-	.ktc-mixin-teaser(@ktc-icon-pin-blue, @ktc-icon-pin-blue-width, @ktc-icon-pin-blue-height);
+	.ktc-mixin-teaser(@ktc-color-blue-font, @ktc-icon-pin-blue, @ktc-icon-pin-blue-width, @ktc-icon-pin-blue-height);
 }
 
-// (gold)
+// Gold
 .ktc-gold {
-	.ktc-mixin-teaser(@ktc-icon-pin-gold, @ktc-icon-pin-gold-width, @ktc-icon-pin-gold-height);
+	.ktc-mixin-teaser(@ktc-color-gold-font, @ktc-icon-pin-gold, @ktc-icon-pin-gold-width, @ktc-icon-pin-gold-height);
 }
 
-// (red)
+// Red
 .ktc-red {
-	.ktc-mixin-teaser(@ktc-icon-pin-red, @ktc-icon-pin-red-width, @ktc-icon-pin-red-height);
+	.ktc-mixin-teaser(@ktc-color-red-font, @ktc-icon-pin-red, @ktc-icon-pin-red-width, @ktc-icon-pin-red-height);
 }

@@ -13,6 +13,7 @@
 @ktc-default-title-font-family: @headings-font-family;
 @ktc-default-title-font-size: @font-size-base;
 @ktc-default-title-font-weight: @headings-font-weight;
+@ktc-default-title-font-color: @headings-color;
 
 //== Spacing
 @ktc-default-left-right-inner-spacing: 10px;
@@ -20,6 +21,9 @@
 @ktc-default-body-top-bottom-inner-spacing: 10px;
 
 //== Colouring
+@ktc-default-color-headline: @gray-darker;
+@ktc-default-color-font: @text-color;
+
 @ktc-color-light-content-background: #fff;
 @ktc-color-dark-content-background: @gray-darker;
 
@@ -126,6 +130,24 @@
 @ktc-aside-body-top-bottom-inner-spacing: @ktc-default-body-top-bottom-inner-spacing;
 
 // --------------------------------------------------
+// Teaser
+// --------------------------------------------------
+
+//== Spacing
+@ktc-teaser-outer-spacing-bottom: @grid-gutter-width;
+
+//== Title
+@ktc-teaser-title-icon-spacing: 5px;
+@ktc-teaser-title-font-color: @ktc-default-title-font-color;
+@ktc-teaser-title-top-bottom-inner-spacing: 2px;
+@ktc-teaser-title-font-family: @ktc-default-title-font-family;
+@ktc-teaser-title-font-size: @ktc-default-title-font-size;
+@ktc-teaser-title-font-weight: @ktc-default-title-font-weight;
+
+//== Body
+@ktc-teaser-body-top-bottom-inner-spacing: @ktc-default-body-top-bottom-inner-spacing;
+
+// --------------------------------------------------
 // Listevisning
 // --------------------------------------------------
 
@@ -154,6 +176,14 @@
 @ktc-type-footer-icon-spacing: 5px;
 
 // --------------------------------------------------
+// Date
+// --------------------------------------------------
+
+@ktc-date-font-size: @font-size-large;
+@ktc-date-font-weight: bold;
+@ktc-date-font-style: italic;
+
+// --------------------------------------------------
 // Call-to-action button
 // --------------------------------------------------
 
@@ -169,15 +199,3 @@
 @ktc-user-profile-photo-content-spacing: 10px;
 @ktc-user-profile-photo-border-width: 2px;
 @ktc-user-profile-photo-border-distance: 3px;
-
-//== Colouring
-@ktc-user-profile-default-photo-headline-color: @gray-darker;
-@ktc-user-profile-default-photo-border-color: #e9edee;
-@ktc-user-profile-gold-photo-headline-color: @brand-gold;
-@ktc-user-profile-gold-photo-border-color: @ktc-user-profile-gold-photo-headline-color;
-@ktc-user-profile-green-photo-headline-color: @brand-darkgreen;
-@ktc-user-profile-green-photo-border-color: @ktc-user-profile-green-photo-headline-color;
-@ktc-user-profile-blue-photo-headline-color: @brand-darkblue;
-@ktc-user-profile-blue-photo-border-color: @ktc-user-profile-blue-photo-headline-color;
-@ktc-user-profile-red-photo-headline-color: @brand-userlink-red;
-@ktc-user-profile-red-photo-border-color: @ktc-user-profile-red-photo-headline-color;

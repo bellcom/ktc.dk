@@ -4,10 +4,10 @@
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser"<?php print $attributes; ?>>
         <div class="ktc-teaser-body">
 
-            <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
+            <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
             <?php if (isset($signup_date_formatted)): ?>
-                <p class="panel-date-simple"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
+                <p class="ktc-date"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
             <?php endif; ?>
 
             <div class="ktc-user-profile">
@@ -26,10 +26,10 @@
 
         </div>
 
-        <div class="panel-footer">
-            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="panel-footer-button panel-footer-button-comment"><?php print $num_comments; ?></a>
-            <span class="panel-footer-button panel-footer-button-viewers"><?php print $statistics_count; ?></span>
-            <span class="panel-footer-button panel-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
+        <div class="ktc-footer">
+            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+            <span class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+            <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
         </div>
 
     </article>

@@ -32,10 +32,10 @@
 
         </div>
 
-        <div class="panel-footer">
-            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="panel-footer-button panel-footer-button-comment"><?php print $num_comments; ?></a>
-            <span class="panel-footer-button panel-footer-button-viewers"><?php print $statistics_count; ?></span>
-            <span class="panel-footer-button panel-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
+        <div class="ktc-footer">
+            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+            <span class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+            <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
         </div>
 
     </article>

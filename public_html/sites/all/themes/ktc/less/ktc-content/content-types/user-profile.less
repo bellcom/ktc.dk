@@ -1,0 +1,118 @@
+// |--------------------------------------------------------------------------
+// | User profile
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-user-profile
+// |
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// User profile
+.ktc-mixin-user-profile(@color) {
+
+	// User profile
+	.ktc-user-profile {
+
+		// Photo container
+		.ktc-user-profile-photo-container {
+
+			// Photo
+			img {
+				border-color: @color;
+			}
+
+			// VIP
+			&.ktc-user-profile-photo-vip {
+
+				// Photo
+				img {
+					border-color: @ktc-color-green;
+				}
+			}
+		}
+
+		// Content
+		.ktc-user-profile-content {
+
+			// Headlines
+			h1, h2, h3, h4, h5, h6 {
+
+				// Headline and link
+				&,
+				> a {
+					color: @color;
+				}
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// User profile
+.ktc-user-profile {
+	display: table;
+	padding: @ktc-user-profile-top-bottom-padding 0;
+
+	// Photo container
+	.ktc-user-profile-photo-container {
+		float: left;
+
+		// Photo
+		img {
+			display: inherit;
+			height: auto;
+			width: auto;
+			max-width: 48px;
+			max-height: 48px;
+			border-radius: 100%;
+			border-width: @ktc-user-profile-photo-border-width;
+			border-style: solid;
+			background-color: transparent;
+			margin-right: @ktc-user-profile-photo-content-spacing;
+			padding: @ktc-user-profile-photo-border-distance;
+		}
+	}
+
+	// Content
+	.ktc-user-profile-content {
+		display: inherit;
+
+		// Headlines
+		h1, h2, h3, h4, h5, h6 {
+			margin-top: 0;
+			padding-top: 0;
+			margin-bottom: 3px;
+		}
+	}
+
+	// Clearfix
+	&:extend(.clearfix all);
+}
+
+// Default
+.ktc-mixin-user-profile(@ktc-color-green);
+
+// Green
+.ktc-green {
+	.ktc-mixin-user-profile(@ktc-color-green);
+}
+
+// Blue
+.ktc-blue {
+	.ktc-mixin-user-profile(@ktc-color-blue);
+}
+
+// Gold
+.ktc-gold {
+	.ktc-mixin-user-profile(@ktc-color-gold);
+}
+
+// Red
+.ktc-red {
+	.ktc-mixin-user-profile(@ktc-color-red);
+}

@@ -3,12 +3,15 @@
     <!-- Begin - teaser -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser"<?php print $attributes; ?>>
 
+        <!-- Begin - full width image -->
         <?php if (isset($content['field_image'])) : ?>
             <div class="ktc-full-width-image">
                 <?php print render($content['field_image']); ?>
             </div>
         <?php endif; ?>
+        <!-- End - full width image -->
 
+        <!-- Begin - heading -->
         <?php if (isset($network_groups)): ?>
             <?php foreach($network_groups AS $network_group): ?>
                 <div class="ktc-teaser-heading">
@@ -16,12 +19,14 @@
                 </div>
             <?php endforeach ?>
         <?php endif ?>
+        <!-- End - heading -->
 
         <div class="ktc-teaser-body">
-            <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
+
+            <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
             <?php if (isset($arrangement_date)): ?>
-                <h5 class="panel-date-simple"><?php print $arrangement_date; ?></h5>
+                <p class="ktc-date"><?php print $published_at; ?></p>
             <?php endif; ?>
 
             <?php if (isset($arrangement_signup_date_formatted)): ?>
@@ -50,11 +55,11 @@
 
         </div>
 
-        <div class="panel-footer">
-            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="panel-footer-button panel-footer-button-comment"><?php print $num_comments; ?></a>
-            <span class="panel-footer-button panel-footer-button-viewers"><?php print $statistics_count; ?></span>
-            <span class="panel-footer-button panel-footer-button-viewers"><?php print $signup_total; ?></span>
-            <span class="panel-footer-button panel-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
+        <div class="ktc-footer">
+            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+            <span class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+            <span class="ktc-footer-button ktc-footer-button-viewers"><?php print $signup_total; ?></span>
+            <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
         </div>
 
     </article>

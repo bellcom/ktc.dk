@@ -203,69 +203,70 @@
 @ktc-comments-default-photo-border-color: #fff;
 
 // User comments container
-.ktc-comments-container {
-	margin-left: -( @panel-left-right-padding - @ktc-comments-container-left-right-margin );
-	margin-right: -( @panel-left-right-padding - @ktc-comments-container-left-right-margin );
-	margin-bottom: -@ktc-comments-container-left-right-margin;
-	padding-left: ( @panel-left-right-padding - @ktc-comments-container-left-right-margin );
-	padding-right: ( @panel-left-right-padding - @ktc-comments-container-left-right-margin );
-	background-color: @body-bg;
+//.ktc-comments-container {
+//	margin-left: -( @panel-left-right-padding - @ktc-comments-container-left-right-margin );
+//	margin-right: -( @panel-left-right-padding - @ktc-comments-container-left-right-margin );
+//	margin-bottom: -@ktc-comments-container-left-right-margin;
+//	padding-left: ( @panel-left-right-padding - @ktc-comments-container-left-right-margin );
+//	padding-right: ( @panel-left-right-padding - @ktc-comments-container-left-right-margin );
+//	background-color: @body-bg;
+//
+//	// User comments
+//	.ktc-comments {
+//		display: table;
+//		margin-top: -2px; // THIS IS UGLY
+//		padding: @ktc-comments-top-bottom-padding 0;
+//		border-top: 2px solid #fff;
+//
+//		// Photo container
+//		.panel-user-photo-container {
+//			float: left;
+//
+//			// Photo
+//			img {
+//				display: inherit;
+//				height: auto;
+//				width: auto;
+//				max-width: 48px;
+//				max-height: 48px;
+//				border-radius: 100%;
+//				border-width: @ktc-comments-photo-border-width;
+//				border-style: solid;
+//				border-color: @ktc-comments-default-photo-border-color;
+//				background-color: transparent;
+//				margin-right: @ktc-comments-photo-content-spacing;
+//				padding: @ktc-comments-photo-border-distance;
+//			}
+//		}
+//
+//		// Content
+//		.ktc-comments-content {
+//			display: inherit;
+//
+//			// Headlines
+//			h1, h2, h3, h4, h5, h6 {
+//				font-family: @font-family-base;
+//				font-size: @font-size-base;
+//				margin-top: 0;
+//				padding-top: 0;
+//				margin-bottom: 1px;
+//				color: @ktc-comments-default-photo-headline-color;
+//
+//				// Date (span)
+//				span {
+//					font-weight: normal;
+//					margin-left: 5px;
+//
+//					// EM
+//					> em {
+//						font-style: normal;
+//					}
+//				}
+//			}
+//		}
+//
+//		// Clearfix
+//		&:extend(.clearfix all);
+//	}
+//}
 
-	// User comments
-	.ktc-comments {
-		display: table;
-		margin-top: -2px; // THIS IS UGLY
-		padding: @ktc-comments-top-bottom-padding 0;
-		border-top: 2px solid #fff;
-
-		// Photo container
-		.panel-user-photo-container {
-			float: left;
-
-			// Photo
-			img {
-				display: inherit;
-				height: auto;
-				width: auto;
-				max-width: 48px;
-				max-height: 48px;
-				border-radius: 100%;
-				border-width: @ktc-comments-photo-border-width;
-				border-style: solid;
-				border-color: @ktc-comments-default-photo-border-color;
-				background-color: transparent;
-				margin-right: @ktc-comments-photo-content-spacing;
-				padding: @ktc-comments-photo-border-distance;
-			}
-		}
-
-		// Content
-		.ktc-comments-content {
-			display: inherit;
-
-			// Headlines
-			h1, h2, h3, h4, h5, h6 {
-				font-family: @font-family-base;
-				font-size: @font-size-base;
-				margin-top: 0;
-				padding-top: 0;
-				margin-bottom: 1px;
-				color: @ktc-comments-default-photo-headline-color;
-
-				// Date (span)
-				span {
-					font-weight: normal;
-					margin-left: 5px;
-
-					// EM
-					> em {
-						font-style: normal;
-					}
-				}
-			}
-		}
-
-		// Clearfix
-		&:extend(.clearfix all);
-	}
-}
