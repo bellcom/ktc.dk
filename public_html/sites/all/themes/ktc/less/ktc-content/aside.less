@@ -6,6 +6,27 @@
 // |
 
 // --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+.ktc-mixin-aside(@background-color, @font-color) {
+
+	// Aside color
+	.ktc-aside {
+
+		// Heading
+		.ktc-aside-heading {
+			background-color: @background-color;
+
+			// Title
+			.ktc-aside-title {
+				color: @font-color;
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
@@ -20,6 +41,7 @@
 		// Title
 		.ktc-aside-title {
 			display: block;
+			text-transform: uppercase;
 			font-family: @ktc-aside-title-font-family;
 			font-size: @ktc-aside-title-font-size;
 			font-weight: @ktc-aside-title-font-weight;
@@ -31,12 +53,6 @@
 	// Body
 	.ktc-aside-body {
 		padding: @ktc-aside-body-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
-
-		// Full width image
-		.ktc-full-width-image {
-			margin-left: -(@ktc-default-left-right-inner-spacing);
-			margin-right: -(@ktc-default-left-right-inner-spacing);
-		}
 	}
 }
 
@@ -60,7 +76,7 @@
 				display: block;
 				content: "";
 				top: 50%;
-				right: 0;
+				right: @ktc-default-left-right-inner-spacing;
 				margin-top: -(floor( @ktc-icon-toggle-open-height / 2 ));
 				.sprite(@ktc-icon-toggle-open);
 			}
@@ -90,4 +106,19 @@
 			display: none;
 		}
 	}
+}
+
+// Technique and environment (blue)
+.tech-env {
+	.ktc-mixin-aside(@ktc-color-blue-background, @ktc-color-blue-background-font);
+}
+
+// Network (gold)
+.og-context.og-context-node {
+	.ktc-mixin-aside(@ktc-color-gold-background, @ktc-color-gold-background-font);
+}
+
+// Not network (green)
+.no-network {
+	.ktc-mixin-aside(@ktc-color-green-background, @ktc-color-green-background-font);
 }
