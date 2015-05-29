@@ -685,6 +685,7 @@ function ktc_netvaerk_default_page_manager_pages() {
     $pane->css = array(
       'css_id' => 'section-page-with-filter-all-groups',
       'css_class' => 'col-md-12 col-sm-12 col-xs-12',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -710,6 +711,7 @@ function ktc_netvaerk_default_page_manager_pages() {
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
       'css_class' => 'col-md-12 col-sm-12 col-xs-12',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -736,7 +738,7 @@ function ktc_netvaerk_default_page_manager_pages() {
     $pane->css = array(
       'css_id' => 'groups',
       'css_class' => '',
-      'template_suggestion' => 'aside',
+      'template_suggestion' => '',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -762,7 +764,7 @@ function ktc_netvaerk_default_page_manager_pages() {
     $pane->css = array(
       'css_id' => 'content_type',
       'css_class' => '',
-      'template_suggestion' => 'aside',
+      'template_suggestion' => '',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -795,7 +797,7 @@ function ktc_netvaerk_default_page_manager_pages() {
     $pane->css = array(
       'css_id' => 'emner',
       'css_class' => '',
-      'template_suggestion' => 'aside',
+      'template_suggestion' => '',
     );
     $pane->extras = array();
     $pane->position = 2;
@@ -828,7 +830,7 @@ function ktc_netvaerk_default_page_manager_pages() {
     $pane->css = array(
       'css_id' => 'term_type',
       'css_class' => '',
-      'template_suggestion' => 'aside',
+      'template_suggestion' => '',
     );
     $pane->extras = array();
     $pane->position = 3;
@@ -861,7 +863,7 @@ function ktc_netvaerk_default_page_manager_pages() {
     $pane->css = array(
       'css_id' => 'regioner',
       'css_class' => '',
-      'template_suggestion' => 'aside',
+      'template_suggestion' => '',
     );
     $pane->extras = array();
     $pane->position = 4;
