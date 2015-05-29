@@ -10744,6 +10744,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 }
 .ktc-teaser {
   margin-bottom: 20px;
+  background-color: #ffffff;
 }
 .ktc-teaser .ktc-teaser-heading .ktc-teaser-title {
   position: relative;
@@ -10752,7 +10753,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   font-size: 12px;
   font-weight: 700;
   color: inherit;
-  padding: 2px 10px;
+  padding: 5px 10px;
+  margin-bottom: -5px;
   text-transform: uppercase;
 }
 .ktc-teaser .ktc-teaser-heading .ktc-teaser-title:before {
@@ -10763,7 +10765,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
   content: "";
 }
 .ktc-teaser .ktc-teaser-body {
-  padding: 0 10px 10px;
+  padding: 5px 10px 10px;
 }
 .ktc-teaser .ktc-teaser-body .ktc-full-width-image {
   margin-left: -10px;

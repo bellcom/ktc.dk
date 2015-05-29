@@ -73,6 +73,7 @@
 // Teaser
 .ktc-teaser {
 	margin-bottom: @ktc-teaser-outer-spacing-bottom;
+	background-color: @ktc-color-light-content-background;
 
 	// Heading
 	.ktc-teaser-heading {
@@ -86,6 +87,7 @@
 			font-weight: @ktc-teaser-title-font-weight;
 			color: @ktc-teaser-title-font-color;
 			padding: @ktc-teaser-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			margin-bottom: -(@ktc-teaser-title-top-bottom-inner-spacing);
 			text-transform: uppercase;
 
 			// Icon
@@ -101,7 +103,7 @@
 
 	// Body
 	.ktc-teaser-body {
-		padding: 0 @ktc-default-left-right-inner-spacing @ktc-teaser-body-top-bottom-inner-spacing;
+		padding: (@ktc-teaser-body-top-bottom-inner-spacing / 2) @ktc-default-left-right-inner-spacing @ktc-teaser-body-top-bottom-inner-spacing;
 
 		// Full width image
 		.ktc-full-width-image {
