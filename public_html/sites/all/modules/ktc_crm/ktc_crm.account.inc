@@ -66,7 +66,7 @@ function ktc_crm_account_create_update(\KTC\AccountService\AccountDto $accountdt
   $account->field_zipcode[LANGUAGE_NONE][0]['value'] = $accountdto->Address->PostalCode;
   $account->field_country[LANGUAGE_NONE][0]['value'] = $accountdto->Address->Country;
 
-  if ($region_tid = _ktc_crm_group_get_region_tid($accountdto->Region)) {
+  if ($region_tid = _ktc_crm_group_get_region_tid($accountdto->Address->Region)) {
     $account->field_regioner[LANGUAGE_NONE]['0']['tid'] = $region_tid;
   }
 
@@ -159,9 +159,9 @@ function ktc_crm_account_load_from_uuid($uuid) {
  */
 function ktc_crm_account_load_top_level_account($account) {
   if ($field = field_get_items('taxonomy_term', $account, 'field_toplevelaccountid')) {
-    return ktc_crm_account_load_from_uuid($field[0]['value']); 
+    return ktc_crm_account_load_from_uuid($field[0]['value']);
   }
-  return FALSE;
+  return $account;
 }
 
 /**
