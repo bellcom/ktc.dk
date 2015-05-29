@@ -20,6 +20,7 @@ include_once('RetrieveAccountByIdResponse.php');
 include_once('RetrieveContactsForAccountById.php');
 include_once('RetrieveContactsForAccountByIdResponse.php');
 include_once('WebUserDto.php');
+include_once('MemberCategory.php');
 
 
 /**
