@@ -17,6 +17,9 @@
       $('#member-modal .js-form-add-user').click(function(){
         $('#form-add-user').toggleClass('hide');
       });
+      $('#member-modal .js-form-massadd-user').click(function(){
+        $('#form-massadd-user').toggleClass('hide');
+      });
 
       $('#form-div .close').click(function(){
         $('#form-div').addClass('hide');
@@ -27,7 +30,7 @@
         var url = $(this).attr('href');
         var pieces = url.split('/');
 
-        // "", "group", "node", "650", "admin", "people", "edit-membership 
+        // "", "group", "node", "650", "admin", "people", "edit-membership
         $('#form-div div').load('/netvaerk/form/' + pieces[3] + '/' + pieces[6] + '/' + pieces[7] + '?destination=node/' + pieces[3]);
         $('#form-div').removeClass('hide');
 
