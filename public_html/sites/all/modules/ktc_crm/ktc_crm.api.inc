@@ -54,7 +54,6 @@ function ktc_crm_fetch_webusers($options = array()) {
  * Update user in CRM.
  */
 function ktc_crm_update_user(\KTC\WebUser\WebUserDto $webuserdto) {
-  die();
   $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
 

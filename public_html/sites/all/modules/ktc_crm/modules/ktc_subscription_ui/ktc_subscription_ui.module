@@ -175,6 +175,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
 
   $user_uuid = _ktc_crm_get_uuid('user', $account);
 
+  // Find / create a SubscripitonDto.
   $subscriptions = ktc_crm_subscriptions_fetch_user_subscriptions($account);
   if (isset($subscriptions[$product_uuid])) {
     $form_state['subscriptiondto'] = $subscriptions[$product_uuid];
@@ -195,7 +196,6 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     drupal_goto($_SERVER['HTTP_REFERER']);
   }
 
-
   $form_state['subscriptiondto']->KundensReference = substr($account->name, 0, 30);
 
   $vocab = taxonomy_vocabulary_machine_name_load('accounts');
@@ -204,6 +204,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   if (!$invoiceaccount) {
     $invoiceaccount = _ktc_crm_account_get_users_account($account);
   }
+  $top_level_account = ktc_crm_account_load_top_level_account($invoiceaccount);
 
   if ($field = field_get_items('node', $product, 'field_text_before_invoiceaccount')) {
     $form['text_before_invoiceaccount'] = array(
@@ -213,7 +214,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
 
   $form['invoiceaccount'] = array(
     '#type' => 'value',
-    '#prefix' => '<div class="form-item form-group"><label>Firma</label><p>' . $invoiceaccount->name . '<br />' . ktc_crm_get_user_address($account, 'Work') . '</p>',
+    '#prefix' => '<div class="form-item form-group"><label>Firma</label><p>' . $top_level_account->name . '<br />' . $invoiceaccount->name . '<br />' . ktc_crm_get_user_address($account, 'Work') . '</p>',
     '#suffix' => '</div>',
     '#value' => array($invoiceaccount->tid),
   );
@@ -226,34 +227,18 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   );
 
   if ($ktc_membership) {
-    if ($top_level_account = ktc_crm_account_load_top_level_account($invoiceaccount)) {
-      if ($field = field_get_items('taxonomy_term', $top_level_account, 'field_regioner')) {
-        $region_tid = $field[0]['tid'];
+    $region_uuid = '';
+    $region_name = '';
 
-        $ktc_membership_settings = variable_get('ktc_subscription_ktc_membership', array());
+    if ($top_level_account && $field = field_get_items('taxonomy_term', $top_level_account, 'field_regioner')) {
+      $region_tid = $field[0]['tid'];
 
-        if (isset($ktc_membership_settings['region'][$region_tid])) {
-            $region_uuid = $ktc_membership_settings['region'][$region_tid]['uuid'];
-            $region_name = $ktc_membership_settings['region'][$region_tid]['name'];
-          }
+      $ktc_membership_settings = variable_get('ktc_subscription_ktc_membership', array());
+
+      if (isset($ktc_membership_settings['region'][$region_tid])) {
+        $region_uuid = $ktc_membership_settings['region'][$region_tid]['uuid'];
+        $region_name = $ktc_membership_settings['region'][$region_tid]['name'];
       }
-
-      $form['kreds'] = array(
-        '#tree' => FALSE,
-        '#type' => 'fieldset',
-      );
-
-      if ($field = field_get_items('node', $product, 'field_text_before_region')) {
-        $form['kreds']['text_before_region'] = array(
-          '#markup' => '<div>' . $field[0]['value'] . '</div><br />',
-        );
-      }
-
-      $form['kreds']['region'] = array(
-        '#type' => 'value',
-        '#prefix' => $region_name,
-        '#value' => $region_uuid,
-      );
     }
 
     $prefix = '';
@@ -268,12 +253,35 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
 
     $membership_categories = ktc_crm_webuser_membership_categories();
 
+    $membership_category = '';
+    if ($field = field_get_items('user', $account, 'field_membership_ktc_category')) {
+      $membership_category = $field[0]['value'];
+    }
+
     $form['ktc_membership_type']['ktc_membership_category'] = array(
       '#title' => 'Vælg medlemsparagraf',
       '#type' => 'select',
       '#prefix' => $prefix,
       '#required' => TRUE,
       '#options' => $membership_categories,
+      '#default_value' => $membership_category,
+    );
+
+    $form['kreds'] = array(
+      '#tree' => FALSE,
+      '#type' => 'fieldset',
+    );
+
+    if ($field = field_get_items('node', $product, 'field_text_before_region')) {
+      $form['kreds']['text_before_region'] = array(
+        '#markup' => '<div>' . $field[0]['value'] . '</div><br />',
+      );
+    }
+
+    $form['kreds']['region'] = array(
+      '#type' => 'value',
+      '#prefix' => $region_name,
+      '#value' => $region_uuid,
     );
   }
 
@@ -401,6 +409,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
       '#date_year_range' => ':+20',
       '#default_value' => $enddate,
       '#date_label_position' => 'invisible',
+      '#suffix' => '<br /><br /><br />',
     );
   }
   else {
@@ -428,7 +437,6 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   }
 
   $form['submit'] = array(
-    '#prefix' => '<br /><br /><br />',
     '#value' => $submit,
     '#type' => 'submit',
   );
@@ -472,13 +480,14 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
   // Default redirect path.
   $overview_path = 'abonnementer';
 
+  global $user;
+
   // If this is a ktc_membership, handle the extra products aswell.
   if ($form_state['ktc_membership']) {
     // Update the additional products to the membership.
     ktc_crm_subscription_update_membership_extras($subscriptiondto, $form_state['values']['region']);
 
     // Update the membership category.
-    global $user;
     $account = user_load($user->uid);
     ktc_crm_webuser_update_membership_category($account, $form_state['values']['ktc_membership_category']);
 
@@ -488,7 +497,6 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
 
   ktc_crm_update_user_subscription($subscriptiondto);
 
-  global $user;
   drupal_goto('user/' . $user->uid . '/' . $overview_path);
 }
 
@@ -558,6 +566,7 @@ function ktc_crm_subscription_cancel_form($form, &$form_state, $account, $produc
 function ktc_crm_subscription_cancel_form_submit($form, &$form_state) {
   $subscriptiondto = $form_state['subscriptiondto'];
   $subscriptiondto->EndDate = date('Y-m-d\TH:i:s', time());
+  global $user;
 
   // Default redirect path.
   $overview_path = 'abonnementer';
@@ -565,6 +574,8 @@ function ktc_crm_subscription_cancel_form_submit($form, &$form_state) {
   if ($form_state['ktc_membership']) {
     // Update the additional products to the membership.
     ktc_crm_subscription_update_membership_extras($subscriptiondto, $form_state['values']['region']);
+    $account = user_load($user->uid);
+    ktc_crm_webuser_cancel_membership($account);
 
     // Redirect to membership overview.
     $overview_path = 'medlemskab';
@@ -572,7 +583,6 @@ function ktc_crm_subscription_cancel_form_submit($form, &$form_state) {
 
   ktc_crm_update_user_subscription($subscriptiondto);
 
-  global $user;
   drupal_goto('user/' . $user->uid . '/' . $overview_path);
 }
 
