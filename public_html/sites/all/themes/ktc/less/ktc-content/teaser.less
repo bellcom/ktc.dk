@@ -45,7 +45,7 @@
 		.ktc-teaser-body {
 
 			// Link
-			a {
+			a:not('.btn') {
 
 				// Hover and focus
 				&:hover,
@@ -104,12 +104,6 @@
 	// Body
 	.ktc-teaser-body {
 		padding: (@ktc-teaser-body-top-bottom-inner-spacing / 2) @ktc-default-left-right-inner-spacing @ktc-teaser-body-top-bottom-inner-spacing;
-
-		// Full width image
-		.ktc-full-width-image {
-			margin-left: -(@ktc-default-left-right-inner-spacing);
-			margin-right: -(@ktc-default-left-right-inner-spacing);
-		}
 	}
 }
 

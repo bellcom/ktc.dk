@@ -17,7 +17,7 @@
 
 //== Spacing
 @ktc-default-left-right-inner-spacing: 10px;
-@ktc-default-title-top-bottom-inner-spacing: 5px;
+@ktc-default-title-top-bottom-inner-spacing: 7px;
 @ktc-default-body-top-bottom-inner-spacing: 10px;
 
 //== Colouring
@@ -25,7 +25,10 @@
 @ktc-default-color-font: @text-color;
 
 @ktc-color-light-content-background: #fff;
+@ktc-color-light-content-background-font: @text-color;
+
 @ktc-color-dark-content-background: @gray-darker;
+@ktc-color-dark-content-background-font: #fff;
 
 @ktc-color-green: @brand-darkgreen;
 @ktc-color-green-font: @ktc-color-green;
@@ -117,14 +120,14 @@
 // --------------------------------------------------
 
 //== Heading
-@ktc-aside-heading-background-color: @ktc-color-green-background;
+@ktc-aside-heading-background-color: @ktc-color-dark-content-background;
 
 //== Title
-@ktc-aside-title-font-color: @ktc-color-green-background-font;
+@ktc-aside-title-font-color: @ktc-color-dark-content-background-font;
 @ktc-aside-title-top-bottom-inner-spacing: @ktc-default-title-top-bottom-inner-spacing;
-@ktc-aside-title-font-family: @ktc-default-title-font-family;
-@ktc-aside-title-font-size: @ktc-default-title-font-size;
-@ktc-aside-title-font-weight: @ktc-default-title-font-weight;
+@ktc-aside-title-font-family: @font-family-base;
+@ktc-aside-title-font-size: @font-size-base;
+@ktc-aside-title-font-weight: bold;
 
 //== Body
 @ktc-aside-body-top-bottom-inner-spacing: @ktc-default-body-top-bottom-inner-spacing;
