@@ -1,6 +1,6 @@
 <?php
 /**
- * @file panels-pane.tpl.php
+ * @file panels-pane--aside.tpl.php
  * Main panel pane template
  *
  * Variables available:
@@ -18,37 +18,37 @@
  */
 ?>
 <?php if ($pane_prefix): ?>
-  <?php print $pane_prefix; ?>
+    <?php print $pane_prefix; ?>
 <?php endif; ?>
 
-<div class="<?php print $classes; ?>" <?php print $id; ?> <?php print $attributes; ?>>
-  <?php if ($admin_links): ?>
-    <?php print $admin_links; ?>
-  <?php endif; ?>
+<div class="ktc-aside <?php print $classes; ?> <?php if(isset($panel_is_filter) && $panel_is_filter) { print 'ktc-aside-toggle'; } ?>" <?php print $id; ?> <?php print $attributes; ?>>
+    <?php if ($admin_links): ?>
+        <?php print $admin_links; ?>
+    <?php endif; ?>
 
-  <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
-      <div class="panel-heading">
-          <h3 class="panel-title" <?php print $title_attributes; ?>><?php print $title; ?></h3>
-      </div>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
+    <?php print render($title_prefix); ?>
+    <?php if ($title): ?>
+        <div class="ktc-aside-heading">
+            <h3 class="ktc-aside-title" <?php print $title_attributes; ?>><?php print $title; ?></h3>
+        </div>
+    <?php endif; ?>
+    <?php print render($title_suffix); ?>
 
-  <div class="panel-body pane-content">
-    <?php print render($content); ?>
-  </div>
-
-  <?php if ($links): ?>
-    <div class="links">
-      <?php print $links; ?>
+    <div class="ktc-aside-body pane-content">
+        <?php print render($content); ?>
     </div>
-  <?php endif; ?>
 
-  <?php if ($more): ?>
-    <div class="more-link">
-      <?php print $more; ?>
-    </div>
-  <?php endif; ?>
+    <?php if ($links): ?>
+        <div class="links">
+            <?php print $links; ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($more): ?>
+        <div class="more-link">
+            <?php print $more; ?>
+        </div>
+    <?php endif; ?>
 
     <?php if ($feeds): ?>
         <div class="feed">
@@ -57,5 +57,5 @@
     <?php endif; ?>
 </div>
 <?php if ($pane_suffix): ?>
-  <?php print $pane_suffix; ?>
+    <?php print $pane_suffix; ?>
 <?php endif; ?>

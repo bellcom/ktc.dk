@@ -20,7 +20,12 @@
 
 			// Title
 			.ktc-aside-title {
-				color: @font-color;
+
+				// Title and link
+				&,
+				> a {
+					color: @font-color;
+				}
 			}
 		}
 	}
@@ -41,12 +46,17 @@
 		// Title
 		.ktc-aside-title {
 			display: block;
-			text-transform: uppercase;
-			font-family: @ktc-aside-title-font-family;
-			font-size: @ktc-aside-title-font-size;
-			font-weight: @ktc-aside-title-font-weight;
-			color: @ktc-aside-title-font-color;
 			padding: @ktc-aside-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+
+			// Title and link
+			&,
+			> a {
+				text-transform: uppercase;
+				font-family: @ktc-aside-title-font-family;
+				font-size: @ktc-aside-title-font-size;
+				font-weight: @ktc-aside-title-font-weight;
+				color: @ktc-aside-title-font-color;
+			}
 		}
 	}
 
