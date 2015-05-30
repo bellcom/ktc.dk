@@ -9701,6 +9701,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title {
   padding-right: 30px;
+  margin: 0;
 }
 .ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title:after {
   margin-top: -7px;
@@ -9745,6 +9746,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   display: block;
   padding: 10px 15px;
   padding-left: 7px;
+  margin: 0;
 }
 .ktc-block .ktc-block-heading .ktc-block-title,
 .ktc-block .ktc-block-heading .ktc-block-title > a {
@@ -9947,25 +9949,25 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   width: 9px;
   height: 16px;
 }
-.ktc-list .ktc-list-content {
+.ktc-list .ktc-list-body {
   display: inherit;
 }
-.ktc-list .ktc-list-content .ktc-list-headline {
+.ktc-list .ktc-list-body .ktc-list-headline {
   font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 12px;
   margin: 0;
   margin-bottom: 5px;
   color: #2c353a;
 }
-.ktc-list .ktc-list-content .ktc-list-subheadline {
+.ktc-list .ktc-list-body .ktc-list-subheadline {
   font-size: 85%;
   margin: 0;
 }
-.ktc-list .ktc-list-content .ktc-list-date-simple {
+.ktc-list .ktc-list-body .ktc-list-date-simple {
   font-style: italic;
   font-size: 85%;
 }
-.ktc-list .ktc-list-content p {
+.ktc-list .ktc-list-body p {
   margin-bottom: 3px;
 }
 .ktc-list .ktc-list-content .ktc-list-headline,
@@ -10066,6 +10068,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
+  margin: 0;
 }
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before,
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
@@ -10116,6 +10119,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-green.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-green .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
+  margin: 0;
 }
 .ktc-green.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before,
 .ktc-green .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
@@ -10166,6 +10170,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-blue.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-blue .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
+  margin: 0;
 }
 .ktc-blue.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before,
 .ktc-blue .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
@@ -10216,6 +10221,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-gold.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-gold .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
+  margin: 0;
 }
 .ktc-gold.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before,
 .ktc-gold .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
@@ -10266,6 +10272,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-red.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-red .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
+  margin: 0;
 }
 .ktc-red.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before,
 .ktc-red .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
