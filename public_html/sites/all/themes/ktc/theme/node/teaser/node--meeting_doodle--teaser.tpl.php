@@ -21,7 +21,7 @@
             </div>
 
             <div class="ktc-call-to-action-button">
-                <a class="btn btn-blacknblue" href="<?php global $base_url; print $base_url . $node_url; ?>" class="ktc-teaser-title"><?php print t('Afgiv stemme'); ?></a>
+                <a class="btn btn-default" href="<?php global $base_url; print $base_url . $node_url; ?>" class="ktc-teaser-title"><?php print t('Afgiv stemme'); ?></a>
             </div>
 
         </div>

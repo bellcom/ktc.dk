@@ -310,7 +310,7 @@ function _ktc_section_block_netvaerk_invite_links_content() {
   $html = '';
   if (is_numeric($nid) && user_is_logged_in()) {
     $html .= '<div class="row">';
-    $link_class = 'col-md-12 col-sm-12 col-xs-12 filter-link btn btn-blacknblue';
+    $link_class = 'col-md-12 col-sm-12 col-xs-12 filter-link btn btn-default';
     $node = node_load($nid);
     // If user has access to invite user to group.
     if ($access = og_user_access('node', $nid, 'invite any user') && og_is_member('node', $nid)) {
@@ -350,16 +350,16 @@ function _ktc_custom_filter_on_hearing() {
   if ($user->uid != 0) {
     $html .= '
       <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">All</div>
+        <div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">All</div>
       </div>
       <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-blacknblue filter-link filter-status col-md-12 col-sm-12 col-xs-12" id="filter-status" data-filter="1837">Åbne</div>
+        <div class="btn btn-default filter-link filter-status col-md-12 col-sm-12 col-xs-12" id="filter-status" data-filter="1837">Åbne</div>
       </div>
       <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-mine" data-filter="mine">Mine</div>
+        <div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-mine" data-filter="mine">Mine</div>
       </div>
       <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-blacknblue filter-link filter-status col-md-12 col-sm-12 col-xs-12" id="filter-status" data-filter="1840">Lukkede</div>
+        <div class="btn btn-default filter-link filter-status col-md-12 col-sm-12 col-xs-12" id="filter-status" data-filter="1840">Lukkede</div>
       </div>';
 
   }
@@ -368,7 +368,7 @@ function _ktc_custom_filter_on_hearing() {
     foreach ($years as $key => $year) {
       $html .= '
         <div class="col-md-6 col-sm-12 col-xs-12">
-          <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-year" data-filter="' . $key . '">' . $key . '</div>
+          <div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-year" data-filter="' . $key . '">' . $key . '</div>
         </div>';
     }
   }
@@ -503,11 +503,11 @@ function _ktc_section_block_netvaerk_content_types() {
 
   if (!empty($types)) {
     $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
-      <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
+      <div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
       </div>';
     foreach ($types as $type) {
       $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" id="' . $type . '"
+        <div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="' . $type . '"
         data-filter="' . $type . '" name="filter-content-type">' . node_type_get_name($type) . '</div>
       </div>';
     }
@@ -527,13 +527,13 @@ function _ktc_section_block_page_menu_tabs() {
       $group_menu = '<div>';
 
       $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
-      $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-blacknblue filter-link">';
+      $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-default filter-link">';
       $group_menu .= l('Vis', 'node/' . $nid);
       $group_menu .= '</div></div>';
 
       if (drupal_valid_path('node/' . $nid . '/edit')) {
         $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
-        $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-blacknblue filter-link">';
+        $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-default filter-link">';
         $group_menu .= l('Redigér', 'node/' . $nid . '/edit');
         $group_menu .= '</div></div>';
       }

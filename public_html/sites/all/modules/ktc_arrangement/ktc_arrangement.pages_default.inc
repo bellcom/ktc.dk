@@ -831,7 +831,7 @@ function ktc_arrangement_default_page_manager_pages() {
 		Kommende</div>
 </div>
 <div class="col-md-6 col-sm-12 col-xs-12">
-	<div class="btn btn-blacknblue filter-link col-md-12 col-sm-12 col-xs-12" data-filter="old" id="filter-old">
+	<div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" data-filter="old" id="filter-old">
 		Afholdte</div>
 </div>
 </div>',
