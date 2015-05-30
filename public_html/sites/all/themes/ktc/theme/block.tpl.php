@@ -36,6 +36,11 @@
   	<?php print render($title_prefix); ?>
   	<?php if ($block->subject): ?>
     	<div class="block-heading panel-heading">
+          asd
+          as
+          sd
+          ads
+          ads
 			<h3 class=""><?php print $block->subject ?></h3>
 		</div>
 	<?php endif;?>

@@ -1,25 +1,25 @@
 // |--------------------------------------------------------------------------
-// | Aside
+// | Block
 // |--------------------------------------------------------------------------
 // |
-// | Provides styles for .ktc-aside
+// | Provides styles for .ktc-block
 // |
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-.ktc-mixin-aside(@background-color, @font-color) {
+.ktc-mixin-block(@background-color, @font-color) {
 
-	// Aside
-	.ktc-aside {
+	// Block
+	.ktc-block {
 
 		// Heading
-		.ktc-aside-heading {
+		.ktc-block-heading {
 			background-color: @background-color;
 
 			// Title
-			.ktc-aside-title {
+			.ktc-block-title {
 
 				// Title and link
 				&,
@@ -35,45 +35,45 @@
 // Styling
 // --------------------------------------------------
 
-// Aside
-.ktc-aside {
+// Block
+.ktc-block {
 	background-color: @ktc-color-light-content-background;
 
 	// Heading
-	.ktc-aside-heading {
-		background-color: @ktc-aside-heading-background-color;
+	.ktc-block-heading {
+		background-color: @ktc-block-heading-background-color;
 
 		// Title
-		.ktc-aside-title {
+		.ktc-block-title {
 			display: block;
-			padding: @ktc-aside-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			padding: @ktc-block-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
 
 			// Title and link
 			&,
 			> a {
 				text-transform: uppercase;
-				font-family: @ktc-aside-title-font-family;
-				font-size: @ktc-aside-title-font-size;
-				font-weight: @ktc-aside-title-font-weight;
-				color: @ktc-aside-title-font-color;
+				font-family: @ktc-block-title-font-family;
+				font-size: @ktc-block-title-font-size;
+				font-weight: @ktc-block-title-font-weight;
+				color: @ktc-block-title-font-color;
 			}
 		}
 	}
 
 	// Body
-	.ktc-aside-body {
-		padding: @ktc-aside-body-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+	.ktc-block-body {
+		padding: @ktc-block-body-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
 	}
 }
 
 // Toggle
-.ktc-aside-toggle {
+.ktc-block-toggle {
 
 	// Heading
-	> .ktc-aside-heading {
+	> .ktc-block-heading {
 
 		// Title
-		.ktc-aside-title {
+		.ktc-block-title {
 			position: relative;
 			cursor: pointer;
 			cursor: hand;
@@ -97,10 +97,10 @@
 	&.closed {
 
 		// Heading
-		> .ktc-aside-heading {
+		> .ktc-block-heading {
 
 			// Title
-			.ktc-aside-title {
+			.ktc-block-title {
 				padding-right: floor( @ktc-default-left-right-inner-spacing + @ktc-icon-toggle-closed-width );
 
 				// Toggle icon
@@ -112,7 +112,7 @@
 		}
 
 		// Body
-		> .ktc-aside-body {
+		> .ktc-block-body {
 			display: none;
 		}
 	}
@@ -120,15 +120,15 @@
 
 // Technique and environment (blue)
 .tech-env {
-	.ktc-mixin-aside(@ktc-color-blue-background, @ktc-color-blue-background-font);
+	.ktc-mixin-block(@ktc-color-blue-background, @ktc-color-blue-background-font);
 }
 
 // Network (gold)
 .og-context.og-context-node {
-	.ktc-mixin-aside(@ktc-color-gold-background, @ktc-color-gold-background-font);
+	.ktc-mixin-block(@ktc-color-gold-background, @ktc-color-gold-background-font);
 }
 
 // Not network (green)
 .no-network {
-	.ktc-mixin-aside(@ktc-color-green-background, @ktc-color-green-background-font);
+	.ktc-mixin-block(@ktc-color-green-background, @ktc-color-green-background-font);
 }
