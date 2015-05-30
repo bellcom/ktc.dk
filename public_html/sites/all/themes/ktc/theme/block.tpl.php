@@ -32,18 +32,23 @@
  * @ingroup themeable
  */
 ?>
-<aside id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  	<?php print render($title_prefix); ?>
-  	<?php if ($block->subject): ?>
-    	<div class="block-heading panel-heading">
-          asd
-          as
-          sd
-          ads
-          ads
-			<h3 class=""><?php print $block->subject ?></h3>
-		</div>
-	<?php endif;?>
-    <?php print render($title_suffix); ?>
-	<div class=""><?php print $content ?></div>
+
+<!-- Begin - block -->
+<aside class="<?php print $classes; ?> ktc-block" id="<?php print $block_html_id; ?>" <?php print $attributes; ?>>
+
+  <?php print render($title_prefix); ?>
+  <?php if ($block->subject): ?>
+    <!-- Begin - heading -->
+    <div class="ktc-block-heading">
+      <h3 class="ktc-block-title"><?php print $block->subject ?></h3>
+    </div>
+    <!-- End - heading -->
+  <?php endif;?>
+  <?php print render($title_suffix); ?>
+
+  <!-- Begin - content -->
+  <div class="ktc-block-content"><?php print $content ?></div>
+  <!-- End - content -->
+
 </aside>
+<!-- End - block -->

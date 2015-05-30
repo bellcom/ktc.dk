@@ -14,39 +14,6 @@
 @list-default-headline-color: @gray-darker;
 
 // --------------------------------------------------
-// Mixins
-// --------------------------------------------------
-
-// List
-.ktc-mixin-list(@font-color) {
-
-	// List
-	.ktc-list,
-	&.ktc-list {
-
-		// Content
-		.ktc-list-content {
-
-			// Headline
-			.ktc-list-headline {
-
-				// Headline and link
-				&,
-				> a {
-
-					// Normal, hover and focus state
-					&,
-					&:hover,
-					&:focus {
-						color: @font-color;
-					}
-				}
-			}
-		}
-	}
-}
-
-// --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
@@ -124,6 +91,39 @@
 		// Paragraph
 		p {
 			margin-bottom: 3px;
+		}
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// List
+.ktc-mixin-list(@font-color) {
+
+	// List
+	.ktc-list,
+	&.ktc-list {
+
+		// Content
+		.ktc-list-content {
+
+			// Headline
+			.ktc-list-headline {
+
+				// Headline and link
+				&,
+				> a {
+
+					// Normal, hover and focus state
+					&,
+					&:hover,
+					&:focus {
+						color: @font-color;
+					}
+				}
+			}
 		}
 	}
 }

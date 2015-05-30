@@ -6,32 +6,6 @@
 // |
 
 // --------------------------------------------------
-// Mixins
-// --------------------------------------------------
-
-.ktc-mixin-block(@background-color, @font-color) {
-
-	// Block
-	.ktc-block {
-
-		// Heading
-		.ktc-block-heading {
-			background-color: @background-color;
-
-			// Title
-			.ktc-block-title {
-
-				// Title and link
-				&,
-				> a {
-					color: @font-color;
-				}
-			}
-		}
-	}
-}
-
-// --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
@@ -114,6 +88,32 @@
 		// Body
 		> .ktc-block-body {
 			display: none;
+		}
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+.ktc-mixin-block(@background-color, @font-color) {
+
+	// Block
+	.ktc-block {
+
+		// Heading
+		.ktc-block-heading {
+			background-color: @background-color;
+
+			// Title
+			.ktc-block-title {
+
+				// Title and link
+				&,
+				> a {
+					color: @font-color;
+				}
+			}
 		}
 	}
 }

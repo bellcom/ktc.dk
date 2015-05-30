@@ -6,32 +6,6 @@
 // |
 
 // --------------------------------------------------
-// Mixins
-// --------------------------------------------------
-
-.ktc-mixin-aside(@background-color, @font-color) {
-
-	// Aside
-	.ktc-aside {
-
-		// Heading
-		.ktc-aside-heading {
-			background-color: @background-color;
-
-			// Title
-			.ktc-aside-title {
-
-				// Title and link
-				&,
-				> a {
-					color: @font-color;
-				}
-			}
-		}
-	}
-}
-
-// --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
@@ -114,6 +88,32 @@
 		// Body
 		> .ktc-aside-body {
 			display: none;
+		}
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+.ktc-mixin-aside(@background-color, @font-color) {
+
+	// Aside
+	.ktc-aside {
+
+		// Heading
+		.ktc-aside-heading {
+			background-color: @background-color;
+
+			// Title
+			.ktc-aside-title {
+
+				// Title and link
+				&,
+				> a {
+					color: @font-color;
+				}
+			}
 		}
 	}
 }
