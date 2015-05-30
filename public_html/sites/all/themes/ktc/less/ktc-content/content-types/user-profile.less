@@ -6,50 +6,6 @@
 // |
 
 // --------------------------------------------------
-// Mixins
-// --------------------------------------------------
-
-// User profile
-.ktc-mixin-user-profile(@color) {
-
-	// User profile
-	.ktc-user-profile {
-
-		// Photo container
-		.ktc-user-profile-photo-container {
-
-			// Photo
-			img {
-				border-color: @color;
-			}
-
-			// VIP
-			&.ktc-user-profile-photo-vip {
-
-				// Photo
-				img {
-					border-color: @ktc-color-green;
-				}
-			}
-		}
-
-		// Content
-		.ktc-user-profile-content {
-
-			// Headlines
-			h1, h2, h3, h4, h5, h6 {
-
-				// Headline and link
-				&,
-				> a {
-					color: @color;
-				}
-			}
-		}
-	}
-}
-
-// --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
@@ -92,6 +48,50 @@
 
 	// Clearfix
 	&:extend(.clearfix all);
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// User profile
+.ktc-mixin-user-profile(@color) {
+
+	// User profile
+	.ktc-user-profile {
+
+		// Photo container
+		.ktc-user-profile-photo-container {
+
+			// Photo
+			img {
+				border-color: @color;
+			}
+
+			// VIP
+			&.ktc-user-profile-photo-vip {
+
+				// Photo
+				img {
+					border-color: @ktc-color-green;
+				}
+			}
+		}
+
+		// Content
+		.ktc-user-profile-content {
+
+			// Headlines
+			h1, h2, h3, h4, h5, h6 {
+
+				// Headline and link
+				&,
+				> a {
+					color: @color;
+				}
+			}
+		}
+	}
 }
 
 // Default
