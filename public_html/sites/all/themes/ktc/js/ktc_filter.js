@@ -4,11 +4,11 @@
   $(document).ready(function(){
 
     var button = 'filter-all';
-    var button_class = "active";
+    var button_active = "btn-default active";
     var button_normal = "btn-default";
     var $container = $('#section-page-with-filter').find('.view-content:first');
 
-    $('.filter-box #filter-all').addClass(button_class);
+    $('.filter-box #filter-all').addClass(button_active);
     $('.filter-box #filter-all').removeClass(button_normal);
 
     $('.filter-link').click(function(event){
@@ -16,43 +16,43 @@
       $container.infinitescroll('unbind');
 
       // Change the buttons class.
-      if (!$(this).hasClass(button_class)) {
-        $(this).addClass(button_class);
+      if (!$(this).hasClass(button_active)) {
+        $(this).addClass(button_active);
         $(this).removeClass(button_normal);
         if ($(this).attr('id') == 'filter-all') {
-          $(this).closest('.filter-box').find('.filter-link').not(this).removeClass(button_class);
+          $(this).closest('.filter-box').find('.filter-link').not(this).removeClass(button_active);
           $(this).closest('.filter-box').find('.filter-link').not(this).addClass(button_normal);
           if ($(this).closest('.pane-views-panes').attr('id') == 'groups') {
-            $('.filter-box').find('.filter-link').not(this).removeClass(button_class);
+            $('.filter-box').find('.filter-link').not(this).removeClass(button_active);
             $('.filter-box').find('.filter-link').not(this).addClass(button_normal);
-            $('.filter-box #filter-all').addClass(button_class);
+            $('.filter-box #filter-all').addClass(button_active);
             $('.filter-box #filter-all').removeClass(button_normal);
           }
         }
         else if ($(this).attr('id') == 'filter-my') {
-          $(this).closest('.filter-box').find('.filter-link').not(this).removeClass(button_class);
+          $(this).closest('.filter-box').find('.filter-link').not(this).removeClass(button_active);
           $(this).closest('.filter-box').find('.filter-link').not(this).addClass(button_normal);
         }
         else if ($(this).attr('id') == 'filter-status') {
           $(this).closest('#filter-box-hearing-extra').find('.filter-status').not(this).addClass(button_normal);
-          $(this).closest('#filter-box-hearing-extra').find('.filter-status').not(this).removeClass(button_class);
+          $(this).closest('#filter-box-hearing-extra').find('.filter-status').not(this).removeClass(button_active);
         }
         else {
-          $(this).closest('.filter-box').find('#filter-all').removeClass(button_class);
+          $(this).closest('.filter-box').find('#filter-all').removeClass(button_active);
           $(this).closest('.filter-box').find('#filter-all').addClass(button_normal);
-          $(this).closest('.filter-box').find('#filter-my').removeClass(button_class);
+          $(this).closest('.filter-box').find('#filter-my').removeClass(button_active);
           $(this).closest('.filter-box').find('#filter-my').addClass(button_normal);
         }
       }
       else  {
         if ($(this).attr('id') != 'filter-all' && $(this).attr('id') != 'filter-my') {
-          $(this).removeClass(button_class);
+          $(this).removeClass(button_active);
           $(this).addClass(button_normal);
         }
         if ($(this).attr('id') == 'filter-all' && $(this).closest('.pane-views-panes').attr('id') == 'groups') {
-            $('.filter-box').find('.filter-link').not("[id*='filter-all']").removeClass(button_class);
+            $('.filter-box').find('.filter-link').not("[id*='filter-all']").removeClass(button_active);
             $('.filter-box').find('.filter-link').not("[id*='filter-all']").addClass(button_normal);
-            $('.filter-box #filter-all').addClass(button_class);
+            $('.filter-box #filter-all').addClass(button_active);
             $('.filter-box #filter-all').removeClass(button_normal);
         }
 
@@ -139,10 +139,10 @@
       var date = $(this).attr('href').split('/');
       date = date[date.length-1];
       var time = new Date(date + ' 00:00:00');
-      $('.filter-box').find('.filter-link').not("[id*='filter-all']").removeClass(button_class);
+      $('.filter-box').find('.filter-link').not("[id*='filter-all']").removeClass(button_active);
       $('.filter-box').find('.filter-link').not("[id*='filter-all']").addClass(button_normal);
       $('.filter-box').find('#filter-all').removeClass(button_normal);
-      $('.filter-box').find('#filter-all').addClass(button_class);
+      $('.filter-box').find('#filter-all').addClass(button_active);
       filter_value = check_filter_value();
       if (time.getTime() > $.now()) {
         link = '/ajax/aktiviteter/view/all/'+filter_value[1]+'/fulture/'+date+'/'+filter_value[4]+'/all';
