@@ -375,7 +375,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 70,
+      'weight' => 12,
     ),
   );
 
@@ -671,7 +671,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 69,
+      'weight' => 11,
     ),
   );
 
@@ -850,7 +850,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 79,
+      'weight' => 21,
     ),
   );
 
@@ -948,7 +948,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 73,
+      'weight' => 15,
     ),
   );
 
@@ -1370,7 +1370,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 75,
+      'weight' => 17,
     ),
   );
 
@@ -1468,7 +1468,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 74,
+      'weight' => 16,
     ),
   );
 
@@ -1558,7 +1558,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 77,
+      'weight' => 19,
     ),
   );
 
@@ -1651,7 +1651,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 71,
+      'weight' => 13,
     ),
   );
 
@@ -1847,7 +1847,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 72,
+      'weight' => 14,
     ),
   );
 
@@ -2641,6 +2641,118 @@ function ktc_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_membership_ktc_category'
+  $field_instances['user-user-field_membership_ktc_category'] = array(
+    'bundle' => 'user',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 50,
+      ),
+      'list1' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list2' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list3' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list4' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_membership_ktc_category',
+    'label' => 'membership_ktc_category',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 23,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_membership_kvf'
   $field_instances['user-user-field_membership_kvf'] = array(
     'bundle' => 'user',
@@ -2922,7 +3034,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 67,
+      'weight' => 9,
     ),
   );
 
@@ -3208,7 +3320,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 76,
+      'weight' => 18,
     ),
   );
 
@@ -3305,7 +3417,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 68,
+      'weight' => 10,
     ),
   );
 
@@ -3526,7 +3638,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 80,
+      'weight' => 22,
     ),
   );
 
@@ -3795,7 +3907,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 78,
+      'weight' => 20,
     ),
   );
 
@@ -4151,6 +4263,7 @@ function ktc_users_field_default_field_instances() {
   t('Typo3 uid(fe_users)');
   t('Uddannelser og kurser');
   t('Udpegninger i foreninger, udvalg og nævn');
+  t('membership_ktc_category');
 
   return $field_instances;
 }

@@ -363,3 +363,49 @@ function ktc_crm_load_account_from_crm_uuid($uuid) {
   }
   return FALSE;
 }
+
+/**
+ * Update the users membership category in CRM.
+ */
+function ktc_crm_webuser_update_membership_category($account, $category) {
+  $edit['field_membership_ktc'][LANGUAGE_NONE][0]['value'] = 1;
+  $edit['field_membership_ktc_category'][LANGUAGE_NONE][0]['value'] = $category;
+  user_save($account, $edit);
+
+  $webuserdto = ktc_crm_map_account_to_webuserdto($account);
+  $webuserdto->KtcMemberCategory = $category;
+  $webuserdto->KtcMember = TRUE;
+  ktc_crm_update_user($webuserdto);
+}
+
+/**
+ * Cancel ktc membership set boolean to false.
+ */
+function ktc_crm_webuser_cancel_membership($account) {
+  $webuserdto = ktc_crm_map_account_to_webuserdto($account);
+
+  $webuserdto->KtcMember = FALSE;
+
+  $edit['field_membership_ktc'][LANGUAGE_NONE][0]['value'] = 0;
+
+  user_save($account, $edit);
+  ktc_crm_update_user($webuserdto);
+}
+
+/**
+ * Return membership categories.
+ */
+function ktc_crm_webuser_membership_categories() {
+  // CRM allowed value => pretty name.
+  return array(
+    'DirektoerDirektionsmedlem'                    => '§3. Stk.1A - Direktør/direktionsmedlem',
+    'DirektoerDirektionsmedlemSuppl'               => '§3. Stk.1A-sup - Direktør/direktionsmedlem suppl.',
+    'AndreCheferMedRefTil1A'                       => '§3. Stk.1B - Andre chefer med ref. til 1a',
+    'DirektoerOeversteChefFaellesKommunalSelskab'  => '§3. Stk.1C - Direktør/øverste chef fælles kommunal selskab',
+    'AndreCheferMedRefTil1C'                       => '§3. Stk.1D - Andre chefer med ref. til 1c',
+    'DirektoerI100ProcentKommEjetSelskab'          => '§3. Stk.1E - Direktør i 100% komm. ejet selskab',
+    'FormandAssocieringForening'                   => '§3. Stk.1F - Formand associeret forening',
+    'SaerligFagkundskabEllerLedendeRolle'          => '§3. Stk.1G - Særlig fagkundskab eller ledende rolle',
+    'Senior'                                       => 'Senior',
+  );
+}

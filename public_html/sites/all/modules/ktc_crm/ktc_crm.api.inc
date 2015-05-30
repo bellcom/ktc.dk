@@ -164,6 +164,11 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
     global $user;
   }
 
+  $subscriptions = &drupal_static(__FUNCTION__);
+  if (isset($subscriptions[$user->uid])) {
+    return $subscriptions[$user->uid];
+  }
+
   $account = user_load($user->uid);
 
   if ($crm_uuid_field = field_get_items('user', $account, 'field_crm_uuid')) {
@@ -200,12 +205,13 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
           $end = strtotime($subscription->EndDate);
 
           if (time() > $end) {
-            $subscription->is_active = FALSE;
+            continue;
           }
         }
         $user_subscriptions[$subscription->ProductId] = $subscription;
       }
 
+      $subscriptions[$user->uid] = $user_subscriptions;
       return $user_subscriptions;
     }
 
