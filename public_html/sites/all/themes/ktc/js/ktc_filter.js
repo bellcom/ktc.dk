@@ -4,7 +4,7 @@
   $(document).ready(function(){
 
     var button = 'filter-all';
-    var button_active = "btn-default.active";
+    var button_active = "btn-primary active";
     var button_normal = "btn-default";
     var $container = $('#section-page-with-filter').find('.view-content:first');
 
