@@ -79,10 +79,9 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="created"><?php print date('d. F Y', $node->created); ?></div>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes;?>  clearfix"<?php print $attributes; ?>>
+  <div class="created yani"><?php print date('d. F Y', $node->created); ?></div>
   <h5><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h5>
-  <?php print render($content['field_short']); ?>
+  <?php print render($content['field_os2web_base_field_lead_img']); ?>
   <?php print render($content['body']); ?>
 </article>
-

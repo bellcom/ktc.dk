@@ -79,19 +79,10 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-listevisning"<?php print $attributes; ?>>
-    <span class="ktc-listevisning-icon ktc-listevisning-icon-<?php print $type; ?>"></span>
-    <div class="ktc-listevisning-content">
-
-        <?php if (isset($group_type)): ?>
-            <p class="ktc-listevisning-subheadline"><?php print $group_type; ?></p>
-        <?php endif ?>
-
-        <h3 class="ktc-listevisning-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-
-        <?php if (isset($group_region)): ?>
-            <p>- <?php print $group_region; ?></p>
-        <?php endif ?>
-
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list"<?php print $attributes; ?>>
+    <span class="ktc-list-icon ktc-list-icon-<?php print $type; ?>"></span>
+    <div class="ktc-list-content">
+        <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+        <p class="ktc-list-date-simple"><?php print $published_at; ?></p>
     </div>
 </article>

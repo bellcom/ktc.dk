@@ -79,18 +79,22 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-listevisning"<?php print $attributes; ?>>
-    <span class="ktc-listevisning-icon ktc-listevisning-icon-<?php print $type; ?>"></span>
-    <div class="ktc-listevisning-content">
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list"<?php print $attributes; ?>>
+    <span class="ktc-list-icon ktc-list-icon-<?php print $type; ?>"></span>
+    <div class="ktc-list-content">
 
-        <?php if (isset($news_type)): ?>
-            <p class="ktc-listevisning-subheadline"><?php print $news_type; ?></p>
+        <?php if (isset($network_groups)): ?>
+            <?php foreach($network_groups AS $network_group): ?>
+                <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="ktc-list-title"><?php print $network_group->title; ?></a>
+            <?php endforeach ?>
         <?php endif ?>
 
-        <h3 class="ktc-listevisning-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+        <?php if (isset($arrangement_type)): ?>
+            <p class="mute"><?php print $arrangement_type; ?></p>
+        <?php endif ?>
 
-        <p class="ktc-listevisning-date-simple"><?php print $published_at; ?></p>
-
+        <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+        <p class="ktc-list-date-simple"><?php $arrangement_date; ?></p>
     </div>
 </article>
 

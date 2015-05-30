@@ -1,11 +1,11 @@
 <?php if (!$page): ?>
 
     <!-- Begin - teaser -->
-    <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser-stor"<?php print $attributes; ?>>
+    <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser-large"<?php print $attributes; ?>>
 
-        <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
+        <?php if (isset($content['field_image'])) : ?>
             <div class="ktc-full-width-image">
-                <?php print render($content['field_os2web_base_field_lead_img']); ?>
+                <?php print render($content['field_image']); ?>
             </div>
         <?php endif ?>
 
@@ -17,10 +17,6 @@
         <div class="panel-body">
 
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
-
-            <?php if (isset($news_type)): ?>
-                <p class="mute"><?php print $news_type; ?></p>
-            <?php endif ?>
 
             <p><?php print $body_shortened; ?></p>
 
@@ -42,17 +38,17 @@
     <!-- End - teaser -->
 
     <?php
-    // Hide comments, tags, and links now so that we can render them later.
-    hide($content['comments']);
-    hide($content['links']);
-    hide($content['field_tags']);
-    hide($content['field_os2web_base_field_image']);
-    hide($content['field_os2web_base_field_lead_img']);
-
-    if (!empty($content['field_tags']) || !empty($content['links'])) {
-        hide($content['field_tags']);
+        // Hide comments, tags, and links now so that we can render them later.
+        hide($content['comments']);
         hide($content['links']);
-    }
+        hide($content['field_tags']);
+        hide($content['field_os2web_base_field_image']);
+        hide($content['field_os2web_base_field_lead_img']);
+
+        if (!empty($content['field_tags']) || !empty($content['links'])) {
+            hide($content['field_tags']);
+            hide($content['links']);
+        }
     ?>
 
 <?php endif; ?>

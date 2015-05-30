@@ -1,5 +1,5 @@
 // |--------------------------------------------------------------------------
-// | Listevisning stor
+// | List
 // |--------------------------------------------------------------------------
 // |
 // | Contains the following:
@@ -11,24 +11,24 @@
 // --------------------------------------------------
 
 //== Colouring
-@listevisning-default-headline-color: @gray-darker;
+@list-default-headline-color: @gray-darker;
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Listevisning
-.ktc-mixin-listevisning(@font-color) {
+// List
+.ktc-mixin-list(@font-color) {
 
-	// Listevisning
-	.ktc-listevisning,
-	&.ktc-listevisning {
+	// List
+	.ktc-list,
+	&.ktc-list {
 
 		// Content
-		.ktc-listevisning-content {
+		.ktc-list-content {
 
 			// Headline
-			.ktc-listevisning-headline {
+			.ktc-list-headline {
 
 				// Headline and link
 				&,
@@ -50,73 +50,73 @@
 // Styling
 // --------------------------------------------------
 
-// Listevisning
-.ktc-listevisning {
+// List
+.ktc-list {
 	display: table;
 	margin-bottom: 15px;
 
 	// Icon
-	.ktc-listevisning-icon {
+	.ktc-list-icon {
 		float: left;
 		min-width: 25px; // Bit of a hack to make sure all content is aligned since icon width is different
 
 		// Vote
-		&.ktc-listevisning-icon-meeting_doodle {
+		&.ktc-list-icon-meeting_doodle {
 			.sprite(@ikon-afstemning);
 		}
 
 		// Document
-		&.ktc-listevisning-icon-document {
+		&.ktc-list-icon-document {
 			.sprite(@ikon-dok);
 		}
 
 		// News
-		&.ktc-listevisning-icon-os2web_base_news {
+		&.ktc-list-icon-os2web_base_news {
 			.sprite(@ikon-nyhed);
 		}
 
 		// Network / group
-		&.ktc-listevisning-icon-group {
+		&.ktc-list-icon-group {
 			.sprite(@ikon-netvaerk);
 		}
 
 		// Arrangement
-		&.ktc-listevisning-icon-arrangement {
+		&.ktc-list-icon-arrangement {
 			.sprite(@ikon-arrangement);
 		}
 
 		// Forum
-		&.ktc-listevisning-icon-forum_post {
+		&.ktc-list-icon-forum_post {
 			.sprite(@ikon-debat2);
 		}
 
 		// Hearing
-		&.ktc-listevisning-icon-hearing {
+		&.ktc-list-icon-hearing {
 			.sprite(@ikon-hoering);
 		}
 	}
 
 	// Content
-	.ktc-listevisning-content {
+	.ktc-list-content {
 		display: inherit;
 
 		// Headline
-		.ktc-listevisning-headline {
+		.ktc-list-headline {
 			font-family: @font-family-base;
 			font-size: @font-size-base;
 			margin: 0;
 			margin-bottom: 5px;
-			color: @listevisning-default-headline-color;
+			color: @list-default-headline-color;
 		}
 
 		// Sub headline
-		.ktc-listevisning-subheadline {
+		.ktc-list-subheadline {
 			.small; // Include small class
 			margin: 0;
 		}
 
 		// Simple date
-		.ktc-listevisning-date-simple {
+		.ktc-list-date-simple {
 			font-style: italic;
 			.small; // Include small class
 		}
@@ -129,24 +129,24 @@
 }
 
 // Default
-.ktc-mixin-listevisning(@ktc-default-color-font);
+.ktc-mixin-list(@ktc-default-color-font);
 
 // Gold
 .ktc-gold {
-	.ktc-mixin-listevisning(@ktc-color-gold-font);
+	.ktc-mixin-list(@ktc-color-gold-font);
 }
 
 // Green
 .ktc-green {
-	.ktc-mixin-listevisning(@ktc-color-green-font);
+	.ktc-mixin-list(@ktc-color-green-font);
 }
 
 // Red
 .ktc-red {
-	.ktc-mixin-listevisning(@ktc-color-red-font);
+	.ktc-mixin-list(@ktc-color-red-font);
 }
 
 // Blue
 .ktc-blue {
-	.ktc-mixin-listevisning(@ktc-color-blue-font);
+	.ktc-mixin-list(@ktc-color-blue-font);
 }
