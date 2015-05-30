@@ -58,18 +58,19 @@ a.btn {
 // --------------------------------------------------
 
 // Button
-.ktc-mixin-button(@background-color, @background-hover-color, @border-color, @font-color) {
+.ktc-mixin-button(@background-color, @border-color, @font-color) {
 
 	// Same as passed into (probably .btn)
 	& {
-		background-color: @background-hover-color;
+		background-color: @background-color;
 		color: @font-color;
 		border-color: @border-color;
 
 		// Hover and focus state
 		&:hover,
 		&:focus {
-			background-color: @background-hover-color;
+			background-color: darken(@background-color, 10%);
+			color: @font-color;
 		}
 	}
 }
@@ -80,31 +81,31 @@ a.btn {
 	// Default and primary
 	&.btn-default,
 	&.btn-primary {
-		.ktc-mixin-button(@ktc-button-default-background-color, @ktc-button-default-background-hover-color, @ktc-button-default-border-color, @ktc-button-default-font-color);
+		.ktc-mixin-button(@ktc-button-default-background-color, @ktc-button-default-border-color, @ktc-button-default-font-color);
 	}
 
 	// Success
 	&.btn-success {
-		.ktc-mixin-button(@ktc-button-success-background-color, @ktc-button-success-background-hover-color, @ktc-button-success-border-color, @ktc-button-success-font-color);
+		.ktc-mixin-button(@ktc-button-success-background-color, @ktc-button-success-border-color, @ktc-button-success-font-color);
 	}
 
 	// Info
 	&.btn-info {
-		.ktc-mixin-button(@ktc-button-info-background-color, @ktc-button-info-background-hover-color, @ktc-button-info-border-color, @ktc-button-info-font-color);
+		.ktc-mixin-button(@ktc-button-info-background-color, @ktc-button-info-border-color, @ktc-button-info-font-color);
 	}
 
 	// Danger
 	&.btn-danger {
-		.ktc-mixin-button(@ktc-button-danger-background-color, @ktc-button-danger-background-hover-color, @ktc-button-danger-border-color, @ktc-button-danger-font-color);
+		.ktc-mixin-button(@ktc-button-danger-background-color, @ktc-button-danger-border-color, @ktc-button-danger-font-color);
 	}
 
 	// Warning
 	&.btn-warning {
-		.ktc-mixin-button(@ktc-button-warning-background-color, @ktc-button-warning-background-hover-color, @ktc-button-warning-border-color, @ktc-button-warning-font-color);
+		.ktc-mixin-button(@ktc-button-warning-background-color, @ktc-button-warning-border-color, @ktc-button-warning-font-color);
 	}
 
 	// Action (our own for buttons inside actions)
 	&.btn-action {
-		//.ktc-mixin-button(@ktc-button-action-background-color, @ktc-button-action-background-hover-color, @ktc-button-action-border-color, @ktc-button-action-font-color);
+		//.ktc-mixin-button(@ktc-button-action-background-color, @ktc-button-action-border-color, @ktc-button-action-font-color);
 	}
 }

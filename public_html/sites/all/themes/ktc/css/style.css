@@ -7416,26 +7416,6 @@ fieldset[disabled] .btn-blacknblue:active,
 fieldset[disabled] .btn-blacknblue.active {
   background-color: #fff;
 }
-/*
-.btn-success {
-  .pretty-buttons(@btn-success-color, @btn-success-bg, darken(@btn-success-bg, 10%));
-}
-.btn-info {
-  .pretty-buttons(@btn-info-color, @btn-info-bg, darken(@btn-info-bg, 10%));
-}
-.btn-warning {
-  .pretty-buttons(@btn-warning-color, @btn-warning-bg, darken(@btn-warning-bg, 10%));
-}
-.btn-danger {
-  .pretty-buttons(@btn-danger-color, @btn-danger-bg, darken(@btn-danger-bg, 10%));
-}
-.btn-inverse {
-  .pretty-buttons(white, #474949, darken(#474949, 10%));
-}
-
-.btn-orange {
-  .pretty-buttons(#EE9727, #F19C2E, darken(#F19C2E, 10%));
-}*/
 .page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-row {
   border-bottom: 1px solid #dfded7;
   margin-bottom: 5px;
@@ -8289,122 +8269,6 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-12 .pane-ktc-sign
   margin-left: 20px;
   margin-bottom: 20px;
 }
-.node-type-group .panel-pane .field-name-group-group a {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: 600;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 12px;
-  line-height: 1.42857143;
-  border-radius: 4px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #ffffff;
-  border-color: #e9edee;
-  color: #2c353a;
-  border: 2px solid #e9edee;
-  padding: 1px 8px;
-  border-radius: 14px;
-  text-decoration: none;
-  text-align: center;
-}
-.node-type-group .panel-pane .field-name-group-group a:focus,
-.node-type-group .panel-pane .field-name-group-group a:active:focus,
-.node-type-group .panel-pane .field-name-group-group a.active:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-.node-type-group .panel-pane .field-name-group-group a:hover,
-.node-type-group .panel-pane .field-name-group-group a:focus {
-  color: #2c353a;
-  text-decoration: none;
-}
-.node-type-group .panel-pane .field-name-group-group a:active,
-.node-type-group .panel-pane .field-name-group-group a.active {
-  outline: 0;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-.node-type-group .panel-pane .field-name-group-group a.disabled,
-.node-type-group .panel-pane .field-name-group-group a[disabled],
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-.node-type-group .panel-pane .field-name-group-group a:hover,
-.node-type-group .panel-pane .field-name-group-group a:focus,
-.node-type-group .panel-pane .field-name-group-group a:active,
-.node-type-group .panel-pane .field-name-group-group a.active,
-.open .dropdown-toggle.node-type-group .panel-pane .field-name-group-group a {
-  color: #2c353a;
-  background-color: #ebebeb;
-  border-color: #c6d1d3;
-}
-.node-type-group .panel-pane .field-name-group-group a:active,
-.node-type-group .panel-pane .field-name-group-group a.active,
-.open .dropdown-toggle.node-type-group .panel-pane .field-name-group-group a {
-  background-image: none;
-}
-.node-type-group .panel-pane .field-name-group-group a.disabled,
-.node-type-group .panel-pane .field-name-group-group a[disabled],
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a,
-.node-type-group .panel-pane .field-name-group-group a.disabled:hover,
-.node-type-group .panel-pane .field-name-group-group a[disabled]:hover,
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a:hover,
-.node-type-group .panel-pane .field-name-group-group a.disabled:focus,
-.node-type-group .panel-pane .field-name-group-group a[disabled]:focus,
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a:focus,
-.node-type-group .panel-pane .field-name-group-group a.disabled:active,
-.node-type-group .panel-pane .field-name-group-group a[disabled]:active,
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a:active,
-.node-type-group .panel-pane .field-name-group-group a.disabled.active,
-.node-type-group .panel-pane .field-name-group-group a[disabled].active,
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a.active {
-  background-color: #ffffff;
-  border-color: #e9edee;
-}
-.node-type-group .panel-pane .field-name-group-group a .badge {
-  color: #ffffff;
-  background-color: #2c353a;
-}
-.node-type-group .panel-pane .field-name-group-group a:hover,
-.node-type-group .panel-pane .field-name-group-group a:focus,
-.node-type-group .panel-pane .field-name-group-group a:active,
-.node-type-group .panel-pane .field-name-group-group a.active {
-  color: #2c353a;
-}
-.node-type-group .panel-pane .field-name-group-group a.disabled,
-.node-type-group .panel-pane .field-name-group-group a[disabled],
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a,
-.node-type-group .panel-pane .field-name-group-group a.disabled:hover,
-.node-type-group .panel-pane .field-name-group-group a[disabled]:hover,
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a:hover,
-.node-type-group .panel-pane .field-name-group-group a.disabled:focus,
-.node-type-group .panel-pane .field-name-group-group a[disabled]:focus,
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a:focus,
-.node-type-group .panel-pane .field-name-group-group a.disabled:active,
-.node-type-group .panel-pane .field-name-group-group a[disabled]:active,
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a:active,
-.node-type-group .panel-pane .field-name-group-group a.disabled.active,
-.node-type-group .panel-pane .field-name-group-group a[disabled].active,
-fieldset[disabled] .node-type-group .panel-pane .field-name-group-group a.active {
-  background-color: #fff;
-}
 .node-type-group .panel-pane.pane-node-body .parent-group a {
   color: #2c353a;
   font-weight: 700;
@@ -8573,30 +8437,6 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   overflow: hidden;
 }
 .toggle-pane-content .pane-content > a {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: 600;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 12px;
-  line-height: 1.42857143;
-  border-radius: 4px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #ffffff;
-  border-color: #e9edee;
-  color: #2c353a;
-  border: 2px solid #e9edee;
-  padding: 1px 8px;
-  border-radius: 14px;
-  text-decoration: none;
-  text-align: center;
   position: relative;
   min-height: 1px;
   padding-left: 10px;
@@ -8604,96 +8444,6 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   float: right !important;
   margin-top: 10px;
   display: block;
-}
-.toggle-pane-content .pane-content > a:focus,
-.toggle-pane-content .pane-content > a:active:focus,
-.toggle-pane-content .pane-content > a.active:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-.toggle-pane-content .pane-content > a:hover,
-.toggle-pane-content .pane-content > a:focus {
-  color: #2c353a;
-  text-decoration: none;
-}
-.toggle-pane-content .pane-content > a:active,
-.toggle-pane-content .pane-content > a.active {
-  outline: 0;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-.toggle-pane-content .pane-content > a.disabled,
-.toggle-pane-content .pane-content > a[disabled],
-fieldset[disabled] .toggle-pane-content .pane-content > a {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-.toggle-pane-content .pane-content > a:hover,
-.toggle-pane-content .pane-content > a:focus,
-.toggle-pane-content .pane-content > a:active,
-.toggle-pane-content .pane-content > a.active,
-.open .dropdown-toggle.toggle-pane-content .pane-content > a {
-  color: #2c353a;
-  background-color: #ebebeb;
-  border-color: #c6d1d3;
-}
-.toggle-pane-content .pane-content > a:active,
-.toggle-pane-content .pane-content > a.active,
-.open .dropdown-toggle.toggle-pane-content .pane-content > a {
-  background-image: none;
-}
-.toggle-pane-content .pane-content > a.disabled,
-.toggle-pane-content .pane-content > a[disabled],
-fieldset[disabled] .toggle-pane-content .pane-content > a,
-.toggle-pane-content .pane-content > a.disabled:hover,
-.toggle-pane-content .pane-content > a[disabled]:hover,
-fieldset[disabled] .toggle-pane-content .pane-content > a:hover,
-.toggle-pane-content .pane-content > a.disabled:focus,
-.toggle-pane-content .pane-content > a[disabled]:focus,
-fieldset[disabled] .toggle-pane-content .pane-content > a:focus,
-.toggle-pane-content .pane-content > a.disabled:active,
-.toggle-pane-content .pane-content > a[disabled]:active,
-fieldset[disabled] .toggle-pane-content .pane-content > a:active,
-.toggle-pane-content .pane-content > a.disabled.active,
-.toggle-pane-content .pane-content > a[disabled].active,
-fieldset[disabled] .toggle-pane-content .pane-content > a.active {
-  background-color: #ffffff;
-  border-color: #e9edee;
-}
-.toggle-pane-content .pane-content > a .badge {
-  color: #ffffff;
-  background-color: #2c353a;
-}
-.toggle-pane-content .pane-content > a:hover,
-.toggle-pane-content .pane-content > a:focus,
-.toggle-pane-content .pane-content > a:active,
-.toggle-pane-content .pane-content > a.active {
-  color: #2c353a;
-}
-.toggle-pane-content .pane-content > a.disabled,
-.toggle-pane-content .pane-content > a[disabled],
-fieldset[disabled] .toggle-pane-content .pane-content > a,
-.toggle-pane-content .pane-content > a.disabled:hover,
-.toggle-pane-content .pane-content > a[disabled]:hover,
-fieldset[disabled] .toggle-pane-content .pane-content > a:hover,
-.toggle-pane-content .pane-content > a.disabled:focus,
-.toggle-pane-content .pane-content > a[disabled]:focus,
-fieldset[disabled] .toggle-pane-content .pane-content > a:focus,
-.toggle-pane-content .pane-content > a.disabled:active,
-.toggle-pane-content .pane-content > a[disabled]:active,
-fieldset[disabled] .toggle-pane-content .pane-content > a:active,
-.toggle-pane-content .pane-content > a.disabled.active,
-.toggle-pane-content .pane-content > a[disabled].active,
-fieldset[disabled] .toggle-pane-content .pane-content > a.active {
-  background-color: #fff;
 }
 @media (min-width: 992px) {
   .toggle-pane-content .pane-content > a {
@@ -9575,388 +9325,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .col-md-4 .tabs--secondary li a,
 .col-md-3 .pane-menu-menu-user-profile-menu li a,
 .col-md-4 .pane-menu-menu-user-profile-menu li a {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: 600;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 12px;
-  line-height: 1.42857143;
-  border-radius: 4px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #ffffff;
-  border-color: #e9edee;
-  color: #2c353a;
-  border: 2px solid #e9edee;
-  padding: 1px 8px;
-  border-radius: 14px;
-  text-decoration: none;
-  text-align: center;
   width: 100%;
   margin-right: 0px;
   margin-bottom: 3px;
-}
-.col-md-3 .tabs--primary li a:focus,
-.col-md-4 .tabs--primary li a:focus,
-.col-md-3 .tabs--secondary li a:focus,
-.col-md-4 .tabs--secondary li a:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:focus,
-.col-md-3 .tabs--primary li a:active:focus,
-.col-md-4 .tabs--primary li a:active:focus,
-.col-md-3 .tabs--secondary li a:active:focus,
-.col-md-4 .tabs--secondary li a:active:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:active:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:active:focus,
-.col-md-3 .tabs--primary li a.active:focus,
-.col-md-4 .tabs--primary li a.active:focus,
-.col-md-3 .tabs--secondary li a.active:focus,
-.col-md-4 .tabs--secondary li a.active:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.active:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.active:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-.col-md-3 .tabs--primary li a:hover,
-.col-md-4 .tabs--primary li a:hover,
-.col-md-3 .tabs--secondary li a:hover,
-.col-md-4 .tabs--secondary li a:hover,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:hover,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:hover,
-.col-md-3 .tabs--primary li a:focus,
-.col-md-4 .tabs--primary li a:focus,
-.col-md-3 .tabs--secondary li a:focus,
-.col-md-4 .tabs--secondary li a:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:focus {
-  color: #2c353a;
-  text-decoration: none;
-}
-.col-md-3 .tabs--primary li a:active,
-.col-md-4 .tabs--primary li a:active,
-.col-md-3 .tabs--secondary li a:active,
-.col-md-4 .tabs--secondary li a:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:active,
-.col-md-3 .tabs--primary li a.active,
-.col-md-4 .tabs--primary li a.active,
-.col-md-3 .tabs--secondary li a.active,
-.col-md-4 .tabs--secondary li a.active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.active {
-  outline: 0;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-.col-md-3 .tabs--primary li a.disabled,
-.col-md-4 .tabs--primary li a.disabled,
-.col-md-3 .tabs--secondary li a.disabled,
-.col-md-4 .tabs--secondary li a.disabled,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled,
-.col-md-3 .tabs--primary li a[disabled],
-.col-md-4 .tabs--primary li a[disabled],
-.col-md-3 .tabs--secondary li a[disabled],
-.col-md-4 .tabs--secondary li a[disabled],
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled],
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled],
-fieldset[disabled] .col-md-3 .tabs--primary li a,
-fieldset[disabled] .col-md-4 .tabs--primary li a,
-fieldset[disabled] .col-md-3 .tabs--secondary li a,
-fieldset[disabled] .col-md-4 .tabs--secondary li a,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-.col-md-3 .tabs--primary li a:hover,
-.col-md-4 .tabs--primary li a:hover,
-.col-md-3 .tabs--secondary li a:hover,
-.col-md-4 .tabs--secondary li a:hover,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:hover,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:hover,
-.col-md-3 .tabs--primary li a:focus,
-.col-md-4 .tabs--primary li a:focus,
-.col-md-3 .tabs--secondary li a:focus,
-.col-md-4 .tabs--secondary li a:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:focus,
-.col-md-3 .tabs--primary li a:active,
-.col-md-4 .tabs--primary li a:active,
-.col-md-3 .tabs--secondary li a:active,
-.col-md-4 .tabs--secondary li a:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:active,
-.col-md-3 .tabs--primary li a.active,
-.col-md-4 .tabs--primary li a.active,
-.col-md-3 .tabs--secondary li a.active,
-.col-md-4 .tabs--secondary li a.active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.active,
-.open .dropdown-toggle.col-md-3 .tabs--primary li a,
-.open .dropdown-toggle.col-md-4 .tabs--primary li a,
-.open .dropdown-toggle.col-md-3 .tabs--secondary li a,
-.open .dropdown-toggle.col-md-4 .tabs--secondary li a,
-.open .dropdown-toggle.col-md-3 .pane-menu-menu-user-profile-menu li a,
-.open .dropdown-toggle.col-md-4 .pane-menu-menu-user-profile-menu li a {
-  color: #2c353a;
-  background-color: #ebebeb;
-  border-color: #c6d1d3;
-}
-.col-md-3 .tabs--primary li a:active,
-.col-md-4 .tabs--primary li a:active,
-.col-md-3 .tabs--secondary li a:active,
-.col-md-4 .tabs--secondary li a:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:active,
-.col-md-3 .tabs--primary li a.active,
-.col-md-4 .tabs--primary li a.active,
-.col-md-3 .tabs--secondary li a.active,
-.col-md-4 .tabs--secondary li a.active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.active,
-.open .dropdown-toggle.col-md-3 .tabs--primary li a,
-.open .dropdown-toggle.col-md-4 .tabs--primary li a,
-.open .dropdown-toggle.col-md-3 .tabs--secondary li a,
-.open .dropdown-toggle.col-md-4 .tabs--secondary li a,
-.open .dropdown-toggle.col-md-3 .pane-menu-menu-user-profile-menu li a,
-.open .dropdown-toggle.col-md-4 .pane-menu-menu-user-profile-menu li a {
-  background-image: none;
-}
-.col-md-3 .tabs--primary li a.disabled,
-.col-md-4 .tabs--primary li a.disabled,
-.col-md-3 .tabs--secondary li a.disabled,
-.col-md-4 .tabs--secondary li a.disabled,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled,
-.col-md-3 .tabs--primary li a[disabled],
-.col-md-4 .tabs--primary li a[disabled],
-.col-md-3 .tabs--secondary li a[disabled],
-.col-md-4 .tabs--secondary li a[disabled],
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled],
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled],
-fieldset[disabled] .col-md-3 .tabs--primary li a,
-fieldset[disabled] .col-md-4 .tabs--primary li a,
-fieldset[disabled] .col-md-3 .tabs--secondary li a,
-fieldset[disabled] .col-md-4 .tabs--secondary li a,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a,
-.col-md-3 .tabs--primary li a.disabled:hover,
-.col-md-4 .tabs--primary li a.disabled:hover,
-.col-md-3 .tabs--secondary li a.disabled:hover,
-.col-md-4 .tabs--secondary li a.disabled:hover,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled:hover,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled:hover,
-.col-md-3 .tabs--primary li a[disabled]:hover,
-.col-md-4 .tabs--primary li a[disabled]:hover,
-.col-md-3 .tabs--secondary li a[disabled]:hover,
-.col-md-4 .tabs--secondary li a[disabled]:hover,
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled]:hover,
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled]:hover,
-fieldset[disabled] .col-md-3 .tabs--primary li a:hover,
-fieldset[disabled] .col-md-4 .tabs--primary li a:hover,
-fieldset[disabled] .col-md-3 .tabs--secondary li a:hover,
-fieldset[disabled] .col-md-4 .tabs--secondary li a:hover,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a:hover,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a:hover,
-.col-md-3 .tabs--primary li a.disabled:focus,
-.col-md-4 .tabs--primary li a.disabled:focus,
-.col-md-3 .tabs--secondary li a.disabled:focus,
-.col-md-4 .tabs--secondary li a.disabled:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled:focus,
-.col-md-3 .tabs--primary li a[disabled]:focus,
-.col-md-4 .tabs--primary li a[disabled]:focus,
-.col-md-3 .tabs--secondary li a[disabled]:focus,
-.col-md-4 .tabs--secondary li a[disabled]:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled]:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled]:focus,
-fieldset[disabled] .col-md-3 .tabs--primary li a:focus,
-fieldset[disabled] .col-md-4 .tabs--primary li a:focus,
-fieldset[disabled] .col-md-3 .tabs--secondary li a:focus,
-fieldset[disabled] .col-md-4 .tabs--secondary li a:focus,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a:focus,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a:focus,
-.col-md-3 .tabs--primary li a.disabled:active,
-.col-md-4 .tabs--primary li a.disabled:active,
-.col-md-3 .tabs--secondary li a.disabled:active,
-.col-md-4 .tabs--secondary li a.disabled:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled:active,
-.col-md-3 .tabs--primary li a[disabled]:active,
-.col-md-4 .tabs--primary li a[disabled]:active,
-.col-md-3 .tabs--secondary li a[disabled]:active,
-.col-md-4 .tabs--secondary li a[disabled]:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled]:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled]:active,
-fieldset[disabled] .col-md-3 .tabs--primary li a:active,
-fieldset[disabled] .col-md-4 .tabs--primary li a:active,
-fieldset[disabled] .col-md-3 .tabs--secondary li a:active,
-fieldset[disabled] .col-md-4 .tabs--secondary li a:active,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a:active,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a:active,
-.col-md-3 .tabs--primary li a.disabled.active,
-.col-md-4 .tabs--primary li a.disabled.active,
-.col-md-3 .tabs--secondary li a.disabled.active,
-.col-md-4 .tabs--secondary li a.disabled.active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled.active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled.active,
-.col-md-3 .tabs--primary li a[disabled].active,
-.col-md-4 .tabs--primary li a[disabled].active,
-.col-md-3 .tabs--secondary li a[disabled].active,
-.col-md-4 .tabs--secondary li a[disabled].active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled].active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled].active,
-fieldset[disabled] .col-md-3 .tabs--primary li a.active,
-fieldset[disabled] .col-md-4 .tabs--primary li a.active,
-fieldset[disabled] .col-md-3 .tabs--secondary li a.active,
-fieldset[disabled] .col-md-4 .tabs--secondary li a.active,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a.active,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
-  background-color: #ffffff;
-  border-color: #e9edee;
-}
-.col-md-3 .tabs--primary li a .badge,
-.col-md-4 .tabs--primary li a .badge,
-.col-md-3 .tabs--secondary li a .badge,
-.col-md-4 .tabs--secondary li a .badge,
-.col-md-3 .pane-menu-menu-user-profile-menu li a .badge,
-.col-md-4 .pane-menu-menu-user-profile-menu li a .badge {
-  color: #ffffff;
-  background-color: #2c353a;
-}
-.col-md-3 .tabs--primary li a:hover,
-.col-md-4 .tabs--primary li a:hover,
-.col-md-3 .tabs--secondary li a:hover,
-.col-md-4 .tabs--secondary li a:hover,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:hover,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:hover,
-.col-md-3 .tabs--primary li a:focus,
-.col-md-4 .tabs--primary li a:focus,
-.col-md-3 .tabs--secondary li a:focus,
-.col-md-4 .tabs--secondary li a:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:focus,
-.col-md-3 .tabs--primary li a:active,
-.col-md-4 .tabs--primary li a:active,
-.col-md-3 .tabs--secondary li a:active,
-.col-md-4 .tabs--secondary li a:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a:active,
-.col-md-3 .tabs--primary li a.active,
-.col-md-4 .tabs--primary li a.active,
-.col-md-3 .tabs--secondary li a.active,
-.col-md-4 .tabs--secondary li a.active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.active {
-  color: #2c353a;
-}
-.col-md-3 .tabs--primary li a.disabled,
-.col-md-4 .tabs--primary li a.disabled,
-.col-md-3 .tabs--secondary li a.disabled,
-.col-md-4 .tabs--secondary li a.disabled,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled,
-.col-md-3 .tabs--primary li a[disabled],
-.col-md-4 .tabs--primary li a[disabled],
-.col-md-3 .tabs--secondary li a[disabled],
-.col-md-4 .tabs--secondary li a[disabled],
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled],
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled],
-fieldset[disabled] .col-md-3 .tabs--primary li a,
-fieldset[disabled] .col-md-4 .tabs--primary li a,
-fieldset[disabled] .col-md-3 .tabs--secondary li a,
-fieldset[disabled] .col-md-4 .tabs--secondary li a,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a,
-.col-md-3 .tabs--primary li a.disabled:hover,
-.col-md-4 .tabs--primary li a.disabled:hover,
-.col-md-3 .tabs--secondary li a.disabled:hover,
-.col-md-4 .tabs--secondary li a.disabled:hover,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled:hover,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled:hover,
-.col-md-3 .tabs--primary li a[disabled]:hover,
-.col-md-4 .tabs--primary li a[disabled]:hover,
-.col-md-3 .tabs--secondary li a[disabled]:hover,
-.col-md-4 .tabs--secondary li a[disabled]:hover,
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled]:hover,
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled]:hover,
-fieldset[disabled] .col-md-3 .tabs--primary li a:hover,
-fieldset[disabled] .col-md-4 .tabs--primary li a:hover,
-fieldset[disabled] .col-md-3 .tabs--secondary li a:hover,
-fieldset[disabled] .col-md-4 .tabs--secondary li a:hover,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a:hover,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a:hover,
-.col-md-3 .tabs--primary li a.disabled:focus,
-.col-md-4 .tabs--primary li a.disabled:focus,
-.col-md-3 .tabs--secondary li a.disabled:focus,
-.col-md-4 .tabs--secondary li a.disabled:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled:focus,
-.col-md-3 .tabs--primary li a[disabled]:focus,
-.col-md-4 .tabs--primary li a[disabled]:focus,
-.col-md-3 .tabs--secondary li a[disabled]:focus,
-.col-md-4 .tabs--secondary li a[disabled]:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled]:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled]:focus,
-fieldset[disabled] .col-md-3 .tabs--primary li a:focus,
-fieldset[disabled] .col-md-4 .tabs--primary li a:focus,
-fieldset[disabled] .col-md-3 .tabs--secondary li a:focus,
-fieldset[disabled] .col-md-4 .tabs--secondary li a:focus,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a:focus,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a:focus,
-.col-md-3 .tabs--primary li a.disabled:active,
-.col-md-4 .tabs--primary li a.disabled:active,
-.col-md-3 .tabs--secondary li a.disabled:active,
-.col-md-4 .tabs--secondary li a.disabled:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled:active,
-.col-md-3 .tabs--primary li a[disabled]:active,
-.col-md-4 .tabs--primary li a[disabled]:active,
-.col-md-3 .tabs--secondary li a[disabled]:active,
-.col-md-4 .tabs--secondary li a[disabled]:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled]:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled]:active,
-fieldset[disabled] .col-md-3 .tabs--primary li a:active,
-fieldset[disabled] .col-md-4 .tabs--primary li a:active,
-fieldset[disabled] .col-md-3 .tabs--secondary li a:active,
-fieldset[disabled] .col-md-4 .tabs--secondary li a:active,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a:active,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a:active,
-.col-md-3 .tabs--primary li a.disabled.active,
-.col-md-4 .tabs--primary li a.disabled.active,
-.col-md-3 .tabs--secondary li a.disabled.active,
-.col-md-4 .tabs--secondary li a.disabled.active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a.disabled.active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a.disabled.active,
-.col-md-3 .tabs--primary li a[disabled].active,
-.col-md-4 .tabs--primary li a[disabled].active,
-.col-md-3 .tabs--secondary li a[disabled].active,
-.col-md-4 .tabs--secondary li a[disabled].active,
-.col-md-3 .pane-menu-menu-user-profile-menu li a[disabled].active,
-.col-md-4 .pane-menu-menu-user-profile-menu li a[disabled].active,
-fieldset[disabled] .col-md-3 .tabs--primary li a.active,
-fieldset[disabled] .col-md-4 .tabs--primary li a.active,
-fieldset[disabled] .col-md-3 .tabs--secondary li a.active,
-fieldset[disabled] .col-md-4 .tabs--secondary li a.active,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li a.active,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
-  background-color: #fff;
 }
 .col-md-3 .tabs--secondary,
 .col-md-4 .tabs--secondary {
@@ -10606,145 +9977,342 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .personsoegning .andcell::before {
   content: " / ";
 }
-.ktc-listevisning {
+.ktc-aside {
+  background-color: #ffffff;
+}
+.ktc-aside .ktc-aside-heading {
+  background-color: #2c353a;
+}
+.ktc-aside .ktc-aside-heading .ktc-aside-title {
+  display: block;
+  padding: 7px 10px;
+}
+.ktc-aside .ktc-aside-heading .ktc-aside-title,
+.ktc-aside .ktc-aside-heading .ktc-aside-title > a {
+  text-transform: uppercase;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.ktc-aside .ktc-aside-body {
+  padding: 10px 10px;
+}
+.ktc-aside-toggle > .ktc-aside-heading .ktc-aside-title {
+  position: relative;
+  cursor: pointer;
+  cursor: hand;
+  padding-right: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ktc-aside-toggle > .ktc-aside-heading .ktc-aside-title:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 50%;
+  right: 10px;
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -166px;
+  width: 15px;
+  height: 15px;
+}
+.ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title {
+  padding-right: 25px;
+}
+.ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title:after {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -121px;
+  width: 15px;
+  height: 15px;
+}
+.ktc-aside-toggle.closed > .ktc-aside-body {
+  display: none;
+}
+.tech-env .ktc-aside .ktc-aside-heading {
+  background-color: #1f9bd7;
+}
+.tech-env .ktc-aside .ktc-aside-heading .ktc-aside-title,
+.tech-env .ktc-aside .ktc-aside-heading .ktc-aside-title > a {
+  color: #ffffff;
+}
+.og-context.og-context-node .ktc-aside .ktc-aside-heading {
+  background-color: #d3a900;
+}
+.og-context.og-context-node .ktc-aside .ktc-aside-heading .ktc-aside-title,
+.og-context.og-context-node .ktc-aside .ktc-aside-heading .ktc-aside-title > a {
+  color: #ffffff;
+}
+.no-network .ktc-aside .ktc-aside-heading {
+  background-color: #36a145;
+}
+.no-network .ktc-aside .ktc-aside-heading .ktc-aside-title,
+.no-network .ktc-aside .ktc-aside-heading .ktc-aside-title > a {
+  color: #ffffff;
+}
+.ktc-red.ktc-color-background,
+.ktc-red .ktc-color-background {
+  background-color: #e75311;
+}
+.ktc-red.ktc-color-background h1,
+.ktc-red .ktc-color-background h1,
+.ktc-red.ktc-color-background h2,
+.ktc-red .ktc-color-background h2,
+.ktc-red.ktc-color-background h3,
+.ktc-red .ktc-color-background h3,
+.ktc-red.ktc-color-background h4,
+.ktc-red .ktc-color-background h4,
+.ktc-red.ktc-color-background h5,
+.ktc-red .ktc-color-background h5,
+.ktc-red.ktc-color-background h6,
+.ktc-red .ktc-color-background h6 {
+  color: #ffffff;
+}
+.ktc-red.ktc-color-background span,
+.ktc-red .ktc-color-background span,
+.ktc-red.ktc-color-background p,
+.ktc-red .ktc-color-background p,
+.ktc-red.ktc-color-background a,
+.ktc-red .ktc-color-background a {
+  color: #ffffff;
+}
+.ktc-red.ktc-color-font,
+.ktc-red .ktc-color-font {
+  color: #e75311;
+}
+.ktc-blue.ktc-color-background,
+.ktc-blue .ktc-color-background {
+  background-color: #1f9bd7;
+}
+.ktc-blue.ktc-color-background h1,
+.ktc-blue .ktc-color-background h1,
+.ktc-blue.ktc-color-background h2,
+.ktc-blue .ktc-color-background h2,
+.ktc-blue.ktc-color-background h3,
+.ktc-blue .ktc-color-background h3,
+.ktc-blue.ktc-color-background h4,
+.ktc-blue .ktc-color-background h4,
+.ktc-blue.ktc-color-background h5,
+.ktc-blue .ktc-color-background h5,
+.ktc-blue.ktc-color-background h6,
+.ktc-blue .ktc-color-background h6 {
+  color: #ffffff;
+}
+.ktc-blue.ktc-color-background span,
+.ktc-blue .ktc-color-background span,
+.ktc-blue.ktc-color-background p,
+.ktc-blue .ktc-color-background p,
+.ktc-blue.ktc-color-background a,
+.ktc-blue .ktc-color-background a {
+  color: #ffffff;
+}
+.ktc-blue.ktc-color-font,
+.ktc-blue .ktc-color-font {
+  color: #1f9bd7;
+}
+.ktc-green.ktc-color-background,
+.ktc-green .ktc-color-background {
+  background-color: #36a145;
+}
+.ktc-green.ktc-color-background h1,
+.ktc-green .ktc-color-background h1,
+.ktc-green.ktc-color-background h2,
+.ktc-green .ktc-color-background h2,
+.ktc-green.ktc-color-background h3,
+.ktc-green .ktc-color-background h3,
+.ktc-green.ktc-color-background h4,
+.ktc-green .ktc-color-background h4,
+.ktc-green.ktc-color-background h5,
+.ktc-green .ktc-color-background h5,
+.ktc-green.ktc-color-background h6,
+.ktc-green .ktc-color-background h6 {
+  color: #ffffff;
+}
+.ktc-green.ktc-color-background span,
+.ktc-green .ktc-color-background span,
+.ktc-green.ktc-color-background p,
+.ktc-green .ktc-color-background p,
+.ktc-green.ktc-color-background a,
+.ktc-green .ktc-color-background a {
+  color: #ffffff;
+}
+.ktc-green.ktc-color-font,
+.ktc-green .ktc-color-font {
+  color: #36a145;
+}
+.ktc-gold.ktc-color-background,
+.ktc-gold .ktc-color-background {
+  background-color: #d3a900;
+}
+.ktc-gold.ktc-color-background h1,
+.ktc-gold .ktc-color-background h1,
+.ktc-gold.ktc-color-background h2,
+.ktc-gold .ktc-color-background h2,
+.ktc-gold.ktc-color-background h3,
+.ktc-gold .ktc-color-background h3,
+.ktc-gold.ktc-color-background h4,
+.ktc-gold .ktc-color-background h4,
+.ktc-gold.ktc-color-background h5,
+.ktc-gold .ktc-color-background h5,
+.ktc-gold.ktc-color-background h6,
+.ktc-gold .ktc-color-background h6 {
+  color: #ffffff;
+}
+.ktc-gold.ktc-color-background span,
+.ktc-gold .ktc-color-background span,
+.ktc-gold.ktc-color-background p,
+.ktc-gold .ktc-color-background p,
+.ktc-gold.ktc-color-background a,
+.ktc-gold .ktc-color-background a {
+  color: #ffffff;
+}
+.ktc-gold.ktc-color-font,
+.ktc-gold .ktc-color-font {
+  color: #d3a900;
+}
+.ktc-list {
   display: table;
   margin-bottom: 15px;
 }
-.ktc-listevisning .ktc-listevisning-icon {
+.ktc-list .ktc-list-icon {
   float: left;
   min-width: 25px;
 }
-.ktc-listevisning .ktc-listevisning-icon.ktc-listevisning-icon-meeting_doodle {
+.ktc-list .ktc-list-icon.ktc-list-icon-meeting_doodle {
   background-image: url(../images/sprites.png);
   background-position: 0px -66px;
   width: 16px;
   height: 13px;
 }
-.ktc-listevisning .ktc-listevisning-icon.ktc-listevisning-icon-document {
+.ktc-list .ktc-list-icon.ktc-list-icon-document {
   background-image: url(../images/sprites.png);
   background-position: 0px -256px;
   width: 12px;
   height: 16px;
 }
-.ktc-listevisning .ktc-listevisning-icon.ktc-listevisning-icon-os2web_base_news {
+.ktc-list .ktc-list-icon.ktc-list-icon-os2web_base_news {
   background-image: url(../images/sprites.png);
   background-position: 0px -288px;
   width: 15px;
   height: 16px;
 }
-.ktc-listevisning .ktc-listevisning-icon.ktc-listevisning-icon-group {
+.ktc-list .ktc-list-icon.ktc-list-icon-group {
   background-image: url(../images/sprites.png);
   background-position: 0px -338px;
   width: 15px;
   height: 17px;
 }
-.ktc-listevisning .ktc-listevisning-icon.ktc-listevisning-icon-arrangement {
+.ktc-list .ktc-list-icon.ktc-list-icon-arrangement {
   background-image: url(../images/sprites.png);
   background-position: 0px -107px;
   width: 14px;
   height: 14px;
 }
-.ktc-listevisning .ktc-listevisning-icon.ktc-listevisning-icon-forum_post {
+.ktc-list .ktc-list-icon.ktc-list-icon-forum_post {
   background-image: url(../images/sprites.png);
   background-position: 0px -79px;
   width: 15px;
   height: 14px;
 }
-.ktc-listevisning .ktc-listevisning-icon.ktc-listevisning-icon-hearing {
+.ktc-list .ktc-list-icon.ktc-list-icon-hearing {
   background-image: url(../images/sprites.png);
   background-position: 0px -272px;
   width: 9px;
   height: 16px;
 }
-.ktc-listevisning .ktc-listevisning-content {
+.ktc-list .ktc-list-content {
   display: inherit;
 }
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline {
+.ktc-list .ktc-list-content .ktc-list-headline {
   font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 12px;
   margin: 0;
   margin-bottom: 5px;
   color: #2c353a;
 }
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-subheadline {
+.ktc-list .ktc-list-content .ktc-list-subheadline {
   font-size: 85%;
   margin: 0;
 }
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-date-simple {
+.ktc-list .ktc-list-content .ktc-list-date-simple {
   font-style: italic;
   font-size: 85%;
 }
-.ktc-listevisning .ktc-listevisning-content p {
+.ktc-list .ktc-list-content p {
   margin-bottom: 3px;
 }
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:hover,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:hover,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:hover,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:hover,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:focus,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:focus,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:focus,
-.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:focus {
+.ktc-list .ktc-list-content .ktc-list-headline,
+.ktc-list .ktc-list-content .ktc-list-headline,
+.ktc-list .ktc-list-content .ktc-list-headline > a,
+.ktc-list .ktc-list-content .ktc-list-headline > a,
+.ktc-list .ktc-list-content .ktc-list-headline:hover,
+.ktc-list .ktc-list-content .ktc-list-headline:hover,
+.ktc-list .ktc-list-content .ktc-list-headline > a:hover,
+.ktc-list .ktc-list-content .ktc-list-headline > a:hover,
+.ktc-list .ktc-list-content .ktc-list-headline:focus,
+.ktc-list .ktc-list-content .ktc-list-headline:focus,
+.ktc-list .ktc-list-content .ktc-list-headline > a:focus,
+.ktc-list .ktc-list-content .ktc-list-headline > a:focus {
   color: #848e92;
 }
-.ktc-gold .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline,
-.ktc-gold.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline,
-.ktc-gold .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a,
-.ktc-gold.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a,
-.ktc-gold .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:hover,
-.ktc-gold.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:hover,
-.ktc-gold .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:hover,
-.ktc-gold.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:hover,
-.ktc-gold .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:focus,
-.ktc-gold.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:focus,
-.ktc-gold .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:focus,
-.ktc-gold.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:focus {
+.ktc-gold .ktc-list .ktc-list-content .ktc-list-headline,
+.ktc-gold.ktc-list .ktc-list-content .ktc-list-headline,
+.ktc-gold .ktc-list .ktc-list-content .ktc-list-headline > a,
+.ktc-gold.ktc-list .ktc-list-content .ktc-list-headline > a,
+.ktc-gold .ktc-list .ktc-list-content .ktc-list-headline:hover,
+.ktc-gold.ktc-list .ktc-list-content .ktc-list-headline:hover,
+.ktc-gold .ktc-list .ktc-list-content .ktc-list-headline > a:hover,
+.ktc-gold.ktc-list .ktc-list-content .ktc-list-headline > a:hover,
+.ktc-gold .ktc-list .ktc-list-content .ktc-list-headline:focus,
+.ktc-gold.ktc-list .ktc-list-content .ktc-list-headline:focus,
+.ktc-gold .ktc-list .ktc-list-content .ktc-list-headline > a:focus,
+.ktc-gold.ktc-list .ktc-list-content .ktc-list-headline > a:focus {
   color: #d3a900;
 }
-.ktc-green .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline,
-.ktc-green.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline,
-.ktc-green .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a,
-.ktc-green.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a,
-.ktc-green .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:hover,
-.ktc-green.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:hover,
-.ktc-green .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:hover,
-.ktc-green.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:hover,
-.ktc-green .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:focus,
-.ktc-green.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:focus,
-.ktc-green .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:focus,
-.ktc-green.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:focus {
+.ktc-green .ktc-list .ktc-list-content .ktc-list-headline,
+.ktc-green.ktc-list .ktc-list-content .ktc-list-headline,
+.ktc-green .ktc-list .ktc-list-content .ktc-list-headline > a,
+.ktc-green.ktc-list .ktc-list-content .ktc-list-headline > a,
+.ktc-green .ktc-list .ktc-list-content .ktc-list-headline:hover,
+.ktc-green.ktc-list .ktc-list-content .ktc-list-headline:hover,
+.ktc-green .ktc-list .ktc-list-content .ktc-list-headline > a:hover,
+.ktc-green.ktc-list .ktc-list-content .ktc-list-headline > a:hover,
+.ktc-green .ktc-list .ktc-list-content .ktc-list-headline:focus,
+.ktc-green.ktc-list .ktc-list-content .ktc-list-headline:focus,
+.ktc-green .ktc-list .ktc-list-content .ktc-list-headline > a:focus,
+.ktc-green.ktc-list .ktc-list-content .ktc-list-headline > a:focus {
   color: #36a145;
 }
-.ktc-red .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline,
-.ktc-red.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline,
-.ktc-red .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a,
-.ktc-red.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a,
-.ktc-red .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:hover,
-.ktc-red.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:hover,
-.ktc-red .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:hover,
-.ktc-red.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:hover,
-.ktc-red .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:focus,
-.ktc-red.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:focus,
-.ktc-red .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:focus,
-.ktc-red.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:focus {
+.ktc-red .ktc-list .ktc-list-content .ktc-list-headline,
+.ktc-red.ktc-list .ktc-list-content .ktc-list-headline,
+.ktc-red .ktc-list .ktc-list-content .ktc-list-headline > a,
+.ktc-red.ktc-list .ktc-list-content .ktc-list-headline > a,
+.ktc-red .ktc-list .ktc-list-content .ktc-list-headline:hover,
+.ktc-red.ktc-list .ktc-list-content .ktc-list-headline:hover,
+.ktc-red .ktc-list .ktc-list-content .ktc-list-headline > a:hover,
+.ktc-red.ktc-list .ktc-list-content .ktc-list-headline > a:hover,
+.ktc-red .ktc-list .ktc-list-content .ktc-list-headline:focus,
+.ktc-red.ktc-list .ktc-list-content .ktc-list-headline:focus,
+.ktc-red .ktc-list .ktc-list-content .ktc-list-headline > a:focus,
+.ktc-red.ktc-list .ktc-list-content .ktc-list-headline > a:focus {
   color: #e75311;
 }
-.ktc-blue .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline,
-.ktc-blue.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline,
-.ktc-blue .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a,
-.ktc-blue.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a,
-.ktc-blue .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:hover,
-.ktc-blue.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:hover,
-.ktc-blue .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:hover,
-.ktc-blue.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:hover,
-.ktc-blue .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:focus,
-.ktc-blue.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline:focus,
-.ktc-blue .ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:focus,
-.ktc-blue.ktc-listevisning .ktc-listevisning-content .ktc-listevisning-headline > a:focus {
+.ktc-blue .ktc-list .ktc-list-content .ktc-list-headline,
+.ktc-blue.ktc-list .ktc-list-content .ktc-list-headline,
+.ktc-blue .ktc-list .ktc-list-content .ktc-list-headline > a,
+.ktc-blue.ktc-list .ktc-list-content .ktc-list-headline > a,
+.ktc-blue .ktc-list .ktc-list-content .ktc-list-headline:hover,
+.ktc-blue.ktc-list .ktc-list-content .ktc-list-headline:hover,
+.ktc-blue .ktc-list .ktc-list-content .ktc-list-headline > a:hover,
+.ktc-blue.ktc-list .ktc-list-content .ktc-list-headline > a:hover,
+.ktc-blue .ktc-list .ktc-list-content .ktc-list-headline:focus,
+.ktc-blue.ktc-list .ktc-list-content .ktc-list-headline:focus,
+.ktc-blue .ktc-list .ktc-list-content .ktc-list-headline > a:focus,
+.ktc-blue.ktc-list .ktc-list-content .ktc-list-headline > a:focus {
   color: #1f9bd7;
 }
 .ktc-teaser {
@@ -11021,83 +10589,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li a.active {
 .ktc-red.ktc-teaser .ktc-teaser-body h6 a,
 .ktc-red .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
-}
-.ktc-aside {
-  background-color: #ffffff;
-}
-.ktc-aside .ktc-aside-heading {
-  background-color: #2c353a;
-}
-.ktc-aside .ktc-aside-heading .ktc-aside-title {
-  display: block;
-  padding: 7px 10px;
-}
-.ktc-aside .ktc-aside-heading .ktc-aside-title,
-.ktc-aside .ktc-aside-heading .ktc-aside-title > a {
-  text-transform: uppercase;
-  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  color: #ffffff;
-}
-.ktc-aside .ktc-aside-body {
-  padding: 10px 10px;
-}
-.ktc-aside-toggle > .ktc-aside-heading .ktc-aside-title {
-  position: relative;
-  cursor: pointer;
-  cursor: hand;
-  padding-right: 25px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.ktc-aside-toggle > .ktc-aside-heading .ktc-aside-title:after {
-  position: absolute;
-  display: block;
-  content: "";
-  top: 50%;
-  right: 10px;
-  margin-top: -7px;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -166px;
-  width: 15px;
-  height: 15px;
-}
-.ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title {
-  padding-right: 25px;
-}
-.ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title:after {
-  margin-top: -7px;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -121px;
-  width: 15px;
-  height: 15px;
-}
-.ktc-aside-toggle.closed > .ktc-aside-body {
-  display: none;
-}
-.tech-env .ktc-aside .ktc-aside-heading {
-  background-color: #1f9bd7;
-}
-.tech-env .ktc-aside .ktc-aside-heading .ktc-aside-title,
-.tech-env .ktc-aside .ktc-aside-heading .ktc-aside-title > a {
-  color: #ffffff;
-}
-.og-context.og-context-node .ktc-aside .ktc-aside-heading {
-  background-color: #d3a900;
-}
-.og-context.og-context-node .ktc-aside .ktc-aside-heading .ktc-aside-title,
-.og-context.og-context-node .ktc-aside .ktc-aside-heading .ktc-aside-title > a {
-  color: #ffffff;
-}
-.no-network .ktc-aside .ktc-aside-heading {
-  background-color: #36a145;
-}
-.no-network .ktc-aside .ktc-aside-heading .ktc-aside-title,
-.no-network .ktc-aside .ktc-aside-heading .ktc-aside-title > a {
-  color: #ffffff;
 }
 h1 + .ktc-date,
 h2 + .ktc-date,
@@ -11403,4 +10894,87 @@ h6 + .ktc-date {
 .ktc-call-to-action-button .btn {
   min-width: 40%;
   margin: 8px auto;
+}
+.btn {
+  min-width: 50px;
+  padding: 3px 15px;
+  border-radius: 100%;
+  border-width: 2px;
+  border-style: solid;
+}
+.btn.btn-xs {
+  min-width: 20px;
+  padding: 1px 6px;
+}
+.btn.btn-sm {
+  min-width: 25px;
+  padding: 2px 8px;
+}
+.btn.btn-lg {
+  min-width: 70px;
+  padding: 5px 25px;
+}
+.btn:active,
+.btn.active {
+  -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+a.btn,
+a.btn:hover,
+a.btn:focus {
+  text-decoration: none;
+}
+.btn.btn-default,
+.btn.btn-primary {
+  background-color: #ffffff;
+  color: #2c353a;
+  border-color: #e9edee;
+}
+.btn.btn-default:hover,
+.btn.btn-primary:hover,
+.btn.btn-default:focus,
+.btn.btn-primary:focus {
+  background-color: #e6e6e6;
+  color: #2c353a;
+}
+.btn.btn-success {
+  background-color: #36a145;
+  color: #ffffff;
+  border-color: #308e3d;
+}
+.btn.btn-success:hover,
+.btn.btn-success:focus {
+  background-color: #297b35;
+  color: #ffffff;
+}
+.btn.btn-info {
+  background-color: #2dace9;
+  color: #ffffff;
+  border-color: #18a2e5;
+}
+.btn.btn-info:hover,
+.btn.btn-info:focus {
+  background-color: #1692cd;
+  color: #ffffff;
+}
+.btn.btn-danger {
+  background-color: #e75311;
+  color: #ffffff;
+  border-color: #cf4a0f;
+}
+.btn.btn-danger:hover,
+.btn.btn-danger:focus {
+  background-color: #b7420e;
+  color: #ffffff;
+}
+.btn.btn-warning {
+  background-color: #d3a900;
+  color: #ffffff;
+  border-color: #ba9500;
+}
+.btn.btn-warning:hover,
+.btn.btn-warning:focus {
+  background-color: #a08000;
+  color: #ffffff;
 }
