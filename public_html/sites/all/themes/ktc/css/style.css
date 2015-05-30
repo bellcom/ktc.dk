@@ -9761,20 +9761,20 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-block .ktc-block-heading {
   border-left-color: #36a145;
 }
-.ktc-green.ktc-block .ktc-block-heading,
-.ktc-green .ktc-block .ktc-block-heading {
+.ktc-block-green.ktc-block .ktc-block-heading,
+.ktc-block-green .ktc-block .ktc-block-heading {
   border-left-color: #36a145;
 }
-.ktc-blue.ktc-block .ktc-block-heading,
-.ktc-blue .ktc-block .ktc-block-heading {
+.ktc-block-blue.ktc-block .ktc-block-heading,
+.ktc-block-blue .ktc-block .ktc-block-heading {
   border-left-color: #1f9bd7;
 }
-.ktc-gold.ktc-block .ktc-block-heading,
-.ktc-gold .ktc-block .ktc-block-heading {
+.ktc-block-gold.ktc-block .ktc-block-heading,
+.ktc-block-gold .ktc-block .ktc-block-heading {
   border-left-color: #d3a900;
 }
-.ktc-red.ktc-block .ktc-block-heading,
-.ktc-red .ktc-block .ktc-block-heading {
+.ktc-block-red.ktc-block .ktc-block-heading,
+.ktc-block-red .ktc-block .ktc-block-heading {
   border-left-color: #e75311;
 }
 .ktc-red.ktc-color-background,
