@@ -11,16 +11,19 @@
 
 // Block
 .ktc-block {
-	background-color: @ktc-color-light-content-background;
+	background-color: transparent;
 
 	// Heading
 	.ktc-block-heading {
+	 	border-left-width: @ktc-block-heading-left-border-width;
+	 	border-left-style: solid;
 		background-color: @ktc-block-heading-background-color;
 
 		// Title
 		.ktc-block-title {
 			display: block;
 			padding: @ktc-block-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			padding-left: floor( @ktc-default-left-right-inner-spacing - @ktc-block-heading-left-border-width );
 
 			// Title and link
 			&,
@@ -40,95 +43,41 @@
 	}
 }
 
-// Toggle
-.ktc-block-toggle {
-
-	// Heading
-	> .ktc-block-heading {
-
-		// Title
-		.ktc-block-title {
-			position: relative;
-			cursor: pointer;
-			cursor: hand;
-			padding-right: floor( @ktc-default-left-right-inner-spacing + @ktc-icon-toggle-open-width );
-			.user-select(none);
-
-			// Toggle icon
-			&:after {
-				position: absolute;
-				display: block;
-				content: "";
-				top: 50%;
-				right: @ktc-default-left-right-inner-spacing;
-				margin-top: -(floor( @ktc-icon-toggle-open-height / 2 ));
-				.sprite(@ktc-icon-toggle-open);
-			}
-		}
-	}
-
-	// Closed
-	&.closed {
-
-		// Heading
-		> .ktc-block-heading {
-
-			// Title
-			.ktc-block-title {
-				padding-right: floor( @ktc-default-left-right-inner-spacing + @ktc-icon-toggle-closed-width );
-
-				// Toggle icon
-				&:after {
-					margin-top: -(floor( @ktc-icon-toggle-closed-height / 2 ));
-					.sprite(@ktc-icon-toggle-closed);
-				}
-			}
-		}
-
-		// Body
-		> .ktc-block-body {
-			display: none;
-		}
-	}
-}
-
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-.ktc-mixin-block(@background-color, @font-color) {
+.ktc-mixin-block(@border-color) {
 
 	// Block
 	.ktc-block {
 
 		// Heading
 		.ktc-block-heading {
-			background-color: @background-color;
-
-			// Title
-			.ktc-block-title {
-
-				// Title and link
-				&,
-				> a {
-					color: @font-color;
-				}
-			}
+			border-left-color: @border-color;
 		}
 	}
 }
 
-// Technique and environment (blue)
-.tech-env {
-	.ktc-mixin-block(@ktc-color-blue-background, @ktc-color-blue-background-font);
+// Default
+.ktc-mixin-block(@ktc-color-blue-background);
+
+// Blue
+.ktc-blue {
+	.ktc-mixin-block(@ktc-color-blue-background);
 }
 
-// Network (gold)
-.og-context.og-context-node {
-	.ktc-mixin-block(@ktc-color-gold-background, @ktc-color-gold-background-font);
+// Gold
+.ktc-gold {
+	.ktc-mixin-block(@ktc-color-gold-background);
 }
 
-// Not network (green)
-.no-network {
-	.ktc-mixin-block(@ktc-color-green-background, @ktc-color-green-background-font);
+// Green
+.ktc-green {
+	.ktc-mixin-block(@ktc-color-green-background);
+}
+
+// Red
+.ktc-red {
+	.ktc-mixin-block(@ktc-color-red-background);
 }
