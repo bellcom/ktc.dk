@@ -50,6 +50,7 @@
 .ktc-mixin-block(@border-color) {
 
 	// Block
+	&.ktc-block,
 	.ktc-block {
 
 		// Heading
@@ -60,7 +61,12 @@
 }
 
 // Default
-.ktc-mixin-block(@ktc-color-blue-background);
+.ktc-mixin-block(@ktc-color-green-background);
+
+// Green
+.ktc-green {
+	.ktc-mixin-block(@ktc-color-green-background);
+}
 
 // Blue
 .ktc-blue {
@@ -70,11 +76,6 @@
 // Gold
 .ktc-gold {
 	.ktc-mixin-block(@ktc-color-gold-background);
-}
-
-// Green
-.ktc-green {
-	.ktc-mixin-block(@ktc-color-green-background);
 }
 
 // Red
