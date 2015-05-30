@@ -71,6 +71,12 @@ a.btn {
 		&:focus {
 			background-color: darken(@background-color, 10%);
 			color: @font-color;
+			border-color: darken(@border-color, 5%);
+		}
+
+		// Active (by class only)
+		&.active {
+			border-color: darken(@border-color, 20%);
 		}
 	}
 }
