@@ -16,7 +16,7 @@
 @ktc-default-title-font-color: @headings-color;
 
 //== Spacing
-@ktc-default-left-right-inner-spacing: 10px;
+@ktc-default-left-right-inner-spacing: 14px;
 @ktc-default-title-top-bottom-inner-spacing: 7px;
 @ktc-default-body-top-bottom-inner-spacing: 10px;
 
@@ -137,12 +137,12 @@
 // --------------------------------------------------
 
 //== Heading
-@ktc-block-heading-left-border-width: 5px;
+@ktc-block-heading-left-border-width: 8px;
 @ktc-block-heading-background-color: @ktc-color-dark-content-background;
 
 //== Title
 @ktc-block-title-font-color: @ktc-color-dark-content-background-font;
-@ktc-block-title-top-bottom-inner-spacing: @ktc-default-title-top-bottom-inner-spacing;
+@ktc-block-title-top-bottom-inner-spacing: floor(@ktc-default-title-top-bottom-inner-spacing + 3px);
 @ktc-block-title-font-family: @font-family-base;
 @ktc-block-title-font-size: @font-size-base;
 @ktc-block-title-font-weight: bold;
