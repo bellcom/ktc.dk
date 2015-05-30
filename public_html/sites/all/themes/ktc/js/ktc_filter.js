@@ -4,8 +4,8 @@
   $(document).ready(function(){
 
     var button = 'filter-all';
-    var button_class = "btn-primary";
-    var button_normal = "btn-blacknblue";
+    var button_class = "active";
+    var button_normal = "btn-default";
     var $container = $('#section-page-with-filter').find('.view-content:first');
 
     $('.filter-box #filter-all').addClass(button_class);
