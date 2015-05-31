@@ -6,6 +6,47 @@
 // |
 
 // --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Teaser
+.ktc-teaser {
+	background-color: @ktc-color-light-content-background;
+	margin-bottom: @grid-gutter-width;
+
+	// Heading
+	.ktc-teaser-heading {
+
+		// Title
+		.ktc-teaser-title {
+			position: relative;
+			display: block;
+			font-family: @ktc-teaser-title-font-family;
+			font-size: @ktc-teaser-title-font-size;
+			font-weight: @ktc-teaser-title-font-weight;
+			color: @ktc-teaser-title-font-color;
+			padding: @ktc-teaser-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			margin-bottom: -(@ktc-teaser-title-top-bottom-inner-spacing);
+			text-transform: uppercase;
+
+			// Icon
+			&:before {
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: @ktc-default-left-right-inner-spacing;
+				content: "";
+			}
+		}
+	}
+
+	// Body
+	.ktc-teaser-body {
+		padding: (@ktc-teaser-body-top-bottom-inner-spacing / 2) @ktc-default-left-right-inner-spacing @ktc-teaser-body-top-bottom-inner-spacing;
+	}
+}
+
+// --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
@@ -64,47 +105,6 @@
 				}
 			}
 		}
-	}
-}
-
-// --------------------------------------------------
-// Styling
-// --------------------------------------------------
-
-// Teaser
-.ktc-teaser {
-	margin-bottom: @ktc-teaser-outer-spacing-bottom;
-	background-color: @ktc-color-light-content-background;
-
-	// Heading
-	.ktc-teaser-heading {
-
-		// Title
-		.ktc-teaser-title {
-			position: relative;
-			display: block;
-			font-family: @ktc-teaser-title-font-family;
-			font-size: @ktc-teaser-title-font-size;
-			font-weight: @ktc-teaser-title-font-weight;
-			color: @ktc-teaser-title-font-color;
-			padding: @ktc-teaser-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
-			margin-bottom: -(@ktc-teaser-title-top-bottom-inner-spacing);
-			text-transform: uppercase;
-
-			// Icon
-			&:before {
-				display: block;
-				position: absolute;
-				top: 50%;
-				left: @ktc-default-left-right-inner-spacing;
-				content: "";
-			}
-		}
-	}
-
-	// Body
-	.ktc-teaser-body {
-		padding: (@ktc-teaser-body-top-bottom-inner-spacing / 2) @ktc-default-left-right-inner-spacing @ktc-teaser-body-top-bottom-inner-spacing;
 	}
 }
 
