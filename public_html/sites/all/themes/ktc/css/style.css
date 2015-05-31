@@ -9714,25 +9714,34 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-aside-toggle.closed > .ktc-aside-body {
   display: none;
 }
-.tech-env .ktc-aside .ktc-aside-heading {
+.tech-env.ktc-aside-color .ktc-aside-heading,
+.tech-env .ktc-aside-color .ktc-aside-heading {
   background-color: #1f9bd7;
 }
-.tech-env .ktc-aside .ktc-aside-heading .ktc-aside-title,
-.tech-env .ktc-aside .ktc-aside-heading .ktc-aside-title > a {
+.tech-env.ktc-aside-color .ktc-aside-heading .ktc-aside-title,
+.tech-env .ktc-aside-color .ktc-aside-heading .ktc-aside-title,
+.tech-env.ktc-aside-color .ktc-aside-heading .ktc-aside-title > a,
+.tech-env .ktc-aside-color .ktc-aside-heading .ktc-aside-title > a {
   color: #ffffff;
 }
-.og-context.og-context-node .ktc-aside .ktc-aside-heading {
+.og-context.og-context-node.ktc-aside-color .ktc-aside-heading,
+.og-context.og-context-node .ktc-aside-color .ktc-aside-heading {
   background-color: #d3a900;
 }
-.og-context.og-context-node .ktc-aside .ktc-aside-heading .ktc-aside-title,
-.og-context.og-context-node .ktc-aside .ktc-aside-heading .ktc-aside-title > a {
+.og-context.og-context-node.ktc-aside-color .ktc-aside-heading .ktc-aside-title,
+.og-context.og-context-node .ktc-aside-color .ktc-aside-heading .ktc-aside-title,
+.og-context.og-context-node.ktc-aside-color .ktc-aside-heading .ktc-aside-title > a,
+.og-context.og-context-node .ktc-aside-color .ktc-aside-heading .ktc-aside-title > a {
   color: #ffffff;
 }
-.no-network .ktc-aside .ktc-aside-heading {
+.no-network.ktc-aside-color .ktc-aside-heading,
+.no-network .ktc-aside-color .ktc-aside-heading {
   background-color: #36a145;
 }
-.no-network .ktc-aside .ktc-aside-heading .ktc-aside-title,
-.no-network .ktc-aside .ktc-aside-heading .ktc-aside-title > a {
+.no-network.ktc-aside-color .ktc-aside-heading .ktc-aside-title,
+.no-network .ktc-aside-color .ktc-aside-heading .ktc-aside-title,
+.no-network.ktc-aside-color .ktc-aside-heading .ktc-aside-title > a,
+.no-network .ktc-aside-color .ktc-aside-heading .ktc-aside-title > a {
   color: #ffffff;
 }
 .ktc-block {
