@@ -46,9 +46,11 @@
   <?php endif;?>
   <?php print render($title_suffix); ?>
 
-  <!-- Begin - content -->
-  <div class="ktc-block-content"><?php print $content ?></div>
-  <!-- End - content -->
+  <!-- Begin - body -->
+  <div class="ktc-block-body">
+    <?php print $content ?>
+  </div>
+  <!-- End - body -->
 
 </aside>
 <!-- End - block -->

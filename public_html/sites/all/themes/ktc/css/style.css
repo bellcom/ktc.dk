@@ -9976,6 +9976,20 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
 }
+.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h6 + .ktc-date,
+.ktc-teaser .ktc-teaser-body h6 + .ktc-date {
+  margin-top: -6px;
+}
 .ktc-green.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-green .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
@@ -10026,6 +10040,20 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-green.ktc-teaser .ktc-teaser-body h6 a,
 .ktc-green .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
+}
+.ktc-green.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
+.ktc-green .ktc-teaser .ktc-teaser-body h1 + .ktc-date,
+.ktc-green.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
+.ktc-green .ktc-teaser .ktc-teaser-body h2 + .ktc-date,
+.ktc-green.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
+.ktc-green .ktc-teaser .ktc-teaser-body h3 + .ktc-date,
+.ktc-green.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
+.ktc-green .ktc-teaser .ktc-teaser-body h4 + .ktc-date,
+.ktc-green.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
+.ktc-green .ktc-teaser .ktc-teaser-body h5 + .ktc-date,
+.ktc-green.ktc-teaser .ktc-teaser-body h6 + .ktc-date,
+.ktc-green .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
+  margin-top: -6px;
 }
 .ktc-blue.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-blue .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
@@ -10078,6 +10106,20 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-blue .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
 }
+.ktc-blue.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
+.ktc-blue .ktc-teaser .ktc-teaser-body h1 + .ktc-date,
+.ktc-blue.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
+.ktc-blue .ktc-teaser .ktc-teaser-body h2 + .ktc-date,
+.ktc-blue.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
+.ktc-blue .ktc-teaser .ktc-teaser-body h3 + .ktc-date,
+.ktc-blue.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
+.ktc-blue .ktc-teaser .ktc-teaser-body h4 + .ktc-date,
+.ktc-blue.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
+.ktc-blue .ktc-teaser .ktc-teaser-body h5 + .ktc-date,
+.ktc-blue.ktc-teaser .ktc-teaser-body h6 + .ktc-date,
+.ktc-blue .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
+  margin-top: -6px;
+}
 .ktc-gold.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-gold .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
@@ -10128,6 +10170,20 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-gold.ktc-teaser .ktc-teaser-body h6 a,
 .ktc-gold .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
+}
+.ktc-gold.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
+.ktc-gold .ktc-teaser .ktc-teaser-body h1 + .ktc-date,
+.ktc-gold.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
+.ktc-gold .ktc-teaser .ktc-teaser-body h2 + .ktc-date,
+.ktc-gold.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
+.ktc-gold .ktc-teaser .ktc-teaser-body h3 + .ktc-date,
+.ktc-gold.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
+.ktc-gold .ktc-teaser .ktc-teaser-body h4 + .ktc-date,
+.ktc-gold.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
+.ktc-gold .ktc-teaser .ktc-teaser-body h5 + .ktc-date,
+.ktc-gold.ktc-teaser .ktc-teaser-body h6 + .ktc-date,
+.ktc-gold .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
+  margin-top: -6px;
 }
 .ktc-red.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-red .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
@@ -10180,31 +10236,42 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-red .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
 }
-h1 + .ktc-date,
-h2 + .ktc-date,
-h3 + .ktc-date,
-h4 + .ktc-date,
-h5 + .ktc-date,
-h6 + .ktc-date {
-  margin-top: -8px;
+.ktc-red.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
+.ktc-red .ktc-teaser .ktc-teaser-body h1 + .ktc-date,
+.ktc-red.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
+.ktc-red .ktc-teaser .ktc-teaser-body h2 + .ktc-date,
+.ktc-red.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
+.ktc-red .ktc-teaser .ktc-teaser-body h3 + .ktc-date,
+.ktc-red.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
+.ktc-red .ktc-teaser .ktc-teaser-body h4 + .ktc-date,
+.ktc-red.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
+.ktc-red .ktc-teaser .ktc-teaser-body h5 + .ktc-date,
+.ktc-red.ktc-teaser .ktc-teaser-body h6 + .ktc-date,
+.ktc-red .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
+  margin-top: -6px;
 }
 .ktc-date {
   font-size: 14px;
   font-style: italic;
   font-weight: bold;
 }
+.ktc-date,
 .ktc-date {
   color: #36a145;
 }
+.ktc-green.ktc-date,
 .ktc-green .ktc-date {
   color: #36a145;
 }
+.ktc-blue.ktc-date,
 .ktc-blue .ktc-date {
   color: #1f9bd7;
 }
+.ktc-gold.ktc-date,
 .ktc-gold .ktc-date {
   color: #d3a900;
 }
+.ktc-red.ktc-date,
 .ktc-red .ktc-date {
   color: #e75311;
 }
