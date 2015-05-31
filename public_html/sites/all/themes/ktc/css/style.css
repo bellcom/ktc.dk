@@ -10255,6 +10255,14 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   font-style: italic;
   font-weight: bold;
 }
+h1 + .ktc-date,
+h2 + .ktc-date,
+h3 + .ktc-date,
+h4 + .ktc-date,
+h5 + .ktc-date,
+h6 + .ktc-date {
+  margin-top: -3px;
+}
 .ktc-date,
 .ktc-date {
   color: #36a145;
