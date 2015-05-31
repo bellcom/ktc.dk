@@ -7,13 +7,6 @@
 // |
 
 // --------------------------------------------------
-// Variables
-// --------------------------------------------------
-
-//== Colouring
-@list-default-headline-color: @gray-darker;
-
-// --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
@@ -25,7 +18,7 @@
 	// Icon
 	.ktc-list-icon {
 		float: left;
-		min-width: 25px; // Bit of a hack to make sure all content is aligned since icon width is different
+		min-width: 25px; // Bit of a hack to make sure all content is aligned, since icon width is different
 
 		// Vote
 		&.ktc-list-icon-meeting_doodle {
@@ -73,7 +66,6 @@
 			font-size: @font-size-base;
 			margin: 0;
 			margin-bottom: 5px;
-			color: @list-default-headline-color;
 		}
 
 		// Sub headline
@@ -83,8 +75,7 @@
 		}
 
 		// Simple date
-		.ktc-list-date-simple {
-			font-style: italic;
+		.ktc-date {
 			.small; // Include small class
 		}
 

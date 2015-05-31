@@ -9658,6 +9658,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-aside {
   background-color: #ffffff;
+  margin-bottom: 20px;
 }
 .ktc-aside .ktc-aside-heading {
   background-color: #2c353a;
@@ -9665,6 +9666,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-aside .ktc-aside-heading .ktc-aside-title {
   display: block;
   padding: 7px 15px;
+  margin: 0;
 }
 .ktc-aside .ktc-aside-heading .ktc-aside-title,
 .ktc-aside .ktc-aside-heading .ktc-aside-title > a {
@@ -9701,7 +9703,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title {
   padding-right: 30px;
-  margin: 0;
 }
 .ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title:after {
   margin-top: -7px;
@@ -10041,8 +10042,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   color: #1f9bd7;
 }
 .ktc-teaser {
-  margin-bottom: 20px;
   background-color: #ffffff;
+  margin-bottom: 20px;
 }
 .ktc-teaser .ktc-teaser-heading .ktc-teaser-title {
   position: relative;
@@ -10726,4 +10727,25 @@ a.btn:focus {
 }
 .btn.btn-warning.active {
   border-color: #3a2e00;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body.page-node .field-name-field-hearing-materials .field-label,
+body.page-taxonomy-term .field-name-field-hearing-materials .field-label,
+body.page-node .field-name-field-os2web-base-field-media .field-label,
+body.page-taxonomy-term .field-name-field-os2web-base-field-media .field-label {
+  color: #2c353a;
+}
+p {
+  color: #848e92;
+}
+a {
+  color: #2c353a;
+}
+a:hover {
+  text-decoration: underline;
 }

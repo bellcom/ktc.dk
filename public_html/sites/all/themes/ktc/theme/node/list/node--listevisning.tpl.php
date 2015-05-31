@@ -79,10 +79,20 @@
  * @ingroup themeable
  */
 ?>
+
+<!-- Begin - list -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list"<?php print $attributes; ?>>
-    <span class="ktc-list-icon ktc-list-icon-<?php print $type; ?>"></span>
-    <div class="ktc-list-content">
-        <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-        <p class="ktc-list-date-simple"><?php print $published_at; ?></p>
-    </div>
+
+  <!-- Begin - icon -->
+  <span class="ktc-list-icon ktc-list-icon-<?php print $type; ?>"></span>
+  <!-- End - icon -->
+
+  <!-- Begin - content -->
+  <div class="ktc-list-content">
+    <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+    <p class="ktc-date"><?php print $published_at; ?></p>
+  </div>
+  <!-- End - content -->
+
 </article>
+<!-- End - list -->

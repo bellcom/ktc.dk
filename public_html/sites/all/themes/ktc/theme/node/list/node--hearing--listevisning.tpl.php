@@ -17,7 +17,7 @@
         <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
 
         <?php if (isset($hearing_duedate)): ?>
-            <p class="ktc-list-date-simple"><?php print t('Svarfrist:'); ?> <?php print $hearing_duedate; ?></p>
+            <p class="ktc-date"><?php print t('Svarfrist:'); ?> <?php print $hearing_duedate; ?></p>
         <?php endif ?>
 
         <?php if (isset($hearing_status)): ?>

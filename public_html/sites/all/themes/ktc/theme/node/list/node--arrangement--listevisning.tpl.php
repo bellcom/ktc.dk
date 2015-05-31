@@ -94,7 +94,6 @@
         <?php endif ?>
 
         <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-        <p class="ktc-list-date-simple"><?php $arrangement_date; ?></p>
+        <p class="ktc-date"><?php $arrangement_date; ?></p>
     </div>
 </article>
-

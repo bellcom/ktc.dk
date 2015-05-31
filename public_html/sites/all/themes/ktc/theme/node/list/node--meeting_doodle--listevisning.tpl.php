@@ -83,7 +83,7 @@
     <span class="ktc-list-icon ktc-list-icon-<?php print $type; ?>"></span>
     <div class="ktc-list-content">
         <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-        <p class="ktc-list-date-simple"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
+        <p class="ktc-date"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
         <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print t('Afgiv stemme'); ?></a>
     </div>
 </article>

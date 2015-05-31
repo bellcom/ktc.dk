@@ -89,7 +89,7 @@
 
         <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
 
-        <p class="ktc-list-date-simple"><?php print $published_at; ?></p>
+        <p class="ktc-date"><?php print $published_at; ?></p>
 
     </div>
 </article>
