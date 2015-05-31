@@ -3,7 +3,7 @@
 // |--------------------------------------------------------------------------
 // |
 // | Contains the following:
-// | - .panel-block
+// | - .ktc-list
 // |
 
 // --------------------------------------------------
@@ -66,8 +66,10 @@
 			// Headline and link
 			&,
 			> a {
-				font-family: @font-family-base;
-				font-size: @font-size-base;
+				font-family: @ktc-list-headline-font-family;
+				font-size: @ktc-list-headline-font-size;
+				font-weight: @ktc-list-headline-font-weight;
+				color: @ktc-list-headline-font-color;
 				margin: 0;
 				margin-bottom: 5px;
 			}
@@ -102,8 +104,8 @@
 	.ktc-list,
 	&.ktc-list {
 
-		// Content
-		.ktc-list-content {
+		// Body
+		.ktc-list-body {
 
 			// Headline
 			.ktc-list-headline {
