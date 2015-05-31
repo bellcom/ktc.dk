@@ -8642,9 +8642,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   vertical-align: middle;
   display: inline-block;
 }
-.region_footer.footer_1 .footer_1 .container .view-content {
-  padding-left: 10px;
-}
 .front .main-container.container {
   background: none;
 }
@@ -10632,52 +10629,22 @@ h6 + .ktc-date {
 .ktc-list .ktc-list-body p {
   margin-bottom: 3px;
 }
-.ktc-list .ktc-list-body .ktc-list-headline,
-.ktc-list .ktc-list-body .ktc-list-headline,
-.ktc-list .ktc-list-body .ktc-list-headline > a,
-.ktc-list .ktc-list-body .ktc-list-headline > a,
-.ktc-list .ktc-list-body .ktc-list-headline:hover,
-.ktc-list .ktc-list-body .ktc-list-headline:hover,
 .ktc-list .ktc-list-body .ktc-list-headline > a:hover,
 .ktc-list .ktc-list-body .ktc-list-headline > a:hover {
   color: #848e92;
 }
-.ktc-gold .ktc-list .ktc-list-body .ktc-list-headline,
-.ktc-gold.ktc-list .ktc-list-body .ktc-list-headline,
-.ktc-gold .ktc-list .ktc-list-body .ktc-list-headline > a,
-.ktc-gold.ktc-list .ktc-list-body .ktc-list-headline > a,
-.ktc-gold .ktc-list .ktc-list-body .ktc-list-headline:hover,
-.ktc-gold.ktc-list .ktc-list-body .ktc-list-headline:hover,
 .ktc-gold .ktc-list .ktc-list-body .ktc-list-headline > a:hover,
 .ktc-gold.ktc-list .ktc-list-body .ktc-list-headline > a:hover {
   color: #d3a900;
 }
-.ktc-green .ktc-list .ktc-list-body .ktc-list-headline,
-.ktc-green.ktc-list .ktc-list-body .ktc-list-headline,
-.ktc-green .ktc-list .ktc-list-body .ktc-list-headline > a,
-.ktc-green.ktc-list .ktc-list-body .ktc-list-headline > a,
-.ktc-green .ktc-list .ktc-list-body .ktc-list-headline:hover,
-.ktc-green.ktc-list .ktc-list-body .ktc-list-headline:hover,
 .ktc-green .ktc-list .ktc-list-body .ktc-list-headline > a:hover,
 .ktc-green.ktc-list .ktc-list-body .ktc-list-headline > a:hover {
   color: #36a145;
 }
-.ktc-red .ktc-list .ktc-list-body .ktc-list-headline,
-.ktc-red.ktc-list .ktc-list-body .ktc-list-headline,
-.ktc-red .ktc-list .ktc-list-body .ktc-list-headline > a,
-.ktc-red.ktc-list .ktc-list-body .ktc-list-headline > a,
-.ktc-red .ktc-list .ktc-list-body .ktc-list-headline:hover,
-.ktc-red.ktc-list .ktc-list-body .ktc-list-headline:hover,
 .ktc-red .ktc-list .ktc-list-body .ktc-list-headline > a:hover,
 .ktc-red.ktc-list .ktc-list-body .ktc-list-headline > a:hover {
   color: #e75311;
 }
-.ktc-blue .ktc-list .ktc-list-body .ktc-list-headline,
-.ktc-blue.ktc-list .ktc-list-body .ktc-list-headline,
-.ktc-blue .ktc-list .ktc-list-body .ktc-list-headline > a,
-.ktc-blue.ktc-list .ktc-list-body .ktc-list-headline > a,
-.ktc-blue .ktc-list .ktc-list-body .ktc-list-headline:hover,
-.ktc-blue.ktc-list .ktc-list-body .ktc-list-headline:hover,
 .ktc-blue .ktc-list .ktc-list-body .ktc-list-headline > a:hover,
 .ktc-blue.ktc-list .ktc-list-body .ktc-list-headline > a:hover {
   color: #1f9bd7;
