@@ -9958,14 +9958,12 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   font-size: 12px;
   margin: 0;
   margin-bottom: 5px;
-  color: #2c353a;
 }
 .ktc-list .ktc-list-body .ktc-list-subheadline {
   font-size: 85%;
   margin: 0;
 }
-.ktc-list .ktc-list-body .ktc-list-date-simple {
-  font-style: italic;
+.ktc-list .ktc-list-body .ktc-date {
   font-size: 85%;
 }
 .ktc-list .ktc-list-body p {
