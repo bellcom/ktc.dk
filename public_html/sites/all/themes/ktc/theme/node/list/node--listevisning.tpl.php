@@ -87,12 +87,12 @@
   <span class="ktc-list-icon ktc-list-icon-<?php print $type; ?>"></span>
   <!-- End - icon -->
 
-  <!-- Begin - content -->
-  <div class="ktc-list-content">
+  <!-- Begin - body -->
+  <div class="ktc-list-body">
     <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
     <p class="ktc-date"><?php print $published_at; ?></p>
   </div>
-  <!-- End - content -->
+  <!-- End - body -->
 
 </article>
 <!-- End - list -->

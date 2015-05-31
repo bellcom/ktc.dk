@@ -79,21 +79,33 @@
  * @ingroup themeable
  */
 ?>
+
+<!-- Begin - list -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list"<?php print $attributes; ?>>
-    <span class="ktc-list-icon ktc-list-icon-<?php print $type; ?>"></span>
-    <div class="ktc-list-content">
 
-        <?php if (isset($network_groups)): ?>
-            <?php foreach($network_groups AS $network_group): ?>
-                <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="ktc-list-title"><?php print $network_group->title; ?></a>
-            <?php endforeach ?>
-        <?php endif ?>
+  <!-- Begin - icon -->
+  <span class="ktc-list-icon ktc-list-icon-<?php print $type; ?>"></span>
+  <!-- End - icon -->
 
-        <?php if (isset($arrangement_type)): ?>
-            <p class="mute"><?php print $arrangement_type; ?></p>
-        <?php endif ?>
+  <!-- Begin - body -->
+  <div class="ktc-list-body">
 
-        <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-        <p class="ktc-date"><?php $arrangement_date; ?></p>
-    </div>
+    <?php if (isset($network_groups)): ?>
+      <?php foreach($network_groups AS $network_group): ?>
+        <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="ktc-list-title"><?php print $network_group->title; ?></a>
+      <?php endforeach ?>
+    <?php endif ?>
+
+    <?php if (isset($arrangement_type)): ?>
+      <p class="mute"><?php print $arrangement_type; ?></p>
+    <?php endif ?>
+
+    <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+
+    <p class="ktc-date"><?php $arrangement_date; ?></p>
+
+  </div>
+  <!-- End - body -->
+
 </article>
+<!-- End - list -->
