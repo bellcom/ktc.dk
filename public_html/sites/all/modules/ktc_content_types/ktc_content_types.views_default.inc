@@ -122,10 +122,10 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_logo']['field'] = 'field_arrangement_logo';
   $handler->display->display_options['fields']['field_arrangement_logo']['label'] = '';
   $handler->display->display_options['fields']['field_arrangement_logo']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_arrangement_logo']['element_class'] = 'panel-block-logo-image';
+  $handler->display->display_options['fields']['field_arrangement_logo']['element_class'] = 'ktc-logo-image';
   $handler->display->display_options['fields']['field_arrangement_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_logo']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_arrangement_logo']['element_wrapper_class'] = 'panel-block-logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['element_wrapper_class'] = 'ktc-logo';
   $handler->display->display_options['fields']['field_arrangement_logo']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_logo']['empty'] = '<span class="content-type-logo"></span>';
   $handler->display->display_options['fields']['field_arrangement_logo']['click_sort_column'] = 'fid';
@@ -393,7 +393,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_address_1']['label'] = '';
   $handler->display->display_options['fields']['field_arrangement_address_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_address_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_arrangement_address_1']['element_wrapper_class'] = 'panel-image';
+  $handler->display->display_options['fields']['field_arrangement_address_1']['element_wrapper_class'] = 'ktc-full-width-image';
   $handler->display->display_options['fields']['field_arrangement_address_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_address_1']['type'] = 'simple_gmap';
   $handler->display->display_options['fields']['field_arrangement_address_1']['settings'] = array(
