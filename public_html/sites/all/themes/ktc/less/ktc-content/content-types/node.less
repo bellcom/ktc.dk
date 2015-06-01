@@ -9,7 +9,18 @@
 // Styling
 // --------------------------------------------------
 
-// Footer
+// Title
+.ktc-node-title {
+	font-size: @font-size-h2;
+	color: @ktc-default-color-headline;
+}
+
+// Lead
+.ktc-node-lead {
+	font-size: @font-size-large;
+}
+
+// Node header
 .ktc-node-header {
 	background-color: @ktc-type-node-header-background-color;
 	border: 0;
@@ -158,4 +169,42 @@
 
 	// Clearfix
 	&:extend(.clearfix all);
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Lead
+.ktc-mixin-lead(@font-color) {
+
+	// Lead
+	&.ktc-node-lead,
+	.ktc-node-lead {
+		color: @font-color;
+	}
+}
+
+// Default
+.ktc-mixin-lead(@ktc-color-green-font);
+
+// Technique and environment (blue)
+.tech-env {
+
+	// Lead
+	.ktc-mixin-lead(@ktc-color-blue-font);
+}
+
+// Network (gold)
+.og-context.og-context-node {
+
+	// Lead
+	.ktc-mixin-lead(@ktc-color-gold-font);
+}
+
+// Not network (green)
+.no-network {
+
+	// Lead
+	.ktc-mixin-lead(@ktc-color-green-font);
 }

@@ -11074,6 +11074,13 @@ h6 + .ktc-date {
   padding-right: 10px;
   background-color: #e9edee;
 }
+.ktc-node-title {
+  font-size: 24px;
+  color: #2c353a;
+}
+.ktc-node-lead {
+  font-size: 14px;
+}
 .ktc-node-header {
   background-color: transparent;
   border: 0;
@@ -11201,6 +11208,22 @@ h6 + .ktc-date {
   background-position: 0px -288px;
   width: 12px;
   height: 16px;
+}
+.ktc-node-lead,
+.ktc-node-lead {
+  color: #36a145;
+}
+.tech-env.ktc-node-lead,
+.tech-env .ktc-node-lead {
+  color: #1f9bd7;
+}
+.og-context.og-context-node.ktc-node-lead,
+.og-context.og-context-node .ktc-node-lead {
+  color: #d3a900;
+}
+.no-network.ktc-node-lead,
+.no-network .ktc-node-lead {
+  color: #36a145;
 }
 .btn {
   min-width: 50px;
