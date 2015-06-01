@@ -25,18 +25,18 @@
 
   <div class="row">
 
-    <div class="col-md-3 col-sm-4 col-xs-12 pane-left">
+    <div class="col-sm-6 col-md-3 pane-left">
       <?php print $content['left']; ?>
     </div>
 
-    <div class="col-md-3 col-sm-4 col-xs-12 pane-right">
+    <div class="col-sm-6 col-md-3 pane-right">
       <?php print $content['right']; ?>
     </div>
 
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-sm-4 col-xs-12 pane-center ktc-content">
+    <div class="col-md-6 pane-center ktc-content">
 
       <?php if ($content['centertop']): ?>
         <div class="row">
@@ -50,13 +50,13 @@
         <div class="row">
 
           <?php if (isset($content['centerleft'])): ?>
-            <div class="col-sm-6 col-xs-12 pane-centerleft">
+            <div class="col-sm-6 pane-centerleft">
               <?php print $content['centerleft']; ?>
             </div>
           <?php endif ?>
 
           <?php if (isset($content['centerright'])): ?>
-            <div class="col-sm-6 col-xs-12 pane-centerright">
+            <div class="col-sm-6 pane-centerright">
               <?php print $content['centerright']; ?>
             </div>
           <?php endif ?>
