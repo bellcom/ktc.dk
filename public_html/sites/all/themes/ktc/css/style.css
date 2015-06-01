@@ -10298,6 +10298,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content li:hover {
   background-color: #e9edee;
 }
+.ktc-header .ktc-header-dropdown .ktc-block {
+  float: left;
+  width: 20%;
+}
 .ktc-header .ktc-header-navigation {
   min-height: 92px;
   background: #ffffff url("../images/bg_navigation.jpg") repeat-x;
