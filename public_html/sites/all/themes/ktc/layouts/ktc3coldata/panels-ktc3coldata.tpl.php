@@ -29,34 +29,36 @@
       <?php print $content['left']; ?>
     </div>
 
-    <div class="col-md-6 pane-center ktc-content">
+    <div class="col-md-6 pane-center">
+      <div class="ktc-content">
 
-      <?php if ($content['centertop']): ?>
-        <div class="row">
-          <div class="col-xs-12">
-            <?php print $content['centertop']; ?>
+        <?php if ($content['centertop']): ?>
+          <div class="row">
+            <div class="col-xs-12">
+              <?php print $content['centertop']; ?>
+            </div>
           </div>
-        </div>
-      <?php endif; ?>
+        <?php endif; ?>
 
-      <?php if ($content['centerleft'] || $content['centerright']): ?>
-        <div class="row">
+        <?php if ($content['centerleft'] || $content['centerright']): ?>
+          <div class="row">
 
-          <?php if ($content['centerleft']): ?>
-            <div class="col-sm-6 pane-centerleft">
-              <?php print $content['centerleft']; ?>
-            </div>
-          <?php endif ?>
+            <?php if ($content['centerleft']): ?>
+              <div class="col-sm-6 pane-centerleft">
+                <?php print $content['centerleft']; ?>
+              </div>
+            <?php endif ?>
 
-          <?php if ($content['centerright']): ?>
-            <div class="col-sm-6 pane-centerright">
-              <?php print $content['centerright']; ?>
-            </div>
-          <?php endif ?>
+            <?php if ($content['centerright']): ?>
+              <div class="col-sm-6 pane-centerright">
+                <?php print $content['centerright']; ?>
+              </div>
+            <?php endif ?>
 
-        </div>
-      <?php endif ?>
+          </div>
+        <?php endif ?>
 
+      </div>
     </div>
 
     <div class="col-sm-6 col-md-3 pane-right">
