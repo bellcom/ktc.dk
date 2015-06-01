@@ -81,12 +81,6 @@
               </li>
               <!-- End - login form -->
 
-              <!-- Begin - login -->
-              <li>
-                <a href="/user/create"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-login"></span></a>
-              </li>
-              <!-- End - login -->
-
               <!-- Begin - create user -->
               <li>
                 <a href="/user/register"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-create"></span></a>

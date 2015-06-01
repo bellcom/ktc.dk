@@ -10198,8 +10198,20 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li.first {
   padding-left: 0;
 }
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li {
+  vertical-align: middle;
+}
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-login label {
   display: none;
+}
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-login button {
+  min-width: auto;
+  padding: 0;
+  border-width: 0;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -792px;
+  width: 28px;
+  height: 28px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon {
   display: inline-block;
@@ -10972,4 +10984,9 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+.form-control {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }

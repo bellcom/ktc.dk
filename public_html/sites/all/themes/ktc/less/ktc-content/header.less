@@ -46,6 +46,7 @@
 
 			// List item
 			> li {
+				vertical-align: middle;
 
 				// User login
 				.ktc-header-top-bar-user-login {
@@ -53,6 +54,14 @@
 					// Label
 					label {
 						display: none;
+					}
+
+					// Submit
+					button {
+						min-width: auto;
+						padding: 0;
+						border-width: 0;
+						.sprite(@header-login);
 					}
 				}
 
