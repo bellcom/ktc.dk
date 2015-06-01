@@ -49,7 +49,7 @@
 			}
 
 			// Content
-			.ktc-comments-body {
+			.ktc-comments-content {
 				display: inherit;
 
 				// Headlines
@@ -71,6 +71,16 @@
 							font-style: normal;
 						}
 					}
+				}
+			}
+
+			// Link
+			.ktc-comments-list-links {
+
+				// Links
+				a {
+					.btn;
+					.ktc-mixin-button(@ktc-override-button-default-background-color, @ktc-override-button-default-border-color, @ktc-override-button-default-font-color);
 				}
 			}
 
