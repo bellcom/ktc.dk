@@ -10251,6 +10251,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-wrapper {
   position: relative;
+  padding-top: 35px;
 }
 .ktc-wrapper .ktc-wrapper-background {
   position: absolute;
