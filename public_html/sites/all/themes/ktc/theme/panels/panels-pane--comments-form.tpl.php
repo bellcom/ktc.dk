@@ -21,7 +21,7 @@
   <?php print $pane_prefix; ?>
 <?php endif; ?>
 
-<div class="ktc-comments <?php print $classes; ?> <?php if(isset($panel_is_filter) && $panel_is_filter) { print 'ktc-aside-toggle'; } ?>" <?php print $id; ?> <?php print $attributes; ?>>
+<div class="ktc-comments-form <?php print $classes; ?> <?php if(isset($panel_is_filter) && $panel_is_filter) { print 'ktc-aside-toggle'; } ?>" <?php print $id; ?> <?php print $attributes; ?>>
   <?php if ($admin_links): ?>
     <?php print $admin_links; ?>
   <?php endif; ?>
