@@ -15,57 +15,68 @@
  *   - $content['right']: Content in the right column.
  */
 ?>
-<div class="row ktc3coldata" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="ktc3coldata" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
 
-  <div class="col-xs-12 pane-top">
+  <div class="row">
+    <div class="col-xs-12 pane-top">
       <?php print $content['top']; ?>
+    </div>
   </div>
 
-  <div class="col-md-3 col-sm-4 col-xs-12 pane-left">
-    <?php print $content['left']; ?>
+  <div class="row">
+
+    <div class="col-md-3 col-sm-4 col-xs-12 pane-left">
+      <?php print $content['left']; ?>
+    </div>
+
+    <div class="col-md-3 col-sm-4 col-xs-12 pane-right">
+      <?php print $content['right']; ?>
+    </div>
+
   </div>
 
-  <div class="col-md-3 col-sm-4 col-xs-12 pane-right">
-    <?php print $content['right']; ?>
-  </div>
+  <div class="row">
+    <div class="col-md-6 col-sm-4 col-xs-12 pane-center ktc-content">
 
-  <div class="col-md-6 col-sm-4 col-xs-12 pane-center ktc-content">
-
-        <?php if ($content['centertop']): ?>
+      <?php if ($content['centertop']): ?>
         <div class="row">
-            <div class="col-xs-12">
-                <?php print $content['centertop']; ?>
-            </div>
+          <div class="col-xs-12">
+            <?php print $content['centertop']; ?>
+          </div>
         </div>
-        <?php endif; ?>
+      <?php endif; ?>
 
-        <?php if (isset($content['centerleft']) || isset($content['centerright'])): ?>
+      <?php if (isset($content['centerleft']) || isset($content['centerright'])): ?>
         <div class="row">
 
-            <?php if (isset($content['centerleft'])): ?>
+          <?php if (isset($content['centerleft'])): ?>
             <div class="col-sm-6 col-xs-12 pane-centerleft">
-                <?php print $content['centerleft']; ?>
+              <?php print $content['centerleft']; ?>
             </div>
-            <?php endif ?>
+          <?php endif ?>
 
-            <?php if (isset($content['centerright'])): ?>
+          <?php if (isset($content['centerright'])): ?>
             <div class="col-sm-6 col-xs-12 pane-centerright">
-                <?php print $content['centerright']; ?>
+              <?php print $content['centerright']; ?>
             </div>
-            <?php endif ?>
+          <?php endif ?>
 
         </div>
-        <?php endif ?>
+      <?php endif ?>
 
-        <div class="row">
-            <div class="col-xs-12 pane-center">
-                <?php print $content['center']; ?>
-            </div>
+      <div class="row">
+        <div class="col-xs-12 pane-center">
+          <?php print $content['center']; ?>
         </div>
+      </div>
 
+    </div>
   </div>
 
-  <div class="col-xs-12 pane-bottom">
-    <?php print $content['bottom']; ?>
+  <div class="row">
+    <div class="col-xs-12 pane-bottom">
+      <?php print $content['bottom']; ?>
+    </div>
   </div>
+
 </div>
