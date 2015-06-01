@@ -10284,15 +10284,12 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content {
   display: none;
-  margin: 0px 0px 0px 20px;
+  position: absolute;
+  top: 100%;
+  left: 0;
   padding: 0px;
   background-color: #fff;
-  z-index: 900;
-  position: absolute;
-  width: 110%;
-  -webkit-box-shadow: 4px 4px 4px 0px #cccccc;
-  -moz-box-shadow: 4px 4px 4px 0px #cccccc;
-  box-shadow: 4px 4px 4px 0px #cccccc;
+  z-index: 1010;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content li {
   list-style: none;
