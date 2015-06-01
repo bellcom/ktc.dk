@@ -10181,7 +10181,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   margin-top: -6px;
 }
 .ktc-header .ktc-header-top-bar {
-  display: none;
   min-height: 50px;
   background-color: #ffffff;
 }
@@ -10247,6 +10246,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   background: url("../images/bg_body.jpg") top repeat-x;
   border-top: 20px solid #fff;
   border-bottom: 10px solid #d5dcde;
+}
+.ktc-wrapper .region-header {
+  display: none;
 }
 .calendar-calendar td {
   text-align: center;
