@@ -31,7 +31,7 @@
     <?php print $content['right']; ?>
   </div>
 
-  <div class="col-md-6 col-sm-4 col-xs-12 col-md-pull-3 col-sm-pull-4 pane-center white-bg">
+  <div class="col-md-6 col-sm-4 col-xs-12 col-md-pull-3 col-sm-pull-4 pane-center">
 
         <?php print $content['centertop']; ?>
 
