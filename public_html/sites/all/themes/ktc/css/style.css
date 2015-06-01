@@ -10355,6 +10355,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-wrapper .region-header {
   display: none;
 }
+.ktc-content {
+  background-color: #ffffff;
+  padding: 15px 10px;
+}
 .calendar-calendar td {
   text-align: center;
 }
@@ -10598,11 +10602,6 @@ fieldset[disabled] .ktc-comments-list .ktc-comments-list-body .ktc-comments-list
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item + .ktc-comments-list-item {
   border: 2px solid #fff;
   margin-top: -2px;
-}
-.ktc-content {
-  background-color: #ffffff;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 .ktc-date {
   font-size: 14px;
@@ -10905,6 +10904,11 @@ h6 + .ktc-date {
   margin-right: -15px;
 }
 .ktc-aside .ktc-aside-body .ktc-full-width-image {
+  margin-top: -10px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.ktc-content .ktc-full-width-image {
   margin-top: -10px;
   margin-left: -15px;
   margin-right: -15px;
