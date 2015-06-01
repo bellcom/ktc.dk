@@ -11085,9 +11085,11 @@ h6 + .ktc-date {
   position: relative;
   color: #2c353a;
   float: left;
+  font-size: 14px;
+  font-weight: bold;
 }
 .ktc-node-header .ktc-node-header-button + .ktc-node-header-button {
-  margin-left: 10px;
+  margin-left: 6px;
 }
 .ktc-node-header .ktc-node-header-button.pull-right {
   float: right;
