@@ -42,18 +42,18 @@
           <?php endif; ?>
 
           <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
-            <div class="ktc-header-top-bar-add-content">
+            <span class="ktc-header-top-bar-add-content">
               <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
               <?php /* print $page['create_menu']; */ ?>
-            </div>
+            </span>
           <?php endif; ?>
 
           <!-- Begin - navigation -->
-          <ul class="ktc-header-top-bar-navigation">
+          <form action=""></form>
+          <ul class="ktc-header-top-bar-user-menu">
             <?php print $content; ?>
 
             <!-- Begin - form - not logged in -->
-            <form action=""></form>
             <!-- End - form - not logged in -->
 
           </ul>
@@ -63,4 +63,4 @@
     </div>
     <!-- End - header top bar -->
 
-<?php endif; ?>
+<?php endif ?>
