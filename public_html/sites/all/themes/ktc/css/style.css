@@ -10267,6 +10267,29 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-red .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
   margin-top: -6px;
 }
+.calendar-calendar td {
+  text-align: center;
+}
+.calendar-calendar td.today {
+  background-color: #2c353a;
+}
+.calendar-calendar .mini-day-off,
+.calendar-calendar .mini-day-on {
+  padding: 10px;
+}
+.calendar-calendar .mini-day-on {
+  background-color: #d3a900;
+}
+.calendar-calendar .mini-day-on a {
+  font-weight: bold;
+}
+.view .pager {
+  margin: 0;
+}
+.view .date-prev,
+.view .date-next {
+  background-color: transparent;
+}
 .ktc-comments-container {
   margin-left: -13px;
   margin-right: -13px;
