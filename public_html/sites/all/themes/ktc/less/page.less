@@ -252,17 +252,12 @@
 }
 .darkgray-box,
 #section-page-with-filter-all-groups {
-  position: relative;
-  margin-bottom: 20px;
-  h3 {
-    .filter-title();
-  }
+
   .pane-content {
     color: @gray-lighter;
-    background-color: @gray-darker;
-    position: relative;
      a { color: @gray-lighter}
      a:hover { color: #FFF }
+
     .view-header {
       text-align: center;
       li {
@@ -289,7 +284,7 @@
       }
     }
     .view-content {
-      padding: 20px 10px;
+      padding: 20px 0;
       &:after {
         content: "";
         clear: both;
@@ -306,10 +301,6 @@
       }
     }
     ul.pager {
-      position: absolute;
-      top: -32px;
-      right: 0px;
-      margin: 10px 5px;
       .pager-current {
         display: none;
       }

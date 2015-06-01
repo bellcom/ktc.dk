@@ -9511,28 +9511,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   padding-left: 0px;
   padding-right: 0px;
 }
-.darkgray-box,
-#section-page-with-filter-all-groups {
-  position: relative;
-  margin-bottom: 20px;
-}
-.darkgray-box h3,
-#section-page-with-filter-all-groups h3 {
-  border: none;
-  padding: 5px 0px 5px 20px;
-  font-size: 15px;
-  font-weight: normal;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #2c353a;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
 .darkgray-box .pane-content,
 #section-page-with-filter-all-groups .pane-content {
   color: #e9edee;
-  background-color: #2c353a;
-  position: relative;
 }
 .darkgray-box .pane-content a,
 #section-page-with-filter-all-groups .pane-content a {
@@ -9587,7 +9568,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .darkgray-box .pane-content .view-content,
 #section-page-with-filter-all-groups .pane-content .view-content {
-  padding: 20px 10px;
+  padding: 20px 0;
 }
 .darkgray-box .pane-content .view-content:after,
 #section-page-with-filter-all-groups .pane-content .view-content:after {
@@ -9606,13 +9587,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .darkgray-box .pane-content .view-content article.node--group--teaser h5 a:hover,
 #section-page-with-filter-all-groups .pane-content .view-content article.node--group--teaser h5 a:hover {
   color: #ffffff;
-}
-.darkgray-box .pane-content ul.pager,
-#section-page-with-filter-all-groups .pane-content ul.pager {
-  position: absolute;
-  top: -32px;
-  right: 0px;
-  margin: 10px 5px;
 }
 .darkgray-box .pane-content ul.pager .pager-current,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-current {
@@ -9751,6 +9725,21 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-aside-action .ktc-aside-heading .ktc-aside-title,
 .ktc-aside-action .ktc-aside-heading .ktc-aside-title > a {
   color: #ffffff;
+}
+.ktc-aside-dark {
+  position: relative;
+  background-color: #222b2f;
+}
+.ktc-aside-dark .ktc-aside-heading .ktc-aside-title {
+  font-weight: bold;
+}
+.ktc-aside-dark .contextual-links-region {
+  position: static;
+}
+.ktc-aside-dark .ktc-aside-body .pager {
+  position: absolute;
+  top: 6px;
+  right: 15px;
 }
 .ktc-block {
   background-color: transparent;
@@ -10648,10 +10637,12 @@ h6 + .ktc-date {
   height: auto;
 }
 .ktc-teaser .ktc-teaser-body .ktc-full-width-image {
+  margin-top: -10px;
   margin-left: -15px;
   margin-right: -15px;
 }
 .ktc-aside .ktc-aside-body .ktc-full-width-image {
+  margin-top: -10px;
   margin-left: -15px;
   margin-right: -15px;
 }

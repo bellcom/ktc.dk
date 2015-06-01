@@ -155,3 +155,43 @@
 	.ktc-mixin-aside-color(@ktc-color-red-background, @ktc-color-red-background-font);
 	background-color: @ktc-color-dark-content-background;
 }
+
+// Dark
+.ktc-aside-dark {
+	position: relative;
+	background-color: #222b2f;
+
+	// Heading
+	.ktc-aside-heading {
+
+		// Title
+		.ktc-aside-title {
+			font-weight: bold;
+		}
+	}
+
+	// Region
+	.contextual-links-region {
+		position: static;
+	}
+
+	// Body
+	.ktc-aside-body {
+
+		// Pager
+		.pager {
+			position: absolute;
+			top: 6px; // bad practice
+			right: @ktc-default-left-right-inner-spacing;
+		}
+
+		// Header
+		.view-header {}
+
+		// Content
+		.view-content {}
+
+		// Footer
+		.view-footer {}
+	}
+}
