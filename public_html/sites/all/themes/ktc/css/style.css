@@ -10439,6 +10439,11 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   border: 2px solid #fff;
   margin-top: -2px;
 }
+.ktc-content {
+  background-color: #ffffff;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .ktc-date {
   font-size: 14px;
   font-style: italic;
