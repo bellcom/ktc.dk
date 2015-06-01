@@ -28,6 +28,8 @@
 ?>
 <?php if ($content): ?>
   <header<?php print $attributes; ?>>
-    <?php print $content; ?>
+    <div class="container">
+      <?php print $content; ?>
+    </div>
   </header>
 <?php endif; ?>
