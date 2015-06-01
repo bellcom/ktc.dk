@@ -50,7 +50,6 @@
 
           <!-- Begin - navigation -->
           <ul class="ktc-header-top-bar-user-menu">
-            <?php print $content; ?>
 
             <?php if ($logged_in): ?>
 
@@ -73,6 +72,12 @@
               <!-- End - logout -->
 
             <?php else: ?>
+
+              <!-- Begin - login form -->
+              <li>
+                <?php print $content; ?>
+              </li>
+              <!-- End - login form -->
 
               <!-- Begin - login -->
               <li>
