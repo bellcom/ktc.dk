@@ -49,11 +49,8 @@
           <?php endif; ?>
 
           <!-- Begin - navigation -->
-          <form action=""></form>
           <ul class="ktc-header-top-bar-user-menu">
             <?php print $content; ?>
-
-
 
             <?php if ($logged_in): ?>
 
@@ -71,7 +68,7 @@
 
               <!-- Begin - logout -->
               <li>
-                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon-user-login"></span></a>
+                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon-user-logout"></span></a>
               </li>
               <!-- End - logout -->
 
