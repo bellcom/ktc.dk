@@ -29,35 +29,37 @@
 
     <!-- Begin - header top bar -->
     <div class="ktc-header-top-bar">
+        <div class="container">
 
-        <?php if ($page['logo']): ?>
-        <!-- Begin - logo -->
-        <div class="ktc-header-top-bar-logo">
-            <a class="logo pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
+          <?php if ($page['logo']): ?>
+            <!-- Begin - logo -->
+            <div class="ktc-header-top-bar-logo">
+              <a class="logo pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
                 <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
-            </a>
-        </div>
-        <!-- End - logo -->
-        <?php endif; ?>
-
-        <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
-            <div class="ktc-header-top-bar-add-content">
-                <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
-                <?php print $page['create_menu']; ?>
+              </a>
             </div>
-        <?php endif; ?>
+            <!-- End - logo -->
+          <?php endif; ?>
 
-        <!-- Begin - navigation -->
-        <ul class="ktc-header-top-bar-navigation">
+          <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
+            <div class="ktc-header-top-bar-add-content">
+              <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
+              <?php print $page['create_menu']; ?>
+            </div>
+          <?php endif; ?>
+
+          <!-- Begin - navigation -->
+          <ul class="ktc-header-top-bar-navigation">
             <?php print $content; ?>
 
             <!-- Begin - form - not logged in -->
             form
             <!-- End - form - not logged in -->
 
-        </ul>
-        <!-- End - navigation -->
+          </ul>
+          <!-- End - navigation -->
 
+        </div>
     </div>
     <!-- End - header top bar -->
 
