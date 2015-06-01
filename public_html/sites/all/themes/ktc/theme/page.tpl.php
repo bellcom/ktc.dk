@@ -73,26 +73,17 @@
  * @ingroup themeable
  */
 ?>
-<div class="header-region">
-  <div class="top_header">
-  <div class="container">
-    <div class="row">
-    <?php /* region--header_top.tpl.php */ ?>
-    <?php if ($page['header_top']): ?>
-      <?php print render($page['header_top']); ?>
-    <?php endif; ?>
-    </div>
-  </div>
-  </div>
-  <div class="navigation">
-  <div class="container">
-    <?php /* region--navigation.tpl.php */ ?>
-    <?php if ($page['navigation']): ?>
-      <?php print render($page['navigation']); ?>
-    <?php endif; ?>
-  </div>
-  </div>
-</div>
+<header class="header-region ktc-header">
+
+  <?php if ($page['header_top']): ?>
+    <?php print render($page['header_top']); ?>
+  <?php endif; ?>
+
+  <?php if ($page['navigation']): ?>
+    <?php print render($page['navigation']); ?>
+  <?php endif; ?>
+
+</header>
 
 <div class="main-container container margin-fixed">
 

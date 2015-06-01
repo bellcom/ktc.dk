@@ -32,23 +32,23 @@
 
         <?php if ($page['logo']): ?>
         <!-- Begin - logo -->
-        <div class="header-top-bar-logo">
+        <div class="ktc-header-top-bar-logo">
             <a class="logo pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
                 <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
             </a>
-
-            <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
-                <div class="ktc-header-top-bar-add-content">
-                    <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
-                    <?php print $page['create_menu']; ?>
-                </div>
-            <?php endif; ?>
         </div>
         <!-- End - logo -->
         <?php endif; ?>
 
+        <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
+            <div class="ktc-header-top-bar-add-content">
+                <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
+                <?php print $page['create_menu']; ?>
+            </div>
+        <?php endif; ?>
+
         <!-- Begin - navigation -->
-        <ul class="header-top-navigation">
+        <ul class="ktc-header-top-bar-navigation">
             <?php print $content; ?>
 
             <!-- Begin - form - not logged in -->

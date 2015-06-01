@@ -1,0 +1,78 @@
+// |--------------------------------------------------------------------------
+// | Header
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-header
+// |
+
+//== Top bar
+@ktc-header-top-bar-background-color: #fff;
+@ktc-header-top-bar-height: 50px;
+
+//== Logo
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Header
+.ktc-header {
+
+	// Top bar
+	.ktc-header-top-bar {
+		min-height: @ktc-header-top-bar-height;
+		background-color: @ktc-header-top-bar-background-color;
+
+		// Container
+		> .container {
+			position: relative;
+		}
+
+		// Logo
+		.ktc-header-top-bar-logo {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		// Button (add content)
+		.ktc-header-top-bar-add-content {
+			cursor: pointer;
+			float: left;
+			position: relative;
+
+			// Icon
+			.ktc-header-top-bar-add-content-icon {
+				display: inline-block;
+				.sprite(@node_add);
+			}
+			span {
+				padding: 5px 8px;
+				font-size: 13px;
+				line-height: 2em;
+				vertical-align: top;
+				font-weight: 700;
+			}
+			ul.create_content {
+				display: none;
+				margin: 0px 0px 0px 20px;
+				padding: 0px;
+				background-color: #fff;
+				z-index: 900;
+				position: absolute;
+				width: 110%;
+				-webkit-box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
+				-moz-box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
+				box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
+				li {
+					list-style: none;
+					padding: 2px 10px;
+					&:hover {
+						background-color: @gray-lighter;
+					}
+				}
+			}
+		}
+	}
+}
