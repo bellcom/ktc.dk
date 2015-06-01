@@ -29,13 +29,6 @@
       <?php print $content['left']; ?>
     </div>
 
-    <div class="col-sm-6 col-md-3 pane-right">
-      <?php print $content['right']; ?>
-    </div>
-
-  </div>
-
-  <div class="row">
     <div class="col-md-6 pane-center ktc-content">
 
       <?php if ($content['centertop']): ?>
@@ -65,6 +58,11 @@
       <?php endif ?>
 
     </div>
+
+    <div class="col-sm-6 col-md-3 pane-right">
+      <?php print $content['right']; ?>
+    </div>
+
   </div>
 
   <div class="row">
