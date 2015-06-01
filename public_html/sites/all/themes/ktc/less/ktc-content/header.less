@@ -11,6 +11,7 @@
 
 //== Logo
 @ktc-header-top-bar-logo-width: 140px;
+@ktc-header-top-bar-logo-height: 70px;
 
 // --------------------------------------------------
 // Top bar
@@ -24,15 +25,11 @@
 		min-height: @ktc-header-top-bar-height;
 		background-color: @ktc-header-top-bar-background-color;
 
-		// Container
-		> .container {
-			position: relative;
-		}
-
 		// Logo
 		.ktc-header-top-bar-logo {
 			float: left;
 			width: @ktc-header-top-bar-logo-width;
+			margin-bottom: floor(@ktc-header-top-bar-height - @ktc-header-top-bar-logo-height);
 
 			// Image
 			img {

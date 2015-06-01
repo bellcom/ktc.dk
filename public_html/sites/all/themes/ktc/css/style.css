@@ -10174,12 +10174,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   min-height: 50px;
   background-color: #ffffff;
 }
-.ktc-header .ktc-header-top-bar > .container {
-  position: relative;
-}
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo {
   float: left;
   width: 140px;
+  margin-bottom: -20px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo img {
   border: 0;
