@@ -10191,7 +10191,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   position: absolute;
   top: 0;
   left: 10px;
-  height: 70px;
   width: 140px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo img {
@@ -10242,7 +10241,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   background: #ffffff url("../images/bg_navigation.jpg") repeat-x;
 }
 .ktc-header .ktc-header-navigation .navbar-nav {
-  margin-left: 160px;
+  margin-left: 140px;
 }
 .ktc-header .ktc-header-navigation .navbar-nav > li > a {
   font-size: 16px;

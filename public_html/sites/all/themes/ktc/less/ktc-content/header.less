@@ -10,7 +10,6 @@
 @ktc-header-top-bar-height: 50px;
 
 //== Logo
-@ktc-header-top-bar-logo-height: 70px;
 @ktc-header-top-bar-logo-width: 140px;
 
 // --------------------------------------------------
@@ -35,7 +34,6 @@
 			position: absolute;
 			top: 0;
 			left: floor(@grid-gutter-width / 2);
-			height: @ktc-header-top-bar-logo-height;
 			width: @ktc-header-top-bar-logo-width;
 
 			// Image
@@ -75,6 +73,7 @@
 				-webkit-box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
 				-moz-box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
 				box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
+
 				li {
 					list-style: none;
 					padding: 2px 10px;
@@ -101,7 +100,7 @@
 
 		// Nav
 		.navbar-nav {
-			margin-left: floor( @ktc-header-top-bar-logo-width + @grid-gutter-width );
+			margin-left: @ktc-header-top-bar-logo-width;
 
 			// List item
 			> li {
