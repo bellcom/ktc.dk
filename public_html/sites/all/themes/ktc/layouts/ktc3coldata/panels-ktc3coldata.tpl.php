@@ -29,7 +29,7 @@
       <?php print $content['left']; ?>
     </div>
 
-    <div class="col-md-6 pane-center">
+    <div class="col-md-6">
       <div class="ktc-content">
 
         <?php if ($content['centertop']): ?>
@@ -55,6 +55,14 @@
               </div>
             <?php endif ?>
 
+          </div>
+        <?php endif ?>
+
+        <?php if ($content['center']): ?>
+          <div class="row">
+            <div class="col-xs-12 pane-center">
+              <?php print $content['center']; ?>
+            </div>
           </div>
         <?php endif ?>
 
