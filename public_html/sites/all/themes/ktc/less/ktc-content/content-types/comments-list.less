@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Comments
+// | Comments list
 // |--------------------------------------------------------------------------
 // |
 // | Contains the following:
-// | - .ktc-comments
+// | - .ktc-comments-list
 // |
 
 // --------------------------------------------------
@@ -11,16 +11,11 @@
 // --------------------------------------------------
 
 // User comments wrapper
-.ktc-comments-wrapper {
-	margin-left: -( @ktc-default-left-right-inner-spacing - @ktc-comments-container-left-right-margin );
-	margin-right: -( @ktc-default-left-right-inner-spacing - @ktc-comments-container-left-right-margin );
-	margin-bottom: -@ktc-comments-top-bottom-padding;
-	padding-left: ( @ktc-default-left-right-inner-spacing - @ktc-comments-container-left-right-margin );
-	padding-right: ( @ktc-default-left-right-inner-spacing - @ktc-comments-container-left-right-margin );
-	background-color: @ktc-comments-background-color;
+.ktc-comments-list {
+	.ktc-well;
 
-	// User comments
-	.ktc-comments {
+	// Comments list
+	.ktc-comments-list {
 		border-style: solid;
 		border-width: 2px;
 
