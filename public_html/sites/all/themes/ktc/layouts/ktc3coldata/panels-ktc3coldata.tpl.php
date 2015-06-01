@@ -17,51 +17,55 @@
 ?>
 <div class="row ktc3coldata" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
 
-  <div class="col-md-12 col-sm-12 col-xs-12 pane-top">
-    <div class="row">
+  <div class="col-xs-12 pane-top">
       <?php print $content['top']; ?>
-    </div>
   </div>
 
   <div class="col-md-3 col-sm-4 col-xs-12 pane-left">
     <?php print $content['left']; ?>
   </div>
 
-  <div class="col-md-3 col-sm-4 col-xs-12 col-md-push-6 col-sm-push-4  pane-right">
+  <div class="col-md-3 col-sm-4 col-xs-12 pane-right">
     <?php print $content['right']; ?>
   </div>
 
-  <div class="col-md-6 col-sm-4 col-xs-12 col-md-pull-3 col-sm-pull-4 pane-center ktc-content">
+  <div class="col-md-6 col-sm-4 col-xs-12 pane-center ktc-content">
 
-        <?php print $content['centertop']; ?>
+        <?php if ($content['centertop']): ?>
+        <div class="row">
+            <div class="col-xs-12">
+                <?php print $content['centertop']; ?>
+            </div>
+        </div>
+        <?php endif; ?>
 
         <?php if (isset($content['centerleft']) || isset($content['centerright'])): ?>
-        <div class="row col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
 
             <?php if (isset($content['centerleft'])): ?>
-            <div class="col-md-6 col-sm-6 col-xs-12 pane-centerleft">
+            <div class="col-sm-6 col-xs-12 pane-centerleft">
                 <?php print $content['centerleft']; ?>
             </div>
             <?php endif ?>
 
             <?php if (isset($content['centerright'])): ?>
-            <div class="col-md-6 col-sm-6 col-xs-12 pane-centerright">
+            <div class="col-sm-6 col-xs-12 pane-centerright">
                 <?php print $content['centerright']; ?>
             </div>
             <?php endif ?>
 
+        </div>
         <?php endif ?>
 
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12 pane-center">
+            <div class="col-xs-12 pane-center">
                 <?php print $content['center']; ?>
             </div>
         </div>
 
   </div>
-</div>
 
-  <div class="col-md-12 col-sm-12 col-xs-12 pane-bottom">
+  <div class="col-xs-12 pane-bottom">
     <?php print $content['bottom']; ?>
   </div>
 </div>
