@@ -10329,7 +10329,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-header .ktc-header-navigation {
   min-height: 92px;
-  background: #ffffff url("../images/bg_navigation.jpg") repeat-x;
+  background: #ffffff url("../images/bg_navigation.jpg") center top repeat-x;
 }
 .ktc-header .ktc-header-navigation .navbar-nav {
   margin-left: 140px;
@@ -10352,7 +10352,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   left: 0;
   right: 0;
   height: 231px;
-  background: url("../images/bg_body.jpg") top repeat-x;
+  background: url("../images/bg_body.jpg") center top repeat-x;
   border-top: 20px solid #fff;
   border-bottom: 10px solid #d5dcde;
 }
