@@ -10302,7 +10302,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-header .ktc-header-dropdown {
   display: none;
-  padding-top: 140px;
+  padding-top: 0px;
 }
 .ktc-header .ktc-header-dropdown.open {
   display: block;

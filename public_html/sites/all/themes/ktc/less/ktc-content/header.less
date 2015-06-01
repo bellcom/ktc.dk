@@ -168,7 +168,7 @@
 	// Dropdown
 	.ktc-header-dropdown {
 		display: none;
-		padding-top: floor(@ktc-header-top-bar-height + @ktc-header-top-bar-logo-height + @grid-gutter-width);
+		padding-top: floor( floor(@ktc-header-top-bar-height - @ktc-header-top-bar-logo-height ) + @grid-gutter-width);
 
 		// Open
 		&.open {
