@@ -10241,6 +10241,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   position: relative;
   cursor: pointer;
   float: left;
+  margin-top: 12px;
   margin-left: 10px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content .ktc-header-top-bar-add-content-icon {
