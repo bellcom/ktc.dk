@@ -10205,30 +10205,38 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-red .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
   margin-top: -6px;
 }
-.ktc-header-top-bar {
+.ktc-header .ktc-header-top-bar {
+  min-height: 50px;
   background-color: #ffffff;
-  margin-bottom: 20px;
 }
-.ktc-header-top-bar .ktc-header-top-bar-add-content {
+.ktc-header .ktc-header-top-bar > .container {
+  position: relative;
+}
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content {
   cursor: pointer;
   float: left;
   position: relative;
 }
-.ktc-header-top-bar .ktc-header-top-bar-add-content .ktc-header-top-bar-add-content-icon {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content .ktc-header-top-bar-add-content-icon {
   display: inline-block;
   background-image: url(../images/sprites.png);
   background-position: 0px -738px;
   width: 28px;
   height: 28px;
 }
-.ktc-header-top-bar .ktc-header-top-bar-add-content span {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content span {
   padding: 5px 8px;
   font-size: 13px;
   line-height: 2em;
   vertical-align: top;
   font-weight: 700;
 }
-.ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content {
   display: none;
   margin: 0px 0px 0px 20px;
   padding: 0px;
@@ -10240,33 +10248,12 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   -moz-box-shadow: 4px 4px 4px 0px #cccccc;
   box-shadow: 4px 4px 4px 0px #cccccc;
 }
-.ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content li {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content li {
   list-style: none;
   padding: 2px 10px;
 }
-.ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content li:hover {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content li:hover {
   background-color: #e9edee;
-}
-.ktc-header-top-bar .ktc-teaser-heading .ktc-teaser-title {
-  position: relative;
-  display: block;
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: inherit;
-  padding: 7px 15px;
-  margin-bottom: -7px;
-  text-transform: uppercase;
-}
-.ktc-header-top-bar .ktc-teaser-heading .ktc-teaser-title:before {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  content: "";
-}
-.ktc-header-top-bar .ktc-teaser-body {
-  padding: 5px 15px 10px;
 }
 .calendar-calendar td {
   text-align: center;
