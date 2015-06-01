@@ -33,28 +33,35 @@
  *
  * @ingroup themeable
  */
+
+global $user;
+$account = $elements['#account'];
 ?>
-<section class="user-teaser col-md-12 no-padding clearfix">
-  <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
-    <?php global $user; $account = $elements['#account']; ?>
-    <?php if ($user->uid == $account->uid): ?>
-      <div class="user-image ktc-red">
-    <?php else: ?>
-      <div class="user-image">
-    <?php endif; ?>
-      <?php print render($user_profile['user_picture']); ?>
-    </div>
+
+<!-- Begin - user profile teaser -->
+<section class="ktc-user-profile <?php if ($user->uid == $account->uid) { print 'ktc-red'; } ?>">
+
+  <!-- Begin - profile photo -->
+  <?php print render($user_profile['user_picture']); ?>
+  <!-- End - profile photo -->
+
+  <!-- Begin - profile content -->
+  <div class="ktc-user-profile-content">
+
+    <?php if (isset($user_name)): ?>
+    <h5><?php print $user_name; ?></h5>
+    <?php endif ?>
+
+    <?php if (isset($employer)): ?>
+    <p><?php print $employer; ?></p>
+    <?php endif ?>
+
+    <?php if (isset($job_title)): ?>
+    <p><?php print $job_title; ?></p>
+    <?php endif ?>
+
   </div>
-  <div class="col-md-9 col-sm-9 col-xs-9">
-    <div class="user-body">
-      <div class="employer">
-        <?php print $employer; ?>
-      </div>
-      <div class="user-name">
-        <?php print $user_name; ?>
-      </div>
-      <span><?php print $job_title; ?></span>
-    </div>
-  </div>
+  <!-- End - profile content -->
 
 </section>
+<!-- End - user profile teaser -->

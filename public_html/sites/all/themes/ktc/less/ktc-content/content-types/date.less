@@ -1,0 +1,62 @@
+// |--------------------------------------------------------------------------
+// | Date
+// |--------------------------------------------------------------------------
+// |
+// | Provide styling for dates.
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Date
+.ktc-date {
+	font-size: @ktc-date-font-size;
+	font-style: @ktc-date-font-style;
+	font-weight: @ktc-date-font-weight;
+}
+
+// Headlines
+h1, h2, h3, h4, h5, h6 {
+
+	// Date
+	+ .ktc-date {
+		margin-top: -3px;
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+.ktc-mixin-date(@color-font) {
+
+	// Date
+	&.ktc-date,
+	.ktc-date {
+		color: @color-font;
+	}
+}
+
+// Default
+.ktc-mixin-date(@ktc-color-green-font);
+
+// Green
+.ktc-green {
+	.ktc-mixin-date(@ktc-color-green-font);
+}
+
+// Blue
+.ktc-blue {
+	.ktc-mixin-date(@ktc-color-blue-font);
+}
+
+// Gold
+.ktc-gold {
+	.ktc-mixin-date(@ktc-color-gold-font);
+}
+
+// Red
+.ktc-red {
+	.ktc-mixin-date(@ktc-color-red-font);
+}

@@ -1,0 +1,120 @@
+// |--------------------------------------------------------------------------
+// | Button
+// |--------------------------------------------------------------------------
+// |
+// | Override some of Bootstraps default button styling.
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Button
+.btn {
+	min-width: 50px;
+	padding: 3px 15px;
+	border-radius: 20px; // Can this be done in percent?
+	border-width: 2px;
+	border-style: solid;
+
+	// Extra small
+	&.btn-xs {
+		min-width: 20px;
+		padding: 1px 6px;
+	}
+
+	// Small
+	&.btn-sm {
+		min-width: 25px;
+		padding: 2px 8px;
+	}
+
+	// Large
+	&.btn-lg {
+		min-width: 70px;
+		padding: 5px 25px;
+	}
+
+	// Active (class only)
+	&.active {
+		.box-shadow(none);
+	}
+
+	// Active (state only)
+	&:active {
+		.box-shadow(inset 0 2px 3px rgba(0, 0, 0, .1));
+	}
+}
+
+// Link (as button)
+a.btn {
+
+	// Normal, hover and focus state
+	&,
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Button
+.ktc-mixin-button(@background-color, @border-color, @font-color) {
+
+	// Same as passed into (probably .btn)
+	& {
+		background-color: @background-color;
+		color: @font-color;
+		border-color: @border-color;
+
+		// Hover state
+		&:hover {
+			background-color: darken(@background-color, 6%);
+			color: @font-color;
+			border-color: darken(@border-color, 7%);
+		}
+
+		// Active (by class only)
+		&.active {
+			border-color: darken(@border-color, 25%);
+		}
+	}
+}
+
+// Button
+.btn {
+
+	// Default and primary
+	&.btn-default,
+	&.btn-primary {
+		.ktc-mixin-button(@ktc-override-button-default-background-color, @ktc-override-button-default-border-color, @ktc-override-button-default-font-color);
+	}
+
+	// Success
+	&.btn-success {
+		.ktc-mixin-button(@ktc-override-button-success-background-color, @ktc-override-button-success-border-color, @ktc-override-button-success-font-color);
+	}
+
+	// Info
+	&.btn-info {
+		.ktc-mixin-button(@ktc-override-button-info-background-color, @ktc-override-button-info-border-color, @ktc-override-button-info-font-color);
+	}
+
+	// Danger
+	&.btn-danger {
+		.ktc-mixin-button(@ktc-override-button-danger-background-color, @ktc-override-button-danger-border-color, @ktc-override-button-danger-font-color);
+	}
+
+	// Warning
+	&.btn-warning {
+		.ktc-mixin-button(@ktc-override-button-warning-background-color, @ktc-override-button-warning-border-color, @ktc-override-button-warning-font-color);
+	}
+
+	// Action (our own for buttons inside actions)
+	&.btn-action {
+		//.ktc-mixin-button(@ktc-override-button-action-background-color, @ktc-override-button-action-border-color, @ktc-override-button-action-font-color);
+	}
+}

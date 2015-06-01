@@ -1123,7 +1123,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
   $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
   $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
-  /* Felt: Felt: Tags */
+  /* Felt: Felt: Stikord (Tags) */
   $handler->display->display_options['fields']['field_tags']['id'] = 'field_tags';
   $handler->display->display_options['fields']['field_tags']['table'] = 'field_data_field_tags';
   $handler->display->display_options['fields']['field_tags']['field'] = 'field_tags';
@@ -1314,7 +1314,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['fields']['field_topics']['alter']['text'] = '[field_topics]';
   $handler->display->display_options['fields']['field_topics']['delta_limit'] = '30';
   $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
-  /* Felt: Felt: Tags */
+  /* Felt: Felt: Stikord (Tags) */
   $handler->display->display_options['fields']['field_tags']['id'] = 'field_tags';
   $handler->display->display_options['fields']['field_tags']['table'] = 'field_data_field_tags';
   $handler->display->display_options['fields']['field_tags']['field'] = 'field_tags';
@@ -1400,7 +1400,7 @@ function ktc_user_profile_views_default_views() {
     t('Send besked om alle nye kommentarer fra alle "Mine Netværk".'),
     t('Send nyt fra "Mine netværk" (når der er nye indlæg, arrangementer, dokumenter, diskussioner mm.)'),
     t('Faglige emner'),
-    t('Tags'),
+    t('Stikord (Tags)'),
     t('Alle'),
     t('Block'),
     t('user profile left'),

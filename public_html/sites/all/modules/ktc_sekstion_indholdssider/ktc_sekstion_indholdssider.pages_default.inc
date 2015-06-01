@@ -123,7 +123,11 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -158,6 +162,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => 'panel-image',
+      'template_suggestion' => '',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -187,7 +192,11 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();

@@ -33,12 +33,12 @@
  */
 ?>
 <aside id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  	<?php print render($title_prefix); ?>
-  	<?php if ($block->subject): ?>
-    	<div class="block-heading panel-heading">
-			<h3 class=""><?php print $block->subject ?></h3>
-		</div>
-	<?php endif;?>
-    <?php print render($title_suffix); ?>
-	<div class=""><?php print $content ?></div>
+  <?php print render($title_prefix); ?>
+  <?php if ($block->subject): ?>
+    <div class="block-heading panel-heading">
+      <h3 class=""><?php print $block->subject ?></h3>
+    </div>
+  <?php endif;?>
+  <?php print render($title_suffix); ?>
+  <div class=""><?php print $content ?></div>
 </aside>

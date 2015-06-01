@@ -150,6 +150,7 @@ function ktc_user_profile_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => 'panel-block-aside pane-page-tabs col-md-12 col-xs-12',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 3;
@@ -172,6 +173,7 @@ function ktc_user_profile_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => 'col-md-12 col-sm-12 col-xs-12',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 4;

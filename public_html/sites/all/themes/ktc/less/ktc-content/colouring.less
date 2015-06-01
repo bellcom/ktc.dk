@@ -1,0 +1,73 @@
+// |--------------------------------------------------------------------------
+// | Colouring
+// |--------------------------------------------------------------------------
+// |
+// | Provide some color variables, so it's possible for content to change
+// | appearance depending on which container it's inside.
+// |
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Background color
+.ktc-mixin-background-color(@background-color, @font-color) {
+
+	// Background
+	&.ktc-color-background,
+	.ktc-color-background {
+		background-color: @background-color;
+
+		// Headlines
+		h1, h2, h3, h4, h5, h6 {
+			color: @font-color;
+		}
+
+		// Text
+		span,
+		p,
+		a {
+			color: @font-color;
+		}
+	}
+}
+
+// Font color
+.ktc-mixin-font-color(@font-color) {
+
+	// Font
+	&.ktc-color-font,
+	.ktc-color-font {
+		color: @font-color;
+	}
+}
+
+// Content colouring
+.ktc-mixin-content-colouring(@background-color, @background-font-color, @font-color) {
+
+	// Background color
+	.ktc-mixin-background-color(@background-color, @background-font-color);
+
+	// Font color
+	.ktc-mixin-font-color(@font-color);
+}
+
+// Red
+.ktc-red {
+	.ktc-mixin-content-colouring(@ktc-color-red-background, @ktc-color-red-background-font, @ktc-color-red-font);
+}
+
+// Blue
+.ktc-blue {
+	.ktc-mixin-content-colouring(@ktc-color-blue-background, @ktc-color-blue-background-font, @ktc-color-blue-font);
+}
+
+// Green
+.ktc-green {
+	.ktc-mixin-content-colouring(@ktc-color-green-background, @ktc-color-green-background-font, @ktc-color-green-font);
+}
+
+// Gold
+.ktc-gold {
+	.ktc-mixin-content-colouring(@ktc-color-gold-background, @ktc-color-gold-background-font, @ktc-color-gold-font);
+}

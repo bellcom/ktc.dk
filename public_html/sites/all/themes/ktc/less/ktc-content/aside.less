@@ -1,0 +1,137 @@
+// |--------------------------------------------------------------------------
+// | Aside
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-aside
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Aside
+.ktc-aside {
+	background-color: @ktc-color-light-content-background;
+	margin-bottom: @grid-gutter-width;
+
+	// Heading
+	.ktc-aside-heading {
+		background-color: @ktc-aside-heading-background-color;
+
+		// Title
+		.ktc-aside-title {
+			display: block;
+			padding: @ktc-aside-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			margin: 0;
+
+			// Title and link
+			&,
+			> a {
+				text-transform: uppercase;
+				font-family: @ktc-aside-title-font-family;
+				font-size: @ktc-aside-title-font-size;
+				font-weight: @ktc-aside-title-font-weight;
+				color: @ktc-aside-title-font-color;
+			}
+		}
+	}
+
+	// Body
+	.ktc-aside-body {
+		padding: @ktc-aside-body-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+	}
+}
+
+// Toggle
+.ktc-aside-toggle {
+
+	// Heading
+	> .ktc-aside-heading {
+
+		// Title
+		.ktc-aside-title {
+			position: relative;
+			cursor: pointer;
+			cursor: hand;
+			padding-right: floor( @ktc-default-left-right-inner-spacing + @ktc-icon-toggle-open-width );
+			.user-select(none);
+
+			// Toggle icon
+			&:after {
+				position: absolute;
+				display: block;
+				content: "";
+				top: 50%;
+				right: @ktc-default-left-right-inner-spacing;
+				margin-top: -(floor( @ktc-icon-toggle-open-height / 2 ));
+				.sprite(@ktc-icon-toggle-open);
+			}
+		}
+	}
+
+	// Closed
+	&.closed {
+
+		// Heading
+		> .ktc-aside-heading {
+
+			// Title
+			.ktc-aside-title {
+				padding-right: floor( @ktc-default-left-right-inner-spacing + @ktc-icon-toggle-closed-width );
+
+				// Toggle icon
+				&:after {
+					margin-top: -(floor( @ktc-icon-toggle-closed-height / 2 ));
+					.sprite(@ktc-icon-toggle-closed);
+				}
+			}
+		}
+
+		// Body
+		> .ktc-aside-body {
+			display: none;
+		}
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+.ktc-mixin-aside(@background-color, @font-color) {
+
+	// Aside
+	&.ktc-aside-color,
+	.ktc-aside-color {
+
+		// Heading
+		.ktc-aside-heading {
+			background-color: @background-color;
+
+			// Title
+			.ktc-aside-title {
+
+				// Title and link
+				&,
+				> a {
+					color: @font-color;
+				}
+			}
+		}
+	}
+}
+
+// Technique and environment (blue)
+.tech-env {
+	.ktc-mixin-aside(@ktc-color-blue-background, @ktc-color-blue-background-font);
+}
+
+// Network (gold)
+.og-context.og-context-node {
+	.ktc-mixin-aside(@ktc-color-gold-background, @ktc-color-gold-background-font);
+}
+
+// Not network (green)
+.no-network {
+	.ktc-mixin-aside(@ktc-color-green-background, @ktc-color-green-background-font);
+}

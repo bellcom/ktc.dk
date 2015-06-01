@@ -122,7 +122,7 @@ function _ktc_signup_block_get_cancel_link($signup) {
     $output .= l(t('Frameld'), "signup/cancel/$signup->sid/$signup_token",
                 array(
                   'query' => $destination,
-                  'attributes' => array('class' => array('btn', 'btn-blacknblue')),
+                  'attributes' => array('class' => array('btn', 'btn-default')),
                 ));
   }
   return $output;

@@ -1,0 +1,85 @@
+// |--------------------------------------------------------------------------
+// | Block
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-block
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Block
+.ktc-block {
+	background-color: transparent;
+
+	// Heading
+	.ktc-block-heading {
+	 	border-left-width: @ktc-block-heading-left-border-width;
+	 	border-left-style: solid;
+		background-color: @ktc-block-heading-background-color;
+
+		// Title
+		.ktc-block-title {
+			display: block;
+			padding: @ktc-block-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			padding-left: floor( @ktc-default-left-right-inner-spacing - @ktc-block-heading-left-border-width );
+			margin: 0;
+
+			// Title and link
+			&,
+			> a {
+				text-transform: uppercase;
+				font-family: @ktc-block-title-font-family;
+				font-size: @ktc-block-title-font-size;
+				font-weight: @ktc-block-title-font-weight;
+				color: @ktc-block-title-font-color;
+			}
+		}
+	}
+
+	// Body
+	.ktc-block-body {
+		padding: @ktc-block-body-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+.ktc-mixin-block(@border-color) {
+
+	// Block
+	&.ktc-block,
+	.ktc-block {
+
+		// Heading
+		.ktc-block-heading {
+			border-left-color: @border-color;
+		}
+	}
+}
+
+// Default
+.ktc-mixin-block(@ktc-color-green-background);
+
+// Green
+.ktc-block-green {
+	.ktc-mixin-block(@ktc-color-green-background);
+}
+
+// Blue
+.ktc-block-blue {
+	.ktc-mixin-block(@ktc-color-blue-background);
+}
+
+// Gold
+.ktc-block-gold {
+	.ktc-mixin-block(@ktc-color-gold-background);
+}
+
+// Red
+.ktc-block-red {
+	.ktc-mixin-block(@ktc-color-red-background);
+}

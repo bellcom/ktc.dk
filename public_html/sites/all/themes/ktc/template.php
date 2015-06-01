@@ -236,7 +236,18 @@ function ktc_preprocess_node(&$vars) {
         if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
             $vars['document_attachments'] = $media;
         }
+
+        // Title (shortened)
+        $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 60);
     }
+
+    // Teaser
+    if ( $vars['elements']['#view_mode'] == 'teaser' ) {
+
+        // Title (shortened)
+        $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 40);
+    }
+
 
   // Added user_name and user_object for node--teaser/teasercomments templates.
   $user = user_load($vars['uid']);
@@ -333,9 +344,6 @@ function ktc_preprocess_node(&$vars) {
             $hearing_type_term = taxonomy_term_load($hearing_type[0]['tid']);
             $vars['hearing_type'] = $hearing_type_term->name;
         }
-
-        // Title (shortened)
-        $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 50);
     }
 
     // Created (converted)
@@ -891,7 +899,7 @@ function ktc_preprocess_user_picture(&$variables) {
     if(isset($variables['account']->roles)) {
         if (is_array($variables['account']->roles)) {
             if (in_array('KTC VIP', $variables['account']->roles)) {
-                $variables['role_class'] = 'panel-user-photo-vip';
+                $variables['role_class'] = 'ktc-user-profile-photo-vip';
             }
         }
     }
