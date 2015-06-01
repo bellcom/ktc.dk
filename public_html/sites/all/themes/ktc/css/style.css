@@ -9506,11 +9506,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .page-user .pane-sidebar .pane-menu-menu-user-profile-menu .pane-content {
   padding-top: 0px;
 }
-.page-hoeringer #section-page-with-filter,
-.page-netvaerk #section-page-with-filter {
-  padding-left: 0px;
-  padding-right: 0px;
-}
 .darkgray-box .pane-content,
 #section-page-with-filter-all-groups .pane-content {
   color: #e9edee;
