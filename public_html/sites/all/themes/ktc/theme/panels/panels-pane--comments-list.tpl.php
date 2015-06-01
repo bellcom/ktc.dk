@@ -26,14 +26,6 @@
     <?php print $admin_links; ?>
   <?php endif; ?>
 
-  <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
-    <div class="ktc-comments-list-heading">
-      <h3 class="ktc-comments-list-title" <?php print $title_attributes; ?>><?php print $title; ?></h3>
-    </div>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
   <div class="ktc-comments-list-body pane-content">
     <?php print render($content); ?>
   </div>
