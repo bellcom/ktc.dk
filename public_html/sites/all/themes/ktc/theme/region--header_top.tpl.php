@@ -44,7 +44,7 @@
           <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
             <div class="ktc-header-top-bar-add-content">
               <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
-              <?php print $page['create_menu']; ?>
+              <?php /* print $page['create_menu']; */ ?>
             </div>
           <?php endif; ?>
 
@@ -53,7 +53,7 @@
             <?php print $content; ?>
 
             <!-- Begin - form - not logged in -->
-            form
+            <form action=""></form>
             <!-- End - form - not logged in -->
 
           </ul>
