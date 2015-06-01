@@ -15,7 +15,7 @@
  *   - $content['right']: Content in the right column.
  */
 ?>
-<div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   
   <div class="row">
     <div class="col-xs-12 pane-top">
