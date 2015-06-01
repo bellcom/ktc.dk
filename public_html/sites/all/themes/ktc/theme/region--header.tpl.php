@@ -27,7 +27,11 @@
  */
 ?>
 <?php if ($content): ?>
-  <header<?php print $attributes; ?>>
-    <?php print $content; ?>
+  <header class="ktc-header-dropdown" <?php print $attributes; ?>>
+    <div class="container">
+      <div class="row">
+        <?php print $content; ?>
+      </div>
+    </div>
   </header>
 <?php endif; ?>

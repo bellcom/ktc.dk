@@ -1681,7 +1681,7 @@ output {
   padding-top: 7px;
   font-size: 12px;
   line-height: 1.42857143;
-  color: #30353c;
+  color: #2c353a;
 }
 .form-control {
   display: block;
@@ -1690,10 +1690,10 @@ output {
   padding: 6px 12px;
   font-size: 12px;
   line-height: 1.42857143;
-  color: #30353c;
-  background-color: #ffffff;
+  color: #2c353a;
+  background-color: #e9edee;
   background-image: none;
-  border: 1px solid #cccccc;
+  border: 1px solid #e9edee;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -1701,10 +1701,10 @@ output {
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #66afe9;
+  border-color: #becacd;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(190, 202, 205, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(190, 202, 205, 0.6);
 }
 .form-control::-moz-placeholder {
   color: #848e92;
@@ -1720,7 +1720,7 @@ output {
 .form-control[readonly],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
-  background-color: #e9edee;
+  background-color: #ccd5d8;
   opacity: 1;
 }
 textarea.form-control {
@@ -3370,10 +3370,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 12px;
   font-weight: normal;
   line-height: 1;
-  color: #30353c;
+  color: #2c353a;
   text-align: center;
   background-color: #e9edee;
-  border: 1px solid #cccccc;
+  border: 1px solid #e9edee;
   border-radius: 4px;
 }
 .input-group-addon.input-sm {

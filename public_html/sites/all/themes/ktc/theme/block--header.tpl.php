@@ -32,18 +32,25 @@
  * @ingroup themeable
  */
 ?>
-<section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix "<?php print $attributes; ?>>
-  <?php print render($title_suffix); ?>
-    <div class="block-heading">
-      <?php if ($block->region == 'header' || $block->region == 'footer'): ?>
-        <i class="title-left"></i>
-      <?php endif; ?>
-      <h3 class="panel-title">
-        <?php if ($block->region == 'header'): ?>
-          <?php //$title = substr(0, 18, $title) . '...'; ?>
-        <?php endif; ?>
-        <?php print $title; ?>
-      </h3>
+
+<!-- Begin - block -->
+<aside class="<?php print $classes; ?> ktc-block" id="<?php print $block_html_id; ?>" <?php print $attributes; ?>>
+
+  <?php print render($title_prefix); ?>
+  <?php if ($block->subject): ?>
+    <!-- Begin - heading -->
+    <div class="ktc-block-heading">
+      <h3 class="ktc-block-title"><?php print $block->subject ?></h3>
     </div>
-  <?php print $content ?>
-</section>
+    <!-- End - heading -->
+  <?php endif;?>
+  <?php print render($title_suffix); ?>
+
+  <!-- Begin - body -->
+  <div class="ktc-block-body">
+    <?php print $content ?>
+  </div>
+  <!-- End - body -->
+
+</aside>
+<!-- End - block -->
