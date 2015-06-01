@@ -11078,7 +11078,7 @@ h6 + .ktc-date {
   background-color: transparent;
   border: 0;
   border-radius: 0;
-  padding: 10px 15px;
+  padding: 10px 0;
   border-bottom: 1px solid #e0e4e5;
 }
 .ktc-node-header .ktc-node-header-button {
