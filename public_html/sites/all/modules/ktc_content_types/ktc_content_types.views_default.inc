@@ -174,7 +174,17 @@ function ktc_content_types_views_default_views() {
   /* Display: Titel, type og type */
   $handler = $view->new_display('panel_pane', 'Titel, type og type', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'ktc-content-header';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Type */
+  $handler->display->display_options['fields']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['fields']['type_1']['table'] = 'node';
+  $handler->display->display_options['fields']['type_1']['field'] = 'type';
+  $handler->display->display_options['fields']['type_1']['label'] = '';
+  $handler->display->display_options['fields']['type_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type_1']['machine_name'] = TRUE;
   /* Felt: Indhold: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
@@ -182,7 +192,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['type']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['type']['element_wrapper_class'] = 'contenttype-icon';
+  $handler->display->display_options['fields']['type']['element_wrapper_class'] = 'contenttype-icon ktc-list-icon-[type_1]';
   $handler->display->display_options['fields']['type']['element_default_classes'] = FALSE;
   /* Felt: Indhold: Arrangementstype */
   $handler->display->display_options['fields']['field_arrangement_type']['id'] = 'field_arrangement_type';
