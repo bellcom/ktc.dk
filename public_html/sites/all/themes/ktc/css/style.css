@@ -10224,6 +10224,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content li:hover {
   background-color: #e9edee;
 }
+.ktc-header .ktc-header-navigation {
+  background: #ffffff url("../images/bg_navigation.jpg") repeat-x;
+}
 .calendar-calendar td {
   text-align: center;
 }
