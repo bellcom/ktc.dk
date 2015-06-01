@@ -10239,11 +10239,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-wrapper .ktc-wrapper-background {
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 0;
   right: 0;
   height: 231px;
   background: url("../images/bg_body.jpg") top repeat-x;
+  border-top: 20px solid #fff;
+  border-bottom: 10px solid #d5dcde;
 }
 .calendar-calendar td {
   text-align: center;
