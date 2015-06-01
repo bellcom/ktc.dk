@@ -1,6 +1,6 @@
 <?php
 /**
- * @file panels-pane--aside.tpl.php
+ * @file panels-pane--content.tpl.php
  * Main panel pane template
  *
  * Variables available:
@@ -34,7 +34,7 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
-  <div class="pane-content ">
+  <div class="pane-content">
     <?php print render($content); ?>
   </div>
 

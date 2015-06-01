@@ -1,6 +1,6 @@
 <?php
 /**
- * @file panels-pane--comment.tpl.php
+ * @file panels-pane--comments-list.tpl.php
  * Main panel pane template
  *
  * Variables available:
@@ -26,15 +26,7 @@
     <?php print $admin_links; ?>
   <?php endif; ?>
 
-  <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
-    <div class="ktc-aside-heading">
-      <h3 class="ktc-aside-title" <?php print $title_attributes; ?>><?php print $title; ?></h3>
-    </div>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
-  <div class="ktc-aside-body pane-content">
+  <div class="ktc-comments-list-body pane-content">
     <?php print render($content); ?>
   </div>
 

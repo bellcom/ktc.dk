@@ -10,67 +10,94 @@
 // Styling
 // --------------------------------------------------
 
-// User comments wrapper
+// Comments list
 .ktc-comments-list {
 	.ktc-well;
 
-	// Comments list
-	.ktc-comments-list {
-		border-style: solid;
-		border-width: 2px;
+	// Heading
+	.ktc-comments-list-heading {
 
-		// Photo container
-		.ktc-user-profile-photo-container {
-			float: left;
+		// Title
+		.ktc-comments-list-title {}
+	}
 
-			// Photo
-			img {
-				display: inherit;
-				height: auto;
-				width: auto;
-				max-width: 48px;
-				max-height: 48px;
-				border-radius: 100%;
-				border-width: @ktc-comments-photo-border-width;
-				border-style: solid;
-				border-color: @ktc-comments-default-photo-border-color;
-				background-color: transparent;
-				margin-right: @ktc-comments-photo-content-spacing;
-				padding: @ktc-comments-photo-border-distance;
-			}
-		}
+	// Body
+	.ktc-comments-list-body {
 
-		// Content
-		.ktc-comments-content {
-			display: inherit;
+		// List item
+		.ktc-comments-list-item {
 
-			// Headlines
-			h1, h2, h3, h4, h5, h6 {
-				font-family: @font-family-base;
-				font-size: @font-size-base;
-				margin-top: 0;
-				padding-top: 0;
-				margin-bottom: 1px;
-				color: @ktc-comments-default-photo-headline-color;
+			// Photo container
+			.ktc-user-profile-photo-container {
+				float: left;
 
-				// Date (span)
-				span {
-					font-weight: normal;
-					margin-left: 5px;
-
-					// EM
-					> em {
-						font-style: normal;
-					}
+				// Photo
+				img {
+					display: inherit;
+					height: auto;
+					width: auto;
+					max-width: 48px;
+					max-height: 48px;
+					border-radius: 100%;
+					border-width: @ktc-comments-photo-border-width;
+					border-style: solid;
+					border-color: @ktc-comments-default-photo-border-color;
+					background-color: transparent;
+					margin-right: @ktc-comments-photo-content-spacing;
+					padding: @ktc-comments-photo-border-distance;
 				}
 			}
-		}
 
-		// Clearfix
-		&:extend(.clearfix all);
+			// Content
+			.ktc-comments-content {
+				display: inherit;
+
+				// Headlines
+				h1, h2, h3, h4, h5, h6 {
+					font-family: @font-family-base;
+					font-size: @font-size-base;
+					margin-top: 0;
+					padding-top: 0;
+					margin-bottom: 1px;
+					color: @ktc-comments-default-photo-headline-color;
+
+					// Date (span)
+					span {
+						font-weight: normal;
+						margin-left: 5px;
+
+						// EM
+						> em {
+							font-style: normal;
+						}
+					}
+				}
+
+				// Date
+				.ktc-date {
+					color: @ktc-override-headline-color;
+					font-size: @font-size-base;
+				}
+			}
+
+			// Link
+			.ktc-comments-list-links {
+
+				// Links
+				a {
+					.btn;
+					.ktc-mixin-button(@ktc-override-button-default-background-color, @ktc-override-button-default-border-color, @ktc-override-button-default-font-color);
+				}
+			}
+
+			// Stacked
+			+ .ktc-comments-list-item {
+				border: 2px solid #fff;
+				margin-top: -2px;
+			}
+
+			// Clearfix
+			&:extend(.clearfix all);
+		}
 	}
 }
-
-// --------------------------------------------------
-// Mixins
-// --------------------------------------------------
