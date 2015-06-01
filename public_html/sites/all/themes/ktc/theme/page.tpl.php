@@ -88,8 +88,9 @@
 </header>
 <!-- End - header -->
 
-<!-- Begin - content -->
-<div id="wrapper">
+<!-- Begin - wrapper -->
+<div id="wrapper" class="ktc-wrapper">
+  <div class="ktc-wrapper-background"></div>
   <div class="container">
 
     <?php /* region--header.tpl.php */ ?>
@@ -125,7 +126,7 @@
 
   </div>
 </div>
-<!-- End - content -->
+<!-- End - wrapper -->
 
 <?php /* region--footer.tpl.php */ ?>
 <?php print render($page['footer']); ?>

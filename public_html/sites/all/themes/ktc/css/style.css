@@ -10227,6 +10227,17 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-header .ktc-header-navigation {
   background: #ffffff url("../images/bg_navigation.jpg") repeat-x;
 }
+.ktc-wrapper {
+  position: relative;
+}
+.ktc-wrapper .ktc-wrapper-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 231px;
+  background: url("../images/bg_navigation.jpg") top repeat-x;
+}
 .calendar-calendar td {
   text-align: center;
 }
