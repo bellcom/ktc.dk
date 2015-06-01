@@ -10,64 +10,79 @@
 // Styling
 // --------------------------------------------------
 
-// User comments wrapper
+// Comments list
 .ktc-comments-list {
 	.ktc-well;
 
-	// Comments list
-	.ktc-comments-list {
-		border-style: solid;
-		border-width: 2px;
+	// Heading
+	.ktc-comments-list-heading {
 
-		// Photo container
-		.ktc-user-profile-photo-container {
-			float: left;
+		// Title
+		.ktc-comments-list-title {}
+	}
 
-			// Photo
-			img {
-				display: inherit;
-				height: auto;
-				width: auto;
-				max-width: 48px;
-				max-height: 48px;
-				border-radius: 100%;
-				border-width: @ktc-comments-photo-border-width;
-				border-style: solid;
-				border-color: @ktc-comments-default-photo-border-color;
-				background-color: transparent;
-				margin-right: @ktc-comments-photo-content-spacing;
-				padding: @ktc-comments-photo-border-distance;
+	// Body
+	.ktc-comments-list-body {
+
+		// List item
+		.ktc-comments-list-item {
+
+			// Photo container
+			.ktc-user-profile-photo-container {
+				float: left;
+
+				// Photo
+				img {
+					display: inherit;
+					height: auto;
+					width: auto;
+					max-width: 48px;
+					max-height: 48px;
+					border-radius: 100%;
+					border-width: @ktc-comments-photo-border-width;
+					border-style: solid;
+					border-color: @ktc-comments-default-photo-border-color;
+					background-color: transparent;
+					margin-right: @ktc-comments-photo-content-spacing;
+					padding: @ktc-comments-photo-border-distance;
+				}
 			}
-		}
 
-		// Content
-		.ktc-comments-content {
-			display: inherit;
+			// Content
+			.ktc-comments-body {
+				display: inherit;
 
-			// Headlines
-			h1, h2, h3, h4, h5, h6 {
-				font-family: @font-family-base;
-				font-size: @font-size-base;
-				margin-top: 0;
-				padding-top: 0;
-				margin-bottom: 1px;
-				color: @ktc-comments-default-photo-headline-color;
+				// Headlines
+				h1, h2, h3, h4, h5, h6 {
+					font-family: @font-family-base;
+					font-size: @font-size-base;
+					margin-top: 0;
+					padding-top: 0;
+					margin-bottom: 1px;
+					color: @ktc-comments-default-photo-headline-color;
 
-				// Date (span)
-				span {
-					font-weight: normal;
-					margin-left: 5px;
+					// Date (span)
+					span {
+						font-weight: normal;
+						margin-left: 5px;
 
-					// EM
-					> em {
-						font-style: normal;
+						// EM
+						> em {
+							font-style: normal;
+						}
 					}
 				}
 			}
-		}
 
-		// Clearfix
-		&:extend(.clearfix all);
+			// Stacked
+			+ .ktc-comments-list-item {
+				border: 2px solid #fff;
+				margin-top: -2px;
+			}
+
+			// Clearfix
+			&:extend(.clearfix all);
+		}
 	}
 }
 

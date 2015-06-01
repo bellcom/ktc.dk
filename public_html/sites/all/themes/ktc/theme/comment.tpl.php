@@ -59,19 +59,8 @@
  * @ingroup themeable
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<div class="ktc-comments-list-item <?php print $classes; ?>"<?php print $attributes; ?>>
 
-
-  asdads
-  ads
-  das
-  asd
-
-  ads
-  ad
-  as
-
-  asd
   <?php print $picture ?>
 
   <?php if ($new): ?>
