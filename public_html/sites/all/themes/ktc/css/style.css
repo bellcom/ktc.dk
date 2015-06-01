@@ -9455,14 +9455,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   margin-left: 0px;
   margin-right: 0px;
 }
-.page-kalender .main-container.container .region-content .pane-content,
-.page-hoeringer .main-container.container .region-content .pane-content,
-.page-netvaerk .main-container.container .region-content .pane-content,
-.page-nyheder .main-container.container .region-content .pane-content,
-.page-teksnik-miljoe .main-container.container .region-content .pane-content {
-  padding-left: 0px;
-  padding-right: 0px;
-}
 @media (max-width: 767px) {
   .page-kalender .main-container.container .region-content .pane-content.col-sm-pull-4,
   .page-hoeringer .main-container.container .region-content .pane-content.col-sm-pull-4,
