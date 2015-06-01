@@ -53,8 +53,49 @@
           <ul class="ktc-header-top-bar-user-menu">
             <?php print $content; ?>
 
-            <!-- Begin - form - not logged in -->
-            <!-- End - form - not logged in -->
+
+
+            <?php if ($logged_in): ?>
+
+              <!-- Begin - toggle -->
+              <li>
+                <a href="#"><span class="ktc-header-top-bar-user-menu-icon-toggle"></span></a>
+              </li>
+              <!-- End - toggle -->
+
+              <!-- Begin - settings -->
+              <li>
+                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon-settings"></span></a>
+              </li>
+              <!-- End - settings -->
+
+              <!-- Begin - logout -->
+              <li>
+                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon-user-login"></span></a>
+              </li>
+              <!-- End - logout -->
+
+            <?php else ?>
+
+              <!-- Begin - login -->
+              <li>
+                <a href="/user/create"><span class="ktc-header-top-bar-user-menu-icon-user-login"></span></a>
+              </li>
+              <!-- End - login -->
+
+              <!-- Begin - create user -->
+              <li>
+                <a href="/user/create"><span class="ktc-header-top-bar-user-menu-icon-user-create"></span></a>
+              </li>
+              <!-- End - create user -->
+
+            <?php endif ?>
+
+            <!-- Begin - search -->
+            <li>
+              <a href="/search"><span class="ktc-header-top-bar-user-menu-icon-search"></span></a>
+            </li>
+            <!-- End - search -->
 
           </ul>
           <!-- End - navigation -->
