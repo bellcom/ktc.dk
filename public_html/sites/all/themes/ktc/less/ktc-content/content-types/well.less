@@ -1,3 +1,11 @@
-.ktc-well {
+// Variables
+@ktc-well-inner-spacing: 5px;
 
+// Well
+.ktc-well {
+	margin-left: -( floor(@ktc-default-left-right-inner-spacing - @ktc-well-inner-spacing));
+	margin-right: -( floor(@ktc-default-left-right-inner-spacing - @ktc-well-inner-spacing));
+	padding-left: floor(@ktc-default-left-right-inner-spacing - @ktc-well-inner-spacing);
+	padding-right: floor(@ktc-default-left-right-inner-spacing - @ktc-well-inner-spacing);
+	background-color: @body-bg;
 }

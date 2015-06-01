@@ -10378,6 +10378,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .view .date-next {
   background-color: transparent;
 }
+.ktc-comments-list {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #e9edee;
+}
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-user-profile-photo-container {
   float: left;
 }
@@ -10886,6 +10893,13 @@ h6 + .ktc-date {
   background-position: 0px -1229px;
   width: 93px;
   height: 93px;
+}
+.ktc-well {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #e9edee;
 }
 .btn {
   min-width: 50px;
