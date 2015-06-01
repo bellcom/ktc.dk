@@ -61,7 +61,7 @@
 
               <!-- Begin - settings -->
               <li>
-                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-settings"></span></a>
+                <a href="/user"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-settings"></span></a>
               </li>
               <!-- End - settings -->
 
@@ -87,7 +87,7 @@
 
               <!-- Begin - create user -->
               <li>
-                <a href="/user/create"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-create"></span></a>
+                <a href="/user/register"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-create"></span></a>
               </li>
               <!-- End - create user -->
 
