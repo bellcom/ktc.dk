@@ -11,7 +11,6 @@
 
     // Header - add content
     $('.ktc-header-top-bar-add-content').click(function(element) {
-        element.preventDefault();
 
         // Toggle menu
         $(this).toggleClass('open');
