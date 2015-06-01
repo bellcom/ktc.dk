@@ -627,7 +627,7 @@ function ktc_menu_local_task($variables) {
 function ktc_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   if (isset($data['tabs'][0]['output'])) {
     foreach ($data['tabs'][0]['output'] as $key => &$item) {
-      $item['#link']['localized_options']['attributes']['class'][] = 'col-md-12 col-sm-12 col-xs-12';
+      $item['#link']['localized_options']['attributes']['class'][] = 'btn btn-default';
     }
   }
 }
