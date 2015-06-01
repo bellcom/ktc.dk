@@ -5646,7 +5646,9 @@ button.close {
 .ktc-footer:before,
 .ktc-footer:after,
 .ktc-user-profile:before,
-.ktc-user-profile:after {
+.ktc-user-profile:after,
+.ktc-node-header:before,
+.ktc-node-header:after {
   content: " ";
   display: table;
 }
@@ -5666,7 +5668,8 @@ button.close {
 .modal-footer:after,
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item:after,
 .ktc-footer:after,
-.ktc-user-profile:after {
+.ktc-user-profile:after,
+.ktc-node-header:after {
   clear: both;
 }
 .center-block {
@@ -11070,6 +11073,132 @@ h6 + .ktc-date {
   padding-left: 10px;
   padding-right: 10px;
   background-color: #e9edee;
+}
+.ktc-node-header {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e0e4e5;
+}
+.ktc-node-header .ktc-node-header-button {
+  position: relative;
+  color: #2c353a;
+  float: left;
+}
+.ktc-node-header .ktc-node-header-button + .ktc-node-header-button {
+  margin-left: 10px;
+}
+.ktc-node-header .ktc-node-header-button.pull-right {
+  float: right;
+}
+.ktc-node-header .ktc-node-header-button:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+  margin-right: 10px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-comment {
+  padding-left: 20px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-comment:before {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -107px;
+  width: 15px;
+  height: 14px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-viewers {
+  padding-left: 28px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-viewers:before {
+  margin-top: -5px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -43px;
+  width: 23px;
+  height: 11px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-hearing {
+  padding-left: 14px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-hearing:before {
+  margin-top: -8px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -256px;
+  width: 9px;
+  height: 16px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-forum_post {
+  padding-left: 20px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-forum_post:before {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -79px;
+  width: 15px;
+  height: 14px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-article {
+  padding-left: 16px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-article:before {
+  margin-top: -5px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -32px;
+  width: 11px;
+  height: 11px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-meeting_doodle {
+  padding-left: 21px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-meeting_doodle:before {
+  margin-top: -6px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -66px;
+  width: 16px;
+  height: 13px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-os2web_base_news {
+  padding-left: 20px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-os2web_base_news:before {
+  margin-top: -8px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -272px;
+  width: 15px;
+  height: 16px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-private {
+  padding-left: 16px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-private:before {
+  margin-top: -6px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -54px;
+  width: 11px;
+  height: 12px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-arrangement {
+  padding-left: 19px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-arrangement:before {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -93px;
+  width: 14px;
+  height: 14px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-document {
+  padding-left: 17px;
+}
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-document:before {
+  margin-top: -8px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -288px;
+  width: 12px;
+  height: 16px;
 }
 .btn {
   min-width: 50px;

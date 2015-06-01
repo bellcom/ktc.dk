@@ -1,0 +1,159 @@
+// |--------------------------------------------------------------------------
+// | Footer
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-node-header
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Footer
+.ktc-node-header {
+	background-color: @ktc-type-node-header-background-color;
+	border: 0;
+	border-radius: 0;
+	padding: @ktc-type-node-header-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+	border-bottom: 1px solid #e0e4e5;
+
+	// Button
+	.ktc-node-header-button {
+		position: relative;
+		color: @ktc-default-color-headline;
+		float: left;
+
+		// Additional elements
+		+ .ktc-node-header-button {
+			margin-left: 10px;
+		}
+
+		// Right
+		&.pull-right {
+			float: right;
+		}
+
+		// Icon
+		&:before {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			content: "";
+			margin-right: 10px;
+		}
+
+		// Comment
+		&.ktc-node-header-button-comment {
+			padding-left: floor( @ktc-icon-comment-width + @ktc-type-node-header-icon-spacing );
+
+			// Icon
+			&:before {
+				margin-top: -(floor( @ktc-icon-comment-height / 2 ));
+				.sprite(@ktc-icon-comment);
+			}
+		}
+
+		// Viewers
+		&.ktc-node-header-button-viewers {
+			padding-left: floor( @ktc-icon-viewers-width + @ktc-type-node-header-icon-spacing );
+
+			// Icon
+			&:before {
+				margin-top: -(floor( @ktc-icon-viewers-height / 2 ));
+				.sprite(@ktc-icon-viewers);
+			}
+		}
+
+		// Hearing
+		&.ktc-node-header-button-hearing {
+			padding-left: floor( @ktc-icon-hearing-width + @ktc-type-node-header-icon-spacing );
+
+			// Icon
+			&:before {
+				margin-top: -(floor( @ktc-icon-hearing-height / 2 ));
+				.sprite(@ktc-icon-hearing);
+			}
+		}
+
+		// Forum
+		&.ktc-node-header-button-forum_post {
+			padding-left: floor( @ktc-icon-forum-width + @ktc-type-node-header-icon-spacing );
+
+			// Icon
+			&:before {
+				margin-top: -(floor( @ktc-icon-forum-height / 2 ));
+				.sprite(@ktc-icon-forum);
+			}
+		}
+
+		// Article
+		&.ktc-node-header-button-article {
+			padding-left: floor( @ktc-icon-article-width + @ktc-type-node-header-icon-spacing );
+
+			// Icon
+			&:before {
+				margin-top: -(floor( @ktc-icon-article-height / 2 ));
+				.sprite(@ktc-icon-article);
+			}
+		}
+
+		// Vote
+		&.ktc-node-header-button-meeting_doodle {
+			padding-left: floor( @ktc-icon-vote-width + @ktc-type-node-header-icon-spacing );
+
+			// Icon
+			&:before {
+				margin-top: -(floor( @ktc-icon-vote-height / 2 ));
+				.sprite(@ktc-icon-vote);
+			}
+		}
+
+		// News
+		&.ktc-node-header-button-os2web_base_news {
+			padding-left: floor( @ktc-icon-news-width + @ktc-type-node-header-icon-spacing );
+
+			// Icon
+			&:before {
+				margin-top: -(floor( @ktc-icon-news-height / 2 ));
+				.sprite(@ktc-icon-news);
+			}
+		}
+
+		// Private
+		&.ktc-node-header-button-private {
+			padding-left: floor( @ktc-icon-private-width + @ktc-type-node-header-icon-spacing );
+
+			// Icon
+			&:before {
+				margin-top: -(floor( @ktc-icon-private-height / 2 ));
+				.sprite(@ktc-icon-private);
+			}
+		}
+
+		// Arrangement
+		&.ktc-node-header-button-arrangement {
+			padding-left: floor( @ktc-icon-arrangement-width + @ktc-type-node-header-icon-spacing );
+
+			// Icon
+			&:before {
+				margin-top: -(floor( @ktc-icon-arrangement-height / 2 ));
+				.sprite(@ktc-icon-arrangement);
+			}
+		}
+
+		// Document
+		&.ktc-node-header-button-document {
+			padding-left: floor( @ktc-icon-document-width + @ktc-type-node-header-icon-spacing );
+
+			// Icon
+			&:before {
+				margin-top: -(floor( @ktc-icon-document-height / 2 ));
+				.sprite(@ktc-icon-document);
+			}
+		}
+	}
+
+	// Clearfix
+	&:extend(.clearfix all);
+}
