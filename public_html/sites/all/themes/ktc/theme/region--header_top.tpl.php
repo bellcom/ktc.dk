@@ -27,43 +27,40 @@
 ?>
 <?php if ($page['logo'] || $page['site_name'] || $page['primary_nav'] || $page['secondary_nav'] || $content): ?>
 
-    <!-- Begin - header top -->
-    <div class="header-top-bar col-xs-12">
+    <!-- Begin - header top bar -->
+    <div class="ktc-header-top-bar">
+        <div class="container">
 
-        <?php if ($page['logo']): ?>
-        <!-- Begin - logo -->
-        <div class="header-top-bar-logo">
-            <a class="logo pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
+          <?php if ($page['logo']): ?>
+            <!-- Begin - logo -->
+            <div class="ktc-header-top-bar-logo">
+              <a class="logo pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
                 <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
-            </a>
-        </div>
-        <!-- End - logo -->
-        <?php endif; ?>
+              </a>
+            </div>
+            <!-- End - logo -->
+          <?php endif; ?>
 
-        <!-- Begin - navigation -->
-        <ul class="header-top-navigation">
+          <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
+            <div class="ktc-header-top-bar-add-content">
+              <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
+              <?php /* print $page['create_menu']; */ ?>
+            </div>
+          <?php endif; ?>
+
+          <!-- Begin - navigation -->
+          <ul class="ktc-header-top-bar-navigation">
+            <?php print $content; ?>
 
             <!-- Begin - form - not logged in -->
-            form
+            <form action=""></form>
             <!-- End - form - not logged in -->
 
-        </ul>
-        <!-- End - navigation -->
+          </ul>
+          <!-- End - navigation -->
 
+        </div>
     </div>
-    <!-- End - header top -->
+    <!-- End - header top bar -->
 
-
-  <div class="col-md-10 col-sm-9 col-xs-12 header_top_content">
-    <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
-    <div class="header-add-content"><i class="icon-add-content"></i><span>OPRET INDHOLD</span>
-      <?php print $page['create_menu']; ?>
-    </div>
-
-    <?php endif; ?>
-    <?php print $content; ?>
-  </div>
-  </div>
-</div>
-</div>
 <?php endif; ?>

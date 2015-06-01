@@ -22,7 +22,7 @@
                 <a class="btn btn-default" href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print t('Afgiv stemme'); ?></a>
             </div>
 
-            <div class="ktc-comments">
+            <div class="ktc-comments-wrapper">
                 <?php if (isset($comments_view)): ?>
                     <?php print $comments_view; ?>
                 <?php endif ?>
