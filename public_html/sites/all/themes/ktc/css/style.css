@@ -10435,6 +10435,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-content h6 span > em {
   font-style: normal;
 }
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-content .ktc-date {
+  color: #2c353a;
+  font-size: 12px;
+}
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a {
   display: inline-block;
   margin-bottom: 0;
