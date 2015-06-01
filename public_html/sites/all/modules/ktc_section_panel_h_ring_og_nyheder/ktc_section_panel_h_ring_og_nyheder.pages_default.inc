@@ -151,34 +151,6 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $display->content['new-b377e18c-88fd-405d-ae35-dbb5592b67a9'] = $pane;
     $display->panels['center'][2] = 'new-b377e18c-88fd-405d-ae35-dbb5592b67a9';
     $pane = new stdClass();
-    $pane->pid = 'new-20f14952-1f76-419e-ab06-4bada6cf8447';
-    $pane->panel = 'center';
-    $pane->type = 'node_comment_form';
-    $pane->subtype = 'node_comment_form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'anon_links' => 1,
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-      'template_suggestion' => 'content',
-    );
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '20f14952-1f76-419e-ab06-4bada6cf8447';
-    $display->content['new-20f14952-1f76-419e-ab06-4bada6cf8447'] = $pane;
-    $display->panels['center'][3] = 'new-20f14952-1f76-419e-ab06-4bada6cf8447';
-    $pane = new stdClass();
     $pane->pid = 'new-023a351b-d90c-4e05-b3e9-7ebf28738193';
     $pane->panel = 'center';
     $pane->type = 'node_comments';
@@ -199,14 +171,42 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => '',
-      'template_suggestion' => 'content',
+      'template_suggestion' => 'comments-list',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '023a351b-d90c-4e05-b3e9-7ebf28738193';
+    $display->content['new-023a351b-d90c-4e05-b3e9-7ebf28738193'] = $pane;
+    $display->panels['center'][3] = 'new-023a351b-d90c-4e05-b3e9-7ebf28738193';
+    $pane = new stdClass();
+    $pane->pid = 'new-20f14952-1f76-419e-ab06-4bada6cf8447';
+    $pane->panel = 'center';
+    $pane->type = 'node_comment_form';
+    $pane->subtype = 'node_comment_form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'anon_links' => 1,
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'comments-form',
     );
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
-    $pane->uuid = '023a351b-d90c-4e05-b3e9-7ebf28738193';
-    $display->content['new-023a351b-d90c-4e05-b3e9-7ebf28738193'] = $pane;
-    $display->panels['center'][4] = 'new-023a351b-d90c-4e05-b3e9-7ebf28738193';
+    $pane->uuid = '20f14952-1f76-419e-ab06-4bada6cf8447';
+    $display->content['new-20f14952-1f76-419e-ab06-4bada6cf8447'] = $pane;
+    $display->panels['center'][4] = 'new-20f14952-1f76-419e-ab06-4bada6cf8447';
     $pane = new stdClass();
     $pane->pid = 'new-8ae0c5ba-db5e-45d6-9560-7948908f7f75';
     $pane->panel = 'centertop';
