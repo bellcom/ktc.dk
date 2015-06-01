@@ -10196,6 +10196,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo img {
   border: 0;
+  width: 100%;
+  height: auto;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content {
   cursor: pointer;
