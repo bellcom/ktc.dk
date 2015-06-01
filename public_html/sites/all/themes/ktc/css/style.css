@@ -10190,7 +10190,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 10px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content {
   cursor: pointer;
@@ -10233,6 +10233,12 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-header .ktc-header-navigation {
   min-height: 92px;
   background: #ffffff url("../images/bg_navigation.jpg") repeat-x;
+}
+.ktc-header .ktc-header-navigation .navbar-nav > li > a {
+  font-size: 16px;
+}
+.ktc-header .ktc-header-navigation .navbar-nav > li.active > a {
+  text-decoration: underline;
 }
 .ktc-wrapper {
   position: relative;

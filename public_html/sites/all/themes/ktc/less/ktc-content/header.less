@@ -33,7 +33,7 @@
 		.ktc-header-top-bar-logo {
 			position: absolute;
 			top: 0;
-			left: 0;
+			left: floor(@grid-gutter-width / 2);
 		}
 
 		// Button (add content)
@@ -88,5 +88,27 @@
 	.ktc-header-navigation {
 		min-height: 92px;
 		background: #fff url("../images/bg_navigation.jpg") repeat-x;
+
+		// Nav
+		.navbar-nav {
+
+			// List item
+			> li {
+
+				// Link
+				> a {
+					font-size: 16px;
+				}
+
+				// Active
+				&.active {
+
+					// Link
+					> a {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
 	}
 }
