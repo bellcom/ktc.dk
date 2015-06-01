@@ -7247,7 +7247,7 @@ h3.pane-title {
  */
 .icon-hearing-sm {
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -288px;
   width: 9px;
   height: 16px;
   vertical-align: middle;
@@ -7395,7 +7395,7 @@ body .form-control {
 .header-region .top_header .region-header #block-views-exp-search-page .views-submit-button .form-submit#edit-submit-search,
 .header-region .top_header .header_top #block-views-exp-search-page .views-submit-button .form-submit#edit-submit-search {
   background-image: url(../images/sprites.png);
-  background-position: 0px -741px;
+  background-position: 0px -932px;
   width: 28px;
   height: 28px;
   border: none;
@@ -7424,7 +7424,7 @@ body .form-control {
 .header-region .top_header .region-header #block-user-login #edit-actions button,
 .header-region .top_header .header_top #block-user-login #edit-actions button {
   background-image: url(../images/sprites.png);
-  background-position: 0px -657px;
+  background-position: 0px -848px;
   width: 28px;
   height: 28px;
   background-color: #fff;
@@ -7434,7 +7434,7 @@ body .form-control {
 .header-region .top_header .region-header #block-user-login #edit-actions button.login_open,
 .header-region .top_header .header_top #block-user-login #edit-actions button.login_open {
   background-image: url(../images/sprites.png);
-  background-position: 0px -713px;
+  background-position: 0px -792px;
   width: 28px;
   height: 28px;
 }
@@ -7469,7 +7469,7 @@ body .form-control {
 .header-region .top_header .header_top_content .header-add-content .icon-add-content {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -685px;
+  background-position: 0px -820px;
   width: 28px;
   height: 28px;
 }
@@ -8301,7 +8301,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-left: -15px;
   content: ' ';
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -288px;
   width: 9px;
   height: 16px;
 }
@@ -8542,7 +8542,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .region_footer.footer_5 .footer-5 .footer_location {
   background-image: url(../images/sprites.png);
-  background-position: 0px -136px;
+  background-position: 0px -241px;
   width: 12px;
   height: 15px;
   display: inline-block;
@@ -8797,14 +8797,14 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .col-md-3 .filter-foldout,
 .col-md-4 .filter-foldout {
   background-image: url(../images/sprites.png);
-  background-position: 0px -121px;
+  background-position: 0px -166px;
   width: 15px;
   height: 15px;
 }
 .col-md-3 .filter-foldin,
 .col-md-4 .filter-foldin {
   background-image: url(../images/sprites.png);
-  background-position: 0px -166px;
+  background-position: 0px -181px;
   width: 15px;
   height: 15px;
 }
@@ -9032,7 +9032,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .node-teaser.node-group .ktc-yellow {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -304px;
+  background-position: 0px -355px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -9041,7 +9041,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .node-teaser.node-group .ktc-red {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -406px;
+  background-position: 0px -338px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -9050,7 +9050,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .node-teaser.node-group .ktc-green {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -389px;
+  background-position: 0px -321px;
   width: 17px;
   height: 17px;
   vertical-align: middle;
@@ -9072,7 +9072,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .node-teaser .node-teaser-bottom .left .icon-comment {
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -107px;
   width: 15px;
   height: 14px;
   display: inline-block;
@@ -9095,7 +9095,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .node-teaser .node-teaser-bottom .right .node-type-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -79px;
+  background-position: 0px -93px;
   width: 15px;
   height: 14px;
   vertical-align: top;
@@ -9113,7 +9113,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .node-teaser .node-teaser-bottom .right .node-type-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -79px;
   width: 14px;
   height: 14px;
   vertical-align: top;
@@ -9122,7 +9122,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .node-teaser .node-teaser-bottom .right .node-type-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -288px;
   width: 9px;
   height: 16px;
   vertical-align: top;
@@ -9131,7 +9131,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .node-teaser .node-teaser-bottom .right .node-type-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -272px;
   width: 12px;
   height: 16px;
   vertical-align: top;
@@ -9140,7 +9140,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .node-teaser .node-teaser-bottom .right .node-type-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -256px;
   width: 15px;
   height: 16px;
   vertical-align: top;
@@ -9212,7 +9212,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .node--group--listevisning .icon-subgroup {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -338px;
+  background-position: 0px -304px;
   width: 15px;
   height: 17px;
   vertical-align: bottom;
@@ -9253,7 +9253,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -630px;
+  background-position: 0px -576px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -9263,7 +9263,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -441px;
+  background-position: 0px -603px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -9273,7 +9273,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -495px;
+  background-position: 0px -684px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -9283,7 +9283,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -576px;
+  background-position: 0px -441px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -9293,7 +9293,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -549px;
+  background-position: 0px -765px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -9303,7 +9303,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-meeting_doodle {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -468px;
+  background-position: 0px -522px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -9313,7 +9313,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -522px;
+  background-position: 0px -495px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -9562,7 +9562,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .darkgray-box .pane-content .view-header li i.red-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.red-dot {
   background-image: url(../images/sprites.png);
-  background-position: 0px -24px;
+  background-position: 0px -8px;
   width: 8px;
   height: 8px;
 }
@@ -9576,14 +9576,14 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .darkgray-box .pane-content .view-header li i.green-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.green-dot {
   background-image: url(../images/sprites.png);
-  background-position: 0px -16px;
+  background-position: 0px -24px;
   width: 8px;
   height: 8px;
 }
 .darkgray-box .pane-content .view-header li i.blue-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.blue-dot {
   background-image: url(../images/sprites.png);
-  background-position: 0px -8px;
+  background-position: 0px -16px;
   width: 8px;
   height: 8px;
 }
@@ -9637,7 +9637,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .darkgray-box .pane-content ul.pager .pager-next a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-next a {
   background-image: url(../images/sprites.png);
-  background-position: 0px -121px;
+  background-position: 0px -166px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -9697,7 +9697,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   right: 15px;
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -166px;
+  background-position: 0px -181px;
   width: 15px;
   height: 15px;
 }
@@ -9707,7 +9707,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title:after {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -121px;
+  background-position: 0px -166px;
   width: 15px;
   height: 15px;
 }
@@ -10073,7 +10073,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-blue .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -241px;
+  background-position: 0px -151px;
   width: 12px;
   height: 15px;
 }
@@ -10138,7 +10138,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-gold .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -181px;
+  background-position: 0px -121px;
   width: 12px;
   height: 15px;
 }
@@ -10203,7 +10203,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-red .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -151px;
+  background-position: 0px -136px;
   width: 12px;
   height: 15px;
 }
@@ -10385,7 +10385,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-comment:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -107px;
   width: 15px;
   height: 14px;
 }
@@ -10405,7 +10405,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-hearing:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -288px;
   width: 9px;
   height: 16px;
 }
@@ -10415,7 +10415,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-forum_post:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -79px;
+  background-position: 0px -93px;
   width: 15px;
   height: 14px;
 }
@@ -10445,7 +10445,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-os2web_base_news:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -256px;
   width: 15px;
   height: 16px;
 }
@@ -10465,7 +10465,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-arrangement:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -79px;
   width: 14px;
   height: 14px;
 }
@@ -10475,7 +10475,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-document:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -272px;
   width: 12px;
   height: 16px;
 }
@@ -10647,37 +10647,37 @@ h6 + .ktc-date {
 }
 .ktc-list .ktc-list-icon.ktc-list-icon-document {
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -272px;
   width: 12px;
   height: 16px;
 }
 .ktc-list .ktc-list-icon.ktc-list-icon-os2web_base_news {
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -256px;
   width: 15px;
   height: 16px;
 }
 .ktc-list .ktc-list-icon.ktc-list-icon-group {
   background-image: url(../images/sprites.png);
-  background-position: 0px -338px;
+  background-position: 0px -304px;
   width: 15px;
   height: 17px;
 }
 .ktc-list .ktc-list-icon.ktc-list-icon-arrangement {
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -79px;
   width: 14px;
   height: 14px;
 }
 .ktc-list .ktc-list-icon.ktc-list-icon-forum_post {
   background-image: url(../images/sprites.png);
-  background-position: 0px -79px;
+  background-position: 0px -93px;
   width: 15px;
   height: 14px;
 }
 .ktc-list .ktc-list-icon.ktc-list-icon-hearing {
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -288px;
   width: 9px;
   height: 16px;
 }
