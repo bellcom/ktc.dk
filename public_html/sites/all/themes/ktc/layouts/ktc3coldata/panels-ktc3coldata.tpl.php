@@ -46,10 +46,10 @@
         </div>
       <?php endif; ?>
 
-      <?php if (isset($content['centerleft']) || isset($content['centerright'] || isset($content['center'])): ?>
+      <?php if ($content['centerleft'] || $content['centerright'] || $content['center']): ?>
         <div class="row">
 
-          <?php if (isset($content['centerleft'])): ?>
+          <?php if ($content['centerleft']): ?>
             <div class="col-sm-6 pane-centerleft">
               <?php print $content['centerleft']; ?>
             </div>
@@ -63,7 +63,7 @@
             </div>
           <?php endif ?>
 
-          <?php if (isset($content['centerright'])): ?>
+          <?php if ($content['centerright']): ?>
             <div class="col-sm-6 pane-centerright">
               <?php print $content['centerright']; ?>
             </div>
