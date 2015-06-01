@@ -10232,7 +10232,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-wrapper .ktc-wrapper-background {
   position: absolute;
-  top: 0;
+  top: 20px;
   left: 0;
   right: 0;
   height: 231px;
