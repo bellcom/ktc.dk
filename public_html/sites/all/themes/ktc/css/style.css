@@ -10300,6 +10300,13 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content li:hover {
   background-color: #e9edee;
 }
+.ktc-header .ktc-header-dropdown {
+  display: none;
+  padding-top: 140px;
+}
+.ktc-header .ktc-header-dropdown.open {
+  display: block;
+}
 .ktc-header .ktc-header-dropdown .ktc-block {
   float: left;
   width: 20%;

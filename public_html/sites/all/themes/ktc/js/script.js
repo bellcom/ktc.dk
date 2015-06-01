@@ -9,12 +9,19 @@
           $toggle.toggleClass('closed');
       });
 
-    // Header - add content
-    $('.ktc-header-top-bar-add-content').click(function(element) {
+      // Header - add content
+      $('.ktc-header-top-bar-add-content').click(function(element) {
 
-        // Toggle menu
-        $(this).toggleClass('open');
-    });
+          // Toggle menu
+          $(this).toggleClass('open');
+      });
+
+      // Header - toggle user menu
+      $('.ktc-header-top-bar-user-menu-icon-toggle').click(function(element) {
+
+          // Toggle menu
+          $('.ktc-header-dropdown').toggleClass('open');
+      });
 
     // Header user-menu
     $('.header-user .icon-arrow-down').click(function() {
