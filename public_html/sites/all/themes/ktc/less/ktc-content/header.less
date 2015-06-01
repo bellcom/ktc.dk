@@ -5,12 +5,15 @@
 // | Provides styles for .ktc-header
 // |
 
-//== Top bar
+//== General
 @ktc-header-top-bar-background-color: #fff;
+
+//== Top bar
 @ktc-header-top-bar-height: 50px;
 
 //== Logo
-
+@ktc-header-top-bar-logo-width: 140px;
+@ktc-header-top-bar-logo-height: 70px;
 
 // --------------------------------------------------
 // Top bar
@@ -18,29 +21,109 @@
 
 // Header
 .ktc-header {
+	background-color: @ktc-header-top-bar-background-color;
 
 	// Top bar
 	.ktc-header-top-bar {
 		min-height: @ktc-header-top-bar-height;
-		background-color: @ktc-header-top-bar-background-color;
-
-		// Container
-		> .container {
-			position: relative;
-		}
 
 		// Logo
 		.ktc-header-top-bar-logo {
-			position: absolute;
-			top: 0;
-			left: 0;
+			float: left;
+			width: @ktc-header-top-bar-logo-width;
+			margin-bottom: floor(@ktc-header-top-bar-height - @ktc-header-top-bar-logo-height);
+
+			// Image
+			img {
+				border: 0;
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		// User menu
+		.ktc-header-top-bar-user-menu {
+			margin-top: 10px;
+			.pull-right;
+			.list-inline;
+
+			// List item
+			> li {
+				vertical-align: middle;
+
+				// User login
+				.ktc-header-top-bar-user-login {
+
+					// Label
+					label {
+						display: none;
+					}
+
+					// Submit
+					button {
+						min-width: initial;
+						padding: 0;
+						border-width: 0;
+						.sprite(@header-login);
+						background-color: transparent;
+					}
+				}
+
+				// Icon
+				.ktc-header-top-bar-user-menu-icon {
+					display: inline-block;
+
+					// Search
+					&.ktc-header-top-bar-user-menu-icon-search {
+						.sprite(@header-search);
+						margin-top: 1px;
+					}
+
+					// Settings
+					&.ktc-header-top-bar-user-menu-icon-settings {
+						.sprite(@header-cog);
+						margin-top: 1px;
+					}
+
+					// Toggle
+					&.ktc-header-top-bar-user-menu-icon-toggle {
+						.sprite(@header-toggle);
+						margin-top: 1px;
+					}
+
+					// Create user
+					&.ktc-header-top-bar-user-menu-icon-user-create {
+						.sprite(@header-user-create);
+						margin-top: 1px;
+					}
+
+					// Login
+					&.ktc-header-top-bar-user-menu-icon-user-login {
+						.sprite(@header-login);
+					}
+
+					// Log out
+					&.ktc-header-top-bar-user-menu-icon-user-logout {
+						.sprite(@header-logout);
+					}
+				}
+			}
 		}
 
 		// Button (add content)
 		.ktc-header-top-bar-add-content {
+			position: relative;
 			cursor: pointer;
 			float: left;
-			position: relative;
+			margin-top: 12px;
+			margin-left: floor( @grid-gutter-width / 2 );
+
+			// Open
+			&.open {
+				ul.create_content {
+					display: block;
+				}
+			}
 
 			// Icon
 			.ktc-header-top-bar-add-content-icon {
@@ -56,15 +139,13 @@
 			}
 			ul.create_content {
 				display: none;
-				margin: 0px 0px 0px 20px;
+				position: absolute;
+				top: 100%;
+				left: 0;
 				padding: 0px;
 				background-color: #fff;
-				z-index: 900;
-				position: absolute;
-				width: 110%;
-				-webkit-box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
-				-moz-box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
-				box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
+				z-index: @zindex-navbar + 10;
+
 				li {
 					list-style: none;
 					padding: 2px 10px;
@@ -73,6 +154,33 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Dropdown
+// --------------------------------------------------
+
+// Header
+.ktc-header {
+
+	// Dropdown
+	.ktc-header-dropdown {
+		display: none;
+		padding-top: floor( floor( @ktc-header-top-bar-logo-height - @ktc-header-top-bar-height ) + @grid-gutter-width);
+
+		// Open
+		&.open {
+			display: block;
+		}
+
+		// Block
+		.ktc-block {
+			float: left;
+			width: 20%;
+			padding-left: floor( @grid-gutter-width / 2);
+			padding-right: floor( @grid-gutter-width / 2);
 		}
 	}
 }
@@ -88,5 +196,28 @@
 	.ktc-header-navigation {
 		min-height: 92px;
 		background: #fff url("../images/bg_navigation.jpg") repeat-x;
+
+		// Nav
+		.navbar-nav {
+			margin-left: @ktc-header-top-bar-logo-width;
+
+			// List item
+			> li {
+
+				// Link
+				> a {
+					font-size: 16px;
+				}
+
+				// Active
+				&.active {
+
+					// Link
+					> a {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
 	}
 }

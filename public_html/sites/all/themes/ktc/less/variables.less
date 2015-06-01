@@ -199,18 +199,18 @@
 //##
 
 //** `<input>` background color
-@input-bg:                       #fff;
+@input-bg:                       #e9edee;
 //** `<input disabled>` background color
-@input-bg-disabled:              @gray-lighter;
+@input-bg-disabled:              darken(@input-bg, 10%);
 
 //** Text color for `<input>`s
-@input-color:                    @brand-blacknblue;
+@input-color:                    @gray-darker;
 //** `<input>` border color
-@input-border:                   #ccc;
+@input-border:                   @input-bg;
 //** `<input>` border radius
 @input-border-radius:            @border-radius-base;
 //** Border color for inputs on focus
-@input-border-focus:             #66afe9;
+@input-border-focus:             darken(@input-bg, 15%);
 
 //** Placeholder text color
 @input-color-placeholder:        @gray-light;

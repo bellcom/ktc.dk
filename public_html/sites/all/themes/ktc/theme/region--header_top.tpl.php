@@ -34,7 +34,7 @@
           <?php if ($page['logo']): ?>
             <!-- Begin - logo -->
             <div class="ktc-header-top-bar-logo">
-              <a class="logo pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
+              <a href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
                 <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
               </a>
             </div>
@@ -42,19 +42,58 @@
           <?php endif; ?>
 
           <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
-            <div class="ktc-header-top-bar-add-content">
+            <span class="ktc-header-top-bar-add-content">
               <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
-              <?php /* print $page['create_menu']; */ ?>
-            </div>
+              <?php print $page['create_menu']; ?>
+            </span>
           <?php endif; ?>
 
           <!-- Begin - navigation -->
-          <ul class="ktc-header-top-bar-navigation">
-            <?php print $content; ?>
+          <ul class="ktc-header-top-bar-user-menu">
 
-            <!-- Begin - form - not logged in -->
-            <form action=""></form>
-            <!-- End - form - not logged in -->
+            <?php if ($logged_in): ?>
+
+              <!-- Begin - toggle -->
+              <li>
+                <a href="#"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-toggle"></span></a>
+              </li>
+              <!-- End - toggle -->
+
+              <!-- Begin - settings -->
+              <li>
+                <a href="/user"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-settings"></span></a>
+              </li>
+              <!-- End - settings -->
+
+              <!-- Begin - logout -->
+              <li>
+                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-logout"></span></a>
+              </li>
+              <!-- End - logout -->
+
+            <?php else: ?>
+
+              <!-- Begin - login form -->
+              <li>
+                <div class="form-inline ktc-header-top-bar-user-login">
+                  <?php print $content; ?>
+                </div>
+              </li>
+              <!-- End - login form -->
+
+              <!-- Begin - create user -->
+              <li>
+                <a href="/user/register"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-create"></span></a>
+              </li>
+              <!-- End - create user -->
+
+            <?php endif ?>
+
+            <!-- Begin - search -->
+            <li>
+              <a href="/search"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-search"></span></a>
+            </li>
+            <!-- End - search -->
 
           </ul>
           <!-- End - navigation -->
@@ -63,4 +102,4 @@
     </div>
     <!-- End - header top bar -->
 
-<?php endif; ?>
+<?php endif ?>
