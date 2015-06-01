@@ -44,7 +44,7 @@
           <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
             <span class="ktc-header-top-bar-add-content">
               <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
-              <?php /* print $page['create_menu']; */ ?>
+              <?php print $page['create_menu']; ?>
             </span>
           <?php endif; ?>
 
