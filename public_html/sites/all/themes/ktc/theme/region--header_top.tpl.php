@@ -28,7 +28,7 @@
 <?php if ($page['logo'] || $page['site_name'] || $page['primary_nav'] || $page['secondary_nav'] || $content): ?>
 
     <!-- Begin - header top bar -->
-    <div class="ktc-header-top-bar col-xs-12">
+    <div class="ktc-header-top-bar">
 
         <?php if ($page['logo']): ?>
         <!-- Begin - logo -->
@@ -38,8 +38,8 @@
             </a>
 
             <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
-                <div class="header-add-content">
-                    <i class="icon-add-content"></i><span>OPRET INDHOLD</span>
+                <div class="ktc-header-top-bar-add-content">
+                    <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
                     <?php print $page['create_menu']; ?>
                 </div>
             <?php endif; ?>
