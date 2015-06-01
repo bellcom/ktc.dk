@@ -27,8 +27,8 @@
 ?>
 <?php if ($page['logo'] || $page['site_name'] || $page['primary_nav'] || $page['secondary_nav'] || $content): ?>
 
-    <!-- Begin - header top -->
-    <div class="header-top-bar col-xs-12">
+    <!-- Begin - header top bar -->
+    <div class="ktc-header-top-bar col-xs-12">
 
         <?php if ($page['logo']): ?>
         <!-- Begin - logo -->
@@ -36,12 +36,20 @@
             <a class="logo pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
                 <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
             </a>
+
+            <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
+                <div class="header-add-content">
+                    <i class="icon-add-content"></i><span>OPRET INDHOLD</span>
+                    <?php print $page['create_menu']; ?>
+                </div>
+            <?php endif; ?>
         </div>
         <!-- End - logo -->
         <?php endif; ?>
 
         <!-- Begin - navigation -->
         <ul class="header-top-navigation">
+            <?php print $content; ?>
 
             <!-- Begin - form - not logged in -->
             form
@@ -51,19 +59,6 @@
         <!-- End - navigation -->
 
     </div>
-    <!-- End - header top -->
+    <!-- End - header top bar -->
 
-
-  <div class="col-md-10 col-sm-9 col-xs-12 header_top_content">
-    <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
-    <div class="header-add-content"><i class="icon-add-content"></i><span>OPRET INDHOLD</span>
-      <?php print $page['create_menu']; ?>
-    </div>
-
-    <?php endif; ?>
-    <?php print $content; ?>
-  </div>
-  </div>
-</div>
-</div>
 <?php endif; ?>

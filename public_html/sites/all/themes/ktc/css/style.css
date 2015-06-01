@@ -10243,6 +10243,31 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-red .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
   margin-top: -6px;
 }
+.ktc-teaser {
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+.ktc-teaser .ktc-teaser-heading .ktc-teaser-title {
+  position: relative;
+  display: block;
+  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: inherit;
+  padding: 7px 15px;
+  margin-bottom: -7px;
+  text-transform: uppercase;
+}
+.ktc-teaser .ktc-teaser-heading .ktc-teaser-title:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  content: "";
+}
+.ktc-teaser .ktc-teaser-body {
+  padding: 5px 15px 10px;
+}
 .calendar-calendar td {
   text-align: center;
 }
