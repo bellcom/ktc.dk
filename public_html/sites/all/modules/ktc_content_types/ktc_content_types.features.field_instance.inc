@@ -497,66 +497,6 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-arrangement-field_arrangement_categories'
-  $field_instances['node-arrangement-field_arrangement_categories'] = array(
-    'bundle' => 'arrangement',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_arrangement_categories',
-    'label' => 'Nøgleord/ kategorier (max 5 stk.)',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 50,
-    ),
-  );
-
   // Exported field_instance: 'node-arrangement-field_arrangement_date'
   $field_instances['node-arrangement-field_arrangement_date'] = array(
     'bundle' => 'arrangement',
@@ -10001,7 +9941,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Målgruppe');
   t('Mødetype');
   t('Nyhedstype');
-  t('Nøgleord/ kategorier (max 5 stk.)');
   t('Original link');
   t('Periode');
   t('Primært billede');
