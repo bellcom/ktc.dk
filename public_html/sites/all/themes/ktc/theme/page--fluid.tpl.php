@@ -81,6 +81,10 @@
     <?php print render($page['header_top']); ?>
   <?php endif; ?>
 
+  <?php if ($page['header']): ?>
+    <?php print render($page['header']); ?>
+  <?php endif; ?>
+
   <?php if ($page['navigation']): ?>
     <?php print render($page['navigation']); ?>
   <?php endif; ?>
@@ -92,12 +96,6 @@
 <div id="wrapper" class="ktc-wrapper">
   <div class="ktc-wrapper-background"></div>
   <div class="container-fluid">
-
-    <?php /* region--header.tpl.php */ ?>
-    <?php if ($page['header']): ?>
-      <?php print render($page['header']); ?>
-    <?php endif; ?>
-
     <div class="row">
 
       <?php /* region--sidebar.tpl.php */ ?>
