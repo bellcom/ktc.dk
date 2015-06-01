@@ -10189,6 +10189,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   height: auto;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu {
+  float: right !important;
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
