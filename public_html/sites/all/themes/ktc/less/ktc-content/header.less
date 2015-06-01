@@ -31,9 +31,7 @@
 
 		// Logo
 		.ktc-header-top-bar-logo {
-			position: absolute;
-			top: 0;
-			left: floor(@grid-gutter-width / 2);
+			float: left;
 			width: @ktc-header-top-bar-logo-width;
 
 			// Image
@@ -90,9 +88,9 @@
 
 		// Button (add content)
 		.ktc-header-top-bar-add-content {
+			position: relative;
 			cursor: pointer;
 			float: left;
-			position: relative;
 
 			// Icon
 			.ktc-header-top-bar-add-content-icon {

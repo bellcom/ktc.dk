@@ -10178,9 +10178,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   position: relative;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo {
-  position: absolute;
-  top: 0;
-  left: 10px;
+  float: left;
   width: 140px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo img {
@@ -10242,9 +10240,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   height: 28px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content {
+  position: relative;
   cursor: pointer;
   float: left;
-  position: relative;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content .ktc-header-top-bar-add-content-icon {
   display: inline-block;
