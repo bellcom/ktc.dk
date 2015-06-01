@@ -109,6 +109,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => 'lead',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -138,7 +139,11 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
@@ -162,7 +167,11 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
@@ -187,7 +196,11 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
@@ -221,7 +234,8 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-image',
+      'css_class' => 'ktc-full-width-image',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -528,7 +542,8 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-md-12 col-sm-12 col-xs-12 darkgray-box',
+      'css_class' => 'ktc-aside-action',
+      'template_suggestion' => 'ikkesat',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -553,7 +568,8 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
-      'css_class' => 'col-md-12 col-sm-12 col-xs-12',
+      'css_class' => '',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 1;

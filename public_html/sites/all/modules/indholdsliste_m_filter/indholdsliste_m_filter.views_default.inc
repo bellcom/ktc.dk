@@ -477,6 +477,8 @@ function indholdsliste_m_filter_views_default_views() {
 
   /* Display: two cols */
   $handler = $view->new_display('panel_pane', 'two cols', 'panel_pane_5');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'section-content-ajax row';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -671,6 +673,8 @@ function indholdsliste_m_filter_views_default_views() {
 
   /* Display: hearing */
   $handler = $view->new_display('panel_pane', 'hearing', 'panel_pane_3');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'section-content-ajax row';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;

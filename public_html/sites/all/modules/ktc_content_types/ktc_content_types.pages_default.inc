@@ -517,7 +517,11 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'doodle',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -546,7 +550,11 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -570,7 +578,11 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
@@ -595,7 +607,11 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
@@ -629,7 +645,8 @@ function ktc_content_types_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-image',
+      'css_class' => 'ktc-full-width-image',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -649,47 +666,17 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '8353dbf5-8c49-4350-a2a0-f576015ff8b9';
     $display->content['new-8353dbf5-8c49-4350-a2a0-f576015ff8b9'] = $pane;
     $display->panels['centertop'][1] = 'new-8353dbf5-8c49-4350-a2a0-f576015ff8b9';
-    $pane = new stdClass();
-    $pane->pid = 'new-a1f17682-bf4e-4916-bf1e-e2866499eb2a';
-    $pane->panel = 'centertop';
-    $pane->type = 'views';
-    $pane->subtype = 'addthis_kode';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '1',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'block',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'a1f17682-bf4e-4916-bf1e-e2866499eb2a';
-    $display->content['new-a1f17682-bf4e-4916-bf1e-e2866499eb2a'] = $pane;
-    $display->panels['centertop'][2] = 'new-a1f17682-bf4e-4916-bf1e-e2866499eb2a';
     $pane = new stdClass();
     $pane->pid = 'new-0e40a650-7ace-490c-9878-89a818107e67';
     $pane->panel = 'centertop';
@@ -718,13 +705,17 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '0e40a650-7ace-490c-9878-89a818107e67';
     $display->content['new-0e40a650-7ace-490c-9878-89a818107e67'] = $pane;
-    $display->panels['centertop'][3] = 'new-0e40a650-7ace-490c-9878-89a818107e67';
+    $display->panels['centertop'][2] = 'new-0e40a650-7ace-490c-9878-89a818107e67';
     $pane = new stdClass();
     $pane->pid = 'new-41f71c3f-7841-4673-b295-4ffcd08ef6fe';
     $pane->panel = 'left';
@@ -1115,7 +1106,11 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -1139,7 +1134,11 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -1164,7 +1163,11 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
@@ -1198,7 +1201,8 @@ function ktc_content_types_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-image',
+      'css_class' => 'ktc-full-width-image',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -1218,47 +1222,17 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '8353dbf5-8c49-4350-a2a0-f576015ff8b9';
     $display->content['new-8353dbf5-8c49-4350-a2a0-f576015ff8b9'] = $pane;
     $display->panels['centertop'][1] = 'new-8353dbf5-8c49-4350-a2a0-f576015ff8b9';
-    $pane = new stdClass();
-    $pane->pid = 'new-a1f17682-bf4e-4916-bf1e-e2866499eb2a';
-    $pane->panel = 'centertop';
-    $pane->type = 'views';
-    $pane->subtype = 'addthis_kode';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '1',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'block',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'a1f17682-bf4e-4916-bf1e-e2866499eb2a';
-    $display->content['new-a1f17682-bf4e-4916-bf1e-e2866499eb2a'] = $pane;
-    $display->panels['centertop'][2] = 'new-a1f17682-bf4e-4916-bf1e-e2866499eb2a';
     $pane = new stdClass();
     $pane->pid = 'new-0e40a650-7ace-490c-9878-89a818107e67';
     $pane->panel = 'centertop';
@@ -1287,13 +1261,17 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '0e40a650-7ace-490c-9878-89a818107e67';
     $display->content['new-0e40a650-7ace-490c-9878-89a818107e67'] = $pane;
-    $display->panels['centertop'][3] = 'new-0e40a650-7ace-490c-9878-89a818107e67';
+    $display->panels['centertop'][2] = 'new-0e40a650-7ace-490c-9878-89a818107e67';
     $pane = new stdClass();
     $pane->pid = 'new-41f71c3f-7841-4673-b295-4ffcd08ef6fe';
     $pane->panel = 'left';

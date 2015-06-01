@@ -36,7 +36,7 @@
         <?php print $content['centertop']; ?>
 
         <?php if (isset($content['centerleft']) || isset($content['centerright'])): ?>
-        <div class="row">
+        <div class="row col-md-12 col-sm-12 col-xs-12">
 
             <?php if (isset($content['centerleft'])): ?>
             <div class="col-md-6 col-sm-6 col-xs-12 pane-centerleft">

@@ -684,8 +684,8 @@ function ktc_netvaerk_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter-all-groups',
-      'css_class' => 'col-md-12 col-sm-12 col-xs-12',
-      'template_suggestion' => 'content',
+      'css_class' => 'ktc-aside-dark',
+      'template_suggestion' => 'ikkesat',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -710,7 +710,7 @@ function ktc_netvaerk_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
-      'css_class' => 'col-md-12 col-sm-12 col-xs-12',
+      'css_class' => '',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();

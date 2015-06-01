@@ -161,8 +161,8 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-image',
-      'template_suggestion' => '',
+      'css_class' => 'ktc-full-width-image',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 0;
