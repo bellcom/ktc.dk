@@ -9680,6 +9680,17 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-block .ktc-block-body {
   padding: 10px 15px;
 }
+.ktc-block .ktc-block-body a,
+.ktc-block .ktc-block-body p,
+.ktc-block .ktc-block-body span,
+.ktc-block .ktc-block-body h1,
+.ktc-block .ktc-block-body h2,
+.ktc-block .ktc-block-body h3,
+.ktc-block .ktc-block-body h4,
+.ktc-block .ktc-block-body h5,
+.ktc-block .ktc-block-body h6 {
+  word-wrap: break-word;
+}
 .ktc-block .ktc-block-heading,
 .ktc-block .ktc-block-heading {
   border-left-color: #36a145;
