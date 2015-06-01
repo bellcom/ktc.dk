@@ -10620,6 +10620,11 @@ h5 + .ktc-date,
 h6 + .ktc-date {
   margin-top: -3px;
 }
+.ktc-content .ktc-date {
+  font-style: normal;
+  font-weight: normal;
+  color: #848e92;
+}
 .ktc-date,
 .ktc-date {
   color: #36a145;
