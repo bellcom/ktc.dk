@@ -34,7 +34,7 @@
           <?php if ($page['logo']): ?>
             <!-- Begin - logo -->
             <div class="ktc-header-top-bar-logo">
-              <a class="logo pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
+              <a href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
                 <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
               </a>
             </div>

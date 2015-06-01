@@ -10194,6 +10194,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   height: 70px;
   width: 140px;
 }
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo img {
+  border: 0;
+}
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content {
   cursor: pointer;
   float: left;
