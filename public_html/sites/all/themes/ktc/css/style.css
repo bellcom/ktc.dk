@@ -10185,6 +10185,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   height: auto;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu {
+  margin-top: 12px;
   float: right !important;
   padding-left: 0;
   list-style: none;
@@ -10985,7 +10986,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.form-control {
+.form-control:focus {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
