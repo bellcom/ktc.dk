@@ -10191,6 +10191,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   position: absolute;
   top: 0;
   left: 10px;
+  max-height: 70px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content {
   cursor: pointer;
