@@ -98,11 +98,10 @@
 // Mixins
 // --------------------------------------------------
 
-.ktc-mixin-aside(@background-color, @font-color) {
+// Color
+.ktc-mixin-aside-color(@background-color, @font-color) {
 
-	// Aside
-	&.ktc-aside-color,
-	.ktc-aside-color {
+	& {
 
 		// Heading
 		.ktc-aside-heading {
@@ -123,15 +122,36 @@
 
 // Technique and environment (blue)
 .tech-env {
-	.ktc-mixin-aside(@ktc-color-blue-background, @ktc-color-blue-background-font);
+
+	// Aside
+	&.ktc-aside-color,
+	.ktc-aside-color {
+		.ktc-mixin-aside-color(@ktc-color-blue-background, @ktc-color-blue-background-font);
+	}
 }
 
 // Network (gold)
 .og-context.og-context-node {
-	.ktc-mixin-aside(@ktc-color-gold-background, @ktc-color-gold-background-font);
+
+	// Aside
+	&.ktc-aside-color,
+	.ktc-aside-color {
+		.ktc-mixin-aside-color(@ktc-color-gold-background, @ktc-color-gold-background-font);
+	}
 }
 
 // Not network (green)
 .no-network {
-	.ktc-mixin-aside(@ktc-color-green-background, @ktc-color-green-background-font);
+
+	// Aside
+	&.ktc-aside-color,
+	.ktc-aside-color {
+		.ktc-mixin-aside-color(@ktc-color-green-background, @ktc-color-green-background-font);
+	}
+}
+
+// Action
+.ktc-aside-action {
+	.ktc-mixin-aside-color(@ktc-color-red-background, @ktc-color-red-background-font);
+	background-color: @ktc-color-dark-content-background;
 }
