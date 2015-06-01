@@ -46,12 +46,20 @@
         </div>
       <?php endif; ?>
 
-      <?php if (isset($content['centerleft']) || isset($content['centerright'])): ?>
+      <?php if (isset($content['centerleft']) || isset($content['centerright'] || isset($content['center'])): ?>
         <div class="row">
 
           <?php if (isset($content['centerleft'])): ?>
             <div class="col-sm-6 pane-centerleft">
               <?php print $content['centerleft']; ?>
+            </div>
+          <?php endif ?>
+
+          <?php if ($content['center']): ?>
+            <div class="row">
+              <div class="col-xs-12 pane-center">
+                <?php print $content['center']; ?>
+              </div>
             </div>
           <?php endif ?>
 
@@ -63,12 +71,6 @@
 
         </div>
       <?php endif ?>
-
-      <div class="row">
-        <div class="col-xs-12 pane-center">
-          <?php print $content['center']; ?>
-        </div>
-      </div>
 
     </div>
   </div>
