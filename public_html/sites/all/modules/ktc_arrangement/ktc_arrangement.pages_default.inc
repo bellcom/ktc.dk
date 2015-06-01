@@ -405,7 +405,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-block-aside panel-block-aside-color',
+      'css_class' => ' ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -427,7 +427,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-block-aside panel-block-aside-color',
+      'css_class' => ' ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -455,7 +455,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-block-aside panel-block-aside-color',
+      'css_class' => ' ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 2;
@@ -513,7 +513,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-block-aside panel-block-aside-color',
+      'css_class' => ' ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -545,7 +545,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-block-aside panel-block-aside-color',
+      'css_class' => ' ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 2;
@@ -570,7 +570,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-block-aside',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 3;
@@ -631,7 +631,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-block-aside',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 5;
