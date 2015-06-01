@@ -73,6 +73,8 @@
  * @ingroup themeable
  */
 ?>
+
+<!-- Begin - header -->
 <header class="header-region ktc-header">
 
   <?php if ($page['header_top']): ?>
@@ -84,13 +86,18 @@
   <?php endif; ?>
 
 </header>
+<!-- End - header -->
 
-<div class="main-container container margin-fixed">
+<!-- Begin - content -->
+<div id="wrapper">
+  <div class="container">
 
-  <?php /* region--header.tpl.php */ ?>
-  <?php print render($page['header']); ?>
+    <?php /* region--header.tpl.php */ ?>
+    <?php if ($page['header']): ?>
+      <?php print render($page['header']); ?>
+    <?php endif; ?>
 
-  <div class="row">
+    <div class="row">
 
       <?php /* region--sidebar.tpl.php */ ?>
       <?php if ($page['sidebar_first']): ?>
@@ -105,20 +112,21 @@
       <?php /* region--content.tpl.php */ ?>
       <?php print render($page['content']); ?>
 
-  </div>
-  <?php if ($page['content_bottom']): ?>
-  <div class="row">
+    </div>
 
-      <?php /* region--content_bottom.tpl.php */ ?>
+    <?php if ($page['content_bottom']): ?>
+      <div class="row">
+
+        <?php /* region--content_bottom.tpl.php */ ?>
         <?php print render($page['content_bottom']); ?>
 
-  </div>
-  <?php endif; ?>
+      </div>
+    <?php endif; ?>
 
-    </div>
   </div>
-
 </div>
+<!-- End - content -->
+
 <?php /* region--footer.tpl.php */ ?>
 <?php print render($page['footer']); ?>
 <?php print render($page['footer_2']); ?>
