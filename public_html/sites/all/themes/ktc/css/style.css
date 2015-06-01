@@ -10301,6 +10301,8 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-header .ktc-header-dropdown .ktc-block {
   float: left;
   width: 20%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .ktc-header .ktc-header-navigation {
   min-height: 92px;
