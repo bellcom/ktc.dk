@@ -10232,6 +10232,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   background-color: #e9edee;
 }
 .ktc-header .ktc-header-navigation {
+  min-height: 92px;
   background: #ffffff url("../images/bg_navigation.jpg") repeat-x;
 }
 .ktc-wrapper {
