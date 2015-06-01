@@ -10170,9 +10170,11 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-red .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
   margin-top: -6px;
 }
+.ktc-header {
+  background-color: #ffffff;
+}
 .ktc-header .ktc-header-top-bar {
   min-height: 50px;
-  background-color: #ffffff;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo {
   float: left;
