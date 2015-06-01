@@ -75,7 +75,9 @@
 
               <!-- Begin - login form -->
               <li>
-                <?php print $content; ?>
+                <div class="form-inline">
+                  <?php print $content; ?>
+                </div>
               </li>
               <!-- End - login form -->
 
