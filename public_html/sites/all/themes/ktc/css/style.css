@@ -8773,11 +8773,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .col-md-3 .panel-pane .pane-content,
 .col-md-4 .panel-pane .pane-content {
-  padding-top: 10px;
   display: block;
   position: relative;
   margin-bottom: 0;
-  background-color: #fff;
   overflow: hidden;
 }
 .col-md-3 .panel-pane .pane-content .filter-box,
@@ -10732,6 +10730,57 @@ h6 + .ktc-date {
 .ktc-blue .ktc-list .ktc-list-body .ktc-list-headline > a:hover,
 .ktc-blue.ktc-list .ktc-list-body .ktc-list-headline > a:hover {
   color: #1f9bd7;
+}
+.ktc-logo {
+  border: 2px solid #e9edee;
+  border-radius: 3px;
+  padding: 20px 0;
+}
+.ktc-logo .ktc-logo-image {
+  display: block;
+  margin: auto;
+}
+.node-type-os2web-base-news .ktc-logo .ktc-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1361px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-hearing .ktc-logo .ktc-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1268px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-arrangement .ktc-logo .ktc-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -989px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-document .ktc-logo .ktc-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -896px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-article .ktc-logo .ktc-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1082px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-group .ktc-logo .ktc-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1175px;
+  width: 93px;
+  height: 93px;
+}
+.node-type-forum_post .ktc-logo .ktc-logo-image {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -1454px;
+  width: 93px;
+  height: 93px;
 }
 .btn {
   min-width: 50px;

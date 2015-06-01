@@ -1,0 +1,75 @@
+// |--------------------------------------------------------------------------
+// | Logo
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-logo
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Logo image
+.ktc-logo {
+	border: 2px solid #e9edee;
+	border-radius: 3px;
+	padding: 20px 0;
+
+	// Image
+	.ktc-logo-image {
+		display: block;
+		margin: auto;
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Logo
+.ktc-mixin-logo(@sprite) {
+
+	// Logo
+	.ktc-logo {
+
+		// Image
+		.ktc-logo-image {
+			.sprite(@sprite);
+		}
+	}
+}
+
+// News
+.node-type-os2web-base-news {
+	.ktc-mixin-logo(@nyh);
+}
+
+// Hearing
+.node-type-hearing {
+	.ktc-mixin-logo(@hor);
+}
+
+// Arrangement
+.node-type-arrangement {
+	.ktc-mixin-logo(@arr);
+}
+
+// Document
+.node-type-document {
+	.ktc-mixin-logo(@dok);
+}
+
+// Article
+.node-type-article {
+	.ktc-mixin-logo(@ark);
+}
+
+// Group (network)
+.node-type-group {
+	.ktc-mixin-logo(@net);
+}
+
+// Forum
+.node-type-forum_post {
+	.ktc-mixin-logo(@deb);
+}
