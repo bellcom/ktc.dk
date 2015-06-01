@@ -75,7 +75,7 @@
 
               <!-- Begin - login form -->
               <li>
-                <div class="form-inline">
+                <div class="form-inline ktc-header-top-bar-user-login">
                   <?php print $content; ?>
                 </div>
               </li>
