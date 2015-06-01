@@ -35,7 +35,7 @@
                 <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="btn btn-default ktc-call-to-action-button"><?php print t('Tilmeld'); ?></a>
             </div>
 
-            <div class="ktc-comments">
+            <div class="ktc-comments-wrapper">
                 <?php if (isset($comments_view)): ?>
                     <?php print $comments_view; ?>
                 <?php endif ?>

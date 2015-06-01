@@ -24,7 +24,7 @@
 
             <p><?php print $body_shortened; ?></p>
 
-            <div class="ktc-comments">
+            <div class="ktc-comments-wrapper">
                 <?php if (isset($comments_view)): ?>
                     <?php print $comments_view; ?>
                 <?php endif ?>
