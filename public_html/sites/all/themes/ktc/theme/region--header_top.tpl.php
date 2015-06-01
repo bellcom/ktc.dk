@@ -72,7 +72,7 @@
               </li>
               <!-- End - logout -->
 
-            <?php else ?>
+            <?php else: ?>
 
               <!-- Begin - login -->
               <li>
