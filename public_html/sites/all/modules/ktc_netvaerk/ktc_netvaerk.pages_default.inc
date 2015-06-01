@@ -252,7 +252,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'gold-title panel-image panel-block-aside panel-block-aside-color',
+      'css_class' => 'gold-title ktc-full-width-image  ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -360,7 +360,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'gold-title panel-block-aside panel-block-aside-color',
+      'css_class' => 'gold-title  ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 4;
@@ -416,7 +416,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'gold-title panel-block-aside panel-block-aside-color',
+      'css_class' => 'gold-title  ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 6;
@@ -443,7 +443,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-block-aside pane-page-tabs',
+      'css_class' => ' pane-page-tabs',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -585,7 +585,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'panel-block-aside',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 5;

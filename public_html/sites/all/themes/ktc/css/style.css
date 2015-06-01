@@ -5641,8 +5641,8 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
-.ktc-comments-wrapper .ktc-comments:before,
-.ktc-comments-wrapper .ktc-comments:after,
+.ktc-comments-list .ktc-comments-list:before,
+.ktc-comments-list .ktc-comments-list:after,
 .ktc-footer:before,
 .ktc-footer:after,
 .ktc-user-profile:before,
@@ -5664,7 +5664,7 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-.ktc-comments-wrapper .ktc-comments:after,
+.ktc-comments-list .ktc-comments-list:after,
 .ktc-footer:after,
 .ktc-user-profile:after {
   clear: both;
@@ -10340,6 +10340,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-wrapper {
   position: relative;
   padding-top: 35px;
+  min-height: 250px;
 }
 .ktc-wrapper .ktc-wrapper-background {
   position: absolute;
@@ -10377,22 +10378,14 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .view .date-next {
   background-color: transparent;
 }
-.ktc-comments-wrapper {
-  margin-left: -13px;
-  margin-right: -13px;
-  margin-bottom: -15px;
-  padding-left: 13px;
-  padding-right: 13px;
-  background-color: #e9edee;
-}
-.ktc-comments-wrapper .ktc-comments {
+.ktc-comments-list .ktc-comments-list {
   border-style: solid;
   border-width: 2px;
 }
-.ktc-comments-wrapper .ktc-comments .ktc-user-profile-photo-container {
+.ktc-comments-list .ktc-comments-list .ktc-user-profile-photo-container {
   float: left;
 }
-.ktc-comments-wrapper .ktc-comments .ktc-user-profile-photo-container img {
+.ktc-comments-list .ktc-comments-list .ktc-user-profile-photo-container img {
   display: inherit;
   height: auto;
   width: auto;
@@ -10406,15 +10399,15 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   margin-right: 10px;
   padding: 3px;
 }
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content {
+.ktc-comments-list .ktc-comments-list .ktc-comments-content {
   display: inherit;
 }
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h1,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h2,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h3,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h4,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h5,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h6 {
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h1,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h2,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h3,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h4,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h5,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h6 {
   font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 12px;
   margin-top: 0;
@@ -10422,21 +10415,21 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   margin-bottom: 1px;
   color: #2c353a;
 }
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h1 span,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h2 span,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h3 span,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h4 span,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h5 span,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h6 span {
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h1 span,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h2 span,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h3 span,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h4 span,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h5 span,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h6 span {
   font-weight: normal;
   margin-left: 5px;
 }
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h1 span > em,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h2 span > em,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h3 span > em,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h4 span > em,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h5 span > em,
-.ktc-comments-wrapper .ktc-comments .ktc-comments-content h6 span > em {
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h1 span > em,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h2 span > em,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h3 span > em,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h4 span > em,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h5 span > em,
+.ktc-comments-list .ktc-comments-list .ktc-comments-content h6 span > em {
   font-style: normal;
 }
 .ktc-date {

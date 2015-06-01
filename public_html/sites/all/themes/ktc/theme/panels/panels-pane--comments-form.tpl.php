@@ -1,6 +1,6 @@
 <?php
 /**
- * @file panels-pane--aside.tpl.php
+ * @file panels-pane--comment.tpl.php
  * Main panel pane template
  *
  * Variables available:
@@ -21,20 +21,20 @@
   <?php print $pane_prefix; ?>
 <?php endif; ?>
 
-<div class="<?php print $classes; ?>" <?php print $id; ?> <?php print $attributes; ?>>
+<div class="ktc-comments-form <?php print $classes; ?> <?php if(isset($panel_is_filter) && $panel_is_filter) { print 'ktc-aside-toggle'; } ?>" <?php print $id; ?> <?php print $attributes; ?>>
   <?php if ($admin_links): ?>
     <?php print $admin_links; ?>
   <?php endif; ?>
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
-    <div class="pane-heading">
-      <h3 class="" <?php print $title_attributes; ?>><?php print $title; ?></h3>
+    <div class="ktc-aside-heading">
+      <h3 class="ktc-aside-title" <?php print $title_attributes; ?>><?php print $title; ?></h3>
     </div>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
-  <div class="pane-content ">
+  <div class="ktc-aside-body pane-content">
     <?php print render($content); ?>
   </div>
 
