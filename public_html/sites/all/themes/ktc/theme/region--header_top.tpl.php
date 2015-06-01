@@ -56,19 +56,19 @@
 
               <!-- Begin - toggle -->
               <li>
-                <a href="#"><span class="ktc-header-top-bar-user-menu-icon-toggle"></span></a>
+                <a href="#"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-toggle"></span></a>
               </li>
               <!-- End - toggle -->
 
               <!-- Begin - settings -->
               <li>
-                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon-settings"></span></a>
+                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-settings"></span></a>
               </li>
               <!-- End - settings -->
 
               <!-- Begin - logout -->
               <li>
-                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon-user-logout"></span></a>
+                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-logout"></span></a>
               </li>
               <!-- End - logout -->
 
@@ -76,13 +76,13 @@
 
               <!-- Begin - login -->
               <li>
-                <a href="/user/create"><span class="ktc-header-top-bar-user-menu-icon-user-login"></span></a>
+                <a href="/user/create"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-login"></span></a>
               </li>
               <!-- End - login -->
 
               <!-- Begin - create user -->
               <li>
-                <a href="/user/create"><span class="ktc-header-top-bar-user-menu-icon-user-create"></span></a>
+                <a href="/user/create"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-create"></span></a>
               </li>
               <!-- End - create user -->
 
@@ -90,7 +90,7 @@
 
             <!-- Begin - search -->
             <li>
-              <a href="/search"><span class="ktc-header-top-bar-user-menu-icon-search"></span></a>
+              <a href="/search"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-search"></span></a>
             </li>
             <!-- End - search -->
 

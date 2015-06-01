@@ -10188,37 +10188,40 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   width: 100%;
   height: auto;
 }
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon-search {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon {
+  display: inline-block;
+}
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-search {
   background-image: url(../images/sprites.png);
   background-position: 0px -684px;
   width: 27px;
   height: 27px;
 }
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon-settings {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-settings {
   background-image: url(../images/sprites.png);
   background-position: 0px -765px;
   width: 27px;
   height: 27px;
 }
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon-toggle {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-toggle {
   background-image: url(../images/sprites.png);
   background-position: 0px -711px;
   width: 27px;
   height: 27px;
 }
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon-user-create {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-create {
   background-image: url(../images/sprites.png);
   background-position: 0px -738px;
   width: 27px;
   height: 27px;
 }
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon-user-login {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-login {
   background-image: url(../images/sprites.png);
   background-position: 0px -792px;
   width: 28px;
   height: 28px;
 }
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon-user-logout {
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-logout {
   background-image: url(../images/sprites.png);
   background-position: 0px -848px;
   width: 28px;
