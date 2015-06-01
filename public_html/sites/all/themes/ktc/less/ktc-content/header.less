@@ -35,7 +35,8 @@
 			position: absolute;
 			top: 0;
 			left: floor(@grid-gutter-width / 2);
-			max-height: 70px;
+			height: @ktc-header-top-bar-logo-height;
+			width: @ktc-header-top-bar-logo-width;
 		}
 
 		// Button (add content)
@@ -93,6 +94,7 @@
 
 		// Nav
 		.navbar-nav {
+			margin-left: floor( @ktc-header-top-bar-logo-width + @grid-gutter-width );
 
 			// List item
 			> li {
