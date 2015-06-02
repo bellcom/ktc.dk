@@ -350,7 +350,7 @@ function _ktc_custom_filter_on_hearing() {
   if ($user->uid != 0) {
     $html .= '
       <div class="ktc-filter-button-container">
-        <div class="btn btn-default filter-link" id="filter-all" data-filter="all">All</div>
+        <div class="btn btn-default filter-link" id="filter-all" data-filter="all">Alle</div>
       </div>
       <div class="ktc-filter-button-container">
         <div class="btn btn-default filter-link filter-status" id="filter-status" data-filter="1837">Åbne</div>
