@@ -737,8 +737,8 @@ function ktc_netvaerk_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'groups',
-      'css_class' => '',
-      'template_suggestion' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-3-col',
+      'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -763,8 +763,8 @@ function ktc_netvaerk_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'content_type',
-      'css_class' => '',
-      'template_suggestion' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
+      'template_suggestion' => 'block',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -862,8 +862,8 @@ function ktc_netvaerk_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'regioner',
-      'css_class' => '',
-      'template_suggestion' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
+      'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
     $pane->position = 4;
