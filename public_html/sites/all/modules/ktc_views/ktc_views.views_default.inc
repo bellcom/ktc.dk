@@ -1970,15 +1970,15 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="col-md-4 col-sm-12 col-xs-12">
-<div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">ALLE</div>
+  $handler->display->display_options['header']['area']['content'] = '<div class="filter-box">
+<div class="ktc-filter-button-container">
+  <div class="btn btn-default filter-link" id="filter-all" data-filter="all">ALLE</div>
 </div>
-<div class="col-md-4 col-sm-12 col-xs-12">
-<div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="my">MINE</div>
+<div class="ktc-filter-button-container">
+  <div class="btn btn-default filter-link" id="filter-my" data-filter="my">MINE</div>
 </div>
-<div class="col-md-4 col-sm-12 col-xs-12">
-<div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="newest">NYESTE</div>
+<div class="ktc-filter-button-container">
+  <div class="btn btn-default filter-link" id="filter-my" data-filter="newest">NYESTE</div>
 </div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -2146,15 +2146,15 @@ function ktc_views_views_default_views() {
     t('KTC users groups'),
     t('Mine netværk'),
     t('KTC users filter groups'),
-    t('<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="col-md-4 col-sm-12 col-xs-12">
-<div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">ALLE</div>
+    t('<div class="filter-box">
+<div class="ktc-filter-button-container">
+  <div class="btn btn-default filter-link" id="filter-all" data-filter="all">ALLE</div>
 </div>
-<div class="col-md-4 col-sm-12 col-xs-12">
-<div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="my">MINE</div>
+<div class="ktc-filter-button-container">
+  <div class="btn btn-default filter-link" id="filter-my" data-filter="my">MINE</div>
 </div>
-<div class="col-md-4 col-sm-12 col-xs-12">
-<div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-my" data-filter="newest">NYESTE</div>
+<div class="ktc-filter-button-container">
+  <div class="btn btn-default filter-link" id="filter-my" data-filter="newest">NYESTE</div>
 </div>
 </div>'),
     t('Nyt indhold filtrer grupper'),
