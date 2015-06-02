@@ -506,7 +506,7 @@ function _ktc_section_block_netvaerk_content_types() {
       <div class="btn btn-default filter-link" id="filter-all" data-filter="all">Alle</div>
       </div>';
     foreach ($types as $type) {
-      $html .= '<div>
+      $html .= '<div class="ktc-filter-button-container">
         <div class="btn btn-default filter-link" id="' . $type . '"
         data-filter="' . $type . '" name="filter-content-type">' . node_type_get_name($type) . '</div>
       </div>';
