@@ -346,20 +346,20 @@ function _ktc_section_block_netvaerk_invite_links_content() {
  */
 function _ktc_custom_filter_on_hearing() {
   global $user;
-  $html = '<div id="filter-box-hearing-extra" class="col-md-12 col-sm-12 col-xs-12">';
+  $html = '<div id="filter-box-hearing-extra" class="filter-box">';
   if ($user->uid != 0) {
     $html .= '
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">All</div>
+      <div class="ktc-filter-button-container">
+        <div class="btn btn-default filter-link" id="filter-all" data-filter="all">All</div>
       </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-default filter-link filter-status col-md-12 col-sm-12 col-xs-12" id="filter-status" data-filter="1837">Åbne</div>
+      <div class="ktc-filter-button-container">
+        <div class="btn btn-default filter-link filter-status" id="filter-status" data-filter="1837">Åbne</div>
       </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-mine" data-filter="mine">Mine</div>
+      <div class="ktc-filter-button-container">
+        <div class="btn btn-default filter-link" id="filter-mine" data-filter="mine">Mine</div>
       </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-default filter-link filter-status col-md-12 col-sm-12 col-xs-12" id="filter-status" data-filter="1840">Lukkede</div>
+      <div class="ktc-filter-button-container">
+        <div class="btn btn-default filter-link filter-status" id="filter-status" data-filter="1840">Lukkede</div>
       </div>';
 
   }
@@ -367,8 +367,8 @@ function _ktc_custom_filter_on_hearing() {
   if (!empty($years)) {
     foreach ($years as $key => $year) {
       $html .= '
-        <div class="col-md-6 col-sm-12 col-xs-12">
-          <div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-year" data-filter="' . $key . '">' . $key . '</div>
+        <div class="ktc-filter-button-container">
+          <div class="btn btn-default filter-link" id="filter-year" data-filter="' . $key . '">' . $key . '</div>
         </div>';
     }
   }
@@ -524,23 +524,23 @@ function _ktc_section_block_page_menu_tabs() {
   if (arg(1) == 'node' && arg(3) == 'admin' && arg(4) == 'people') {
     $nid = arg(2);
     if (is_numeric($nid)) {
-      $group_menu = '<div>';
+      $group_menu = '<div class="filter-box">';
 
-      $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
-      $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-default filter-link">';
+      $group_menu .= '<div class="ktc-filter-button-container">';
+      $group_menu .= '<div class="btn btn-default filter-link">';
       $group_menu .= l('Vis', 'node/' . $nid);
       $group_menu .= '</div></div>';
 
       if (drupal_valid_path('node/' . $nid . '/edit')) {
-        $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
-        $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-default filter-link">';
+        $group_menu .= '<div class="ktc-filter-button-container">';
+        $group_menu .= '<div class="btn btn-default filter-link">';
         $group_menu .= l('Redigér', 'node/' . $nid . '/edit');
         $group_menu .= '</div></div>';
       }
 
       if (drupal_valid_path('node/' . $nid . '/group')) {
-        $group_menu .= '<div class="col-md-6 col-sm-6 col-xs-12 ">';
-        $group_menu .= '<div class="col-md-12 col-sm-12 col-xs-12 btn btn-primary filter-link">';
+        $group_menu .= '<div class="ktc-filter-button-container">';
+        $group_menu .= '<div class="btn btn-primary filter-link">';
         $group_menu .= l('Gruppe', 'node/' . $nid . '/group');
         $group_menu .= '</div></div>';
       }

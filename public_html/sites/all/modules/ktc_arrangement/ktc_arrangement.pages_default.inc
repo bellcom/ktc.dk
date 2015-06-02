@@ -856,13 +856,13 @@ function ktc_arrangement_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="col-md-6 col-sm-12 col-xs-12">
-	<div class="btn btn-primary filter-link col-md-12 col-sm-12 col-xs-12" data-filter="future" id="filter-all">
+      'body' => '<div class="filter-box">
+<div class="ktc-filter-button-container">
+	<div class="btn btn-primary filter-link" data-filter="future" id="filter-all">
 		Kommende</div>
 </div>
-<div class="col-md-6 col-sm-12 col-xs-12">
-	<div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" data-filter="old" id="filter-old">
+<div class="ktc-filter-button-container">
+	<div class="btn btn-default filter-link" data-filter="old" id="filter-old">
 		Afholdte</div>
 </div>
 </div>',
