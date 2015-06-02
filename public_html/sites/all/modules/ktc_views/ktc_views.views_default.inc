@@ -3083,38 +3083,36 @@ function ktc_views_views_default_views() {
     t('Sortér efter'),
     t('Stigende'),
     t('Faldende'),
-    t('<div class="col-md-6 col-sm-12 col-xs-12">
+    t('<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-all" data-filter="all">Alle</div>
 </div>'),
     t('Overordnet element'),
     t('.'),
-    t('<div class="col-md-6 col-sm-12 col-xs-12">
+    t('<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-[tid]" data-filter="[tid]">[name]</div>
 </div>
 '),
     t('Alle'),
     t('Block'),
-    t('<div class="col-md-6 col-sm-12 col-xs-12">
+    t('<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-[tid]" data-filter="[tid]">[name]</div>
 </div>'),
     t('Term first level'),
-    t('<div class="col-md-6 col-sm-12 col-xs-12">
+    t('<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-all" data-filter="all">Alle</div>
 </div>
 '),
     t('View panes'),
     t('Term first level with chosen ids'),
-    t('<div class="col-md-12 col-sm-12 col-xs-12">
+    t('<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>
 </div>'),
-    t('<div class="col-md-12 col-sm-12 col-xs-12">
+    t('<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-[tid]" data-filter="[tid]">[name]</div>
 </div>'),
     t('Term 1. level width'),
-    t('<div class="col-md-12 col-sm-12 col-xs-12">
-<div class="col-md-12 col-sm-12 col-xs-12">
+    t('<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>
-</div>
 </div>'),
   );
   $export['section_page_filter'] = $view;
