@@ -2898,9 +2898,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="ktc-filter-button-container">
-<div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>
-</div>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="ktc-filter-button-container"><div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Ord i ordforråd: Term ID */
@@ -3018,9 +3016,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="ktc-filter-button-container">
-<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>
-</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
