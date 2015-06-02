@@ -310,29 +310,29 @@ function _ktc_section_block_netvaerk_invite_links_content() {
   $html = '';
   if (is_numeric($nid) && user_is_logged_in()) {
     $html .= '<div class="row">';
-    $link_class = 'col-md-12 col-sm-12 col-xs-12 filter-link btn btn-default';
+    $link_class = 'filter-link btn btn-default';
     $node = node_load($nid);
     // If user has access to invite user to group.
     if ($access = og_user_access('node', $nid, 'invite any user') && og_is_member('node', $nid)) {
-      $html .= '<div class="col-md-6 col-sm-12 col-xs-12">';
+      $html .= '<div class="ktc-filter-button-container">';
       $html .= l('Invitér', 'group/node/' . $nid . '/admin/people/invite-users', array('attributes' => array('class' => $link_class), 'query' => array('destination' => 'node/' . $nid)));
       $html .= '</div>';
     }
     // Check if the user is a member,
     // print out subscrib/unsubscrib link.
     if (og_is_member('node', $nid)) {
-      $html .= '<div class="col-md-6 col-sm-12 col-xs-12">';
+      $html .= '<div class="ktc-filter-button-container">';
       $html .= l('Afmeld', 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' => $link_class)));
       $html .= '</div>';
     }
     else {
       if (og_user_access('node', $nid, 'subscribe without approval')) {
-        $html .= '<div class="col-md-12 col-sm-12 col-xs-12">';
+        $html .= '<div class="ktc-filter-button-container">';
         $html .= l('Ansøg om medlemskab', 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
         $html .= '</div>';
       }
       else if (og_user_access('node', $nid, 'subscribe')) {
-        $html .= '<div class="col-md-12 col-sm-12 col-xs-12">';
+        $html .= '<div class="ktc-filter-button-container">';
         $html .= l('Tilmeld', 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
         $html .= '</div>';
       }

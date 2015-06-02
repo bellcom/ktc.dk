@@ -1803,7 +1803,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 col-sm-12 col-xs-12';
+  $handler->display->display_options['style_options']['row_class'] = 'ktc-filter-button-container';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -2762,7 +2762,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-6 col-sm-12 col-xs-12">
+  $handler->display->display_options['header']['area']['content'] = '<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-all" data-filter="all">Alle</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -2796,7 +2796,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-6 col-sm-12 col-xs-12">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-[tid]" data-filter="[tid]">[name]</div>
 </div>
 ';
@@ -2851,7 +2851,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-6 col-sm-12 col-xs-12">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-[tid]" data-filter="[tid]">[name]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -2859,13 +2859,13 @@ function ktc_views_views_default_views() {
   /* Display: Term first level */
   $handler = $view->new_display('panel_pane', 'Term first level', 'panel_pane_1');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'filter-box col-md-12 col-sm-12 col-xs-12';
+  $handler->display->display_options['css_class'] = 'filter-box';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Overskrift: Global: Tekstområde */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-6 col-sm-12 col-xs-12">
+  $handler->display->display_options['header']['area']['content'] = '<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-all" data-filter="all">Alle</div>
 </div>
 ';
@@ -2898,7 +2898,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-12 col-sm-12 col-xs-12">
+  $handler->display->display_options['header']['area']['content'] = '<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -2929,7 +2929,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-12 col-sm-12 col-xs-12">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-[tid]" data-filter="[tid]">[name]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -3017,7 +3017,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-12 col-sm-12 col-xs-12">
+  $handler->display->display_options['header']['area']['content'] = '<div class="ktc-filter-button-container">
 <div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>
 </div>
@@ -3050,7 +3050,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-md-12 col-sm-12 col-xs-12">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-[tid]" data-filter="[tid]">[name]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -3516,7 +3516,7 @@ function ktc_views_views_default_views() {
     t('næste ›'),
     t('sidste »'),
     t('<div class="filter-foldin"> - </div>
-<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link" id="filter-all" data-filter="all">Alle</div>
 </div>'),
     t('Group list'),
