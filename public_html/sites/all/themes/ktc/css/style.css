@@ -5648,7 +5648,9 @@ button.close {
 .ktc-user-profile:before,
 .ktc-user-profile:after,
 .ktc-node-header:before,
-.ktc-node-header:after {
+.ktc-node-header:after,
+.ktc-aside-filter .filter-box:before,
+.ktc-aside-filter .filter-box:after {
   content: " ";
   display: table;
 }
@@ -5669,7 +5671,8 @@ button.close {
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item:after,
 .ktc-footer:after,
 .ktc-user-profile:after,
-.ktc-node-header:after {
+.ktc-node-header:after,
+.ktc-aside-filter .filter-box:after {
   clear: both;
 }
 .center-block {
@@ -8694,27 +8697,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .col-md-4 .panel-pane.pane-ktc-related-links-related-links-block ul li {
   list-style: none;
   margin-bottom: 8px;
-}
-.col-md-3 .panel-pane .pane-content,
-.col-md-4 .panel-pane .pane-content {
-  display: block;
-  position: relative;
-  margin-bottom: 0;
-  overflow: hidden;
-}
-.col-md-3 .panel-pane .pane-content .filter-box,
-.col-md-4 .panel-pane .pane-content .filter-box {
-  margin: 0px 0 20px 0;
-}
-.col-md-3 .panel-pane .pane-content #filter-all,
-.col-md-4 .panel-pane .pane-content #filter-all,
-.col-md-3 .panel-pane .pane-content .filter-link,
-.col-md-4 .panel-pane .pane-content .filter-link {
-  margin-bottom: 3px;
-}
-.col-md-3 .filter-link,
-.col-md-4 .filter-link {
-  margin-bottom: 3px;
 }
 .col-md-3 .filter-foldout,
 .col-md-4 .filter-foldout {
