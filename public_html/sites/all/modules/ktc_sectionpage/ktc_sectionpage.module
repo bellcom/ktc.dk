@@ -492,7 +492,7 @@ function _ktc_user_comments_content($page = TRUE) {
 function _ktc_section_block_netvaerk_content_types() {
   $nid = arg(1);
   $types = array();
-  $html = '<div class="filter-box col-md-12 col-sm-12 col-xs-12">';
+  $html = '<div class="filter-box">';
   if (is_numeric($nid)) {
     // Se function ktc_netvaerk_get_group_content_types in ktc_netvaerk.module.
     $types = ktc_netvaerk_get_group_content_types($nid);
@@ -502,12 +502,12 @@ function _ktc_section_block_netvaerk_content_types() {
   }
 
   if (!empty($types)) {
-    $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
-      <div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="filter-all" data-filter="all">Alle</div>
+    $html .= '<div>
+      <div class="btn btn-default filter-link" id="filter-all" data-filter="all">Alle</div>
       </div>';
     foreach ($types as $type) {
-      $html .= '<div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="btn btn-default filter-link col-md-12 col-sm-12 col-xs-12" id="' . $type . '"
+      $html .= '<div>
+        <div class="btn btn-default filter-link" id="' . $type . '"
         data-filter="' . $type . '" name="filter-content-type">' . node_type_get_name($type) . '</div>
       </div>';
     }
