@@ -10370,13 +10370,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   top: 0;
   left: 0;
   right: 0;
-  height: 231px;
+  height: 261px;
   background: url("../images/bg_body.jpg") center top repeat-x;
   border-top: 20px solid #fff;
   border-bottom: 10px solid #d5dcde;
-}
-.ktc-wrapper .region-header {
-  display: none;
 }
 .ktc-content {
   background-color: #ffffff;
