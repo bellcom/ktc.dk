@@ -11124,10 +11124,7 @@ h6 + .ktc-date {
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn {
   position: relative;
   padding-left: 22px;
-  display: block;
   width: 100%;
-  padding-left: 0;
-  padding-right: 0;
 }
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn,
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:hover,
