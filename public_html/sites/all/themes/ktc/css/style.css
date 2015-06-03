@@ -11087,6 +11087,14 @@ h6 + .ktc-date {
   width: 50%;
   padding: 2px 15px;
 }
+.ktc-aside-filter-2-col .filter-box .ktc-filter-button-container:nth-child(odd) {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.ktc-aside-filter-2-col .filter-box .ktc-filter-button-container:nth-child(even) {
+  padding-left: 7px;
+  padding-right: 15px;
+}
 .ktc-aside-filter-3-col .filter-box .ktc-filter-button-container {
   float: left;
   width: 33.333%;

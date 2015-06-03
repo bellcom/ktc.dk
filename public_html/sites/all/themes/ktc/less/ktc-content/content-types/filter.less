@@ -32,6 +32,18 @@
 			float: left;
 			width: 50%;
 			padding: 2px @ktc-default-left-right-inner-spacing;
+
+			// On left side
+			&:nth-child(odd) {
+				padding-left: @ktc-default-left-right-inner-spacing;
+				padding-right: floor( @ktc-default-left-right-inner-spacing / 2 );
+			}
+
+			// On right side
+			&:nth-child(even) {
+				padding-left: floor( @ktc-default-left-right-inner-spacing / 2 );
+				padding-right: @ktc-default-left-right-inner-spacing;
+			}
 		}
 	}
 }
