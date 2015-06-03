@@ -204,8 +204,8 @@
     // Toggle description length
     $('.toggle-pane-content').each(function(){
       if ($(this).find('.pane-content').height() > 115) {
-        $(this).find('.pane-content').append('<a href="#" class="js-toggle-description-length short">Vis mere</a>');
-        $(this).find('.pane-content').append('<a href="#" class="js-toggle-description-length hide long">Skjul</a>');
+        $(this).find('.pane-content').append('<a href="#" class="js-toggle-description-length short btn btn-default">Vis mere</a>');
+        $(this).find('.pane-content').append('<a href="#" class="js-toggle-description-length hide long btn btn-default">Skjul</a>');
 
         $('.js-toggle-description-length').click(function(){
           $(this).parent().find('.js-toggle-description-length').toggleClass('hide');

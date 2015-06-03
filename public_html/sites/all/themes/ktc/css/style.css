@@ -11087,10 +11087,75 @@ h6 + .ktc-date {
   width: 50%;
   padding: 2px 15px;
 }
+.ktc-aside-filter-2-col .filter-box .ktc-filter-button-container:nth-child(odd) {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.ktc-aside-filter-2-col .filter-box .ktc-filter-button-container:nth-child(even) {
+  padding-left: 7px;
+  padding-right: 15px;
+}
 .ktc-aside-filter-3-col .filter-box .ktc-filter-button-container {
   float: left;
   width: 33.333%;
+  padding: 2px 7px;
+}
+.ktc-aside-filter-3-col .filter-box .ktc-filter-button-container:first-child {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.ktc-aside-filter-3-col .filter-box .ktc-filter-button-container:last-child {
+  padding-left: 7px;
+  padding-right: 15px;
+}
+.ktc-aside-checkbox-filter .ktc-filter-button-container {
   padding: 2px 15px;
+}
+.ktc-aside-checkbox-filter .ktc-aside-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+.ktc-aside-checkbox-filter .view-header .ktc-filter-button-container {
+  text-align: center;
+}
+.ktc-aside-checkbox-filter .view-header .ktc-filter-button-container .btn {
+  min-width: 40%;
+}
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn {
+  position: relative;
+  padding-left: 22px;
+  width: 100%;
+  font-weight: normal;
+  border-radius: 0;
+}
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn,
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:hover,
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:focus {
+  text-align: left;
+  border-width: 0;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: inline-block;
+  content: "";
+  background-image: url(../images/sprites.png);
+  background-position: 0px -423px;
+  width: 18px;
+  height: 18px;
+  margin-top: -9px;
+}
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn.active:before {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -406px;
+  width: 17px;
+  height: 17px;
+  margin-top: -9px;
 }
 .ktc-aside-tabs .ktc-aside-body {
   padding-left: 0;
@@ -11107,6 +11172,14 @@ h6 + .ktc-date {
   float: left;
   width: 50%;
   padding: 2px 15px;
+}
+.ktc-aside-tabs-2-col .nav-tabs .ktc-tabs-button-container:nth-child(odd) {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.ktc-aside-tabs-2-col .nav-tabs .ktc-tabs-button-container:nth-child(even) {
+  padding-left: 7px;
+  padding-right: 15px;
 }
 .ktc-aside-tabs-3-col .nav-tabs .ktc-tabs-button-container {
   float: left;

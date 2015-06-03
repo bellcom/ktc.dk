@@ -796,8 +796,8 @@ function ktc_netvaerk_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'emner',
-      'css_class' => '',
-      'template_suggestion' => '',
+      'css_class' => 'ktc-aside-checkbox-filter',
+      'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
     $pane->position = 2;
@@ -829,8 +829,8 @@ function ktc_netvaerk_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'term_type',
-      'css_class' => '',
-      'template_suggestion' => '',
+      'css_class' => 'ktc-aside-checkbox-filter',
+      'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
     $pane->position = 3;
