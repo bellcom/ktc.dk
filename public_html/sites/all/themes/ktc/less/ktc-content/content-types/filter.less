@@ -115,6 +115,8 @@
 				position: relative;
 				padding-left: floor(@tick-width + 5px );
 				width: 100%;
+				font-weight: normal;
+				border-radius: 0;
 
 				// Reset
 				&,
@@ -123,6 +125,7 @@
 					text-align: left;
 					border-width: 0;
 					background-color: transparent;
+					.box-shadow(none);
 				}
 
 				// Icon
@@ -138,7 +141,6 @@
 
 				// Active
 				&.active {
-					margin-top: -( floor(@tick-height / 2));
 					.sprite(@tick);
 				}
 			}
