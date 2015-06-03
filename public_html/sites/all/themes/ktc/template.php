@@ -618,7 +618,7 @@ function ktc_menu_local_task($variables) {
     $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
   }
 
-  return '<li' . (!empty($variables['element']['#active']) ? ' class="active col-md-6 col-sm-6 col-xs-12"' : ' class="col-md-6 col-sm-6 col-xs-12"') . '>' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n";
+  return '<li' . (!empty($variables['element']['#active']) ? ' class="active ktc-tab-button-container"' : ' class="ktc-tab-button-container"') . '>' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n";
 }
 
 /**

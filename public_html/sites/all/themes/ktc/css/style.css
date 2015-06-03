@@ -9633,16 +9633,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   top: 6px;
   right: 15px;
 }
-.ktc-aside-tab-menu .nav-tabs {
-  display: block;
-}
-.ktc-aside-tab-menu .nav-tabs > li {
-  float: left;
-  width: 50%;
-}
-.ktc-aside-tab-menu .nav-tabs > li > a {
-  display: block;
-}
 .ktc-block {
   background-color: transparent;
 }
