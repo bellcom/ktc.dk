@@ -10577,6 +10577,19 @@ fieldset[disabled] .ktc-comments-list .ktc-comments-list-body .ktc-comments-list
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a.btn-warning.active {
   border-color: #3a2e00;
 }
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a.btn-action {
+  background-color: #2c353a;
+  color: #ffffff;
+  border-color: #586a74;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a.btn-action:hover {
+  background-color: #1f2529;
+  color: #ffffff;
+  border-color: #495760;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a.btn-action.active {
+  border-color: #21282c;
+}
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a:hover {
   background-color: #f0f0f0;
   color: #2c353a;
@@ -11335,6 +11348,19 @@ a.btn:focus {
 .btn.btn-warning.active {
   border-color: #3a2e00;
 }
+.btn.btn-action {
+  background-color: #2c353a;
+  color: #ffffff;
+  border-color: #586a74;
+}
+.btn.btn-action:hover {
+  background-color: #1f2529;
+  color: #ffffff;
+  border-color: #495760;
+}
+.btn.btn-action.active {
+  border-color: #21282c;
+}
 .nav-tabs .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -11483,6 +11509,19 @@ fieldset[disabled] .nav-tabs .btn {
 .nav-tabs .btn.btn-warning.active {
   border-color: #3a2e00;
 }
+.nav-tabs .btn.btn-action {
+  background-color: #2c353a;
+  color: #ffffff;
+  border-color: #586a74;
+}
+.nav-tabs .btn.btn-action:hover {
+  background-color: #1f2529;
+  color: #ffffff;
+  border-color: #495760;
+}
+.nav-tabs .btn.btn-action.active {
+  border-color: #21282c;
+}
 .nav-tabs .btn:hover {
   background-color: #f0f0f0;
   color: #2c353a;
@@ -11490,16 +11529,6 @@ fieldset[disabled] .nav-tabs .btn {
 }
 .nav-tabs .btn.active {
   border-color: #a1b2b6;
-}
-.ktc-aside-action .btn.btn-primary,
-.ktc-aside-action .btn.btn-default,
-.ktc-aside-action .btn.btn-primary.active,
-.ktc-aside-action .btn.btn-default.active,
-.ktc-aside-action .btn.btn-primary:hover,
-.ktc-aside-action .btn.btn-default:hover,
-.ktc-aside-action .btn.btn-primary:focus,
-.ktc-aside-action .btn.btn-default:focus {
-  background-color: transparent;
 }
 h1,
 h2,

@@ -115,7 +115,7 @@ a.btn {
 
 	// Action (our own for buttons inside actions)
 	&.btn-action {
-		//.ktc-mixin-button(@ktc-override-button-action-background-color, @ktc-override-button-action-border-color, @ktc-override-button-action-font-color);
+		.ktc-mixin-button(@ktc-override-button-action-background-color, @ktc-override-button-action-border-color, @ktc-override-button-action-font-color);
 	}
 }
 
@@ -126,26 +126,5 @@ a.btn {
 	.btn {
 		.btn;
 		.ktc-mixin-button(@ktc-override-button-default-background-color, @ktc-override-button-default-border-color, @ktc-override-button-default-font-color);
-	}
-}
-
-// Aside action
-.ktc-aside-action {
-
-	// Button
-	.btn {
-
-		// Primary and default
-		&.btn-primary,
-		&.btn-default {
-
-			// Normal, active, hover and focus state
-			&,
-			&.active,
-			&:hover,
-			&:focus {
-				background-color: transparent;
-			}
-		}
 	}
 }
