@@ -11139,6 +11139,13 @@ h6 + .ktc-date {
   content: "";
   top: 50%;
   left: 0;
+  margin-top: -9px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -423px;
+  width: 18px;
+  height: 18px;
+}
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn.active {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
   background-position: 0px -406px;

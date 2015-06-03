@@ -132,6 +132,12 @@
 					content: "";
 					top: 50%;
 					left: 0;
+					margin-top: -( floor(@rundt-height / 2));
+					.sprite(@rundt);
+				}
+
+				// Active
+				&.active {
 					margin-top: -( floor(@tick-height / 2));
 					.sprite(@tick);
 				}
