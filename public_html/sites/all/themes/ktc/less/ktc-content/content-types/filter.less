@@ -58,7 +58,19 @@
 		.ktc-filter-button-container {
 			float: left;
 			width: 33.333%;
-			padding: 2px @ktc-default-left-right-inner-spacing;
+			padding: 2px floor( @ktc-default-left-right-inner-spacing / 2 );
+
+			// On left side
+			&:first-child {
+				padding-left: @ktc-default-left-right-inner-spacing;
+				padding-right: floor( @ktc-default-left-right-inner-spacing / 2 );
+			}
+
+			// On right side
+			&:last-child {
+				padding-left: floor( @ktc-default-left-right-inner-spacing / 2 );
+				padding-right: @ktc-default-left-right-inner-spacing;
+			}
 		}
 	}
 }

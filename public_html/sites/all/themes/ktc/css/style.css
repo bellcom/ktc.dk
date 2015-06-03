@@ -11098,7 +11098,15 @@ h6 + .ktc-date {
 .ktc-aside-filter-3-col .filter-box .ktc-filter-button-container {
   float: left;
   width: 33.333%;
-  padding: 2px 15px;
+  padding: 2px 7px;
+}
+.ktc-aside-filter-3-col .filter-box .ktc-filter-button-container:first-child {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.ktc-aside-filter-3-col .filter-box .ktc-filter-button-container:last-child {
+  padding-left: 7px;
+  padding-right: 15px;
 }
 .ktc-aside-tabs .ktc-aside-body {
   padding-left: 0;
