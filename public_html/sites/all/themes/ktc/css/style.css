@@ -11122,6 +11122,7 @@ h6 + .ktc-date {
   min-width: 40%;
 }
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn {
+  position: relative;
   display: block;
   width: 100%;
   padding-left: 0;
@@ -11130,8 +11131,19 @@ h6 + .ktc-date {
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn,
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:hover,
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:focus {
+  text-align: left;
   border-width: 0;
   background-color: transparent;
+}
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:before {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -406px;
+  width: 17px;
+  height: 17px;
 }
 .ktc-aside-tabs .ktc-aside-body {
   padding-left: 0;

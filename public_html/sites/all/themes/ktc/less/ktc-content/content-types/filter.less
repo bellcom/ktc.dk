@@ -112,14 +112,25 @@
 
 			// Button
 			.btn {
+				position: relative;
 				.btn-block;
 
 				// Reset
 				&,
 				&:hover,
 				&:focus {
+					text-align: left;
 					border-width: 0;
 					background-color: transparent;
+				}
+
+				// Icon
+				&:before {
+					position: absolute;
+					display: inline-block;
+					top: 0;
+					left: 0;
+					.sprite(@tick);
 				}
 			}
 		}
