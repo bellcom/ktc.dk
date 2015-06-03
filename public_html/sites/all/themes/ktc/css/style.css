@@ -11281,12 +11281,12 @@ h6 + .ktc-date {
   padding-right: 0;
   word-wrap: break-word;
 }
-.ktc-aside-tabs-2-col .nav-tabs > li {
+.ktc-aside-tabs-2-col .nav-tabs .ktc-tabs-button-container {
   float: left;
   width: 50%;
   padding: 2px 15px;
 }
-.ktc-aside-tabs-3-col .nav-tabs > li {
+.ktc-aside-tabs-3-col .nav-tabs .ktc-tabs-button-container {
   float: left;
   width: 33.333%;
   padding: 2px 15px;
