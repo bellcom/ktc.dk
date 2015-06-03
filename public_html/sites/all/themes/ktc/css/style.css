@@ -11127,6 +11127,12 @@ h6 + .ktc-date {
   padding-left: 0;
   padding-right: 0;
 }
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn,
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:hover,
+.ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:focus {
+  border-width: 0;
+  background-color: transparent;
+}
 .ktc-aside-tabs .ktc-aside-body {
   padding-left: 0;
   padding-right: 0;
