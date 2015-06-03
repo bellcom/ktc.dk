@@ -50,6 +50,7 @@
 			// List item
 			> li {
 				vertical-align: middle;
+				padding-right: 0; // BS reset
 
 				// User login
 				.ktc-header-top-bar-user-login {
@@ -71,30 +72,26 @@
 
 				// Icon
 				.ktc-header-top-bar-user-menu-icon {
-					display: inline-block;
+					display: block;
 
 					// Search
 					&.ktc-header-top-bar-user-menu-icon-search {
 						.sprite(@header-search);
-						margin-top: 1px;
 					}
 
 					// Settings
 					&.ktc-header-top-bar-user-menu-icon-settings {
 						.sprite(@header-cog);
-						margin-top: 1px;
 					}
 
 					// Toggle
 					&.ktc-header-top-bar-user-menu-icon-toggle {
 						.sprite(@header-toggle);
-						margin-top: 1px;
 					}
 
 					// Create user
 					&.ktc-header-top-bar-user-menu-icon-user-create {
 						.sprite(@header-user-create);
-						margin-top: 1px;
 					}
 
 					// Login
