@@ -11123,6 +11123,7 @@ h6 + .ktc-date {
 }
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn {
   position: relative;
+  padding-left: 22px;
   display: block;
   width: 100%;
   padding-left: 0;
@@ -11138,8 +11139,9 @@ h6 + .ktc-date {
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:before {
   position: absolute;
   display: inline-block;
-  top: 0;
+  top: 50%;
   left: 0;
+  margin-top: -8px;
   background-image: url(../images/sprites.png);
   background-position: 0px -406px;
   width: 17px;

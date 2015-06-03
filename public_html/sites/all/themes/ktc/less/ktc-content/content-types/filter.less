@@ -113,6 +113,7 @@
 			// Button
 			.btn {
 				position: relative;
+				padding-left: floor(@tick-width + 5px );
 				.btn-block;
 
 				// Reset
@@ -128,8 +129,9 @@
 				&:before {
 					position: absolute;
 					display: inline-block;
-					top: 0;
+					top: 50%;
 					left: 0;
+					margin-top: -( floor(@tick-height / 2));
 					.sprite(@tick);
 				}
 			}
