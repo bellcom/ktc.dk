@@ -55,19 +55,19 @@
 
               <!-- Begin - toggle -->
               <li>
-                <a href="#"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-toggle"></span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Dine genveje"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-toggle"></span></a>
               </li>
               <!-- End - toggle -->
 
               <!-- Begin - settings -->
               <li>
-                <a href="/user"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-settings"></span></a>
+                <a href="/user" data-toggle="tooltip" data-placement="bottom" title="Indstillinger"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-settings"></span></a>
               </li>
               <!-- End - settings -->
 
               <!-- Begin - logout -->
               <li>
-                <a href="/user/logout"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-logout"></span></a>
+                <a href="/user/logout" data-toggle="tooltip" data-placement="bottom" title="Log af"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-logout"></span></a>
               </li>
               <!-- End - logout -->
 
@@ -83,7 +83,7 @@
 
               <!-- Begin - create user -->
               <li>
-                <a href="/user/register"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-create"></span></a>
+                <a href="/user/register" data-toggle="tooltip" data-placement="bottom" title="Opret bruger"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-create"></span></a>
               </li>
               <!-- End - create user -->
 
@@ -91,7 +91,7 @@
 
             <!-- Begin - search -->
             <li>
-              <a href="/search"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-search"></span></a>
+              <a href="/search" data-toggle="tooltip" data-placement="bottom" title="Søg"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-search"></span></a>
             </li>
             <!-- End - search -->
 

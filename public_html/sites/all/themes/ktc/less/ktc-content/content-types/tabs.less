@@ -1,0 +1,52 @@
+// Tabs
+.ktc-aside-tabs {
+
+	// Body
+	.ktc-aside-body {
+		padding-left: 0;
+		padding-right: 0;
+
+		// Button
+		.btn {
+			.btn-block;
+			word-wrap: break-word;
+		}
+	}
+
+	// Nav tabs
+	.nav-tabs {
+
+		// Clearfix
+		&:extend(.clearfix all);
+	}
+}
+
+// 2 columns
+.ktc-aside-tabs-2-col {
+
+	// Nav tabs
+	.nav-tabs {
+
+		// Button container
+		.ktc-tabs-button-container {
+			float: left;
+			width: 50%;
+			padding: 2px @ktc-default-left-right-inner-spacing;
+		}
+	}
+}
+
+// 3 columns
+.ktc-aside-tabs-3-col {
+
+	// Nav tabs
+	.nav-tabs {
+
+		// Button container
+		.ktc-tabs-button-container {
+			float: left;
+			width: 33.333%;
+			padding: 2px @ktc-default-left-right-inner-spacing;
+		}
+	}
+}

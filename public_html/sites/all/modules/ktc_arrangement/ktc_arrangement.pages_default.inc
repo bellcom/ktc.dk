@@ -513,7 +513,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-tab-menu ktc-aside-action',
+      'css_class' => 'ktc-aside-tabs ktc-aside-tabs-2-col ktc-aside-action',
       'template_suggestion' => 'page_tabs',
     );
     $pane->extras = array();

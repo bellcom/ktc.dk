@@ -618,7 +618,7 @@ function ktc_menu_local_task($variables) {
     $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
   }
 
-  return '<li' . (!empty($variables['element']['#active']) ? ' class="active col-md-6 col-sm-6 col-xs-12"' : ' class="col-md-6 col-sm-6 col-xs-12"') . '>' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n";
+  return '<li' . (!empty($variables['element']['#active']) ? ' class="active ktc-tabs-button-container"' : ' class="ktc-tabs-button-container"') . '>' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n";
 }
 
 /**
@@ -627,7 +627,7 @@ function ktc_menu_local_task($variables) {
 function ktc_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   if (isset($data['tabs'][0]['output'])) {
     foreach ($data['tabs'][0]['output'] as $key => &$item) {
-      $item['#link']['localized_options']['attributes']['class'][] = 'btn btn-default';
+      $item['#link']['localized_options']['attributes']['class'][] = 'btn btn-action';
     }
   }
 }

@@ -6,7 +6,7 @@
 // |
 
 //== General
-@ktc-header-top-bar-background-color: #fff;
+@ktc-header-background-color: #fff;
 
 //== Top bar
 @ktc-header-top-bar-height: 50px;
@@ -21,11 +21,11 @@
 
 // Header
 .ktc-header {
-	background-color: @ktc-header-top-bar-background-color;
 
 	// Top bar
 	.ktc-header-top-bar {
 		min-height: @ktc-header-top-bar-height;
+		background-color: @ktc-header-background-color;
 
 		// Logo
 		.ktc-header-top-bar-logo {
@@ -50,6 +50,7 @@
 			// List item
 			> li {
 				vertical-align: middle;
+				padding-right: 0; // BS reset
 
 				// User login
 				.ktc-header-top-bar-user-login {
@@ -71,30 +72,26 @@
 
 				// Icon
 				.ktc-header-top-bar-user-menu-icon {
-					display: inline-block;
+					display: block;
 
 					// Search
 					&.ktc-header-top-bar-user-menu-icon-search {
 						.sprite(@header-search);
-						margin-top: 1px;
 					}
 
 					// Settings
 					&.ktc-header-top-bar-user-menu-icon-settings {
 						.sprite(@header-cog);
-						margin-top: 1px;
 					}
 
 					// Toggle
 					&.ktc-header-top-bar-user-menu-icon-toggle {
 						.sprite(@header-toggle);
-						margin-top: 1px;
 					}
 
 					// Create user
 					&.ktc-header-top-bar-user-menu-icon-user-create {
 						.sprite(@header-user-create);
-						margin-top: 1px;
 					}
 
 					// Login
@@ -169,6 +166,11 @@
 	.ktc-header-dropdown {
 		display: none;
 		padding-top: floor( floor( @ktc-header-top-bar-logo-height - @ktc-header-top-bar-height ) + @grid-gutter-width);
+
+		// Container
+		> .container {
+			background-color: @ktc-header-background-color;
+		}
 
 		// Open
 		&.open {

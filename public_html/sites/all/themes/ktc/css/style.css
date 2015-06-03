@@ -5650,7 +5650,9 @@ button.close {
 .ktc-node-header:before,
 .ktc-node-header:after,
 .ktc-aside-filter .filter-box:before,
-.ktc-aside-filter .filter-box:after {
+.ktc-aside-filter .filter-box:after,
+.ktc-aside-tabs .nav-tabs:before,
+.ktc-aside-tabs .nav-tabs:after {
   content: " ";
   display: table;
 }
@@ -5672,7 +5674,8 @@ button.close {
 .ktc-footer:after,
 .ktc-user-profile:after,
 .ktc-node-header:after,
-.ktc-aside-filter .filter-box:after {
+.ktc-aside-filter .filter-box:after,
+.ktc-aside-tabs .nav-tabs:after {
   clear: both;
 }
 .center-block {
@@ -8724,193 +8727,15 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .col-md-4 ul.nav-tabs {
   border-bottom: none;
 }
-.col-md-3 .tabs--primary,
-.col-md-4 .tabs--primary,
-.col-md-3 .tabs--secondary,
-.col-md-4 .tabs--secondary,
-.col-md-3 .pane-menu-menu-user-profile-menu,
-.col-md-4 .pane-menu-menu-user-profile-menu {
-  padding-top: 10px;
-}
 .col-md-3 .tabs--primary li.active > a.active,
 .col-md-4 .tabs--primary li.active > a.active,
 .col-md-3 .tabs--secondary li.active > a.active,
 .col-md-4 .tabs--secondary li.active > a.active,
 .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active,
 .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active {
-  background-color: #fff !important;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  color: #2c353a;
-  background-color: #ffffff;
-  border-color: #2c353a;
-}
-.col-md-3 .tabs--primary li.active > a.active:hover,
-.col-md-4 .tabs--primary li.active > a.active:hover,
-.col-md-3 .tabs--secondary li.active > a.active:hover,
-.col-md-4 .tabs--secondary li.active > a.active:hover,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active:hover,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active:hover,
-.col-md-3 .tabs--primary li.active > a.active:focus,
-.col-md-4 .tabs--primary li.active > a.active:focus,
-.col-md-3 .tabs--secondary li.active > a.active:focus,
-.col-md-4 .tabs--secondary li.active > a.active:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active:focus,
-.col-md-3 .tabs--primary li.active > a.active:active,
-.col-md-4 .tabs--primary li.active > a.active:active,
-.col-md-3 .tabs--secondary li.active > a.active:active,
-.col-md-4 .tabs--secondary li.active > a.active:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active:active,
-.col-md-3 .tabs--primary li.active > a.active.active,
-.col-md-4 .tabs--primary li.active > a.active.active,
-.col-md-3 .tabs--secondary li.active > a.active.active,
-.col-md-4 .tabs--secondary li.active > a.active.active,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active.active,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active.active,
-.open .dropdown-toggle.col-md-3 .tabs--primary li.active > a.active,
-.open .dropdown-toggle.col-md-4 .tabs--primary li.active > a.active,
-.open .dropdown-toggle.col-md-3 .tabs--secondary li.active > a.active,
-.open .dropdown-toggle.col-md-4 .tabs--secondary li.active > a.active,
-.open .dropdown-toggle.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active,
-.open .dropdown-toggle.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active {
-  color: #2c353a;
-  background-color: #ebebeb;
-  border-color: #121517;
-}
-.col-md-3 .tabs--primary li.active > a.active:active,
-.col-md-4 .tabs--primary li.active > a.active:active,
-.col-md-3 .tabs--secondary li.active > a.active:active,
-.col-md-4 .tabs--secondary li.active > a.active:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active:active,
-.col-md-3 .tabs--primary li.active > a.active.active,
-.col-md-4 .tabs--primary li.active > a.active.active,
-.col-md-3 .tabs--secondary li.active > a.active.active,
-.col-md-4 .tabs--secondary li.active > a.active.active,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active.active,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active.active,
-.open .dropdown-toggle.col-md-3 .tabs--primary li.active > a.active,
-.open .dropdown-toggle.col-md-4 .tabs--primary li.active > a.active,
-.open .dropdown-toggle.col-md-3 .tabs--secondary li.active > a.active,
-.open .dropdown-toggle.col-md-4 .tabs--secondary li.active > a.active,
-.open .dropdown-toggle.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active,
-.open .dropdown-toggle.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active {
-  background-image: none;
-}
-.col-md-3 .tabs--primary li.active > a.active.disabled,
-.col-md-4 .tabs--primary li.active > a.active.disabled,
-.col-md-3 .tabs--secondary li.active > a.active.disabled,
-.col-md-4 .tabs--secondary li.active > a.active.disabled,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active.disabled,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active.disabled,
-.col-md-3 .tabs--primary li.active > a.active[disabled],
-.col-md-4 .tabs--primary li.active > a.active[disabled],
-.col-md-3 .tabs--secondary li.active > a.active[disabled],
-.col-md-4 .tabs--secondary li.active > a.active[disabled],
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active[disabled],
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active[disabled],
-fieldset[disabled] .col-md-3 .tabs--primary li.active > a.active,
-fieldset[disabled] .col-md-4 .tabs--primary li.active > a.active,
-fieldset[disabled] .col-md-3 .tabs--secondary li.active > a.active,
-fieldset[disabled] .col-md-4 .tabs--secondary li.active > a.active,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active,
-.col-md-3 .tabs--primary li.active > a.active.disabled:hover,
-.col-md-4 .tabs--primary li.active > a.active.disabled:hover,
-.col-md-3 .tabs--secondary li.active > a.active.disabled:hover,
-.col-md-4 .tabs--secondary li.active > a.active.disabled:hover,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active.disabled:hover,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active.disabled:hover,
-.col-md-3 .tabs--primary li.active > a.active[disabled]:hover,
-.col-md-4 .tabs--primary li.active > a.active[disabled]:hover,
-.col-md-3 .tabs--secondary li.active > a.active[disabled]:hover,
-.col-md-4 .tabs--secondary li.active > a.active[disabled]:hover,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active[disabled]:hover,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active[disabled]:hover,
-fieldset[disabled] .col-md-3 .tabs--primary li.active > a.active:hover,
-fieldset[disabled] .col-md-4 .tabs--primary li.active > a.active:hover,
-fieldset[disabled] .col-md-3 .tabs--secondary li.active > a.active:hover,
-fieldset[disabled] .col-md-4 .tabs--secondary li.active > a.active:hover,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active:hover,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active:hover,
-.col-md-3 .tabs--primary li.active > a.active.disabled:focus,
-.col-md-4 .tabs--primary li.active > a.active.disabled:focus,
-.col-md-3 .tabs--secondary li.active > a.active.disabled:focus,
-.col-md-4 .tabs--secondary li.active > a.active.disabled:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active.disabled:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active.disabled:focus,
-.col-md-3 .tabs--primary li.active > a.active[disabled]:focus,
-.col-md-4 .tabs--primary li.active > a.active[disabled]:focus,
-.col-md-3 .tabs--secondary li.active > a.active[disabled]:focus,
-.col-md-4 .tabs--secondary li.active > a.active[disabled]:focus,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active[disabled]:focus,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active[disabled]:focus,
-fieldset[disabled] .col-md-3 .tabs--primary li.active > a.active:focus,
-fieldset[disabled] .col-md-4 .tabs--primary li.active > a.active:focus,
-fieldset[disabled] .col-md-3 .tabs--secondary li.active > a.active:focus,
-fieldset[disabled] .col-md-4 .tabs--secondary li.active > a.active:focus,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active:focus,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active:focus,
-.col-md-3 .tabs--primary li.active > a.active.disabled:active,
-.col-md-4 .tabs--primary li.active > a.active.disabled:active,
-.col-md-3 .tabs--secondary li.active > a.active.disabled:active,
-.col-md-4 .tabs--secondary li.active > a.active.disabled:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active.disabled:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active.disabled:active,
-.col-md-3 .tabs--primary li.active > a.active[disabled]:active,
-.col-md-4 .tabs--primary li.active > a.active[disabled]:active,
-.col-md-3 .tabs--secondary li.active > a.active[disabled]:active,
-.col-md-4 .tabs--secondary li.active > a.active[disabled]:active,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active[disabled]:active,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active[disabled]:active,
-fieldset[disabled] .col-md-3 .tabs--primary li.active > a.active:active,
-fieldset[disabled] .col-md-4 .tabs--primary li.active > a.active:active,
-fieldset[disabled] .col-md-3 .tabs--secondary li.active > a.active:active,
-fieldset[disabled] .col-md-4 .tabs--secondary li.active > a.active:active,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active:active,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active:active,
-.col-md-3 .tabs--primary li.active > a.active.disabled.active,
-.col-md-4 .tabs--primary li.active > a.active.disabled.active,
-.col-md-3 .tabs--secondary li.active > a.active.disabled.active,
-.col-md-4 .tabs--secondary li.active > a.active.disabled.active,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active.disabled.active,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active.disabled.active,
-.col-md-3 .tabs--primary li.active > a.active[disabled].active,
-.col-md-4 .tabs--primary li.active > a.active[disabled].active,
-.col-md-3 .tabs--secondary li.active > a.active[disabled].active,
-.col-md-4 .tabs--secondary li.active > a.active[disabled].active,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active[disabled].active,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active[disabled].active,
-fieldset[disabled] .col-md-3 .tabs--primary li.active > a.active.active,
-fieldset[disabled] .col-md-4 .tabs--primary li.active > a.active.active,
-fieldset[disabled] .col-md-3 .tabs--secondary li.active > a.active.active,
-fieldset[disabled] .col-md-4 .tabs--secondary li.active > a.active.active,
-fieldset[disabled] .col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active.active,
-fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active.active {
-  background-color: #ffffff;
-  border-color: #2c353a;
-}
-.col-md-3 .tabs--primary li.active > a.active .badge,
-.col-md-4 .tabs--primary li.active > a.active .badge,
-.col-md-3 .tabs--secondary li.active > a.active .badge,
-.col-md-4 .tabs--secondary li.active > a.active .badge,
-.col-md-3 .pane-menu-menu-user-profile-menu li.active > a.active .badge,
-.col-md-4 .pane-menu-menu-user-profile-menu li.active > a.active .badge {
-  color: #ffffff;
-  background-color: #2c353a;
-}
-.col-md-3 .tabs--primary li a,
-.col-md-4 .tabs--primary li a,
-.col-md-3 .tabs--secondary li a,
-.col-md-4 .tabs--secondary li a,
-.col-md-3 .pane-menu-menu-user-profile-menu li a,
-.col-md-4 .pane-menu-menu-user-profile-menu li a {
-  width: 100%;
-  margin-right: 0px;
-  margin-bottom: 3px;
 }
 .col-md-3 .tabs--secondary,
 .col-md-4 .tabs--secondary {
@@ -9630,16 +9455,6 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   top: 6px;
   right: 15px;
 }
-.ktc-aside-tab-menu .nav-tabs {
-  display: block;
-}
-.ktc-aside-tab-menu .nav-tabs > li {
-  float: left;
-  width: 50%;
-}
-.ktc-aside-tab-menu .nav-tabs > li > a {
-  display: block;
-}
 .ktc-block {
   background-color: transparent;
 }
@@ -9815,6 +9630,42 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-gold.ktc-color-font,
 .ktc-gold .ktc-color-font {
   color: #d3a900;
+}
+.ktc-bg-green {
+  background-color: #36a145;
+}
+.ktc-bg-green-font {
+  color: #ffffff;
+}
+.ktc-font-green {
+  color: #36a145;
+}
+.ktc-bg-blue {
+  background-color: #1f9bd7;
+}
+.ktc-bg-blue-font {
+  color: #ffffff;
+}
+.ktc-font-blue {
+  color: #1f9bd7;
+}
+.ktc-bg-gold {
+  background-color: #d3a900;
+}
+.ktc-bg-gold-font {
+  color: #ffffff;
+}
+.ktc-font-gold {
+  color: #d3a900;
+}
+.ktc-bg-red {
+  background-color: #e75311;
+}
+.ktc-bg-red-font {
+  color: #ffffff;
+}
+.ktc-font-red {
+  color: #e75311;
 }
 .ktc-teaser {
   background-color: #ffffff;
@@ -10166,11 +10017,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-red .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
   margin-top: -6px;
 }
-.ktc-header {
-  background-color: #ffffff;
-}
 .ktc-header .ktc-header-top-bar {
   min-height: 50px;
+  background-color: #ffffff;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-logo {
   float: left;
@@ -10199,6 +10048,7 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li {
   vertical-align: middle;
+  padding-right: 0;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-login label {
   display: none;
@@ -10214,35 +10064,31 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   background-color: transparent;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon {
-  display: inline-block;
+  display: block;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-search {
   background-image: url(../images/sprites.png);
   background-position: 0px -684px;
   width: 27px;
   height: 27px;
-  margin-top: 1px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-settings {
   background-image: url(../images/sprites.png);
   background-position: 0px -765px;
   width: 27px;
   height: 27px;
-  margin-top: 1px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-toggle {
   background-image: url(../images/sprites.png);
   background-position: 0px -711px;
   width: 27px;
   height: 27px;
-  margin-top: 1px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-create {
   background-image: url(../images/sprites.png);
   background-position: 0px -738px;
   width: 27px;
   height: 27px;
-  margin-top: 1px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-login {
   background-image: url(../images/sprites.png);
@@ -10300,6 +10146,9 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   display: none;
   padding-top: 40px;
 }
+.ktc-header .ktc-header-dropdown > .container {
+  background-color: #ffffff;
+}
 .ktc-header .ktc-header-dropdown.open {
   display: block;
 }
@@ -10333,13 +10182,10 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
   top: 0;
   left: 0;
   right: 0;
-  height: 231px;
+  height: 261px;
   background: url("../images/bg_body.jpg") center top repeat-x;
   border-top: 20px solid #fff;
   border-bottom: 10px solid #d5dcde;
-}
-.ktc-wrapper .region-header {
-  display: none;
 }
 .ktc-content {
   background-color: #ffffff;
@@ -10576,6 +10422,19 @@ fieldset[disabled] .ktc-comments-list .ktc-comments-list-body .ktc-comments-list
 }
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a.btn-warning.active {
   border-color: #3a2e00;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a.btn-action {
+  background-color: #2c353a;
+  color: #ffffff;
+  border-color: #586a74;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a.btn-action:hover {
+  background-color: #1f2529;
+  color: #ffffff;
+  border-color: #495760;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a.btn-action.active {
+  border-color: #21282c;
 }
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a:hover {
   background-color: #f0f0f0;
@@ -11233,6 +11092,27 @@ h6 + .ktc-date {
   width: 33.333%;
   padding: 2px 15px;
 }
+.ktc-aside-tabs .ktc-aside-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+.ktc-aside-tabs .ktc-aside-body .btn {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  word-wrap: break-word;
+}
+.ktc-aside-tabs-2-col .nav-tabs .ktc-tabs-button-container {
+  float: left;
+  width: 50%;
+  padding: 2px 15px;
+}
+.ktc-aside-tabs-3-col .nav-tabs .ktc-tabs-button-container {
+  float: left;
+  width: 33.333%;
+  padding: 2px 15px;
+}
 .btn {
   min-width: 50px;
   padding: 3px 15px;
@@ -11334,6 +11214,19 @@ a.btn:focus {
 }
 .btn.btn-warning.active {
   border-color: #3a2e00;
+}
+.btn.btn-action {
+  background-color: #2c353a;
+  color: #ffffff;
+  border-color: #586a74;
+}
+.btn.btn-action:hover {
+  background-color: #1f2529;
+  color: #ffffff;
+  border-color: #495760;
+}
+.btn.btn-action.active {
+  border-color: #21282c;
 }
 .nav-tabs .btn {
   display: inline-block;
@@ -11483,6 +11376,19 @@ fieldset[disabled] .nav-tabs .btn {
 .nav-tabs .btn.btn-warning.active {
   border-color: #3a2e00;
 }
+.nav-tabs .btn.btn-action {
+  background-color: #2c353a;
+  color: #ffffff;
+  border-color: #586a74;
+}
+.nav-tabs .btn.btn-action:hover {
+  background-color: #1f2529;
+  color: #ffffff;
+  border-color: #495760;
+}
+.nav-tabs .btn.btn-action.active {
+  border-color: #21282c;
+}
 .nav-tabs .btn:hover {
   background-color: #f0f0f0;
   color: #2c353a;
@@ -11516,4 +11422,7 @@ a:hover {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+}
+.admin-menu.adminimal-menu {
+  margin-top: 29px !important;
 }
