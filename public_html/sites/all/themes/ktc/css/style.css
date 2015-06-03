@@ -11581,3 +11581,6 @@ a:hover {
   -moz-box-shadow: none;
   box-shadow: none;
 }
+.admin-menu.adminimal-menu {
+  margin-top: 29px !important;
+}
