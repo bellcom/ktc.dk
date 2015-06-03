@@ -165,7 +165,8 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
-      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
+      'css_class' => '',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 2;
