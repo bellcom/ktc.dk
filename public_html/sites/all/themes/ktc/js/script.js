@@ -3,6 +3,9 @@
 ( function ($) {
   $(document).ready(function(){
 
+      // Enable tooltips
+      $("[data-toggle=tooltip]").tooltip();
+
       // Aside toggle
       $('.ktc-aside-toggle .ktc-aside-title').on('click', function(event) {
           var $toggle = $(this).parents('.ktc-aside-toggle');
