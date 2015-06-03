@@ -5650,7 +5650,9 @@ button.close {
 .ktc-node-header:before,
 .ktc-node-header:after,
 .ktc-aside-filter .filter-box:before,
-.ktc-aside-filter .filter-box:after {
+.ktc-aside-filter .filter-box:after,
+.ktc-aside-tabs .nav-tabs:before,
+.ktc-aside-tabs .nav-tabs:after {
   content: " ";
   display: table;
 }
@@ -5672,7 +5674,8 @@ button.close {
 .ktc-footer:after,
 .ktc-user-profile:after,
 .ktc-node-header:after,
-.ktc-aside-filter .filter-box:after {
+.ktc-aside-filter .filter-box:after,
+.ktc-aside-tabs .nav-tabs:after {
   clear: both;
 }
 .center-block {
@@ -11242,6 +11245,27 @@ h6 + .ktc-date {
   padding: 2px 15px;
 }
 .ktc-aside-filter-3-col .filter-box .ktc-filter-button-container {
+  float: left;
+  width: 33.333%;
+  padding: 2px 15px;
+}
+.ktc-aside-tabs .ktc-aside-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+.ktc-aside-tabs .ktc-aside-body .btn {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  word-wrap: break-word;
+}
+.ktc-aside-tabs-2-col .nav-tabs > li {
+  float: left;
+  width: 50%;
+  padding: 2px 15px;
+}
+.ktc-aside-tabs-3-col .nav-tabs > li {
   float: left;
   width: 33.333%;
   padding: 2px 15px;
