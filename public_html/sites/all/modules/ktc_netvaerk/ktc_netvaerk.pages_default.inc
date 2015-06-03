@@ -166,6 +166,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
       'css_class' => '',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 2;
@@ -268,8 +269,8 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Logo',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -277,7 +278,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -416,7 +417,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'gold-title  ktc-aside-color',
+      'css_class' => 'ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 6;
@@ -443,7 +444,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' pane-page-tabs',
+      'css_class' => 'ktc-aside-action ktc-aside-tabs ktc-aside-tabs-2-col',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -468,7 +469,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => 'content_type',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -500,7 +501,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => 'term_type',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
     );
     $pane->extras = array();
     $pane->position = 2;
@@ -532,7 +533,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => 'emner',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
     );
     $pane->extras = array();
     $pane->position = 3;
