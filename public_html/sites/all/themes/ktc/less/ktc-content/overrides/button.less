@@ -128,3 +128,24 @@ a.btn {
 		.ktc-mixin-button(@ktc-override-button-default-background-color, @ktc-override-button-default-border-color, @ktc-override-button-default-font-color);
 	}
 }
+
+// Aside action
+.ktc-aside-action {
+
+	// Button
+	.btn {
+
+		// Primary and default
+		&.btn-primary,
+		&.btn-default {
+
+			// Normal, active, hover and focus state
+			&,
+			&.active,
+			&:hover,
+			&:focus {
+				background-color: transparent;
+			}
+		}
+	}
+}

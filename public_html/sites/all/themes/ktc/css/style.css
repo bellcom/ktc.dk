@@ -11491,6 +11491,16 @@ fieldset[disabled] .nav-tabs .btn {
 .nav-tabs .btn.active {
   border-color: #a1b2b6;
 }
+.ktc-aside-action .btn.btn-primary,
+.ktc-aside-action .btn.btn-default,
+.ktc-aside-action .btn.btn-primary.active,
+.ktc-aside-action .btn.btn-default.active,
+.ktc-aside-action .btn.btn-primary:hover,
+.ktc-aside-action .btn.btn-default:hover,
+.ktc-aside-action .btn.btn-primary:focus,
+.ktc-aside-action .btn.btn-default:focus {
+  background-color: transparent;
+}
 h1,
 h2,
 h3,
