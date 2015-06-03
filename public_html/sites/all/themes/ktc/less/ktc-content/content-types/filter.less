@@ -135,13 +135,18 @@
 					content: "";
 					top: 50%;
 					left: 0;
-					margin-top: -( floor(@rundt-height / 2));
 					.sprite(@rundt);
+					margin-top: -( floor(@rundt-height / 2));
 				}
 
 				// Active
 				&.active {
-					.sprite(@tick);
+
+					// Icon
+					&:before {
+						.sprite(@tick);
+						margin-top: -( floor(@rundt-height / 2));
+					}
 				}
 			}
 		}
