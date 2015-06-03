@@ -165,7 +165,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
     );
     $pane->extras = array();
     $pane->position = 2;
@@ -443,7 +443,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' pane-page-tabs',
+      'css_class' => 'ktc-aside-action ktc-aside-tabs ktc-aside-tabs-2-col',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -468,7 +468,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => 'content_type',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -500,7 +500,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => 'term_type',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
     );
     $pane->extras = array();
     $pane->position = 2;
@@ -532,7 +532,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => 'emner',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
     );
     $pane->extras = array();
     $pane->position = 3;
