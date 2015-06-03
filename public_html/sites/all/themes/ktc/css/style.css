@@ -11136,6 +11136,7 @@ h6 + .ktc-date {
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn:before {
   position: absolute;
   display: inline-block;
+  content: "";
   top: 50%;
   left: 0;
   margin-top: -8px;
