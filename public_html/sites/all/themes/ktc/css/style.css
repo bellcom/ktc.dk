@@ -9819,6 +9819,42 @@ fieldset[disabled] .col-md-4 .pane-menu-menu-user-profile-menu li.active > a.act
 .ktc-gold .ktc-color-font {
   color: #d3a900;
 }
+.ktc-bg-green {
+  background-color: #36a145;
+}
+.ktc-bg-green-font {
+  color: #ffffff;
+}
+.ktc-font-green {
+  color: #36a145;
+}
+.ktc-bg-blue {
+  background-color: #1f9bd7;
+}
+.ktc-bg-blue-font {
+  color: #ffffff;
+}
+.ktc-font-blue {
+  color: #1f9bd7;
+}
+.ktc-bg-gold {
+  background-color: #d3a900;
+}
+.ktc-bg-gold-font {
+  color: #ffffff;
+}
+.ktc-font-gold {
+  color: #d3a900;
+}
+.ktc-bg-red {
+  background-color: #e75311;
+}
+.ktc-bg-red-font {
+  color: #ffffff;
+}
+.ktc-font-red {
+  color: #e75311;
+}
 .ktc-teaser {
   background-color: #ffffff;
   margin-bottom: 20px;
