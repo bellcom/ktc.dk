@@ -26,9 +26,15 @@
  * @ingroup themeable
  */
 ?>
+
 <?php if ($content): ?>
   <header class="ktc-header-dropdown" <?php print $attributes; ?>>
     <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Dine genveje</h2>
+        </div>
+      </div>
       <div class="row">
         <?php print $content; ?>
       </div>

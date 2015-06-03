@@ -6,7 +6,7 @@
 // |
 
 //== General
-@ktc-header-top-bar-background-color: #fff;
+@ktc-header-background-color: #fff;
 
 //== Top bar
 @ktc-header-top-bar-height: 50px;
@@ -21,11 +21,11 @@
 
 // Header
 .ktc-header {
-	background-color: @ktc-header-top-bar-background-color;
 
 	// Top bar
 	.ktc-header-top-bar {
 		min-height: @ktc-header-top-bar-height;
+		background-color: @ktc-header-background-color;
 
 		// Logo
 		.ktc-header-top-bar-logo {
@@ -169,6 +169,11 @@
 	.ktc-header-dropdown {
 		display: none;
 		padding-top: floor( floor( @ktc-header-top-bar-logo-height - @ktc-header-top-bar-height ) + @grid-gutter-width);
+
+		// Container
+		> .container {
+			background-color: @ktc-header-background-color;
+		}
 
 		// Open
 		&.open {
