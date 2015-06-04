@@ -36,6 +36,8 @@
 
 global $user;
 $account = $elements['#account'];
+
+xdebug_break();
 ?>
 
 <!-- Begin - user profile - list 3 -->
