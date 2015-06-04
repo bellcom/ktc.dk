@@ -38,7 +38,7 @@ global $user;
 $account = $elements['#account'];
 ?>
 
-<!-- Begin - user profile - list 3 -->
+<!-- Begin - user profile - list 6 -->
 <section class="ktc-user-profile <?php if ($user->uid == $account->uid) { print 'ktc-red'; } ?>">
 
   <!-- Begin - profile photo -->
@@ -64,4 +64,4 @@ $account = $elements['#account'];
   <!-- End - profile content -->
 
 </section>
-<!-- End - user profile - list 3 -->
+<!-- End - user profile - list 6 -->

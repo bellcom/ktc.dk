@@ -834,12 +834,6 @@ function ktc_preprocess_user_profile(&$vars) {
   else {
     $vars['job_title'] = '';
   }
-
-//  xdebug_break();
-  // Roles
-  if ($roles = field_get_items('user', $user_obj, 'roles')) {
-    $vars['roles'] = _ktc_format_user_roles($roles);
-  }
 }
 
 function ktc_field($variables) {
@@ -939,39 +933,6 @@ function _ktc_get_network_groups($nid) {
   }
 
   return $groups;
-}
-
-// Get network group of user
-function _ktc_get_user_network_groups($uid) {
-  $groups = array();
-<<<<<<< HEAD
-  $ktc_node = user_load($uid);
-
-  if($network_groups = field_get_items('node', $ktc_node, 'og_group_ref')) {
-=======
-  $ktc_user = user_load($uid);
-
-  if($network_groups = field_get_items('user', $ktc_user, 'og_group_ref')) {
->>>>>>> 89e44a8885af452e7f909dada4a66a5569632b23
-
-    foreach($network_groups AS $network_group) {
-      $groups[] = node_load($network_group['target_id']);
-    }
-  }
-<<<<<<< HEAD
-
-  return $groups;
-}
-
-/*
- * Get a list of the users roles
- */
-function _ktc_format_user_roles($roles) {
-
-=======
-
-  return $groups;
->>>>>>> 89e44a8885af452e7f909dada4a66a5569632b23
 }
 
 /*
