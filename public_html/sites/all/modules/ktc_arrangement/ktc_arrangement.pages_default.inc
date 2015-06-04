@@ -838,7 +838,8 @@ function ktc_arrangement_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'term_type',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
+      'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
     $pane->position = 0;

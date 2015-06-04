@@ -835,12 +835,11 @@ function ktc_preprocess_user_profile(&$vars) {
     $vars['job_title'] = '';
   }
 
-
-  // Roles in network
-
-
-
 //  xdebug_break();
+  // Roles
+  if ($roles = field_get_items('user', $user_obj, 'roles')) {
+    $vars['roles'] = _ktc_format_user_roles($roles);
+  }
 }
 
 function ktc_field($variables) {
@@ -955,6 +954,13 @@ function _ktc_get_user_network_groups($uid) {
   }
 
   return $groups;
+}
+
+/*
+ * Get a list of the users roles
+ */
+function _ktc_format_user_roles($roles) {
+
 }
 
 /*

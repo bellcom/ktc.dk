@@ -2084,7 +2084,9 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/netvaerk">Se flere</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="ktc-call-to-action-button">
+  <a href="/netvaerk" class="btn btn-default">Se flere</a>
+</div>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Titel */
@@ -2158,14 +2160,16 @@ function ktc_views_views_default_views() {
 </div>
 </div>'),
     t('Nyt indhold filtrer grupper'),
-    t('<div class="ktc-filter-button-container">
+    t('<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-default filter-link" id="filter-all" data-filter="all">Alt</div>
 </div>'),
-    t('<div class="ktc-filter-button-container">
+    t('<div class="col-md-12 col-sm-12 col-xs-12">
 <div class="btn btn-default filter-link" id="gid-[nid]" data-filter="[nid]" name="filter-gid">[title]</div>
 </div>'),
     t('Blok'),
-    t('<a href="/netvaerk">Se flere</a>'),
+    t('<div class="ktc-call-to-action-button">
+  <a href="/netvaerk" class="btn btn-default">Se flere</a>
+</div>'),
     t('Dine netværk'),
   );
   $export['ktc_og_user_groups'] = $view;
@@ -3100,12 +3104,7 @@ function ktc_views_views_default_views() {
 '),
     t('View panes'),
     t('Term first level with chosen ids'),
-    t('<div class="ktc-filter-button-container">
-<div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>
-</div>'),
-    t('<div class="ktc-filter-button-container">
-<div class="btn btn-default filter-link" id="filter-[tid]" data-filter="[tid]">[name]</div>
-</div>'),
+    t('<div class="ktc-filter-button-container"><div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>'),
     t('Term 1. level width'),
     t('<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>
