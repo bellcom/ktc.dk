@@ -926,17 +926,32 @@ function _ktc_format_datetime($datetime) {
 
 // Get network group of node
 function _ktc_get_network_groups($nid) {
-    $groups = array();
-    $ktc_node = node_load($nid);
+  $groups = array();
+  $ktc_node = node_load($nid);
 
-    if($network_groups = field_get_items('node', $ktc_node, 'og_group_ref')) {
+  if($network_groups = field_get_items('node', $ktc_node, 'og_group_ref')) {
 
-        foreach($network_groups AS $network_group) {
-            $groups[] = node_load($network_group['target_id']);
-        }
+    foreach($network_groups AS $network_group) {
+      $groups[] = node_load($network_group['target_id']);
     }
+  }
 
-    return $groups;
+  return $groups;
+}
+
+// Get network group of user
+function _ktc_get_user_network_groups($uid) {
+  $groups = array();
+  $ktc_user = user_load($uid);
+
+  if($network_groups = field_get_items('user', $ktc_user, 'og_group_ref')) {
+
+    foreach($network_groups AS $network_group) {
+      $groups[] = node_load($network_group['target_id']);
+    }
+  }
+
+  return $groups;
 }
 
 /*
