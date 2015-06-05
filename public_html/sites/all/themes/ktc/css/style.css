@@ -10188,7 +10188,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article .field-collection-view {
   padding: 0;
   margin: 0;
-  border-bottom: 1px dotted #D3D7D9;
+  border-bottom: 0;
 }
 .ktc-article .field-collection-container .field-items .field-item {
   margin-bottom: 0;
