@@ -10190,6 +10190,13 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin: 0;
   border-bottom: 1px dotted #D3D7D9;
 }
+.ktc-article .field-collection-container .field-items .field-item {
+  margin-bottom: 0;
+}
+.ktc-article .field-collection-view .entity-field-collection-item {
+  width: auto;
+  float: none;
+}
 .ktc-article-type-faktaboks,
 .ktc-article-type-faktaboksgreen,
 .ktc-article-type-faktaboksyellow,
