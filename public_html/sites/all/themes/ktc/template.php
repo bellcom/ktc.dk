@@ -23,7 +23,7 @@ function ktc_preprocess_field(&$variables) {
 
   // Artikel afsnit
   if($variables['element']['#field_name'] == "field_artikel_afsnit"){
-xdebug_break();
+//xdebug_break();
     $field_collections = array();
     foreach (element_children($variables['element']) as $key) {
       $field_collections[] = array_pop($variables['element'][$key]['entity']['field_collection_item']);

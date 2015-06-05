@@ -72,7 +72,7 @@
     hide($content['field_tags']);
     hide($content['field_os2web_base_field_image']);
     hide($content['field_os2web_base_field_lead_img']);
-
+½
     if (!empty($content['field_tags']) || !empty($content['links'])) {
         hide($content['field_tags']);
         hide($content['links']);

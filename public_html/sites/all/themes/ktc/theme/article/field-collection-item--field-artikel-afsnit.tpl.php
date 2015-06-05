@@ -28,42 +28,37 @@
  * @see template_process()
  */
 
-//xdebug_break();
-hide($content['field_artikelafsnit_overskrift']);
-hide($content['field_artikelafsnit_billede']);
-hide($content['field_artikelafsnit_tekst']);
-hide($content['field_artikelafsnit_ekstratekst']);
-hide($content['field_artikel_billedserie']);
+//xdebug_break()
 ?>
 
 <!-- Begin - article -->
 <section class="ktc-article ktc-article-type-<?php print $field_type; ?> <?php print $classes; ?>"<?php print $attributes; ?>>
 
-  <?php if (!empty($content['field_artikelafsnit_overskrift'])): ?>
+  <?php if ($content['field_artikelafsnit_overskrift']): ?>
     <div class="ktc-article-headline">
       <?php print render($content['field_artikelafsnit_overskrift']); ?>
     </div>
   <?php endif ?>
 
-  <?php if (!empty($content['field_artikelafsnit_billede'])): ?>
+  <?php if ($content['field_artikelafsnit_billede']): ?>
     <div class="ktc-article-image">
       <?php print render($content['field_artikelafsnit_billede']); ?>
     </div>
   <?php endif ?>
 
-  <?php if (!empty($content['field_artikelafsnit_tekst'])): ?>
+  <?php if ($content['field_artikelafsnit_tekst']): ?>
     <div class="ktc-article-body">
       <?php print render($content['field_artikelafsnit_tekst']); ?>
     </div>
   <?php endif ?>
 
-  <?php if (!empty($content['field_artikelafsnit_ekstratekst'])): ?>
+  <?php if ($content['field_artikelafsnit_ekstratekst']): ?>
     <div class="ktc-article-extra-body">
       <?php print render($content['field_artikelafsnit_ekstratekst']); ?>
     </div>
   <?php endif ?>
 
-  <?php if (!empty($content['field_artikel_billedserie'])): ?>
+  <?php if ($content['field_artikel_billedserie']): ?>
     <?php print render($content['field_artikel_billedserie']); ?>
   <?php endif ?>
 
