@@ -8621,12 +8621,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   clear: both;
   margin-bottom: 20px;
 }
-.col-md-3.pane-right .pane-content,
-.col-md-4.pane-right .pane-content,
-.col-md-3.pane-sidebar .pane-content,
-.col-md-4.pane-sidebar .pane-content {
-  padding-bottom: 10px;
-}
 .col-md-3.pane-right .pane-content .col-md-12.filter-link.all,
 .col-md-4.pane-right .pane-content .col-md-12.filter-link.all,
 .col-md-3.pane-sidebar .pane-content .col-md-12.filter-link.all,

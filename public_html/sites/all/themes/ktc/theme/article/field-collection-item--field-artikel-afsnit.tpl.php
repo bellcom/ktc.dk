@@ -27,10 +27,11 @@
  * @see template_preprocess_entity()
  * @see template_process()
  */
+//xdebug_break();
 ?>
 
 <!-- Begin - article -->
-<section class="ktc-article ktc-article-type-<?php print $field_type; ?> <?php print $classes; ?>"<?php print $attributes; ?>>
+<section class="ktc-article ktc-article-type-<?php print $article_type; ?> <?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print render($content); ?>
 </section>
 <!-- End - article -->

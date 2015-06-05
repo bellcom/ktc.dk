@@ -19,11 +19,10 @@ function configure_comment_form(&$form) {
 /*
  * Implements hook_preprocess_field().
  */
-function ktc_preprocess_field(&$variables) {
+function ktc_preprocess_field__field_artikel_afsnit(&$variables) {
 
   // Artikel afsnit
   if($variables['element']['#field_name'] == "field_artikel_afsnit"){
-//xdebug_break();
     $field_collections = array();
     foreach (element_children($variables['element']) as $key) {
       $field_collections[] = array_pop($variables['element'][$key]['entity']['field_collection_item']);
@@ -32,10 +31,22 @@ function ktc_preprocess_field(&$variables) {
     // Run through collections
     foreach ($field_collections as $field_collection) {
 
-      // I would recommend overrideing items markup for whatever black magic you desire
-      $vars['items'] = array(
-        '#markup' => "Whatever you need to render",
-      );
+//      xdebug_break();
+    }
+  }
+}
+
+/*
+ * Implements hook_preprocess_entity().
+ */
+function ktc_preprocess_entity(&$variables) {
+
+  // Artikel afsnit
+  if ($variables['elements']['#bundle'] == 'field_artikel_afsnit') {
+
+    // Grab type
+    if ($type = field_get_items('field_collection_item', $variables['field_collection_item'], 'field_artikelafsnit_type')) {
+      $variables['article_type'] = $type[0]['value'];
     }
   }
 }
