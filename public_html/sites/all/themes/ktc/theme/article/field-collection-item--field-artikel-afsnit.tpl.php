@@ -29,12 +29,43 @@
  */
 
 //xdebug_break();
+hide($content['field_artikelafsnit_overskrift']);
+hide($content['field_artikelafsnit_billede']);
+hide($content['field_artikelafsnit_tekst']);
+hide($content['field_artikelafsnit_ekstratekst']);
+hide($content['field_artikel_billedserie']);
 ?>
 
 <!-- Begin - article -->
 <section class="ktc-article ktc-article-type-<?php print $field_type; ?> <?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php
-  print render($content);
-  ?>
+
+  <?php if (isset($content['field_artikelafsnit_overskrift'])): ?>
+    <div class="ktc-article-headline">
+      <?php print render($content['field_artikelafsnit_overskrift']); ?>
+    </div>
+  <?php endif ?>
+
+  <?php if (isset($content['field_artikelafsnit_billede'])): ?>
+    <div class="ktc-article-image">
+      <?php print render($content['field_artikelafsnit_billede']); ?>
+    </div>
+  <?php endif ?>
+
+  <?php if (isset($content['field_artikelafsnit_tekst'])): ?>
+    <div class="ktc-article-body">
+      <?php print render($content['field_artikelafsnit_tekst']); ?>
+    </div>
+  <?php endif ?>
+
+  <?php if (isset($content['field_artikelafsnit_ekstratekst'])): ?>
+    <div class="ktc-article-extra-body">
+      <?php print render($content['field_artikelafsnit_ekstratekst']); ?>
+    </div>
+  <?php endif ?>
+
+  <?php if (isset($content['field_artikel_billedserie'])): ?>
+    <?php print render($content['field_artikel_billedserie']); ?>
+  <?php endif ?>
+
 </section>
 <!-- End - article -->
