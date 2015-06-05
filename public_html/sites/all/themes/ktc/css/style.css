@@ -10204,6 +10204,8 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article-type-faktaboksblack {
   margin-left: -15px;
   margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .ktc-article-type-faktaboksgreen {
   background-color: #36a145;
