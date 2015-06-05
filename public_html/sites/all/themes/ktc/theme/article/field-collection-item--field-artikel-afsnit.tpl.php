@@ -27,7 +27,6 @@
  * @see template_preprocess_entity()
  * @see template_process()
  */
-//xdebug_break();
 ?>
 
 <!-- Begin - article -->
