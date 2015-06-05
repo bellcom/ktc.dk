@@ -32,13 +32,11 @@ xdebug_break();
     // Run through collections
     foreach ($field_collections as $field_collection) {
 
-
+      // I would recommend overrideing items markup for whatever black magic you desire
+      $vars['items'] = array(
+        '#markup' => "Whatever you need to render",
+      );
     }
-
-    // I would recommend overrideing items markup for whatever black magic you desire
-    $vars['items'] = array(
-      '#markup' => "Whatever you need to render",
-    );
   }
 }
 
