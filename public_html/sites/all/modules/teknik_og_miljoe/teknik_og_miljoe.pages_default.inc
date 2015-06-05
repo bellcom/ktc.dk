@@ -660,7 +660,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'lead',
+      'css_class' => 'ktc-node-lead',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
@@ -732,7 +732,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-article',
       'template_suggestion' => 'artikelafsnit',
     );
     $pane->extras = array();
