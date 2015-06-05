@@ -16,6 +16,32 @@ function configure_comment_form(&$form) {
   return $form;
 }
 
+/*
+ * Implements hook_preprocess_field().
+ */
+function ktc_preprocess_field(&$variables) {
+
+  // Artikel afsnit
+  if($variables['element']['#field_name'] == "field_artikel_afsnit"){
+xdebug_break();
+    $field_collections = array();
+    foreach (element_children($variables['element']) as $key) {
+      $field_collections[] = array_pop($variables['element'][$key]['entity']['field_collection_item']);
+    }
+
+    // Run through collections
+    foreach ($field_collections as $field_collection) {
+
+
+    }
+
+    // I would recommend overrideing items markup for whatever black magic you desire
+    $vars['items'] = array(
+      '#markup' => "Whatever you need to render",
+    );
+  }
+}
+
 /**
  * Override or insert variables into the block templates.
  *
