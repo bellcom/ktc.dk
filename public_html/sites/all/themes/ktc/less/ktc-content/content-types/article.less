@@ -46,10 +46,13 @@
 .ktc-article-type-faktaboksyellow,
 .ktc-article-type-faktaboksblue,
 .ktc-article-type-faktaboksblack {
+	margin-top: -10px; // to overlap border
 	margin-left: -(@ktc-default-left-right-inner-spacing);
 	margin-right: -(@ktc-default-left-right-inner-spacing);
 	padding-left: @ktc-default-left-right-inner-spacing;
 	padding-right: @ktc-default-left-right-inner-spacing;
+	border-top: 10px solid @body-bg;
+	border-bottom: 10px solid @body-bg;
 }
 
 // FAQ - green
