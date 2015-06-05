@@ -17,26 +17,6 @@ function configure_comment_form(&$form) {
 }
 
 /*
- * Implements hook_preprocess_field().
- */
-function ktc_preprocess_field__field_artikel_afsnit(&$variables) {
-
-  // Artikel afsnit
-  if($variables['element']['#field_name'] == "field_artikel_afsnit"){
-    $field_collections = array();
-    foreach (element_children($variables['element']) as $key) {
-      $field_collections[] = array_pop($variables['element'][$key]['entity']['field_collection_item']);
-    }
-
-    // Run through collections
-    foreach ($field_collections as $field_collection) {
-
-//      xdebug_break();
-    }
-  }
-}
-
-/*
  * Implements hook_preprocess_entity().
  */
 function ktc_preprocess_entity(&$variables) {
