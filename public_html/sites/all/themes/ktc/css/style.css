@@ -10197,6 +10197,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   width: auto;
   float: none;
 }
+.ktc-article .field-collection-view-links {
+  display: none;
+}
 .ktc-article-type-faktaboks,
 .ktc-article-type-faktaboksgreen,
 .ktc-article-type-faktaboksyellow,
