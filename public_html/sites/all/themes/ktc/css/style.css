@@ -10185,6 +10185,62 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   background-color: #ffffff;
   padding: 10px 15px;
 }
+.ktc-article-faktaboks,
+.ktc-article-faktaboksgreen,
+.ktc-article-faktaboksyellow,
+.ktc-article-faktaboksblue,
+.ktc-article-faktaboksblack {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.ktc-article-faktaboksgreen {
+  background-color: #36a145;
+}
+.ktc-article-faktaboksgreen h1,
+.ktc-article-faktaboksgreen h2,
+.ktc-article-faktaboksgreen h3,
+.ktc-article-faktaboksgreen h4,
+.ktc-article-faktaboksgreen h5,
+.ktc-article-faktaboksgreen h6 {
+  color: #5bc86b;
+}
+.ktc-article-faktaboksgreen,
+.ktc-article-faktaboksgreen span,
+.ktc-article-faktaboksgreen p {
+  color: #ffffff;
+}
+.ktc-article-faktaboksyellow {
+  background-color: #d3a900;
+}
+.ktc-article-faktaboksyellow h1,
+.ktc-article-faktaboksyellow h2,
+.ktc-article-faktaboksyellow h3,
+.ktc-article-faktaboksyellow h4,
+.ktc-article-faktaboksyellow h5,
+.ktc-article-faktaboksyellow h6 {
+  color: #ffd321;
+}
+.ktc-article-faktaboksyellow,
+.ktc-article-faktaboksyellow span,
+.ktc-article-faktaboksyellow p {
+  color: #ffffff;
+}
+.ktc-article-faktaboksblue {
+  background-color: #1f9bd7;
+}
+.ktc-article-faktaboksblue h1,
+.ktc-article-faktaboksblue h2,
+.ktc-article-faktaboksblue h3,
+.ktc-article-faktaboksblue h4,
+.ktc-article-faktaboksblue h5,
+.ktc-article-faktaboksblue h6 {
+  color: #5bbae7;
+}
+.ktc-article-faktaboksblue,
+.ktc-article-faktaboksblue span,
+.ktc-article-faktaboksblue p {
+  color: #ffffff;
+}
 .calendar-calendar td {
   text-align: center;
 }

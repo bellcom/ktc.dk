@@ -8,10 +8,14 @@
 	.ktc-article-body {}
 
 	// Body extra
-	.ktc-article-body-extra
+	.ktc-article-body-extra {
+		
+	}
 
 	// Image
-	.ktc-article-body-extra {}
+	.ktc-article-image {
+
+	}
 }
 
 // Text w. headline
@@ -28,7 +32,53 @@
 .ktc-article-faktaboksyellow,
 .ktc-article-faktaboksblue,
 .ktc-article-faktaboksblack {
+	margin-left: -(@ktc-default-left-right-inner-spacing);
+	margin-right: -(@ktc-default-left-right-inner-spacing);
+}
 
+// FAQ - green
+.ktc-article-faktaboksgreen {
+	background-color: @ktc-color-green-background;
+
+	// Headlines
+	h1, h2, h3, h4, h5, h6 {
+		color: lighten(@ktc-color-green-background, 15%);
+	}
+
+	// Text
+	&, span, p {
+		color: @ktc-color-green-background-font;
+	}
+}
+
+// FAQ - gold / yellow
+.ktc-article-faktaboksyellow {
+	background-color: @ktc-color-gold-background;
+
+	// Headlines
+	h1, h2, h3, h4, h5, h6 {
+		color: lighten(@ktc-color-gold-background, 15%);
+	}
+
+	// Text
+	&, span, p {
+		color: @ktc-color-gold-background-font;
+	}
+}
+
+// FAQ - blue
+.ktc-article-faktaboksblue {
+	background-color: @ktc-color-blue-background;
+
+	// Headlines
+	h1, h2, h3, h4, h5, h6 {
+		color: lighten(@ktc-color-blue-background, 15%);
+	}
+
+	// Text
+	&, span, p {
+		color: @ktc-color-blue-background-font;
+	}
 }
 
 // Indented
