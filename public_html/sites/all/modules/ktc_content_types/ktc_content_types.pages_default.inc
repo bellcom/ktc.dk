@@ -421,14 +421,18 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->configuration = array(
       'type' => 'primary',
       'id' => 'tabs',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Faner',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-tabs ktc-aside-tabs-2-col ktc-aside-action',
+      'template_suggestion' => 'page_tabs',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();

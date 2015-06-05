@@ -28,11 +28,9 @@
  * @see template_process()
  */
 ?>
-<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      print render($content);
-    ?>
-  </div>
-</div>
-	<h2><?php print $field_artikelafsnit_type['und'][0]['value']; ?></h2>
+
+<!-- Begin - article -->
+<section class="ktc-article ktc-article-type-<?php print $article_type; ?> <?php print $classes; ?>"<?php print $attributes; ?>>
+  <?php print render($content); ?>
+</section>
+<!-- End - article -->

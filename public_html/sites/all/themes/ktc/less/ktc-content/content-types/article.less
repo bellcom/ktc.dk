@@ -1,0 +1,128 @@
+// Article
+.ktc-article {
+
+	// Headline
+	.ktc-article-headline {}
+
+	// Body
+	.ktc-article-body {}
+
+	// Body extra
+	.ktc-article-body-extra {
+
+	}
+
+	// Image
+	.ktc-article-image {
+
+	}
+
+	// Reset from field_collection contrib CSS
+	.field-collection-view {
+		padding: 0;
+		margin: 0;
+		border-bottom: 0;
+	}
+	.field-collection-container .field-items .field-item {
+		margin-bottom: 0;
+	}
+	.field-collection-view .entity-field-collection-item {
+		width: auto;
+		float: none;
+	}
+	.field-collection-view-links {
+		display: none;
+	}
+}
+
+// Text w. headline
+.ktc-article-type-afsnit {
+}
+
+// Text and image w. headline
+.ktc-article-type-afsnitb {
+}
+
+// FAQ (all colors)
+.ktc-article-type-faktaboks,
+.ktc-article-type-faktaboksgreen,
+.ktc-article-type-faktaboksyellow,
+.ktc-article-type-faktaboksblue,
+.ktc-article-type-faktaboksblack {
+	margin-left: -(@ktc-default-left-right-inner-spacing);
+	margin-right: -(@ktc-default-left-right-inner-spacing);
+	padding-left: @ktc-default-left-right-inner-spacing;
+	padding-right: @ktc-default-left-right-inner-spacing;
+	border-top: 20px solid @body-bg;
+	border-bottom: 20px solid @body-bg;
+}
+
+// FAQ - green
+.ktc-article-type-faktaboksgreen {
+	background-color: @ktc-color-green-background;
+
+	// Headline
+	.ktc-article-headline {
+
+		// Headlines
+		h1, h2, h3, h4, h5, h6 {
+			color: lighten(@ktc-color-green-background, 15%);
+		}
+	}
+
+	// Body
+	.ktc-article-body {
+
+		// Text
+		&, span, p {
+			color: @ktc-color-green-background-font;
+		}
+	}
+}
+
+// FAQ - gold / yellow
+.ktc-article-type-faktaboksyellow {
+	background-color: @ktc-color-gold-background;
+
+	// Headlines
+	h1, h2, h3, h4, h5, h6 {
+		color: lighten(@ktc-color-gold-background, 15%);
+	}
+
+	// Text
+	&, span, p {
+		color: @ktc-color-gold-background-font;
+	}
+}
+
+// FAQ - blue
+.ktc-article-type-faktaboksblue {
+	background-color: @ktc-color-blue-background;
+
+	// Headlines
+	h1, h2, h3, h4, h5, h6 {
+		color: lighten(@ktc-color-blue-background, 15%);
+	}
+
+	// Text
+	&, span, p {
+		color: @ktc-color-blue-background-font;
+	}
+}
+
+// Indented
+.ktc-article-type-indrykket {}
+
+// Large image
+.ktc-article-type-stortbillede {}
+
+// Image gallery
+.ktc-article-type-billedserie {}
+
+// Quote
+.ktc-article-type-citat {
+}
+
+// Person
+.ktc-article-type-person {
+}
