@@ -10215,17 +10215,17 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article-type-faktaboksgreen {
   background-color: #36a145;
 }
-.ktc-article-type-faktaboksgreen h1,
-.ktc-article-type-faktaboksgreen h2,
-.ktc-article-type-faktaboksgreen h3,
-.ktc-article-type-faktaboksgreen h4,
-.ktc-article-type-faktaboksgreen h5,
-.ktc-article-type-faktaboksgreen h6 {
+.ktc-article-type-faktaboksgreen .ktc-article-headline h1,
+.ktc-article-type-faktaboksgreen .ktc-article-headline h2,
+.ktc-article-type-faktaboksgreen .ktc-article-headline h3,
+.ktc-article-type-faktaboksgreen .ktc-article-headline h4,
+.ktc-article-type-faktaboksgreen .ktc-article-headline h5,
+.ktc-article-type-faktaboksgreen .ktc-article-headline h6 {
   color: #5bc86b;
 }
-.ktc-article-type-faktaboksgreen,
-.ktc-article-type-faktaboksgreen span,
-.ktc-article-type-faktaboksgreen p {
+.ktc-article-type-faktaboksgreen .ktc-article-body,
+.ktc-article-type-faktaboksgreen .ktc-article-body span,
+.ktc-article-type-faktaboksgreen .ktc-article-body p {
   color: #ffffff;
 }
 .ktc-article-type-faktaboksyellow {
@@ -10992,6 +10992,10 @@ h6 + .ktc-date {
 .ktc-node-title {
   font-size: 24px;
   color: #2c353a;
+}
+.ktc-node-trompet {
+  font-size: 14px;
+  text-transform: uppercase;
 }
 .ktc-node-lead {
   font-size: 14px;

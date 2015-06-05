@@ -61,14 +61,22 @@
 .ktc-article-type-faktaboksgreen {
 	background-color: @ktc-color-green-background;
 
-	// Headlines
-	h1, h2, h3, h4, h5, h6 {
-		color: lighten(@ktc-color-green-background, 15%);
+	// Headline
+	.ktc-article-headline {
+
+		// Headlines
+		h1, h2, h3, h4, h5, h6 {
+			color: lighten(@ktc-color-green-background, 15%);
+		}
 	}
 
-	// Text
-	&, span, p {
-		color: @ktc-color-green-background-font;
+	// Body
+	.ktc-article-body {
+
+		// Text
+		&, span, p {
+			color: @ktc-color-green-background-font;
+		}
 	}
 }
 
