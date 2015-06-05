@@ -3,6 +3,9 @@
 ( function ($) {
   $(document).ready(function(){
 
+      // Add button class to "gennemse" knap in media modules
+      $('div.media-widget .button').addClass('btn').addClass('btn-default');
+
       // Enable tooltips
       $("[data-toggle=tooltip]").tooltip();
 

@@ -38,7 +38,7 @@ global $user;
 $account = $elements['#account'];
 ?>
 
-<!-- Begin - user profile - list 3 -->
+<!-- Begin - user profile - list 5 -->
 <section class="ktc-user-profile <?php if ($user->uid == $account->uid) { print 'ktc-red'; } ?>">
 
   <!-- Begin - profile photo -->
@@ -48,12 +48,12 @@ $account = $elements['#account'];
   <!-- Begin - profile content -->
   <div class="ktc-user-profile-content">
 
-    <?php if (isset($employer)): ?>
-      <p><?php print $employer; ?></p>
-    <?php endif ?>
-
     <?php if (isset($user_name)): ?>
       <h5><?php print $user_name; ?></h5>
+    <?php endif ?>
+
+    <?php if (isset($employer)): ?>
+      <p><?php print $employer; ?></p>
     <?php endif ?>
 
     <?php if (isset($job_title)): ?>
@@ -64,4 +64,4 @@ $account = $elements['#account'];
   <!-- End - profile content -->
 
 </section>
-<!-- End - user profile - list 3 -->
+<!-- End - user profile - list 5 -->

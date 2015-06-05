@@ -24,10 +24,6 @@ function configure_comment_form(&$form) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
- 
-
-
-
 function ktc_preprocess_page(&$variables) {
   // Remove all Taxonomy auto listings here.
   $term = NULL;
@@ -926,17 +922,17 @@ function _ktc_format_datetime($datetime) {
 
 // Get network group of node
 function _ktc_get_network_groups($nid) {
-    $groups = array();
-    $ktc_node = node_load($nid);
+  $groups = array();
+  $ktc_node = node_load($nid);
 
-    if($network_groups = field_get_items('node', $ktc_node, 'og_group_ref')) {
+  if($network_groups = field_get_items('node', $ktc_node, 'og_group_ref')) {
 
-        foreach($network_groups AS $network_group) {
-            $groups[] = node_load($network_group['target_id']);
-        }
+    foreach($network_groups AS $network_group) {
+      $groups[] = node_load($network_group['target_id']);
     }
+  }
 
-    return $groups;
+  return $groups;
 }
 
 /*
