@@ -11168,6 +11168,18 @@ h6 + .ktc-date {
   padding-left: 7px;
   padding-right: 15px;
 }
+.ktc-aside-filter-2-col .view-header .ktc-filter-button-container {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.ktc-aside-filter-2-col .view-content .ktc-filter-button-container:nth-child(even) {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.ktc-aside-filter-2-col .view-content .ktc-filter-button-container:nth-child(odd) {
+  padding-left: 7px;
+  padding-right: 15px;
+}
 .ktc-aside-filter-3-col .ktc-filter-button-container {
   float: left;
   width: 33.333%;
