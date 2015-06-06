@@ -11172,11 +11172,11 @@ h6 + .ktc-date {
   padding-left: 15px;
   padding-right: 7px;
 }
-.ktc-aside-filter-2-col .view-content .ktc-filter-button-container:nth-child(even) {
+.ktc-aside-filter-2-col .view-content div:nth-child(even) .ktc-filter-button-container {
   padding-left: 15px;
   padding-right: 7px;
 }
-.ktc-aside-filter-2-col .view-content .ktc-filter-button-container:nth-child(odd) {
+.ktc-aside-filter-2-col .view-content div:nth-child(odd) .ktc-filter-button-container {
   padding-left: 7px;
   padding-right: 15px;
 }

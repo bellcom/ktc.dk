@@ -56,19 +56,27 @@
 	// Content
 	.view-content {
 
-		// Button container
-		.ktc-filter-button-container {
+		// Div (stupid wrapper)
+		div {
 
 			// On right side
 			&:nth-child(even) {
-				padding-left: @ktc-default-left-right-inner-spacing;
-				padding-right: floor( @ktc-default-left-right-inner-spacing / 2 );
+
+				// Button container
+				.ktc-filter-button-container {
+					padding-left: @ktc-default-left-right-inner-spacing;
+					padding-right: floor( @ktc-default-left-right-inner-spacing / 2 );
+				}
 			}
 
 			// On left side
 			&:nth-child(odd) {
-				padding-left: floor( @ktc-default-left-right-inner-spacing / 2 );
-				padding-right: @ktc-default-left-right-inner-spacing;
+
+				// Button container
+				.ktc-filter-button-container {
+					padding-left: floor( @ktc-default-left-right-inner-spacing / 2 );
+					padding-right: @ktc-default-left-right-inner-spacing;
+				}
 			}
 		}
 	}
