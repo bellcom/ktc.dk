@@ -682,7 +682,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="og-members-all"><a href="#" >Se alle medlemmer</a></div>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="og-members-all ktc-call-to-action-button"><a href="#" class="btn btn-default">Se alle medlemmer</a></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['pane_title'] = 'KTC OG members';
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -1301,7 +1301,7 @@ function ktc_views_views_default_views() {
     t('Medlemmer af %1'),
     t('Block'),
     t('Content pane'),
-    t('<div class="og-members-all"><a href="#" >Se alle medlemmer</a></div>'),
+    t('<div class="og-members-all ktc-call-to-action-button"><a href="#" class="btn btn-default">Se alle medlemmer</a></div>'),
     t('KTC OG members'),
     t('View panes'),
     t('Medlemsliste gruppe venstre'),
@@ -2864,6 +2864,15 @@ function ktc_views_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Term first level', 'panel_pane_1');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'filter-box';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Overskrift: Global: Tekstområde */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -2897,6 +2906,15 @@ function ktc_views_views_default_views() {
 
   /* Display: Term first level with chosen ids */
   $handler = $view->new_display('panel_pane', 'Term first level with chosen ids', 'panel_pane_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Overskrift: Global: Tekstområde */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -3014,6 +3032,15 @@ function ktc_views_views_default_views() {
 
   /* Display: Term 1. level width */
   $handler = $view->new_display('panel_pane', 'Term 1. level width', 'panel_pane_3');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Overskrift: Global: Tekstområde */
   $handler->display->display_options['header']['area']['id'] = 'area';

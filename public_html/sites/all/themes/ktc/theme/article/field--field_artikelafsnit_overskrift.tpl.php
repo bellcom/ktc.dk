@@ -46,7 +46,7 @@
 ?>
 
 <!-- Begin - headline -->
-<div class="ktc-article-headline <?php print $classes; ?>"<?php print $attributes; ?>>
+<div class="ktc-article-section-headline <?php print $classes; ?>"<?php print $attributes; ?>>
 
   <?php if (!$label_hidden): ?>
     <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>

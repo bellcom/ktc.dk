@@ -21,15 +21,14 @@
   <?php print $pane_prefix; ?>
 <?php endif; ?>
 
-<div class="<?php print $classes; ?>" <?php print $id; ?> <?php print $attributes; ?>>
+<div class="ktc-article-content <?php print $classes; ?>" <?php print $id; ?> <?php print $attributes; ?>>
   <?php if ($admin_links): ?>
     <?php print $admin_links; ?>
   <?php endif; ?>
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
-    <div class="ktc-aside-heading">
-      <h3 class="ktc-aside-title" <?php print $title_attributes; ?>><?php print $title; ?></h3>
+      <h3 <?php print $title_attributes; ?>><?php print $title; ?></h3>
     </div>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
