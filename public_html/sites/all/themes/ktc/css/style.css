@@ -11155,29 +11155,41 @@ h6 + .ktc-date {
   padding-right: 0;
   word-wrap: break-word;
 }
-.ktc-aside-filter-2-col .filter-box .ktc-filter-button-container {
+.ktc-aside-filter-2-col .ktc-filter-button-container {
   float: left;
   width: 50%;
   padding: 2px 15px;
 }
-.ktc-aside-filter-2-col .filter-box .ktc-filter-button-container:nth-child(odd) {
+.ktc-aside-filter-2-col .ktc-filter-button-container:nth-child(odd) {
   padding-left: 15px;
   padding-right: 7px;
 }
-.ktc-aside-filter-2-col .filter-box .ktc-filter-button-container:nth-child(even) {
+.ktc-aside-filter-2-col .ktc-filter-button-container:nth-child(even) {
   padding-left: 7px;
   padding-right: 15px;
 }
-.ktc-aside-filter-3-col .filter-box .ktc-filter-button-container {
+.ktc-aside-filter-2-col .view-header .ktc-filter-button-container {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.ktc-aside-filter-2-col .view-content div:nth-child(even) .ktc-filter-button-container {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.ktc-aside-filter-2-col .view-content div:nth-child(odd) .ktc-filter-button-container {
+  padding-left: 7px;
+  padding-right: 15px;
+}
+.ktc-aside-filter-3-col .ktc-filter-button-container {
   float: left;
   width: 33.333%;
   padding: 2px 7px;
 }
-.ktc-aside-filter-3-col .filter-box .ktc-filter-button-container:first-child {
+.ktc-aside-filter-3-col .ktc-filter-button-container:first-child {
   padding-left: 15px;
   padding-right: 7px;
 }
-.ktc-aside-filter-3-col .filter-box .ktc-filter-button-container:last-child {
+.ktc-aside-filter-3-col .ktc-filter-button-container:last-child {
   padding-left: 7px;
   padding-right: 15px;
 }
@@ -11241,20 +11253,20 @@ h6 + .ktc-date {
   padding-right: 0;
   word-wrap: break-word;
 }
-.ktc-aside-tabs-2-col .nav-tabs .ktc-tabs-button-container {
+.ktc-aside-tabs-2-col .ktc-tabs-button-container {
   float: left;
   width: 50%;
   padding: 2px 15px;
 }
-.ktc-aside-tabs-2-col .nav-tabs .ktc-tabs-button-container:nth-child(odd) {
+.ktc-aside-tabs-2-col .ktc-tabs-button-container:nth-child(odd) {
   padding-left: 15px;
   padding-right: 7px;
 }
-.ktc-aside-tabs-2-col .nav-tabs .ktc-tabs-button-container:nth-child(even) {
+.ktc-aside-tabs-2-col .ktc-tabs-button-container:nth-child(even) {
   padding-left: 7px;
   padding-right: 15px;
 }
-.ktc-aside-tabs-3-col .nav-tabs .ktc-tabs-button-container {
+.ktc-aside-tabs-3-col .ktc-tabs-button-container {
   float: left;
   width: 33.333%;
   padding: 2px 15px;
