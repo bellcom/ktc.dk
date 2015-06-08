@@ -38,8 +38,8 @@ function ktc_crm_webuser_update_users() {
     foreach ($webusers as $webuserdto) {
       ktc_crm_update_account_from_webuserdto($webuserdto);
     }
+    $i++;
   }
-  $i++;
 }
 
 /**

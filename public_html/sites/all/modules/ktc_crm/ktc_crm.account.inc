@@ -8,27 +8,52 @@
  * Update accounts.
  */
 function ktc_crm_account_update_accounts() {
-  $accounts = ktc_crm_fetch_accounts();
+  $logger = KtcCrmLogger::getInstance();
+  $logger->log->addInfo('cron', 'start account sync');
+  // The webservice complains about not using paging cookie.
+  $fetch_accounts = TRUE;
+  $amount = 100;
+  $i = 0;
 
-  if ($accounts) {
-    $vocab = taxonomy_vocabulary_machine_name_load('accounts');
+  $vocab = taxonomy_vocabulary_machine_name_load('accounts');
+  // Set all terms as updated = 0. When the term is updated, it will be set
+  // to 1.
+  db_update('taxonomy_term_data')
+    ->fields(array('updated' => 0))
+    ->condition('vid', $vocab->vid)
+    ->execute();
 
-    // Set all terms as updated = 0.
-    db_update('taxonomy_term_data')
-      ->fields(array('updated' => 0))
-      ->condition('vid', $vocab->vid)
-      ->execute();
+  while ($fetch_accounts) {
+    $options = array(
+      'MaxReturned' => $amount,
+      'Skip' => ($i * $amount),
+      'UpdatedSince' => $updated_since,
+    );
+
+    $accounts = ktc_crm_fetch_accounts($options);
+
+    if (!$accounts && $i == 0) {
+      // If no accounts are returned on first fetch, don't no anything more.
+      $logger->log->addInfo('cron', 'no accounts returned from webservice');
+      return;
+    }
+    if (!$accounts) {
+      $fetch_accounts = FALSE;
+      break;
+    }
 
     foreach ($accounts as $accountdto) {
       ktc_crm_account_create_update($accountdto);
     }
+    $i++;
+  }
 
-    // Fetch all accounts not updated, and remove them.
-    $result = db_query('SELECT * FROM {taxonomy_term_data} WHERE updated = 0 AND vid = :vid', array(':vid' => $vocab->vid));
+  // Fetch all accounts not updated, and remove them. We only get here if some
+  // accounts are updated.
+  $result = db_query('SELECT * FROM {taxonomy_term_data} WHERE updated = 0 AND vid = :vid', array(':vid' => $vocab->vid));
 
-    foreach ($result as $record) {
-      taxonomy_term_delete($record->tid);
-    }
+  foreach ($result as $record) {
+    taxonomy_term_delete($record->tid);
   }
 }
 
