@@ -94,7 +94,7 @@
   </div>
 </div>
 
-<div class="main-container container-fluid margin-fixed">
+<div class="main-container container-fluid">
 
 
   <div class="row">
