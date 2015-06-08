@@ -10185,41 +10185,17 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   background-color: #ffffff;
   padding: 10px 15px;
 }
-.ktc-article-content {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 45px;
-  margin-right: 45px;
-}
-.ktc-article-full-width-image {
-  padding: 0;
-  margin-top: -10px;
+.ktc-content .ktc-section-full-width {
   margin-left: -15px;
   margin-right: -15px;
 }
-.ktc-article-full-width-image img {
-  min-width: 100%;
-  height: auto;
+.ktc-content-wide {
+  background-color: #ffffff;
+  padding: 10px 60px;
 }
-.ktc-article-trompet {
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #36a145;
-}
-.ktc-article-headline h1,
-.ktc-article-headline h2,
-.ktc-article-headline h3,
-.ktc-article-headline h4,
-.ktc-article-headline h5,
-.ktc-article-headline h6 {
-  font-size: 24px;
-  padding: 0;
-  margin: 6px 0;
-}
-.ktc-article-lead {
-  font-size: 18px;
-  color: #36a145;
-  line-height: 1.42857143;
+.ktc-content-wide .ktc-section-full-width {
+  margin-left: -60px;
+  margin-right: -60px;
 }
 .ktc-article-section {
   padding: 20px 0;
@@ -10229,12 +10205,12 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article-section.ktc-article-type-faktaboksyellow,
 .ktc-article-section.ktc-article-type-faktaboksblue,
 .ktc-article-section.ktc-article-type-faktaboksblack {
-  padding-left: 75px;
-  padding-right: 75px;
   border-top: 10px solid #e9edee;
   border-bottom: 10px solid #e9edee;
-  margin-left: -75px;
-  margin-right: -75px;
+  margin-left: -60px;
+  margin-right: -60px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 .ktc-article-section .ktc-article-section-headline h1,
 .ktc-article-section .ktc-article-section-headline h2,
@@ -10316,19 +10292,19 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article-type-faktaboksblack .ktc-article-body p {
   color: #ffffff;
 }
-.ktc-article-section-container .field-collection-view {
+.ktc-article-section-wrapper .field-collection-view {
   padding: 0;
   margin: 0;
   border-bottom: 0;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links {
   margin: 0;
   padding: 0;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links > li {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links > li {
   padding-left: 6px;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a {
   margin-right: 0;
   display: inline-block;
   margin-bottom: 0;
@@ -10356,29 +10332,29 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   color: #2c353a;
   border-color: #e9edee;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a:focus,
-.ktc-article-section-container .field-collection-view .field-collection-view-links a:active:focus,
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.active:focus {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:focus,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:active:focus,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a:hover,
-.ktc-article-section-container .field-collection-view .field-collection-view-links a:focus {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:hover,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:focus {
   color: #2c353a;
   text-decoration: none;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a:active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.disabled,
-.ktc-article-section-container .field-collection-view .field-collection-view-links a[disabled],
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.disabled,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a[disabled],
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -10387,214 +10363,214 @@ fieldset[disabled] .ktc-article-section-container .field-collection-view .field-
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-xs {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-xs {
   min-width: 20px;
   padding: 1px 6px;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-sm {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-sm {
   min-width: 25px;
   padding: 2px 8px;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-lg {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-lg {
   min-width: 70px;
   padding: 5px 25px;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a:active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:active {
   -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-default,
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-primary {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-default,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary {
   background-color: #ffffff;
   color: #2c353a;
   border-color: #e9edee;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-default:hover,
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-primary:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-default:hover,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary:hover {
   background-color: #f0f0f0;
   color: #2c353a;
   border-color: #d5ddde;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-default.active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-primary.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-default.active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary.active {
   border-color: #a1b2b6;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-success {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success {
   background-color: #36a145;
   color: #ffffff;
   border-color: #308e3d;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-success:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success:hover {
   background-color: #2e8a3b;
   color: #ffffff;
   border-color: #277331;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-success.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success.active {
   border-color: #102e14;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-info {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info {
   background-color: #2dace9;
   color: #ffffff;
   border-color: #18a2e5;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-info:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info:hover {
   background-color: #179fe0;
   color: #ffffff;
   border-color: #158bc4;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-info.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info.active {
   border-color: #0c5071;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-danger {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger {
   background-color: #e75311;
   color: #ffffff;
   border-color: #cf4a0f;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-danger:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger:hover {
   background-color: #ca490f;
   color: #ffffff;
   border-color: #ae3f0d;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-danger.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger.active {
   border-color: #582007;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-warning {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning {
   background-color: #d3a900;
   color: #ffffff;
   border-color: #ba9500;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-warning:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning:hover {
   background-color: #b49000;
   color: #ffffff;
   border-color: #967800;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-warning.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning.active {
   border-color: #3a2e00;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-action {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action {
   background-color: #2c353a;
   color: #ffffff;
   border-color: #586a74;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-action:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action:hover {
   background-color: #1f2529;
   color: #ffffff;
   border-color: #495760;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.btn-action.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action.active {
   border-color: #21282c;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:hover {
   background-color: #f0f0f0;
   color: #2c353a;
   border-color: #d5ddde;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links a.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active {
   border-color: #a1b2b6;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a {
   color: #ffffff;
   background-color: #2dace9;
   border-color: #18a2e5;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a:hover,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a:focus,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a:active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a.active,
-.open .dropdown-toggle.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:hover,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:focus,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.active,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a {
   color: #ffffff;
   background-color: #1698d7;
   border-color: #127bad;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a:active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a.active,
-.open .dropdown-toggle.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.active,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a {
   background-image: none;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a.disabled,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a[disabled],
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links .edit a,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a.disabled:hover,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a[disabled]:hover,
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links .edit a:hover,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a.disabled:focus,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a[disabled]:focus,
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links .edit a:focus,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a.disabled:active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a[disabled]:active,
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links .edit a:active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a.disabled.active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a[disabled].active,
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links .edit a.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled],
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled:hover,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled]:hover,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:hover,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled:focus,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled]:focus,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:focus,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled:active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled]:active,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled.active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled].active,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.active {
   background-color: #2dace9;
   border-color: #18a2e5;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links .edit a .badge {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a .badge {
   color: #2dace9;
   background-color: #ffffff;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a {
   color: #ffffff;
   background-color: #e75311;
   border-color: #cf4a0f;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a:hover,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a:focus,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a:active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a.active,
-.open .dropdown-toggle.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:hover,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:focus,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.active,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a {
   color: #ffffff;
   background-color: #c1450e;
   border-color: #96360b;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a:active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a.active,
-.open .dropdown-toggle.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.active,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a {
   background-image: none;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a.disabled,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a[disabled],
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links .delete a,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a.disabled:hover,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a[disabled]:hover,
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links .delete a:hover,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a.disabled:focus,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a[disabled]:focus,
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links .delete a:focus,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a.disabled:active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a[disabled]:active,
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links .delete a:active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a.disabled.active,
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a[disabled].active,
-fieldset[disabled] .ktc-article-section-container .field-collection-view .field-collection-view-links .delete a.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled],
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled:hover,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled]:hover,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:hover,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled:focus,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled]:focus,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:focus,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled:active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled]:active,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled.active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled].active,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.active {
   background-color: #e75311;
   border-color: #cf4a0f;
 }
-.ktc-article-section-container .field-collection-view .field-collection-view-links .delete a .badge {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a .badge {
   color: #e75311;
   background-color: #ffffff;
 }
-.ktc-article-section-container .field-collection-container .field-items .field-item {
+.ktc-article-section-wrapper .field-collection-container .field-items .field-item {
   margin-bottom: 0;
 }
-.ktc-article-section-container .field-collection-view .entity-field-collection-item {
+.ktc-article-section-wrapper .field-collection-view .entity-field-collection-item {
   width: auto;
   float: none;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add {
   padding: 0;
   margin: 0;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add > li {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add > li {
   padding: 0;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a {
   display: inline-block;
   margin-bottom: 0;
   font-weight: 600;
@@ -10621,29 +10597,29 @@ fieldset[disabled] .ktc-article-section-container .field-collection-view .field-
   color: #ffffff;
   border-color: #308e3d;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a:focus,
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a:active:focus,
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.active:focus {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:focus,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:active:focus,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a:hover,
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a:focus {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:hover,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:focus {
   color: #2c353a;
   text-decoration: none;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a:active,
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:active,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.disabled,
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a[disabled],
-fieldset[disabled] .ktc-article-section-container .field-collection-container .action-links-field-collection-add a {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.disabled,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a[disabled],
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -10652,115 +10628,115 @@ fieldset[disabled] .ktc-article-section-container .field-collection-container .a
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-xs {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-xs {
   min-width: 20px;
   padding: 1px 6px;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-sm {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-sm {
   min-width: 25px;
   padding: 2px 8px;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-lg {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-lg {
   min-width: 70px;
   padding: 5px 25px;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a:active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:active {
   -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-default,
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-primary {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary {
   background-color: #ffffff;
   color: #2c353a;
   border-color: #e9edee;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-default:hover,
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-primary:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default:hover,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary:hover {
   background-color: #f0f0f0;
   color: #2c353a;
   border-color: #d5ddde;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-default.active,
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-primary.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default.active,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary.active {
   border-color: #a1b2b6;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-success {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success {
   background-color: #36a145;
   color: #ffffff;
   border-color: #308e3d;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-success:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success:hover {
   background-color: #2e8a3b;
   color: #ffffff;
   border-color: #277331;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-success.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success.active {
   border-color: #102e14;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-info {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info {
   background-color: #2dace9;
   color: #ffffff;
   border-color: #18a2e5;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-info:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info:hover {
   background-color: #179fe0;
   color: #ffffff;
   border-color: #158bc4;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-info.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info.active {
   border-color: #0c5071;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-danger {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger {
   background-color: #e75311;
   color: #ffffff;
   border-color: #cf4a0f;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-danger:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger:hover {
   background-color: #ca490f;
   color: #ffffff;
   border-color: #ae3f0d;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-danger.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger.active {
   border-color: #582007;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-warning {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning {
   background-color: #d3a900;
   color: #ffffff;
   border-color: #ba9500;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-warning:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning:hover {
   background-color: #b49000;
   color: #ffffff;
   border-color: #967800;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-warning.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning.active {
   border-color: #3a2e00;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-action {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action {
   background-color: #2c353a;
   color: #ffffff;
   border-color: #586a74;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-action:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action:hover {
   background-color: #1f2529;
   color: #ffffff;
   border-color: #495760;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.btn-action.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action.active {
   border-color: #21282c;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:hover {
   background-color: #2e8a3b;
   color: #ffffff;
   border-color: #277331;
 }
-.ktc-article-section-container .field-collection-container .action-links-field-collection-add a.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active {
   border-color: #102e14;
 }
 .calendar-calendar td {
@@ -11335,6 +11311,11 @@ h6 + .ktc-date {
   margin-left: -15px;
   margin-right: -15px;
 }
+.ktc-content-wide .ktc-full-width-image {
+  margin-top: -10px;
+  margin-left: -60px;
+  margin-right: -60px;
+}
 .ktc-call-to-action-button {
   text-align: center;
 }
@@ -11495,13 +11476,17 @@ h6 + .ktc-date {
 .ktc-node-title {
   font-size: 24px;
   color: #2c353a;
+  margin: 6px 0;
 }
 .ktc-node-trompet {
   font-size: 14px;
+  color: #36a145;
   text-transform: uppercase;
+  font-weight: bold;
 }
 .ktc-node-lead {
-  font-size: 14px;
+  font-size: 18px;
+  color: #36a145;
 }
 .ktc-node-header {
   background-color: transparent;

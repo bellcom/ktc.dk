@@ -23,7 +23,7 @@
 
     <div class="row">
         <div class="col-md-9">
-            <div class="ktc-content">
+            <div class="ktc-content-wide">
                 <?php print $content['left']; ?>
             </div>
         </div>

@@ -27,10 +27,6 @@
  * @see template_preprocess_entity()
  * @see template_process()
  */
-
-if($article_type == "billedserie") {
-  xdebug_break();
-}
 ?>
 
 <!-- Begin - article section -->

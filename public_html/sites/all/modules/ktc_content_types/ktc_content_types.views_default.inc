@@ -258,7 +258,14 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_meeting_type']['table'] = 'field_data_field_meeting_type';
   $handler->display->display_options['fields']['field_meeting_type']['field'] = 'field_meeting_type';
   $handler->display->display_options['fields']['field_meeting_type']['label'] = '';
+  $handler->display->display_options['fields']['field_meeting_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_meeting_type']['alter']['text'] = '- [field_meeting_type]';
+  $handler->display->display_options['fields']['field_meeting_type']['element_type'] = '0';
   $handler->display->display_options['fields']['field_meeting_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_meeting_type']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_meeting_type']['element_wrapper_class'] = 'ktc-node-header-button';
+  $handler->display->display_options['fields']['field_meeting_type']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_meeting_type']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_meeting_type']['settings'] = array(
     'link' => 0,
   );
@@ -475,6 +482,7 @@ function ktc_content_types_views_default_views() {
     t('Titel, type og type'),
     t('- [field_arrangement_type]'),
     t('- [field_artikeltype]'),
+    t('- [field_meeting_type]'),
     t('- [field_os2web_news_page_type]'),
     t('.'),
     t(' '),
