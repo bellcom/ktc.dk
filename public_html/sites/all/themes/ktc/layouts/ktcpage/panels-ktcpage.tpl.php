@@ -14,20 +14,28 @@
  *   - $content['right']: Content in the right column.
  */
 ?>
-<div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-  <div class="col-md-12">
-    <?php print $content['top']; ?>
-  </div>
-  <div class="col-md-9">
-    <div class="ktc-content">
-      <?php print $content['left']; ?>
+<div <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+    <div class="row">
+        <div class="col-md-12">
+            <?php print $content['top']; ?>
+        </div>
     </div>
-  </div>
 
-  <div class="col-md-3">
-    <?php print $content['right']; ?>
-  </div>
-  <div class="col-md-12">
-    <?php print $content['bottom']; ?>
-  </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="ktc-content">
+                <?php print $content['left']; ?>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <?php print $content['right']; ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <?php print $content['bottom']; ?>
+        </div>
+    </div>
 </div>
