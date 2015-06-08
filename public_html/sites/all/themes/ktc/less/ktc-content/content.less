@@ -1,5 +1,63 @@
+// |--------------------------------------------------------------------------
+// | Content
+// |--------------------------------------------------------------------------
+// |
+// | Contains the following:
+// | - .ktc-content
+// | - .ktc-content-wide
+// | - .ktc-section-full-width
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
 // Content
 .ktc-content {
 	background-color: @ktc-color-light-content-background;
 	padding: @ktc-content-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+
+	// Full width
+	.ktc-section-full-width {
+		margin-left: -(@ktc-default-left-right-inner-spacing);
+		margin-right: -(@ktc-default-left-right-inner-spacing);
+	}
+}
+
+// Wide
+.ktc-content-wide {
+	background-color: @ktc-color-light-content-background;
+	padding: @ktc-content-top-bottom-inner-spacing @ktc-default-wide-left-right-inner-spacing;
+
+	// Full width
+	.ktc-section-full-width {
+		margin-left: -(@ktc-default-wide-left-right-inner-spacing);
+		margin-right: -(@ktc-default-wide-left-right-inner-spacing);
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Full width (normal)
+.ktc-mixin-content-full-width() {
+
+	& {
+		margin-left: -(@ktc-default-left-right-inner-spacing);
+		margin-right: -(@ktc-default-left-right-inner-spacing);
+		padding-left: @ktc-default-left-right-inner-spacing;
+		padding-right: @ktc-default-left-right-inner-spacing;
+	}
+}
+
+// Full width (wide)
+.ktc-mixin-content-wide-full-width() {
+
+	& {
+		margin-left: -(@ktc-default-wide-left-right-inner-spacing);
+		margin-right: -(@ktc-default-wide-left-right-inner-spacing);
+		padding-left: @ktc-default-wide-left-right-inner-spacing;
+		padding-right: @ktc-default-wide-left-right-inner-spacing;
+	}
 }

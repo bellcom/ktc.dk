@@ -15,60 +15,8 @@
 // |
 
 // --------------------------------------------------
-// Variables
-// --------------------------------------------------
-
-@ktc-article-margin: 60px;
-
-// --------------------------------------------------
 // Styling
 // --------------------------------------------------
-
-.ktc-article-content {
-	padding-left: @ktc-default-left-right-inner-spacing;
-	padding-right: @ktc-default-left-right-inner-spacing;
-	margin-left: floor( @ktc-article-margin - @ktc-default-left-right-inner-spacing );
-	margin-right: floor( @ktc-article-margin - @ktc-default-left-right-inner-spacing );
-}
-
-// Image
-.ktc-article-full-width-image {
-	padding: 0;
-	margin-top: -(@ktc-teaser-body-top-bottom-inner-spacing);
-	margin-left: -(@ktc-default-left-right-inner-spacing);
-	margin-right: -(@ktc-default-left-right-inner-spacing);
-
-	// Image
-	img {
-		min-width: 100%;
-		height: auto;
-	}
-}
-
-// Trompet
-.ktc-article-trompet {
-	font-weight: bold;
-	text-transform: uppercase;
-	color: @ktc-color-green-font;
-}
-
-// Headline
-.ktc-article-headline {
-
-	// Headlines
-	h1, h2, h3, h4, h5, h6 {
-		font-size: @font-size-h2;
-		padding: 0;
-		margin: 6px 0;
-	}
-}
-
-// Lead / manchete
-.ktc-article-lead {
-	font-size: 18px;
-	color: @ktc-color-green-font;
-	line-height: @line-height-base;
-}
 
 // Section
 .ktc-article-section {
@@ -80,13 +28,9 @@
 	&.ktc-article-type-faktaboksyellow,
 	&.ktc-article-type-faktaboksblue,
 	&.ktc-article-type-faktaboksblack {
-		padding-left: floor(@ktc-default-left-right-inner-spacing + @ktc-article-margin);
-		padding-right: floor(@ktc-default-left-right-inner-spacing + @ktc-article-margin);
 		border-top: 10px solid @body-bg;
 		border-bottom: 10px solid @body-bg;
-
-		margin-left: -(floor( @ktc-article-margin + @ktc-default-left-right-inner-spacing ));
-		margin-right: -(floor( @ktc-article-margin + @ktc-default-left-right-inner-spacing ));
+		.ktc-mixin-content-wide-full-width();
 	}
 
 	// Headline (all)
@@ -180,8 +124,8 @@
 // Reset
 // --------------------------------------------------
 
-// Section container
-.ktc-article-section-container {
+// Section wrapper
+.ktc-article-section-wrapper {
 
 	// Reset from field_collection contrib CSS
 	.field-collection-view {
