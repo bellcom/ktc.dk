@@ -27,10 +27,14 @@
  * @see template_preprocess_entity()
  * @see template_process()
  */
+
+if($article_type == "billedserie") {
+  xdebug_break();
+}
 ?>
 
-<!-- Begin - article -->
-<section class="ktc-article ktc-article-type-<?php print $article_type; ?> <?php print $classes; ?>"<?php print $attributes; ?>>
+<!-- Begin - article section -->
+<section class="ktc-article-section ktc-article-type-<?php print $article_type; ?> <?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print render($content); ?>
 </section>
-<!-- End - article -->
+<!-- End - article section -->
