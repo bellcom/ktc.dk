@@ -26,7 +26,7 @@
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
             <?php if (isset($arrangement_date)): ?>
-                <p class="ktc-date"><?php print $published_at; ?></p>
+                <p class="ktc-date"><?php print $arrangement_date; ?></p>
             <?php endif; ?>
 
             <?php if (isset($arrangement_signup_date_formatted)): ?>
