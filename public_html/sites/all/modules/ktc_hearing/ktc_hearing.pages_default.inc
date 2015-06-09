@@ -284,7 +284,8 @@ function ktc_hearing_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'row',
+      'css_class' => 'ktc-aside-action ktc-aside-tabs ktc-aside-tabs-2-col',
+      'template_suggestion' => 'page_tabs',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -300,14 +301,18 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Status',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'block',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -329,7 +334,11 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'block',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
