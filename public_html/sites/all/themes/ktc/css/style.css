@@ -11743,7 +11743,7 @@ h6 + .ktc-date {
 .related-links > li {
   position: relative;
   padding: 5px 0;
-  padding-right: 23px;
+  padding-right: 25px;
 }
 .related-links > li:first-child {
   padding-top: 0;
@@ -11765,11 +11765,11 @@ h6 + .ktc-date {
   content: "";
   top: 50%;
   right: 0;
-  margin-top: -7px;
+  margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -151px;
-  width: 15px;
-  height: 15px;
+  background-position: 0px -423px;
+  width: 17px;
+  height: 17px;
 }
 .related-links > li.related-link-type-hearing {
   padding-left: 17px;
