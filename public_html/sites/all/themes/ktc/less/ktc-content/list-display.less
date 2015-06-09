@@ -1,0 +1,147 @@
+// |--------------------------------------------------------------------------
+// | List
+// |--------------------------------------------------------------------------
+// |
+// | Contains the following:
+// | - .ktc-list-display
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// List
+.ktc-list-display {
+	display: table;
+	margin-bottom: floor(@grid-gutter-width / 2);
+
+	// Icon
+	.ktc-list-display-icon {
+		float: left;
+		min-width: 25px; // Bit of a hack to make sure all content is aligned, since icon width is different
+
+		// Vote
+		&.ktc-list-display-icon-meeting_doodle {
+			.sprite(@ktc-icon-vote);
+		}
+
+		// Document
+		&.ktc-list-display-icon-document {
+			.sprite(@ktc-icon-document);
+		}
+
+		// News
+		&.ktc-list-display-icon-os2web_base_news {
+			.sprite(@ktc-icon-news);
+		}
+
+		// Network / group
+		&.ktc-list-display-icon-group {
+			.sprite(@ktc-icon-network);
+		}
+
+		// Arrangement
+		&.ktc-list-display-icon-arrangement {
+			.sprite(@ktc-icon-arrangement);
+		}
+
+		// Forum
+		&.ktc-list-display-icon-forum_post {
+			.sprite(@ktc-icon-forum);
+		}
+
+		// Hearing
+		&.ktc-list-display-icon-hearing {
+			.sprite(@ktc-icon-hearing);
+		}
+	}
+
+	// Body
+	.ktc-list-display-body {
+		display: inherit;
+
+		// Headline
+		.ktc-list-display-headline {
+
+			// Headline and link
+			&,
+			> a {
+				font-family: @ktc-list-display-headline-font-family;
+				font-size: @ktc-list-display-headline-font-size;
+				font-weight: @ktc-list-display-headline-font-weight;
+				color: @ktc-list-display-headline-font-color;
+				margin: 0;
+				margin-bottom: 5px;
+			}
+		}
+
+		// Sub headline
+		.ktc-list-display-subheadline {
+			.small; // Include small class
+			margin: 0;
+		}
+
+		// Simple date
+		.ktc-date {
+			.small; // Include small class
+		}
+
+		// Paragraph
+		p {
+			margin-bottom: 3px;
+		}
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// List
+.ktc-mixin-list-display(@font-color) {
+
+	// List
+	.ktc-list-display,
+	&.ktc-list-display {
+
+		// Body
+		.ktc-list-display-body {
+
+			// Headline
+			.ktc-list-display-headline {
+
+				// Link
+				> a {
+
+					// Hover state
+					&:hover {
+						color: @font-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Default
+.ktc-mixin-list-display(@ktc-color-green-font);
+
+// Gold
+.ktc-gold {
+	.ktc-mixin-list-display(@ktc-color-gold-font);
+}
+
+// Green
+.ktc-green {
+	.ktc-mixin-list-display(@ktc-color-green-font);
+}
+
+// Red
+.ktc-red {
+	.ktc-mixin-list-display(@ktc-color-red-font);
+}
+
+// Blue
+.ktc-blue {
+	.ktc-mixin-list-display(@ktc-color-blue-font);
+}

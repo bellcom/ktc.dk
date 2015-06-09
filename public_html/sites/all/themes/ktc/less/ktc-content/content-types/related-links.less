@@ -13,27 +13,13 @@
 
 // Related links
 .related-links {
-	.list-unstyled;
+	.ktc-list;
 
 	// List item
 	> li {
-		position: relative;
-		padding: 5px 0;
-		padding-right: floor(@ikon-arrow-right-width + 8px);
-
-		// First
-		&:first-child {
-			padding-top: 0;
-		}
-
-		// Last
-		&:last-child {
-			padding-bottom: 0;
-		}
 
 		// Link
 		> a {
-			display: block;
 
 			// Icon (node type)
 			&:before {
@@ -41,16 +27,6 @@
 				content: "";
 				top: 50%;
 				left: 0;
-			}
-
-			// Icon
-			&:after {
-				position: absolute;
-				content: "";
-				top: 50%;
-				right: 0;
-				margin-top: -(floor( @ikon-arrow-right-height / 2 ));
-				.sprite(@ikon-arrow-right);
 			}
 		}
 	}
