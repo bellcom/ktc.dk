@@ -11746,10 +11746,10 @@ h6 + .ktc-date {
   padding-right: 25px;
 }
 .ktc-list > li:first-child {
-  padding-top: 0;
+  margin-top: -5px;
 }
 .ktc-list > li:last-child {
-  padding-bottom: 0;
+  margin-bottom: -5px;
 }
 .ktc-list > li > a {
   display: block;
@@ -11771,10 +11771,10 @@ h6 + .ktc-date {
   padding-right: 25px;
 }
 .ktc-aside-list .ktc-aside-body .field-items > .field-item:first-child {
-  padding-top: 0;
+  margin-top: -5px;
 }
 .ktc-aside-list .ktc-aside-body .field-items > .field-item:last-child {
-  padding-bottom: 0;
+  margin-bottom: -5px;
 }
 .ktc-aside-list .ktc-aside-body .field-items > .field-item > a {
   display: block;
@@ -11800,10 +11800,10 @@ h6 + .ktc-date {
   padding-right: 25px;
 }
 .related-links > li:first-child {
-  padding-top: 0;
+  margin-top: -5px;
 }
 .related-links > li:last-child {
-  padding-bottom: 0;
+  margin-bottom: -5px;
 }
 .related-links > li > a {
   display: block;

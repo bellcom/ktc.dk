@@ -81,31 +81,26 @@
 ?>
 
 <!-- Begin - list -->
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list"<?php print $attributes; ?>>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display"<?php print $attributes; ?>>
 
   <!-- Begin - icon -->
-  <span class="ktc-list-icon ktc-list-icon-<?php print $type; ?>"></span>
+  <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
   <!-- End - icon -->
 
   <!-- Begin - body -->
-  <div class="ktc-list-body">
+  <div class="ktc-list-display-body">
 
-    <?php if (isset($network_groups)): ?>
-      <?php foreach($network_groups AS $network_group): ?>
-        <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="ktc-list-title"><?php print $network_group->title; ?></a>
-      <?php endforeach ?>
+    <?php if (isset($news_type)): ?>
+      <p class="ktc-list-display-subheadline"><?php print $news_type; ?></p>
     <?php endif ?>
 
-    <?php if (isset($arrangement_type)): ?>
-      <p class="mute"><?php print $arrangement_type; ?></p>
-    <?php endif ?>
+    <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
 
-    <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-
-    <p class="ktc-date"><?php $arrangement_date; ?></p>
+    <p class="ktc-date"><?php print $published_at; ?></p>
 
   </div>
   <!-- End - body -->
 
 </article>
 <!-- End - list -->
+

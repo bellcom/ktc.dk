@@ -446,7 +446,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-list',
       'template_suggestion' => 'aside',
     );
     $pane->extras = array();

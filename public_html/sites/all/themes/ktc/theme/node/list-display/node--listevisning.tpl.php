@@ -81,25 +81,16 @@
 ?>
 
 <!-- Begin - list -->
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list"<?php print $attributes; ?>>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display"<?php print $attributes; ?>>
 
   <!-- Begin - icon -->
-  <span class="ktc-list-icon ktc-list-icon-<?php print $type; ?>"></span>
+  <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
   <!-- End - icon -->
 
   <!-- Begin - body -->
-  <div class="ktc-list-body">
-
-    <?php if (isset($group_type)): ?>
-      <p class="ktc-list-subheadline"><?php print $group_type; ?></p>
-    <?php endif ?>
-
-    <h3 class="ktc-list-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-
-    <?php if (isset($group_region)): ?>
-      <p>- <?php print $group_region; ?></p>
-    <?php endif ?>
-
+  <div class="ktc-list-display-body">
+    <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+    <p class="ktc-date"><?php print $published_at; ?></p>
   </div>
   <!-- End - body -->
 

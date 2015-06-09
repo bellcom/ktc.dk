@@ -636,7 +636,11 @@ function ktc_arrangement_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-list',
+      'template_suggestion' => 'entity_field',
+    );
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
