@@ -2,8 +2,9 @@
 // | List
 // |--------------------------------------------------------------------------
 // |
-// | Contains the following:
-// | - .ktc-list
+// | Provides styles for:
+// | - ul.related-links
+// | - a.related-link-type-{%node_type%}
 // |
 
 // --------------------------------------------------
@@ -12,136 +13,81 @@
 
 // List
 .ktc-list {
-	display: table;
-	margin-bottom: floor(@grid-gutter-width / 2);
+	.list-unstyled;
 
-	// Icon
-	.ktc-list-icon {
-		float: left;
-		min-width: 25px; // Bit of a hack to make sure all content is aligned, since icon width is different
+	// List item
+	> li {
+		position: relative;
+		padding: 5px 0;
+		padding-right: floor(@ikon-arrow-right-width + 8px);
 
-		// Vote
-		&.ktc-list-icon-meeting_doodle {
-			.sprite(@ktc-icon-vote);
+		// First
+		&:first-child {
+			margin-top: -5px;
 		}
 
-		// Document
-		&.ktc-list-icon-document {
-			.sprite(@ktc-icon-document);
+		// Last
+		&:last-child {
+			margin-bottom: -5px;
 		}
 
-		// News
-		&.ktc-list-icon-os2web_base_news {
-			.sprite(@ktc-icon-news);
-		}
+		// Link
+		> a {
+			display: block;
 
-		// Network / group
-		&.ktc-list-icon-group {
-			.sprite(@ktc-icon-network);
-		}
-
-		// Arrangement
-		&.ktc-list-icon-arrangement {
-			.sprite(@ktc-icon-arrangement);
-		}
-
-		// Forum
-		&.ktc-list-icon-forum_post {
-			.sprite(@ktc-icon-forum);
-		}
-
-		// Hearing
-		&.ktc-list-icon-hearing {
-			.sprite(@ktc-icon-hearing);
-		}
-	}
-
-	// Body
-	.ktc-list-body {
-		display: inherit;
-
-		// Headline
-		.ktc-list-headline {
-
-			// Headline and link
-			&,
-			> a {
-				font-family: @ktc-list-headline-font-family;
-				font-size: @ktc-list-headline-font-size;
-				font-weight: @ktc-list-headline-font-weight;
-				color: @ktc-list-headline-font-color;
-				margin: 0;
-				margin-bottom: 5px;
+			// Icon
+			&:after {
+				position: absolute;
+				content: "";
+				top: 50%;
+				right: 0;
+				margin-top: -(floor( @ikon-arrow-right-height / 2 ));
+				.sprite(@ikon-arrow-right);
 			}
-		}
-
-		// Sub headline
-		.ktc-list-subheadline {
-			.small; // Include small class
-			margin: 0;
-		}
-
-		// Simple date
-		.ktc-date {
-			.small; // Include small class
-		}
-
-		// Paragraph
-		p {
-			margin-bottom: 3px;
 		}
 	}
 }
 
-// --------------------------------------------------
-// Mixins
-// --------------------------------------------------
+// Aside
+.ktc-aside-list {
 
-// List
-.ktc-mixin-list(@font-color) {
+	// Body
+	.ktc-aside-body {
 
-	// List
-	.ktc-list,
-	&.ktc-list {
+		// Field items
+		.field-items {
 
-		// Body
-		.ktc-list-body {
+			// Item
+			> .field-item {
+				position: relative;
+				padding: 5px 0;
+				padding-right: floor(@ikon-arrow-right-width + 8px);
 
-			// Headline
-			.ktc-list-headline {
+				// First
+				&:first-child {
+					margin-top: -5px;
+				}
+
+				// Last
+				&:last-child {
+					margin-bottom: -5px;
+				}
 
 				// Link
 				> a {
+					display: block;
 
-					// Hover state
-					&:hover {
-						color: @font-color;
+					// Icon
+					&:after {
+						position: absolute;
+						content: "";
+						top: 50%;
+						right: 0;
+						margin-top: -(floor( @ikon-arrow-right-height / 2 ));
+						.sprite(@ikon-arrow-right);
 					}
 				}
 			}
 		}
 	}
-}
-
-// Default
-.ktc-mixin-list(@ktc-color-green-font);
-
-// Gold
-.ktc-gold {
-	.ktc-mixin-list(@ktc-color-gold-font);
-}
-
-// Green
-.ktc-green {
-	.ktc-mixin-list(@ktc-color-green-font);
-}
-
-// Red
-.ktc-red {
-	.ktc-mixin-list(@ktc-color-red-font);
-}
-
-// Blue
-.ktc-blue {
-	.ktc-mixin-list(@ktc-color-blue-font);
 }

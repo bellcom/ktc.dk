@@ -1504,7 +1504,8 @@ function ktc_content_types_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-list',
+      'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();
     $pane->position = 4;
