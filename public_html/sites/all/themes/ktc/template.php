@@ -841,6 +841,8 @@ function ktc_preprocess_region(&$variables, $hook) {
   }
   if($variables['region'] == "content"){
     $class = '';
+    	if (!panels_get_current_page_display()) {  $class = 'ktc-bg-white'; } 
+
     switch ($variables['elements']['#content_column_class'][0]) {
       case 8:
         $class = 'col-md-pull-4 col-sm-pull-4';
