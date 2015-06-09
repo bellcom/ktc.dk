@@ -289,6 +289,13 @@ function ktc_users_edit_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'user_profile_form') {
     $edit = variable_get('ktc_users_edit_company_message', '');
     $form['field_account']['#suffix'] = '<div class="account-address"><div class="address"></div><br />' . $edit . '</div>';
+
+    // The membership checkbox must be disabled, since it is handled by the
+    // subscriptions.
+    $form['field_membership_ktc']['#disabled'] = 1;
+    // Tell the user to edit the subscription.
+    global $user;
+    $form['field_membership_ktc'][LANGUAGE_NONE]['#title'] .= ' ' . t('(For at oprette/redigere KTC medlemsskab,') . ' ' . l(t('klik her'), 'user/' . $user->uid . '/medlemskab') . ')';
   }
 }
 
