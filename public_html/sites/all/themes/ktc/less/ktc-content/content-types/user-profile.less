@@ -55,7 +55,7 @@
 // --------------------------------------------------
 
 // User profile
-.ktc-mixin-user-profile(@color) {
+.ktc-mixin-user-profile(@border-color, @color: @border-color) {
 
 	// User profile
 	.ktc-user-profile {
@@ -65,7 +65,7 @@
 
 			// Photo
 			img {
-				border-color: @color;
+				border-color: @border-color;
 			}
 		}
 
@@ -86,7 +86,7 @@
 }
 
 // Default
-.ktc-mixin-user-profile(@ktc-color-gray);
+.ktc-mixin-user-profile(@ktc-color-gray, @ktc-default-color-headline);
 
 // Green
 .ktc-user-green {
