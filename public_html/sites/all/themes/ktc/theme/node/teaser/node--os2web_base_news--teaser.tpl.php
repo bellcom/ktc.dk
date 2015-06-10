@@ -1,5 +1,4 @@
 <?php if ($teaser): ?>
-    <?php xdebug_break(); ?>
 
     <!-- Begin - teaser -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser"<?php print $attributes; ?>>

@@ -285,6 +285,26 @@ function ktc_preprocess_node(&$vars) {
     $vars['statistics_count'] = 0;
   }
 
+    // Teaser and news
+    if ($vars['elements']['#view_mode'] == 'teaser' && $vars['type'] == 'os2web_base_news') {
+
+        // Newstype is set
+        if( $news_type = field_get_items('node', $vars['node'], 'field_os2web_news_page_type') ) {
+
+            // Is a TM news
+            if( $news_type[0]['tid'] == 1849 ) {
+
+                // Classes contains ktc-red - remove ktc-red
+                if (($key = array_search('ktc-red', $vars['classes_array'])) !== false) {
+                    unset($vars['classes_array'][$key]);
+                }
+
+                // Add ktc-blue
+                $vars['classes_array'][] = 'ktc-blue';
+            }
+        }
+    }
+
     // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
     if ($vars['type'] == 'arrangement') {
 
