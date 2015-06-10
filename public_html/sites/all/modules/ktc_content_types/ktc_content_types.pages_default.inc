@@ -761,7 +761,8 @@ function ktc_content_types_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' pane-page-tabs',
+      'css_class' => ' pane-page-tabs ktc-aside-action ktc-aside-tabs ktc-aside-tabs-2-col',
+      'template_suggestion' => 'page_tabs',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -1349,7 +1350,8 @@ function ktc_content_types_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' ktc-aside-color',
+      'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -1403,7 +1405,7 @@ function ktc_content_types_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Bilag',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1411,7 +1413,7 @@ function ktc_content_types_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-color',
       'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();
@@ -1470,6 +1472,7 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => ' ktc-aside-color',
+      'template_suggestion' => 'block',
     );
     $pane->extras = array();
     $pane->position = 3;
@@ -1501,7 +1504,8 @@ function ktc_content_types_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-list',
+      'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();
     $pane->position = 4;

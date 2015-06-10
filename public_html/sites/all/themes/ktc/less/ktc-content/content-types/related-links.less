@@ -1,0 +1,120 @@
+// |--------------------------------------------------------------------------
+// | Related links OS2web
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for:
+// | - ul.related-links
+// | - a.related-link-type-{%node_type%}
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Related links
+.related-links {
+	.ktc-list;
+
+	// List item
+	> li {
+
+		// Link
+		> a {
+
+			// Icon (node type)
+			&:before {
+				position: absolute;
+				content: "";
+				top: 50%;
+				left: 0;
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Icons
+// --------------------------------------------------
+
+// Related links
+.related-links {
+
+	// List item
+	> li {
+
+		// Hearing
+		&.related-link-type-hearing {
+			padding-left: floor(@ktc-icon-hearing-width + 8px);
+
+			// Link
+			> a {
+
+				// Icon
+				&:before {
+					margin-top: -(floor( @ktc-icon-hearing-height / 2 ));
+					.sprite(@ktc-icon-hearing);
+				}
+			}
+		}
+
+		// Document
+		&.related-link-type-document {
+			padding-left: floor(@ktc-icon-document-width + 8px);
+
+			// Link
+			> a {
+
+				// Icon
+				&:before {
+					margin-top: -(floor( @ktc-icon-document-height / 2 ));
+					.sprite(@ktc-icon-document);
+				}
+			}
+		}
+
+		// Group / network
+		&.related-link-type-group {
+			 padding-left: floor(@ktc-icon-network-width + 8px);
+
+			 // Link
+			 > a {
+
+				 // Icon
+				 &:before {
+					 margin-top: -(floor( @ktc-icon-network-height / 2 ));
+					 .sprite(@ktc-icon-network);
+				 }
+			 }
+		 }
+
+		// News
+		&.related-link-type-os2web_base_news {
+			padding-left: floor(@ktc-icon-news-width + 8px);
+
+			// Link
+			> a {
+
+				// Icon
+				&:before {
+					margin-top: -(floor( @ktc-icon-news-height / 2 ));
+					.sprite(@ktc-icon-news);
+				}
+			}
+		}
+
+		// Forum
+		&.related-link-type-forum_post {
+			padding-left: floor(@ktc-icon-forum-width + 8px);
+
+			// Link
+			> a {
+
+				// Icon
+				&:before {
+					margin-top: -(floor( @ktc-icon-forum-height / 2 ));
+					.sprite(@ktc-icon-forum);
+				}
+			}
+		}
+	}
+}
