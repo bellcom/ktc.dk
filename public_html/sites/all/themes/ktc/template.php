@@ -4,9 +4,6 @@
  * template.php
  */
 
-/* Set danish locale (quickfix) */
-setlocale(LC_ALL, "da_DK.UTF-8", "Danish_Denmark.1252", "danish_denmark", "danish", "dk_DK@euro");
-
 /**
  * Implements template_preprocess_page().
  */
@@ -879,10 +876,7 @@ function ktc_preprocess_user_picture(&$variables) {
  * Format timestamp
  */
 function _ktc_format_timestamp($timestamp) {
-    $date = new DateTime();
-    $date->setTimestamp($timestamp);
-
-    return $date->format('d\. M Y \k\l\. H:i');
+    return format_date($timestamp);
 }
 
 /*
@@ -891,7 +885,7 @@ function _ktc_format_timestamp($timestamp) {
 function _ktc_format_datetime($datetime) {
     $date = new DateTime($datetime);
 
-    return $date->format('d\. M Y \k\l\. H:i');
+    return format_date($date->getTimestamp());
 }
 
 // Get network group of node
