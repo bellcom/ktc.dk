@@ -629,7 +629,8 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'filter-box',
+      'css_class' => 'filter-box ktc-aside-filter ktc-aside-filter-2-col ktc-aside-toggle',
+      'template_suggestion' => 'block',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -661,7 +662,8 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'term_type',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-toggle ktc-aside-filter ktc-aside-filter-2-col',
+      'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -693,7 +695,8 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'emner',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-checkbox-filter',
+      'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
     $pane->position = 2;
