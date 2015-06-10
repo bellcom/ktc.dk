@@ -11067,7 +11067,7 @@ fieldset[disabled] .ktc-comments-list .ktc-comments-list-body .ktc-comments-list
 .ktc-date {
   font-size: 14px;
   font-style: italic;
-  font-weight: bold;
+  font-weight: normal;
 }
 h1 + .ktc-date,
 h2 + .ktc-date,
