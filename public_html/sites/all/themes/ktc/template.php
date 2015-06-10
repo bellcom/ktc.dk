@@ -263,8 +263,9 @@ function ktc_preprocess_node(&$vars) {
   // Added user_name and user_object for node--teaser/teasercomments templates.
   $user = user_load($vars['uid']);
   $vars['user_object'] = $user;
-  if ($name = field_get_items('user', $user, 'field_navn')) {
-    $vars['user_name'] = l($name[0]['value'], 'user/' . $user->uid);
+  if ($name = field_get_items('user', $user, 'field_navn') && $lastname = field_get_items('user', $user, 'field_efternavn')) {
+    $full_name = $name[0]['value'] . ' ' . $lastname[0]['value'];
+    $vars['user_name'] = l($full_name, 'user/' . $user->uid);
   }
   else {
     $vars['user_name'] = l($user->name, 'user/' . $user->uid);
