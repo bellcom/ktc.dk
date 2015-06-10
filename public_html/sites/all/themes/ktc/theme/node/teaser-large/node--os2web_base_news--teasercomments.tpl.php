@@ -1,26 +1,21 @@
 <?php if (!$page): ?>
-
-    <!-- Begin - teaser -->
+    <!-- Begin - teaser large -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser-large"<?php print $attributes; ?>>
 
-        <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
-            <div class="ktc-full-width-image">
-                <?php print render($content['field_os2web_base_field_lead_img']); ?>
-            </div>
-        <?php endif ?>
-
-        <div class="panel-heading">
+        <!-- Begin - heading -->
+        <div class="ktc-teaser-large-heading">
             <span><?php print $created_ago . ' ' . t('siden'); ?></span>
             <?php print $user_name; ?>
         </div>
+        <!-- End - heading -->
 
-        <div class="panel-body">
+        <div class="ktc-teaser-large-body">
 
-            <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $node->title; ?></a></h4>
+            <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
-            <?php if (isset($news_type)): ?>
-                <p class="mute"><?php print $news_type; ?></p>
-            <?php endif ?>
+            <?php if (isset($published_at)): ?>
+                <p class="ktc-date"><?php print $published_at; ?></p>
+            <?php endif; ?>
 
             <p><?php print $body_shortened; ?></p>
 
@@ -33,13 +28,14 @@
         </div>
 
         <div class="ktc-footer">
-            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
-            <span data-toggle="tooltip" data-placement="bottom"title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+            <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
             <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
+            <span class="ktc-footer-button pull-right"><?php print t('Bilag:') . ' ' . $num_attachments; ?></span>
         </div>
 
     </article>
-    <!-- End - teaser -->
+    <!-- End - teaser large -->
 
     <?php
     // Hide comments, tags, and links now so that we can render them later.

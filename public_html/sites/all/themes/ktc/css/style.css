@@ -9983,6 +9983,86 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-red .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
   margin-top: -6px;
 }
+.ktc-teaser-large {
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+.ktc-teaser-large .ktc-teaser-large-heading {
+  position: relative;
+  display: block;
+  color: inherit;
+  padding: 7px 0;
+  margin: 0 15px;
+  margin-bottom: -7px;
+  border-bottom: 1px solid #e9edee;
+}
+.ktc-teaser-large .ktc-teaser-large-heading a,
+.ktc-teaser-large .ktc-teaser-large-heading span {
+  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}
+.ktc-teaser-large .ktc-teaser-large-heading a {
+  color: #848e92;
+  font-weight: bold;
+}
+.ktc-teaser-large .ktc-teaser-large-heading span {
+  float: right;
+  color: #848e92;
+  font-weight: normal;
+}
+.ktc-teaser-large .ktc-teaser-large-body {
+  padding: 5px 15px 10px;
+}
+.ktc-teaser-large > .ktc-teaser-large-heading a,
+.ktc-teaser-large > .ktc-teaser-large-heading a,
+.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.ktc-teaser-large > .ktc-teaser-large-heading a:active,
+.ktc-teaser-large > .ktc-teaser-large-heading a:active,
+.ktc-teaser-large > .ktc-teaser-large-heading a:focus,
+.ktc-teaser-large > .ktc-teaser-large-heading a:focus {
+  color: #36a145;
+}
+.ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a,
+.ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a,
+.ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a:active,
+.ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a:active,
+.ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a:focus,
+.ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a:focus {
+  color: #36a145;
+}
+.ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a,
+.ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a,
+.ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a:active,
+.ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a:active,
+.ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a:focus,
+.ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a:focus {
+  color: #1f9bd7;
+}
+.ktc-gold.ktc-teaser-large > .ktc-teaser-large-heading a,
+.ktc-gold .ktc-teaser-large > .ktc-teaser-large-heading a,
+.ktc-gold.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.ktc-gold .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.ktc-gold.ktc-teaser-large > .ktc-teaser-large-heading a:active,
+.ktc-gold .ktc-teaser-large > .ktc-teaser-large-heading a:active,
+.ktc-gold.ktc-teaser-large > .ktc-teaser-large-heading a:focus,
+.ktc-gold .ktc-teaser-large > .ktc-teaser-large-heading a:focus {
+  color: #d3a900;
+}
+.ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a,
+.ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a,
+.ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a:active,
+.ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a:active,
+.ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a:focus,
+.ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a:focus {
+  color: #e75311;
+}
 .ktc-header .ktc-header-top-bar {
   min-height: 50px;
   background-color: #ffffff;

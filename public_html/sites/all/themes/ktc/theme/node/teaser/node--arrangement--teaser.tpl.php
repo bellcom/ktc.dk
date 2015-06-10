@@ -4,9 +4,9 @@
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser"<?php print $attributes; ?>>
 
         <!-- Begin - full width image -->
-        <?php if (isset($content['field_image'])) : ?>
+        <?php if (isset($content['field_arrangement_billede'])) : ?>
             <div class="ktc-full-width-image">
-                <?php print render($content['field_image']); ?>
+                <?php print render($content['field_arrangement_billede']); ?>
             </div>
         <?php endif; ?>
         <!-- End - full width image -->
@@ -57,7 +57,7 @@
 
         <div class="ktc-footer">
             <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
-            <span data-toggle="tooltip" data-placement="bottom"title="Visninger" data-toggle="tooltip" data-placement="bottom"title="Visninger" data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+            <span data-toggle="tooltip" data-placement="bottom"title="Visninger" data-toggle="tooltip" data-placement="bottom"title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
             <span data-toggle="tooltip" data-placement="bottom"title="Visninger" data-toggle="tooltip" data-placement="bottom" title="Tilmeldte" class="ktc-footer-button ktc-footer-button-arrangement"><?php print $signup_total; ?></span>
             <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
         </div>
@@ -70,8 +70,6 @@
     hide($content['comments']);
     hide($content['links']);
     hide($content['field_tags']);
-    hide($content['field_os2web_base_field_image']);
-    hide($content['field_os2web_base_field_lead_img']);
 
     if (!empty($content['field_tags']) || !empty($content['links'])) {
         hide($content['field_tags']);

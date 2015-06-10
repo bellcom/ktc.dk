@@ -3,6 +3,14 @@
     <!-- Begin - teaser -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser"<?php print $attributes; ?>>
 
+        <!-- Begin - full width image -->
+        <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
+            <div class="ktc-full-width-image">
+                <?php print render($content['field_os2web_base_field_lead_img']); ?>
+            </div>
+        <?php endif; ?>
+        <!-- End - full width image -->
+
         <!-- Begin - heading -->
         <?php if (isset($network_groups)): ?>
             <?php foreach($network_groups AS $network_group): ?>
@@ -57,8 +65,6 @@
     hide($content['comments']);
     hide($content['links']);
     hide($content['field_tags']);
-    hide($content['field_os2web_base_field_image']);
-    hide($content['field_os2web_base_field_lead_img']);
 
     if (!empty($content['field_tags']) || !empty($content['links'])) {
         hide($content['field_tags']);

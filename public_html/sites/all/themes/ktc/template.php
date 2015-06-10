@@ -264,7 +264,9 @@ function ktc_preprocess_node(&$vars) {
   $user = user_load($vars['uid']);
   $vars['user_object'] = $user;
   if ($name = field_get_items('user', $user, 'field_navn')) {
-    $vars['user_name'] = l($name[0]['value'], 'user/' . $user->uid);
+    $lastname = field_get_items('user', $user, 'field_efternavn');
+    $full_name = $name[0]['value'] . ' ' . $lastname[0]['value'];
+    $vars['user_name'] = l($full_name, 'user/' . $user->uid);
   }
   else {
     $vars['user_name'] = l($user->name, 'user/' . $user->uid);
@@ -282,6 +284,26 @@ function ktc_preprocess_node(&$vars) {
   else {
     $vars['statistics_count'] = 0;
   }
+
+    // Teaser and news
+    if ($vars['elements']['#view_mode'] == 'teaser' && $vars['type'] == 'os2web_base_news') {
+
+        // Newstype is set
+        if( $news_type = field_get_items('node', $vars['node'], 'field_os2web_news_page_type') ) {
+
+            // Is a TM news
+            if( $news_type[0]['tid'] == 1849 ) {
+
+                // Classes contains ktc-red - remove ktc-red
+                if (($key = array_search('ktc-red', $vars['classes_array'])) !== false) {
+                    unset($vars['classes_array'][$key]);
+                }
+
+                // Add ktc-blue
+                $vars['classes_array'][] = 'ktc-blue';
+            }
+        }
+    }
 
     // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
     if ($vars['type'] == 'arrangement') {

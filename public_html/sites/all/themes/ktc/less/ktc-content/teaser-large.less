@@ -1,0 +1,102 @@
+// |--------------------------------------------------------------------------
+// | Teaser large
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-teaser-large
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Teaser
+.ktc-teaser-large {
+	background-color: @ktc-color-light-content-background;
+	margin-bottom: @grid-gutter-width;
+
+	// Heading
+	.ktc-teaser-large-heading {
+		position: relative;
+		display: block;
+		color: @ktc-teaser-large-title-font-color;
+		padding: @ktc-teaser-large-title-top-bottom-inner-spacing 0;
+		margin: 0 @ktc-default-left-right-inner-spacing;
+		margin-bottom: -(@ktc-teaser-large-title-top-bottom-inner-spacing);
+		border-bottom: 1px solid @ktc-color-gray;
+
+		// Typography
+		a,
+		span {
+			font-family: @ktc-teaser-large-title-font-family;
+			font-size: @ktc-teaser-large-title-font-size;
+		}
+
+		// Link (name)
+		a {
+			color: @ktc-teaser-large-title-link-font-color;
+			font-weight: @ktc-teaser-large-title-link-font-weight;
+		}
+
+		// Span (date)
+		span {
+			float: right;
+			color: @ktc-teaser-large-title-span-font-color;
+			font-weight: @ktc-teaser-large-title-span-font-weight;
+		}
+	}
+
+	// Body
+	.ktc-teaser-large-body {
+		padding: (@ktc-teaser-large-body-top-bottom-inner-spacing / 2) @ktc-default-left-right-inner-spacing @ktc-teaser-large-body-top-bottom-inner-spacing;
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Teaser
+.ktc-mixin-teaser-large(@color-font) {
+
+	// Teaser
+	&.ktc-teaser-large,
+	.ktc-teaser-large {
+
+		// Heading
+		> .ktc-teaser-large-heading {
+
+			// Link
+			a {
+				&,
+				&:hover,
+				&:active,
+				&:focus {
+					color: @color-font;
+				}
+			}
+		}
+	}
+}
+
+// Default
+.ktc-mixin-teaser-large(@ktc-color-green-font);
+
+// Green
+.ktc-green {
+	.ktc-mixin-teaser-large(@ktc-color-green-font);
+}
+
+// Blue
+.ktc-blue {
+	.ktc-mixin-teaser-large(@ktc-color-blue-font);
+}
+
+// Gold
+.ktc-gold {
+	.ktc-mixin-teaser-large(@ktc-color-gold-font);
+}
+
+// Red
+.ktc-red {
+	.ktc-mixin-teaser-large(@ktc-color-red-font);
+}

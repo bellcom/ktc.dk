@@ -52,8 +52,6 @@
         hide($content['comments']);
         hide($content['links']);
         hide($content['field_tags']);
-        hide($content['field_os2web_base_field_image']);
-        hide($content['field_os2web_base_field_lead_img']);
 
         if (!empty($content['field_tags']) || !empty($content['links'])) {
             hide($content['field_tags']);
