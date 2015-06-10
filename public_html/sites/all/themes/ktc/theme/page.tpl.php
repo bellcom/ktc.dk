@@ -98,7 +98,10 @@
   <div class="container">
     <div class="row">
     	<?php if (!panels_get_current_page_display()) {  
-	    	        if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; 
+	    	        if ($tabs): ?>
+	    	        <div class="col-xs-12">
+		    	        <div class="tabs bg-white"><?php print render($tabs); ?></div>
+		    	    </div><?php endif; 
 
 	    	; } ?>
 
