@@ -56,7 +56,7 @@
 // --------------------------------------------------
 
 // Teaser
-.ktc-mixin-teaser-large(@color-font, @icon-pin, @icon-pin-width, @icon-pin-height) {
+.ktc-mixin-teaser-large(@color-font) {
 
 	// Teaser
 	&.ktc-teaser-large,
@@ -67,52 +67,15 @@
 
 			// Title
 			.ktc-teaser-large-title {
-				padding-left: floor(@icon-pin-width + @ktc-teaser-large-title-icon-spacing + @ktc-default-left-right-inner-spacing);
-				margin: 0;
 
-				// Pin icon
-				&:before {
-					margin-top: -(floor( @icon-pin-height / 2 ));
-					.sprite(@icon-pin);
-				}
-			}
-
-			// Link title
-			a.ktc-teaser-large-title {
-
-				// Hover and focus
-				&:hover,
-				&:focus {
-					color: @color-font;
-				}
-			}
-		}
-
-		// Body
-		.ktc-teaser-large-body {
-
-			// Link
-			a:not('.btn') {
-
-				// Hover and focus
-				&:hover,
-				&:focus {
-					color: @color-font;
-				}
-			}
-
-			// Headlines
-			h1, h2, h3, h4, h5, h6 {
-
-				// Headline and link
-				&,
+				// Link
 				a {
-					color: @ktc-default-color-headline;
-				}
-
-				// Date
-				+ .ktc-date {
-					margin-top: -6px;
+					&,
+					&:hover,
+					&:active,
+					&:focus {
+						color: @color-font;
+					}
 				}
 			}
 		}
@@ -120,24 +83,24 @@
 }
 
 // Default
-.ktc-mixin-teaser-large(@ktc-color-green-font, @ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
+.ktc-mixin-teaser-large(@ktc-color-green-font);
 
 // Green
 .ktc-green {
-	.ktc-mixin-teaser-large(@ktc-color-green-font, @ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
+	.ktc-mixin-teaser-large(@ktc-color-green-font);
 }
 
 // Blue
 .ktc-blue {
-	.ktc-mixin-teaser-large(@ktc-color-blue-font, @ktc-icon-pin-blue, @ktc-icon-pin-blue-width, @ktc-icon-pin-blue-height);
+	.ktc-mixin-teaser-large(@ktc-color-blue-font);
 }
 
 // Gold
 .ktc-gold {
-	.ktc-mixin-teaser-large(@ktc-color-gold-font, @ktc-icon-pin-gold, @ktc-icon-pin-gold-width, @ktc-icon-pin-gold-height);
+	.ktc-mixin-teaser-large(@ktc-color-gold-font);
 }
 
 // Red
 .ktc-red {
-	.ktc-mixin-teaser-large(@ktc-color-red-font, @ktc-icon-pin-red, @ktc-icon-pin-red-width, @ktc-icon-pin-red-height);
+	.ktc-mixin-teaser-large(@ktc-color-red-font);
 }
