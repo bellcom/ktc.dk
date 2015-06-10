@@ -4,6 +4,9 @@
  * template.php
  */
 
+/* Set danish locale (quickfix) */
+setlocale(LC_ALL, "da_DK.UTF-8", "Danish_Denmark.1252", "danish_denmark", "danish", "dk_DK@euro");
+
 /**
  * Implements template_preprocess_page().
  */
