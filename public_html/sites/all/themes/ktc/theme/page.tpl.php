@@ -97,6 +97,10 @@
   <div class="ktc-wrapper-background"></div>
   <div class="container">
     <div class="row">
+    	<?php if (!panels_get_current_page_display()) {  
+	    	        if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; 
+
+	    	; } ?>
 
       <?php /* region--sidebar.tpl.php */ ?>
       <?php if ($page['sidebar_first']): ?>
