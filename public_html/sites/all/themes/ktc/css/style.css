@@ -11263,9 +11263,6 @@ h6 + .ktc-date {
 .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #e9edee;
 }
-.ktc-user-profile .ktc-user-profile-photo-container.ktc-user-profile-photo-vip img {
-  border-color: #36a145;
-}
 .ktc-user-profile .ktc-user-profile-content h1,
 .ktc-user-profile .ktc-user-profile-content h2,
 .ktc-user-profile .ktc-user-profile-content h3,
@@ -11278,12 +11275,9 @@ h6 + .ktc-date {
 .ktc-user-profile .ktc-user-profile-content h4 > a,
 .ktc-user-profile .ktc-user-profile-content h5 > a,
 .ktc-user-profile .ktc-user-profile-content h6 > a {
-  color: #e9edee;
+  color: #2c353a;
 }
 .ktc-user-green .ktc-user-profile .ktc-user-profile-photo-container img {
-  border-color: #36a145;
-}
-.ktc-user-green .ktc-user-profile .ktc-user-profile-photo-container.ktc-user-profile-photo-vip img {
   border-color: #36a145;
 }
 .ktc-user-green .ktc-user-profile .ktc-user-profile-content h1,
@@ -11303,9 +11297,6 @@ h6 + .ktc-date {
 .ktc-user-blue .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #1f9bd7;
 }
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-photo-container.ktc-user-profile-photo-vip img {
-  border-color: #36a145;
-}
 .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h1,
 .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h2,
 .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h3,
@@ -11323,9 +11314,6 @@ h6 + .ktc-date {
 .ktc-user-gold .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #d3a900;
 }
-.ktc-user-gold .ktc-user-profile .ktc-user-profile-photo-container.ktc-user-profile-photo-vip img {
-  border-color: #36a145;
-}
 .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h1,
 .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h2,
 .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h3,
@@ -11342,9 +11330,6 @@ h6 + .ktc-date {
 }
 .ktc-user-red .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #e75311;
-}
-.ktc-user-red .ktc-user-profile .ktc-user-profile-photo-container.ktc-user-profile-photo-vip img {
-  border-color: #36a145;
 }
 .ktc-user-red .ktc-user-profile .ktc-user-profile-content h1,
 .ktc-user-red .ktc-user-profile .ktc-user-profile-content h2,
