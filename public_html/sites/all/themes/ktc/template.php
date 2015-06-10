@@ -866,7 +866,7 @@ function ktc_preprocess_user_picture(&$variables) {
     if(isset($variables['account']->roles)) {
         if (is_array($variables['account']->roles)) {
             if (in_array('KTC VIP', $variables['account']->roles)) {
-                $variables['role_class'] = 'ktc-user-profile-photo-vip';
+                $variables['role_class'] = 'ktc-user-green';
             }
         }
     }
@@ -876,10 +876,7 @@ function ktc_preprocess_user_picture(&$variables) {
  * Format timestamp
  */
 function _ktc_format_timestamp($timestamp) {
-    $date = new DateTime();
-    $date->setTimestamp($timestamp);
-
-    return $date->format('d\. M Y \k\l\. H:i');
+    return format_date($timestamp);
 }
 
 /*
@@ -888,7 +885,7 @@ function _ktc_format_timestamp($timestamp) {
 function _ktc_format_datetime($datetime) {
     $date = new DateTime($datetime);
 
-    return $date->format('d\. M Y \k\l\. H:i');
+    return format_date($date->getTimestamp());
 }
 
 // Get network group of node

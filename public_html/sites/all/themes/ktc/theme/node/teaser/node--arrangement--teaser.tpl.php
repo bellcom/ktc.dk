@@ -23,6 +23,10 @@
 
         <div class="ktc-teaser-body">
 
+            <?php if (isset($arrangement_type)): ?>
+              <p class="mute"><?php print $arrangement_type; ?></p>
+            <?php endif ?>
+
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
             <?php if (isset($arrangement_date)): ?>
@@ -30,11 +34,7 @@
             <?php endif; ?>
 
             <?php if (isset($arrangement_signup_date_formatted)): ?>
-                <p><?php print t('Tilmelding inden: ') . ' ' . $arrangement_signup_date_formatted; ?></p>
-            <?php endif ?>
-
-            <?php if (isset($arrangement_type)): ?>
-                <p class="mute"><?php print $arrangement_type; ?></p>
+                <p><strong><?php print t('Tilmeldingsfrist: '); ?></strong><?php print $arrangement_signup_date_formatted; ?></p>
             <?php endif ?>
 
             <p><?php print $body_shortened; ?></p>
@@ -56,9 +56,9 @@
         </div>
 
         <div class="ktc-footer">
-            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
-            <span class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
-            <span class="ktc-footer-button ktc-footer-button-viewers"><?php print $signup_total; ?></span>
+            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+            <span data-toggle="tooltip" data-placement="bottom"title="Visninger" data-toggle="tooltip" data-placement="bottom"title="Visninger" data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+            <span data-toggle="tooltip" data-placement="bottom"title="Visninger" data-toggle="tooltip" data-placement="bottom" title="Tilmeldte" class="ktc-footer-button ktc-footer-button-arrangement"><?php print $signup_total; ?></span>
             <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
         </div>
 

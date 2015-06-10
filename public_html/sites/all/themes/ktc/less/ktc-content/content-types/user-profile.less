@@ -55,7 +55,7 @@
 // --------------------------------------------------
 
 // User profile
-.ktc-mixin-user-profile(@color) {
+.ktc-mixin-user-profile(@border-color, @text-color: @border-color) {
 
 	// User profile
 	.ktc-user-profile {
@@ -65,16 +65,7 @@
 
 			// Photo
 			img {
-				border-color: @color;
-			}
-
-			// VIP
-			&.ktc-user-profile-photo-vip {
-
-				// Photo
-				img {
-					border-color: @ktc-color-green;
-				}
+				border-color: @border-color;
 			}
 		}
 
@@ -87,7 +78,7 @@
 				// Headline and link
 				&,
 				> a {
-					color: @color;
+					color: @text-color;
 				}
 			}
 		}
@@ -95,24 +86,24 @@
 }
 
 // Default
-.ktc-mixin-user-profile(@ktc-color-green);
+.ktc-mixin-user-profile(@ktc-color-gray, @ktc-default-color-headline);
 
 // Green
-.ktc-green {
+.ktc-user-green {
 	.ktc-mixin-user-profile(@ktc-color-green);
 }
 
 // Blue
-.ktc-blue {
+.ktc-user-blue {
 	.ktc-mixin-user-profile(@ktc-color-blue);
 }
 
 // Gold
-.ktc-gold {
+.ktc-user-gold {
 	.ktc-mixin-user-profile(@ktc-color-gold);
 }
 
 // Red
-.ktc-red {
+.ktc-user-red {
 	.ktc-mixin-user-profile(@ktc-color-red);
 }

@@ -337,7 +337,8 @@ function ktc_hearing_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-md-4 col-sm-4 col-xs',
+      'css_class' => 'ktc-aside-list',
+      'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();
     $pane->position = 3;

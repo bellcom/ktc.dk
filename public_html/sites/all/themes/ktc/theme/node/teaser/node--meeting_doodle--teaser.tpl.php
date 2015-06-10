@@ -2,33 +2,46 @@
 
     <!-- Begin - teaser -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser"<?php print $attributes; ?>>
-        <div class="ktc-teaser-body">
 
-            <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
-
-            <?php if (isset($signup_date_formatted)): ?>
-                <p class="ktc-date"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
-            <?php endif; ?>
-
-            <div class="ktc-user-profile">
-                <?php if (isset($user_object)): ?>
-                    <?php print $image = theme('user_picture', array('account' => $user_object));?>
-                <?php endif; ?>
-                <div class="ktc-user-profile-content">
-                    <h5><?php print $user_name; ?></h5>
-                    <p><?php print $created_ago . ' ' . t('ago'); ?></p>
-                </div>
+        <!-- Begin - heading -->
+        <?php if (isset($network_groups)): ?>
+          <?php foreach($network_groups AS $network_group): ?>
+            <div class="ktc-teaser-heading">
+              <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="ktc-teaser-title"><?php print $network_group->title; ?></a>
             </div>
+          <?php endforeach ?>
+        <?php endif ?>
+        <!-- End - heading -->
 
-            <div class="ktc-call-to-action-button">
-                <a class="btn btn-default" href="<?php global $base_url; print $base_url . $node_url; ?>" class="ktc-teaser-title"><?php print t('Afgiv stemme'); ?></a>
-            </div>
+      <!-- Begin - body -->
+      <div class="ktc-teaser-body">
 
+        <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
+
+        <?php if (isset($signup_date_formatted)): ?>
+          <p class="ktc-date"><strong><?php print t('Svarfrist:'); ?></strong><?php print $signup_date_formatted; ?></p>
+        <?php endif; ?>
+
+        <div class="ktc-user-profile">
+          <?php if (isset($user_object)): ?>
+            <?php print $image = theme('user_picture', array('account' => $user_object));?>
+          <?php endif; ?>
+          <div class="ktc-user-profile-content">
+            <h5><?php print $user_name; ?></h5>
+            <p><?php print $created_ago . ' ' . t('ago'); ?></p>
+          </div>
         </div>
 
+        <div class="ktc-call-to-action-button">
+          <a class="btn btn-default" href="<?php global $base_url; print $base_url . $node_url; ?>" class="ktc-teaser-title"><?php print t('Afgiv stemme'); ?></a>
+        </div>
+
+      </div>
+      <!-- End - body -->
+
         <div class="ktc-footer">
-            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
-            <span class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+            <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
             <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
         </div>
 
