@@ -16,27 +16,32 @@
 
 	// Heading
 	.ktc-teaser-large-heading {
+		position: relative;
+		display: block;
+		color: @ktc-teaser-large-title-font-color;
+		padding: @ktc-teaser-large-title-top-bottom-inner-spacing 0;
+		margin: 0 @ktc-default-left-right-inner-spacing;
+		margin-bottom: -(@ktc-teaser-large-title-top-bottom-inner-spacing);
+		border-bottom: 1px solid @ktc-color-gray;
 
-		// Title
-		.ktc-teaser-large-title {
-			position: relative;
-			display: block;
+		// Typography
+		a,
+		span {
 			font-family: @ktc-teaser-large-title-font-family;
 			font-size: @ktc-teaser-large-title-font-size;
-			font-weight: @ktc-teaser-large-title-font-weight;
-			color: @ktc-teaser-large-title-font-color;
-			padding: @ktc-teaser-large-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
-			margin-bottom: -(@ktc-teaser-large-title-top-bottom-inner-spacing);
-			text-transform: uppercase;
+		}
 
-			// Icon
-			&:before {
-				display: block;
-				position: absolute;
-				top: 50%;
-				left: @ktc-default-left-right-inner-spacing;
-				content: "";
-			}
+		// Link (name)
+		a {
+			color: @ktc-teaser-large-title-link-font-color;
+			font-weight: @ktc-teaser-large-title-link-font-weight;
+		}
+
+		// Span (date)
+		span {
+			float: right;
+			color: @ktc-teaser-large-title-span-font-color;
+			font-weight: @ktc-teaser-large-title-span-font-weight;
 		}
 	}
 
@@ -51,7 +56,7 @@
 // --------------------------------------------------
 
 // Teaser
-.ktc-mixin-teaser(@color-font, @icon-pin, @icon-pin-width, @icon-pin-height) {
+.ktc-mixin-teaser-large(@color-font, @icon-pin, @icon-pin-width, @icon-pin-height) {
 
 	// Teaser
 	&.ktc-teaser-large,
@@ -115,24 +120,24 @@
 }
 
 // Default
-.ktc-mixin-teaser(@ktc-color-green-font, @ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
+.ktc-mixin-teaser-large(@ktc-color-green-font, @ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
 
 // Green
 .ktc-green {
-	.ktc-mixin-teaser(@ktc-color-green-font, @ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
+	.ktc-mixin-teaser-large(@ktc-color-green-font, @ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
 }
 
 // Blue
 .ktc-blue {
-	.ktc-mixin-teaser(@ktc-color-blue-font, @ktc-icon-pin-blue, @ktc-icon-pin-blue-width, @ktc-icon-pin-blue-height);
+	.ktc-mixin-teaser-large(@ktc-color-blue-font, @ktc-icon-pin-blue, @ktc-icon-pin-blue-width, @ktc-icon-pin-blue-height);
 }
 
 // Gold
 .ktc-gold {
-	.ktc-mixin-teaser(@ktc-color-gold-font, @ktc-icon-pin-gold, @ktc-icon-pin-gold-width, @ktc-icon-pin-gold-height);
+	.ktc-mixin-teaser-large(@ktc-color-gold-font, @ktc-icon-pin-gold, @ktc-icon-pin-gold-width, @ktc-icon-pin-gold-height);
 }
 
 // Red
 .ktc-red {
-	.ktc-mixin-teaser(@ktc-color-red-font, @ktc-icon-pin-red, @ktc-icon-pin-red-width, @ktc-icon-pin-red-height);
+	.ktc-mixin-teaser-large(@ktc-color-red-font, @ktc-icon-pin-red, @ktc-icon-pin-red-width, @ktc-icon-pin-red-height);
 }
