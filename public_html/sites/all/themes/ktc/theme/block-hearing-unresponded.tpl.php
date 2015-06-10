@@ -11,7 +11,7 @@ $i=0;
 <div class="view-content">
   <?php if (!empty($unresponded_hearings)): ?>
     <?php foreach($unresponded_hearings as $hearing): ?>
-      <?php while($i < 4): ?>
+      <?php if($i < 4): ?>
 
         <div class="views-row">
           <div class="ktc-date"><?php print date('d. F Y', $hearing->created); ?></div>
@@ -19,8 +19,8 @@ $i=0;
 
           <span class="field-content">Af <?php print l($hearing->user_mail, 'user/' . $hearing->uid, array('attributes' => array('class' => array('username'), 'title' => 'Vis brugerprofil'))); ?></span>
         </div>
-        
-      <?php endwhile; ?>
+
+      <?php endif; ?>
     <?php $i++; endforeach; ?>
   <?php else: ?>
   Du har ingen ubesvarede høringer.
