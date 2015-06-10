@@ -11434,6 +11434,7 @@ h6 + .ktc-date {
   padding-right: 10px;
   background-color: #e9edee;
 }
+.ktc-node-title,
 .ktc-node-title h1,
 .ktc-node-title h2,
 .ktc-node-title h3,
