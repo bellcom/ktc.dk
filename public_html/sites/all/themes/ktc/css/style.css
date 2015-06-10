@@ -10169,6 +10169,11 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-left: -60px;
   margin-right: -60px;
 }
+.no-panels .region .region-inner {
+  background-color: #ffffff;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .ktc-list-display {
   display: table;
   margin-bottom: 10px;
