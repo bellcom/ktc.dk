@@ -27,6 +27,7 @@
 ?>
 <?php if ($content): ?>
   <div<?php print $attributes; ?>>
+	<div class="region-inner">
     <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
     <?php print render($page['page']['highlighted']); ?>
     <a id="main-content"></a>
@@ -49,5 +50,6 @@
     <?php print render($page['action_links']); ?>
     <?php print $content; ?>
     <?php if ($content_attributes): ?></div><?php endif; ?>
+	</div>
   </div>
 <?php endif; ?>
