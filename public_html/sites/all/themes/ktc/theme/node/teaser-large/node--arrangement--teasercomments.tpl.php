@@ -4,9 +4,9 @@
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser-large"<?php print $attributes; ?>>
 
         <!-- Begin - full width image -->
-        <?php if (isset($content['field_image'])) : ?>
+        <?php if (isset($content['field_arrangement_billede'])) : ?>
             <div class="ktc-full-width-image">
-                <?php print render($content['field_image']); ?>
+                <?php print render($content['field_arrangement_billede']); ?>
             </div>
         <?php endif; ?>
         <!-- End - full width image -->
