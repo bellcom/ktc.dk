@@ -841,7 +841,7 @@ function ktc_preprocess_region(&$variables, $hook) {
   }
   if($variables['region'] == "content"){
     $class = '';
-    	if (!panels_get_current_page_display()) {  $class = 'ktc-bg-white'; } 
+    	if (!panels_get_current_page_display()) {  $class = 'no-panels'; } 
 
     switch ($variables['elements']['#content_column_class'][0]) {
       case 8:
