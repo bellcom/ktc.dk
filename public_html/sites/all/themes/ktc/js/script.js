@@ -7,7 +7,7 @@
       $('div.media-widget .button').addClass('btn').addClass('btn-default');
 
       // Enable tooltips
-      $("[data-toggle=tooltip]").tooltip();
+      $("[data-toggle=tooltip]").tooltip({container: 'body'});
 
       // Aside toggle
       $('.ktc-aside-toggle .ktc-aside-title').on('click', function(event) {
