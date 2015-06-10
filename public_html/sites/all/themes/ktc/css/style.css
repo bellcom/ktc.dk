@@ -10171,8 +10171,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .region.no-panels .region-inner {
   background-color: #ffffff;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 20px 15px;
 }
 .ktc-list-display {
   display: table;
