@@ -43,6 +43,9 @@ function ktc_crm_account_update_accounts() {
     }
 
     foreach ($accounts as $accountdto) {
+      // Reset the static cache for taxonomy terms. Before this we ran out of
+      // memory once in a while.
+      taxonomy_terms_static_reset();
       ktc_crm_account_create_update($accountdto);
     }
     $i++;
