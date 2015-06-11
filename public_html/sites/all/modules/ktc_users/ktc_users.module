@@ -45,6 +45,10 @@ function ktc_users_entity_info_alter(&$entity_info) {
     'label' => t('User List 6'),
     'custom settings' => TRUE,
   );
+  $entity_info['user']['view modes']['list7'] = array(
+    'label' => t('User List 7'),
+    'custom settings' => TRUE,
+  );
 }
 
 function ktc_users_preprocess_user_profile(&$vars) {
@@ -68,6 +72,9 @@ function ktc_users_preprocess_user_profile(&$vars) {
   }
   if ($vars['elements']['#view_mode'] == 'list6') {
     $vars['theme_hook_suggestions'][] = 'user_profile__list6';
+  }
+  if ($vars['elements']['#view_mode'] == 'list7') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list7';
   }
 }
 

@@ -77,48 +77,86 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
 
 /**
  * Get users address.
+ * Data format: html, data
  */
-function ktc_crm_get_user_address($user, $type) {
-  switch ($type) {
-    case 'Work':
-      if ($field = field_get_items('user', $user, 'field_account')) {
-        if ($account = taxonomy_term_load($field[0]['tid'])) {
-          $address = _ktc_crm_get_formatted_address($account, 'taxonomy_term');
-        }
-      }
-      break;
+function ktc_crm_get_user_address($user, $type, $data_format = 'html') {
+  $type = ucfirst($type);
 
-    case 'Private':
-      $address = _ktc_crm_get_formatted_address($user, 'user');
-      break;
+  // HTML
+  if ($data_format == 'html') {
+      switch ($type) {
+          case 'Work':
+              if ($field = field_get_items('user', $user, 'field_account')) {
+                  if ($account = taxonomy_term_load($field[0]['tid'])) {
+                      $data = _ktc_crm_get_formatted_address($account, 'taxonomy_term', $data_format);
+                  }
+              }
+              break;
+
+          case 'Private':
+              $data = _ktc_crm_get_formatted_address($user, 'user', $data_format);
+              break;
+      }
   }
 
-  return $address;
+  // Data
+  elseif ($data_format == 'data') {
+      switch ($type) {
+          case 'Work':
+              if ($field = field_get_items('user', $user, 'field_account')) {
+                  if ($account = taxonomy_term_load($field[0]['tid'])) {
+                      $data = _ktc_crm_get_formatted_address($account, 'taxonomy_term', $data_format);
+                  }
+              }
+              break;
+
+          case 'Private':
+              $data = _ktc_crm_get_formatted_address($user, 'user', $data_format);
+              break;
+      }
+  }
+
+  return $data;
 }
 
 /**
  * Get formatted address from entity.
+ * Data format: html, data
  */
-function _ktc_crm_get_formatted_address($entity, $type) {
-  $address = '';
+function _ktc_crm_get_formatted_address($entity, $type, $data_format = 'html') {
+  $html = '';
+  $data = array();
 
   if ($field = field_get_items($type, $entity, 'field_adresse')) {
-    $address = $field[0]['value'] . '<br />';
+    $html = $field[0]['value'] . '<br />';
+    $data['address'] = $field[0]['value'];
   }
   if ($field = field_get_items($type, $entity, 'field_adresse_2')) {
-    $address .= $field[0]['value'] . '<br />';
+    $html .= $field[0]['value'] . '<br />';
+    $data['address_2'] = $field[0]['value'];
   }
   if ($field = field_get_items($type, $entity, 'field_zipcode')) {
-    $address .= $field[0]['value'] . ' ';
+    $html .= $field[0]['value'] . ' ';
+    $data['zipcode'] = $field[0]['value'];
   }
   if ($field = field_get_items($type, $entity, 'field_city')) {
-    $address .= $field[0]['value'] . '<br />';
+    $html .= $field[0]['value'] . '<br />';
+    $data['city'] = $field[0]['value'];
   }
   if ($field = field_get_items($type, $entity, 'field_country')) {
-    $address .= $field[0]['value'];
+    $html .= $field[0]['value'];
+    $data['country'] = $field[0]['value'];
   }
 
-  return $address;
+  // Return value
+  if ($data_format == 'html') {
+    $return = $html;
+  }
+  elseif ($data_format == 'data') {
+    $return = $data;
+  }
+
+  return $return;
 }
 
 /**
