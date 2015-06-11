@@ -338,15 +338,29 @@ function ktc_netvaerk_create_content_links($group) {
   }
 
   $links = <<<EOL
-<ul>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/meeting-doodle?og_group_ref=$nid"><i class="group-add-meeting_doodle"></i>Afstemning</a></li>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/arrangement?og_group_ref=$nid"><i class="group-add-arrangement"></i>Arrangement</a></li>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/forum-post?og_group_ref=$nid"><i class="group-add-forum_post"></i>Diskussion</a></li>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/document?og_group_ref=$nid"><i class="group-add-document"></i>Dokument</a></li>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/group?og_group_ref=$nid"><i class="group-add-group"></i>Undernetværk</a></li>
-  <li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/os2web-base-news?og_group_ref=$nid"><i class="group-add-os2web_base_news"></i>Nyhed</a></li>
+  <div class="ktc-link-wrapper">
+      <div class="ktc-link-container">
+        <a href="/node/add/meeting-doodle?og_group_ref=$nid" class="ktc-link-with-icon ktc-link-with-icon-large ktc-link-icon-meeting_doodle">Afstemning</a>
+      </div>
+      <div class="ktc-link-container">
+        <a href="/node/add/arrangement?og_group_ref=$nid" class="ktc-link-with-icon ktc-link-with-icon-large ktc-link-icon-arrangement">Arrangement</a>
+      </div>
+      <div class="ktc-link-container">
+        <a href="/node/add/forum-post?og_group_ref=$nid" class="ktc-link-with-icon ktc-link-with-icon-large ktc-link-icon-forum_post">Diskussion</a>
+      </div>
+  </div>
+  <div class="ktc-link-wrapper">
+      <div class="ktc-link-container">
+        <a href="/node/add/document?og_group_ref=$nid" class="ktc-link-with-icon ktc-link-with-icon-large ktc-link-icon-document">Dokument</a>
+      </div>
+      <div class="ktc-link-container">
+        <a href="/node/add/group?og_group_ref=$nid" class="ktc-link-with-icon ktc-link-with-icon-large ktc-link-icon-subnetwork">Undernetværk</a>
+      </div>
+      <div class="ktc-link-container">
+        <a href="/node/add/os2web-base-news?og_group_ref=$nid" class="ktc-link-with-icon ktc-link-with-icon-large ktc-link-icon-os2web_base_news">Nyhed</a>
+      </div>
+  </div>
   $hearing_link
-</ul>
 EOL;
 
   return $links;

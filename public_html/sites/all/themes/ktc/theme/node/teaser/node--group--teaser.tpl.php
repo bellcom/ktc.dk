@@ -79,8 +79,9 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <h5>
-    <a href="<?php print $node_url; ?>"><i class="<?php if (isset($group_info)) print $group_info['class']; ?>"></i><span><?php print $title; ?></span></a></h5>
-</article>
 
+<!-- Begin - group teaser -->
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+    <a href="<?php print $node_url; ?>" class="ktc-link-with-icon ktc-link-icon-color-arrow"><?php print $title; ?></a>
+</article>
+<!-- End - group teaser -->
