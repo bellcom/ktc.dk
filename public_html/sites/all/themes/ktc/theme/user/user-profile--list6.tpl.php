@@ -68,7 +68,7 @@ $account = $elements['#account'];
               <?php endif ?>
 
               <?php if (isset($work['address_2'])): ?>
-                  <p class="ktc-user-profile-content-work-address_2"><?php print $work['address_2']; ?></p>
+                  <p class="ktc-user-profile-content-work-address-2"><?php print $work['address_2']; ?></p>
               <?php endif ?>
 
               <?php if (isset($work['zipcode']) && isset($work['city'])): ?>
