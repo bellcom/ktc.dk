@@ -534,6 +534,34 @@ function ktc_content_types_views_default_views() {
       'label' => 'Indhold: Nid',
     ),
   );
+
+  /* Display: Logo på Netværk */
+  $handler = $view->new_display('panel_pane', 'Logo på Netværk', 'panel_pane_7');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Logo */
+  $handler->display->display_options['fields']['field_arrangement_logo']['id'] = 'field_arrangement_logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['table'] = 'field_data_field_arrangement_logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['field'] = 'field_arrangement_logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_arrangement_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_logo']['empty'] = '<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>';
+  $handler->display->display_options['fields']['field_arrangement_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_arrangement_logo']['settings'] = array(
+    'image_style' => 'netvaerks_logo',
+    'image_link' => '',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'KTC Nodevisninger';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['ktc_full_node_field_displays'] = array(
     t('Master'),
     t('Logo'),
@@ -573,6 +601,7 @@ function ktc_content_types_views_default_views() {
     t('Group node from OG membership'),
     t('<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>'),
     t('Gruppe/Netværk'),
+    t('Logo på Netværk'),
   );
   $export['ktc_full_node_field_displays'] = $view;
 
