@@ -825,6 +825,10 @@ function ktc_preprocess_user_profile(&$vars) {
   else {
     $vars['job_title'] = '';
   }
+
+  // Address
+  $vars['work'] = ktc_crm_get_user_address($user_obj, 'work', 'data');
+
 }
 
 function ktc_field($variables) {
@@ -861,22 +865,26 @@ function ktc_preprocess_region(&$variables, $hook) {
   if($variables['region'] == "sidebar_second"){
     $variables['classes_array'][] = 'col-md-4 col-xs-12 col-md-push-8 col-sm-push-8';
   }
-  if($variables['region'] == "content"){
-    $class = '';
-    	if (!panels_get_current_page_display()) {  $class = 'no-panels'; } 
+    if($variables['region'] == "content"){
+        $class = '';
+        if (!panels_get_current_page_display()) {  $class = 'no-panels'; }
 
-    switch ($variables['elements']['#content_column_class'][0]) {
-      case 8:
-        $class = 'col-md-pull-4 col-sm-pull-4';
-        break;
+        switch ($variables['elements']['#content_column_class'][0]) {
+            case 8:
+                $class = 'col-md-pull-4 col-sm-pull-4';
+                break;
 
-      case 4:
-        $class = 'col-md-pull-4 col-sm-pull-4';
-        break;
+            case 4:
+                $class = 'col-md-pull-4 col-sm-pull-4';
+                break;
 
+        }
+        $variables['classes_array'][] = $class;
     }
-    $variables['classes_array'][] = $class;
-  }
+
+    if($variables['region'] == "highlighted"){
+//        xdebug_break();
+    }
 }
 
 /**

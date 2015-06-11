@@ -49,16 +49,38 @@ $account = $elements['#account'];
   <div class="ktc-user-profile-content">
 
     <?php if (isset($user_name)): ?>
-      <h5><?php print $user_name; ?></h5>
+      <h5 class="ktc-user-profile-content-name"><?php print $user_name; ?></h5>
     <?php endif ?>
+
+      <?php if (isset($job_title)): ?>
+          <p class="ktc-user-profile-content-job-title"><?php print $job_title; ?></p>
+      <?php endif ?>
 
     <?php if (isset($employer)): ?>
-      <p><?php print $employer; ?></p>
+      <p class="ktc-user-profile-content-employer"><?php print $employer; ?></p>
     <?php endif ?>
 
-    <?php if (isset($job_title)): ?>
-      <p><?php print $job_title; ?></p>
-    <?php endif ?>
+      <?php if (isset($work)): ?>
+          <div class="ktc-user-profile-content-work">
+
+              <?php if (isset($work['address'])): ?>
+                  <p class="ktc-user-profile-content-work-address"><?php print $work['address']; ?></p>
+              <?php endif ?>
+
+              <?php if (isset($work['address_2'])): ?>
+                  <p class="ktc-user-profile-content-work-address_2"><?php print $work['address_2']; ?></p>
+              <?php endif ?>
+
+              <?php if (isset($work['zipcode']) && isset($work['city'])): ?>
+                  <p class="ktc-user-profile-content-work-zipcode-city"><?php print $work['zipcode'] . ' ' . $work['city']; ?></p>
+              <?php endif ?>
+
+              <?php if (isset($work['country'])): ?>
+                  <p class="ktc-user-profile-content-work-country"><?php print $work['country']; ?></p>
+              <?php endif ?>
+
+          </div>
+      <?php endif ?>
 
   </div>
   <!-- End - profile content -->

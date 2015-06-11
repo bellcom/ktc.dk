@@ -46,21 +46,21 @@ $account = $elements['#account'];
   <!-- End - profile photo -->
 
   <!-- Begin - profile content -->
-  <div class="ktc-user-profile-content">
+    <div class="ktc-user-profile-content">
 
-    <?php if (isset($user_name)): ?>
-      <h5><?php print $user_name; ?></h5>
-    <?php endif ?>
+        <?php if (isset($job_title)): ?>
+            <p class="ktc-user-profile-content-job-title"><?php print $job_title; ?></p>
+        <?php endif ?>
 
-    <?php if (isset($employer)): ?>
-      <p><?php print $employer; ?></p>
-    <?php endif ?>
+        <?php if (isset($user_name)): ?>
+            <h5 class="ktc-user-profile-content-name"><?php print $user_name; ?></h5>
+        <?php endif ?>
 
-    <?php if (isset($job_title)): ?>
-      <p><?php print $job_title; ?></p>
-    <?php endif ?>
+        <?php if (isset($employer)): ?>
+            <p class="ktc-user-profile-content-employer"><?php print $employer; ?></p>
+        <?php endif ?>
 
-  </div>
+    </div>
   <!-- End - profile content -->
 
 </section>
