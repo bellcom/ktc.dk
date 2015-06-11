@@ -335,9 +335,11 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-field_arrangement_address'
   $field_instances['node-arrangement-field_arrangement_address'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Skriv en <b>postadresse</b> som Google Maps kan genkende. Feks. <i>Bredgade 20, 6000 Kolding</i>. Adressen bruges til at genere et kort. Info som mødelokaler og bygninger skal være under Beskrivelse af arrangementet.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -388,6 +390,32 @@ function ktc_content_types_field_default_field_instances() {
     'label' => 'Adresse',
     'required' => 1,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
       'text_processing' => 0,
@@ -10020,6 +10048,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Side nr');
   t('Skal gerne være 256x256px');
   t('Skjul auto relaterede links');
+  t('Skriv en <b>postadresse</b> som Google Maps kan genkende. Feks. <i>Bredgade 20, 6000 Kolding</i>. Adressen bruges til at genere et kort. Info som mødelokaler og bygninger skal være under Beskrivelse af arrangementet.');
   t('Skriv et kort resume af din nyhed som du ønsker det skal vises i lister og oversigter. Du kan udelade dette, så i stedet vises de første sætninger i din tekst som resume');
   t('Status');
   t('Stikord (Tags)');
