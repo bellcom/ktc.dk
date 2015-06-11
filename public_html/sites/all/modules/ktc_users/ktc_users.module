@@ -155,12 +155,12 @@ function ktc_users_generate_username($name, $employer, $email, $uid) {
 
   // Drupal only allows the users to have a 60 character long username.
   if (strlen($username) > 60) {
-    if (strlen($name) > 27) {
-      $name = substr($name, 0, 27) . '..';
+    if (strlen($name) > 28) {
+      $name = substr($name, 0, 26) . '..';
     }
 
-    if (strlen($employer) > 27) {
-      $employer = substr($employer, 0, 27) . '..';
+    if (strlen($employer) > 28) {
+      $employer = substr($employer, 0, 26) . '..';
     }
     return ktc_users_generate_username($name, $employer, $email, $uid);
   }

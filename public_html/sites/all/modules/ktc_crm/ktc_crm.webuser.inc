@@ -292,7 +292,7 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto, $uid) {
 
   $edit['mail'] = $webuserdto->EMail;
   // Username is generated from firstname, lastname and toplevelaccount name.
-  $edit['name'] = ktc_users_generate_username($webuserdto->FirstName . $webuserdto->LastName, $webuserdto->TopLevelAccountName, $webuserdto->EMail, $uid);
+  $edit['name'] = ktc_users_generate_username($webuserdto->FirstName . ' ' . $webuserdto->LastName, $webuserdto->TopLevelAccountName, $webuserdto->EMail, $uid);
 
   $edit['field_navn'][LANGUAGE_NONE][0]['value'] = $webuserdto->FirstName;
   $edit['field_efternavn'][LANGUAGE_NONE][0]['value'] = $webuserdto->LastName;
