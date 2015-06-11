@@ -134,7 +134,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'red-title pane-node-create-links ktc-aside-dark',
+      'css_class' => 'ktc-aside-action ktc-aside-link-list-3-col',
       'template_suggestion' => 'block',
     );
     $pane->extras = array();
@@ -695,7 +695,7 @@ function ktc_netvaerk_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter-all-groups',
-      'css_class' => 'ktc-aside-dark',
+      'css_class' => 'ktc-aside-dark ktc-aside-link-list-2-col',
       'template_suggestion' => 'ikkesat',
     );
     $pane->extras = array();

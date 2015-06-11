@@ -3222,7 +3222,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 col-sm-6 col-sx-12';
+  $handler->display->display_options['style_options']['row_class'] = 'ktc-link-container';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
@@ -3247,7 +3247,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
-  $handler->display->display_options['footer']['result']['content'] = 'I AlT @total STK';
+  $handler->display->display_options['footer']['result']['content'] = '- I alt @total stk.';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sorteringskriterie: Indhold: Titel */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
@@ -3550,11 +3550,12 @@ function ktc_views_views_default_views() {
     <li><i class="blue-dot"></i>Magasinet</li>
   </ul>
 </div>'),
-    t('I AlT @total STK'),
+    t('- I alt @total stk.'),
     t('Alle'),
     t('All Group list'),
     t('View panes'),
     t('Group list newest'),
+    t('I AlT @total STK'),
   );
   $export['section_page_filter_extra'] = $view;
 
