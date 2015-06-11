@@ -748,10 +748,14 @@ function ktc_netvaerk_og_membership_validate(&$form, &$form_state) {
  * Generate block content for 'group-members'.
  */
 function _ktc_netvaerk_og_members_list() {
+  $gid = arg(1);
+  // Only proceed with generating the block if this is a group id.
+  if (!is_numeric($gid)) {
+    return;
+  }
+
   module_load_include('inc', 'og_ui', 'og_ui.admin');
   drupal_add_js(drupal_get_path('module', 'ktc_netvaerk') . '/js/ktc_netvaerk.group.js');
-
-  $gid = arg(1);
 
   $view = views_get_view('ktc_og_members');
   $view->set_display('block_2');
