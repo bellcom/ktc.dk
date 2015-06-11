@@ -140,6 +140,7 @@ function ktc_users_field_group_hide_field_groups(&$element, $group_names) {
 function ktc_users_generate_username($name, $employer, $email, $uid) {
   // If name is empty, use the email. This is only a temporary solution
   // until the user edits his userprofile the first time.
+  $name = trim($name);
   if (!$name) {
     $name = $email;
   }
