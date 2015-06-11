@@ -651,7 +651,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -743,7 +743,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -812,7 +812,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -872,7 +872,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -993,7 +993,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1064,7 +1064,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1132,7 +1132,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1194,7 +1194,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1261,7 +1261,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1325,7 +1325,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1406,7 +1406,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1468,7 +1468,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1529,9 +1529,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'teaservisning',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
       'teasercomments' => array(
@@ -1623,7 +1627,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1702,7 +1706,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1763,7 +1767,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1822,9 +1826,10 @@ function teknik_og_miljoe_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1913,7 +1918,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1971,9 +1976,10 @@ function teknik_og_miljoe_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -2058,7 +2064,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
       'teasercomments' => array(
         'label' => 'above',
