@@ -277,13 +277,13 @@ function ktc_arrangement_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'title',
+      'label' => 'inline',
       'formatter' => 'date_default',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'format_type' => 'medium',
+        'format_type' => 'short',
         'multiple_number' => '',
         'multiple_from' => '',
         'multiple_to' => '',
