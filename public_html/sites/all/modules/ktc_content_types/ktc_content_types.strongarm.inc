@@ -902,6 +902,10 @@ function ktc_content_types_strongarm() {
             'weight' => '15',
             'visible' => TRUE,
           ),
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
         ),
         'subscriptions_ui' => array(
           'default' => array(
