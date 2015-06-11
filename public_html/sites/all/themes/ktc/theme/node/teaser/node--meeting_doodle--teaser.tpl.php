@@ -7,7 +7,7 @@
         <?php if (isset($network_groups)): ?>
           <?php foreach($network_groups AS $network_group): ?>
             <div class="ktc-teaser-heading">
-              <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="ktc-teaser-title"><?php print $network_group->title; ?></a>
+              <?php print l($network_group->title, 'node/' . $network_group->nid, array('attributes' => array('class' => 'ktc-teaser-title'))); ?>
             </div>
           <?php endforeach ?>
         <?php endif ?>
