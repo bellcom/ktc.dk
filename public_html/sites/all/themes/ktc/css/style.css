@@ -5641,6 +5641,8 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
+.ktc-aside .ktc-aside-body:before,
+.ktc-aside .ktc-aside-body:after,
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item:before,
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item:after,
 .ktc-footer:before,
@@ -5670,6 +5672,7 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
+.ktc-aside .ktc-aside-body:after,
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item:after,
 .ktc-footer:after,
 .ktc-user-profile:after,
@@ -8616,11 +8619,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .front .main-container.container .pane-content .view-content .views-row h5 {
   margin-top: 0px;
 }
-.col-md-3 .panel-separator,
-.col-md-4 .panel-separator {
-  clear: both;
-  margin-bottom: 20px;
-}
 .col-md-3.pane-right .pane-content .col-md-12.filter-link.all,
 .col-md-4.pane-right .pane-content .col-md-12.filter-link.all,
 .col-md-3.pane-sidebar .pane-content .col-md-12.filter-link.all,
@@ -9324,6 +9322,10 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-aside .ktc-aside-body {
   padding: 10px 15px;
 }
+.ktc-aside .ktc-aside-body .row {
+  margin-left: 0;
+  margin-right: 0;
+}
 .ktc-aside-toggle > .ktc-aside-heading .ktc-aside-title {
   position: relative;
   cursor: pointer;
@@ -9420,6 +9422,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   position: absolute;
   top: 6px;
   right: 15px;
+}
+.ktc-aside.ktc-aside-no-stack {
+  margin-bottom: 0;
 }
 .ktc-block {
   background-color: transparent;

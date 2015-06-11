@@ -39,6 +39,15 @@
 	// Body
 	.ktc-aside-body {
 		padding: @ktc-aside-body-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+
+		// Row (this is crap)
+		.row {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		
+		// Clearfix
+		&:extend(.clearfix all);
 	}
 }
 
@@ -189,5 +198,15 @@
 			top: 6px; // bad practice
 			right: @ktc-default-left-right-inner-spacing;
 		}
+	}
+}
+
+
+// Aside
+.ktc-aside {
+
+	// No stack
+	&.ktc-aside-no-stack {
+		margin-bottom: 0;
 	}
 }
