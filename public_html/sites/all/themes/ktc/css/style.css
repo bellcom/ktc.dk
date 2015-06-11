@@ -11950,6 +11950,62 @@ h6 + .ktc-date {
   width: 15px;
   height: 14px;
 }
+.ktc-link-with-icon {
+  vertical-align: middle;
+}
+.ktc-link-with-icon:before {
+  float: left;
+  margin-right: 5px;
+  content: "";
+}
+.ktc-aside-link-list-2-col .ktc-aside-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+.ktc-aside-link-list-2-col .ktc-link-container {
+  float: left;
+  width: 50%;
+  padding: 2px 15px;
+}
+.ktc-aside-link-list-2-col .ktc-link-container:nth-child(odd) {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.ktc-aside-link-list-2-col .ktc-link-container:nth-child(even) {
+  padding-left: 7px;
+  padding-right: 15px;
+}
+.ktc-aside-link-list-2-col .ktc-link-container a {
+  display: block;
+}
+.ktc-green.ktc-link-with-icon:before,
+.ktc-green .ktc-link-with-icon:before {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -338px;
+  width: 17px;
+  height: 17px;
+}
+.ktc-blue.ktc-link-with-icon:before,
+.ktc-blue .ktc-link-with-icon:before {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -304px;
+  width: 17px;
+  height: 17px;
+}
+.ktc-gold.ktc-link-with-icon:before,
+.ktc-gold .ktc-link-with-icon:before {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -372px;
+  width: 17px;
+  height: 17px;
+}
+.ktc-red.ktc-link-with-icon:before,
+.ktc-red .ktc-link-with-icon:before {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -355px;
+  width: 17px;
+  height: 17px;
+}
 .btn {
   min-width: 50px;
   padding: 3px 15px;
