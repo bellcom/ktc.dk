@@ -22,7 +22,19 @@ function indholdsliste_m_filter_image_default_styles() {
     'name' => 'listevisning',
     'label' => 'listevisning',
     'effects' => array(
-      3 => array(
+      8 => array(
+        'label' => 'Reuse EPSA Image Crop',
+        'help' => 'Use the image crop selection from another image style',
+        'effect callback' => 'epsacrop_crop_image_reuse',
+        'form callback' => 'epsacrop_crop_image_reuse_form',
+        'module' => 'epsacrop',
+        'name' => 'epsacrop_crop_reuse',
+        'data' => array(
+          'jcrop_reuse' => 'listevisning_stor',
+        ),
+        'weight' => -10,
+      ),
+      7 => array(
         'label' => 'Skalér og beskær',
         'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
         'effect callback' => 'image_scale_and_crop_effect',
@@ -32,10 +44,10 @@ function indholdsliste_m_filter_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 100,
-          'height' => 100,
+          'width' => 300,
+          'height' => 112,
         ),
-        'weight' => 1,
+        'weight' => -9,
       ),
     ),
   );
@@ -45,7 +57,19 @@ function indholdsliste_m_filter_image_default_styles() {
     'name' => 'listevisning_stor',
     'label' => 'listevisning stor',
     'effects' => array(
-      2 => array(
+      6 => array(
+        'label' => 'Reuse EPSA Image Crop',
+        'help' => 'Use the image crop selection from another image style',
+        'effect callback' => 'epsacrop_crop_image_reuse',
+        'form callback' => 'epsacrop_crop_image_reuse_form',
+        'module' => 'epsacrop',
+        'name' => 'epsacrop_crop_reuse',
+        'data' => array(
+          'jcrop_reuse' => 'ktc_content_image',
+        ),
+        'weight' => -10,
+      ),
+      5 => array(
         'label' => 'Skalér og beskær',
         'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
         'effect callback' => 'image_scale_and_crop_effect',
@@ -55,10 +79,10 @@ function indholdsliste_m_filter_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 200,
-          'height' => 200,
+          'width' => 460,
+          'height' => 172,
         ),
-        'weight' => 1,
+        'weight' => -9,
       ),
     ),
   );
