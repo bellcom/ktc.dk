@@ -170,6 +170,22 @@
 	background-color: @ktc-color-dark-content-background;
 }
 
+// Action and dark
+.ktc-aside-action,
+.ktc-aside-dark {
+
+	// Link
+	a {
+		color: #e9edee;
+
+		// Hover and focus
+		&:hover,
+		&:focus {
+			color: #fff;
+		}
+	}
+}
+
 // Dark
 .ktc-aside-dark {
 	position: relative;
@@ -197,6 +213,19 @@
 			position: absolute;
 			top: 6px; // bad practice
 			right: @ktc-default-left-right-inner-spacing;
+		}
+
+		.view-footer {
+			position: absolute;
+			top: 5px; // Should have been: @ktc-aside-title-top-bottom-inner-spacing, which does not work
+			left: 110px;
+			margin: 0;
+			border: 0;
+			font-family: @ktc-aside-title-font-family;
+			font-size: @ktc-aside-title-font-size;
+			font-weight: @ktc-aside-title-font-weight;
+			text-transform: uppercase;
+			color: @ktc-aside-title-font-color;
 		}
 	}
 }
