@@ -75,7 +75,36 @@ function ktc_users_signup_settings_form() {
  * Signup form.
  */
 function ktc_users_signup_form($form, &$form_state) {
-  $form = array();
+  if (arg(2) == 'no') {
+    drupal_set_message(t('Det er ikke muligt at oprette dig som bruger med den angivne e-mailadresse. Anvend en anden e-mailadresse, eller kontakt KTC Sekretariatet for hjælp'), 'error');
+    drupal_goto('user/signup');
+  }
+
+  if (isset($form_state['#existing_contact'])) {
+    $contact = $form_state['#existing_contact'];
+    $firma = '';
+
+    if (isset($contact['field_account'])) {
+      $account = taxonomy_term_load($contact['field_account'][LANGUAGE_NONE][0]['tid']);
+      $firma = $account->name;
+    }
+
+    $form['existing_user'] = array(
+      '#type' => 'item',
+      '#title' => 'Vi har fundet en eksisterende person med din e-mailadresse',
+      '#markup' => '<p>' . $contact['field_navn'][LANGUAGE_NONE][0]['value'] . ' ' . $contact['field_efternavn'][LANGUAGE_NONE][0]['value'] . '</p><p>' . $firma . '</p><p>' . $form_state['values']['mail'] . '</p>',
+    );
+
+    $form_state['#create_from_existing'] = TRUE;
+
+    $form['submit'] = array(
+      '#prefix' => '<p><b>Er du denne person - og vil du fortsætte med at oprette/aktivere brugeren på www.ktc.dk?</b></p>',
+      '#value' => 'Ja, opret',
+      '#type' => 'submit',
+      '#suffix' => l(t('Nej, annuller'), 'user/signup/no'),
+    );
+    return $form;
+  }
 
   global $user;
   if ($user->uid) {
@@ -168,6 +197,9 @@ function ktc_users_signup_form($form, &$form_state) {
  * Implements hook_FORM_ID_validate().
  */
 function ktc_users_signup_form_validate($form, $form_state) {
+  if (isset($form_state['#create_from_existing'])) {
+    return;
+  }
   if (!$form_state['values']['usertype']) {
     form_set_error('usertype', t('Du skal angive en brugertype.'));
   }
@@ -201,15 +233,32 @@ function ktc_users_signup_form_submit(&$form, &$form_state) {
     'name' => $mail,
     'field_navn' => array(LANGUAGE_NONE => array(array('value' => $firstname))),
     'field_efternavn' => array(LANGUAGE_NONE => array(array('value' => $lastname))),
-    'field_usertype' => array(LANGUAGE_NONE => array(array('tid' => $usertype))),
     'mail' => $mail,
     'pass' => $pass,
-    'status' => 1,
     'init' => 'mail address',
+    'status' => 1,
+    'field_usertype' => array(LANGUAGE_NONE => array(array('tid' => $usertype))),
     'roles' => array(
       DRUPAL_AUTHENTICATED_RID => 'authenticated user',
     ),
   );
+
+  // If the form is resubmitted with create_from_existing set, use this data
+  // for the new user.
+  if (isset($form_state['#create_from_existing'])) {
+    $fields = $form_state['#existing_contact'];
+    unset($form_state['#create_from_existing']);
+    unset($form_state['#existing_contact']);
+  }
+  else {
+    // Check to see if there already is a user with this mail address in crm.
+    if ($webuserdto = ktc_crm_lookup_webuser_by_mail($mail)) {
+      // If so, create the new user from this webuserdto.
+      $form_state['#existing_contact'] = array_merge($fields, ktc_crm_map_webuserdto_to_edit_array($webuserdto));
+      $form_state['rebuild'] = TRUE;
+      return;
+    }
+  }
 
   $account = user_save('', $fields);
 
