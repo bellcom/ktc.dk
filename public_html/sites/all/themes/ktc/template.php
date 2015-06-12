@@ -869,15 +869,6 @@ function ktc_preprocess_user_profile(&$vars) {
     $vars['job_title'] = '';
   }
 
-
-    // User job title.
-    if ($job_title = field_get_items('user', $user_obj, 'field_jobposition')) {
-        if (strlen($job_title[0]['value']) > 16) {
-            $job_title[0]['value'] = substr($job_title[0]['value'], 0, 15) . '...';
-        }
-        $vars['job_title'] = $job_title[0]['value'];
-    }
-
   // Work
   $vars['work'] = ktc_crm_get_user_info($user_obj, 'work');
   // Personal
@@ -916,6 +907,12 @@ function ktc_field($variables) {
  * Implements hook_preprocess_region().
  */
 function ktc_preprocess_region(&$variables, $hook) {
+    if($variables['region'] == "header_top"){
+        global $user;
+        $user_object = user_load($user->uid);
+        $variables['user_object'] = $user_object;
+    }
+
   if($variables['region'] == "sidebar_second"){
     $variables['classes_array'][] = 'col-md-4 col-xs-12 col-md-push-8 col-sm-push-8';
   }
