@@ -49,7 +49,7 @@
         <div class="ktc-user-profile-content">
 
           <?php if (isset($personal['full_name'])): ?>
-              <h5 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h5>
+            <p class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></p>
           <?php endif ?>
 
         </div>
