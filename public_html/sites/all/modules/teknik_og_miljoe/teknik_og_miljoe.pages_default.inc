@@ -1133,7 +1133,7 @@ function teknik_og_miljoe_default_page_manager_pages() {
     $pane->panel = 'right';
     $pane->type = 'views_panes';
     $pane->subtype = 'section_page_filter-panel_pane_2';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'use_pager' => 0,
