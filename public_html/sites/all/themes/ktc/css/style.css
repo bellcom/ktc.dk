@@ -10102,6 +10102,8 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-profile {
   padding-right: 10px;
+  margin-top: -11px;
+  margin-bottom: -7px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-profile .ktc-user-profile-photo-container {
   float: left;
@@ -10109,8 +10111,8 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-profile .ktc-user-profile-photo-container img {
   display: inline-block;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 100%;
   border-width: 2px;
   border-style: solid;
