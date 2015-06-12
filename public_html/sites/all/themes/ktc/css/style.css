@@ -10223,6 +10223,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-header .ktc-header-navigation .navbar-nav > li.active > a {
   text-decoration: underline;
 }
+.ktc-header form button {
+  min-width: auto;
+}
 .ktc-wrapper {
   position: relative;
   padding-top: 35px;
