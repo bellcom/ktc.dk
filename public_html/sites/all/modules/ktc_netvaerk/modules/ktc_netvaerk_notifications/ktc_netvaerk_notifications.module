@@ -155,7 +155,11 @@ function ktc_netvaerk_notifications_mail($key, &$message, $params) {
  * Implements hook_node_presave().
  */
 function ktc_netvaerk_notifications_node_presave($node) {
-  if (is_object($node) && $node->status && $field = field_get_items('node', $node, 'og_group_ref')) {
+  if (is_object($node) && $node->nid && $node->status && $field = field_get_items('node', $node, 'og_group_ref')) {
+    if ($node->type == 'hearing' || $node->type == 'hearing_responses') {
+      return;
+    }
+
     $result = db_query('SELECT status FROM {ktc_netvaerk_notifications} WHERE nid = :nid', array(':nid' => $node->nid))->fetchAll();
 
     if (empty($result)) {
