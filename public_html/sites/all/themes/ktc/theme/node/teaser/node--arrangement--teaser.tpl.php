@@ -39,13 +39,13 @@
 
             <p><?php print $body_shortened; ?></p>
 
-            <?php if ($user_object): ?>
-                <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2')); ?>
-            <?php endif; ?>
-
             <div class="ktc-call-to-action-button">
                 <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="btn btn-default ktc-call-to-action-button"><?php print t('Tilmeld'); ?></a>
             </div>
+
+            <?php if ($user_object): ?>
+                <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2')); ?>
+            <?php endif; ?>
 
         </div>
 

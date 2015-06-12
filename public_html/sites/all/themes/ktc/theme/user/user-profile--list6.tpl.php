@@ -36,53 +36,63 @@
 ?>
 
 <!-- Begin - user profile - list 6 -->
-<section class="ktc-user-profile <?php print $classes; ?>">
+<section class="ktc-user-profile ktc-user-profile-list-6 <?php print $classes; ?>">
 
-  <!-- Begin - profile photo -->
-  <?php print render($user_profile['user_picture']); ?>
-  <!-- End - profile photo -->
+    <!-- Begin - wrapper -->
+    <div class="ktc-user-profile-content-wrapper">
 
-  <!-- Begin - profile content -->
-  <div class="ktc-user-profile-content">
+        <!-- Begin - profile photo -->
+        <?php print $image = theme('user_picture', array('account' => $account, 'style_name' => 'medium')); ?>
+        <!-- End - profile photo -->
 
-      <?php if (isset($personal['full_name'])): ?>
-          <h5 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h5>
-      <?php endif ?>
+        <!-- Begin - profile content -->
+        <div class="ktc-user-profile-content">
 
-      <?php if (isset($personal['job_title'])): ?>
-          <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
-      <?php endif ?>
+            <?php if (isset($network['roles'])): ?>
+                <p class="ktc-user-profile-content-network-roles"><?php print $network['roles']; ?></p>
+            <?php endif ?>
 
-      <?php if (isset($personal['employer'])): ?>
-          <p class="ktc-user-profile-content-employer"><?php print $personal['employer']; ?></p>
-      <?php endif ?>
+            <?php if (isset($personal['job_title'])): ?>
+                <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
+            <?php endif ?>
 
-      <?php if (isset($work['address'])): ?>
-          <p class="ktc-user-profile-content-work-address"><?php print $work['address']; ?></p>
-      <?php endif ?>
+            <?php if (isset($personal['full_name'])): ?>
+              <h5 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h5>
+            <?php endif ?>
 
-      <?php if (isset($work['address_2'])): ?>
-          <p class="ktc-user-profile-content-work-address-2"><?php print $work['address_2']; ?></p>
-      <?php endif ?>
+            <?php if (isset($personal['employer'])): ?>
+              <p class="ktc-user-profile-content-employer"><?php print $personal['employer']; ?></p>
+            <?php endif ?>
 
-      <?php if (isset($work['zipcode']) && isset($work['city'])): ?>
-          <p class="ktc-user-profile-content-work-zipcode-city"><?php print $work['zipcode'] . ' ' . $work['city']; ?></p>
-      <?php endif ?>
+            <?php if (isset($work['address'])): ?>
+              <p class="ktc-user-profile-content-work-address"><?php print $work['address']; ?></p>
+            <?php endif ?>
 
-      <?php if (isset($personal['cellphone'])): ?>
-          <p class="ktc-user-profile-content-cellphone"><?php print $personal['cellphone']; ?></p>
-      <?php endif ?>
+            <?php if (isset($work['address_2'])): ?>
+              <p class="ktc-user-profile-content-work-address-2"><?php print $work['address_2']; ?></p>
+            <?php endif ?>
 
-      <?php if (isset($personal['direct_phone'])): ?>
-          <p class="ktc-user-profile-content-direct-phone"><?php print $personal['direct_phone']; ?></p>
-      <?php endif ?>
+            <?php if (isset($work['zipcode']) && isset($work['city'])): ?>
+              <p class="ktc-user-profile-content-work-zipcode-city"><?php print $work['zipcode'] . ' ' . $work['city']; ?></p>
+            <?php endif ?>
 
-      <?php if (isset($personal['email'])): ?>
-          <a href="mailto: <?php print $personal['email']; ?>" class="ktc-user-profile-content-direct-email"><?php print $personal['email']; ?></a>
-      <?php endif ?>
+            <?php if (isset($personal['cellphone'])): ?>
+              <p class="ktc-user-profile-content-cellphone"><?php print $personal['cellphone']; ?></p>
+            <?php endif ?>
 
-  </div>
-  <!-- End - profile content -->
+            <?php if (isset($personal['direct_phone'])): ?>
+              <p class="ktc-user-profile-content-direct-phone"><?php print $personal['direct_phone']; ?></p>
+            <?php endif ?>
+
+            <?php if (isset($personal['email'])): ?>
+              <a href="mailto: <?php print $personal['email']; ?>" class="ktc-user-profile-content-direct-email"><?php print $personal['email']; ?></a>
+            <?php endif ?>
+
+        </div>
+        <!-- End - profile content -->
+
+    </div>
+    <!-- End - wrapper -->
 
 </section>
 <!-- End - user profile - list 6 -->

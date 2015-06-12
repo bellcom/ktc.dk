@@ -11,75 +11,123 @@
 
 // User profile
 .ktc-user-profile {
-	display: table;
 	padding: @ktc-user-profile-top-bottom-padding 0;
 
-	// Photo container
-	.ktc-user-profile-photo-container {
-		float: left;
-
-		// Photo
-		img {
-			display: inherit;
-			height: auto;
-			width: auto;
-			max-width: 48px;
-			max-height: 48px;
-			border-radius: 100%;
-			border-width: @ktc-user-profile-photo-border-width;
-			border-style: solid;
-			background-color: transparent;
-			margin-right: @ktc-user-profile-photo-content-spacing;
-			padding: @ktc-user-profile-photo-border-distance;
-		}
+	// Paragraph
+	p {
+		margin: 0;
+		margin-bottom: 2px;
 	}
 
-	// Content
-	.ktc-user-profile-content {
-		display: inherit;
+	// Wrapper
+	.ktc-user-profile-content-wrapper {
+		display: table;
+		width: 100%;
 
-		// Paragraph
-		p {
+		// Photo container
+		.ktc-user-profile-photo-container {
+			display: table-cell;
+			width: 50px;
+
+			// Photo
+			img {
+				display: inline-block;
+				height: auto;
+				width: auto;
+				max-width: 48px;
+				max-height: 48px;
+				border-radius: 100%;
+				border-width: @ktc-user-profile-photo-border-width;
+				border-style: solid;
+				background-color: transparent;
+				margin-right: @ktc-user-profile-photo-content-spacing;
+				padding: @ktc-user-profile-photo-border-distance;
+			}
+		}
+
+		// Content
+		.ktc-user-profile-content {
+			display: table-cell;
+			padding: 0;
 			margin: 0;
-			margin-bottom: 2px;
+			vertical-align: middle;
+
+			// Name
+			.ktc-user-profile-content-name {
+				margin-top: 0;
+				padding-top: 0;
+				margin-bottom: 3px;
+			}
+
+			// Job title
+			.ktc-user-profile-content-job-title {
+				font-size: 10px;
+			}
+
+			// Employer
+			.ktc-user-profile-content-employer {
+				font-weight: bold;
+			}
+
+			// Address (work)
+			.ktc-user-profile-content-work-address {}
+
+			// Address 2 (work)
+			.ktc-user-profile-content-work-address-2 {}
+
+			// Zipcode and city (work)
+			.ktc-user-profile-content-work-zipcode-city {}
+
+			// Country (work)
+			.ktc-user-profile-content-work-zipcode-country {}
+
+			// Twitter
+
+			// Linked In
 		}
 
-		// Name
-		.ktc-user-profile-content-name {
-			margin-top: 0;
-			padding-top: 0;
-			margin-bottom: 3px;
+		// Well
+		+ .ktc-well {
+			margin-top: 15px;
 		}
-
-		// Job title
-		.ktc-user-profile-content-job-title {
-			font-size: 10px;
-		}
-
-		// Employer
-		.ktc-user-profile-content-employer {
-			font-weight: bold;
-		}
-
-		// Address (work)
-		.ktc-user-profile-content-work-address {}
-
-		// Address 2 (work)
-		.ktc-user-profile-content-work-address-2 {}
-
-		// Zipcode and city (work)
-		.ktc-user-profile-content-work-zipcode-city {}
-
-		// Country (work)
-		.ktc-user-profile-content-work-zipcode-country {}
-
-		// Twitter
-
-		// Linked In
 	}
 
-	// Clearfix
-	&:extend(.clearfix all);
+	// Well
+	.ktc-well {
+		margin-top: 8px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		// Bold
+		strong {
+			color: @ktc-default-color-headline;
+		}
+	}
+
+	// List 6
+	&.ktc-user-profile-list-6 {
+
+		// Photo container
+		.ktc-user-profile-photo-container {
+			display: table-cell;
+			width: auto;
+
+			// Photo
+			img {
+				display: inline-block;
+				height: auto;
+				width: auto;
+				max-width: 100%;
+				max-height: none;
+				border-radius: 5px;
+				border-width: @ktc-user-profile-photo-border-width;
+				border-style: solid;
+				background-color: transparent;
+				margin-right: @ktc-user-profile-photo-content-spacing;
+				padding: @ktc-user-profile-photo-border-distance;
+			}
+		}
+	}
 }
 
 // --------------------------------------------------
