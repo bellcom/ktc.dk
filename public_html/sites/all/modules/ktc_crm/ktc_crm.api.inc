@@ -51,6 +51,40 @@ function ktc_crm_fetch_webusers($options = array()) {
 }
 
 /**
+ * Lookup user in CRM by e-mail.
+ */
+function ktc_crm_lookup_webuser_by_mail($mail) {
+  $logger = KtcCrmLogger::getInstance();
+  $url = variable_get('ktc_crm_url', '');
+
+  $wsdl_url = $url . '/' . KTC_CRM_WEBUSER_WSDL;
+
+  $logger->log->AddInfo('RetrieveWebUsersByMail', $mail);
+
+  try {
+    $webuser = new KTC\WebUser\WebUser(array(), $wsdl_url);
+
+    $retrievewebuserbymail = new KTC\WebUser\RetrieveWebUserByMail($mail);
+
+    $result = $webuser->RetrieveWebUserByMail($retrievewebuserbymail);
+
+    $logger->log->AddDebug('RetrieveWebUserByMail result', $result);
+
+    if (is_object($result->RetrieveWebUserByMailResult->Results->WebUserDto)) {
+      return $result->RetrieveWebUserByMailResult->Results->WebUserDto;
+    }
+  }
+  catch (\Exception $e) {
+    $logger->log->addError('soap error', array(
+      'message' => $e->getMessage(),
+      'method' => 'RetrieveWebUserByMail',
+    ));
+  }
+
+  return FALSE;
+}
+
+/**
  * Update user in CRM.
  */
 function ktc_crm_update_user(\KTC\WebUser\WebUserDto $webuserdto) {

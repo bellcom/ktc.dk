@@ -18,6 +18,8 @@ include_once('Region.php');
 include_once('MemberCategory.php');
 include_once('CreateUpdateWebUser.php');
 include_once('CreateUpdateWebUserResponse.php');
+include_once('RetrieveWebUserByMail.php');
+include_once('RetrieveWebUserByMailResponse.php');
 
 
 /**
@@ -44,7 +46,9 @@ class WebUser extends \SoapClient
     'EANAddressDto' => 'KTC\WebUser\EANAddressDto',
     'AddressDto' => 'KTC\WebUser\AddressDto',
     'CreateUpdateWebUser' => 'KTC\WebUser\CreateUpdateWebUser',
-    'CreateUpdateWebUserResponse' => 'KTC\WebUser\CreateUpdateWebUserResponse');
+    'CreateUpdateWebUserResponse' => 'KTC\WebUser\CreateUpdateWebUserResponse',
+    'RetrieveWebUserByMail' => 'KTC\WebUser\RetrieveWebUserByMail',
+    'RetrieveWebUserByMailResponse' => 'KTC\WebUser\RetrieveWebUserByMailResponse');
 
   /**
    * 
@@ -94,6 +98,17 @@ class WebUser extends \SoapClient
   public function CreateUpdateWebUser(CreateUpdateWebUser $parameters)
   {
     return $this->__soapCall('CreateUpdateWebUser', array($parameters));
+  }
+
+  /**
+   * 
+   * @param RetrieveWebUserByMail $parameters
+   * @access public
+   * @return RetrieveWebUserByMailResponse
+   */
+  public function RetrieveWebUserByMail(RetrieveWebUserByMail $parameters)
+  {
+    return $this->__soapCall('RetrieveWebUserByMail', array($parameters));
   }
 
 }

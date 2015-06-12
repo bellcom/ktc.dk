@@ -49,7 +49,7 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
   // Only update user if $_POST['form_id'] is correct. Presave is also called
   // when a user is updated programmatically, so this could turn into an
   // unwanted loop otherwise.
-  if (isset($_POST['form_id']) && $_POST['form_id'] == 'user_profile_form') {
+  if (isset($_POST['form_id']) && ($_POST['form_id'] == 'user_profile_form' || $_POST['form_id'] == 'ktc_users_signup_form')) {
     // ktc_crm_map_account_to_webuserdto() takes a normal drupal user
     // account object. Since the $account object is not populated with the
     // new values at this point, we create a temporary one, where we do this
@@ -475,10 +475,11 @@ function ktc_crm_update_account_from_webuserdto(\KTC\WebUser\WebUserDto $webuser
 /**
  * Map WebUserDto to edit array for user object.
  */
-function ktc_crm_map_webuserdto_to_edit_array($webuserdto, $uid) {
+function ktc_crm_map_webuserdto_to_edit_array($webuserdto, $uid = 0) {
   $edit = array();
 
   $edit['mail'] = $webuserdto->EMail;
+  $edit['field_crm_uuid'][LANGUAGE_NONE][0]['value'] = $webuserdto->CrmId;
   // Username is generated from firstname, lastname and toplevelaccount name.
   $edit['name'] = ktc_users_generate_username($webuserdto->FirstName . ' ' . $webuserdto->LastName, $webuserdto->TopLevelAccountName, $webuserdto->EMail, $uid);
 
