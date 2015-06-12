@@ -224,6 +224,7 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
     }
   }
 
+  $group_node->{OG_GROUP_FIELD}[$language][0]['value'] = 1;
   $group_node->field_open_group[$language][0]['value'] = _ktc_crm_group_transform_open($groupdto->AabenPrivat);
   $group_node->group_content_access[$language][0]['value'] = _ktc_crm_group_transform_content_access($groupdto->GruppensRollerOgTilladelser);
 
