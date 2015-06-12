@@ -30,6 +30,7 @@
             <?php if ($user_object): ?>
                 <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2')); ?>
             <?php endif; ?>
+
         </div>
 
         <div class="ktc-footer">

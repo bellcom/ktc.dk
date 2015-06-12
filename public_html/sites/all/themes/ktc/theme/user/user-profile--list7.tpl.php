@@ -38,49 +38,55 @@
 <!-- Begin - user profile - list 7 -->
 <section class="ktc-user-profile <?php print $classes; ?>">
 
-    <!-- Begin - profile photo -->
-    <?php print render($user_profile['user_picture']); ?>
-    <!-- End - profile photo -->
+    <!-- Begin - wrapper -->
+    <div class="ktc-user-profile-content-wrapper">
 
-    <!-- Begin - profile content -->
-    <div class="ktc-user-profile-content">
+        <!-- Begin - profile photo -->
+        <?php print $image = theme('user_picture', array('account' => $account));?>
+        <!-- End - profile photo -->
 
-        <?php if (isset($personal['job_title'])): ?>
-            <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
-        <?php endif ?>
+        <!-- Begin - profile content -->
+        <div class="ktc-user-profile-content">
 
-        <?php if (isset($personal['full_name'])): ?>
-            <h5 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h5>
-        <?php endif ?>
+            <?php if (isset($personal['job_title'])): ?>
+                <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
+            <?php endif ?>
 
-        <?php if (isset($personal['employer'])): ?>
-            <p class="ktc-user-profile-content-employer"><?php print $personal['employer']; ?></p>
-        <?php endif ?>
+            <?php if (isset($personal['full_name'])): ?>
+                <h5 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h5>
+            <?php endif ?>
 
-        <?php if (isset($personal['linked_in'])): ?>
-            <a href="<?php print $personal['linked_in']; ?>" target="_blank" class="ktc-user-profile-content-linked_in"><?php print $personal['linked_in']; ?></a>
-        <?php endif ?>
+            <?php if (isset($personal['employer'])): ?>
+                <p class="ktc-user-profile-content-employer"><?php print $personal['employer']; ?></p>
+            <?php endif ?>
 
-        <?php if (isset($personal['twitter'])): ?>
-            <a href="https://twitter.com/<?php print $personal['twitter']; ?>" target="_blank" class="ktc-user-profile-content-linked_in"><?php print $personal['twitter']; ?></a>
-        <?php endif ?>
+            <?php if (isset($personal['linked_in'])): ?>
+                <a href="<?php print $personal['linked_in']; ?>" target="_blank" class="ktc-user-profile-content-linked_in"><?php print $personal['linked_in']; ?></a>
+            <?php endif ?>
 
-        <?php if (isset($personal['education'])): ?>
-            <div class="ktc-well">
-                <strong>Uddannelse:</strong><br />
-                <p class="ktc-user-profile-content-education"><?php print $personal['education']; ?></p>
-            </div>
-        <?php endif ?>
+            <?php if (isset($personal['twitter'])): ?>
+                <a href="https://twitter.com/<?php print $personal['twitter']; ?>" target="_blank" class="ktc-user-profile-content-linked_in"><?php print $personal['twitter']; ?></a>
+            <?php endif ?>
 
-        <?php if (isset($personal['special_skills'])): ?>
-            <div class="ktc-well">
-                <strong>Andre kompetencer:</strong><br />
-                <p class="ktc-user-profile-content-special-skills"><?php print $personal['special_skills']; ?></p>
-            </div>
-        <?php endif ?>
+        </div>
+        <!-- End - profile content -->
 
     </div>
-    <!-- End - profile content -->
+    <!-- End - wrapper -->
+
+    <?php if (isset($personal['education'])): ?>
+        <div class="ktc-well">
+            <p><strong>Uddannelse og kurser:</strong></p>
+            <p class="ktc-user-profile-content-education"><?php print $personal['education']; ?></p>
+        </div>
+    <?php endif ?>
+
+    <?php if (isset($personal['special_skills'])): ?>
+        <div class="ktc-well">
+            <p><strong>Andre kompetencer:</strong></p>
+            <p class="ktc-user-profile-content-special-skills"><?php print $personal['special_skills']; ?></p>
+        </div>
+    <?php endif ?>
 
 </section>
 <!-- End - user profile - list 7 -->

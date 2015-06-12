@@ -38,19 +38,25 @@
 <!-- Begin - user profile - list 1 -->
 <section class="ktc-user-profile <?php print $classes; ?>">
 
-  <!-- Begin - profile photo -->
-  <?php print render($user_profile['user_picture']); ?>
-  <!-- End - profile photo -->
+    <!-- Begin - wrapper -->
+    <div class="ktc-user-profile-content-wrapper">
 
-  <!-- Begin - profile content -->
-  <div class="ktc-user-profile-content">
+        <!-- Begin - profile photo -->
+        <?php print $image = theme('user_picture', array('account' => $account));?>
+        <!-- End - profile photo -->
 
-      <?php if (isset($personal['full_name'])): ?>
-          <h5 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h5>
-      <?php endif ?>
+        <!-- Begin - profile content -->
+        <div class="ktc-user-profile-content">
 
-  </div>
-  <!-- End - profile content -->
+          <?php if (isset($personal['full_name'])): ?>
+              <h5 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h5>
+          <?php endif ?>
+
+        </div>
+        <!-- End - profile content -->
+
+    </div>
+    <!-- End - wrapper -->
 
 </section>
 <!-- End - user profile - list 1 -->

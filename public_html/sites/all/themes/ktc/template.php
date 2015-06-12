@@ -798,6 +798,7 @@ function ktc_preprocess_user_profile(&$vars) {
     else {
         $user_obj = $vars['elements']['#account'];
     }
+    $vars['account'] = $user_obj;
 
     // Allow for: print theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2'));
     if ($vars['theme_suggestion']) {
@@ -940,6 +941,7 @@ function ktc_preprocess_region(&$variables, $hook) {
  * Implements ktc_preprocess_user_picture().
  */
 function ktc_preprocess_user_picture(&$variables) {
+
   // When a suer has the role "KTC VIP" there must be a green ring around the
   // user picture.
     if(isset($variables['account']->roles)) {

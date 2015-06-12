@@ -83,7 +83,7 @@
 
               <!-- Begin - create user -->
               <li>
-                <a href="/user/register" data-toggle="tooltip" data-placement="bottom" title="Opret bruger"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-create"></span></a>
+                <a href="/user/signup" data-toggle="tooltip" data-placement="bottom" title="Opret bruger"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-create"></span></a>
               </li>
               <!-- End - create user -->
 
