@@ -91,14 +91,14 @@ function ktc_users_signup_form($form, &$form_state) {
 
     $form['existing_user'] = array(
       '#type' => 'item',
-      '#title' => 'Vi har fundet en eksisterende person med din e-mailadresse',
-      '#markup' => '<p>' . $contact['field_navn'][LANGUAGE_NONE][0]['value'] . ' ' . $contact['field_efternavn'][LANGUAGE_NONE][0]['value'] . '</p><p>' . $firma . '</p><p>' . $form_state['values']['mail'] . '</p>',
+      '#title' => 'Vi har fundet en eksisterende person med din e-mailadresse<br /><br />',
+      '#markup' => '<p><b>Navn:</b> ' . $contact['field_navn'][LANGUAGE_NONE][0]['value'] . ' ' . $contact['field_efternavn'][LANGUAGE_NONE][0]['value'] . '</p><p><b>Firma:</b> ' . $firma . '</p><p><b>E-mail:</b> ' . $form_state['values']['mail'] . '</p>',
     );
 
     $form_state['#create_from_existing'] = TRUE;
 
     $form['submit'] = array(
-      '#prefix' => '<p><b>Er du denne person - og vil du fortsætte med at oprette/aktivere brugeren på www.ktc.dk?</b></p>',
+      '#prefix' => '<br /><br /><p><b>Er du denne person - og vil du fortsætte med at oprette/aktivere brugeren på www.ktc.dk?</b></p>',
       '#value' => 'Ja, opret',
       '#type' => 'submit',
       '#suffix' => l(t('Nej, annuller'), 'user/signup/no'),

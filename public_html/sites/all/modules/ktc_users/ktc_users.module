@@ -55,9 +55,26 @@ function ktc_users_entity_info_alter(&$entity_info) {
  * Implements hook_form_alter().
  */
 function ktc_users_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_login_block') {
+    $form['#validate'][] = 'ktc_users_verify_email';
+  }
+
   // Hide hidden form field_group.
   if ($form_id == 'user_profile_form') {
     ktc_users_field_group_hide_field_groups($form, array('group_hidden'));
+  }
+}
+
+/**
+ * Stop users first login, if not from email.
+ */
+function ktc_users_verify_email($form, $form_state) {
+  if ($form_state['uid']) {
+    $account = user_load($form_state['uid']);
+
+    if (!$account->access) {
+      form_set_error('name', t('Du skal først verificere din e-mail adresse. Tryk <a href="@link">her</a> for at få tilsendt en ny mail.', array('@link' => '/user/password')));
+    }
   }
 }
 
