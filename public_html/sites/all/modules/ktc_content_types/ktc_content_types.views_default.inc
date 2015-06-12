@@ -482,13 +482,12 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['label'] = '';
-  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'ktc-node-title-small ktc-node-title-light';
   $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['og_group_ref']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
-    'view_mode' => 'listevisningstor',
-    'links' => 0,
+    'link' => 1,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
   /* Felt: Bruger: Rendered Bruger */
@@ -496,23 +495,13 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_user';
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
-  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['label'] = 'Oprettet af';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_class'] = 'ktc-node-title-xs';
   $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'list3';
   $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-  /* Felt: Indhold: Gruppe/Netværk */
-  $handler->display->display_options['fields']['og_group_ref_1']['id'] = 'og_group_ref_1';
-  $handler->display->display_options['fields']['og_group_ref_1']['table'] = 'og_membership';
-  $handler->display->display_options['fields']['og_group_ref_1']['field'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref_1']['type'] = 'entityreference_entity_view';
-  $handler->display->display_options['fields']['og_group_ref_1']['settings'] = array(
-    'view_mode' => 'teaser',
-    'links' => 0,
-  );
-  $handler->display->display_options['fields']['og_group_ref_1']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['og_group_ref_1']['multi_type'] = 'ul';
   $handler->display->display_options['pane_category']['name'] = 'KTC Nodevisninger';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -600,7 +589,7 @@ function ktc_content_types_views_default_views() {
     t('Logo og netværksnavn'),
     t('Group node from OG membership'),
     t('<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>'),
-    t('Gruppe/Netværk'),
+    t('Oprettet af'),
     t('Logo på Netværk'),
   );
   $export['ktc_full_node_field_displays'] = $view;
