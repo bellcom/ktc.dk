@@ -790,12 +790,54 @@ function ktc_get_node_create_link() {
 * Adds theme suggestions for the user view mode teaser
 */
 function ktc_preprocess_user_profile(&$vars) {
-  if ($vars['elements']['#view_mode'] == 'teaser') {
-    $vars['theme_hook_suggestions'][] = 'user_profile__teaser';
-  }
-  $user_obj = $vars['elements']['#account'];
+    global $user;
 
-  // User real name in field_navn.
+    if ($vars['account']) {
+        $user_obj = $vars['account'];
+    }
+    else {
+        $user_obj = $vars['elements']['#account'];
+    }
+
+    // Allow for: print theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2'));
+    if ($vars['theme_suggestion']) {
+        $vars['theme_hook_suggestions'][] = 'user_profile__' . $vars['theme_suggestion'];
+    }
+
+    if ($vars['elements']['#view_mode'] == 'teaser') {
+        $vars['theme_hook_suggestions'][] = 'user_profile__teaser';
+    }
+    if ($vars['elements']['#view_mode'] == 'teaser2') {
+        $vars['theme_hook_suggestions'][] = 'user_profile__teaser2';
+    }
+    if ($vars['elements']['#view_mode'] == 'list1') {
+        $vars['theme_hook_suggestions'][] = 'user_profile__list1';
+    }
+    if ($vars['elements']['#view_mode'] == 'list2') {
+        $vars['theme_hook_suggestions'][] = 'user_profile__list2';
+    }
+    if ($vars['elements']['#view_mode'] == 'list3') {
+        $vars['theme_hook_suggestions'][] = 'user_profile__list3';
+    }
+    if ($vars['elements']['#view_mode'] == 'list4') {
+        $vars['theme_hook_suggestions'][] = 'user_profile__list4';
+    }
+    if ($vars['elements']['#view_mode'] == 'list5') {
+        $vars['theme_hook_suggestions'][] = 'user_profile__list5';
+    }
+    if ($vars['elements']['#view_mode'] == 'list6') {
+        $vars['theme_hook_suggestions'][] = 'user_profile__list6';
+    }
+    if ($vars['elements']['#view_mode'] == 'list7') {
+        $vars['theme_hook_suggestions'][] = 'user_profile__list7';
+    }
+
+    // Own user - set red color
+    if ($user->uid == $user_obj->uid) {
+        $vars['classes_array'][] = 'ktc-red';
+    }
+
+    // User real name in field_navn.
   if ($name = field_get_items('user', $user_obj, 'field_navn')) {
     if (strlen($name[0]['value']) > 16) {
       $name[0]['value'] = substr($name[0]['value'], 0, 15) . '...';
@@ -826,8 +868,19 @@ function ktc_preprocess_user_profile(&$vars) {
     $vars['job_title'] = '';
   }
 
-  // Address
-  $vars['work'] = ktc_crm_get_user_address($user_obj, 'work', 'data');
+
+    // User job title.
+    if ($job_title = field_get_items('user', $user_obj, 'field_jobposition')) {
+        if (strlen($job_title[0]['value']) > 16) {
+            $job_title[0]['value'] = substr($job_title[0]['value'], 0, 15) . '...';
+        }
+        $vars['job_title'] = $job_title[0]['value'];
+    }
+
+  // Work
+  $vars['work'] = ktc_crm_get_user_info($user_obj, 'work');
+  // Personal
+  $vars['personal'] = ktc_crm_get_user_info($user_obj, 'personal');
 
 }
 
@@ -880,10 +933,6 @@ function ktc_preprocess_region(&$variables, $hook) {
 
         }
         $variables['classes_array'][] = $class;
-    }
-
-    if($variables['region'] == "highlighted"){
-//        xdebug_break();
     }
 }
 

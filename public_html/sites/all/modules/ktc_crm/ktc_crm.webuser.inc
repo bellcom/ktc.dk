@@ -76,6 +76,156 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
 }
 
 /**
+ * Get users data.
+ * Data format: html, data
+ */
+function ktc_crm_get_user_info($user, $info_type) {
+    $info_type = ucfirst($info_type);
+    $info = array();
+
+    switch ($info_type) {
+        case 'Work':
+            if ($field = field_get_items('user', $user, 'field_account')) {
+                if ($account = taxonomy_term_load($field[0]['tid'])) {
+                    $info = _ktc_crm_get_user_info_work_data($account);
+                }
+            }
+            break;
+
+        case 'Personal':
+            $info = _ktc_crm_get_user_info_personal_data($user);
+            break;
+    }
+
+    return $info;
+}
+
+/*
+ * Get users personal data
+ */
+function _ktc_crm_get_user_info_personal_data($entity) {
+    $data = array();
+
+    // User ID
+    if ($entity->uid) {
+        $data['uid'] = $entity->uid;
+    }
+    // Employer
+    if ($field = field_get_items('user', $entity, 'field_employer_name')) {
+        $data['employer'] = $field[0]['value'];
+    }
+    // Job title
+    if ($field = field_get_items('user', $entity, 'field_jobposition')) {
+        $data['job_title'] = $field[0]['value'];
+    }
+    // Email
+    if ($entity->mail) {
+        $data['email'] = $entity->mail;
+    }
+    // LinkedIn
+    if ($field = field_get_items('user', $entity, 'field_linkedin')) {
+        $data['linked_in'] = $field[0]['value'];
+    }
+    // Twitter
+    if ($field = field_get_items('user', $entity, 'field_twitter_brugernavn')) {
+        $data['twitter'] = $field[0]['value'];
+    }
+    // Direct phone
+    if ($field = field_get_items('user', $entity, 'field_directe_telefon')) {
+        $data['direct_phone'] = $field[0]['value'];
+    }
+    // Cellphone
+    if ($field = field_get_items('user', $entity, 'field_cell')) {
+        $data['cellphone'] = $field[0]['value'];
+    }
+    // Firstname
+    if ($field = field_get_items('user', $entity, 'field_navn')) {
+        $data['firstname'] = $field[0]['value'];
+    }
+    // Lastname
+    if ($field = field_get_items('user', $entity, 'field_efternavn')) {
+        $data['lastname'] = $field[0]['value'];
+    }
+    // Full name
+    if ($data['firstname'] && $data['lastname']) {
+        $data['full_name'] = $data['firstname'] . ' ' . $data['lastname'];
+    }
+    // Address
+    if ($field = field_get_items('user', $entity, 'field_adresse')) {
+        $data['address'] = $field[0]['value'];
+    }
+    // Address 2
+    if ($field = field_get_items('user', $entity, 'field_adresse_2')) {
+        $data['address_2'] = $field[0]['value'];
+    }
+    // Zipcode
+    if ($field = field_get_items('user', $entity, 'field_zipcode')) {
+        $data['zipcode'] = $field[0]['value'];
+    }
+    // City
+    if ($field = field_get_items('user', $entity, 'field_city')) {
+        $data['city'] = $field[0]['value'];
+    }
+    // Country
+    if ($field = field_get_items('user', $entity, 'field_country')) {
+        $data['country'] = $field[0]['value'];
+    }
+    // Education
+    if ($field = field_get_items('user', $entity, 'field_uddannelser_og_kurser')) {
+        $data['education'] = $field[0]['value'];
+    }
+    // Special skills
+    if ($field = field_get_items('user', $entity, 'field_special_skills')) {
+        $data['special_skills'] = $field[0]['value'];
+    }
+
+    return $data;
+}
+
+/*
+ * Get users work data
+ */
+function _ktc_crm_get_user_info_work_data($entity) {
+    $data = array();
+
+    // Phone
+    if ($field = field_get_items('taxonomy_term', $entity, 'field_phone')) {
+        $data['phone'] = $field[0]['value'];
+    }
+    // EAN number
+    if ($field = field_get_items('taxonomy_term', $entity, 'field_ean')) {
+        $data['ean_number'] = $field[0]['value'];
+    }
+    // VAT number
+    if ($field = field_get_items('taxonomy_term', $entity, 'field_cvr')) {
+        $data['vat_number'] = $field[0]['value'];
+    }
+    // Address
+    if ($field = field_get_items('taxonomy_term', $entity, 'field_adresse')) {
+        $data['address'] = $field[0]['value'];
+    }
+    // Address 2
+    if ($field = field_get_items('taxonomy_term', $entity, 'field_adresse_2')) {
+        $data['address_2'] = $field[0]['value'];
+    }
+    // Zipcode
+    if ($field = field_get_items('taxonomy_term', $entity, 'field_zipcode')) {
+        $data['zipcode'] = $field[0]['value'];
+    }
+    // City
+    if ($field = field_get_items('taxonomy_term', $entity, 'field_city')) {
+        $data['city'] = $field[0]['value'];
+    }
+    // Country
+    if ($field = field_get_items('taxonomy_term', $entity, 'field_country')) {
+        $data['country'] = $field[0]['value'];
+    }
+
+    return $data;
+}
+
+
+/**
  * Get users address.
  * Data format: html, data
  */
