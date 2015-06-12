@@ -78,7 +78,9 @@ function ktc_content_types_image_default_styles() {
       ),
     ),
   );
-
+  
+  return $styles;
+}
 
 /**
  * Implements hook_node_info().
