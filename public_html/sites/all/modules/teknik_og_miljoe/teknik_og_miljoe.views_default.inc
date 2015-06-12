@@ -11,6 +11,153 @@ function teknik_og_miljoe_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'artikel_forfattere';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'field_collection_item';
+  $view->human_name = 'Artikel forfattere';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'ktc-user-profile';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Forbindelse: Field collection item: Entity with the Forfatter(e) (field_coforfattere) */
+  $handler->display->display_options['relationships']['field_coforfattere_node']['id'] = 'field_coforfattere_node';
+  $handler->display->display_options['relationships']['field_coforfattere_node']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_coforfattere_node']['field'] = 'field_coforfattere_node';
+  /* Felt: Field collection item: Field collection item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['label'] = '';
+  $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
+  /* Felt: Field collection item: Eksisterende bruger */
+  $handler->display->display_options['fields']['field_eksisterende_bruger']['id'] = 'field_eksisterende_bruger';
+  $handler->display->display_options['fields']['field_eksisterende_bruger']['table'] = 'field_data_field_eksisterende_bruger';
+  $handler->display->display_options['fields']['field_eksisterende_bruger']['field'] = 'field_eksisterende_bruger';
+  $handler->display->display_options['fields']['field_eksisterende_bruger']['label'] = '';
+  $handler->display->display_options['fields']['field_eksisterende_bruger']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_eksisterende_bruger']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_eksisterende_bruger']['settings'] = array(
+    'view_mode' => 'list3',
+    'links' => 0,
+  );
+  /* Felt: Field collection item: Foto af forfatter */
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['id'] = 'field_foto_af_forfatter';
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['table'] = 'field_data_field_foto_af_forfatter';
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['field'] = 'field_foto_af_forfatter';
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['label'] = '';
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['element_wrapper_class'] = 'ktc-user-profile-photo-container';
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  /* Felt: Felt: Stilling/titel */
+  $handler->display->display_options['fields']['field_jobposition']['id'] = 'field_jobposition';
+  $handler->display->display_options['fields']['field_jobposition']['table'] = 'field_data_field_jobposition';
+  $handler->display->display_options['fields']['field_jobposition']['field'] = 'field_jobposition';
+  $handler->display->display_options['fields']['field_jobposition']['label'] = '';
+  $handler->display->display_options['fields']['field_jobposition']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_jobposition']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_jobposition']['element_wrapper_class'] = 'ktc-user-profile-content-job-title';
+  $handler->display->display_options['fields']['field_jobposition']['element_default_classes'] = FALSE;
+  /* Felt: Felt: Efternavn */
+  $handler->display->display_options['fields']['field_efternavn']['id'] = 'field_efternavn';
+  $handler->display->display_options['fields']['field_efternavn']['table'] = 'field_data_field_efternavn';
+  $handler->display->display_options['fields']['field_efternavn']['field'] = 'field_efternavn';
+  $handler->display->display_options['fields']['field_efternavn']['label'] = '';
+  $handler->display->display_options['fields']['field_efternavn']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_efternavn']['element_label_colon'] = FALSE;
+  /* Felt: Felt: Fornavn + mellemnavn */
+  $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
+  $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
+  $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
+  $handler->display->display_options['fields']['field_navn']['label'] = '';
+  $handler->display->display_options['fields']['field_navn']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_navn']['alter']['text'] = '<div class="ktc-user-profile-content-name">[field_navn] [field_efternavn]</div>';
+  $handler->display->display_options['fields']['field_navn']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_navn']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_navn']['element_wrapper_class'] = 'ktc-user-profile-content';
+  $handler->display->display_options['fields']['field_navn']['element_default_classes'] = FALSE;
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_coforfattere_node';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Artikel forfattere */
+  $handler = $view->new_display('panel_pane', 'Artikel forfattere', 'panel_pane_1');
+  $handler->display->display_options['pane_category']['name'] = 'KTC';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'node_edit_form.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
+  $translatables['artikel_forfattere'] = array(
+    t('Master'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Antal elementer'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('« første'),
+    t('‹ forrige'),
+    t('næste ›'),
+    t('sidste »'),
+    t('field_coforfattere'),
+    t('.'),
+    t(','),
+    t('<div class="ktc-user-profile-content-name">[field_navn] [field_efternavn]</div>'),
+    t('Alle'),
+    t('Artikel forfattere'),
+    t('KTC'),
+  );
+  $export['artikel_forfattere'] = $view;
+
+  $view = new view();
   $view->name = 'artikler';
   $view->description = '';
   $view->tag = 'default';

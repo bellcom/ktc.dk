@@ -373,7 +373,8 @@ function teknik_og_miljoe_field_group_info() {
       3 => 'field_deadline',
       4 => 'field_highres_billeder',
       5 => 'field_send_opdateringer_til_alle',
-      6 => 'group_forfatterperm',
+      6 => 'field_medtaget_i_udgivelse',
+      7 => 'group_forfatterperm',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
