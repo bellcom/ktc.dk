@@ -9394,6 +9394,12 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-aside-dark a:focus {
   color: #fff;
 }
+.ktc-aside-green .ktc-aside-heading {
+  background-color: #36a145;
+}
+.ktc-aside-gold .ktc-aside-heading {
+  background-color: #d3a900;
+}
 .ktc-aside-dark {
   position: relative;
   background-color: #222b2f;
@@ -11373,6 +11379,7 @@ h6 + .ktc-date {
   vertical-align: middle;
 }
 .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-name {
+  font-weight: bold;
   margin-top: 0;
   padding-top: 0;
   margin-bottom: 3px;
@@ -11529,6 +11536,7 @@ h6 + .ktc-date {
   border: 2px solid #e9edee;
   border-radius: 3px;
   padding: 20px 0;
+  margin-bottom: 15px;
 }
 .ktc-logo .ktc-logo-image {
   display: block;
@@ -11593,6 +11601,34 @@ h6 + .ktc-date {
   font-size: 22px;
   color: #2c353a;
   margin: 6px 0;
+}
+.ktc-node-title-small,
+.ktc-node-title-small h1,
+.ktc-node-title-small h2,
+.ktc-node-title-small h3,
+.ktc-node-title-small h4,
+.ktc-node-title-small h5,
+.ktc-node-title-small h6 {
+  font-size: 18px;
+  color: #2c353a;
+  margin: 6px 0;
+}
+.ktc-node-title-xs {
+  font-size: 15px;
+  border-top: 2px solid #e9e9dd;
+  padding-top: 11px;
+  padding-bottom: 2px;
+  margin: 0;
+  margin-top: 15px;
+}
+.ktc-node-title-light,
+.ktc-node-title-light h1,
+.ktc-node-title-light h2,
+.ktc-node-title-light h3,
+.ktc-node-title-light h4,
+.ktc-node-title-light h5,
+.ktc-node-title-light h6 {
+  font-weight: normal;
 }
 .ktc-node-trompet {
   font-size: 14px;

@@ -147,7 +147,7 @@ function _ktc_crm_get_user_info_personal_data($entity) {
         $data['lastname'] = $field[0]['value'];
     }
     // Full name
-    if ($data['firstname'] && $data['lastname']) {
+    if ($data['firstname'] || $data['lastname']) {
         $data['full_name'] = $data['firstname'] . ' ' . $data['lastname'];
     }
     // Address
