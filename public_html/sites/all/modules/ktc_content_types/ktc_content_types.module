@@ -25,6 +25,8 @@ function ktc_content_types_entity_info_alter(&$entity_info) {
  * Implements hook_form_FORM_ID_alter().
  */
 function ktc_content_types_form_node_form_alter(&$form, $form_state, $form_id) {
+  // Properly hide hidden groups.
+  ktc_content_types_field_group_hide_field_groups($form, array('group_hidden'));
 
   // Remove n/a from radio
   unset($form['field_hearing_official']['und']['#options']['_none']); 
@@ -63,6 +65,27 @@ function ktc_content_types_form_node_form_alter(&$form, $form_state, $form_id) {
       }
     }
     $form['field_os2web_base_field_promote']['und']['#options'] = $options;
+  }
+}
+
+/**
+ * Hides field groups including children in a render array.
+ *
+ * @param array $element
+ *   A render array. Can be a form, node, user, ...
+ * @param array $group_names
+ *   An array of field group names that should be hidden.
+ */
+function ktc_content_types_field_group_hide_field_groups(&$element, $group_names) {
+  foreach ($group_names as $group_name) {
+    if (isset($element['#fieldgroups'][$group_name]) && isset($element['#group_children'])) {
+      // Hide the field group.
+      $element['#fieldgroups'][$group_name]->format_type = 'hidden';
+      // Hide the elements inside the field group.
+      foreach (array_keys($element['#group_children'], $group_name) as $field_name) {
+        $element[$field_name]['#access'] = FALSE;
+      }
+    }
   }
 }
 
