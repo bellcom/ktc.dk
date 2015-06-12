@@ -56,6 +56,7 @@ function ktc_content_types_image_default_styles() {
     ),
   );
 
+  // Exported image style: netvaerks_logo.
   $styles['netvaerks_logo'] = array(
     'name' => 'netvaerks_logo',
     'label' => 'Logo - Profil',
@@ -78,7 +79,7 @@ function ktc_content_types_image_default_styles() {
       ),
     ),
   );
-  
+
   return $styles;
 }
 
