@@ -56,15 +56,29 @@ function ktc_content_types_image_default_styles() {
     ),
   );
 
-  // Exported image style: netvaerks_logo.
   $styles['netvaerks_logo'] = array(
     'name' => 'netvaerks_logo',
-    'label' => 'Logo / Profil',
+    'label' => 'Logo - Profil',
     'effects' => array(
-      6 => NULL,
+      2 => array(
+        'label' => 'Skalér',
+        'help' => 'Skalering bevarer billedets højde-bredde-forhold. Hvis kun den ene dimension angives vil den anden blive beregnet.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 140,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
     ),
   );
-
+  
   return $styles;
 }
 
