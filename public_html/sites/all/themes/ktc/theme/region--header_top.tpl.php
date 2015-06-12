@@ -53,7 +53,13 @@
 
             <?php if ($logged_in): ?>
 
-              <!-- Begin - toggle -->
+                <!-- Begin - user display -->
+                <li>
+                    <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'header')); ?>
+                </li>
+                <!-- End - user display -->
+
+                <!-- Begin - toggle -->
               <li>
                 <a href="#" data-toggle="tooltip" data-placement="bottom" title="Dine genveje"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-toggle"></span></a>
               </li>

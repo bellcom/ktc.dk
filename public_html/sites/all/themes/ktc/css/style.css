@@ -10100,6 +10100,29 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   vertical-align: middle;
   padding-right: 0;
 }
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-profile {
+  padding-right: 10px;
+}
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-profile .ktc-user-profile-photo-container {
+  float: left;
+  margin-right: 5px;
+}
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-profile .ktc-user-profile-photo-container img {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  border-width: 2px;
+  border-style: solid;
+  background-color: transparent;
+  padding: 3px;
+  border-color: #e75311;
+}
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-profile a {
+  color: #e75311;
+  font-size: 16px;
+  line-height: 48px;
+}
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-login label {
   display: none;
 }

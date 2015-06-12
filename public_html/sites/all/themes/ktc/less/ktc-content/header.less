@@ -52,6 +52,37 @@
 				vertical-align: middle;
 				padding-right: 0; // BS reset
 
+				// User profile
+				.ktc-header-top-bar-user-profile {
+					padding-right: 10px;
+
+					// Photo
+					.ktc-user-profile-photo-container {
+						float: left;
+						margin-right: 5px;
+
+						// Image
+						img {
+							display: inline-block;
+							width: 48px;
+							height: 48px;
+							border-radius: 100%;
+							border-width: @ktc-user-profile-photo-border-width;
+							border-style: solid;
+							background-color: transparent;
+							padding: @ktc-user-profile-photo-border-distance;
+							border-color: @ktc-color-red;
+						}
+					}
+
+					// Link
+					a {
+						color: @ktc-color-red-font;
+						font-size: 16px;
+						line-height: 48px;
+					}
+				}
+
 				// User login
 				.ktc-header-top-bar-user-login {
 
