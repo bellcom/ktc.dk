@@ -37,7 +37,7 @@ function bootstrap_preprocess_region(&$variables) {
 
     case 'highlighted':
       $attributes['class'][] = 'highlighted';
-      $attributes['class'][] = 'jumbotron';
+      // $attributes['class'][] = 'jumbotron';
       break;
 
     case 'header':
