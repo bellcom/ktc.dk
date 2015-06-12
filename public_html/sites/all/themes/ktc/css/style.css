@@ -11339,10 +11339,20 @@ h6 + .ktc-date {
 .ktc-user-profile .ktc-user-profile-content {
   display: inherit;
 }
+.ktc-user-profile .ktc-user-profile-content p {
+  margin: 0;
+  margin-bottom: 2px;
+}
 .ktc-user-profile .ktc-user-profile-content .ktc-user-profile-content-name {
   margin-top: 0;
   padding-top: 0;
   margin-bottom: 3px;
+}
+.ktc-user-profile .ktc-user-profile-content .ktc-user-profile-content-job-title {
+  font-size: 10px;
+}
+.ktc-user-profile .ktc-user-profile-content .ktc-user-profile-content-employer {
+  font-weight: bold;
 }
 .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #e9edee;

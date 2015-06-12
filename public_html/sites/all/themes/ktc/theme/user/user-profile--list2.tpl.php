@@ -33,13 +33,10 @@
  *
  * @ingroup themeable
  */
-
-global $user;
-$account = $elements['#account'];
 ?>
 
 <!-- Begin - user profile - list 2 -->
-<section class="ktc-user-profile <?php if ($user->uid == $account->uid) { print 'ktc-red'; } ?>">
+<section class="ktc-user-profile <?php print $classes; ?>">
 
   <!-- Begin - profile photo -->
   <?php print render($user_profile['user_picture']); ?>
@@ -48,12 +45,12 @@ $account = $elements['#account'];
   <!-- Begin - profile content -->
   <div class="ktc-user-profile-content">
 
-      <?php if (isset($job_title)): ?>
-          <p class="ktc-user-profile-content-job-title"><?php print $job_title; ?></p>
+      <?php if (isset($personal['job_title'])): ?>
+          <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
       <?php endif ?>
 
-      <?php if (isset($user_name)): ?>
-          <h5 class="ktc-user-profile-content-name"><?php print $user_name; ?></h5>
+      <?php if (isset($personal['full_name'])): ?>
+          <h5 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h5>
       <?php endif ?>
 
   </div>

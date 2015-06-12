@@ -22,15 +22,9 @@
 
             <p><?php print $body_shortened; ?></p>
 
-            <div class="ktc-user-profile">
-                <?php if (isset($user_object)): ?>
-                    <?php print $image = theme('user_picture', array('account' => $user_object));?>
-                <?php endif; ?>
-                <div class="ktc-user-profile-content">
-                    <h5><?php print $user_name; ?></h5>
-                    <p><?php print $created_ago . ' ' . t('ago'); ?></p>
-                </div>
-            </div>
+            <?php if ($user_object): ?>
+                <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2')); ?>
+            <?php endif; ?>
 
         </div>
 

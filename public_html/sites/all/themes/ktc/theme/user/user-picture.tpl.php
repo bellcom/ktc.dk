@@ -17,6 +17,6 @@
 ?>
 <?php if ($user_picture): ?>
 <div class="ktc-user-profile-photo-container <?php print isset($role_class) ? $role_class: ''?>">
-  <?php print $user_picture; ?>
+    <?php print $user_picture; ?>
 </div>
 <?php endif; ?>
