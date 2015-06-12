@@ -1629,7 +1629,11 @@ function teknik_og_miljoe_field_default_field_instances() {
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
-          'ktc_article_prim' => 'ktc_article_prim',
+          'indholdsside' => 'indholdsside',
+          'ktc_content_image' => 0,
+          'listevisning' => 0,
+          'listevisning_stor' => 0,
+          'teaservisning' => 0,
         ),
       ),
       'file_directory' => '',
