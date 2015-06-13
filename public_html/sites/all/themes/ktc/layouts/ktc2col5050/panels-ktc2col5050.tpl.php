@@ -1,7 +1,7 @@
 <div class="row ktc2col5050" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <div class="col-md-6 col-sm-6 col-xs-12">
     <div id="panel-pane-ktc2col5050-left">
-      <?php print $content['content']; ?>
+			<?php print $content['content']; ?>
     </div>
   </div>
   <div class="col-md-6 col-sm-6 col-xs-12">
