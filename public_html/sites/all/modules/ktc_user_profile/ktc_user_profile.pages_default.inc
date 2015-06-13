@@ -47,28 +47,6 @@ function ktc_user_profile_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-55369f30-bd96-4e8f-b81d-d40c688d4f0d';
-    $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'brugerprifil_top-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'darkgray-box',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '55369f30-bd96-4e8f-b81d-d40c688d4f0d';
-    $display->content['new-55369f30-bd96-4e8f-b81d-d40c688d4f0d'] = $pane;
-    $display->panels['left'][0] = 'new-55369f30-bd96-4e8f-b81d-d40c688d4f0d';
-    $pane = new stdClass();
     $pane->pid = 'new-2743fafa-a238-438a-b45d-e199e0754e77';
     $pane->panel = 'left';
     $pane->type = 'token';
@@ -90,11 +68,11 @@ function ktc_user_profile_default_page_manager_handlers() {
       'css_class' => 'col-md-2 col-sm-2 col-xs-2',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '2743fafa-a238-438a-b45d-e199e0754e77';
     $display->content['new-2743fafa-a238-438a-b45d-e199e0754e77'] = $pane;
-    $display->panels['left'][1] = 'new-2743fafa-a238-438a-b45d-e199e0754e77';
+    $display->panels['left'][0] = 'new-2743fafa-a238-438a-b45d-e199e0754e77';
     $pane = new stdClass();
     $pane->pid = 'new-01cef55c-2185-4ffc-85c9-7dc21a3ae1bf';
     $pane->panel = 'left';
@@ -115,11 +93,11 @@ function ktc_user_profile_default_page_manager_handlers() {
       'css_class' => 'col-md-10 col-sm-10 col-xs-12',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '01cef55c-2185-4ffc-85c9-7dc21a3ae1bf';
     $display->content['new-01cef55c-2185-4ffc-85c9-7dc21a3ae1bf'] = $pane;
-    $display->panels['left'][2] = 'new-01cef55c-2185-4ffc-85c9-7dc21a3ae1bf';
+    $display->panels['left'][1] = 'new-01cef55c-2185-4ffc-85c9-7dc21a3ae1bf';
     $pane = new stdClass();
     $pane->pid = 'new-f24b66dc-9b9e-4a55-9994-c3928a7799be';
     $pane->panel = 'left';
@@ -140,8 +118,8 @@ function ktc_user_profile_default_page_manager_handlers() {
       'args' => '',
       'url' => '',
       'display' => 'block',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Brugerens ubhendlede høringer',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -149,15 +127,15 @@ function ktc_user_profile_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' pane-page-tabs col-md-12 col-xs-12',
+      'css_class' => 'ktc-content',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'f24b66dc-9b9e-4a55-9994-c3928a7799be';
     $display->content['new-f24b66dc-9b9e-4a55-9994-c3928a7799be'] = $pane;
-    $display->panels['left'][3] = 'new-f24b66dc-9b9e-4a55-9994-c3928a7799be';
+    $display->panels['left'][2] = 'new-f24b66dc-9b9e-4a55-9994-c3928a7799be';
     $pane = new stdClass();
     $pane->pid = 'new-06ecfa2e-ef6d-4228-91a1-4446ea8ceff9';
     $pane->panel = 'left';
@@ -172,15 +150,15 @@ function ktc_user_profile_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-md-12 col-sm-12 col-xs-12',
+      'css_class' => 'ktc-content',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '06ecfa2e-ef6d-4228-91a1-4446ea8ceff9';
     $display->content['new-06ecfa2e-ef6d-4228-91a1-4446ea8ceff9'] = $pane;
-    $display->panels['left'][4] = 'new-06ecfa2e-ef6d-4228-91a1-4446ea8ceff9';
+    $display->panels['left'][3] = 'new-06ecfa2e-ef6d-4228-91a1-4446ea8ceff9';
     $pane = new stdClass();
     $pane->pid = 'new-f866bc9f-a2c1-47c1-9b85-8705a69a731a';
     $pane->panel = 'right';
@@ -226,7 +204,8 @@ function ktc_user_profile_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' pane-page-tabs',
+      'css_class' => 'pane-page-tabs ktc-aside-action ktc-aside-tabs ktc-aside-tabs-2-col',
+      'template_suggestion' => 'page_tabs',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -295,14 +274,18 @@ function ktc_user_profile_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Notifikationer',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
@@ -318,7 +301,7 @@ function ktc_user_profile_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
-      'formatter' => 'hs_taxonomy_term_reference_hierarchical_text',
+      'formatter' => 'hs_taxonomy_term_reference_hierarchical_links',
       'delta_limit' => '0',
       'delta_offset' => '0',
       'delta_reversed' => 0,
