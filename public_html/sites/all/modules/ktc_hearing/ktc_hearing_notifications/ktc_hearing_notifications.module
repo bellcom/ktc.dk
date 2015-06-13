@@ -185,8 +185,11 @@ function ktc_hearing_notifications_notify_users($op, $hearing) {
 
           $token_data = array('user' => $user, 'node' => $hearing);
           $to = $user->mail;
+
           // Testing.
-          $to = 'tth@bellcom.dk';
+          if ($test_mail = variable_get('ktc_test_mail_address', FALSE)) {
+            $to = $test_mail;
+          }
           $language = $user->language;
 
           $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
