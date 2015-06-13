@@ -182,7 +182,9 @@ function ktc_netvaerk_notifications_node_presave($node) {
         $to = $user->mail;
 
         // Testing.
-        $to = 'tth@bellcom.dk';
+        if ($test_mail = variable_get('ktc_test_mail_address', FALSE)) {
+          $to = $test_mail;
+        }
         $language = $user->language;
 
         $params = array();
