@@ -468,7 +468,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'max_filesize' => '',
       'max_resolution' => '',
       'media_library_include_in_library' => FALSE,
-      'min_resolution' => '220x220',
+      'min_resolution' => '195x195',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -476,7 +476,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'medium',
+        'preview_image_style' => 'netvaerks_logo',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
