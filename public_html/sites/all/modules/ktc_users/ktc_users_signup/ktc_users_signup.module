@@ -263,7 +263,7 @@ function ktc_users_signup_form_submit(&$form, &$form_state) {
     }
 
     // Check to see if there already is a user with this mail address in crm.
-    if ($webuser) {
+    if ($webuserdto) {
       // If so, create the new user from this webuserdto.
       $form_state['#existing_contact'] = array_merge($fields, ktc_crm_map_webuserdto_to_edit_array($webuserdto));
       $form_state['rebuild'] = TRUE;
