@@ -311,6 +311,17 @@ function ktc_content_types_views_default_views() {
   /* Display: Pladser, tid og pris */
   $handler = $view->new_display('panel_pane', 'Pladser, tid og pris', 'panel_pane_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'row';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: Signup: Indholdselement */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
@@ -334,9 +345,9 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_event_seats']['table'] = 'field_data_field_event_seats';
   $handler->display->display_options['fields']['field_event_seats']['field'] = 'field_event_seats';
   $handler->display->display_options['fields']['field_event_seats']['label'] = 'Pladser';
-  $handler->display->display_options['fields']['field_event_seats']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_event_seats']['element_class'] = 'large-text';
-  $handler->display->display_options['fields']['field_event_seats']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_event_seats']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['field_event_seats']['element_class'] = 'ktc-node-title-light';
+  $handler->display->display_options['fields']['field_event_seats']['element_label_type'] = 'h5';
   $handler->display->display_options['fields']['field_event_seats']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_event_seats']['element_wrapper_class'] = 'col-md-4 col-sm-6 col-xs-6';
   $handler->display->display_options['fields']['field_event_seats']['element_default_classes'] = FALSE;
@@ -350,9 +361,9 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_date']['table'] = 'field_data_field_arrangement_date';
   $handler->display->display_options['fields']['field_arrangement_date']['field'] = 'field_arrangement_date';
   $handler->display->display_options['fields']['field_arrangement_date']['label'] = 'Tid';
-  $handler->display->display_options['fields']['field_arrangement_date']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_arrangement_date']['element_class'] = 'large-text';
-  $handler->display->display_options['fields']['field_arrangement_date']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_arrangement_date']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['field_arrangement_date']['element_class'] = 'ktc-node-title-light';
+  $handler->display->display_options['fields']['field_arrangement_date']['element_label_type'] = 'h5';
   $handler->display->display_options['fields']['field_arrangement_date']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_arrangement_date']['element_wrapper_class'] = 'col-md-4 col-sm-6 col-xs-6';
   $handler->display->display_options['fields']['field_arrangement_date']['element_default_classes'] = FALSE;
@@ -368,9 +379,9 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_price']['table'] = 'field_data_field_arrangement_price';
   $handler->display->display_options['fields']['field_arrangement_price']['field'] = 'field_arrangement_price';
   $handler->display->display_options['fields']['field_arrangement_price']['label'] = 'Pris';
-  $handler->display->display_options['fields']['field_arrangement_price']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_arrangement_price']['element_class'] = 'large-text';
-  $handler->display->display_options['fields']['field_arrangement_price']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_arrangement_price']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['field_arrangement_price']['element_class'] = 'ktc-node-title-light';
+  $handler->display->display_options['fields']['field_arrangement_price']['element_label_type'] = 'h5';
   $handler->display->display_options['fields']['field_arrangement_price']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_arrangement_price']['element_wrapper_class'] = 'col-md-4 col-xs-6';
   $handler->display->display_options['fields']['field_arrangement_price']['element_default_classes'] = FALSE;
@@ -380,6 +391,16 @@ function ktc_content_types_views_default_views() {
   /* Display: Målgruppe */
   $handler = $view->new_display('panel_pane', 'Målgruppe', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: Signup: Indholdselement */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
@@ -393,8 +414,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_target_group']['element_class'] = 'large-text';
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_target_group']['element_wrapper_class'] = 'col-xs-12';
+  $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'KTC';
   $handler->display->display_options['pane_category']['weight'] = '0';
