@@ -614,7 +614,7 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => '',
-      'template_suggestion' => 'comments-form',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 3;

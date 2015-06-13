@@ -5643,8 +5643,6 @@ button.close {
 .modal-footer:after,
 .ktc-aside .ktc-aside-body:before,
 .ktc-aside .ktc-aside-body:after,
-.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item:before,
-.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item:after,
 .ktc-footer:before,
 .ktc-footer:after,
 .ktc-node-header:before,
@@ -5671,7 +5669,6 @@ button.close {
 .panel-body:after,
 .modal-footer:after,
 .ktc-aside .ktc-aside-body:after,
-.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item:after,
 .ktc-footer:after,
 .ktc-node-header:after,
 .ktc-aside-filter .filter-box:after,
@@ -10948,18 +10945,51 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
 .view .date-next {
   background-color: transparent;
 }
+.ktc-comments-form {
+  background-color: #fff;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .ktc-comments-list {
+  margin-top: 2px;
   margin-left: -10px;
   margin-right: -10px;
   padding-left: 10px;
   padding-right: 10px;
   background-color: #e9edee;
+  margin-top: 30px;
+}
+.ktc-comments-list.ktc-well-large {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item {
+  border-bottom: 2px solid #fff;
+  padding: 15px 0;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item:last-child {
+  border-bottom: 0;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-item-wrapper {
+  display: table;
+  width: 100%;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-item-wrapper .ktc-user-profile-photo-container,
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-item-wrapper .ktc-comments-list-content {
+  display: table-cell;
+  vertical-align: top;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date {
+  font-size: 11px;
+  margin-bottom: 1px;
 }
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-user-profile-photo-container {
-  float: left;
+  width: 60px;
 }
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-user-profile-photo-container img {
-  display: inherit;
+  display: inline-block;
   height: auto;
   width: auto;
   max-width: 48px;
@@ -10967,9 +10997,8 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
   border-radius: 100%;
   border-width: 2px;
   border-style: solid;
-  border-color: #ffffff;
+  border-color: #fff;
   background-color: transparent;
-  margin-right: 10px;
   padding: 3px;
 }
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-content {
@@ -11008,6 +11037,16 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-content .ktc-date {
   color: #2c353a;
   font-size: 12px;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links {
+  padding-top: 10px;
+  text-align: right;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links ul {
+  margin: 0;
+}
+.ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links ul > li:last-child {
+  padding-right: 0;
 }
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links a {
   display: inline-block;
@@ -11585,11 +11624,16 @@ h6 + .ktc-date {
   height: 93px;
 }
 .ktc-well {
+  margin-top: 2px;
   margin-left: -10px;
   margin-right: -10px;
   padding-left: 10px;
   padding-right: 10px;
   background-color: #e9edee;
+}
+.ktc-well.ktc-well-large {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .ktc-node-title,
 .ktc-node-title h1,
@@ -12484,6 +12528,7 @@ h3,
 h4,
 h5,
 h6,
+strong,
 body.page-node .field-name-field-hearing-materials .field-label,
 body.page-taxonomy-term .field-name-field-hearing-materials .field-label,
 body.page-node .field-name-field-os2web-base-field-media .field-label,

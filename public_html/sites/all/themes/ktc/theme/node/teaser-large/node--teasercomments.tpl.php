@@ -1,4 +1,5 @@
 <?php if (!$page): ?>
+
     <!-- Begin - teaser large -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser-large"<?php print $attributes; ?>>
 
@@ -19,10 +20,12 @@
 
             <p><?php print $body_shortened; ?></p>
 
-            <div class="ktc-comments-wrapper">
+            <div class="ktc-comments-list">
+              <div class="ktc-comments-list-body">
                 <?php if (isset($comments_view)): ?>
-                    <?php print $comments_view; ?>
+                  <?php print $comments_view; ?>
                 <?php endif ?>
+              </div>
             </div>
 
         </div>

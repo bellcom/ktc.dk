@@ -47,7 +47,7 @@ function ktc_signup_block_link_content() {
     // signup permissions.  Let them know it's closed.
     if ($node && !$node->signup_status && !$direct_link = field_get_items('node', $node, 'field_link_to_signup')) {
       if (user_access('sign up for content')) {
-        $output .= '<div class="col-md-12 col-sm-12 col-xs-12">
+        $output .= '<div>
                     <h2>Tilmelding til arrangementet</h2>';
         // If they're logged in and already signed up, show their current
         // signup info and give them the option to cancel.
@@ -67,7 +67,7 @@ function ktc_signup_block_link_content() {
       if ($user->uid == 0) {
         // This is an anonymous user.
         if ($access = node_access('view', $node)) {
-          $output .= '<div class="col-md-12 col-sm-12 col-xs-12">
+          $output .= '<div>
                         <h2>Tilmelding til arrangementet</h2>
                         <h4>For medlem | <a href="/user?destination=node/' . $nid . '">Klik her </a>for at login og tilmelde dig</h4>
                       </div>';
@@ -82,7 +82,7 @@ function ktc_signup_block_link_content() {
         if (empty($signup)) {
           // Not yet signed up.
           if (user_access('sign up for content')) {
-            $output .= '<div class="col-md-12 col-sm-12 col-xs-12">
+            $output .= '<div>
                         <h2>Tilmelding til arrangementet</h2>';
             $output .= _ktc_signup_block_get_signup_link($node);
             $output .= '</div>';
@@ -90,8 +90,8 @@ function ktc_signup_block_link_content() {
         }
         else {
           // Already signed up, display cancel link.
-          $output .= '<div class="col-md-12 col-sm-12 col-xs-12">
-                        <h2>Tilmelding til arrangementet</h2>';
+          $output .= '<div>
+                        <h2>5Tilmelding til arrangementet</h2>';
           $output .= _ktc_signup_block_get_cancel_link($signup);
 
           $output .= '</div>';

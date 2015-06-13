@@ -13,6 +13,7 @@
 // Comments list
 .ktc-comments-list {
 	.ktc-well;
+	margin-top: 30px;
 
 	// Heading
 	.ktc-comments-list-heading {
@@ -26,25 +27,46 @@
 
 		// List item
 		.ktc-comments-list-item {
+			border-bottom: 2px solid #fff;
+			padding: 15px 0;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			.ktc-comments-list-item-wrapper {
+				display: table;
+				width: 100%;
+
+				.ktc-user-profile-photo-container,
+				.ktc-comments-list-content {
+					display: table-cell;
+					vertical-align: top;
+				}
+			}
+
+			.ktc-date {
+				font-size: floor(@font-size-base - 1px);
+				margin-bottom: 1px;
+			}
 
 			// Photo container
 			.ktc-user-profile-photo-container {
-				float: left;
+				width: 60px;
 
 				// Photo
 				img {
-					display: inherit;
+					display: inline-block;
 					height: auto;
 					width: auto;
 					max-width: 48px;
 					max-height: 48px;
 					border-radius: 100%;
-					border-width: @ktc-comments-photo-border-width;
+					border-width: @ktc-user-profile-photo-border-width;
 					border-style: solid;
-					border-color: @ktc-comments-default-photo-border-color;
+					border-color: #fff;
 					background-color: transparent;
-					margin-right: @ktc-comments-photo-content-spacing;
-					padding: @ktc-comments-photo-border-distance;
+					padding: @ktc-user-profile-photo-border-distance;
 				}
 			}
 
@@ -82,6 +104,19 @@
 
 			// Link
 			.ktc-comments-list-links {
+				padding-top: 10px;
+				text-align: right;
+
+				ul {
+					margin: 0;
+
+					> li {
+
+						&:last-child {
+							padding-right: 0;
+						}
+					}
+				}
 
 				// Links
 				a {
@@ -95,9 +130,6 @@
 				border: 2px solid #fff;
 				margin-top: -2px;
 			}
-
-			// Clearfix
-			&:extend(.clearfix all);
 		}
 	}
 }

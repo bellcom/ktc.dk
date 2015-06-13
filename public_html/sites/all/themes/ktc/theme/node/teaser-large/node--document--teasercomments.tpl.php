@@ -15,11 +15,13 @@
 
             <p><?php print $body_shortened; ?></p>
 
-            <div class="ktc-comments-wrapper">
-                <?php if (isset($comments_view)): ?>
-                    <?php print $comments_view; ?>
-                <?php endif ?>
+          <div class="ktc-comments-list">
+            <div class="ktc-comments-list-body">
+              <?php if (isset($comments_view)): ?>
+                <?php print $comments_view; ?>
+              <?php endif ?>
             </div>
+          </div>
 
         </div>
 

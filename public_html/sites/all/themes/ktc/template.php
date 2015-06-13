@@ -9,11 +9,29 @@
  */
 function ktc_form_comment_form_alter(&$form, &$form_state, &$form_id) {
   $form['comment_body']['#after_build'][] = 'configure_comment_form';
+//xdebug_break();
+
+  //
+  $form['#attributes']['class'][] = 'ktc-comments-form';
 }
 
 function configure_comment_form(&$form) {
   unset($form[LANGUAGE_NONE][0]['format']);
   return $form;
+}
+
+/*
+ * Implements template_preprocess_comment().
+ */
+function ktc_preprocess_comment(&$variables) {
+
+  //
+  $comment_obj = $variables['comment'];
+  $uid = $comment_obj->uid;
+  $user_obj = user_load($uid);
+
+  // Author
+  $variables['comment_author'] = ktc_crm_get_user_info($user_obj, 'personal');
 }
 
 /*
