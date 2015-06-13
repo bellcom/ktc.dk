@@ -672,6 +672,18 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filterkriterie: Indhold: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_tid_1']['id'] = 'field_status_tid_1';
+  $handler->display->display_options['filters']['field_status_tid_1']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_tid_1']['field'] = 'field_status_tid';
+  $handler->display->display_options['filters']['field_status_tid_1']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_status_tid_1']['value'] = array(
+    1840 => '1840',
+    1892 => '1892',
+  );
+  $handler->display->display_options['filters']['field_status_tid_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_status_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_status_tid_1']['vocabulary'] = 'hearing_status';
   /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -686,13 +698,18 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'hearing' => 'hearing',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filterkriterie: Indhold: Status (field_status) */
   $handler->display->display_options['filters']['field_status_tid']['id'] = 'field_status_tid';
   $handler->display->display_options['filters']['field_status_tid']['table'] = 'field_data_field_status';
   $handler->display->display_options['filters']['field_status_tid']['field'] = 'field_status_tid';
   $handler->display->display_options['filters']['field_status_tid']['value'] = array(
+    1836 => '1836',
+    1837 => '1837',
+    1838 => '1838',
     1839 => '1839',
   );
+  $handler->display->display_options['filters']['field_status_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_status_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_status_tid']['expose']['operator_id'] = 'field_status_tid_op';
   $handler->display->display_options['filters']['field_status_tid']['expose']['label'] = 'Status';
@@ -721,7 +738,11 @@ function ktc_hearing_views_default_views() {
     20 => 0,
     21 => 0,
     22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
   );
+  $handler->display->display_options['filters']['field_status_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_status_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_status_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_status_tid']['vocabulary'] = 'hearing_status';
