@@ -225,6 +225,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_message']['id'] = 'field_message';
   $handler->display->display_options['fields']['field_message']['table'] = 'field_data_field_message';
   $handler->display->display_options['fields']['field_message']['field'] = 'field_message';
+  $handler->display->display_options['fields']['field_message']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_message']['element_class'] = 'clearfix';
   $handler->display->display_options['fields']['field_message']['element_label_type'] = 'h3';
   $handler->display->display_options['fields']['field_message']['element_label_colon'] = FALSE;
@@ -263,54 +264,62 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_chairman']['id'] = 'field_chairman';
   $handler->display->display_options['fields']['field_chairman']['table'] = 'field_data_field_chairman';
   $handler->display->display_options['fields']['field_chairman']['field'] = 'field_chairman';
-  $handler->display->display_options['fields']['field_chairman']['element_class'] = 'col-md-6 col-sm-6 col-xm-12';
-  $handler->display->display_options['fields']['field_chairman']['element_label_class'] = 'col-md-6 col-sm-6 col-xm-12';
-  $handler->display->display_options['fields']['field_chairman']['element_wrapper_class'] = 'clearfix ';
+  $handler->display->display_options['fields']['field_chairman']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['field_chairman']['element_label_class'] = 'ktc-node-title-xs';
+  $handler->display->display_options['fields']['field_chairman']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_chairman']['settings'] = array(
-    'link' => 1,
+    'view_mode' => 'list3',
+    'links' => 1,
   );
   $handler->display->display_options['fields']['field_chairman']['delta_offset'] = '0';
   /* Felt: Indhold: Ansvarlig formand */
   $handler->display->display_options['fields']['field_responsible_foreman']['id'] = 'field_responsible_foreman';
   $handler->display->display_options['fields']['field_responsible_foreman']['table'] = 'field_data_field_responsible_foreman';
   $handler->display->display_options['fields']['field_responsible_foreman']['field'] = 'field_responsible_foreman';
-  $handler->display->display_options['fields']['field_responsible_foreman']['element_class'] = 'col-md-6 col-sm-6 col-xm-12';
-  $handler->display->display_options['fields']['field_responsible_foreman']['element_label_class'] = 'col-md-6 col-sm-6 col-xm-12';
-  $handler->display->display_options['fields']['field_responsible_foreman']['element_wrapper_class'] = 'clearfix ';
+  $handler->display->display_options['fields']['field_responsible_foreman']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['field_responsible_foreman']['element_label_class'] = 'ktc-node-title-xs';
+  $handler->display->display_options['fields']['field_responsible_foreman']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_responsible_foreman']['settings'] = array(
-    'link' => 1,
+    'view_mode' => 'list3',
+    'links' => 1,
   );
   /* Felt: Indhold: Tovholder */
   $handler->display->display_options['fields']['field_coordinator']['id'] = 'field_coordinator';
   $handler->display->display_options['fields']['field_coordinator']['table'] = 'field_data_field_coordinator';
   $handler->display->display_options['fields']['field_coordinator']['field'] = 'field_coordinator';
-  $handler->display->display_options['fields']['field_coordinator']['element_class'] = 'col-md-6 col-sm-6 col-xm-12';
-  $handler->display->display_options['fields']['field_coordinator']['element_label_class'] = 'col-md-6 col-sm-6 col-xm-12';
-  $handler->display->display_options['fields']['field_coordinator']['element_wrapper_class'] = 'clearfix ';
+  $handler->display->display_options['fields']['field_coordinator']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['field_coordinator']['element_label_class'] = 'ktc-node-title-xs';
+  $handler->display->display_options['fields']['field_coordinator']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_coordinator']['settings'] = array(
-    'link' => 1,
+    'view_mode' => 'list3',
+    'links' => 1,
   );
   $handler->display->display_options['fields']['field_coordinator']['delta_offset'] = '0';
   /* Felt: Indhold: Ansvarlig tovholder */
   $handler->display->display_options['fields']['field_responsible_admin']['id'] = 'field_responsible_admin';
   $handler->display->display_options['fields']['field_responsible_admin']['table'] = 'field_data_field_responsible_admin';
   $handler->display->display_options['fields']['field_responsible_admin']['field'] = 'field_responsible_admin';
-  $handler->display->display_options['fields']['field_responsible_admin']['element_class'] = 'col-md-6 col-sm-6 col-xs-6';
-  $handler->display->display_options['fields']['field_responsible_admin']['element_label_class'] = 'col-md-6 col-sm-6 col-xs-6';
-  $handler->display->display_options['fields']['field_responsible_admin']['element_wrapper_class'] = 'clearfix ';
+  $handler->display->display_options['fields']['field_responsible_admin']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['field_responsible_admin']['element_label_class'] = 'ktc-node-title-xs';
+  $handler->display->display_options['fields']['field_responsible_admin']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_responsible_admin']['settings'] = array(
-    'link' => 1,
+    'view_mode' => 'list3',
+    'links' => 1,
   );
   /* Felt: Indhold: Deltagere */
   $handler->display->display_options['fields']['field_attendees']['id'] = 'field_attendees';
   $handler->display->display_options['fields']['field_attendees']['table'] = 'field_data_field_attendees';
   $handler->display->display_options['fields']['field_attendees']['field'] = 'field_attendees';
+  $handler->display->display_options['fields']['field_attendees']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['field_attendees']['element_label_class'] = 'ktc-node-title-xs';
   $handler->display->display_options['fields']['field_attendees']['element_wrapper_class'] = 'clearfix';
+  $handler->display->display_options['fields']['field_attendees']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['field_attendees']['settings'] = array(
-    'link' => 1,
+    'view_mode' => 'list3',
+    'links' => 1,
   );
   $handler->display->display_options['fields']['field_attendees']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_attendees']['multi_type'] = 'ul';
+  $handler->display->display_options['fields']['field_attendees']['separator'] = '';
   $handler->display->display_options['pane_title'] = 'Høring deltagere/datoer';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
