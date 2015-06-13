@@ -27,7 +27,7 @@ if ($status == 'Under sammenskrivning' || $status == 'Under godkendelse') {
   $head_class = 'ktc-aside-gold';
 }
 ?>
-<div class="ktc-aside ktc-aside-dark ktc-aside-green">
+<div class="ktc-aside ktc-aside-dark ktc-aside-green ktc-section-full-width">
   <div class="ktc-aside-heading">
     <h1 class="ktc-aside-title"><?php print $title; ?> (<?php print $nid; ?>) - <?php print $type; ?></h1>
   </div>
