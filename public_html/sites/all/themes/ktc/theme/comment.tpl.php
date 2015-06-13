@@ -61,16 +61,21 @@
 ?>
 <div class="ktc-comments-list-item <?php print $classes; ?>"<?php print $attributes; ?>>
 
-  <?php print $picture ?>
+  <div class="ktc-comments-list-item-wrapper">
 
-  <div class="ktc-comments-list-content">
+    <?php print $picture ?>
 
-    <p class="ktc-date"><?php print $submitted; ?></p>
-    <?php
+    <div class="ktc-comments-list-content">
+
+      <p class="ktc-date"><strong><?php print l($comment_author['full_name'], 'user/' . $comment_author['uid']); ?></strong> <?php print $created; ?></p>
+
+      <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['links']);
       print render($content);
-    ?>
+      ?>
+
+    </div>
 
   </div>
 

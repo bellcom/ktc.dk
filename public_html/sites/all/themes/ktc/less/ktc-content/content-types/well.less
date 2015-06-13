@@ -3,9 +3,15 @@
 
 // Well
 .ktc-well {
+	margin-top: 2px;
 	margin-left: -( floor(@ktc-default-left-right-inner-spacing - @ktc-well-inner-spacing));
 	margin-right: -( floor(@ktc-default-left-right-inner-spacing - @ktc-well-inner-spacing));
 	padding-left: floor(@ktc-default-left-right-inner-spacing - @ktc-well-inner-spacing);
 	padding-right: floor(@ktc-default-left-right-inner-spacing - @ktc-well-inner-spacing);
 	background-color: @body-bg;
+
+	&.ktc-well-large {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 }
