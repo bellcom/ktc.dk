@@ -79,6 +79,7 @@ function ktc_crm_lookup_webuser_by_mail($mail) {
       'message' => $e->getMessage(),
       'method' => 'RetrieveWebUserByMail',
     ));
+    return 'error';
   }
 
   return FALSE;

@@ -243,6 +243,7 @@ function ktc_users_signup_form_submit(&$form, &$form_state) {
     ),
   );
 
+  
   // If the form is resubmitted with create_from_existing set, use this data
   // for the new user.
   if (isset($form_state['#create_from_existing'])) {
@@ -251,8 +252,18 @@ function ktc_users_signup_form_submit(&$form, &$form_state) {
     unset($form_state['#existing_contact']);
   }
   else {
+    $webuserdto = ktc_crm_lookup_webuser_by_mail($mail);
+
+    // If the return is 'error', break the signup process. We don't want to
+    // create users before we can talk to CRM.
+    if ($webuserdto == 'error') {
+      drupal_set_message(t('Der er sket en teknisk fejl, prøv venligst igen senere.'), 'error');
+      drupal_goto('user/signup');
+      return;
+    }
+
     // Check to see if there already is a user with this mail address in crm.
-    if ($webuserdto = ktc_crm_lookup_webuser_by_mail($mail)) {
+    if ($webuser) {
       // If so, create the new user from this webuserdto.
       $form_state['#existing_contact'] = array_merge($fields, ktc_crm_map_webuserdto_to_edit_array($webuserdto));
       $form_state['rebuild'] = TRUE;
