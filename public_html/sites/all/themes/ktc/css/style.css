@@ -10276,6 +10276,12 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-left: -15px;
   margin-right: -15px;
 }
+.ktc-content .ktc-section-top-no-margin {
+  margin-top: -10px;
+}
+.ktc-content .ktc-section-bottom-no-margin {
+  margin-bottom: -10px;
+}
 .ktc-content-wide {
   background-color: #ffffff;
   padding: 10px 60px;
@@ -10283,6 +10289,12 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-content-wide .ktc-section-full-width {
   margin-left: -60px;
   margin-right: -60px;
+}
+.ktc-content-wide .ktc-section-top-no-margin {
+  margin-top: -10px;
+}
+.ktc-content-wide .ktc-section-bottom-no-margin {
+  margin-bottom: -10px;
 }
 .region.no-panels .region-inner {
   background-color: #ffffff;
