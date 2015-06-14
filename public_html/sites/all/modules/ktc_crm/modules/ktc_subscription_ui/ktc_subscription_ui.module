@@ -214,7 +214,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
 
   $form['invoiceaccount'] = array(
     '#type' => 'value',
-    '#prefix' => '<div class="form-item form-group"><label>Firma</label><p>' . $top_level_account->name . '<br />' . $invoiceaccount->name . '<br />' . ktc_crm_get_user_address($account, 'Work') . '</p>',
+    '#prefix' => '<div class="form-item form-group"><label>Firma</label><p>' . $top_level_account->name . '<br />' . $invoiceaccount->name . '<br />' . ktc_users_get_user_address($account, 'Work') . '</p>',
     '#suffix' => '</div>',
     '#value' => array($invoiceaccount->tid),
   );
@@ -287,13 +287,13 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
 
   $recipient_addresses['Work'] = array(
     'Arbejde',
-    ktc_crm_get_user_address($account, 'Work'),
+    ktc_users_get_user_address($account, 'Work'),
     l(t('ret'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
   );
 
   $recipient_addresses['Private'] = array(
     'Privat',
-    ktc_crm_get_user_address($account, 'Private'),
+    ktc_users_get_user_address($account, 'Private'),
     l(t('ret'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
   );
 

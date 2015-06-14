@@ -30,7 +30,7 @@ function ktc_preprocess_comment(&$variables) {
   $user_obj = user_load($uid);
 
   // Author
-  $variables['comment_author'] = ktc_crm_get_user_info($user_obj, 'personal');
+  $variables['comment_author'] = ktc_users_get_user_info($user_obj, 'personal');
 }
 
 /*
@@ -895,10 +895,10 @@ function ktc_preprocess_user_profile(&$vars) {
   }
 
   // Work
-  $vars['work'] = ktc_crm_get_user_info($user_obj, 'work');
+  $vars['work'] = ktc_users_get_user_info($user_obj, 'work');
 
   // Personal
-  $vars['personal'] = ktc_crm_get_user_info($user_obj, 'personal');
+  $vars['personal'] = ktc_users_get_user_info($user_obj, 'personal');
 
 }
 

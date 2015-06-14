@@ -7,6 +7,286 @@
 include_once 'ktc_users.features.inc';
 
 /**
+ * Get users data.
+ */
+function ktc_users_get_user_info($user, $info_type) {
+  $info_type = ucfirst($info_type);
+  $info = array();
+
+  switch ($info_type) {
+    case 'Work':
+      if ($field = field_get_items('user', $user, 'field_account')) {
+        if ($account = taxonomy_term_load($field[0]['tid'])) {
+          $info = ktc_users_get_user_info_work_data($account);
+        }
+      }
+      else {
+        $info = ktc_users_get_user_info_old_work_data($user);
+      }
+      break;
+
+    case 'Personal':
+      $info = ktc_users_get_user_info_personal_data($user);
+      break;
+  }
+
+  return $info;
+}
+
+/**
+ * Return users personal data.
+ */
+function ktc_users_get_user_info_personal_data($entity) {
+  $data = array();
+
+  // User ID.
+  if ($entity->uid) {
+    $data['uid'] = $entity->uid;
+  }
+  // Job title.
+  if ($field = field_get_items('user', $entity, 'field_jobposition')) {
+    $data['job_title'] = $field[0]['value'];
+  }
+  // Email.
+  if ($entity->mail) {
+    $data['email'] = $entity->mail;
+  }
+  // LinkedIn.
+  if ($field = field_get_items('user', $entity, 'field_linkedin')) {
+    $data['linked_in'] = $field[0]['value'];
+  }
+  // Twitter.
+  if ($field = field_get_items('user', $entity, 'field_twitter_brugernavn')) {
+    $data['twitter'] = $field[0]['value'];
+  }
+  // Direct phone.
+  if ($field = field_get_items('user', $entity, 'field_directe_telefon')) {
+    $data['direct_phone'] = $field[0]['value'];
+  }
+  // Cellphone.
+  if ($field = field_get_items('user', $entity, 'field_cell')) {
+    $data['cellphone'] = $field[0]['value'];
+  }
+  // Firstname.
+  if ($field = field_get_items('user', $entity, 'field_navn')) {
+    $data['firstname'] = $field[0]['value'];
+  }
+  // Lastname.
+  if ($field = field_get_items('user', $entity, 'field_efternavn')) {
+    $data['lastname'] = $field[0]['value'];
+  }
+  // Full name.
+  if ($data['firstname'] || $data['lastname']) {
+    $data['full_name'] = $data['firstname'] . ' ' . $data['lastname'];
+  }
+  // Address.
+  if ($field = field_get_items('user', $entity, 'field_adresse')) {
+    $data['address'] = $field[0]['value'];
+  }
+  // Address 2.
+  if ($field = field_get_items('user', $entity, 'field_adresse_2')) {
+    $data['address_2'] = $field[0]['value'];
+  }
+  // Zipcode.
+  if ($field = field_get_items('user', $entity, 'field_zipcode')) {
+    $data['zipcode'] = $field[0]['value'];
+  }
+  // City.
+  if ($field = field_get_items('user', $entity, 'field_city')) {
+    $data['city'] = $field[0]['value'];
+  }
+  // Country.
+  if ($field = field_get_items('user', $entity, 'field_country')) {
+    $data['country'] = $field[0]['value'];
+  }
+  // Education.
+  if ($field = field_get_items('user', $entity, 'field_uddannelser_og_kurser')) {
+    $data['education'] = $field[0]['value'];
+  }
+  // Special skills.
+  if ($field = field_get_items('user', $entity, 'field_special_skills')) {
+    $data['special_skills'] = $field[0]['value'];
+  }
+
+  return $data;
+}
+
+/**
+ * Return legacy data for work place.
+ *
+ * This is only relevant while the user has not updated his/her userprofile
+ * to reference a company taxonomy
+ */
+function ktc_users_get_user_info_old_work_data($entity) {
+  if ($field = field_get_items('user', $entity, 'field_department')) {
+    $data['company'] = $field[0]['value'];
+  }
+  // Phone.
+  if ($field = field_get_items('user', $entity, 'field_phone')) {
+    $data['phone'] = $field[0]['value'];
+  }
+  // EAN number.
+  if ($field = field_get_items('user', $entity, 'field_ean')) {
+    $data['ean_number'] = $field[0]['value'];
+  }
+  // VAT number.
+  if ($field = field_get_items('user', $entity, 'field_cvr')) {
+    $data['vat_number'] = $field[0]['value'];
+  }
+  // Address.
+  if ($field = field_get_items('user', $entity, 'field_adresse')) {
+    $data['address'] = $field[0]['value'];
+  }
+  // Address 2.
+  if ($field = field_get_items('user', $entity, 'field_adresse_2')) {
+    $data['address_2'] = $field[0]['value'];
+  }
+  // Zipcode.
+  if ($field = field_get_items('user', $entity, 'field_zipcode')) {
+    $data['zipcode'] = $field[0]['value'];
+  }
+  // City.
+  if ($field = field_get_items('user', $entity, 'field_city')) {
+    $data['city'] = $field[0]['value'];
+  }
+  // Country.
+  if ($field = field_get_items('user', $entity, 'field_country')) {
+    $data['country'] = $field[0]['value'];
+  }
+
+  return $data;
+}
+
+/**
+ * Return data about users work place.
+ */
+function ktc_users_get_user_info_work_data($entity) {
+  $data = array();
+
+  // Company.
+  if ($entity->name) {
+    $data['company'] = $entity->name;
+  }
+  // Phone.
+  if ($field = field_get_items('taxonomy_term', $entity, 'field_phone')) {
+    $data['phone'] = $field[0]['value'];
+  }
+  // EAN number.
+  if ($field = field_get_items('taxonomy_term', $entity, 'field_ean')) {
+    $data['ean_number'] = $field[0]['value'];
+  }
+  // VAT number.
+  if ($field = field_get_items('taxonomy_term', $entity, 'field_cvr')) {
+    $data['vat_number'] = $field[0]['value'];
+  }
+  // Address.
+  if ($field = field_get_items('taxonomy_term', $entity, 'field_adresse')) {
+    $data['address'] = $field[0]['value'];
+  }
+  // Address 2.
+  if ($field = field_get_items('taxonomy_term', $entity, 'field_adresse_2')) {
+    $data['address_2'] = $field[0]['value'];
+  }
+  // Zipcode.
+  if ($field = field_get_items('taxonomy_term', $entity, 'field_zipcode')) {
+    $data['zipcode'] = $field[0]['value'];
+  }
+  // City.
+  if ($field = field_get_items('taxonomy_term', $entity, 'field_city')) {
+    $data['city'] = $field[0]['value'];
+  }
+  // Country.
+  if ($field = field_get_items('taxonomy_term', $entity, 'field_country')) {
+    $data['country'] = $field[0]['value'];
+  }
+
+  return $data;
+}
+
+/**
+ * Return the users address. in specified format.
+ */
+function ktc_users_get_user_address($user, $type, $data_format = 'html') {
+  $type = ucfirst($type);
+
+  // HTML.
+  if ($data_format == 'html') {
+    switch ($type) {
+      case 'Work':
+        if ($field = field_get_items('user', $user, 'field_account')) {
+          if ($account = taxonomy_term_load($field[0]['tid'])) {
+            $data = ktc_users_get_formatted_address($account, 'taxonomy_term', $data_format);
+          }
+        }
+        break;
+
+      case 'Private':
+        $data = ktc_users_get_formatted_address($user, 'user', $data_format);
+        break;
+    }
+  }
+
+  // Data. 
+  elseif ($data_format == 'data') {
+    switch ($type) {
+      case 'Work':
+        if ($field = field_get_items('user', $user, 'field_account')) {
+          if ($account = taxonomy_term_load($field[0]['tid'])) {
+            $data = ktc_users_get_formatted_address($account, 'taxonomy_term', $data_format);
+          }
+        }
+        break;
+
+      case 'Private':
+        $data = ktc_users_get_formatted_address($user, 'user', $data_format);
+        break;
+    }
+  }
+
+  return $data;
+}
+
+/**
+ * Return formatted address for entity (user/taxonomy {account}).
+ */
+function ktc_users_get_formatted_address($entity, $type, $data_format = 'html') {
+  $html = '';
+  $data = array();
+
+  if ($field = field_get_items($type, $entity, 'field_adresse')) {
+    $html = $field[0]['value'] . '<br />';
+    $data['address'] = $field[0]['value'];
+  }
+  if ($field = field_get_items($type, $entity, 'field_adresse_2')) {
+    $html .= $field[0]['value'] . '<br />';
+    $data['address_2'] = $field[0]['value'];
+  }
+  if ($field = field_get_items($type, $entity, 'field_zipcode')) {
+    $html .= $field[0]['value'] . ' ';
+    $data['zipcode'] = $field[0]['value'];
+  }
+  if ($field = field_get_items($type, $entity, 'field_city')) {
+    $html .= $field[0]['value'] . '<br />';
+    $data['city'] = $field[0]['value'];
+  }
+  if ($field = field_get_items($type, $entity, 'field_country')) {
+    $html .= $field[0]['value'];
+    $data['country'] = $field[0]['value'];
+  }
+
+  // Return value.
+  if ($data_format == 'html') {
+    $return = $html;
+  }
+  elseif ($data_format == 'data') {
+    $return = $data;
+  }
+
+  return $return;
+}
+
+
+/**
  * Implements hook_entity_info_alter().
  *
  * The first attribute in the array defines an arbitrary label for the view mode machine name.
