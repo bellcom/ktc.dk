@@ -53,13 +53,13 @@ function ktc_hearing_notifications_cron() {
   $time_now = date('Ymd');
 
   if ($cron_time < $time_now) {
-    $due_days = array(2, 12);
+    $due_days = array(2, 14);
 
     foreach ($due_days as $days) {
       $hearings = _ktc_hearing_notifications_get_hearings_due($days);
 
       foreach ($hearings as $hearing_nid) {
-        ktc_hearing_notifications_notify_users('notify', node_load($hearing_nid));
+        ktc_hearing_notifications_notify_users('notify-' . $days, node_load($hearing_nid));
       }
     }
   }
