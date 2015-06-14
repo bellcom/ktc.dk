@@ -338,7 +338,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' ktc-aside-no-stack',
+      'css_class' => ' ktc-aside-no-stack ktc-node-title-small ktc-node-title-light',
       'template_suggestion' => 'node_title',
     );
     $pane->extras = array();
