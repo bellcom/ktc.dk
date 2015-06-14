@@ -799,6 +799,10 @@ function ktc_preprocess_block(&$vars) {
 function ktc_get_node_create_link() {
   $menu = array();
   foreach (node_type_get_types() as $type) {
+
+    // Replace underscores with -
+    $type->type = str_replace("_", "-", $type->type);
+
     $item = menu_get_item('node/add/' . $type->type);
     if ($item['access']) {
       $menu[$type->type] = t('Opret') . ' ' . $type->name;
