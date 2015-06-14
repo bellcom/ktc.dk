@@ -7,7 +7,9 @@
    *
    * Also adds some cleafixes.
    */
-  $(window).load(function(){
+  $(window).wait(1000).load(function(){
+
+
 
     var $region_sidebar = $('.region-sidebar-second'),
         $spotboxes = $('.node-os2web-spotbox-box'),
