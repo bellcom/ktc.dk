@@ -832,8 +832,8 @@ function ktc_arrangement_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'darkgray-box',
-      'template_suggestion' => 'content',
+      'css_class' => 'ktc-aside-dark',
+      'template_suggestion' => '',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -858,7 +858,7 @@ function ktc_arrangement_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
-      'css_class' => '',
+      'css_class' => 'row',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
@@ -909,17 +909,17 @@ function ktc_arrangement_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => '',
-      'title' => '',
+      'title' => 'Status',
       'body' => '<div class="filter-box">
 <div class="ktc-filter-button-container">
-	<div class="btn btn-primary filter-link" data-filter="future" id="filter-all">
-		Kommende</div>
+<div class="btn btn-primary filter-link" data-filter="future" id="filter-all">Kommende</div>
 </div>
+
 <div class="ktc-filter-button-container">
-	<div class="btn btn-default filter-link" data-filter="old" id="filter-old">
-		Afholdte</div>
+<div class="btn btn-default filter-link" data-filter="old" id="filter-old">Afholdte</div>
 </div>
-</div>',
+</div>
+',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -929,7 +929,8 @@ function ktc_arrangement_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'period',
-      'css_class' => 'filter-box',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
+      'template_suggestion' => '',
     );
     $pane->extras = array();
     $pane->position = 1;
