@@ -14,7 +14,6 @@
 
     $('.filter-link').click(function(event){
       $container = $('#section-page-with-filter').find('.view-content:first');
-      $container.infinitescroll('unbind');
 
       // Change the buttons class.
       if (!$(this).hasClass(button_active)) {
@@ -107,7 +106,6 @@
         link = '/ajax/hoeringer/view/hearing/'+filter_value[1]+'/'+filter_value[2]+'/'+hearing_filter_value[0]+'/'+hearing_filter_value[1]+'/'+hearing_filter_value[2];
       }
 
-      console.log(link);
       jQuery.get(link, function(data){
 
         $('#section-page-with-filter .pane-content').html(data);
@@ -166,7 +164,6 @@
 
     $('.filter-pane-title').click(function() {
       var foldout = $(this).parent('.panel-pane').find('.pane-content').css('display');
-      console.log(foldout);
       var icon = $(this).closest('.panel-pane').find('.filter-fold');
       if (foldout == 'block') {
         $(this).closest('.pane-views-panes').find('.pane-content').css('display', 'none');
@@ -351,7 +348,6 @@
     filter_value.push(emner);
     filter_value.push(tags);
     filter_value.push(regioner);
-    console.log(filter_value);
     return filter_value;
   }
 
