@@ -176,7 +176,6 @@ function ktc_hearing_field_group_info() {
       1 => 'field_enrollment_deadlines',
       2 => 'field_official_date',
       3 => 'field_official_responsedate',
-      4 => 'field_hearing_archived',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -268,12 +267,13 @@ function ktc_hearing_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'group_content_access',
-      1 => 'field_titel_lang',
-      2 => 'field_typo3_uid',
-      3 => 'field_typo3_user_id',
-      4 => 'field_missing_files',
-      5 => 'field_os2web_base_field_hidlinks',
-      6 => 'path',
+      1 => 'field_hearing_archived',
+      2 => 'field_titel_lang',
+      3 => 'field_typo3_uid',
+      4 => 'field_typo3_user_id',
+      5 => 'field_missing_files',
+      6 => 'field_os2web_base_field_hidlinks',
+      7 => 'path',
     ),
     'format_type' => 'div',
     'format_settings' => array(
