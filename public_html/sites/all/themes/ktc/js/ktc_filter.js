@@ -1,6 +1,7 @@
 /* KTC filter script
 */
 ( function ($) {
+
     $(window).load(function(){
 
     var button = 'filter-all';
@@ -208,13 +209,16 @@
     }
   }
   function load_content() {
-    $container = $('#section-page-with-filter').find('.view-content:first');
+
+    $container = $('.masonry-wrapper');
 
     $container.imagesLoaded(function(){
 
-      $container.masonry({
-        columnWidth: '.switch-elements',
-      });
+        $container.masonry({
+            columnWidth: '.masonry-sizer',
+            itemSelector: '.masonry-item'
+        });
+
       /*
       $container.infinitescroll({
         state : {
