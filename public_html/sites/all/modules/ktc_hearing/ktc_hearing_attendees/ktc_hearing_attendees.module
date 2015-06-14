@@ -17,6 +17,20 @@ function ktc_hearing_attendees_init() {
 }
 
 /**
+ * Implements hook_form_alter().
+ */
+function ktc_hearing_attendees_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'ktc_hearing_permission_settings') {
+    $form['ktc_hearing_attendees_exclude_uids'] = array(
+      '#title' => 'Ekskluder disse uid`er fra høringsdeltagere',
+      '#description' => 'Adskilles af ",", f.eks "1,1974" brug ikke mellemrum eller andre specialtegn.',
+      '#type' => 'textfield',
+      '#default_value' => variable_get('ktc_hearing_attendees_exclude_uids'),
+    );
+  }
+}
+
+/**
  * Implements hook_field_widget_form_alter().
  */
 function ktc_hearing_attendees_field_widget_form_alter(&$element, &$form_state, $context) {
@@ -109,6 +123,12 @@ function ktc_hearing_attendees_get_group_members($id = NULL) {
     // Generate an array of members according to their grouprole.
     foreach ($memberships as $membership) {
       $member_uid = $membership->etid;
+
+      // Skip some users.
+      if (in_array($member_uid, explode(',', variable_get('ktc_hearing_attendees_exclude_uids')))) {
+        continue;
+      }
+
       $account = user_load($member_uid);
 
       $member_value = $account->name . ' (' . $member_uid . ')';
