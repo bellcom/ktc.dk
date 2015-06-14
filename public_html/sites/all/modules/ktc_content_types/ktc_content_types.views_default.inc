@@ -368,7 +368,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_date']['element_wrapper_class'] = 'col-md-4 col-sm-6 col-xs-6';
   $handler->display->display_options['fields']['field_arrangement_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'klokkeslet',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
