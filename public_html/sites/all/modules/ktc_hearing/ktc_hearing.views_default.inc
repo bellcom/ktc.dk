@@ -242,6 +242,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_hearing_materials']['table'] = 'field_data_field_hearing_materials';
   $handler->display->display_options['fields']['field_hearing_materials']['field'] = 'field_hearing_materials';
   $handler->display->display_options['fields']['field_hearing_materials']['label'] = '';
+  $handler->display->display_options['fields']['field_hearing_materials']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hearing_materials']['element_label_type'] = 'h3';
   $handler->display->display_options['fields']['field_hearing_materials']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hearing_materials']['click_sort_column'] = 'fid';
