@@ -24,6 +24,7 @@
  *
  * @ingroup themeable
  */
+global $user;
 ?>
 <?php if ($page['logo'] || $page['site_name'] || $page['primary_nav'] || $page['secondary_nav'] || $content): ?>
 
@@ -67,7 +68,7 @@
 
               <!-- Begin - settings -->
               <li>
-                <a href="/user" data-toggle="tooltip" data-placement="bottom" title="Indstillinger"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-settings"></span></a>
+                <a href="/user/<?php print $user->uid; ?>/edit" data-toggle="tooltip" data-placement="bottom" title="Indstillinger"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-settings"></span></a>
               </li>
               <!-- End - settings -->
 

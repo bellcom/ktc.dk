@@ -309,7 +309,7 @@ function ktc_preprocess_node(&$vars) {
         if( $news_type = field_get_items('node', $vars['node'], 'field_os2web_news_page_type') ) {
 
             // Is a TM news
-            if( $news_type[0]['tid'] == 1849 ) {
+            if( $news_type[0]['tid'] == 1898 ) {
 
                 // Classes contains ktc-red - remove ktc-red
                 if (($key = array_search('ktc-red', $vars['classes_array'])) !== false) {
