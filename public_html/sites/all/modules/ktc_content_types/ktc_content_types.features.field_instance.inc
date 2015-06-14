@@ -2989,12 +2989,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'hs_taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
         'content_taxonomy_opt_groups' => 0,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_hs',
       'weight' => 48,
     ),
   );
