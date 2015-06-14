@@ -760,6 +760,10 @@ function ktc_preprocess_panels_pane(&$vars) {
  * Implements hook_form_ID_alter().
  */
 function ktc_form_user_login_block_alter(&$form, &$form_state, $form_id) {
+
+  $form['name']['#attributes']['placeholder'] = t('E-mail adresse');
+  $form['pass']['#attributes']['placeholder'] = t('Adgangskode');
+
   unset($form['actions']['submit']['#value']);
   unset($form['links']);
 }
