@@ -60,8 +60,8 @@
               <p class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></p>
             <?php endif ?>
 
-            <?php if (isset($personal['employer'])): ?>
-              <p class="ktc-user-profile-content-employer"><?php print $personal['employer']; ?></p>
+            <?php if (isset($work['company'])): ?>
+              <p class="ktc-user-profile-content-employer"><?php print $work['company']; ?></p>
             <?php endif ?>
 
             <?php if (isset($work['address'])): ?>

@@ -3,8 +3,6 @@
  * @file
  * Template for ktc signup admin form page.
  */
-
-//xdebug_break();
 ?>
 
 <div class="row">

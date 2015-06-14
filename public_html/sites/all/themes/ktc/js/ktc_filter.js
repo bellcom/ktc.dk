@@ -1,7 +1,7 @@
 /* KTC filter script
 */
 ( function ($) {
-  $(document).ready(function(){
+    $(window).load(function(){
 
     var button = 'filter-all';
     var button_active = "btn-primary active";
@@ -211,6 +211,7 @@
     $container = $('#section-page-with-filter').find('.view-content:first');
 
     $container.imagesLoaded(function(){
+
       $container.masonry({
         columnWidth: '.switch-elements',
       });

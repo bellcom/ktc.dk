@@ -9,7 +9,6 @@
  */
 function ktc_form_comment_form_alter(&$form, &$form_state, &$form_id) {
   $form['comment_body']['#after_build'][] = 'configure_comment_form';
-//xdebug_break();
 
   //
   $form['#attributes']['class'][] = 'ktc-comments-form';
@@ -760,6 +759,10 @@ function ktc_preprocess_panels_pane(&$vars) {
  * Implements hook_form_ID_alter().
  */
 function ktc_form_user_login_block_alter(&$form, &$form_state, $form_id) {
+
+  $form['name']['#attributes']['placeholder'] = t('E-mail adresse');
+  $form['pass']['#attributes']['placeholder'] = t('Adgangskode');
+
   unset($form['actions']['submit']['#value']);
   unset($form['links']);
 }
@@ -889,6 +892,7 @@ function ktc_preprocess_user_profile(&$vars) {
 
   // Work
   $vars['work'] = ktc_crm_get_user_info($user_obj, 'work');
+
   // Personal
   $vars['personal'] = ktc_crm_get_user_info($user_obj, 'personal');
 

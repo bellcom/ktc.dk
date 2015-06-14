@@ -7,7 +7,15 @@
    *
    * Also adds some cleafixes.
    */
-  $(window).load(function(){
+console.log('hej');
+
+
+  $(window).wait(10000).load(function(){
+
+
+      console.log('hej');
+
+
 
     var $region_sidebar = $('.region-sidebar-second'),
         $spotboxes = $('.node-os2web-spotbox-box'),

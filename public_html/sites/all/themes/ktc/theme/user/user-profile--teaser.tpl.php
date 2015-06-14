@@ -53,8 +53,8 @@
           <h5 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h5>
       <?php endif ?>
 
-      <?php if (isset($personal['employer'])): ?>
-          <p class="ktc-user-profile-content-employer"><?php print $personal['employer']; ?></p>
+      <?php if (isset($work['company'])): ?>
+          <p class="ktc-user-profile-content-employer"><?php print $work['company']; ?></p>
       <?php endif ?>
 
   </div>
