@@ -629,7 +629,7 @@ function makemeeting_answers_form($form, $form_state, $item, $instance, $answer 
   }
   else {
     $user_object = user_load($user->uid); // Injected
-    $user_personal_information = ktc_crm_get_user_info($user_object, 'personal'); // Injected
+    $user_personal_information = ktc_users_get_user_info($user_object, 'personal'); // Injected
     $form['name']['#default_value'] = $user_personal_information['full_name']; // Modified
     //$form['name']['#default_value'] = format_username($user); (correct line)
     $form['name']['#disabled'] = TRUE;
