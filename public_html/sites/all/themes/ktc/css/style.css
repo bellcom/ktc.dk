@@ -10392,6 +10392,13 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-blue.ktc-list-display .ktc-list-display-body .ktc-list-display-headline > a:hover {
   color: #1f9bd7;
 }
+.masonry-sizer,
+.masonry-item {
+  float: left;
+  width: 49.99%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .ktc-article-section {
   padding: 20px 0;
 }
