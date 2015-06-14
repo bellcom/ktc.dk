@@ -9,7 +9,6 @@
  */
 function ktc_form_comment_form_alter(&$form, &$form_state, &$form_id) {
   $form['comment_body']['#after_build'][] = 'configure_comment_form';
-//xdebug_break();
 
   //
   $form['#attributes']['class'][] = 'ktc-comments-form';
@@ -893,6 +892,7 @@ function ktc_preprocess_user_profile(&$vars) {
 
   // Work
   $vars['work'] = ktc_crm_get_user_info($user_obj, 'work');
+
   // Personal
   $vars['personal'] = ktc_crm_get_user_info($user_obj, 'personal');
 

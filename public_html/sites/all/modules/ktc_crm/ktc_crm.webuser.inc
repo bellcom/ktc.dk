@@ -110,10 +110,6 @@ function _ktc_crm_get_user_info_personal_data($entity) {
     if ($entity->uid) {
         $data['uid'] = $entity->uid;
     }
-    // Employer
-    if ($field = field_get_items('user', $entity, 'field_employer_name')) {
-        $data['employer'] = $field[0]['value'];
-    }
     // Job title
     if ($field = field_get_items('user', $entity, 'field_jobposition')) {
         $data['job_title'] = $field[0]['value'];
@@ -188,6 +184,10 @@ function _ktc_crm_get_user_info_personal_data($entity) {
 function _ktc_crm_get_user_info_work_data($entity) {
     $data = array();
 
+    // Company
+    if ($entity->name) {
+      $data['company'] = $entity->name;
+    }
     // Phone
     if ($field = field_get_items('taxonomy_term', $entity, 'field_phone')) {
         $data['phone'] = $field[0]['value'];
