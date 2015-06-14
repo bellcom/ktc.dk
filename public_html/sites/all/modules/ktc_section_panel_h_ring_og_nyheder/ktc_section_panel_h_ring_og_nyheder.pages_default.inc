@@ -222,6 +222,38 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $display->content['new-b377e18c-88fd-405d-ae35-dbb5592b67a9'] = $pane;
     $display->panels['center'][4] = 'new-b377e18c-88fd-405d-ae35-dbb5592b67a9';
     $pane = new stdClass();
+    $pane->pid = 'new-4a866c68-b970-4d3c-9464-a73a27c831bf';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_flere_billeder';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'photoswipe',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'photoswipe_node_style' => 'medium',
+        'photoswipe_image_style' => '',
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '4a866c68-b970-4d3c-9464-a73a27c831bf';
+    $display->content['new-4a866c68-b970-4d3c-9464-a73a27c831bf'] = $pane;
+    $display->panels['center'][5] = 'new-4a866c68-b970-4d3c-9464-a73a27c831bf';
+    $pane = new stdClass();
     $pane->pid = 'new-023a351b-d90c-4e05-b3e9-7ebf28738193';
     $pane->panel = 'center';
     $pane->type = 'node_comments';
@@ -245,11 +277,11 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 6;
     $pane->locks = array();
     $pane->uuid = '023a351b-d90c-4e05-b3e9-7ebf28738193';
     $display->content['new-023a351b-d90c-4e05-b3e9-7ebf28738193'] = $pane;
-    $display->panels['center'][5] = 'new-023a351b-d90c-4e05-b3e9-7ebf28738193';
+    $display->panels['center'][6] = 'new-023a351b-d90c-4e05-b3e9-7ebf28738193';
     $pane = new stdClass();
     $pane->pid = 'new-20f14952-1f76-419e-ab06-4bada6cf8447';
     $pane->panel = 'center';
@@ -273,11 +305,11 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
-    $pane->position = 6;
+    $pane->position = 7;
     $pane->locks = array();
     $pane->uuid = '20f14952-1f76-419e-ab06-4bada6cf8447';
     $display->content['new-20f14952-1f76-419e-ab06-4bada6cf8447'] = $pane;
-    $display->panels['center'][6] = 'new-20f14952-1f76-419e-ab06-4bada6cf8447';
+    $display->panels['center'][7] = 'new-20f14952-1f76-419e-ab06-4bada6cf8447';
     $pane = new stdClass();
     $pane->pid = 'new-810064cf-194c-4da6-a6a6-e91927f3779b';
     $pane->panel = 'left';
