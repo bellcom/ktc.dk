@@ -282,6 +282,9 @@ function ktc_hearing_node_access($node, $op, $account) {
       if (_ktc_hearing_user_can_create_hearing($account)) {
         return NODE_ACCESS_ALLOW;
       }
+      else {
+        return NODE_ACCESS_DENY;
+      }
     }
   }
 }
@@ -884,9 +887,10 @@ function _ktc_hearing_is_open($hearing) {
  */
 function _ktc_hearing_user_can_create_hearing($account) {
   $user = user_load($account->uid);
-
   if ($usertype_field = field_get_items('user', $user, 'field_usertype')) {
-    if (in_array($usertype_field[0]['tid'], variable_get('ktc_hearings_usertype_create', array()))) {
+    $usertype_tid = $usertype_field[0]['tid'];
+    $allowed_usertypes = variable_get('ktc_hearings_usertype_create', array());
+    if (isset($allowed_usertypes[$usertype_tid]) && $allowed_usertypes[$usertype_tid]) {
       return TRUE;
     }
   }
