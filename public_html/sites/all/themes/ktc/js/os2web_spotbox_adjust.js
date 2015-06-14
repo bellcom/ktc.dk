@@ -7,7 +7,13 @@
    *
    * Also adds some cleafixes.
    */
-  $(window).wait(1000).load(function(){
+console.log('hej');
+
+
+  $(window).wait(10000).load(function(){
+
+
+      console.log('hej');
 
 
 
