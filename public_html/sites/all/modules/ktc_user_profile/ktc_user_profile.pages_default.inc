@@ -79,8 +79,8 @@ function ktc_user_profile_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
-      'template_suggestion' => 'content',
+      'css_class' => 'ktc-full-width',
+      'template_suggestion' => 'block',
     );
     $pane->extras = array();
     $pane->position = 0;

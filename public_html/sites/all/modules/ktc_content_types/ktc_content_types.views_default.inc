@@ -437,10 +437,10 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_address_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_arrangement_address_1']['type'] = 'simple_gmap';
   $handler->display->display_options['fields']['field_arrangement_address_1']['settings'] = array(
-    'include_map' => 1,
-    'include_static_map' => 0,
-    'iframe_width' => '225',
-    'iframe_height' => '225',
+    'include_map' => 0,
+    'include_static_map' => 1,
+    'iframe_width' => '220',
+    'iframe_height' => '120',
     'include_link' => 0,
     'link_text' => 'Kørselsvejledning',
     'zoom_level' => '14',
@@ -465,6 +465,28 @@ function ktc_content_types_views_default_views() {
 <p>[field_arrangement_address]</p>';
   $handler->display->display_options['fields']['field_arrangement_address']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_arrangement_address']['element_default_classes'] = FALSE;
+  /* Felt: Indhold: Adresse */
+  $handler->display->display_options['fields']['field_arrangement_address_2']['id'] = 'field_arrangement_address_2';
+  $handler->display->display_options['fields']['field_arrangement_address_2']['table'] = 'field_data_field_arrangement_address';
+  $handler->display->display_options['fields']['field_arrangement_address_2']['field'] = 'field_arrangement_address';
+  $handler->display->display_options['fields']['field_arrangement_address_2']['label'] = '';
+  $handler->display->display_options['fields']['field_arrangement_address_2']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_arrangement_address_2']['element_class'] = 'btn btn-default';
+  $handler->display->display_options['fields']['field_arrangement_address_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_address_2']['type'] = 'simple_gmap';
+  $handler->display->display_options['fields']['field_arrangement_address_2']['settings'] = array(
+    'include_map' => 0,
+    'include_static_map' => 0,
+    'iframe_width' => '200',
+    'iframe_height' => '200',
+    'include_link' => 1,
+    'link_text' => 'Kørselsvejledning',
+    'zoom_level' => '14',
+    'information_bubble' => 0,
+    'include_text' => 0,
+    'map_type' => 'm',
+    'langcode' => 'da',
+  );
   $handler->display->display_options['pane_category']['name'] = 'KTC';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -571,6 +593,161 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Titel, type og type - uden Addthis */
+  $handler = $view->new_display('panel_pane', 'Titel, type og type - uden Addthis', 'panel_pane_8');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'ktc-node-header';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Type */
+  $handler->display->display_options['fields']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['fields']['type_1']['table'] = 'node';
+  $handler->display->display_options['fields']['type_1']['field'] = 'type';
+  $handler->display->display_options['fields']['type_1']['label'] = '';
+  $handler->display->display_options['fields']['type_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type_1']['machine_name'] = TRUE;
+  /* Felt: Indhold: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['type']['element_wrapper_class'] = 'ktc-node-header-button ktc-node-header-button-[type_1]';
+  $handler->display->display_options['fields']['type']['element_default_classes'] = FALSE;
+  /* Felt: Indhold: Arrangementstype */
+  $handler->display->display_options['fields']['field_arrangement_type']['id'] = 'field_arrangement_type';
+  $handler->display->display_options['fields']['field_arrangement_type']['table'] = 'field_data_field_arrangement_type';
+  $handler->display->display_options['fields']['field_arrangement_type']['field'] = 'field_arrangement_type';
+  $handler->display->display_options['fields']['field_arrangement_type']['label'] = '';
+  $handler->display->display_options['fields']['field_arrangement_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_arrangement_type']['alter']['text'] = '- [field_arrangement_type]';
+  $handler->display->display_options['fields']['field_arrangement_type']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_arrangement_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_type']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_arrangement_type']['element_wrapper_class'] = 'ktc-node-header-button';
+  $handler->display->display_options['fields']['field_arrangement_type']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_type']['settings'] = array(
+    'link' => 0,
+  );
+  /* Felt: Indhold: Artikeltype */
+  $handler->display->display_options['fields']['field_artikeltype']['id'] = 'field_artikeltype';
+  $handler->display->display_options['fields']['field_artikeltype']['table'] = 'field_data_field_artikeltype';
+  $handler->display->display_options['fields']['field_artikeltype']['field'] = 'field_artikeltype';
+  $handler->display->display_options['fields']['field_artikeltype']['label'] = '';
+  $handler->display->display_options['fields']['field_artikeltype']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_artikeltype']['alter']['text'] = '- [field_artikeltype]';
+  $handler->display->display_options['fields']['field_artikeltype']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_artikeltype']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_artikeltype']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_artikeltype']['element_wrapper_class'] = 'ktc-node-header-button';
+  $handler->display->display_options['fields']['field_artikeltype']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_artikeltype']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_artikeltype']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Indhold: Dokumenttype */
+  $handler->display->display_options['fields']['field_document_type']['id'] = 'field_document_type';
+  $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
+  $handler->display->display_options['fields']['field_document_type']['label'] = '';
+  $handler->display->display_options['fields']['field_document_type']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_document_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_document_type']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_document_type']['element_wrapper_class'] = 'ktc-node-header-button';
+  $handler->display->display_options['fields']['field_document_type']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_document_type']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_document_type']['delta_offset'] = '0';
+  /* Felt: Indhold: Høringssvar type */
+  $handler->display->display_options['fields']['field_hearing_response_type']['id'] = 'field_hearing_response_type';
+  $handler->display->display_options['fields']['field_hearing_response_type']['table'] = 'field_data_field_hearing_response_type';
+  $handler->display->display_options['fields']['field_hearing_response_type']['field'] = 'field_hearing_response_type';
+  $handler->display->display_options['fields']['field_hearing_response_type']['label'] = '';
+  $handler->display->display_options['fields']['field_hearing_response_type']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_hearing_response_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hearing_response_type']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_hearing_response_type']['element_wrapper_class'] = 'ktc-node-header-button';
+  $handler->display->display_options['fields']['field_hearing_response_type']['element_default_classes'] = FALSE;
+  /* Felt: Indhold: Høringstype */
+  $handler->display->display_options['fields']['field_hearing_type']['id'] = 'field_hearing_type';
+  $handler->display->display_options['fields']['field_hearing_type']['table'] = 'field_data_field_hearing_type';
+  $handler->display->display_options['fields']['field_hearing_type']['field'] = 'field_hearing_type';
+  $handler->display->display_options['fields']['field_hearing_type']['label'] = '';
+  $handler->display->display_options['fields']['field_hearing_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hearing_type']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Indhold: Mødetype */
+  $handler->display->display_options['fields']['field_meeting_type']['id'] = 'field_meeting_type';
+  $handler->display->display_options['fields']['field_meeting_type']['table'] = 'field_data_field_meeting_type';
+  $handler->display->display_options['fields']['field_meeting_type']['field'] = 'field_meeting_type';
+  $handler->display->display_options['fields']['field_meeting_type']['label'] = '';
+  $handler->display->display_options['fields']['field_meeting_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_meeting_type']['alter']['text'] = '- [field_meeting_type]';
+  $handler->display->display_options['fields']['field_meeting_type']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_meeting_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_meeting_type']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_meeting_type']['element_wrapper_class'] = 'ktc-node-header-button';
+  $handler->display->display_options['fields']['field_meeting_type']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_meeting_type']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_meeting_type']['settings'] = array(
+    'link' => 0,
+  );
+  /* Felt: Indhold: Netværkstype */
+  $handler->display->display_options['fields']['field_netvaerkstype']['id'] = 'field_netvaerkstype';
+  $handler->display->display_options['fields']['field_netvaerkstype']['table'] = 'field_data_field_netvaerkstype';
+  $handler->display->display_options['fields']['field_netvaerkstype']['field'] = 'field_netvaerkstype';
+  $handler->display->display_options['fields']['field_netvaerkstype']['label'] = '';
+  $handler->display->display_options['fields']['field_netvaerkstype']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_netvaerkstype']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Indhold: Nyhedstype */
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['id'] = 'field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['table'] = 'field_data_field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['field'] = 'field_os2web_news_page_type';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['alter']['text'] = '- [field_os2web_news_page_type]';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['element_wrapper_class'] = 'ktc-node-header-button';
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_news_page_type']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Indhold: Produkt type */
+  $handler->display->display_options['fields']['field_product_type']['id'] = 'field_product_type';
+  $handler->display->display_options['fields']['field_product_type']['table'] = 'field_data_field_product_type';
+  $handler->display->display_options['fields']['field_product_type']['field'] = 'field_product_type';
+  $handler->display->display_options['fields']['field_product_type']['label'] = '';
+  $handler->display->display_options['fields']['field_product_type']['element_label_colon'] = FALSE;
+  /* Felt: Indhold: Type */
+  $handler->display->display_options['fields']['field_factbox_type']['id'] = 'field_factbox_type';
+  $handler->display->display_options['fields']['field_factbox_type']['table'] = 'field_data_field_factbox_type';
+  $handler->display->display_options['fields']['field_factbox_type']['field'] = 'field_factbox_type';
+  $handler->display->display_options['fields']['field_factbox_type']['label'] = '';
+  $handler->display->display_options['fields']['field_factbox_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_factbox_type']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Indhold: Kommentarantal */
+  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['element_type'] = '0';
+  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['comment_count']['element_wrapper_class'] = 'ktc-node-header-button ktc-node-header-button-comment pull-right';
+  $handler->display->display_options['fields']['comment_count']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['separator'] = ' ';
+  /* Felt: Indholdsstatistik: Totale visninger */
+  $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
+  $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['label'] = '';
+  $handler->display->display_options['fields']['totalcount']['element_type'] = '0';
+  $handler->display->display_options['fields']['totalcount']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['totalcount']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['totalcount']['element_wrapper_class'] = 'ktc-node-header-button ktc-node-header-button-viewers pull-right';
+  $handler->display->display_options['fields']['totalcount']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['totalcount']['separator'] = ' ';
+  $handler->display->display_options['pane_category']['name'] = 'KTC';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $translatables['ktc_full_node_field_displays'] = array(
     t('Master'),
     t('Logo'),
@@ -611,6 +788,7 @@ function ktc_content_types_views_default_views() {
     t('<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>'),
     t('Oprettet af'),
     t('Logo på Netværk'),
+    t('Titel, type og type - uden Addthis'),
   );
   $export['ktc_full_node_field_displays'] = $view;
 
