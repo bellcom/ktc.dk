@@ -19,13 +19,13 @@
 <?php if ($content['right']) { ?>
 
   <!-- Begin - left -->
-  <div class="col-md-8 pane-content">
+  <div class="col-xs-12 col-sm-8 col-sm-pull-4 pane-content">
     <?php print $content['left']; ?>
   </div>
   <!-- End - left -->
 
   <!-- Begin - right -->
-  <div class="col-md-4 pane-sidebar">
+  <div class="col-xs-12 col-sm-4 col-sm-push-8 pane-sidebar">
     <?php print $content['right']; ?>
   </div>
   <!-- End - right -->

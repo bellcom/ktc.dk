@@ -1,9 +1,19 @@
-
-
 .masonry-sizer,
 .masonry-item {
 	float: left;
-	width: 49.99%;
+	width: 100%;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+// Tablet and above
+@media (min-width: @screen-sm-min) {
+
+	.masonry-sizer,
+	.masonry-item {
+		float: left;
+		width: 49.99%;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }
