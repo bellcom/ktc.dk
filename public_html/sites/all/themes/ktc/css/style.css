@@ -10944,6 +10944,7 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
 .ktc-gallery-wrapper {
   border-top: 10px solid #e9edee;
   border-bottom: 10px solid #e9edee;
+  padding: 10px 0;
   margin-left: -15px;
   margin-right: -15px;
   padding-left: 15px;
