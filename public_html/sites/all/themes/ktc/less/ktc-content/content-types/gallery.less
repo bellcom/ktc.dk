@@ -1,10 +1,14 @@
 // Wrapper
 .ktc-gallery-wrapper {
+	border-top: 10px solid @body-bg;
+	border-bottom: 10px solid @body-bg;
+	.ktc-mixin-content-full-width();
 
 	// Links (image containers)
 	a {
-		.make-xs-column(3);
-		.make-sm-column(6);
-		margin-bottom: @grid-gutter-width;
+		.make-xs-column(6);
+		.make-sm-column(3);
+		margin-top: floor(@grid-gutter-width / 2);
+		margin-bottom: floor(@grid-gutter-width / 2);
 	}
 }

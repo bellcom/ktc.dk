@@ -10941,19 +10941,28 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active {
   border-color: #102e14;
 }
+.ktc-gallery-wrapper {
+  border-top: 10px solid #e9edee;
+  border-bottom: 10px solid #e9edee;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .ktc-gallery-wrapper a {
   float: left;
-  width: 25%;
+  width: 50%;
   position: relative;
   min-height: 1px;
   padding-left: 10px;
   padding-right: 10px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 @media (min-width: 768px) {
   .ktc-gallery-wrapper a {
     float: left;
-    width: 50%;
+    width: 25%;
   }
 }
 .calendar-calendar td {
