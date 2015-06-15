@@ -46,7 +46,12 @@ function ktc_form_comment_form_alter(&$form, &$form_state, &$form_id) {
     $form['actions']['submit']['#attributes']['class'][] = 'ktc-footer-button';
     $form['actions']['submit']['#attributes']['class'][] = 'pull-right';
     $form['actions']['submit']['#value'] = t('Send kommentar');
+}
 
+function ktc_comment_post_forbidden($variables) {
+    $node = $variables ['node'];
+    global $user;
+    xdebug_break();
 }
 
 function configure_comment_form(&$form) {

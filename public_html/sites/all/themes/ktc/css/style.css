@@ -11959,6 +11959,9 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.pull-right {
   float: right;
 }
+.ktc-node-header .ktc-node-header-button.ktc-node-header-button-type {
+  font-weight: normal;
+}
 .ktc-node-header .ktc-node-header-button:before {
   display: block;
   position: absolute;
