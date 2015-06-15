@@ -302,14 +302,14 @@ function ktc_preprocess_node(&$vars) {
     $vars['statistics_count'] = 0;
   }
 
-    // Teaser and news
+    // News teaser
     if ($vars['elements']['#view_mode'] == 'teaser' && $vars['type'] == 'os2web_base_news') {
 
-        // Newstype is set
-        if( $news_type = field_get_items('node', $vars['node'], 'field_os2web_news_page_type') ) {
+        // Promote to is set
+        if( $promote_to = field_get_items('node', $vars['node'], 'field_os2web_base_field_promote') ) {
 
             // Is a TM news
-            if( $news_type[0]['tid'] == 1898 ) {
+            if( $promote_to[0]['tid'] == 1902 ) {
 
                 // Classes contains ktc-red - remove ktc-red
                 if (($key = array_search('ktc-red', $vars['classes_array'])) !== false) {
