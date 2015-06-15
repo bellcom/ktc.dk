@@ -98,6 +98,18 @@ function ktc_hearing_menu() {
 }
 
 /**
+ * Implements hook_permission().
+ */
+function ktc_hearing_permission() {
+  return array(
+    'administer ktc hearings' => array(
+      'title' => 'Administrer KTC høringer',
+      'description' => 'Giv tilladelse til at ændre indstillinger for høringsmodulet.',
+    ),
+  );
+}
+
+/**
  * Implements hook_theme().
  */
 function ktc_hearing_theme() {
