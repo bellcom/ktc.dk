@@ -10941,6 +10941,21 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active {
   border-color: #102e14;
 }
+.ktc-gallery-wrapper a {
+  float: left;
+  width: 25%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .ktc-gallery-wrapper a {
+    float: left;
+    width: 50%;
+  }
+}
 .calendar-calendar td {
   text-align: center;
 }
