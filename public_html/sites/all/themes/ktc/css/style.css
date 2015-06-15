@@ -10395,9 +10395,18 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .masonry-sizer,
 .masonry-item {
   float: left;
-  width: 49.99%;
+  width: 100%;
   padding-left: 10px;
   padding-right: 10px;
+}
+@media (min-width: 768px) {
+  .masonry-sizer,
+  .masonry-item {
+    float: left;
+    width: 49.99%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 .ktc-article-section {
   padding: 20px 0;
