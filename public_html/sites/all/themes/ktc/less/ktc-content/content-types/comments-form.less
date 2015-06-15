@@ -2,4 +2,85 @@
 .ktc-comments-form {
 	background-color: #fff;
 	.ktc-mixin-content-full-width();
+	padding-top: @ktc-default-body-top-bottom-inner-spacing;
+	margin-bottom: -(@ktc-default-body-top-bottom-inner-spacing);
+
+	.ktc-comments-form-content {
+		display: table;
+		width: 100%;
+		margin-bottom: @ktc-default-body-top-bottom-inner-spacing;
+	}
+
+	// Photo container
+	.ktc-user-profile-photo-container {
+		display: table-cell;
+		width: 60px;
+
+		// Photo
+		img {
+			display: inline-block;
+			height: auto;
+			width: auto;
+			max-width: 48px;
+			max-height: 48px;
+			border-radius: 100%;
+			border-width: @ktc-user-profile-photo-border-width;
+			border-style: solid;
+			border-color: @ktc-color-red-background;
+			background-color: transparent;
+			padding: @ktc-user-profile-photo-border-distance;
+		}
+	}
+
+	// Textarea wrapper
+	.ktc-comments-form-textarea-wrapper {
+		display: table-cell;
+		vertical-align: top;
+
+		// Textarea
+		.form-control {
+			background-color: transparent;
+			border: 0;
+			padding: 0;
+			resize: none;
+			.box-shadow(none);
+		}
+
+		// Hide fields
+		.form-required,
+		.grippie {
+			display: none;
+		}
+	}
+
+	// Buttons
+	.form-actions {
+		.ktc-mixin-content-full-width();
+		.ktc-footer;
+
+		.ktc-footer-button {
+
+			&,
+			&:hover,
+			&:focus {
+				min-width: initial;
+				padding: 0;
+				margin: 0;
+				font-weight: normal;
+				border: 0;
+				background-color: transparent;
+				outline: 0;
+				color: #fff;
+			}
+
+			&:before {
+				display: none;
+			}
+
+			// Icon
+			.icon {
+				display: none;
+			}
+		}
+	}
 }
