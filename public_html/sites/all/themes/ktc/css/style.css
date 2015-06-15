@@ -10441,6 +10441,22 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article-section.ktc-article-type-citat {
   border-top: 1px solid #e0e4e5;
   border-bottom: 1px solid #e0e4e5;
+  text-align: center;
+}
+.ktc-article-section.ktc-article-type-citat .ktc-article-section-headline h1,
+.ktc-article-section.ktc-article-type-citat .ktc-article-section-headline h2,
+.ktc-article-section.ktc-article-type-citat .ktc-article-section-headline h3,
+.ktc-article-section.ktc-article-type-citat .ktc-article-section-headline h4,
+.ktc-article-section.ktc-article-type-citat .ktc-article-section-headline h5,
+.ktc-article-section.ktc-article-type-citat .ktc-article-section-headline h6 {
+  font-weight: normal;
+  font-style: italic;
+}
+.ktc-article-section.ktc-article-type-citat .ktc-article-section-body,
+.ktc-article-section.ktc-article-type-citat .ktc-article-section-body span,
+.ktc-article-section.ktc-article-type-citat .ktc-article-section-body p {
+  font-style: italic;
+  color: #36a145;
 }
 .ktc-article-type-faktaboksgreen {
   background-color: #36a145;
@@ -10453,9 +10469,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article-type-faktaboksgreen .ktc-article-section-headline h6 {
   color: #6ecf7c;
 }
-.ktc-article-type-faktaboksgreen .ktc-article-body,
-.ktc-article-type-faktaboksgreen .ktc-article-body span,
-.ktc-article-type-faktaboksgreen .ktc-article-body p {
+.ktc-article-type-faktaboksgreen .ktc-article-section-body,
+.ktc-article-type-faktaboksgreen .ktc-article-section-body span,
+.ktc-article-type-faktaboksgreen .ktc-article-section-body p {
   color: #ffffff;
 }
 .ktc-article-type-faktaboksyellow {
@@ -10469,9 +10485,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article-type-faktaboksyellow .ktc-article-section-headline h6 {
   color: #ffd83a;
 }
-.ktc-article-type-faktaboksyellow .ktc-article-body,
-.ktc-article-type-faktaboksyellow .ktc-article-body span,
-.ktc-article-type-faktaboksyellow .ktc-article-body p {
+.ktc-article-type-faktaboksyellow .ktc-article-section-body,
+.ktc-article-type-faktaboksyellow .ktc-article-section-body span,
+.ktc-article-type-faktaboksyellow .ktc-article-section-body p {
   color: #ffffff;
 }
 .ktc-article-type-faktaboksblue {
@@ -10485,9 +10501,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article-type-faktaboksblue .ktc-article-section-headline h6 {
   color: #71c3eb;
 }
-.ktc-article-type-faktaboksblue .ktc-article-body,
-.ktc-article-type-faktaboksblue .ktc-article-body span,
-.ktc-article-type-faktaboksblue .ktc-article-body p {
+.ktc-article-type-faktaboksblue .ktc-article-section-body,
+.ktc-article-type-faktaboksblue .ktc-article-section-body span,
+.ktc-article-type-faktaboksblue .ktc-article-section-body p {
   color: #ffffff;
 }
 .ktc-article-type-faktaboksblack {
@@ -10501,9 +10517,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article-type-faktaboksblack .ktc-article-section-headline h6 {
   color: #586a74;
 }
-.ktc-article-type-faktaboksblack .ktc-article-body,
-.ktc-article-type-faktaboksblack .ktc-article-body span,
-.ktc-article-type-faktaboksblack .ktc-article-body p {
+.ktc-article-type-faktaboksblack .ktc-article-section-body,
+.ktc-article-type-faktaboksblack .ktc-article-section-body span,
+.ktc-article-type-faktaboksblack .ktc-article-section-body p {
   color: #ffffff;
 }
 .ktc-article-section-wrapper .field-collection-view {

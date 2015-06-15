@@ -64,6 +64,29 @@
 	&.ktc-article-type-citat {
 		border-top: 1px solid #e0e4e5;
 		border-bottom: 1px solid #e0e4e5;
+		text-align: center;
+
+		// Headline
+		.ktc-article-section-headline {
+
+			// Headlines
+			h1, h2, h3, h4, h5, h6 {
+				font-weight: normal;
+				font-style: italic;
+			}
+		}
+
+		// Body
+		.ktc-article-section-body {
+
+			&,
+			span,
+			p {
+				font-style: italic;
+				color: @ktc-color-green-font;
+			}
+		}
+
 	}
 
 	// Person
@@ -90,7 +113,7 @@
 		}
 
 		// Body
-		.ktc-article-body {
+		.ktc-article-section-body {
 
 			// Text
 			&, span, p {

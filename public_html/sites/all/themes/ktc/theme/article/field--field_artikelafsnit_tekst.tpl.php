@@ -46,7 +46,7 @@
 ?>
 
 <!-- Begin - text -->
-<div class="ktc-article-body <?php print $classes; ?>"<?php print $attributes; ?>>
+<div class="ktc-article-section-body <?php print $classes; ?>"<?php print $attributes; ?>>
 
   <?php if (!$label_hidden): ?>
     <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
