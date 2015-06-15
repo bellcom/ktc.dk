@@ -240,7 +240,11 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-no-stack',
+      'template_suggestion' => 'node_title',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
@@ -273,6 +277,35 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->uuid = 'a2876f4c-61a7-434e-ba15-6b55c661e0aa';
     $display->content['new-a2876f4c-61a7-434e-ba15-6b55c661e0aa'] = $pane;
     $display->panels['content'][3] = 'new-a2876f4c-61a7-434e-ba15-6b55c661e0aa';
+    $pane = new stdClass();
+    $pane->pid = 'new-d719a157-3846-432d-b0c3-21ef4dd0a5a3';
+    $pane->panel = 'content';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'd719a157-3846-432d-b0c3-21ef4dd0a5a3';
+    $display->content['new-d719a157-3846-432d-b0c3-21ef4dd0a5a3'] = $pane;
+    $display->panels['content'][4] = 'new-d719a157-3846-432d-b0c3-21ef4dd0a5a3';
     $pane = new stdClass();
     $pane->pid = 'new-ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69';
     $pane->panel = 'contentrightbotleft';
