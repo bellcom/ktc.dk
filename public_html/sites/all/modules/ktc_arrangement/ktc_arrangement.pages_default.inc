@@ -445,7 +445,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     $pane->configuration = array(
       'anon_links' => 1,
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();

@@ -8,10 +8,50 @@
  * Implements template_preprocess_page().
  */
 function ktc_form_comment_form_alter(&$form, &$form_state, &$form_id) {
-  $form['comment_body']['#after_build'][] = 'configure_comment_form';
+    global $user;
 
-  //
-  $form['#attributes']['class'][] = 'ktc-comments-form';
+    $node = node_load($form['#node']->nid);
+
+    $account = user_load($user->uid);
+    $image = theme('user_picture', array('account' => $account));
+
+    $form['comment_body']['#after_build'][] = 'configure_comment_form';
+    // Author
+    unset($form['author']['_author']['#type']);
+    unset($form['author']['_author']['#title']);
+    $form['author']['_author']['#markup'] = $image;
+
+    // Form class
+    $form['#attributes']['class'][] = 'ktc-comments-form';
+
+    // Textarea
+    $form['comment_body']['#attributes']['class'][] = 'ktc-comments-form-textarea-wrapper';
+    $form['comment_body'][LANGUAGE_NONE][0]['#attributes']['placeholder'] = t('Skriv din kommentar her...');
+    $form['comment_body'][LANGUAGE_NONE][0]['#title'] = false;
+    $form['comment_body'][LANGUAGE_NONE][0]['#title_display'] = 'invisible';
+    $form['comment_body'][LANGUAGE_NONE][0]['#rows'] = 3;
+
+    $form['form_content']['#type'] = 'container';
+    $form['form_content']['#attributes']['class'][] = 'ktc-comments-form-content';
+
+    // Move stuff around
+    $textarea = $form['comment_body'];
+    unset($form['comment_body']);
+    $form['form_content']['comment_body'] = $textarea;
+
+    $author = $form['author'];
+    unset($form['author']);
+    $form['form_content']['author'] = $author;
+
+    $form['actions']['submit']['#attributes']['class'][] = 'ktc-footer-button';
+    $form['actions']['submit']['#attributes']['class'][] = 'pull-right';
+    $form['actions']['submit']['#value'] = t('Send kommentar');
+}
+
+function ktc_comment_post_forbidden($variables) {
+    $node = $variables ['node'];
+    global $user;
+    xdebug_break();
 }
 
 function configure_comment_form(&$form) {
