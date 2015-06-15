@@ -222,37 +222,28 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     $display->content['new-b377e18c-88fd-405d-ae35-dbb5592b67a9'] = $pane;
     $display->panels['center'][4] = 'new-b377e18c-88fd-405d-ae35-dbb5592b67a9';
     $pane = new stdClass();
-    $pane->pid = 'new-4a866c68-b970-4d3c-9464-a73a27c831bf';
+    $pane->pid = 'new-36779b53-e17c-450a-871d-4051143ddc98';
     $pane->panel = 'center';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_flere_billeder';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ktc_full_node_field_displays-panel_pane_9';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'photoswipe',
-      'delta_limit' => '0',
-      'delta_offset' => '0',
-      'delta_reversed' => 0,
-      'formatter_settings' => array(
-        'photoswipe_node_style' => 'medium',
-        'photoswipe_image_style' => '',
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-gallery-wrapper',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
-    $pane->uuid = '4a866c68-b970-4d3c-9464-a73a27c831bf';
-    $display->content['new-4a866c68-b970-4d3c-9464-a73a27c831bf'] = $pane;
-    $display->panels['center'][5] = 'new-4a866c68-b970-4d3c-9464-a73a27c831bf';
+    $pane->uuid = '36779b53-e17c-450a-871d-4051143ddc98';
+    $display->content['new-36779b53-e17c-450a-871d-4051143ddc98'] = $pane;
+    $display->panels['center'][5] = 'new-36779b53-e17c-450a-871d-4051143ddc98';
     $pane = new stdClass();
     $pane->pid = 'new-023a351b-d90c-4e05-b3e9-7ebf28738193';
     $pane->panel = 'center';

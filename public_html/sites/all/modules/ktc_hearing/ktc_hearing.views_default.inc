@@ -160,10 +160,14 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_hearing_authority']['id'] = 'field_hearing_authority';
   $handler->display->display_options['fields']['field_hearing_authority']['table'] = 'field_data_field_hearing_authority';
   $handler->display->display_options['fields']['field_hearing_authority']['field'] = 'field_hearing_authority';
-  $handler->display->display_options['fields']['field_hearing_authority']['label'] = '';
   $handler->display->display_options['fields']['field_hearing_authority']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_hearing_authority']['alter']['text'] = 'Myndighed: [field_hearing_authority]';
+  $handler->display->display_options['fields']['field_hearing_authority']['alter']['text'] = '[field_hearing_authority]';
+  $handler->display->display_options['fields']['field_hearing_authority']['element_class'] = 'col-md-6 col-sm-6 col-xm-12';
+  $handler->display->display_options['fields']['field_hearing_authority']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_hearing_authority']['element_label_class'] = 'col-md-6 col-sm-6 col-xm-12';
   $handler->display->display_options['fields']['field_hearing_authority']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hearing_authority']['element_wrapper_class'] = 'row';
+  $handler->display->display_options['fields']['field_hearing_authority']['element_default_classes'] = FALSE;
   /* Felt: Indhold: Officiel udsendelsesdato */
   $handler->display->display_options['fields']['field_official_date']['id'] = 'field_official_date';
   $handler->display->display_options['fields']['field_official_date']['table'] = 'field_data_field_official_date';
@@ -171,7 +175,8 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_official_date']['element_class'] = 'col-md-6 col-sm-6 col-xm-12';
   $handler->display->display_options['fields']['field_official_date']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_official_date']['element_label_class'] = 'col-md-6 col-sm-6 col-xm-12';
-  $handler->display->display_options['fields']['field_official_date']['element_wrapper_class'] = 'clearfix';
+  $handler->display->display_options['fields']['field_official_date']['element_wrapper_class'] = 'row';
+  $handler->display->display_options['fields']['field_official_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_official_date']['settings'] = array(
     'format_type' => 'medium',
     'fromto' => 'both',
@@ -186,6 +191,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_enrollment_deadlines']['element_class'] = 'col-md-6 col-sm-6 col-xm-12';
   $handler->display->display_options['fields']['field_enrollment_deadlines']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_enrollment_deadlines']['element_label_class'] = 'col-md-6 col-sm-6 col-xm-12';
+  $handler->display->display_options['fields']['field_enrollment_deadlines']['element_wrapper_class'] = 'row';
   $handler->display->display_options['fields']['field_enrollment_deadlines']['settings'] = array(
     'format_type' => 'medium',
     'fromto' => 'both',
@@ -200,6 +206,8 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_attendee_deadlines']['element_class'] = 'col-md-6 col-sm-6 col-xm-12';
   $handler->display->display_options['fields']['field_attendee_deadlines']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_attendee_deadlines']['element_label_class'] = 'col-md-6 col-sm-6 col-xm-12';
+  $handler->display->display_options['fields']['field_attendee_deadlines']['element_wrapper_class'] = 'row';
+  $handler->display->display_options['fields']['field_attendee_deadlines']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_attendee_deadlines']['settings'] = array(
     'format_type' => 'medium',
     'fromto' => 'both',
@@ -214,6 +222,8 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_official_responsedate']['element_class'] = 'col-md-6 col-sm-6 col-xm-12';
   $handler->display->display_options['fields']['field_official_responsedate']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_official_responsedate']['element_label_class'] = 'col-md-6 col-sm-6 col-xm-12';
+  $handler->display->display_options['fields']['field_official_responsedate']['element_wrapper_class'] = 'row';
+  $handler->display->display_options['fields']['field_official_responsedate']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_official_responsedate']['settings'] = array(
     'format_type' => 'medium',
     'fromto' => 'both',
@@ -235,6 +245,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_class'] = 'wrap';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   /* Felt: Indhold: Bilag */
@@ -347,6 +358,8 @@ function ktc_hearing_views_default_views() {
     t('Alle'),
     t('Block'),
     t('Content pane'),
+    t('Myndighed'),
+    t('[field_hearing_authority]'),
     t('Officiel udsendelsesdato'),
     t('KTC høringsfrist'),
     t('Deltagers frist'),
