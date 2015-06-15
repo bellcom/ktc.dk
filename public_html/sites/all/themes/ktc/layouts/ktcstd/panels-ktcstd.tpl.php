@@ -16,27 +16,16 @@
 ?>
 <div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
 
-<?php if ($content['right']) { ?>
-
-  <!-- Begin - left -->
-  <div class="col-xs-12 col-sm-8 col-sm-pull-4 pane-content">
-    <?php print $content['left']; ?>
-  </div>
-  <!-- End - left -->
-
-  <!-- Begin - right -->
-  <div class="col-xs-12 col-sm-4 col-sm-push-8 pane-sidebar">
-    <?php print $content['right']; ?>
-  </div>
-  <!-- End - right -->
-
-<?php } else { ?>
-
-  <!-- Begin - left -->
-  <div class="col-xs-12 pane-content">
-    <?php print $content['left']; ?>
-  </div>
-  <!-- End - left -->
-
-<?php }?>
+    <?php if ($content['right']) { ?>
+        <div class="col-md-4 col-sm-4 col-xs-12 col-md-push-8 col-sm-push-8 pane-sidebar">
+            <?php print $content['right']; ?>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-12 col-md-pull-4 col-sm-pull-4 pane-content">
+            <?php print $content['left']; ?>
+        </div>
+    <?php } else { ?>
+        <div class="col-md-12 col-sm-12 col-xs-12 pane-content">
+            <?php print $content['left']; ?>
+        </div>
+    <?php }?>
 </div>
