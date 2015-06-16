@@ -51,7 +51,6 @@ function ktc_form_comment_form_alter(&$form, &$form_state, &$form_id) {
 function ktc_comment_post_forbidden($variables) {
     $node = $variables ['node'];
     global $user;
-    xdebug_break();
 }
 
 function configure_comment_form(&$form) {
