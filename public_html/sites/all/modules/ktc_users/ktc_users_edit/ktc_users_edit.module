@@ -203,7 +203,7 @@ function ktc_users_edit_mail($key, &$message, $params) {
  */
 function ktc_users_edit_account_address($account_tid) {
   if ($account = taxonomy_term_load($account_tid)) {
-    return array(_ktc_crm_get_formatted_address($account, 'taxonomy_term'));
+    return array(ktc_users_get_formatted_address($account, 'taxonomy_term'));
   }
 }
 
