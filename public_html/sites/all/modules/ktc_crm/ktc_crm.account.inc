@@ -125,7 +125,8 @@ function ktc_crm_account_create_update(\KTC\AccountService\AccountDto $accountdt
 /**
  * Set the top level account type for toplevelaccount term.
  */
-function ktc_crm_account_set_type($account, $type, $toplevelaccountid) {
+function ktc_crm_account_set_type($account, $type_name, $toplevelaccountid) {
+  $type = $type_name . ' - segment';
   // The account type determine the parent term for the toplevelaccount.
   // This creates a term, for the type set on the account.
   $vocab = taxonomy_vocabulary_machine_name_load('accounts');
