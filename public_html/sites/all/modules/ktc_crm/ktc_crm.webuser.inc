@@ -270,6 +270,13 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto, $uid = 0) {
 
   if ($account = ktc_crm_account_load_from_uuid($webuserdto->DepartmentId)) {
     $edit['field_account'][LANGUAGE_NONE][0]['tid'] = $account->tid;
+
+    // Calculate the usertype. And set it.
+    $top_level_term = end(taxonomy_get_parents_all($account->tid));
+    $ktc_users_edit_type_company_map = array_flip(variable_get('ktc_users_edit_type_company_map', array()));
+    $usertype_tid = $ktc_users_edit_type_company_map[$top_level_term->tid];
+
+    $edit['field_usertype'][LANGUAGE_NONE][0]['tid'] = $account->tid;
   }
   $edit['field_employer_name'][LANGUAGE_NONE][0]['value'] = $webuserdto->TopLevelAccountName;
 
