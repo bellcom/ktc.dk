@@ -13,7 +13,7 @@ function ktc_accounts_taxonomy_default_vocabularies() {
       'name' => 'Firmaer',
       'machine_name' => 'accounts',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
     ),

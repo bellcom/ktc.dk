@@ -958,11 +958,10 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Sorteringskriterie: Indhold: Oprettelsesdato */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sorteringskriterie: Indhold: Deltagers frist (field_attendee_deadlines) */
+  $handler->display->display_options['sorts']['field_attendee_deadlines_value']['id'] = 'field_attendee_deadlines_value';
+  $handler->display->display_options['sorts']['field_attendee_deadlines_value']['table'] = 'field_data_field_attendee_deadlines';
+  $handler->display->display_options['sorts']['field_attendee_deadlines_value']['field'] = 'field_attendee_deadlines_value';
   /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
