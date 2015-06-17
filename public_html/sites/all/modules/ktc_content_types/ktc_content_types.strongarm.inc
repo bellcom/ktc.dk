@@ -406,7 +406,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_document';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_document'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -887,10 +887,10 @@ function ktc_content_types_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '2',
         ),
         'metatags' => array(
-          'weight' => '2',
+          'weight' => '1',
         ),
         'scheduler_settings' => array(
           'weight' => '8',
@@ -899,8 +899,8 @@ function ktc_content_types_strongarm() {
       'display' => array(
         'signup' => array(
           'default' => array(
-            'weight' => '15',
-            'visible' => TRUE,
+            'weight' => '18',
+            'visible' => FALSE,
           ),
           'teaser' => array(
             'weight' => '3',

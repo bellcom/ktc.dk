@@ -210,6 +210,8 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
   $handler->display->display_options['fields']['field_document_type']['label'] = '';
+  $handler->display->display_options['fields']['field_document_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_document_type']['alter']['text'] = '- [field_document_type]';
   $handler->display->display_options['fields']['field_document_type']['element_type'] = '0';
   $handler->display->display_options['fields']['field_document_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_document_type']['element_wrapper_type'] = 'span';
@@ -217,22 +219,17 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_document_type']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_document_type']['delta_offset'] = '0';
-  /* Felt: Indhold: Høringssvar type */
-  $handler->display->display_options['fields']['field_hearing_response_type']['id'] = 'field_hearing_response_type';
-  $handler->display->display_options['fields']['field_hearing_response_type']['table'] = 'field_data_field_hearing_response_type';
-  $handler->display->display_options['fields']['field_hearing_response_type']['field'] = 'field_hearing_response_type';
-  $handler->display->display_options['fields']['field_hearing_response_type']['label'] = '';
-  $handler->display->display_options['fields']['field_hearing_response_type']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_hearing_response_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_hearing_response_type']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['field_hearing_response_type']['element_wrapper_class'] = 'ktc-node-header-button';
-  $handler->display->display_options['fields']['field_hearing_response_type']['element_default_classes'] = FALSE;
   /* Felt: Indhold: Høringstype */
   $handler->display->display_options['fields']['field_hearing_type']['id'] = 'field_hearing_type';
   $handler->display->display_options['fields']['field_hearing_type']['table'] = 'field_data_field_hearing_type';
   $handler->display->display_options['fields']['field_hearing_type']['field'] = 'field_hearing_type';
   $handler->display->display_options['fields']['field_hearing_type']['label'] = '';
+  $handler->display->display_options['fields']['field_hearing_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_hearing_type']['alter']['text'] = '- [field_hearing_type]';
+  $handler->display->display_options['fields']['field_hearing_type']['element_type'] = '0';
   $handler->display->display_options['fields']['field_hearing_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hearing_type']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_hearing_type']['element_wrapper_class'] = 'ktc-node-header-button';
   $handler->display->display_options['fields']['field_hearing_type']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Indhold: Mødetype */
   $handler->display->display_options['fields']['field_meeting_type']['id'] = 'field_meeting_type';
@@ -250,13 +247,6 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_meeting_type']['settings'] = array(
     'link' => 0,
   );
-  /* Felt: Indhold: Netværkstype */
-  $handler->display->display_options['fields']['field_netvaerkstype']['id'] = 'field_netvaerkstype';
-  $handler->display->display_options['fields']['field_netvaerkstype']['table'] = 'field_data_field_netvaerkstype';
-  $handler->display->display_options['fields']['field_netvaerkstype']['field'] = 'field_netvaerkstype';
-  $handler->display->display_options['fields']['field_netvaerkstype']['label'] = '';
-  $handler->display->display_options['fields']['field_netvaerkstype']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_netvaerkstype']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Indhold: Nyhedstype */
   $handler->display->display_options['fields']['field_os2web_news_page_type']['id'] = 'field_os2web_news_page_type';
   $handler->display->display_options['fields']['field_os2web_news_page_type']['table'] = 'field_data_field_os2web_news_page_type';
@@ -270,19 +260,6 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_news_page_type']['element_wrapper_class'] = 'ktc-node-header-button';
   $handler->display->display_options['fields']['field_os2web_news_page_type']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_os2web_news_page_type']['type'] = 'taxonomy_term_reference_plain';
-  /* Felt: Indhold: Produkt type */
-  $handler->display->display_options['fields']['field_product_type']['id'] = 'field_product_type';
-  $handler->display->display_options['fields']['field_product_type']['table'] = 'field_data_field_product_type';
-  $handler->display->display_options['fields']['field_product_type']['field'] = 'field_product_type';
-  $handler->display->display_options['fields']['field_product_type']['label'] = '';
-  $handler->display->display_options['fields']['field_product_type']['element_label_colon'] = FALSE;
-  /* Felt: Indhold: Type */
-  $handler->display->display_options['fields']['field_factbox_type']['id'] = 'field_factbox_type';
-  $handler->display->display_options['fields']['field_factbox_type']['table'] = 'field_data_field_factbox_type';
-  $handler->display->display_options['fields']['field_factbox_type']['field'] = 'field_factbox_type';
-  $handler->display->display_options['fields']['field_factbox_type']['label'] = '';
-  $handler->display->display_options['fields']['field_factbox_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_factbox_type']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Indhold: Kommentarantal */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
@@ -416,6 +393,20 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
+  /* Felt: Indhold: Tilmeldingsfrist */
+  $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
+  $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
+  $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
+  $handler->display->display_options['fields']['field_registration_deadline']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_registration_deadline']['element_class'] = 'large-text';
+  $handler->display->display_options['fields']['field_registration_deadline']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_registration_deadline']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   $handler->display->display_options['pane_category']['name'] = 'KTC';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -673,7 +664,13 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_hearing_type']['table'] = 'field_data_field_hearing_type';
   $handler->display->display_options['fields']['field_hearing_type']['field'] = 'field_hearing_type';
   $handler->display->display_options['fields']['field_hearing_type']['label'] = '';
+  $handler->display->display_options['fields']['field_hearing_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_hearing_type']['alter']['text'] = '- [field_hearing_type]';
+  $handler->display->display_options['fields']['field_hearing_type']['element_type'] = '0';
   $handler->display->display_options['fields']['field_hearing_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hearing_type']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_hearing_type']['element_wrapper_class'] = 'ktc-node-header-button';
+  $handler->display->display_options['fields']['field_hearing_type']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_hearing_type']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Indhold: Mødetype */
   $handler->display->display_options['fields']['field_meeting_type']['id'] = 'field_meeting_type';
@@ -800,6 +797,8 @@ function ktc_content_types_views_default_views() {
     t('Titel, type og type'),
     t('- [field_arrangement_type]'),
     t('- [field_artikeltype]'),
+    t('- [field_document_type]'),
+    t('- [field_hearing_type]'),
     t('- [field_meeting_type]'),
     t('- [field_os2web_news_page_type]'),
     t('.'),
@@ -813,6 +812,7 @@ function ktc_content_types_views_default_views() {
     t('Tid'),
     t('Pris'),
     t('Målgruppe'),
+    t('Tilmeldingsfrist'),
     t('Kort og adresse'),
     t('Adresse'),
     t('<p>[field_arrangement_location]</p>

@@ -119,7 +119,6 @@ features[field_instance][] = node-hearing_responses-field_is_summary
 features[field_instance][] = node-hearing_responses-field_typo3_uid
 features[field_instance][] = node-hearing_responses-field_typo3_user_id
 features[field_instance][] = node-hearing_responses-group_content_access
-features[field_instance][] = node-hearing_responses-og_group_ref
 features[node][] = hearing
 features[node][] = hearing_responses
 features[page_manager_handlers][] = node_edit_panel_context_2

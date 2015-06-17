@@ -669,6 +669,53 @@ function ktc_content_types_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_artikler_og_nyheder'
+  $field_bases['field_artikler_og_nyheder'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_artikler_og_nyheder',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'field_default_token' => array(
+            'status' => TRUE,
+          ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'artikler' => 'artikler',
+          'os2web_base_news' => 'os2web_base_news',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_banner'
   $field_bases['field_banner'] = array(
     'active' => 1,
@@ -975,7 +1022,7 @@ function ktc_content_types_field_default_field_bases() {
     'module' => 'file',
     'settings' => array(
       'display_default' => 1,
-      'display_field' => 1,
+      'display_field' => 0,
       'uri_scheme' => 'private',
     ),
     'translatable' => 0,
@@ -1607,17 +1654,21 @@ function ktc_content_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'views',
+      'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
+          'field_default_token' => array(
+            'status' => TRUE,
+          ),
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_2',
-          'view_name' => 'artikler',
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'artikler' => 'artikler',
         ),
       ),
       'target_type' => 'node',
@@ -2378,6 +2429,7 @@ function ktc_content_types_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'artikler' => 'artikler',
+          'os2web_base_news' => 'os2web_base_news',
         ),
       ),
       'target_type' => 'node',
