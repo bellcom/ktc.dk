@@ -761,7 +761,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Flere billeder */
+  /* Felt: Indhold: Billeder fra arrangementet */
   $handler->display->display_options['fields']['field_flere_billeder']['id'] = 'field_flere_billeder';
   $handler->display->display_options['fields']['field_flere_billeder']['table'] = 'field_data_field_flere_billeder';
   $handler->display->display_options['fields']['field_flere_billeder']['field'] = 'field_flere_billeder';
