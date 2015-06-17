@@ -5637,6 +5637,12 @@ button.close {
 .modal-footer:after,
 .ktc-aside .ktc-aside-body:before,
 .ktc-aside .ktc-aside-body:after,
+.ktc-article-section.ktc-article-type-billedserie .photoswipe-gallery:before,
+.ktc-article-section.ktc-article-type-billedserie .photoswipe-gallery:after,
+.ktc-gallery-wrapper:before,
+.ktc-gallery-wrapper:after,
+.ktc-gallery-wrapper:before,
+.ktc-gallery-wrapper:after,
 .ktc-comments-form .form-actions:before,
 .ktc-comments-form .form-actions:after,
 .ktc-footer:before,
@@ -5665,6 +5671,9 @@ button.close {
 .panel-body:after,
 .modal-footer:after,
 .ktc-aside .ktc-aside-body:after,
+.ktc-article-section.ktc-article-type-billedserie .photoswipe-gallery:after,
+.ktc-gallery-wrapper:after,
+.ktc-gallery-wrapper:after,
 .ktc-comments-form .form-actions:after,
 .ktc-footer:after,
 .ktc-node-header:after,
@@ -10427,6 +10436,16 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   font-size: 19px;
   margin-top: 0;
 }
+.ktc-article-section.ktc-article-type-afsnitb .ktc-article-section-image {
+  float: left;
+}
+.ktc-article-section.ktc-article-type-stortbillede .ktc-article-section-image img {
+  width: 100%;
+}
+.ktc-article-section.ktc-article-type-stortbillede .ktc-article-section-body-extra {
+  font-style: italic;
+  padding: 10px 0;
+}
 .ktc-article-section.ktc-article-type-indrykket {
   padding-left: 40px;
 }
@@ -10449,6 +10468,29 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-article-section.ktc-article-type-citat .ktc-article-section-body p {
   font-style: italic;
   color: #36a145;
+}
+.ktc-article-section.ktc-article-type-billedserie .photoswipe-gallery {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.ktc-article-section.ktc-article-type-billedserie .photoswipe-gallery a {
+  float: left;
+  width: 50%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .ktc-article-section.ktc-article-type-billedserie .photoswipe-gallery a {
+    float: left;
+    width: 25%;
+  }
+}
+.ktc-article-section.ktc-article-type-billedserie .photoswipe-gallery a img {
+  width: 100%;
 }
 .ktc-article-type-faktaboksgreen {
   background-color: #36a145;
@@ -10969,6 +11011,8 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
   margin-right: -15px;
   padding-left: 15px;
   padding-right: 15px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .ktc-gallery-wrapper a {
   float: left;
@@ -10985,6 +11029,9 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
     float: left;
     width: 25%;
   }
+}
+.ktc-gallery-wrapper a img {
+  width: 100%;
 }
 .calendar-calendar td {
   text-align: center;

@@ -18,12 +18,12 @@ function teknik_og_miljoe_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'photoswipe',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => 'magazinethumb',
+          'photoswipe_image_style' => '',
+          'photoswipe_node_style' => 'ktc_galleri_miniature',
         ),
-        'type' => 'image',
+        'type' => 'photoswipe',
         'weight' => 3,
       ),
     ),
@@ -87,8 +87,12 @@ function teknik_og_miljoe_field_default_field_instances() {
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
-          'ktc_article_afsnit' => 'ktc_article_afsnit',
-          'ktc_article_prim' => 0,
+          'indholdsside' => 'indholdsside',
+          'ktc_content_image' => 'ktc_content_image',
+          'ktc_profile_image_small' => 0,
+          'listevisning' => 0,
+          'listevisning_stor' => 0,
+          'teaservisning' => 0,
         ),
       ),
       'file_directory' => '',

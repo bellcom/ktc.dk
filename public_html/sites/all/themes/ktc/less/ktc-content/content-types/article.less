@@ -22,7 +22,7 @@
 .ktc-article-section {
 	padding: 20px 0;
 
-	// FAQ (all colors)
+	// Full width elements
 	&.ktc-article-type-faktaboks,
 	&.ktc-article-type-faktaboksgreen,
 	&.ktc-article-type-faktaboksyellow,
@@ -42,23 +42,82 @@
 			margin-top: 0;
 		}
 	}
+}
+
+// --------------------------------------------------
+// Text with headline
+// --------------------------------------------------
+
+// Section
+.ktc-article-section {
 
 	// Text w. headline
-	&.ktc-article-type-afsnit {}
+	&.ktc-article-type-afsnit {
+
+	}
+}
+
+// --------------------------------------------------
+// Text and image with headline
+// --------------------------------------------------
+
+// Section
+.ktc-article-section {
 
 	// Text and image w. headline
-	&.ktc-article-type-afsnitb {}
+	&.ktc-article-type-afsnitb {
+
+		// Image
+		.ktc-article-section-image {
+			float: left;
+		}
+	}
+}
+
+// --------------------------------------------------
+// Large image
+// --------------------------------------------------
+
+// Section
+.ktc-article-section {
+
+	// Large image
+	&.ktc-article-type-stortbillede {
+
+		// Image
+		.ktc-article-section-image {
+			img {
+				width: 100%;
+			}
+		}
+
+		// Extra body
+		.ktc-article-section-body-extra {
+			font-style: italic;
+			padding: 10px 0;
+		}
+	}
+}
+
+// --------------------------------------------------
+// Indented
+// --------------------------------------------------
+
+// Section
+.ktc-article-section {
 
 	// Indented
 	&.ktc-article-type-indrykket {
 		padding-left: 40px;
 	}
+}
 
-	// Large image
-	&.ktc-article-type-stortbillede {}
+// --------------------------------------------------
+// Quote
+// --------------------------------------------------
 
-	// Image gallery
-	&.ktc-article-type-billedserie {}
+// Section
+.ktc-article-section {
 
 	// Quote
 	&.ktc-article-type-citat {
@@ -86,11 +145,24 @@
 				color: @ktc-color-green-font;
 			}
 		}
-
 	}
+}
 
-	// Person
-	&.ktc-article-type-person {}
+// --------------------------------------------------
+// Gallery
+// --------------------------------------------------
+
+// Section
+.ktc-article-section {
+
+	// Gallery
+	&.ktc-article-type-billedserie {
+
+		// Photoswipe gallery
+		.photoswipe-gallery {
+			.ktc-mixin-photoswipe-gallery-wrapper();
+		}
+	}
 }
 
 // --------------------------------------------------
