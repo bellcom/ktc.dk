@@ -1022,7 +1022,7 @@ function ktc_content_types_field_default_field_bases() {
     'module' => 'file',
     'settings' => array(
       'display_default' => 1,
-      'display_field' => 1,
+      'display_field' => 0,
       'uri_scheme' => 'private',
     ),
     'translatable' => 0,
