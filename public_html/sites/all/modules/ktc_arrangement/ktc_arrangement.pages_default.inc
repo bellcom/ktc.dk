@@ -822,8 +822,8 @@ function ktc_arrangement_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-dark',
-      'template_suggestion' => '',
+      'css_class' => 'ktc-aside-dark ktc-aside-link-list-2-col',
+      'template_suggestion' => 'views',
     );
     $pane->extras = array();
     $pane->position = 0;

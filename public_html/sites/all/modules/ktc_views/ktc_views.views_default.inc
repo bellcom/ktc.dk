@@ -2661,7 +2661,6 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 col-sm-6 col-sx-12';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Felt: Ord i ordforråd: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
@@ -2681,7 +2680,11 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_type'] = 'div';
+  $handler->display->display_options['fields']['name']['element_class'] = 'ktc-link-with-icon ktc-link-with-icon-large ktc-link-icon-arrangement';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'ktc-link-container';
   /* Filterkriterie: Ordforråd: Internt navn */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
