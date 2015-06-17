@@ -355,9 +355,7 @@ h6,
 .h5,
 .h6,
 body.page-node .field-name-field-hearing-materials .field-label,
-body.page-taxonomy-term .field-name-field-hearing-materials .field-label,
-body.page-node .field-name-field-os2web-base-field-media .field-label,
-body.page-taxonomy-term .field-name-field-os2web-base-field-media .field-label {
+body.page-taxonomy-term .field-name-field-hearing-materials .field-label {
   font-family: 'Lato', Geneva, Verdana, sans-serif;
   font-weight: 700;
   line-height: 1.1;
@@ -421,9 +419,7 @@ h5,
 h6,
 .h6,
 body.page-node .field-name-field-hearing-materials .field-label,
-body.page-taxonomy-term .field-name-field-hearing-materials .field-label,
-body.page-node .field-name-field-os2web-base-field-media .field-label,
-body.page-taxonomy-term .field-name-field-os2web-base-field-media .field-label {
+body.page-taxonomy-term .field-name-field-hearing-materials .field-label {
   margin-top: 8.5px;
   margin-bottom: 8.5px;
 }
@@ -456,9 +452,7 @@ h3,
 h4,
 .h4,
 body.page-node .field-name-field-hearing-materials .field-label,
-body.page-taxonomy-term .field-name-field-hearing-materials .field-label,
-body.page-node .field-name-field-os2web-base-field-media .field-label,
-body.page-taxonomy-term .field-name-field-os2web-base-field-media .field-label {
+body.page-taxonomy-term .field-name-field-hearing-materials .field-label {
   font-size: 19px;
 }
 h5,
@@ -7899,22 +7893,16 @@ body.page-taxonomy-term .nav-tabs {
   margin-bottom: 0;
 }
 body.page-node .field-name-field-hearing-materials .field-label,
-body.page-taxonomy-term .field-name-field-hearing-materials .field-label,
-body.page-node .field-name-field-os2web-base-field-media .field-label,
-body.page-taxonomy-term .field-name-field-os2web-base-field-media .field-label {
+body.page-taxonomy-term .field-name-field-hearing-materials .field-label {
   text-transform: none;
 }
 body.page-node .field-name-field-hearing-materials .field-item,
-body.page-taxonomy-term .field-name-field-hearing-materials .field-item,
-body.page-node .field-name-field-os2web-base-field-media .field-item,
-body.page-taxonomy-term .field-name-field-os2web-base-field-media .field-item {
+body.page-taxonomy-term .field-name-field-hearing-materials .field-item {
   border-top: 1px solid #dfded7;
   padding: 5px 0;
 }
 body.page-node .field-name-field-hearing-materials .field-item a,
-body.page-taxonomy-term .field-name-field-hearing-materials .field-item a,
-body.page-node .field-name-field-os2web-base-field-media .field-item a,
-body.page-taxonomy-term .field-name-field-os2web-base-field-media .field-item a {
+body.page-taxonomy-term .field-name-field-hearing-materials .field-item a {
   margin-left: 10px;
   color: #30353c;
 }
@@ -9274,6 +9262,10 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .personsoegning .andcell::before {
   content: " / ";
+}
+.cke_editable_themed {
+  background-color: #fff;
+  padding: 15px;
 }
 .ktc-aside {
   background-color: #ffffff;
@@ -12283,6 +12275,41 @@ h6 + .ktc-date {
   width: 17px;
   height: 17px;
 }
+.ktc-aside-table-list .ktc-aside-body {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.ktc-aside-table-list .table {
+  margin-bottom: 0;
+}
+.ktc-aside-table-list .table thead {
+  display: none;
+}
+.ktc-aside-table-list .table tr td {
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 3px;
+}
+.ktc-aside-table-list .table tr td,
+.ktc-aside-table-list .table tr td:hover {
+  background-color: transparent;
+}
+.ktc-aside-table-list .table tr td .file-icon {
+  display: none;
+}
+.ktc-aside-table-list .table tr td .file-extension {
+  float: right !important;
+  font-weight: bold;
+  color: #2c353a;
+}
+.ktc-aside-table-list .table tr:nth-child(odd) td,
+.ktc-aside-table-list .table tr:nth-child(odd) td:hover {
+  background-color: #e9edee;
+}
+.ktc-aside-table-list .field-item {
+  border: 0;
+  padding: 0;
+}
 .related-links {
   padding-left: 0;
   list-style: none;
@@ -12804,9 +12831,7 @@ h5,
 h6,
 strong,
 body.page-node .field-name-field-hearing-materials .field-label,
-body.page-taxonomy-term .field-name-field-hearing-materials .field-label,
-body.page-node .field-name-field-os2web-base-field-media .field-label,
-body.page-taxonomy-term .field-name-field-os2web-base-field-media .field-label {
+body.page-taxonomy-term .field-name-field-hearing-materials .field-label {
   color: #2c353a;
 }
 p {

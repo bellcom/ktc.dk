@@ -8,49 +8,52 @@
  * Implements template_preprocess_page().
  */
 function ktc_form_comment_form_alter(&$form, &$form_state, &$form_id) {
-    global $user;
+  global $user;
 
-    $node = node_load($form['#node']->nid);
+  $node = node_load($form['#node']->nid);
 
-    $account = user_load($user->uid);
-    $image = theme('user_picture', array('account' => $account));
+  $account = user_load($user->uid);
+  $image = theme('user_picture', array('account' => $account));
 
-    $form['comment_body']['#after_build'][] = 'configure_comment_form';
-    // Author
-    unset($form['author']['_author']['#type']);
-    unset($form['author']['_author']['#title']);
-    $form['author']['_author']['#markup'] = $image;
+  $form['comment_body']['#after_build'][] = 'configure_comment_form';
+  // Author
+  unset($form['author']['_author']['#type']);
+  unset($form['author']['_author']['#title']);
+  $form['author']['_author']['#markup'] = $image;
 
-    // Form class
-    $form['#attributes']['class'][] = 'ktc-comments-form';
+  // Form class
+  $form['#attributes']['class'][] = 'ktc-comments-form';
 
-    // Textarea
-    $form['comment_body']['#attributes']['class'][] = 'ktc-comments-form-textarea-wrapper';
-    $form['comment_body'][LANGUAGE_NONE][0]['#attributes']['placeholder'] = t('Skriv din kommentar her...');
-    $form['comment_body'][LANGUAGE_NONE][0]['#title'] = false;
-    $form['comment_body'][LANGUAGE_NONE][0]['#title_display'] = 'invisible';
-    $form['comment_body'][LANGUAGE_NONE][0]['#rows'] = 3;
+  // Textarea
+  $form['comment_body']['#attributes']['class'][] = 'ktc-comments-form-textarea-wrapper';
+  $form['comment_body'][LANGUAGE_NONE][0]['#attributes']['placeholder'] = t('Skriv din kommentar her...');
+  $form['comment_body'][LANGUAGE_NONE][0]['#title'] = FALSE;
+  $form['comment_body'][LANGUAGE_NONE][0]['#title_display'] = 'invisible';
+  $form['comment_body'][LANGUAGE_NONE][0]['#rows'] = 3;
 
-    $form['form_content']['#type'] = 'container';
-    $form['form_content']['#attributes']['class'][] = 'ktc-comments-form-content';
+  $form['form_content']['#type'] = 'container';
+  $form['form_content']['#attributes']['class'][] = 'ktc-comments-form-content';
 
-    // Move stuff around
-    $textarea = $form['comment_body'];
-    unset($form['comment_body']);
-    $form['form_content']['comment_body'] = $textarea;
+  // Move stuff around
+  $textarea = $form['comment_body'];
+  unset($form['comment_body']);
+  $form['form_content']['comment_body'] = $textarea;
 
-    $author = $form['author'];
-    unset($form['author']);
-    $form['form_content']['author'] = $author;
+  $author = $form['author'];
+  unset($form['author']);
+  $form['form_content']['author'] = $author;
 
-    $form['actions']['submit']['#attributes']['class'][] = 'ktc-footer-button';
-    $form['actions']['submit']['#attributes']['class'][] = 'pull-right';
-    $form['actions']['submit']['#value'] = t('Send kommentar');
+  $form['actions']['submit']['#attributes']['class'][] = 'ktc-footer-button';
+  $form['actions']['submit']['#attributes']['class'][] = 'pull-right';
+  $form['actions']['submit']['#value'] = t('Send kommentar');
 }
 
+/*
+ * Implements theme_comment_post_forbidden().
+ */
 function ktc_comment_post_forbidden($variables) {
-    $node = $variables ['node'];
-    global $user;
+  $node = $variables ['node'];
+  global $user;
 }
 
 function configure_comment_form(&$form) {
@@ -136,19 +139,20 @@ function ktc_preprocess_page(&$variables) {
 
   // Get all the nodes selvbetjeningslinks and give them to the template.
   if (($node && $links = field_get_items('node', $node, 'field_os2web_base_field_selfserv')) ||
-      ($term && $links = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_selfserv'))) {
+    ($term && $links = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_selfserv'))
+  ) {
     $variables['page']['os2web_selfservicelinks'] = _ktc_get_selfservicelinks($links);
   }
 
   // Add out fonts from Google Fonts API.
   drupal_add_html_head(array(
-    '#tag' => 'link',
+    '#tag'        => 'link',
     '#attributes' => array(
       'href' => 'http://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:300italic,400italic,400,700,300,800',
       // font-family: 'Lato', sans-serif;
       // font-family: 'Open Sans', sans-serif;
 
-      'rel' => 'stylesheet',
+      'rel'  => 'stylesheet',
       'type' => 'text/css',
     ),
   ), 'google_font_ktc');
@@ -156,10 +160,10 @@ function ktc_preprocess_page(&$variables) {
   // Add google site verification.
   drupal_add_html_head(
     array(
-      '#tag' => 'meta',
-      '#type' => 'html_tag',
+      '#tag'        => 'meta',
+      '#type'       => 'html_tag',
       '#attributes' => array(
-        'name' => 'google-site-verification',
+        'name'    => 'google-site-verification',
         'content' => 'RERf3yjIX_1JFNkt2dpPZvqH_XeG8eum3P4PHXIpqqM',
       ),
     ),
@@ -209,6 +213,7 @@ function ktc_preprocess_page(&$variables) {
     }
   }
 }
+
 /**
  * Implements template_process_page().
  */
@@ -223,6 +228,7 @@ function ktc_process_page(&$variables) {
     $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
   }
 }
+
 /**
  * Implements template_preprocess_taxonomy_term().
  */
@@ -236,21 +242,21 @@ function ktc_preprocess_taxonomy_term(&$variables) {
 function ktc_preprocess_html(&$variables) {
   // Add conditional stylesheets for IE.
   drupal_add_css(path_to_theme() . '/css/ie.css', array(
-    'group' => CSS_THEME,
-    'browsers' => array('IE' => 'lte IE 8', '!IE' => FALSE),
+    'group'      => CSS_THEME,
+    'browsers'   => array('IE' => 'lte IE 8', '!IE' => FALSE),
     'preprocess' => FALSE,
-    'weight' => 115,
+    'weight'     => 115,
   ));
 
   // Setup IE meta tag to force IE rendering mode.
   $meta_ie_render_engine = array(
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
+    '#type'       => 'html_tag',
+    '#tag'        => 'meta',
     '#attributes' => array(
       'http-equiv' => 'X-UA-Compatible',
-      'content' => 'IE=8,IE=Edge,chrome=1',
+      'content'    => 'IE=8,IE=Edge,chrome=1',
     ),
-    '#weight' => '-99999',
+    '#weight'     => '-99999',
   );
   // Add header meta tag for IE to head.
   drupal_add_html_head($meta_ie_render_engine, 'meta_ie_render_engine');
@@ -290,30 +296,30 @@ function ktc_preprocess_node(&$vars) {
   $vars['group_info'] = $group_info;
   $vars['classes_array'][] = $group_info['class'];
 
-    // Teaser and teaser comments
-    if ( $vars['elements']['#view_mode'] == 'teaser' || $vars['elements']['#view_mode'] == 'teasercomments' ) {
-        if ($body_shortened = field_get_items('node', $vars['node'], 'body')) {
-            $vars['body_shortened'] = _ktc_text_shortener($body_shortened[0]['value'], 150);
-        }
+  // Teaser and teaser comments
+  if ($vars['elements']['#view_mode'] == 'teaser' || $vars['elements']['#view_mode'] == 'teasercomments') {
+    if ($body_shortened = field_get_items('node', $vars['node'], 'body')) {
+      $vars['body_shortened'] = _ktc_text_shortener($body_shortened[0]['value'], 150);
+    }
+  }
+
+  // Teaser comments
+  if ($vars['elements']['#view_mode'] == 'teasercomments') {
+    // Attachments
+    if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
+      $vars['document_attachments'] = $media;
     }
 
-    // Teaser comments
-    if ( $vars['elements']['#view_mode'] == 'teasercomments' ) {
-        // Attachments
-        if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
-            $vars['document_attachments'] = $media;
-        }
+    // Title (shortened)
+    $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 60);
+  }
 
-        // Title (shortened)
-        $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 60);
-    }
+  // Teaser
+  if ($vars['elements']['#view_mode'] == 'teaser') {
 
-    // Teaser
-    if ( $vars['elements']['#view_mode'] == 'teaser' ) {
-
-        // Title (shortened)
-        $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 40);
-    }
+    // Title (shortened)
+    $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 40);
+  }
 
 
   // Added user_name and user_object for node--teaser/teasercomments templates.
@@ -341,117 +347,117 @@ function ktc_preprocess_node(&$vars) {
     $vars['statistics_count'] = 0;
   }
 
-    // News teaser
-    if ($vars['elements']['#view_mode'] == 'teaser' && $vars['type'] == 'os2web_base_news') {
+  // News teaser
+  if ($vars['elements']['#view_mode'] == 'teaser' && $vars['type'] == 'os2web_base_news') {
 
-        // Promote to is set
-        if( $promote_to = field_get_items('node', $vars['node'], 'field_os2web_base_field_promote') ) {
+    // Promote to is set
+    if ($promote_to = field_get_items('node', $vars['node'], 'field_os2web_base_field_promote')) {
 
-            // Is a TM news
-            if( $promote_to[0]['tid'] == 1902 ) {
+      // Is a TM news
+      if ($promote_to[0]['tid'] == 1902) {
 
-                // Classes contains ktc-red - remove ktc-red
-                if (($key = array_search('ktc-red', $vars['classes_array'])) !== false) {
-                    unset($vars['classes_array'][$key]);
-                }
-
-                // Add ktc-blue
-                $vars['classes_array'][] = 'ktc-blue';
-            }
+        // Classes contains ktc-red - remove ktc-red
+        if (($key = array_search('ktc-red', $vars['classes_array'])) !== FALSE) {
+          unset($vars['classes_array'][$key]);
         }
+
+        // Add ktc-blue
+        $vars['classes_array'][] = 'ktc-blue';
+      }
+    }
+  }
+
+  // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
+  if ($vars['type'] == 'arrangement') {
+
+    if (isset($vars['field_arrangement_date']['und'])) {
+      $dbDate = $vars['field_arrangement_date']['und'][0]['value'];
+    }
+    else {
+      $dbDate = $vars['field_arrangement_date'][0]['value'];
     }
 
-    // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
-    if ($vars['type'] == 'arrangement') {
+    $vars['arrangement_date'] = _ktc_format_datetime($dbDate);
 
-        if (isset($vars['field_arrangement_date']['und'])) {
-            $dbDate = $vars['field_arrangement_date']['und'][0]['value'];
-        }
-        else {
-            $dbDate = $vars['field_arrangement_date'][0]['value'];
-        }
-
-        $vars['arrangement_date'] = _ktc_format_datetime($dbDate);
-
-        if($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
-            $vars['arrangement_signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
-        }
-
-        if($arrangement_type = field_get_items('node', $vars['node'], 'field_arrangement_type')) {
-            $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['tid']);
-            $vars['arrangement_type'] = $arrangement_type_term->name;
-        }
+    if ($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
+      $vars['arrangement_signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
     }
 
-    // Network / group
-    if ($vars['type'] == 'group') {
+    if ($arrangement_type = field_get_items('node', $vars['node'], 'field_arrangement_type')) {
+      $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['tid']);
+      $vars['arrangement_type'] = $arrangement_type_term->name;
+    }
+  }
 
-        // Network type
-        if($group_type = field_get_items('node', $vars['node'], 'field_netvaerkstype')) {
-            $group_type_term = taxonomy_term_load($group_type[0]['tid']);
-            $vars['group_type'] = $group_type_term->name;
-        }
+  // Network / group
+  if ($vars['type'] == 'group') {
 
-        // Region
-        if($region = field_get_items('node', $vars['node'], 'field_regioner')) {
-            $region_term = taxonomy_term_load($region[0]['tid']);
-            $vars['group_region'] = $region_term->name;
-        }
+    // Network type
+    if ($group_type = field_get_items('node', $vars['node'], 'field_netvaerkstype')) {
+      $group_type_term = taxonomy_term_load($group_type[0]['tid']);
+      $vars['group_type'] = $group_type_term->name;
     }
 
-    // Meeting_doodle
-    if ($vars['type'] == 'meeting_doodle') {
-        if($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
-            $vars['signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
-        }
+    // Region
+    if ($region = field_get_items('node', $vars['node'], 'field_regioner')) {
+      $region_term = taxonomy_term_load($region[0]['tid']);
+      $vars['group_region'] = $region_term->name;
+    }
+  }
+
+  // Meeting_doodle
+  if ($vars['type'] == 'meeting_doodle') {
+    if ($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
+      $vars['signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
+    }
+  }
+
+  // Document
+  if ($vars['type'] == 'document') {
+    $vars['num_attachments'] = 0;
+    if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
+      $vars['num_attachments'] = count($media);
+    }
+  }
+
+  // Hearing
+  if ($vars['type'] == 'hearing') {
+
+    // Duedate (response date)
+    if ($hearing_duedate = field_get_items('node', $vars['node'], 'field_official_responsedate')) {
+      $vars['hearing_duedate'] = _ktc_format_datetime($hearing_duedate[0]['value']);
     }
 
-    // Document
-    if ($vars['type'] == 'document') {
-        $vars['num_attachments'] = 0;
-        if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
-            $vars['num_attachments'] = count($media);
-        }
+    // Status
+    if ($hearing_status = field_get_items('node', $vars['node'], 'field_status')) {
+      $hearing_status_term = taxonomy_term_load($hearing_status[0]['tid']);
+      $vars['hearing_status'] = $hearing_status_term->name;
     }
 
-    // Hearing
-    if ($vars['type'] == 'hearing') {
-
-        // Duedate (response date)
-        if($hearing_duedate = field_get_items('node', $vars['node'], 'field_official_responsedate')) {
-            $vars['hearing_duedate'] = _ktc_format_datetime($hearing_duedate[0]['value']);
-        }
-
-        // Status
-        if($hearing_status = field_get_items('node', $vars['node'], 'field_status')) {
-            $hearing_status_term = taxonomy_term_load($hearing_status[0]['tid']);
-            $vars['hearing_status'] = $hearing_status_term->name;
-        }
-
-        // Type
-        if($hearing_type = field_get_items('node', $vars['node'], 'field_hearing_type')) {
-            $hearing_type_term = taxonomy_term_load($hearing_type[0]['tid']);
-            $vars['hearing_type'] = $hearing_type_term->name;
-        }
+    // Type
+    if ($hearing_type = field_get_items('node', $vars['node'], 'field_hearing_type')) {
+      $hearing_type_term = taxonomy_term_load($hearing_type[0]['tid']);
+      $vars['hearing_type'] = $hearing_type_term->name;
     }
+  }
 
-    // Created (converted)
-    if (isset($vars['created'])) {
-        $vars['published_at'] = _ktc_format_timestamp($vars['created']);
-    }
+  // Created (converted)
+  if (isset($vars['created'])) {
+    $vars['published_at'] = _ktc_format_timestamp($vars['created']);
+  }
 
-    // News
-    if ($vars['type'] == 'os2web_base_news') {
-        if($news_type = field_get_items('node', $vars['node'], 'field_os2web_news_page_type')) {
-            $news_type_term = taxonomy_term_load($news_type[0]['tid']);
-            $vars['news_type'] = $news_type_term->name;
-        }
+  // News
+  if ($vars['type'] == 'os2web_base_news') {
+    if ($news_type = field_get_items('node', $vars['node'], 'field_os2web_news_page_type')) {
+      $news_type_term = taxonomy_term_load($news_type[0]['tid']);
+      $vars['news_type'] = $news_type_term->name;
     }
+  }
 
-    // Network groups
-    if (isset($vars['og_group_ref']) && isset($vars['nid'])) {
-        $vars['network_groups'] = _ktc_get_network_groups($vars['nid']);
-    }
+  // Network groups
+  if (isset($vars['og_group_ref']) && isset($vars['nid'])) {
+    $vars['network_groups'] = _ktc_get_network_groups($vars['nid']);
+  }
 
   // Added comments_view and num_comments for node--teasecomments.tpl.php.
   $view = views_get_view('comments_in_teaser');
@@ -469,6 +475,7 @@ function ktc_preprocess_node(&$vars) {
                                    WHERE nid = :nid", array(":nid" => $vars['nid']))->fetchField();
 
 }
+
 /**
  * Date to danish.
  */
@@ -559,7 +566,7 @@ function ktc_breadcrumb($variables) {
           $breadcrumb = $breadcrumb['data'];
         }
       }
-      $crumbs .= '<li class="' . implode(' ', $classes) . '"><i></i>'  . $breadcrumb . '</li>';
+      $crumbs .= '<li class="' . implode(' ', $classes) . '"><i></i>' . $breadcrumb . '</li>';
     }
     $crumbs .= '</ul>';
     return $crumbs;
@@ -595,6 +602,7 @@ function ktc_menu_link(array $variables) {
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
+
 /**
  * Override menu link menu user profile menu.
  */
@@ -650,7 +658,12 @@ function ktc_file_link($variables) {
   $file = $variables['file'];
   $icon_directory = $variables['icon_directory'];
   $url = file_create_url($file->uri);
-  $icon = theme('file_icon', array('file' => $file, 'icon_directory' => $icon_directory));
+  $icon = theme('file_icon', array(
+    'file'           => $file,
+    'icon_directory' => $icon_directory
+  ));
+  //
+  $extension = pathinfo($file->filename, PATHINFO_EXTENSION);
   // Set options as per anchor format described at
   // http://microformats.org/wiki/file-format-examples
   $options = array(
@@ -667,11 +680,11 @@ function ktc_file_link($variables) {
     $options['attributes']['title'] = check_plain($file->filename);
   }
   // Open files of particular mime types in new window.
-  $new_window_mimetypes = array('application/pdf','text/plain');
+  $new_window_mimetypes = array('application/pdf', 'text/plain');
   if (in_array($file->filemime, $new_window_mimetypes)) {
     $options['attributes']['target'] = '_blank';
   }
-  return '<span class="file">' . $icon . ' ' . l($link_text, $url, $options) . '</span>';
+  return '<span class="file">' . $icon . ' ' . l($link_text, $url, $options) . '<span class="file-extension">(' . $extension . ')</span></span>';
 }
 
 /**
@@ -685,8 +698,12 @@ function ktc_file_formatter_table($variables) {
       theme('file_link', array('file' => (object) $item)),
     );
   }
-  return empty($rows) ? '' : theme('table', array('header' => $header, 'rows' => $rows));
+  return empty($rows) ? '' : theme('table', array(
+    'header' => $header,
+    'rows'   => $rows
+  ));
 }
+
 /**
  * Override theme_menu_local_task.
  */
@@ -704,7 +721,10 @@ function ktc_menu_local_task($variables) {
       $link['title'] = check_plain($link['title']);
     }
     $link['localized_options']['html'] = TRUE;
-    $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
+    $link_text = t('!local-task-title!active', array(
+      '!local-task-title' => $link['title'],
+      '!active'           => $active
+    ));
   }
 
   return '<li' . (!empty($variables['element']['#active']) ? ' class="ktc-tabs-button-container"' : ' class="ktc-tabs-button-container"') . '>' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n";
@@ -753,9 +773,9 @@ function ktc_date_nav_title($params) {
     case 'week':
       $format = !empty($format) ? $format : (empty($date_info->mini) ? 'W, Y' : 'M j');
       $title = t('Week of @date',
-                array(
-                  '@date' => date_format_date($date_info->min_date, 'custom', $format),
-                ));
+        array(
+          '@date' => date_format_date($date_info->min_date, 'custom', $format),
+        ));
       $date_arg = $date_info->year . '-W' . date_pad($date_info->week);
       break;
 
@@ -786,9 +806,10 @@ function ktc_preprocess_summary_hearing_answer(&$vars) {
  */
 function ktc_preprocess_panels_pane(&$vars) {
   if ($vars['id'] === ' id="regioner"' || $vars['id'] === ' id="groups"'
-      || $vars['id'] === ' id="content_type"' || $vars['id'] === ' id="term_type"'
-      || $vars['id'] === ' id="emner"' || $vars['id'] === ' id="tags"'
-      || $vars['id'] === ' id="edit-tabs"') {
+    || $vars['id'] === ' id="content_type"' || $vars['id'] === ' id="term_type"'
+    || $vars['id'] === ' id="emner"' || $vars['id'] === ' id="tags"'
+    || $vars['id'] === ' id="edit-tabs"'
+  ) {
     $vars['panel_is_filter'] = TRUE;
     $vars['title_attributes_array']['class'][] = 'filter-pane-title';
   }
@@ -849,60 +870,61 @@ function ktc_get_node_create_link() {
   }
   return $menu;
 }
+
 /**
-* Implements HOOK_preprocess_user_profile()
-* Adds theme suggestions for the user view mode teaser
-*/
+ * Implements HOOK_preprocess_user_profile()
+ * Adds theme suggestions for the user view mode teaser
+ */
 function ktc_preprocess_user_profile(&$vars) {
-    global $user;
+  global $user;
 
-    if ($vars['account']) {
-        $user_obj = $vars['account'];
-    }
-    else {
-        $user_obj = $vars['elements']['#account'];
-    }
-    $vars['account'] = $user_obj;
+  if ($vars['account']) {
+    $user_obj = $vars['account'];
+  }
+  else {
+    $user_obj = $vars['elements']['#account'];
+  }
+  $vars['account'] = $user_obj;
 
-    // Allow for: print theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2'));
-    if ($vars['theme_suggestion']) {
-        $vars['theme_hook_suggestions'][] = 'user_profile__' . $vars['theme_suggestion'];
-    }
+  // Allow for: print theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2'));
+  if ($vars['theme_suggestion']) {
+    $vars['theme_hook_suggestions'][] = 'user_profile__' . $vars['theme_suggestion'];
+  }
 
-    if ($vars['elements']['#view_mode'] == 'teaser') {
-        $vars['theme_hook_suggestions'][] = 'user_profile__teaser';
-    }
-    if ($vars['elements']['#view_mode'] == 'teaser2') {
-        $vars['theme_hook_suggestions'][] = 'user_profile__teaser2';
-    }
-    if ($vars['elements']['#view_mode'] == 'list1') {
-        $vars['theme_hook_suggestions'][] = 'user_profile__list1';
-    }
-    if ($vars['elements']['#view_mode'] == 'list2') {
-        $vars['theme_hook_suggestions'][] = 'user_profile__list2';
-    }
-    if ($vars['elements']['#view_mode'] == 'list3') {
-        $vars['theme_hook_suggestions'][] = 'user_profile__list3';
-    }
-    if ($vars['elements']['#view_mode'] == 'list4') {
-        $vars['theme_hook_suggestions'][] = 'user_profile__list4';
-    }
-    if ($vars['elements']['#view_mode'] == 'list5') {
-        $vars['theme_hook_suggestions'][] = 'user_profile__list5';
-    }
-    if ($vars['elements']['#view_mode'] == 'list6') {
-        $vars['theme_hook_suggestions'][] = 'user_profile__list6';
-    }
-    if ($vars['elements']['#view_mode'] == 'list7') {
-        $vars['theme_hook_suggestions'][] = 'user_profile__list7';
-    }
+  if ($vars['elements']['#view_mode'] == 'teaser') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__teaser';
+  }
+  if ($vars['elements']['#view_mode'] == 'teaser2') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__teaser2';
+  }
+  if ($vars['elements']['#view_mode'] == 'list1') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list1';
+  }
+  if ($vars['elements']['#view_mode'] == 'list2') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list2';
+  }
+  if ($vars['elements']['#view_mode'] == 'list3') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list3';
+  }
+  if ($vars['elements']['#view_mode'] == 'list4') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list4';
+  }
+  if ($vars['elements']['#view_mode'] == 'list5') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list5';
+  }
+  if ($vars['elements']['#view_mode'] == 'list6') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list6';
+  }
+  if ($vars['elements']['#view_mode'] == 'list7') {
+    $vars['theme_hook_suggestions'][] = 'user_profile__list7';
+  }
 
-    // Own user - set red color
-    if ($user->uid == $user_obj->uid) {
-        $vars['classes_array'][] = 'ktc-red';
-    }
+  // Own user - set red color
+  if ($user->uid == $user_obj->uid) {
+    $vars['classes_array'][] = 'ktc-red';
+  }
 
-    // User real name in field_navn.
+  // User real name in field_navn.
   if ($name = field_get_items('user', $user_obj, 'field_navn')) {
     if (strlen($name[0]['value']) > 16) {
       $name[0]['value'] = substr($name[0]['value'], 0, 15) . '...';
@@ -972,31 +994,33 @@ function ktc_field($variables) {
  * Implements hook_preprocess_region().
  */
 function ktc_preprocess_region(&$variables, $hook) {
-    if($variables['region'] == "header_top"){
-        global $user;
-        $user_object = user_load($user->uid);
-        $variables['user_object'] = $user_object;
-    }
+  if ($variables['region'] == "header_top") {
+    global $user;
+    $user_object = user_load($user->uid);
+    $variables['user_object'] = $user_object;
+  }
 
-  if($variables['region'] == "sidebar_second"){
+  if ($variables['region'] == "sidebar_second") {
     $variables['classes_array'][] = 'col-md-4 col-xs-12 col-md-push-8 col-sm-push-8';
   }
-    if($variables['region'] == "content"){
-        $class = '';
-        if (!panels_get_current_page_display()) {  $class = 'no-panels'; }
-
-        switch ($variables['elements']['#content_column_class'][0]) {
-            case 8:
-                $class = 'col-md-pull-4 col-sm-pull-4';
-                break;
-
-            case 4:
-                $class = 'col-md-pull-4 col-sm-pull-4';
-                break;
-
-        }
-        $variables['classes_array'][] = $class;
+  if ($variables['region'] == "content") {
+    $class = '';
+    if (!panels_get_current_page_display()) {
+      $class = 'no-panels';
     }
+
+    switch ($variables['elements']['#content_column_class'][0]) {
+      case 8:
+        $class = 'col-md-pull-4 col-sm-pull-4';
+        break;
+
+      case 4:
+        $class = 'col-md-pull-4 col-sm-pull-4';
+        break;
+
+    }
+    $variables['classes_array'][] = $class;
+  }
 }
 
 /**
@@ -1006,29 +1030,29 @@ function ktc_preprocess_user_picture(&$variables) {
 
   // When a suer has the role "KTC VIP" there must be a green ring around the
   // user picture.
-    if(isset($variables['account']->roles)) {
-        if (is_array($variables['account']->roles)) {
-            if (in_array('KTC VIP', $variables['account']->roles)) {
-                $variables['role_class'] = 'ktc-user-green';
-            }
-        }
+  if (isset($variables['account']->roles)) {
+    if (is_array($variables['account']->roles)) {
+      if (in_array('KTC VIP', $variables['account']->roles)) {
+        $variables['role_class'] = 'ktc-user-green';
+      }
     }
+  }
 }
 
 /*
  * Format timestamp
  */
 function _ktc_format_timestamp($timestamp) {
-    return format_date($timestamp);
+  return format_date($timestamp);
 }
 
 /*
  * Format datetime
  */
 function _ktc_format_datetime($datetime) {
-    $date = new DateTime($datetime);
+  $date = new DateTime($datetime);
 
-    return format_date($date->getTimestamp());
+  return format_date($date->getTimestamp());
 }
 
 // Get network group of node
@@ -1036,9 +1060,9 @@ function _ktc_get_network_groups($nid) {
   $groups = array();
   $ktc_node = node_load($nid);
 
-  if($network_groups = field_get_items('node', $ktc_node, 'og_group_ref')) {
+  if ($network_groups = field_get_items('node', $ktc_node, 'og_group_ref')) {
 
-    foreach($network_groups AS $network_group) {
+    foreach ($network_groups AS $network_group) {
       $groups[] = node_load($network_group['target_id']);
     }
   }
@@ -1050,13 +1074,13 @@ function _ktc_get_network_groups($nid) {
  * Text shortener
  */
 function _ktc_text_shortener($text_string, $max_length) {
-    $alter = array(
-        'max_length' => $max_length,
-        'ellipsis' => TRUE,
-        'word_boundary' => TRUE,
-        'html' => TRUE,
-    );
-    $shortened_string = views_trim_text($alter, $text_string);
+  $alter = array(
+    'max_length'    => $max_length,
+    'ellipsis'      => TRUE,
+    'word_boundary' => TRUE,
+    'html'          => TRUE,
+  );
+  $shortened_string = views_trim_text($alter, $text_string);
 
-    return $shortened_string;
+  return $shortened_string;
 }

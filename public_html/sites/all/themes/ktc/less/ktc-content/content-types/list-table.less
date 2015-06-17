@@ -1,0 +1,88 @@
+// |--------------------------------------------------------------------------
+// | List table
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for:
+// | - .ktc-aside-list-table
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// List
+.ktc-aside-table-list {
+
+	.ktc-aside-body {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	// Table
+	.table {
+		margin-bottom: 0;
+
+		// Header
+		thead {
+			display: none;
+		}
+
+		// Row
+		tr {
+
+			td {
+				padding: 4px floor( @ktc-default-left-right-inner-spacing - 5px );
+				border: 0;
+				border-radius: 3px;
+
+				&,
+				&:hover {
+					background-color: transparent;
+				}
+
+				.file-icon {
+					display: none;
+				}
+
+				.file-extension {
+					.pull-right;
+					font-weight: bold;
+					color: @ktc-default-color-headline;
+				}
+			}
+
+			// Odd
+			&:nth-child(odd) {
+
+				td {
+
+					&,
+					&:hover {
+						background-color: @body-bg;
+					}
+				}
+			}
+		}
+
+		// Striped and hover
+		&.table-striped,
+		&.table-hover {
+
+			tr {
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Reset
+// --------------------------------------------------
+
+// List
+.ktc-aside-table-list {
+
+	.field-item {
+		border: 0;
+		padding: 0;
+	}
+}
