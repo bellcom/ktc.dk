@@ -48,6 +48,9 @@ function ktc_form_comment_form_alter(&$form, &$form_state, &$form_id) {
   $form['actions']['submit']['#value'] = t('Send kommentar');
 }
 
+/*
+ * Implements theme_comment_post_forbidden().
+ */
 function ktc_comment_post_forbidden($variables) {
   $node = $variables ['node'];
   global $user;
@@ -659,6 +662,8 @@ function ktc_file_link($variables) {
     'file'           => $file,
     'icon_directory' => $icon_directory
   ));
+  //
+  $extension = pathinfo($file->filename, PATHINFO_EXTENSION);
   // Set options as per anchor format described at
   // http://microformats.org/wiki/file-format-examples
   $options = array(
@@ -679,7 +684,7 @@ function ktc_file_link($variables) {
   if (in_array($file->filemime, $new_window_mimetypes)) {
     $options['attributes']['target'] = '_blank';
   }
-  return '<span class="file">' . $icon . ' ' . l($link_text, $url, $options) . '</span>';
+  return '<span class="file">' . $icon . ' ' . l($link_text, $url, $options) . '<span class="file-extension">(' . $extension . ')</span></span>';
 }
 
 /**
