@@ -210,6 +210,8 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
   $handler->display->display_options['fields']['field_document_type']['label'] = '';
+  $handler->display->display_options['fields']['field_document_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_document_type']['alter']['text'] = '- [field_document_type]';
   $handler->display->display_options['fields']['field_document_type']['element_type'] = '0';
   $handler->display->display_options['fields']['field_document_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_document_type']['element_wrapper_type'] = 'span';
@@ -795,6 +797,7 @@ function ktc_content_types_views_default_views() {
     t('Titel, type og type'),
     t('- [field_arrangement_type]'),
     t('- [field_artikeltype]'),
+    t('- [field_document_type]'),
     t('- [field_hearing_type]'),
     t('- [field_meeting_type]'),
     t('- [field_os2web_news_page_type]'),

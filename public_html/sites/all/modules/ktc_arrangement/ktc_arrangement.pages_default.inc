@@ -585,7 +585,8 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' ktc-aside-color',
+      'css_class' => ' ktc-aside-color ktc-aside-table-list',
+      'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();
     $pane->position = 1;

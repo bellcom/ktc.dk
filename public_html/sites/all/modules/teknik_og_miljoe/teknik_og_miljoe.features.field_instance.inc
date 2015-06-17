@@ -1678,6 +1678,8 @@ function teknik_og_miljoe_field_default_field_instances() {
   // Exported field_instance: 'node-artikler-field_os2web_base_field_media'
   $field_instances['node-artikler-field_os2web_base_field_media'] = array(
     'bundle' => 'artikler',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1720,11 +1722,11 @@ function teknik_og_miljoe_field_default_field_instances() {
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => '',
       'file_extensions' => 'txt doc docx pdf tif tiff psd jpg zip',
       'max_filesize' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1732,21 +1734,25 @@ function teknik_og_miljoe_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 'private',
+          'prezi' => 0,
+          'private' => 0,
           'public' => 'public',
+          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
+          'presentation' => 0,
           'video' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
           'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
           'upload' => 'upload',
         ),
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 31,
