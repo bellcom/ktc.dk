@@ -48,12 +48,8 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Andet',
-    'weight' => '24',
-    'children' => array(
-      0 => 'field_os2web_base_field_ext_link',
-      1 => 'field_os2web_base_field_hidlinks',
-      2 => 'path',
-    ),
+    'weight' => '4',
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -77,7 +73,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_generelst';
   $field_group->data = array(
     'label' => 'Annoncer',
-    'weight' => '22',
+    'weight' => '23',
     'children' => array(
       0 => 'group_banner1',
       1 => 'group_banner2',
@@ -340,6 +336,35 @@ function ktc_content_types_field_group_info() {
     ),
   );
   $export['group_arrangement|node|arrangement|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_artiklernyheder|node|magazine|form';
+  $field_group->group_name = 'group_artiklernyheder';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'magazine';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_generelst';
+  $field_group->data = array(
+    'label' => 'Artikler og Nyheder',
+    'weight' => '21',
+    'children' => array(
+      0 => 'field_artikler_og_nyheder',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Artikler og Nyheder',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-artiklernyheder field-group-tab',
+        'description' => 'Her tilknyttes alle artikler og nyheder der har relation til denne udgivelse.
+For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil kun være det indhold der er tilknyttet der, der vises ude på hjemmesiden under teknik og miljø. Denne tilknytning skaber relationen til knappen - "Vis alle" der er på Teknik og Miljø siden.',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_artiklernyheder|node|magazine|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -762,7 +787,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_generelst';
   $field_group->data = array(
     'label' => 'Intro',
-    'weight' => '21',
+    'weight' => '22',
     'children' => array(
       0 => 'field_ekstra_artikler',
       1 => 'field_top_artikel',
@@ -774,7 +799,7 @@ function ktc_content_types_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-featured field-group-tab',
-        'description' => 'Månedens forside',
+        'description' => 'Månedens forside. Det er kun muligt at vælge de artikler der i forvejen er tilknyttet under "Artikler og nyheder". Hvis artiklen du leder efter ikke er i listen, skal du muligvis gemme først, og bagefter komme tilbage til denne side. Artikler behøver ikke at være udgivet til omverdenen for at kunne tilknyttes her.',
       ),
       'formatter' => 'closed',
     ),
@@ -854,6 +879,7 @@ function ktc_content_types_field_group_info() {
       1 => 'group_featured',
       2 => 'group_sider',
       3 => 'group_udgave',
+      4 => 'group_artiklernyheder',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -1120,7 +1146,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_sider';
   $field_group->data = array(
     'label' => 'Udgivelsens indhold',
-    'weight' => '45',
+    'weight' => '46',
     'children' => array(
       0 => 'field_magasin_indhold',
     ),
@@ -1614,7 +1640,7 @@ function ktc_content_types_field_group_info() {
   $field_group->parent_name = 'group_generelst';
   $field_group->data = array(
     'label' => 'Sider',
-    'weight' => '23',
+    'weight' => '24',
     'children' => array(
       0 => 'field_os2web_base_field_ext_link',
       1 => 'field_antal_sider',
