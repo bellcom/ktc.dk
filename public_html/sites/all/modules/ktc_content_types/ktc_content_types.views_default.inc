@@ -391,10 +391,11 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Tilmeldingsfrist */
+  /* Felt: Indhold: Svarfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
+  $handler->display->display_options['fields']['field_registration_deadline']['label'] = 'Tilmeldingsfrist';
   $handler->display->display_options['fields']['field_registration_deadline']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_registration_deadline']['element_class'] = 'large-text';
   $handler->display->display_options['fields']['field_registration_deadline']['element_label_type'] = 'strong';

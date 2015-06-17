@@ -208,7 +208,6 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_magasin_target_id';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
@@ -301,6 +300,11 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: Entity Reference: Refererende entity */
+  $handler->display->display_options['relationships']['reverse_field_artikler_og_nyheder_node']['id'] = 'reverse_field_artikler_og_nyheder_node';
+  $handler->display->display_options['relationships']['reverse_field_artikler_og_nyheder_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_artikler_og_nyheder_node']['field'] = 'reverse_field_artikler_og_nyheder_node';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterie: Indhold: Udgivet */
@@ -316,13 +320,6 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'artikler' => 'artikler',
-  );
-  /* Filterkriterie: Handler mangler eller er i stykker */
-  $handler->display->display_options['filters']['field_artikel_type_value']['id'] = 'field_artikel_type_value';
-  $handler->display->display_options['filters']['field_artikel_type_value']['table'] = 'field_data_field_artikel_type';
-  $handler->display->display_options['filters']['field_artikel_type_value']['field'] = 'field_artikel_type_value';
-  $handler->display->display_options['filters']['field_artikel_type_value']['value'] = array(
-    'leder' => 'leder',
   );
 
   /* Display: Artikler og Nyheder - m type */
@@ -411,6 +408,7 @@ function teknik_og_miljoe_views_default_views() {
 '),
     t('Side'),
     t('Entity Reference - Leder'),
+    t('Indhold refererer til Indhold fra field_artikler_og_nyheder'),
     t('Artikler og Nyheder - m type'),
     t('[title] [field_artikeltype] [field_os2web_news_page_type] - [type]
 '),
