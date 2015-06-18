@@ -177,9 +177,11 @@ jQuery(document).ready(function($){
     $(".chosen-entityreference-container select").trigger("chosen:updated");
   });
 
-  $.each($('#edit-og-group-ref-und').val(), function (i, val) {
-    addGroupMembers(val);
-  });
+  if ($('#edit-og-group-ref-und').val()) {
+    $.each($('#edit-og-group-ref-und').val(), function (i, val) {
+      addGroupMembers(val);
+    });
+  }
 
   // Handle updating original field.
   $(".chosen-entityreference-container select").on("chosen:updated", function(){
