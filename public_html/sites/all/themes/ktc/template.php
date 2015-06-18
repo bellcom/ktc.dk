@@ -84,8 +84,17 @@ function ktc_preprocess_entity(&$variables) {
   if ($variables['elements']['#bundle'] == 'field_artikel_afsnit') {
 
     // Grab type
-    if ($type = field_get_items('field_collection_item', $variables['field_collection_item'], 'field_artikelafsnit_type')) {
-      $variables['article_type'] = $type[0]['value'];
+    if ($field = field_get_items('field_collection_item', $variables['field_collection_item'], 'field_artikelafsnit_type')) {
+      $variables['classes_array'][] = 'ktc-article-section-type-' . $field[0]['value'];
+
+      // Text w. image
+      if ($field[0]['value'] == 'afsnitb') {
+
+        // Image positioning
+        if ($field = field_get_items('field_collection_item', $variables['field_collection_item'], 'field_artikelafsnit_placering')) {
+          $variables['classes_array'][] = 'ktc-article-section-type-afsnitb-image-' . $field[0]['value'];
+        }
+      }
     }
   }
 }

@@ -30,7 +30,7 @@
 ?>
 
 <!-- Begin - article section -->
-<section class="ktc-article-section ktc-article-type-<?php print $article_type; ?> <?php print $classes; ?>"<?php print $attributes; ?>>
+<section class="ktc-article-section <?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print render($content); ?>
 </section>
 <!-- End - article section -->

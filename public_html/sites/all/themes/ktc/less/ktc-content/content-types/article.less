@@ -7,11 +7,11 @@
 // | - .ktc-article-headline
 // | - .ktc-article-lead
 // | - .ktc-article-section
-// | - .ktc-article-type-faktaboks
-// | - .ktc-article-type-faktaboksyellow
-// | - .ktc-article-type-faktaboksgreen
-// | - .ktc-article-type-faktaboksblue
-// | - .ktc-article-type-faktaboksblack
+// | - .ktc-article-section-type-faktaboks
+// | - .ktc-article-section-type-faktaboksyellow
+// | - .ktc-article-section-type-faktaboksgreen
+// | - .ktc-article-section-type-faktaboksblue
+// | - .ktc-article-section-type-faktaboksblack
 // |
 
 // --------------------------------------------------
@@ -23,11 +23,11 @@
 	padding: 20px 0;
 
 	// Full width elements
-	&.ktc-article-type-faktaboks,
-	&.ktc-article-type-faktaboksgreen,
-	&.ktc-article-type-faktaboksyellow,
-	&.ktc-article-type-faktaboksblue,
-	&.ktc-article-type-faktaboksblack {
+	&.ktc-article-section-type-faktaboks,
+	&.ktc-article-section-type-faktaboksgreen,
+	&.ktc-article-section-type-faktaboksyellow,
+	&.ktc-article-section-type-faktaboksblue,
+	&.ktc-article-section-type-faktaboksblack {
 		border-top: 10px solid @body-bg;
 		border-bottom: 10px solid @body-bg;
 		.ktc-mixin-content-wide-full-width();
@@ -52,7 +52,7 @@
 .ktc-article-section {
 
 	// Text w. headline
-	&.ktc-article-type-afsnit {
+	&.ktc-article-section-type-afsnit {
 
 	}
 }
@@ -65,24 +65,34 @@
 .ktc-article-section {
 
 	// Text and image w. headline
-	&.ktc-article-type-afsnitb {
+	&.ktc-article-section-type-afsnitb {
+
+		// Left aligned image
+		&.ktc-article-section-type-afsnitb-left {}
+
+		// Right aligned image
+		&.ktc-article-section-type-afsnitb-right {}
 
 		// Image
 		.ktc-article-section-image {
 			float: left;
 		}
+
+		// Body
+		.ktc-article-section-body {
+		}
 	}
 }
 
 // --------------------------------------------------
-// Large image
+// Full width image
 // --------------------------------------------------
 
 // Section
 .ktc-article-section {
 
 	// Large image
-	&.ktc-article-type-stortbillede {
+	&.ktc-article-section-type-stortbillede {
 
 		// Image
 		.ktc-article-section-image {
@@ -107,7 +117,7 @@
 .ktc-article-section {
 
 	// Indented
-	&.ktc-article-type-indrykket {
+	&.ktc-article-section-type-indrykket {
 		padding-left: 40px;
 	}
 }
@@ -120,7 +130,7 @@
 .ktc-article-section {
 
 	// Quote
-	&.ktc-article-type-citat {
+	&.ktc-article-section-type-citat {
 		border-top: 1px solid #e0e4e5;
 		border-bottom: 1px solid #e0e4e5;
 		text-align: center;
@@ -156,7 +166,7 @@
 .ktc-article-section {
 
 	// Gallery
-	&.ktc-article-type-billedserie {
+	&.ktc-article-section-type-billedserie {
 
 		// Photoswipe gallery
 		.photoswipe-gallery {
@@ -196,22 +206,22 @@
 }
 
 // FAQ - green
-.ktc-article-type-faktaboksgreen {
+.ktc-article-section-type-faktaboksgreen {
 	.ktc-mixin-faq(@ktc-color-green-background, lighten(@ktc-color-green-background, 20%), @ktc-color-green-background-font);
 }
 
 // FAQ - gold / yellow
-.ktc-article-type-faktaboksyellow {
+.ktc-article-section-type-faktaboksyellow {
 	.ktc-mixin-faq(@ktc-color-gold-background, lighten(@ktc-color-gold-background, 20%), @ktc-color-gold-background-font);
 }
 
 // FAQ - blue
-.ktc-article-type-faktaboksblue {
+.ktc-article-section-type-faktaboksblue {
 	.ktc-mixin-faq(@ktc-color-blue-background, lighten(@ktc-color-blue-background, 20%), @ktc-color-blue-background-font);
 }
 
 // FAQ - black
-.ktc-article-type-faktaboksblack {
+.ktc-article-section-type-faktaboksblack {
 	.ktc-mixin-faq(@ktc-color-dark-content-background, lighten(@ktc-color-dark-content-background, 20%), @ktc-color-dark-content-background-font);
 }
 
