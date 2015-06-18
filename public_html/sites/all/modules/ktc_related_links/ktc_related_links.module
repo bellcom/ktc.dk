@@ -54,17 +54,16 @@ function _ktc_related_links_block_content() {
         $query = new EntityFieldQuery();
         $result = $query->entityCondition('entity_type', 'node')
           ->propertyCondition('status', 1)
+          ->entityCondition('bundle', array('hearing', 'document'), 'NOT IN')
           ->fieldCondition('field_os2web_base_field_kle_ref', 'tid', $kle['tid'])
           ->propertyOrderBy('created', 'ASC')
+          ->range(0,10)
           ->execute();
         if (isset($result['node'])) {
           foreach ($result['node'] as $link) {
             // Be sure to skip links which already is in list, or links to
             // current node.
             if (isset($related_links[$link->nid]) || ($node && $node->nid == $link->nid)) {
-              continue;
-            }
-            if ($node->type == 'document') {
               continue;
             }
             $link_node = node_load($link->nid);
@@ -88,17 +87,16 @@ function _ktc_related_links_block_content() {
         $query = new EntityFieldQuery();
         $result = $query->entityCondition('entity_type', 'node')
           ->propertyCondition('status', 1)
+          ->entityCondition('bundle', array('hearing', 'document'), 'NOT IN')
           ->fieldCondition('field_topics', 'tid', $item['tid'])
           ->propertyOrderBy('created', 'ASC')
+          ->range(0,10)
           ->execute();
         if (isset($result['node'])) {
           foreach ($result['node'] as $link) {
             // Be sure to skip links which already is in list, or links to
             // current node.
             if (isset($related_links[$link->nid]) || ($node && $node->nid == $link->nid)) {
-              continue;
-            }
-            if ($node->type == 'document') {
               continue;
             }
             $link_node = node_load($link->nid);
@@ -123,17 +121,16 @@ function _ktc_related_links_block_content() {
         $query = new EntityFieldQuery();
         $result = $query->entityCondition('entity_type', 'node')
           ->propertyCondition('status', 1)
+          ->entityCondition('bundle', array('hearing', 'document'), 'NOT IN')
           ->fieldCondition('field_tags', 'tid', $item['tid'])
           ->propertyOrderBy('created', 'ASC')
+          ->range(0,10)
           ->execute();
         if (isset($result['node'])) {
           foreach ($result['node'] as $link) {
             // Be sure to skip links which already is in list, or links to
             // current node.
             if (isset($related_links[$link->nid]) || ($node && $node->nid == $link->nid)) {
-              continue;
-            }
-            if ($node->type == 'document') {
               continue;
             }
             $link_node = node_load($link->nid);
@@ -145,7 +142,6 @@ function _ktc_related_links_block_content() {
                 'class' => 'tags-link',
               );
             }
-
           }
         }
       }
