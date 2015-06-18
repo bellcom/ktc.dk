@@ -30,6 +30,26 @@ function ktc_hearing_permission_settings() {
     );
   }
 
+  if (!$vocabulary = taxonomy_vocabulary_machine_name_load('ktc_netvaerk_grouproles')) {
+    drupal_set_message('Vocabulary with machinename "brugertyper" is missing', 'error');
+  }
+  else {
+    $taxonomy_terms = taxonomy_term_load_multiple(array(), array('vid' => $vocabulary->vid));
+
+    $group_roles = array();
+
+    foreach ($taxonomy_terms as $term) {
+      $group_roles[$term->tid] = $term->name;
+    }
+
+    $form['ktc_hearings_group_roles_create'] = array(
+      '#title' => 'Grupperoller der kan oprette høringer i egne faggruppenetværk.',
+      '#type' => 'checkboxes',
+      '#options' => $group_roles,
+      '#default_value' => variable_get('ktc_hearings_group_roles_create', array()),
+    );
+  }
+
   if (!$vocabulary = taxonomy_vocabulary_machine_name_load('hearing_status')) {
     drupal_set_message('Vocabulary with machinename "hearing_status" is missing', 'error');
   }

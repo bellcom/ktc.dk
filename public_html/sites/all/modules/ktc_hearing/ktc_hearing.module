@@ -144,19 +144,12 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
   // On the hearing node form. It should only be possible to select a
   // 'faggruppe' in the og_group_ref field.
   if ($form_id == 'hearing_node_form') {
-    // Fetch ids for all networks of this type.
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'node')
-      ->fieldCondition('field_netvaerkstype', 'tid', 1134);
-    $result = $query->execute();
-
-    if (isset($result['node'])) {
-      $group_ids = array_keys($result['node']);
-      // Filter them out of the normal options.
-      foreach ($form['og_group_ref'][LANGUAGE_NONE]['#options'] as $nid => $options) {
-        if (!in_array($nid, $group_ids)) {
-          unset($form['og_group_ref'][LANGUAGE_NONE]['#options'][$nid]);
-        }
+    global $user;
+    $group_ids = _ktc_hearing_user_can_create_hearing_groups($user->uid);
+    // Filter them out of the normal options.
+    foreach ($form['og_group_ref'][LANGUAGE_NONE]['#options'] as $nid => $options) {
+      if (!in_array($nid, $group_ids)) {
+        unset($form['og_group_ref'][LANGUAGE_NONE]['#options'][$nid]);
       }
     }
   }
@@ -897,17 +890,68 @@ function _ktc_hearing_is_open($hearing) {
 /**
  * Helper, can the user create a hearing.
  */
-function _ktc_hearing_user_can_create_hearing($account) {
-  $user = user_load($account->uid);
-  if ($usertype_field = field_get_items('user', $user, 'field_usertype')) {
+function _ktc_hearing_user_can_create_hearing($user) {
+  // Check if there are groups where the user can create hearings.
+  $group_ids = _ktc_hearing_user_can_create_hearing_groups($user->uid);
+  if (!empty($group_ids)) {
+    return TRUE;
+  }
+
+  // If none of the above, deny creating hearings.
+  return FALSE;
+}
+
+/**
+ * Helper, return list of groups, where the user can create hearings.
+ */
+function _ktc_hearing_user_can_create_hearing_groups($uid) {
+  $account = user_load($uid);
+
+  $groups = array();
+
+  if ($usertype_field = field_get_items('user', $account, 'field_usertype')) {
     $usertype_tid = $usertype_field[0]['tid'];
     $allowed_usertypes = variable_get('ktc_hearings_usertype_create', array());
     if (isset($allowed_usertypes[$usertype_tid]) && $allowed_usertypes[$usertype_tid]) {
-      return TRUE;
+
+      // Fetch ids for all networks of this type.
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+        ->fieldCondition('field_netvaerkstype', 'tid', 1134);
+      $result = $query->execute();
+
+      if (isset($result['node'])) {
+        foreach ($result['node'] as $group_id => $value) {
+          $groups[$group_id] = $group_id;
+        }
+      }
     }
   }
 
-  return FALSE;
+  $allowed_group_roles = variable_get('ktc_hearings_group_roles_create', array());
+
+  if (!empty($allowed_group_roles)) {
+    // Check if the user is either chairman, responsible_chairman,
+    // responsible_admin, coordinator.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'og_membership')
+      ->propertyCondition('etid', $uid)
+      ->fieldCondition('field_grouprole', 'target_id', $allowed_group_roles)
+      ->fieldCondition('field_netvaerkstype', 'tid', 1134);
+    $result = $query->execute();
+
+    if (isset($result['og_membership'])) {
+      // Load memberships and extract group ids.
+      $memberships = og_membership_load_multiple(array_keys($result['og_membership']));
+
+      foreach ($memberships as $membership) {
+        $groups[$membership->gid] = $membership->gid;
+      }
+
+    }
+  }
+
+  return $groups;
 }
 
 /**
