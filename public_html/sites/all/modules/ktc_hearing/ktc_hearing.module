@@ -1144,6 +1144,7 @@ function _ktc_hearing_get_info_vars() {
   // Defines the following variables for the template.
   //
   // Titel                      => $title
+  // Kort titel                 => $short_title
   // Myndighed                  => $authority
   // Høringstype                => $type
   // Status                     => $status
@@ -1168,6 +1169,10 @@ function _ktc_hearing_get_info_vars() {
 
     // Oprettet af.
     $vars['author'] = _ktc_hearing_get_user_name($node->uid);
+
+    if ($field = field_get_items('node', $node, 'field_titel_kort')) {
+      $vars['short_title'] = $field[0]['value'];
+    }
 
     if ($field = field_get_items('node', $node, 'field_responsible_admin')) {
       $vars['responsible_chairman'] = _ktc_hearing_get_user_name($field[0]['target_id']);
