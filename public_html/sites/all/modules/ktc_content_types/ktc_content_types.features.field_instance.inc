@@ -537,66 +537,6 @@ function ktc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-arrangement-field_arrangement_categories'
-  $field_instances['node-arrangement-field_arrangement_categories'] = array(
-    'bundle' => 'arrangement',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 31,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_arrangement_categories',
-    'label' => 'Nøgleord/ kategorier (max 5 stk.)',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 50,
-    ),
-  );
-
   // Exported field_instance: 'node-arrangement-field_arrangement_date'
   $field_instances['node-arrangement-field_arrangement_date'] = array(
     'bundle' => 'arrangement',
@@ -3084,6 +3024,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-arrangement-og_group_ref'
   $field_instances['node-arrangement-og_group_ref'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => 'Tilføj netværk',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
@@ -3142,7 +3084,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'providers' => array(
-            'og_context' => FALSE,
+            'og_context' => 0,
             'url' => 1,
           ),
           'skip_perm' => 0,
@@ -4929,10 +4871,11 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'better_formats' => array(
         'allowed_formats' => array(
           'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
@@ -4941,6 +4884,9 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
             ),
             'full_html' => array(
               'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -5405,7 +5351,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'settings' => array(
         'allowed_schemes' => array(
           'prezi' => 'prezi',
-          'private' => 'private',
+          'private' => 0,
           'public' => 'public',
           'youtube' => 'youtube',
         ),
@@ -7204,6 +7150,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-meeting_doodle-body'
   $field_instances['node-meeting_doodle-body'] = array(
     'bundle' => 'meeting_doodle',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -7251,11 +7199,11 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'better_formats' => array(
         'allowed_formats' => array(
           'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'mailchimp_campaign' => 'mailchimp_campaign',
-          'plain_text' => 'plain_text',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
@@ -7276,7 +7224,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       ),
       'custom_add_another' => '',
       'custom_remove' => '',
-      'display_summary' => 1,
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -7664,7 +7612,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-meeting_doodle-og_group_ref'
   $field_instances['node-meeting_doodle-og_group_ref'] = array(
     'bundle' => 'meeting_doodle',
-    'custom_add_another' => '',
+    'custom_add_another' => 'Tilføj netværk',
     'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
@@ -10062,7 +10010,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Målgruppe');
   t('Mødetype');
   t('Nyhedstype');
-  t('Nøgleord/ kategorier (max 5 stk.)');
   t('Original link');
   t('Periode');
   t('Primært billede');
