@@ -5,6 +5,7 @@
  *
  * Following variables are available.
  * Titel                      => $title
+ * Kort titel                 => $short_title
  * Myndighed                  => $authority
  * Høringstype                => $type
  * Status                     => $status
@@ -26,66 +27,86 @@ if ($status == 'Åben') {
 if ($status == 'Under sammenskrivning' || $status == 'Under godkendelse') {
   $head_class = 'ktc-aside-gold';
 }
+
+// Test which title to usevar_dump($short_title);
+if ($short_title != '') {
+  // Short title exists. Use that as header title
+  $header_title = $short_title;
+}
+else {
+  // Short title does not exist. Truncate node title if necessary
+  if (strlen($title) > 70) {
+    $str = explode("\n", wordwrap($title, 70));
+    $header_title = $str[0] . '...';
+  }
+}
+
 ?>
-<div class="ktc-aside ktc-aside-dark ktc-aside-green ktc-section-full-width">
-  <div class="ktc-aside-heading">
-    <h1 class="ktc-aside-title"><?php print $title; ?> (<?php print $nid; ?>) - <?php print $type; ?></h1>
-  </div>
-  <div class="ktc-aside-body">
+<div class="ktc-aside ktc-section-full-width <?php print $head_class; ?>">
+  <div class="ktc-aside-body pane-content">
+    <div class="row">
+      <div class="col-lg-12">
+        <?php?>
+
+        <h4><?php print $header_title; ?> (<?php print $nid; ?>) - <?php print $type; ?></h4>
+        <p class="ktc-date">
+          <?php print ($answer_by == '' ? '' : 'Svarfrist: ' .  $answer_by); ?>
+        </p>
+        <strong><?php print $authority; ?></strong>
+      </div>
+    </div>
 
     <div class="row">
-      <div class="col-md-6">
-
-        <table class="" border="0">
-          <tbody>
-          <tr>
-            <td>
-              Indmelder:
-            </td>
-            <td>
-              <?php print $author; ?>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Ansvarlig formand:
-            </td>
-            <td>
-              <?php print $responsible_chairman; ?>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Ansvarlig tovholder:
-            </td>
-            <td>
-              <?php print $responsible_foreman; ?>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Status:
-            </td>
-            <td>
-              <?php print $status; ?>
-            </td>
-          </tr>
-          </tbody>
-        </table>
+      <div class="col-sm-4">
+        Indmelder:
       </div>
+      <div class="col-sm-8">
+        <?php print $author; ?>
+      </div>
+    </div>
 
-      <div class="col-md-6">
-        <table class="" border="0">
-          <tbody>
-          <tr>
-            <td>
-              Antal deltagere / Svar:
-            </td>
-            <td>
-              <?php print $attendee_count; ?> / <?php print $answer_count; ?>
-            </td>
-          </tr>
-          <tr>
+    <div class="row">
+      <div class="col-sm-4">
+        Ansvarlig tovholder:
+      </div>
+      <div class="col-sm-8">
+        <?php print $responsible_chairman; ?>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        Ansvarlig formand:
+      </div>
+      <div class="col-sm-8">
+        <?php print $responsible_foreman; ?>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        Status:
+      </div>
+      <div class="col-sm-8">
+        <?php print $status; ?>
+      </div>
+    </div>
+  </div>
+
+  <div class="ktc-footer">
+    <div class="row">
+      <div class="col-md-12">
+        <span class="ktc-footer-button">
+          Deltagere: <?php print (!isset($attendee_count) ? '0' : $attendee_count); ?>
+        </span>
+        <span class="ktc-footer-button">
+          Svar: <?php print (!isset($answer_count) ? '0' : $answer_count); ?>
+        </span>
+        <span class="ktc-footer-button">Type: <?php print $type; ?></span>
+        <span class="ktc-footer-button pull-right">ID: <?php print $nid; ?></span>
+        <span class="ktc-footer-button ktc-footer-button-hearing pull-right">Høring</span>
+
+      <!--    <tr>
             <td>
               Autoritet:
             </td>
@@ -116,11 +137,12 @@ if ($status == 'Under sammenskrivning' || $status == 'Under godkendelse') {
             <td>
               <?php print $answer_by; ?>
             </td>
-          </tr>
+          </tr> -->
           </tbody>
         </table>
       </div>
     </div>
 
   </div>
+
 </div>
