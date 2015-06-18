@@ -222,6 +222,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   $form['ean'] = array(
     '#title' => 'EAN',
     '#type' => 'textfield',
+    '#description' => 'har du ikke et ean nummer, så skriv 13 9-taller efter hinanden i formularen',
     '#required' => TRUE,
     '#default_value' => $form_state['subscriptiondto']->EAN,
   );
@@ -730,6 +731,11 @@ function ktc_subscription_ui_get_product_list($type) {
  * Validate EAN numbers.
  */
 function ktc_subscription_ui_validate_ean($ean) {
+  // Skip validation if EAN is 13x9.
+  if ($ean == 9999999999999) {
+    return TRUE;
+  }
+
   $get_ean_check_digit = function($param) {
     $sum = 0;
     $odd = TRUE;
