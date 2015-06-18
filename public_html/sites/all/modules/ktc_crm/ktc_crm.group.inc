@@ -37,7 +37,7 @@ function ktc_crm_group_update_groups() {
  */
 function ktc_crm_group_process_groups($groups) {
   foreach ($groups->Results->GroupDto as $groupdto) {
-    if ($groupdto->Active) {
+    if ($groupdto->VisibleOnWeb) {
       ktc_crm_group_update_from_groupdto($groupdto);
     }
   }
@@ -52,7 +52,7 @@ function ktc_crm_node_delete($node) {
     $groupdto = ktc_crm_group_map_group_to_groupdto($node);
 
     $groupdto->GroupName = 'Skal slettes';
-    $groupdto->Active = 0;
+    $groupdto->VisibleOnWeb = 0;
 
     ktc_crm_update_group($groupdto);
   }
@@ -136,7 +136,7 @@ function ktc_crm_group_map_group_to_groupdto($group) {
 
   $groupdto = new \KTC\GroupService\GroupDto($group_uuid);
 
-  $groupdto->Active = $group->status;
+  $groupdto->VisibleOnWeb = $group->status;
 
   if ($field = field_get_items('node', $group, 'body')) {
     $groupdto->Description = substr($field[0]['value'], 0, 1999);
@@ -153,6 +153,7 @@ function ktc_crm_group_map_group_to_groupdto($group) {
       $grouptype->Name = $type->name;
 
       $groupdto->GroupType = $grouptype;
+      $groupdto->GroupTypeId = $grouptype_uuid;
     }
   }
 
@@ -170,9 +171,7 @@ function ktc_crm_group_map_group_to_groupdto($group) {
     $groupdto->ParentGroup = $parentgroupdto;
   }
 
-  if ($field = field_get_items('node', $group, 'field_os2web_base_field_ext_link')) {
-    $groupdto->WebSite = $field[1]['url'];
-  }
+  $groupdto->WebSite = url('node/' . $group->nid, array('absolute' => TRUE));
 
   if ($field = field_get_items('node', $group, 'field_open_group')) {
     $groupdto->AabenPrivat = _ktc_crm_group_transform_open($field[0]['value']);
