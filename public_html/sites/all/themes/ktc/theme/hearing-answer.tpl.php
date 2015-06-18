@@ -9,11 +9,11 @@ $block_status_form = module_invoke('ktc_hearing', 'block_view', 'ktc_hearing_set
 
 <div class="row">
 
-  <div class="col-md-8">
+  <div class="col-md-7">
     <?php print render($block_info['content']); ?>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-5">
 
     <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-2-col ktc-aside-action">
       <div class="ktc-aside-heading">
