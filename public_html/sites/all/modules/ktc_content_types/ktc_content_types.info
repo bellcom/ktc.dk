@@ -287,6 +287,7 @@ features[field_instance][] = node-magazine-field_linkbladreversion
 features[field_instance][] = node-magazine-field_magasin_indhold
 features[field_instance][] = node-magazine-field_magasinleder
 features[field_instance][] = node-magazine-field_os2web_base_field_ext_link
+features[field_instance][] = node-magazine-field_os2web_base_field_hidlinks
 features[field_instance][] = node-magazine-field_tags
 features[field_instance][] = node-magazine-field_top_artikel
 features[field_instance][] = node-magazine-field_topics

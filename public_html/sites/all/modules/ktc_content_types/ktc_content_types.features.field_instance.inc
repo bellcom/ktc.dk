@@ -2058,8 +2058,7 @@ function ktc_content_types_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Bruges hvis tilmeldingen ikke bruges på KTC.dk.
-Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
+    'description' => 'Fuldt link inkl. http:// til program.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -2134,9 +2133,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-arrangement-field_link_to_signup'
   $field_instances['node-arrangement-field_link_to_signup'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Bruges hvis tilmeldingen ikke bruges på KTC.dk.
+Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -3822,7 +3824,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'entity_type' => 'node',
     'field_name' => 'field_dokument',
     'label' => 'Bilag',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -6817,6 +6819,69 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 44,
+    ),
+  );
+
+  // Exported field_instance: 'node-magazine-field_os2web_base_field_hidlinks'
+  $field_instances['node-magazine-field_os2web_base_field_hidlinks'] = array(
+    'bundle' => 'magazine',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 13,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_hidlinks',
+    'label' => 'Skjul auto relaterede links',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 7,
     ),
   );
 
@@ -9984,6 +10049,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Forfrem til');
   t('Fornavn');
   t('Forside (billede)');
+  t('Fuldt link inkl. http:// til program.');
   t('Gammel gid');
   t('Gammel nid');
   t('Gruppe/Netværk');

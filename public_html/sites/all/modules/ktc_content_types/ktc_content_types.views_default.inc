@@ -563,14 +563,14 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Logo */
-  $handler->display->display_options['fields']['field_arrangement_logo']['id'] = 'field_arrangement_logo';
-  $handler->display->display_options['fields']['field_arrangement_logo']['table'] = 'field_data_field_arrangement_logo';
-  $handler->display->display_options['fields']['field_arrangement_logo']['field'] = 'field_arrangement_logo';
-  $handler->display->display_options['fields']['field_arrangement_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_arrangement_logo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_arrangement_logo']['empty'] = '<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>';
-  $handler->display->display_options['fields']['field_arrangement_logo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_arrangement_logo']['settings'] = array(
+  $handler->display->display_options['fields']['field_groupimage']['id'] = 'field_groupimage';
+  $handler->display->display_options['fields']['field_groupimage']['table'] = 'field_data_field_groupimage';
+  $handler->display->display_options['fields']['field_groupimage']['field'] = 'field_groupimage';
+  $handler->display->display_options['fields']['field_groupimage']['label'] = '';
+  $handler->display->display_options['fields']['field_groupimage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_groupimage']['empty'] = '<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>';
+  $handler->display->display_options['fields']['field_groupimage']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_groupimage']['settings'] = array(
     'image_style' => 'netvaerks_logo',
     'image_link' => '',
   );
