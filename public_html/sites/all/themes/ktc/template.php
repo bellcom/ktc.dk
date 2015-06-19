@@ -348,12 +348,9 @@ function ktc_preprocess_node(&$vars) {
   $time_ar = explode(' ', $created_ago);
   $vars['created_ago'] = ktc_date_translate($time_ar);
 
-  // Added statistics_count for node--teaser and node-teasercomments templates.
-  if (isset($vars['content']['links']['statistics'])) {
-    $vars['statistics_count'] = (int) $vars['content']['links']['statistics']['#links']['statistics_counter']['title'];
-  }
-  else {
-    $vars['statistics_count'] = 0;
+  $vars['statistics_count'] = 0;
+  if ($stats = statistics_get($vars['node']->nid)) {
+    $vars['statistics_count'] = $stats['totalcount'];
   }
 
   // News teaser
@@ -422,7 +419,7 @@ function ktc_preprocess_node(&$vars) {
   }
 
   // Document
-  if ($vars['type'] == 'document') {
+  if ($vars['type'] == 'document' || $vars['type'] == 'os2web_base_news') {
     $vars['num_attachments'] = 0;
     if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
       $vars['num_attachments'] = count($media);

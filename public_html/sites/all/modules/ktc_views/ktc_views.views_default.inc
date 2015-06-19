@@ -778,6 +778,46 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<div class="og-members-all ktc-call-to-action-button"><a href="#" class="btn btn-default">Se alle medlemmer</a></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: OG membership: OG membership from Bruger */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Forbindelse: OG membership: OG Roles from membership */
+  $handler->display->display_options['relationships']['og_users_roles']['id'] = 'og_users_roles';
+  $handler->display->display_options['relationships']['og_users_roles']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_users_roles']['field'] = 'og_users_roles';
+  $handler->display->display_options['relationships']['og_users_roles']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Bruger: Aktiv */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filterkriterie: OG membership: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['state']['value'] = array(
+    1 => '1',
+  );
+  /* Filterkriterie: Bruger: Bruger ID */
+  $handler->display->display_options['filters']['uid_raw']['id'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
+  $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1';
+  /* Filterkriterie: OG user roles: Role Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'og_role';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['relationship'] = 'og_users_roles';
+  $handler->display->display_options['filters']['name']['operator'] = 'not';
+  $handler->display->display_options['filters']['name']['value'] = array(
+    'Netværksadministrator' => 'Netværksadministrator',
+  );
   $handler->display->display_options['pane_title'] = 'KTC OG members';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
@@ -1409,10 +1449,10 @@ function ktc_views_views_default_views() {
     t('Block'),
     t('Content pane'),
     t('<div class="og-members-all ktc-call-to-action-button"><a href="#" class="btn btn-default">Se alle medlemmer</a></div>'),
+    t('OG Roles from OG membership'),
     t('KTC OG members'),
     t('View panes'),
     t('Medlemsliste gruppe venstre'),
-    t('OG Roles from OG membership'),
     t('KTC OG members admin'),
     t('Medlemsliste til modal'),
     t('term fra field_account'),
