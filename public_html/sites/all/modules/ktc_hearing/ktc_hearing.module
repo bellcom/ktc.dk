@@ -731,20 +731,19 @@ function ktc_hearing_set_status_submit(&$form, &$form_state) {
  * Hearing response page.
  */
 function ktc_hearing_responses($hearing) {
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-    ->propertyCondition('status', 1)
-    ->entityCondition('bundle', 'hearing_responses')
-    ->fieldCondition('field_hearing_node', 'target_id', $hearing->nid);
-  $result = $query->execute();
+  $result = db_select('field_data_field_hearing_node', 'h')
+    ->fields('h', array('entity_id'))
+    ->condition('field_hearing_node_target_id', $hearing->nid)
+    ->execute()
+    ->fetchAllKeyed(0,0);
 
   $type = 'hearing_responses';
   $vars = array();
 
   global $user;
-  if (isset($result['node'])) {
-    foreach ($result['node'] as $item) {
-      $node = node_load($item->nid);
+  if ($result) {
+    foreach ($result as $nid) {
+      $node = node_load($nid);
 
       if (_ktc_hearing_response_is_summary($node)) {
         continue;
@@ -754,7 +753,9 @@ function ktc_hearing_responses($hearing) {
         $users_response = $node;
       }
 
-      $vars['responses'][] = node_view($node, 'full');
+      if ($node->status) {
+        $vars['responses'][] = node_view($node, 'full');
+      }
     }
   }
 
