@@ -395,7 +395,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'gold-title  ktc-aside-color',
+      'css_class' => 'ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 5;
@@ -423,7 +423,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'gold-title',
+      'css_class' => 'ktc-aside-color',
     );
     $pane->extras = array();
     $pane->position = 6;

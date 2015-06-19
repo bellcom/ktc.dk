@@ -1489,7 +1489,7 @@ function ktc_content_types_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Flere bilag',
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(

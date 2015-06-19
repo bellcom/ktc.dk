@@ -148,6 +148,7 @@ function ktc_crm_fetch_subscriptions($options = array()) {
       'message' => $e->getMessage(),
       'method' => 'RetrieveSubscriptions',
     ));
+    return 'error';
   }
 
   return FALSE;
@@ -184,6 +185,7 @@ function ktc_crm_update_user_subscription(\KTC\Subscription\SubscriptionDto $sub
       'message' => $e->getMessage(),
       'method' => __FUNCTION__,
     ));
+    return 'error';
   }
 
   return FALSE;
@@ -210,7 +212,7 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
     $user_uuid = strtolower($crm_uuid_field[0]['value']);
   }
   else {
-    return FALSE;
+    return 'error';
   }
 
   $logger = KtcCrmLogger::getInstance();
@@ -256,6 +258,7 @@ function ktc_crm_subscriptions_fetch_user_subscriptions($user = NULL) {
       'message' => $e->getMessage(),
       'method' => __FUNCTION__,
     ));
+    return 'error';
   }
 
   return FALSE;
