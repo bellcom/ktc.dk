@@ -2058,8 +2058,7 @@ function ktc_content_types_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Bruges hvis tilmeldingen ikke bruges på KTC.dk.
-Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
+    'description' => 'Fuldt link inkl. http:// til program.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -2134,9 +2133,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-arrangement-field_link_to_signup'
   $field_instances['node-arrangement-field_link_to_signup'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Bruges hvis tilmeldingen ikke bruges på KTC.dk.
+Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -10047,6 +10049,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Forfrem til');
   t('Fornavn');
   t('Forside (billede)');
+  t('Fuldt link inkl. http:// til program.');
   t('Gammel gid');
   t('Gammel nid');
   t('Gruppe/Netværk');
