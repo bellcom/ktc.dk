@@ -27,7 +27,8 @@
 	&.ktc-article-section-type-faktaboksgreen,
 	&.ktc-article-section-type-faktaboksyellow,
 	&.ktc-article-section-type-faktaboksblue,
-	&.ktc-article-section-type-faktaboksblack {
+	&.ktc-article-section-type-faktaboksblack,
+	&.ktc-article-section-type-billedserie {
 		border-top: 10px solid @body-bg;
 		border-bottom: 10px solid @body-bg;
 		.ktc-mixin-content-wide-full-width();
@@ -46,6 +47,12 @@
 	// Image
 	.ktc-article-section-image {
 		width: 100%;
+	}
+
+	// Extra body
+	.ktc-article-section-body-extra {
+		font-style: italic;
+		padding: 10px 0;
 	}
 }
 
@@ -119,12 +126,6 @@
 
 	// Large image
 	&.ktc-article-section-type-stortbillede {
-
-		// Extra body
-		.ktc-article-section-body-extra {
-			font-style: italic;
-			padding: 10px 0;
-		}
 	}
 }
 
@@ -150,9 +151,11 @@
 
 	// Quote
 	&.ktc-article-section-type-citat {
-		border-top: 1px solid #e0e4e5;
-		border-bottom: 1px solid #e0e4e5;
+		border-top: 2px solid #e0e4e5;
+		border-bottom: 2px solid #e0e4e5;
 		text-align: center;
+		padding-left: 30px;
+		padding-right: 30px;
 
 		// Headline
 		.ktc-article-section-headline {
@@ -161,11 +164,19 @@
 			h1, h2, h3, h4, h5, h6 {
 				font-weight: normal;
 				font-style: italic;
+				color: @ktc-default-color-headline;
+				margin-bottom: 0;
+
+				// Quotation marks
+				&:after,
+				&:before {
+					content: '"';
+				}
 			}
 		}
 
-		// Body
-		.ktc-article-section-body {
+		// Extra body
+		.ktc-article-section-body-extra {
 
 			&,
 			span,
@@ -199,7 +210,7 @@
 // --------------------------------------------------
 
 // FAQ
-.ktc-mixin-faq(@background-color, @headline-font-color, @body-font-color) {
+.ktc-mixin-article-section-faq(@background-color, @headline-font-color, @body-font-color) {
 
 	& {
 		background-color: @background-color;
@@ -224,24 +235,81 @@
 	}
 }
 
+// Section
+.ktc-mixin-article-section-typography(@headline-font-color) {
+
+	& {
+
+		// Headline
+		.ktc-article-section-headline {
+
+			// Headlines
+			h1, h2, h3, h4, h5, h6 {
+				color: @headline-font-color;
+			}
+		}
+
+		// Quote
+		&.ktc-article-section-type-citat {
+
+			// Extra body
+			.ktc-article-section-body-extra {
+				color: @headline-font-color;
+			}
+		}
+	}
+}
+
+// Default
+.ktc-article-section {
+	.ktc-mixin-article-section-typography(@ktc-color-green-font);
+}
+
+// Technique and environment (blue)
+.tech-env {
+
+	// Section
+	.ktc-article-section {
+		.ktc-mixin-article-section-typography(@ktc-color-blue-font);
+	}
+}
+
+// Network (gold)
+.og-context.og-context-node {
+
+	// Section
+	.ktc-article-section {
+		.ktc-mixin-article-section-typography(@ktc-color-gold-font);
+	}
+}
+
+// Not network (green)
+.no-network {
+
+	// Section
+	.ktc-article-section {
+		.ktc-mixin-article-section-typography(@ktc-color-green-font);
+	}
+}
+
 // FAQ - green
 .ktc-article-section-type-faktaboksgreen {
-	.ktc-mixin-faq(@ktc-color-green-background, lighten(@ktc-color-green-background, 20%), @ktc-color-green-background-font);
+	.ktc-mixin-article-section-faq(@ktc-color-green-background, lighten(@ktc-color-green-background, 20%), @ktc-color-green-background-font);
 }
 
 // FAQ - gold / yellow
 .ktc-article-section-type-faktaboksyellow {
-	.ktc-mixin-faq(@ktc-color-gold-background, lighten(@ktc-color-gold-background, 20%), @ktc-color-gold-background-font);
+	.ktc-mixin-article-section-faq(@ktc-color-gold-background, lighten(@ktc-color-gold-background, 20%), @ktc-color-gold-background-font);
 }
 
 // FAQ - blue
 .ktc-article-section-type-faktaboksblue {
-	.ktc-mixin-faq(@ktc-color-blue-background, lighten(@ktc-color-blue-background, 20%), @ktc-color-blue-background-font);
+	.ktc-mixin-article-section-faq(@ktc-color-blue-background, lighten(@ktc-color-blue-background, 20%), @ktc-color-blue-background-font);
 }
 
 // FAQ - black
 .ktc-article-section-type-faktaboksblack {
-	.ktc-mixin-faq(@ktc-color-dark-content-background, lighten(@ktc-color-dark-content-background, 20%), @ktc-color-dark-content-background-font);
+	.ktc-mixin-article-section-faq(@ktc-color-dark-content-background, lighten(@ktc-color-dark-content-background, 20%), @ktc-color-dark-content-background-font);
 }
 
 // --------------------------------------------------
@@ -298,6 +366,8 @@
 	}
 
 	.field-collection-container {
+		border: 0;
+		margin: 0;
 
 		.action-links-field-collection-add {
 			padding: 0;

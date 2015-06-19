@@ -1,7 +1,6 @@
 // Form
 .ktc-comments-form {
 	background-color: #fff;
-	.ktc-mixin-content-full-width();
 	padding-top: @ktc-default-body-top-bottom-inner-spacing;
 	margin-bottom: -(@ktc-default-body-top-bottom-inner-spacing);
 
@@ -55,7 +54,6 @@
 
 	// Buttons
 	.form-actions {
-		.ktc-mixin-content-full-width();
 		.ktc-footer;
 
 		.ktc-footer-button {
@@ -81,6 +79,34 @@
 			.icon {
 				display: none;
 			}
+		}
+	}
+}
+
+// Content
+.ktc-content {
+
+	// Form
+	.ktc-comments-form {
+		.ktc-mixin-content-full-width();
+
+		// Buttons
+		.form-actions {
+			.ktc-mixin-content-full-width();
+		}
+	}
+}
+
+// Content wide
+.ktc-content-wide {
+
+	// Form
+	.ktc-comments-form {
+		.ktc-mixin-content-wide-full-width();
+
+		// Buttons
+		.form-actions {
+			.ktc-mixin-content-wide-full-width();
 		}
 	}
 }
