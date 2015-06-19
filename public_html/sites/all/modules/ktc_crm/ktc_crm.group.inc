@@ -11,12 +11,15 @@ function ktc_crm_group_update_groups() {
   $logger = KtcCrmLogger::getInstance();
   $logger->log->addInfo('cron', 'start group sync');
 
-  $logger->log->addInfo('cron group', 'update groups');
   $groups = ktc_crm_fetch_groups();
-  ktc_crm_group_process_groups($groups);
 
-  $logger->log->addInfo('cron group', 'remove old groups');
-  ktc_crm_group_remove_old_groups($groups);
+  if ($groups) {
+    $logger->log->addInfo('cron group', 'update groups');
+    ktc_crm_group_process_groups($groups);
+
+    $logger->log->addInfo('cron group', 'remove old groups');
+    ktc_crm_group_remove_old_groups($groups);
+  }
 
   $logger->log->addInfo('cron group', 'update grouproles');
   $grouproles = ktc_crm_fetch_grouproles();
@@ -24,12 +27,14 @@ function ktc_crm_group_update_groups() {
 
   $groups = ktc_crm_fetch_groupmembers();
 
-  $logger->log->addInfo('cron group', 'update memberhips');
   $group_members = ktc_crm_group_create_array($groups);
-  ktc_crm_group_process_memberships($group_members);
-
-  $logger->log->addInfo('cron group', 'remove old memberships');
-  ktc_crm_group_remove_old_memberships($group_members);
+  if ($group_members) {
+    $logger->log->addInfo('cron group', 'update memberhips');
+    ktc_crm_group_process_memberships($group_members);
+   
+    $logger->log->addInfo('cron group', 'remove old memberships');
+    ktc_crm_group_remove_old_memberships($group_members);
+  }
 }
 
 /**
@@ -137,6 +142,7 @@ function ktc_crm_group_map_group_to_groupdto($group) {
   $groupdto = new \KTC\GroupService\GroupDto($group_uuid);
 
   $groupdto->VisibleOnWeb = $group->status;
+  $groupdto->Active = $group->status;
 
   if ($field = field_get_items('node', $group, 'body')) {
     $groupdto->Description = substr($field[0]['value'], 0, 1999);
