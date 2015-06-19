@@ -137,6 +137,10 @@ function ktc_subscription_ui_page($account) {
   $args['subscription_nodes'] = ktc_subscription_ui_get_product_list($type);
   $args['user_subscriptions'] = ktc_crm_subscriptions_fetch_user_subscriptions($account);
 
+  if ($args['user_subscriptions'] == 'error') {
+    drupal_set_message('Der er sket en teknisk fejl. Det var ikke muligt at hente en oversigt over dine eksisterende abonnementer. Prøv venligst igen senere.', 'error');
+  }
+
   return theme('ktc_subscription_ui_page', $args);
 }
 
@@ -432,6 +436,12 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     );
   }
 
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'ktc_subscription_ui') . '/ktc_subscription_ui.js', array(
+      'type' => 'file',
+    ),
+  );
+
   $submit = $is_new ? t('Opret abonnement') : t('Gem abonnement');
   if ($ktc_membership) {
     $submit = $is_new ? t('Opret medlemskab') : t('Gem medlemskab');
@@ -496,9 +506,14 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
     $overview_path = 'medlemskab';
   }
 
-  ktc_crm_update_user_subscription($subscriptiondto);
-
-  drupal_goto('user/' . $user->uid . '/' . $overview_path);
+  $return = ktc_crm_update_user_subscription($subscriptiondto);
+  if ($return == 'error') {
+    drupal_set_message('Der er sket en teknisk fejl. Det var ikke muligt at oprette det ønskede abonnement. Prøv venligst igen senere.', 'error');
+    $form_state['rebuild'] = TRUE;
+  }
+  else {
+    drupal_goto('user/' . $user->uid . '/' . $overview_path);
+  }
 }
 
 /**
