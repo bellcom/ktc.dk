@@ -40,7 +40,7 @@
             <p><?php print $body_shortened; ?></p>
 
             <div class="ktc-call-to-action-button">
-                <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="btn btn-default ktc-call-to-action-button"><?php print t('Tilmeld'); ?></a>
+                <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="btn btn-default ktc-call-to-action-button"><?php print t('Tilmeld/frameld'); ?></a>
             </div>
 
             <?php if ($user_object): ?>

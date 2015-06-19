@@ -70,16 +70,18 @@
 
 // Trompet
 .ktc-node-trompet {
-	font-size: @font-size-large;
-	color: @ktc-color-green-font;
-	text-transform: uppercase;
+	font-family: @headings-font-family;
+	font-size: @font-size-base;
+	line-height: @headings-line-height;
 	font-weight: bold;
+	text-transform: uppercase;
 }
 
 // Lead
 .ktc-node-lead {
-	font-size: 18px;
-	color: @ktc-color-green-font;
+	font-family: @headings-font-family;
+	font-size: floor(@font-size-h4 - 2px);
+	line-height: @headings-line-height;
 }
 
 // Node header
@@ -252,14 +254,28 @@
 	}
 }
 
+// Trompet
+.ktc-mixin-trompet(@font-color) {
+
+	// Trompet
+	&.ktc-node-trompet,
+	.ktc-node-trompet {
+		color: @font-color;
+	}
+}
+
 // Default
 .ktc-mixin-lead(@ktc-color-green-font);
+.ktc-mixin-trompet(@ktc-color-green-font);
 
 // Technique and environment (blue)
 .tech-env {
 
 	// Lead
 	.ktc-mixin-lead(@ktc-color-blue-font);
+
+	// Trompet
+	.ktc-mixin-trompet(@ktc-color-blue-font);
 }
 
 // Network (gold)
@@ -267,6 +283,9 @@
 
 	// Lead
 	.ktc-mixin-lead(@ktc-color-gold-font);
+
+	// Trompet
+	.ktc-mixin-trompet(@ktc-color-gold-font);
 }
 
 // Not network (green)
@@ -274,4 +293,7 @@
 
 	// Lead
 	.ktc-mixin-lead(@ktc-color-green-font);
+
+	// Trompet
+	.ktc-mixin-trompet(@ktc-color-green-font);
 }
