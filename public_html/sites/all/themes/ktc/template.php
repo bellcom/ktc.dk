@@ -48,16 +48,20 @@ function ktc_form_comment_form_alter(&$form, &$form_state, &$form_id) {
   $form['actions']['submit']['#value'] = t('Send kommentar');
 }
 
+function configure_comment_form(&$form) {
+  unset($form[LANGUAGE_NONE][0]['format']);
+  return $form;
+}
+
 /*
  * Implements theme_comment_post_forbidden().
  */
 function ktc_comment_post_forbidden($variables) {
   $node = $variables ['node'];
   global $user;
-}
 
-function configure_comment_form(&$form) {
-  unset($form[LANGUAGE_NONE][0]['format']);
+  $elements = drupal_get_form("user_login");
+  $form = drupal_render($elements);
   return $form;
 }
 
