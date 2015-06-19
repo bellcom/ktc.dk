@@ -92,6 +92,12 @@
 </header>
 <!-- End - header -->
 
+<!-- Begin - breadcrumb -->
+<div class="ktc-breadcrumb">
+  <div class="container"><?php print render($breadcrumb); ?></div>
+</div>
+<!-- End - breadcrumb -->
+
 <!-- Begin - wrapper -->
 <div id="wrapper" class="ktc-wrapper">
   <div class="ktc-wrapper-background"></div>

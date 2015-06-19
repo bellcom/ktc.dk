@@ -4121,22 +4121,22 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #ffffff;
 }
 .breadcrumb {
-  padding: 0 0;
+  padding: 2px 0;
   margin-bottom: 17px;
   list-style: none;
-  background-color: inherit;
+  background-color: transparent;
   border-radius: 4px;
 }
 .breadcrumb > li {
   display: inline-block;
 }
 .breadcrumb > li + li:before {
-  content: "\00a0";
+  content: "-\00a0";
   padding: 0 5px;
-  color: #30353c;
+  color: #848e92;
 }
 .breadcrumb > .active {
-  color: #ffffff;
+  color: #2c353a;
 }
 .pagination {
   display: inline-block;
@@ -10269,9 +10269,8 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   top: 0;
   left: 0;
   right: 0;
-  height: 261px;
+  height: 241px;
   background: url("../images/bg_body.jpg") center top repeat-x;
-  border-top: 20px solid #fff;
   border-bottom: 10px solid #d5dcde;
 }
 .ktc-content {
@@ -10413,6 +10412,13 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
     padding-left: 10px;
     padding-right: 10px;
   }
+}
+.ktc-breadcrumb {
+  background-color: #fff;
+  min-height: 20px;
+}
+.ktc-breadcrumb .breadcrumb {
+  margin-bottom: 0;
 }
 .ktc-article-section {
   padding: 20px 0;
@@ -12506,6 +12512,9 @@ h6 + .ktc-date {
 .ktc-aside-table-list .table tr td:hover {
   background-color: transparent;
 }
+.ktc-aside-table-list .table tr td a {
+  word-break: break-all;
+}
 .ktc-aside-table-list .table tr td .file-icon {
   display: none;
 }
@@ -12566,6 +12575,16 @@ h6 + .ktc-date {
   background-position: 0px -272px;
   width: 9px;
   height: 16px;
+}
+.related-links > li.related-link-type-arrangement {
+  padding-left: 22px;
+}
+.related-links > li.related-link-type-arrangement > a:before {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -107px;
+  width: 14px;
+  height: 14px;
 }
 .related-links > li.related-link-type-document {
   padding-left: 20px;

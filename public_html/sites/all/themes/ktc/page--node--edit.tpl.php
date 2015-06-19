@@ -94,6 +94,12 @@
   </div>
 </div>
 
+<!-- Begin - breadcrumb -->
+<div class="ktc-breadcrumb">
+  <div class="container"><?php print render($breadcrumb); ?></div>
+</div>
+<!-- End - breadcrumb -->
+
 <div class="main-container container-fluid">
 
 
