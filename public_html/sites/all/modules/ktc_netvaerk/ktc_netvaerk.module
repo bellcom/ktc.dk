@@ -195,7 +195,13 @@ function ktc_netvaerk_og_user_access_alter(&$perm, $context) {
         $type_closed = variable_get('ktc_netvaerk_type_closed', array());
 
         if (in_array($field[0]['tid'], array_values($type_closed))) {
+          // The closed groups are only supposed to be handled from CRM.
           $perm['subscribe'] = FALSE;
+          $perm['invite any user'] = FALSE;
+          $perm['administer group'] = FALSE;
+          $perm['add user'] = FALSE;
+          $perm['unsubscribe'] = FALSE;
+          $perm['manage members'] = FALSE;
         }
       }
 
