@@ -157,7 +157,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 18,
     ),
   );
 
@@ -408,7 +408,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -1280,78 +1280,6 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-group-group_access'
-  $field_instances['node-group-group_access'] = array(
-    'bundle' => 'group',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '<p class="well well-sm">Her skal du angive om netværket er åbent for alle registrerede brugere på ktc.dk, så de frit kan melde sig ind, eller om du selv vil invitere og tilføje medlemmer. Selvom netværket er lukket, er det muligt for alle at se titel, billede og beskrivelse og alle kan ansøge om medlemskab. Det er op til dig, eller andre af netværkets administratorer at give adgang.</p>',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'group_access',
-    'label' => 'Åbent/Privat',
-    'required' => 1,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'label' => 'above',
-        'type' => 'options_onoff',
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'type' => 'options_onoff',
-      ),
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 10,
-    ),
-    'widget_type' => 'options_select',
-  );
-
   // Exported field_instance: 'node-group-group_content_access'
   $field_instances['node-group-group_content_access'] = array(
     'bundle' => 'group',
@@ -1592,80 +1520,6 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-group-og_roles_permissions'
-  $field_instances['node-group-og_roles_permissions'] = array(
-    'bundle' => 'group',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'og_roles_permissions',
-    'label' => 'Gruppens roller og tilladelser',
-    'required' => 1,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Fuld',
-        'type' => 'list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Smagsprøve',
-        'type' => 'list_default',
-      ),
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 11,
-    ),
-    'widget_type' => 'options_select',
-  );
-
   // Exported field_instance: 'og_membership-og_membership_type_default-field_crm_uuid'
   $field_instances['og_membership-og_membership_type_default-field_crm_uuid'] = array(
     'bundle' => 'og_membership_type_default',
@@ -1841,7 +1695,6 @@ function ktc_netvaerk_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('<p class="well well-sm">Her skal du angive om netværket er åbent for alle registrerede brugere på ktc.dk, så de frit kan melde sig ind, eller om du selv vil invitere og tilføje medlemmer. Selvom netværket er lukket, er det muligt for alle at se titel, billede og beskrivelse og alle kan ansøge om medlemskab. Det er op til dig, eller andre af netværkets administratorer at give adgang.</p>');
   t('Angiv hvilken region dit netværk tilhører. Angiv landsdækkende, hvis det ikke tilhører en specifik region');
   t('Beskriv målgruppen for dette netværk');
   t('Beskrivelse og formål');
@@ -1857,7 +1710,6 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Gammel nid');
   t('Gammel typo3 id');
   t('Group content visibility');
-  t('Gruppens roller og tilladelser');
   t('Her skal du angive om netværket er åbent for alle registrerede brugere på ktc.dk, så de frit kan melde sig ind, eller om du selv vil invitere og tilføje medlemmer. Selvom netværket er lukket, er det muligt for alle at se titel, billede og beskrivelse og alle kan ansøge om medlemskab. Det er op til dig, eller andre af netværkets administratorer at give adgang.');
   t('Hvilken type er dit netværk? Vælg den type der passer bedst til dit netværk');
   t('Hvis dette er et undernetværk, så skal du vælge hvilket netværk i listen der er dets overnetværk.');
@@ -1877,7 +1729,6 @@ function ktc_netvaerk_field_default_field_instances() {
   t('Tilmelding');
   t('Undernetværk');
   t('grouprole');
-  t('Åbent/Privat');
 
   return $field_instances;
 }
