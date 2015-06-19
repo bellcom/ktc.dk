@@ -57,6 +57,21 @@
 			}
 		}
 
+		// Arrangement
+		&.related-link-type-arrangement {
+			padding-left: floor(@ktc-icon-arrangement-width + 8px);
+
+			// Link
+			> a {
+
+				// Icon
+				&:before {
+					margin-top: -(floor( @ktc-icon-arrangement-height / 2 ));
+					.sprite(@ktc-icon-arrangement);
+				}
+			}
+		}
+
 		// Document
 		&.related-link-type-document {
 			padding-left: floor(@ktc-icon-document-width + 8px);
