@@ -9650,6 +9650,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   background-color: #ffffff;
   margin-bottom: 20px;
 }
+.ktc-teaser .ktc-teaser-heading {
+  margin-bottom: -7px;
+}
 .ktc-teaser .ktc-teaser-heading .ktc-teaser-title {
   position: relative;
   display: block;
@@ -9658,7 +9661,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   font-weight: 700;
   color: inherit;
   padding: 7px 15px;
-  margin-bottom: -7px;
   text-transform: uppercase;
 }
 .ktc-teaser .ktc-teaser-heading .ktc-teaser-title:before {
@@ -11401,14 +11403,6 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
 .ktc-comments-list .ktc-comments-list-body .links {
   display: block;
 }
-.ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item {
-  padding-left: 40px;
-}
-.ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item,
-.ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item:first-child,
-.ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item:last-child {
-  border-bottom: 2px solid #fff;
-}
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item {
   border-bottom: 2px solid #fff;
   padding: 15px 0;
@@ -11664,6 +11658,15 @@ fieldset[disabled] .ktc-comments-list .ktc-comments-list-body .ktc-comments-list
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item + .ktc-comments-list-item {
   border: 2px solid #fff;
   margin-top: -2px;
+}
+.ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item {
+  padding-left: 40px;
+}
+.ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item,
+.ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item:first-child,
+.ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item:last-child {
+  border-bottom: 2px solid #fff;
+  margin-bottom: -2px;
 }
 .ktc-content .ktc-comments-list {
   margin-left: -10px;
@@ -12155,7 +12158,7 @@ h6 + .ktc-date {
   border: 0;
   border-radius: 0;
   padding: 10px 0;
-  border-bottom: 1px solid #e0e4e5;
+  border-bottom: 2px solid #e0e4e5;
 }
 .ktc-node-header .ktc-node-header-button {
   position: relative;
@@ -12629,6 +12632,16 @@ h6 + .ktc-date {
   background-position: 0px -93px;
   width: 15px;
   height: 14px;
+}
+.related-links > li.related-link-type-artikler {
+  padding-left: 19px;
+}
+.related-links > li.related-link-type-artikler > a:before {
+  margin-top: -5px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -32px;
+  width: 11px;
+  height: 11px;
 }
 .ktc-link-with-icon:before {
   float: left;

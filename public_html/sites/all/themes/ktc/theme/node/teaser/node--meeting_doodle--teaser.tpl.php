@@ -19,7 +19,7 @@
         <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
         <?php if (isset($signup_date_formatted)): ?>
-          <p class="ktc-date"><strong><?php print t('Svarfrist:'); ?></strong> <?php print $signup_date_formatted; ?></p>
+          <p class="ktc-date"><?php print t('Svarfrist:'); ?> <?php print $signup_date_formatted; ?></p>
         <?php endif; ?>
 
           <div class="ktc-call-to-action-button">
