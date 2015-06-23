@@ -25,10 +25,12 @@
 	// Body
 	.ktc-comments-list-body {
 
+		// Links
 		.links {
-			display: none;
+			display: block;
 		}
 
+		// Indented
 		.indented {
 			.ktc-comments-list-item {
 				padding-left: 40px;
@@ -151,19 +153,20 @@
 }
 
 // Content
+&,
 .ktc-content {
 
 	// Comments list
 	.ktc-comments-list {
-		.ktc-mixin-content-full-width();
+		.ktc-mixin-content-almost-full-width();
 	}
 }
 
-// Content wide
+// Wide
 .ktc-content-wide {
 
 	// Comments list
 	.ktc-comments-list {
-		.ktc-mixin-content-wide-full-width();
+		.ktc-mixin-content-wide-almost-full-width();
 	}
 }
