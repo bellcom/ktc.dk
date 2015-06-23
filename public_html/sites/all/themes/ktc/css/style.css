@@ -12630,6 +12630,16 @@ h6 + .ktc-date {
   width: 15px;
   height: 14px;
 }
+.related-links > li.related-link-type-artikler {
+  padding-left: 19px;
+}
+.related-links > li.related-link-type-artikler > a:before {
+  margin-top: -5px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -32px;
+  width: 11px;
+  height: 11px;
+}
 .ktc-link-with-icon:before {
   float: left;
   margin-right: 5px;

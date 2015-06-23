@@ -25,6 +25,7 @@
  * @ingroup themeable
  */
 global $user;
+xdebug_break();
 ?>
 <?php if ($page['logo'] || $page['site_name'] || $page['primary_nav'] || $page['secondary_nav'] || $content): ?>
 
