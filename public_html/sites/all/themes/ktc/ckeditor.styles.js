@@ -1,4 +1,4 @@
-/*
+	/*
 Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
@@ -18,7 +18,6 @@ if(typeof(CKEDITOR) !== 'undefined') {
         { name : 'Afsnitsoverskift (H3)'        , element : 'h3', attributes: { 'class': 'h3' } },
         { name : 'Mindre overskrift (H4)'        , element : 'h4', attributes: { 'class': 'h4' } },
         { name : 'Listeoverskrift (H5)'        , element : 'h5', attributes: { 'class': 'h5' } },
-
         { name : 'Indledning'     , element : 'p', attributes: { 'class': 'lead' } },
         { name : 'Afsnit'     , element : 'p', attributes: { } },
 
