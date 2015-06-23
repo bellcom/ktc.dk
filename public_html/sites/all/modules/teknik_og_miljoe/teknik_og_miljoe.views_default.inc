@@ -42,7 +42,8 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'ktc-user-profile';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Forbindelse: Field collection item: Entity with the Forfatter(e) (field_coforfattere) */
   $handler->display->display_options['relationships']['field_coforfattere_node']['id'] = 'field_coforfattere_node';
@@ -71,13 +72,14 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_foto_af_forfatter']['table'] = 'field_data_field_foto_af_forfatter';
   $handler->display->display_options['fields']['field_foto_af_forfatter']['field'] = 'field_foto_af_forfatter';
   $handler->display->display_options['fields']['field_foto_af_forfatter']['label'] = '';
+  $handler->display->display_options['fields']['field_foto_af_forfatter']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_foto_af_forfatter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_foto_af_forfatter']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_foto_af_forfatter']['element_wrapper_class'] = 'ktc-user-profile-photo-container';
   $handler->display->display_options['fields']['field_foto_af_forfatter']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_foto_af_forfatter']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_foto_af_forfatter']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'ktc_profile_image_small',
     'image_link' => '',
   );
   /* Felt: Felt: Stilling/titel */
@@ -85,10 +87,10 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_jobposition']['table'] = 'field_data_field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['field'] = 'field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['label'] = '';
+  $handler->display->display_options['fields']['field_jobposition']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_jobposition']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_jobposition']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_jobposition']['element_wrapper_class'] = 'ktc-user-profile-content-job-title';
   $handler->display->display_options['fields']['field_jobposition']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_jobposition']['type'] = 'text_plain';
   /* Felt: Felt: Efternavn */
   $handler->display->display_options['fields']['field_efternavn']['id'] = 'field_efternavn';
   $handler->display->display_options['fields']['field_efternavn']['table'] = 'field_data_field_efternavn';
@@ -96,16 +98,39 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_efternavn']['label'] = '';
   $handler->display->display_options['fields']['field_efternavn']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_efternavn']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_efternavn']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_efternavn']['type'] = 'text_plain';
   /* Felt: Felt: Fornavn + mellemnavn */
   $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
   $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
   $handler->display->display_options['fields']['field_navn']['label'] = '';
   $handler->display->display_options['fields']['field_navn']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_navn']['alter']['text'] = '<div class="ktc-user-profile-content-name">[field_navn] [field_efternavn]</div>';
+  $handler->display->display_options['fields']['field_navn']['alter']['text'] = '<section class="ktc-user-profile">
+
+    <!-- Begin - wrapper -->
+    <div class="ktc-user-profile-content-wrapper">
+
+        <!-- Begin - profile photo -->
+        <div class="ktc-user-profile-photo-container">
+            [field_foto_af_forfatter]
+        </div>
+        <!-- End - profile photo -->
+
+        <!-- Begin - profile content -->
+        <div class="ktc-user-profile-content">
+
+              <p class="ktc-user-profile-content-job-title">[field_jobposition]</p>
+              <p class="ktc-user-profile-content-name">[field_navn] [field_efternavn]</p>
+
+        </div>
+        <!-- End - profile content -->
+
+    </div>
+    <!-- End - wrapper -->
+
+</section>';
   $handler->display->display_options['fields']['field_navn']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_navn']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_navn']['element_wrapper_class'] = 'ktc-user-profile-content';
   $handler->display->display_options['fields']['field_navn']['element_default_classes'] = FALSE;
   /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -150,7 +175,30 @@ function teknik_og_miljoe_views_default_views() {
     t('field_coforfattere'),
     t('.'),
     t(','),
-    t('<div class="ktc-user-profile-content-name">[field_navn] [field_efternavn]</div>'),
+    t('<section class="ktc-user-profile">
+
+    <!-- Begin - wrapper -->
+    <div class="ktc-user-profile-content-wrapper">
+
+        <!-- Begin - profile photo -->
+        <div class="ktc-user-profile-photo-container">
+            [field_foto_af_forfatter]
+        </div>
+        <!-- End - profile photo -->
+
+        <!-- Begin - profile content -->
+        <div class="ktc-user-profile-content">
+
+              <p class="ktc-user-profile-content-job-title">[field_jobposition]</p>
+              <p class="ktc-user-profile-content-name">[field_navn] [field_efternavn]</p>
+
+        </div>
+        <!-- End - profile content -->
+
+    </div>
+    <!-- End - wrapper -->
+
+</section>'),
     t('Alle'),
     t('Artikel forfattere'),
     t('KTC'),
