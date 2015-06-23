@@ -311,26 +311,28 @@ function ktc_users_roles_grouptype_roles($uid) {
   $groups = array();
   foreach ($role_map as $grouptype_tid => $group_role_map) {
     $groups = ktc_users_roles_get_group_nids_by_type($grouptype_tid);
-
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'og_membership')
-      ->propertyCondition('etid', $uid)
-      ->propertyCondition('gid', $groups, 'IN');
-    $result = $query->execute();
-
-    $og_membership_ids = array();
-
-    if (isset($result['og_membership'])) {
-      $og_membership_ids = array_keys($result['og_membership']);
-    }
-
-    $og_memberships = og_membership_load_multiple($og_membership_ids);
-
-    foreach ($og_memberships as $og_membership) {
-      $rid = ktc_users_roles_from_membership($og_membership, $group_role_map);
-
-      if ($rid) {
-        $user_roles[$og_membership->gid] = $rid;
+    if (is_array($groups) && !empty($groups)) {
+     
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'og_membership')
+        ->propertyCondition('etid', $uid)
+        ->propertyCondition('gid', $groups, 'IN');
+      $result = $query->execute();
+     
+      $og_membership_ids = array();
+     
+      if (isset($result['og_membership'])) {
+        $og_membership_ids = array_keys($result['og_membership']);
+      }
+     
+      $og_memberships = og_membership_load_multiple($og_membership_ids);
+     
+      foreach ($og_memberships as $og_membership) {
+        $rid = ktc_users_roles_from_membership($og_membership, $group_role_map);
+     
+        if ($rid) {
+          $user_roles[$og_membership->gid] = $rid;
+        }
       }
     }
   }
