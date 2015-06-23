@@ -14,11 +14,10 @@ if(typeof(CKEDITOR) !== 'undefined') {
         /* Bootstrap Styles */
 
         /* Typography */
-        { name : 'Overskift (H2)'        , element : 'h2', attributes: { 'class': 'h2' } },
+
         { name : 'Afsnitsoverskift (H3)'        , element : 'h3', attributes: { 'class': 'h3' } },
-        { name : 'Overskrift 4'        , element : 'h4', attributes: { 'class': 'h4' } },
-        { name : 'Overskrift 5'        , element : 'h5', attributes: { 'class': 'h5' } },
-        { name : 'Overskrift 6'        , element : 'h6', attributes: { 'class': 'h6' } },
+        { name : 'Mindre overskrift (H4)'        , element : 'h4', attributes: { 'class': 'h4' } },
+        { name : 'Listeoverskrift (H5)'        , element : 'h5', attributes: { 'class': 'h5' } },
 
         { name : 'Indledning'     , element : 'p', attributes: { 'class': 'lead' } },
         { name : 'Afsnit'     , element : 'p', attributes: { } },
