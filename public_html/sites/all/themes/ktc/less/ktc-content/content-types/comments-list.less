@@ -30,19 +30,6 @@
 			display: block;
 		}
 
-		// Indented
-		.indented {
-			.ktc-comments-list-item {
-				padding-left: 40px;
-
-				&,
-				&:first-child,
-				&:last-child {
-					border-bottom: 2px solid #fff;
-				}
-			}
-		}
-
 		// List item
 		.ktc-comments-list-item {
 			border-bottom: 2px solid #fff;
@@ -149,8 +136,23 @@
 				margin-top: -2px;
 			}
 		}
+
+		// Indented
+		.indented {
+			.ktc-comments-list-item {
+				padding-left: 40px;
+
+				&,
+				&:first-child,
+				&:last-child {
+					border-bottom: 2px solid #fff;
+					margin-bottom: -2px;
+				}
+			}
+		}
 	}
 }
+
 
 // Content
 &,
