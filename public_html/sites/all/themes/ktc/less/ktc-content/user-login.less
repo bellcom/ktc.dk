@@ -1,0 +1,59 @@
+// |--------------------------------------------------------------------------
+// | User login
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for:
+// | - .ktc-header
+// |
+
+// --------------------------------------------------
+// Styles
+// --------------------------------------------------
+
+// User login
+.ktc-user-login {
+
+	// Label
+	label {
+		display: none;
+	}
+
+	// Actions
+	.form-actions {
+
+		// Action button
+		.ktc-user-login-action-button {
+			float: left;
+			vertical-align: middle;
+			min-width: initial;
+			padding: 0;
+			margin: 0;
+			border: 0;
+			background-color: transparent;
+			border-radius: 0;
+
+			// Stacked
+			+ .ktc-user-login-action-button {
+				margin-left: 4px;
+			}
+
+			// Login
+			&.ktc-user-login-action-button-login {
+				.sprite(@header-login);
+			}
+
+			// Search
+			&.ktc-user-login-action-button-search {
+				.sprite(@header-search);
+			}
+
+			// Create user
+			&.ktc-user-login-action-button-create-user {
+				.sprite(@header-user-create);
+			}
+		}
+
+		// Clearfix
+		&:extend(.clearfix all);
+	}
+}

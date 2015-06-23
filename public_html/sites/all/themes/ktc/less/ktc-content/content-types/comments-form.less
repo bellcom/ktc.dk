@@ -1,5 +1,5 @@
 // Form
-.ktc-comments-form {
+div.ktc-comments-form {
 	background-color: #fff;
 	padding-top: @ktc-default-body-top-bottom-inner-spacing;
 	margin-bottom: -(@ktc-default-body-top-bottom-inner-spacing);
@@ -8,6 +8,11 @@
 		display: table;
 		width: 100%;
 		margin-bottom: @ktc-default-body-top-bottom-inner-spacing;
+	}
+
+	.ktc-comment-form-title {
+		margin-top: 20px;
+		margin-bottom: 4px;
 	}
 
 	// Photo container
@@ -52,34 +57,43 @@
 		}
 	}
 
-	// Buttons
-	.form-actions {
-		.ktc-footer;
+	// Comments form
+	form.ktc-comments-form {
 
-		.ktc-footer-button {
+		// Buttons
+		.form-actions {
+			.ktc-footer;
 
-			&,
-			&:hover,
-			&:focus {
-				min-width: initial;
-				padding: 0;
-				margin: 0;
-				font-weight: normal;
-				border: 0;
-				background-color: transparent;
-				outline: 0;
-				color: #fff;
-			}
+			.ktc-footer-button {
 
-			&:before {
-				display: none;
-			}
+				&,
+				&:hover,
+				&:focus {
+					min-width: initial;
+					padding: 0;
+					margin: 0;
+					font-weight: normal;
+					border: 0;
+					background-color: transparent;
+					outline: 0;
+					color: #fff;
+				}
 
-			// Icon
-			.icon {
-				display: none;
+				&:before {
+					display: none;
+				}
+
+				// Icon
+				.icon {
+					display: none;
+				}
 			}
 		}
+	}
+
+	// Login
+	.ktc-user-login {
+		margin: 0 0 20px;
 	}
 }
 

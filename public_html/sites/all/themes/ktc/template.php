@@ -54,18 +54,6 @@ function configure_comment_form(&$form) {
 }
 
 /*
- * Implements theme_comment_post_forbidden().
- */
-function ktc_comment_post_forbidden($variables) {
-  $node = $variables ['node'];
-  global $user;
-
-  $elements = drupal_get_form("user_login");
-  $form = drupal_render($elements);
-  return $form;
-}
-
-/*
  * Implements template_preprocess_comment().
  */
 function ktc_preprocess_comment(&$variables) {
@@ -77,6 +65,16 @@ function ktc_preprocess_comment(&$variables) {
 
   // Author
   $variables['comment_author'] = ktc_users_get_user_info($user_obj, 'personal');
+}
+
+/*
+ * Implements theme_comment_post_forbidden().
+ */
+function ktc_comment_post_forbidden($variables) {
+  $form = ktc_users_login();
+  $form['#prefix'] = '<p class="ktc-comment-form-title">' . t('Log ind for at kommentere') . '</p>';
+
+  return drupal_render($form);
 }
 
 /*
@@ -781,18 +779,6 @@ function ktc_preprocess_panels_pane(&$vars) {
 }
 
 /**
- * Implements hook_form_ID_alter().
- */
-function ktc_form_user_login_block_alter(&$form, &$form_state, $form_id) {
-
-  $form['name']['#attributes']['placeholder'] = t('E-mail adresse');
-  $form['pass']['#attributes']['placeholder'] = t('Adgangskode');
-
-  unset($form['actions']['submit']['#value']);
-  unset($form['links']);
-}
-
-/**
  * Implements hook_preprocess_block().
  */
 function ktc_preprocess_block(&$vars) {
@@ -963,6 +949,7 @@ function ktc_preprocess_region(&$variables, $hook) {
     global $user;
     $user_object = user_load($user->uid);
     $variables['user_object'] = $user_object;
+    $variables['user_login'] = drupal_render(ktc_users_login());
   }
 
   if ($variables['region'] == "sidebar_second") {

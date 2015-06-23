@@ -5635,6 +5635,8 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
+.ktc-user-login .form-actions:before,
+.ktc-user-login .form-actions:after,
 .ktc-aside .ktc-aside-body:before,
 .ktc-aside .ktc-aside-body:after,
 .ktc-article-section.ktc-article-section-type-afsnitb:before,
@@ -5645,8 +5647,8 @@ button.close {
 .ktc-gallery-wrapper:after,
 .ktc-gallery-wrapper:before,
 .ktc-gallery-wrapper:after,
-.ktc-comments-form .form-actions:before,
-.ktc-comments-form .form-actions:after,
+div.ktc-comments-form form.ktc-comments-form .form-actions:before,
+div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-footer:before,
 .ktc-footer:after,
 .ktc-node-header:before,
@@ -5672,12 +5674,13 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
+.ktc-user-login .form-actions:after,
 .ktc-aside .ktc-aside-body:after,
 .ktc-article-section.ktc-article-section-type-afsnitb:after,
 .ktc-article-section.ktc-article-section-type-billedserie .photoswipe-gallery:after,
 .ktc-gallery-wrapper:after,
 .ktc-gallery-wrapper:after,
-.ktc-comments-form .form-actions:after,
+div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-footer:after,
 .ktc-node-header:after,
 .ktc-aside-filter .filter-box:after,
@@ -9278,6 +9281,40 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   background-color: #fff;
   padding: 15px;
 }
+.ktc-user-login label {
+  display: none;
+}
+.ktc-user-login .form-actions .ktc-user-login-action-button {
+  float: left;
+  vertical-align: middle;
+  min-width: initial;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+.ktc-user-login .form-actions .ktc-user-login-action-button + .ktc-user-login-action-button {
+  margin-left: 4px;
+}
+.ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-login {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -809px;
+  width: 28px;
+  height: 28px;
+}
+.ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-search {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -647px;
+  width: 27px;
+  height: 27px;
+}
+.ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-create-user {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -728px;
+  width: 27px;
+  height: 27px;
+}
 .ktc-aside {
   background-color: #ffffff;
   margin-bottom: 20px;
@@ -10136,27 +10173,8 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   font-size: 16px;
   line-height: 48px;
 }
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-login label {
-  display: none;
-}
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-login button {
-  min-width: initial;
-  padding: 0;
-  border-width: 0;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -809px;
-  width: 28px;
-  height: 28px;
-  background-color: transparent;
-}
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon {
   display: block;
-}
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-search {
-  background-image: url(../images/sprites.png);
-  background-position: 0px -647px;
-  width: 27px;
-  height: 27px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-settings {
   background-image: url(../images/sprites.png);
@@ -10169,18 +10187,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   background-position: 0px -701px;
   width: 27px;
   height: 27px;
-}
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-create {
-  background-image: url(../images/sprites.png);
-  background-position: 0px -728px;
-  width: 27px;
-  height: 27px;
-}
-.ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-login {
-  background-image: url(../images/sprites.png);
-  background-position: 0px -809px;
-  width: 28px;
-  height: 28px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-logout {
   background-image: url(../images/sprites.png);
@@ -11180,21 +11186,25 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
 .view .date-next {
   background-color: transparent;
 }
-.ktc-comments-form {
+div.ktc-comments-form {
   background-color: #fff;
   padding-top: 10px;
   margin-bottom: -10px;
 }
-.ktc-comments-form .ktc-comments-form-content {
+div.ktc-comments-form .ktc-comments-form-content {
   display: table;
   width: 100%;
   margin-bottom: 10px;
 }
-.ktc-comments-form .ktc-user-profile-photo-container {
+div.ktc-comments-form .ktc-comment-form-title {
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+div.ktc-comments-form .ktc-user-profile-photo-container {
   display: table-cell;
   width: 60px;
 }
-.ktc-comments-form .ktc-user-profile-photo-container img {
+div.ktc-comments-form .ktc-user-profile-photo-container img {
   display: inline-block;
   height: auto;
   width: auto;
@@ -11207,11 +11217,11 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
   background-color: transparent;
   padding: 3px;
 }
-.ktc-comments-form .ktc-comments-form-textarea-wrapper {
+div.ktc-comments-form .ktc-comments-form-textarea-wrapper {
   display: table-cell;
   vertical-align: top;
 }
-.ktc-comments-form .ktc-comments-form-textarea-wrapper .form-control {
+div.ktc-comments-form .ktc-comments-form-textarea-wrapper .form-control {
   background-color: transparent;
   border: 0;
   padding: 0;
@@ -11220,28 +11230,28 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.ktc-comments-form .ktc-comments-form-textarea-wrapper .form-required,
-.ktc-comments-form .ktc-comments-form-textarea-wrapper .grippie {
+div.ktc-comments-form .ktc-comments-form-textarea-wrapper .form-required,
+div.ktc-comments-form .ktc-comments-form-textarea-wrapper .grippie {
   display: none;
 }
-.ktc-comments-form .form-actions {
+div.ktc-comments-form form.ktc-comments-form .form-actions {
   background-color: #2c353a;
   border: 0;
   border-radius: 0;
   padding: 6px 15px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button {
   position: relative;
   color: #fff;
   float: left;
 }
-.ktc-comments-form .form-actions .ktc-footer-button + .ktc-footer-button {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button + .ktc-footer-button {
   margin-left: 10px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.pull-right {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.pull-right {
   float: right;
 }
-.ktc-comments-form .form-actions .ktc-footer-button:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button:before {
   display: block;
   position: absolute;
   top: 50%;
@@ -11249,109 +11259,109 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
   content: "";
   margin-right: 10px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-comment {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-comment {
   padding-left: 20px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-comment:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-comment:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -79px;
   width: 15px;
   height: 14px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-viewers {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-viewers {
   padding-left: 28px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-viewers:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-viewers:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
   background-position: 0px -43px;
   width: 23px;
   height: 11px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-hearing {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-hearing {
   padding-left: 14px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-hearing:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-hearing:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
   background-position: 0px -272px;
   width: 9px;
   height: 16px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-forum_post {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-forum_post {
   padding-left: 20px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-forum_post:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-forum_post:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -93px;
   width: 15px;
   height: 14px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-article {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-article {
   padding-left: 16px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-article:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-article:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
   background-position: 0px -32px;
   width: 11px;
   height: 11px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-meeting_doodle {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-meeting_doodle {
   padding-left: 21px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-meeting_doodle:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-meeting_doodle:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
   background-position: 0px -66px;
   width: 16px;
   height: 13px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-os2web_base_news {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-os2web_base_news {
   padding-left: 20px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-os2web_base_news:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-os2web_base_news:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
   background-position: 0px -256px;
   width: 15px;
   height: 16px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-private {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-private {
   padding-left: 16px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-private:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-private:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
   background-position: 0px -54px;
   width: 11px;
   height: 12px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-arrangement {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-arrangement {
   padding-left: 19px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-arrangement:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-arrangement:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
   background-position: 0px -107px;
   width: 14px;
   height: 14px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-document {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-document {
   padding-left: 17px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-document:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-document:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
   background-position: 0px -288px;
   width: 12px;
   height: 16px;
 }
-.ktc-comments-form .form-actions .ktc-footer-button,
-.ktc-comments-form .form-actions .ktc-footer-button:hover,
-.ktc-comments-form .form-actions .ktc-footer-button:focus {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button,
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button:hover,
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button:focus {
   min-width: initial;
   padding: 0;
   margin: 0;
@@ -11361,11 +11371,14 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
   outline: 0;
   color: #fff;
 }
-.ktc-comments-form .form-actions .ktc-footer-button:before {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button:before {
   display: none;
 }
-.ktc-comments-form .form-actions .ktc-footer-button .icon {
+div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button .icon {
   display: none;
+}
+div.ktc-comments-form .ktc-user-login {
+  margin: 0 0 20px;
 }
 .ktc-content .ktc-comments-form {
   margin-left: -15px;
