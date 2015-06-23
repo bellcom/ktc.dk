@@ -11391,10 +11391,6 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
 }
 .ktc-comments-list {
   margin-top: 2px;
-  margin-left: -10px;
-  margin-right: -10px;
-  padding-left: 10px;
-  padding-right: 10px;
   background-color: #e9edee;
   margin-top: 30px;
 }
@@ -11403,7 +11399,7 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
   padding-bottom: 10px;
 }
 .ktc-comments-list .ktc-comments-list-body .links {
-  display: none;
+  display: block;
 }
 .ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item {
   padding-left: 40px;
@@ -11670,16 +11666,16 @@ fieldset[disabled] .ktc-comments-list .ktc-comments-list-body .ktc-comments-list
   margin-top: -2px;
 }
 .ktc-content .ktc-comments-list {
-  margin-left: -15px;
-  margin-right: -15px;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .ktc-content-wide .ktc-comments-list {
-  margin-left: -60px;
-  margin-right: -60px;
-  padding-left: 60px;
-  padding-right: 60px;
+  margin-left: -55px;
+  margin-right: -55px;
+  padding-left: 55px;
+  padding-right: 55px;
 }
 .ktc-date {
   font-size: 14px;
@@ -12085,15 +12081,23 @@ h6 + .ktc-date {
 }
 .ktc-well {
   margin-top: 2px;
-  margin-left: -10px;
-  margin-right: -10px;
-  padding-left: 10px;
-  padding-right: 10px;
   background-color: #e9edee;
 }
 .ktc-well.ktc-well-large {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.ktc-content .ktc-well {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.ktc-content-wide .ktc-well {
+  margin-left: -55px;
+  margin-right: -55px;
+  padding-left: 55px;
+  padding-right: 55px;
 }
 .ktc-node-title,
 .ktc-node-title h1,
