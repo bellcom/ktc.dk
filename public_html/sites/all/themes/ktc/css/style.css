@@ -9288,6 +9288,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-aside .ktc-aside-heading .ktc-aside-title {
   display: block;
   padding: 7px 15px;
+  padding-bottom: 0;
   margin: 0;
 }
 .ktc-aside .ktc-aside-heading .ktc-aside-title,
@@ -9650,6 +9651,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   background-color: #ffffff;
   margin-bottom: 20px;
 }
+.ktc-teaser .ktc-teaser-heading {
+  margin-bottom: -7px;
+}
 .ktc-teaser .ktc-teaser-heading .ktc-teaser-title {
   position: relative;
   display: block;
@@ -9658,7 +9662,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   font-weight: 700;
   color: inherit;
   padding: 7px 15px;
-  margin-bottom: -7px;
   text-transform: uppercase;
 }
 .ktc-teaser .ktc-teaser-heading .ktc-teaser-title:before {
