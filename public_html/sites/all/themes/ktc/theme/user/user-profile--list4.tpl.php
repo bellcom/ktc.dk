@@ -52,6 +52,10 @@
               <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
           <?php endif ?>
 
+          <?php if (isset($network_role)): ?>
+              <p class="ktc-user-profile-content-job-title"><?php print $network_role; ?></p>
+          <?php endif ?>
+
           <?php if (isset($personal['full_name'])): ?>
             <p class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></p>
           <?php endif ?>
