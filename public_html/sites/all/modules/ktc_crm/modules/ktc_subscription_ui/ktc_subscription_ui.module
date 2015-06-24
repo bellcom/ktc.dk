@@ -226,8 +226,6 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   $form['ean'] = array(
     '#title' => 'EAN',
     '#type' => 'textfield',
-    '#description' => 'har du ikke et ean nummer, så skriv 13 9-taller efter hinanden i formularen',
-    '#required' => TRUE,
     '#default_value' => $form_state['subscriptiondto']->EAN,
   );
 
@@ -523,7 +521,7 @@ function ktc_subscription_ui_form_validate(&$form, &$form_state) {
   if ($form_state['values']['enddate'] && strtotime($form_state['values']['enddate']) < time()) {
     form_set_error('enddate', t('Du skal vælge en dato i fremtiden'));
   }
-  if (!ktc_subscription_ui_validate_ean($form_state['values']['ean'])) {
+  if ($form_state['values']['ean'] && !ktc_subscription_ui_validate_ean($form_state['values']['ean'])) {
     form_set_error('ean', t('Det indtastede EAN er ikke gyldigt.'));
   }
   if (!$form_state['values']['region'] && $form_state['ktc_membership']) {
@@ -746,11 +744,6 @@ function ktc_subscription_ui_get_product_list($type) {
  * Validate EAN numbers.
  */
 function ktc_subscription_ui_validate_ean($ean) {
-  // Skip validation if EAN is 13x9.
-  if ($ean == 9999999999999) {
-    return TRUE;
-  }
-
   $get_ean_check_digit = function($param) {
     $sum = 0;
     $odd = TRUE;
