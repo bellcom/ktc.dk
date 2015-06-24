@@ -1,0 +1,3 @@
+name = KTC Users Login
+description = Defines a default reuseable login-form
+core = 7.x

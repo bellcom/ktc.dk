@@ -1,0 +1,45 @@
+<?php
+/**
+ * @file
+ * KTC Users login module.
+ */
+
+function ktc_users_login() {
+  $form = drupal_get_form("user_login_block");
+
+  // Form class
+  $form['#attributes']['class'][] = 'ktc-user-login';
+  $form['#attributes']['class'][] = 'form-inline';
+
+  // Remove form labels
+  $form['name']['#title'] = '';
+  $form['name']['#description'] = '';
+  $form['pass']['#title'] = '';
+  $form['pass']['#description'] = '';
+
+  // Add placeholders
+  $form['name']['#attributes']['placeholder'] = t('E-mail adresse');
+  $form['pass']['#attributes']['placeholder'] = t('Adgangskode');
+
+  // Submit
+  unset($form['actions']['submit']['#value']);
+  $form['actions']['submit']['#attributes']['class'][] = 'ktc-user-login-action-button';
+  $form['actions']['submit']['#attributes']['class'][] = 'ktc-user-login-action-button-login';
+  $form['actions']['submit']['#attributes']['data-toggle'] = 'tooltip';
+  $form['actions']['submit']['#attributes']['data-placement'] = 'bottom';
+  $form['actions']['submit']['#attributes']['title'] = t('Log ind');
+
+  // Create user
+  $form['actions']['create-user'] = array(
+    '#markup' => l('', 'user/signup', array('attributes' => array('class' => 'ktc-user-login-action-button ktc-user-login-action-button-create-user', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('Opret bruger')))),
+  );
+
+  // Search
+  $form['actions']['search'] = array(
+    '#markup' => l('', 'search', array('attributes' => array('class' => 'ktc-user-login-action-button ktc-user-login-action-button-search', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('Søg')))),
+  );
+
+  unset($form['links']);
+
+  return $form;
+}

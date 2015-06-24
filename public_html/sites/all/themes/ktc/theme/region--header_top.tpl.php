@@ -54,13 +54,13 @@ global $user;
 
             <?php if ($logged_in): ?>
 
-                <!-- Begin - user display -->
-                <li>
-                    <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'header')); ?>
-                </li>
-                <!-- End - user display -->
+              <!-- Begin - user display -->
+              <li>
+                  <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'header')); ?>
+              </li>
+              <!-- End - user display -->
 
-                <!-- Begin - toggle -->
+              <!-- Begin - toggle -->
               <li>
                 <a href="#" data-toggle="tooltip" data-placement="bottom" title="Dine genveje"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-toggle"></span></a>
               </li>
@@ -78,29 +78,21 @@ global $user;
               </li>
               <!-- End - logout -->
 
+              <!-- Begin - search -->
+              <li>
+                <a href="/search" data-toggle="tooltip" data-placement="bottom" title="Søg"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-search"></span></a>
+              </li>
+              <!-- End - search -->
+
             <?php else: ?>
 
               <!-- Begin - login form -->
               <li>
-                <div class="form-inline ktc-header-top-bar-user-login">
-                  <?php print $content; ?>
-                </div>
+                <?php print $user_login; ?>
               </li>
               <!-- End - login form -->
 
-              <!-- Begin - create user -->
-              <li>
-                <a href="/user/signup" data-toggle="tooltip" data-placement="bottom" title="Opret bruger"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-create"></span></a>
-              </li>
-              <!-- End - create user -->
-
             <?php endif ?>
-
-            <!-- Begin - search -->
-            <li>
-              <a href="/search" data-toggle="tooltip" data-placement="bottom" title="Søg"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-search"></span></a>
-            </li>
-            <!-- End - search -->
 
           </ul>
           <!-- End - navigation -->
