@@ -10246,7 +10246,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .ktc-header .ktc-header-navigation {
   min-height: 92px;
-  background: #ffffff url("../images/bg_navigation.jpg") center top repeat-x;
+  background: url("../images/bg_navigation.jpg") center top;
 }
 .ktc-header .ktc-header-navigation .navbar-nav {
   margin-left: 140px;

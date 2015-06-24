@@ -31,10 +31,19 @@
 <!-- Begin - navigation -->
 <header class="ktc-header-navigation">
     <div class="container">
-      <div class="navbar-default navbar-collapse">
+      <div class="navbar-default">
+
+        <div class="navbar-header hidden-sm hidden-md hidden-lg">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
 
         <?php if ($page['primary_nav']): ?>
-          <nav role="navigation">
+          <nav class="navbar-collapse collapse">
             <?php print render($page['primary_nav']); ?>
           </nav>
         <?php endif; ?>
