@@ -450,22 +450,21 @@
 //== Pagination
 //
 //##
+@pagination-color:                     @btn-default-color;
+@pagination-bg:                        @btn-default-bg;
+@pagination-border:                    @btn-default-border;
 
-@pagination-color:                     @link-color;
-@pagination-bg:                        #fff;
-@pagination-border:                    #ddd;
+@pagination-hover-color:               @gray-darker;
+@pagination-hover-bg:                  darken(@pagination-bg, 5%);
+@pagination-hover-border:              @pagination-border;
 
-@pagination-hover-color:               @link-hover-color;
-@pagination-hover-bg:                  @gray-lighter;
-@pagination-hover-border:              #ddd;
+@pagination-active-color:              @pagination-hover-color;
+@pagination-active-bg:                 @pagination-hover-bg;
+@pagination-active-border:             #a1b2b6;
 
-@pagination-active-color:              #fff;
-@pagination-active-bg:                 @brand-primary;
-@pagination-active-border:             @brand-primary;
-
-@pagination-disabled-color:            @gray-light;
-@pagination-disabled-bg:               #fff;
-@pagination-disabled-border:           #ddd;
+@pagination-disabled-color:            @text-color;
+@pagination-disabled-bg:               @pagination-bg;
+@pagination-disabled-border:           @pagination-border;
 
 
 //== Pager

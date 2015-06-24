@@ -4137,7 +4137,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-decoration: none;
   color: #2c353a;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 1px solid #e9edee;
   margin-left: -1px;
 }
 .pagination > li:first-child > a,
@@ -4155,9 +4155,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-  color: #1f9bd7;
-  background-color: #e9edee;
-  border-color: #dddddd;
+  color: #2c353a;
+  background-color: #f2f2f2;
+  border-color: #e9edee;
 }
 .pagination > .active > a,
 .pagination > .active > span,
@@ -4166,9 +4166,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
   z-index: 2;
-  color: #ffffff;
-  background-color: #36a145;
-  border-color: #36a145;
+  color: #2c353a;
+  background-color: #f2f2f2;
+  border-color: #a1b2b6;
   cursor: default;
 }
 .pagination > .disabled > span,
@@ -4179,7 +4179,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pagination > .disabled > a:focus {
   color: #848e92;
   background-color: #ffffff;
-  border-color: #dddddd;
+  border-color: #e9edee;
   cursor: not-allowed;
 }
 .pagination-lg > li > a,
@@ -4226,13 +4226,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   display: inline-block;
   padding: 5px 14px;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 1px solid #e9edee;
   border-radius: 15px;
 }
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
-  background-color: #e9edee;
+  background-color: #f2f2f2;
 }
 .pager .next > a,
 .pager .next > span {

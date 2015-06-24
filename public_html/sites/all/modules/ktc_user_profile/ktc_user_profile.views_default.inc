@@ -884,7 +884,7 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<div class="ktc-call-to-action-button">
   <a href="/netvaerk" class="btn btn-default">Se flere</a>
 </div>';
-  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* Opførsel ved ingen resultater: Global: Tekstområde */
   $handler->display->display_options['empty']['area']['id'] = 'area';
