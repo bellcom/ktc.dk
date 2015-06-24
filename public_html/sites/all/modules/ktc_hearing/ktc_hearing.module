@@ -731,6 +731,7 @@ function ktc_hearing_set_status_submit(&$form, &$form_state) {
  * Hearing response page.
  */
 function ktc_hearing_responses($hearing) {
+  drupal_add_js(drupal_get_path('module', 'ktc_hearing') . '/ktc_hearing_response.js');
   $result = db_select('field_data_field_hearing_node', 'h')
     ->fields('h', array('entity_id'))
     ->condition('field_hearing_node_target_id', $hearing->nid)
@@ -754,7 +755,7 @@ function ktc_hearing_responses($hearing) {
       }
 
       if ($node->status) {
-        $vars['responses'][] = node_view($node, 'full');
+        $vars['responses'][$node->uid] = node_view($node, 'full');
       }
     }
   }
@@ -768,6 +769,17 @@ function ktc_hearing_responses($hearing) {
 
   if (isset($users_response)) {
     $node = $users_response;
+  }
+
+  if ($field = field_get_items('node', $hearing, 'field_attendees')) {
+    foreach ($field as $delta => $value) {
+      $_uid = $value['target_id'];
+
+      if (!isset($vars['responses'][$_uid])) {
+        $account = user_load($_uid);
+        $vars['no_response'][$_uid] = $account->name;
+      }
+    }
   }
 
   if (ktc_hearing_access($hearing, 'respond') && ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
