@@ -185,7 +185,7 @@ function ktc_user_profile_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' ktc-aside',
+      'css_class' => ' ktc-aside ktc-aside-list',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
