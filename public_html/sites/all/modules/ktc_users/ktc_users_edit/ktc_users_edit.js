@@ -46,7 +46,6 @@ jQuery(document).ready(function($){
   function limitCompaniesTo(usertypeTid) {
     var usertypeMap = [];
     var firstLevel = Drupal.settings.ktcUsersEdit.usertypeMap[usertypeTid];
-    console.log(firstLevel);
 
     $select = $('#edit-field-account-und-hierarchical-select-selects-0');
 
@@ -63,6 +62,15 @@ jQuery(document).ready(function($){
     limitMembershipFieldsTo($(this).val());
   });
   $('#edit-field-usertype-und').trigger('change');
+
+  $('.account-address a').click(function(event) {
+    if (window.confirm("Hvis du forlader denne side vil dine rettelser ikke blive tabt. \n\nEr du sikker på at du vil fortsætte?")) {
+      return true;
+    }
+    else {
+      event.preventDefault();
+    }
+  });
 });
 
 (function ($) {
