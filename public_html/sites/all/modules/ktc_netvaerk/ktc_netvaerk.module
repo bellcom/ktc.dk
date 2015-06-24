@@ -36,7 +36,63 @@ function ktc_netvaerk_menu() {
     'access callback' => 'og_user_access',
     'access arguments' => array('node', 2, 'administer group'),
   );
+  $items['netvaerk/emner/%/%/%'] = array(
+    'access callback'   => true,
+    'page callback'     => 'ktc_netvaek_get_emner',
+    'page arguments' => array(2, 3, 4),
+    'delivery callback' => 'drupal_json_output' 
+  );
   return $items;
+}
+
+function ktc_netvaek_get_emner($content_type, $network_type, $region) {
+  $content_types = explode(',', $content_type);
+  $regions = explode(',', $region);
+
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'group');
+  if (!empty($regions) && $regions[0] != 'all') {
+    $query->fieldCondition('field_regioner', 'tid', $regions, 'IN');
+  }
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+
+    $db_or = db_or(); 
+    foreach($nids as $nid){
+	 $db_or->condition('ogm.gid', $nid, '=');
+    }
+
+    $query = db_select('og_membership', 'ogm');
+    $query->join('node', 'n', 'n.nid = ogm.etid');
+    $query->join('field_data_field_topics', 'f', 'f.entity_id = ogm.etid');
+    $query->join('taxonomy_term_hierarchy', 'tth', 'tth.tid = f.field_topics_tid');
+    $query->distinct()
+          ->fields('f', array('entity_id', 'field_topics_tid'))
+	  ->condition($db_or)
+          ->condition('ogm.entity_type', 'node', '=')
+	  ->condition('tth.parent', '0', '=');
+    
+    if (!empty($content_types) && $content_types[0] != 'all') {
+      $query->condition('n.type', $content_types, 'IN');
+    }
+
+    $result = $query->execute();
+
+    $emner = array();
+    if ($result->rowCount() > 0) {
+      while ($record = $result->fetchAssoc()) {
+        $emner[$record['entity_id']] = intval($record['entity_id']);
+      }
+    }
+
+    return $emner;
+  }  
+
+  return array();
 }
 
 /**
@@ -483,7 +539,7 @@ function ktc_netvaerk_state_message($state) {
  */
 function ktc_netvaerk_get_node_group_info($nid) {
   $group_info = array('name' => '', 'class' => '', 'gid' => '');
-  if (is_numeric($nid)) {
+   if (is_numeric($nid)) {
     $node = node_load($nid);
     if ($gid = field_get_items('node', $node, 'og_group_ref')) {
       $gid = $gid[0]['target_id'];
@@ -603,6 +659,7 @@ function ktc_netvaerk_get_group_content_types($nid = 'all') {
     }
   }
   if ($nid == 'all') {
+      
     $node_types = node_type_get_types();
     foreach ($node_types as $obj) {
       // Skip hearing_responses type.
