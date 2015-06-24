@@ -162,10 +162,11 @@ function ktc_users_get_user_info_old_work_data($entity) {
  */
 function ktc_users_get_user_info_work_data($entity) {
   $data = array();
+  $parents = taxonomy_get_parents_all($entity->tid);
 
   // Company.
   if ($entity->name) {
-    $data['company'] = $entity->name;
+    $data['company'] = $parents[1]->name;
   }
   // Phone.
   if ($field = field_get_items('taxonomy_term', $entity, 'field_phone')) {
