@@ -9751,6 +9751,83 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
   );
 
+  // Exported field_instance: 'node-page-field_vis_netvaerk'
+  $field_instances['node-page-field_vis_netvaerk'] = array(
+    'bundle' => 'page',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 6,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_vis_netvaerk',
+    'label' => 'Vis netværk',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 41,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-emner_faste_-field_typo3_uid'
   $field_instances['taxonomy_term-emner_faste_-field_typo3_uid'] = array(
     'bundle' => 'emner_faste_',
@@ -10105,6 +10182,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Udgave');
   t('Udgivelsesdato');
   t('Udgået');
+  t('Vis netværk');
   t('Vises i højre spalte');
   t('Vælg de netværk som Diskussionen skal publiceres i.');
   t('Vælg gerne 3-7 emner og underemner - og vær så specifik som muligt. ');

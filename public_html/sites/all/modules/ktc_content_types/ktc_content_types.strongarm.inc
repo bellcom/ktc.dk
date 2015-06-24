@@ -1096,6 +1096,12 @@ function ktc_content_types_strongarm() {
         'path' => array(
           'weight' => '5',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(
         'signup' => array(
