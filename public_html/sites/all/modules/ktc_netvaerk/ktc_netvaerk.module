@@ -273,9 +273,16 @@ function ktc_netvaerk_tokens($type, $tokens, array $data = array(), array $optio
  * Implements hook_block_info().
  */
 function ktc_netvaerk_block_info() {
+  $blocks['sidebar-group-members'] = array(
+    'info' => t('KTC Netværk, Gruppe medlemmer - sidebar'),
+  );
+
+  $blocks['sidebar-group-admins'] = array(
+    'info' => t('KTC Netværk, Gruppe administratorer - sidebar'),
+  );
+
   $blocks['group-members'] = array(
     'info' => t('KTC Netværk, Gruppe medlemmer modal'),
-    'cache' => DRUPAL_NO_CACHE,
   );
 
   $blocks['group-not-member-message'] = array(
@@ -295,6 +302,16 @@ function ktc_netvaerk_block_view($delta = '') {
   $block = array();
 
   switch ($delta) {
+    case 'sidebar-group-members':
+      $block['content'] = ktc_netvaerk_sidebar_group_members();
+      $block['subject'] = t('MEDLEMMER AF ') . drupal_get_title();
+      break;
+
+    case 'sidebar-group-admins':
+      $block['content'] = ktc_netvaerk_sidebar_group_members(TRUE);
+      $block['subject'] = t('ADMINISTRATORER AF DETTE NETVÆRK');
+      break;
+
     case 'group-members':
       $block['content'] = _ktc_netvaerk_og_members_list();
       break;
@@ -320,6 +337,59 @@ function ktc_netvaerk_block_view($delta = '') {
       break;
   }
   return $block;
+}
+
+/**
+ *
+ */
+function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
+  $gid = arg(1);
+  // Only proceed with generating the block if this is a group id.
+  if (!is_numeric($gid)) {
+    return;
+  }
+
+  $admin_user_roles = variable_get('ktc_users_grouproles_map', array());
+  foreach ($admin_user_roles as $role_tid => $value) {
+    if ($admins && $value) {
+      $roles[] = $role_tid;
+    }
+    if (!$admins && !$value) {
+      $roles[] = $role_tid;
+    }
+  }
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'og_membership')
+     ->propertyCondition('gid', $gid);
+
+  if (!empty($roles)) {
+    $query->fieldCondition('field_grouprole', 'target_id', $roles, 'IN');
+  }
+
+  $query->range(0, 5);
+  $result = $query->execute();
+
+  if ($result['og_membership']) {
+    $memberships = og_membership_load_multiple(array_keys($result['og_membership']));
+
+    foreach ($memberships as $membership) {
+      if ($membership->etid == 1) {
+        continue;
+      }
+
+      $user = user_load($membership->etid);
+      if (!is_object($user)) {
+        continue;
+      }
+
+      $list .= render(user_view($user, 'list4'));
+    }
+  }
+  if (!$admins) {
+    $list .= '<div class="og-members-all ktc-call-to-action-button"><a href="#" class="btn btn-default">Se alle medlemmer</a></div>';
+  }
+  return $list;
 }
 
 /**

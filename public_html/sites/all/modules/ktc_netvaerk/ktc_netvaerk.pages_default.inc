@@ -404,44 +404,13 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $display->content['new-46b3adc9-8170-480a-a374-d98dfb09edff'] = $pane;
     $display->panels['left'][5] = 'new-46b3adc9-8170-480a-a374-d98dfb09edff';
     $pane = new stdClass();
-    $pane->pid = 'new-35abb797-3fee-48e9-be76-e150a6c69f17';
+    $pane->pid = 'new-08efd50f-eaa4-490e-ae91-0476a4194199';
     $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'ktc_og_members-panel_pane_2';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_netvaerk-sidebar-group-admins';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Administratorer af dette netværk ',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'ktc-aside-color',
-    );
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $pane->uuid = '35abb797-3fee-48e9-be76-e150a6c69f17';
-    $display->content['new-35abb797-3fee-48e9-be76-e150a6c69f17'] = $pane;
-    $display->panels['left'][6] = 'new-35abb797-3fee-48e9-be76-e150a6c69f17';
-    $pane = new stdClass();
-    $pane->pid = 'new-b164890e-1556-45d0-89ae-8c60d0846911';
-    $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'ktc_og_members-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
       'override_title' => 0,
       'override_title_text' => '',
     );
@@ -452,13 +421,40 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'block',
+    );
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '08efd50f-eaa4-490e-ae91-0476a4194199';
+    $display->content['new-08efd50f-eaa4-490e-ae91-0476a4194199'] = $pane;
+    $display->panels['left'][6] = 'new-08efd50f-eaa4-490e-ae91-0476a4194199';
+    $pane = new stdClass();
+    $pane->pid = 'new-e7bcd3e5-0fa0-4a4d-ad18-6ba946e7c6a1';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_netvaerk-sidebar-group-members';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'block',
     );
     $pane->extras = array();
     $pane->position = 7;
     $pane->locks = array();
-    $pane->uuid = 'b164890e-1556-45d0-89ae-8c60d0846911';
-    $display->content['new-b164890e-1556-45d0-89ae-8c60d0846911'] = $pane;
-    $display->panels['left'][7] = 'new-b164890e-1556-45d0-89ae-8c60d0846911';
+    $pane->uuid = 'e7bcd3e5-0fa0-4a4d-ad18-6ba946e7c6a1';
+    $display->content['new-e7bcd3e5-0fa0-4a4d-ad18-6ba946e7c6a1'] = $pane;
+    $display->panels['left'][7] = 'new-e7bcd3e5-0fa0-4a4d-ad18-6ba946e7c6a1';
     $pane = new stdClass();
     $pane->pid = 'new-b6f26677-5782-4ef8-800c-9ebfb7fb8497';
     $pane->panel = 'right';
