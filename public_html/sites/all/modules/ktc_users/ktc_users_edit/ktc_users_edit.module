@@ -44,6 +44,20 @@ function ktc_users_edit_company_form() {
   $vocab = taxonomy_vocabulary_machine_name_load('accounts');
 
   $invoiceaccount = _ktc_crm_account_get_users_account($account);
+  if (!$invoiceaccount) {
+    if ($field = field_get_items('user', $account, 'field_usertype')) {
+      $ktc_users_edit_type_company_map = variable_get('ktc_users_edit_type_company_map', array());
+
+      if ($ktc_users_edit_type_company_map[$field[0]['tid']]) {
+        $invoiceaccount = taxonomy_term_load($ktc_users_edit_type_company_map[$field[0]['tid']]);
+      }
+    }
+  }
+  $invoiceaccount = FALSE;
+
+  if (!$invoiceaccount) {
+    drupal_set_message(t('Du skal angive en brugertype.') . ' ' . l(t('Tryk her for at går til brugerredigering'), 'user' . $account->uid . '/edit'), 'warning');
+  }
 
   $css = '
       #edit-account-hierarchical-select-selects-0 {display: none;}
