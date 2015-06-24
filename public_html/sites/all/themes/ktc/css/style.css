@@ -10303,6 +10303,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .ktc-content-wide .ktc-section-bottom-no-margin {
   margin-bottom: -10px;
 }
+.node-type-artikler .ktc-content-wide {
+  padding-bottom: 0;
+}
 .region.no-panels .region-inner {
   background-color: #ffffff;
   padding: 20px 15px;
@@ -10742,6 +10745,14 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
     float: left;
     width: 58.33333333%;
   }
+}
+.ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-body-extra {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 768px) {
   .ktc-article-section.ktc-article-section-type-afsnitb.ktc-article-section-type-afsnitb-image-left .ktc-article-section-image {
@@ -12683,10 +12694,6 @@ h6 + .ktc-date {
 }
 .ktc-aside-tabs .nav-tabs {
   border: 0;
-}
-.ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-aside-body {
-  padding-top: 0;
-  margin-top: -15px;
 }
 .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-container a {
   display: inline-block;
