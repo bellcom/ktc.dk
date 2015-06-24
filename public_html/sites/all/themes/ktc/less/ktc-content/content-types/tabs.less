@@ -11,36 +11,54 @@
 			.btn-block;
 			word-wrap: break-word;
 		}
+
+		// Clearfix
+		&:extend(.clearfix all);
 	}
 
 	// Nav tabs
 	.nav-tabs {
 		border: 0;
+	}
 
-		// Clearfix
-		&:extend(.clearfix all);
+	&.ktc-aside-tabs-menu-fix {
+		.ktc-aside-body {
+			padding-top: 0;
+			margin-top: -(@ktc-default-body-top-bottom-inner-spacing + 5px);
+		}
+
+		.ktc-tabs-button-container {
+			a {
+				.btn;
+				.btn-action;
+				.btn-block;
+			}
+		}
 	}
 }
 
 // 2 columns
 .ktc-aside-tabs-2-col {
 
-	// Button container
-	.ktc-tabs-button-container {
-		float: left;
-		width: 50%;
-		padding: 2px @ktc-default-left-right-inner-spacing;
+	ul {
 
-		// On left side
-		&:nth-child(odd) {
-			padding-left: @ktc-default-left-right-inner-spacing;
-			padding-right: floor( @ktc-default-left-right-inner-spacing / 2 );
-		}
+		// Button container
+		.ktc-tabs-button-container {
+			float: left;
+			width: 50%;
+			padding: 2px @ktc-default-left-right-inner-spacing;
 
-		// On right side
-		&:nth-child(even) {
-			padding-left: floor( @ktc-default-left-right-inner-spacing / 2 );
-			padding-right: @ktc-default-left-right-inner-spacing;
+			// On left side
+			&:nth-child(odd) {
+				padding-left: @ktc-default-left-right-inner-spacing;
+				padding-right: floor( @ktc-default-left-right-inner-spacing / 2 );
+			}
+
+			// On right side
+			&:nth-child(even) {
+				padding-left: floor( @ktc-default-left-right-inner-spacing / 2 );
+				padding-right: @ktc-default-left-right-inner-spacing;
+			}
 		}
 	}
 }
