@@ -30,6 +30,12 @@ function ktc_hearing_notifications_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -90,6 +96,12 @@ function ktc_hearing_notifications_field_default_field_instances() {
         'weight' => 1,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
