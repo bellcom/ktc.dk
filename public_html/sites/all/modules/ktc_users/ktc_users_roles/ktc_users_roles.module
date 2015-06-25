@@ -312,24 +312,24 @@ function ktc_users_roles_grouptype_roles($uid) {
   foreach ($role_map as $grouptype_tid => $group_role_map) {
     $groups = ktc_users_roles_get_group_nids_by_type($grouptype_tid);
     if (is_array($groups) && !empty($groups)) {
-     
+
       $query = new EntityFieldQuery();
       $query->entityCondition('entity_type', 'og_membership')
         ->propertyCondition('etid', $uid)
         ->propertyCondition('gid', $groups, 'IN');
       $result = $query->execute();
-     
+
       $og_membership_ids = array();
-     
+
       if (isset($result['og_membership'])) {
         $og_membership_ids = array_keys($result['og_membership']);
       }
-     
+
       $og_memberships = og_membership_load_multiple($og_membership_ids);
-     
+
       foreach ($og_memberships as $og_membership) {
         $rid = ktc_users_roles_from_membership($og_membership, $group_role_map);
-     
+
         if ($rid) {
           $user_roles[$og_membership->gid] = $rid;
         }
@@ -360,6 +360,7 @@ function ktc_users_roles_from_membership($og_membership, $group_role_map) {
  */
 function ktc_users_roles_og_membership_presave($og_membership) {
   $uid = $og_membership->etid;
+  $account = user_load($uid);
   // If the grouprole field is set, we check if the value triggers a group
   // role assignment.
   if ($field = field_get_items('og_membership', $og_membership, 'field_grouprole')) {
@@ -411,6 +412,11 @@ function ktc_users_roles_og_membership_presave($og_membership) {
     }
     ktc_users_roles_role($uid, $new_grouptype_role, 'grant');
   }
+
+  // Check if the user has the role now. If not, grant it.
+  if (!isset($account->roles[$new_grouptype_role])) {
+    ktc_users_roles_role($uid, $new_grouptype_role, 'grant');
+  }
 }
 
 /**
@@ -454,6 +460,11 @@ function _ktc_users_role_map_from_grouptype($gid) {
  * Handle users role.
  */
 function ktc_users_roles_role($uid, $drupal_role_id, $action) {
+  // Be sure not to revoke roles that should never be removed.
+  $never_remove = variable_get('ktc_users_roles_never_remove', array());
+  if ($action == 'revoke' && in_array($drupal_role_id, $never_remove)) {
+    return;
+  }
 
   if ($drupal_role_id) {
     switch ($action) {
