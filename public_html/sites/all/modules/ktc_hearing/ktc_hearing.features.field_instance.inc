@@ -30,6 +30,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -127,6 +133,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -193,6 +205,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 15,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -273,6 +291,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 13,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -390,6 +414,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 14,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -516,6 +546,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -588,6 +624,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -642,6 +684,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 4,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -730,6 +778,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -809,6 +863,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -861,6 +921,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 2,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -921,6 +987,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 29,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -998,6 +1070,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 7,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1085,6 +1163,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1147,6 +1231,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 9,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1227,6 +1317,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1290,6 +1386,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 26,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1376,6 +1478,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1430,6 +1538,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 30,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1493,6 +1607,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 17,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1609,6 +1729,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 16,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1731,6 +1857,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1794,6 +1926,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1849,6 +1987,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 27,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1936,6 +2080,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1999,6 +2149,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2050,6 +2206,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 22,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2115,6 +2277,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2174,6 +2342,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 21,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2248,6 +2422,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 1,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2338,6 +2518,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2403,6 +2589,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2458,6 +2650,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 8,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2523,6 +2721,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2577,6 +2781,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 5,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2663,6 +2873,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2724,6 +2940,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2779,6 +3001,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 2,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2848,6 +3076,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2906,6 +3140,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 9,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2974,6 +3214,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3027,6 +3273,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 10,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3092,6 +3344,12 @@ function ktc_hearing_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3151,6 +3409,12 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 14,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

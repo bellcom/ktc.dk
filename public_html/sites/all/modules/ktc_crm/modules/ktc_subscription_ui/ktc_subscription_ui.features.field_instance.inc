@@ -32,6 +32,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -125,6 +131,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -211,6 +223,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -274,6 +292,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -329,6 +353,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'weight' => 3,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -401,6 +431,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -457,6 +493,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'weight' => 7,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -550,6 +592,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -633,6 +681,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'weight' => 10,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -726,6 +780,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -809,6 +869,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'weight' => 8,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -902,6 +968,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'listevisningstor' => array(
         'label' => 'above',
         'settings' => array(),
@@ -985,6 +1057,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'weight' => 11,
       ),
       'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

@@ -3779,6 +3779,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'listevisningboks';
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -3791,7 +3792,6 @@ function ktc_views_views_default_views() {
     <li><i class="red-dot"></i>Netværk du følger</li>
     <li><i class="yellow-dot"></i>Netværk generelt</li>
     <li><i class="green-dot"></i>Foreningen</li>
-    <li><i class="blue-dot"></i>Magasinet</li>
   </ul>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -3955,7 +3955,6 @@ function ktc_views_views_default_views() {
     <li><i class="red-dot"></i>Netværk du følger</li>
     <li><i class="yellow-dot"></i>Netværk generelt</li>
     <li><i class="green-dot"></i>Foreningen</li>
-    <li><i class="blue-dot"></i>Magasinet</li>
   </ul>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -4100,7 +4099,6 @@ function ktc_views_views_default_views() {
     <li><i class="red-dot"></i>Netværk du følger</li>
     <li><i class="yellow-dot"></i>Netværk generelt</li>
     <li><i class="green-dot"></i>Foreningen</li>
-    <li><i class="blue-dot"></i>Magasinet</li>
   </ul>
 </div>'),
     t('- I alt @total stk.'),

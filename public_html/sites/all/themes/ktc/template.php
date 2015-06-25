@@ -293,10 +293,13 @@ function ktc_preprocess_node(&$vars) {
   if ($vars['elements']['#view_mode'] == 'listevisning') {
     $vars['theme_hook_suggestions'][] = 'node__listevisning';
   }
-
-  // Node--listevisningstor.tpl.php.
-  if ($vars['elements']['#view_mode'] == 'listevisningstor') {
-    $vars['theme_hook_suggestions'][] = 'node__listevisningstor';
+  // Node--listevisning.tpl.php.
+  if ($vars['elements']['#view_mode'] == 'listevisning') {
+    $vars['theme_hook_suggestions'][] = 'node__listevisning';
+  }
+  // Node--listevisningboks.tpl.php.
+  if ($vars['elements']['#view_mode'] == 'listevisningboks') {
+    $vars['theme_hook_suggestions'][] = 'node__listevisningboks';
   }
   // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes.
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
@@ -331,7 +334,6 @@ function ktc_preprocess_node(&$vars) {
     // Title (shortened)
     $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 40);
   }
-
 
   // Added user_name and user_object for node--teaser/teasercomments templates.
   $user = user_load($vars['uid']);
@@ -844,8 +846,13 @@ function ktc_preprocess_user_profile(&$vars) {
   // user picture
   if (isset($vars['account']->roles)) {
     if (is_array($vars['account']->roles)) {
+      // VIP
       if (in_array('KTC VIP', $vars['account']->roles)) {
         $vars['classes_array'][] = 'ktc-user-green';
+      }
+      // Blue
+      if (in_array('KTC BLUE', $vars['account']->roles)) {
+        $vars['classes_array'][] = 'ktc-user-blue';
       }
     }
   }

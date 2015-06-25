@@ -15,6 +15,10 @@ function ktc_content_types_entity_info_alter(&$entity_info) {
     'label' => t('Listevisning Stor'),
     'custom settings' => TRUE,
   );
+  $entity_info['node']['view modes']['listevisningboks'] = array(
+    'label' => t('Listevisning boks'),
+    'custom settings' => TRUE,
+  );
   $entity_info['node']['view modes']['teasercomments'] = array(
     'label' => t('Teaser with comments'),
     'custom settings' => TRUE,
