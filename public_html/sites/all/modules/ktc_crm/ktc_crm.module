@@ -62,33 +62,6 @@ function ktc_crm_settings() {
 }
 
 /**
- * Implements hook_cron().
- */
-function ktc_crm_cron() {
-  // Disable cron on ktc server for now.
-  if (gethostname() == 'ktc') {
-    return;
-  }
-
-  $logger = KtcCrmLogger::getInstance();
-  $logger->log->addInfo('cron', 'run started');
-
-  $lastupdate = variable_get('ktc_crm_lastupdate');
-
-  $logger->log->addInfo('cron webuser', 'fetch webusers');
-  if ($webusers = ktc_crm_fetch_webusers()) {
-    foreach ($webusers as $webuserdto) {
-      ktc_crm_update_account_from_webuserdto($webuserdto);
-    }
-  }
-
-  ktc_crm_group_update_groups($lastupdate);
-
-  variable_set('ktc_crm_lastupdate', date('Y-m-d\TH:i:s', strtotime('-1 hour')));
-  $logger->log->addInfo('cron', 'run completed');
-}
-
-/**
  * Implements hook_form_alter().
  */
 function ktc_crm_form_alter(&$form, &$form_state, $form_id) {
