@@ -3786,7 +3786,6 @@ function ktc_views_views_default_views() {
     <li><i class="red-dot"></i>Netværk du følger</li>
     <li><i class="yellow-dot"></i>Netværk generelt</li>
     <li><i class="green-dot"></i>Foreningen</li>
-    <li><i class="blue-dot"></i>Magasinet</li>
   </ul>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -3950,7 +3949,6 @@ function ktc_views_views_default_views() {
     <li><i class="red-dot"></i>Netværk du følger</li>
     <li><i class="yellow-dot"></i>Netværk generelt</li>
     <li><i class="green-dot"></i>Foreningen</li>
-    <li><i class="blue-dot"></i>Magasinet</li>
   </ul>
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -4095,7 +4093,6 @@ function ktc_views_views_default_views() {
     <li><i class="red-dot"></i>Netværk du følger</li>
     <li><i class="yellow-dot"></i>Netværk generelt</li>
     <li><i class="green-dot"></i>Foreningen</li>
-    <li><i class="blue-dot"></i>Magasinet</li>
   </ul>
 </div>'),
     t('- I alt @total stk.'),
