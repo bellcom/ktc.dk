@@ -11933,13 +11933,22 @@ fieldset[disabled] .ktc-comments-list .ktc-comments-list-body .ktc-comments-list
   margin-top: -2px;
 }
 .ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item {
-  padding-left: 40px;
+  padding-left: 25px;
 }
 .ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item,
 .ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item:first-child,
 .ktc-comments-list .ktc-comments-list-body .indented .ktc-comments-list-item:last-child {
   border-bottom: 2px solid #fff;
   margin-bottom: -2px;
+}
+.ktc-comments-list .ktc-comments-list-body .indented .indented .ktc-comments-list-item {
+  padding-left: 50px;
+}
+.ktc-comments-list .ktc-comments-list-body .indented .indented .indented .ktc-comments-list-item {
+  padding-left: 75px;
+}
+.ktc-comments-list .ktc-comments-list-body .indented .indented .indented .indented .ktc-comments-list-item {
+  padding-left: 100px;
 }
 .ktc-content .ktc-comments-list {
   margin-left: -10px;
