@@ -25,10 +25,12 @@
 
             <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
-            <p><?php print $body_shortened; ?></p>
+            <?php if (isset($body_shortened)): ?>
+              <p><?php print $body_shortened; ?></p>
+            <?php endif; ?>
 
             <?php if ($user_object): ?>
-                <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2')); ?>
+              <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2')); ?>
             <?php endif; ?>
 
         </div>

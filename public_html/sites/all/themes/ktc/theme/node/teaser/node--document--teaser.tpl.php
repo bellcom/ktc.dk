@@ -20,7 +20,9 @@
                 <p class="ktc-date"><?php print $published_at; ?></p>
             <?php endif; ?>
 
-            <p><?php print $body_shortened; ?></p>
+            <?php if (isset($body_shortened)): ?>
+              <p><?php print $body_shortened; ?></p>
+            <?php endif; ?>
 
             <?php if ($user_object): ?>
                 <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2')); ?>

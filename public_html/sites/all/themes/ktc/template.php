@@ -378,14 +378,17 @@ function ktc_preprocess_node(&$vars) {
   // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
   if ($vars['type'] == 'arrangement') {
 
-    if (isset($vars['field_arrangement_date']['und'])) {
-      $dbDate = $vars['field_arrangement_date']['und'][0]['value'];
+    if ( ! empty($vars['field_arrangement_date'])) {
+      if (isset($vars['field_arrangement_date']['und'])) {
+        $dbDate = $vars['field_arrangement_date']['und'][0]['value'];
+      }
+      else {
+        $dbDate = $vars['field_arrangement_date'][0]['value'];
+      }
+      if ($dbDate) {
+        $vars['arrangement_date'] = _ktc_format_datetime($dbDate);
+      }
     }
-    else {
-      $dbDate = $vars['field_arrangement_date'][0]['value'];
-    }
-
-    $vars['arrangement_date'] = _ktc_format_datetime($dbDate);
 
     if ($signup_date = field_get_items('node', $vars['node'], 'field_registration_deadline')) {
       $vars['arrangement_signup_date_formatted'] = _ktc_format_datetime($signup_date[0]['value']);
@@ -840,32 +843,34 @@ function ktc_preprocess_user_profile(&$vars) {
     $vars['theme_hook_suggestions'][] = 'user_profile__' . $vars['theme_suggestion'];
   }
 
-  if ($vars['elements']['#view_mode'] == 'teaser') {
-    $vars['theme_hook_suggestions'][] = 'user_profile__teaser';
-  }
-  if ($vars['elements']['#view_mode'] == 'teaser2') {
-    $vars['theme_hook_suggestions'][] = 'user_profile__teaser2';
-  }
-  if ($vars['elements']['#view_mode'] == 'list1') {
-    $vars['theme_hook_suggestions'][] = 'user_profile__list1';
-  }
-  if ($vars['elements']['#view_mode'] == 'list2') {
-    $vars['theme_hook_suggestions'][] = 'user_profile__list2';
-  }
-  if ($vars['elements']['#view_mode'] == 'list3') {
-    $vars['theme_hook_suggestions'][] = 'user_profile__list3';
-  }
-  if ($vars['elements']['#view_mode'] == 'list4') {
-    $vars['theme_hook_suggestions'][] = 'user_profile__list4';
-  }
-  if ($vars['elements']['#view_mode'] == 'list5') {
-    $vars['theme_hook_suggestions'][] = 'user_profile__list5';
-  }
-  if ($vars['elements']['#view_mode'] == 'list6') {
-    $vars['theme_hook_suggestions'][] = 'user_profile__list6';
-  }
-  if ($vars['elements']['#view_mode'] == 'list7') {
-    $vars['theme_hook_suggestions'][] = 'user_profile__list7';
+  if (isset($vars['elements']['#view_mode'])) {
+    if ($vars['elements']['#view_mode'] == 'teaser') {
+      $vars['theme_hook_suggestions'][] = 'user_profile__teaser';
+    }
+    if ($vars['elements']['#view_mode'] == 'teaser2') {
+      $vars['theme_hook_suggestions'][] = 'user_profile__teaser2';
+    }
+    if ($vars['elements']['#view_mode'] == 'list1') {
+      $vars['theme_hook_suggestions'][] = 'user_profile__list1';
+    }
+    if ($vars['elements']['#view_mode'] == 'list2') {
+      $vars['theme_hook_suggestions'][] = 'user_profile__list2';
+    }
+    if ($vars['elements']['#view_mode'] == 'list3') {
+      $vars['theme_hook_suggestions'][] = 'user_profile__list3';
+    }
+    if ($vars['elements']['#view_mode'] == 'list4') {
+      $vars['theme_hook_suggestions'][] = 'user_profile__list4';
+    }
+    if ($vars['elements']['#view_mode'] == 'list5') {
+      $vars['theme_hook_suggestions'][] = 'user_profile__list5';
+    }
+    if ($vars['elements']['#view_mode'] == 'list6') {
+      $vars['theme_hook_suggestions'][] = 'user_profile__list6';
+    }
+    if ($vars['elements']['#view_mode'] == 'list7') {
+      $vars['theme_hook_suggestions'][] = 'user_profile__list7';
+    }
   }
 
   // Own user - set red color
