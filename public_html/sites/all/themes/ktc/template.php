@@ -838,6 +838,21 @@ function ktc_preprocess_user_profile(&$vars) {
   }
   $vars['account'] = $user_obj;
 
+
+
+  // When a suer has the role "KTC VIP" there must be a green ring around the
+  // user picture
+  if (isset($vars['account']->roles)) {
+    if (is_array($vars['account']->roles)) {
+      if (in_array('KTC VIP', $vars['account']->roles)) {
+        $vars['classes_array'][] = 'ktc-user-green';
+      }
+    }
+  }
+  if ($user->uid == $user_obj->uid) {
+    $vars['classes_array'][] = 'ktc-user-red';
+  }
+
   // Allow for: print theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2'));
   if ($vars['theme_suggestion']) {
     $vars['theme_hook_suggestions'][] = 'user_profile__' . $vars['theme_suggestion'];
@@ -871,11 +886,6 @@ function ktc_preprocess_user_profile(&$vars) {
     if ($vars['elements']['#view_mode'] == 'list7') {
       $vars['theme_hook_suggestions'][] = 'user_profile__list7';
     }
-  }
-
-  // Own user - set red color
-  if ($user->uid == $user_obj->uid) {
-    $vars['classes_array'][] = 'ktc-red';
   }
 
   // User real name in field_navn.
@@ -985,16 +995,6 @@ function ktc_preprocess_region(&$variables, $hook) {
  * Implements ktc_preprocess_user_picture().
  */
 function ktc_preprocess_user_picture(&$variables) {
-
-  // When a suer has the role "KTC VIP" there must be a green ring around the
-  // user picture.
-  if (isset($variables['account']->roles)) {
-    if (is_array($variables['account']->roles)) {
-      if (in_array('KTC VIP', $variables['account']->roles)) {
-        $variables['role_class'] = 'ktc-user-green';
-      }
-    }
-  }
 }
 
 /*

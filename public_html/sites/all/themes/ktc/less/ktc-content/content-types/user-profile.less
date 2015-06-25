@@ -138,6 +138,7 @@
 .ktc-mixin-user-profile(@border-color, @text-color: @border-color) {
 
 	// User profile
+	&.ktc-user-profile,
 	.ktc-user-profile {
 
 		// Photo container
@@ -158,6 +159,15 @@
 				// Headline and link
 				&,
 				> a {
+					color: @text-color;
+				}
+			}
+
+			// Link
+			a {
+
+				// Hover state
+				&:hover {
 					color: @text-color;
 				}
 			}
