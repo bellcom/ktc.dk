@@ -475,13 +475,25 @@ function ktc_users_generate_username($name, $employer, $email, $uid) {
  * Get users grouprole depeding on the current group context.
  */
 function ktc_users_get_user_network_role($account) {
-  $group = menu_get_object('node');
+  $node = menu_get_object('node');
 
-  if (!$group || $group->type != 'group') {
+  if (!$node) {
     return FALSE;
   }
 
-  if ($membership = og_get_membership('node', $group->nid, 'user', $account->uid)) {
+  if ($node->type == 'group') {
+    $gid = $node->nid;
+  }
+
+  if ($field = field_get_items('node', $node, 'field_vis_netvaerk')) {
+    $gid = $field[0]['target_id'];
+  }
+
+  if (!$gid) {
+    return FALSE;
+  }
+
+  if ($membership = og_get_membership('node', $gid, 'user', $account->uid)) {
     if ($field = field_get_items('og_membership', $membership, 'field_grouprole')) {
       $group_role = taxonomy_term_load($field[0]['target_id']);
       return $group_role->name;
