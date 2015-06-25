@@ -213,6 +213,10 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   if (!$invoiceaccount) {
     $invoiceaccount = _ktc_crm_account_get_users_account($account);
   }
+  if (!$invoiceaccount) {
+    drupal_set_message(t('Du mangler at udfylde nogle informationer i din brugerprofil.') . ' ' . l(t('Tryk her for at redigere.'), 'user/' . $account->uid . '/edit'), 'warning');
+    drupal_goto('user/' . $account->uid . '/' . arg(2));
+  }
   $top_level_account = ktc_crm_account_load_top_level_account($invoiceaccount);
 
   if ($field = field_get_items('node', $product, 'field_text_before_invoiceaccount')) {
