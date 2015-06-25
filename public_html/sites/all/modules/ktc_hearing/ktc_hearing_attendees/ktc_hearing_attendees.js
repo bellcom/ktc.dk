@@ -179,7 +179,7 @@ jQuery(document).ready(function($){
 
   if ($('#edit-og-group-ref-und').val()) {
     $.each($('#edit-og-group-ref-und').val(), function (i, val) {
-      addGroupMembers(val);
+      addGroupMembers(val, 'selected');
     });
   }
 

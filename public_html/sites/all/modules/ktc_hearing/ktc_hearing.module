@@ -921,23 +921,25 @@ function _ktc_hearing_user_can_create_hearing_groups($uid) {
   $account = user_load($uid);
 
   $groups = array();
+  $hearings_groups = array();
+
+  // Fetch ids for all networks of this type.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->fieldCondition('field_netvaerkstype', 'tid', 1134);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    foreach ($result['node'] as $group_id => $value) {
+      $hearing_groups[$group_id] = $group_id;
+    }
+  }
 
   if ($usertype_field = field_get_items('user', $account, 'field_usertype')) {
     $usertype_tid = $usertype_field[0]['tid'];
     $allowed_usertypes = variable_get('ktc_hearings_usertype_create', array());
     if (isset($allowed_usertypes[$usertype_tid]) && $allowed_usertypes[$usertype_tid]) {
-
-      // Fetch ids for all networks of this type.
-      $query = new EntityFieldQuery();
-      $query->entityCondition('entity_type', 'node')
-        ->fieldCondition('field_netvaerkstype', 'tid', 1134);
-      $result = $query->execute();
-
-      if (isset($result['node'])) {
-        foreach ($result['node'] as $group_id => $value) {
-          $groups[$group_id] = $group_id;
-        }
-      }
+      $groups = $hearing_groups;
     }
   }
 
@@ -949,8 +951,8 @@ function _ktc_hearing_user_can_create_hearing_groups($uid) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'og_membership')
       ->propertyCondition('etid', $uid)
-      ->fieldCondition('field_grouprole', 'target_id', $allowed_group_roles)
-      ->fieldCondition('field_netvaerkstype', 'tid', 1134);
+      ->fieldCondition('field_grouprole', 'target_id', array_values($allowed_group_roles), 'IN')
+      ->propertyCondition('gid', $hearing_groups, 'IN');
     $result = $query->execute();
 
     if (isset($result['og_membership'])) {
@@ -960,7 +962,6 @@ function _ktc_hearing_user_can_create_hearing_groups($uid) {
       foreach ($memberships as $membership) {
         $groups[$membership->gid] = $membership->gid;
       }
-
     }
   }
 
