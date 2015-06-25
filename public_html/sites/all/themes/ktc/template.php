@@ -909,6 +909,9 @@ function ktc_preprocess_user_profile(&$vars) {
     $vars['job_title'] = '';
   }
 
+  // Fetch grouprole. If it's relevant.
+  $vars['network_role'] = ktc_users_get_user_network_role($user_obj);
+
   // Work
   $vars['work'] = ktc_users_get_user_info($user_obj, 'work');
 
