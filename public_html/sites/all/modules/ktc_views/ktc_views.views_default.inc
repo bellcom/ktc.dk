@@ -785,6 +785,12 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
   $handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
   $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id']['id'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id']['value']['value'] = '23217';
   $handler->display->display_options['argument_input'] = array(
     'gid' => array(
       'type' => 'user',
@@ -1232,7 +1238,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  /* Felt: Felt: Direkte telefon */
+  /* Felt: Felt: Telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
@@ -1506,7 +1512,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  /* Felt: Felt: Direkte telefon */
+  /* Felt: Felt: Telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
@@ -3616,7 +3622,6 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['max_length'] = '20';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['name']['element_type'] = '0';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
@@ -4593,7 +4598,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_cell']['table'] = 'field_data_field_cell';
   $handler->display->display_options['fields']['field_cell']['field'] = 'field_cell';
   $handler->display->display_options['fields']['field_cell']['exclude'] = TRUE;
-  /* Felt: Felt: Direkte telefon */
+  /* Felt: Felt: Telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
