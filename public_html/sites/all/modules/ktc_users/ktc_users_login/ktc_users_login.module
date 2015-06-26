@@ -31,12 +31,12 @@ function ktc_users_login() {
 
   // Create user
   $form['actions']['create-user'] = array(
-    '#markup' => l('', 'user/signup', array('attributes' => array('class' => 'ktc-user-login-action-button ktc-user-login-action-button-create-user', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('Opret bruger')))),
+    '#markup' => l('', 'user/signup', array('attributes' => array('class' => array('ktc-user-login-action-button', 'ktc-user-login-action-button-create-user'), 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('Opret bruger')))),
   );
 
   // Search
   $form['actions']['search'] = array(
-    '#markup' => l('', 'search', array('attributes' => array('class' => 'ktc-user-login-action-button ktc-user-login-action-button-search', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('Søg')))),
+    '#markup' => l('', 'search', array('attributes' => array('class' => array('ktc-user-login-action-button', 'ktc-user-login-action-button-search'), 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('Søg')))),
   );
 
   unset($form['links']);
