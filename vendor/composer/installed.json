@@ -363,54 +363,6 @@
         ]
     },
     {
-        "name": "nickcernis/html-to-markdown",
-        "version": "2.1.2",
-        "version_normalized": "2.1.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nickcernis/html-to-markdown.git",
-            "reference": "c27833198b2777da43455829439cb24287597218"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nickcernis/html-to-markdown/zipball/c27833198b2777da43455829439cb24287597218",
-            "reference": "c27833198b2777da43455829439cb24287597218",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2"
-        },
-        "require-dev": {
-            "php": ">=5.3.3",
-            "phpunit/phpunit": "4.*"
-        },
-        "time": "2015-01-04 20:10:30",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "classmap": [
-                "HTML_To_Markdown.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Nick Cernis",
-                "email": "nick@cern.is",
-                "homepage": "http://modernnerd.net"
-            }
-        ],
-        "description": "An HTML-to-markdown conversion helper for PHP",
-        "homepage": "https://github.com/nickcernis/html-to-markdown",
-        "keywords": [
-            "html",
-            "markdown"
-        ]
-    },
-    {
         "name": "symfony/event-dispatcher",
         "version": "v2.6.3",
         "version_normalized": "2.6.3.0",
@@ -542,6 +494,54 @@
             "log",
             "logging",
             "psr-3"
+        ]
+    },
+    {
+        "name": "nickcernis/html-to-markdown",
+        "version": "2.1.2",
+        "version_normalized": "2.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nickcernis/html-to-markdown.git",
+            "reference": "c27833198b2777da43455829439cb24287597218"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nickcernis/html-to-markdown/zipball/c27833198b2777da43455829439cb24287597218",
+            "reference": "c27833198b2777da43455829439cb24287597218",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "require-dev": {
+            "php": ">=5.3.3",
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2015-01-04 20:10:30",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "HTML_To_Markdown.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nick Cernis",
+                "email": "nick@cern.is",
+                "homepage": "http://modernnerd.net"
+            }
+        ],
+        "description": "An HTML-to-markdown conversion helper for PHP",
+        "homepage": "https://github.com/nickcernis/html-to-markdown",
+        "keywords": [
+            "html",
+            "markdown"
         ]
     }
 ]
