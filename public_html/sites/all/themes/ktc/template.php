@@ -427,7 +427,7 @@ function ktc_preprocess_node(&$vars) {
 
   // Document
   if ($vars['type'] == 'document' || $vars['type'] == 'os2web_base_news') {
-    $vars['num_attachments'] = 0;
+    $vars['num_attachments'] = false;
     if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
       $vars['num_attachments'] = count($media);
     }

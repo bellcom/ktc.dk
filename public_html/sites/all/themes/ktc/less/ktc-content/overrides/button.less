@@ -49,10 +49,9 @@
 // Link (as button)
 a.btn {
 
-	// Normal, hover and focus state
+	// Normal and hover state
 	&,
-	&:hover,
-	&:focus {
+	&:hover {
 		text-decoration: none;
 	}
 }
@@ -75,6 +74,10 @@ a.btn {
 			background-color: darken(@background-color, 6%);
 			color: @font-color;
 			border-color: darken(@border-color, 7%);
+		}
+
+		&:focus {
+			color: @font-color;
 		}
 
 		// Active (by class only)

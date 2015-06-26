@@ -34,7 +34,7 @@
             <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
             <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
             <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
-            <span class="ktc-footer-button pull-right"><?php print t('Bilag:') . ' ' . $num_attachments; ?></span>
+            <?php if(isset($num_attachments) && $num_attachments > 0): ?><span class="ktc-footer-button pull-right"><?php print t('Bilag:') . ' ' . $num_attachments; ?></span><?php endif ?>
         </div>
 
     </article>
