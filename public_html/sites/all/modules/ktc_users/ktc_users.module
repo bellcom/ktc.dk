@@ -29,7 +29,6 @@ function ktc_users_get_user_info($user, $info_type) {
       $info = ktc_users_get_user_info_personal_data($user);
       break;
   }
-
   return $info;
 }
 
@@ -128,8 +127,11 @@ function ktc_users_get_user_info_personal_data($entity) {
 function ktc_users_get_user_info_old_work_data($entity) {
   $data = array();
 
-  if ($field = field_get_items('user', $entity, 'field_department')) {
+  if ($field = field_get_items('user', $entity, 'field_employer_name')) {
     $data['company'] = $field[0]['value'];
+  }
+  if ($field = field_get_items('user', $entity, 'field_department')) {
+    $data['department'] = $field[0]['value'];
   }
   // Phone.
   if ($field = field_get_items('user', $entity, 'field_phone')) {
@@ -178,6 +180,8 @@ function ktc_users_get_user_info_work_data($entity) {
   if ($entity->name) {
     $data['company'] = $parents[1]->name;
   }
+  // Department
+  $data['department'] = $entity->name;
   // Phone.
   if ($field = field_get_items('taxonomy_term', $entity, 'field_phone')) {
     $data['phone'] = $field[0]['value'];
