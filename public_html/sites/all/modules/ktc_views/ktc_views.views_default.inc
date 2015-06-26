@@ -637,7 +637,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
   $handler->display->display_options['filters']['rid']['value'] = array(
-    3 => '3',
+    8 => '8',
   );
 
   /* Display: Block */
