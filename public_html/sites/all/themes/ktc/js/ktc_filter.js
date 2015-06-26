@@ -19,7 +19,7 @@
         $('.filter-box #filter-all').addClass(button_active);
         $('.filter-box #filter-all').removeClass(button_normal);
     }
-    $('.filter-link').click(function(event){        
+    $('body').on('click', '.filter-link', function(event){        
       $container = $('#section-page-with-filter').find('.view-content:first');
   
       // Change the buttons class.
@@ -65,11 +65,8 @@
         }
 
       }
-      // Get all the filter values.
-      var filter_value = check_filter_value();
-        
-        
-     if ($(this).closest('.panel-pane').attr('id').indexOf("emner") >= 0) {
+      
+      if ($(this).closest('.panel-pane').attr('id').indexOf("emner") >= 0) {
        var parent_term_ids = '';
             if ($(this).attr('id') != 'filter-all') {
                $(this).closest('.pane-views-panes').find('.btn-primary').each(function() {
@@ -91,7 +88,12 @@
                 else {
                     $(this).closest('.pane-views-panes').next().remove();
                 }
-            }
+            } 
+        // Get all the filter values.
+      var filter_value = check_filter_value();
+        
+        
+   
         var activeFilterBox = $(this).closest('.panel-pane');
     
         //selecting all passive filters
@@ -375,7 +377,7 @@
   // content_type, term_type (like document, news type, arrangement type..), emner, tags, regioner
   function check_filter_value() {
     var filter_value = [];
-    var content_type = '', term_type = '', emner = '', tags = '', regioner = '';
+    var content_type = '', term_type = '', emner_arr = [], emner = '', tags = '', regioner = '';
 
     $('.filter-box').each(function(){
 
@@ -390,10 +392,18 @@
           term_type += $(this).attr('data-filter') + ',';
         }
 
-        if (filter_id == 'emner') {
-          emner += $(this).attr('data-filter') + ',';
+        if (filter_id.indexOf('emner') >=0) {
+           var  level = 0;
+           if (filter_id.indexOf('-')>=0 && $(this).attr('data-filter')!='all')
+                 level = filter_id.substr(filter_id.indexOf('-')+1);
+           if (!emner_arr[level])
+                emner_arr[level] = Array();
+           if ($(this).attr('data-filter')!='all') 
+            emner_arr[level].push($(this).attr('data-filter'));
+           
+         // emner += $(this).attr('data-filter') + ',';
         }
-
+   
         if (filter_id == 'tags') {
           tags += $(this).attr('data-filter') + ',';
         }
@@ -403,6 +413,8 @@
         }
       });
     });
+    
+emner = emner_arr[emner_arr.length - 1].join(',');
 
     if (regioner == '') {
       regioner = 'all';

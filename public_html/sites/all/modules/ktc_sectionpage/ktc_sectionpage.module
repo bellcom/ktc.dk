@@ -13,7 +13,11 @@ function ktc_sectionpage_menu() {
     'access arguments' => array('access content'),
     'page arguments' => array(1, 3, 4, 5, 6, 7, 8),
   );
-  
+  $items['ajax/pane/subterms/view/%'] = array(
+    'page callback' => 'ktc_subterms_filters_ajax_view',
+    'access arguments' => array('access content'),
+     'page arguments' => array(4,5)
+  );
   $items['all_groups/%/%/%/%/%'] = array(
     'page callback' => 'ktc_sectionpage_ajax_all_groups_view',
     'access arguments' => array('access content'),
@@ -127,6 +131,26 @@ function ktc_sectionpage_ajax_view($page, $f1, $f2, $f3, $f4, $f5, $gid) {
   }
   print $output;
 
+}
+
+function ktc_subterms_filters_ajax_view($voc_id, $parent_id){   
+  $parent_terms = _ktc_sectionpage_filter_helper($parent_id);
+  $level = _ktc_sectionpage_helper_get_term_depth($parent_id);
+  $view = views_get_view('section_page_filter');
+  $view->set_display('panel_pane_4');
+  $view->set_arguments(array($voc_id, $parent_terms));
+  $view->pre_execute();
+  $view->execute();
+  if (count( $view->result )>0) {
+  $output = '<div class="ktc-aside panel-pane pane-views-panes pane-section-page-filter-panel-pane-3 ktc-aside-filter ktc-aside-filter-2-col ktc-aside-toggle" id="emner-'.$level .'">
+                <div class="ktc-aside-heading">
+                    <h3 class="ktc-aside-title">Filtrer på faglige emner</h3>
+                 </div>        
+                <div class="ktc-aside-body pane-content">';
+ $output .= $view->render('panel_pane_4');
+ $output .='</div></div>';
+ print $output;
+ }
 }
 
 /****************  ktc_sectionpage.module blocks *********************/
@@ -975,3 +999,14 @@ function _ktc_sectionpage_magazine_years_filter_helper($f3, $f4) {
   return $filter_value;
 }
 
+function _ktc_sectionpage_helper_get_term_depth($parent_id){
+    $terms = explode(',', $parent_id);
+    $tid = array_shift($terms);
+    $parent = db_query("SELECT parent FROM {taxonomy_term_hierarchy} WHERE tid = :tid", array(':tid' => $tid))->fetchField();
+    if($parent == 0) {
+        return 1;
+    }else  {
+        return 1+_ktc_sectionpage_helper_get_term_depth($parent);
+  }
+   
+}
