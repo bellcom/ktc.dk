@@ -150,6 +150,7 @@ function ktc_hearing_notifications_notify_users($op, $hearing) {
     }
   }
 
+  $attendee_roles[] = 'creator';
   $users['creator'][]['target_id'] = $hearing->uid;
 
   $mail_templates = ktc_hearing_generate_mail_templates($hearing, $op, $attendee_roles);
