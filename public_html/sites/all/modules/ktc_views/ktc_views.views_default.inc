@@ -562,7 +562,8 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'col-md-12 col-sm-12 col-xs-12';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'list2';
   /* Felt: Bruger: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
@@ -1238,7 +1239,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  /* Felt: Felt: Telefon */
+  /* Felt: Felt: Direkte telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
@@ -1512,7 +1513,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  /* Felt: Felt: Telefon */
+  /* Felt: Felt: Direkte telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
@@ -4596,7 +4597,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_cell']['table'] = 'field_data_field_cell';
   $handler->display->display_options['fields']['field_cell']['field'] = 'field_cell';
   $handler->display->display_options['fields']['field_cell']['exclude'] = TRUE;
-  /* Felt: Felt: Telefon */
+  /* Felt: Felt: Direkte telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
