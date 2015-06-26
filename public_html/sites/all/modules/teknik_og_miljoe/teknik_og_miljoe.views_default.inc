@@ -4,6 +4,7 @@
  * teknik_og_miljoe.views_default.inc
  */
 
+/**
  * Implements hook_views_default_views().
  */
 function teknik_og_miljoe_views_default_views() {
