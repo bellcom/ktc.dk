@@ -86,7 +86,7 @@
                     }
                 }
                 else {
-                    $(this).closest('.pane-views-panes').next().remove();
+                    $(this).closest('.pane-views-panes').nextAll().remove();
                 }
             } 
         // Get all the filter values.
@@ -413,8 +413,8 @@
         }
       });
     });
-    
-emner = emner_arr[emner_arr.length - 1].join(',');
+    if (emner_arr.length)    
+        emner = emner_arr[emner_arr.length - 1].join(',');
 
     if (regioner == '') {
       regioner = 'all';
