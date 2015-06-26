@@ -12227,42 +12227,10 @@ h6 + .ktc-date {
   color: #2c353a;
 }
 .ktc-user-profile .ktc-user-profile-content a:hover,
-.ktc-user-profile .ktc-user-profile-content a:hover {
+.ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-user-profile .ktc-user-profile-content a:focus {
   color: #2c353a;
-}
-.ktc-teaser.ktc-user-profile .ktc-user-profile-photo-container img,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-photo-container img {
-  border-color: #d3a900;
-}
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h1,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h1,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h2,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h2,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h3,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h3,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h4,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h4,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h5,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h5,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h6,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h6,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h1 > a,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h1 > a,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h2 > a,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h2 > a,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h3 > a,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h3 > a,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h4 > a,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h4 > a,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h5 > a,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h5 > a,
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content h6 > a,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content h6 > a {
-  color: #d3a900;
-}
-.ktc-teaser.ktc-user-profile .ktc-user-profile-content a:hover,
-.ktc-teaser .ktc-user-profile .ktc-user-profile-content a:hover {
-  color: #d3a900;
 }
 .ktc-user-green.ktc-user-profile .ktc-user-profile-photo-container img,
 .ktc-user-green .ktc-user-profile .ktc-user-profile-photo-container img {
@@ -12295,7 +12263,12 @@ h6 + .ktc-date {
   color: #36a145;
 }
 .ktc-user-green.ktc-user-profile .ktc-user-profile-content a:hover,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content a:hover {
+.ktc-user-green .ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-user-green.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-user-green .ktc-user-profile .ktc-user-profile-content a:focus {
+  color: #36a145;
+}
+.ktc-user-green .ktc-user-profile-content a {
   color: #36a145;
 }
 .ktc-user-blue.ktc-user-profile .ktc-user-profile-photo-container img,
@@ -12329,7 +12302,9 @@ h6 + .ktc-date {
   color: #1f9bd7;
 }
 .ktc-user-blue.ktc-user-profile .ktc-user-profile-content a:hover,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content a:hover {
+.ktc-user-blue .ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-user-blue.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-user-blue .ktc-user-profile .ktc-user-profile-content a:focus {
   color: #1f9bd7;
 }
 .ktc-user-gold.ktc-user-profile .ktc-user-profile-photo-container img,
@@ -12363,7 +12338,9 @@ h6 + .ktc-date {
   color: #d3a900;
 }
 .ktc-user-gold.ktc-user-profile .ktc-user-profile-content a:hover,
-.ktc-user-gold .ktc-user-profile .ktc-user-profile-content a:hover {
+.ktc-user-gold .ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-user-gold.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-user-gold .ktc-user-profile .ktc-user-profile-content a:focus {
   color: #d3a900;
 }
 .ktc-user-red.ktc-user-profile .ktc-user-profile-photo-container img,
@@ -12397,7 +12374,224 @@ h6 + .ktc-date {
   color: #e75311;
 }
 .ktc-user-red.ktc-user-profile .ktc-user-profile-content a:hover,
-.ktc-user-red .ktc-user-profile .ktc-user-profile-content a:hover {
+.ktc-user-red .ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-user-red.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-user-red .ktc-user-profile .ktc-user-profile-content a:focus {
+  color: #e75311;
+}
+.ktc-teaser.ktc-user-profile .ktc-user-profile-photo-container img,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-photo-container img {
+  border-color: #d3a900;
+}
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content h6 > a,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content h6 > a {
+  color: #d3a900;
+}
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-teaser .ktc-user-profile .ktc-user-profile-content a:focus {
+  color: #d3a900;
+}
+.ktc-teaser .ktc-user-profile-content a {
+  font-size: 14px;
+  color: #d3a900;
+}
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-photo-container img,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-photo-container img,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-photo-container img,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-photo-container img,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-photo-container img,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-photo-container img,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-photo-container img,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-photo-container img,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-photo-container img,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-photo-container img {
+  border-color: #e75311;
+}
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h1,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h2,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h3,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h4,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h5,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h6,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h1 > a,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h2 > a,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h3 > a,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h4 > a,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h5 > a,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content h6 > a,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content h6 > a,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content h6 > a,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content h6 > a,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content h6 > a,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content h6 > a,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content h6 > a,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content h6 > a,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content h6 > a,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content h6 > a {
+  color: #e75311;
+}
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content a:hover,
+.ktc-teaser.ktc-red.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-teaser.ktc-red .ktc-user-green.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-teaser.ktc-red .ktc-user-blue.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-teaser.ktc-red .ktc-user-gold.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-teaser.ktc-red .ktc-user-red.ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-teaser.ktc-red .ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile .ktc-user-profile-content a:focus,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content a:focus {
+  color: #e75311;
+}
+.ktc-teaser.ktc-red .ktc-user-profile-content a,
+.ktc-teaser.ktc-red .ktc-user-green .ktc-user-profile-content a,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile-content a,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile-content a,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile-content a {
+  color: #e75311;
+}
+.ktc-teaser .ktc-user-green.ktc-user-profile .ktc-user-profile-content a {
+  color: #36a145;
+}
+.ktc-teaser .ktc-user-blue.ktc-user-profile .ktc-user-profile-content a {
+  color: #1f9bd7;
+}
+.ktc-teaser .ktc-user-gold.ktc-user-profile .ktc-user-profile-content a {
+  color: #d3a900;
+}
+.ktc-teaser .ktc-user-red.ktc-user-profile .ktc-user-profile-content a {
   color: #e75311;
 }
 .ktc-full-width-image img {
