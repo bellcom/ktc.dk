@@ -48,12 +48,12 @@
         <!-- Begin - profile content -->
         <div class="ktc-user-profile-content">
 
-          <?php if (isset($personal['job_title'])): ?>
-              <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
-          <?php endif ?>
-
           <?php if (isset($network_role)): ?>
               <p class="ktc-user-profile-content-job-title"><?php print $network_role; ?></p>
+          <?php endif ?>
+          
+          <?php if (isset($personal['job_title'])): ?>
+              <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
           <?php endif ?>
 
           <?php if (isset($personal['full_name'])): ?>
