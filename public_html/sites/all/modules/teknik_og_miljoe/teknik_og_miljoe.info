@@ -18,7 +18,6 @@ dependencies[] = ktc_content_types
 dependencies[] = ktc_users
 dependencies[] = link
 dependencies[] = media
-dependencies[] = node
 dependencies[] = number
 dependencies[] = options
 dependencies[] = page_manager

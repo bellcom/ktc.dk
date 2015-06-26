@@ -475,7 +475,7 @@ function ktc_preprocess_node(&$vars) {
   // Added comments_view and num_comments for node--teasecomments.tpl.php.
   $view = views_get_view('comments_in_teaser');
   if ($view && $view->access('block')) {
-    // It has a 'block' display.
+    // It has a 'block' display.       
     $view->set_display('block');
     $view->set_arguments(array($vars['nid']));
     $view->pre_execute();

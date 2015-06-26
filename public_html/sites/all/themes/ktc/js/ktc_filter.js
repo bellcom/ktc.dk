@@ -69,7 +69,7 @@
       var filter_value = check_filter_value();
         
         
-     if ($(this).closest('.pane-views-panes').attr('id').indexOf("emner") >= 0) {
+     if ($(this).closest('.panel-pane').attr('id').indexOf("emner") >= 0) {
        var parent_term_ids = '';
             if ($(this).attr('id') != 'filter-all') {
                $(this).closest('.pane-views-panes').find('.btn-primary').each(function() {
