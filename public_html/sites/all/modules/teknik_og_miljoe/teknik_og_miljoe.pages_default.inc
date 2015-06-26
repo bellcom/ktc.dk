@@ -820,7 +820,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-comments-form',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
@@ -881,7 +881,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
         0 => 'argument_entity_id:node_1.nid',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Forfattere',
+      'override_title_text' => 'Forfatter(e)',
     );
     $pane->cache = array();
     $pane->style = array(
