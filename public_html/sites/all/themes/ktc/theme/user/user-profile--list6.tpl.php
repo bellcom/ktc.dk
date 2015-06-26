@@ -41,27 +41,23 @@
     <!-- Begin - wrapper -->
     <div class="ktc-user-profile-content-wrapper">
 
-        <!-- Begin - profile photo -->
-        <?php print $image = theme('user_picture', array('account' => $account, 'style_name' => 'medium')); ?>
-        <!-- End - profile photo -->
-
         <!-- Begin - profile content -->
         <div class="ktc-user-profile-content">
 
-            <?php if (isset($network['roles'])): ?>
-                <p class="ktc-user-profile-content-network-roles"><?php print $network['roles']; ?></p>
+            <?php if (isset($personal['full_name'])): ?>
+              <h2 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h2>
             <?php endif ?>
 
             <?php if (isset($personal['job_title'])): ?>
-                <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
-            <?php endif ?>
-
-            <?php if (isset($personal['full_name'])): ?>
-              <p class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></p>
+              <h3 class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></h3>
             <?php endif ?>
 
             <?php if (isset($work['company'])): ?>
               <p class="ktc-user-profile-content-employer"><?php print $work['company']; ?></p>
+            <?php endif ?>
+
+            <?php if (isset($work['department'])): ?>
+              <p class="ktc-user-profile-content-work-department"><?php print $work['department']; ?></p>
             <?php endif ?>
 
             <?php if (isset($work['address'])): ?>
@@ -90,6 +86,10 @@
 
         </div>
         <!-- End - profile content -->
+
+        <!-- Begin - profile photo -->
+        <?php print $image = theme('user_picture', array('account' => $account, 'style_name' => 'netvaerks_logo')); ?>
+        <!-- End - profile photo -->
 
     </div>
     <!-- End - wrapper -->

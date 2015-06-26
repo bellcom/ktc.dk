@@ -842,7 +842,7 @@ function ktc_preprocess_user_profile(&$vars) {
 
 
 
-  // When a suer has the role "KTC VIP" there must be a green ring around the
+  // When a user has the role "KTC VIP" there must be a green ring around the
   // user picture
   if (isset($vars['account']->roles)) {
     if (is_array($vars['account']->roles)) {
