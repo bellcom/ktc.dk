@@ -12196,7 +12196,7 @@ h6 + .ktc-date {
   margin-bottom: 3px;
 }
 .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-job-title {
-  font-size: 22px;
+  font-size: 10px;
 }
 .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-employer {
   font-weight: bold;
@@ -12226,6 +12226,9 @@ h6 + .ktc-date {
 }
 .ktc-user-profile.ktc-user-profile-list-6 .ktc-user-profile-content {
   vertical-align: top;
+}
+.ktc-user-profile.ktc-user-profile-list-6 .ktc-user-profile-content .ktc-user-profile-content-job-title {
+  font-size: 22px;
 }
 .ktc-user-profile .ktc-user-profile-photo-container img,
 .ktc-user-profile .ktc-user-profile-photo-container img {
