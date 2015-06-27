@@ -9275,6 +9275,13 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   background-color: #fff;
   padding: 15px;
 }
+body.page-search .view-filters.ktc-content {
+  margin-bottom: 20px;
+}
+body.page-search .view-filters #edit-search-api-views-fulltext-wrapper,
+body.page-search .view-filters button.form-submit {
+  margin-top: 0;
+}
 .ktc-user-login label {
   display: none;
 }
