@@ -3,6 +3,34 @@
 ( function ($) {
   $(document).ready(function(){
 
+      // Search facetapi.
+      $('ul.facetapi-facetapi-links li').each(function(){
+          var li_text = $(this).clone() //clone the element
+              .children() //select all the children
+              .remove()   //remove all the children
+              .end()  //again go back to selected element
+              .text();
+          if (li_text != '') {
+              $(this).find('a').append(li_text);
+              $(this).contents().filter(function () {
+                  return this.nodeType === 3 && $.trim(this.nodeValue).length;
+              }).replaceWith('');
+          }
+      });
+
+      // Search page
+      var $searchPage = $('body.page-search'),
+          $searchFacetContainer = $searchPage.find('.block-facetapi');
+
+      // Facet
+      $searchFacetContainer.addClass('ktc-aside').addClass('ktc-aside-checkbox-filter');
+      $searchFacetContainer.find('.block-heading').addClass('ktc-aside-heading');
+      $searchFacetContainer.find('.block-heading > h3').addClass('ktc-aside-title');
+      $searchFacetContainer.find('.facetapi-facetapi-links').addClass('list-unstyled');
+      $searchFacetContainer.find('.facetapi-facetapi-links').parent().addClass('ktc-aside-body');
+      $searchFacetContainer.find('.facetapi-facetapi-links > li').addClass('ktc-filter-button-container');
+      $searchFacetContainer.find('.facetapi-facetapi-links > li > a').addClass('btn').addClass('btn-default');
+
       // Add button class to "gennemse" knap in media modules
       $('div.media-widget .button').addClass('btn').addClass('btn-default');
 
@@ -138,21 +166,6 @@
           $( '.header_top .views-widget-filter-search_api_views_fulltext' ).css('display', 'none');
           return false;
         }
-      }
-    });
-
-    // Search facetapi.
-    $('ul.facetapi-facetapi-links li').each(function(){
-      var li_text = $(this).clone() //clone the element
-                    .children() //select all the children
-                    .remove()   //remove all the children
-                    .end()  //again go back to selected element
-                    .text();
-      if (li_text != '') {
-        $(this).find('a').append(li_text);
-        $(this).contents().filter(function () {
-          return this.nodeType === 3 && $.trim(this.nodeValue).length;
-        }).replaceWith('');
       }
     });
 
