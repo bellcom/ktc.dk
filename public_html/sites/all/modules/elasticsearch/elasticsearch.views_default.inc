@@ -45,7 +45,7 @@ function elasticsearch_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 col-sm-6 col-xs-12 select-element';
+  $handler->display->display_options['style_options']['row_class'] = 'select-element masonry-item';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   /* Opførsel ved ingen resultater: Global: Tekstområde */
