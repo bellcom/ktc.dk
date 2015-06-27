@@ -20,18 +20,23 @@
 
       // Search page
       var $searchPage = $('body.page-search'),
-          $searchFacetContainer = $searchPage.find('.block-facetapi');
+          $searchFilters = $searchPage.find('.view-filters'),
+          $searchFacetContainer = $searchPage.find('.block-facetapi'),
+          $searchResultBody = $searchPage.find('.view-Search > .view-content');
 
       // Facet
       $searchFacetContainer.addClass('ktc-aside').addClass('ktc-aside-checkbox-filter');
       $searchFacetContainer.find('.block-heading').addClass('ktc-aside-heading');
       $searchFacetContainer.find('.block-heading > h3').addClass('ktc-aside-title');
       $searchFacetContainer.find('.facetapi-facetapi-links').addClass('list-unstyled');
-      $seachResultBody = $searchPage.find('.view-search').find('.view-content');
+
       $searchFacetContainer = $searchPage.find('.block-facetapi');
 
+      // Filters
+      $searchFilters.addClass('ktc-content');
+
       // Search result
-      $seachResultBody.addClass('masonry-wrapper');
+      $searchResultBody.addClass('masonry-wrapper').addClass('row');
 
       // Facet
       $searchFacetContainer.addClass('ktc-aside').addClass('ktc-aside-checkbox-filter');
