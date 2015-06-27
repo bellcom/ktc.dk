@@ -27,6 +27,17 @@
       $searchFacetContainer.find('.block-heading').addClass('ktc-aside-heading');
       $searchFacetContainer.find('.block-heading > h3').addClass('ktc-aside-title');
       $searchFacetContainer.find('.facetapi-facetapi-links').addClass('list-unstyled');
+      $seachResultBody = $searchPage.find('.view-search').find('.view-content');
+      $searchFacetContainer = $searchPage.find('.block-facetapi');
+
+      // Search result
+      $seachResultBody.addClass('masonry-wrapper');
+
+      // Facet
+      $searchFacetContainer.addClass('ktc-aside').addClass('ktc-aside-checkbox-filter');
+      $searchFacetContainer.find('.block-heading').addClass('ktc-aside-heading').removeClass('panel-heading');
+      $searchFacetContainer.find('.block-heading > h3').addClass('ktc-aside-title');
+      $searchFacetContainer.find('.facetapi-facetapi-links').addClass('list-unstyled').addClass('view-content');
       $searchFacetContainer.find('.facetapi-facetapi-links').parent().addClass('ktc-aside-body');
       $searchFacetContainer.find('.facetapi-facetapi-links > li').addClass('ktc-filter-button-container');
       $searchFacetContainer.find('.facetapi-facetapi-links > li > a').addClass('btn').addClass('btn-default');
