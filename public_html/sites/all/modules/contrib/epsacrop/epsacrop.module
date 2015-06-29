@@ -136,7 +136,7 @@ function epsacrop_dialog($entity_name, $field_name, $bundle, $fid) {
   //@TODO: If a method is added to determine if the image is used elsewhere (or number of instances), add that condition for the message
   //related issue: http://drupal.org/node/1352722
   if(module_exists('media')) {
-    $out .= '<p>For convenience, cropping applies to <strong>all</strong> current and future content which uses this image. (If the image is from the library, changing the cropping will affect all existing content which uses the image.)</p>';
+    $out .= t('<p>For convenience, cropping applies to <strong>all</strong> current and future content which uses this image. (If the image is from the library, changing the cropping will affect all existing content which uses the image.)</p>');
   }
   $out .='<div class="epsacrop-global">' . "\n";
   $out .='<div class="epsacrop-image-crop">' . "\n";
