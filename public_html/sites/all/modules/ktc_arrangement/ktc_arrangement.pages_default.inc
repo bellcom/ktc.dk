@@ -443,7 +443,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-comments-form',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();

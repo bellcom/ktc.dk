@@ -351,7 +351,11 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'comments-list',
+    );
     $pane->extras = array();
     $pane->position = 6;
     $pane->locks = array();
@@ -375,7 +379,11 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-comments-form',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 7;
     $pane->locks = array();
