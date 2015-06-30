@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         src: 'images/sprites/*.png',
         destImg: 'images/sprites.png',
         destCSS: 'less/sprites.less',
-        padding: 5,
+        padding: 6,
         cssFormat: 'less',
         cssOpts: {
           cssClass: function (item) {
