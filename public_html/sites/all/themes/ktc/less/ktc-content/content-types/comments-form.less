@@ -3,6 +3,8 @@ div.ktc-comments-form {
 	background-color: #fff;
 	padding-top: @ktc-default-body-top-bottom-inner-spacing;
 	margin-bottom: -(@ktc-default-body-top-bottom-inner-spacing);
+	padding-left: @ktc-default-left-right-inner-spacing;
+	padding-right: @ktc-default-left-right-inner-spacing;
 
 	.ktc-comments-form-content {
 		display: table;
@@ -63,6 +65,7 @@ div.ktc-comments-form {
 		// Buttons
 		.form-actions {
 			.ktc-footer;
+			.ktc-mixin-content-full-width();
 
 			.ktc-footer-button {
 
@@ -96,7 +99,7 @@ div.ktc-comments-form {
 	}
 }
 
-// Content
+// Content (and default)
 .ktc-content {
 
 	// Form

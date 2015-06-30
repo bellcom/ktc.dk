@@ -7264,7 +7264,7 @@ h3.pane-title {
  */
 .icon-hearing-sm {
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -398px;
   width: 9px;
   height: 16px;
   vertical-align: middle;
@@ -7391,7 +7391,7 @@ body .form-control {
 }
 .header-region .header_top #block-views-exp-search-page .views-submit-button .form-submit#edit-submit-search {
   background-image: url(../images/sprites.png);
-  background-position: 0px -893px;
+  background-position: 0px -1181px;
   width: 28px;
   height: 28px;
   border: none;
@@ -7544,7 +7544,7 @@ body .form-control {
 }
 .navigation .header_bottom .header_fixed .header-user .header-user-name .icon-arrow-down {
   background-image: url(../images/sprites.png);
-  background-position: 0px -226px;
+  background-position: 0px -334px;
   width: 15px;
   height: 15px;
   display: inline-block;
@@ -8233,7 +8233,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-left: -15px;
   content: ' ';
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -398px;
   width: 9px;
   height: 16px;
 }
@@ -8474,7 +8474,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .region_footer.footer_5 .footer-5 .footer_location {
   background-image: url(../images/sprites.png);
-  background-position: 0px -121px;
+  background-position: 0px -187px;
   width: 12px;
   height: 15px;
   display: inline-block;
@@ -8703,9 +8703,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   left: 0;
   right: auto;
 }
-.node-teaser.node-group {
-  background: none !important;
-}
 .node-teaser.node-group h5 {
   font-size: 12px;
   margin-bottom: 5px;
@@ -8714,42 +8711,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser.node-group h5 a {
   color: #2c353a;
 }
-.node-teaser.node-group .ktc-yellow {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -372px;
-  width: 17px;
-  height: 17px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.node-teaser.node-group .ktc-red {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -355px;
-  width: 17px;
-  height: 17px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.node-teaser.node-group .ktc-green {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -338px;
-  width: 17px;
-  height: 17px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.node-teaser.node-group .ktc-blue {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -304px;
-  width: 17px;
-  height: 17px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
 .node-teaser .node-teaser-bottom {
   clear: both;
   background-color: #2c353a;
@@ -8757,7 +8718,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .node-teaser .node-teaser-bottom .left .icon-comment {
   background-image: url(../images/sprites.png);
-  background-position: 0px -79px;
+  background-position: 0px -127px;
   width: 15px;
   height: 14px;
   display: inline-block;
@@ -8765,7 +8726,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .node-teaser .node-teaser-bottom .left .icon-statistics {
   background-image: url(../images/sprites.png);
-  background-position: 0px -43px;
+  background-position: 0px -73px;
   width: 23px;
   height: 11px;
   display: inline-block;
@@ -8780,7 +8741,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -147px;
   width: 15px;
   height: 14px;
   vertical-align: top;
@@ -8789,7 +8750,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-meeting_doodle {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -66px;
+  background-position: 0px -108px;
   width: 16px;
   height: 13px;
   vertical-align: top;
@@ -8798,7 +8759,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -167px;
   width: 14px;
   height: 14px;
   vertical-align: top;
@@ -8807,7 +8768,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -398px;
   width: 9px;
   height: 16px;
   vertical-align: top;
@@ -8816,7 +8777,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -420px;
   width: 12px;
   height: 16px;
   vertical-align: top;
@@ -8825,7 +8786,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -376px;
   width: 15px;
   height: 16px;
   vertical-align: top;
@@ -8897,7 +8858,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node--group--listevisning .icon-subgroup {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -321px;
+  background-position: 0px -465px;
   width: 15px;
   height: 17px;
   vertical-align: bottom;
@@ -8934,7 +8895,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -593px;
+  background-position: 0px -815px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8944,7 +8905,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -620px;
+  background-position: 0px -848px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8954,7 +8915,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -782px;
+  background-position: 0px -1046px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8964,7 +8925,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -566px;
+  background-position: 0px -782px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8974,7 +8935,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -458px;
+  background-position: 0px -650px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8984,7 +8945,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-meeting_doodle {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -485px;
+  background-position: 0px -683px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8994,7 +8955,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -512px;
+  background-position: 0px -716px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -9107,7 +9068,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node .views-field .term-name a .icon-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -304px;
+  background-position: 0px -442px;
   width: 17px;
   height: 17px;
   vertical-align: bottom;
@@ -9190,7 +9151,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.red-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.red-dot {
   background-image: url(../images/sprites.png);
-  background-position: 0px -8px;
+  background-position: 0px -14px;
   width: 8px;
   height: 8px;
 }
@@ -9204,14 +9165,14 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.green-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.green-dot {
   background-image: url(../images/sprites.png);
-  background-position: 0px -24px;
+  background-position: 0px -42px;
   width: 8px;
   height: 8px;
 }
 .darkgray-box .pane-content .view-header li i.blue-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.blue-dot {
   background-image: url(../images/sprites.png);
-  background-position: 0px -16px;
+  background-position: 0px -28px;
   width: 8px;
   height: 8px;
 }
@@ -9248,7 +9209,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content ul.pager .pager-previous a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-previous a {
   background-image: url(../images/sprites.png);
-  background-position: 0px -181px;
+  background-position: 0px -271px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -9258,7 +9219,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content ul.pager .pager-next a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-next a {
   background-image: url(../images/sprites.png);
-  background-position: 0px -151px;
+  background-position: 0px -229px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -9297,19 +9258,19 @@ body.page-search .view-filters button.form-submit {
 }
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-login {
   background-image: url(../images/sprites.png);
-  background-position: 0px -809px;
+  background-position: 0px -1079px;
   width: 28px;
   height: 28px;
 }
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-search {
   background-image: url(../images/sprites.png);
-  background-position: 0px -647px;
+  background-position: 0px -881px;
   width: 27px;
   height: 27px;
 }
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-create-user {
   background-image: url(../images/sprites.png);
-  background-position: 0px -728px;
+  background-position: 0px -980px;
   width: 27px;
   height: 27px;
 }
@@ -9358,7 +9319,7 @@ body.page-search .view-filters button.form-submit {
   right: 15px;
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -166px;
+  background-position: 0px -250px;
   width: 15px;
   height: 15px;
 }
@@ -9368,7 +9329,7 @@ body.page-search .view-filters button.form-submit {
 .ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title:after {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -151px;
+  background-position: 0px -229px;
   width: 15px;
   height: 15px;
 }
@@ -9715,7 +9676,7 @@ body.page-search .view-filters button.form-submit {
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -241px;
+  background-position: 0px -355px;
   width: 12px;
   height: 15px;
 }
@@ -9776,7 +9737,7 @@ body.page-search .view-filters button.form-submit {
 .ktc-green .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -241px;
+  background-position: 0px -355px;
   width: 12px;
   height: 15px;
 }
@@ -9837,7 +9798,7 @@ body.page-search .view-filters button.form-submit {
 .ktc-blue .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -136px;
+  background-position: 0px -208px;
   width: 12px;
   height: 15px;
 }
@@ -9898,7 +9859,7 @@ body.page-search .view-filters button.form-submit {
 .ktc-gold .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -196px;
+  background-position: 0px -292px;
   width: 12px;
   height: 15px;
 }
@@ -9959,7 +9920,7 @@ body.page-search .view-filters button.form-submit {
 .ktc-red .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -211px;
+  background-position: 0px -313px;
   width: 12px;
   height: 15px;
 }
@@ -10134,25 +10095,25 @@ body.page-search .view-filters button.form-submit {
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-settings {
   background-image: url(../images/sprites.png);
-  background-position: 0px -755px;
+  background-position: 0px -1013px;
   width: 27px;
   height: 27px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-search {
   background-image: url(../images/sprites.png);
-  background-position: 0px -647px;
+  background-position: 0px -881px;
   width: 27px;
   height: 27px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-toggle {
   background-image: url(../images/sprites.png);
-  background-position: 0px -701px;
+  background-position: 0px -947px;
   width: 27px;
   height: 27px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-logout {
   background-image: url(../images/sprites.png);
-  background-position: 0px -865px;
+  background-position: 0px -1147px;
   width: 28px;
   height: 28px;
 }
@@ -10169,7 +10130,7 @@ body.page-search .view-filters button.form-submit {
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content .ktc-header-top-bar-add-content-icon {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -837px;
+  background-position: 0px -1113px;
   width: 28px;
   height: 28px;
 }
@@ -10288,43 +10249,43 @@ body.page-search .view-filters button.form-submit {
 }
 .ktc-list-display .ktc-list-display-icon.ktc-list-display-icon-meeting_doodle {
   background-image: url(../images/sprites.png);
-  background-position: 0px -66px;
+  background-position: 0px -108px;
   width: 16px;
   height: 13px;
 }
 .ktc-list-display .ktc-list-display-icon.ktc-list-display-icon-document {
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -420px;
   width: 12px;
   height: 16px;
 }
 .ktc-list-display .ktc-list-display-icon.ktc-list-display-icon-os2web_base_news {
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -376px;
   width: 15px;
   height: 16px;
 }
 .ktc-list-display .ktc-list-display-icon.ktc-list-display-icon-group {
   background-image: url(../images/sprites.png);
-  background-position: 0px -321px;
+  background-position: 0px -465px;
   width: 15px;
   height: 17px;
 }
 .ktc-list-display .ktc-list-display-icon.ktc-list-display-icon-arrangement {
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -167px;
   width: 14px;
   height: 14px;
 }
 .ktc-list-display .ktc-list-display-icon.ktc-list-display-icon-forum_post {
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -147px;
   width: 15px;
   height: 14px;
 }
 .ktc-list-display .ktc-list-display-icon.ktc-list-display-icon-hearing {
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -398px;
   width: 9px;
   height: 16px;
 }
@@ -11464,6 +11425,8 @@ div.ktc-comments-form {
   background-color: #fff;
   padding-top: 10px;
   margin-bottom: -10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 div.ktc-comments-form .ktc-comments-form-content {
   display: table;
@@ -11513,6 +11476,10 @@ div.ktc-comments-form form.ktc-comments-form .form-actions {
   border: 0;
   border-radius: 0;
   padding: 6px 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button {
   position: relative;
@@ -11539,7 +11506,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-comment:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -79px;
+  background-position: 0px -127px;
   width: 15px;
   height: 14px;
 }
@@ -11549,7 +11516,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-viewers:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -43px;
+  background-position: 0px -73px;
   width: 23px;
   height: 11px;
 }
@@ -11559,7 +11526,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-hearing:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -398px;
   width: 9px;
   height: 16px;
 }
@@ -11569,7 +11536,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-forum_post:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -147px;
   width: 15px;
   height: 14px;
 }
@@ -11579,7 +11546,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-article:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -32px;
+  background-position: 0px -56px;
   width: 11px;
   height: 11px;
 }
@@ -11589,7 +11556,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-meeting_doodle:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -66px;
+  background-position: 0px -108px;
   width: 16px;
   height: 13px;
 }
@@ -11599,7 +11566,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-os2web_base_news:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -376px;
   width: 15px;
   height: 16px;
 }
@@ -11609,7 +11576,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-private:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -54px;
+  background-position: 0px -90px;
   width: 11px;
   height: 12px;
 }
@@ -11619,7 +11586,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-arrangement:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -167px;
   width: 14px;
   height: 14px;
 }
@@ -11629,7 +11596,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-document:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -420px;
   width: 12px;
   height: 16px;
 }
@@ -12066,7 +12033,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-comment:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -79px;
+  background-position: 0px -127px;
   width: 15px;
   height: 14px;
 }
@@ -12076,7 +12043,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-viewers:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -43px;
+  background-position: 0px -73px;
   width: 23px;
   height: 11px;
 }
@@ -12086,7 +12053,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-hearing:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -398px;
   width: 9px;
   height: 16px;
 }
@@ -12096,7 +12063,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-forum_post:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -147px;
   width: 15px;
   height: 14px;
 }
@@ -12106,7 +12073,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-article:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -32px;
+  background-position: 0px -56px;
   width: 11px;
   height: 11px;
 }
@@ -12116,7 +12083,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-meeting_doodle:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -66px;
+  background-position: 0px -108px;
   width: 16px;
   height: 13px;
 }
@@ -12126,7 +12093,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-os2web_base_news:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -376px;
   width: 15px;
   height: 16px;
 }
@@ -12136,7 +12103,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-private:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -54px;
+  background-position: 0px -90px;
   width: 11px;
   height: 12px;
 }
@@ -12146,7 +12113,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-arrangement:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -167px;
   width: 14px;
   height: 14px;
 }
@@ -12156,7 +12123,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-document:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -420px;
   width: 12px;
   height: 16px;
 }
@@ -12760,43 +12727,43 @@ h6 + .ktc-date {
 }
 .node-type-os2web-base-news .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1339px;
+  background-position: 0px -1663px;
   width: 93px;
   height: 93px;
 }
 .node-type-hearing .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1432px;
+  background-position: 0px -1762px;
   width: 93px;
   height: 93px;
 }
 .node-type-arrangement .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1525px;
+  background-position: 0px -1861px;
   width: 93px;
   height: 93px;
 }
 .node-type-document .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1153px;
+  background-position: 0px -1465px;
   width: 93px;
   height: 93px;
 }
 .node-type-article .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -967px;
+  background-position: 0px -1267px;
   width: 93px;
   height: 93px;
 }
 .node-type-group .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1060px;
+  background-position: 0px -1366px;
   width: 93px;
   height: 93px;
 }
 .node-type-forum-post .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1246px;
+  background-position: 0px -1564px;
   width: 93px;
   height: 93px;
 }
@@ -12908,7 +12875,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-comment:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -79px;
+  background-position: 0px -127px;
   width: 15px;
   height: 14px;
 }
@@ -12918,7 +12885,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-viewers:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -43px;
+  background-position: 0px -73px;
   width: 23px;
   height: 11px;
 }
@@ -12928,7 +12895,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-hearing:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -398px;
   width: 9px;
   height: 16px;
 }
@@ -12938,7 +12905,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-forum_post:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -147px;
   width: 15px;
   height: 14px;
 }
@@ -12948,7 +12915,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-artikler:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -32px;
+  background-position: 0px -56px;
   width: 11px;
   height: 11px;
 }
@@ -12958,7 +12925,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-meeting_doodle:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -66px;
+  background-position: 0px -108px;
   width: 16px;
   height: 13px;
 }
@@ -12968,7 +12935,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-os2web_base_news:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -376px;
   width: 15px;
   height: 16px;
 }
@@ -12978,7 +12945,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-private:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -54px;
+  background-position: 0px -90px;
   width: 11px;
   height: 12px;
 }
@@ -12988,7 +12955,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-arrangement:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -167px;
   width: 14px;
   height: 14px;
 }
@@ -12998,7 +12965,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-document:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -420px;
   width: 12px;
   height: 16px;
 }
@@ -13119,14 +13086,14 @@ h6 + .ktc-date {
   display: inline-block;
   content: "";
   background-image: url(../images/sprites.png);
-  background-position: 0px -440px;
+  background-position: 0px -626px;
   width: 18px;
   height: 18px;
   margin-top: -9px;
 }
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn.active:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -389px;
+  background-position: 0px -557px;
   width: 17px;
   height: 17px;
   margin-top: -9px;
@@ -13383,7 +13350,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   right: 0;
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -423px;
+  background-position: 0px -603px;
   width: 17px;
   height: 17px;
 }
@@ -13408,7 +13375,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   right: 0;
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -423px;
+  background-position: 0px -603px;
   width: 17px;
   height: 17px;
 }
@@ -13475,7 +13442,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   right: 0;
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -423px;
+  background-position: 0px -603px;
   width: 17px;
   height: 17px;
 }
@@ -13491,7 +13458,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-hearing > a:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -272px;
+  background-position: 0px -398px;
   width: 9px;
   height: 16px;
 }
@@ -13501,7 +13468,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-arrangement > a:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -107px;
+  background-position: 0px -167px;
   width: 14px;
   height: 14px;
 }
@@ -13511,7 +13478,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-document > a:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -288px;
+  background-position: 0px -420px;
   width: 12px;
   height: 16px;
 }
@@ -13521,7 +13488,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-group > a:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -321px;
+  background-position: 0px -465px;
   width: 15px;
   height: 17px;
 }
@@ -13531,7 +13498,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-os2web_base_news > a:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -256px;
+  background-position: 0px -376px;
   width: 15px;
   height: 16px;
 }
@@ -13541,7 +13508,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-forum_post > a:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -93px;
+  background-position: 0px -147px;
   width: 15px;
   height: 14px;
 }
@@ -13551,7 +13518,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-artikler > a:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -32px;
+  background-position: 0px -56px;
   width: 11px;
   height: 11px;
 }
@@ -13601,7 +13568,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-color-arrow:before,
 .ktc-link-with-icon.ktc-link-icon-color-arrow:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -151px;
+  background-position: 0px -229px;
   width: 15px;
   height: 15px;
 }
@@ -13612,7 +13579,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-meeting_doodle:before,
 .ktc-link-with-icon.ktc-link-icon-meeting_doodle:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -485px;
+  background-position: 0px -683px;
   width: 27px;
   height: 27px;
 }
@@ -13623,7 +13590,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-arrangement:before,
 .ktc-link-with-icon.ktc-link-icon-arrangement:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -593px;
+  background-position: 0px -815px;
   width: 27px;
   height: 27px;
 }
@@ -13634,7 +13601,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-forum_post:before,
 .ktc-link-with-icon.ktc-link-icon-forum_post:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -782px;
+  background-position: 0px -1046px;
   width: 27px;
   height: 27px;
 }
@@ -13645,7 +13612,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-document:before,
 .ktc-link-with-icon.ktc-link-icon-document:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -458px;
+  background-position: 0px -650px;
   width: 27px;
   height: 27px;
 }
@@ -13656,7 +13623,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-subnetwork:before,
 .ktc-link-with-icon.ktc-link-icon-subnetwork:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -566px;
+  background-position: 0px -782px;
   width: 27px;
   height: 27px;
 }
@@ -13667,37 +13634,41 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-os2web_base_news:before,
 .ktc-link-with-icon.ktc-link-icon-os2web_base_news:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -620px;
+  background-position: 0px -848px;
   width: 27px;
   height: 27px;
 }
 .ktc-green.ktc-link-with-icon.ktc-link-icon-color-arrow:before,
 .ktc-green .ktc-link-with-icon.ktc-link-icon-color-arrow:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -338px;
+  background-position: 0px -488px;
   width: 17px;
   height: 17px;
 }
 .ktc-blue.ktc-link-with-icon.ktc-link-icon-color-arrow:before,
 .ktc-blue .ktc-link-with-icon.ktc-link-icon-color-arrow:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -304px;
+  background-position: 0px -442px;
   width: 17px;
   height: 17px;
 }
 .ktc-gold.ktc-link-with-icon.ktc-link-icon-color-arrow:before,
 .ktc-gold .ktc-link-with-icon.ktc-link-icon-color-arrow:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -372px;
+  background-position: 0px -534px;
   width: 17px;
   height: 17px;
 }
 .ktc-red.ktc-link-with-icon.ktc-link-icon-color-arrow:before,
 .ktc-red .ktc-link-with-icon.ktc-link-icon-color-arrow:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -355px;
+  background-position: 0px -511px;
   width: 17px;
   height: 17px;
+}
+.ktc-box {
+  background-color: #fff;
+  padding: 7px 15px 10px;
 }
 .btn {
   min-width: 50px;
