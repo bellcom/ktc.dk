@@ -1,20 +1,49 @@
 .calendar-calendar {
 
-	td {
-		text-align: center;
+	.mini {
+		border: 1px solid #fff;
+	}
 
-		&.today {
-			background-color:  @ktc-color-dark-content-background;
+	tr {
+		td {
+			text-align: center;
+
+			a {
+				text-decoration: none;
+			}
+
+			&.today {
+				background-color: @ktc-color-blue-background;
+
+				&,
+				p,
+				span,
+				a {
+					color: @ktc-color-blue-background-font;
+					font-style: italic;
+				}
+			}
+
+			&.has-events {
+				background-color: @ktc-color-green-background;
+
+				&,
+				p,
+				span,
+				a {
+					color: @ktc-color-green-background-font;
+				}
+			}
+			&.has-no-events {}
 		}
 	}
 
 	.mini-day-off,
 	.mini-day-on {
-		padding: 10px;
+		padding: 6px;
 	}
 
 	.mini-day-on {
-		background-color: @ktc-color-gold-background;
 
 		a {
 			font-weight: bold;
@@ -28,8 +57,71 @@
 		margin: 0
 	}
 
+
+
 	.date-prev,
 	.date-next {
 		background-color: transparent;
+	}
+}
+
+
+.view {
+
+	.date-nav-wrapper {
+
+		.date-nav {
+			padding-bottom: 0;
+			margin-bottom: 10px;
+			min-height: initial;
+
+			// Heading
+			.date-heading {
+
+				h1, h2, h3, h4, h5, h6 {
+					font-size: @font-size-h5;
+				}
+			}
+
+			// Previous and next
+			.date-prev,
+			.date-next {
+				background: none;
+				padding: 0;
+
+				a {
+					.btn;
+					.btn-default;
+				}
+			}
+
+			// Previous
+			.date-prev {
+				a {
+					margin-left: 0;
+				}
+			}
+
+			// Next
+			.date-next {
+				a {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+.calendar-calendar {
+
+	// Table head
+	thead {
+
+		// Days
+		th.days {
+			border-color: #e9edee;
+			background-color: transparent;
+			color: @ktc-default-color-headline;
+		}
 	}
 }
