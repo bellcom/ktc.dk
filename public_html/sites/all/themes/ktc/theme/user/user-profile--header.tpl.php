@@ -39,7 +39,7 @@
 <div class="ktc-header-top-bar-user-profile">
 
     <!-- Begin - profile photo -->
-    <?php print $image = theme('user_picture', array('account' => $account));?>
+    <?php print $image = theme('user_picture', array('account' => $account, 'style_name' => 'ktc_profile_image_small'));?>
     <!-- End - profile photo -->
 
     <!-- Begin - name -->
