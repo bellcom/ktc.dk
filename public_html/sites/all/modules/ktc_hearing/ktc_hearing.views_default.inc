@@ -420,6 +420,7 @@ function ktc_hearing_views_default_views() {
     'links' => 1,
   );
   $handler->display->display_options['fields']['field_chairman']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_chairman']['separator'] = '';
   /* Felt: Indhold: Ansvarlig formand */
   $handler->display->display_options['fields']['field_responsible_foreman']['id'] = 'field_responsible_foreman';
   $handler->display->display_options['fields']['field_responsible_foreman']['table'] = 'field_data_field_responsible_foreman';
@@ -443,6 +444,7 @@ function ktc_hearing_views_default_views() {
     'links' => 1,
   );
   $handler->display->display_options['fields']['field_coordinator']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_coordinator']['separator'] = '';
   /* Felt: Indhold: Ansvarlig tovholder */
   $handler->display->display_options['fields']['field_responsible_admin']['id'] = 'field_responsible_admin';
   $handler->display->display_options['fields']['field_responsible_admin']['table'] = 'field_data_field_responsible_admin';
