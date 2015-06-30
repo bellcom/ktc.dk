@@ -29,3 +29,16 @@ body.page-search {
 		}
 	}
 }
+
+// Remove versions fieldset and its content on node add pages
+.page-node-add {
+	.tabs-left {
+		.vertical-tabs-list {
+			.vertical-tab-button {
+				&:nth-child(3) {
+					display: none;
+				}
+			}
+		}
+	}
+}
