@@ -8703,9 +8703,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   left: 0;
   right: auto;
 }
-.node-teaser.node-group {
-  background: none !important;
-}
 .node-teaser.node-group h5 {
   font-size: 12px;
   margin-bottom: 5px;
@@ -8713,42 +8710,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .node-teaser.node-group h5 a {
   color: #2c353a;
-}
-.node-teaser.node-group .ktc-yellow {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -372px;
-  width: 17px;
-  height: 17px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.node-teaser.node-group .ktc-red {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -355px;
-  width: 17px;
-  height: 17px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.node-teaser.node-group .ktc-green {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -338px;
-  width: 17px;
-  height: 17px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.node-teaser.node-group .ktc-blue {
-  display: inline-block;
-  background-image: url(../images/sprites.png);
-  background-position: 0px -304px;
-  width: 17px;
-  height: 17px;
-  vertical-align: middle;
-  margin-right: 5px;
 }
 .node-teaser .node-teaser-bottom {
   clear: both;
