@@ -327,6 +327,7 @@ features[field_instance][] = node-page-field_os2web_base_field_hidlinks
 features[field_instance][] = node-page-field_os2web_base_field_media
 features[field_instance][] = node-page-field_short
 features[field_instance][] = node-page-field_vis_netvaerk
+features[field_instance][] = taxonomy_term-emner_faste_-field_crm_uuid
 features[field_instance][] = taxonomy_term-emner_faste_-field_typo3_uid
 features[field_instance][] = taxonomy_term-os2web_taxonomies_tax_kle-field_os2web_taxonomies_cue_word
 features[field_instance][] = taxonomy_term-os2web_taxonomies_tax_kle-field_os2web_taxonomies_dis_con

@@ -10590,6 +10590,70 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-emner_faste_-field_crm_uuid'
+  $field_instances['taxonomy_term-emner_faste_-field_crm_uuid'] = array(
+    'bundle' => 'emner_faste_',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_crm_uuid',
+    'label' => 'CRM UUID',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 42,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-emner_faste_-field_typo3_uid'
   $field_instances['taxonomy_term-emner_faste_-field_typo3_uid'] = array(
     'bundle' => 'emner_faste_',
@@ -10866,6 +10930,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   t('Bredt banner');
   t('Bruges hvis tilmeldingen ikke bruges på KTC.dk.
 Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
+  t('CRM UUID');
   t('Direkte link til program');
   t('Direkte link til tilmelding');
   t('Direkte telefon');

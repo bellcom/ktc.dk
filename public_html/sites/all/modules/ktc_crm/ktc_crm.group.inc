@@ -31,7 +31,7 @@ function ktc_crm_group_update_groups() {
   if ($group_members) {
     $logger->log->addInfo('cron group', 'update memberhips');
     ktc_crm_group_process_memberships($group_members);
-   
+
     $logger->log->addInfo('cron group', 'remove old memberships');
     ktc_crm_group_remove_old_memberships($group_members);
   }
@@ -177,6 +177,18 @@ function ktc_crm_group_map_group_to_groupdto($group) {
     $groupdto->ParentGroup = $parentgroupdto;
   }
 
+  if ($field = field_get_items('node', $group, 'field_topics')) {
+    foreach ($field as $delta => $value) {
+      $term = taxonomy_term_load($value['tid']);
+
+      if ($uuid_field = field_get_items('taxonomy_term', $term, 'field_crm_uuid')) {
+        $professionalfielddto = new \KTC\GroupService\ReferenceDto($uuid_field[0]['value']);
+        $groupdto->ProfessionalField = $professionalfielddto;
+        break;
+      }
+    }
+  }
+
   $groupdto->WebSite = url('node/' . $group->nid, array('absolute' => TRUE));
 
   if ($field = field_get_items('node', $group, 'field_open_group')) {
@@ -226,6 +238,23 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
   if (!empty($groupdto->ParentGroup)) {
     if ($parent_group = ktc_crm_group_load_from_uuid($groupdto->ParentGroup->CrmId)) {
       $group_node->og_group_ref[$language][0]['target_id'] = $parent_group->nid;
+    }
+  }
+
+  if ($groupdto->ProfessionalField) {
+    $professional_tid = _ktc_crm_group_get_tid('emner_faste_', $groupdto->ProfessionalField->CrmId, $groupdto->ProfessionalField->Name);
+
+    $add_professional = TRUE;
+    if ($field = field_get_items('node', $group_node, 'field_topics')) {
+      foreach ($field as $delta => $value) {
+        if ($value['tid'] == $professional_tid) {
+          $add_professional = FALSE;
+          break;
+        }
+      }
+    }
+    if ($add_professional) {
+      $group_node->field_topics[$language][]['tid'] = $professional_tid;
     }
   }
 
