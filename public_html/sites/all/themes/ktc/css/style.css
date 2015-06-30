@@ -13666,6 +13666,10 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   width: 17px;
   height: 17px;
 }
+.ktc-box {
+  background-color: #fff;
+  padding: 7px 15px 10px;
+}
 .btn {
   min-width: 50px;
   padding: 3px 15px;
