@@ -176,7 +176,8 @@ function ktc_users_get_user_info_work_data($entity) {
 
   // Company.
   if ($entity->name) {
-    $data['company'] = $parents[1]->name;
+    $index = count($parents) - 2;
+    $data['company'] = $parents[$index]->name;
   }
   // Phone.
   if ($field = field_get_items('taxonomy_term', $entity, 'field_phone')) {
