@@ -11464,6 +11464,8 @@ div.ktc-comments-form {
   background-color: #fff;
   padding-top: 10px;
   margin-bottom: -10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 div.ktc-comments-form .ktc-comments-form-content {
   display: table;
@@ -11513,6 +11515,10 @@ div.ktc-comments-form form.ktc-comments-form .form-actions {
   border: 0;
   border-radius: 0;
   padding: 6px 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button {
   position: relative;
