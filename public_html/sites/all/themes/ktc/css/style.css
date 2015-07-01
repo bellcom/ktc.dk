@@ -5656,7 +5656,9 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-aside-filter .filter-box:before,
 .ktc-aside-filter .filter-box:after,
 .ktc-aside-tabs .ktc-aside-body:before,
-.ktc-aside-tabs .ktc-aside-body:after {
+.ktc-aside-tabs .ktc-aside-body:after,
+.date-no-float .date-padding:before,
+.date-no-float .date-padding:after {
   content: " ";
   display: table;
 }
@@ -5684,7 +5686,8 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-footer:after,
 .ktc-node-header:after,
 .ktc-aside-filter .filter-box:after,
-.ktc-aside-tabs .ktc-aside-body:after {
+.ktc-aside-tabs .ktc-aside-body:after,
+.date-no-float .date-padding:after {
   clear: both;
 }
 .center-block {
