@@ -721,6 +721,29 @@ function ktc_arrangement_default_page_manager_handlers() {
     $pane->uuid = 'c7e2b4da-35ee-47c5-9bb4-5707c4a52b62';
     $display->content['new-c7e2b4da-35ee-47c5-9bb4-5707c4a52b62'] = $pane;
     $display->panels['right'][5] = 'new-c7e2b4da-35ee-47c5-9bb4-5707c4a52b62';
+    $pane = new stdClass();
+    $pane->pid = 'new-807835cb-f567-43c3-bcc5-5084a09a8230';
+    $pane->panel = 'top';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'add_to_outlook-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '807835cb-f567-43c3-bcc5-5084a09a8230';
+    $display->content['new-807835cb-f567-43c3-bcc5-5084a09a8230'] = $pane;
+    $display->panels['top'][0] = 'new-807835cb-f567-43c3-bcc5-5084a09a8230';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -309,7 +309,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col  ktc-aside-no-stack',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col  ktc-aside-no-stack ktc-aside-no-inner-spacing',
       'template_suggestion' => 'block',
     );
     $pane->extras = array();
@@ -340,7 +340,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' ktc-aside-no-stack ktc-node-title-small ktc-node-title-light',
+      'css_class' => ' ktc-aside-no-stack ktc-node-title-small ktc-node-title-light ktc-aside-half-inner-spacing ktc-padding-top-sm',
       'template_suggestion' => 'node_title',
     );
     $pane->extras = array();

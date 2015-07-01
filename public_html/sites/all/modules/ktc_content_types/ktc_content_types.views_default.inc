@@ -527,7 +527,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['label'] = '';
   $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'ktc-node-title-small ktc-node-title-light';
+  $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'ktc-node-title-small ktc-node-title-light ktc-padding-bottom-sm ktc-padding-top';
   $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
@@ -772,7 +772,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Billeder fra arrangementet */
+  /* Felt: Indhold: Flere billeder */
   $handler->display->display_options['fields']['field_flere_billeder']['id'] = 'field_flere_billeder';
   $handler->display->display_options['fields']['field_flere_billeder']['table'] = 'field_data_field_flere_billeder';
   $handler->display->display_options['fields']['field_flere_billeder']['field'] = 'field_flere_billeder';
