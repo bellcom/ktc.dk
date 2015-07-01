@@ -9310,6 +9310,15 @@ body.page-search .view-filters button.form-submit {
   margin-left: 0;
   margin-right: 0;
 }
+.ktc-aside .ktc-aside-body h1,
+.ktc-aside .ktc-aside-body h2,
+.ktc-aside .ktc-aside-body h3,
+.ktc-aside .ktc-aside-body h4,
+.ktc-aside .ktc-aside-body h5,
+.ktc-aside .ktc-aside-body h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .ktc-aside-toggle > .ktc-aside-heading .ktc-aside-title {
   position: relative;
   cursor: pointer;
