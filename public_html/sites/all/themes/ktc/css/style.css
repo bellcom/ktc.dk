@@ -14216,6 +14216,30 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-padding-bottom-lg {
   padding-bottom: 25px;
 }
+.ktc-padding-left-xs {
+  padding-bottom: 5px;
+}
+.ktc-padding-left-sm {
+  padding-bottom: 10px;
+}
+.ktc-padding-left {
+  padding-bottom: 15px;
+}
+.ktc-padding-left-lg {
+  padding-bottom: 25px;
+}
+.ktc-padding-right-xs {
+  padding-bottom: 5px;
+}
+.ktc-padding-right-sm {
+  padding-bottom: 10px;
+}
+.ktc-padding-right {
+  padding-bottom: 15px;
+}
+.ktc-padding-right-lg {
+  padding-bottom: 25px;
+}
 .btn {
   min-width: 50px;
   padding: 3px 15px;
