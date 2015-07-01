@@ -7981,9 +7981,6 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-12 .pane-ktc-sign
 .page-taxonomy .main-container {
   background-color: #fff;
 }
-.region-content {
-  margin-top: 10px;
-}
 .region-content .taxonomy-term-description a,
 .region-content .field-name-body a {
   font-weight: 400;
@@ -10038,6 +10035,26 @@ body.page-search .view-filters button.form-submit {
 .ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
   color: #e75311;
 }
+.og-context.og-context-node.ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #d3a900;
+}
+.og-context.og-context-node .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-yellow.ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-yellow .ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-yellow.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-yellow .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #d3a900;
+}
 .ktc-header .ktc-header-top-bar {
   min-height: 50px;
   background-color: #ffffff;
@@ -10197,7 +10214,7 @@ body.page-search .view-filters button.form-submit {
 }
 .ktc-wrapper {
   position: relative;
-  padding-top: 35px;
+  padding-top: 32px;
   padding-bottom: 25px;
   min-height: 250px;
 }
@@ -13099,7 +13116,7 @@ h6 + .ktc-date {
 .ktc-node-title-small h6 {
   font-size: 18px;
   color: #2c353a;
-  margin: 6px 0;
+  padding: 6px 0;
 }
 .ktc-node-title-xs {
   font-size: 15px;
