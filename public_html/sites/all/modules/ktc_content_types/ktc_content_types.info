@@ -20,6 +20,7 @@ dependencies[] = filter
 dependencies[] = hs_taxonomy
 dependencies[] = image
 dependencies[] = ktc_hearing
+dependencies[] = ktc_netvaerk
 dependencies[] = link
 dependencies[] = list
 dependencies[] = makemeeting
