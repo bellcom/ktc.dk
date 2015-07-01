@@ -117,6 +117,7 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   /* Felt: Indhold: Link til arrangørs hjemmeside */
   $handler->display->display_options['fields']['field_link_arrangement_organizer']['id'] = 'field_link_arrangement_organizer';
   $handler->display->display_options['fields']['field_link_arrangement_organizer']['table'] = 'field_data_field_link_arrangement_organizer';
@@ -160,6 +161,7 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['fields']['forwarding_email']['table'] = 'signup';
   $handler->display->display_options['fields']['forwarding_email']['field'] = 'forwarding_email';
   $handler->display->display_options['fields']['forwarding_email']['label'] = '';
+  $handler->display->display_options['fields']['forwarding_email']['exclude'] = TRUE;
   $handler->display->display_options['fields']['forwarding_email']['element_type'] = '0';
   $handler->display->display_options['fields']['forwarding_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['forwarding_email']['element_wrapper_type'] = '0';
@@ -190,7 +192,7 @@ function ktc_arrangement_views_default_views() {
             <var class="atc_description">[body]</var>
             <var class="atc_location">[field_arrangement_location] </var>
             <var class="atc_organizer">[field_news_author]</var>
-            <var class="atc_organizer_email">luke@starwars.com</var>
+            <var class="atc_organizer_email">[forwarding_email]</var>
         </var>
     </span>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -254,14 +256,12 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_date']['table'] = 'field_data_field_arrangement_date';
   $handler->display->display_options['fields']['field_arrangement_date']['field'] = 'field_arrangement_date';
   $handler->display->display_options['fields']['field_arrangement_date']['label'] = '';
-  $handler->display->display_options['fields']['field_arrangement_date']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_arrangement_date']['alter']['text'] = '[field_arrangement_date-value]';
   $handler->display->display_options['fields']['field_arrangement_date']['element_type'] = 'p';
   $handler->display->display_options['fields']['field_arrangement_date']['element_class'] = 'ktc-date-calendar-day';
   $handler->display->display_options['fields']['field_arrangement_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_date']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_arrangement_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_arrangement_date']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_arrangement_date']['settings'] = array(
     'format_type' => 'dag',
     'fromto' => 'value',
@@ -279,7 +279,6 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_date_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_date_2']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_arrangement_date_2']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_arrangement_date_2']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_arrangement_date_2']['settings'] = array(
     'format_type' => 'month',
     'fromto' => 'value',
@@ -329,7 +328,7 @@ function ktc_arrangement_views_default_views() {
             <var class="atc_description">[body]</var>
             <var class="atc_location">[field_arrangement_location] </var>
             <var class="atc_organizer">[field_news_author]</var>
-            <var class="atc_organizer_email">luke@starwars.com</var>
+            <var class="atc_organizer_email">[forwarding_email]</var>
         </var>
     </span>'),
     t('Alle'),

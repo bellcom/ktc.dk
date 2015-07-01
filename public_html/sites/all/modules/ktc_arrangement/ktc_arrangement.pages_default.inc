@@ -152,29 +152,6 @@ function ktc_arrangement_default_page_manager_handlers() {
     $display->content['new-4054cac8-3c6a-4800-a96c-dfed661a1895'] = $pane;
     $display->panels['center'][0] = 'new-4054cac8-3c6a-4800-a96c-dfed661a1895';
     $pane = new stdClass();
-    $pane->pid = 'new-5f3a2726-d8b2-4221-8304-2514169da424';
-    $pane->panel = 'center';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'add_to_outlook-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '5f3a2726-d8b2-4221-8304-2514169da424';
-    $display->content['new-5f3a2726-d8b2-4221-8304-2514169da424'] = $pane;
-    $display->panels['center'][1] = 'new-5f3a2726-d8b2-4221-8304-2514169da424';
-    $pane = new stdClass();
     $pane->pid = 'new-8353dbf5-8c49-4350-a2a0-f576015ff8b9';
     $pane->panel = 'center';
     $pane->type = 'views_panes';
@@ -192,11 +169,34 @@ function ktc_arrangement_default_page_manager_handlers() {
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '8353dbf5-8c49-4350-a2a0-f576015ff8b9';
     $display->content['new-8353dbf5-8c49-4350-a2a0-f576015ff8b9'] = $pane;
-    $display->panels['center'][2] = 'new-8353dbf5-8c49-4350-a2a0-f576015ff8b9';
+    $display->panels['center'][1] = 'new-8353dbf5-8c49-4350-a2a0-f576015ff8b9';
+    $pane = new stdClass();
+    $pane->pid = 'new-5f3a2726-d8b2-4221-8304-2514169da424';
+    $pane->panel = 'center';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'add_to_outlook-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '5f3a2726-d8b2-4221-8304-2514169da424';
+    $display->content['new-5f3a2726-d8b2-4221-8304-2514169da424'] = $pane;
+    $display->panels['center'][2] = 'new-5f3a2726-d8b2-4221-8304-2514169da424';
     $pane = new stdClass();
     $pane->pid = 'new-fd453120-d80e-45c4-866c-4636d1110262';
     $pane->panel = 'center';
@@ -234,7 +234,43 @@ function ktc_arrangement_default_page_manager_handlers() {
     $pane->type = 'block';
     $pane->subtype = 'ktc_signup_block-ktc_signup_link_block';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:arrangement:field_link_to_signup',
+          'settings' => array(
+            'field_link_to_signup' => array(
+              'und' => array(
+                0 => array(
+                  'title' => '',
+                  'url' => '',
+                ),
+              ),
+            ),
+            'field_link_to_signup_url' => array(
+              0 => array(
+                'title' => '',
+                'url' => '',
+              ),
+            ),
+            'field_link_to_signup_title' => array(
+              0 => array(
+                'title' => '',
+                'url' => '',
+              ),
+            ),
+            'field_link_to_signup_attributes' => array(
+              0 => array(
+                'title' => '',
+                'url' => '',
+              ),
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',
