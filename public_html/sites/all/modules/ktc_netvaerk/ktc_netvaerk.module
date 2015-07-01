@@ -465,7 +465,7 @@ function ktc_netvaerk_create_content_links($group) {
   // "faggruppe".
   if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
     if ($field[0]['tid'] == 1134) {
-      $hearing_link = '<li class="col-md-4 col-sm-12 col-xs-12"><a href="/node/add/hearing?og_group_ref=' . $nid . '"><i class="group-add-hearing"></i>Høring</a></li>';
+      $hearing_link = '<div class="ktc-link-wrapper"><div class="ktc-link-container"><a class="ktc-link-with-icon ktc-link-with-icon-large ktc-link-icon-hearing" href="/node/add/hearing?og_group_ref=' . $nid . '">Høring</a></div></div>';
     }
   }
 

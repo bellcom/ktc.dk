@@ -13846,11 +13846,11 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   width: 33.333%;
   padding: 2px 7px;
 }
-.ktc-aside-link-list-3-col .ktc-link-wrapper .ktc-link-container:first-child {
+.ktc-aside-link-list-3-col .ktc-link-wrapper .ktc-link-container:nth-child(1) {
   padding-left: 15px;
   padding-right: 7px;
 }
-.ktc-aside-link-list-3-col .ktc-link-wrapper .ktc-link-container:last-child {
+.ktc-aside-link-list-3-col .ktc-link-wrapper .ktc-link-container:nth-child(3) {
   padding-left: 7px;
   padding-right: 15px;
 }
@@ -13913,6 +13913,17 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-subnetwork:before {
   background-image: url(../images/sprites.png);
   background-position: 0px -782px;
+  width: 27px;
+  height: 27px;
+}
+.ktc-link-with-icon.ktc-link-icon-hearing,
+.ktc-link-with-icon.ktc-link-icon-hearing {
+  line-height: 27px;
+}
+.ktc-link-with-icon.ktc-link-icon-hearing:before,
+.ktc-link-with-icon.ktc-link-icon-hearing:before {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -716px;
   width: 27px;
   height: 27px;
 }
