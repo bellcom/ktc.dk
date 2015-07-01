@@ -13237,7 +13237,6 @@ h6 + .ktc-date {
 .ktc-node-title h6 {
   font-size: 22px;
   color: #2c353a;
-  margin: 6px 0;
 }
 .ktc-node-title-small,
 .ktc-node-title-small h1,
@@ -13248,7 +13247,6 @@ h6 + .ktc-date {
 .ktc-node-title-small h6 {
   font-size: 18px;
   color: #2c353a;
-  padding: 6px 0;
 }
 .ktc-node-title-xs {
   font-size: 15px;
