@@ -9345,6 +9345,22 @@ body.page-search .view-filters button.form-submit {
 .ktc-aside-toggle.closed > .ktc-aside-body {
   display: none;
 }
+.ktc-aside-no-inner-spacing .ktc-aside-heading .ktc-aside-title {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ktc-aside-no-inner-spacing .ktc-aside-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ktc-aside-half-inner-spacing .ktc-aside-heading .ktc-aside-title {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.ktc-aside-half-inner-spacing .ktc-aside-body {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 .ktc-aside-color .ktc-aside-heading {
   background-color: #36a145;
 }

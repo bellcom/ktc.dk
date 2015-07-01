@@ -103,6 +103,36 @@
 	}
 }
 
+// No inner spacing
+.ktc-aside-no-inner-spacing {
+	.ktc-aside-heading {
+
+		.ktc-aside-title {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+	.ktc-aside-body {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+// Half inner spacing
+.ktc-aside-half-inner-spacing {
+	.ktc-aside-heading {
+
+		.ktc-aside-title {
+			padding-top: floor(@ktc-aside-title-top-bottom-inner-spacing / 2);
+			padding-bottom: floor(@ktc-aside-title-top-bottom-inner-spacing / 2);
+		}
+	}
+	.ktc-aside-body {
+		padding-top: floor(@ktc-aside-body-top-bottom-inner-spacing / 2);
+		padding-bottom: floor(@ktc-aside-body-top-bottom-inner-spacing / 2);
+	}
+}
+
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
