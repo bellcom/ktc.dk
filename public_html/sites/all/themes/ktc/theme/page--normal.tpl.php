@@ -92,11 +92,13 @@
 </header>
 <!-- End - header -->
 
-<!-- Begin - breadcrumb -->
-<div class="ktc-breadcrumb">
-  <div class="container"><?php print render($breadcrumb); ?></div>
-</div>
-<!-- End - breadcrumb -->
+<?php if ($breadcrumb): ?>
+  <!-- Begin - breadcrumb -->
+  <div class="ktc-breadcrumb">
+    <div class="container"><?php print render($breadcrumb); ?></div>
+  </div>
+  <!-- End - breadcrumb -->
+<?php endif ?>
 
 <!-- Begin - wrapper -->
 <div id="wrapper" class="ktc-wrapper">

@@ -285,7 +285,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #1f9bd7;
+  color: #2c353a;
   text-decoration: underline;
 }
 a:focus {
@@ -2315,7 +2315,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #1f9bd7;
+  color: #2c353a;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -5647,6 +5647,10 @@ button.close {
 .ktc-gallery-wrapper:after,
 .ktc-gallery-wrapper:before,
 .ktc-gallery-wrapper:after,
+.ktc-node-gallery:before,
+.ktc-node-gallery:after,
+.ktc-node-gallery:before,
+.ktc-node-gallery:after,
 div.ktc-comments-form form.ktc-comments-form .form-actions:before,
 div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-footer:before,
@@ -5682,6 +5686,8 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-article-section.ktc-article-section-type-billedserie .photoswipe-gallery:after,
 .ktc-gallery-wrapper:after,
 .ktc-gallery-wrapper:after,
+.ktc-node-gallery:after,
+.ktc-node-gallery:after,
 div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-footer:after,
 .ktc-node-header:after,
@@ -6998,7 +7004,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #1f9bd7;
+  color: #2c353a;
 }
 .bottom-padding {
   padding-bottom: 20px;
@@ -7981,9 +7987,6 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-12 .pane-ktc-sign
 .page-taxonomy .main-container {
   background-color: #fff;
 }
-.region-content {
-  margin-top: 10px;
-}
 .region-content .taxonomy-term-description a,
 .region-content .field-name-body a {
   font-weight: 400;
@@ -8302,7 +8305,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   color: #848e92;
 }
 .front-s-news-item-text .news-title:hover {
-  color: #1f9bd7;
+  color: #2c353a;
   text-decoration: none;
 }
 .front-s-news-item-text p {
@@ -8446,7 +8449,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   text-decoration: none;
 }
 #svendborg_tabs .views-row h4 a:hover {
-  color: #1f9bd7;
+  color: #2c353a;
 }
 #svendborg_tabs .views-row .quicktabs-nyheder-row {
   min-height: 67px;
@@ -9307,6 +9310,15 @@ body.page-search .view-filters button.form-submit {
   margin-left: 0;
   margin-right: 0;
 }
+.ktc-aside .ktc-aside-body h1,
+.ktc-aside .ktc-aside-body h2,
+.ktc-aside .ktc-aside-body h3,
+.ktc-aside .ktc-aside-body h4,
+.ktc-aside .ktc-aside-body h5,
+.ktc-aside .ktc-aside-body h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .ktc-aside-toggle > .ktc-aside-heading .ktc-aside-title {
   position: relative;
   cursor: pointer;
@@ -9341,6 +9353,22 @@ body.page-search .view-filters button.form-submit {
 }
 .ktc-aside-toggle.closed > .ktc-aside-body {
   display: none;
+}
+.ktc-aside-no-inner-spacing .ktc-aside-heading .ktc-aside-title {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ktc-aside-no-inner-spacing .ktc-aside-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ktc-aside-half-inner-spacing .ktc-aside-heading .ktc-aside-title {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.ktc-aside-half-inner-spacing .ktc-aside-body {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .ktc-aside-color .ktc-aside-heading {
   background-color: #36a145;
@@ -10014,10 +10042,26 @@ body.page-search .view-filters button.form-submit {
 .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
   color: #36a145;
 }
+.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #36a145;
+}
+.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #36a145;
+}
 .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a,
 .ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a,
 .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
 .ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #36a145;
+}
+.ktc-green.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.ktc-green .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #36a145;
+}
+.ktc-green.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.ktc-green .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #36a145;
 }
 .ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a,
@@ -10026,16 +10070,98 @@ body.page-search .view-filters button.form-submit {
 .ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
   color: #1f9bd7;
 }
+.ktc-blue.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #1f9bd7;
+}
+.ktc-blue.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #1f9bd7;
+}
 .ktc-gold.ktc-teaser-large > .ktc-teaser-large-heading a,
 .ktc-gold .ktc-teaser-large > .ktc-teaser-large-heading a,
 .ktc-gold.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
 .ktc-gold .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
   color: #d3a900;
 }
+.ktc-gold.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.ktc-gold .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #d3a900;
+}
+.ktc-gold.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.ktc-gold .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #d3a900;
+}
 .ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a,
 .ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a,
 .ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
 .ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #e75311;
+}
+.ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #e75311;
+}
+.ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #e75311;
+}
+.og-context.og-context-node.ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #d3a900;
+}
+.og-context.og-context-node.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #d3a900;
+}
+.og-context.og-context-node.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #d3a900;
+}
+.og-context.og-context-node .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-yellow.ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-yellow .ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-yellow.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-yellow .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #d3a900;
+}
+.og-context.og-context-node .ktc-green.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-yellow.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-blue.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-green .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-yellow .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #d3a900;
+}
+.og-context.og-context-node .ktc-green.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-yellow.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-blue.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-green .ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-yellow .ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #d3a900;
+}
+.og-context.og-context-node .ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #e75311;
+}
+.og-context.og-context-node .ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #e75311;
+}
+.og-context.og-context-node .ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #e75311;
 }
 .ktc-header .ktc-header-top-bar {
@@ -10197,7 +10323,7 @@ body.page-search .view-filters button.form-submit {
 }
 .ktc-wrapper {
   position: relative;
-  padding-top: 35px;
+  padding-top: 32px;
   padding-bottom: 25px;
   min-height: 250px;
 }
@@ -11402,6 +11528,29 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
   }
 }
 .ktc-gallery-wrapper a img {
+  width: 100%;
+}
+.ktc-node-gallery {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.ktc-node-gallery a {
+  float: left;
+  width: 50%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .ktc-node-gallery a {
+    float: left;
+    width: 25%;
+  }
+}
+.ktc-node-gallery a img {
   width: 100%;
 }
 .calendar-calendar .mini {
@@ -13011,7 +13160,6 @@ h6 + .ktc-date {
   border: 2px solid #e9edee;
   border-radius: 3px;
   padding: 20px 0;
-  margin-bottom: 15px;
 }
 .ktc-logo .ktc-logo-image {
   display: block;
@@ -13088,7 +13236,6 @@ h6 + .ktc-date {
 .ktc-node-title h6 {
   font-size: 22px;
   color: #2c353a;
-  margin: 6px 0;
 }
 .ktc-node-title-small,
 .ktc-node-title-small h1,
@@ -13099,7 +13246,6 @@ h6 + .ktc-date {
 .ktc-node-title-small h6 {
   font-size: 18px;
   color: #2c353a;
-  margin: 6px 0;
 }
 .ktc-node-title-xs {
   font-size: 15px;
@@ -13972,6 +14118,30 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-box {
   background-color: #fff;
   padding: 7px 15px 10px;
+}
+.ktc-padding-top-xs {
+  padding-top: 5px;
+}
+.ktc-padding-top-sm {
+  padding-top: 10px;
+}
+.ktc-padding-top {
+  padding-top: 15px;
+}
+.ktc-padding-top-lg {
+  padding-top: 25px;
+}
+.ktc-padding-bottom-xs {
+  padding-bottom: 5px;
+}
+.ktc-padding-bottom-sm {
+  padding-bottom: 10px;
+}
+.ktc-padding-bottom {
+  padding-bottom: 15px;
+}
+.ktc-padding-bottom-lg {
+  padding-bottom: 25px;
 }
 .btn {
   min-width: 50px;

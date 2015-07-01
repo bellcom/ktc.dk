@@ -402,7 +402,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Tilmeldingsfrist */
+  /* Felt: Indhold: Svarfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
@@ -461,9 +461,11 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_address']['table'] = 'field_data_field_arrangement_address';
   $handler->display->display_options['fields']['field_arrangement_address']['field'] = 'field_arrangement_address';
   $handler->display->display_options['fields']['field_arrangement_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_arrangement_address']['alter']['text'] = '<p>[field_arrangement_location]</p>
-<p>[field_arrangement_address]</p>';
+  $handler->display->display_options['fields']['field_arrangement_address']['alter']['text'] = '[field_arrangement_location]<br />
+[field_arrangement_address]';
   $handler->display->display_options['fields']['field_arrangement_address']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_arrangement_address']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_arrangement_address']['element_wrapper_class'] = 'ktc-padding-top ktc-padding-bottom';
   $handler->display->display_options['fields']['field_arrangement_address']['element_default_classes'] = FALSE;
   /* Felt: Indhold: Adresse */
   $handler->display->display_options['fields']['field_arrangement_address_2']['id'] = 'field_arrangement_address_2';
@@ -525,7 +527,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['label'] = '';
   $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'ktc-node-title-small ktc-node-title-light';
+  $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'ktc-node-title-small ktc-node-title-light ktc-padding-bottom-sm ktc-padding-top';
   $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
@@ -759,9 +761,9 @@ function ktc_content_types_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Flere billeder - galleri', 'panel_pane_9');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'ktc-node-gallery';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'row';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -821,11 +823,11 @@ function ktc_content_types_views_default_views() {
     t('Tid'),
     t('Pris'),
     t('Målgruppe'),
-    t('Tilmeldingsfrist'),
+    t('Svarfrist'),
     t('Kort og adresse'),
     t('Adresse'),
-    t('<p>[field_arrangement_location]</p>
-<p>[field_arrangement_address]</p>'),
+    t('[field_arrangement_location]<br />
+[field_arrangement_address]'),
     t('Logo og netværksnavn'),
     t('Group node from OG membership'),
     t('<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>'),

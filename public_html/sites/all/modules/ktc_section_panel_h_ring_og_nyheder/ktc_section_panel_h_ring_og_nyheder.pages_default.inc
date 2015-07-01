@@ -235,7 +235,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-gallery-wrapper',
+      'css_class' => 'ktc-node-gallery',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
