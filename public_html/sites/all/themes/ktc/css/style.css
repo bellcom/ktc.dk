@@ -285,7 +285,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #1f9bd7;
+  color: #2c353a;
   text-decoration: underline;
 }
 a:focus {
@@ -2315,7 +2315,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #1f9bd7;
+  color: #2c353a;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -7004,7 +7004,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #1f9bd7;
+  color: #2c353a;
 }
 .bottom-padding {
   padding-bottom: 20px;
@@ -8305,7 +8305,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   color: #848e92;
 }
 .front-s-news-item-text .news-title:hover {
-  color: #1f9bd7;
+  color: #2c353a;
   text-decoration: none;
 }
 .front-s-news-item-text p {
@@ -8449,7 +8449,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   text-decoration: none;
 }
 #svendborg_tabs .views-row h4 a:hover {
-  color: #1f9bd7;
+  color: #2c353a;
 }
 #svendborg_tabs .views-row .quicktabs-nyheder-row {
   min-height: 67px;
