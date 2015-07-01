@@ -296,7 +296,9 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->type = 'block';
     $pane->subtype = 'ktc_sectionpage-netvaerk_invite_links';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(),
+    );
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => 'Logo',
@@ -420,7 +422,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-color',
+      'css_class' => 'ktc-aside',
       'template_suggestion' => 'block',
     );
     $pane->extras = array();
