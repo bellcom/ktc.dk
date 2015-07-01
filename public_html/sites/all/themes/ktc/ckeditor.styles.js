@@ -18,7 +18,7 @@ if(typeof(CKEDITOR) !== 'undefined') {
         { name : 'Afsnitsoverskift (H3)'        , element : 'h3', attributes: { 'class': 'h3' } },
         { name : 'Mindre overskrift (H4)'        , element : 'h4', attributes: { 'class': 'h4' } },
         { name : 'Listeoverskrift (H5)'        , element : 'h5', attributes: { 'class': 'h5' } },
-        { name : 'Indledning'     , element : 'p', attributes: { 'class': 'lead' } },
+        { name : 'Indledning'     , element : 'p', attributes: { 'class': 'ktc-node-lead' } },
         { name : 'Afsnit'     , element : 'p', attributes: { } },
 
         {
