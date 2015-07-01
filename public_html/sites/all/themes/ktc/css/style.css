@@ -10011,10 +10011,26 @@ body.page-search .view-filters button.form-submit {
 .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
   color: #36a145;
 }
+.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #36a145;
+}
+.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #36a145;
+}
 .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a,
 .ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a,
 .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
 .ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #36a145;
+}
+.ktc-green.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.ktc-green .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #36a145;
+}
+.ktc-green.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.ktc-green .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #36a145;
 }
 .ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a,
@@ -10023,10 +10039,26 @@ body.page-search .view-filters button.form-submit {
 .ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
   color: #1f9bd7;
 }
+.ktc-blue.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #1f9bd7;
+}
+.ktc-blue.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #1f9bd7;
+}
 .ktc-gold.ktc-teaser-large > .ktc-teaser-large-heading a,
 .ktc-gold .ktc-teaser-large > .ktc-teaser-large-heading a,
 .ktc-gold.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
 .ktc-gold .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #d3a900;
+}
+.ktc-gold.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.ktc-gold .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #d3a900;
+}
+.ktc-gold.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.ktc-gold .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #d3a900;
 }
 .ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a,
@@ -10035,10 +10067,26 @@ body.page-search .view-filters button.form-submit {
 .ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
   color: #e75311;
 }
+.ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #e75311;
+}
+.ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #e75311;
+}
 .og-context.og-context-node.ktc-teaser-large > .ktc-teaser-large-heading a,
 .og-context.og-context-node .ktc-teaser-large > .ktc-teaser-large-heading a,
 .og-context.og-context-node.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
 .og-context.og-context-node .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #d3a900;
+}
+.og-context.og-context-node.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #d3a900;
+}
+.og-context.og-context-node.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #d3a900;
 }
 .og-context.og-context-node .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a,
@@ -10054,6 +10102,36 @@ body.page-search .view-filters button.form-submit {
 .og-context.og-context-node .ktc-yellow .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
 .og-context.og-context-node .ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
   color: #d3a900;
+}
+.og-context.og-context-node .ktc-green.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-yellow.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-blue.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-green .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-yellow .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #d3a900;
+}
+.og-context.og-context-node .ktc-green.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-yellow.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-blue.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-green .ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-yellow .ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #d3a900;
+}
+.og-context.og-context-node .ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a,
+.og-context.og-context-node .ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
+.og-context.og-context-node .ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
+  color: #e75311;
+}
+.og-context.og-context-node .ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
+.og-context.og-context-node .ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
+  color: #e75311;
+}
+.og-context.og-context-node .ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
+.og-context.og-context-node .ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
+  color: #e75311;
 }
 .ktc-header .ktc-header-top-bar {
   min-height: 50px;

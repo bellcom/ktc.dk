@@ -12,7 +12,7 @@
 
         <div class="ktc-teaser-large-body">
 
-            <h4><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
+            <h4 class="ktc-teaser-large-body-title"><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
             <?php if (isset($published_at)): ?>
                 <p class="ktc-date"><?php print $published_at; ?></p>

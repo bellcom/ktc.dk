@@ -73,6 +73,28 @@
 				}
 			}
 		}
+
+		// Body
+		.ktc-teaser-large-body {
+
+			// Body title
+			.ktc-teaser-large-body-title {
+
+				// Link
+				a {
+
+					// Hover state
+					&:hover {
+						color: @color-font;
+					}
+				}
+			}
+
+			// Date
+			.ktc-date {
+				color: @color-font;
+			}
+		}
 	}
 }
 
@@ -99,7 +121,7 @@
 	.ktc-mixin-teaser-large(@ktc-color-red-font);
 }
 
-// Network 
+// Network
 .og-context.og-context-node {
 	.ktc-mixin-teaser-large(@ktc-color-gold-font);
 
@@ -107,5 +129,9 @@
 	.ktc-yellow,
 	.ktc-blue {
 		.ktc-mixin-teaser-large(@ktc-color-gold-font);
+	}
+
+	.ktc-red {
+		.ktc-mixin-teaser-large(@ktc-color-red-font);
 	}
 }
