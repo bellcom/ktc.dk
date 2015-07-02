@@ -716,11 +716,11 @@ function ktc_content_types_strongarm() {
             'visible' => TRUE,
           ),
           'teasercomments' => array(
-            'weight' => '10',
+            'weight' => '0',
             'visible' => TRUE,
           ),
           'listevisningstor' => array(
-            'weight' => '10',
+            'weight' => '15',
             'visible' => FALSE,
           ),
         ),
@@ -939,7 +939,7 @@ function ktc_content_types_strongarm() {
       'display' => array(
         'signup' => array(
           'teaser' => array(
-            'weight' => '10',
+            'weight' => '1',
             'visible' => TRUE,
           ),
           'teasercomments' => array(
