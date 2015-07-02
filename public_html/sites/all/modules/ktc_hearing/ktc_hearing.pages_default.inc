@@ -484,7 +484,7 @@ function ktc_hearing_default_page_manager_handlers() {
       'type' => 'primary',
       'id' => 'edit-tabs',
       'override_title' => 1,
-      'override_title_text' => 'Faner',
+      'override_title_text' => 'Handlinger',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -492,7 +492,7 @@ function ktc_hearing_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-action ktc-aside-tabs ktc-aside-tabs-2-col',
+      'css_class' => 'ktc-aside-action ktc-aside-tabs ktc-aside-tabs-1-col',
       'template_suggestion' => 'page_tabs',
     );
     $pane->extras = array();

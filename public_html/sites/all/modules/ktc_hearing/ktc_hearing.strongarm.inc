@@ -226,7 +226,14 @@ function ktc_hearing_strongarm() {
           'weight' => '7',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'teaser' => array(
+            'weight' => '11',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__hearing_responses'] = $strongarm;
