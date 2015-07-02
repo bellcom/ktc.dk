@@ -104,6 +104,7 @@
 				.ktc-date {
 					color: @ktc-override-headline-color;
 					font-size: @font-size-base;
+					font-style: normal;
 				}
 			}
 
@@ -174,14 +175,16 @@
 	}
 }
 
-
 // Content
-&,
-.ktc-content {
+body {
 
-	// Comments list
-	.ktc-comments-list {
-		.ktc-mixin-content-almost-full-width();
+	&,
+	.ktc-content {
+
+		// Comments list
+		.ktc-comments-list {
+			.ktc-mixin-content-almost-full-width();
+		}
 	}
 }
 
@@ -191,5 +194,52 @@
 	// Comments list
 	.ktc-comments-list {
 		.ktc-mixin-content-wide-almost-full-width();
+	}
+}
+
+.ktc-teaser,
+.ktc-teaser-large {
+
+	&,
+	&.ktc-red,
+	&.ktc-blue,
+	&.ktc-green,
+	&.ktc-yellow {
+
+		// Comments list
+		.ktc-comments-list {
+			margin-top: 15px;
+
+			// Body
+			.ktc-comments-list-body {
+
+				// Stacked
+				.view-content {
+
+					> div {
+						border-bottom: 2px solid #fff;
+
+						+ div {
+							margin-top: -2px;
+						}
+
+						&:last-child {
+							border-bottom: 0;
+						}
+					}
+				}
+
+				// List item
+				.ktc-comments-list-item {
+
+					.ktc-date {
+						font-size: floor(@font-size-base - 1px);
+						margin-bottom: 1px;
+						font-style: normal;
+						color: @text-color;
+					}
+				}
+			}
+		}
 	}
 }
