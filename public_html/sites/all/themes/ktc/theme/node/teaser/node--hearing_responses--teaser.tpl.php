@@ -25,7 +25,7 @@
     </div>
 
   <?php else: ?>
-    <div class="ktc-aside ktc-aside-green ktc-aside-toggle closed">
+    <div class="ktc-aside ktc-aside-toggle ktc-aside-green closed">
       <div class="ktc-aside-heading">
         <h3 class="ktc-aside-title"><?php print $node->name; ?></h3>
       </div>
