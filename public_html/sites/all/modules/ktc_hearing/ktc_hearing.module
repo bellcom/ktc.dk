@@ -1256,7 +1256,7 @@ function _ktc_hearing_term_name($term_id) {
 /**
  * Generate an array containing info about the current hearing.
  */
-function _ktc_hearing_get_info_vars() {
+function _ktc_hearing_get_info_vars($node = NULL) {
   // Defines the following variables for the template.
   //
   // Titel                      => $title
@@ -1276,7 +1276,9 @@ function _ktc_hearing_get_info_vars() {
   // Din status i høringen      => $role
   $vars = array();
 
-  $node = menu_get_object('node');
+  if ($node == NULL) {
+    $node = menu_get_object('node');
+  }
   if ($node->type == 'hearing') {
 
     // Titel og Løbenummer / id.

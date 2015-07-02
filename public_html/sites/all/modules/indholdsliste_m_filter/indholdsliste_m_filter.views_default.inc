@@ -48,27 +48,27 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
-  /* Field: Content: Title */
+  /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Type */
+  /* Felt: Indhold: Type */
   $handler->display->display_options['fields']['field_factbox_type']['id'] = 'field_factbox_type';
   $handler->display->display_options['fields']['field_factbox_type']['table'] = 'field_data_field_factbox_type';
   $handler->display->display_options['fields']['field_factbox_type']['field'] = 'field_factbox_type';
-  /* Field: Content: Type */
+  /* Felt: Indhold: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
-  /* Sort criterion: Content: Post date */
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Type */
+  /* Kontekstuelt filter: Indhold: Type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'node';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
@@ -78,7 +78,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['type']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -101,7 +101,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Type */
+  /* Kontekstuelt filter: Indhold: Type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'node';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
@@ -113,7 +113,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
   $handler->display->display_options['arguments']['type']['break_phrase'] = TRUE;
-  /* Contextual filter: Term types */
+  /* Kontekstuelt filter: Term types */
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['id'] = 'term_node_tid_depth_1';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['field'] = 'term_node_tid_depth';
@@ -135,7 +135,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['break_phrase'] = TRUE;
-  /* Contextual filter: emner */
+  /* Kontekstuelt filter: emner */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -154,7 +154,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['fail'] = 'empty';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
-  /* Contextual filter: tags */
+  /* Kontekstuelt filter: tags */
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['id'] = 'term_node_tid_depth_2';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['field'] = 'term_node_tid_depth';
@@ -173,7 +173,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['break_phrase'] = TRUE;
-  /* Contextual filter: regioner */
+  /* Kontekstuelt filter: regioner */
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['id'] = 'term_node_tid_depth_3';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['field'] = 'term_node_tid_depth';
@@ -192,7 +192,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['break_phrase'] = TRUE;
-  /* Contextual filter: Field: Gruppe/Netværk (og_group_ref) */
+  /* Kontekstuelt filter: Indhold: Gruppe/Netværk (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -204,7 +204,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['og_group_ref_target_id']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -300,7 +300,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Type */
+  /* Kontekstuelt filter: Indhold: Type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'node';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
@@ -312,7 +312,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
   $handler->display->display_options['arguments']['type']['break_phrase'] = TRUE;
-  /* Contextual filter: Term types */
+  /* Kontekstuelt filter: Term types */
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['id'] = 'term_node_tid_depth_1';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['field'] = 'term_node_tid_depth';
@@ -334,7 +334,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['break_phrase'] = TRUE;
-  /* Contextual filter: emner */
+  /* Kontekstuelt filter: emner */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -353,7 +353,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['fail'] = 'empty';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
-  /* Contextual filter: tags */
+  /* Kontekstuelt filter: tags */
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['id'] = 'term_node_tid_depth_2';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['field'] = 'term_node_tid_depth';
@@ -372,7 +372,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['break_phrase'] = TRUE;
-  /* Contextual filter: regioner */
+  /* Kontekstuelt filter: regioner */
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['id'] = 'term_node_tid_depth_3';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['field'] = 'term_node_tid_depth';
@@ -391,7 +391,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['break_phrase'] = TRUE;
-  /* Contextual filter: Field: Gruppe/Netværk (og_group_ref) */
+  /* Kontekstuelt filter: Indhold: Gruppe/Netværk (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -403,7 +403,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['og_group_ref_target_id']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -489,7 +489,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Type */
+  /* Kontekstuelt filter: Indhold: Type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'node';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
@@ -501,7 +501,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
   $handler->display->display_options['arguments']['type']['break_phrase'] = TRUE;
-  /* Contextual filter: Term types */
+  /* Kontekstuelt filter: Term types */
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['id'] = 'term_node_tid_depth_1';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['field'] = 'term_node_tid_depth';
@@ -523,7 +523,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['break_phrase'] = TRUE;
-  /* Contextual filter: emner */
+  /* Kontekstuelt filter: emner */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -542,7 +542,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['fail'] = 'empty';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
-  /* Contextual filter: tags */
+  /* Kontekstuelt filter: tags */
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['id'] = 'term_node_tid_depth_2';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['field'] = 'term_node_tid_depth';
@@ -561,7 +561,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['break_phrase'] = TRUE;
-  /* Contextual filter: regioner */
+  /* Kontekstuelt filter: regioner */
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['id'] = 'term_node_tid_depth_3';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['field'] = 'term_node_tid_depth';
@@ -582,14 +582,14 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -601,6 +601,11 @@ function indholdsliste_m_filter_views_default_views() {
     'hearing' => 'hearing',
     'os2web_base_news' => 'os2web_base_news',
   );
+  /* Filterkriterie: Indhold: Gruppe/Netværk (og_group_ref) */
+  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['operator'] = 'not empty';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
@@ -677,7 +682,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Type */
+  /* Kontekstuelt filter: Indhold: Type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'node';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
@@ -689,7 +694,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['type']['validate']['type'] = 'node';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
-  /* Contextual filter: Content: Nid */
+  /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -700,7 +705,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
-  /* Contextual filter: Content: Author uid */
+  /* Kontekstuelt filter: Indhold: Forfatter uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -710,7 +715,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Status (field_status) */
+  /* Kontekstuelt filter: Indhold: Status (field_status) */
   $handler->display->display_options['arguments']['field_status_tid']['id'] = 'field_status_tid';
   $handler->display->display_options['arguments']['field_status_tid']['table'] = 'field_data_field_status';
   $handler->display->display_options['arguments']['field_status_tid']['field'] = 'field_status_tid';
@@ -726,7 +731,7 @@ function indholdsliste_m_filter_views_default_views() {
     'hearing_status' => 'hearing_status',
   );
   $handler->display->display_options['arguments']['field_status_tid']['break_phrase'] = TRUE;
-  /* Contextual filter: Term types */
+  /* Kontekstuelt filter: Term types */
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['id'] = 'term_node_tid_depth_1';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['field'] = 'term_node_tid_depth';
@@ -746,7 +751,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['break_phrase'] = TRUE;
-  /* Contextual filter: emner */
+  /* Kontekstuelt filter: emner */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -767,14 +772,14 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -856,7 +861,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Type */
+  /* Kontekstuelt filter: Indhold: Type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'node';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
@@ -868,7 +873,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
   $handler->display->display_options['arguments']['type']['break_phrase'] = TRUE;
-  /* Contextual filter: Term types */
+  /* Kontekstuelt filter: Term types */
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['id'] = 'term_node_tid_depth_1';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['field'] = 'term_node_tid_depth';
@@ -890,7 +895,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['break_phrase'] = TRUE;
-  /* Contextual filter: emner */
+  /* Kontekstuelt filter: emner */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -909,7 +914,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['fail'] = 'empty';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
-  /* Contextual filter: tags */
+  /* Kontekstuelt filter: tags */
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['id'] = 'term_node_tid_depth_2';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['field'] = 'term_node_tid_depth';
@@ -928,7 +933,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['break_phrase'] = TRUE;
-  /* Contextual filter: regioner */
+  /* Kontekstuelt filter: regioner */
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['id'] = 'term_node_tid_depth_3';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['field'] = 'term_node_tid_depth';
@@ -947,7 +952,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_3']['break_phrase'] = TRUE;
-  /* Contextual filter: Field: Gruppe/Netværk (og_group_ref) */
+  /* Kontekstuelt filter: Indhold: Gruppe/Netværk (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -959,14 +964,14 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['og_group_ref_target_id']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1048,7 +1053,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Type */
+  /* Kontekstuelt filter: Indhold: Type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'node';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
@@ -1060,7 +1065,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
   $handler->display->display_options['arguments']['type']['break_phrase'] = TRUE;
-  /* Contextual filter: Term types */
+  /* Kontekstuelt filter: Term types */
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['id'] = 'term_node_tid_depth_1';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['field'] = 'term_node_tid_depth';
@@ -1078,11 +1083,12 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_1']['break_phrase'] = TRUE;
-  /* Contextual filter: Content: Nid */
+  /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
@@ -1090,14 +1096,14 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1183,7 +1189,6 @@ function indholdsliste_m_filter_views_default_views() {
     t('Type'),
     t('Alle'),
     t('Side'),
-    t('more'),
     t('KTC sectionpage default'),
     t('View panes'),
     t('Footer lister m filter'),
@@ -1193,7 +1198,6 @@ function indholdsliste_m_filter_views_default_views() {
     t('Hearing section view'),
     t('two cols - artikler'),
     t('two cols magazine'),
-    t('All'),
   );
   $export['indhold_m_filter'] = $view;
 

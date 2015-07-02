@@ -38,33 +38,35 @@
 <!-- Begin - user profile - list 3 -->
 <section class="ktc-user-profile <?php print $classes; ?>">
 
-    <!-- Begin - wrapper -->
-    <div class="ktc-user-profile-content-wrapper">
+  <!-- Begin - wrapper -->
+  <div class="ktc-user-profile-content-wrapper">
 
-        <!-- Begin - profile photo -->
-        <?php print $image = theme('user_picture', array('account' => $account, 'style_name' => 'ktc_profile_image_small'));?>
-        <!-- End - profile photo -->
+    <!-- Begin - profile photo -->
+    <?php print $image = theme('user_picture', array('account'    => $account,
+                                                     'style_name' => 'ktc_profile_image_small'
+    )); ?>
+    <!-- End - profile photo -->
 
-        <!-- Begin - profile content -->
-        <div class="ktc-user-profile-content">
+    <!-- Begin - profile content -->
+    <div class="ktc-user-profile-content">
 
-          <?php if (isset($personal['job_title'])): ?>
-              <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
-          <?php endif ?>
+      <?php if (isset($personal['job_title'])): ?>
+        <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
+      <?php endif ?>
 
-          <?php if (isset($personal['full_name'])): ?>
-              <p class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></p>
-          <?php endif ?>
+      <?php if (isset($personal['full_name'])): ?>
+        <p class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></p>
+      <?php endif ?>
 
-          <?php if (isset($work['company'])): ?>
-              <p class="ktc-user-profile-content-employer"><?php print $work['company']; ?></p>
-          <?php endif ?>
-
-        </div>
-        <!-- End - profile content -->
+      <?php if (isset($work['company'])): ?>
+        <p class="ktc-user-profile-content-employer"><?php print $work['company']; ?></p>
+      <?php endif ?>
 
     </div>
-    <!-- End - wrapper -->
+    <!-- End - profile content -->
+
+  </div>
+  <!-- End - wrapper -->
 
 </section>
 <!-- End - user profile - list 3 -->
