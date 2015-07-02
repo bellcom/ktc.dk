@@ -2,23 +2,20 @@
 global $base_url;
 ?>
 
-<?php if ($teaser): ?>
+<?php if (!$page): ?>
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser"<?php print $attributes; ?>>
+  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser-large"<?php print $attributes; ?>>
 
     <!-- Begin - heading -->
-    <?php if (isset($network_groups)): ?>
-      <?php foreach ($network_groups AS $network_group): ?>
-        <div class="ktc-teaser-heading">
-          <?php print l($network_group->title, 'node/' . $network_group->nid, array('attributes' => array('class' => 'ktc-teaser-title'))); ?>
-        </div>
-      <?php endforeach ?>
-    <?php endif ?>
+    <div class="ktc-teaser-large-heading">
+      <span><?php print $created_ago . ' ' . t('siden'); ?></span>
+      <?php print $user_name; ?>
+    </div>
     <!-- End - heading -->
 
-    <div class="ktc-teaser-body">
+    <div class="ktc-teaser-large-body">
 
-      <h4 class="ktc-teaser-body-title">
+      <h4 class="ktc-teaser-large-body-title">
         <a href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a>
       </h4>
 
@@ -38,6 +35,10 @@ global $base_url;
         </p>
       <?php endif ?>
 
+      <div class="ktc-call-to-action-button">
+        <a class="btn btn-default" href="<?php print $base_url . $node_url; ?>"><?php print t('Afgiv/rediger svar'); ?></a>
+      </div>
+
       <?php if ($user_object): ?>
         <?php print $profile = theme('user_profile', array('account'          => $user_object,
                                                            'theme_suggestion' => 'list3'
@@ -47,11 +48,11 @@ global $base_url;
     </div>
 
     <div class="ktc-footer">
-      <a href="<?php print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
-      <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+      <span data-toggle="tooltip" data-placement="bottom" title="Antal deltagere" class="ktc-footer-button"><?php print t('Deltagere:') . ' ' . $hearing_attendees; ?></span>
+      <span data-toggle="tooltip" data-placement="bottom" title="Antal svar" class="ktc-footer-button"><?php print t('Svar:') . ' ' .  $hearing_replies; ?></span>
       <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
       <?php if (isset($hearing_type)): ?>
-        <span class="ktc-footer-button pull-right"><?php print $hearing_type; ?></span>
+        <span data-toggle="tooltip" data-placement="bottom" title="Høringstype" class="ktc-footer-button pull-right"><?php print $hearing_type; ?></span>
       <?php endif ?>
     </div>
 

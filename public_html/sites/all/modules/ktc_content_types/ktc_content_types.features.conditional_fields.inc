@@ -2536,10 +2536,10 @@ function ktc_content_types_conditional_fields_default_fields() {
     'dependent' => 'field_arrangement_opretteremail',
     'dependee' => 'field_arrangement_type',
     'options' => array(
-      'state' => 'visible',
+      'state' => 'required',
       'condition' => 'value',
       'grouping' => 'AND',
-      'effect' => 'show',
+      'effect' => FALSE,
       'effect_options' => array(),
       'element_view' => array(
         1 => 1,
@@ -2851,10 +2851,10 @@ function ktc_content_types_conditional_fields_default_fields() {
     'dependent' => 'field_arrangement_opretteremail',
     'dependee' => 'field_arrangement_type',
     'options' => array(
-      'state' => 'required',
+      'state' => 'visible',
       'condition' => 'value',
       'grouping' => 'AND',
-      'effect' => FALSE,
+      'effect' => 'show',
       'effect_options' => array(),
       'element_view' => array(
         1 => 1,

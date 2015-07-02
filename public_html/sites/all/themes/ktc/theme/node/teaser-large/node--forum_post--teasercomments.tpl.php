@@ -3,8 +3,8 @@ global $base_url;
 ?>
 
 <?php if (!$page): ?>
-  <!-- Begin - teaser large -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser-large"<?php print $attributes; ?>>
+  <!-- Begin - teaser -->
+  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser-large"<?php print $attributes; ?>>
 
     <!-- Begin - heading -->
     <div class="ktc-teaser-large-heading">
@@ -19,10 +19,20 @@ global $base_url;
         <a href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a>
       </h4>
 
-      <p><?php print $body_shortened; ?></p>
+      <?php if (isset($body_shortened)): ?>
+        <p><?php print $body_shortened; ?></p>
+      <?php endif; ?>
 
-      <div class="ktc-call-to-action-button">
-        <a class="btn btn-default" href="<?php print $base_url . $node_url; ?>"><?php print t('Afgiv stemme'); ?></a>
+      <?php if ($user_object): ?>
+        <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list3')); ?>
+      <?php endif; ?>
+
+      <div class="ktc-comments-list">
+        <div class="ktc-comments-list-body">
+          <?php if (isset($comments_view)): ?>
+            <?php print $comments_view; ?>
+          <?php endif ?>
+        </div>
       </div>
 
     </div>
@@ -34,5 +44,5 @@ global $base_url;
     </div>
 
   </article>
-  <!-- End - teaser large -->
+  <!-- End - teaser -->
 <?php endif; ?>
