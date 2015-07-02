@@ -12224,6 +12224,7 @@ div.ktc-comments-form .ktc-user-login {
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-content .ktc-date {
   color: #2c353a;
   font-size: 12px;
+  font-style: normal;
 }
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-links {
   padding-top: 10px;
@@ -12448,7 +12449,8 @@ fieldset[disabled] .ktc-comments-list .ktc-comments-list-body .ktc-comments-list
 .ktc-comments-list .ktc-comments-list-body .indented .indented .indented .indented .ktc-comments-list-item {
   padding-left: 100px;
 }
-.ktc-content .ktc-comments-list {
+body .ktc-comments-list,
+body .ktc-content .ktc-comments-list {
   margin-left: -10px;
   margin-right: -10px;
   padding-left: 10px;
@@ -12459,6 +12461,69 @@ fieldset[disabled] .ktc-comments-list .ktc-comments-list-body .ktc-comments-list
   margin-right: -55px;
   padding-left: 55px;
   padding-right: 55px;
+}
+.ktc-teaser .ktc-comments-list,
+.ktc-teaser-large .ktc-comments-list,
+.ktc-teaser.ktc-red .ktc-comments-list,
+.ktc-teaser-large.ktc-red .ktc-comments-list,
+.ktc-teaser.ktc-blue .ktc-comments-list,
+.ktc-teaser-large.ktc-blue .ktc-comments-list,
+.ktc-teaser.ktc-green .ktc-comments-list,
+.ktc-teaser-large.ktc-green .ktc-comments-list,
+.ktc-teaser.ktc-yellow .ktc-comments-list,
+.ktc-teaser-large.ktc-yellow .ktc-comments-list {
+  margin-top: 15px;
+}
+.ktc-teaser .ktc-comments-list .ktc-comments-list-body .view-content > div,
+.ktc-teaser-large .ktc-comments-list .ktc-comments-list-body .view-content > div,
+.ktc-teaser.ktc-red .ktc-comments-list .ktc-comments-list-body .view-content > div,
+.ktc-teaser-large.ktc-red .ktc-comments-list .ktc-comments-list-body .view-content > div,
+.ktc-teaser.ktc-blue .ktc-comments-list .ktc-comments-list-body .view-content > div,
+.ktc-teaser-large.ktc-blue .ktc-comments-list .ktc-comments-list-body .view-content > div,
+.ktc-teaser.ktc-green .ktc-comments-list .ktc-comments-list-body .view-content > div,
+.ktc-teaser-large.ktc-green .ktc-comments-list .ktc-comments-list-body .view-content > div,
+.ktc-teaser.ktc-yellow .ktc-comments-list .ktc-comments-list-body .view-content > div,
+.ktc-teaser-large.ktc-yellow .ktc-comments-list .ktc-comments-list-body .view-content > div {
+  border-bottom: 2px solid #fff;
+}
+.ktc-teaser .ktc-comments-list .ktc-comments-list-body .view-content > div + div,
+.ktc-teaser-large .ktc-comments-list .ktc-comments-list-body .view-content > div + div,
+.ktc-teaser.ktc-red .ktc-comments-list .ktc-comments-list-body .view-content > div + div,
+.ktc-teaser-large.ktc-red .ktc-comments-list .ktc-comments-list-body .view-content > div + div,
+.ktc-teaser.ktc-blue .ktc-comments-list .ktc-comments-list-body .view-content > div + div,
+.ktc-teaser-large.ktc-blue .ktc-comments-list .ktc-comments-list-body .view-content > div + div,
+.ktc-teaser.ktc-green .ktc-comments-list .ktc-comments-list-body .view-content > div + div,
+.ktc-teaser-large.ktc-green .ktc-comments-list .ktc-comments-list-body .view-content > div + div,
+.ktc-teaser.ktc-yellow .ktc-comments-list .ktc-comments-list-body .view-content > div + div,
+.ktc-teaser-large.ktc-yellow .ktc-comments-list .ktc-comments-list-body .view-content > div + div {
+  margin-top: -2px;
+}
+.ktc-teaser .ktc-comments-list .ktc-comments-list-body .view-content > div:last-child,
+.ktc-teaser-large .ktc-comments-list .ktc-comments-list-body .view-content > div:last-child,
+.ktc-teaser.ktc-red .ktc-comments-list .ktc-comments-list-body .view-content > div:last-child,
+.ktc-teaser-large.ktc-red .ktc-comments-list .ktc-comments-list-body .view-content > div:last-child,
+.ktc-teaser.ktc-blue .ktc-comments-list .ktc-comments-list-body .view-content > div:last-child,
+.ktc-teaser-large.ktc-blue .ktc-comments-list .ktc-comments-list-body .view-content > div:last-child,
+.ktc-teaser.ktc-green .ktc-comments-list .ktc-comments-list-body .view-content > div:last-child,
+.ktc-teaser-large.ktc-green .ktc-comments-list .ktc-comments-list-body .view-content > div:last-child,
+.ktc-teaser.ktc-yellow .ktc-comments-list .ktc-comments-list-body .view-content > div:last-child,
+.ktc-teaser-large.ktc-yellow .ktc-comments-list .ktc-comments-list-body .view-content > div:last-child {
+  border-bottom: 0;
+}
+.ktc-teaser .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date,
+.ktc-teaser-large .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date,
+.ktc-teaser.ktc-red .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date,
+.ktc-teaser-large.ktc-red .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date,
+.ktc-teaser.ktc-blue .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date,
+.ktc-teaser-large.ktc-blue .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date,
+.ktc-teaser.ktc-green .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date,
+.ktc-teaser-large.ktc-green .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date,
+.ktc-teaser.ktc-yellow .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date,
+.ktc-teaser-large.ktc-yellow .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-date {
+  font-size: 11px;
+  margin-bottom: 1px;
+  font-style: normal;
+  color: #848e92;
 }
 .ktc-date {
   font-size: 14px;
