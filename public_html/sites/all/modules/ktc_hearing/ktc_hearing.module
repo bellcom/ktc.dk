@@ -540,7 +540,7 @@ function ktc_hearing_view_summary_responses($hearing) {
  * Implements hook_node_view().
  */
 function ktc_hearing_node_view($node, $view_mode) {
-  if ($node->type == 'hearing_responses') {
+  if ($node->type == 'hearing_responses' && $view_mode == 'full') {
     $hearing = ktc_hearing_get_hearing_from_response($node);
 
     if ($field = field_get_items('node', $hearing, 'field_link_kl_hoeringssvar')) {
@@ -852,7 +852,7 @@ function ktc_hearing_responses($hearing) {
       }
 
       if ($node->status) {
-        $vars['responses'][$node->uid] = node_view($node, 'full');
+        $vars['responses'][$node->uid] = node_view($node, 'teaser');
       }
     }
   }
