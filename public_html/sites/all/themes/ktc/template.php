@@ -452,6 +452,16 @@ function ktc_preprocess_node(&$vars) {
       $hearing_type_term = taxonomy_term_load($hearing_type[0]['tid']);
       $vars['hearing_type'] = $hearing_type_term->name;
     }
+
+    if ($hearing_info = _ktc_hearing_get_info_vars($vars['node'])) {
+
+      $vars['hearing_attendees'] = $hearing_info['attendee_count'];
+
+      if ($hearing_info['answer_count'] == null) {
+        $hearing_info['answer_count'] = 0;
+      }
+      $vars['hearing_replies'] = $hearing_info['answer_count'];
+    }
   }
 
   // Created (converted)

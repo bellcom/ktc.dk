@@ -1,4 +1,8 @@
-<?php if (!$page): ?>
+<?php
+global $base_url;
+?>
+
+<?php xdebug_break(); if (!$page): ?>
     <!-- Begin - teaser large -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser-large"<?php print $attributes; ?>>
 
@@ -11,7 +15,7 @@
 
         <div class="ktc-teaser-large-body">
 
-            <h4 class="ktc-teaser-large-body-title"><a href="<?php global $base_url; print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
+            <h4 class="ktc-teaser-large-body-title"><a href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
             <p><?php print $body_shortened; ?></p>
 
@@ -23,29 +27,20 @@
               </div>
             </div>
 
+            <?php if (isset($field_dokument)): ?>
+            <div class="ktc-aside-table-list">
+              <?php print render($field_dokument); ?>
+            </div>
+            <?php endif; ?>
+
         </div>
 
         <div class="ktc-footer">
-            <a href="<?php global $base_url; print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+            <a href="<?php print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
             <span data-toggle="tooltip" data-placement="bottom"title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
             <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
         </div>
 
     </article>
     <!-- End - teaser large -->
-
-    <?php
-    // Hide comments, tags, and links now so that we can render them later.
-    hide($content['comments']);
-    hide($content['links']);
-    hide($content['field_tags']);
-    hide($content['field_os2web_base_field_image']);
-    hide($content['field_os2web_base_field_lead_img']);
-
-    if (!empty($content['field_tags']) || !empty($content['links'])) {
-        hide($content['field_tags']);
-        hide($content['links']);
-    }
-    ?>
-
 <?php endif; ?>
