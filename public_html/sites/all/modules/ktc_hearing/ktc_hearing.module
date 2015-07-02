@@ -489,7 +489,7 @@ function ktc_hearing_summary_responses($hearing) {
           continue;
         }
 
-        $vars['responses'][] = node_view($node, 'full');
+        $vars['responses'][] = node_view($node, 'teaser');
       }
     }
 
@@ -643,7 +643,7 @@ function ktc_hearing_approve_summary_responses($hearing) {
               continue;
             }
 
-            $vars['responses'][] = node_view($node, 'full');
+            $vars['responses'][] = node_view($node, 'teaser');
           }
         }
 
@@ -853,7 +853,7 @@ function ktc_hearing_responses($hearing) {
 
       if ($node->status) {
         $vars['responses'][$node->uid] = node_view($node, 'teaser');
-      }
+      }	
     }
   }
 
