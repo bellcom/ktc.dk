@@ -6,6 +6,14 @@
   <!-- Begin - teaser large -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser-large"<?php print $attributes; ?>>
 
+    <!-- Begin - full width image -->
+    <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
+      <div class="ktc-full-width-image">
+        <?php print render($content['field_os2web_base_field_lead_img']); ?>
+      </div>
+    <?php endif; ?>
+    <!-- End - full width image -->
+
     <!-- Begin - heading -->
     <div class="ktc-teaser-large-heading">
       <span><?php print $created_ago . ' ' . t('siden'); ?></span>
@@ -13,25 +21,14 @@
     </div>
     <!-- End - heading -->
 
+    <!-- Begin - body -->
     <div class="ktc-teaser-large-body">
 
-      <div class="row">
-
-        <div class="col-xs-6">
-          <?php if (isset($published_at)): ?>
-            <p class="ktc-date"><?php print $published_at; ?></p>
-          <?php endif; ?>
-        </div>
-
-        <div class="col-xs-6 text-right">
-          <?php if (isset($news_type)): ?>
-            <p class="mute"><?php print $news_type; ?></p>
-          <?php endif ?>
-        </div>
-
-      </div>
-
       <h4 class="ktc-teaser-large-body-title"><a href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
+
+      <?php if (isset($news_type)): ?>
+        <p><strong>Type:</strong> <?php print $news_type; ?></p>
+      <?php endif; ?>
 
       <p><?php print $body_shortened; ?></p>
 
@@ -48,6 +45,7 @@
       </div>
 
     </div>
+    <!-- End - body -->
 
     <div class="ktc-footer">
       <a href="<?php print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
