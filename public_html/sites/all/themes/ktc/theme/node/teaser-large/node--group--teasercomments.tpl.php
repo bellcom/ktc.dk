@@ -4,7 +4,7 @@ global $base_url;
 
 <?php if (!$page): ?>
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser"<?php print $attributes; ?>>
+  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser-large"<?php print $attributes; ?>>
 
     <!-- Begin - full width image -->
     <?php if (isset($content['field_groupimage'])) : ?>
@@ -14,13 +14,13 @@ global $base_url;
     <?php endif; ?>
     <!-- End - full width image -->
 
-    <div class="ktc-teaser-body">
+    <div class="ktc-teaser-large-body">
 
       <?php if (isset($group_type)): ?>
         <p class="mute"><?php print $group_type; ?></p>
       <?php endif ?>
 
-      <h4 class="ktc-teaser-body-title"><a href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
+      <h4 class="ktc-teaser-large-body-title"><a href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
       <?php if (isset($content['field_target_group'])): ?>
         <p><?php print render($content['field_target_group']); ?></p>
