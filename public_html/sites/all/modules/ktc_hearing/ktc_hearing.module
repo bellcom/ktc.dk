@@ -339,9 +339,11 @@ function ktc_hearing_block_view($delta = '') {
       break;
 
     case 'ktc_hearing_set_status_form':
-      $hearing = node_load(arg(1));
-      if (ktc_hearing_access($hearing, 'update')) {
-        $block['content'] = drupal_get_form('ktc_hearing_set_status');
+      if ($hearing = node_load(arg(1))) {
+        $status = ktc_hearing_get_status($hearing);
+        if ($status != KTC_HEARING_STATUS_APPROVED && ktc_hearing_access($hearing, 'update')) {
+          $block['content'] = drupal_get_form('ktc_hearing_set_status');
+        }
       }
       break;
 
@@ -369,6 +371,20 @@ function ktc_hearing_views_pre_view(&$view, &$display_id, &$args) {
  * Access callback function.
  */
 function ktc_hearing_access($node, $op) {
+  $status = ktc_hearing_get_status($node);
+
+  $disable_on_closed = array(
+    'approve summary response',
+    'invite',
+    'summary response',
+    'view responses',
+    'view summary response',
+  );
+
+  if (in_array($op, $disable_on_closed) && $status == KTC_HEARING_STATUS_APPROVED) {
+    return FALSE;
+  }
+
   if ($node->type != 'hearing') {
     return FALSE;
   }
@@ -521,6 +537,78 @@ function ktc_hearing_view_summary_responses($hearing) {
 }
 
 /**
+ * Implements hook_node_view().
+ */
+function ktc_hearing_node_view($node, $view_mode) {
+  if ($node->type == 'hearing_responses') {
+    $hearing = ktc_hearing_get_hearing_from_response($node);
+
+    if ($field = field_get_items('node', $hearing, 'field_link_kl_hoeringssvar')) {
+      // Show link.
+      $node->content['kl_hearing_answer_link'] = array(
+        '#markup' => '<a href="' . $field[0]['url'] . '">Link til KL høringssvar</a>',
+        '#weight' => -10,
+      );
+    }
+    else {
+      // Show form to enter KL answer url, if the user has the sufficient
+      // permissions.
+      $access = ktc_hearing_user_has_access($hearing, $account);
+      if (in_array('link to kl answer', $access)) {
+        $node->content['kl_hearing_answer_form'] = drupal_get_form('ktc_hearing_kl_hearing_answer_form', $hearing);
+        $node->content['kl_hearing_answer_form']['#weight'] = -10;
+      }
+    }
+  }
+}
+
+/**
+ * Set a KL hearing answer link on the hearing.
+ */
+function ktc_hearing_kl_hearing_answer_form($form, &$form_state, $hearing) {
+  $form_state['hearing'] = $hearing;
+
+  $form['kl_hearing_answer_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Link til KL høringssvar'),
+    '#default_value' => 'http://',
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Gem'),
+    '#states' => array(
+      'invisible' => array(
+        ':input[name="kl_hearing_answer_url"]' => array('value' => 'http://'),
+      )
+    ),
+  );
+  return $form;
+}
+
+/**
+ * Validate handler kl_hearing_answer_form.
+ */
+function ktc_hearing_kl_hearing_answer_form_validate($form, &$form_state) {
+  $url = $form_state['values']['kl_hearing_answer_url'];
+  $parts = explode('//', $url);
+
+  if (!url_is_external($url) || !valid_url($url) || !$parts[1]) {
+    form_set_error('kl_hearing_answer_url', 'Den indtastede adresse er ikke gyldig.');
+  }
+}
+
+/**
+ * Submithandler, set KL hearing answer link on hearing.
+ */
+function ktc_hearing_kl_hearing_answer_form_submit(&$form, &$form_state) {
+  $hearing = $form_state['hearing'];
+
+  $hearing->field_link_kl_hoeringssvar[LANGUAGE_NONE][0]['url'] = $form_state['values']['kl_hearing_answer_url'];
+  node_save($hearing);
+}
+
+/**
  * Get a hearing from the response.
  */
 function ktc_hearing_get_hearing_from_response($hearing_response) {
@@ -647,11 +735,10 @@ function ktc_hearing_set_status_approval(&$form, &$form_state) {
 }
 
 /**
- * Extra submit handler for sending a response for approval.
+ * Extra submit handler for setting a hearing approved.
  */
 function ktc_hearing_set_status_approved(&$form, &$form_state) {
   if ($form_state['clicked_button']['#parents'][0] == 'set_approved') {
-    $summary_response = $form['#entity'];
     $hearing = node_load(arg(1));
 
     $values['values']['hearing_nid'] = $hearing->nid;
@@ -725,6 +812,16 @@ function ktc_hearing_set_status_submit(&$form, &$form_state) {
   $node->field_status[$language][0]['tid'] = $form_state['values']['status'];
 
   node_save($node);
+
+  // Set the summary response to be final if the hearing is approved.
+  if ($form_state['values']['status'] == KTC_HEARING_STATUS_APPROVED) {
+    if ($summary = ktc_hearing_get_summary_response($node)) {
+      $summary->field_is_final[LANGUAGE_NONE][0]['value'] = 1;
+      node_save($summary);
+    }
+  }
+
+  drupal_goto('node/' . $node->nid);
 }
 
 /**
@@ -862,7 +959,7 @@ function ktc_hearing_user_has_access($hearing, $account = FALSE) {
   // Loop over them and determine what level of acces the user has.
   foreach ($fields as $field_name) {
     if ($field = field_get_items('node', $hearing, 'field_' . $field_name)) {
-      if (_ktc_hearing_account_in_field($account->uid, $field)) {
+      if (_ktc_hearing_account_in_field($account->uid, $field) || $account->uid == 1) {
         $access = array_merge($access, $reference_permissions[$field_name]);
       }
     }
@@ -975,21 +1072,25 @@ function _ktc_hearing_reference_permissions() {
   return array(
     'chairman' => array(
       'approve summary response' => 'approve summary response',
+      'link to kl answer' => 'link to kl answer',
       'summary response' => 'summary response',
       'update' => 'update',
       'view' => 'view',
     ),
     'responsible_foreman' => array(
       'approve summary response' => 'approve summary response',
+      'link to kl answer' => 'link to kl answer',
       'summary response' => 'summary response',
       'update' => 'update',
       'view' => 'view',
     ),
     'responsible_admin' => array(
+      'link to kl answer' => 'link to kl answer',
       'update' => 'update',
       'view' => 'view',
     ),
     'coordinator' => array(
+      'link to kl answer' => 'link to kl answer',
       'respond' => 'respond',
       'summary response' => 'summary response',
       'update' => 'update',
@@ -1003,6 +1104,7 @@ function _ktc_hearing_reference_permissions() {
       'view' => 'view',
     ),
     'creator' => array(
+      'link to kl answer' => 'link to kl answer',
       'update' => 'update',
       'view responses' => 'view responses',
       'view summary response' => 'view summary response',
