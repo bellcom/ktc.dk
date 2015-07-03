@@ -281,7 +281,40 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_message';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:hearing:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1840',
+                ),
+              ),
+            ),
+            'field_status_tid' => '1840',
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => TRUE,
+        ),
+        1 => array(
+          'name' => 'entity_field_value:node:hearing:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1892',
+                ),
+              ),
+            ),
+            'field_status_tid' => '1892',
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'label' => 'title',
       'formatter' => 'text_default',
@@ -368,7 +401,41 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->type = 'node_comment_form';
     $pane->subtype = 'node_comment_form';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:hearing:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1840',
+                ),
+              ),
+            ),
+            'field_status_tid' => '1840',
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'entity_field_value:node:hearing:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1892',
+                ),
+              ),
+            ),
+            'field_status_tid' => '1892',
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'or',
+    );
     $pane->configuration = array(
       'anon_links' => 1,
       'context' => 'argument_entity_id:node_1',
