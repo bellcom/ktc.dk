@@ -197,8 +197,9 @@ function ktc_users_field_group_info() {
     'label' => 'Notifikationer',
     'weight' => '7',
     'children' => array(
-      0 => 'field_netvaerk_notifications',
-      1 => 'mimemail',
+      0 => 'field_nyhedsbrev_ktc_update',
+      1 => 'field_netvaerk_notifications',
+      2 => 'mimemail',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
