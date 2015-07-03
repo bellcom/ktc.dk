@@ -3426,7 +3426,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 61,
+      'weight' => 1,
     ),
   );
 
