@@ -368,6 +368,54 @@ function ktc_hearing_views_pre_view(&$view, &$display_id, &$args) {
 }
 
 /**
+ * Implements hook_file_download().
+ */
+function ktc_hearing_file_download($uri) {
+  // Here we determine if the file is attached to a hearing, and in this case
+  // wether the user is allowed to view this hearing.
+  // If not, we tell drupal not to let the user download it.
+  // Our starting point is that the user is allowed to watch the file. We do it
+  // this way, since all private files are passed throug here for access
+  // checking.
+  $access = TRUE;
+
+  // Find file usage.
+  $result = db_query('SELECT f.fid
+                FROM {file_managed} f WHERE f.uri = :uri', array(':uri' => $uri))->fetchAll();
+
+  if ($result) {
+    $file = file_load($result[0]->fid);
+    $usage = file_usage_list($file);
+
+    if ($usage['file']['node']) {
+      foreach ($usage['file']['node'] as $nid => $count) {
+        $node = node_load($nid);
+
+        if ($node->type == 'hearing') {
+          if (ktc_hearing_access($node, 'view')) {
+            $access = TRUE;
+            continue;
+          }
+          else {
+            $access = FALSE;
+          }
+        }
+      }
+    }
+  }
+
+  // If access is granted, let drupal (or other hooks) handle the permissions.
+  if ($access) {
+    return NULL;
+  }
+  // If access is denied to the hearing, tell drupal not to let the user download the
+  // file.
+  else {
+    return FALSE;
+  }
+}
+
+/**
  * Access callback function.
  */
 function ktc_hearing_access($node, $op) {
@@ -853,7 +901,7 @@ function ktc_hearing_responses($hearing) {
 
       if ($node->status) {
         $vars['responses'][$node->uid] = node_view($node, 'teaser');
-      }	
+      }
     }
   }
 
