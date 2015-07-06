@@ -382,8 +382,8 @@ function _ktc_section_block_netvaerk_invite_links_content() {
     $node = node_load($nid);
     // If user has access to invite user to group.
     if ($access = og_user_access('node', $nid, 'invite any user') && og_is_member('node', $nid)) {
-      $html .= '<div class="ktc-filter-button-container">';
-      $html .= l('Invitér', 'group/node/' . $nid . '/admin/people/invite-users', array('attributes' => array('class' => $link_class), 'query' => array('destination' => 'node/' . $nid)));
+      $html .= '<div class="ktc-filter-button-container og-members-modal">';
+      $html .= l('Invitér', '', array('attributes' => array('class' => $link_class)));
       $html .= '</div>';
     }
     // Check if the user is a member,
