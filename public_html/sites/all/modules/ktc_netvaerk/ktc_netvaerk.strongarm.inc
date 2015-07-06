@@ -56,7 +56,7 @@ function ktc_netvaerk_strongarm() {
           'weight' => '17',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '4',
         ),
       ),
       'display' => array(
