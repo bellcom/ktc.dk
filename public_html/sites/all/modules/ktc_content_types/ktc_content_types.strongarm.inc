@@ -903,7 +903,11 @@ function ktc_content_types_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '3',
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+          'teasercomments' => array(
+            'weight' => '10',
             'visible' => FALSE,
           ),
         ),

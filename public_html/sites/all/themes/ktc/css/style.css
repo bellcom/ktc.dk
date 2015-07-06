@@ -9756,6 +9756,15 @@ body.page-search .view-filters button.form-submit {
 .ktc-teaser .ktc-teaser-body {
   padding: 5px 15px 10px;
 }
+.ktc-teaser-magazine {
+  margin-bottom: 20px;
+}
+.ktc-teaser-magazine .ktc-box {
+  margin-bottom: 20px;
+}
+.ktc-teaser-magazine .ktc-teaser-magazine-banner {
+  margin-bottom: 20px;
+}
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
@@ -10532,6 +10541,9 @@ body.page-search .view-filters button.form-submit {
     width: 49.99%;
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .masonry-item.masonry-item-width-magazine {
+    width: 99.99%;
   }
 }
 .pagination {
