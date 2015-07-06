@@ -357,26 +357,6 @@ function ktc_preprocess_node(&$vars) {
     $vars['statistics_count'] = $stats['totalcount'];
   }
 
-  // News teaser
-  if ($vars['elements']['#view_mode'] == 'teaser' && $vars['type'] == 'os2web_base_news') {
-
-    // Promote to is set
-    if ($promote_to = field_get_items('node', $vars['node'], 'field_os2web_base_field_promote')) {
-
-      // Is a TM news
-      if ($promote_to[0]['tid'] == 1902) {
-
-        // Classes contains ktc-red - remove ktc-red
-        if (($key = array_search('ktc-red', $vars['classes_array'])) !== FALSE) {
-          unset($vars['classes_array'][$key]);
-        }
-
-        // Add ktc-blue
-        $vars['classes_array'][] = 'ktc-blue';
-      }
-    }
-  }
-
   // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
   if ($vars['type'] == 'arrangement') {
 
@@ -399,6 +379,26 @@ function ktc_preprocess_node(&$vars) {
     if ($arrangement_type = field_get_items('node', $vars['node'], 'field_arrangement_type')) {
       $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['tid']);
       $vars['arrangement_type'] = $arrangement_type_term->name;
+    }
+  }
+
+  // News teaser
+  if ($vars['elements']['#view_mode'] == 'teaser' && $vars['type'] == 'os2web_base_news') {
+
+    // Promote to is set
+    if ($promote_to = field_get_items('node', $vars['node'], 'field_os2web_base_field_promote')) {
+
+      // Is a TM news
+      if ($promote_to[0]['tid'] == 1902) {
+
+        // Classes contains ktc-red - remove ktc-red
+        if (($key = array_search('ktc-red', $vars['classes_array'])) !== FALSE) {
+          unset($vars['classes_array'][$key]);
+        }
+
+        // Add ktc-blue
+        $vars['classes_array'][] = 'ktc-blue';
+      }
     }
   }
 

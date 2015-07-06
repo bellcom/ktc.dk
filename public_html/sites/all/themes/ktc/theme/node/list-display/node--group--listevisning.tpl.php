@@ -80,28 +80,40 @@
  */
 ?>
 
-<!-- Begin - list -->
+<!-- Begin - list display -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display"<?php print $attributes; ?>>
-
-  <!-- Begin - icon -->
-  <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
-  <!-- End - icon -->
 
   <!-- Begin - body -->
   <div class="ktc-list-display-body">
 
-    <?php if (isset($group_type)): ?>
-      <p class="ktc-list-display-subheadline"><?php print $group_type; ?></p>
-    <?php endif ?>
+    <!-- Begin - icon -->
+    <div class="ktc-list-display-icon-container">
+      <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
+    </div>
+    <!-- End - icon -->
 
-    <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+    <!-- Begin - content -->
+    <div class="ktc-list-display-body-content">
 
-    <?php if (isset($group_region)): ?>
-      <p>- <?php print $group_region; ?></p>
-    <?php endif ?>
+      <?php if (isset($content['field_netvaerkstype'])): ?>
+        <!-- Begin - group type -->
+        <div class="ktc-list-display-subheadline"><?php print render($content['field_netvaerkstype']); ?></div>
+        <!-- End - group type -->
+      <?php endif; ?>
+
+      <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+
+      <?php if (isset($content['field_regioner'])): ?>
+        <!-- Begin - region -->
+        <div class="ktc-list-display-subheadline"><?php print render($content['field_regioner']); ?></div>
+        <!-- End - region -->
+      <?php endif; ?>
+
+    </div>
+    <!-- End - content -->
 
   </div>
   <!-- End - body -->
 
 </article>
-<!-- End - list -->
+<!-- End - list display -->

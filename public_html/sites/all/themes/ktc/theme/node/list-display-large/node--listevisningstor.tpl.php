@@ -79,12 +79,27 @@
  * @ingroup themeable
  */
 ?>
+
+<!-- Begin - list display large -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display-large"<?php print $attributes; ?>>
-  <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
-  <div class="ktc-list-display-content">
-    <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-    <p class="ktc-list-display-date-simple"><?php print $published_at; ?></p>
-    <p><?php print render($content['field_image']); ?></p>
-    <p><?php print render($content['body']); ?></p>
+
+  <!-- Begin - body -->
+  <div class="ktc-list-display-large-body">
+
+    <h3 class="ktc-list-display-large-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+
+    <p class="ktc-date"><?php print $published_at; ?></p>
+
   </div>
+  <!-- End - body -->
+
+  <!-- Begin - footer -->
+  <div class="ktc-footer">
+    <a href="<?php print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+    <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+    <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
+  </div>
+  <!-- End - footer -->
+
 </article>
+<!-- End - list display large -->
