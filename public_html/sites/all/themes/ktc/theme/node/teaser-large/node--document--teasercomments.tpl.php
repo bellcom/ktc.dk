@@ -27,6 +27,12 @@ global $base_url;
         </div>
       <?php endif; ?>
 
+      <?php if ($content['field_os2web_base_field_media']): ?>
+        <div class="ktc-aside-table-list">
+          <?php print render($content['field_os2web_base_field_media']); ?>
+        </div>
+      <?php endif; ?>
+
       <div class="ktc-comments-list">
         <div class="ktc-comments-list-body">
           <?php if (isset($comments_view)): ?>
