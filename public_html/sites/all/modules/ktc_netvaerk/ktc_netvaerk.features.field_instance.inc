@@ -1473,7 +1473,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 10,
+      'weight' => 1,
     ),
     'widget_type' => 'options_select',
   );
@@ -1811,7 +1811,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 2,
     ),
     'widget_type' => 'options_select',
   );
