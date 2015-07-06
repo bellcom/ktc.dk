@@ -46,11 +46,7 @@ else {
   <div class="ktc-aside-body pane-content">
     <div class="row">
       <div class="col-lg-12">
-        <?php?>
-
-
-<!--        <h4><?php print $header_title; ?> (<?php print $nid; ?>) - <?php print $type; ?></h4> -->
-		<h4>Høringens titel kommer her</h4>
+        <h4><?php print $title; ?></h4>
         <p class="ktc-date">
           <?php print ($answer_by == '' ? '' : 'Svarfrist: ' .  $answer_by); ?>
         </p>
