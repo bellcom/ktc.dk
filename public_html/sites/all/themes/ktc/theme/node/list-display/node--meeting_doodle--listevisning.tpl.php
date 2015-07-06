@@ -80,20 +80,44 @@
  */
 ?>
 
-<!-- Begin - list -->
+<!-- Begin - list display -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display"<?php print $attributes; ?>>
 
-  <!-- Begin - icon -->
-  <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
-  <!-- End - icon -->
+  <!-- Begin - heading -->
+  <?php if (isset($network_groups)): ?>
+    <?php foreach ($network_groups AS $network_group): ?>
+      <div class="ktc-list-display-heading">
+        <?php print l($network_group->title, 'node/' . $network_group->nid, array('attributes' => array('class' => 'ktc-list-display-title'))); ?>
+      </div>
+    <?php endforeach ?>
+  <?php endif ?>
+  <!-- End - heading -->
 
   <!-- Begin - body -->
   <div class="ktc-list-display-body">
-    <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-    <p class="ktc-date"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
-    <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="panel-title"><?php print t('Afgiv stemme'); ?></a>
+
+    <!-- Begin - icon -->
+    <div class="ktc-list-display-icon-container">
+      <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
+    </div>
+    <!-- End - icon -->
+
+    <!-- Begin - content -->
+    <div class="ktc-list-display-body-content">
+
+      <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+
+      <?php if ($signup_date_formatted): ?>
+        <p class="ktc-date"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>
+      <?php endif; ?>
+
+      <a href="<?php global $base_url; print $base_url . $node_url; ?>" class="btn btn-default btn-xs"><?php print t('Afgiv stemme'); ?></a>
+
+    </div>
+    <!-- End - content -->
+
   </div>
   <!-- End - body -->
 
 </article>
-<!-- End - list -->
+<!-- End - list display -->

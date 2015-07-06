@@ -12,83 +12,129 @@
 
 // List
 .ktc-list-display {
-	display: table;
 	margin-bottom: floor(@grid-gutter-width / 2);
 
-	// Icon
-	.ktc-list-display-icon {
-		float: left;
-		min-width: 25px; // Bit of a hack to make sure all content is aligned, since icon width is different
+	// Heading
+	.ktc-list-display-heading {
+		margin-bottom: -(@ktc-list-display-title-top-bottom-inner-spacing);
 
-		// Vote
-		&.ktc-list-display-icon-meeting_doodle {
-			.sprite(@ktc-icon-vote);
-		}
+		// Title
+		.ktc-list-display-title {
+			position: relative;
+			display: block;
+			font-family: @ktc-list-display-title-font-family;
+			font-size: @ktc-list-display-title-font-size;
+			font-weight: normal;
+			color: @ktc-list-display-title-font-color;
+			.small;
+			padding: @ktc-list-display-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			text-transform: uppercase;
 
-		// Document
-		&.ktc-list-display-icon-document {
-			.sprite(@ktc-icon-document);
-		}
-
-		// News
-		&.ktc-list-display-icon-os2web_base_news {
-			.sprite(@ktc-icon-news);
-		}
-
-		// Network / group
-		&.ktc-list-display-icon-group {
-			.sprite(@ktc-icon-network);
-		}
-
-		// Arrangement
-		&.ktc-list-display-icon-arrangement {
-			.sprite(@ktc-icon-arrangement);
-		}
-
-		// Forum
-		&.ktc-list-display-icon-forum_post {
-			.sprite(@ktc-icon-forum);
-		}
-
-		// Hearing
-		&.ktc-list-display-icon-hearing {
-			.sprite(@ktc-icon-hearing);
+			// Icon
+			&:before {
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				content: "";
+			}
 		}
 	}
 
 	// Body
 	.ktc-list-display-body {
-		display: inherit;
+		display: table;
+		width: 100%;
+		padding-top: 3px;
 
-		// Headline
-		.ktc-list-display-headline {
+		// Icon container
+		.ktc-list-display-icon-container {
+			display: table-cell;
+			width: 25px;
 
-			// Headline and link
-			&,
-			> a {
-				font-family: @ktc-list-display-headline-font-family;
-				font-size: @ktc-list-display-headline-font-size;
-				font-weight: @ktc-list-display-headline-font-weight;
-				color: @ktc-list-display-headline-font-color;
-				margin: 0;
-				margin-bottom: 5px;
+			// Icon
+			.ktc-list-display-icon {
+				display: inline-block;
+
+				// Vote
+				&.ktc-list-display-icon-meeting_doodle {
+					.sprite(@ktc-icon-vote);
+				}
+
+				// Document
+				&.ktc-list-display-icon-document {
+					.sprite(@ktc-icon-document);
+				}
+
+				// News
+				&.ktc-list-display-icon-os2web_base_news {
+					.sprite(@ktc-icon-news);
+				}
+
+				// Network / group
+				&.ktc-list-display-icon-group {
+					.sprite(@ktc-icon-network);
+				}
+
+				// Arrangement
+				&.ktc-list-display-icon-arrangement {
+					.sprite(@ktc-icon-arrangement);
+				}
+
+				// Forum
+				&.ktc-list-display-icon-forum_post {
+					.sprite(@ktc-icon-forum);
+				}
+
+				// Hearing
+				&.ktc-list-display-icon-hearing {
+					.sprite(@ktc-icon-hearing);
+				}
+
+				// Article
+				&.ktc-list-display-icon-artikler {
+					.sprite(@ktc-icon-article);
+				}
 			}
 		}
 
-		// Sub headline
-		.ktc-list-display-subheadline {
-			.small; // Include small class
+		// Content
+		.ktc-list-display-body-content {
+			display: table-cell;
+			padding: 0;
 			margin: 0;
-		}
+			vertical-align: middle;
 
-		// Simple date
-		.ktc-date {
-			.small; // Include small class
-		}
+			// Headline
+			.ktc-list-display-headline {
 
-		// Paragraph
-		p {
-			margin-bottom: 3px;
+				// Headline and link
+				&,
+				> a {
+					font-family: @ktc-list-display-headline-font-family;
+					font-size: @ktc-list-display-headline-font-size;
+					font-weight: @ktc-list-display-headline-font-weight;
+					color: @ktc-list-display-headline-font-color;
+					margin: 0;
+					margin-bottom: 5px;
+				}
+			}
+
+			// Sub headline
+			.ktc-list-display-subheadline {
+				.small; // Include small class
+				margin: 0;
+			}
+
+			// Simple date
+			.ktc-date {
+				.small; // Include small class
+			}
+
+			// Paragraph
+			p {
+				margin-bottom: 3px;
+			}
 		}
 	}
 }
@@ -98,11 +144,36 @@
 // --------------------------------------------------
 
 // List
-.ktc-mixin-list-display(@font-color) {
+.ktc-mixin-list-display(@color-font, @icon-pin, @icon-pin-width, @icon-pin-height) {
 
 	// List
 	.ktc-list-display,
 	&.ktc-list-display {
+
+		// Heading
+		> .ktc-list-display-heading {
+
+			// Title
+			.ktc-list-display-title {
+				padding-left: floor(@icon-pin-width + @ktc-list-display-title-icon-spacing);
+				margin: 0;
+
+				// Pin icon
+				&:before {
+					margin-top: -(floor( @icon-pin-height / 2 ));
+					.sprite(@icon-pin);
+				}
+			}
+
+			// Link title
+			a.ktc-list-display-title {
+
+				// Hover
+				&:hover {
+					color: @color-font;
+				}
+			}
+		}
 
 		// Body
 		.ktc-list-display-body {
@@ -115,7 +186,16 @@
 
 					// Hover state
 					&:hover {
-						color: @font-color;
+						color: @color-font;
+					}
+				}
+
+				// Color
+				&.ktc-list-display-headline-color {
+
+					// Link
+					> a {
+						color: @color-font;
 					}
 				}
 			}
@@ -124,24 +204,24 @@
 }
 
 // Default
-.ktc-mixin-list-display(@ktc-color-green-font);
-
-// Gold
-.ktc-gold {
-	.ktc-mixin-list-display(@ktc-color-gold-font);
-}
+.ktc-mixin-list-display(@ktc-color-green-font, @ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
 
 // Green
 .ktc-green {
-	.ktc-mixin-list-display(@ktc-color-green-font);
-}
-
-// Red
-.ktc-red {
-	.ktc-mixin-list-display(@ktc-color-red-font);
+	.ktc-mixin-list-display(@ktc-color-green-font, @ktc-icon-pin-green, @ktc-icon-pin-green-width, @ktc-icon-pin-green-height);
 }
 
 // Blue
 .ktc-blue {
-	.ktc-mixin-list-display(@ktc-color-blue-font);
+	.ktc-mixin-list-display(@ktc-color-blue-font, @ktc-icon-pin-blue, @ktc-icon-pin-blue-width, @ktc-icon-pin-blue-height);
+}
+
+// Gold
+.ktc-gold {
+	.ktc-mixin-list-display(@ktc-color-gold-font, @ktc-icon-pin-gold, @ktc-icon-pin-gold-width, @ktc-icon-pin-gold-height);
+}
+
+// Red
+.ktc-red {
+	.ktc-mixin-list-display(@ktc-color-red-font, @ktc-icon-pin-red, @ktc-icon-pin-red-width, @ktc-icon-pin-red-height);
 }

@@ -79,9 +79,44 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>" <?php print $attributes; ?>>
-  <div class="created"><?php print date('d. F Y', $node->created); ?></div>
-  <h5><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h5>
-  <?php print render($content['field_short']); ?>
-  <?php print render($content['body']); ?>
+
+<!-- Begin - list display large -->
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display-large"<?php print $attributes; ?>>
+
+  <!-- Begin - body -->
+  <div class="ktc-list-display-large-body">
+
+    <h3 class="ktc-list-display-large-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+
+    <?php if (isset($arrangement_date)): ?>
+      <p class="ktc-date"><?php print $arrangement_date; ?></p>
+    <?php endif; ?>
+
+    <?php if (isset($arrangement_signup_date_formatted)): ?>
+      <p>
+        <strong><?php print t('Tilmeldingsfrist: '); ?></strong><?php print $arrangement_signup_date_formatted; ?>
+      </p>
+    <?php endif ?>
+
+    <div class="ktc-call-to-action-button">
+      <a href="<?php print $base_url . $node_url; ?>" class="btn btn-default ktc-call-to-action-button"><?php print t('Tilmeld/afmeld'); ?></a>
+    </div>
+
+    <?php if ($user_object): ?>
+      <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list3')); ?>
+    <?php endif; ?>
+
+  </div>
+  <!-- End - body -->
+
+  <!-- Begin - footer -->
+  <div class="ktc-footer">
+    <a href="<?php print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+    <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+    <span data-toggle="tooltip" data-placement="bottom" title="Tilmeldte" class="ktc-footer-button ktc-footer-button-arrangement"><?php print $signup_total; ?></span>
+    <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
+  </div>
+  <!-- End - footer -->
+
 </article>
+<!-- End - list display large -->

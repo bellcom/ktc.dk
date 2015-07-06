@@ -80,19 +80,30 @@
  */
 ?>
 
-<!-- Begin - list -->
+<!-- Begin - list display -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display"<?php print $attributes; ?>>
-
-  <!-- Begin - icon -->
-  <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
-  <!-- End - icon -->
 
   <!-- Begin - body -->
   <div class="ktc-list-display-body">
-    <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-    <p class="ktc-date"><?php print $published_at; ?></p>
+
+    <!-- Begin - icon -->
+    <div class="ktc-list-display-icon-container">
+      <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
+    </div>
+    <!-- End - icon -->
+
+    <!-- Begin - content -->
+    <div class="ktc-list-display-body-content">
+
+      <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+
+      <p class="ktc-date"><?php print $published_at; ?></p>
+
+    </div>
+    <!-- End - content -->
+
   </div>
   <!-- End - body -->
 
 </article>
-<!-- End - list -->
+<!-- End - list display -->
