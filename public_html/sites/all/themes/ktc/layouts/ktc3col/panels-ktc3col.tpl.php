@@ -16,11 +16,15 @@
  */
 ?>
 <div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+
+  <?php if ($content['top']): ?>
   <div class="col-md-12 col-sm-12 col-xs-12 pane-top">
     <div class="row">
       <?php print $content['top']; ?>
     </div>
   </div>
+  <?php endif; ?>
+
   <div class="col-md-3 col-sm-4 col-xs-12 pane-left">
     <?php print $content['left']; ?>
   </div>
@@ -30,7 +34,11 @@
   <div class="col-md-6 col-sm-4 col-xs-12 col-md-pull-3 col-sm-pull-4 pane-center">
     <?php print $content['center']; ?>
   </div>
+
+  <?php if ($content['bottom']): ?>
   <div class="col-md-12 col-sm-12 col-xs-12 pane-bottom">
     <?php print $content['bottom']; ?>
   </div>
+  <?php endif; ?>
+
 </div>
