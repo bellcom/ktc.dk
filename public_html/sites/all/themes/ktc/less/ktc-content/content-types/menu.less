@@ -1,0 +1,40 @@
+// |--------------------------------------------------------------------------
+// | Menu
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .menu
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Menu
+.menu-block-wrapper ul {
+	border-radius: 0;
+	background-color: transparent;
+
+	> li {
+		border: 0;
+
+		> a {
+			font-size: @font-size-base;
+			padding: 6px 0;
+			color: @gray-darker;
+			font-weight: bold;
+
+			&:hover {
+				background-color: transparent;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Menu
+.ktc-mixin-menu(@font-color) {
+}

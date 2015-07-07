@@ -23,10 +23,13 @@
  * @ingroup themeable
  */
 ?>
+
 <?php if ($content): ?>
-  <div<?php print $attributes; ?>>
-    <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
-    <?php print $content; ?>
-    <?php if ($content_attributes): ?></div><?php endif; ?>
+<footer class="region region_footer footer_1" <?php print $attributes; ?>>
+  <div class="footer_1">
+    <div class="container">
+      <?php print $content; ?>
+    </div>
   </div>
+</footer>
 <?php endif; ?>
