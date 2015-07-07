@@ -26,14 +26,11 @@
  * @ingroup themeable
  */
 ?>
-  <footer class="region region_footer footer_2 lcontainer-fluid">
-    <div class="lcontainer-fluid clearfix footer_2">
-      <div class="container">
-        <div class="row">
-      <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
-      <?php print $content; ?>
-      <?php if ($content_attributes): ?></div><?php endif; ?>
-      </div>
-      </div>
-    </div>
-  </footer>
+
+<?php if (isset($content)): ?>
+<!-- Begin - footer 2 -->
+<footer class="footer_2">
+  <?php print $content; ?>
+</footer>
+<!-- End - footer 2 -->
+<?php endif; ?>

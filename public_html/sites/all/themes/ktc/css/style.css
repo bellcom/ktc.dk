@@ -8609,11 +8609,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   background-color: #fff;
   padding: 30px 0;
 }
-.region_footer.footer_2 .footer_2 {
-  background-image: url('../images/footer_2.png');
-  height: 80px;
-  color: #fff;
-}
 .region_footer.footer_1 {
   border-top: 10px solid #d5dcde;
 }
@@ -10434,6 +10429,23 @@ body.page-search .view-filters button.form-submit {
 .region.no-panels .region-inner {
   background-color: #ffffff;
   padding: 20px 15px;
+}
+.footer_2 {
+  position: relative;
+  text-align: center;
+  padding: 25px 0;
+  background-image: url('../images/footer-2-bg.jpg');
+}
+.footer_2 h1,
+.footer_2 h2,
+.footer_2 h3,
+.footer_2 h4,
+.footer_2 h5,
+.footer_2 h6 {
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 .ktc-list-display {
   margin-bottom: 10px;
