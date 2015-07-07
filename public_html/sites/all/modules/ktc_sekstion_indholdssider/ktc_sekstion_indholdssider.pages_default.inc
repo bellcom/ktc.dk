@@ -162,7 +162,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'link' => 0,
-      'markup' => 'h1',
+      'markup' => 'h2',
       'id' => '',
       'class' => '',
       'context' => 'argument_entity_id:node_1',
@@ -173,7 +173,11 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
