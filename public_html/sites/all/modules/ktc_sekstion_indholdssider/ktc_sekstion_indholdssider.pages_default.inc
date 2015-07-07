@@ -118,32 +118,6 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-31346af8-5739-4878-825d-d67c2511b06d';
-    $pane->panel = 'bottom';
-    $pane->type = 'panels_mini';
-    $pane->subtype = 'sektionsside_footer';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-      'template_suggestion' => 'content',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '31346af8-5739-4878-825d-d67c2511b06d';
-    $display->content['new-31346af8-5739-4878-825d-d67c2511b06d'] = $pane;
-    $display->panels['bottom'][0] = 'new-31346af8-5739-4878-825d-d67c2511b06d';
-    $pane = new stdClass();
     $pane->pid = 'new-7241e2e6-2d58-483f-b2fd-94941b79f416';
     $pane->panel = 'left';
     $pane->type = 'entity_field';

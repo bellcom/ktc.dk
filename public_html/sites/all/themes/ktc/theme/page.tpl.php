@@ -128,18 +128,12 @@
 
     </div>
 
-    <?php if ($page['content_bottom']): ?>
-      <div class="row">
-
-        <?php /* region--content_bottom.tpl.php */ ?>
-        <?php print render($page['content_bottom']); ?>
-
-      </div>
-    <?php endif; ?>
 
   </div>
 </div>
 <!-- End - wrapper -->
+
+<?php print render($page['content_bottom']); ?>
 
 <?php /* region--footer.tpl.php */ ?>
 <?php print render($page['footer']); ?>

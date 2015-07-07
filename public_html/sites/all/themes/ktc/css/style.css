@@ -14665,6 +14665,23 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-padding-right-lg {
   margin-right: 25px;
 }
+.menu-block-wrapper ul {
+  border-radius: 0;
+  background-color: transparent;
+}
+.menu-block-wrapper ul > li {
+  border: 0;
+}
+.menu-block-wrapper ul > li > a {
+  font-size: 12px;
+  padding: 6px 0;
+  color: #2c353a;
+  font-weight: bold;
+}
+.menu-block-wrapper ul > li > a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
 .btn {
   min-width: 50px;
   padding: 3px 15px;

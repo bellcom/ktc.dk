@@ -1,0 +1,10 @@
+
+.page-admin-structure {
+}
+.page-admin-structure .ktc-4-col .pane-col-1,
+.page-admin-structure .ktc-4-col .pane-col-2,
+.page-admin-structure .ktc-4-col .pane-col-3,
+.page-admin-structure .ktc-4-col .pane-col-4 {
+    float: left;
+    width: 25%;
+}
