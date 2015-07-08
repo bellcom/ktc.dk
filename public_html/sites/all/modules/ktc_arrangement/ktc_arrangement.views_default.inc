@@ -228,6 +228,165 @@ function ktc_arrangement_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Felt: Indhold: Adresse */
+  $handler->display->display_options['fields']['field_arrangement_address']['id'] = 'field_arrangement_address';
+  $handler->display->display_options['fields']['field_arrangement_address']['table'] = 'field_data_field_arrangement_address';
+  $handler->display->display_options['fields']['field_arrangement_address']['field'] = 'field_arrangement_address';
+  $handler->display->display_options['fields']['field_arrangement_address']['exclude'] = TRUE;
+  /* Felt: Indhold: Afholdelsessted */
+  $handler->display->display_options['fields']['field_arrangement_location']['id'] = 'field_arrangement_location';
+  $handler->display->display_options['fields']['field_arrangement_location']['table'] = 'field_data_field_arrangement_location';
+  $handler->display->display_options['fields']['field_arrangement_location']['field'] = 'field_arrangement_location';
+  $handler->display->display_options['fields']['field_arrangement_location']['exclude'] = TRUE;
+  /* Felt: Indhold: Arrangementets dato */
+  $handler->display->display_options['fields']['field_arrangement_date']['id'] = 'field_arrangement_date';
+  $handler->display->display_options['fields']['field_arrangement_date']['table'] = 'field_data_field_arrangement_date';
+  $handler->display->display_options['fields']['field_arrangement_date']['field'] = 'field_arrangement_date';
+  $handler->display->display_options['fields']['field_arrangement_date']['label'] = '';
+  $handler->display->display_options['fields']['field_arrangement_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_arrangement_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_arrangement_date']['alter']['text'] = '[field_arrangement_date-value]';
+  $handler->display->display_options['fields']['field_arrangement_date']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_arrangement_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_date']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_arrangement_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_date']['type'] = 'date_plain';
+  $handler->display->display_options['fields']['field_arrangement_date']['settings'] = array(
+    'format_type' => 'oulook',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Felt: Indhold: Arrangementstype */
+  $handler->display->display_options['fields']['field_arrangement_type']['id'] = 'field_arrangement_type';
+  $handler->display->display_options['fields']['field_arrangement_type']['table'] = 'field_data_field_arrangement_type';
+  $handler->display->display_options['fields']['field_arrangement_type']['field'] = 'field_arrangement_type';
+  $handler->display->display_options['fields']['field_arrangement_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_arrangement_type']['settings'] = array(
+    'link' => 0,
+  );
+  /* Felt: Indhold: Direkte link til program */
+  $handler->display->display_options['fields']['field_link_to_arrangement']['id'] = 'field_link_to_arrangement';
+  $handler->display->display_options['fields']['field_link_to_arrangement']['table'] = 'field_data_field_link_to_arrangement';
+  $handler->display->display_options['fields']['field_link_to_arrangement']['field'] = 'field_link_to_arrangement';
+  $handler->display->display_options['fields']['field_link_to_arrangement']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_arrangement']['click_sort_column'] = 'url';
+  /* Felt: Indhold: Direkte link til tilmelding */
+  $handler->display->display_options['fields']['field_link_to_signup']['id'] = 'field_link_to_signup';
+  $handler->display->display_options['fields']['field_link_to_signup']['table'] = 'field_data_field_link_to_signup';
+  $handler->display->display_options['fields']['field_link_to_signup']['field'] = 'field_link_to_signup';
+  $handler->display->display_options['fields']['field_link_to_signup']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_signup']['click_sort_column'] = 'url';
+  /* Felt: Indhold: Eksterne links */
+  $handler->display->display_options['fields']['field_os2web_base_field_ext_link']['id'] = 'field_os2web_base_field_ext_link';
+  $handler->display->display_options['fields']['field_os2web_base_field_ext_link']['table'] = 'field_data_field_os2web_base_field_ext_link';
+  $handler->display->display_options['fields']['field_os2web_base_field_ext_link']['field'] = 'field_os2web_base_field_ext_link';
+  $handler->display->display_options['fields']['field_os2web_base_field_ext_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_base_field_ext_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_os2web_base_field_ext_link']['delta_offset'] = '0';
+  /* Felt: Indhold: Forfatter */
+  $handler->display->display_options['fields']['field_news_author']['id'] = 'field_news_author';
+  $handler->display->display_options['fields']['field_news_author']['table'] = 'field_data_field_news_author';
+  $handler->display->display_options['fields']['field_news_author']['field'] = 'field_news_author';
+  $handler->display->display_options['fields']['field_news_author']['label'] = '';
+  $handler->display->display_options['fields']['field_news_author']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_news_author']['element_label_colon'] = FALSE;
+  /* Felt: Indhold: Indhold */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+  /* Felt: Indhold: Link til arrangørs hjemmeside */
+  $handler->display->display_options['fields']['field_link_arrangement_organizer']['id'] = 'field_link_arrangement_organizer';
+  $handler->display->display_options['fields']['field_link_arrangement_organizer']['table'] = 'field_data_field_link_arrangement_organizer';
+  $handler->display->display_options['fields']['field_link_arrangement_organizer']['field'] = 'field_link_arrangement_organizer';
+  $handler->display->display_options['fields']['field_link_arrangement_organizer']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link_arrangement_organizer']['click_sort_column'] = 'url';
+  /* Felt: Indhold: Mødetype */
+  $handler->display->display_options['fields']['field_meeting_type']['id'] = 'field_meeting_type';
+  $handler->display->display_options['fields']['field_meeting_type']['table'] = 'field_data_field_meeting_type';
+  $handler->display->display_options['fields']['field_meeting_type']['field'] = 'field_meeting_type';
+  $handler->display->display_options['fields']['field_meeting_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_meeting_type']['settings'] = array(
+    'link' => 0,
+  );
+  /* Felt: Indhold: Pris (inkl./ ekskl. moms) */
+  $handler->display->display_options['fields']['field_arrangement_price']['id'] = 'field_arrangement_price';
+  $handler->display->display_options['fields']['field_arrangement_price']['table'] = 'field_data_field_arrangement_price';
+  $handler->display->display_options['fields']['field_arrangement_price']['field'] = 'field_arrangement_price';
+  $handler->display->display_options['fields']['field_arrangement_price']['exclude'] = TRUE;
+  /* Felt: Indhold: Arrangementets dato */
+  $handler->display->display_options['fields']['field_arrangement_date_1']['id'] = 'field_arrangement_date_1';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['table'] = 'field_data_field_arrangement_date';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['field'] = 'field_arrangement_date';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_arrangement_date_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_arrangement_date_1']['alter']['text'] = '[field_arrangement_date_1-value2]';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_date_1']['type'] = 'date_plain';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['settings'] = array(
+    'format_type' => 'oulook',
+    'fromto' => 'value2',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Felt: Signup: Notification: Email Address */
+  $handler->display->display_options['fields']['forwarding_email']['id'] = 'forwarding_email';
+  $handler->display->display_options['fields']['forwarding_email']['table'] = 'signup';
+  $handler->display->display_options['fields']['forwarding_email']['field'] = 'forwarding_email';
+  $handler->display->display_options['fields']['forwarding_email']['label'] = '';
+  $handler->display->display_options['fields']['forwarding_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['forwarding_email']['element_type'] = '0';
+  $handler->display->display_options['fields']['forwarding_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['forwarding_email']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['forwarding_email']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['forwarding_email']['empty'] = 'ktc@ktc.dk';
+  /* Felt: Indhold: Email */
+  $handler->display->display_options['fields']['field_arrangement_opretteremail']['id'] = 'field_arrangement_opretteremail';
+  $handler->display->display_options['fields']['field_arrangement_opretteremail']['table'] = 'field_data_field_arrangement_opretteremail';
+  $handler->display->display_options['fields']['field_arrangement_opretteremail']['field'] = 'field_arrangement_opretteremail';
+  $handler->display->display_options['fields']['field_arrangement_opretteremail']['label'] = '';
+  $handler->display->display_options['fields']['field_arrangement_opretteremail']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_arrangement_opretteremail']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_arrangement_opretteremail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_opretteremail']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_arrangement_opretteremail']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_opretteremail']['empty'] = '[forwarding_email]';
+  /* Felt: Global: Tilpasset tekst */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="addtocalendar atc-style-blue btn btn-default">
+        <var class="atc_event">
+            <var class="atc_date_start">[field_arrangement_date]</var>
+            <var class="atc_date_end">[field_arrangement_date_1]</var>
+            <var class="atc_timezone">Europe/Copenhagen</var>
+            <var class="atc_title">[title]</var>
+            <var class="atc_description">[body]</var>
+            <var class="atc_location">[field_arrangement_location] </var>
+            <var class="atc_organizer">[field_news_author]</var>
+            <var class="atc_organizer_email">[forwarding_email]</var>
+        </var>
+    </span>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'context',
@@ -333,6 +492,18 @@ function ktc_arrangement_views_default_views() {
     </span>'),
     t('Alle'),
     t('Content pane'),
+    t('<span class="addtocalendar atc-style-blue btn btn-default">
+        <var class="atc_event">
+            <var class="atc_date_start">[field_arrangement_date]</var>
+            <var class="atc_date_end">[field_arrangement_date_1]</var>
+            <var class="atc_timezone">Europe/Copenhagen</var>
+            <var class="atc_title">[title]</var>
+            <var class="atc_description">[body]</var>
+            <var class="atc_location">[field_arrangement_location] </var>
+            <var class="atc_organizer">[field_news_author]</var>
+            <var class="atc_organizer_email">[forwarding_email]</var>
+        </var>
+    </span>'),
     t('View panes'),
     t('Dato på full-node'),
   );

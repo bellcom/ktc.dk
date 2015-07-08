@@ -327,7 +327,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'pull-left',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
@@ -360,7 +360,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'btn btn-success',
+      'css_class' => 'pull-left btn btn-success',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
@@ -393,7 +393,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'pull-left',
+      'css_class' => 'pull-left btn btn-default',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
@@ -418,7 +418,11 @@ function ktc_arrangement_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pull-left',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -502,7 +506,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'pull-left ktc-padding-right',
+      'css_class' => 'pull-left ktc-padding-right-sm ktc-padding-bottom',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
@@ -533,7 +537,7 @@ function ktc_arrangement_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'pull-left',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
