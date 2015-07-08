@@ -12285,6 +12285,7 @@ div.ktc-comments-form {
   margin-bottom: -10px;
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 30px;
 }
 div.ktc-comments-form .ktc-comments-form-content {
   display: table;
@@ -12334,10 +12335,6 @@ div.ktc-comments-form form.ktc-comments-form .form-actions {
   border: 0;
   border-radius: 0;
   padding: 6px 15px;
-  margin-left: -15px;
-  margin-right: -15px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button {
   position: relative;
@@ -12478,13 +12475,15 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button .i
 div.ktc-comments-form .ktc-user-login {
   margin: 0 0 20px;
 }
-.ktc-content .ktc-comments-form {
+body .ktc-comments-form,
+body .ktc-content .ktc-comments-form {
   margin-left: -15px;
   margin-right: -15px;
   padding-left: 15px;
   padding-right: 15px;
 }
-.ktc-content .ktc-comments-form .form-actions {
+body .ktc-comments-form .form-actions,
+body .ktc-content .ktc-comments-form .form-actions {
   margin-left: -15px;
   margin-right: -15px;
   padding-left: 15px;
@@ -12506,6 +12505,7 @@ div.ktc-comments-form .ktc-user-login {
   margin-top: 2px;
   background-color: #e9edee;
   margin-top: 30px;
+  margin-bottom: -30px;
 }
 .ktc-comments-list.ktc-well-large {
   padding-top: 10px;
@@ -12810,6 +12810,10 @@ fieldset[disabled] .ktc-comments-list .ktc-comments-list-body .ktc-comments-list
 }
 .ktc-comments-list .ktc-comments-list-body .indented .indented .indented .indented .ktc-comments-list-item {
   padding-left: 100px;
+}
+.ktc-teaser .ktc-comments-list,
+.ktc-teaser-large .ktc-comments-list {
+  margin-bottom: 0;
 }
 body .ktc-comments-list,
 body .ktc-content .ktc-comments-list {
