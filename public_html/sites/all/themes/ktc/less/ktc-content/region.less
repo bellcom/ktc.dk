@@ -28,3 +28,113 @@
 		padding: 0;
 	}
 }
+
+// Footer 4
+.footer_4 {
+	background-color: @brand-footergreen;
+	padding: 15px 0;
+
+	.footer-4 {
+		position: relative;
+	}
+
+	// Block
+	.block {
+		padding: 15px;
+
+		// First element
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:nth-child(2) {
+			border-left: 2px solid lighten(@brand-footergreen, 5%);
+			border-right: 2px solid lighten(@brand-footergreen, 5%);
+		}
+
+		// Heading
+		.panel-heading {
+			padding: 0;
+
+			// Headlines
+			h1, h2, h3, h4, h5, h6 {
+				font-weight: 400;
+				font-size: @font-size-h5;
+				color: @gray-darker;
+				margin: 0 0 15px;
+			}
+		}
+	}
+
+	// User profile
+	.ktc-user-profile {
+
+		// Colouring
+		&,
+		&.ktc-user-green,
+		&.ktc-user-yellow,
+		&.ktc-user-red,
+		&.ktc-user-blue {
+
+			// Wrapper
+			.ktc-user-profile-content-wrapper {
+
+				// Photo
+				.ktc-user-profile-photo-container {
+
+					// Link
+					> a {
+
+						// Image
+						> img {
+							border-color: #fff;
+						}
+					}
+				}
+
+				// Content
+				.ktc-user-profile-content {
+
+					// Name
+					.ktc-user-profile-content-name {
+
+						// Link
+						> a {
+							font-family: @headings-font-family;
+							font-size: @font-size-h5;
+							font-weight: 400;
+
+							// Normal and hover state
+							&,
+							&:hover {
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Menu
+	.menu.nav {
+		border-radius: 0;
+		background-color: transparent;
+
+		> li {
+			border: 0;
+
+			> a {
+				font-size: @font-size-base;
+				padding: 3px 0;
+				color: #fff;
+
+				&:hover {
+					color: #fff;
+					background-color: transparent;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
