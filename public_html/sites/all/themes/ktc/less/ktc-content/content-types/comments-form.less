@@ -5,6 +5,7 @@ div.ktc-comments-form {
 	margin-bottom: -(@ktc-default-body-top-bottom-inner-spacing);
 	padding-left: @ktc-default-left-right-inner-spacing;
 	padding-right: @ktc-default-left-right-inner-spacing;
+	margin-top: 30px;
 
 	.ktc-comments-form-content {
 		display: table;
@@ -65,7 +66,6 @@ div.ktc-comments-form {
 		// Buttons
 		.form-actions {
 			.ktc-footer;
-			.ktc-mixin-content-full-width();
 
 			.ktc-footer-button {
 
@@ -99,21 +99,25 @@ div.ktc-comments-form {
 	}
 }
 
-// Content (and default)
-.ktc-content {
+// Content
+body {
 
-	// Form
-	.ktc-comments-form {
-		.ktc-mixin-content-full-width();
+	&,
+	.ktc-content {
 
-		// Buttons
-		.form-actions {
+		// Form
+		.ktc-comments-form {
 			.ktc-mixin-content-full-width();
+
+			// Buttons
+			.form-actions {
+				.ktc-mixin-content-full-width();
+			}
 		}
 	}
 }
 
-// Content wide
+// Wide
 .ktc-content-wide {
 
 	// Form
