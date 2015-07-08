@@ -41,12 +41,15 @@
 	// Block
 	.block {
 		padding: 15px;
-		border-left: 2px solid lighten(@brand-footergreen, 5%);
 
 		// First element
 		&:first-child {
 			padding-left: 0;
-			border: 0;
+		}
+
+		&:nth-child(2) {
+			border-left: 2px solid lighten(@brand-footergreen, 5%);
+			border-right: 2px solid lighten(@brand-footergreen, 5%);
 		}
 
 		// Heading
