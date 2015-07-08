@@ -10414,12 +10414,22 @@ body.page-search .view-filters button.form-submit {
   color: #2c353a;
   margin: 0 0 15px;
 }
+.footer_4 .ktc-user-profile {
+  padding: 4px 0;
+}
 .footer_4 .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img,
 .footer_4 .ktc-user-profile.ktc-user-green .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img,
 .footer_4 .ktc-user-profile.ktc-user-yellow .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img,
 .footer_4 .ktc-user-profile.ktc-user-red .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img,
 .footer_4 .ktc-user-profile.ktc-user-blue .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img {
   border-color: #fff;
+}
+.footer_4 .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-job-title,
+.footer_4 .ktc-user-profile.ktc-user-green .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-job-title,
+.footer_4 .ktc-user-profile.ktc-user-yellow .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-job-title,
+.footer_4 .ktc-user-profile.ktc-user-red .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-job-title,
+.footer_4 .ktc-user-profile.ktc-user-blue .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-job-title {
+  color: #1cba4e;
 }
 .footer_4 .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-name > a,
 .footer_4 .ktc-user-profile.ktc-user-green .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-name > a,
