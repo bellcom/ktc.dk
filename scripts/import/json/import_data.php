@@ -13,7 +13,7 @@ function process_file($entity, $filename, $config) {
 
   $data = json_decode($file_contents);
 
-  foreach ($data as $_data) {
+  foreach ($data as $delta => $_data) {
     process_data($entity, $_data, $config);
   }
 }

@@ -1,0 +1,3 @@
+This command will export the tables needed for exporting hearings from ktc.dk:
+
+mysqldump -uktc -p6521gvdfqw7q www_ktc_dk tx_ktchoringdb_proposal tx_ktchoringdb_answer fe_users > /tmp/hearing_dump.sql

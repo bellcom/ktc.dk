@@ -6,8 +6,9 @@
 
 $config['files'] = array(
   'users' => 'users.json',
-  'nodes' => 'nodes.json',
-  'comments' => 'comments.json',
+//  'nodes' => 'nodes.json',
+//  'makemeeting' => 'makemeeting.json',
+ // 'comments' => 'comments.json',
 );
 
 /**
@@ -26,6 +27,10 @@ $config['handler'] = array(
     'load' => 'ktc_import_load_comment',
     'save' => 'ktc_import_save_comment',
   ),
+  'makemeeting' => array(
+    'load' => 'ktc_import_load_makemeeting',
+    'save' => 'ktc_import_save_makemeeting',
+  ),
 );
 
 /**
@@ -36,6 +41,7 @@ $config['transform']['nodes'] = array(
   'uid' => 'ktc_import_set_new_uid',
   'title' => 'ktc_import_no_transform',
   'body' => 'ktc_import_no_transform',
+  'language' => 'ktc_import_no_transform',
   'group_audience' => 'ktc_import_set_group_info',
   'group_content_access' => 'ktc_import_no_transform',
   'field_short' => 'ktc_import_no_transform',
@@ -44,10 +50,11 @@ $config['transform']['nodes'] = array(
   'field_grouptype' => array('ktc_import_no_transform', 'opt' => array('field' => 'field_netvaerkstype')),
   'field_tags' => 'ktc_import_no_transform',
   'field_event_seats' => 'ktc_import_no_transform',
+  'field_doodle' => 'ktc_import_no_transform',
   'field_meeting_type' => 'ktc_import_update_to_entity_reference',
-  'field_fil' => array('ktc_import_fetch_file', 'opt' => array('field' => 'field_os2web_base_field_media')),
-  'field_groupimage' => array('ktc_import_fetch_file', 'opt' => array('field' => 'field_groupimage')),
-  'field_image' => array('ktc_import_fetch_file', 'opt' => array('field' => 'field_image')),
+  'field_fil' => array('ktc_import_field_fetch_file', 'opt' => array('field' => 'field_os2web_base_field_media')),
+  'field_groupimage' => array('ktc_import_field_fetch_file', 'opt' => array('field' => 'field_groupimage')),
+  'field_image' => array('ktc_import_field_fetch_file', 'opt' => array('field' => 'field_image')),
 );
 
 /**
@@ -62,8 +69,10 @@ $config['transform']['users'] = array(
   'pass' => 'ktc_import_no_transform',
   'roles' => 'ktc_import_no_transform',
   'access' => 'ktc_import_no_transform',
+  'language' => 'ktc_import_no_transform',
+  'picture' => 'ktc_import_prop_fetch_file',
   'group_audience' => 'ktc_import_set_new_groups',
-  'field_navn' => 'ktc_import_no_transform',
+  'field_navn' => 'ktc_import_split_name',
   'field_adresse' => 'ktc_import_no_transform',
   'field_phone' => 'ktc_import_no_transform',
   'field_cell' => 'ktc_import_no_transform',
@@ -90,6 +99,7 @@ $config['transform']['users'] = array(
  */
 $config['transform']['comments'] = array(
   'subject' => array('ktc_import_no_transform', 'opt' => array()),
+  'language' => 'ktc_import_no_transform',
   'comment_body' => 'ktc_import_no_transform',
   'nid' => 'ktc_import_set_new_nid',
   'uid' => 'ktc_import_set_new_uid',
@@ -100,5 +110,17 @@ $config['transform']['comments'] = array(
   'status' => 'ktc_import_no_transform',
   'name' => 'ktc_import_no_transform',
 );
+
+/**
+ * Transformations for makemeeting answers.
+ */
+$config['transform']['makemeeting'] = array(
+  'uid' => 'ktc_import_set_new_uid',
+  'entity_id' => 'ktc_import_set_new_nid',
+  'value' => 'ktc_import_makemeeting_value',
+);
+
+// Define directory where the importer can find files from the original site.
+$config['import_files'] = '/var/www/tmp/';
 
 return $config;

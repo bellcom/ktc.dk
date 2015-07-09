@@ -7,6 +7,7 @@ function ktc_import_load_node($data) {
     'group' => 'group',
     'discussion' => 'forum_post',
     'document' => 'document',
+    'meeting_doodle' => 'meeting_doodle',
     'event' => 'arrangement',
   );
 
@@ -51,7 +52,7 @@ function ktc_import_save_node($entity) {
 }
 
 function ktc_import_load_user($data) {
-  if ($uid = ktc_import_new_uid($data->uid)) {
+  if ($uid = ktc_import_new_uid($data->uid, $data->mail)) {
     return user_load($uid);
   }
 
@@ -120,4 +121,25 @@ function ktc_import_save_comment($entity) {
     ))
     ->condition('cid', $entity->cid)
     ->execute();
+}
+
+/**
+ *
+ */
+function ktc_import_load_makemeeting($entity) {
+  return $entity;
+}
+
+/**
+ *
+ */
+function ktc_import_save_makemeeting($entity) {
+  echo "Saving makemeeting answers is temprorarily disabled";
+  return;
+  unset($entity->answer_id);
+  if ($entity->entity_id) {
+    db_insert('makemeeting_answers')
+      ->fields((array) $entity)
+      ->execute();
+  }
 }
