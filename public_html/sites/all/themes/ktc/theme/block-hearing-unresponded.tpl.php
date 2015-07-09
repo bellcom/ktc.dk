@@ -16,10 +16,10 @@ $i=0;
       <?php endif; ?>
     <?php $i++; endforeach; ?>
   <?php else: ?>
-  Du har ingen ubesvarede høringer.
+    <?php print t('Du har ingen ubesvarede høringer.'); ?>
   <?php endif; ?>
 </div>
 <div class="ktc-call-to-action-button">
-  <a href="/hoeringer" class="btn btn-default">Se flere</a>
+  <a href="/hoeringer" class="btn btn-default"><?php print t('Se flere'); ?></a>
 </div>
 <!-- /block-hearing-unresponded.tpl.php -->
