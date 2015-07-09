@@ -14754,6 +14754,9 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .node-type-meeting-doodle .makemeeting-table .answer {
   background-size: 15px 15px;
 }
+.node-type-meeting-doodle .field-name-field-doodle {
+  margin-bottom: 18px;
+}
 .btn {
   min-width: 50px;
   padding: 3px 15px;
