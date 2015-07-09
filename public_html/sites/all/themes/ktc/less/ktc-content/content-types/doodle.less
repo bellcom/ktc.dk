@@ -1,11 +1,120 @@
+
 .node-type-meeting-doodle {
-  .makemeeting-table {
-    font-size: 9px;
-      .table;
-      input.form-control {
-          font-size: 9px;}
-      .answer {
-          background-size: 15px 15px}
-      }
-  .field-name-field-doodle {margin-bottom: 18px; }
+
+	.makemeeting-table.table.table-hover.table-striped {
+		font-size: 9px;
+
+		input.form-control {
+			font-size: 9px;
+			background-color: transparent;
+			padding: 0;
+			border: 0;
+			.box-shadow(none);
+		}
+
+		thead {
+			th {
+				background-color: @ktc-color-dark-content-background;
+				text-transform: uppercase;
+				font-family: @ktc-aside-title-font-family;
+				font-size: @ktc-aside-title-font-size;
+				font-weight: @ktc-aside-title-font-weight;
+				color: @ktc-color-dark-content-background-font;
+				border: 0;
+			}
+		}
+
+		tr {
+			border: 0;
+
+			&.dates {
+
+				&,
+				&:hover {
+					> td {
+						background-color: transparent;
+						font-weight: bold;
+						color: @gray-darker;
+						border-bottom: 1px solid #ccc;
+					}
+				}
+			}
+
+			&.answer-form-row {
+				.radio,
+				.checkbox {
+
+					label {
+						line-height: 20px;
+					}
+				}
+			}
+
+			&.suggestions {
+
+				&,
+				&:hover {
+					> td {
+						&,
+						&.suggestion {
+							background-color: #fff;
+							border: 0;
+							border-bottom: 1px solid #ccc;
+							color: @gray-darker;
+						}
+					}
+				}
+			}
+
+			&.total-row {
+
+				td {
+
+					&.total-title {
+						text-align: left;
+						font-weight: bold;
+						color: @gray-darker;
+					}
+				}
+			}
+
+			td {
+				border: 0;
+			}
+		}
+
+		.answer {
+			background-size: 15px 15px;
+			border: 0;
+		}
+
+		.answer.answer-0,
+		.total-0.total-max {
+			background-color: @state-danger-bg;
+			color: @state-danger-text;
+		}
+
+		.answer.answer-1,
+		.total-1.total-max {
+			background-color: @state-success-bg;
+			color: @state-success-text;
+		}
+
+		.answer.answer-2,
+		.total-2.total-max {
+			background-color: @state-warning-bg;
+			color: @state-warning-text;
+		}
+
+		.radio input[type="radio"],
+		.radio-inline input[type="radio"],
+		.checkbox input[type="checkbox"],
+		.checkbox-inline input[type="checkbox"] {
+			float: none;
+		}
+	}
+
+	.field-name-field-doodle {
+		margin-bottom: 18px;
+	}
 }
