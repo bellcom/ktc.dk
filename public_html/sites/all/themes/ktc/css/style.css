@@ -14714,6 +14714,46 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   background-color: transparent;
   text-decoration: underline;
 }
+.node-type-meeting-doodle .makemeeting-table {
+  font-size: 9px;
+  width: 100%;
+  margin-bottom: 17px;
+}
+.node-type-meeting-doodle .makemeeting-table > thead > tr > th,
+.node-type-meeting-doodle .makemeeting-table > tbody > tr > th,
+.node-type-meeting-doodle .makemeeting-table > tfoot > tr > th,
+.node-type-meeting-doodle .makemeeting-table > thead > tr > td,
+.node-type-meeting-doodle .makemeeting-table > tbody > tr > td,
+.node-type-meeting-doodle .makemeeting-table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+.node-type-meeting-doodle .makemeeting-table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+.node-type-meeting-doodle .makemeeting-table > caption + thead > tr:first-child > th,
+.node-type-meeting-doodle .makemeeting-table > colgroup + thead > tr:first-child > th,
+.node-type-meeting-doodle .makemeeting-table > thead:first-child > tr:first-child > th,
+.node-type-meeting-doodle .makemeeting-table > caption + thead > tr:first-child > td,
+.node-type-meeting-doodle .makemeeting-table > colgroup + thead > tr:first-child > td,
+.node-type-meeting-doodle .makemeeting-table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.node-type-meeting-doodle .makemeeting-table > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+.node-type-meeting-doodle .makemeeting-table .table {
+  background-color: #e9edee;
+}
+.node-type-meeting-doodle .makemeeting-table input.form-control {
+  font-size: 9px;
+}
+.node-type-meeting-doodle .makemeeting-table .answer {
+  background-size: 15px 15px;
+}
 .btn {
   min-width: 50px;
   padding: 3px 15px;
