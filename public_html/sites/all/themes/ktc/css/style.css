@@ -9247,6 +9247,9 @@ body.page-search .view-filters #edit-search-api-views-fulltext-wrapper,
 body.page-search .view-filters button.form-submit {
   margin-top: 0;
 }
+body.node-type-page .region-content .ktc-content-wide {
+  padding-bottom: 60px;
+}
 .ktc-user-login label {
   display: none;
 }
