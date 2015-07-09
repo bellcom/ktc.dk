@@ -126,7 +126,6 @@ function ktc_import_field_fetch_file($entity, $prop, $value, $opt) {
   foreach ($value[$language] as $_key => $_val) {
     $uri = $_val['uri'];
 
-    /**
     list($scheme, $path) = explode('://', $uri);
 
     list($dir) = explode('/', $path);
@@ -141,9 +140,6 @@ function ktc_import_field_fetch_file($entity, $prop, $value, $opt) {
     $file = file_uri_to_object(file_unmanaged_copy($file_path, $destination_uri, FILE_EXISTS_REPLACE));
     $file->display = 1;
     file_save($file);
-     */
-
-    $file = (array) ktc_import_fetch_file($uri, $_val['filename']);
 
     $entity->{$field_name}[LANGUAGE_NONE][$_key] = (array) $file;
   }
