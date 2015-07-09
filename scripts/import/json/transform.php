@@ -59,10 +59,8 @@ function ktc_import_new_uid($old_uid, $mail = FALSE) {
     $uid = $result['entity_id'];
   }
 
-  if ($user = user_load_by_mail($mail)) {
-    if (!field_get_items('user', $user, 'field_gammel_uid')) {
-      $uid = $user->uid;
-    }
+  if (!$uid && $user = user_load_by_mail($mail)) {
+    $uid = $user->uid;
   }
   return $uid;
 }
