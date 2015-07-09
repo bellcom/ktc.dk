@@ -1059,3 +1059,10 @@ function _ktc_text_shortener($text_string, $max_length) {
 
   return $shortened_string;
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_form_alter(&$form, &$form_state, $form_id) {
+  $form['revision_information']['#access'] = false;
+}
