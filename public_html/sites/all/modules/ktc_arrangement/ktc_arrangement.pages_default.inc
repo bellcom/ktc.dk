@@ -67,6 +67,7 @@ function ktc_arrangement_default_page_manager_handlers() {
       'centertop' => NULL,
       'centerleft' => NULL,
       'centerright' => NULL,
+      'centertop_secondary' => NULL,
     ),
   );
   $display->cache = array();
@@ -275,161 +276,6 @@ function ktc_arrangement_default_page_manager_handlers() {
     $display->content['new-20f14952-1f76-419e-ab06-4bada6cf8447'] = $pane;
     $display->panels['center'][5] = 'new-20f14952-1f76-419e-ab06-4bada6cf8447';
     $pane = new stdClass();
-    $pane->pid = 'new-b21e672d-8ae6-4858-9e7c-620fc4927886';
-    $pane->panel = 'centerleft';
-    $pane->type = 'block';
-    $pane->subtype = 'ktc_signup_block-ktc_signup_link_block';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'entity_field_value:node:arrangement:field_link_to_signup',
-          'settings' => array(
-            'field_link_to_signup' => array(
-              'und' => array(
-                0 => array(
-                  'title' => '',
-                  'url' => '',
-                ),
-              ),
-            ),
-            'field_link_to_signup_url' => array(
-              0 => array(
-                'title' => '',
-                'url' => '',
-              ),
-            ),
-            'field_link_to_signup_title' => array(
-              0 => array(
-                'title' => '',
-                'url' => '',
-              ),
-            ),
-            'field_link_to_signup_attributes' => array(
-              0 => array(
-                'title' => '',
-                'url' => '',
-              ),
-            ),
-          ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => TRUE,
-        ),
-      ),
-    );
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'pull-left',
-      'template_suggestion' => 'content',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'b21e672d-8ae6-4858-9e7c-620fc4927886';
-    $display->content['new-b21e672d-8ae6-4858-9e7c-620fc4927886'] = $pane;
-    $display->panels['centerleft'][0] = 'new-b21e672d-8ae6-4858-9e7c-620fc4927886';
-    $pane = new stdClass();
-    $pane->pid = 'new-4f14c8b1-66ff-4f75-ad55-aae40ac6e08c';
-    $pane->panel = 'centerleft';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_link_to_signup';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'link_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'pull-left btn btn-success',
-      'template_suggestion' => 'content',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '4f14c8b1-66ff-4f75-ad55-aae40ac6e08c';
-    $display->content['new-4f14c8b1-66ff-4f75-ad55-aae40ac6e08c'] = $pane;
-    $display->panels['centerleft'][1] = 'new-4f14c8b1-66ff-4f75-ad55-aae40ac6e08c';
-    $pane = new stdClass();
-    $pane->pid = 'new-4298fd9b-61a6-4889-928c-48c92bf8ddc4';
-    $pane->panel = 'centerright';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_link_to_arrangement';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'link_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'pull-left btn btn-default',
-      'template_suggestion' => 'content',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '4298fd9b-61a6-4889-928c-48c92bf8ddc4';
-    $display->content['new-4298fd9b-61a6-4889-928c-48c92bf8ddc4'] = $pane;
-    $display->panels['centerright'][0] = 'new-4298fd9b-61a6-4889-928c-48c92bf8ddc4';
-    $pane = new stdClass();
-    $pane->pid = 'new-35d83e36-854e-430b-9a07-31e582819644';
-    $pane->panel = 'centerright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'add_to_outlook-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'pull-left',
-      'template_suggestion' => 'content',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '35d83e36-854e-430b-9a07-31e582819644';
-    $display->content['new-35d83e36-854e-430b-9a07-31e582819644'] = $pane;
-    $display->panels['centerright'][1] = 'new-35d83e36-854e-430b-9a07-31e582819644';
-    $pane = new stdClass();
     $pane->pid = 'new-4054cac8-3c6a-4800-a96c-dfed661a1895';
     $pane->panel = 'centertop';
     $pane->type = 'entity_field';
@@ -546,6 +392,161 @@ function ktc_arrangement_default_page_manager_handlers() {
     $pane->uuid = 'fd453120-d80e-45c4-866c-4636d1110262';
     $display->content['new-fd453120-d80e-45c4-866c-4636d1110262'] = $pane;
     $display->panels['centertop'][3] = 'new-fd453120-d80e-45c4-866c-4636d1110262';
+    $pane = new stdClass();
+    $pane->pid = 'new-b21e672d-8ae6-4858-9e7c-620fc4927886';
+    $pane->panel = 'centertop_secondary';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_signup_block-ktc_signup_link_block';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:arrangement:field_link_to_signup',
+          'settings' => array(
+            'field_link_to_signup' => array(
+              'und' => array(
+                0 => array(
+                  'title' => '',
+                  'url' => '',
+                ),
+              ),
+            ),
+            'field_link_to_signup_url' => array(
+              0 => array(
+                'title' => '',
+                'url' => '',
+              ),
+            ),
+            'field_link_to_signup_title' => array(
+              0 => array(
+                'title' => '',
+                'url' => '',
+              ),
+            ),
+            'field_link_to_signup_attributes' => array(
+              0 => array(
+                'title' => '',
+                'url' => '',
+              ),
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pull-left ktc-margin-right-xs ktc-margin-bottom',
+      'template_suggestion' => 'content',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b21e672d-8ae6-4858-9e7c-620fc4927886';
+    $display->content['new-b21e672d-8ae6-4858-9e7c-620fc4927886'] = $pane;
+    $display->panels['centertop_secondary'][0] = 'new-b21e672d-8ae6-4858-9e7c-620fc4927886';
+    $pane = new stdClass();
+    $pane->pid = 'new-4f14c8b1-66ff-4f75-ad55-aae40ac6e08c';
+    $pane->panel = 'centertop_secondary';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_link_to_signup';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'link_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pull-left btn btn-success ktc-margin-right-xs ktc-margin-bottom',
+      'template_suggestion' => 'content',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '4f14c8b1-66ff-4f75-ad55-aae40ac6e08c';
+    $display->content['new-4f14c8b1-66ff-4f75-ad55-aae40ac6e08c'] = $pane;
+    $display->panels['centertop_secondary'][1] = 'new-4f14c8b1-66ff-4f75-ad55-aae40ac6e08c';
+    $pane = new stdClass();
+    $pane->pid = 'new-4298fd9b-61a6-4889-928c-48c92bf8ddc4';
+    $pane->panel = 'centertop_secondary';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_link_to_arrangement';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'link_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pull-left btn btn-default ktc-margin-right-xs ktc-margin-bottom',
+      'template_suggestion' => 'content',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '4298fd9b-61a6-4889-928c-48c92bf8ddc4';
+    $display->content['new-4298fd9b-61a6-4889-928c-48c92bf8ddc4'] = $pane;
+    $display->panels['centertop_secondary'][2] = 'new-4298fd9b-61a6-4889-928c-48c92bf8ddc4';
+    $pane = new stdClass();
+    $pane->pid = 'new-35d83e36-854e-430b-9a07-31e582819644';
+    $pane->panel = 'centertop_secondary';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'add_to_outlook-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pull-left ktc-margin-right-xs ktc-margin-bottom',
+      'template_suggestion' => 'content',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '35d83e36-854e-430b-9a07-31e582819644';
+    $display->content['new-35d83e36-854e-430b-9a07-31e582819644'] = $pane;
+    $display->panels['centertop_secondary'][3] = 'new-35d83e36-854e-430b-9a07-31e582819644';
     $pane = new stdClass();
     $pane->pid = 'new-51c37052-ebc8-4e4b-b384-819083e03ed6';
     $pane->panel = 'left';
