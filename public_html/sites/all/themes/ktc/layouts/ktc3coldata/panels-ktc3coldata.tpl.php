@@ -40,6 +40,14 @@
           </div>
         <?php endif; ?>
 
+        <?php if ($content['centertop_secondary']): ?>
+          <div class="row">
+            <div class="col-xs-12">
+              <?php print $content['centertop_secondary']; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+
         <?php if ($content['centerleft'] || $content['centerright']): ?>
           <div class="row">
 
