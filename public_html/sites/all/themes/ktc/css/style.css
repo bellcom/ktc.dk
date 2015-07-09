@@ -6522,6 +6522,7 @@ fieldset .panel-heading a.panel-title:hover {
 a.tabledrag-handle .handle {
   height: auto;
   width: auto;
+  background-position: 2px 9px;
 }
 .error {
   color: #a94442;
@@ -6777,7 +6778,20 @@ a .glyphicon-spin {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   border: 1px solid #dddddd;
   padding: 10px 15px;
-  background-color: #FFF;
+  background-color: #f9f9f9;
+  margin-left: 219px;
+}
+.tabs-left > .tab-content .form-control,
+.tabs-right > .tab-content .form-control {
+  background-color: #fff;
+}
+.tabs-left > .tab-content div.field-type-image fieldset,
+.tabs-right > .tab-content div.field-type-image fieldset,
+.tabs-left > .tab-content div.field-type-file fieldset,
+.tabs-right > .tab-content div.field-type-file fieldset,
+.tabs-left > .tab-content div.field-type-datetime,
+.tabs-right > .tab-content div.field-type-datetime {
+  padding: 0 0 0 0;
 }
 .tabs-left > .nav-tabs {
   float: left;
@@ -6797,6 +6811,7 @@ a .glyphicon-spin {
   -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
+  background-color: #f9f9f9 ;
 }
 .tabs-right > .nav-tabs {
   float: right;
