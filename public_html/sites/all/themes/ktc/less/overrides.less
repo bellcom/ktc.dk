@@ -314,6 +314,7 @@ fieldset .panel-heading a.panel-title {
 a.tabledrag-handle .handle {
   height: auto;
   width: auto;
+  background-position: 2px 9px;
 }
 
 // Error containers.
@@ -588,7 +589,12 @@ a .glyphicon-spin {
     .box-shadow(0 1px 1px rgba(0,0,0,.05));
     border: 1px solid @nav-tabs-border-color;
     padding: 10px 15px;
-    background-color: #FFF;
+    background-color: #f9f9f9;
+    margin-left: 219px;
+    .form-control { background-color: #fff;}
+    div.field-type-image fieldset,
+    div.field-type-file fieldset,
+    div.field-type-datetime { padding: 0 0 0 0}
   }
 }
 
@@ -609,6 +615,7 @@ a .glyphicon-spin {
     > .active > a:focus {
       border-color: @nav-tabs-border-color transparent @nav-tabs-border-color @nav-tabs-border-color;
       .box-shadow(-1px 1px 1px rgba(0,0,0,.05));
+      background-color: #f9f9f9 ;
     }
   }
 }
