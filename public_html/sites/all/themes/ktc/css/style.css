@@ -9232,9 +9232,6 @@ body.page-search .view-filters #edit-search-api-views-fulltext-wrapper,
 body.page-search .view-filters button.form-submit {
   margin-top: 0;
 }
-.page-node-add .tabs-left .vertical-tabs-list .vertical-tab-button:nth-child(3) {
-  display: none;
-}
 .ktc-user-login label {
   display: none;
 }
