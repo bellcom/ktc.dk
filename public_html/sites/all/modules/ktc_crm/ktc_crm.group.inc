@@ -230,8 +230,6 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
   $group_node->body[$language][0]['value'] = $groupdto->Description;
   $group_node->body[$language][0]['format'] = 'filtered_html';
 
-  $group_node->field_os2web_base_field_ext_link[$language][0]['url'] = $groupdto->WebSite;
-
   $group_node->field_start_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->StartDate));
   $group_node->field_end_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->EndDate));
 

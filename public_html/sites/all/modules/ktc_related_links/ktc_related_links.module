@@ -35,7 +35,6 @@ function ktc_related_links_block_view($delta = '') {
  * KTC block view content callback.
  */
 function _ktc_related_links_block_content() {
-
   $node = FALSE;
   $nid = arg(1);
   $output = '';
@@ -150,17 +149,6 @@ function _ktc_related_links_block_content() {
   // Only show 10 items. TODO: admin setting form for content type and max iterms.
   if (count($related_links) > 10) {
     $related_links = array_slice($related_links, 0, 10);
-  }
-  // External related links.
-  if ($node && $ext_links = field_get_items('node', $node, 'field_os2web_base_field_ext_link')) {
-    foreach ($ext_links as $link) {
-      $related_links[] = array(
-        'url' => $link['url'],
-        'title' => $link['title'],
-        'type' => $link_node->type,
-        'class' => 'ext-link',
-      );
-    }
   }
 
   if (!empty($related_links)) {
