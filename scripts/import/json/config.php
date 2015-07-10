@@ -5,10 +5,10 @@
  */
 
 $config['files'] = array(
-  'users' => 'users.json',
+//  'users' => 'users.json',
 //  'nodes' => 'nodes.json',
-//  'makemeeting' => 'makemeeting.json',
- // 'comments' => 'comments.json',
+  'makemeeting' => 'makemeeting.json',
+//  'comments' => 'comments.json',
 );
 
 /**
@@ -121,6 +121,6 @@ $config['transform']['makemeeting'] = array(
 );
 
 // Define directory where the importer can find files from the original site.
-$config['import_files'] = '/var/www/tmp/';
+$config['import_files'] = '/var/tmp/ktc.dk-files/drupal/';
 
 return $config;

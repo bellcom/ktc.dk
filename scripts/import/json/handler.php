@@ -134,7 +134,7 @@ function ktc_import_load_makemeeting($entity) {
  *
  */
 function ktc_import_save_makemeeting($entity) {
-  echo "Saving makemeeting answers is temprorarily disabled";
+  echo "Saving makemeeting answers is temprorarily disabled - edit handler.php\n";
   return;
   unset($entity->answer_id);
   if ($entity->entity_id) {
