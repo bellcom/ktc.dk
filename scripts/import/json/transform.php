@@ -116,6 +116,9 @@ function ktc_import_set_user_name($entity, $prop, $value) {
 function ktc_import_field_fetch_file($entity, $prop, $value, $opt) {
   $value = obj_to_array($value);
 
+  $config = include dirname(__FILE__) . '/config.php';
+  $dir_map = $config['import_files'];
+
   if (!$value) {
     return;
   }
