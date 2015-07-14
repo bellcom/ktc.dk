@@ -39,7 +39,7 @@
 <section class="ktc-user-profile <?php print $classes; ?>">
 
   <!-- Begin - profile photo -->
-  <?php print render($user_profile['user_picture']); ?>
+  <?php print $image = theme('user_picture', array('account' => $account, 'style_name' => 'ktc_profile_image_small'));?>
   <!-- End - profile photo -->
 
   <!-- Begin - profile content -->
