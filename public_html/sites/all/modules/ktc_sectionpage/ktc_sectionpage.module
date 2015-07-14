@@ -142,7 +142,7 @@ function ktc_subterms_filters_ajax_view($voc_id, $parent_id){
   $view->pre_execute();
   $view->execute();
   if (count( $view->result )>0) {
-  $output = '<div class="ktc-aside panel-pane pane-views-panes pane-section-page-filter-panel-pane-3 ktc-aside-filter ktc-aside-filter-2-col ktc-aside-toggle" id="emner-'.$level .'">
+  $output = '<div class="ktc-aside panel-pane pane-views-panes pane-section-page-filter-panel-pane-3 ktc-aside-checkbox-filter" id="emner-'.$level .'">
                 <div class="ktc-aside-heading">
                     <h3 class="ktc-aside-title">Filtrer på faglige emner</h3>
                  </div>        
