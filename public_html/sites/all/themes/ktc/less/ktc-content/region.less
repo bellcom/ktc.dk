@@ -87,7 +87,7 @@
 					> a {
 
 						// Image
-						> img {
+						> img.img-responsive {
 							border-color: #fff;
 						}
 					}
@@ -130,15 +130,20 @@
 		> li {
 			border: 0;
 
-			> a {
-				font-size: @font-size-base;
-				padding: 3px 0;
-				color: #fff;
-
-				&:hover {
+			&,
+			&.active {
+				> a {
+					font-size: @font-size-base;
+					padding: 3px 0;
 					color: #fff;
-					background-color: transparent;
-					text-decoration: underline;
+
+					&:hover,
+					&:focus,
+					&:active {
+						color: #fff;
+						background-color: transparent;
+						text-decoration: underline;
+					}
 				}
 			}
 		}
