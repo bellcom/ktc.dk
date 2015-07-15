@@ -12,6 +12,7 @@ CKEDITOR.editorConfig = function(config) {
   config.justifyClasses = [ 'text-left', 'text-center', 'text-right', 'text-justify' ];
   config.wsc_lang = "da_DK";
   config.scayt_defLan = 'da_DK';
+  config.js.config.scayt_defLan = 'da_DK';
   config.allowedContent = true;
   config.extraAllowedContent = 'style';
 };
