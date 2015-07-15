@@ -10438,11 +10438,11 @@ body.node-type-page .region-content .ktc-content-wide {
 .footer_4 .ktc-user-profile {
   padding: 4px 0;
 }
-.footer_4 .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img,
-.footer_4 .ktc-user-profile.ktc-user-green .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img,
-.footer_4 .ktc-user-profile.ktc-user-yellow .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img,
-.footer_4 .ktc-user-profile.ktc-user-red .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img,
-.footer_4 .ktc-user-profile.ktc-user-blue .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img {
+.footer_4 .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img.img-responsive,
+.footer_4 .ktc-user-profile.ktc-user-green .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img.img-responsive,
+.footer_4 .ktc-user-profile.ktc-user-yellow .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img.img-responsive,
+.footer_4 .ktc-user-profile.ktc-user-red .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img.img-responsive,
+.footer_4 .ktc-user-profile.ktc-user-blue .ktc-user-profile-content-wrapper .ktc-user-profile-photo-container > a > img.img-responsive {
   border-color: #fff;
 }
 .footer_4 .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-job-title,
@@ -10480,12 +10480,18 @@ body.node-type-page .region-content .ktc-content-wide {
 .footer_4 .menu.nav > li {
   border: 0;
 }
-.footer_4 .menu.nav > li > a {
+.footer_4 .menu.nav > li > a,
+.footer_4 .menu.nav > li.active > a {
   font-size: 12px;
   padding: 3px 0;
   color: #fff;
 }
-.footer_4 .menu.nav > li > a:hover {
+.footer_4 .menu.nav > li > a:hover,
+.footer_4 .menu.nav > li.active > a:hover,
+.footer_4 .menu.nav > li > a:focus,
+.footer_4 .menu.nav > li.active > a:focus,
+.footer_4 .menu.nav > li > a:active,
+.footer_4 .menu.nav > li.active > a:active {
   color: #fff;
   background-color: transparent;
   text-decoration: underline;
