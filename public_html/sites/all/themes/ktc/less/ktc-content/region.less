@@ -40,16 +40,20 @@
 
 	// Block
 	.block {
-		padding: 15px;
+		padding-top: 10px;
 
-		// First element
-		&:first-child {
-			padding-left: 0;
-		}
+		@media (min-width:992px) {
+			padding: 15px;
 
-		&:nth-child(2) {
-			border-left: 2px solid lighten(@brand-footergreen, 5%);
-			border-right: 2px solid lighten(@brand-footergreen, 5%);
+			// First element
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:nth-child(2) {
+				border-left: 2px solid lighten(@brand-footergreen, 5%);
+				border-right: 2px solid lighten(@brand-footergreen, 5%);
+			}
 		}
 
 		// Heading

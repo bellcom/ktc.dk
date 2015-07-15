@@ -10412,14 +10412,19 @@ body.node-type-page .region-content .ktc-content-wide {
   position: relative;
 }
 .footer_4 .block {
-  padding: 15px;
+  padding-top: 10px;
 }
-.footer_4 .block:first-child {
-  padding-left: 0;
-}
-.footer_4 .block:nth-child(2) {
-  border-left: 2px solid #16923d;
-  border-right: 2px solid #16923d;
+@media (min-width: 992px) {
+  .footer_4 .block {
+    padding: 15px;
+  }
+  .footer_4 .block:first-child {
+    padding-left: 0;
+  }
+  .footer_4 .block:nth-child(2) {
+    border-left: 2px solid #16923d;
+    border-right: 2px solid #16923d;
+  }
 }
 .footer_4 .block .panel-heading {
   padding: 0;
