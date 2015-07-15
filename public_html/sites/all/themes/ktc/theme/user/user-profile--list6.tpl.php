@@ -49,7 +49,7 @@
             <?php endif ?>
 
             <?php if (isset($personal['job_title'])): ?>
-              <h3 class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></h3>
+              <h4 class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></h4>
             <?php endif ?>
 
             <?php if (isset($work['company'])): ?>

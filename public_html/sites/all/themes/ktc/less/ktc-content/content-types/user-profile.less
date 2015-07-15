@@ -130,11 +130,28 @@
 		.ktc-user-profile-content {
 			vertical-align: top;
 
-			// Job title
 			.ktc-user-profile-content-job-title {
-				font-size: @font-size-h3;
+				font-size: @font-size-h5;
 			}
 		}
+	}
+}
+
+// Photo container
+.ktc-user-profile-photo {
+
+	// Photo
+	img {
+		display: inline-block;
+		height: auto;
+		width: auto;
+		max-width: 48px;
+		max-height: 48px;
+		border-radius: 100%;
+		border-width: @ktc-user-profile-photo-border-width;
+		border-style: solid;
+		background-color: transparent;
+		padding: @ktc-user-profile-photo-border-distance;
 	}
 }
 
@@ -179,6 +196,15 @@
 					color: @text-color;
 				}
 			}
+		}
+	}
+
+	// Photo container
+	.ktc-user-profile-photo {
+
+		// Photo
+		img {
+			border-color: @border-color;
 		}
 	}
 }
