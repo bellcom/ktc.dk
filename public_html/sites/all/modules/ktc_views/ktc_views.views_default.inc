@@ -1109,6 +1109,7 @@ function ktc_views_views_default_views() {
     'mail' => 'mail',
     'field_directe_telefon' => 'field_directe_telefon',
     'field_cell' => 'field_directe_telefon',
+    'nothing' => 'nothing',
     'field_department' => 'field_department',
     'field_account' => 'field_account',
     'field_toplevelaccountname_1' => 'field_toplevelaccountname_1',
@@ -1126,28 +1127,28 @@ function ktc_views_views_default_views() {
       'empty_column' => 0,
     ),
     'field_navn' => array(
-      'sortable' => 1,
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_efternavn' => array(
-      'sortable' => 1,
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'mail' => array(
-      'sortable' => 1,
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_directe_telefon' => array(
-      'sortable' => 1,
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => ' / ',
@@ -1156,6 +1157,11 @@ function ktc_views_views_default_views() {
     'field_cell' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -1221,6 +1227,10 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
   $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['element_type'] = 'div';
+  $handler->display->display_options['fields']['picture']['element_class'] = 'ktc-user-profile-photo';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
   /* Felt: Felt: Fornavn + mellemnavn */
   $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
@@ -1232,6 +1242,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_efternavn']['table'] = 'field_data_field_efternavn';
   $handler->display->display_options['fields']['field_efternavn']['field'] = 'field_efternavn';
   $handler->display->display_options['fields']['field_efternavn']['label'] = 'Navn';
+  $handler->display->display_options['fields']['field_efternavn']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_efternavn']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_efternavn']['alter']['text'] = '[field_navn] [field_efternavn]';
   $handler->display->display_options['fields']['field_efternavn']['empty'] = '[field_navn] [field_efternavn]';
@@ -1240,15 +1251,26 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['exclude'] = TRUE;
   /* Felt: Felt: Direkte telefon */
   $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
   $handler->display->display_options['fields']['field_directe_telefon']['label'] = 'Telefon/Mobil';
+  $handler->display->display_options['fields']['field_directe_telefon']['exclude'] = TRUE;
   /* Felt: Bruger: Mobil */
   $handler->display->display_options['fields']['field_cell']['id'] = 'field_cell';
   $handler->display->display_options['fields']['field_cell']['table'] = 'field_data_field_cell';
   $handler->display->display_options['fields']['field_cell']['field'] = 'field_cell';
+  $handler->display->display_options['fields']['field_cell']['exclude'] = TRUE;
+  /* Felt: Global: Tilpasset tekst */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Navn, e-mail og telefon nr.';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_navn] [field_efternavn]
+[mail]
+[field_directe_telefon] [field_cell] ';
   /* Felt: Bruger: Afdeling */
   $handler->display->display_options['fields']['field_department']['id'] = 'field_department';
   $handler->display->display_options['fields']['field_department']['table'] = 'field_data_field_department';
@@ -1658,6 +1680,10 @@ function ktc_views_views_default_views() {
     t('E-mail'),
     t('Telefon/Mobil'),
     t('Mobil'),
+    t('Navn, e-mail og telefon nr.'),
+    t('[field_navn] [field_efternavn]
+[mail]
+[field_directe_telefon] [field_cell] '),
     t('Afdeling'),
     t('[field_department]'),
     t('Kommune'),

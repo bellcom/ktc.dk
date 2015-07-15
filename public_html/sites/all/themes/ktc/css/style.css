@@ -13173,6 +13173,18 @@ h6 + .ktc-date {
 .ktc-user-profile.ktc-user-profile-list-6 .ktc-user-profile-content {
   vertical-align: top;
 }
+.ktc-user-profile-photo img {
+  display: inline-block;
+  height: auto;
+  width: auto;
+  max-width: 48px;
+  max-height: 48px;
+  border-radius: 100%;
+  border-width: 2px;
+  border-style: solid;
+  background-color: transparent;
+  padding: 3px;
+}
 .ktc-user-profile .ktc-user-profile-photo-container img,
 .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #e9edee;
@@ -13207,6 +13219,9 @@ h6 + .ktc-date {
 .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #2c353a;
 }
+.ktc-user-profile-photo img {
+  border-color: #e9edee;
+}
 .ktc-user-green.ktc-user-profile .ktc-user-profile-photo-container img,
 .ktc-user-green .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #36a145;
@@ -13240,6 +13255,9 @@ h6 + .ktc-date {
 .ktc-user-green.ktc-user-profile .ktc-user-profile-content a:hover,
 .ktc-user-green .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #36a145;
+}
+.ktc-user-green .ktc-user-profile-photo img {
+  border-color: #36a145;
 }
 .ktc-user-green .ktc-user-profile-content a {
   color: #36a145;
@@ -13278,6 +13296,9 @@ h6 + .ktc-date {
 .ktc-user-blue .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #1f9bd7;
 }
+.ktc-user-blue .ktc-user-profile-photo img {
+  border-color: #1f9bd7;
+}
 .ktc-user-gold.ktc-user-profile .ktc-user-profile-photo-container img,
 .ktc-user-gold .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #d3a900;
@@ -13311,6 +13332,9 @@ h6 + .ktc-date {
 .ktc-user-gold.ktc-user-profile .ktc-user-profile-content a:hover,
 .ktc-user-gold .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #d3a900;
+}
+.ktc-user-gold .ktc-user-profile-photo img {
+  border-color: #d3a900;
 }
 .ktc-user-red.ktc-user-profile .ktc-user-profile-photo-container img,
 .ktc-user-red .ktc-user-profile .ktc-user-profile-photo-container img {
@@ -13346,6 +13370,9 @@ h6 + .ktc-date {
 .ktc-user-red .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #e75311;
 }
+.ktc-user-red .ktc-user-profile-photo img {
+  border-color: #e75311;
+}
 .ktc-teaser.ktc-user-profile .ktc-user-profile-photo-container img,
 .ktc-teaser .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #d3a900;
@@ -13379,6 +13406,9 @@ h6 + .ktc-date {
 .ktc-teaser.ktc-user-profile .ktc-user-profile-content a:hover,
 .ktc-teaser .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #d3a900;
+}
+.ktc-teaser .ktc-user-profile-photo img {
+  border-color: #d3a900;
 }
 .ktc-teaser .ktc-user-profile-content a {
   font-size: 14px;
@@ -13502,6 +13532,12 @@ h6 + .ktc-date {
 .ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #e75311;
 }
+.ktc-teaser.ktc-red .ktc-user-profile-photo img,
+.ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile-photo img,
+.ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile-photo img,
+.ktc-teaser.ktc-red .ktc-user-red .ktc-user-profile-photo img {
+  border-color: #e75311;
+}
 .ktc-teaser.ktc-red .ktc-user-profile-content a,
 .ktc-teaser.ktc-red .ktc-user-blue .ktc-user-profile-content a,
 .ktc-teaser.ktc-red .ktc-user-gold .ktc-user-profile-content a,
@@ -13542,6 +13578,9 @@ h6 + .ktc-date {
 .ktc-teaser .ktc-user-green.ktc-user-profile .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #36a145;
 }
+.ktc-teaser .ktc-user-green.ktc-user-profile .ktc-user-profile-photo img {
+  border-color: #36a145;
+}
 .ktc-teaser .ktc-user-green.ktc-user-profile .ktc-user-profile-content a {
   color: #36a145;
 }
@@ -13578,6 +13617,9 @@ h6 + .ktc-date {
 .ktc-teaser .ktc-user-blue.ktc-user-profile.ktc-user-profile .ktc-user-profile-content a:hover,
 .ktc-teaser .ktc-user-blue.ktc-user-profile .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #1f9bd7;
+}
+.ktc-teaser .ktc-user-blue.ktc-user-profile .ktc-user-profile-photo img {
+  border-color: #1f9bd7;
 }
 .ktc-teaser .ktc-user-blue.ktc-user-profile .ktc-user-profile-content a {
   color: #1f9bd7;
@@ -13616,6 +13658,9 @@ h6 + .ktc-date {
 .ktc-teaser .ktc-user-gold.ktc-user-profile .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #d3a900;
 }
+.ktc-teaser .ktc-user-gold.ktc-user-profile .ktc-user-profile-photo img {
+  border-color: #d3a900;
+}
 .ktc-teaser .ktc-user-gold.ktc-user-profile .ktc-user-profile-content a {
   color: #d3a900;
 }
@@ -13652,6 +13697,9 @@ h6 + .ktc-date {
 .ktc-teaser .ktc-user-red.ktc-user-profile.ktc-user-profile .ktc-user-profile-content a:hover,
 .ktc-teaser .ktc-user-red.ktc-user-profile .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #e75311;
+}
+.ktc-teaser .ktc-user-red.ktc-user-profile .ktc-user-profile-photo img {
+  border-color: #e75311;
 }
 .ktc-teaser .ktc-user-red.ktc-user-profile .ktc-user-profile-content a {
   color: #e75311;

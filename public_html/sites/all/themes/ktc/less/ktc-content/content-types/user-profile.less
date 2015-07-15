@@ -133,6 +133,24 @@
 	}
 }
 
+// Photo container
+.ktc-user-profile-photo {
+
+	// Photo
+	img {
+		display: inline-block;
+		height: auto;
+		width: auto;
+		max-width: 48px;
+		max-height: 48px;
+		border-radius: 100%;
+		border-width: @ktc-user-profile-photo-border-width;
+		border-style: solid;
+		background-color: transparent;
+		padding: @ktc-user-profile-photo-border-distance;
+	}
+}
+
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
@@ -174,6 +192,15 @@
 					color: @text-color;
 				}
 			}
+		}
+	}
+
+	// Photo container
+	.ktc-user-profile-photo {
+
+		// Photo
+		img {
+			border-color: @border-color;
 		}
 	}
 }
