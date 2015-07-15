@@ -10414,7 +10414,7 @@ body.node-type-page .region-content .ktc-content-wide {
 .footer_4 .block {
   padding-top: 10px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .footer_4 .block {
     padding: 15px;
   }
