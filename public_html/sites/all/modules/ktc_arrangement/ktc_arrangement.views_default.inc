@@ -374,18 +374,19 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="addtocalendar atc-style-blue btn btn-default">
-        <var class="atc_event">
-            <var class="atc_date_start">[field_arrangement_date]</var>
-            <var class="atc_date_end">[field_arrangement_date_1]</var>
-            <var class="atc_timezone">Europe/Copenhagen</var>
-            <var class="atc_title">[title]</var>
-            <var class="atc_description">[body]</var>
-            <var class="atc_location">[field_arrangement_location] </var>
-            <var class="atc_organizer">[field_news_author]</var>
-            <var class="atc_organizer_email">[forwarding_email]</var>
-        </var>
-    </span>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div title="Tilføj til kalender" class="addthisevent addtocalendar atc-style-blue btn btn-default">
+	    Tilføj til kalender
+	    <span class="start">[field_arrangement_date]</span>
+	    <span class="end">[field_arrangement_date_1]</span>
+	    <span class="timezone">Europe/Copenhagen</span>
+	    <span class="title">[title]</span>
+	    <span class="description">[body]</span>
+	    <span class="location">[field_arrangement_location]</span>
+	    <span class="organizer">[field_news_author]</span>
+	    <span class="organizer_email">[forwarding_email]</span>
+	    <span class="all_day_event">false</span>
+	    <span class="date_format">YYYY-MM-DD</span>
+	</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
