@@ -439,7 +439,7 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
         continue;
       }
 
-      $list .= render(user_view($user, 'list4'));
+      $list .= render(user_view($user, 'list3'));
     }
   }
   if (!$admins) {
