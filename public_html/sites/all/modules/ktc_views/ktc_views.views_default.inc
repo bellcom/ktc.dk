@@ -2170,7 +2170,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'field-items';
+  $handler->display->display_options['style_options']['row_class'] = 'field-items [field_netvaerkstype]';
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
@@ -2204,6 +2204,13 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['created']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Felt: Indhold: Netværkstype */
+  $handler->display->display_options['fields']['field_netvaerkstype']['id'] = 'field_netvaerkstype';
+  $handler->display->display_options['fields']['field_netvaerkstype']['table'] = 'field_data_field_netvaerkstype';
+  $handler->display->display_options['fields']['field_netvaerkstype']['field'] = 'field_netvaerkstype';
+  $handler->display->display_options['fields']['field_netvaerkstype']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['field_netvaerkstype']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_netvaerkstype']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: We pass the user ID as the Entity ID. */
   $handler->display->display_options['arguments']['etid']['id'] = 'etid';
@@ -2538,6 +2545,7 @@ function ktc_views_views_default_views() {
     t('KTC users groups'),
     t('forrige'),
     t('næste'),
+    t('Netværkstype'),
     t('Mine netværk'),
     t('KTC users filter groups'),
     t('<div class="filter-box">
