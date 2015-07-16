@@ -349,7 +349,7 @@ function ktc_preprocess_node(&$vars) {
     }
   }
 
-  
+
 
   // Created time.
   $created_ago = format_interval(time() - $vars['created'], 2, 'da');
