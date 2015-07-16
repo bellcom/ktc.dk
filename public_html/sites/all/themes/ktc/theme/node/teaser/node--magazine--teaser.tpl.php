@@ -1,5 +1,4 @@
 <?php if (! $page): ?>
-<!--  --><?php //xdebug_break(); ?>
   <!-- Begin - teaser large -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser-magazine"<?php print $attributes; ?> date-filter="<?php if (isset($top_parent_term)) print $top_parent_term->tid ?>">
     <div class="row">
