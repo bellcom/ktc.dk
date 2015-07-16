@@ -3,6 +3,12 @@
 ( function ($) {
   $(document).ready(function(){
 
+      // Load masonry
+      $container = $('.masonry-wrapper .view-content');
+      $container.masonry({
+          itemSelector: '.masonry-item'
+      });
+
       // Search facetapi.
       $('ul.facetapi-facetapi-links li').each(function(){
           var li_text = $(this).clone() //clone the element
