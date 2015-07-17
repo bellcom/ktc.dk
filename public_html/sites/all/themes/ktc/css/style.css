@@ -10648,7 +10648,6 @@ fieldset[disabled] .field-type-image .button {
   padding-right: 10px;
 }
 .ktc-header .ktc-header-navigation {
-  min-height: 92px;
   background: url("../images/bg_navigation.jpg") center top;
 }
 .ktc-header .ktc-header-navigation .navbar-nav {
@@ -10661,7 +10660,7 @@ fieldset[disabled] .field-type-image .button {
   text-decoration: underline;
 }
 .ktc-header form button {
-  min-width: auto;
+  min-width: initial;
 }
 .ktc-wrapper {
   position: relative;
@@ -15042,6 +15041,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-box {
   background-color: #fff;
   padding: 7px 15px 10px;
+  margin-bottom: 20px;
 }
 .ktc-padding-top-xs {
   padding-top: 5px;

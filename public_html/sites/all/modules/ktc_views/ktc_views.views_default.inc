@@ -3510,7 +3510,11 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="ktc-filter-button-container"><div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="ktc-filter-button-container">
+<div class="btn btn-default filter-link all" id="filter-all" data-filter="all">
+Alle
+</div>
+</div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Ord i ordforråd: Term ID */
@@ -3831,7 +3835,11 @@ function ktc_views_views_default_views() {
 '),
     t('View panes'),
     t('Term first level with chosen ids'),
-    t('<div class="ktc-filter-button-container"><div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>'),
+    t('<div class="ktc-filter-button-container">
+<div class="btn btn-default filter-link all" id="filter-all" data-filter="all">
+Alle
+</div>
+</div>'),
     t('Term 1. level width'),
     t('<div class="ktc-filter-button-container">
 <div class="btn btn-default filter-link all" id="filter-all" data-filter="all">Alle</div>
