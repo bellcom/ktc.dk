@@ -965,6 +965,8 @@ function teknik_og_miljoe_field_default_field_instances() {
   // Exported field_instance: 'node-artikler-field_artikel_forfattere'
   $field_instances['node-artikler-field_artikel_forfattere'] = array(
     'bundle' => 'artikler',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
@@ -1036,9 +1038,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'create' => array(
           'arrangement' => 0,
           'artikler' => 0,
-          'banner' => 0,
           'document' => 0,
-          'factbox' => 0,
           'forum_post' => 0,
           'group' => 0,
           'hearing' => 0,
@@ -1050,6 +1050,7 @@ function teknik_og_miljoe_field_default_field_instances() {
           'meeting_doodle' => 0,
           'os2web_base_news' => 0,
           'page' => 0,
+          'panel' => 0,
           'product' => 0,
           'webform' => 0,
         ),
@@ -1073,12 +1074,14 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
-        'apply_chosen' => 1,
-        'content_taxonomy_opt_groups' => FALSE,
+        'apply_chosen' => '',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'entityreference_autocomplete',
       'weight' => 27,
     ),
   );

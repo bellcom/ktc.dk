@@ -776,8 +776,8 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
   $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Landing page',
-    'no_blocks' => FALSE,
-    'pipeline' => 'ipe',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
     'css_id' => '',
