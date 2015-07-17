@@ -17,12 +17,13 @@
 <div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
 
     <?php if ($content['right']) { ?>
-        <div class="col-md-8 col-sm-8 col-xs-12 pane-content">
-            <?php print $content['left']; ?>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12 pane-sidebar">
-            <?php print $content['right']; ?>
-        </div>
+      <div class="col-sm-4 col-sm-push-8">
+        <?php print $content['right']; ?>
+      </div>
+
+      <div class="col-sm-8 col-sm-pull-4">
+        <?php print $content['left']; ?>
+      </div>
 
     <?php } else { ?>
         <div class="col-md-12 col-sm-12 col-xs-12 pane-content">
