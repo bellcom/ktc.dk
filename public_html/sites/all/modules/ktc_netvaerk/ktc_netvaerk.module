@@ -584,16 +584,26 @@ function ktc_netvaerk_get_node_group_info($nid) {
 function ktc_netvaerk_check_my_groups($nid) {
   // Yellow is the genernal group.
   $class = 'ktc-gold';
+  $gids = og_get_groups_by_user();
+  $node = node_load($nid);
+  $ktc_green_network_tids = array(1133, 1134, 1155);
 
-  if ($gids = og_get_groups_by_user()) {
-    if (in_array($nid, $gids['node'])) {
-      // Red is my group.
-      $class = 'ktc-red';
+  if (in_array($nid, $gids['node'])) {
+    // Red is my group.
+    $class = 'ktc-red';
+  }
+  else {
+
+    if ($field_network_type = field_get_items('node', $node, 'field_netvaerkstype')) {
+      foreach($ktc_green_network_tids AS $ktc_green_network_tid) {
+        if (in_array($ktc_green_network_tid, $field_network_type[0])) {
+          $class = 'ktc-green';
+        }
+      }
     }
   }
 
   // Check group content visibility.
-  $node = node_load($nid);
   if (is_object($node) && $visible = field_get_items('node', $node, 'og_roles_permissions')) {
     if ($visible[0]['value']) {
       $class .= ' private-content';
