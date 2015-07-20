@@ -9530,41 +9530,51 @@ fieldset[disabled] .field-type-image .button {
 .addthisevent_dropdown .frs:hover {
   color: #999!important;
 }
-.addthisevent_dropdown .ateappleical {
+.addthisevent_dropdown .ateappleical:before {
   background-image: url(../images/sprites.png);
   background-position: 0px -551px;
   width: 16px;
   height: 16px;
 }
-.addthisevent_dropdown .ateoutlook {
+.addthisevent_dropdown .ateoutlook:before {
   background-image: url(../images/sprites.png);
   background-position: 0px -441px;
   width: 16px;
   height: 16px;
 }
-.addthisevent_dropdown .ateoutlookcom {
+.addthisevent_dropdown .ateoutlookcom:before {
   background-image: url(../images/sprites.png);
   background-position: 0px -441px;
   width: 16px;
   height: 16px;
 }
-.addthisevent_dropdown .ategoogle {
+.addthisevent_dropdown .ategoogle:before {
   background-image: url(../images/sprites.png);
   background-position: 0px -507px;
   width: 16px;
   height: 16px;
 }
-.addthisevent_dropdown .ateyahoo {
+.addthisevent_dropdown .ateyahoo:before {
   background-image: url(../images/sprites.png);
   background-position: 0px -419px;
   width: 16px;
   height: 16px;
 }
-.addthisevent_dropdown .atefacebook {
+.addthisevent_dropdown .atefacebook:before {
   background-image: url(../images/sprites.png);
   background-position: 0px -397px;
   width: 16px;
   height: 16px;
+}
+.addthisevent_dropdown .ateappleical:before,
+.addthisevent_dropdown .ateoutlook:before,
+.addthisevent_dropdown .ateoutlookcom:before,
+.addthisevent_dropdown .ategoogle:before,
+.addthisevent_dropdown .ateyahoo:before,
+.addthisevent_dropdown .atefacebook:before {
+  content: "";
+  float: left;
+  margin-right: 5px;
 }
 .addthisevent_dropdown .copyx {
   height: 21px;

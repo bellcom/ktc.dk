@@ -73,27 +73,31 @@ body.node-type-page {
 	.frs:hover 		{
 		color:#999!important;
 	}
-	.ateappleical 	{
-		.sprite(@dropdown-apple-t1);
+	.ateappleical:before 	{ .sprite(@dropdown-apple-t1); }
+	.ateoutlook:before 		{ .sprite(@dropdown-outlook-t1); }
+	.ateoutlookcom:before 	{ .sprite(@dropdown-outlook-t1); }
+	.ategoogle:before 		{ .sprite(@dropdown-google-t1);	}
+	.ateyahoo:before 		{ .sprite(@dropdown-yahoo-t1); }
+	.atefacebook:before 	{ .sprite(@dropdown-facebook-t1); }
+
+	.ateappleical,
+	.ateoutlook,
+	.ateoutlookcom,
+	.ategoogle,
+	.ateyahoo,
+	.atefacebook {
+		&:before {
+			content: "";
+			float: left;
+			margin-right: 5px;
+		}
 	}
-	.ateoutlook 		{
-		.sprite(@dropdown-outlook-t1);
-	}
-	.ateoutlookcom 	{
-		.sprite(@dropdown-outlook-t1);
-	}
-	.ategoogle 		{
-		.sprite(@dropdown-google-t1);
-	}
-	.ateyahoo 		{
-		.sprite(@dropdown-yahoo-t1);
-	}
-	.atefacebook 	{
-		.sprite(@dropdown-facebook-t1);
-	}
-	.copyx 			{
-		height:21px;display:block;position:relative;cursor:default;
-	}
+
+
+
+
+
+	.copyx 			{ height:21px;display:block;position:relative;cursor:default; }
 	.brx 			{
 		height:1px;overflow:hidden;background:#e0e0e0;position:absolute;z-index:100;left:10px;right:10px;top:9px;
 	}
