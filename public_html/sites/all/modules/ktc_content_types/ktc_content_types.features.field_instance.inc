@@ -657,7 +657,7 @@ function ktc_content_types_field_default_field_instances() {
       'max_filesize' => '',
       'max_resolution' => '',
       'media_library_include_in_library' => 0,
-      'min_resolution' => '460x174',
+      'min_resolution' => '470x174',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),

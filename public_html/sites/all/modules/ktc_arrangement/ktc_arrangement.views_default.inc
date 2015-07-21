@@ -255,15 +255,14 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_date']['field'] = 'field_arrangement_date';
   $handler->display->display_options['fields']['field_arrangement_date']['label'] = '';
   $handler->display->display_options['fields']['field_arrangement_date']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_arrangement_date']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_arrangement_date']['alter']['text'] = '[field_arrangement_date-value]';
+  $handler->display->display_options['fields']['field_arrangement_date']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_arrangement_date']['element_type'] = '0';
   $handler->display->display_options['fields']['field_arrangement_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_date']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_arrangement_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_arrangement_date']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_arrangement_date']['settings'] = array(
-    'format_type' => 'oulook',
+    'format_type' => 'outlook',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -332,16 +331,17 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_date_1']['id'] = 'field_arrangement_date_1';
   $handler->display->display_options['fields']['field_arrangement_date_1']['table'] = 'field_data_field_arrangement_date';
   $handler->display->display_options['fields']['field_arrangement_date_1']['field'] = 'field_arrangement_date';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['label'] = '';
   $handler->display->display_options['fields']['field_arrangement_date_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_arrangement_date_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_arrangement_date_1']['alter']['text'] = '[field_arrangement_date_1-value2]';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_arrangement_date_1']['element_type'] = '0';
   $handler->display->display_options['fields']['field_arrangement_date_1']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_date_1']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_arrangement_date_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_arrangement_date_1']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_arrangement_date_1']['settings'] = array(
-    'format_type' => 'oulook',
+    'format_type' => 'outlook',
     'fromto' => 'value2',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -493,18 +493,19 @@ function ktc_arrangement_views_default_views() {
     </span>'),
     t('Alle'),
     t('Content pane'),
-    t('<span class="addtocalendar atc-style-blue btn btn-default">
-        <var class="atc_event">
-            <var class="atc_date_start">[field_arrangement_date]</var>
-            <var class="atc_date_end">[field_arrangement_date_1]</var>
-            <var class="atc_timezone">Europe/Copenhagen</var>
-            <var class="atc_title">[title]</var>
-            <var class="atc_description">[body]</var>
-            <var class="atc_location">[field_arrangement_location] </var>
-            <var class="atc_organizer">[field_news_author]</var>
-            <var class="atc_organizer_email">[forwarding_email]</var>
-        </var>
-    </span>'),
+    t('<div title="Tilføj til kalender" class="addthisevent addtocalendar atc-style-blue btn btn-default">
+	    Tilføj til kalender
+	    <span class="start">[field_arrangement_date]</span>
+	    <span class="end">[field_arrangement_date_1]</span>
+	    <span class="timezone">Europe/Copenhagen</span>
+	    <span class="title">[title]</span>
+	    <span class="description">[body]</span>
+	    <span class="location">[field_arrangement_location]</span>
+	    <span class="organizer">[field_news_author]</span>
+	    <span class="organizer_email">[forwarding_email]</span>
+	    <span class="all_day_event">false</span>
+	    <span class="date_format">YYYY-MM-DD</span>
+	</div>'),
     t('View panes'),
     t('Dato på full-node'),
   );
