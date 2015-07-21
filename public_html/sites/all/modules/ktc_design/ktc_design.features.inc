@@ -56,7 +56,7 @@ function ktc_design_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 460,
+          'width' => 470,
           'height' => 277,
         ),
         'weight' => -9,
