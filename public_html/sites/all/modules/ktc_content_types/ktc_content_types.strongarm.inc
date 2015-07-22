@@ -182,7 +182,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_arrangement';
-  $strongarm->value = '50';
+  $strongarm->value = '150';
   $export['comment_default_per_page_arrangement'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -196,7 +196,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_document';
-  $strongarm->value = '50';
+  $strongarm->value = '150';
   $export['comment_default_per_page_document'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -210,14 +210,14 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_forum_post';
-  $strongarm->value = '50';
+  $strongarm->value = '150';
   $export['comment_default_per_page_forum_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_group';
-  $strongarm->value = '50';
+  $strongarm->value = '150';
   $export['comment_default_per_page_group'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -231,14 +231,14 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_meeting_doodle';
-  $strongarm->value = '50';
+  $strongarm->value = '150';
   $export['comment_default_per_page_meeting_doodle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_os2web_base_news';
-  $strongarm->value = '50';
+  $strongarm->value = '150';
   $export['comment_default_per_page_os2web_base_news'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -273,7 +273,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_arrangement';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['comment_form_location_arrangement'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -308,7 +308,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_group';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['comment_form_location_group'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -329,7 +329,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_os2web_base_news';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['comment_form_location_os2web_base_news'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -357,7 +357,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_group';
-  $strongarm->value = '0';
+  $strongarm->value = '2';
   $export['comment_group'] = $strongarm;
 
   $strongarm = new stdClass();
