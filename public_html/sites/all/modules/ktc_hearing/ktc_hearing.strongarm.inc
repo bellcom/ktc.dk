@@ -49,7 +49,7 @@ function ktc_hearing_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_hearing_responses';
-  $strongarm->value = '50';
+  $strongarm->value = '150';
   $export['comment_default_per_page_hearing_responses'] = $strongarm;
 
   $strongarm = new stdClass();

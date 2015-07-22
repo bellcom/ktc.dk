@@ -23,8 +23,8 @@ function ktc_content_types_field_group_info() {
     'label' => 'Afstemning',
     'weight' => '0',
     'children' => array(
-      0 => 'group_indhold',
-      1 => 'group_doodle',
+      0 => 'group_doodle',
+      1 => 'group_indhold',
       2 => 'group_netvaerk',
     ),
     'format_type' => 'tabs',
@@ -661,7 +661,7 @@ For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_afstemning';
   $field_group->data = array(
-    'label' => 'Publicering',
+    'label' => 'Publicering *',
     'weight' => '14',
     'children' => array(
       0 => 'og_group_ref',
@@ -671,7 +671,7 @@ For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Publicering',
+      'label' => 'Publicering *',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-doodle field-group-tab',
