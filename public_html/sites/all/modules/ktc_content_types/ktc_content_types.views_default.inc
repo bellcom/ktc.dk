@@ -331,11 +331,10 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_event_seats']['table'] = 'field_data_field_event_seats';
   $handler->display->display_options['fields']['field_event_seats']['field'] = 'field_event_seats';
   $handler->display->display_options['fields']['field_event_seats']['label'] = 'Pladser';
-  $handler->display->display_options['fields']['field_event_seats']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['field_event_seats']['element_class'] = 'ktc-node-title-light';
-  $handler->display->display_options['fields']['field_event_seats']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['field_event_seats']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_event_seats']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_event_seats']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_event_seats']['element_wrapper_class'] = 'col-md-4 col-sm-6 col-xs-6';
+  $handler->display->display_options['fields']['field_event_seats']['element_wrapper_class'] = 'col-md-3 col-sm-6 col-xs-6';
   $handler->display->display_options['fields']['field_event_seats']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_event_seats']['empty'] = 'Ingen grænse';
   $handler->display->display_options['fields']['field_event_seats']['settings'] = array(
@@ -346,16 +345,33 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_date']['id'] = 'field_arrangement_date';
   $handler->display->display_options['fields']['field_arrangement_date']['table'] = 'field_data_field_arrangement_date';
   $handler->display->display_options['fields']['field_arrangement_date']['field'] = 'field_arrangement_date';
-  $handler->display->display_options['fields']['field_arrangement_date']['label'] = 'Tid';
-  $handler->display->display_options['fields']['field_arrangement_date']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['field_arrangement_date']['element_class'] = 'ktc-node-title-light';
-  $handler->display->display_options['fields']['field_arrangement_date']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['field_arrangement_date']['label'] = 'Start';
+  $handler->display->display_options['fields']['field_arrangement_date']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_arrangement_date']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_arrangement_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_date']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_arrangement_date']['element_wrapper_class'] = 'col-md-4 col-sm-6 col-xs-6';
+  $handler->display->display_options['fields']['field_arrangement_date']['element_wrapper_class'] = 'col-md-3 col-sm-6 col-xs-6';
   $handler->display->display_options['fields']['field_arrangement_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_arrangement_date']['settings'] = array(
-    'format_type' => 'klokkeslet',
-    'fromto' => 'both',
+    'format_type' => 'short',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Felt: Indhold: Arrangementets dato */
+  $handler->display->display_options['fields']['field_arrangement_date_1']['id'] = 'field_arrangement_date_1';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['table'] = 'field_data_field_arrangement_date';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['field'] = 'field_arrangement_date';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['label'] = 'Slut';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_date_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['element_wrapper_class'] = 'col-md-3 col-sm-6 col-xs-6';
+  $handler->display->display_options['fields']['field_arrangement_date_1']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value2',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
@@ -365,11 +381,10 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_arrangement_price']['table'] = 'field_data_field_arrangement_price';
   $handler->display->display_options['fields']['field_arrangement_price']['field'] = 'field_arrangement_price';
   $handler->display->display_options['fields']['field_arrangement_price']['label'] = 'Pris';
-  $handler->display->display_options['fields']['field_arrangement_price']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['field_arrangement_price']['element_class'] = 'ktc-node-title-light';
-  $handler->display->display_options['fields']['field_arrangement_price']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['field_arrangement_price']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_arrangement_price']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_arrangement_price']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_arrangement_price']['element_wrapper_class'] = 'col-md-4 col-xs-6';
+  $handler->display->display_options['fields']['field_arrangement_price']['element_wrapper_class'] = 'col-md-3 col-xs-6';
   $handler->display->display_options['fields']['field_arrangement_price']['element_default_classes'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'KTC';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -402,7 +417,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Svarfrist */
+  /* Felt: Indhold: Tilmeldingsfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
@@ -822,10 +837,11 @@ function ktc_content_types_views_default_views() {
     t('/[close_signup_limit]'),
     t('Pladser'),
     t('Ingen grænse'),
-    t('Tid'),
+    t('Start'),
+    t('Slut'),
     t('Pris'),
     t('Målgruppe'),
-    t('Svarfrist'),
+    t('Tilmeldingsfrist'),
     t('Kort og adresse'),
     t('Adresse'),
     t('[field_arrangement_location]<br />
