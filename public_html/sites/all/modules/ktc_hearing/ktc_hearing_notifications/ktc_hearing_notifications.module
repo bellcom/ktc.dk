@@ -196,7 +196,7 @@ function ktc_hearing_notifications_notify_users($op, $hearing) {
           $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
           $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
 
-          //drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
+          drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
         }
       }
     }
