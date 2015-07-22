@@ -106,7 +106,6 @@ function _ktc_signup_block_get_cancel_link($signup) {
   $node = node_load($signup->nid);
 
   // Check permissions.
-
   $admin = _signup_menu_access($node, 'admin');
   $own = !empty($user->uid) && $user->uid == $signup->uid;
   $can_cancel = $admin || (user_access('cancel own signups') && $own);
@@ -128,9 +127,21 @@ function _ktc_signup_block_get_cancel_link($signup) {
  */
 function _ktc_signup_block_get_signup_link($node) {
   $output = '';
-  module_load_include('inc', 'signup', 'includes/signup_form');
-  $form = drupal_get_form('signup_form', $node, 'auth', FALSE);
-  $output .= drupal_render($form);
+
+  if ($field_registration_deadline = field_get_items('node', $node, 'field_registration_deadline')) {
+    $deadline = new DateTime($field_registration_deadline[0]['value']);
+    $now = new DateTime('now');
+  }
+
+  if ($deadline && $now && ($now > $deadline)) {
+    $output = '<p>' . t('Fristen for tilmelding til dette arrangement er overskredet. Kontakt evt. arrangøren for "last minute" tilmelding.') . '</p>';
+  }
+  else {
+    module_load_include('inc', 'signup', 'includes/signup_form');
+    $form = drupal_get_form('signup_form', $node, 'auth', FALSE);
+    $output .= drupal_render($form);
+  }
+
   return $output;
 }
 
