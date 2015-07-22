@@ -9837,8 +9837,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
-    'label' => 'Gruppe/Netværk',
-    'required' => 0,
+    'label' => 'Gruppe/Netværk *',
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
@@ -12830,6 +12830,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Gammel gid');
   t('Gammel nid');
   t('Gruppe/Netværk');
+  t('Gruppe/Netværk *');
   t('Grupper / Netværk');
   t('Her kan du indtastse stikord til din diskussion (tags)');
   t('Her kan du indtastse stikord til dit dokument (tags)');
