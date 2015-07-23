@@ -137,7 +137,7 @@ function ktc_hearing_theme() {
  */
 function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
   // Don't redirect hearing response node form submits.
-  if (strstr($form_id, '_node_form') && strstr($form_id, 'hearing')) {
+  if ($form_id != 'hearing_node_form' && strstr($form_id, '_node_form') && strstr($form_id, 'hearing')) {
     $form['actions']['submit']['#submit'][] = '_ktc_hearings_node_no_redirect';
   }
 
