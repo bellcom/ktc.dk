@@ -131,6 +131,18 @@ function ktc_hearing_attendees_get_group_members($id = NULL) {
 
       $account = user_load($member_uid);
 
+      // TODO@ should be implemented more GUI alike
+      $disallowed_user_rids = array(
+        21, // Ansat i KL
+      );
+
+      // Skip some users by role.
+      foreach($disallowed_user_rids AS $disallowed_user_rid) {
+        if (array_key_exists($disallowed_user_rid, $account->roles)) {
+          continue;
+        }
+      }
+
       $member_value = $account->name . ' (' . $member_uid . ')';
 
       $user_grouprole_tid = FALSE;
