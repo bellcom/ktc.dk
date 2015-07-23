@@ -85,7 +85,6 @@
 
   <!-- Begin - heading -->
   <?php if (isset($network_groups)): ?>
-    <?php xdebug_break(); ?>
     <?php foreach ($network_groups AS $network_group): ?>
       <div class="ktc-list-display-heading">
         <?php print l($network_group->title, 'node/' . $network_group->nid, array('attributes' => array('class' => array('ktc-list-display-title')))); ?>
