@@ -15,7 +15,7 @@
       <div class="created"><?php print date('d. F Y', $hearing->created); ?></div>
       <h5 class="field-content"><?php print l($hearing->title, 'node/' . $hearing->nid); ?></h5>
 
-      <span class="field-content">Af <?php print l($hearing->user_mail, 'user/' . $hearing->uid, array('attributes' => array('class' => array('username'), 'title' => 'Vis brugerprofil'))); ?></span> 
+      <span class="field-content">Af <?php print l($hearing->user_mail, 'user/' . $hearing->uid, array('attributes' => array('class' => array('username'), 'title' => 'Vis brugerprofil'))); ?></span>
     </div>
     <?php endforeach; ?>
   <?php else: ?>
