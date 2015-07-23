@@ -1268,8 +1268,8 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'Navn, e-mail og telefon nr.';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_navn] [field_efternavn]
-[mail]
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_navn] [field_efternavn]<br/>
+[mail]<br/>
 [field_directe_telefon] [field_cell] ';
   /* Felt: Bruger: Afdeling */
   $handler->display->display_options['fields']['field_department']['id'] = 'field_department';
@@ -1681,8 +1681,8 @@ function ktc_views_views_default_views() {
     t('Telefon/Mobil'),
     t('Mobil'),
     t('Navn, e-mail og telefon nr.'),
-    t('[field_navn] [field_efternavn]
-[mail]
+    t('[field_navn] [field_efternavn]<br/>
+[mail]<br/>
 [field_directe_telefon] [field_cell] '),
     t('Afdeling'),
     t('[field_department]'),
