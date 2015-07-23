@@ -9,10 +9,14 @@ $i=0;
 ?>
 <!-- block-hearing-unresponded.tpl.php -->
 <div class="view-content">
-  <?php if (!empty($unresponded_hearings)): ?>
+  <?php if ( ! empty($unresponded_hearings)): ?>
     <?php foreach($unresponded_hearings as $hearing): ?>
       <?php if($i < 4): ?>
-        <?php print $rendered_teaser = render(node_view(node_load($hearing->nid), 'listevisning')); ?>
+        <?php
+
+        $node = node_view($hearing, 'listevisning');
+        print render($node);
+        ?>
       <?php endif; ?>
     <?php $i++; endforeach; ?>
   <?php else: ?>

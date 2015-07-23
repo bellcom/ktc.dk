@@ -18,7 +18,7 @@ global $base_url;
     <?php if (isset($network_groups)): ?>
       <?php foreach ($network_groups AS $network_group): ?>
         <div class="ktc-teaser-heading">
-          <?php print l($network_group->title, 'node/' . $network_group->nid, array('attributes' => array('class' => 'ktc-teaser-title'))); ?>
+          <?php print l($network_group->title, 'node/' . $network_group->nid, array('attributes' => array('class' => array('ktc-teaser-title')))); ?>
         </div>
       <?php endforeach ?>
     <?php endif ?>
