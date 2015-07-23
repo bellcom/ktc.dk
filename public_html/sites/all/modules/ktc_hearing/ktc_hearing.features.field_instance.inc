@@ -183,7 +183,7 @@ function ktc_hearing_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -596,7 +596,7 @@ function ktc_hearing_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1965,7 +1965,9 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => 1,
+        'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_opt_groups' => 0,
+        'size' => 60,
       ),
       'type' => 'options_select',
       'weight' => 23,
