@@ -1,5 +1,5 @@
 <?php if (! $page): ?>
-  <!-- Begin - teaser large -->
+  <!-- Begin - teaser magazine -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser-magazine"<?php print $attributes; ?> date-filter="<?php if (isset($top_parent_term)) print $top_parent_term->tid ?>">
     <div class="row">
 
@@ -73,7 +73,7 @@
         <?php endif; ?>
 
         <div class="text-right">
-          <a class="btn btn-primary" href="#"><?php print t('Se alle artikler for denne udgave'); ?></a>
+          <a class="btn btn-primary" href="node/<?php print $nid; ?>"><?php print t('Se alle artikler for denne udgave'); ?></a>
         </div>
 
       </div>
@@ -81,5 +81,5 @@
 
     </div>
   </article>
-  <!-- End - teaser large -->
+  <!-- End - teaser magazine -->
 <?php endif; ?>
