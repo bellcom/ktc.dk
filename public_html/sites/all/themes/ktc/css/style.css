@@ -5639,6 +5639,10 @@ button.close {
 .ktc-user-login .form-actions:after,
 .ktc-aside .ktc-aside-body:before,
 .ktc-aside .ktc-aside-body:after,
+.ktc-teaser-magazine .ktc-teaser-artikler:before,
+.ktc-teaser-magazine .ktc-teaser-artikler:after,
+.ktc-list-display-artikler:before,
+.ktc-list-display-artikler:after,
 .ktc-article-section.ktc-article-section-type-afsnitb:before,
 .ktc-article-section.ktc-article-section-type-afsnitb:after,
 .ktc-article-section.ktc-article-section-type-billedserie .photoswipe-gallery:before,
@@ -5686,6 +5690,8 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .modal-footer:after,
 .ktc-user-login .form-actions:after,
 .ktc-aside .ktc-aside-body:after,
+.ktc-teaser-magazine .ktc-teaser-artikler:after,
+.ktc-list-display-artikler:after,
 .ktc-article-section.ktc-article-section-type-afsnitb:after,
 .ktc-article-section.ktc-article-section-type-billedserie .photoswipe-gallery:after,
 .ktc-gallery-wrapper:after,
@@ -9774,6 +9780,9 @@ fieldset[disabled] .field-type-image .button {
 .ktc-aside-gold .ktc-aside-heading {
   background-color: #d3a900;
 }
+.ktc-aside-blue .ktc-aside-heading {
+  background-color: #1f9bd7;
+}
 .ktc-aside-dark {
   position: relative;
   background-color: #222b2f;
@@ -10047,11 +10056,37 @@ fieldset[disabled] .field-type-image .button {
 .ktc-teaser-magazine {
   margin-bottom: 20px;
 }
-.ktc-teaser-magazine .ktc-box {
-  margin-bottom: 20px;
+.ktc-teaser-magazine.ktc-aside .ktc-aside-body .row {
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .ktc-teaser-magazine .ktc-teaser-magazine-banner {
   margin-bottom: 20px;
+}
+.ktc-teaser-magazine .ktc-teaser-magazine-banner:last-child {
+  margin-bottom: 0;
+}
+.ktc-teaser-magazine .ktc-teaser-magazine-top-artikel {
+  border-bottom: 2px solid #d5ddde;
+  margin-bottom: 18px;
+}
+.ktc-teaser-magazine .ktc-teaser-magazine-leder {
+  border-top: 2px solid #d5ddde;
+  margin-top: 18px;
+  padding-top: 18px;
+}
+.ktc-teaser-magazine .ktc-teaser-artikler {
+  margin-bottom: 18px;
+}
+.ktc-teaser-magazine .ktc-teaser-artikler .ktc-teaser-artikler-image {
+  float: right;
+  margin-left: 15px;
+}
+.ktc-teaser-magazine .ktc-teaser-artikler .ktc-date {
+  margin-bottom: 4px;
+}
+.ktc-teaser-magazine .ktc-teaser-magazine-buttons {
+  padding-top: 10px;
 }
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
@@ -10944,6 +10979,19 @@ fieldset[disabled] .field-type-image .button {
 }
 .ktc-list-display .ktc-list-display-body .ktc-list-display-body-content p {
   margin-bottom: 3px;
+}
+.ktc-list-display-artikler {
+  margin-bottom: 15px;
+}
+.ktc-list-display-artikler .ktc-list-display-headline {
+  font-size: 15px;
+}
+.ktc-list-display-artikler .ktc-date {
+  font-size: 10px;
+  margin-bottom: 1px;
+}
+.ktc-list-display-artikler .ktc-list-display-author {
+  margin-top: 3px;
 }
 .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title,
 .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title {
