@@ -551,6 +551,74 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_coforfattere-field_employee'
+  $field_instances['field_collection_item-field_coforfattere-field_employee'] = array(
+    'bundle' => 'field_coforfattere',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_employee',
+    'label' => 'Ansættelsessted',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_coforfattere-field_foto_af_forfatter'
   $field_instances['field_collection_item-field_coforfattere-field_foto_af_forfatter'] = array(
     'bundle' => 'field_coforfattere',
@@ -2423,6 +2491,7 @@ function teknik_og_miljoe_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Angiv hvem der skal stå som forfatter af artiklen. Det er muligt at tilføje flere forfattere.');
   t('Annonce');
+  t('Ansættelsessted');
   t('Antal anslag - længde på artikel');
   t('Artikel Afsnit');
   t('Artikel status');
