@@ -4,10 +4,10 @@
   $(document).ready(function(){
 
       // Load masonry
-      $container = $('.masonry-wrapper .view-content');
-      $container.masonry({
-          itemSelector: '.masonry-item'
-      });
+      //$container = $('.masonry-wrapper .view-content');
+      //$container.masonry({
+      //    itemSelector: '.masonry-item'
+      //});
 
       // Search facetapi.
       $('ul.facetapi-facetapi-links li').each(function(){
@@ -216,7 +216,7 @@
       $container.append('<div class="panel-pane col-md-1"></div>');
       $container.masonry({
         itemSelector: '.panel-pane',
-        columnWidth: '.col-md-1',
+        columnWidth: '.col-md-1'
       });
     });
 
@@ -226,7 +226,7 @@
     $search_container.imagesLoaded(function(){
       $search_container.masonry({
         itemSelector: '.select-element',
-        columnWidth: '.select-element',
+        columnWidth: '.select-element'
       });
     });
 

@@ -82,6 +82,14 @@ function teknik_og_miljoe_views_default_views() {
     'image_style' => 'ktc_profile_image_small',
     'image_link' => '',
   );
+  /* Felt: Field collection item: Ansættelsessted */
+  $handler->display->display_options['fields']['field_employee']['id'] = 'field_employee';
+  $handler->display->display_options['fields']['field_employee']['table'] = 'field_data_field_employee';
+  $handler->display->display_options['fields']['field_employee']['field'] = 'field_employee';
+  $handler->display->display_options['fields']['field_employee']['label'] = '';
+  $handler->display->display_options['fields']['field_employee']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_employee']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_employee']['type'] = 'text_plain';
   /* Felt: Felt: Stilling/titel */
   $handler->display->display_options['fields']['field_jobposition']['id'] = 'field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['table'] = 'field_data_field_jobposition';
@@ -119,7 +127,7 @@ function teknik_og_miljoe_views_default_views() {
 
         <!-- Begin - profile content -->
         <div class="ktc-user-profile-content">
-
+              <p class="ktc-user-profile-content-employer">[field_employee]</p>
               <p class="ktc-user-profile-content-job-title">[field_jobposition]</p>
               <p class="ktc-user-profile-content-name">[field_navn] [field_efternavn]</p>
 
@@ -188,7 +196,7 @@ function teknik_og_miljoe_views_default_views() {
 
         <!-- Begin - profile content -->
         <div class="ktc-user-profile-content">
-
+              <p class="ktc-user-profile-content-employer">[field_employee]</p>
               <p class="ktc-user-profile-content-job-title">[field_jobposition]</p>
               <p class="ktc-user-profile-content-name">[field_navn] [field_efternavn]</p>
 

@@ -7,8 +7,8 @@
     var button_active = "btn-primary active";
     var button_normal = "btn-default";
     var $container = $('#section-page-with-filter').find('.view-content:first');
-    
-    var path = window.location.href.split('/');      
+
+    var path = window.location.href.split('/');
     var type = path[path.length-1];
     if (type == 'teknikmiljoe'){
         $('.filter-box #magazine').addClass(button_active);
@@ -19,9 +19,9 @@
         $('.filter-box #filter-all').addClass(button_active);
         $('.filter-box #filter-all').removeClass(button_normal);
     }
-    $('body').on('click', '.filter-link', function(event){        
+    $('body').on('click', '.filter-link', function(event){
       $container = $('#section-page-with-filter').find('.view-content:first');
-  
+
       // Change the buttons class.
       if (!$(this).hasClass(button_active)) {
         $(this).addClass(button_active);
@@ -34,7 +34,7 @@
             $('.filter-box').find('.filter-link').not(this).addClass(button_normal);
             $('.filter-box #filter-all').addClass(button_active);
             $('.filter-box #filter-all').removeClass(button_normal);
-          }    
+          }
         }
         else if ($(this).attr('id') == 'filter-my') {
           $(this).closest('.filter-box').find('.filter-link').not(this).removeClass(button_active);
@@ -49,7 +49,7 @@
           $(this).closest('.filter-box').find('#filter-all').addClass(button_normal);
           $(this).closest('.filter-box').find('#filter-my').removeClass(button_active);
           $(this).closest('.filter-box').find('#filter-my').addClass(button_normal);
-          
+
         }
       }
       else  {
@@ -65,7 +65,7 @@
         }
 
       }
-      
+
       if ($(this).closest('.panel-pane').attr('id').indexOf("emner") >= 0) {
        var parent_term_ids = '';
             if ($(this).attr('id') != 'filter-all') {
@@ -77,7 +77,7 @@
                else {
                    jQuery.get('ajax/pane/subterms/view/4/' + parent_term_ids, function(data) {
                        dataObj=$.parseHTML(data);
-                       
+
                          if ($('.pane-sidebar #' + $(dataObj).attr('id')).length > 0)
                            $('.pane-sidebar #' + $(dataObj).attr('id')).replaceWith(data)
                          else
@@ -88,14 +88,14 @@
                 else {
                     $(this).closest('.pane-views-panes').nextAll().remove();
                 }
-            } 
+            }
         // Get all the filter values.
       var filter_value = check_filter_value();
-        
-        
-   
+
+
+
         var activeFilterBox = $(this).closest('.panel-pane');
-    
+
         //selecting all passive filters
         $('.filter-box').closest('.panel-pane').each(function(index, passiveFilterBox){
             if ($(passiveFilterBox).attr('id') != $(activeFilterBox).attr('id')) {
@@ -104,7 +104,7 @@
                     //hiding or showing emner fields
                     jQuery.get("/netvaerk/emner/" + filter_value[0] + "/" + filter_value[1] + "/" +  filter_value[4], function(data){
                         console.log(data);
-    
+
                         $(passiveFilterBox).find('.filter-link').each(function(index, passivefilterLink){
                             if ($.inArray($(passivefilterLink).data('filter'), data) == -1) {
                                 $(passivefilterLink).removeClass('btn-default');
@@ -112,7 +112,7 @@
                                 $(passivefilterLink).addClass('btn-default');
                             }
                         });
-    
+
                     });
                 }
             }
@@ -120,7 +120,7 @@
 
       var path = window.location.href.split('/');
       var type = path[path.length-1];
-     
+
       // Get the group id.
       var gid = $('#content_id').find('.pane-content p').text();
       if (gid == '') {
@@ -131,16 +131,16 @@
       }
        if (type == 'teknikmiljoe') {
            if (filter_value[0].indexOf("artikler")>=0 || filter_value[0].indexOf("all")>=0)
-               $('#term_type').show();           
+               $('#term_type').show();
            else
-               $('#term_type').hide();  
+               $('#term_type').hide();
            if (filter_value[0].indexOf("magazine")>=0 || filter_value[0].indexOf("all")>=0)
-               $('#magazine-date-filter').show();           
+               $('#magazine-date-filter').show();
            else
-               $('#magazine-date-filter').hide();  
+               $('#magazine-date-filter').hide();
        }
       var link = '/ajax/' + type +'/view/'+filter_value[0]+'/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4]+'/'+gid;
-      
+
       // Netvaerk section page my groups and all groups filter.
       if (type == 'netvaerk' && (filter_value[1] != 'all,' || filter_value[2] != 'all,' || filter_value[3] != 'all,' || filter_value[4] != 'all,')) {
         var link_2 = '/all_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4]+'/all,';
@@ -153,7 +153,7 @@
           link_2 = '/all_groups/'+filter_value[1]+'/'+filter_value[2]+'/'+filter_value[3]+'/'+filter_value[4]+'/newest';
         }
 
-        jQuery.get(link_2, function(data){          
+        jQuery.get(link_2, function(data){
           block.find('.pane-content').html(data);
           add_pager_ajax();
         });
@@ -172,8 +172,8 @@
         var hearing_filter_value = check_hearing_extra_filter_value();
         link = '/ajax/hoeringer/view/hearing/'+filter_value[1]+'/'+filter_value[2]+'/'+hearing_filter_value[0]+'/'+hearing_filter_value[1]+'/'+hearing_filter_value[2];
       }
-      
-      if (type == 'teknikmiljoe') {  
+
+      if (type == 'teknikmiljoe') {
           var magazine_date_filter_value = check_magazine_date_filter_value();
           link = '/ajax/' + type +'/view/'+filter_value[0]+'/'+filter_value[1]+'/'+magazine_date_filter_value[0]+'/'+magazine_date_filter_value[1]+'/'+filter_value[4]+'/'+gid;
       }
@@ -398,12 +398,12 @@
                  level = filter_id.substr(filter_id.indexOf('-')+1);
            if (!emner_arr[level])
                 emner_arr[level] = Array();
-           if ($(this).attr('data-filter')!='all') 
+           if ($(this).attr('data-filter')!='all')
             emner_arr[level].push($(this).attr('data-filter'));
-           
+
          // emner += $(this).attr('data-filter') + ',';
         }
-   
+
         if (filter_id == 'tags') {
           tags += $(this).attr('data-filter') + ',';
         }
@@ -413,7 +413,7 @@
         }
       });
     });
-    if (emner_arr.length)    
+    if (emner_arr.length)
         emner = emner_arr[emner_arr.length - 1].join(',');
 
     if (regioner == '') {
@@ -491,17 +491,17 @@
 
       $(this).find('.btn-primary').each(function() {
         var filter_id = $(this).attr('id');
-        
+
 
         if (filter_id == 'filter-year') {
           year += $(this).attr('data-filter') + ',';
         }
-        
+
          if (filter_id == 'filter-month') {
           month += $(this).attr('data-filter') + ',';
         }
 
-        
+
 
       });
     });
@@ -509,7 +509,7 @@
     if (month == '') {
       month = 'all';
     }
-   
+
     if (year == '') {
       year = 'all';
     }

@@ -23,7 +23,7 @@ function ktc_subscription_ui_menu() {
   );
 
   $items['user/%user/abonnementer'] = array(
-    'title' => 'Mine abonnementer',
+    'title' => 'Abonnementer',
     'description' => 'Håndter abonnementer',
     'access callback' => 'user_is_logged_in',
     'page arguments' => array(1),
@@ -32,7 +32,7 @@ function ktc_subscription_ui_menu() {
   );
 
   $items['user/%user/abonnementer/%/edit'] = array(
-    'title' => 'Mine abonnementer',
+    'title' => 'Abonnementer',
     'description' => 'Håndter abonnementer',
     'access callback' => 'user_is_logged_in',
     'page callback' => 'drupal_get_form',
@@ -40,7 +40,7 @@ function ktc_subscription_ui_menu() {
   );
 
   $items['user/%user/abonnementer/%/add'] = array(
-    'title' => 'Mine abonnementer',
+    'title' => 'Abonnementer',
     'description' => 'Håndter abonnementer',
     'access callback' => 'user_is_logged_in',
     'page callback' => 'drupal_get_form',
@@ -48,7 +48,7 @@ function ktc_subscription_ui_menu() {
   );
 
   $items['user/%user/abonnementer/%/cancel'] = array(
-    'title' => 'Mine abonnementer',
+    'title' => 'Abonnementer',
     'description' => 'Håndter abonnementer',
     'access callback' => 'user_is_logged_in',
     'page callback' => 'drupal_get_form',

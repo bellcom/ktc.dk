@@ -880,6 +880,9 @@ function ktc_content_types_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'listevisningboks' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -903,7 +906,7 @@ function ktc_content_types_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '12',
+            'weight' => '13',
             'visible' => FALSE,
           ),
           'teasercomments' => array(
