@@ -94,9 +94,7 @@
   <?php endif; ?>
 
   <p class="ktc-date"><?php print $published_at; ?></p>
-
   <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-
   <p class="ktc-list-display-author"><?php print t('Forfatter:') . ' ' . $name; ?></p>
 
 </article>

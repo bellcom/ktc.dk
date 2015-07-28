@@ -6,13 +6,13 @@ global $base_url;
   <!-- Begin - teaser -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser"<?php print $attributes; ?>>
 
-    <!-- Begin - full width image -->
-    <?php if (isset($content['field_image'])) : ?>
+    <?php if (isset($content['field_os2web_base_field_lead_img'])): ?>
+      <!-- Begin - full width image -->
       <div class="ktc-full-width-image">
-        <?php print render($content['field_image']); ?>
+        <?php print render($content['field_os2web_base_field_lead_img']); ?>
       </div>
+      <!-- End - full width image -->
     <?php endif; ?>
-    <!-- End - full width image -->
 
     <!-- Begin - heading -->
     <?php if (isset($network_groups)): ?>
@@ -30,14 +30,6 @@ global $base_url;
         <a href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a>
       </h4>
 
-      <?php if (isset($content['field_os2web_base_field_lead_img'])): ?>
-        <!-- Begin - image -->
-        <div class="pull-right">
-          <?php print render($content['field_os2web_base_field_lead_img']); ?>
-        </div>
-        <!-- End - image -->
-      <?php endif; ?>
-
       <?php if (isset($content['field_short'])): ?>
         <!-- Begin - manchet -->
         <p><?php print render($content['field_short']); ?></p>
@@ -46,10 +38,10 @@ global $base_url;
 
       <div class="clearfix"></div>
 
-      <?php if ($user_object): ?>
-        <?php print $profile = theme('user_profile', array('account'          => $user_object,
-                                                           'theme_suggestion' => 'list3'
-        )); ?>
+      <?php if (isset($content['field_artikel_forfattere'])): ?>
+        <!-- Begin - authors -->
+        <?php print render($content['field_artikel_forfattere']); ?>
+        <!-- End - authors -->
       <?php endif; ?>
 
     </div>

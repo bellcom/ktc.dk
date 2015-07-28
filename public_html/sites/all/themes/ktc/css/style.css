@@ -8220,6 +8220,11 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .magasinflow .faerdig .inner {
   background-color: #b0dfb7;
 }
+.magasinflow .views-row-first {
+  width: 100%;
+  display: block;
+  float: none;
+}
 .magasinflow .views-row-first::after {
   clear: both;
 }
@@ -10983,6 +10988,7 @@ fieldset[disabled] .field-type-image .button {
 }
 .ktc-list-display-artikler .ktc-list-display-headline {
   font-size: 15px;
+  margin: 2px 0;
 }
 .ktc-list-display-artikler .ktc-date {
   font-size: 10px;

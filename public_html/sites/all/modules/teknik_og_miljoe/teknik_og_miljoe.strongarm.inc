@@ -112,7 +112,7 @@ function teknik_og_miljoe_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '4',
+            'weight' => '6',
             'visible' => FALSE,
           ),
           'listevisning' => array(
