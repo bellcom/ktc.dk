@@ -12402,7 +12402,6 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
 .calendar-calendar tr td.today span,
 .calendar-calendar tr td.today a {
   color: #ffffff;
-  font-style: italic;
 }
 .calendar-calendar tr td.has-events {
   background-color: #36a145;
