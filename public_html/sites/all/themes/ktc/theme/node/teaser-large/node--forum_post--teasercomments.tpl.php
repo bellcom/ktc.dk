@@ -34,6 +34,7 @@ global $base_url;
           <?php endif ?>
         </div>
       </div>
+      <div class="clearfix"></div>
 
     </div>
 
