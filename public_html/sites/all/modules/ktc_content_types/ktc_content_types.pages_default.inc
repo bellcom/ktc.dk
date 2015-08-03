@@ -1167,7 +1167,7 @@ function ktc_content_types_default_page_manager_handlers() {
       'type' => 'primary',
       'id' => 'edit-tabs',
       'override_title' => 1,
-      'override_title_text' => 'Faner',
+      'override_title_text' => 'Værktøjer',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1800,7 +1800,7 @@ function ktc_content_types_default_page_manager_handlers() {
       'type' => 'primary',
       'id' => 'edit-tabs',
       'override_title' => 1,
-      'override_title_text' => 'Faner',
+      'override_title_text' => 'Værktøjer',
     );
     $pane->cache = array();
     $pane->style = array(

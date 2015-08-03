@@ -2896,6 +2896,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-arrangement-field_os2web_base_field_ext_link'
   $field_instances['node-arrangement-field_os2web_base_field_ext_link'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2939,7 +2941,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_ext_link',
-    'label' => 'Ekstern links',
+    'label' => 'Eksterne links',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -5369,7 +5371,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'default_value' => NULL,
     'default_value_label_token' => 0,
     'deleted' => 0,
-    'description' => 'Her kan du indtastse stikord til dit dokument (tags)',
+    'description' => 'Her kan du indtaste stikord til dit dokument (tags)',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -10132,6 +10134,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-os2web_base_news-field_os2web_base_field_ext_link'
   $field_instances['node-os2web_base_news-field_os2web_base_field_ext_link'] = array(
     'bundle' => 'os2web_base_news',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -10175,7 +10179,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_ext_link',
-    'label' => 'Ekstern links',
+    'label' => 'Eksterne links',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -12551,8 +12555,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Gruppe/Netværk');
   t('Gruppe/Netværk *');
   t('Grupper / Netværk');
+  t('Her kan du indtaste stikord til dit dokument (tags)');
   t('Her kan du indtastse stikord til din diskussion (tags)');
-  t('Her kan du indtastse stikord til dit dokument (tags)');
   t('Her kan du uploade det billede, som du ønsker der skal være arrangementets primære billede. Husk at KTC skal have rettighed til at vise billedet. Billeder du finder på nettet, er normalt beskyttet af ophavsrettigheder, og må derfor ikke anvendes på KTC.dk.');
   t('Her kan du vælge om du vil publicere Diskussionen på andre platforme (kræver særlige rettigheder)');
   t('Indhold');
