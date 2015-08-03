@@ -88,9 +88,9 @@ function _ktc_hearing_notifications_get_hearings_due($days) {
 }
 
 /**
- * Implements hook_node_presave().
+ * Implements hook_node_insert().
  */
-function ktc_hearing_notifications_node_presave($node) {
+function ktc_hearing_notifications_node_insert($node) {
   if ($node->type == 'hearing' && $node->status) {
     $hearing_status = ktc_hearing_get_status($node);
 
