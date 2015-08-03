@@ -8220,11 +8220,6 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .magasinflow .faerdig .inner {
   background-color: #b0dfb7;
 }
-.magasinflow .views-row-first {
-  width: 100%;
-  display: block;
-  float: none;
-}
 .magasinflow .views-row-first::after {
   clear: both;
 }
