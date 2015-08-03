@@ -101,7 +101,7 @@
         <!-- End - group type -->
       <?php endif; ?>
 
-      <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+      <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
 
       <?php if (isset($content['field_regioner'])): ?>
         <!-- Begin - region -->

@@ -323,10 +323,10 @@ function ktc_preprocess_node(&$vars) {
     if ($media = field_get_items('node', $vars['node'], 'field_os2web_base_field_media')) {
       $vars['document_attachments'] = $media;
     }
-
-    // Title (shortened)
-    $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 60);
   }
+
+  // Title (shortened)
+  $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 60);
 
   // Teaser
   if ($vars['elements']['#view_mode'] == 'teaser') {

@@ -105,7 +105,7 @@
     <!-- Begin - content -->
     <div class="ktc-list-display-body-content">
 
-      <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+      <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
 
       <?php if ($signup_date_formatted): ?>
         <p class="ktc-date"><?php print t('Svarfrist:') . ' ' . $signup_date_formatted; ?></p>

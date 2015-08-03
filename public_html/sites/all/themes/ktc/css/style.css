@@ -9217,34 +9217,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 #section-page-with-filter-all-groups .pane-content .view-content article.node--group--teaser h5 a:hover {
   color: #ffffff;
 }
-.darkgray-box .pane-content ul.pager .pager-current,
-#section-page-with-filter-all-groups .pane-content ul.pager .pager-current {
-  display: none;
-}
-.darkgray-box .pane-content ul.pager .pager-previous,
-#section-page-with-filter-all-groups .pane-content ul.pager .pager-previous {
-  margin-right: 5px;
-}
-.darkgray-box .pane-content ul.pager .pager-previous a,
-#section-page-with-filter-all-groups .pane-content ul.pager .pager-previous a {
-  background-image: url(../images/sprites.png);
-  background-position: 0px -187px;
-  width: 15px;
-  height: 15px;
-  background-color: #2c353a;
-  border: none;
-  padding: 2px 2px;
-}
-.darkgray-box .pane-content ul.pager .pager-next a,
-#section-page-with-filter-all-groups .pane-content ul.pager .pager-next a {
-  background-image: url(../images/sprites.png);
-  background-position: 0px -355px;
-  width: 15px;
-  height: 15px;
-  background-color: #2c353a;
-  border: none;
-  padding: 2px 2px;
-}
 .personsoegning .andcell::before {
   content: " / ";
 }
@@ -9597,6 +9569,22 @@ fieldset[disabled] .field-type-image .button {
   left: 10px;
   right: 10px;
   top: 9px;
+}
+.calendar-calendar .month-view .full td.multi-day .inner .monthview .cutoff,
+.calendar-calendar .month-view .full td.multi-day div.monthview {
+  background-color: #d3a900;
+}
+.calendar-calendar td .inner div.day a {
+  color: #2c353a;
+}
+.calendar-calendar td span.date-display-single {
+  color: #fff;
+}
+.calendar-calendar .month-view .full td.single-day div.monthview {
+  background-color: #36a145;
+}
+.calendar-calendar .month-view .full td.date-box.today {
+  border-color: #1f9bd7;
 }
 .ktc-user-login label {
   display: none;
@@ -11571,6 +11559,14 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
 }
 .ktc-aside-list .view ul.pager li.pager-current {
   display: none;
+}
+.view .date-nav-wrapper .date-prev {
+  left: 0;
+  right: auto;
+}
+.view .date-nav-wrapper .date-next {
+  left: auto;
+  right: 0;
 }
 .ktc-breadcrumb {
   background-color: #fff;
