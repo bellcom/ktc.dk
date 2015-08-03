@@ -8220,6 +8220,11 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .magasinflow .faerdig .inner {
   background-color: #b0dfb7;
 }
+.magasinflow .views-row-first {
+  width: 100%;
+  display: block;
+  float: none;
+}
 .magasinflow .views-row-first::after {
   clear: both;
 }
@@ -9592,6 +9597,22 @@ fieldset[disabled] .field-type-image .button {
   left: 10px;
   right: 10px;
   top: 9px;
+}
+.calendar-calendar .month-view .full td.multi-day .inner .monthview .cutoff,
+.calendar-calendar .month-view .full td.multi-day div.monthview {
+  background-color: #d3a900;
+}
+.calendar-calendar td .inner div.day a {
+  color: #2c353a;
+}
+.calendar-calendar td span.date-display-single {
+  color: #fff;
+}
+.calendar-calendar .month-view .full td.single-day div.monthview {
+  background-color: #36a145;
+}
+.calendar-calendar .month-view .full td.date-box.today {
+  border-color: #1f9bd7;
 }
 .ktc-user-login label {
   display: none;
