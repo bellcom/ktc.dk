@@ -8222,8 +8222,6 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 }
 .magasinflow .views-row-first {
   width: 100%;
-  display: block;
-  float: none;
 }
 .magasinflow .views-row-first::after {
   clear: both;
