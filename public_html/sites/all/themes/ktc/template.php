@@ -1016,6 +1016,13 @@ function ktc_preprocess_region(&$variables, $hook) {
  * Implements ktc_preprocess_user_picture().
  */
 function ktc_preprocess_user_picture(&$variables) {
+  if (!$variables['user_picture']) {
+    // If no user_picture is set. Generate a default one.
+    $img_src = '/' . drupal_get_path('theme', 'ktc') . '/images/user-icon.png';
+    $title = $variables['account']->name . 's billede';
+    $user_url = drupal_get_path_alias('user/' . $variables['account']->uid);
+    $variables['user_picture'] = '<a href="' . $user_url . '" title="Vis brugerprofil."><img class="img-responsive" src="' . $img_src . '" alt="' . $title . '" title="' . $title . '"></a>';
+  }
 }
 
 /*
