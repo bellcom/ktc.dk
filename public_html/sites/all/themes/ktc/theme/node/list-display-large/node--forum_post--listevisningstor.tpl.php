@@ -86,7 +86,7 @@
   <!-- Begin - body -->
   <div class="ktc-list-display-large-body">
 
-    <h3 class="ktc-list-display-large-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+    <h3 class="ktc-list-display-large-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
 
     <?php if ($user_object): ?>
       <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list3')); ?>

@@ -86,7 +86,7 @@
   <!-- Begin - body -->
   <div class="ktc-list-display-large-body">
 
-    <h3 class="ktc-list-display-large-headline"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+    <h3 class="ktc-list-display-large-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
 
     <?php if (isset($arrangement_date)): ?>
       <p class="ktc-date"><?php print $arrangement_date; ?></p>
