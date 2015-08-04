@@ -6,6 +6,21 @@
 
 include_once 'ktc_content_types.features.inc';
 
+/**
+ * Implements hook_menu().
+ */
+function ktc_content_types_menu() {
+  $items['node/%/unpublish'] = array(
+    'title' => 'Træk tilbage',
+    'access callback' => 'ktc_content_types_unpublish_access',
+    'access arguments' => array(1),
+    'page callback' => 'ktc_content_types_unpublish_node',
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
 function ktc_content_types_entity_info_alter(&$entity_info) {
   $entity_info['node']['view modes']['listevisning'] = array(
     'label' => t('Listevisning'),
@@ -152,13 +167,6 @@ function ktc_content_types_publish_node_form($form, $form_state, $nid, $status) 
       '#attributes' => array('class' => array('btn-success')),
     );
   }
-  else {
-    $form['submit'] = array(
-      '#type' => 'submit',
-      '#value' => 'Træk tilbage',
-      '#attributes' => array('class' => array('btn-warning')),
-    );
-  }
 
   return $form;
 }
@@ -182,10 +190,7 @@ function ktc_content_types_preprocess_page(&$variables) {
     global $user;
 
     if ($variables['node']->uid == $user->uid) {
-      if ($variables['node']->status) {
-        $output = drupal_render(drupal_get_form('ktc_content_types_publish_node_form', $variables['node']->nid, 'unpublish'));
-      }
-      else {
+      if (!$variables['node']->status) {
         $output = '<div class="alert alert-danger" role="alert">';
         $output .= 'Denne side er kun gemt som kladde, og er skjult for alle andre. Du kan redigere indholdet ved at klikke på rediger, eller udgive indholdet ved at klikke på Udgiv.';
         $output .= drupal_render(drupal_get_form('ktc_content_types_publish_node_form', $variables['node']->nid, 'publish'));
@@ -197,4 +202,27 @@ function ktc_content_types_preprocess_page(&$variables) {
       );
     }
   }
+}
+
+/**
+ * Permission callback for unpublish action.
+ */
+function ktc_content_types_unpublish_access($nid) {
+  $node = node_load($nid);
+  global $user;
+  if ($node->status && $node->uid == $user->uid) {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+/**
+ * Unpublish node.
+ */
+function ktc_content_types_unpublish_node() {
+  $node = node_load(arg(1));
+  $node->status = 0;
+  node_save($node);
+
+  drupal_goto('node/' . $node->nid);
 }
