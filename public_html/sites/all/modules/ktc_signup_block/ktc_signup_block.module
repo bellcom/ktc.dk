@@ -128,7 +128,7 @@ function _ktc_signup_block_get_cancel_link($signup) {
 function _ktc_signup_block_get_signup_link($node) {
   $output = '';
   $now = new DateTime('now');
-  
+
   if ($field_registration_deadline = field_get_items('node', $node, 'field_registration_deadline')) {
     $deadline = new DateTime($field_registration_deadline[0]['value']);
   }
