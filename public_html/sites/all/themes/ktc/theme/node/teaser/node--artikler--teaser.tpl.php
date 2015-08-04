@@ -49,6 +49,13 @@ global $base_url;
     <div class="ktc-footer">
       <a href="<?php print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
       <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+
+      <?php if (isset($content['field_antal_sider'])): ?>
+        <!-- Begin - antal sider -->
+        <span data-toggle="tooltip" data-placement="bottom" title="Antal sider" class="ktc-footer-button"><?php print t('Sider:'); ?><?php print render($content['field_antal_sider']); ?></span>
+        <!-- End - antal sider -->
+      <?php endif; ?>
+
       <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
     </div>
 
