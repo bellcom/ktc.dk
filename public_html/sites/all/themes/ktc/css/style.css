@@ -10123,20 +10123,6 @@ fieldset[disabled] .field-type-image .button {
 .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
 }
-.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h6 + .ktc-date,
-.ktc-teaser .ktc-teaser-body h6 + .ktc-date {
-  margin-top: -6px;
-}
 .ktc-green.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-green .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
@@ -10183,20 +10169,6 @@ fieldset[disabled] .field-type-image .button {
 .ktc-green.ktc-teaser .ktc-teaser-body h6 a,
 .ktc-green .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
-}
-.ktc-green.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
-.ktc-green .ktc-teaser .ktc-teaser-body h1 + .ktc-date,
-.ktc-green.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
-.ktc-green .ktc-teaser .ktc-teaser-body h2 + .ktc-date,
-.ktc-green.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
-.ktc-green .ktc-teaser .ktc-teaser-body h3 + .ktc-date,
-.ktc-green.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
-.ktc-green .ktc-teaser .ktc-teaser-body h4 + .ktc-date,
-.ktc-green.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
-.ktc-green .ktc-teaser .ktc-teaser-body h5 + .ktc-date,
-.ktc-green.ktc-teaser .ktc-teaser-body h6 + .ktc-date,
-.ktc-green .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
-  margin-top: -6px;
 }
 .ktc-blue.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-blue .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
@@ -10245,20 +10217,6 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
 }
-.ktc-blue.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
-.ktc-blue .ktc-teaser .ktc-teaser-body h1 + .ktc-date,
-.ktc-blue.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
-.ktc-blue .ktc-teaser .ktc-teaser-body h2 + .ktc-date,
-.ktc-blue.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
-.ktc-blue .ktc-teaser .ktc-teaser-body h3 + .ktc-date,
-.ktc-blue.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
-.ktc-blue .ktc-teaser .ktc-teaser-body h4 + .ktc-date,
-.ktc-blue.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
-.ktc-blue .ktc-teaser .ktc-teaser-body h5 + .ktc-date,
-.ktc-blue.ktc-teaser .ktc-teaser-body h6 + .ktc-date,
-.ktc-blue .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
-  margin-top: -6px;
-}
 .ktc-gold.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-gold .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
@@ -10306,20 +10264,6 @@ fieldset[disabled] .field-type-image .button {
 .ktc-gold .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
 }
-.ktc-gold.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
-.ktc-gold .ktc-teaser .ktc-teaser-body h1 + .ktc-date,
-.ktc-gold.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
-.ktc-gold .ktc-teaser .ktc-teaser-body h2 + .ktc-date,
-.ktc-gold.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
-.ktc-gold .ktc-teaser .ktc-teaser-body h3 + .ktc-date,
-.ktc-gold.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
-.ktc-gold .ktc-teaser .ktc-teaser-body h4 + .ktc-date,
-.ktc-gold.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
-.ktc-gold .ktc-teaser .ktc-teaser-body h5 + .ktc-date,
-.ktc-gold.ktc-teaser .ktc-teaser-body h6 + .ktc-date,
-.ktc-gold .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
-  margin-top: -6px;
-}
 .ktc-red.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-red .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
   padding-left: 32px;
@@ -10366,20 +10310,6 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red.ktc-teaser .ktc-teaser-body h6 a,
 .ktc-red .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
-}
-.ktc-red.ktc-teaser .ktc-teaser-body h1 + .ktc-date,
-.ktc-red .ktc-teaser .ktc-teaser-body h1 + .ktc-date,
-.ktc-red.ktc-teaser .ktc-teaser-body h2 + .ktc-date,
-.ktc-red .ktc-teaser .ktc-teaser-body h2 + .ktc-date,
-.ktc-red.ktc-teaser .ktc-teaser-body h3 + .ktc-date,
-.ktc-red .ktc-teaser .ktc-teaser-body h3 + .ktc-date,
-.ktc-red.ktc-teaser .ktc-teaser-body h4 + .ktc-date,
-.ktc-red .ktc-teaser .ktc-teaser-body h4 + .ktc-date,
-.ktc-red.ktc-teaser .ktc-teaser-body h5 + .ktc-date,
-.ktc-red .ktc-teaser .ktc-teaser-body h5 + .ktc-date,
-.ktc-red.ktc-teaser .ktc-teaser-body h6 + .ktc-date,
-.ktc-red .ktc-teaser .ktc-teaser-body h6 + .ktc-date {
-  margin-top: -6px;
 }
 .ktc-teaser-large {
   background-color: #ffffff;
