@@ -906,7 +906,7 @@ function ktc_content_types_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '13',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'teasercomments' => array(
