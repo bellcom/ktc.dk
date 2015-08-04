@@ -4,10 +4,13 @@
   $(document).ready(function(){
 
       // Load masonry
-      //$container = $('.masonry-wrapper .view-content');
-      //$container.masonry({
-      //    itemSelector: '.masonry-item'
-      //});
+      $container = $('.masonry-wrapper .view-content');
+      // Don't use masonry if items contain comments (it screws up comments)
+      if ($container.find('.ktc-comments-list').length === 0 && !$('body').hasClass('node-type-group')) {
+          $container.masonry({
+              itemSelector: '.masonry-item'
+          });
+      }
 
       // Search facetapi.
       $('ul.facetapi-facetapi-links li').each(function(){

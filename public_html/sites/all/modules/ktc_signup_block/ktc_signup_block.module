@@ -127,14 +127,25 @@ function _ktc_signup_block_get_cancel_link($signup) {
  */
 function _ktc_signup_block_get_signup_link($node) {
   $output = '';
+  $now = new DateTime('now');
 
   if ($field_registration_deadline = field_get_items('node', $node, 'field_registration_deadline')) {
     $deadline = new DateTime($field_registration_deadline[0]['value']);
-    $now = new DateTime('now');
   }
 
-  if ($deadline && $now && ($now > $deadline)) {
+  if ($field_arrangement_date = field_get_items('node', $node, 'field_arrangement_date')) {
+    $arrangement_date = new DateTime($field_arrangement_date[0]['value']);
+  }
+
+  if ($field_registration_deadline = field_get_items('node', $node, 'field_registration_deadline')) {
+    $deadline = new DateTime($field_registration_deadline[0]['value']);
+  }
+
+  if ($deadline && $now && ($now > $deadline) && ($now < $arrangement_date)) {
     $output = '<p>' . t('Fristen for tilmelding til dette arrangement er overskredet. Kontakt evt. arrangøren for "last minute" tilmelding.') . '</p>';
+  }
+  elseif($now > $arrangement_date) {
+    $output = '';
   }
   else {
     module_load_include('inc', 'signup', 'includes/signup_form');

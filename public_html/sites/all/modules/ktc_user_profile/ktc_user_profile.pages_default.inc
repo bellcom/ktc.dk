@@ -671,7 +671,8 @@ function ktc_user_profile_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
-      'css_class' => 'col-md-12 col-sm-12 col-sm-12',
+      'css_class' => '',
+      'template_suggestion' => 'content',
     );
     $pane->extras = array();
     $pane->position = 0;
