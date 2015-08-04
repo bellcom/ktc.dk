@@ -4,12 +4,33 @@ $dir = __DIR__ . '/';
 //
 // Nodes
 //
+// First regular content.
 $query = new EntityFieldQuery();
 $query->entityCondition('entity_type', 'node')
-   ->propertyCondition('changed', strtotime('2014-09-01 00:00:01'), '>');
+  ->entityCondition('bundle', 'group', '!=')
+  ->propertyCondition('changed', strtotime('2014-09-01 00:00:01'), '>');
 $result = $query->execute();
 
 $nodes = node_load_multiple(array_keys($result['node']));
+
+$file_fields = array('field_fil', 'field_groupimage', 'field_image');
+foreach ($nodes as $node) {
+  foreach ($file_fields as $field_name) {
+    if ($field = field_get_items('node', $node, $field_name)) {
+      foreach ($field as $delta => $data) {
+        $files[] = $data['uri'];
+      }
+    }
+  }
+}
+
+// And now groups.
+$query = new EntityFieldQuery();
+$query->entityCondition('entity_type', 'node')
+  ->entityCondition('bundle', 'group');
+$result = $query->execute();
+
+$nodes = array_merge($nodes, node_load_multiple(array_keys($result['node'])));
 
 $file_fields = array('field_fil', 'field_groupimage', 'field_image');
 foreach ($nodes as $node) {

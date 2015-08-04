@@ -149,7 +149,7 @@ function ktc_import_field_fetch_file($entity, $prop, $value, $opt) {
 }
 
 /**
- * 
+ *
  */
 function ktc_import_fetch_file($uri, $filename) {
   $config = include dirname(__FILE__) . '/config.php';
@@ -182,7 +182,7 @@ function ktc_import_fetch_file($uri, $filename) {
 }
 
 /**
- * 
+ *
  */
 function ktc_import_prop_fetch_file($entity, $prop, $value, $opt) {
   $file = ktc_import_fetch_file($value->uri, $value->filename);
@@ -266,7 +266,7 @@ function obj_to_array($obj){
 }
 
 /**
- * 
+ *
  */
 function ktc_import_split_name($entity, $prop, $value) {
   $value = obj_to_array($value);
@@ -292,4 +292,35 @@ function ktc_import_split_name($entity, $prop, $value) {
 
   $entity->field_navn[LANGUAGE_NONE][0]['value'] = $firstname;
   $edit->field_efternavn[LANGUAGE_NONE][0]['value'] = $lastname;
+}
+
+/**
+ *
+ */
+function ktc_import_group_access($entity, $prop, $value) {
+  // Map group acces to new field, where the value is inverted.
+  $value = obj_to_array($value);
+  $entity->field_open_group[LANGUAGE_NONE][0]['value'] = (int) !$value[LANGUAGE_NONE][0]['value'];
+}
+
+/**
+ *
+ */
+function ktc_import_roles_permissions($entity, $prop, $value) {
+  $value = obj_to_array($value);
+
+  $value_map = array(
+    // Old value -> new value
+    // old:
+    // 0 = synlig
+    // 1 = usynlig
+    //
+    // new:
+    // 0 = use group settings
+    // 1 = synlig
+    // 2 = usynlig
+    0 => 1,
+    1 => 2
+  );
+  $entity->group_content_access[LANGUAGE_NONE][0]['value'] = (int) $value_map[$value[LANGUAGE_NONE][0]['value']];
 }
