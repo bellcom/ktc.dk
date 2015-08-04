@@ -1,115 +1,104 @@
-	/*
-Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or http://ckeditor.com/license
-*/
+/*
+ Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ For licensing, see LICENSE.html or http://ckeditor.com/license
+ */
 
 /*
  * This file is used/requested by the 'Styles' button.
  * The 'Styles' button is not enabled by default in DrupalFull and DrupalFiltered toolbars.
  */
-if(typeof(CKEDITOR) !== 'undefined') {
-    CKEDITOR.addStylesSet( 'drupal',
-    [
+if (typeof(CKEDITOR) !== 'undefined') {
+    CKEDITOR.addStylesSet('drupal',
+        [
 
-        /* Bootstrap Styles */
+            /* Bootstrap Styles */
 
-        /* Typography */
+            /* Typography */
 
-        { name : 'Afsnitsoverskift (H3)'        , element : 'h3', attributes: { 'class': 'h3' } },
-        { name : 'Mindre overskrift (H4)'        , element : 'h4', attributes: { 'class': 'h4' } },
-        { name : 'Listeoverskrift (H5)'        , element : 'h5', attributes: { 'class': 'h5' } },
-        { name : 'Indledning'     , element : 'p', attributes: { 'class': 'ktc-node-lead' } },
-        { name : 'Afsnit'     , element : 'p', attributes: { } },
+            {name: 'Afsnitsoverskift (H3)', element: 'h3', attributes: {'class': 'h3'}},
+            {name: 'Mindre overskrift (H4)', element: 'h4', attributes: {'class': 'h4'}},
+            {name: 'Listeoverskrift (H5)', element: 'h5', attributes: {'class': 'h5'}},
+            {name: 'Indledning', element: 'p', attributes: {'class': 'ktc-node-lead'}},
+            {name: 'Afsnit', element: 'p', attributes: {'class': ''}},
 
-        {
-            name : 'Liste',
-            element : 'ul',
-            attributes :
             {
-                'class' : 'list-unstyled'
-            }
-        },
-        {
-            name : 'Liste - horisontal',
-            element : 'ul',
-            attributes :
+                name      : 'Liste',
+                element   : 'ul',
+                attributes: {
+                    'class': 'list-unstyled'
+                }
+            },
             {
-                'class' : 'list-inline'
-            }
-        },
-        {
-            name : 'Tabel',
-            element : 'table',
-            attributes :
+                name      : 'Liste - horisontal',
+                element   : 'ul',
+                attributes: {
+                    'class': 'list-inline'
+                }
+            },
             {
-                'class' : 'table'
-            }
-        },
-        {
-            name : 'Tabel - stribet',
-            element : 'table',
-            attributes :
+                name      : 'Tabel',
+                element   : 'table',
+                attributes: {
+                    'class': 'table'
+                }
+            },
             {
-                'class' : 'table table-striped'
-            }
-        },
-        {
-            name : 'Tabel - m ramme',
-            element : 'table',
-            attributes :
+                name      : 'Tabel - stribet',
+                element   : 'table',
+                attributes: {
+                    'class': 'table table-striped'
+                }
+            },
             {
-                'class' : 'table table-bordered'
-            }
-        },
-        {
-            name : 'Tabel - mouse-over effekt',
-            element : 'table',
-            attributes :
+                name      : 'Tabel - m ramme',
+                element   : 'table',
+                attributes: {
+                    'class': 'table table-bordered'
+                }
+            },
             {
-                'class' : 'table table-hover'
-            }
-        },
-        {
-            name : 'Tabel - lille margin',
-            element : 'table',
-            attributes :
+                name      : 'Tabel - mouse-over effekt',
+                element   : 'table',
+                attributes: {
+                    'class': 'table table-hover'
+                }
+            },
             {
-                'class' : 'table table-condensed'
-            }
-        },
-        {
-            name : 'Billede - runde hjørner',
-            element : 'img',
-            attributes :
+                name      : 'Tabel - lille margin',
+                element   : 'table',
+                attributes: {
+                    'class': 'table table-condensed'
+                }
+            },
             {
-                'class' : 'img-rounded'
-            }
-        },
-        {
-            name : 'Billede - rundt',
-            element : 'img',
-            attributes :
+                name      : 'Billede - runde hjørner',
+                element   : 'img',
+                attributes: {
+                    'class': 'img-rounded'
+                }
+            },
             {
-                'class' : 'img-circle'
-            }
-        },
+                name      : 'Billede - rundt',
+                element   : 'img',
+                attributes: {
+                    'class': 'img-circle'
+                }
+            },
 
-        {
-            name : 'Billede - flyder t venstre',
-            element : 'img',
-            attributes :
             {
-                'class' : 'pull-left'
-            }
-        },
-        {
-            name : 'Billede - flyder t højre',
-            element : 'img',
-            attributes :
+                name      : 'Billede - flyder t venstre',
+                element   : 'img',
+                attributes: {
+                    'class': 'pull-left'
+                }
+            },
             {
-                'class' : 'pull-right'
-            }
-        },
+                name      : 'Billede - flyder t højre',
+                element   : 'img',
+                attributes: {
+                    'class': 'pull-right'
+                }
+            },
 
-    ]);
+        ]);
 }
