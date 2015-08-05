@@ -507,6 +507,7 @@ function ktc_hearing_invite_submit(&$form, &$form_state) {
 
       $wrapper->save();
       drupal_set_message(t('The user user has been added to the hearing.'));
+      ktc_hearing_notifications_notify_attendee($user->uid, $node);
     }
   }
 }
