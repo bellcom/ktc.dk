@@ -55,8 +55,24 @@ function ktc_crm_account_update_accounts() {
   // accounts are updated.
   $result = db_query('SELECT * FROM {taxonomy_term_data} WHERE updated = 0 AND vid = :vid', array(':vid' => $vocab->vid));
 
+  // Collect a list of user ids affected by the deletion of account terms.
+  $user_ids = array();
+
   foreach ($result as $record) {
     taxonomy_term_delete($record->tid);
+    $user_ids = array_merge($user_ids, _ktc_crm_account_find_users($record->tid));
+  }
+
+  // Save the user ids. A seperate function will take care of updating the user.
+  variable_set('ktc_crm_accounts_update_user_ids', $user_ids);
+}
+
+/**
+ * Update users affected by account update.
+ */
+function ktc_crm_accounts_update_affected_users() {
+  if ($user_ids = variable_get('ktc_crm_accounts_update_user_ids', array())) {
+    ktc_crm_webuser_update_user_ids($user_ids);
   }
 }
 
@@ -201,4 +217,20 @@ function _ktc_crm_account_get_users_account($account) {
     return taxonomy_term_load($field[0]['tid']);
   }
   return FALSE;
+}
+
+/**
+ * Helper, return a list of users with reference to the tid.
+ */
+function _ktc_crm_account_find_users($tid) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'user')
+     ->fieldCondition('field_account', 'tid', $tid);
+  $result = $query->execute();
+
+  if (!empty($result['user'])) {
+    return array_keys($result['user']);
+  }
+
+  return array();
 }
