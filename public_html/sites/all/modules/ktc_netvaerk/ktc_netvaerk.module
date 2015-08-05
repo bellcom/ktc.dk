@@ -195,6 +195,12 @@ function ktc_netvaerk_settings() {
     '#title' => t('Besked på (lukket)netværk hvor indholdet er skjult'),
     '#default_value' => variable_get($var_name),
   );
+  $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_CLOSED_HIDDEN;
+  $form['netvaerk_not_member']['ktc_netvaerk_search_empty_message'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Besked på (lukket)netværk hvor indholdet er skjult'),
+    '#default_value' => variable_get($var_name),
+  );
 
   $group_types_vocab = taxonomy_vocabulary_machine_name_load('netv_rkstype');
   $group_types = taxonomy_term_load_multiple(array(), array('vid' => $group_types_vocab->vid));
@@ -202,7 +208,11 @@ function ktc_netvaerk_settings() {
   foreach ($group_types as $group_type) {
     $group_types_options[$group_type->tid] = $group_type->name;
   }
-
+ $form['ktc_netvaerk_search_empty_message'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Text shown if filter / search result is empty'),
+    '#default_value' => variable_get('ktc_netvaerk_search_empty_message', 'No result'),
+  );
   $form['ktc_netvaerk_type_closed'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Håndter netværk som "Lukket"'),
