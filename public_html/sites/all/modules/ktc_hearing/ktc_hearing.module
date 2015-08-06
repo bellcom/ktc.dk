@@ -1154,8 +1154,6 @@ function _ktc_hearing_reference_permissions() {
     'creator' => array(
       'link to kl answer' => 'link to kl answer',
       'update' => 'update',
-      'view responses' => 'view responses',
-      'view summary response' => 'view summary response',
       'view' => 'view',
     ),
   );
