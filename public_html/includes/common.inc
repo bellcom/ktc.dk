@@ -7726,6 +7726,8 @@ function entity_extract_ids($entity_type, $entity) {
   if (!empty($info['entity keys']['bundle'])) {
     // Explicitly fail for malformed entities missing the bundle property.
     if (!isset($entity->{$info['entity keys']['bundle']}) || $entity->{$info['entity keys']['bundle']} === '') {
+      $e = new Exception;
+      error_log(print_r($e->getTraceAsString(), 1));
       throw new EntityMalformedException(t('Missing bundle property on entity of type @entity_type.', array('@entity_type' => $entity_type)));
     }
     $bundle = $entity->{$info['entity keys']['bundle']};
