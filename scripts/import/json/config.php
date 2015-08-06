@@ -6,8 +6,8 @@
 
 $config['files'] = array(
 //  'users' => 'users.json',
-//  'nodes' => 'nodes.json',
-  'makemeeting' => 'makemeeting.json',
+  'nodes' => 'nodes.json',
+//  'makemeeting' => 'makemeeting.json',
 //  'comments' => 'comments.json',
 );
 
@@ -40,10 +40,12 @@ $config['transform']['nodes'] = array(
   'nid' => 'ktc_import_set_old_nid',
   'uid' => 'ktc_import_set_new_uid',
   'title' => 'ktc_import_no_transform',
+  'status' => 'ktc_import_no_transform',
   'body' => 'ktc_import_no_transform',
   'language' => 'ktc_import_no_transform',
   'group_audience' => 'ktc_import_set_group_info',
-  'group_content_access' => 'ktc_import_no_transform',
+  'group_access' => 'ktc_import_group_access',
+  'og_roles_permissions' => 'ktc_import_roles_permissions',
   'field_short' => 'ktc_import_no_transform',
   'field_topics' => 'ktc_import_no_transform',
   'field_regioner' => 'ktc_import_no_transform',
