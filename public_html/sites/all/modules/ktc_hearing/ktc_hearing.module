@@ -41,6 +41,19 @@ function ktc_hearing_menu() {
     'file path' => drupal_get_path('module', 'node'),
   );
 
+  $items['node/%node/no_response'] = array(
+    'type' => MENU_LOCAL_TASK,
+    'title' => 'Unlad at svare',
+    'page callback' => 'ktc_hearing_no_response',
+    'page arguments' => array(1),
+    'access callback' => 'ktc_hearing_access',
+    'access arguments' => array(1, 'respond'),
+    'weight' => 11,
+    // Include node pages, since we're embedding the node add form.
+    'file' => 'node.pages.inc',
+    'file path' => drupal_get_path('module', 'node'),
+  );
+
   $items['node/%node/summary_hearing_response'] = array(
     'type' => MENU_LOCAL_TASK,
     'title' => 'Skriv sammenfatning',
@@ -186,6 +199,8 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
     unset($form['field_hearing_node'][$language][0]['target_id']['#element_validate']);
   }
 
+  $form['field_is_no_answer']['#access'] = 0;
+
   // These two steps, allows the user to move the hearing foward in the
   // workflow. To ease the process. An extra submit button is added.
   switch (arg(2)) {
@@ -203,8 +218,6 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
       $form['actions']['send_for_approval']['#submit'] = $form['actions']['submit']['#submit'];
       // And update the status for the node.
       $form['actions']['send_for_approval']['#submit'][] = 'ktc_hearing_set_status_approval';
-
-      $form['field_is_no_answer']['#access'] = 0;
       break;
 
     case 'approve_summary_hearing_response':
@@ -217,8 +230,6 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
       $form['actions']['set_approved']['#submit'] = $form['actions']['submit']['#submit'];
       // And update the status for the node.
       $form['actions']['set_approved']['#submit'][] = 'ktc_hearing_set_status_approved';
-
-      $form['field_is_no_answer']['#access'] = 0;
       break;
   }
 
@@ -440,6 +451,17 @@ function ktc_hearing_access($node, $op) {
   global $user;
   if ($user->uid == 1) {
     return TRUE;
+  }
+
+  // If the user has declined to respond to the hearing. Don't allow access to
+  // the decline response page again.
+  if ($op == 'respond' && $response_nid = ktc_hearing_user_has_responded($node)) {
+    $response = node_load($response_nid);
+    if ($field = field_get_items('node', $response, 'field_is_no_answer')) {
+      if ($field[0]['value']) {
+        return FALSE;
+      }
+    }
   }
 
   global $user;
@@ -886,6 +908,8 @@ function ktc_hearing_responses($hearing) {
   $type = 'hearing_responses';
   $vars = array();
 
+  $user_decline_respond = FALSE;
+
   global $user;
   if ($result) {
     foreach ($result as $nid) {
@@ -896,6 +920,11 @@ function ktc_hearing_responses($hearing) {
       }
 
       if ($node->uid == $user->uid) {
+        if ($field = field_get_items('node', $node, 'field_is_no_answer')) {
+          if ($field[0]['value']) {
+            $user_decline_respond = TRUE;
+          }
+        }
         $users_response = $node;
       }
 
@@ -934,7 +963,69 @@ function ktc_hearing_responses($hearing) {
     $vars['answer_form'] = render($node_form);
   }
 
+  if ($user_decline_respond) {
+    $vars['answer_form'] = t('Du har valgt ikke at svare på denne høring.');
+  }
+
   return theme('hearing_answer', $vars);
+}
+
+/**
+ * Page callback for "don't answer" action.
+ */
+function ktc_hearing_no_response($hearing) {
+  $vars['answer_form'] = render(drupal_get_form('ktc_hearing_no_response_form'));
+  return theme('hearing_answer', $vars);
+}
+
+/**
+ * Form callback - "don't answer" action.
+ */
+function ktc_hearing_no_response_form($form, &$form_state) {
+  $form['no_answer'] = array(
+    '#title' => t('Begrundelse for ikke at svare'),
+    '#description' => t('Din begrundelse vil være synlig for de andre deltagere.'),
+    '#type' => 'textarea',
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+
+  return $form;
+}
+
+/**
+ * Submit handler for "don't answer" form.
+ */
+function ktc_hearing_no_response_form_submit(&$form, &$form_state) {
+  $node = new stdClass();
+  $hearing_nid = arg(1);
+
+  global $user;
+  $account = user_load($user->uid);
+  $user_name = $user->name;
+
+  if ($name_field = field_get_items('user', $account, 'field_navn')) {
+    $user_name = $name_field[0]['value'];
+  }
+
+  $node->title = t('Høringssvar') . ': ' . $user_name;
+  $node->type = 'hearing_responses';
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
+  $node->uid = $user->uid;
+  $node->status = 1;
+
+  $node->body[LANGUAGE_NONE][]['value'] = $form_state['values']['no_answer'];
+  $node->field_is_no_answer[LANGUAGE_NONE][]['value'] = 1;
+  $node->field_hearing_node[LANGUAGE_NONE][]['target_id'] = $hearing_nid;
+  $node = node_submit($node);
+  node_save($node);
+
+  $form_state['redirect'] = 'node/' . $hearing_nid;
 }
 
 /**
@@ -953,7 +1044,10 @@ function ktc_hearing_user_has_responded($hearing, $user = FALSE) {
     ->propertyCondition('uid', $user->uid);
   $result = $query->execute();
 
-  return isset($result['node']);
+  if (isset($result['node'])) {
+    return key($result['node']);
+  }
+  return FALSE;
 }
 
 /**

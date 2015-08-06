@@ -43,8 +43,8 @@ $block_status_form = module_invoke('ktc_hearing', 'block_view', 'ktc_hearing_set
       </div>
 
       <div class="responses-container">
-        <div class="pull-right"><a href="#" class="btn btn-default btn-sm toggle-all">Alle <span class="glyphicon glyphicon-chevron-right"></span></a></div><br /><br />
         <?php if (isset($responses)): ?>
+          <div class="pull-right"><a href="#" class="btn btn-default btn-sm toggle-all">Alle <span class="glyphicon glyphicon-chevron-right"></span></a></div><br /><br />
           <?php foreach ($responses as $response): ?>
             <?php print render($response); ?>
           <?php endforeach; ?>
