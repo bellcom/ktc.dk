@@ -112,22 +112,28 @@ function ktc_sectionpage_ajax_all_groups_view($f1, $f2, $f3, $f4, $f5 = 'all') {
  *        string $gid: group ids.
  */
 function ktc_sectionpage_ajax_view($page, $f1, $f2, $f3, $f4, $f5, $gid) {
-
-  $output = _ktc_content_filter_view($page, $f1, $f2, $f3, $f4, $f5, $gid);
+ $is_empty_html = '<div class = "ktc-teaser">
+                   <div class="ktc-teaser-body">
+                     <h4 class="ktc-teaser-body-title">'
+                     .variable_get('ktc_netvaerk_search_empty_message', 'No result') 
+                     .'</h4>
+                   </div>
+                </div>';
+  $output = _ktc_content_filter_view($page, $f1, $f2, $f3, $f4, $f5, $gid,  $is_empty_html);
 
   if ($page == 'aktiviteter' || arg(0) == 'aktiviteter') {
     // $f2 in "aktiviteter" page is arrangement type term,
     // $f3 in "aktiviteter" page is period, as "fulture" or "old"
     // $4 is date, like 2014-12-16.
-    $output = _ktc_section_block_arrangement_content($f2, $f3, $f4);
+    $output = _ktc_section_block_arrangement_content($f2, $f3, $f4, $is_empty_html);
   }
 
   if ($page == 'hoeringer' || arg(0) == 'hoeringer') {
-    $output = _ktc_section_block_hearing_content($f1, $f2, $f3, $f4, $f5, $gid);
+    $output = _ktc_section_block_hearing_content($f1, $f2, $f3, $f4, $f5, $gid, $is_empty_html);
   }
   
   if ($page == 'teknikmiljoe' || arg(0) == 'teknikmiljoe') {
-    $output = _ktc_section_block_magazine_content($page, $f1, $f2, $f3, $f4, $f5, $gid);
+    $output = _ktc_section_block_magazine_content($page, $f1, $f2, $f3, $f4, $f5, $gid, $is_empty_html);
   }
   print $output;
 
@@ -274,7 +280,7 @@ function ktc_sectionpage_block_view($delta = '') {
 /**
  * Arrangement block_view call back.
  */
-function _ktc_section_block_arrangement_content($f2 = 'all', $f3 = 'fulture', $f4 = 'all') {
+function _ktc_section_block_arrangement_content($f2 = 'all', $f3 = 'fulture', $f4 = 'all', $is_empty = '') {
   $filter_ar = explode(',', $f2);
   $filter = '';
 
@@ -309,13 +315,16 @@ function _ktc_section_block_arrangement_content($f2 = 'all', $f3 = 'fulture', $f
   $view->set_arguments(array($filter, $f4));
   $view->pre_execute();
   $view->execute();
-  if ($f3 == 'old') {
-    return $view->render('block_4');
-  }
+  if (count($view->result) == 0) 
+      return $is_empty;
   else {
-    return $view->render('block_3');
+    if ($f3 == 'old') {
+      return $view->render('block_4');
+    }
+    else {
+      return $view->render('block_3');
+    }
   }
-
 }
 
 /**
@@ -328,7 +337,7 @@ function _ktc_section_block_arrangement_content($f2 = 'all', $f3 = 'fulture', $f
  *    $4 hearing_status (open or 1840)
  *    $f5 year (all or year nummbers.)
  */
-function _ktc_section_block_hearing_content($type = 'hearing', $f1 = '', $f2 = '', $f3 = '', $f4 = 'all', $f5 = 'all') {
+function _ktc_section_block_hearing_content($type = 'hearing', $f1 = '', $f2 = '', $f3 = '', $f4 = 'all', $f5 = 'all', $is_empty = '') {
   global $user;
   $term_type = _ktc_sectionpage_filter_helper($f1);
   $emner = _ktc_sectionpage_filter_helper($f2);
@@ -340,7 +349,10 @@ function _ktc_section_block_hearing_content($type = 'hearing', $f1 = '', $f2 = '
   $view->set_arguments(array('all', $nids, $uid, $status, $term_type, $emner));
   $view->pre_execute();
   $view->execute();
-  return $view->render('panel_pane_3');
+  if (count($view->result) == 0) 
+    return $is_empty;
+  else
+    return $view->render('panel_pane_3');
 
 }
 
@@ -354,7 +366,7 @@ function _ktc_section_block_hearing_content($type = 'hearing', $f1 = '', $f2 = '
  *    $4 hearing_status (open or 1840)
  *    $f5 year (all or year nummbers.)
  */
-function _ktc_section_block_magazine_content($page = '', $f1 = 'magazine', $f2 = '', $f3 = '', $f4 = '', $f5 = '', $gid = '') {
+function _ktc_section_block_magazine_content($page = '', $f1 = 'magazine', $f2 = '', $f3 = '', $f4 = '', $f5 = '', $gid = '', $is_empty = '') {
   $content_type = _ktc_sectionpage_filter_helper($f1);
   $term_type = _ktc_sectionpage_filter_helper($f2);
   $emner = _ktc_sectionpage_filter_helper($f3);
@@ -367,7 +379,10 @@ function _ktc_section_block_magazine_content($page = '', $f1 = 'magazine', $f2 =
   $view->set_arguments(array($content_type, $term_type,  $nids, $gid));
   $view->pre_execute();
   $view->execute();
-  return $view->render('panel_pane_7');
+  if (count($view->result) == 0) 
+    return $is_empty;
+  else
+    return $view->render('panel_pane_7');
 
 }
 /**
@@ -481,7 +496,7 @@ function _ktc_date_filter_on_magazine() {
 /**
  * Default filter block_view call back.
  */
-function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 = '', $f5 = '', $gid = '') {
+function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 = '', $f5 = '', $gid = '', $is_empty = '') {
   $content_type = _ktc_sectionpage_filter_helper($f1);
   $term_type = _ktc_sectionpage_filter_helper($f2);
   $emner = _ktc_sectionpage_filter_helper($f3);
@@ -546,7 +561,10 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
           );
     $view->pre_execute();
     $view->execute();
-    return $view->render($display);
+    if (count($view->result) == 0) 
+       return $is_empty;
+    else
+      return $view->render($display);
   }
   // Profile subpage user/group/new_content.
   // Get new (unreaded/updated) content from user's groups.

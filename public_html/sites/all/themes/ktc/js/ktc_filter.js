@@ -64,9 +64,8 @@
             $('.filter-box #filter-all').removeClass(button_normal);
         }
 
-      }
-
-      if ($(this).closest('.panel-pane').attr('id').indexOf("emner") >= 0) {
+      }      
+      if (typeof $(this).closest('.panel-pane').attr('id') != "undefined" && $(this).closest('.panel-pane').attr('id').indexOf("emner") >= 0) {
        var parent_term_ids = '';
             if ($(this).attr('id') != 'filter-all') {
                $(this).closest('.pane-views-panes').find('.btn-primary').each(function() {
@@ -392,7 +391,7 @@
           term_type += $(this).attr('data-filter') + ',';
         }
 
-        if (filter_id.indexOf('emner') >=0) {
+        if (typeof filter_id != "undefined" && filter_id.indexOf('emner') >=0) {
            var  level = 0;
            if (filter_id.indexOf('-')>=0 && $(this).attr('data-filter')!='all')
                  level = filter_id.substr(filter_id.indexOf('-')+1);
