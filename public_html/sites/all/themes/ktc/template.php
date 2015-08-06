@@ -77,8 +77,8 @@ function ktc_comment_post_forbidden($variables) {
   return drupal_render($form);
 }
 
-/*
- * Implements hook_preprocess_entity().
+/**
+ * Implements template_preprocess_entity().
  */
 function ktc_preprocess_entity(&$variables) {
 
@@ -274,7 +274,23 @@ function ktc_preprocess_html(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_node().
+ * Implements template_preprocess_field().
+ */
+function ktc_preprocess_field(&$vars, $hook) {
+
+  // Make "field--FIELDNAME--VIEWMODE.tpl.php" templates available.
+  $vars['theme_hook_suggestions'][] = 'field__' . $vars['element']['#field_name'] . '__' . $vars['element']['#view_mode'];
+
+  // Make "field--FIELDNAME--BUNDLE--VIEWMODE.tpl.php" templates available.
+  $vars['theme_hook_suggestions'][] = 'field__' . $vars['element']['#field_name'] . '__' . $vars['element']['#bundle'] . '__' . $vars['element']['#view_mode'];
+
+  if ($vars['element']['#field_name'] == 'field_coforfattere') {
+//    xdebug_break();
+  }
+}
+
+/**
+ * Implements template_preprocess_node().
  */
 function ktc_preprocess_node(&$vars) {
 

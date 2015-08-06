@@ -120,8 +120,8 @@ function teknik_og_miljoe_strongarm() {
             'visible' => TRUE,
           ),
           'teasercomments' => array(
-            'weight' => '2',
-            'visible' => TRUE,
+            'weight' => '4',
+            'visible' => FALSE,
           ),
         ),
       ),

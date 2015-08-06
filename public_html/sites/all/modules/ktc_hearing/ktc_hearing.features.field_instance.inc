@@ -810,7 +810,7 @@ function ktc_hearing_field_default_field_instances() {
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => 'hearing_files',
       'file_extensions' => 'txt pdf doc xml ppt docx',
       'max_filesize' => '',
@@ -822,19 +822,23 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'prezi' => 0,
           'private' => 'private',
           'public' => 0,
+          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
           'document' => 'document',
           'image' => 0,
+          'presentation' => 0,
           'video' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_2' => 0,
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
           'upload' => 'upload',
         ),
       ),

@@ -1,4 +1,5 @@
 <?php if (!$page): ?>
+  <!-- node--magazine--teaser.tpl.php -->
   <!-- Begin - teaser magazine -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-aside ktc-aside-blue ktc-teaser-magazine"<?php print $attributes; ?> date-filter="<?php if (isset($top_parent_term)) print $top_parent_term->tid ?>">
 
@@ -33,24 +34,26 @@
           <?php endif; ?>
 
           <?php if (isset($content['field_bannere']) && isset($content['field_banner_1_tekst_og_link'])): ?>
-            <!-- BEGIN - banner 1 -->
+            <!-- Begin - banner 1 -->
             <div class="ktc-teaser-magazine-banner">
               <a href="<?php print $field_banner_1_tekst_og_link[0]['url']; ?>" title="<?php print $field_banner_1_tekst_og_link[0]['title']; ?>" target="_blank">
                 <?php print render($content['field_bannere']); ?>
               </a>
             </div>
-            <!-- END - banner 1 -->
+            <!-- End - banner 1 -->
           <?php endif; ?>
 
           <?php if (isset($content['field_banner_2']) && isset($content['field_banner_2_tekst_og_link'])): ?>
-            <!-- BEGIN - banner 2 -->
+            <!-- Begin - banner 2 -->
             <div class="ktc-teaser-magazine-banner">
               <a href="<?php print $field_banner_2_tekst_og_link[0]['url']; ?>" title="<?php print $field_banner_2_tekst_og_link[0]['title']; ?>" target="_blank">
                 <?php print render($content['field_banner_2']); ?>
               </a>
             </div>
-            <!-- END - banner 2 -->
+            <!-- End - banner 2 -->
           <?php endif; ?>
+
+          <a href="user/<?php print $user->uid; ?>/abonnementer" class="btn btn-info btn-block"><?php print t('Tegn et online abonnement'); ?></a>
 
         </div>
         <!-- End - left -->
@@ -59,25 +62,25 @@
         <div class="col-sm-8">
 
           <?php if (isset($content['field_top_artikel'])): ?>
-            <!-- BEGIN - top artikel -->
+            <!-- Begin - top artikel -->
             <div class="ktc-teaser-magazine-top-artikel">
               <?php print render($content['field_top_artikel']); ?>
             </div>
-            <!-- END - top artikel -->
+            <!-- End - top artikel -->
           <?php endif; ?>
 
           <?php if (isset($content['field_ekstra_artikler'])): ?>
-            <!-- BEGIN - ekstra artikler -->
+            <!-- Begin - ekstra artikler -->
             <?php print render($content['field_ekstra_artikler']); ?>
-            <!-- END - ekstra artikler -->
+            <!-- End - ekstra artikler -->
           <?php endif; ?>
 
           <?php if (isset($content['field_magasinleder'])): ?>
-            <!-- BEGIN - magasin leder -->
+            <!-- Begin - magasin leder -->
             <div class="ktc-teaser-magazine-leder">
               <?php print render($content['field_magasinleder']); ?>
             </div>
-            <!-- END - magasin leder -->
+            <!-- End - magasin leder -->
           <?php endif; ?>
 
         </div>
@@ -87,7 +90,6 @@
       <!-- End - body -->
 
       <div class="ktc-teaser-magazine-buttons text-right">
-        <a href="user/<?php print $user->uid; ?>/abonnementer" class="btn btn-info"><?php print t('Tegn et online abonnement'); ?></a>
         <a class="btn btn-primary" href="node/<?php print $nid; ?>"><?php print t('Se alle artikler for denne udgave'); ?></a>
       </div>
 

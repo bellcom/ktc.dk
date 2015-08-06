@@ -1186,7 +1186,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'link' => 0,
-      'markup' => 'h1',
+      'markup' => 'h3',
       'id' => '',
       'class' => '',
       'context' => 'argument_entity_id:node_1',
@@ -1238,7 +1238,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-date ktc-content',
+      'css_class' => 'ktc-date ktc-content ktc-blue',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
@@ -1400,7 +1400,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-blue',
       'template_suggestion' => 'aside',
     );
     $pane->extras = array();
