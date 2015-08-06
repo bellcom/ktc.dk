@@ -76,6 +76,18 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
 }
 
 /**
+ * Update a list of user ids from CRM.
+ */
+function ktc_crm_webuser_update_user_ids($user_ids) {
+  foreach ($user_ids as $user_id) {
+    $account = user_load($user_id);
+
+    $webuserdto = ktc_crm_lookup_webuser_by_mail($account->mail);
+    ktc_crm_update_account_from_webuserdto($webuserdto);
+  }
+}
+
+/**
  * Helper, get users uuid.
  */
 function _ktc_crm_user_get_user_uuid($uid) {
