@@ -1962,14 +1962,14 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
         'autocomplete_path' => 'taxonomy/autocomplete',
         'content_taxonomy_opt_groups' => 0,
         'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 23,
     ),
   );
@@ -2707,7 +2707,7 @@ function ktc_hearing_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -2804,7 +2804,7 @@ function ktc_hearing_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -2866,11 +2866,11 @@ function ktc_hearing_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'file',
         'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 3,
+        'type' => 'file_table',
+        'weight' => 7,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -3025,7 +3025,7 @@ function ktc_hearing_field_default_field_instances() {
         'module' => 'hs_taxonomy',
         'settings' => array(),
         'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -3092,7 +3092,7 @@ function ktc_hearing_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teasercomments' => array(
         'label' => 'above',
