@@ -101,6 +101,15 @@ function ktc_hearing_notifications_node_insert($node) {
       $language = field_language('node', $node, 'field_status');
       $node->field_status[$language][0]['tid'] = KTC_HEARING_STATUS_OPEN;
     }
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function ktc_hearing_notifications_node_presave($node) {
+  if ($node->type == 'hearing' && $node->status) {
+    $hearing_status = ktc_hearing_get_status($node);
 
     if (isset($node->original)) {
       $original_status = ktc_hearing_get_status($node->original);
@@ -136,10 +145,13 @@ function ktc_hearing_notifications_node_insert($node) {
  * Notify users on hearing.
  */
 function ktc_hearing_notifications_notify_users($op, $hearing) {
+  // The order of these roles define what notification the user will recieve.
+  // If a user is both chairman and attendee, he will not recieve the normal
+  // attendee mail, as only one notification is send per user.
   $attendee_roles = array(
-    'chairman',
     'responsible_foreman',
     'responsible_admin',
+    'chairman',
     'coordinator',
     'attendees',
   );
@@ -154,8 +166,6 @@ function ktc_hearing_notifications_notify_users($op, $hearing) {
   $users['creator'][]['target_id'] = $hearing->uid;
 
   $mail_templates = ktc_hearing_generate_mail_templates($hearing, $op, $attendee_roles);
-
-  $tokens = array();
 
   if ($op == 'approved') {
     $summary_markup = ktc_hearing_generate_hearing_summary_view($hearing);
@@ -177,12 +187,19 @@ function ktc_hearing_notifications_notify_users($op, $hearing) {
     $params['attachments'][] = $plain_attachment;
   }
 
+  $notified_uids = array();
+
   if (isset($users)) {
     foreach ($users as $role => $role_users) {
 
       if (isset($mail_templates[$role])) {
         foreach ($role_users as $_user) {
           $user = user_load($_user['target_id']);
+
+          // Skip user if he is already notified for this hearing.
+          if (isset($notified_uids[$user->uid])) {
+            continue;
+          }
 
           $token_data = array('user' => $user, 'node' => $hearing);
           $to = $user->mail;
@@ -197,10 +214,29 @@ function ktc_hearing_notifications_notify_users($op, $hearing) {
           $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
 
           drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
+
+          $notified_uids[$user->uid] = $user->uid;
         }
       }
     }
   }
+}
+
+/**
+ * Notify single user, as attendee on hearing.
+ */
+function ktc_hearing_notifications_notify_attendee($uid, $hearing) {
+  $role = 'attendees';
+  $mail_templates = ktc_hearing_generate_mail_templates($hearing, 'new_hearing', array($role));
+  $user = user_load($uid);
+
+  $token_data = array('user' => $user, 'node' => $hearing);
+  $language = $user->language;
+
+  $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
+  $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
+
+  drupal_mail('ktc_hearing', 'notify_new', $user->mail, $language, $params);
 }
 
 /**

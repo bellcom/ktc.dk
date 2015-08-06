@@ -8,6 +8,9 @@
  * Form callback for admin settings.
  */
 function ktc_hearing_notifications_settings() {
+  $form['preface'] = array(
+    '#markup' => '<p><em>En bruger vil kun modtage en mail, pr handling. <br />Er brugeren både "Ansvarlig formand", "Formand" og "Deltager" vil der kun blive sendt en mail for "Ansvarlig formand". <br />Er brugeren "Tovholder" og "Deltager" vil der kun blive sendt en mail for "Tovholder" osv.</em></p>'
+  );
   $values = variable_get('ktc_hearing_notification_settings', array());
 
   $template_options = array(t('Ingen'));
@@ -38,9 +41,9 @@ function ktc_hearing_notifications_settings() {
   );
 
   $attendee_roles = array(
-    'chairman' => 'Formand',
     'responsible_foreman' => 'Ansvarlig Formand',
     'responsible_admin' => 'Ansvarlig Tovholder',
+    'chairman' => 'Formand',
     'coordinator' => 'Tovholder',
     'attendees' => 'Deltagere',
     'creator' => 'Opretter',
