@@ -210,7 +210,7 @@ function ktc_netvaerk_settings() {
   }
  $form['ktc_netvaerk_search_empty_message'] = array(
     '#type' => 'textarea',
-    '#title' => t('Text shown if filter / search result is empty'),
+    '#title' => t('Text which shown if filter / search result is empty'),
     '#default_value' => variable_get('ktc_netvaerk_search_empty_message', 'No result'),
   );
   $form['ktc_netvaerk_type_closed'] = array(
