@@ -95,7 +95,16 @@
 
   <p class="ktc-date"><?php print $published_at; ?></p>
   <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
-  <p class="ktc-list-display-author"><?php print t('Forfatter:') . ' ' . $name; ?></p>
+  <p class="ktc-list-display-author">
 
+    <?php print t('Forfatter:'); ?>
+
+    <?php if (isset($content['field_coforfattere'])): ?>
+      <!-- Begin - authors -->
+      <?php print render($content['field_coforfattere']); ?>
+      <!-- End - authors -->
+    <?php endif; ?>
+
+  </p>
 </article>
 <!-- End - list display -->

@@ -7,20 +7,50 @@
 include_once 'ktc_content_types.features.inc';
 
 function ktc_content_types_entity_info_alter(&$entity_info) {
+
+  /* Teaser */
+  $entity_info['field_collection_item']['view modes']['teaser'] = array(
+    'label' => t('Teaser'),
+    'custom settings' => TRUE,
+  );
+
+  /* Teaser with comments */
+  $entity_info['node']['view modes']['teasercomments'] = array(
+    'label' => t('Teaser with comments'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['field_collection_item']['view modes']['teasercomments'] = array(
+    'label' => t('Teaser with comments'),
+    'custom settings' => TRUE,
+  );
+
+  /* Listevisning */
   $entity_info['node']['view modes']['listevisning'] = array(
     'label' => t('Listevisning'),
     'custom settings' => TRUE,
   );
+  $entity_info['field_collection_item']['view modes']['listevisning'] = array(
+    'label' => t('Listevisning'),
+    'custom settings' => TRUE,
+  );
+
+  /* Listevisning stor */
   $entity_info['node']['view modes']['listevisningstor'] = array(
     'label' => t('Listevisning Stor'),
     'custom settings' => TRUE,
   );
+  $entity_info['field_collection_item']['view modes']['listevisningstor'] = array(
+    'label' => t('Listevisning Stor'),
+    'custom settings' => TRUE,
+  );
+
+  /* Listevisning boks */
   $entity_info['node']['view modes']['listevisningboks'] = array(
     'label' => t('Listevisning boks'),
     'custom settings' => TRUE,
   );
-  $entity_info['node']['view modes']['teasercomments'] = array(
-    'label' => t('Teaser with comments'),
+  $entity_info['field_collection_item']['view modes']['listevisningboks'] = array(
+    'label' => t('Listevisning boks'),
     'custom settings' => TRUE,
   );
 }
