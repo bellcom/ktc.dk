@@ -230,13 +230,20 @@ function ktc_hearing_notifications_notify_attendee($uid, $hearing) {
   $mail_templates = ktc_hearing_generate_mail_templates($hearing, 'new_hearing', array($role));
   $user = user_load($uid);
 
+  $to = $user->mail;
+
+  // Testing.
+  if ($test_mail = variable_get('ktc_test_mail_address', FALSE)) {
+    $to = $test_mail;
+  }
+
   $token_data = array('user' => $user, 'node' => $hearing);
   $language = $user->language;
 
   $params['subject'] = token_replace($mail_templates[$role]['subject'], $token_data);
   $params['body'] = token_replace($mail_templates[$role]['body'], $token_data);
 
-  drupal_mail('ktc_hearing', 'notify_new', $user->mail, $language, $params);
+  drupal_mail('ktc_hearing', 'notify_new', $to, $language, $params);
 }
 
 /**
