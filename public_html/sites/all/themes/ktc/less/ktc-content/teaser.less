@@ -68,19 +68,7 @@
 		}
 	}
 
-	.ktc-teaser-magazine-top-artikel {
-		border-bottom: 2px solid #d5ddde;
-		margin-bottom: 18px;
-	}
-
-	.ktc-teaser-magazine-leder {
-		border-top: 2px solid #d5ddde;
-		margin-top: 18px;
-		padding-top: 18px;
-	}
-
 	.ktc-teaser-artikler {
-		margin-bottom: 18px;
 
 		.ktc-teaser-artikler-image {
 			float: right;
@@ -91,6 +79,25 @@
 		}
 		// Clearfix
 		&:extend(.clearfix all);
+	}
+
+	.ktc-teaser {
+
+		.ktc-teaser-body {
+			padding-left: 0;
+			padding-right: 0;
+			padding-bottom: 0;
+		}
+
+		.ktc-date {
+			color: @ktc-color-blue;
+		}
+
+		.ktc-user-profile,
+		.ktc-teaser-heading,
+		.ktc-footer {
+			display: none;
+		}
 	}
 
 	.ktc-teaser-magazine-buttons {
