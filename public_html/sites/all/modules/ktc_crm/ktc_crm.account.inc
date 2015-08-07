@@ -32,6 +32,11 @@ function ktc_crm_account_update_accounts() {
 
     $accounts = ktc_crm_fetch_accounts($options);
 
+    if ($accounts == 'error') {
+      $logger->log->addError('cron', 'account sync aborted crm died?');
+      return FALSE;
+    }
+
     if (!$accounts && $i == 0) {
       // If no accounts are returned on first fetch, don't no anything more.
       $logger->log->addInfo('cron', 'no accounts returned from webservice');

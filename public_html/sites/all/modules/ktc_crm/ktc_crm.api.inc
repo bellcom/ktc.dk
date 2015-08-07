@@ -516,6 +516,8 @@ function ktc_crm_fetch_accounts($options = array()) {
       'message' => $e->getMessage(),
       'method' => 'RetrieveAccounts',
     ));
+
+    return 'error';
   }
 
   return FALSE;
