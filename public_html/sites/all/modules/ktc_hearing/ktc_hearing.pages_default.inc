@@ -330,7 +330,11 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color ktc-margin-top',
+      'template_suggestion' => 'entity_field',
+    );
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
@@ -482,7 +486,11 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'entity_field',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -507,7 +515,11 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -531,7 +543,7 @@ function ktc_hearing_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-aside-color',
       'template_suggestion' => 'bum',
     );
     $pane->extras = array();
@@ -576,8 +588,8 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Status på høring',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -618,7 +630,7 @@ function ktc_hearing_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-table-list',
+      'css_class' => 'ktc-aside-table-list ktc-aside-color',
       'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();
@@ -649,7 +661,11 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'entity_field',
+    );
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
@@ -680,7 +696,7 @@ function ktc_hearing_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-list',
+      'css_class' => 'ktc-aside-list ktc-aside-color',
       'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();
