@@ -11606,29 +11606,15 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   padding-left: 30px;
   padding-right: 30px;
 }
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h1,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h2,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h3,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h4,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h5,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h6 {
+.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body p {
   font-weight: normal;
   font-style: italic;
+  font-size: 22px;
   color: #2c353a;
   margin-bottom: 0;
 }
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h1:after,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h2:after,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h3:after,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h4:after,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h5:after,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h6:after,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h1:before,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h2:before,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h3:before,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h4:before,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h5:before,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-headline h6:before {
+.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body p:after,
+.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body p:before {
   content: '"';
 }
 .ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body-extra,
