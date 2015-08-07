@@ -300,6 +300,8 @@ function ktc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-arrangement-body'
   $field_instances['node-arrangement-body'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -403,19 +405,27 @@ function ktc_content_types_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'emails' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 0,
           'plain_text' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => -10,
             ),
             'full_html' => array(
               'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -4478,6 +4488,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-document-body'
   $field_instances['node-document-body'] = array(
     'bundle' => 'document',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Indtast en kort beskrivelse af dit dokument - eller formålet med det',
@@ -4553,8 +4565,9 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'emails' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'mailchimp_campaign' => 0,
           'plain_text' => 0,
         ),
@@ -4562,6 +4575,9 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => -10,
             ),
@@ -5447,6 +5463,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-document-field_tekst_til_bilaget'
   $field_instances['node-document-field_tekst_til_bilaget'] = array(
     'bundle' => 'document',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Du kan skrive en kort forklaring til bilaget',
@@ -5508,8 +5526,9 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'emails' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'mailchimp_campaign' => 0,
           'plain_text' => 0,
         ),
@@ -5517,6 +5536,9 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => -10,
             ),
@@ -6102,8 +6124,9 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'emails' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'mailchimp_campaign' => 0,
           'plain_text' => 0,
         ),
@@ -6111,6 +6134,9 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => -10,
             ),
@@ -7274,19 +7300,27 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'emails' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'mailchimp_campaign' => 0,
           'plain_text' => 'plain_text',
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => -10,
             ),
             'full_html' => array(
               'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -8965,8 +8999,9 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'emails' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'mailchimp_campaign' => 0,
           'plain_text' => 0,
         ),
@@ -8974,6 +9009,9 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => -10,
             ),
@@ -11937,6 +11975,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-page-field_short'
   $field_instances['node-page-field_short'] = array(
     'bundle' => 'page',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Vises i højre spalte',
@@ -11998,19 +12038,27 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'emails' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 0,
           'plain_text' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => -10,
             ),
             'full_html' => array(
               'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => 10,
