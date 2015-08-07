@@ -35,6 +35,15 @@ The script `copy_files.php` can be used to copy only the nessecary files from th
 
 Files should be copied to `/var/tmp/ktc.dk-files/drupal`.
 
+**Group roles**
+A script to export the group roles for members is located in `exporters`, named `export_og_users_roles.php`. This is run in the same way as the data export script.
+
+This generates a JSON file. Copy this along with the 5 from the data exporter to the new site.
+
+```
+og_users_roles.json
+```
+
 ### ktc.dk
 Content is exported from ktc.dk via a DB dump
 
@@ -46,9 +55,10 @@ Copy files from `/var/www/www.ktc.dk/htdocs/uploads/tx_ktcfileman` on the produc
 I have done this by sshfs mounting the appropriate folder to my local machine and then rsyncing the files the new server.
 
 ## Import data
+All data is imported to the new KTC site.
 
 ### netvaerk.ktc.dk
-The 5 exported JSON files, are to be placed in the `scripts/json/import/var` folder.
+The 6 exported JSON files, are to be placed in the `scripts/json/import/var` folder. 
 
 The entities that are to be imported are defined in config.php in the `json/import` folder.
 
