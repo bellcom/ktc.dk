@@ -986,7 +986,7 @@ function ktc_hearing_no_response_form($form, &$form_state) {
   $form['no_answer'] = array(
     '#title' => t('Begrundelse for ikke at svare'),
     '#description' => t('Din begrundelse vil være synlig for de andre deltagere.'),
-    '#type' => 'textarea',
+    '#type' => 'text_format',
     '#required' => TRUE,
   );
 
@@ -1020,7 +1020,7 @@ function ktc_hearing_no_response_form_submit(&$form, &$form_state) {
   $node->uid = $user->uid;
   $node->status = 1;
 
-  $node->body[LANGUAGE_NONE][]['value'] = $form_state['values']['no_answer'];
+  $node->body[LANGUAGE_NONE][] = $form_state['values']['no_answer'];
   $node->field_is_no_answer[LANGUAGE_NONE][]['value'] = 1;
   $node->field_hearing_node[LANGUAGE_NONE][]['target_id'] = $hearing_nid;
   $node = node_submit($node);
