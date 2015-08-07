@@ -30,6 +30,39 @@ function teknik_og_miljoe_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function teknik_og_miljoe_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: magazine_teaser_banner.
+  $styles['magazine_teaser_banner'] = array(
+    'name' => 'magazine_teaser_banner',
+    'label' => 'Magazine teaser banner',
+    'effects' => array(
+      3 => array(
+        'label' => 'Skalér',
+        'help' => 'Skalering bevarer billedets højde-bredde-forhold. Hvis kun den ene dimension angives vil den anden blive beregnet.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 188,
+          'height' => '',
+          'upscale' => 1,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function teknik_og_miljoe_node_info() {

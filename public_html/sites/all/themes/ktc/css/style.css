@@ -8222,6 +8222,8 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 }
 .magasinflow .views-row-first {
   width: 100%;
+  display: block;
+  float: none;
 }
 .magasinflow .views-row-first::after {
   clear: both;
@@ -10052,24 +10054,25 @@ fieldset[disabled] .field-type-image .button {
 .ktc-teaser-magazine .ktc-teaser-magazine-banner:last-child {
   margin-bottom: 0;
 }
-.ktc-teaser-magazine .ktc-teaser-magazine-top-artikel {
-  border-bottom: 2px solid #d5ddde;
-  margin-bottom: 18px;
-}
-.ktc-teaser-magazine .ktc-teaser-magazine-leder {
-  border-top: 2px solid #d5ddde;
-  margin-top: 18px;
-  padding-top: 18px;
-}
-.ktc-teaser-magazine .ktc-teaser-artikler {
-  margin-bottom: 18px;
-}
 .ktc-teaser-magazine .ktc-teaser-artikler .ktc-teaser-artikler-image {
   float: right;
   margin-left: 15px;
 }
 .ktc-teaser-magazine .ktc-teaser-artikler .ktc-date {
   margin-bottom: 4px;
+}
+.ktc-teaser-magazine .ktc-teaser .ktc-teaser-body {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+.ktc-teaser-magazine .ktc-teaser .ktc-date {
+  color: #1f9bd7;
+}
+.ktc-teaser-magazine .ktc-teaser .ktc-user-profile,
+.ktc-teaser-magazine .ktc-teaser .ktc-teaser-heading,
+.ktc-teaser-magazine .ktc-teaser .ktc-footer {
+  display: none;
 }
 .ktc-teaser-magazine .ktc-teaser-magazine-buttons {
   padding-top: 10px;
