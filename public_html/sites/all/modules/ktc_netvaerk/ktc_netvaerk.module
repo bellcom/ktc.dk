@@ -744,35 +744,6 @@ function ktc_netvaerk_node_presave($node) {
         $node->field_open_group[$lang][0]['value'] = 0;
       }
     }
-
-    if ($parent_group = field_get_items('node', $node, 'og_group_ref')) {
-
-      // Get subgroup's members.
-      $query = new EntityFieldQuery();
-      $query->entityCondition('entity_type', 'user')
-        ->fieldCondition('og_user_node', 'target_id', $node->nid, '=');
-
-      $results = $query->execute();
-
-      $uids = isset($results['user']) ? array_keys($results['user']) : array();
-      if (!empty($uids)) {
-        foreach ($uids as $uid) {
-          $account = user_load($uid);
-          // Add the user to the parent group.
-          og_group('node', $parent_group[0]['target_id'], array(
-                      "entity type"       => "user",
-                      "entity"        => $account,
-                      "membership type"   => OG_MEMBERSHIP_TYPE_DEFAULT,
-                  ));
-          // Changes the users role in the group
-          // (1 = non-member, 2 = member, 3 = administrator member).
-          og_role_grant('node', $parent_group[0]['target_id'], $uid, 2);
-        }
-        // Loop for all the top groups.
-        $parent_obj = node_load($parent_group[0]['target_id']);
-        node_save($parent_obj);
-      }
-    }
   }
 }
 
