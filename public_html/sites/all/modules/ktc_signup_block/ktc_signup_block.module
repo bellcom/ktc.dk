@@ -45,7 +45,7 @@ function ktc_signup_block_link_content() {
   if (isset($node->signup_status)) {
     // The node has been closed for signups, and the user has
     // signup permissions.  Let them know it's closed.
-    if ($node && !$node->signup_status && !$direct_link = field_get_items('node', $node, 'field_link_to_signup')) {
+    if ($node && !$node->signup_status) {
       if (user_access('sign up for content')) {
         $output .= '<div>';
         // If they're logged in and already signed up, show their current
@@ -60,7 +60,7 @@ function ktc_signup_block_link_content() {
         $output .= '</div>';
       }
     }
-    elseif ($node && $node->signup_status && !$direct_link = field_get_items('node', $node, 'field_link_to_signup')) {
+    elseif ($node && $node->signup_status) {
 
       if ($user->uid == 0) {
         // This is an anonymous user.
@@ -68,7 +68,6 @@ function ktc_signup_block_link_content() {
           $output .= '<div>
                         <h4>For medlem | <a href="/user?destination=node/' . $nid . '">Klik her </a>for at logge på så du kan tilmelde dig</h4>
                       </div>';
-
         }
       }
       else {
@@ -105,19 +104,38 @@ function _ktc_signup_block_get_cancel_link($signup) {
   $output = '';
   $node = node_load($signup->nid);
 
-  // Check permissions.
-  $admin = _signup_menu_access($node, 'admin');
-  $own = !empty($user->uid) && $user->uid == $signup->uid;
-  $can_cancel = $admin || (user_access('cancel own signups') && $own);
-  if ($can_cancel) {
-    $destination = array('destination' => 'node/' . $signup->nid);
-    $signup_token = signup_get_token($signup->sid, 'cancel');
+  // If a direct link is set for an external signup show this instead of the
+  // internal function.
+  if ($direct_link = field_get_items('node', $node, 'field_link_to_signup')) {
+    $url = $direct_link[0]['url'];
+    if (!preg_match('/^http:\/\//', $url)) {
+      $url = 'http://' . $url;
+    }
+    $output = l($direct_link[0]['title'], $url, array(
+      'external' => TRUE,
+      'attributes' => array(
+        'class' => array(
+          'btn', 'btn-primary',
+        ),
+      ),
+    ));
+  }
+  else {
+    // Check permissions.
+    $admin = _signup_menu_access($node, 'admin');
+    $own = !empty($user->uid) && $user->uid == $signup->uid;
+    $can_cancel = $admin || (user_access('cancel own signups') && $own);
+    if ($can_cancel) {
 
-    $output .= l(t('Afmeld'), "signup/cancel/$signup->sid/$signup_token",
-                array(
-                  'query' => $destination,
-                  'attributes' => array('class' => array('btn', 'btn-default')),
-                ));
+      $destination = array('destination' => 'node/' . $signup->nid);
+      $signup_token = signup_get_token($signup->sid, 'cancel');
+
+      $output .= l(t('Afmeld'), "signup/cancel/$signup->sid/$signup_token",
+                  array(
+                    'query' => $destination,
+                    'attributes' => array('class' => array('btn', 'btn-default')),
+                  ));
+    }
   }
   return $output;
 }
@@ -126,7 +144,6 @@ function _ktc_signup_block_get_cancel_link($signup) {
  * KTC signup block get signup link callback.
  */
 function _ktc_signup_block_get_signup_link($node) {
-  $output = '';
   $now = new DateTime('now');
 
   if ($field_registration_deadline = field_get_items('node', $node, 'field_registration_deadline')) {
@@ -144,13 +161,32 @@ function _ktc_signup_block_get_signup_link($node) {
   if ($deadline && $now && ($now > $deadline) && ($now < $arrangement_date)) {
     $output = '<p>' . t('Fristen for tilmelding til dette arrangement er overskredet. Kontakt evt. arrangøren for "last minute" tilmelding.') . '</p>';
   }
-  elseif($now > $arrangement_date) {
+  elseif ($now > $arrangement_date) {
     $output = '';
   }
+  // Allow the user to sign up for the event.
   else {
-    module_load_include('inc', 'signup', 'includes/signup_form');
-    $form = drupal_get_form('signup_form', $node, 'auth', FALSE);
-    $output .= drupal_render($form);
+    // If a direct link is set for an external signup show this instead of the
+    // internal function.
+    if ($direct_link = field_get_items('node', $node, 'field_link_to_signup')) {
+      $url = $direct_link[0]['url'];
+      if (!preg_match('/^http:\/\//', $url)) {
+        $url = 'http://' . $url;
+      }
+      $output = l($direct_link[0]['title'], $url, array(
+        'external' => TRUE,
+        'attributes' => array(
+          'class' => array(
+            'btn', 'btn-primary',
+          ),
+        ),
+      ));
+    }
+    else {
+      module_load_include('inc', 'signup', 'includes/signup_form');
+      $form = drupal_get_form('signup_form', $node, 'auth', FALSE);
+      $output = drupal_render($form);
+    }
   }
 
   return $output;
