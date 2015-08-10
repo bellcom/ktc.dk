@@ -173,6 +173,87 @@ function ktc_user_profile_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'ktc-well ktc-well-large col-xs-12 pane-center';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'replyto_comment' => 'replyto_comment',
+    'edit_comment' => 'edit_comment',
+    'delete_comment' => 'delete_comment',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['title']['label'] = 'Kommentar til';
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'p';
+  /* Felt: Kommentar: Oprettelsesdato */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'comment';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Felt: Kommentar: Titel */
+  $handler->display->display_options['fields']['subject']['id'] = 'subject';
+  $handler->display->display_options['fields']['subject']['table'] = 'comment';
+  $handler->display->display_options['fields']['subject']['field'] = 'subject';
+  $handler->display->display_options['fields']['subject']['label'] = '';
+  $handler->display->display_options['fields']['subject']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['subject']['alter']['text'] = '[subject]   -   [created]';
+  $handler->display->display_options['fields']['subject']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['subject']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['subject']['element_type'] = 'h5';
+  $handler->display->display_options['fields']['subject']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['subject']['element_wrapper_type'] = 'p';
+  /* Felt: Kommentar: Forfatter */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'comment';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = 'Af [name]';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Felt: Kommentar: Comment */
+  $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
+  $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
+  $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
+  $handler->display->display_options['fields']['comment_body']['label'] = '';
+  $handler->display->display_options['fields']['comment_body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['comment_body']['element_class'] = 'ktc-well ktc-well-large';
+  $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
+  /* Felt: Kommentar: Svar-link */
+  $handler->display->display_options['fields']['replyto_comment']['id'] = 'replyto_comment';
+  $handler->display->display_options['fields']['replyto_comment']['table'] = 'comment';
+  $handler->display->display_options['fields']['replyto_comment']['field'] = 'replyto_comment';
+  $handler->display->display_options['fields']['replyto_comment']['label'] = '';
+  $handler->display->display_options['fields']['replyto_comment']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['replyto_comment']['alter']['link_class'] = 'btn btn-default';
+  $handler->display->display_options['fields']['replyto_comment']['element_label_colon'] = FALSE;
+  /* Felt: Kommentar: Redigér-link */
+  $handler->display->display_options['fields']['edit_comment']['id'] = 'edit_comment';
+  $handler->display->display_options['fields']['edit_comment']['table'] = 'comment';
+  $handler->display->display_options['fields']['edit_comment']['field'] = 'edit_comment';
+  $handler->display->display_options['fields']['edit_comment']['label'] = '';
+  $handler->display->display_options['fields']['edit_comment']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['edit_comment']['alter']['link_class'] = 'btn btn-warning';
+  $handler->display->display_options['fields']['edit_comment']['element_label_colon'] = FALSE;
+  /* Felt: Kommentar: Slet-link */
+  $handler->display->display_options['fields']['delete_comment']['id'] = 'delete_comment';
+  $handler->display->display_options['fields']['delete_comment']['table'] = 'comment';
+  $handler->display->display_options['fields']['delete_comment']['field'] = 'delete_comment';
+  $handler->display->display_options['fields']['delete_comment']['label'] = '';
+  $handler->display->display_options['fields']['delete_comment']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['delete_comment']['alter']['link_class'] = 'btn btn-danger';
+  $handler->display->display_options['fields']['delete_comment']['element_label_colon'] = FALSE;
 
   /* Display: Blok */
   $handler = $view->new_display('block', 'Blok', 'block_1');
