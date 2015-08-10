@@ -7355,7 +7355,7 @@ h3.pane-title {
  */
 .icon-hearing-sm {
   background-image: url(../images/sprites.png);
-  background-position: 0px -485px;
+  background-position: 0px -685px;
   width: 9px;
   height: 16px;
   vertical-align: middle;
@@ -7482,7 +7482,7 @@ body .form-control {
 }
 .header-region .header_top #block-views-exp-search-page .views-submit-button .form-submit#edit-submit-search {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1312px;
+  background-position: 0px -1744px;
   width: 28px;
   height: 28px;
   border: none;
@@ -7635,7 +7635,7 @@ body .form-control {
 }
 .navigation .header_bottom .header_fixed .header-user .header-user-name .icon-arrow-down {
   background-image: url(../images/sprites.png);
-  background-position: 0px -250px;
+  background-position: 0px -362px;
   width: 15px;
   height: 15px;
   display: inline-block;
@@ -8316,7 +8316,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-left: -15px;
   content: ' ';
   background-image: url(../images/sprites.png);
-  background-position: 0px -485px;
+  background-position: 0px -685px;
   width: 9px;
   height: 16px;
 }
@@ -8557,7 +8557,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .region_footer.footer_5 .footer-5 .footer_location {
   background-image: url(../images/sprites.png);
-  background-position: 0px -208px;
+  background-position: 0px -304px;
   width: 12px;
   height: 15px;
   display: inline-block;
@@ -8732,7 +8732,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .node-teaser .node-teaser-bottom .left .icon-comment {
   background-image: url(../images/sprites.png);
-  background-position: 0px -167px;
+  background-position: 0px -247px;
   width: 15px;
   height: 14px;
   display: inline-block;
@@ -8740,7 +8740,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 .node-teaser .node-teaser-bottom .left .icon-statistics {
   background-image: url(../images/sprites.png);
-  background-position: 0px -73px;
+  background-position: 0px -113px;
   width: 23px;
   height: 11px;
   display: inline-block;
@@ -8755,7 +8755,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -127px;
+  background-position: 0px -191px;
   width: 15px;
   height: 14px;
   vertical-align: top;
@@ -8764,7 +8764,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-meeting_doodle {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -108px;
+  background-position: 0px -164px;
   width: 16px;
   height: 13px;
   vertical-align: top;
@@ -8773,7 +8773,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -147px;
+  background-position: 0px -219px;
   width: 14px;
   height: 14px;
   vertical-align: top;
@@ -8782,7 +8782,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -485px;
+  background-position: 0px -685px;
   width: 9px;
   height: 16px;
   vertical-align: top;
@@ -8791,7 +8791,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -529px;
+  background-position: 0px -745px;
   width: 12px;
   height: 16px;
   vertical-align: top;
@@ -8800,7 +8800,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -463px;
+  background-position: 0px -655px;
   width: 15px;
   height: 16px;
   vertical-align: top;
@@ -8872,7 +8872,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node--group--listevisning .icon-subgroup {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -642px;
+  background-position: 0px -898px;
   width: 15px;
   height: 17px;
   vertical-align: bottom;
@@ -8909,7 +8909,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -913px;
+  background-position: 0px -1249px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8919,7 +8919,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -946px;
+  background-position: 0px -1290px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8929,7 +8929,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -1144px;
+  background-position: 0px -1536px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8939,7 +8939,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -880px;
+  background-position: 0px -1208px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8949,7 +8949,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -1111px;
+  background-position: 0px -1495px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8959,7 +8959,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-meeting_doodle {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -781px;
+  background-position: 0px -1085px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8969,7 +8969,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -814px;
+  background-position: 0px -1126px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -9082,7 +9082,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node .views-field .term-name a .icon-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -596px;
+  background-position: 0px -836px;
   width: 17px;
   height: 17px;
   vertical-align: bottom;
@@ -9165,7 +9165,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.red-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.red-dot {
   background-image: url(../images/sprites.png);
-  background-position: 0px -42px;
+  background-position: 0px -66px;
   width: 8px;
   height: 8px;
 }
@@ -9179,14 +9179,14 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.green-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.green-dot {
   background-image: url(../images/sprites.png);
-  background-position: 0px -28px;
+  background-position: 0px -44px;
   width: 8px;
   height: 8px;
 }
 .darkgray-box .pane-content .view-header li i.blue-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.blue-dot {
   background-image: url(../images/sprites.png);
-  background-position: 0px -14px;
+  background-position: 0px -22px;
   width: 8px;
   height: 8px;
 }
@@ -9505,37 +9505,37 @@ fieldset[disabled] .field-type-image .button {
 }
 .addthisevent_dropdown .ateappleical:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -551px;
+  background-position: 0px -775px;
   width: 16px;
   height: 16px;
 }
 .addthisevent_dropdown .ateoutlook:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -441px;
+  background-position: 0px -625px;
   width: 16px;
   height: 16px;
 }
 .addthisevent_dropdown .ateoutlookcom:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -441px;
+  background-position: 0px -625px;
   width: 16px;
   height: 16px;
 }
 .addthisevent_dropdown .ategoogle:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -507px;
+  background-position: 0px -715px;
   width: 16px;
   height: 16px;
 }
 .addthisevent_dropdown .ateyahoo:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -419px;
+  background-position: 0px -595px;
   width: 16px;
   height: 16px;
 }
 .addthisevent_dropdown .atefacebook:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -397px;
+  background-position: 0px -565px;
   width: 16px;
   height: 16px;
 }
@@ -9599,19 +9599,19 @@ fieldset[disabled] .field-type-image .button {
 }
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-login {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1210px;
+  background-position: 0px -1618px;
   width: 28px;
   height: 28px;
 }
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-search {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1078px;
+  background-position: 0px -1454px;
   width: 27px;
   height: 27px;
 }
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-create-user {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1012px;
+  background-position: 0px -1372px;
   width: 27px;
   height: 27px;
 }
@@ -9669,7 +9669,7 @@ fieldset[disabled] .field-type-image .button {
   right: 15px;
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -376px;
+  background-position: 0px -536px;
   width: 15px;
   height: 15px;
 }
@@ -9679,7 +9679,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title:after {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -355px;
+  background-position: 0px -507px;
   width: 15px;
   height: 15px;
 }
@@ -10081,7 +10081,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -271px;
+  background-position: 0px -391px;
   width: 12px;
   height: 15px;
 }
@@ -10128,7 +10128,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-green .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -271px;
+  background-position: 0px -391px;
   width: 12px;
   height: 15px;
 }
@@ -10175,7 +10175,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -334px;
+  background-position: 0px -478px;
   width: 12px;
   height: 15px;
 }
@@ -10222,7 +10222,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-gold .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -292px;
+  background-position: 0px -420px;
   width: 12px;
   height: 15px;
 }
@@ -10269,7 +10269,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -313px;
+  background-position: 0px -449px;
   width: 12px;
   height: 15px;
 }
@@ -10528,25 +10528,25 @@ fieldset[disabled] .field-type-image .button {
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-settings {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1177px;
+  background-position: 0px -1577px;
   width: 27px;
   height: 27px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-search {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1078px;
+  background-position: 0px -1454px;
   width: 27px;
   height: 27px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-toggle {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1045px;
+  background-position: 0px -1413px;
   width: 27px;
   height: 27px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-user-menu > li .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-logout {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1244px;
+  background-position: 0px -1660px;
   width: 28px;
   height: 28px;
 }
@@ -10563,7 +10563,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content .ktc-header-top-bar-add-content-icon {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -1278px;
+  background-position: 0px -1702px;
   width: 28px;
   height: 28px;
 }
@@ -10826,49 +10826,49 @@ fieldset[disabled] .field-type-image .button {
 }
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-meeting_doodle {
   background-image: url(../images/sprites.png);
-  background-position: 0px -108px;
+  background-position: 0px -164px;
   width: 16px;
   height: 13px;
 }
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-document {
   background-image: url(../images/sprites.png);
-  background-position: 0px -529px;
+  background-position: 0px -745px;
   width: 12px;
   height: 16px;
 }
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-os2web_base_news {
   background-image: url(../images/sprites.png);
-  background-position: 0px -463px;
+  background-position: 0px -655px;
   width: 15px;
   height: 16px;
 }
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-group {
   background-image: url(../images/sprites.png);
-  background-position: 0px -642px;
+  background-position: 0px -898px;
   width: 15px;
   height: 17px;
 }
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-arrangement {
   background-image: url(../images/sprites.png);
-  background-position: 0px -147px;
+  background-position: 0px -219px;
   width: 14px;
   height: 14px;
 }
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-forum_post {
   background-image: url(../images/sprites.png);
-  background-position: 0px -127px;
+  background-position: 0px -191px;
   width: 15px;
   height: 14px;
 }
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-hearing {
   background-image: url(../images/sprites.png);
-  background-position: 0px -485px;
+  background-position: 0px -685px;
   width: 9px;
   height: 16px;
 }
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-artikler {
   background-image: url(../images/sprites.png);
-  background-position: 0px -56px;
+  background-position: 0px -88px;
   width: 11px;
   height: 11px;
 }
@@ -10920,7 +10920,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -271px;
+  background-position: 0px -391px;
   width: 12px;
   height: 15px;
 }
@@ -10945,7 +10945,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-green.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -271px;
+  background-position: 0px -391px;
   width: 12px;
   height: 15px;
 }
@@ -10970,7 +10970,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -334px;
+  background-position: 0px -478px;
   width: 12px;
   height: 15px;
 }
@@ -10995,7 +10995,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-gold.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -292px;
+  background-position: 0px -420px;
   width: 12px;
   height: 15px;
 }
@@ -11020,7 +11020,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -313px;
+  background-position: 0px -449px;
   width: 12px;
   height: 15px;
 }
@@ -11094,7 +11094,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -271px;
+  background-position: 0px -391px;
   width: 12px;
   height: 15px;
 }
@@ -11119,7 +11119,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-green.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -271px;
+  background-position: 0px -391px;
   width: 12px;
   height: 15px;
 }
@@ -11144,7 +11144,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -334px;
+  background-position: 0px -478px;
   width: 12px;
   height: 15px;
 }
@@ -11169,7 +11169,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-gold.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -292px;
+  background-position: 0px -420px;
   width: 12px;
   height: 15px;
 }
@@ -11194,7 +11194,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -313px;
+  background-position: 0px -449px;
   width: 12px;
   height: 15px;
 }
@@ -12687,7 +12687,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-comment:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -167px;
+  background-position: 0px -247px;
   width: 15px;
   height: 14px;
 }
@@ -12697,7 +12697,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-viewers:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -73px;
+  background-position: 0px -113px;
   width: 23px;
   height: 11px;
 }
@@ -12707,7 +12707,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-hearing:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -485px;
+  background-position: 0px -685px;
   width: 9px;
   height: 16px;
 }
@@ -12717,7 +12717,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-forum_post:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -127px;
+  background-position: 0px -191px;
   width: 15px;
   height: 14px;
 }
@@ -12727,7 +12727,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-article:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -56px;
+  background-position: 0px -88px;
   width: 11px;
   height: 11px;
 }
@@ -12737,7 +12737,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-meeting_doodle:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -108px;
+  background-position: 0px -164px;
   width: 16px;
   height: 13px;
 }
@@ -12747,7 +12747,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-os2web_base_news:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -463px;
+  background-position: 0px -655px;
   width: 15px;
   height: 16px;
 }
@@ -12757,7 +12757,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-private:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -90px;
+  background-position: 0px -138px;
   width: 11px;
   height: 12px;
 }
@@ -12767,7 +12767,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-arrangement:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -147px;
+  background-position: 0px -219px;
   width: 14px;
   height: 14px;
 }
@@ -12777,7 +12777,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.kt
 div.ktc-comments-form form.ktc-comments-form .form-actions .ktc-footer-button.ktc-footer-button-document:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -529px;
+  background-position: 0px -745px;
   width: 12px;
   height: 16px;
 }
@@ -13257,7 +13257,7 @@ h6 + .ktc-date {
 }
 .ktc-date-calendar {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1346px;
+  background-position: 0px -1786px;
   width: 44px;
   height: 46px;
   text-align: center;
@@ -13307,7 +13307,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-comment:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -167px;
+  background-position: 0px -247px;
   width: 15px;
   height: 14px;
 }
@@ -13317,7 +13317,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-viewers:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -73px;
+  background-position: 0px -113px;
   width: 23px;
   height: 11px;
 }
@@ -13327,7 +13327,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-hearing:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -485px;
+  background-position: 0px -685px;
   width: 9px;
   height: 16px;
 }
@@ -13337,7 +13337,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-forum_post:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -127px;
+  background-position: 0px -191px;
   width: 15px;
   height: 14px;
 }
@@ -13347,7 +13347,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-article:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -56px;
+  background-position: 0px -88px;
   width: 11px;
   height: 11px;
 }
@@ -13357,7 +13357,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-meeting_doodle:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -108px;
+  background-position: 0px -164px;
   width: 16px;
   height: 13px;
 }
@@ -13367,7 +13367,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-os2web_base_news:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -463px;
+  background-position: 0px -655px;
   width: 15px;
   height: 16px;
 }
@@ -13377,7 +13377,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-private:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -90px;
+  background-position: 0px -138px;
   width: 11px;
   height: 12px;
 }
@@ -13387,7 +13387,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-arrangement:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -147px;
+  background-position: 0px -219px;
   width: 14px;
   height: 14px;
 }
@@ -13397,7 +13397,7 @@ h6 + .ktc-date {
 .ktc-footer .ktc-footer-button.ktc-footer-button-document:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -529px;
+  background-position: 0px -745px;
   width: 12px;
   height: 16px;
 }
@@ -14052,43 +14052,43 @@ h6 + .ktc-date {
 }
 .node-type-os2web-base-news .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1398px;
+  background-position: 0px -1846px;
   width: 93px;
   height: 93px;
 }
 .node-type-hearing .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1794px;
+  background-position: 0px -2274px;
   width: 93px;
   height: 93px;
 }
 .node-type-arrangement .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1893px;
+  background-position: 0px -2381px;
   width: 93px;
   height: 93px;
 }
 .node-type-document .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1497px;
+  background-position: 0px -1953px;
   width: 93px;
   height: 93px;
 }
 .node-type-article .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1992px;
+  background-position: 0px -2488px;
   width: 93px;
   height: 93px;
 }
 .node-type-group .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1695px;
+  background-position: 0px -2167px;
   width: 93px;
   height: 93px;
 }
 .node-type-forum-post .ktc-logo .ktc-logo-image {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1596px;
+  background-position: 0px -2060px;
   width: 93px;
   height: 93px;
 }
@@ -14201,7 +14201,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-comment:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -167px;
+  background-position: 0px -247px;
   width: 15px;
   height: 14px;
 }
@@ -14211,7 +14211,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-viewers:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -73px;
+  background-position: 0px -113px;
   width: 23px;
   height: 11px;
 }
@@ -14221,7 +14221,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-hearing:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -485px;
+  background-position: 0px -685px;
   width: 9px;
   height: 16px;
 }
@@ -14231,7 +14231,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-forum_post:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -127px;
+  background-position: 0px -191px;
   width: 15px;
   height: 14px;
 }
@@ -14241,7 +14241,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-artikler:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -56px;
+  background-position: 0px -88px;
   width: 11px;
   height: 11px;
 }
@@ -14251,7 +14251,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-meeting_doodle:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -108px;
+  background-position: 0px -164px;
   width: 16px;
   height: 13px;
 }
@@ -14261,7 +14261,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-os2web_base_news:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -463px;
+  background-position: 0px -655px;
   width: 15px;
   height: 16px;
 }
@@ -14271,7 +14271,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-private:before {
   margin-top: -6px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -90px;
+  background-position: 0px -138px;
   width: 11px;
   height: 12px;
 }
@@ -14281,7 +14281,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-arrangement:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -147px;
+  background-position: 0px -219px;
   width: 14px;
   height: 14px;
 }
@@ -14291,7 +14291,7 @@ h6 + .ktc-date {
 .ktc-node-header .ktc-node-header-button.ktc-node-header-button-document:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -529px;
+  background-position: 0px -745px;
   width: 12px;
   height: 16px;
 }
@@ -14412,14 +14412,14 @@ h6 + .ktc-date {
   display: inline-block;
   content: "";
   background-image: url(../images/sprites.png);
-  background-position: 0px -757px;
+  background-position: 0px -1053px;
   width: 18px;
   height: 18px;
   margin-top: -9px;
 }
 .ktc-aside-checkbox-filter .view-content .ktc-filter-button-container .btn.active:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -734px;
+  background-position: 0px -1022px;
   width: 17px;
   height: 17px;
   margin-top: -9px;
@@ -14680,7 +14680,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   right: 0;
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -665px;
+  background-position: 0px -929px;
   width: 17px;
   height: 17px;
 }
@@ -14705,7 +14705,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   right: 0;
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -665px;
+  background-position: 0px -929px;
   width: 17px;
   height: 17px;
 }
@@ -14729,7 +14729,19 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   background-color: transparent;
 }
 .ktc-aside-table-list .table tr td a {
+  display: block;
+  width: 100%;
   word-break: break-all;
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
 }
 .ktc-aside-table-list .table tr td .file-icon {
   display: none;
@@ -14772,7 +14784,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   right: 0;
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -665px;
+  background-position: 0px -929px;
   width: 17px;
   height: 17px;
 }
@@ -14788,7 +14800,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-hearing > a:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -485px;
+  background-position: 0px -685px;
   width: 9px;
   height: 16px;
 }
@@ -14798,7 +14810,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-arrangement > a:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -147px;
+  background-position: 0px -219px;
   width: 14px;
   height: 14px;
 }
@@ -14808,7 +14820,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-document > a:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -529px;
+  background-position: 0px -745px;
   width: 12px;
   height: 16px;
 }
@@ -14818,7 +14830,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-group > a:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -642px;
+  background-position: 0px -898px;
   width: 15px;
   height: 17px;
 }
@@ -14828,7 +14840,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-os2web_base_news > a:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -463px;
+  background-position: 0px -655px;
   width: 15px;
   height: 16px;
 }
@@ -14838,7 +14850,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-forum_post > a:before {
   margin-top: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -127px;
+  background-position: 0px -191px;
   width: 15px;
   height: 14px;
 }
@@ -14848,7 +14860,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .related-links > li.related-link-type-artikler > a:before {
   margin-top: -5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -56px;
+  background-position: 0px -88px;
   width: 11px;
   height: 11px;
 }
@@ -14898,7 +14910,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-color-arrow:before,
 .ktc-link-with-icon.ktc-link-icon-color-arrow:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -355px;
+  background-position: 0px -507px;
   width: 15px;
   height: 15px;
 }
@@ -14909,7 +14921,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-meeting_doodle:before,
 .ktc-link-with-icon.ktc-link-icon-meeting_doodle:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -781px;
+  background-position: 0px -1085px;
   width: 27px;
   height: 27px;
 }
@@ -14920,7 +14932,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-arrangement:before,
 .ktc-link-with-icon.ktc-link-icon-arrangement:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -913px;
+  background-position: 0px -1249px;
   width: 27px;
   height: 27px;
 }
@@ -14931,7 +14943,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-forum_post:before,
 .ktc-link-with-icon.ktc-link-icon-forum_post:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1144px;
+  background-position: 0px -1536px;
   width: 27px;
   height: 27px;
 }
@@ -14942,7 +14954,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-document:before,
 .ktc-link-with-icon.ktc-link-icon-document:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -1111px;
+  background-position: 0px -1495px;
   width: 27px;
   height: 27px;
 }
@@ -14953,7 +14965,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-subnetwork:before,
 .ktc-link-with-icon.ktc-link-icon-subnetwork:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -880px;
+  background-position: 0px -1208px;
   width: 27px;
   height: 27px;
 }
@@ -14964,7 +14976,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-hearing:before,
 .ktc-link-with-icon.ktc-link-icon-hearing:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -814px;
+  background-position: 0px -1126px;
   width: 27px;
   height: 27px;
 }
@@ -14975,35 +14987,35 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-link-with-icon.ktc-link-icon-os2web_base_news:before,
 .ktc-link-with-icon.ktc-link-icon-os2web_base_news:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -946px;
+  background-position: 0px -1290px;
   width: 27px;
   height: 27px;
 }
 .ktc-green.ktc-link-with-icon.ktc-link-icon-color-arrow:before,
 .ktc-green .ktc-link-with-icon.ktc-link-icon-color-arrow:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -688px;
+  background-position: 0px -960px;
   width: 17px;
   height: 17px;
 }
 .ktc-blue.ktc-link-with-icon.ktc-link-icon-color-arrow:before,
 .ktc-blue .ktc-link-with-icon.ktc-link-icon-color-arrow:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -596px;
+  background-position: 0px -836px;
   width: 17px;
   height: 17px;
 }
 .ktc-gold.ktc-link-with-icon.ktc-link-icon-color-arrow:before,
 .ktc-gold .ktc-link-with-icon.ktc-link-icon-color-arrow:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -573px;
+  background-position: 0px -805px;
   width: 17px;
   height: 17px;
 }
 .ktc-red.ktc-link-with-icon.ktc-link-icon-color-arrow:before,
 .ktc-red .ktc-link-with-icon.ktc-link-icon-color-arrow:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -711px;
+  background-position: 0px -991px;
   width: 17px;
   height: 17px;
 }
