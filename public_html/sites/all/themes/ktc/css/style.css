@@ -14742,8 +14742,8 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   background-color: transparent;
 }
 .ktc-aside-table-list .table tr td a {
-  display: block;
-  width: 100%;
+  float: left;
+  width: 80%;
   word-break: break-all;
   white-space: pre-wrap;
   /* css-3 */
