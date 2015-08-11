@@ -151,7 +151,8 @@ function ktc_hearing_theme() {
 function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
   // Don't redirect hearing response node form submits.
   if ($form_id != 'hearing_node_form' && strstr($form_id, '_node_form') && strstr($form_id, 'hearing')) {
-    $form['actions']['submit']['#submit'][] = '_ktc_hearings_node_no_redirect';
+    $form['actions']['submit']['#submit'][] = '_ktc_hearing_redirect_to_hearing';
+    $form['actions']['draft']['#submit'][] = '_ktc_hearing_redirect_to_hearing';
   }
 
   // On the hearing node form. It should only be possible to select a
@@ -1002,7 +1003,6 @@ function ktc_hearing_no_response_form($form, &$form_state) {
  * Submit handler for "don't answer" form.
  */
 function ktc_hearing_no_response_form_submit(&$form, &$form_state) {
-  $node = new stdClass();
   $hearing_nid = arg(1);
 
   global $user;
@@ -1013,11 +1013,18 @@ function ktc_hearing_no_response_form_submit(&$form, &$form_state) {
     $user_name = $name_field[0]['value'];
   }
 
-  $node->title = t('Høringssvar') . ': ' . $user_name;
-  $node->type = 'hearing_responses';
-  node_object_prepare($node);
-  $node->language = LANGUAGE_NONE;
-  $node->uid = $user->uid;
+  // Load users response, if there is any.
+  $node = node_load(ktc_hearing_user_has_responded(node_load($hearing_nid)));
+
+  // If not create a new node.
+  if (!$node) {
+    $node = new stdClass();
+    $node->title = t('Høringssvar') . ': ' . $user_name;
+    $node->type = 'hearing_responses';
+    node_object_prepare($node);
+    $node->language = LANGUAGE_NONE;
+    $node->uid = $user->uid;
+  }
   $node->status = 1;
 
   $node->body[LANGUAGE_NONE][] = $form_state['values']['no_answer'];
@@ -1343,8 +1350,9 @@ function ktc_hearing_generate_hearing_summary_view($hearing, $php_script = FALSE
 /**
  * Don't redirect node forms.
  */
-function _ktc_hearings_node_no_redirect(&$form, &$form_state) {
-  $form_state['redirect'] = $_SERVER['HTTP_REFERER'];
+function _ktc_hearing_redirect_to_hearing(&$form, &$form_state) {
+  $hearing_nid = $form_state['node']->field_hearing_node[LANGUAGE_NONE][0]['target_id'];
+  $form_state['redirect'] = 'node/' . $hearing_nid . '/hearing_response';
 }
 
 /**
