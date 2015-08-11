@@ -108,8 +108,10 @@
 
 
         <div class="col-xs-12 col-md-9">
-      <?php /* region--content.tpl.php */ ?>
-      <?php print render($page['content']); ?>
+	        <div class="row">
+				<?php /* region--content.tpl.php */ ?>
+				<?php print render($page['content']); ?>
+        	</div>
         </div>
         
     	<?php if ($tabs): ?>
