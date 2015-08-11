@@ -13,6 +13,8 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-body'
   $field_instances['node-hearing-body'] = array(
     'bundle' => 'hearing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Indsæt det officielle høringsbrev i feltet',
@@ -68,19 +70,27 @@ function ktc_hearing_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'emails' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 0,
           'plain_text' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => -10,
             ),
             'full_html' => array(
               'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -1062,6 +1072,8 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing-field_message'
   $field_instances['node-hearing-field_message'] = array(
     'bundle' => 'hearing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Skriv evt. en besked til faggruppen vedrørende høringen',
@@ -1111,19 +1123,27 @@ function ktc_hearing_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'emails' => 0,
           'filtered_html' => 'filtered_html',
-          'full_html' => 0,
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 0,
           'plain_text' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => -10,
             ),
             'full_html' => array(
               'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => 10,
