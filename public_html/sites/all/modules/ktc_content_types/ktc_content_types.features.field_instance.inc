@@ -4904,7 +4904,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'entity_type' => 'node',
     'field_name' => 'field_dokument',
     'label' => 'Bilag',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
