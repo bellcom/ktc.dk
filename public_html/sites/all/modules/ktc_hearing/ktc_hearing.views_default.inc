@@ -518,6 +518,202 @@ function ktc_hearing_views_default_views() {
   $export['hearing_node_view'] = $view;
 
   $view = new view();
+  $view->name = 'hearing_responses';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Hearing responses';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Besvarelser';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Sidefod: Global: Tekstområde */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/node/[field_hearing_node]/hearing_response">Se alle besvarelser</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
+  /* Forbindelse: Indhold: Forfatter */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Felt: Indhold: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Felt: Indhold: Endeligt svar */
+  $handler->display->display_options['fields']['field_is_final']['id'] = 'field_is_final';
+  $handler->display->display_options['fields']['field_is_final']['table'] = 'field_data_field_is_final';
+  $handler->display->display_options['fields']['field_is_final']['field'] = 'field_is_final';
+  $handler->display->display_options['fields']['field_is_final']['label'] = '';
+  $handler->display->display_options['fields']['field_is_final']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_is_final']['element_label_colon'] = FALSE;
+  /* Felt: Indhold: Har ikke svaret */
+  $handler->display->display_options['fields']['field_is_no_answer']['id'] = 'field_is_no_answer';
+  $handler->display->display_options['fields']['field_is_no_answer']['table'] = 'field_data_field_is_no_answer';
+  $handler->display->display_options['fields']['field_is_no_answer']['field'] = 'field_is_no_answer';
+  $handler->display->display_options['fields']['field_is_no_answer']['label'] = '';
+  $handler->display->display_options['fields']['field_is_no_answer']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_is_no_answer']['element_label_colon'] = FALSE;
+  /* Felt: Felt: Efternavn */
+  $handler->display->display_options['fields']['field_efternavn']['id'] = 'field_efternavn';
+  $handler->display->display_options['fields']['field_efternavn']['table'] = 'field_data_field_efternavn';
+  $handler->display->display_options['fields']['field_efternavn']['field'] = 'field_efternavn';
+  $handler->display->display_options['fields']['field_efternavn']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_efternavn']['exclude'] = TRUE;
+  /* Felt: Felt: Fornavn + mellemnavn */
+  $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
+  $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
+  $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
+  $handler->display->display_options['fields']['field_navn']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_navn']['label'] = '';
+  $handler->display->display_options['fields']['field_navn']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_navn']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_navn']['alter']['text'] = '[field_navn] [field_efternavn]';
+  $handler->display->display_options['fields']['field_navn']['element_label_colon'] = FALSE;
+  /* Felt: Indhold: Rendered Indholdselement */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Felt: Indhold: Høring */
+  $handler->display->display_options['fields']['field_hearing_node']['id'] = 'field_hearing_node';
+  $handler->display->display_options['fields']['field_hearing_node']['table'] = 'field_data_field_hearing_node';
+  $handler->display->display_options['fields']['field_hearing_node']['field'] = 'field_hearing_node';
+  $handler->display->display_options['fields']['field_hearing_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_hearing_node']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_hearing_node']['settings'] = array(
+    'link' => 0,
+  );
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Kontekstuelt filter: Indhold: Høring (field_hearing_node) */
+  $handler->display->display_options['arguments']['field_hearing_node_target_id']['id'] = 'field_hearing_node_target_id';
+  $handler->display->display_options['arguments']['field_hearing_node_target_id']['table'] = 'field_data_field_hearing_node';
+  $handler->display->display_options['arguments']['field_hearing_node_target_id']['field'] = 'field_hearing_node_target_id';
+  $handler->display->display_options['arguments']['field_hearing_node_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_hearing_node_target_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_hearing_node_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_hearing_node_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_hearing_node_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_hearing_node_target_id']['summary_options']['items_per_page'] = '25';
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'hearing_responses' => 'hearing_responses',
+  );
+  /* Filterkriterie: Indhold: Endeligt svar (field_is_final) */
+  $handler->display->display_options['filters']['field_is_final_value']['id'] = 'field_is_final_value';
+  $handler->display->display_options['filters']['field_is_final_value']['table'] = 'field_data_field_is_final';
+  $handler->display->display_options['filters']['field_is_final_value']['field'] = 'field_is_final_value';
+  $handler->display->display_options['filters']['field_is_final_value']['value'] = array(
+    0 => '0',
+  );
+  /* Filterkriterie: Indhold: Har ikke svaret (field_is_no_answer) */
+  $handler->display->display_options['filters']['field_is_no_answer_value']['id'] = 'field_is_no_answer_value';
+  $handler->display->display_options['filters']['field_is_no_answer_value']['table'] = 'field_data_field_is_no_answer';
+  $handler->display->display_options['filters']['field_is_no_answer_value']['field'] = 'field_is_no_answer_value';
+  $handler->display->display_options['filters']['field_is_no_answer_value']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'field_hearing_node_target_id' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Høring (field_hearing_node)',
+    ),
+  );
+  $translatables['hearing_responses'] = array(
+    t('Master'),
+    t('Besvarelser'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Antal elementer'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('« første'),
+    t('‹ forrige'),
+    t('næste ›'),
+    t('sidste »'),
+    t('<a href="/node/[field_hearing_node]/hearing_response">Se alle besvarelser</a>'),
+    t('forfatter'),
+    t('Efternavn'),
+    t('[field_navn] [field_efternavn]'),
+    t('Høring'),
+    t('Alle'),
+    t('Content pane'),
+    t('View panes'),
+  );
+  $export['hearing_responses'] = $view;
+
+  $view = new view();
   $view->name = 'hearings_missing_files';
   $view->description = '';
   $view->tag = 'default';
