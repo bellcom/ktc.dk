@@ -160,6 +160,7 @@ features[variable][] = node_submitted_hearing
 features[variable][] = node_submitted_hearing_responses
 features[views_view][] = haering_answers
 features[views_view][] = hearing_node_view
+features[views_view][] = hearing_responses
 features[views_view][] = hearings_missing_files
 features[views_view][] = hearings_ubehandlede_hoeringer
 features[views_view][] = ktc_hearing_group_select
