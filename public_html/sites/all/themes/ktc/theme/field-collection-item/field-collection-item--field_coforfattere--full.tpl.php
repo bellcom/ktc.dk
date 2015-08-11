@@ -59,6 +59,4 @@ else:
     </div>
   </section>
 
-<?php
-endif;
-?>
+<?php endif; ?>
