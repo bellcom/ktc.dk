@@ -11,7 +11,7 @@ include_once 'ktc_content_types.features.inc';
  */
 function ktc_content_types_menu() {
   $items['node/%/unpublish'] = array(
-    'title' => 'Træk tilbage',
+    'title' => 'Afpublicér',
     'access callback' => 'ktc_content_types_unpublish_access',
     'access arguments' => array(1),
     'page callback' => 'ktc_content_types_unpublish_node',
@@ -193,7 +193,7 @@ function ktc_content_types_publish_node_form($form, $form_state, $nid, $status) 
   if ($new_status) {
     $form['submit'] = array(
       '#type' => 'submit',
-      '#value' => 'Udgiv',
+      '#value' => 'Publicér',
       '#attributes' => array('class' => array('btn-success')),
     );
   }
@@ -222,7 +222,7 @@ function ktc_content_types_preprocess_page(&$variables) {
     if ($variables['node']->uid == $user->uid) {
       if (!$variables['node']->status) {
         $output = '<div class="alert alert-danger" role="alert">';
-        $output .= 'Denne side er kun gemt som kladde, og er skjult for alle andre. Du kan redigere indholdet ved at klikke på rediger, eller udgive indholdet ved at klikke på Udgiv.';
+        $output .= 'Denne side er kun gemt som kladde, og er skjult for alle andre. Du kan redigere indholdet ved at klikke på rediger, eller udgive indholdet ved at klikke på Publicér.';
         $output .= drupal_render(drupal_get_form('ktc_content_types_publish_node_form', $variables['node']->nid, 'publish'));
         $output .= '</div>';
       }
