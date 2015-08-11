@@ -1,6 +1,6 @@
 .well .bg-info { background-color: @state-info-bg;
 				color: @state-info-text; }
-				
+
 				// Insert your styling here.
 
 .page-node-edit,
@@ -9,7 +9,7 @@
   .region-content section#block-system-main {
     background-color: #F5F5F5;
     padding: 10px;
-  } 
+  }
   h1.page-header {
     display: block;
   }
@@ -336,6 +336,15 @@ body.node-type-ktc-supplier {
         .contact-info-content {
           padding: 10px;
         }
+        .contact-info-content {
+          a {
+            white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+            white-space: -pre-wrap; /* Opera 4-6 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* Internet Explorer 5.5+ */
+            width:100%;
+          }
+        }
       }
       .field-name-body {
         padding: 10px;
@@ -349,15 +358,15 @@ body.node-type-ktc-supplier {
 		ul {
 			li { display: block; float: left;
 				border-bottom: none;
-				
+
 				a {	box-shadow: none;
-					color: #2C353A; 
+					color: #2C353A;
 					border: 2px solid #2C353A;
 					padding: 1px 8px;
 					border-radius: 14px;
 					text-decoration: none;
 					text-align: center;
-					margin-right: 10px; 
+					margin-right: 10px;
 					margin-bottom: 10px;
 					font-size: 90%;
 				}
@@ -378,7 +387,7 @@ body.node-type-ktc-supplier {
 				a { padding: 0 0; font-size: 95%;
 					&.active { color: @brand-primary ;}
 				}
-				
+
 			}
 		}
 	}
@@ -386,19 +395,19 @@ body.node-type-ktc-supplier {
 
 .magasinflow {
 	.magasinsider {
-				
-		.inner { 
-			padding: @thumbnail-padding @thumbnail-padding*2 ; 
-			background-color: @panel-bg; 
-			border: @border-std; 
-			margin-bottom: @panel-body-padding; 
+
+		.inner {
+			padding: @thumbnail-padding @thumbnail-padding*2 ;
+			background-color: @panel-bg;
+			border: @border-std;
+			margin-bottom: @panel-body-padding;
 			display: block;
 			color: @gray-darker;
 			H3 {
 				margin-top: 0;
 				margin-bottom: @thumbnail-padding;
 			}}
-			
+
 		.btn-danger { margin-right: 10px;}
 				}
 		.planlagt {
@@ -416,7 +425,7 @@ body.node-type-ktc-supplier {
 		.view-footer { clear: both; margin-top: 20px;}
 		.sidenummer { float: left; height: 30px; font-size: 24px; margin-right: 5px; margin-top: -5px;}
 		.sidenr { display: block; min-height: 30px;}
-	
+
 }
 .filter-wrapper,
 .ckeditor_links { display: none}
@@ -445,13 +454,13 @@ body.node-type-ktc-supplier {
 
 .field-group-tab h3 { margin-top: 0px;
 	span { font-size: @font-size-h5; }}
-	
+
 .container-inline-date {
 	.form-item { display: block;}
 	.date-padding { float: none; padding-left: 0;}
 	/*label[for="edit-publish-on"] {text-transform: }*/
 	 }
-	 
+
 div.field-group-tabs-wrapper div.field-widget-image-image fieldset.panel,
 div.field-group-tabs-wrapper div.field-type-file.field-widget-file-generic fieldset.panel,
 div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel { padding: 0px 0px 0px 0px}
@@ -460,18 +469,18 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel { padding: 0
 .view-ktc-hearings-sectionpage-block h5 a { font-weight: normal;}
 
 .view-ktc-hearings-sectionpage-block .item-list {
-	
+
 	ul {
 		list-style: none;
 		margin: 0;
 		padding: 0 10px;
-		
+
 		li {
 			position: relative;
 			display: block;
 			padding: 5px 20px;
 			padding-left: 10px;
-			div {display: inline-block;}			
+			div {display: inline-block;}
 			&:before {
 				display: inline-block;
 				position: absolute;
@@ -481,7 +490,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel { padding: 0
 			}
 			a { color: #FFF;}
 		}
-		
+
 		li:before {
 		}
 	}

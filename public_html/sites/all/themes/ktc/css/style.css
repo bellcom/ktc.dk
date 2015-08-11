@@ -8134,6 +8134,17 @@ body.node-type-ktc-supplier .region-content article .contact-info {
 body.node-type-ktc-supplier .region-content article .contact-info .contact-info-content {
   padding: 10px;
 }
+body.node-type-ktc-supplier .region-content article .contact-info .contact-info-content a {
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+  width: 100%;
+}
 body.node-type-ktc-supplier .region-content article .field-name-body {
   padding: 10px;
   background-color: #fff;
@@ -11532,6 +11543,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
 .ktc-article-section .ktc-article-section-body-extra {
   font-style: italic;
   padding: 10px 0;
+}
+.ktc-article-section .ktc-article-section-body a {
+  color: #ffffff;
+  font-weight: bold;
 }
 .ktc-article-section.ktc-article-section-type-afsnitb {
   margin-left: -10px;
