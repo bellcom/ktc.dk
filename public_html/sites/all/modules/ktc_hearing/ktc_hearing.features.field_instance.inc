@@ -2437,6 +2437,9 @@ function ktc_hearing_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'default_value_widget' => array(
+      'default_value_token' => '',
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2516,7 +2519,7 @@ function ktc_hearing_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
