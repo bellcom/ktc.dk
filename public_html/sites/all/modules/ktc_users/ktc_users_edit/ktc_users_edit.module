@@ -310,7 +310,24 @@ function ktc_users_edit_form_alter(&$form, &$form_state, $form_id) {
     // Tell the user to edit the subscription.
     global $user;
     $form['field_membership_ktc'][LANGUAGE_NONE]['#title'] .= ' ' . t('(For at oprette/redigere KTC medlemsskab,') . ' ' . l(t('klik her'), 'user/' . $user->uid . '/medlemskab') . ')';
+
+    // Add some extra validation.
+    $form['#validate'][] = 'ktc_users_edit_validate_profile_form';
   }
+}
+
+/**
+ * Validation for user profile form.
+ */
+function ktc_users_edit_validate_profile_form(&$form, &$form_state) {
+  // Check that the account selected is not a top level term.
+  $tid = $form_state['values']['field_account'][LANGUAGE_NONE][0]['tid'];
+
+  $parent = db_query("SELECT parent FROM {taxonomy_term_hierarchy} WHERE tid = :tid", array(':tid' => $tid))->fetchField();
+  if ($parent == 0) {
+    form_set_error('field_account', t('Feltet Firma er obligatorisk.'));
+  }
+
 }
 
 /**
