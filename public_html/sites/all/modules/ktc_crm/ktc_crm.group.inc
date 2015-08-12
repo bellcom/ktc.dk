@@ -179,12 +179,12 @@ function ktc_crm_group_map_group_to_groupdto($group) {
 
   if ($field = field_get_items('node', $group, 'field_topics')) {
     foreach ($field as $delta => $value) {
-      $term = taxonomy_term_load($value['tid']);
-
-      if ($uuid_field = field_get_items('taxonomy_term', $term, 'field_crm_uuid')) {
-        $professionalfielddto = new \KTC\GroupService\ReferenceDto($uuid_field[0]['value']);
-        $groupdto->ProfessionalField = $professionalfielddto;
-        break;
+      if ($term = taxonomy_term_load($value['tid'])) {
+        if ($uuid_field = field_get_items('taxonomy_term', $term, 'field_crm_uuid')) {
+          $professionalfielddto = new \KTC\GroupService\ReferenceDto($uuid_field[0]['value']);
+          $groupdto->ProfessionalField = $professionalfielddto;
+          break;
+        }
       }
     }
   }
