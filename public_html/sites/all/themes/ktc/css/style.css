@@ -8134,6 +8134,17 @@ body.node-type-ktc-supplier .region-content article .contact-info {
 body.node-type-ktc-supplier .region-content article .contact-info .contact-info-content {
   padding: 10px;
 }
+body.node-type-ktc-supplier .region-content article .contact-info .contact-info-content a {
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+  width: 100%;
+}
 body.node-type-ktc-supplier .region-content article .field-name-body {
   padding: 10px;
   background-color: #fff;
@@ -11546,6 +11557,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   font-style: italic;
   padding: 10px 0;
 }
+.ktc-article-section .ktc-article-section-body a {
+  color: #ffffff;
+  font-weight: bold;
+}
 .ktc-article-section.ktc-article-section-type-afsnitb {
   margin-left: -10px;
   margin-right: -10px;
@@ -14742,8 +14757,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   background-color: transparent;
 }
 .ktc-aside-table-list .table tr td a {
-  float: left;
-  width: 80%;
+  width: 100%;
   word-break: break-all;
   white-space: pre-wrap;
   /* css-3 */
