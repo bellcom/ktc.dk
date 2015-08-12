@@ -462,7 +462,7 @@ function _ktc_users_role_map_from_grouptype($gid) {
 function ktc_users_roles_role($uid, $drupal_role_id, $action) {
   // Be sure not to revoke roles that should never be removed.
   $never_remove = variable_get('ktc_users_roles_never_remove', array());
-  if ($action == 'revoke' && in_array($drupal_role_id, $never_remove)) {
+  if ($action == 'revoke' && $never_remove[$drupal_role_id] != 0) {
     return;
   }
 
