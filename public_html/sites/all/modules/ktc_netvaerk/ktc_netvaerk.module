@@ -867,6 +867,12 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'og_ui_confirm_subscribe') {
     $form['field_grouprole']['#access'] = FALSE;
   }
+
+  // Change button text for unsubscribing group.
+  if ($form_id == 'og_ui_confirm_unsubscribe') {
+    $form['actions']['submit']['#value'] = 'Afmeld dette netværk';
+    $form['actions']['submit']['#attributes']['class'][] = 'btn-danger';
+  }
 }
 
 /**
