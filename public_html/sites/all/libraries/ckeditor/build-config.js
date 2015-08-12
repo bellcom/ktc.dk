@@ -13,10 +13,10 @@
  * (1) http://ckeditor.com/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) http://ckeditor.com/builder/b651a7834aa00ace93bf2e2b262f3be3
+ * (2) http://ckeditor.com/builder/956a5edf097879a0a3ae5602fd348ca7
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) http://ckeditor.com/builder/download/b651a7834aa00ace93bf2e2b262f3be3
+ * (3) http://ckeditor.com/builder/download/956a5edf097879a0a3ae5602fd348ca7
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -42,6 +42,7 @@ var CKBUILDER_CONFIG = {
 		'.jscsrc',
 		'.jshintignore',
 		'.jshintrc',
+		'less',
 		'.mailmap',
 		'node_modules',
 		'package.json',
@@ -51,11 +52,11 @@ var CKBUILDER_CONFIG = {
 	plugins : {
 		'a11yhelp' : 1,
 		'about' : 1,
-		'autogrow' : 1,
+		'autoembed' : 1,
+		'base64image' : 1,
 		'basicstyles' : 1,
 		'bidi' : 1,
 		'blockquote' : 1,
-		'ccmsacdc' : 1,
 		'clipboard' : 1,
 		'colorbutton' : 1,
 		'colordialog' : 1,
@@ -63,6 +64,7 @@ var CKBUILDER_CONFIG = {
 		'dialogadvtab' : 1,
 		'div' : 1,
 		'elementspath' : 1,
+		'embed' : 1,
 		'enterkey' : 1,
 		'entities' : 1,
 		'filebrowser' : 1,
@@ -73,11 +75,16 @@ var CKBUILDER_CONFIG = {
 		'fontawesome' : 1,
 		'format' : 1,
 		'forms' : 1,
+		'gg' : 1,
 		'glyphicons' : 1,
 		'horizontalrule' : 1,
+		'html5validation' : 1,
+		'htmlbuttons' : 1,
 		'htmlwriter' : 1,
 		'iframe' : 1,
+		'iframedialog' : 1,
 		'image' : 1,
+		'imageresponsive' : 1,
 		'indentblock' : 1,
 		'indentlist' : 1,
 		'justify' : 1,
@@ -86,11 +93,7 @@ var CKBUILDER_CONFIG = {
 		'list' : 1,
 		'liststyle' : 1,
 		'magicline' : 1,
-		'mathedit' : 1,
-		'mathjax' : 1,
 		'maximize' : 1,
-		'mediaembed' : 1,
-		'nbsp' : 1,
 		'newpage' : 1,
 		'pagebreak' : 1,
 		'pastefromword' : 1,
@@ -98,7 +101,6 @@ var CKBUILDER_CONFIG = {
 		'preview' : 1,
 		'print' : 1,
 		'removeformat' : 1,
-		'removespan' : 1,
 		'resize' : 1,
 		'save' : 1,
 		'scayt' : 1,
@@ -110,18 +112,17 @@ var CKBUILDER_CONFIG = {
 		'sourcedialog' : 1,
 		'specialchar' : 1,
 		'stylescombo' : 1,
+		'symbol' : 1,
 		'tab' : 1,
 		'table' : 1,
-		'tableresize' : 1,
 		'tabletools' : 1,
 		'templates' : 1,
-		'texzilla' : 1,
 		'toolbar' : 1,
 		'undo' : 1,
 		'widgetbootstrap' : 1,
+		'widgetcommon' : 1,
 		'wsc' : 1,
-		'wysiwygarea' : 1,
-		'youtube' : 1
+		'wysiwygarea' : 1
 	},
 	languages : {
 		'da' : 1,
