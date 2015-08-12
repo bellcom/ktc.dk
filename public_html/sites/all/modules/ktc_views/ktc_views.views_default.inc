@@ -1243,7 +1243,6 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_efternavn']['field'] = 'field_efternavn';
   $handler->display->display_options['fields']['field_efternavn']['label'] = 'Navn';
   $handler->display->display_options['fields']['field_efternavn']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_efternavn']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_efternavn']['alter']['text'] = '[field_navn] [field_efternavn]';
   $handler->display->display_options['fields']['field_efternavn']['empty'] = '[field_navn] [field_efternavn]';
   $handler->display->display_options['fields']['field_efternavn']['hide_alter_empty'] = FALSE;
