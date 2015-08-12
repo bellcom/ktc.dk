@@ -41,6 +41,10 @@ function ktc_hearing_attendees_field_widget_form_alter(&$element, &$form_state, 
   if (isset($element['#field_name']) && in_array($element['#field_name'], $show_for_fields)) {
     $url = url($element['#autocomplete_path'], array('absolute' => TRUE));
 
+    // Default for this field is 1024, which doesn't make much sense, since
+    // each record is transformed and written in it's own row in the db.
+    // Set it to a large numer just to get rid of the form error.
+    $element['#maxlength'] = 100000;
     $element['#suffix'] = '<div class="chosen-entityreference-container"><select data-placeholder="Vælg" class="form-control chosen-entityreference ajax" multiple data-autocomplete-path="' . $url . '">' . _ktc_hearing_attendees_selected($element) . '</select></div>';
   }
 
