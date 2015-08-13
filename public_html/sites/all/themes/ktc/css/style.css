@@ -9753,6 +9753,16 @@ fieldset[disabled] .field-type-image .button {
 .og-context.og-context-node .ktc-aside-color .ktc-aside-heading .ktc-aside-title > a {
   color: #ffffff;
 }
+.og-context.og-context-node.no-network.ktc-aside-color .ktc-aside-heading,
+.og-context.og-context-node.no-network .ktc-aside-color .ktc-aside-heading {
+  background-color: #36a145;
+}
+.og-context.og-context-node.no-network.ktc-aside-color .ktc-aside-heading .ktc-aside-title,
+.og-context.og-context-node.no-network .ktc-aside-color .ktc-aside-heading .ktc-aside-title,
+.og-context.og-context-node.no-network.ktc-aside-color .ktc-aside-heading .ktc-aside-title > a,
+.og-context.og-context-node.no-network .ktc-aside-color .ktc-aside-heading .ktc-aside-title > a {
+  color: #ffffff;
+}
 .no-network.ktc-aside-color .ktc-aside-heading,
 .no-network .ktc-aside-color .ktc-aside-heading {
   background-color: #36a145;
@@ -13451,8 +13461,8 @@ h6 + .ktc-date {
   display: inline-block;
   height: auto;
   width: auto;
-  max-width: 48px;
-  max-height: 48px;
+  width: 48px;
+  height: 48px;
   border-radius: 100%;
   border-width: 2px;
   border-style: solid;
