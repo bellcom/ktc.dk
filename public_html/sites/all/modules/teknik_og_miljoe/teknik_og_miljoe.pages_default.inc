@@ -1677,7 +1677,7 @@ function teknik_og_miljoe_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'term_type',
-      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
+      'css_class' => 'ktc-aside-checkbox-filter',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
