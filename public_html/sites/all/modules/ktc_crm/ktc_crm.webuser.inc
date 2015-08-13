@@ -288,7 +288,7 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto, $uid = 0) {
     $ktc_users_edit_type_company_map = array_flip(variable_get('ktc_users_edit_type_company_map', array()));
     $usertype_tid = $ktc_users_edit_type_company_map[$top_level_term->tid];
 
-    $edit['field_usertype'][LANGUAGE_NONE][0]['tid'] = $account->tid;
+    $edit['field_usertype'][LANGUAGE_NONE][0]['tid'] = $usertype_tid;
   }
   $edit['field_employer_name'][LANGUAGE_NONE][0]['value'] = $webuserdto->TopLevelAccountName;
 

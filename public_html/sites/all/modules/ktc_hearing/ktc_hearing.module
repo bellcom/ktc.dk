@@ -614,9 +614,12 @@ function ktc_hearing_view_summary_responses($hearing) {
 function ktc_hearing_node_view($node, $view_mode) {
   // Redirect the user to the hearing page, with responses instead of viewing
   // the response node normally.
-  if ($node->type == 'hearing_responses' && arg(2) != 'hearing_response') {
+  if ($node->type == 'hearing_responses' && arg(1) == $node->nid) {
     if ($hearing = ktc_hearing_get_hearing_from_response($node)) {
-      drupal_goto('node/' . $hearing->nid . '/hearing_response');
+      if (ktc_hearing_access($hearing, 'view responses')) {
+        drupal_goto('node/' . $hearing->nid . '/hearing_response');
+      }
+      drupal_goto('node/' . $hearing->nid);
     }
   }
 

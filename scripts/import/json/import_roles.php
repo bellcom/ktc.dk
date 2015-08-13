@@ -45,9 +45,12 @@ $admin_roles = array(
   464,
 );
 
+// CRM sync checks if the update is form a form submission by checking what
+// form_id is set in the $_POST array. We want these changes sent to CRM.
+$_POST['form_id'] = 'og_ui_edit_membership';
+
 foreach ($data as $group_nid => $_data) {
   $new_group_nid = ktc_import_new_nid($group_nid);
-  error_log(__FILE__ . ' : ' . __LINE__ . ' : ' .  print_r($new_group_nid, 1));
 
   foreach ($_data as $uid => $roles) {
     $new_uid = ktc_import_new_uid($uid);
