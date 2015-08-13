@@ -2530,6 +2530,8 @@ function ktc_hearing_field_default_field_instances() {
   // Exported field_instance: 'node-hearing_responses-body'
   $field_instances['node-hearing_responses-body'] = array(
     'bundle' => 'hearing_responses',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2575,9 +2577,39 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Detaljerede kommentar',
+    'label' => 'Detaljerede bemærkninger',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
       'display_summary' => 0,
@@ -2592,7 +2624,7 @@ function ktc_hearing_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -2646,7 +2678,7 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_consequences',
-    'label' => 'Konsekvenser',
+    'label' => 'Følgevirkninger (herunder økonomiske)',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -2691,7 +2723,7 @@ function ktc_hearing_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -2790,13 +2822,15 @@ function ktc_hearing_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
   // Exported field_instance: 'node-hearing_responses-field_general_comments'
   $field_instances['node-hearing_responses-field_general_comments'] = array(
     'bundle' => 'hearing_responses',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2842,9 +2876,39 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_general_comments',
-    'label' => 'Generelle kommentarer',
+    'label' => 'Generelle bemærkninger',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
       'text_processing' => 1,
@@ -2857,7 +2921,7 @@ function ktc_hearing_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -2942,7 +3006,7 @@ function ktc_hearing_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -3078,13 +3142,15 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
   // Exported field_instance: 'node-hearing_responses-field_impression'
   $field_instances['node-hearing_responses-field_impression'] = array(
     'bundle' => 'hearing_responses',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3130,9 +3196,39 @@ function ktc_hearing_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_impression',
-    'label' => 'Impression',
+    'label' => 'Helhedsindtryk',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
       'text_processing' => 1,
@@ -3145,7 +3241,7 @@ function ktc_hearing_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -3214,7 +3310,7 @@ function ktc_hearing_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 14,
+      'weight' => 12,
     ),
   );
 
@@ -3284,7 +3380,7 @@ function ktc_hearing_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -3353,7 +3449,7 @@ function ktc_hearing_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 16,
+      'weight' => 13,
     ),
   );
 
@@ -3419,7 +3515,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 13,
+      'weight' => 11,
     ),
   );
 
@@ -3485,7 +3581,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 18,
+      'weight' => 14,
     ),
   );
 
@@ -3563,7 +3659,7 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 19,
+      'weight' => 15,
     ),
     'widget_type' => 'options_select',
   );
@@ -3577,17 +3673,19 @@ function ktc_hearing_field_default_field_instances() {
   t('Bilag');
   t('Deltagere');
   t('Deltagers frist');
-  t('Detaljerede kommentar');
+  t('Detaljerede bemærkninger');
   t('Eksterne links');
   t('Endeligt svar');
   t('Er høringen officiel (udsendt af myndighed), eller uofficiel (intern høring)');
   t('Er sammenfatning');
   t('Faglige emner');
   t('Formand');
-  t('Generelle kommentarer');
+  t('Følgevirkninger (herunder økonomiske)');
+  t('Generelle bemærkninger');
   t('Group content visibility');
   t('Gruppe/Netværk');
   t('Har ikke svaret');
+  t('Helhedsindtryk');
   t('Hvornår er deltagernes høringsfrist? Husk at give tid til tovholder og formand til at sammenskrive og færdigbehandle KTCs endelige høringssvar.');
   t('Hvornår er høringen officielt udsendt fra myndigheden?');
   t('Hvornår skal KTC have færdigbehandlet høringen');
@@ -3597,13 +3695,11 @@ function ktc_hearing_field_default_field_instances() {
   t('Høringsbrev/ beskrivelse');
   t('Høringssvar type');
   t('Høringstype');
-  t('Impression');
   t('Indsæt det officielle høringsbrev i feltet');
   t('Indtast evt. stikord/ tags til høringen');
   t('Indtast gerne en forkortet titel til høringen hvis den er meget lang');
   t('KL Emneord');
   t('KTC høringsfrist');
-  t('Konsekvenser');
   t('Link til KL høringssvar');
   t('Mangler Fil(er)');
   t('Myndighed');
