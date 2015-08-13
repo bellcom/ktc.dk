@@ -30,8 +30,10 @@ global $base_url;
         <p><?php print render($content['field_regioner']); ?></p>
       <?php endif ?>
 
-      <?php if (isset($body_shortened)): ?>
-        <p><?php print $body_shortened; ?></p>
+      <?php if (isset($content['body'])): ?>
+        <!-- Begin - body -->
+        <?php print render($content['body']); ?>
+        <!-- End - body -->
       <?php endif; ?>
 
       <div class="ktc-call-to-action-button">

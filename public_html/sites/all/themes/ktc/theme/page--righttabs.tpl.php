@@ -106,34 +106,30 @@
   <div class="container">
     <div class="row">
 
-
-        <div class="col-xs-12 col-md-9">
-	        <div class="row">
-				<?php /* region--content.tpl.php */ ?>
-				<?php print render($page['content']); ?>
-        	</div>
+      <div class="col-md-9">
+        <div class="row">
+          <?php /* region--content.tpl.php */ ?>
+          <?php print render($page['content']); ?>
         </div>
-        
-    	<?php if ($tabs): ?>
-        <div class="col-xs-12 col-md-3">
-            <div class="tabs bg-white"><?php print render($tabs); ?></div>
+      </div>
 
+      <?php if ($tabs): ?>
+        <div class="col-md-3">
+          <div class="tabs"><?php print render($tabs); ?></div>
 
-      <?php /* region--sidebar.tpl.php */ ?>
-      <?php if ($page['sidebar_first']): ?>
-        <?php print render($page['sidebar_first']); ?>
-      <?php endif; ?>
+          <?php /* region--sidebar.tpl.php */ ?>
+          <?php if ($page['sidebar_first']): ?>
+            <?php print render($page['sidebar_first']); ?>
+          <?php endif; ?>
 
-      <?php /* region--sidebar.tpl.php */ ?>
-      <?php if ($page['sidebar_second']): ?>
-        <?php print render($page['sidebar_second']); ?>
-      <?php endif; ?>
+          <?php /* region--sidebar.tpl.php */ ?>
+          <?php if ($page['sidebar_second']): ?>
+            <?php print render($page['sidebar_second']); ?>
+          <?php endif; ?>
 
         </div>
       <?php endif; ?>
     </div>
-
-
   </div>
 </div>
 <!-- End - wrapper -->
