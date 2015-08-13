@@ -425,12 +425,6 @@ function ktc_preprocess_node(&$vars) {
   // Network / group
   if ($vars['type'] == 'group') {
 
-    // Network type
-    if ($group_type = field_get_items('node', $vars['node'], 'field_netvaerkstype')) {
-      $group_type_term = taxonomy_term_load($group_type[0]['tid']);
-      $vars['group_type'] = $group_type_term->name;
-    }
-
     // Region
     if ($region = field_get_items('node', $vars['node'], 'field_regioner')) {
       $region_term = taxonomy_term_load($region[0]['tid']);
