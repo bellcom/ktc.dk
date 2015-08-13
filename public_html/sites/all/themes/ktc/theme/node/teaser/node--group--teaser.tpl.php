@@ -18,9 +18,11 @@ global $base_url;
 
       <h4 class="ktc-teaser-body-title"><a href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
 
-      <?php if (isset($group_type)): ?>
-        <p class="mute"><?php print $group_type; ?></p>
-      <?php endif ?>
+      <?php if (isset($content['field_netvaerkstype'])): ?>
+        <!-- Begin - group type -->
+        <?php print render($content['field_netvaerkstype']); ?>
+        <!-- End - group type -->
+      <?php endif; ?>
 
       <?php if (isset($content['field_target_group'])): ?>
         <p><?php print render($content['field_target_group']); ?></p>

@@ -69,6 +69,14 @@ function ktc_netvaerk_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'teasercomments' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),
