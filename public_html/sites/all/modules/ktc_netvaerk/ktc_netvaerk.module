@@ -859,9 +859,11 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
     }
 
     // Can't make ktc_content_types_field_group_hide_field_groups work
-    // on these two fields. Hide with CSS instead.
+    // on these two fields. Hide with CSS instead and set a dummy default value.
     $form['og_roles_permissions']['#attributes']['class'][] = 'hide';
+    $form['og_roles_permissions'][LANGUAGE_NONE]['#default_value'] = 0;
     $form['group_access']['#attributes']['class'][] = 'hide';
+    $form['group_access'][LANGUAGE_NONE]['#default_value'] = 0;
   }
 
   if ($form_id == 'og_ui_confirm_subscribe') {
