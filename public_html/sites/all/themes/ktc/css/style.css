@@ -10684,7 +10684,7 @@ fieldset[disabled] .field-type-image .button {
   text-decoration: underline;
 }
 .ktc-header form button {
-  min-width: initial;
+  min-width: 0;
 }
 .ktc-wrapper {
   position: relative;
