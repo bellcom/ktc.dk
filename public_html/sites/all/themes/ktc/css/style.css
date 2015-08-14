@@ -9633,6 +9633,9 @@ fieldset[disabled] .field-type-image .button {
   top: -1px;
   left: 5px;
 }
+.addthisevent-drop {
+  z-index: 100;
+}
 .ktc-user-login label {
   display: none;
 }
