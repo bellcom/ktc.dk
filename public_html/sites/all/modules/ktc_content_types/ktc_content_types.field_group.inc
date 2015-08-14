@@ -26,6 +26,7 @@ function ktc_content_types_field_group_info() {
       0 => 'group_doodle',
       1 => 'group_indhold',
       2 => 'group_netvaerk',
+      3 => 'group_emner',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -662,7 +663,7 @@ For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil
   $field_group->parent_name = 'group_afstemning';
   $field_group->data = array(
     'label' => 'Publicering *',
-    'weight' => '14',
+    'weight' => '15',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'field_os2web_base_field_promote',
@@ -775,6 +776,33 @@ For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil
     ),
   );
   $export['group_emner|node|forum_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_emner|node|meeting_doodle|form';
+  $field_group->group_name = 'group_emner';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'meeting_doodle';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_afstemning';
+  $field_group->data = array(
+    'label' => 'Faglige emner',
+    'weight' => '14',
+    'children' => array(
+      0 => 'field_topics',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-emner field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_emner|node|meeting_doodle|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1806,7 +1834,7 @@ For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil
   $field_group->parent_name = 'group_doodle';
   $field_group->data = array(
     'label' => 'Synlighed',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'group_content_access',
     ),
