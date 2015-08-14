@@ -606,7 +606,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-action',
+      'css_class' => 'ktc-aside-action ktc-aside-link-list-2-col',
       'template_suggestion' => 'ikkesat',
     );
     $pane->extras = array();
