@@ -8307,33 +8307,6 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .view-ktc-hearings-sectionpage-block h5 a {
   font-weight: normal;
 }
-.view-ktc-hearings-sectionpage-block .item-list ul {
-  list-style: none;
-  margin: 0;
-  padding: 0 10px;
-}
-.view-ktc-hearings-sectionpage-block .item-list ul li {
-  position: relative;
-  display: block;
-  padding: 5px 20px;
-  padding-left: 10px;
-}
-.view-ktc-hearings-sectionpage-block .item-list ul li div {
-  display: inline-block;
-}
-.view-ktc-hearings-sectionpage-block .item-list ul li:before {
-  display: inline-block;
-  position: absolute;
-  margin-left: -15px;
-  content: ' ';
-  background-image: url(../images/sprites.png);
-  background-position: 0px -685px;
-  width: 9px;
-  height: 16px;
-}
-.view-ktc-hearings-sectionpage-block .item-list ul li a {
-  color: #FFF;
-}
 .user-picture.green {
   border-color: #36a145 !important;
 }
@@ -9635,6 +9608,30 @@ fieldset[disabled] .field-type-image .button {
 }
 .addthisevent-drop {
   z-index: 100;
+}
+.ktc-aside-action ul.pager .pager-current {
+  display: none;
+}
+.ktc-aside-action ul.pager .pager-previous {
+  margin-right: 5px;
+}
+.ktc-aside-action ul.pager .pager-previous a {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -275px;
+  width: 15px;
+  height: 15px;
+  background-color: #2c353a;
+  border: none;
+  padding: 2px 2px;
+}
+.ktc-aside-action ul.pager .pager-next a {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -507px;
+  width: 15px;
+  height: 15px;
+  background-color: #2c353a;
+  border: none;
+  padding: 2px 2px;
 }
 .ktc-user-login label {
   display: none;
@@ -15050,6 +15047,17 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   background-position: 0px -1126px;
   width: 27px;
   height: 27px;
+}
+.ktc-link-with-icon.ktc-link-icon-hearing-simple,
+.ktc-link-with-icon.ktc-link-icon-hearing-simple {
+  line-height: 16px;
+}
+.ktc-link-with-icon.ktc-link-icon-hearing-simple:before,
+.ktc-link-with-icon.ktc-link-icon-hearing-simple:before {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -685px;
+  width: 9px;
+  height: 16px;
 }
 .ktc-link-with-icon.ktc-link-icon-os2web_base_news,
 .ktc-link-with-icon.ktc-link-icon-os2web_base_news {
