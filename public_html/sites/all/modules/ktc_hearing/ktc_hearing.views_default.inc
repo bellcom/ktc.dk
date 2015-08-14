@@ -1346,7 +1346,8 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '[title] ([nid])
 ';
-  $handler->display->display_options['fields']['title']['alter']['max_length'] = '40';
+  $handler->display->display_options['fields']['title']['alter']['max_length'] = '30';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Felt: Global: Tilpasset tekst */
