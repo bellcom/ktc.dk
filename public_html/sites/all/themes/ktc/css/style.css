@@ -5669,6 +5669,8 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-aside-filter .filter-box:after,
 .ktc-aside-tabs .ktc-aside-body:before,
 .ktc-aside-tabs .ktc-aside-body:after,
+.ktc-aside-link-list-2-col .view-content:before,
+.ktc-aside-link-list-2-col .view-content:after,
 .date-no-float .date-padding:before,
 .date-no-float .date-padding:after {
   content: " ";
@@ -5705,6 +5707,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-node-header:after,
 .ktc-aside-filter .filter-box:after,
 .ktc-aside-tabs .ktc-aside-body:after,
+.ktc-aside-link-list-2-col .view-content:after,
 .date-no-float .date-padding:after {
   clear: both;
 }
