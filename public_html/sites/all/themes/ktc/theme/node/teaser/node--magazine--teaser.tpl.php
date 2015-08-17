@@ -33,6 +33,14 @@
             <!-- End - link to paper edition -->
           <?php endif; ?>
 
+          <?php if (isset($content['field_topics'])): ?>
+            <!-- Begin - topics -->
+            <strong><?php print t('Tema:'); ?></strong>
+            <?php print render($content['field_topics']); ?>
+            <br />
+            <!-- End - topics -->
+          <?php endif; ?>
+
           <?php if (isset($content['field_bannere']) && isset($content['field_banner_1_tekst_og_link'])): ?>
             <!-- Begin - banner 1 -->
             <div class="ktc-teaser-magazine-banner">
@@ -52,9 +60,6 @@
             </div>
             <!-- End - banner 2 -->
           <?php endif; ?>
-
-          <a href="user/<?php print $user->uid; ?>/abonnementer" class="btn btn-info btn-block"><?php print t('Tegn et online abonnement'); ?></a>
-
         </div>
         <!-- End - left -->
 
@@ -75,6 +80,12 @@
             <!-- End - ekstra artikler -->
           <?php endif; ?>
 
+          <div class="ktc-aside ktc-aside-blue">
+            <div class="ktc-aside-heading">
+              <p class="ktc-aside-title"><?php print t('Månedens leder'); ?></p>
+            </div>
+          </div>
+
           <?php if (isset($content['field_magasinleder'])): ?>
             <!-- Begin - magasin leder -->
             <div class="ktc-teaser-magazine-leder">
@@ -90,6 +101,7 @@
       <!-- End - body -->
 
       <div class="ktc-teaser-magazine-buttons text-right">
+        <a href="user/<?php print $user->uid; ?>/abonnementer" class="btn btn-info"><?php print t('Tegn abonnement'); ?></a>
         <a class="btn btn-primary" href="node/<?php print $nid; ?>"><?php print t('Se alle artikler for denne udgave'); ?></a>
       </div>
 
