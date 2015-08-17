@@ -890,7 +890,7 @@ function ktc_hearing_set_status($form, $form_state, $arg = NULL) {
   );
 
   $form['#attributes'] = array(
-    'class' => array('form-inline'),
+    'class' => array(''),
   );
 
   return $form;

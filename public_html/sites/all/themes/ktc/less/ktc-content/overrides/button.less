@@ -147,3 +147,14 @@ a.btn {
 		}
 	}
 }
+
+// Action
+.ktc-aside-action,
+.ktc-aside-dark {
+
+	.btn {
+		&.btn-default {
+			.ktc-mixin-button(@ktc-override-button-action-background-color, @ktc-override-button-action-border-color, @ktc-override-button-action-font-color);
+		}
+	}
+}
