@@ -291,7 +291,7 @@ function ktc_import_split_name($entity, $prop, $value) {
   }
 
   $entity->field_navn[LANGUAGE_NONE][0]['value'] = $firstname;
-  $edit->field_efternavn[LANGUAGE_NONE][0]['value'] = $lastname;
+  $entity->field_efternavn[LANGUAGE_NONE][0]['value'] = $lastname;
 }
 
 /**
