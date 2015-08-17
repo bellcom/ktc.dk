@@ -64,8 +64,14 @@ function create_hearing_nodes() {
       $node->field_hearing_type[LANGUAGE_NONE][0]['tid'] = $type_tid;
     }
 
+    // Reset topic values.
+    $node->field_topics = array();
     if ($element['kategories'] != '') {
       $cat_ar = explode(',', $element['kategories']);
+
+      // Flip category array twice to remove duplicates.
+      $cat_ar = array_flip(array_flip($cat_ar));
+
       foreach ($cat_ar as $key => $cat) {
         if ($tid = get_id_by_typo3_uid($cat, 'emner_faste_')) {
           $node->field_topics[LANGUAGE_NONE][$key]['tid'] = $tid;
