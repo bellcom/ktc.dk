@@ -1573,7 +1573,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1778,7 +1778,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1927,7 +1927,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2000,7 +2000,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2075,7 +2075,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2146,7 +2146,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2233,7 +2233,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2301,7 +2301,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2375,7 +2375,7 @@ function teknik_og_miljoe_field_default_field_instances() {
           'image_style' => 'ktc_galleri_miniature',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2575,7 +2575,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2642,7 +2642,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2706,10 +2706,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 1,
       ),
       'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 100,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 1,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2814,7 +2817,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2880,7 +2883,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2971,7 +2974,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'listevisningboks' => array(
         'label' => 'above',

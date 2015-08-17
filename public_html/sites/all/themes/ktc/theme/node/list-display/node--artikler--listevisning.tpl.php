@@ -95,6 +95,15 @@
 
   <p class="ktc-date"><?php print $published_at; ?></p>
   <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
+
+  <?php if (isset($content['field_short'])): ?>
+    <!-- Begin - manchet -->
+    <p class="ktc-list-display-short">
+      <?php print render($content['field_short']); ?>
+    </p>
+    <!-- End - manchet -->
+  <?php endif; ?>
+
   <p class="ktc-list-display-author">
 
     <?php print t('Forfatter:'); ?>
