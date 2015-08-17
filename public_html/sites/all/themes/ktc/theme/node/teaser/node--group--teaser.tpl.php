@@ -3,6 +3,7 @@ global $base_url;
 ?>
 
 <?php if ($teaser): ?>
+  <!-- node--group--teaser.tpl.php -->
   <!-- Begin - teaser -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser"<?php print $attributes; ?>>
 

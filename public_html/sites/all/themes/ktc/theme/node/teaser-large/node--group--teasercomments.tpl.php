@@ -3,7 +3,8 @@ global $base_url;
 ?>
 
 <?php if (!$page): ?>
-  <!-- Begin - teaser -->
+  <!-- node--group--teasercomments.tpl.php -->
+  <!-- Begin - teaser large -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser-large"<?php print $attributes; ?>>
 
     <!-- Begin - full width image -->
@@ -55,5 +56,5 @@ global $base_url;
     </div>
 
   </article>
-  <!-- End - teaser -->
+  <!-- End - teaser large -->
 <?php endif; ?>
