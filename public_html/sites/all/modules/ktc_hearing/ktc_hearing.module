@@ -609,12 +609,18 @@ function ktc_hearing_view_summary_responses($hearing) {
 }
 
 /**
- * Implements hook_node_view().
+ * Implements hook_node_load().
  */
-function ktc_hearing_node_view($node, $view_mode) {
-  // Redirect the user to the hearing page, with responses instead of viewing
-  // the response node normally.
-  if ($node->type == 'hearing_responses' && arg(1) == $node->nid) {
+function ktc_hearing_node_load($nodes, $types) {
+  if (count($nodes) != 1) {
+    return;
+  }
+
+  $node = reset($nodes);
+  // Redirect to the appropriate page on the hearing if a response is loaded.
+  // Viewing the node normally doesn't fit the flow of the hearing process.
+  if ($types[0] == 'hearing_responses' && arg(1) == $node->nid) {
+    unset($_GET['destination']);
     if ($hearing = ktc_hearing_get_hearing_from_response($node)) {
       if (ktc_hearing_access($hearing, 'view responses')) {
         drupal_goto('node/' . $hearing->nid . '/hearing_response');
@@ -622,7 +628,12 @@ function ktc_hearing_node_view($node, $view_mode) {
       drupal_goto('node/' . $hearing->nid);
     }
   }
+}
 
+/**
+ * Implements hook_node_view().
+ */
+function ktc_hearing_node_view($node, $view_mode) {
   if ($node->type == 'hearing_responses' && $view_mode == 'full') {
     $hearing = ktc_hearing_get_hearing_from_response($node);
 
