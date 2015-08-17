@@ -1024,6 +1024,35 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->uuid = '0566401b-a11f-4f00-b2c2-18a01be63ba3';
     $display->content['new-0566401b-a11f-4f00-b2c2-18a01be63ba3'] = $pane;
     $display->panels['right'][5] = 'new-0566401b-a11f-4f00-b2c2-18a01be63ba3';
+    $pane = new stdClass();
+    $pane->pid = 'new-9f96e8c8-2ee1-4ac9-b5a4-edb87aa29f94';
+    $pane->panel = 'right';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_topics';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'hs_taxonomy_term_reference_hierarchical_links',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '9f96e8c8-2ee1-4ac9-b5a4-edb87aa29f94';
+    $display->content['new-9f96e8c8-2ee1-4ac9-b5a4-edb87aa29f94'] = $pane;
+    $display->panels['right'][6] = 'new-9f96e8c8-2ee1-4ac9-b5a4-edb87aa29f94';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
