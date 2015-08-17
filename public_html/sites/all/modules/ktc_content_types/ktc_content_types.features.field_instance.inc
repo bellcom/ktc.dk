@@ -8883,7 +8883,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'label' => 'hidden',
         'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_last_text_only',
+        'type' => 'hs_taxonomy_term_reference_hierarchical_links',
         'weight' => 10,
       ),
       'teasercomments' => array(
