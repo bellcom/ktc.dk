@@ -1388,7 +1388,8 @@ function _ktc_hearing_get_unresponded($user = FALSE) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'hearing')
-    ->fieldCondition('field_status', 'tid', KTC_HEARING_STATUS_OPEN);
+    ->fieldCondition('field_status', 'tid', KTC_HEARING_STATUS_OPEN)
+    ->propertyOrderBy('created', 'DESC');;
   $result = $query->execute();
 
   $unresponded_hearings = array();
