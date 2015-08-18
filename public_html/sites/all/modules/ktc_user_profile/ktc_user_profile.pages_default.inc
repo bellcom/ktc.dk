@@ -691,13 +691,17 @@ function ktc_user_profile_default_page_manager_pages() {
       'type' => 'both',
       'id' => 'tabs',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Faner',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action ktc-aside-no-stack',
+      'template_suggestion' => 'page_tabs',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -719,7 +723,11 @@ function ktc_user_profile_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action ktc-aside-tabs-menu-fix',
+      'template_suggestion' => 'block',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
