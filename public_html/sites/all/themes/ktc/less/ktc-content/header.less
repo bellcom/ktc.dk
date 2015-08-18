@@ -41,22 +41,25 @@
 			}
 		}
 
-		// User menu
-		.ktc-header-top-bar-user-menu {
-			margin-top: 10px;
+		// List
+		.ktc-header-top-bar-list {
 			.pull-right;
 			.list-inline;
+			margin: 0;
+			height: 48px;
 
 			// List item
 			> li {
+				height: inherit;
 				vertical-align: middle;
-				padding-right: 0; // BS reset
+				padding: 0;
+			}
+
+			// User display
+			&.ktc-header-top-bar-user-display {
 
 				// User profile
 				.ktc-header-top-bar-user-profile {
-					padding-right: 10px;
-					margin-top: -11px;
-					margin-bottom: -7px;
 
 					// Photo
 					.ktc-user-profile-photo-container {
@@ -82,12 +85,24 @@
 						color: @ktc-color-red-font;
 						font-size: 16px;
 						line-height: 48px;
+						width: 100%;
+						word-break: break-all;
+						white-space: pre-wrap; /* css-3 */
+						white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+						white-space: -pre-wrap; /* Opera 4-6 */
+						white-space: -o-pre-wrap; /* Opera 7 */
+						word-wrap: break-word; /* Internet Explorer 5.5+ */
 					}
 				}
+			}
+
+			// Navigation
+			&.ktc-header-top-bar-navigation {
 
 				// Icon
 				.ktc-header-top-bar-user-menu-icon {
-					display: block;
+					display: inline-block;
+					margin-top: 10px;
 
 					// Settings
 					&.ktc-header-top-bar-user-menu-icon-settings {
@@ -155,6 +170,40 @@
 						background-color: @gray-lighter;
 					}
 				}
+			}
+		}
+	}
+}
+
+// Mobile only
+@media @media-query-mobile-only {
+
+	// Header
+	.ktc-header {
+
+		// Top bar
+		.ktc-header-top-bar {
+			min-height: @ktc-header-top-bar-height;
+			background-color: @ktc-header-background-color;
+
+			// List
+			.ktc-header-top-bar-list {
+				height: auto;
+
+				// Navigation
+				&.ktc-header-top-bar-navigation {
+
+					// Icon
+					.ktc-header-top-bar-user-menu-icon {
+						margin-top: 0;
+					}
+				}
+			}
+
+			// Button (add content)
+			.ktc-header-top-bar-add-content {
+				float: none;
+				margin-top: 0;
 			}
 		}
 	}
