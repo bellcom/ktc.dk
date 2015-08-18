@@ -11785,7 +11785,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'better_formats' => array(
         'allowed_formats' => array(
           'emails' => 0,
-          'filtered_html' => 0,
+          'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
           'mailchimp_campaign' => 0,
           'plain_text' => 0,
