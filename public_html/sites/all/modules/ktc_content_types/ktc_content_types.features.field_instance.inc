@@ -1655,7 +1655,7 @@ function ktc_content_types_field_default_field_instances() {
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'description_field' => 1,
+      'description_field' => 0,
       'file_directory' => 'presentations',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
@@ -3351,7 +3351,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'description_field' => 1,
+      'description_field' => 0,
       'file_directory' => 'arrangement',
       'file_extensions' => 'txt pdf doc docx ppt pptx xls xlsx docm',
       'max_filesize' => '',
@@ -11693,6 +11693,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-page-body'
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -11780,6 +11782,36 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'label' => 'Indhold',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 0,
+          'filtered_html' => 0,
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
       'display_summary' => 0,
