@@ -43,7 +43,7 @@
     <!-- End - profile photo -->
 
     <!-- Begin - name -->
-    <?php print l($personal['full_name'], 'user/' . $personal['uid']); ?>
+    <?php print l(_ktc_text_shortener($personal['full_name'], 22), 'user/' . $personal['uid']); ?>
     <!-- End - name -->
 
 </div>

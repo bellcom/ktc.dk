@@ -28,10 +28,12 @@ global $user;
 ?>
 <?php if ($page['logo'] || $page['site_name'] || $page['primary_nav'] || $page['secondary_nav'] || $content): ?>
 
-    <!-- Begin - header top bar -->
-    <div class="ktc-header-top-bar">
-        <div class="container">
+  <!-- Begin - header top bar -->
+  <div class="ktc-header-top-bar">
+    <div class="container">
+      <div class="row">
 
+        <div class="col-xs-6">
           <?php if ($page['logo']): ?>
             <!-- Begin - logo -->
             <div class="ktc-header-top-bar-logo">
@@ -43,62 +45,90 @@ global $user;
           <?php endif; ?>
 
           <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
-            <span class="ktc-header-top-bar-add-content">
+            <span class="ktc-header-top-bar-add-content hidden-xs">
               <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
               <?php print $page['create_menu']; ?>
             </span>
           <?php endif; ?>
+        </div>
 
-          <!-- Begin - navigation -->
-          <ul class="ktc-header-top-bar-user-menu">
+        <div class="col-xs-6 text-right">
+          <div class="row">
 
             <?php if ($logged_in): ?>
+              <div class="col-xs-12 col-md-8">
+                <!-- Begin - user display -->
+                <ul class="ktc-header-top-bar-list ktc-header-top-bar-user-display">
+                  <li>
+                    <?php print $profile = theme('user_profile', array(
+                      'account'          => $user_object,
+                      'theme_suggestion' => 'header'
+                    )); ?>
+                  </li>
+                </ul>
+                <!-- End - user display -->
+              </div>
+            <?php endif; ?>
 
-              <!-- Begin - user display -->
-              <li>
-                  <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'header')); ?>
-              </li>
-              <!-- End - user display -->
+            <?php if ($logged_in): ?>
+              <div class="col-xs-12 col-md-4">
+                <!-- Begin - navigation -->
+                <ul class="ktc-header-top-bar-list ktc-header-top-bar-navigation">
 
-              <!-- Begin - toggle -->
-              <li>
-                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Dine genveje"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-toggle"></span></a>
-              </li>
-              <!-- End - toggle -->
+                  <!-- Begin - toggle -->
+                  <li>
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Dine genveje"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-toggle"></span></a>
+                  </li>
+                  <!-- End - toggle -->
 
-              <!-- Begin - settings -->
-              <li>
-                <a href="/user/<?php print $user->uid; ?>/edit" data-toggle="tooltip" data-placement="bottom" title="Indstillinger"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-settings"></span></a>
-              </li>
-              <!-- End - settings -->
+                  <!-- Begin - settings -->
+                  <li>
+                    <a href="/user/<?php print $user->uid; ?>/edit" data-toggle="tooltip" data-placement="bottom" title="Indstillinger"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-settings"></span></a>
+                  </li>
+                  <!-- End - settings -->
 
-              <!-- Begin - logout -->
-              <li>
-                <a href="/user/logout" data-toggle="tooltip" data-placement="bottom" title="Log af"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-logout"></span></a>
-              </li>
-              <!-- End - logout -->
+                  <!-- Begin - logout -->
+                  <li>
+                    <a href="/user/logout" data-toggle="tooltip" data-placement="bottom" title="Log af"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-user-logout"></span></a>
+                  </li>
+                  <!-- End - logout -->
 
-              <!-- Begin - search -->
-              <li>
-                <a href="/search" data-toggle="tooltip" data-placement="bottom" title="Søg"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-search"></span></a>
-              </li>
-              <!-- End - search -->
+                  <!-- Begin - search -->
+                  <li>
+                    <a href="/search" data-toggle="tooltip" data-placement="bottom" title="Søg"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-search"></span></a>
+                  </li>
+                  <!-- End - search -->
+                </ul>
+              </div>
+              <!-- End - navigation -->
+            <?php endif; ?>
 
-            <?php else: ?>
+            <?php if (!$logged_in): ?>
+              <div class="col-xs-12">
+                <!-- Begin - user login -->
+                <ul class="ktc-header-top-bar-list ktc-header-top-bar-user-login">
+                  <li>
+                    <?php print $user_login; ?>
+                  </li>
+                </ul>
+                <!-- End - user login -->
+              </div>
+            <?php endif; ?>
 
-              <!-- Begin - login form -->
-              <li>
-                <?php print $user_login; ?>
-              </li>
-              <!-- End - login form -->
+            <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
+              <div class="col-xs-12">
+                <span class="ktc-header-top-bar-add-content visible-xs pull-right text-left">
+                  <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
+                  <?php print $page['create_menu']; ?>
+                </span>
+              </div>
+            <?php endif; ?>
 
-            <?php endif ?>
-
-          </ul>
-          <!-- End - navigation -->
-
+          </div>
         </div>
+      </div>
     </div>
-    <!-- End - header top bar -->
+  </div>
+  <!-- End - header top bar -->
 
 <?php endif ?>
