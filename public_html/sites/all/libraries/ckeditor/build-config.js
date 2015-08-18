@@ -13,10 +13,10 @@
  * (1) http://ckeditor.com/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) http://ckeditor.com/builder/b651a7834aa00ace93bf2e2b262f3be3
+ * (2) http://ckeditor.com/builder/5830382aa3e5ca3ee0acafb3dc1757c0
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) http://ckeditor.com/builder/download/b651a7834aa00ace93bf2e2b262f3be3
+ * (3) http://ckeditor.com/builder/download/5830382aa3e5ca3ee0acafb3dc1757c0
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -42,6 +42,7 @@ var CKBUILDER_CONFIG = {
 		'.jscsrc',
 		'.jshintignore',
 		'.jshintrc',
+		'less',
 		'.mailmap',
 		'node_modules',
 		'package.json',
@@ -55,7 +56,7 @@ var CKBUILDER_CONFIG = {
 		'basicstyles' : 1,
 		'bidi' : 1,
 		'blockquote' : 1,
-		'ccmsacdc' : 1,
+		'bootstrapVisibility' : 1,
 		'clipboard' : 1,
 		'colorbutton' : 1,
 		'colordialog' : 1,
@@ -63,6 +64,7 @@ var CKBUILDER_CONFIG = {
 		'dialogadvtab' : 1,
 		'div' : 1,
 		'elementspath' : 1,
+		'embed' : 1,
 		'enterkey' : 1,
 		'entities' : 1,
 		'filebrowser' : 1,
@@ -73,10 +75,12 @@ var CKBUILDER_CONFIG = {
 		'fontawesome' : 1,
 		'format' : 1,
 		'forms' : 1,
+		'gg' : 1,
 		'glyphicons' : 1,
 		'horizontalrule' : 1,
 		'htmlwriter' : 1,
 		'iframe' : 1,
+		'iframedialog' : 1,
 		'image' : 1,
 		'indentblock' : 1,
 		'indentlist' : 1,
@@ -86,19 +90,16 @@ var CKBUILDER_CONFIG = {
 		'list' : 1,
 		'liststyle' : 1,
 		'magicline' : 1,
-		'mathedit' : 1,
-		'mathjax' : 1,
 		'maximize' : 1,
 		'mediaembed' : 1,
-		'nbsp' : 1,
 		'newpage' : 1,
 		'pagebreak' : 1,
 		'pastefromword' : 1,
 		'pastetext' : 1,
 		'preview' : 1,
 		'print' : 1,
+		'quicktable' : 1,
 		'removeformat' : 1,
-		'removespan' : 1,
 		'resize' : 1,
 		'save' : 1,
 		'scayt' : 1,
@@ -112,13 +113,11 @@ var CKBUILDER_CONFIG = {
 		'stylescombo' : 1,
 		'tab' : 1,
 		'table' : 1,
-		'tableresize' : 1,
 		'tabletools' : 1,
 		'templates' : 1,
-		'texzilla' : 1,
+		'tliyoutube' : 1,
 		'toolbar' : 1,
 		'undo' : 1,
-		'widgetbootstrap' : 1,
 		'wsc' : 1,
 		'wysiwygarea' : 1,
 		'youtube' : 1
