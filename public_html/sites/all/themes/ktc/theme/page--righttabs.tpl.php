@@ -113,18 +113,30 @@
         </div>
       </div>
 
-      <?php if ($tabs): ?>
         <div class="col-md-3">
+          <?php if ($tabs_primary): ?>
 
-          <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action">
-            <div class="ktc-aside-heading">
-              <p class="ktc-aside-title"><?php print t('Faner'); ?></p>
-            </div>
+            <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action <?php print ($tabs_secondary) ? 'ktc-aside-no-stack' : ''; ?>">
+              <div class="ktc-aside-heading">
+                <p class="ktc-aside-title"><?php print t('Faner'); ?></p>
+              </div>
 
-            <div class="ktc-aside-body">
-              <?php print render($tabs); ?></div>
+              <div class="ktc-aside-body">
+                <ul class="tabs--primary nav nav-tabs">
+                  <?php print render($tabs_primary); ?>
+                </ul>
+              </div>
             </div>
-          </div>
+            <?php if ($tabs_secondary): ?>
+              <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action ktc-aside-tabs-menu-fix">
+                <div class="ktc-aside-body">
+                  <ul class="tabs--secondary nav nav-tabs">
+                    <?php print render($tabs_secondary); ?>
+                  </ul>
+                </div>
+              </div>
+            <?php endif; ?>
+          <?php endif; ?>
 
           <?php /* region--sidebar.tpl.php */ ?>
           <?php if ($page['sidebar_first']): ?>
@@ -135,9 +147,8 @@
           <?php if ($page['sidebar_second']): ?>
             <?php print render($page['sidebar_second']); ?>
           <?php endif; ?>
-
         </div>
-      <?php endif; ?>
+      </div>
     </div>
   </div>
 </div>

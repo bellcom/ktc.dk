@@ -223,6 +223,10 @@ function ktc_preprocess_page(&$variables) {
       $variables['page']['content']['ktc_sectionpage_ktc_page_menu_tabs']['#block']->css_class = 'col-md-4 col-sm-4 col-md-push-8 col-sm-push-8';
     }
   }
+
+  // Tabs
+  $variables['tabs_primary'] = menu_primary_local_tasks();
+  $variables['tabs_secondary'] = menu_secondary_local_tasks();
 }
 
 /**
