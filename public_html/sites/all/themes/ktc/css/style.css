@@ -10722,6 +10722,14 @@ fieldset[disabled] .field-type-image .button {
 .ktc-header .ktc-header-navigation .navbar-nav > li.active > a {
   text-decoration: underline;
 }
+@media screen and (max-width: 767px) {
+  .ktc-header .ktc-header-navigation .navbar-nav {
+    margin-left: 0;
+  }
+  .ktc-header .ktc-header-navigation .navbar-nav > li > a {
+    padding-left: 0;
+  }
+}
 .ktc-header form button {
   min-width: 0;
 }
