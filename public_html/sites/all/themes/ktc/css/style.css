@@ -10608,7 +10608,7 @@ fieldset[disabled] .field-type-image .button {
   /* Internet Explorer 5.5+ */
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-user-login {
-  margin-top: 10px;
+  padding-top: 10px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon {
   display: inline-block;
@@ -10690,7 +10690,7 @@ fieldset[disabled] .field-type-image .button {
     margin-top: 0;
   }
   .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-user-login {
-    margin-top: 0;
+    padding-top: 0;
   }
   .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content {
     float: none;
