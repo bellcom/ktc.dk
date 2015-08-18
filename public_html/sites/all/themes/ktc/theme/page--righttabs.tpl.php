@@ -106,14 +106,14 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-9">
+      <div class="col-md-4">
         <div class="row">
           <?php /* region--content.tpl.php */ ?>
           <?php print render($page['content']); ?>
         </div>
       </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
           <?php if ($tabs_primary): ?>
 
             <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action <?php print ($tabs_secondary) ? 'ktc-aside-no-stack' : ''; ?>">
