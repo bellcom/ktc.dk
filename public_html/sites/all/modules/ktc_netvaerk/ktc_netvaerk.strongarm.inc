@@ -62,8 +62,8 @@ function ktc_netvaerk_strongarm() {
       'display' => array(
         'signup' => array(
           'listevisning' => array(
-            'weight' => '10',
-            'visible' => TRUE,
+            'weight' => '3',
+            'visible' => FALSE,
           ),
           'default' => array(
             'weight' => '10',

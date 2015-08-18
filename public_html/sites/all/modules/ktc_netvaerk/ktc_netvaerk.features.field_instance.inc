@@ -30,7 +30,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -131,7 +131,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -202,7 +202,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -275,7 +275,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -340,7 +340,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -405,7 +405,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -474,7 +474,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -551,10 +551,11 @@ function ktc_netvaerk_field_default_field_instances() {
         'weight' => 5,
       ),
       'listevisning' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 1,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -627,7 +628,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -690,7 +691,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -776,7 +777,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -844,7 +845,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -909,7 +910,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1053,7 +1054,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1131,7 +1132,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1199,7 +1200,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1265,7 +1266,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1361,7 +1362,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1429,7 +1430,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1508,7 +1509,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1591,7 +1592,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1671,7 +1672,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1765,7 +1766,7 @@ function ktc_netvaerk_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
       'listevisningboks' => array(
         'label' => 'above',
