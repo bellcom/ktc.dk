@@ -115,7 +115,16 @@
 
       <?php if ($tabs): ?>
         <div class="col-md-3">
-          <div class="tabs"><?php print render($tabs); ?></div>
+
+          <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action">
+            <div class="ktc-aside-heading">
+              <p class="ktc-aside-title"><?php print t('Faner'); ?></p>
+            </div>
+
+            <div class="ktc-aside-body">
+              <?php print render($tabs); ?></div>
+            </div>
+          </div>
 
           <?php /* region--sidebar.tpl.php */ ?>
           <?php if ($page['sidebar_first']): ?>
