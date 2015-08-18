@@ -619,7 +619,7 @@ function ktc_hearing_node_load($nodes, $types) {
   $node = reset($nodes);
   // Redirect to the appropriate page on the hearing if a response is loaded.
   // Viewing the node normally doesn't fit the flow of the hearing process.
-  if ($types[0] == 'hearing_responses' && arg(1) == $node->nid) {
+  if ($types[0] == 'hearing_responses' && arg(1) == $node->nid && arg(2) != 'delete') {
     unset($_GET['destination']);
     if ($hearing = ktc_hearing_get_hearing_from_response($node)) {
       if (ktc_hearing_access($hearing, 'view responses')) {
@@ -1036,10 +1036,14 @@ function ktc_hearing_no_response_form_submit(&$form, &$form_state) {
   }
 
   // Load users response, if there is any.
-  $node = node_load(ktc_hearing_user_has_responded(node_load($hearing_nid)));
+  $hearing = node_load($hearing_nid);
+
+  if ($response_nid = ktc_hearing_user_has_responded($hearing)) {
+    $node = node_load($response_nid);
+  }
 
   // If not create a new node.
-  if (!$node) {
+  if (!isset($node)) {
     $node = new stdClass();
     $node->title = t('Høringssvar') . ': ' . $user_name;
     $node->type = 'hearing_responses';
