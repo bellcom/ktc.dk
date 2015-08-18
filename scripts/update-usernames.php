@@ -22,6 +22,7 @@ foreach ($result['user'] as $uid => $info) {
     $name = $field[0]['value'];
   }
 
+  $employer = '';
   if ($field = field_get_items('user', $user, 'field_employer_name')) {
     $employer = $field[0]['value'];
   }
