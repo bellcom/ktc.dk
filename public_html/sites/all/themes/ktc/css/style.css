@@ -10607,6 +10607,9 @@ fieldset[disabled] .field-type-image .button {
   word-wrap: break-word;
   /* Internet Explorer 5.5+ */
 }
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-user-login {
+  margin-top: 10px;
+}
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon {
   display: inline-block;
   margin-top: 10px;
@@ -10684,6 +10687,9 @@ fieldset[disabled] .field-type-image .button {
     height: auto;
   }
   .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon {
+    margin-top: 0;
+  }
+  .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-user-login {
     margin-top: 0;
   }
   .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content {
