@@ -106,7 +106,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-4">
+      <div class="col-md-8">
         <div class="row">
           <?php /* region--content.tpl.php */ ?>
           <?php print render($page['content']); ?>

@@ -14863,6 +14863,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   /* Opera 7 */
   word-wrap: break-word;
   /* Internet Explorer 5.5+ */
+  -ms-word-break: break-all;
 }
 .ktc-aside-table-list .table tr td .file-icon {
   display: none;
