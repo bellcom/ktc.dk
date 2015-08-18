@@ -259,7 +259,8 @@ function ktc_users_field_group_info() {
     'label' => 'Ansættelse',
     'weight' => '3',
     'children' => array(
-      0 => 'field_account',
+      0 => 'field_usertype',
+      1 => 'field_account',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -354,8 +355,7 @@ function ktc_users_field_group_info() {
     'label' => 'ktc.dk',
     'weight' => '0',
     'children' => array(
-      0 => 'field_usertype',
-      1 => 'account',
+      0 => 'account',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -64,6 +64,11 @@ jQuery(document).ready(function($){
   $('#edit-field-usertype-und').trigger('change');
 
   $('.account-address a').click(function(event) {
+    if (!$(this).attr('data-href')) {
+      $(this).attr('data-href', $(this).attr('href'));
+    }
+    var firstLevel = Drupal.settings.ktcUsersEdit.usertypeMap[$('#edit-field-usertype-und').val()];
+    $(this).attr('href', $(this).attr('data-href') + '/' + firstLevel);
     if (window.confirm("Hvis du forlader denne side vil dine rettelser ikke blive tabt. \n\nEr du sikker på at du vil fortsætte?")) {
       return true;
     }

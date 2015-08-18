@@ -53,7 +53,10 @@ function ktc_users_edit_company_form() {
       }
     }
   }
-  $invoiceaccount = FALSE;
+
+  if (arg(2) && is_numeric(arg(2))) {
+    $invoiceaccount = taxonomy_term_load(arg(2));
+  }
 
   if (!$invoiceaccount) {
     drupal_set_message(t('Du skal angive en brugertype.') . ' ' . l(t('Tryk her for at går til brugerredigering'), 'user' . $account->uid . '/edit'), 'warning');
