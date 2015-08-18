@@ -15,7 +15,7 @@ $block_status_form = module_invoke('ktc_hearing', 'block_view', 'ktc_hearing_set
 
   <div class="col-md-5">
 
-    <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-2-col ktc-aside-action">
+    <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action">
       <div class="ktc-aside-heading">
         <h3 class="ktc-aside-title">
           Høring

@@ -848,7 +848,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' pane-page-tabs ktc-aside-tabs ktc-aside-tabs-2-col ktc-aside-action',
+      'css_class' => 'ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action',
       'template_suggestion' => 'page_tabs',
     );
     $pane->extras = array();
@@ -1457,7 +1457,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-tabs ktc-aside-tabs-2-col ktc-aside-action',
+      'css_class' => 'ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action',
       'template_suggestion' => 'aside',
     );
     $pane->extras = array();
