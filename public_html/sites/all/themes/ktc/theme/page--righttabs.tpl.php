@@ -106,51 +106,50 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-8">
+      <div class="col-sm-4 col-sm-push-8">
+        <?php if ($tabs_primary): ?>
+
+          <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action <?php print ($tabs_secondary) ? 'ktc-aside-no-stack' : ''; ?>">
+            <div class="ktc-aside-heading">
+              <p class="ktc-aside-title"><?php print t('Faner'); ?></p>
+            </div>
+
+            <div class="ktc-aside-body">
+              <ul class="tabs--primary nav nav-tabs">
+                <?php print render($tabs_primary); ?>
+              </ul>
+            </div>
+          </div>
+          <?php if ($tabs_secondary): ?>
+            <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action ktc-aside-tabs-menu-fix">
+              <div class="ktc-aside-body">
+                <ul class="tabs--secondary nav nav-tabs">
+                  <?php print render($tabs_secondary); ?>
+                </ul>
+              </div>
+            </div>
+          <?php endif; ?>
+        <?php endif; ?>
+
+        <?php /* region--sidebar.tpl.php */ ?>
+        <?php if ($page['sidebar_first']): ?>
+          <?php print render($page['sidebar_first']); ?>
+        <?php endif; ?>
+
+        <?php /* region--sidebar.tpl.php */ ?>
+        <?php if ($page['sidebar_second']): ?>
+          <?php print render($page['sidebar_second']); ?>
+        <?php endif; ?>
+      </div>
+      <div class="col-sm-8 col-sm-pull-4">
         <div class="row">
           <?php /* region--content.tpl.php */ ?>
           <?php print render($page['content']); ?>
         </div>
       </div>
-
-        <div class="col-md-4">
-          <?php if ($tabs_primary): ?>
-
-            <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action <?php print ($tabs_secondary) ? 'ktc-aside-no-stack' : ''; ?>">
-              <div class="ktc-aside-heading">
-                <p class="ktc-aside-title"><?php print t('Faner'); ?></p>
-              </div>
-
-              <div class="ktc-aside-body">
-                <ul class="tabs--primary nav nav-tabs">
-                  <?php print render($tabs_primary); ?>
-                </ul>
-              </div>
-            </div>
-            <?php if ($tabs_secondary): ?>
-              <div class="ktc-aside ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-action ktc-aside-tabs-menu-fix">
-                <div class="ktc-aside-body">
-                  <ul class="tabs--secondary nav nav-tabs">
-                    <?php print render($tabs_secondary); ?>
-                  </ul>
-                </div>
-              </div>
-            <?php endif; ?>
-          <?php endif; ?>
-
-          <?php /* region--sidebar.tpl.php */ ?>
-          <?php if ($page['sidebar_first']): ?>
-            <?php print render($page['sidebar_first']); ?>
-          <?php endif; ?>
-
-          <?php /* region--sidebar.tpl.php */ ?>
-          <?php if ($page['sidebar_second']): ?>
-            <?php print render($page['sidebar_second']); ?>
-          <?php endif; ?>
-        </div>
-      </div>
     </div>
   </div>
+</div>
 </div>
 <!-- End - wrapper -->
 
