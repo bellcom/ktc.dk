@@ -99,7 +99,7 @@ function ktc_users_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'taxonomy_hs',
-      'weight' => 19,
+      'weight' => -8,
     ),
   );
 
