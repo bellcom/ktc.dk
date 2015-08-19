@@ -115,7 +115,7 @@
       $('.ktc-group-members').removeClass('hide');
       return false;
     });
-    $('.og-members-modal a').click(function() {
+    $('.og-members-show-modal a').click(function() {
       $('#member-modal').modal();
       return false;
     });

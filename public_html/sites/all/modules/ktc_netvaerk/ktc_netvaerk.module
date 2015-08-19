@@ -376,7 +376,7 @@ function ktc_netvaerk_block_view($delta = '') {
   switch ($delta) {
     case 'sidebar-group-members':
       $block['content'] = ktc_netvaerk_sidebar_group_members();
-      $block['subject'] = t('MEDLEMMER AF ') . drupal_get_title();
+      $block['subject'] = t('Nyeste medlemmer');
       break;
 
     case 'sidebar-group-admins':
@@ -416,6 +416,8 @@ function ktc_netvaerk_block_view($delta = '') {
  */
 function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
   $gid = arg(1);
+  $list = '';
+
   // Only proceed with generating the block if this is a group id.
   if (!is_numeric($gid)) {
     return;

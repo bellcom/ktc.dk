@@ -1343,14 +1343,13 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'list4';
+  $handler->display->display_options['row_options']['view_mode'] = 'list7';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Overskrift: Global: Tekstområde */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="og-members-modal"><a href="#" class="btn btn-default">Hent medlemsliste</a></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['pane_title'] = 'KTC OG members';
@@ -1693,7 +1692,6 @@ function ktc_views_views_default_views() {
     t('<span class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></span>'),
     t('%1 medlemmer'),
     t('Medlemsliste gruppe center'),
-    t('<div class="og-members-modal"><a href="#" class="btn btn-default">Hent medlemsliste</a></div>'),
     t('Medlemsliste til modal - ansøgere'),
     t('[gid]'),
     t('.'),
@@ -1922,12 +1920,11 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['created']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['fields']['created']['label'] = 'Member since';
   $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
-  /* Felt: OG membership: Request message */
+  /* Felt: OG membership: Besked */
   $handler->display->display_options['fields']['og_membership_request']['id'] = 'og_membership_request';
   $handler->display->display_options['fields']['og_membership_request']['table'] = 'field_data_og_membership_request';
   $handler->display->display_options['fields']['og_membership_request']['field'] = 'og_membership_request';
   $handler->display->display_options['fields']['og_membership_request']['relationship'] = 'og_membership_rel';
-  $handler->display->display_options['fields']['og_membership_request']['label'] = 'Besked';
   /* Felt: OG membership: Redigér-link */
   $handler->display->display_options['fields']['edit_membership']['id'] = 'edit_membership';
   $handler->display->display_options['fields']['edit_membership']['table'] = 'og_membership';

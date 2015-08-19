@@ -422,6 +422,15 @@ function _ktc_section_block_netvaerk_invite_links_content() {
         $html .= '</div>';
       }
     }
+
+    $html .= '<div class="ktc-filter-button-container og-members-all">';
+    $html .= l(t('Medlemmer'), '#', array('attributes' => array('class' => $link_class)));
+    $html .= '</div>';
+
+    $html .= '<div class="ktc-filter-button-container og-members-show-modal">';
+    $html .= l(t('Medlemsliste'), '#', array('attributes' => array('class' => $link_class)));
+    $html .= '</div>';
+
     $html .= '</div>';
   }
   return $html;
