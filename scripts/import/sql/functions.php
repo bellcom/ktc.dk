@@ -9,7 +9,7 @@ function get_hearing_elements_from_db_table($table, $condition = NULL) {
   if (isset($condition)) {
     $query->condition($condition, '', '<>');
   }
-  $query->condition('tstamp', strtotime('2015-01-01 00:00:01'), '>');
+  $query->condition('tstamp', strtotime('2008-01-01 00:00:01'), '>');
   $result = $query->execute();
   while ($record = $result->fetchAssoc()) {
     $elements[] = $record;
@@ -171,8 +171,8 @@ function get_state_name($tid) {
 }
 
 function convert_char($string) {
-  $find = array("Ã†", "Ã¸", "Ã¦", "Ã¥", "Ã˜", "Ã…", "&#39;", "Ã©", );
-  $replace = array("Æ", "ø", "æ", "å", "Ø", "Å", "'", "é", );
+  $find = array("Ã†", "Ã¸", "Ã¦", "Ã¥", "Ã˜", "Ã…", "&#39;", "Ã©", "Â”", "Â–", "Â´" );
+  $replace = array("Æ", "ø", "æ", "å", "Ø", "Å", "'", "é", "\"", "-", "'" );
   $string = str_replace($find, $replace, $string);
   return $string;
 }
