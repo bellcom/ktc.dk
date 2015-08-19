@@ -255,13 +255,13 @@ function ktc_netvaerk_og_user_access_alter(&$perm, $context) {
     $group = $context['group'];
 
     if (is_object($group)) {
-      // If the group is of the same type as the specified closed
+      // If the group is of the same type as the specified private
       // ones. Don't allow the user to subscribe.
       if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
         $type_closed = variable_get('ktc_netvaerk_type_closed', array());
 
         if (in_array($field[0]['tid'], array_values($type_closed))) {
-          // The closed groups are only supposed to be handled from CRM.
+          // The private groups are only supposed to be handled from CRM.
           $perm['subscribe'] = FALSE;
           $perm['invite any user'] = FALSE;
           $perm['administer group'] = FALSE;
@@ -269,12 +269,18 @@ function ktc_netvaerk_og_user_access_alter(&$perm, $context) {
           $perm['unsubscribe'] = FALSE;
           $perm['manage members'] = FALSE;
         }
-      }
-
-      // If the group is "open" allow users to subscribe without approval.
-      if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
-        if ($field[0]['value']) {
-          $perm['subscribe without approval'] = TRUE;
+        else {
+          // Group is not public. Check if it is open for more subscribers
+          if ($field_open = field_get_items('node', $group, 'field_open_group')) {
+            if ($field_open[0]['value']) {
+              // Group is open for more members
+              $perm['subscribe without approval'] = TRUE;
+            }
+            else {
+              $perm['invite any user'] = FALSE;
+              $perm['subscribe without approval'] = FALSE;
+            }
+          }
         }
       }
     }
@@ -926,7 +932,7 @@ function _ktc_netvaerk_og_members_list() {
 
   // Only show pending users and add form to users with administer group
   // permissions.
-  if (og_user_access('node', $gid, 'administer group')) {
+  if (og_user_access('node', $gid, 'administer group') || og_user_access('node', $gid, 'invite any user')) {
     $view = views_get_view('ktc_og_members');
     $view->set_display('block_3');
     $view->set_arguments(array($gid));
