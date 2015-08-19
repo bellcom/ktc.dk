@@ -11,7 +11,7 @@ define('COMMENT_NOTIFY_NODE', 1);
 define('COMMENT_NOTIFY_COMMENT', 2);
 
 
-define('AUTHOR_SUBJECT', '');
+define('AUTHOR_SUBJECT', 'You have received a comment on: "[comment:node:title]');
 define('AUTHOR_MAILTEXT',
 'Hi [comment:node:author],
 
@@ -423,7 +423,10 @@ function comment_notify_settings() {
   $form['comment_notify_settings']['comment_notify_comment_notify_default_subject'] = array(
     '#type' => 'textfield',
     '#title' => t('Emne'),
+    '#return_value' => 1,
+    '#token_types' => array('comment'),
     '#default_value' => comment_notify_variable_registry_get('comment_notify_default_subject'),
+    '#element_validate' => array('token_element_validate'),
   );
 
   $form['comment_notify_settings']['comment_notify_comment_notify_default_mailtext'] = array(
@@ -437,10 +440,13 @@ function comment_notify_settings() {
     '#element_validate' => array('token_element_validate'),
   );
 
-  $form['comment_notify_settings']['comment_notify_comment_notify_default_subject'] = array(
+  $form['comment_notify_settings']['comment_notify_node_notify_default_subject'] = array(
     '#type' => 'textfield',
     '#title' => t('Emne'),
+    '#return_value' => 1,
+    '#token_types' => array('comment'),
     '#default_value' => comment_notify_variable_registry_get('node_notify_default_subject'),
+    '#element_validate' => array('token_element_validate'),
   );
 
   $form['comment_notify_settings']['comment_notify_node_notify_default_mailtext'] = array(
@@ -466,11 +472,13 @@ function comment_notify_settings() {
 
 function comment_notify_settings_validate($form, &$form_state) {
   $sum_enabled = 0;
-  foreach ($form_state['values']['comment_notify_available_alerts'] as $enabled) {
-    $sum_enabled += $enabled;
+  if ($form_state['values']['comment_notify_available_alerts']) {
+    foreach ($form_state['values']['comment_notify_available_alerts'] as $enabled) {
+      $sum_enabled += $enabled;
+    }
   }
   if (!$sum_enabled) {
-    form_set_error('comment_notify_available_alerts', 'You must enable at least one subscription mode.');
+    // form_set_error('comment_notify_available_alerts', 'You must enable at least one subscription mode.');
   }
 }
 
