@@ -149,6 +149,9 @@ body.node-type-page {
 .ktc-aside-action {
 
 	ul.pager {
+		position: absolute;
+		right: 15px;
+		top: -31px;
 
 		.pager-current {
 			display: none;
@@ -157,18 +160,18 @@ body.node-type-page {
 
 			margin-right: 5px;
 			a {
-				.sprite(@ikon-pilgrey-left);
-				background-color: @gray-darker;
+				.sprite(@arrow_left);
+				background-color: transparent;
 				border: none;
-				padding: 2px 2px;
+				padding: 0;
 			}
 		}
 
 		.pager-next a {
-			.sprite(@ikon-pilgrey);
-			background-color: @gray-darker;
+			.sprite(@arrow_right);
+			background-color: transparent;
 			border: none;
-			padding: 2px 2px;
+			padding: 0;
 		}
 	}
 }
