@@ -14842,7 +14842,9 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   display: none;
 }
 .ktc-aside-table-list .table tr td {
+  position: relative;
   padding: 4px 10px;
+  padding-right: 50px;
   border: 0;
   border-radius: 3px;
 }
@@ -14851,25 +14853,26 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   background-color: transparent;
 }
 .ktc-aside-table-list .table tr td a {
+  display: inline-block;
   width: 100%;
   word-break: break-all;
+  -ms-word-break: break-all;
   white-space: pre-wrap;
   /* css-3 */
   white-space: -moz-pre-wrap;
   /* Mozilla, since 1999 */
-  white-space: -pre-wrap;
-  /* Opera 4-6 */
   white-space: -o-pre-wrap;
   /* Opera 7 */
   word-wrap: break-word;
   /* Internet Explorer 5.5+ */
-  -ms-word-break: break-all;
 }
 .ktc-aside-table-list .table tr td .file-icon {
   display: none;
 }
 .ktc-aside-table-list .table tr td .file-extension {
-  float: right !important;
+  position: absolute;
+  right: 10px;
+  top: 4px;
   font-weight: bold;
   color: #2c353a;
 }
