@@ -11,6 +11,7 @@ define('COMMENT_NOTIFY_NODE', 1);
 define('COMMENT_NOTIFY_COMMENT', 2);
 
 
+define('AUTHOR_SUBJECT', 'You have received a comment on: "[comment:node:title]');
 define('AUTHOR_MAILTEXT',
 'Hi [comment:node:author],
 
@@ -31,6 +32,7 @@ disable this by logging in and changing the settings on your user account at
 -- [site:name] team
 [site:url]');
 
+define('DEFAULT_SUBJECT', '[comment:author] has commented on [comment:node:title]');
 define('DEFAULT_MAILTEXT',
 'Hi [comment-subscribed:author],
 
@@ -285,7 +287,7 @@ function _comment_notify_mailalert($comment) {
     // Get the author's language.
     $language = user_preferred_language($author);
     $raw_values = array(
-      'subject' => comment_notify_variable_registry_get('author_subject'),
+      'subject' => comment_notify_variable_registry_get('node_notify_default_subject'),
       'body'  => comment_notify_variable_registry_get('node_notify_default_mailtext'), //JS @todo:change this.
     );
     foreach ($raw_values as $k => $v) {
@@ -330,7 +332,7 @@ function _comment_notify_mailalert($comment) {
       }
 
       $raw_values = array(
-        'subject' => comment_notify_variable_registry_get('watcher_subject'),
+        'subject' => comment_notify_variable_registry_get('comment_notify_default_subject'),
         'body'  => comment_notify_variable_registry_get('comment_notify_default_mailtext'), //JS @todo:change this var name.
       );
 
@@ -418,6 +420,15 @@ function comment_notify_settings() {
 
   $form['comment_notify_settings'] = array();
 
+  $form['comment_notify_settings']['comment_notify_comment_notify_default_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Emne'),
+    '#return_value' => 1,
+    '#token_types' => array('comment'),
+    '#default_value' => comment_notify_variable_registry_get('comment_notify_default_subject'),
+    '#element_validate' => array('token_element_validate'),
+  );
+
   $form['comment_notify_settings']['comment_notify_comment_notify_default_mailtext'] = array(
     '#type' => 'textarea',
     '#title' => t('Default mail text for sending out notifications to commenters'),
@@ -426,6 +437,15 @@ function comment_notify_settings() {
     '#cols' => 80,
     '#rows' => 15,
     '#token_types' => array('comment'),
+    '#element_validate' => array('token_element_validate'),
+  );
+
+  $form['comment_notify_settings']['comment_notify_node_notify_default_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Emne'),
+    '#return_value' => 1,
+    '#token_types' => array('comment'),
+    '#default_value' => comment_notify_variable_registry_get('node_notify_default_subject'),
     '#element_validate' => array('token_element_validate'),
   );
 
@@ -452,11 +472,13 @@ function comment_notify_settings() {
 
 function comment_notify_settings_validate($form, &$form_state) {
   $sum_enabled = 0;
-  foreach ($form_state['values']['comment_notify_available_alerts'] as $enabled) {
-    $sum_enabled += $enabled;
+  if ($form_state['values']['comment_notify_available_alerts']) {
+    foreach ($form_state['values']['comment_notify_available_alerts'] as $enabled) {
+      $sum_enabled += $enabled;
+    }
   }
   if (!$sum_enabled) {
-    form_set_error('comment_notify_available_alerts', 'You must enable at least one subscription mode.');
+    // form_set_error('comment_notify_available_alerts', 'You must enable at least one subscription mode.');
   }
 }
 
