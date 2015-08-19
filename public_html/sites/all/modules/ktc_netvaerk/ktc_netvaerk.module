@@ -460,9 +460,6 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
       $list .= render(user_view($user, 'list3'));
     }
   }
-  if (!$admins) {
-    $list .= '<div class="og-members-all ktc-call-to-action-button"><a href="#" class="btn btn-default">Se alle medlemmer</a></div>';
-  }
   return $list;
 }
 
