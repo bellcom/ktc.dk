@@ -657,7 +657,7 @@ function ktc_file_link($variables) {
     'icon_directory' => $icon_directory
   ));
   //
-  $extension = pathinfo($file->filename, PATHINFO_EXTENSION);
+  $extension = pathinfo($file->uri, PATHINFO_EXTENSION);
   // Set options as per anchor format described at
   // http://microformats.org/wiki/file-format-examples
   $options = array(
