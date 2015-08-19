@@ -28,6 +28,17 @@
 		tr {
 			border: 0;
 
+			td {
+				border-color: #ddd;
+				text-align: center;
+				border-left: 1px solid #ddd;
+
+				&:first-child {
+					border-left: 0;
+					text-align: left;
+				}
+			}
+
 			&.dates {
 
 				&,
@@ -36,7 +47,8 @@
 						background-color: transparent;
 						font-weight: bold;
 						color: @gray-darker;
-						border-bottom: 1px solid #ccc;
+						border: 0;
+						border-bottom: 1px solid #ddd;
 					}
 				}
 			}
@@ -60,7 +72,7 @@
 						&.suggestion {
 							background-color: #fff;
 							border: 0;
-							border-bottom: 1px solid #ccc;
+							border-bottom: 1px solid #ddd;
 							color: @gray-darker;
 						}
 					}
@@ -76,11 +88,12 @@
 						font-weight: bold;
 						color: @gray-darker;
 					}
-				}
-			}
 
-			td {
-				border: 0;
+					&.total-count {
+						border: 0;
+						border-top: 1px solid #ddd;
+					}
+				}
 			}
 		}
 
