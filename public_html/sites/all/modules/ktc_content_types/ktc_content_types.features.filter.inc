@@ -22,7 +22,7 @@ function ktc_content_types_filter_default_formats() {
         'weight' => 1,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <br> <p> <div> <h3> <h4> <h5> <h6> <table> <tr> <th> <td> <tbody>',
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <br> <p> <div> <h3> <h4> <h5> <h6> <table> <tr> <th> <td> <tbody> <iframe>',
           'filter_html_help' => 0,
           'filter_html_nofollow' => 0,
         ),
