@@ -756,6 +756,10 @@ function ktc_netvaerk_permission() {
       'title' => t('Opret ktc top netværk'),
       'description' => t('Opret ktc top netværk som ktc admin.'),
     ),
+    'ktc access group tabs' => array(
+      'title' => t('Adgang til ekstra tabs på node'),
+      'description' => t('Giver bl.a. adgang til "Netværk" på en gruppe'),
+    ),
   );
 }
 
@@ -768,6 +772,14 @@ function ktc_netvaerk_menu_alter(&$items) {
   $items['group/%/%/admin/people/invite-users']['theme callback'] = 'ktc_netvaerk_get_default_theme';
   $items['node/%/group']['theme callback'] = 'ktc_netvaerk_get_default_theme';
   $items['group/%/%/admin/people/add-user']['theme callback'] = 'ktc_netvaerk_get_default_theme';
+
+  // Restrict access to certain node menu links.
+  $items['node/%/group']['access callback'] = 'user_access';
+  $items['node/%/group']['access arguments'] = array('ktc access group tabs');
+  $items['node/%node/track']['access callback'] = 'user_access';
+  $items['node/%node/track']['access arguments'] = array('ktc access group tabs');
+  $items['node/%node/log']['access callback'] = 'user_access';
+  $items['node/%node/log']['access arguments'] = array('ktc access group tabs');
 }
 /**
  * Get default theme callback.
