@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Dont transform data in property.
  */
