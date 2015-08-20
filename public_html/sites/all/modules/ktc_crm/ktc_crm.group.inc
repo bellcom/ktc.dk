@@ -233,6 +233,7 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
   $group_node->field_start_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->StartDate));
   $group_node->field_end_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->EndDate));
 
+  $group_node->og_group_ref = array();
   if (!empty($groupdto->ParentGroup)) {
     if ($parent_group = ktc_crm_group_load_from_uuid($groupdto->ParentGroup->CrmId)) {
       $group_node->og_group_ref[$language][0]['target_id'] = $parent_group->nid;
@@ -430,15 +431,17 @@ function ktc_crm_group_create_array($groupmembers) {
  * Helper, load a group(node) from crm UUID.
  */
 function ktc_crm_group_load_from_uuid($uuid) {
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'group')
-    ->fieldCondition('field_crm_uuid', 'value', $uuid);
-  $result = $query->execute();
+  $result = db_select('field_data_field_crm_uuid', 'f')
+    ->fields('f')
+    ->condition('field_crm_uuid_value', $uuid)
+    ->orderBy('entity_id', 'ASC')
+    ->execute()
+    ->fetchAll();
 
-  if (isset($result['node'])) {
-    return node_load(key($result['node']));
+  if (!empty($result)) {
+    return node_load($result[0]->entity_id);
   }
+
   return FALSE;
 }
 
