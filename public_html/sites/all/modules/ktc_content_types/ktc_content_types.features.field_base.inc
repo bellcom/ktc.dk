@@ -2533,20 +2533,16 @@ function ktc_content_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'og',
+      'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
           'field_default_token' => array(
-            'status' => TRUE,
-          ),
-          'og_behavior' => array(
             'status' => TRUE,
           ),
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'membership_type' => 'og_membership_type_default',
         'sort' => array(
           'type' => 'none',
         ),
