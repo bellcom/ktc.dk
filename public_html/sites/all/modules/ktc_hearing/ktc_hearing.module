@@ -659,6 +659,70 @@ function ktc_hearing_node_view($node, $view_mode) {
 }
 
 /**
+ * Implement hook_node_insert() and hook_node_presave(), in order to define our
+ * own hook for saving a hearing.
+ *
+ * Defining 'hook_ktc_hearing_save()'.
+ */
+
+/**
+ * Implements hook_entity_insert().
+ */
+function ktc_hearing_entity_insert($entity, $type) {
+  drupal_register_shutdown_function('_ktc_hearing_trigger_hook', $entity, FALSE, $type);
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function ktc_hearing_entity_update($entity, $type) {
+  drupal_register_shutdown_function('_ktc_hearing_trigger_hook', $entity, $entity->original, $type);
+}
+
+
+/**
+ * Handler for hearing updates.
+ */
+function _ktc_hearing_trigger_hook($entity, $original, $type) {
+  if ($type == 'node' && $entity->type == 'hearing') {
+
+    $hearing = $entity;
+    // If this is an insert operation, no original will be set. We need one for
+    // comparison.
+    if (!$original) {
+      $hearing->original = clone $hearing;
+    }
+    else {
+      $hearing->original = clone $original;
+    }
+
+    $modules = module_implements('ktc_hearing_save');
+
+    foreach ($modules as $module) {
+      $function = $module . '_ktc_hearing_save';
+      if (function_exists($function)) {
+        $function($hearing);
+      }
+    }
+
+  }
+}
+
+/**
+ * Implements hook_ktc_hearing_save().
+ */
+function ktc_hearing_ktc_hearing_save($hearing) {
+  $hearing_status = ktc_hearing_get_status($hearing);
+
+  if ($hearing->status == 1 && $hearing_status == KTC_HEARING_STATUS_NEW) {
+    // Set status to open.
+    $language = field_language('node', $hearing, 'field_status');
+    $hearing->field_status[$language][0]['tid'] = KTC_HEARING_STATUS_OPEN;
+    node_save($hearing);
+  }
+}
+
+/**
  * Set a KL hearing answer link on the hearing.
  */
 function ktc_hearing_kl_hearing_answer_form($form, &$form_state, $hearing) {
