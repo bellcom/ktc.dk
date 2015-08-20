@@ -2533,7 +2533,7 @@ function ktc_content_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'og',
       'handler_settings' => array(
         'behaviors' => array(
           'field_default_token' => array(
@@ -2617,7 +2617,7 @@ function ktc_content_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'og',
       'handler_settings' => array(
         'behaviors' => array(
           'field_default_token' => array(
