@@ -12398,16 +12398,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
-        'og_widget' => array(
-          'access_override' => 0,
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'status' => TRUE,
-        ),
         'prepopulate' => array(
           'status' => 0,
         ),
