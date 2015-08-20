@@ -82,6 +82,6 @@
 
 <!-- Begin - group list display box -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-    <a href="<?php print $node_url; ?>" class="ktc-link-with-icon ktc-link-icon-color-arrow"><?php print $title; ?></a>
+    <a href="<?php print $node_url; ?>" class="ktc-link-with-icon ktc-link-icon-color-arrow"><?php print _ktc_text_shortener($title, 40); ?></a>
 </article>
 <!-- End - group list display box -->

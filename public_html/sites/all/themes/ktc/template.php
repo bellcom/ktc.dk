@@ -287,10 +287,6 @@ function ktc_preprocess_field(&$vars, $hook) {
 
   // Make "field--FIELDNAME--BUNDLE--VIEWMODE.tpl.php" templates available.
   $vars['theme_hook_suggestions'][] = 'field__' . $vars['element']['#field_name'] . '__' . $vars['element']['#bundle'] . '__' . $vars['element']['#view_mode'];
-
-  if ($vars['element']['#field_name'] == 'field_coforfattere') {
-//    xdebug_break();
-  }
 }
 
 /**

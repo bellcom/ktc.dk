@@ -3374,9 +3374,8 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['max_length'] = '20';
+  $handler->display->display_options['fields']['name']['alter']['max_length'] = '30';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['name']['element_type'] = '0';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
@@ -3527,9 +3526,8 @@ Alle
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['max_length'] = '20';
+  $handler->display->display_options['fields']['name']['alter']['max_length'] = '30';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['name']['element_type'] = '0';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
@@ -3655,9 +3653,8 @@ Alle
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['max_length'] = '20';
+  $handler->display->display_options['fields']['name']['alter']['max_length'] = '30';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['name']['element_type'] = '0';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
@@ -3731,9 +3728,9 @@ Alle
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['max_length'] = '20';
+  $handler->display->display_options['fields']['name']['alter']['max_length'] = '30';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['name']['element_type'] = '0';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
@@ -4091,10 +4088,11 @@ Alle
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 col-sm-6 col-sx-12';
+  $handler->display->display_options['style_options']['row_class'] = 'ktc-link-container';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'listevisningboks';
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
