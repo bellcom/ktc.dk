@@ -843,7 +843,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
         'vid' => '19',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Filtrer på type',
+      'override_title_text' => 'Filtrer på nyhedstype',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -876,7 +876,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
         'vid' => '1',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Filtrer på emner',
+      'override_title_text' => 'Filtrer på nyhedsemner',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -884,7 +884,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'tags',
-      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
+      'css_class' => 'ktc-aside-checkbox-filter',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
