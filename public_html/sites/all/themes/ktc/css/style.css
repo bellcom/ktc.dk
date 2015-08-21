@@ -10727,6 +10727,18 @@ fieldset[disabled] .field-type-image .button {
 .ktc-header .ktc-header-navigation {
   background: url("../images/bg_navigation.jpg") center top;
 }
+.ktc-header .ktc-header-navigation .navbar-toggle .navbar-toggle-text {
+  float: left;
+  margin-right: 10px;
+  margin-top: -2px;
+  color: #fff;
+}
+.ktc-header .ktc-header-navigation .navbar-toggle .navbar-toggle-wrapper-icon-bar {
+  float: left;
+}
+.ktc-header .ktc-header-navigation .navbar-toggle .navbar-toggle-wrapper-icon-bar .icon-bar {
+  background-color: #fff;
+}
 .ktc-header .ktc-header-navigation .navbar-nav {
   margin-left: 140px;
 }
