@@ -106,13 +106,6 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
   /* Display: Forfatter */
   $handler = $view->new_display('panel_pane', 'Forfatter', 'panel_pane_1');
@@ -417,7 +410,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Tilmeldingsfrist */
+  /* Felt: Indhold: Svarfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
@@ -841,7 +834,7 @@ function ktc_content_types_views_default_views() {
     t('Slut'),
     t('Pris'),
     t('Målgruppe'),
-    t('Tilmeldingsfrist'),
+    t('Svarfrist'),
     t('Kort og adresse'),
     t('Adresse'),
     t('[field_arrangement_location]<br />
