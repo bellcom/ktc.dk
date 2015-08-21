@@ -495,7 +495,7 @@ function _ktc_date_filter_on_magazine() {
     foreach ($month as $key => $month) {
       $html .= '
         <div class="ktc-filter-button-container">
-          <div class="btn btn-default filter-link" id="filter-month" data-filter="' . $key . '">' . $key . '</div>
+          <div class="btn btn-default filter-link" id="filter-month" data-filter="' . $key . '">' . t($key) . '</div>
         </div>';
     }
   }
