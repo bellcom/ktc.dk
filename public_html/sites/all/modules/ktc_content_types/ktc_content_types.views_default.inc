@@ -410,7 +410,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Svarfrist */
+  /* Felt: Indhold: Tilmeldingsfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
@@ -834,7 +834,7 @@ function ktc_content_types_views_default_views() {
     t('Slut'),
     t('Pris'),
     t('Målgruppe'),
-    t('Svarfrist'),
+    t('Tilmeldingsfrist'),
     t('Kort og adresse'),
     t('Adresse'),
     t('[field_arrangement_location]<br />
