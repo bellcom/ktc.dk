@@ -88,53 +88,38 @@ function _ktc_hearing_notifications_get_hearings_due($days) {
 }
 
 /**
- * Implements hook_node_insert().
+ * Implements hook_ktc_hearing_save().
  */
-function ktc_hearing_notifications_node_insert($node) {
-  if ($node->type == 'hearing' && $node->status) {
-    $hearing_status = ktc_hearing_get_status($node);
-
-    if ($hearing_status == KTC_HEARING_STATUS_NEW) {
-      ktc_hearing_notifications_notify_users('new_hearing', $node);
-
-      // Set status to open.
-      $language = field_language('node', $node, 'field_status');
-      $node->field_status[$language][0]['tid'] = KTC_HEARING_STATUS_OPEN;
-    }
-  }
-}
-
-/**
- * Implements hook_node_presave().
- */
-function ktc_hearing_notifications_node_presave($node) {
-  if ($node->type == 'hearing' && $node->status) {
-    $hearing_status = ktc_hearing_get_status($node);
-
-    if (isset($node->original)) {
-      $original_status = ktc_hearing_get_status($node->original);
+function ktc_hearing_notifications_ktc_hearing_save($hearing) {
+  if ($hearing->status) {
+    $hearing_status = ktc_hearing_get_status($hearing);
+    if (isset($hearing->original)) {
+      $original_status = ktc_hearing_get_status($hearing->original);
+      if ($hearing_status == KTC_HEARING_STATUS_OPEN && $original_status == KTC_HEARING_STATUS_NEW) {
+        ktc_hearing_notifications_notify_users('new_hearing', $hearing);
+      }
 
       // Notifications on state change -->
       if ($hearing_status == KTC_HEARING_STATUS_APPROVAL && $original_status != KTC_HEARING_STATUS_APPROVAL) {
-        ktc_hearing_notifications_notify_users('approval', $node);
+        ktc_hearing_notifications_notify_users('approval', $hearing);
       }
 
       if ($hearing_status == KTC_HEARING_STATUS_APPROVED && $original_status != KTC_HEARING_STATUS_APPROVED) {
-        ktc_hearing_notifications_notify_users('approved', $node);
+        ktc_hearing_notifications_notify_users('approved', $hearing);
       }
 
       if ($hearing_status == KTC_HEARING_STATUS_KL_ANSWER && $original_status != KTC_HEARING_STATUS_KL_ANSWER) {
-        ktc_hearing_notifications_notify_users('kl_answer', $node);
+        ktc_hearing_notifications_notify_users('kl_answer', $hearing);
       }
       // <-- End notifications on state change.
 
       // Notifications on coordinator/chairman change -->
-      if (serialize($node->original->field_responsible_admin) != serialize($node->field_responsible_admin)) {
-        ktc_hearing_notifications_notify_users('change_coordinator', $node);
+      if (serialize($hearing->original->field_responsible_admin) != serialize($hearing->field_responsible_admin)) {
+        ktc_hearing_notifications_notify_users('change_coordinator', $hearing);
       }
 
-      if (serialize($node->original->field_responsible_foreman) != serialize($node->field_responsible_foreman)) {
-        ktc_hearing_notifications_notify_users('change_chairman', $node);
+      if (serialize($hearing->original->field_responsible_foreman) != serialize($hearing->field_responsible_foreman)) {
+        ktc_hearing_notifications_notify_users('change_chairman', $hearing);
       }
       // <-- End notifications on coordinator/chairman change.
     }
