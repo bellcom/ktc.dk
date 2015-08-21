@@ -53,6 +53,10 @@ function create_hearing_nodes() {
 
     $node->body[LANGUAGE_NONE][0]['value'] = convert_char($element['text']);
     $node->body[LANGUAGE_NONE][0]['safe_value'] = convert_char($element['text']);
+
+    $node->body[LANGUAGE_NONE][0]['value'] .= convert_char($element['description']);
+    $node->body[LANGUAGE_NONE][0]['safe_value'] .= convert_char($element['description']);
+
     $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
 
     $node->field_message[LANGUAGE_NONE][0]['value'] = convert_char($element['message']);

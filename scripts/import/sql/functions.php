@@ -36,12 +36,12 @@ function get_new_gid($typo3_gid) {
   switch ($typo3_gid) {
     // Digital Forvatning.
     case 1295:
-      $gid = 617;
+      $gid = 30134;
       break;
 
     // Kommunnal ejendonsdrift.
     case 1531:
-      $gid = 613;
+      $gid =30103;
       break;
 
     // Klima, energi og ressourcer.
@@ -51,53 +51,38 @@ function get_new_gid($typo3_gid) {
 
     // Miljø og Grundvand.
     case 1299:
-      $gid = 674;
+      $gid = 30122;
       break;
 
     // Natur og overfladevand.
     case 1298:
-      $gid = 672;
+      $gid = 30120;
       break;
 
     // Plan.
     case 1300:
-      $gid = 671;
+      $gid = 30119;
       break;
 
     // Veje, Trafik og Trafiksikkerhed.
     case 1301:
-      $gid = 670;
+      $gid = 30118;
       break;
 
     // Almene Boliger.
     case 1391:
-      $gid = 612;
+      $gid = 30102;
       break;
 
     // Byggelov.
     case 1294:
-      $gid = FALSE;
+      $gid = 30145;
       break;
 
     default:
       $gid = FALSE;
       break;
 
-  }
-  if (!$gid) {
-    $group_map = array(
-      1606 => 642,
-      1607 => 629,
-      1296 => 645,
-      1325 => 675,
-      1574 => 641,
-      1324 => 676,
-      1326 => 673,
-    );
-
-    if ($group_map[$typo3_gid]) {
-      $gid = $group_map[$typo3_gid];
-    }
   }
   return $gid;
 }
