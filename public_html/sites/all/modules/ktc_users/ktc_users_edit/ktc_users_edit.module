@@ -16,6 +16,15 @@ function ktc_users_edit_menu() {
     'type' => MENU_NORMAL_ITEM,
   );
 
+  $items['user/%/ktc_crm_users_switch'] = array(
+    'title' => 'Skift CRM kontaktperson',
+    'description' => 'Denne funktion gør det muligt at udskifte den kontakt person der refereres til i CRM',
+    'access arguments' => array('administer users'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_users_edit_change_crm_user', 1),
+    'type' => MENU_LOCAL_TASK,
+  );
+
   $items['ktc_users_edit/company_form'] = array(
     'title' => 'Virksomhedsoplysninger',
     'page callback' => 'drupal_get_form',
@@ -143,6 +152,7 @@ function ktc_users_edit_company_form() {
 
   return $form;
 }
+
 
 /**
  * Submit handler for company edit form.
@@ -346,4 +356,57 @@ function ktc_users_edit_webform_component_info() {
   );
 
   return $components;
+}
+
+/**
+ * Form callback for changing ktc crm user.
+ */
+function ktc_users_edit_change_crm_user($form, &$form_state, $uid) {
+  $form['intro']['#markup'] = 'Her er det muligt at skifte referencen til CRM kontaktpersonen for en given bruger. Brug kun denne funktion, hvis du er sikker på hvad du laver. Brugerens data vil blive erstattet med data fra den pågældende kontaktperson der vælges.';
+
+  $form['mail'] = array(
+    '#title' => 'Indtast email-adressen på den kontaktperson fra CRM du vil bruge',
+    '#type' => 'textfield',
+    '#default_value' => isset($form_state['values']['mail']) ? $form_state['values']['mail'] : '',
+    '#disabled' => isset($form_state['values']['mail']) ? 1 : '',
+  );
+
+  if (isset($form_state['values']['mail'])) {
+    $form['info'] = array(
+      '#markup' => '<p>Info om kontaktperson fra crm:</p>' . $form_state['webuserdto']->FirstName . '<br />' . $form_state['webuserdto']->LastName . '<br />' . $form_state['webuserdto']->TopLevelAccountName . '<br />' . $form_state['webuserdto']->DepartmentName . '<br />',
+    );
+
+    $form['are_you_sure'] = array(
+      '#type' => 'checkbox',
+      '#title' => 'Er du sikker på at du vil forsætte?',
+    );
+  }
+
+  $form_state['uid'] = $uid;
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'fortsæt',
+  );
+  return $form;
+}
+
+/**
+ * Submit handler for changing crm user.
+ */
+function ktc_users_edit_change_crm_user_submit(&$form, &$form_state) {
+  $form_state['rebuild'] = TRUE;
+
+  // If an email address is supplies, fetch the webuser.
+  if ($form_state['values']['mail']) {
+    $form_state['webuserdto'] = ktc_crm_lookup_webuser_by_mail($form_state['values']['mail']);
+  }
+
+  // If the user wants to replace with this webuser, create an edit array, and
+  // save the user with this data.
+  if ($form_state['webuserdto'] && $form_state['values']['are_you_sure']) {
+    $account = user_load($form_state['uid']);
+    $edit = ktc_crm_map_webuserdto_to_edit_array($webuserdto);
+    user_save($account, $edit);
+  }
 }
