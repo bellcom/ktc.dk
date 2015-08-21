@@ -167,6 +167,11 @@ function ktc_hearing_attendees_get_group_members($id = NULL) {
 
       $members['attendees'][$member_value] = $account->name;
     }
+
+    if (!isset ($members['coordinator'])) {
+      $members['coordinator'] = $members['chairman'];
+      $members['responsible-admin'] = $members['responsible-foreman'];
+    }
     return $members;
   }
   return FALSE;
