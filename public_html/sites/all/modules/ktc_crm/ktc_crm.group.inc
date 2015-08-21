@@ -56,7 +56,6 @@ function ktc_crm_node_delete($node) {
     (isset($_POST['form_id']) && $_POST['form_id'] == 'node_delete_confirm')) {
     $groupdto = ktc_crm_group_map_group_to_groupdto($node);
 
-    $groupdto->GroupName = 'Skal slettes';
     $groupdto->VisibleOnWeb = 0;
 
     ktc_crm_update_group($groupdto);
