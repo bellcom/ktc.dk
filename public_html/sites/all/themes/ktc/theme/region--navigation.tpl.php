@@ -35,10 +35,13 @@
 
         <div class="navbar-header hidden-sm hidden-md hidden-lg">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="navbar-toggle-text"><?php print t('Åbn menu'); ?></span>
+
+            <span class="navbar-toggle-wrapper-icon-bar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </span>
           </button>
         </div>
 
