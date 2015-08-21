@@ -460,6 +460,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_attendees']['id'] = 'field_attendees';
   $handler->display->display_options['fields']['field_attendees']['table'] = 'field_data_field_attendees';
   $handler->display->display_options['fields']['field_attendees']['field'] = 'field_attendees';
+  $handler->display->display_options['fields']['field_attendees']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_attendees']['element_label_type'] = 'h5';
   $handler->display->display_options['fields']['field_attendees']['element_label_class'] = 'ktc-node-title-xs';
   $handler->display->display_options['fields']['field_attendees']['element_wrapper_class'] = 'clearfix';
@@ -564,6 +565,17 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Felt: Bruger: Rendered Bruger */
+  $handler->display->display_options['fields']['rendered_entity_1']['id'] = 'rendered_entity_1';
+  $handler->display->display_options['fields']['rendered_entity_1']['table'] = 'views_entity_user';
+  $handler->display->display_options['fields']['rendered_entity_1']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity_1']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['rendered_entity_1']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity_1']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity_1']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'list2';
+  $handler->display->display_options['fields']['rendered_entity_1']['bypass_access'] = 0;
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -616,6 +628,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['exclude'] = TRUE;
   $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
@@ -630,11 +643,18 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_hearing_node']['settings'] = array(
     'link' => 0,
   );
-  /* Sorteringskriterie: Indhold: Oprettelsesdato */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Felt: Indhold: Indhold */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_type'] = 'em';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  /* Sorteringskriterie: Indhold: Har ikke svaret (field_is_no_answer) */
+  $handler->display->display_options['sorts']['field_is_no_answer_value']['id'] = 'field_is_no_answer_value';
+  $handler->display->display_options['sorts']['field_is_no_answer_value']['table'] = 'field_data_field_is_no_answer';
+  $handler->display->display_options['sorts']['field_is_no_answer_value']['field'] = 'field_is_no_answer_value';
   /* Kontekstuelt filter: Indhold: Høring (field_hearing_node) */
   $handler->display->display_options['arguments']['field_hearing_node_target_id']['id'] = 'field_hearing_node_target_id';
   $handler->display->display_options['arguments']['field_hearing_node_target_id']['table'] = 'field_data_field_hearing_node';
