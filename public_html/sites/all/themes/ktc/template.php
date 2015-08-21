@@ -677,6 +677,11 @@ function ktc_file_link($variables) {
   return '<span class="file">' . $icon . ' ' . l($link_text, $url, $options) . '<span class="file-extension">(' . $extension . ')</span></span>';
 }
 
+function modulename_menu_alter(&$item) {
+  // Hide the "Create new account" tab
+  $item['user/register']['type'] = MENU_CALLBACK;
+}
+
 /**
  * Implements theme_file_formatter_table().
  */
@@ -700,6 +705,11 @@ function ktc_file_formatter_table($variables) {
 function ktc_menu_local_task($variables) {
   $link = $variables['element']['#link'];
   $link_text = $link['title'];
+
+  // Hide "Følg" and "Log"
+  if ($link['path'] == 'node/%/track' || $link['path'] == 'node/%/log') {
+    return '';
+  }
 
   if (!empty($variables['element']['#active'])) {
     // Add text to indicate active tab for non-visual users.
