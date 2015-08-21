@@ -7063,6 +7063,12 @@ div.features-export-list .form-type-checkbox input[type=checkbox] {
   text-decoration: none;
   outline: none;
 }
+@media only screen and (min-width: 992px) {
+  .ktc-content .media_embed iframe {
+    max-width: 470px;
+    margin: 0 -15px;
+  }
+}
 /*
 LESS variables are information about icon's compiled state, stored under its original file name
 
@@ -15220,7 +15226,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   margin-top: 10px;
 }
 .ktc-margin-top {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 .ktc-margin-top-lg {
   margin-top: 25px;
@@ -15232,7 +15238,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   margin-bottom: 10px;
 }
 .ktc-margin-bottom {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .ktc-margin-bottom-lg {
   margin-bottom: 25px;
@@ -15244,7 +15250,7 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   margin-right: 10px;
 }
 .ktc-margin-right {
-  margin-right: 15px;
+  margin-right: 20px;
 }
 .ktc-margin-right-lg {
   margin-right: 25px;
