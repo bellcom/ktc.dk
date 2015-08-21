@@ -1639,7 +1639,7 @@ function teknik_og_miljoe_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Filtrer på type',
+      'override_title_text' => 'Filtrer på indholdstype',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1698,7 +1698,7 @@ function teknik_og_miljoe_default_page_manager_pages() {
         'vid' => '34,19',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Filtrer på emner',
+      'override_title_text' => 'Filtrer på artikeltype',
     );
     $pane->cache = array();
     $pane->style = array(

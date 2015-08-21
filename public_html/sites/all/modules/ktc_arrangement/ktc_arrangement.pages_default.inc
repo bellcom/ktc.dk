@@ -927,7 +927,7 @@ function ktc_arrangement_default_page_manager_pages() {
         'vid' => '5',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Filtrer på aktiviteter',
+      'override_title_text' => 'Filtrer på type',
     );
     $pane->cache = array();
     $pane->style = array(
