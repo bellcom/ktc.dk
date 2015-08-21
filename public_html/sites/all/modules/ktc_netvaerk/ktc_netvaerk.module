@@ -611,7 +611,7 @@ function ktc_netvaerk_check_my_groups($nid) {
   }
 
   if ($class != 'ktc-red') {
-    if ($field_network_type = field_get_items('node', $node, 'field_netvaerkstype')) {
+    if (is_object($node) && $field_network_type = field_get_items('node', $node, 'field_netvaerkstype')) {
       foreach($ktc_green_network_tids AS $ktc_green_network_tid) {
         if (in_array($ktc_green_network_tid, $field_network_type[0])) {
           $class = 'ktc-green';
