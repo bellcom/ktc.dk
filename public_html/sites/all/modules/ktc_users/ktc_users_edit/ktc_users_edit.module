@@ -405,8 +405,20 @@ function ktc_users_edit_change_crm_user_submit(&$form, &$form_state) {
   // If the user wants to replace with this webuser, create an edit array, and
   // save the user with this data.
   if ($form_state['webuserdto'] && $form_state['values']['are_you_sure']) {
+    // Remove CRM UUID for the old user.
+    $old_account = user_load_by_mail($form_state['values']['mail']);
+
+    if ($old_account) {
+      $old_edit['field_crm_uuid'] = array();
+      user_save($old_account, $old_edit);
+    }
+
+    // Update the selected user.
     $account = user_load($form_state['uid']);
-    $edit = ktc_crm_map_webuserdto_to_edit_array($webuserdto);
+    $edit = ktc_crm_map_webuserdto_to_edit_array($form_state['webuserdto']);
+    $edit['name'] .= '..';
     user_save($account, $edit);
+
+    drupal_set_message('Brugeren er nu opdateret. <b>OBS! Evt gammel bruger der har peget på den pågældende CRM kontaktperson bør slettes, dennes reference til CRM er blevet fjernet.</b>');
   }
 }
