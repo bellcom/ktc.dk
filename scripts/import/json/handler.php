@@ -69,7 +69,7 @@ function ktc_import_save_user($entity) {
     $entity = user_save('', (array) $entity);
   }
   else {
-    user_save($entity);
+    user_save($entity, (array) $entity);
   }
 
   db_update('users')
