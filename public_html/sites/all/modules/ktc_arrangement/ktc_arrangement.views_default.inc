@@ -894,27 +894,26 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Handler mangler eller er i stykker */
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['id'] = 'field_meeting_type_tid';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['table'] = 'field_data_field_meeting_type';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['field'] = 'field_meeting_type_tid';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['summary_options']['items_per_page'] = '25';
-  /* Kontekstuelt filter: Dato: Dato (node) */
-  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
-  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
-    'field_data_field_arrangement_date.field_arrangement_date_value' => 'field_data_field_arrangement_date.field_arrangement_date_value',
-    'field_data_field_arrangement_date.field_arrangement_date_value2' => 'field_data_field_arrangement_date.field_arrangement_date_value2',
-  );
+  /* Kontekstuelt filter: Indhold: Mødetype (field_meeting_type) */
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['id'] = 'field_meeting_type_target_id';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['table'] = 'field_data_field_meeting_type';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['field'] = 'field_meeting_type_target_id';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['summary_options']['items_per_page'] = '25';
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterie: Indhold: Udgivet */
@@ -968,27 +967,26 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['sorts']['field_arrangement_date_value']['field'] = 'field_arrangement_date_value';
   $handler->display->display_options['sorts']['field_arrangement_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontekstuelt filter: Handler mangler eller er i stykker */
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['id'] = 'field_meeting_type_tid';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['table'] = 'field_data_field_meeting_type';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['field'] = 'field_meeting_type_tid';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_meeting_type_tid']['summary_options']['items_per_page'] = '25';
-  /* Kontekstuelt filter: Dato: Dato (node) */
-  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
-  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
-    'field_data_field_arrangement_date.field_arrangement_date_value' => 'field_data_field_arrangement_date.field_arrangement_date_value',
-    'field_data_field_arrangement_date.field_arrangement_date_value2' => 'field_data_field_arrangement_date.field_arrangement_date_value2',
-  );
+  /* Kontekstuelt filter: Indhold: Mødetype (field_meeting_type) */
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['id'] = 'field_meeting_type_target_id';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['table'] = 'field_data_field_meeting_type';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['field'] = 'field_meeting_type_target_id';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_meeting_type_target_id']['summary_options']['items_per_page'] = '25';
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterie: Indhold: Udgivet */
