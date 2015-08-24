@@ -4941,7 +4941,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 17,
+      'weight' => 19,
     ),
   );
 

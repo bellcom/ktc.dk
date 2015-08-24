@@ -1822,39 +1822,6 @@ function ktc_content_types_default_page_manager_handlers() {
     $display->content['new-e939b038-3cb8-4c74-91e8-e371a195e62f'] = $pane;
     $display->panels['right'][0] = 'new-e939b038-3cb8-4c74-91e8-e371a195e62f';
     $pane = new stdClass();
-    $pane->pid = 'new-d24e14b4-a965-4c5e-b49d-b8a6d861e8f2';
-    $pane->panel = 'right';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_dokument';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'file_table',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'Bilag',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'ktc-aside-color ktc-aside-table-list ktc-aside-no-stack',
-      'template_suggestion' => 'entity_field',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'd24e14b4-a965-4c5e-b49d-b8a6d861e8f2';
-    $display->content['new-d24e14b4-a965-4c5e-b49d-b8a6d861e8f2'] = $pane;
-    $display->panels['right'][1] = 'new-d24e14b4-a965-4c5e-b49d-b8a6d861e8f2';
-    $pane = new stdClass();
     $pane->pid = 'new-16d9bc3f-9295-4d14-b919-fb17623ae7ee';
     $pane->panel = 'right';
     $pane->type = 'entity_field';
@@ -1870,7 +1837,7 @@ function ktc_content_types_default_page_manager_handlers() {
       'formatter_settings' => array(),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Bilag',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1878,15 +1845,48 @@ function ktc_content_types_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' ktc-aside-no-stack',
+      'css_class' => ' ktc-aside-no-stack ktc-aside-color',
+      'template_suggestion' => 'entity_field',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '16d9bc3f-9295-4d14-b919-fb17623ae7ee';
+    $display->content['new-16d9bc3f-9295-4d14-b919-fb17623ae7ee'] = $pane;
+    $display->panels['right'][1] = 'new-16d9bc3f-9295-4d14-b919-fb17623ae7ee';
+    $pane = new stdClass();
+    $pane->pid = 'new-d24e14b4-a965-4c5e-b49d-b8a6d861e8f2';
+    $pane->panel = 'right';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_dokument';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'file_table',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => 'Bilag',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-table-list',
       'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '16d9bc3f-9295-4d14-b919-fb17623ae7ee';
-    $display->content['new-16d9bc3f-9295-4d14-b919-fb17623ae7ee'] = $pane;
-    $display->panels['right'][2] = 'new-16d9bc3f-9295-4d14-b919-fb17623ae7ee';
+    $pane->uuid = 'd24e14b4-a965-4c5e-b49d-b8a6d861e8f2';
+    $display->content['new-d24e14b4-a965-4c5e-b49d-b8a6d861e8f2'] = $pane;
+    $display->panels['right'][2] = 'new-d24e14b4-a965-4c5e-b49d-b8a6d861e8f2';
     $pane = new stdClass();
     $pane->pid = 'new-eb2fb250-6b59-4e4e-a1d4-fb483a616fe8';
     $pane->panel = 'right';
@@ -1905,7 +1905,7 @@ function ktc_content_types_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Flere bilag',
     );
     $pane->cache = array();
     $pane->style = array(
