@@ -953,7 +953,7 @@ function ktc_arrangement_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => '',
-      'title' => 'Status',
+      'title' => 'Filtrer på status',
       'body' => '<div class="filter-box">
 <div class="ktc-filter-button-container">
 <div class="btn btn-primary filter-link" data-filter="future" id="filter-all">Kommende</div>
@@ -983,28 +983,31 @@ function ktc_arrangement_default_page_manager_pages() {
     $display->content['new-820aa0ab-0867-411c-9cd3-a62f1bd5bd1f'] = $pane;
     $display->panels['right'][1] = 'new-820aa0ab-0867-411c-9cd3-a62f1bd5bd1f';
     $pane = new stdClass();
-    $pane->pid = 'new-dc251f72-95b3-4ac0-82a0-8c8ff4dd7273';
+    $pane->pid = 'new-bd58c8fc-f680-47a1-bbab-14eccbc5d443';
     $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'arrangement-panel_pane_1';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_sectionpage-arrangement_date_filter_block';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'link_to_view' => 0,
-      'override_title' => 1,
-      'override_title_text' => 'Kalender',
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'magazine-date-filter',
+      'css_class' => 'filter-box ktc-aside-filter ktc-aside-filter-2-col ktc-aside-toggle',
+      'template_suggestion' => 'block',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = 'dc251f72-95b3-4ac0-82a0-8c8ff4dd7273';
-    $display->content['new-dc251f72-95b3-4ac0-82a0-8c8ff4dd7273'] = $pane;
-    $display->panels['right'][2] = 'new-dc251f72-95b3-4ac0-82a0-8c8ff4dd7273';
+    $pane->uuid = 'bd58c8fc-f680-47a1-bbab-14eccbc5d443';
+    $display->content['new-bd58c8fc-f680-47a1-bbab-14eccbc5d443'] = $pane;
+    $display->panels['right'][2] = 'new-bd58c8fc-f680-47a1-bbab-14eccbc5d443';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
