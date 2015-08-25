@@ -397,7 +397,17 @@ function ktc_users_user_presave(&$edit, $account, $category) {
 
     if ($field = field_get_items('user', $tmp_account, 'field_account')) {
       $term = taxonomy_term_load($field[0]['tid']);
-      $employer = $term->name;
+
+      $fetch_parent = TRUE;
+
+      while ($fetch_parent) {
+        $field = field_get_items('taxonomy_term', $term, 'field_toplevelaccountname');
+        if (!$field[0]['value']) {
+          $employer = $term->name;
+          $fetch_parent = FALSE;
+        }
+        $term = reset(taxonomy_get_parents($term->tid));
+      }
     }
 
     $username = ktc_users_generate_username($name, $employer, $email, $tmp_account->uid);
