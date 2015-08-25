@@ -407,6 +407,10 @@ function ktc_users_user_presave(&$edit, $account, $category) {
           $fetch_parent = FALSE;
         }
         $term = reset(taxonomy_get_parents($term->tid));
+
+        if (!$term) {
+          $fetch_parent = FALSE;
+        }
       }
     }
 

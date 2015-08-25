@@ -35,15 +35,21 @@ foreach ($result['user'] as $uid => $info) {
   if ($field = field_get_items('user', $user, 'field_account')) {
     $term = taxonomy_term_load($field[0]['tid']);
 
-    $fetch_parent = TRUE;
+    if ($term) {
+      $fetch_parent = TRUE;
 
-    while ($fetch_parent) {
-      $field = field_get_items('taxonomy_term', $term, 'field_toplevelaccountname');
-      if (!$field[0]['value']) {
-        $employer = $term->name;
-        $fetch_parent = FALSE;
+      while ($fetch_parent) {
+        $field = field_get_items('taxonomy_term', $term, 'field_toplevelaccountname');
+        if (!$field[0]['value']) {
+          $employer = $term->name;
+          $fetch_parent = FALSE;
+        }
+        $term = reset(taxonomy_get_parents($term->tid));
+
+        if (!$term) {
+          $fetch_parent = FALSE;
+        }
       }
-      $term = reset(taxonomy_get_parents($term->tid));
     }
   }
 
