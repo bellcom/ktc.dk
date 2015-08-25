@@ -32,6 +32,21 @@ foreach ($result['user'] as $uid => $info) {
     $employer = $term->name;
   }
 
+  if ($field = field_get_items('user', $user, 'field_account')) {
+    $term = taxonomy_term_load($field[0]['tid']);
+
+    $fetch_parent = TRUE;
+
+    while ($fetch_parent) {
+      $field = field_get_items('taxonomy_term', $term, 'field_toplevelaccountname');
+      if (!$field[0]['value']) {
+        $employer = $term->name;
+        $fetch_parent = FALSE;
+      }
+      $term = reset(taxonomy_get_parents($term->tid));
+    }
+  }
+
   // We rely on the function ktc_users uses to generate the username.
   $username = ktc_users_generate_username($name, $employer, $user->mail, $user->uid);
 
