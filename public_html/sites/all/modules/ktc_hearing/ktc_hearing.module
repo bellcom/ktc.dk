@@ -47,7 +47,7 @@ function ktc_hearing_menu() {
     'page callback' => 'ktc_hearing_no_response',
     'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
-    'access arguments' => array(1, 'respond'),
+    'access arguments' => array(1, 'dont respond'),
     'weight' => 11,
     // Include node pages, since we're embedding the node add form.
     'file' => 'node.pages.inc',
@@ -458,12 +458,9 @@ function ktc_hearing_access($node, $op) {
 
   // If the user has declined to respond to the hearing. Don't allow access to
   // the decline response page again.
-  if ($op == 'respond' && $response_nid = ktc_hearing_user_has_responded($node)) {
-    $response = node_load($response_nid);
-    if ($field = field_get_items('node', $response, 'field_is_no_answer')) {
-      if ($field[0]['value']) {
-        return FALSE;
-      }
+  if ($op == 'dont respond' && $response_nid = ktc_hearing_user_has_responded($node)) {
+    if ($response = node_load($response_nid)) {
+      return FALSE;
     }
   }
 
@@ -1342,6 +1339,7 @@ function _ktc_hearing_reference_permissions() {
     'attendees' => array(
       'invite' => 'invite',
       'respond' => 'respond',
+      'dont respond' => 'dont respond',
       'view responses' => 'view responses',
       'view' => 'view',
     ),
