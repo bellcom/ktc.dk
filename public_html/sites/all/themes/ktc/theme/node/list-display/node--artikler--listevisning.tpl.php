@@ -85,25 +85,28 @@
 <!-- Begin - list display -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display ktc-list-display-artikler"<?php print $attributes; ?>>
 
-  <?php if (isset($content['field_os2web_base_field_lead_img'])): ?>
-    <!-- Begin - image -->
-    <div class="pull-right">
-      <?php print render($content['field_os2web_base_field_lead_img']); ?>
-    </div>
-    <!-- End - image -->
-  <?php endif; ?>
-
   <p class="ktc-date"><?php print $published_at; ?></p>
   <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
+  <div>
 
-  <?php if (isset($content['field_short'])): ?>
-    <!-- Begin - manchet -->
-    <p class="ktc-list-display-short">
-      <?php print render($content['field_short']); ?>
-    </p>
-    <!-- End - manchet -->
-  <?php endif; ?>
+    <?php if (isset($content['field_os2web_base_field_lead_img'])): ?>
+      <!-- Begin - image -->
+      <div class="pull-right">
+        <?php print render($content['field_os2web_base_field_lead_img']); ?>
+      </div>
+      <!-- End - image -->
+    <?php endif; ?>
 
+    <?php if (isset($content['field_short'])): ?>
+      <!-- Begin - manchet -->
+      <p class="ktc-list-display-short">
+        <?php print render($content['field_short']); ?>
+      </p>
+      <!-- End - manchet -->
+    <?php endif; ?>
+
+    <div class="clearfix"></div>
+  </div>
   <p class="ktc-list-display-author">
 
     <?php print t('Forfatter:'); ?>

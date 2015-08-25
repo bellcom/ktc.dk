@@ -15,6 +15,7 @@
 
     <!-- Begin - body -->
     <div class="ktc-aside-body">
+
       <div class="row">
 
         <!-- Begin - left -->
@@ -35,9 +36,10 @@
 
           <?php if (isset($content['field_topics'])): ?>
             <!-- Begin - topics -->
-            <strong><?php print t('Tema:'); ?></strong>
-            <?php print render($content['field_topics']); ?>
-            <br />
+            <div>
+              <?php print render($content['field_topics']); ?>
+              <br>
+            </div>
             <!-- End - topics -->
           <?php endif; ?>
 
