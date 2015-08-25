@@ -2404,7 +2404,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'media_thumbnail',
+          'image_style' => 'teaservisning',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -2709,7 +2709,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 100,
+          'trim_length' => 150,
         ),
         'type' => 'text_trimmed',
         'weight' => 1,

@@ -10118,11 +10118,17 @@ fieldset[disabled] .field-type-image .button {
   margin-left: -10px;
   margin-right: -10px;
 }
+.ktc-teaser-magazine.ktc-aside .ktc-aside-body .ktc-full-width-image {
+  margin: 0;
+}
 .ktc-teaser-magazine .ktc-teaser-magazine-banner {
   margin-bottom: 20px;
 }
 .ktc-teaser-magazine .ktc-teaser-magazine-banner:last-child {
   margin-bottom: 0;
+}
+.ktc-teaser-magazine .ktc-teaser-magazine-banner img {
+  border: 1px solid #eee;
 }
 .ktc-teaser-magazine .ktc-teaser-artikler .ktc-teaser-artikler-image {
   float: right;
@@ -10143,6 +10149,9 @@ fieldset[disabled] .field-type-image .button {
 .ktc-teaser-magazine .ktc-teaser .ktc-teaser-heading,
 .ktc-teaser-magazine .ktc-teaser .ktc-footer {
   display: none;
+}
+.ktc-teaser-magazine .ktc-list-display {
+  padding: 5px 0;
 }
 .ktc-teaser-magazine .ktc-teaser-magazine-buttons {
   padding-top: 10px;
@@ -15739,21 +15748,6 @@ a {
 }
 a:hover {
   text-decoration: underline;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-p,
-a,
-body.page-node .field-name-field-hearing-materials .field-label,
-body.page-taxonomy-term .field-name-field-hearing-materials .field-label {
-  word-break: break-all;
-  word-wrap: break-word;
-  /* Internet Explorer 5.5+ */
 }
 .form-control:focus {
   -webkit-box-shadow: none;

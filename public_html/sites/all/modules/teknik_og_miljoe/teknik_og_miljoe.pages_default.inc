@@ -1115,6 +1115,30 @@ function teknik_og_miljoe_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-d5612c39-9422-41e3-b88d-9c90fda97685';
+    $pane->panel = 'bottom';
+    $pane->type = 'token';
+    $pane->subtype = 'node:field-artikler-og-nyheder';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'sanitize' => 1,
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'd5612c39-9422-41e3-b88d-9c90fda97685';
+    $display->content['new-d5612c39-9422-41e3-b88d-9c90fda97685'] = $pane;
+    $display->panels['bottom'][0] = 'new-d5612c39-9422-41e3-b88d-9c90fda97685';
+    $pane = new stdClass();
     $pane->pid = 'new-454590d3-cd88-4961-8e70-351c40fa5c2d';
     $pane->panel = 'center';
     $pane->type = 'views_panes';
@@ -1197,8 +1221,8 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
-      'template_suggestion' => 'contentg',
+      'css_class' => 'ktc-aside-blue',
+      'template_suggestion' => 'aside',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -1367,42 +1391,6 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $display->content['new-f76952b3-06a6-49b7-919a-7501dd789f12'] = $pane;
     $display->panels['left'][5] = 'new-f76952b3-06a6-49b7-919a-7501dd789f12';
     $pane = new stdClass();
-    $pane->pid = 'new-41268f7f-b46e-4f95-bb96-334dd4ad7e18';
-    $pane->panel = 'left';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_magasinleder';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'entityreference_entity_view',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'view_mode' => 'listevisningstor',
-        'links' => 0,
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'Leder',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-      'template_suggestion' => 'aside',
-    );
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $pane->uuid = '41268f7f-b46e-4f95-bb96-334dd4ad7e18';
-    $display->content['new-41268f7f-b46e-4f95-bb96-334dd4ad7e18'] = $pane;
-    $display->panels['left'][6] = 'new-41268f7f-b46e-4f95-bb96-334dd4ad7e18';
-    $pane = new stdClass();
     $pane->pid = 'new-76a55b9a-212a-44e7-8cad-2519111754ab';
     $pane->panel = 'left';
     $pane->type = 'entity_field';
@@ -1429,15 +1417,51 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-blue',
+      'css_class' => 'ktc-aside-blue',
+      'template_suggestion' => 'aside',
+    );
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '76a55b9a-212a-44e7-8cad-2519111754ab';
+    $display->content['new-76a55b9a-212a-44e7-8cad-2519111754ab'] = $pane;
+    $display->panels['left'][6] = 'new-76a55b9a-212a-44e7-8cad-2519111754ab';
+    $pane = new stdClass();
+    $pane->pid = 'new-41268f7f-b46e-4f95-bb96-334dd4ad7e18';
+    $pane->panel = 'left';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_magasinleder';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'entityreference_entity_view',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'view_mode' => 'listevisningstor',
+        'links' => 0,
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Leder',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-blue',
       'template_suggestion' => 'aside',
     );
     $pane->extras = array();
     $pane->position = 7;
     $pane->locks = array();
-    $pane->uuid = '76a55b9a-212a-44e7-8cad-2519111754ab';
-    $display->content['new-76a55b9a-212a-44e7-8cad-2519111754ab'] = $pane;
-    $display->panels['left'][7] = 'new-76a55b9a-212a-44e7-8cad-2519111754ab';
+    $pane->uuid = '41268f7f-b46e-4f95-bb96-334dd4ad7e18';
+    $display->content['new-41268f7f-b46e-4f95-bb96-334dd4ad7e18'] = $pane;
+    $display->panels['left'][7] = 'new-41268f7f-b46e-4f95-bb96-334dd4ad7e18';
     $pane = new stdClass();
     $pane->pid = 'new-27f6d959-0030-4236-863b-6b9d7376baad';
     $pane->panel = 'right';
