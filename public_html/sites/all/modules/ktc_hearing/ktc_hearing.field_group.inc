@@ -18,7 +18,7 @@ function ktc_hearing_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'hearing';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_hearing_letter';
+  $field_group->parent_name = 'group_hidden';
   $field_group->data = array(
     'label' => 'Avanceret',
     'weight' => '21',
@@ -236,9 +236,8 @@ function ktc_hearing_field_group_info() {
       0 => 'body',
       1 => 'field_titel_kort',
       2 => 'title',
-      3 => 'group_advanced',
-      4 => 'group_indstillinger',
-      5 => 'group_officiel',
+      3 => 'group_indstillinger',
+      4 => 'group_officiel',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -266,14 +265,16 @@ function ktc_hearing_field_group_info() {
     'label' => 'Skjult',
     'weight' => '3',
     'children' => array(
-      0 => 'field_hearing_archived',
-      1 => 'field_titel_lang',
-      2 => 'field_typo3_uid',
-      3 => 'field_typo3_user_id',
-      4 => 'field_missing_files',
-      5 => 'field_os2web_base_field_hidlinks',
-      6 => 'group_content_access',
-      7 => 'path',
+      0 => 'field_status',
+      1 => 'field_hearing_archived',
+      2 => 'field_titel_lang',
+      3 => 'field_typo3_uid',
+      4 => 'field_typo3_user_id',
+      5 => 'field_missing_files',
+      6 => 'field_os2web_base_field_hidlinks',
+      7 => 'group_content_access',
+      8 => 'metatags',
+      9 => 'path',
     ),
     'format_type' => 'div',
     'format_settings' => array(
