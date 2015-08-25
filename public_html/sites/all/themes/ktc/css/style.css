@@ -9908,17 +9908,6 @@ fieldset[disabled] .field-type-image .button {
 .ktc-block .ktc-block-body {
   padding: 10px 15px;
 }
-.ktc-block .ktc-block-body a,
-.ktc-block .ktc-block-body p,
-.ktc-block .ktc-block-body span,
-.ktc-block .ktc-block-body h1,
-.ktc-block .ktc-block-body h2,
-.ktc-block .ktc-block-body h3,
-.ktc-block .ktc-block-body h4,
-.ktc-block .ktc-block-body h5,
-.ktc-block .ktc-block-body h6 {
-  word-wrap: break-word;
-}
 .ktc-block .ktc-block-heading,
 .ktc-block .ktc-block-heading {
   border-left-color: #36a145;
@@ -10606,6 +10595,7 @@ fieldset[disabled] .field-type-image .button {
   font-size: 16px;
   line-height: 48px;
   width: 100%;
+  -ms-word-break: break-all;
   word-break: break-all;
   white-space: pre-wrap;
   /* css-3 */
@@ -10617,6 +10607,9 @@ fieldset[disabled] .field-type-image .button {
   /* Opera 7 */
   word-wrap: break-word;
   /* Internet Explorer 5.5+ */
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-user-login {
   padding-top: 10px;
@@ -14481,7 +14474,6 @@ h6 + .ktc-date {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
-  word-wrap: break-word;
 }
 .ktc-aside-filter-2-col .ktc-filter-button-container {
   float: left;
@@ -14578,7 +14570,6 @@ h6 + .ktc-date {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
-  word-wrap: break-word;
 }
 .ktc-aside-tabs .nav-tabs {
   border: 0;
@@ -14878,16 +14869,21 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 .ktc-aside-table-list .table tr td a {
   display: inline-block;
   width: 100%;
-  word-break: break-all;
   -ms-word-break: break-all;
+  word-break: break-all;
   white-space: pre-wrap;
   /* css-3 */
   white-space: -moz-pre-wrap;
   /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
   white-space: -o-pre-wrap;
   /* Opera 7 */
   word-wrap: break-word;
   /* Internet Explorer 5.5+ */
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 .ktc-aside-table-list .table tr td .file-icon {
   display: none;
