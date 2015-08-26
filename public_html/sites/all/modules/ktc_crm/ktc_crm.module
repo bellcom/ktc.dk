@@ -9,7 +9,6 @@ module_load_include('php', 'ktc_crm', 'includes/KTC/WebUser/WebUser');
 module_load_include('php', 'ktc_crm', 'includes/KTC/Subscription/Subscription');
 module_load_include('php', 'ktc_crm', 'includes/KTC/GroupService/GroupService');
 module_load_include('php', 'ktc_crm', 'includes/KTC/AccountService/AccountService');
-module_load_include('php', 'ktc_crm', 'includes/KtcCrmLoggerToWatchdogHandler');
 
 module_load_include('inc', 'ktc_crm', 'ktc_crm.api');
 module_load_include('inc', 'ktc_crm', 'ktc_crm.group');
@@ -140,6 +139,8 @@ class KtcCrmLogger {
       $log_level = Logger::DEBUG;
     }
 
+    // We need to load module here in order to make sure that composer manager autoloader is ready
+    module_load_include('php', 'ktc_crm', 'includes/KtcCrmLoggerToWatchdogHandler');
     $this->log = new Logger('ktc_crm_sync');
     $this->log->pushHandler(new StreamHandler($log_path, $log_level));
     $this->log->pushHandler(new KtcCrmLoggerToWatchdogHandler($log_level));
