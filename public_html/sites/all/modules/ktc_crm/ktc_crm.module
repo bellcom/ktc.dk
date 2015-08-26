@@ -9,6 +9,7 @@ module_load_include('php', 'ktc_crm', 'includes/KTC/WebUser/WebUser');
 module_load_include('php', 'ktc_crm', 'includes/KTC/Subscription/Subscription');
 module_load_include('php', 'ktc_crm', 'includes/KTC/GroupService/GroupService');
 module_load_include('php', 'ktc_crm', 'includes/KTC/AccountService/AccountService');
+module_load_include('php', 'ktc_crm', 'includes/KtcCrmLoggerToWatchdogHandler');
 
 module_load_include('inc', 'ktc_crm', 'ktc_crm.api');
 module_load_include('inc', 'ktc_crm', 'ktc_crm.group');
@@ -121,6 +122,7 @@ function _ktc_crm_is_ktc_member() {
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+
 class KtcCrmLogger {
 
   private static $instance;
@@ -140,6 +142,7 @@ class KtcCrmLogger {
 
     $this->log = new Logger('ktc_crm_sync');
     $this->log->pushHandler(new StreamHandler($log_path, $log_level));
+    $this->log->pushHandler(new KtcCrmLoggerToWatchdogHandler($log_level));
   }
 
   /**
