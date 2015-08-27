@@ -1391,78 +1391,6 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $display->content['new-f76952b3-06a6-49b7-919a-7501dd789f12'] = $pane;
     $display->panels['left'][5] = 'new-f76952b3-06a6-49b7-919a-7501dd789f12';
     $pane = new stdClass();
-    $pane->pid = 'new-76a55b9a-212a-44e7-8cad-2519111754ab';
-    $pane->panel = 'left';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_top_artikel';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'entityreference_entity_view',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'view_mode' => 'listevisning',
-        'links' => 1,
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'Fremhævet',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'ktc-aside-blue',
-      'template_suggestion' => 'aside',
-    );
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $pane->uuid = '76a55b9a-212a-44e7-8cad-2519111754ab';
-    $display->content['new-76a55b9a-212a-44e7-8cad-2519111754ab'] = $pane;
-    $display->panels['left'][6] = 'new-76a55b9a-212a-44e7-8cad-2519111754ab';
-    $pane = new stdClass();
-    $pane->pid = 'new-41268f7f-b46e-4f95-bb96-334dd4ad7e18';
-    $pane->panel = 'left';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_magasinleder';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'entityreference_entity_view',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'view_mode' => 'listevisningstor',
-        'links' => 0,
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'Leder',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'ktc-aside-blue',
-      'template_suggestion' => 'aside',
-    );
-    $pane->extras = array();
-    $pane->position = 7;
-    $pane->locks = array();
-    $pane->uuid = '41268f7f-b46e-4f95-bb96-334dd4ad7e18';
-    $display->content['new-41268f7f-b46e-4f95-bb96-334dd4ad7e18'] = $pane;
-    $display->panels['left'][7] = 'new-41268f7f-b46e-4f95-bb96-334dd4ad7e18';
-    $pane = new stdClass();
     $pane->pid = 'new-27f6d959-0030-4236-863b-6b9d7376baad';
     $pane->panel = 'right';
     $pane->type = 'page_tabs';
@@ -1554,6 +1482,78 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->uuid = 'aada5d72-de10-4b56-94c2-2298cdaaf38a';
     $display->content['new-aada5d72-de10-4b56-94c2-2298cdaaf38a'] = $pane;
     $display->panels['right'][2] = 'new-aada5d72-de10-4b56-94c2-2298cdaaf38a';
+    $pane = new stdClass();
+    $pane->pid = 'new-76a55b9a-212a-44e7-8cad-2519111754ab';
+    $pane->panel = 'right';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_top_artikel';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'entityreference_entity_view',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'view_mode' => 'listevisning',
+        'links' => 1,
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Fremhævet',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-blue',
+      'template_suggestion' => 'aside',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '76a55b9a-212a-44e7-8cad-2519111754ab';
+    $display->content['new-76a55b9a-212a-44e7-8cad-2519111754ab'] = $pane;
+    $display->panels['right'][3] = 'new-76a55b9a-212a-44e7-8cad-2519111754ab';
+    $pane = new stdClass();
+    $pane->pid = 'new-41268f7f-b46e-4f95-bb96-334dd4ad7e18';
+    $pane->panel = 'right';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_magasinleder';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'entityreference_entity_view',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'view_mode' => 'listevisningstor',
+        'links' => 0,
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Leder',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-blue',
+      'template_suggestion' => 'aside',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '41268f7f-b46e-4f95-bb96-334dd4ad7e18';
+    $display->content['new-41268f7f-b46e-4f95-bb96-334dd4ad7e18'] = $pane;
+    $display->panels['right'][4] = 'new-41268f7f-b46e-4f95-bb96-334dd4ad7e18';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1a0cc82f-96b4-4baf-963f-9beb7ee6fbe3';
   $handler->conf['display'] = $display;
