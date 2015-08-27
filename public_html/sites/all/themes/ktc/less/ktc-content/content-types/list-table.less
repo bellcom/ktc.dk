@@ -18,6 +18,13 @@
 		padding-right: 5px;
 	}
 
+  &.ktc-aside-no-stack {
+
+	.ktc-aside-body {
+	  padding-bottom: 0;
+	}
+  }
+
 	// Table
 	.table {
 		margin-bottom: 0;
@@ -72,15 +79,43 @@
 				}
 			}
 		}
-
-		// Striped and hover
-		&.table-striped,
-		&.table-hover {
-
-			tr {
-			}
-		}
 	}
+
+  &.ktc-aside-table-list-reversed {
+
+
+	// Table
+	.table {
+
+	  // Row
+	  tr {
+
+		// Odd
+		&:nth-child(odd) {
+
+		  td {
+
+			&,
+			&:hover {
+			  background-color: transparent;
+			}
+		  }
+		}
+
+		// Even
+		&:nth-child(even) {
+
+		  td {
+
+			&,
+			&:hover {
+			  background-color: @body-bg;
+			}
+		  }
+		}
+	  }
+	}
+  }
 }
 
 // --------------------------------------------------

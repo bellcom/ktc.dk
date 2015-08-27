@@ -14858,6 +14858,9 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   padding-left: 5px;
   padding-right: 5px;
 }
+.ktc-aside-table-list.ktc-aside-no-stack .ktc-aside-body {
+  padding-bottom: 0;
+}
 .ktc-aside-table-list .table {
   margin-bottom: 0;
 }
@@ -14906,6 +14909,14 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
 }
 .ktc-aside-table-list .table tr:nth-child(odd) td,
 .ktc-aside-table-list .table tr:nth-child(odd) td:hover {
+  background-color: #e9edee;
+}
+.ktc-aside-table-list.ktc-aside-table-list-reversed .table tr:nth-child(odd) td,
+.ktc-aside-table-list.ktc-aside-table-list-reversed .table tr:nth-child(odd) td:hover {
+  background-color: transparent;
+}
+.ktc-aside-table-list.ktc-aside-table-list-reversed .table tr:nth-child(even) td,
+.ktc-aside-table-list.ktc-aside-table-list-reversed .table tr:nth-child(even) td:hover {
   background-color: #e9edee;
 }
 .ktc-aside-table-list .field-item {

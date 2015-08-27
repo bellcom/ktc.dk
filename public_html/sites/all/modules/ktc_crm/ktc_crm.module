@@ -121,6 +121,7 @@ function _ktc_crm_is_ktc_member() {
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+
 class KtcCrmLogger {
 
   private static $instance;
@@ -138,8 +139,11 @@ class KtcCrmLogger {
       $log_level = Logger::DEBUG;
     }
 
+    // We need to load module here in order to make sure that composer manager autoloader is ready
+    module_load_include('php', 'ktc_crm', 'includes/KtcCrmLoggerToWatchdogHandler');
     $this->log = new Logger('ktc_crm_sync');
     $this->log->pushHandler(new StreamHandler($log_path, $log_level));
+    $this->log->pushHandler(new KtcCrmLoggerToWatchdogHandler($log_level));
   }
 
   /**
