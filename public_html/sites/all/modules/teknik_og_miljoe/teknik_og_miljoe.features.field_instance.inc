@@ -1003,6 +1003,8 @@ function teknik_og_miljoe_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_coforfattere-field_foto_af_forfatter'
   $field_instances['field_collection_item-field_coforfattere-field_foto_af_forfatter'] = array(
     'bundle' => 'field_coforfattere',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1075,12 +1077,22 @@ function teknik_og_miljoe_field_default_field_instances() {
       'alt_field' => 0,
       'custom_add_another' => '',
       'custom_remove' => '',
-      'default_image' => 0,
+      'default_image' => 26390,
+      'epsacrop' => array(
+        'styles' => array(
+          'indholdsside' => 0,
+          'ktc_content_image' => 0,
+          'ktc_profile_image_small' => 0,
+          'listevisning' => 0,
+          'listevisning_stor' => 0,
+          'teaservisning' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
+      'media_library_include_in_library' => 0,
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
