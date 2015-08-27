@@ -14,7 +14,7 @@ $i=0;
       <?php if($i < 4): ?>
         <?php
 
-        $node = node_view($hearing, 'listevisning');
+        $node = node_view($hearing, 'listevisningstor');
         print render($node);
         ?>
       <?php endif; ?>
