@@ -142,6 +142,7 @@ function ktc_crm_group_map_group_to_groupdto($group) {
 
   $groupdto->VisibleOnWeb = $group->status;
   $groupdto->Active = $group->status;
+  $groupdto->SynchronizeWithKtcDk = 1;
 
   if ($field = field_get_items('node', $group, 'body')) {
     $groupdto->Description = substr($field[0]['value'], 0, 1999);
