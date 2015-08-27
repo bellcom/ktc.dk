@@ -67,6 +67,14 @@
           var $toggle = $(this).parents('.ktc-aside-toggle');
           $toggle.toggleClass('closed');
       });
+      if (Modernizr.touch) {
+          $('.ktc-aside-toggle').each(function() {
+              var $element = $(this);
+              if ( ! $element.hasClass('closed')) {
+                  $element.addClass('closed');
+             }
+          });
+      }
 
       // Header - add content
       $('.ktc-header-top-bar-add-content').click(function(element) {
