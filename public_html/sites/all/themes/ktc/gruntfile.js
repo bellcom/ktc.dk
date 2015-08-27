@@ -28,6 +28,33 @@ module.exports = function(grunt) {
         }
       },
     },
+    modernizr: {
+      app: {
+        devFile      : 'remote',
+        parseFiles   : true,
+        files        : {
+          src: ['./js/*.js', './css/style.css']
+        },
+        outputFile   : './js/modernizr.min.js',
+        extra        : {
+          shiv      : false,
+          printshiv : false,
+          load      : true,
+          mq        : true,
+          cssclasses: true
+        },
+        extensibility: {
+          addtest     : false,
+          prefixed    : false,
+          teststyles  : false,
+          testprops   : false,
+          testallprops: false,
+          hasevents   : false,
+          prefixes    : false,
+          domprefixes : false
+        }
+      }
+    },
     sprite: {
       all: {
         src: 'images/sprites/*.png',
@@ -62,9 +89,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-spritesmith');
+  grunt.loadNpmTasks('grunt-modernizr');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build', ['less', 'sprite']);
+  grunt.registerTask('build', ['less', 'sprite', 'modernizr']);
   grunt.registerTask('server', [
       'connect',
       'watch'

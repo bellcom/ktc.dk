@@ -57,6 +57,7 @@ scripts[] = 'js/isotope.pkgd.min.js'
 scripts[] = 'js/jquery.imagesloaded.js'
 scripts[] = 'js/ktc_filter.js'
 scripts[] = 'js/script.js'
+scripts[] = 'js/modernizr.min.js'
 ; scripts[] = 'js/os2web_spotbox_adjust.js'
 ;scripts[] = 'js/jquery.infinitescroll.min.js'
 
