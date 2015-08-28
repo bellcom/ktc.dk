@@ -160,9 +160,9 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'hearing_node_form') {
     global $user;
     $group_ids = _ktc_hearing_user_can_create_hearing_groups($user->uid);
-    // Filter them out of the normal options.
+    // Filter them out of the normal options. Preserve preselected groups.
     foreach ($form['og_group_ref'][LANGUAGE_NONE]['#options'] as $nid => &$option) {
-      if (!in_array($nid, $group_ids)) {
+      if (!in_array($nid, $group_ids) && !in_array($nid, $form['og_group_ref'][LANGUAGE_NONE]['#default_value'])) {
         unset($form['og_group_ref'][LANGUAGE_NONE]['#options'][$nid]);
         continue;
       }
