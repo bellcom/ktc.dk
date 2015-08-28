@@ -27,6 +27,8 @@
 	}
 }
 
+
+
 // 2 columns
 .ktc-aside-link-list-2-col {
 
@@ -58,6 +60,28 @@
 			padding-right: @ktc-default-left-right-inner-spacing;
 		}
 	}
+}
+
+@media @media-query-mobile-only {
+  // 2 columns
+  .ktc-aside-link-list-2-col {
+
+	// Link container
+	.ktc-link-container {
+	  width: 100%;
+	  padding: 2px @ktc-default-left-right-inner-spacing;
+
+	  // On left side
+	  &:nth-child(odd) {
+		padding: 2px @ktc-default-left-right-inner-spacing;
+	  }
+
+	  // On right side
+	  &:nth-child(even) {
+		padding: 2px @ktc-default-left-right-inner-spacing;
+	  }
+	}
+  }
 }
 
 // 3 columns
