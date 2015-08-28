@@ -15053,6 +15053,18 @@ fieldset[disabled] .ktc-aside-tabs.ktc-aside-tabs-menu-fix .ktc-tabs-button-cont
   padding-left: 7px;
   padding-right: 15px;
 }
+@media screen and (max-width: 767px) {
+  .ktc-aside-link-list-2-col .ktc-link-container {
+    width: 100%;
+    padding: 2px 15px;
+  }
+  .ktc-aside-link-list-2-col .ktc-link-container:nth-child(odd) {
+    padding: 2px 15px;
+  }
+  .ktc-aside-link-list-2-col .ktc-link-container:nth-child(even) {
+    padding: 2px 15px;
+  }
+}
 .ktc-aside-link-list-3-col .ktc-aside-body {
   padding-left: 0;
   padding-right: 0;

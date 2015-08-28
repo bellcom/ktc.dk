@@ -117,7 +117,7 @@ global $user;
 
             <?php if ($logged_in && isset($page['create_link']) && $page['create_link']): ?>
               <div class="col-xs-12">
-                <span class="ktc-header-top-bar-add-content visible-xs pull-right text-left">
+                <span class="ktc-header-top-bar-add-content visible-xs pull-right text-left hidden-xs">
                   <i class="ktc-header-top-bar-add-content-icon"></i><span>OPRET INDHOLD</span>
                   <?php print $page['create_menu']; ?>
                 </span>
