@@ -9,7 +9,7 @@ function get_hearing_elements_from_db_table($table, $condition = NULL) {
   if (isset($condition)) {
     $query->condition($condition, '', '<>');
   }
-  $query->condition('tstamp', strtotime('2008-01-01 00:00:01'), '>');
+//  $query->condition('tstamp', strtotime('2008-01-01 00:00:01'), '>');
   $result = $query->execute();
   while ($record = $result->fetchAssoc()) {
     $elements[] = $record;
@@ -84,6 +84,46 @@ function get_new_gid($typo3_gid) {
       break;
 
   }
+
+  //                                                  typo3 id    Drupal gruppe nodeid
+  // KTC-faggruppe for Byggelov - BYG.                    1294    30145
+  // KTC-faggruppe for Natur og overfladevand – NOV       1298    30120
+  // KTC faggruppe for Miljø og grundvand - MIG           1325    30122
+  // NOV-underfaggruppen Natur                            1367    30149
+  // NOV-underfaggruppen Overfladevand                    1368    30150
+  // NOV-underfaggruppen  Spildevand                      1605    30151
+  // NOV-underfaggruppen Klimatilpasning                  1610    30152
+  // DFO-underfaggruppen  BBR-drift                       1611    30153
+  // DFO- underfaggruppen BBR-udvikling                   1612    30154
+  // DFO-underfaggruppen FOSAKO-FU                        1596    30156
+  // DFO-underfaggruppen Ejendom/Økonomisystemer          1613    30155
+  // KER- Affald og ressourcer                            1574    30063
+  // KER-Energibesparelser og –forsyning                  1606    30064
+  // KER-Klimastrategi og grøn omstilling                 1607    30109
+  //
+  if (!$gid) {
+    $group_map = array(
+      1294 => 30145,
+      1298 => 30120,
+      1325 => 30122,
+      1367 => 30149,
+      1368 => 30150,
+      1605 => 30151,
+      1610 => 30152,
+      1611 => 30153,
+      1612 => 30154,
+      1596 => 30156,
+      1613 => 30155,
+      1574 => 30063,
+      1606 => 30064,
+      1607 => 30109,
+    );
+
+    if (isset($group_map[$typo3_gid])) {
+      $gid = $group_map[$typo3_gid];
+    }
+  }
+
   return $gid;
 }
 
