@@ -23,6 +23,16 @@ $block_status_form = module_invoke('ktc_hearing', 'block_view', 'ktc_hearing_set
       </div>
       <div class="ktc-aside-body">
         <?php $menu = menu_local_tabs(); print render($menu); ?>
+      </div>
+    </div>
+
+    <div class="ktc-aside ktc-aside-action">
+      <div class="ktc-aside-heading">
+        <h3 class="ktc-aside-title">
+          Status på høring
+        </h3>
+      </div>
+      <div class="ktc-aside-body">
         <?php print render($block_status_form['content']); ?>
       </div>
     </div>
