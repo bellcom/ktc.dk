@@ -110,6 +110,8 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
       'left' => NULL,
       'right' => NULL,
       'bottom' => NULL,
+      'left1' => NULL,
+      'left2' => NULL,
     ),
   );
   $display->cache = array();
@@ -339,42 +341,71 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $display->content['new-db7671ec-09d5-4453-924b-8eb1b010ac5e'] = $pane;
     $display->panels['left'][7] = 'new-db7671ec-09d5-4453-924b-8eb1b010ac5e';
     $pane = new stdClass();
-    $pane->pid = 'new-132a114f-e568-4fef-827b-7bc2825ce099';
+    $pane->pid = 'new-a48df597-5d33-4c90-bbbf-534141527078';
     $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_6';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'gid' => '%netvaerk:nid',
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:page:field_vis_netvaerk',
+          'settings' => array(
+            'field_vis_netvaerk' => array(
+              'und' => array(
+                0 => array(
+                  'target_id' => '',
+                ),
+              ),
+            ),
+            'field_vis_netvaerk_target_id' => array(
+              0 => array(
+                'target_id' => '',
+              ),
+            ),
+          ),
+          'context' => 'relationship_entity_from_field:field_vis_netvaerk-node-node_1',
+          'not' => FALSE,
+        ),
       ),
-      'override_title' => 0,
-      'override_title_text' => '',
+    );
+    $pane->configuration = array(
+      'admin_title' => 'netvaerk:title',
+      'title' => '',
+      'body' => '<div class="ktc-aside-heading">
+<h3 class="ktc-aside-title">Medlemmer af %netvaerk:title</h3>
+</div>
+',
+      'format' => 'full_html',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'content',
+    );
     $pane->extras = array();
     $pane->position = 8;
     $pane->locks = array();
-    $pane->uuid = '132a114f-e568-4fef-827b-7bc2825ce099';
-    $display->content['new-132a114f-e568-4fef-827b-7bc2825ce099'] = $pane;
-    $display->panels['left'][8] = 'new-132a114f-e568-4fef-827b-7bc2825ce099';
+    $pane->uuid = 'a48df597-5d33-4c90-bbbf-534141527078';
+    $display->content['new-a48df597-5d33-4c90-bbbf-534141527078'] = $pane;
+    $display->panels['left'][8] = 'new-a48df597-5d33-4c90-bbbf-534141527078';
     $pane = new stdClass();
-    $pane->pid = 'new-28e12af4-18e2-4e3e-ad29-8f3514756dd7';
+    $pane->pid = 'new-debe4654-8bc4-4f5d-9cd6-b154144477ba';
     $pane->panel = 'left';
     $pane->type = 'views_panes';
-    $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_7';
+    $pane->subtype = 'praesentation_af_netvaerk_indhold-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'gid' => '%netvaerk:nid',
+        'nid' => '%netvaerk:nid',
       ),
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -385,12 +416,70 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 9;
     $pane->locks = array();
+    $pane->uuid = 'debe4654-8bc4-4f5d-9cd6-b154144477ba';
+    $display->content['new-debe4654-8bc4-4f5d-9cd6-b154144477ba'] = $pane;
+    $display->panels['left'][9] = 'new-debe4654-8bc4-4f5d-9cd6-b154144477ba';
+    $pane = new stdClass();
+    $pane->pid = 'new-132a114f-e568-4fef-827b-7bc2825ce099';
+    $pane->panel = 'left1';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'gid' => '%netvaerk:nid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-xs-6',
+      'template_suggestion' => 'views_panes',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '132a114f-e568-4fef-827b-7bc2825ce099';
+    $display->content['new-132a114f-e568-4fef-827b-7bc2825ce099'] = $pane;
+    $display->panels['left1'][0] = 'new-132a114f-e568-4fef-827b-7bc2825ce099';
+    $pane = new stdClass();
+    $pane->pid = 'new-28e12af4-18e2-4e3e-ad29-8f3514756dd7';
+    $pane->panel = 'left1';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'gid' => '%netvaerk:nid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-xs-6',
+      'template_suggestion' => 'views_panes',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $pane->uuid = '28e12af4-18e2-4e3e-ad29-8f3514756dd7';
     $display->content['new-28e12af4-18e2-4e3e-ad29-8f3514756dd7'] = $pane;
-    $display->panels['left'][9] = 'new-28e12af4-18e2-4e3e-ad29-8f3514756dd7';
+    $display->panels['left1'][1] = 'new-28e12af4-18e2-4e3e-ad29-8f3514756dd7';
     $pane = new stdClass();
     $pane->pid = 'new-3e056c08-3876-4095-bcc5-8765aa378201';
-    $pane->panel = 'left';
+    $pane->panel = 'left1';
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_8';
     $pane->shown = TRUE;
@@ -399,23 +488,27 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
       'arguments' => array(
         'gid' => '%netvaerk:nid',
       ),
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-xs-6',
+      'template_suggestion' => 'nohtml',
+    );
     $pane->extras = array();
-    $pane->position = 10;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '3e056c08-3876-4095-bcc5-8765aa378201';
     $display->content['new-3e056c08-3876-4095-bcc5-8765aa378201'] = $pane;
-    $display->panels['left'][10] = 'new-3e056c08-3876-4095-bcc5-8765aa378201';
+    $display->panels['left1'][2] = 'new-3e056c08-3876-4095-bcc5-8765aa378201';
     $pane = new stdClass();
     $pane->pid = 'new-3c399408-f124-41f4-9044-cae3fd681315';
-    $pane->panel = 'left';
+    $pane->panel = 'left1';
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_9';
     $pane->shown = TRUE;
@@ -424,23 +517,27 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
       'arguments' => array(
         'gid' => '%netvaerk:nid',
       ),
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-xs-6',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
-    $pane->position = 11;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '3c399408-f124-41f4-9044-cae3fd681315';
     $display->content['new-3c399408-f124-41f4-9044-cae3fd681315'] = $pane;
-    $display->panels['left'][11] = 'new-3c399408-f124-41f4-9044-cae3fd681315';
+    $display->panels['left1'][3] = 'new-3c399408-f124-41f4-9044-cae3fd681315';
     $pane = new stdClass();
     $pane->pid = 'new-f302a70e-fffe-4574-9a02-80347593ebc2';
-    $pane->panel = 'left';
+    $pane->panel = 'left1';
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_10';
     $pane->shown = TRUE;
@@ -449,23 +546,27 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
       'arguments' => array(
         'gid' => '%netvaerk:nid',
       ),
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-sm-6',
+      'template_suggestion' => 'nohtml',
+    );
     $pane->extras = array();
-    $pane->position = 12;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'f302a70e-fffe-4574-9a02-80347593ebc2';
     $display->content['new-f302a70e-fffe-4574-9a02-80347593ebc2'] = $pane;
-    $display->panels['left'][12] = 'new-f302a70e-fffe-4574-9a02-80347593ebc2';
+    $display->panels['left1'][4] = 'new-f302a70e-fffe-4574-9a02-80347593ebc2';
     $pane = new stdClass();
     $pane->pid = 'new-8c81f0ac-0ad0-4e87-a1f9-e49fa48d9764';
-    $pane->panel = 'left';
+    $pane->panel = 'left1';
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_11';
     $pane->shown = TRUE;
@@ -474,23 +575,27 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
       'arguments' => array(
         'gid' => '%netvaerk:nid',
       ),
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-xs-6',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
-    $pane->position = 13;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '8c81f0ac-0ad0-4e87-a1f9-e49fa48d9764';
     $display->content['new-8c81f0ac-0ad0-4e87-a1f9-e49fa48d9764'] = $pane;
-    $display->panels['left'][13] = 'new-8c81f0ac-0ad0-4e87-a1f9-e49fa48d9764';
+    $display->panels['left1'][5] = 'new-8c81f0ac-0ad0-4e87-a1f9-e49fa48d9764';
     $pane = new stdClass();
     $pane->pid = 'new-23f643c6-f52e-4f2b-970a-219b2bd4cbf1';
-    $pane->panel = 'left';
+    $pane->panel = 'left2';
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_2';
     $pane->shown = TRUE;
@@ -499,21 +604,27 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
       'arguments' => array(
         'gid' => '%netvaerk:nid',
       ),
+      'override_title' => 1,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'erhdsfh',
+    );
     $pane->extras = array();
-    $pane->position = 14;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '23f643c6-f52e-4f2b-970a-219b2bd4cbf1';
     $display->content['new-23f643c6-f52e-4f2b-970a-219b2bd4cbf1'] = $pane;
-    $display->panels['left'][14] = 'new-23f643c6-f52e-4f2b-970a-219b2bd4cbf1';
+    $display->panels['left2'][0] = 'new-23f643c6-f52e-4f2b-970a-219b2bd4cbf1';
     $pane = new stdClass();
     $pane->pid = 'new-def03cf9-43de-4341-8cbc-6f02d992b2a4';
-    $pane->panel = 'left';
+    $pane->panel = 'left2';
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_13';
     $pane->shown = TRUE;
@@ -531,14 +642,14 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 15;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'def03cf9-43de-4341-8cbc-6f02d992b2a4';
     $display->content['new-def03cf9-43de-4341-8cbc-6f02d992b2a4'] = $pane;
-    $display->panels['left'][15] = 'new-def03cf9-43de-4341-8cbc-6f02d992b2a4';
+    $display->panels['left2'][1] = 'new-def03cf9-43de-4341-8cbc-6f02d992b2a4';
     $pane = new stdClass();
     $pane->pid = 'new-186f9929-9cc9-4deb-bb02-e7f18d98a582';
-    $pane->panel = 'left';
+    $pane->panel = 'left2';
     $pane->type = 'views_panes';
     $pane->subtype = 'praesentation_af_netvaerk_indhold-panel_pane_3';
     $pane->shown = TRUE;
@@ -554,11 +665,11 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 16;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '186f9929-9cc9-4deb-bb02-e7f18d98a582';
     $display->content['new-186f9929-9cc9-4deb-bb02-e7f18d98a582'] = $pane;
-    $display->panels['left'][16] = 'new-186f9929-9cc9-4deb-bb02-e7f18d98a582';
+    $display->panels['left2'][2] = 'new-186f9929-9cc9-4deb-bb02-e7f18d98a582';
     $pane = new stdClass();
     $pane->pid = 'new-ee946fb4-4482-4a9c-9c63-137149ee2658';
     $pane->panel = 'right';

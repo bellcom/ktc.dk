@@ -25,6 +25,16 @@
         <div class="col-md-9">
             <div class="ktc-content-wide">
                 <?php print $content['left']; ?>
+                
+                <div class="ktc-aside">
+	                <div class="ktc-aside-body">
+		                <div class="ktc-aside-body-row">
+            	    		<?php print $content['left1']; ?>
+	            		</div>
+	                </div>
+                </div>
+                
+				<?php print $content['left2']; ?>
             </div>
         </div>
 

@@ -810,17 +810,17 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Medlemmer';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'row';
+  $handler->display->display_options['css_class'] = 'ktc-aside-body-row';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-xs-6';
+  $handler->display->display_options['style_options']['row_class'] = 'col-sm-6';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'list4';
+  $handler->display->display_options['row_options']['view_mode'] = 'list3';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sorteringskriterie: Felt: Efternavn (field_efternavn) */
@@ -848,7 +848,93 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['filters']['field_grouprole_target_id']['field'] = 'field_grouprole_target_id';
   $handler->display->display_options['filters']['field_grouprole_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['filters']['field_grouprole_target_id']['operator'] = '!=';
-  $handler->display->display_options['filters']['field_grouprole_target_id']['value']['value'] = '23216,23217,23218,23219,23220,23222,23223,23224,23227,23225,50494,50495';
+  $handler->display->display_options['filters']['field_grouprole_target_id']['value']['value'] = '23216';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_1']['id'] = 'field_grouprole_target_id_1';
+  $handler->display->display_options['filters']['field_grouprole_target_id_1']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_1']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_1']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_1']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_1']['value']['value'] = '23222';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_2']['id'] = 'field_grouprole_target_id_2';
+  $handler->display->display_options['filters']['field_grouprole_target_id_2']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_2']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_2']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_2']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_2']['value']['value'] = '23220';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_3']['id'] = 'field_grouprole_target_id_3';
+  $handler->display->display_options['filters']['field_grouprole_target_id_3']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_3']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_3']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_3']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_3']['value']['value'] = '23217';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_4']['id'] = 'field_grouprole_target_id_4';
+  $handler->display->display_options['filters']['field_grouprole_target_id_4']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_4']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_4']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_4']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_4']['value']['value'] = '23218';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_5']['id'] = 'field_grouprole_target_id_5';
+  $handler->display->display_options['filters']['field_grouprole_target_id_5']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_5']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_5']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_5']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_5']['value']['value'] = '23219';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_6']['id'] = 'field_grouprole_target_id_6';
+  $handler->display->display_options['filters']['field_grouprole_target_id_6']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_6']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_6']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_6']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_6']['value']['value'] = '23223';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_7']['id'] = 'field_grouprole_target_id_7';
+  $handler->display->display_options['filters']['field_grouprole_target_id_7']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_7']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_7']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_7']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_7']['value']['value'] = '23224';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_8']['id'] = 'field_grouprole_target_id_8';
+  $handler->display->display_options['filters']['field_grouprole_target_id_8']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_8']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_8']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_8']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_8']['value']['value'] = '23227';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_9']['id'] = 'field_grouprole_target_id_9';
+  $handler->display->display_options['filters']['field_grouprole_target_id_9']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_9']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_9']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_9']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_9']['value']['value'] = '23225';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_10']['id'] = 'field_grouprole_target_id_10';
+  $handler->display->display_options['filters']['field_grouprole_target_id_10']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_10']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_10']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_10']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_10']['value']['value'] = '50494';
+  /* Filterkriterie: OG membership: grouprole (field_grouprole) */
+  $handler->display->display_options['filters']['field_grouprole_target_id_11']['id'] = 'field_grouprole_target_id_11';
+  $handler->display->display_options['filters']['field_grouprole_target_id_11']['table'] = 'field_data_field_grouprole';
+  $handler->display->display_options['filters']['field_grouprole_target_id_11']['field'] = 'field_grouprole_target_id';
+  $handler->display->display_options['filters']['field_grouprole_target_id_11']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['field_grouprole_target_id_11']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_grouprole_target_id_11']['value']['value'] = '50495';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'gid' => array(
       'type' => 'user',
@@ -1230,7 +1316,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'list6';
+  $handler->display->display_options['row_options']['view_mode'] = 'list4';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: OG membership: OG membership from Bruger */
@@ -1291,7 +1377,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'list3';
+  $handler->display->display_options['row_options']['view_mode'] = 'list4';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: OG membership: OG membership from Bruger */
@@ -4129,6 +4215,44 @@ function ktc_views_views_default_views() {
       'label' => 'Netværk',
     ),
   );
+
+  /* Display: Medlemmer af (overskrift) */
+  $handler = $view->new_display('panel_pane', 'Medlemmer af (overskrift)', 'panel_pane_4');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = 'Medlemmer af [title]';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'KTC';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:user.field-adresse',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Netværks ID',
+    ),
+  );
   $translatables['praesentation_af_netvaerk_indhold'] = array(
     t('Master'),
     t('mere'),
@@ -4150,6 +4274,8 @@ function ktc_views_views_default_views() {
     t('Titel'),
     t('Undernetværk'),
     t('Indhold entity refereret fra og_group_ref'),
+    t('Medlemmer af (overskrift)'),
+    t('Medlemmer af [title]'),
   );
   $export['praesentation_af_netvaerk_indhold'] = $view;
 
