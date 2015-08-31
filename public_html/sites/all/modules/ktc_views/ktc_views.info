@@ -16,6 +16,7 @@ features[views_view][] = ktc_og_members
 features[views_view][] = ktc_og_members_admin
 features[views_view][] = ktc_og_user_groups
 features[views_view][] = leverandoerer_list
+features[views_view][] = magazine_banners
 features[views_view][] = news_skift_term
 features[views_view][] = opret_arrangement
 features[views_view][] = praesentation_af_netvaerk_indhold

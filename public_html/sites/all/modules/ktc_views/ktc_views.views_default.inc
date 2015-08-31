@@ -717,6 +717,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_grouprole']['table'] = 'field_data_field_grouprole';
   $handler->display->display_options['fields']['field_grouprole']['field'] = 'field_grouprole';
   $handler->display->display_options['fields']['field_grouprole']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['fields']['field_grouprole']['label'] = 'Gruppe rolle';
   $handler->display->display_options['fields']['field_grouprole']['settings'] = array(
     'link' => 0,
   );
@@ -849,7 +850,7 @@ function ktc_views_views_default_views() {
     t('næste ›'),
     t('sidste »'),
     t('OG membership from user'),
-    t('grouprole'),
+    t('Gruppe rolle'),
     t('Alle'),
     t('Formand'),
     t('View panes'),
@@ -2663,6 +2664,257 @@ function ktc_views_views_default_views() {
     t('Page'),
   );
   $export['leverandoerer_list'] = $view;
+
+  $view = new view();
+  $view->name = 'magazine_banners';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Udgivelser banners';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Udgivelser banners';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Felt: Indhold: Banner 1 */
+  $handler->display->display_options['fields']['field_bannere']['id'] = 'field_bannere';
+  $handler->display->display_options['fields']['field_bannere']['table'] = 'field_data_field_bannere';
+  $handler->display->display_options['fields']['field_bannere']['field'] = 'field_bannere';
+  $handler->display->display_options['fields']['field_bannere']['label'] = '';
+  $handler->display->display_options['fields']['field_bannere']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_bannere']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bannere']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_bannere']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bannere']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_bannere']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bannere']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_bannere']['settings'] = array(
+    'image_style' => 'magazine_teaser_banner',
+    'image_link' => '',
+  );
+  /* Felt: Indhold: Banner 1 tekst og link */
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['id'] = 'field_banner_1_tekst_og_link';
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['table'] = 'field_data_field_banner_1_tekst_og_link';
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['field'] = 'field_banner_1_tekst_og_link';
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['label'] = '';
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['alter']['text'] = '<a href="[field_banner_1_tekst_og_link-url]" title="[field_banner_1_tekst_og_link-title]">
+  [field_bannere]
+</a>';
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['empty'] = '[field_bannere]';
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['type'] = 'link_plain';
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'magazine' => 'magazine',
+  );
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'magazine' => 'magazine',
+  );
+
+  /* Display: Banner 1 */
+  $handler = $view->new_display('panel_pane', 'Banner 1', 'panel_pane_1');
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
+
+  /* Display: Banner 2 */
+  $handler = $view->new_display('panel_pane', 'Banner 2', 'panel_pane_2');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Banner 2 */
+  $handler->display->display_options['fields']['field_banner_2']['id'] = 'field_banner_2';
+  $handler->display->display_options['fields']['field_banner_2']['table'] = 'field_data_field_banner_2';
+  $handler->display->display_options['fields']['field_banner_2']['field'] = 'field_banner_2';
+  $handler->display->display_options['fields']['field_banner_2']['label'] = '';
+  $handler->display->display_options['fields']['field_banner_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_banner_2']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_banner_2']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_banner_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_banner_2']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_banner_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_banner_2']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_banner_2']['settings'] = array(
+    'image_style' => 'magazine_teaser_banner',
+    'image_link' => '',
+  );
+  /* Felt: Indhold: Banner 2 tekst og link */
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['id'] = 'field_banner_2_tekst_og_link';
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['table'] = 'field_data_field_banner_2_tekst_og_link';
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['field'] = 'field_banner_2_tekst_og_link';
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['label'] = '';
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['alter']['text'] = '<a href="[field_banner_2_tekst_og_link-url]" title="[field_banner_2_tekst_og_link-title]">
+  [field_banner_2]
+</a>';
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['empty'] = '[field_banner_2]';
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_banner_2_tekst_og_link']['type'] = 'link_plain';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
+
+  /* Display: Forside */
+  $handler = $view->new_display('panel_pane', 'Forside', 'panel_pane_3');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Forside (billede) */
+  $handler->display->display_options['fields']['field_forside_billede_']['id'] = 'field_forside_billede_';
+  $handler->display->display_options['fields']['field_forside_billede_']['table'] = 'field_data_field_forside_billede_';
+  $handler->display->display_options['fields']['field_forside_billede_']['field'] = 'field_forside_billede_';
+  $handler->display->display_options['fields']['field_forside_billede_']['label'] = '';
+  $handler->display->display_options['fields']['field_forside_billede_']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_forside_billede_']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_forside_billede_']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_forside_billede_']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_forside_billede_']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_forside_billede_']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_forside_billede_']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_forside_billede_']['settings'] = array(
+    'image_style' => 'magazine_teaser_banner',
+    'image_link' => '',
+  );
+  /* Felt: Indhold: Link til bladreversion */
+  $handler->display->display_options['fields']['field_linkbladreversion']['id'] = 'field_linkbladreversion';
+  $handler->display->display_options['fields']['field_linkbladreversion']['table'] = 'field_data_field_linkbladreversion';
+  $handler->display->display_options['fields']['field_linkbladreversion']['field'] = 'field_linkbladreversion';
+  $handler->display->display_options['fields']['field_linkbladreversion']['label'] = '';
+  $handler->display->display_options['fields']['field_linkbladreversion']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_linkbladreversion']['alter']['text'] = '<a href="[field_linkbladreversion-url]" title="[field_linkbladreversion-title]">
+  [field_forside_billede_]
+</a>';
+  $handler->display->display_options['fields']['field_linkbladreversion']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_linkbladreversion']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_linkbladreversion']['empty'] = '[field_forside_billede_]';
+  $handler->display->display_options['fields']['field_linkbladreversion']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_linkbladreversion']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_linkbladreversion']['type'] = 'link_plain';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
+  $translatables['magazine_banners'] = array(
+    t('Master'),
+    t('Udgivelser banners'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('<a href="[field_banner_1_tekst_og_link-url]" title="[field_banner_1_tekst_og_link-title]">
+  [field_bannere]
+</a>'),
+    t('[field_bannere]'),
+    t('Alle'),
+    t('Banner 1'),
+    t('View panes'),
+    t('Banner 2'),
+    t('<a href="[field_banner_2_tekst_og_link-url]" title="[field_banner_2_tekst_og_link-title]">
+  [field_banner_2]
+</a>'),
+    t('[field_banner_2]'),
+    t('Forside'),
+    t('<a href="[field_linkbladreversion-url]" title="[field_linkbladreversion-title]">
+  [field_forside_billede_]
+</a>'),
+    t('[field_forside_billede_]'),
+  );
+  $export['magazine_banners'] = $view;
 
   $view = new view();
   $view->name = 'news_skift_term';
