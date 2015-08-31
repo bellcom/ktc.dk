@@ -545,6 +545,36 @@ function _ktc_date_filter_on_magazine() {
 }
 
 /**
+ * @param string $region_tids
+ */
+function _ktc_get_groups_with_region($region_tids = 'all') {
+  $filterable_region_tids = array_filter(explode(',', $region_tids));
+  $available_group_nids = array();
+  $available_group_nids_filter = '';
+
+  if ($region_tids == 'all,' or $region_tids == 'all' or !$filterable_region_tids) {
+    return 'all';
+  }
+
+  // Get all gids with this region set
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'group')
+    ->fieldCondition('field_regioner', 'tid', $filterable_region_tids);
+  $result = $query->execute();
+
+  $available_group_nids = array_keys($result['node']);
+
+  if (!count($available_group_nids)) {
+    return 'all';
+  }
+
+  $available_group_nids_filter = implode('+', $available_group_nids);
+
+  return $available_group_nids_filter;
+}
+
+/**
  * Default filter block_view call back.
  */
 function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 = '', $f5 = '', $gid = '', $is_empty = '') {
@@ -552,7 +582,7 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
   $term_type = _ktc_sectionpage_filter_helper($f2);
   $emner = _ktc_sectionpage_filter_helper($f3);
   $tags = _ktc_sectionpage_filter_helper($f4);
-  $regioner = _ktc_sectionpage_filter_helper($f5);
+  $groups_with_region = _ktc_get_groups_with_region($f5);
   $gid = _ktc_sectionpage_group_filter_helper($gid);
 
   // If the content type:document does not included in the content_type,
@@ -603,13 +633,13 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
     $display = 'panel_pane_5';
   }
 
-  // Excluede profile subpage user/group/new_content.
+  // Exclude profile subpage user/group/new_content.
   if ($page != 'new_content') {
     $view = views_get_view('indhold_m_filter');
 
     $view->set_display($display);
     $view->set_arguments(
-      array($content_type, $term_type, $emner, $tags, $regioner, $gid)
+      array($content_type, $term_type, $emner, $tags, $groups_with_region, $gid)
     );
     $view->pre_execute();
     $view->execute();

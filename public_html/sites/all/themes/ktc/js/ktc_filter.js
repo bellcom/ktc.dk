@@ -243,35 +243,12 @@
                 icon.addClass('filter-foldin');
             }
         });
-        filter_on_mobile();
-        $(window).resize(function () {
-            filter_on_mobile();
-        });
-
-
     });
 
     // Add imagesloaded after views ajax completed.
     $(document).ajaxComplete(function () {
         load_content();
     });
-
-    function filter_on_mobile() {
-        if ($(window).width() < 768) {
-            $('.filter-fold').each(function () {
-                $(this).parent('.panel-pane').find('.pane-content').css('display', 'none');
-                $(this).removeClass('filter-foldin');
-                $(this).addClass('filter-foldout');
-            });
-        }
-        else {
-            $('.filter-fold').each(function () {
-                $(this).closest('.panel-pane').find('.pane-content').css('display', 'block');
-                $(this).removeClass('filter-foldout');
-                $(this).addClass('filter-foldin');
-            })
-        }
-    }
 
     function load_content() {
 
