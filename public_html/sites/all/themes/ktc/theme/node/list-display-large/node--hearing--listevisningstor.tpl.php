@@ -86,14 +86,18 @@
   <!-- Begin - body -->
   <div class="ktc-list-display-large-body">
 
+    <?php if ($hearing_info['role']): ?>
+      <p><strong><?php print t('Din status:'); ?></strong> <?php print $hearing_info['role']; ?></p>
+    <?php endif ?>
+
     <h3 class="ktc-list-display-large-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
 
     <?php if ($hearing_info['answer_by']): ?>
       <p><strong><?php print t('Din svarfrist:'); ?></strong> <?php print $hearing_info['answer_by']; ?></p>
     <?php endif ?>
 
-    <?php if ($hearing_info['role']): ?>
-      <p><strong><?php print t('Din status:'); ?></strong> <?php print $hearing_info['role']; ?></p>
+    <?php if ($hearing_info['status']): ?>
+      <p><strong><?php print t('Høringens status:'); ?></strong> <?php print $hearing_info['status']; ?></p>
     <?php endif ?>
 
     <div class="ktc-call-to-action-button">

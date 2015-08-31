@@ -32,10 +32,8 @@ global $base_url;
         </p>
       <?php endif ?>
 
-      <?php if (isset($hearing_status)): ?>
-        <p>
-          <strong><?php print t('Status:'); ?></strong> <?php print strtolower($hearing_status); ?>
-        </p>
+      <?php if ($hearing_info['status']): ?>
+        <p><strong><?php print t('Høringens status:'); ?></strong> <?php print $hearing_info['status']; ?></p>
       <?php endif ?>
 
       <?php if ($user_object): ?>

@@ -85,7 +85,7 @@
 
   <!-- Begin - heading -->
   <?php if (isset($network_groups)): ?>
-    <?php foreach ($network_groups AS $network_group): ?>
+    <?php foreach ($network_groups as $network_group): ?>
       <div class="ktc-list-display-heading">
         <?php print l($network_group->title, 'node/' . $network_group->nid, array('attributes' => array('class' => array('ktc-list-display-title')))); ?>
       </div>
@@ -111,8 +111,8 @@
         <p><small><strong><?php print t('Svarfrist:'); ?></strong> <?php print $hearing_duedate; ?></small></p>
       <?php endif ?>
 
-      <?php if (isset($hearing_status)): ?>
-        <p><small><strong><?php print t('Status:'); ?></strong> <?php print strtolower($hearing_status); ?></small></p>
+      <?php if ($hearing_info['status']): ?>
+        <p><strong><?php print t('Høringens status:'); ?></strong> <?php print $hearing_info['status']; ?></p>
       <?php endif ?>
 
     </div>

@@ -27,10 +27,8 @@ global $base_url;
         <p><strong><?php print t('Din svarfrist:'); ?></strong> <?php print $hearing_info['answer_by']; ?></p>
       <?php endif ?>
 
-      <?php if (isset($hearing_status)): ?>
-        <p>
-          <strong><?php print t('Status:'); ?></strong> <?php print strtolower($hearing_status); ?>
-        </p>
+      <?php if ($hearing_info['status']): ?>
+        <p><strong><?php print t('Høringens status:'); ?></strong> <?php print $hearing_info['status']; ?></p>
       <?php endif ?>
 
       <div class="ktc-call-to-action-button">
