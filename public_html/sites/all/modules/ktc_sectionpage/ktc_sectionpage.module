@@ -1074,7 +1074,7 @@ function _ktc_sectionpage_helper_get_term_depth($parent_id) {
  *
  * @return mixed
  */
-function _ktc_arrangement_filter($no_results, $event_type = 'all', $event_status = 'future', $event_year = 'all', $event_month = 'all') {
+function _ktc_arrangement_filter($no_results = '', $event_type = 'all', $event_status = 'future', $event_year = 'all', $event_month = 'all') {
   $view_type = ($event_status == 'future') ? 'block_3' : 'block_4';
   $nodes = array();
   $nodes = node_load_multiple(array(), array('type' => 'arrangement'));
@@ -1083,7 +1083,7 @@ function _ktc_arrangement_filter($no_results, $event_type = 'all', $event_status
 
   $filterable_event_calendar_month_nids = _ktc_arrangement_filter_get_event_month_nids($event_month, $nodes);
   $filterable_event_calendar_year_nids = _ktc_arrangement_filter_get_event_year_nids($event_year, $nodes);
-//xdebug_break();
+
   $view = views_get_view('arrangement');
   $view->set_display($view_type);
   $view->set_arguments(array($filterable_event_type_nids, $filterable_event_calendar_month_nids, $filterable_event_calendar_year_nids));
