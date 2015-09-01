@@ -126,8 +126,8 @@ function ktc_sectionpage_ajax_all_groups_view($f1, $f2, $f3, $f4, $f5 = 'all') {
 function ktc_sectionpage_ajax_view($page, $f1, $f2, $f3, $f4, $f5, $gid) {
   $is_empty_html = '<div class = "ktc-teaser">
                    <div class="ktc-teaser-body">
-                     <h4 class="ktc-teaser-body-title">'
-    . variable_get('ktc_netvaerk_search_empty_message', 'No result')
+                     <h4>'
+    . variable_get('ktc_netvaerk_search_empty_message', t('No result'))
     . '</h4>
                    </div>
                 </div>';
@@ -138,8 +138,9 @@ function ktc_sectionpage_ajax_view($page, $f1, $f2, $f3, $f4, $f5, $gid) {
     // $f3 in "aktiviteter" page is period, as "fulture" or "old"
     // $f4 is year
     // $f5 is month
-//    $output = _ktc_section_block_arrangement_content($f2, $f3, $f4, $f5, $is_empty_html);
-    $output = _ktc_section_block_arrangement_content($page, $f1, $f2, $f3, $f4, $f5, $gid, $is_empty_html);
+//    $output = _ktc_arrangement_filter($f2, $f3, $f4, $f5, $is_empty_html);
+    $output = _ktc_arrangement_filter($is_empty_html, $f2, $f3, $f4, $f5);
+
   }
 
   if ($page == 'hoeringer' || arg(0) == 'hoeringer') {
@@ -241,7 +242,7 @@ function ktc_sectionpage_block_view($delta = '') {
 
     case 'arrangement_page_block':
       $block['subject'] = '';
-      $block['content'] = _ktc_section_block_arrangement_content();
+      $block['content'] = _ktc_arrangement_filter();
       break;
 
     case 'arrangement_date_filter_block':
@@ -300,64 +301,6 @@ function ktc_sectionpage_block_view($delta = '') {
       break;
   }
   return $block;
-}
-
-/**
- * Arrangement block_view call back.
- * $f2 = type
- * $f3 = future /
- * $f4 = year
- * $f5 = month
- */
-
-function _ktc_section_block_arrangement_content($page = '', $f1 = '', $f2 = 'all', $f3 = 'future', $f4 = 'all', $f5 = 'all', $gid = '', $is_empty = '') {
-  $nids = _ktc_sectionpage_calendar_years_filter_helper($f4, $f5);
-
-  $filter_ar = explode(',', $f2);
-  $filter = '';
-
-  foreach ($filter_ar as $value) {
-    if ($value == 'all' || $value == '') {
-      continue;
-    }
-    if (is_numeric($tid = str_replace('tid-', '', $value))) {
-      if ($term = taxonomy_term_load($tid)) {
-        if ($filter == '') {
-          $filter = $tid;
-        }
-        else {
-          $filter .= '+' . $tid;
-        }
-      }
-    }
-
-  }
-  if ($filter == '') {
-    $filter = 'all';
-  }
-
-  $view = views_get_view('arrangement');
-  if ($f3 == 'old') {
-    $view->set_display('block_4');
-  }
-  else {
-    $view->set_display('block_3');
-  }
-
-  $view->set_arguments(array($filter, $nids));
-  $view->pre_execute();
-  $view->execute();
-  if (count($view->result) == 0) {
-    return $is_empty;
-  }
-  else {
-    if ($f3 == 'old') {
-      return $view->render('block_4');
-    }
-    else {
-      return $view->render('block_3');
-    }
-  }
 }
 
 /**
@@ -1123,53 +1066,191 @@ function _ktc_sectionpage_helper_get_term_depth($parent_id) {
 
 }
 
+/**
+ * @param string $event_type
+ * @param string $event_status
+ * @param string $event_year
+ * @param string $event_month
+ *
+ * @return mixed
+ */
+function _ktc_arrangement_filter($no_results, $event_type = 'all', $event_status = 'future', $event_year = 'all', $event_month = 'all') {
+  $view_type = ($event_status == 'future') ? 'block_3' : 'block_4';
+  $nodes = array();
+  $nodes = node_load_multiple(array(), array('type' => 'arrangement'));
 
+  $filterable_event_type_nids = _ktc_arrangement_filter_get_event_type_nids($event_type);
 
+  $filterable_event_calendar_month_nids = _ktc_arrangement_filter_get_event_month_nids($event_month, $nodes);
+  $filterable_event_calendar_year_nids = _ktc_arrangement_filter_get_event_year_nids($event_year, $nodes);
+//xdebug_break();
+  $view = views_get_view('arrangement');
+  $view->set_display($view_type);
+  $view->set_arguments(array($filterable_event_type_nids, $filterable_event_calendar_month_nids, $filterable_event_calendar_year_nids));
+  $view->pre_execute();
+  $view->execute();
 
+  if (count($view->result) == 0) {
+    return $no_results;
+  }
 
-
+  return $view->render($view_type);
+}
 
 /**
- * Helper function: Get nids for view context filter by years-nids array.
+ * @param $tids
+ *
+ * @return string
  */
-function _ktc_sectionpage_calendar_years_filter_helper($f3, $f4) {
-  $year_filter_value = array();
-  $month_filter_value = array();
-  $filter_value = '';
-  if ($f3 == 'all' and $f4 == 'all') {
-    return $filter_value = 'all';
-  }
-  if ($f3 == '' and $f4 == '') {
-    return $filter_value = 'all';
+function _ktc_arrangement_filter_get_event_type_nids($tids) {
+  $filterable_tids = array_filter(explode(',', $tids));
+  $available_nids = array();
+  $available_nids_filter = '';
+
+  if ($tids == 'all,' or $tids == 'all' or empty($filterable_tids)) {
+    return 'all';
   }
 
-  $years = _ktc_section_block_arrangement_date_filter_years();
-  $filter_ar = explode(',', $f3);
-  foreach ($filter_ar as $value) {
-    if ($value == '') {
-      continue;
-    }
-    if (is_numeric($value)) {
-      foreach ($years[$value] as $key => $nid) {
-        $year_filter_value[] = $nid;
+  // Get all nids that matches
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'arrangement')
+    ->fieldCondition('field_meeting_type', 'target_id', $filterable_tids);
+  $result = $query->execute();
+
+  $available_nids = array_keys($result['node']);
+
+  if (!count($available_nids)) {
+    return 'all';
+  }
+
+  $available_nids_filter = implode('+', $available_nids);
+
+  return $available_nids_filter;
+}
+
+/**
+ * @param $months
+ * @param $nodes
+ *
+ * @return string
+ */
+function _ktc_arrangement_filter_get_event_month_nids($months, $nodes) {
+  $filterable_months = array_filter(explode(',', $months));
+  $available_nids = array();
+  $available_nids_filter = '';
+
+  if ($months == 'all,' or $months == 'all' or empty($filterable_months)) {
+    return 'all';
+  }
+
+  // Get all nids that matches
+  foreach ($nodes as $node) {
+
+    if ($field_date = field_get_items('node', $node, 'field_arrangement_date')) {
+      $node_month = date('F', strtotime($field_date[0]['value'])); // As March, January etc.
+
+      if (in_array($node_month, $filterable_months)) {
+        $available_nids[] = $node->nid;
       }
     }
   }
 
-  $months = _ktc_section_block_arrangement_date_filter_month();
-  $filter_ar = explode(',', $f4);
+  if (!count($available_nids)) {
+    return 'all';
+  }
 
-  foreach ($filter_ar as $value) {
-    if ($value == '') {
-      continue;
-    }
-    foreach ($months[$value] as $key => $nid) {
-      $month_filter_value[] = $nid;
+  $available_nids_filter = implode('+', $available_nids);
+
+  return $available_nids_filter;
+}
+
+/**
+ * @param $years
+ * @param $nodes
+ *
+ * @return string
+ */
+function _ktc_arrangement_filter_get_event_year_nids($years, $nodes) {
+  $filterable_years = array_filter(explode(',', $years));
+  $available_nids = array();
+  $available_nids_filter = '';
+
+  if ($years == 'all,' or $years == 'all' or empty($filterable_years)) {
+    return 'all';
+  }
+
+  // Get all nids that matches
+  foreach ($nodes as $node) {
+
+    if ($field_date = field_get_items('node', $node, 'field_arrangement_date')) {
+      $node_year = date('Y', strtotime($field_date[0]['value']));
+
+      if ($node_year == '1970') {
+        continue;
+      }
+
+      if (in_array($node_year, $filterable_years)) {
+        $available_nids[] = $node->nid;
+      }
     }
   }
+
+  if (!count($available_nids)) {
+    return 'all';
+  }
+
+  $available_nids_filter = implode('+', $available_nids);
+
+  return $available_nids_filter;
+}
+
+/**
+ * Helper function: Get nids for view context filter by years-nids array.
+ * F3 = years
+ * F4 = months
+ */
+function _ktc_sectionpage_calendar_years_filter_helper($f3 = 'all', $f4 = 'all') {
+  $year_filter_value = array();
+  $month_filter_value = array();
+  $filter_value = '';
+  if (($f3 == 'all' or $f3 == '') and ($f4 == 'all' or $f4 == '')) {
+    return $filter_value = 'all';
+  }
+
+  if ($f3 != 'all' and $f3 != '') {
+    $years = _ktc_section_block_arrangement_date_filter_years();
+    $filter_ar = explode(',', $f3);
+    foreach ($filter_ar as $value) {
+      if ($value == '') {
+        continue;
+      }
+      if (is_numeric($value)) {
+        foreach ($years[$value] as $key => $nid) {
+          $year_filter_value[] = $nid;
+        }
+      }
+    }
+  }
+
+
+  if ($f4 != 'all' and $f4 != '') {
+
+    $months = _ktc_section_block_arrangement_date_filter_month();
+    $filter_ar = explode(',', $f4);
+
+    foreach ($filter_ar as $value) {
+      if ($value == '') {
+        continue;
+      }
+      foreach ($months[$value] as $key => $nid) {
+        $month_filter_value[] = $nid;
+      }
+    }
+  }
+
   if (!empty($month_filter_value) && !empty($year_filter_value)) {
     $filter_value = implode('+', array_intersect($year_filter_value, $month_filter_value));
-
   }
   elseif (empty($month_filter_value)) {
     $filter_value = implode('+', $year_filter_value);
@@ -1218,8 +1299,8 @@ function _ktc_section_block_arrangement_date_filter($f2 = 'all', $f3 = 'fulture'
  * Group hearing nodes by years.
  */
 function _ktc_section_block_arrangement_date_filter_years() {
-  $nodes = node_load_multiple(array(), array('type' => 'arrangement'));
   $years = array();
+  $nodes = node_load_multiple(array(), array('type' => 'arrangement'));
   $nids = array();
   foreach ($nodes as $node) {
     if ($date = field_get_items('node', $node, 'field_arrangement_date')) {
@@ -1244,8 +1325,8 @@ function _ktc_section_block_arrangement_date_filter_years() {
  * Group hearing nodes by years.
  */
 function _ktc_section_block_arrangement_date_filter_month() {
-  $nodes = node_load_multiple(array(), array('type' => 'arrangement'));
   $month = array();
+  $nodes = node_load_multiple(array(), array('type' => 'arrangement'));
   $nids = array();
   foreach ($nodes as $node) {
     if ($date = field_get_items('node', $node, 'field_arrangement_date')) {
