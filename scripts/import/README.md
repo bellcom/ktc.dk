@@ -33,7 +33,7 @@ makemeeting.json
 Files are to be copied to a temporary location where they can be accessed from the new site. Be sure to preserve the file structure from sites/default/files
 The script `copy_files.php` can be used to copy only the nessecary files from the server. Run with `php copy_files.php {ssh-passwd}`, it will copy "public" and "private" folders content to the cwd.
 
-Files should be copied to `/var/tmp/ktc.dk-files/drupal`.
+Files should be copied to `/var/tmp/ktc.dk-files/drupal`. (on ktc.dk / ktc.bellcom.dk)
 
 **Group roles**
 A script to export the group roles for members is located in `exporters`, named `export_og_users_roles.php`. This is run in the same way as the data export script.
@@ -59,6 +59,7 @@ All data is imported to the new KTC site.
 
 ### netvaerk.ktc.dk
 The 6 exported JSON files, are to be placed in the `scripts/json/import/var` folder. 
+On the test server there is a set of files for production 
 
 The entities that are to be imported are defined in config.php in the `json/import` folder.
 
@@ -67,10 +68,10 @@ The import script is also executed with drush from the site root. Eg.: `drush ph
 **Be aware that the makemeeting answers will be imported as new rows each time** The save handler is disabled ind the importer. When all other content is in place, the `makemeeting_answer` table can be truncated, the save handler enabled and then rerun the importer.
 
 **Files**
-Files will be imported from the folder specified in config.php.
+Files will be imported from the folder specified in config.php. (mnetioned earliver in the document)
 
 ### ktc.dk
-Import the rows to the same DB Drupal uses:
+Import the rows to the same DB Drupal uses (the filename earliver is db_export.txt):
 `cat {path_to}/hearing_dump.sql | drush sql-cli`
 
 Run these 3 drush scripts
