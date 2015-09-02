@@ -394,7 +394,7 @@ function _ktc_section_block_netvaerk_invite_links_content() {
     if (!$og_is_member) {
       if (og_user_access('node', $nid, 'subscribe without approval')) {
         $html .= '<div class="ktc-filter-button-container">';
-        $html .= l('Ansøg om medlemskab', 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
+        $html .= l('Ansøg', 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
         $html .= '</div>';
       }
       else {
