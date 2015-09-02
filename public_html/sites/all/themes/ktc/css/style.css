@@ -9080,6 +9080,12 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   height: 17px;
   vertical-align: bottom;
 }
+.page-search .ktc-wrapper {
+  padding-top: 0;
+}
+.page-search .region-sidebar-second {
+  margin-top: 0;
+}
 .page-search .view-id-Search .view-content:after {
   content: ".";
   display: block;
@@ -10149,7 +10155,6 @@ fieldset[disabled] .field-type-image .button {
 .ktc-teaser-magazine .ktc-teaser .ktc-date {
   color: #1f9bd7;
 }
-.ktc-teaser-magazine .ktc-teaser .ktc-user-profile,
 .ktc-teaser-magazine .ktc-teaser .ktc-teaser-heading,
 .ktc-teaser-magazine .ktc-teaser .ktc-footer {
   display: none;
@@ -12447,6 +12452,314 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
 .ktc-node-gallery a img {
   width: 100%;
 }
+.calendar-calendar .mini {
+  border: 1px solid #fff;
+}
+.calendar-calendar tr td {
+  text-align: center;
+}
+.calendar-calendar tr td a {
+  text-decoration: none;
+}
+.calendar-calendar tr td.today {
+  background-color: #1f9bd7;
+}
+.calendar-calendar tr td.today,
+.calendar-calendar tr td.today p,
+.calendar-calendar tr td.today span,
+.calendar-calendar tr td.today a {
+  color: #ffffff;
+}
+.calendar-calendar tr td.has-events {
+  background-color: #36a145;
+}
+.calendar-calendar tr td.has-events,
+.calendar-calendar tr td.has-events p,
+.calendar-calendar tr td.has-events span,
+.calendar-calendar tr td.has-events a {
+  color: #ffffff;
+}
+.calendar-calendar .mini-day-off,
+.calendar-calendar .mini-day-on {
+  padding: 6px;
+}
+.calendar-calendar .mini-day-on a {
+  font-weight: bold;
+}
+.view .pager {
+  margin: 0;
+}
+.view .date-prev,
+.view .date-next {
+  background-color: transparent;
+}
+.view .date-nav-wrapper .date-nav {
+  padding-bottom: 0;
+  margin-bottom: 10px;
+  min-height: initial;
+}
+.view .date-nav-wrapper .date-nav .date-heading h1,
+.view .date-nav-wrapper .date-nav .date-heading h2,
+.view .date-nav-wrapper .date-nav .date-heading h3,
+.view .date-nav-wrapper .date-nav .date-heading h4,
+.view .date-nav-wrapper .date-nav .date-heading h5,
+.view .date-nav-wrapper .date-nav .date-heading h6 {
+  font-size: 15px;
+}
+.view .date-nav-wrapper .date-nav .date-prev,
+.view .date-nav-wrapper .date-nav .date-next {
+  background: none;
+  padding: 0;
+}
+.view .date-nav-wrapper .date-nav .date-prev a,
+.view .date-nav-wrapper .date-nav .date-next a {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-width: 50px;
+  padding: 3px 15px;
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  background-color: #ffffff;
+  color: #2c353a;
+  border-color: #e9edee;
+}
+.view .date-nav-wrapper .date-nav .date-prev a:focus,
+.view .date-nav-wrapper .date-nav .date-next a:focus,
+.view .date-nav-wrapper .date-nav .date-prev a:active:focus,
+.view .date-nav-wrapper .date-nav .date-next a:active:focus,
+.view .date-nav-wrapper .date-nav .date-prev a.active:focus,
+.view .date-nav-wrapper .date-nav .date-next a.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.view .date-nav-wrapper .date-nav .date-prev a:hover,
+.view .date-nav-wrapper .date-nav .date-next a:hover,
+.view .date-nav-wrapper .date-nav .date-prev a:focus,
+.view .date-nav-wrapper .date-nav .date-next a:focus {
+  color: #2c353a;
+  text-decoration: none;
+}
+.view .date-nav-wrapper .date-nav .date-prev a:active,
+.view .date-nav-wrapper .date-nav .date-next a:active,
+.view .date-nav-wrapper .date-nav .date-prev a.active,
+.view .date-nav-wrapper .date-nav .date-next a.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.view .date-nav-wrapper .date-nav .date-prev a.disabled,
+.view .date-nav-wrapper .date-nav .date-next a.disabled,
+.view .date-nav-wrapper .date-nav .date-prev a[disabled],
+.view .date-nav-wrapper .date-nav .date-next a[disabled],
+fieldset[disabled] .view .date-nav-wrapper .date-nav .date-prev a,
+fieldset[disabled] .view .date-nav-wrapper .date-nav .date-next a {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-xs,
+.view .date-nav-wrapper .date-nav .date-next a.btn-xs {
+  min-width: 20px;
+  padding: 1px 6px;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-sm,
+.view .date-nav-wrapper .date-nav .date-next a.btn-sm {
+  min-width: 25px;
+  padding: 2px 8px;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-lg,
+.view .date-nav-wrapper .date-nav .date-next a.btn-lg {
+  min-width: 70px;
+  padding: 5px 25px;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.active,
+.view .date-nav-wrapper .date-nav .date-next a.active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.view .date-nav-wrapper .date-nav .date-prev a:active,
+.view .date-nav-wrapper .date-nav .date-next a:active {
+  -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-default,
+.view .date-nav-wrapper .date-nav .date-next a.btn-default,
+.view .date-nav-wrapper .date-nav .date-prev a.btn-primary,
+.view .date-nav-wrapper .date-nav .date-next a.btn-primary {
+  background-color: #ffffff;
+  color: #2c353a;
+  border-color: #e9edee;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-default:hover,
+.view .date-nav-wrapper .date-nav .date-next a.btn-default:hover,
+.view .date-nav-wrapper .date-nav .date-prev a.btn-primary:hover,
+.view .date-nav-wrapper .date-nav .date-next a.btn-primary:hover {
+  background-color: #f0f0f0;
+  color: #2c353a;
+  border-color: #d5ddde;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-default:focus,
+.view .date-nav-wrapper .date-nav .date-next a.btn-default:focus,
+.view .date-nav-wrapper .date-nav .date-prev a.btn-primary:focus,
+.view .date-nav-wrapper .date-nav .date-next a.btn-primary:focus {
+  color: #2c353a;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-default.active,
+.view .date-nav-wrapper .date-nav .date-next a.btn-default.active,
+.view .date-nav-wrapper .date-nav .date-prev a.btn-primary.active,
+.view .date-nav-wrapper .date-nav .date-next a.btn-primary.active {
+  border-color: #a1b2b6;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-success,
+.view .date-nav-wrapper .date-nav .date-next a.btn-success {
+  background-color: #36a145;
+  color: #ffffff;
+  border-color: #308e3d;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-success:hover,
+.view .date-nav-wrapper .date-nav .date-next a.btn-success:hover {
+  background-color: #2e8a3b;
+  color: #ffffff;
+  border-color: #277331;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-success:focus,
+.view .date-nav-wrapper .date-nav .date-next a.btn-success:focus {
+  color: #ffffff;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-success.active,
+.view .date-nav-wrapper .date-nav .date-next a.btn-success.active {
+  border-color: #102e14;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-info,
+.view .date-nav-wrapper .date-nav .date-next a.btn-info {
+  background-color: #2dace9;
+  color: #ffffff;
+  border-color: #18a2e5;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-info:hover,
+.view .date-nav-wrapper .date-nav .date-next a.btn-info:hover {
+  background-color: #179fe0;
+  color: #ffffff;
+  border-color: #158bc4;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-info:focus,
+.view .date-nav-wrapper .date-nav .date-next a.btn-info:focus {
+  color: #ffffff;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-info.active,
+.view .date-nav-wrapper .date-nav .date-next a.btn-info.active {
+  border-color: #0c5071;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-danger,
+.view .date-nav-wrapper .date-nav .date-next a.btn-danger {
+  background-color: #e75311;
+  color: #ffffff;
+  border-color: #cf4a0f;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-danger:hover,
+.view .date-nav-wrapper .date-nav .date-next a.btn-danger:hover {
+  background-color: #ca490f;
+  color: #ffffff;
+  border-color: #ae3f0d;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-danger:focus,
+.view .date-nav-wrapper .date-nav .date-next a.btn-danger:focus {
+  color: #ffffff;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-danger.active,
+.view .date-nav-wrapper .date-nav .date-next a.btn-danger.active {
+  border-color: #582007;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-warning,
+.view .date-nav-wrapper .date-nav .date-next a.btn-warning {
+  background-color: #d3a900;
+  color: #ffffff;
+  border-color: #ba9500;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-warning:hover,
+.view .date-nav-wrapper .date-nav .date-next a.btn-warning:hover {
+  background-color: #b49000;
+  color: #ffffff;
+  border-color: #967800;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-warning:focus,
+.view .date-nav-wrapper .date-nav .date-next a.btn-warning:focus {
+  color: #ffffff;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-warning.active,
+.view .date-nav-wrapper .date-nav .date-next a.btn-warning.active {
+  border-color: #3a2e00;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-action,
+.view .date-nav-wrapper .date-nav .date-next a.btn-action {
+  background-color: #2c353a;
+  color: #ffffff;
+  border-color: #586a74;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-action:hover,
+.view .date-nav-wrapper .date-nav .date-next a.btn-action:hover {
+  background-color: #1f2529;
+  color: #ffffff;
+  border-color: #495760;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-action:focus,
+.view .date-nav-wrapper .date-nav .date-next a.btn-action:focus {
+  color: #ffffff;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.btn-action.active,
+.view .date-nav-wrapper .date-nav .date-next a.btn-action.active {
+  border-color: #21282c;
+}
+.view .date-nav-wrapper .date-nav .date-prev a:hover,
+.view .date-nav-wrapper .date-nav .date-next a:hover {
+  background-color: #f0f0f0;
+  color: #2c353a;
+  border-color: #d5ddde;
+}
+.view .date-nav-wrapper .date-nav .date-prev a:focus,
+.view .date-nav-wrapper .date-nav .date-next a:focus {
+  color: #2c353a;
+}
+.view .date-nav-wrapper .date-nav .date-prev a.active,
+.view .date-nav-wrapper .date-nav .date-next a.active {
+  border-color: #a1b2b6;
+}
+.view .date-nav-wrapper .date-nav .date-prev a {
+  margin-left: 0;
+}
+.view .date-nav-wrapper .date-nav .date-next a {
+  margin-right: 0;
+}
+.calendar-calendar thead th.days {
+  border-color: #e9edee;
+  background-color: transparent;
+  color: #2c353a;
+}
 div.ktc-comments-form {
   background-color: #fff;
   padding-top: 10px;
@@ -13058,314 +13371,6 @@ body .ktc-content .ktc-comments-list {
   margin-bottom: 1px;
   font-style: normal;
   color: #848e92;
-}
-.calendar-calendar .mini {
-  border: 1px solid #fff;
-}
-.calendar-calendar tr td {
-  text-align: center;
-}
-.calendar-calendar tr td a {
-  text-decoration: none;
-}
-.calendar-calendar tr td.today {
-  background-color: #1f9bd7;
-}
-.calendar-calendar tr td.today,
-.calendar-calendar tr td.today p,
-.calendar-calendar tr td.today span,
-.calendar-calendar tr td.today a {
-  color: #ffffff;
-}
-.calendar-calendar tr td.has-events {
-  background-color: #36a145;
-}
-.calendar-calendar tr td.has-events,
-.calendar-calendar tr td.has-events p,
-.calendar-calendar tr td.has-events span,
-.calendar-calendar tr td.has-events a {
-  color: #ffffff;
-}
-.calendar-calendar .mini-day-off,
-.calendar-calendar .mini-day-on {
-  padding: 6px;
-}
-.calendar-calendar .mini-day-on a {
-  font-weight: bold;
-}
-.view .pager {
-  margin: 0;
-}
-.view .date-prev,
-.view .date-next {
-  background-color: transparent;
-}
-.view .date-nav-wrapper .date-nav {
-  padding-bottom: 0;
-  margin-bottom: 10px;
-  min-height: initial;
-}
-.view .date-nav-wrapper .date-nav .date-heading h1,
-.view .date-nav-wrapper .date-nav .date-heading h2,
-.view .date-nav-wrapper .date-nav .date-heading h3,
-.view .date-nav-wrapper .date-nav .date-heading h4,
-.view .date-nav-wrapper .date-nav .date-heading h5,
-.view .date-nav-wrapper .date-nav .date-heading h6 {
-  font-size: 15px;
-}
-.view .date-nav-wrapper .date-nav .date-prev,
-.view .date-nav-wrapper .date-nav .date-next {
-  background: none;
-  padding: 0;
-}
-.view .date-nav-wrapper .date-nav .date-prev a,
-.view .date-nav-wrapper .date-nav .date-next a {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: 600;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 12px;
-  line-height: 1.42857143;
-  border-radius: 4px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-width: 50px;
-  padding: 3px 15px;
-  border-radius: 20px;
-  border-width: 2px;
-  border-style: solid;
-  background-color: #ffffff;
-  color: #2c353a;
-  border-color: #e9edee;
-}
-.view .date-nav-wrapper .date-nav .date-prev a:focus,
-.view .date-nav-wrapper .date-nav .date-next a:focus,
-.view .date-nav-wrapper .date-nav .date-prev a:active:focus,
-.view .date-nav-wrapper .date-nav .date-next a:active:focus,
-.view .date-nav-wrapper .date-nav .date-prev a.active:focus,
-.view .date-nav-wrapper .date-nav .date-next a.active:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-.view .date-nav-wrapper .date-nav .date-prev a:hover,
-.view .date-nav-wrapper .date-nav .date-next a:hover,
-.view .date-nav-wrapper .date-nav .date-prev a:focus,
-.view .date-nav-wrapper .date-nav .date-next a:focus {
-  color: #2c353a;
-  text-decoration: none;
-}
-.view .date-nav-wrapper .date-nav .date-prev a:active,
-.view .date-nav-wrapper .date-nav .date-next a:active,
-.view .date-nav-wrapper .date-nav .date-prev a.active,
-.view .date-nav-wrapper .date-nav .date-next a.active {
-  outline: 0;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-.view .date-nav-wrapper .date-nav .date-prev a.disabled,
-.view .date-nav-wrapper .date-nav .date-next a.disabled,
-.view .date-nav-wrapper .date-nav .date-prev a[disabled],
-.view .date-nav-wrapper .date-nav .date-next a[disabled],
-fieldset[disabled] .view .date-nav-wrapper .date-nav .date-prev a,
-fieldset[disabled] .view .date-nav-wrapper .date-nav .date-next a {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-xs,
-.view .date-nav-wrapper .date-nav .date-next a.btn-xs {
-  min-width: 20px;
-  padding: 1px 6px;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-sm,
-.view .date-nav-wrapper .date-nav .date-next a.btn-sm {
-  min-width: 25px;
-  padding: 2px 8px;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-lg,
-.view .date-nav-wrapper .date-nav .date-next a.btn-lg {
-  min-width: 70px;
-  padding: 5px 25px;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.active,
-.view .date-nav-wrapper .date-nav .date-next a.active {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-.view .date-nav-wrapper .date-nav .date-prev a:active,
-.view .date-nav-wrapper .date-nav .date-next a:active {
-  -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-default,
-.view .date-nav-wrapper .date-nav .date-next a.btn-default,
-.view .date-nav-wrapper .date-nav .date-prev a.btn-primary,
-.view .date-nav-wrapper .date-nav .date-next a.btn-primary {
-  background-color: #ffffff;
-  color: #2c353a;
-  border-color: #e9edee;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-default:hover,
-.view .date-nav-wrapper .date-nav .date-next a.btn-default:hover,
-.view .date-nav-wrapper .date-nav .date-prev a.btn-primary:hover,
-.view .date-nav-wrapper .date-nav .date-next a.btn-primary:hover {
-  background-color: #f0f0f0;
-  color: #2c353a;
-  border-color: #d5ddde;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-default:focus,
-.view .date-nav-wrapper .date-nav .date-next a.btn-default:focus,
-.view .date-nav-wrapper .date-nav .date-prev a.btn-primary:focus,
-.view .date-nav-wrapper .date-nav .date-next a.btn-primary:focus {
-  color: #2c353a;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-default.active,
-.view .date-nav-wrapper .date-nav .date-next a.btn-default.active,
-.view .date-nav-wrapper .date-nav .date-prev a.btn-primary.active,
-.view .date-nav-wrapper .date-nav .date-next a.btn-primary.active {
-  border-color: #a1b2b6;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-success,
-.view .date-nav-wrapper .date-nav .date-next a.btn-success {
-  background-color: #36a145;
-  color: #ffffff;
-  border-color: #308e3d;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-success:hover,
-.view .date-nav-wrapper .date-nav .date-next a.btn-success:hover {
-  background-color: #2e8a3b;
-  color: #ffffff;
-  border-color: #277331;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-success:focus,
-.view .date-nav-wrapper .date-nav .date-next a.btn-success:focus {
-  color: #ffffff;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-success.active,
-.view .date-nav-wrapper .date-nav .date-next a.btn-success.active {
-  border-color: #102e14;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-info,
-.view .date-nav-wrapper .date-nav .date-next a.btn-info {
-  background-color: #2dace9;
-  color: #ffffff;
-  border-color: #18a2e5;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-info:hover,
-.view .date-nav-wrapper .date-nav .date-next a.btn-info:hover {
-  background-color: #179fe0;
-  color: #ffffff;
-  border-color: #158bc4;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-info:focus,
-.view .date-nav-wrapper .date-nav .date-next a.btn-info:focus {
-  color: #ffffff;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-info.active,
-.view .date-nav-wrapper .date-nav .date-next a.btn-info.active {
-  border-color: #0c5071;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-danger,
-.view .date-nav-wrapper .date-nav .date-next a.btn-danger {
-  background-color: #e75311;
-  color: #ffffff;
-  border-color: #cf4a0f;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-danger:hover,
-.view .date-nav-wrapper .date-nav .date-next a.btn-danger:hover {
-  background-color: #ca490f;
-  color: #ffffff;
-  border-color: #ae3f0d;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-danger:focus,
-.view .date-nav-wrapper .date-nav .date-next a.btn-danger:focus {
-  color: #ffffff;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-danger.active,
-.view .date-nav-wrapper .date-nav .date-next a.btn-danger.active {
-  border-color: #582007;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-warning,
-.view .date-nav-wrapper .date-nav .date-next a.btn-warning {
-  background-color: #d3a900;
-  color: #ffffff;
-  border-color: #ba9500;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-warning:hover,
-.view .date-nav-wrapper .date-nav .date-next a.btn-warning:hover {
-  background-color: #b49000;
-  color: #ffffff;
-  border-color: #967800;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-warning:focus,
-.view .date-nav-wrapper .date-nav .date-next a.btn-warning:focus {
-  color: #ffffff;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-warning.active,
-.view .date-nav-wrapper .date-nav .date-next a.btn-warning.active {
-  border-color: #3a2e00;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-action,
-.view .date-nav-wrapper .date-nav .date-next a.btn-action {
-  background-color: #2c353a;
-  color: #ffffff;
-  border-color: #586a74;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-action:hover,
-.view .date-nav-wrapper .date-nav .date-next a.btn-action:hover {
-  background-color: #1f2529;
-  color: #ffffff;
-  border-color: #495760;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-action:focus,
-.view .date-nav-wrapper .date-nav .date-next a.btn-action:focus {
-  color: #ffffff;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.btn-action.active,
-.view .date-nav-wrapper .date-nav .date-next a.btn-action.active {
-  border-color: #21282c;
-}
-.view .date-nav-wrapper .date-nav .date-prev a:hover,
-.view .date-nav-wrapper .date-nav .date-next a:hover {
-  background-color: #f0f0f0;
-  color: #2c353a;
-  border-color: #d5ddde;
-}
-.view .date-nav-wrapper .date-nav .date-prev a:focus,
-.view .date-nav-wrapper .date-nav .date-next a:focus {
-  color: #2c353a;
-}
-.view .date-nav-wrapper .date-nav .date-prev a.active,
-.view .date-nav-wrapper .date-nav .date-next a.active {
-  border-color: #a1b2b6;
-}
-.view .date-nav-wrapper .date-nav .date-prev a {
-  margin-left: 0;
-}
-.view .date-nav-wrapper .date-nav .date-next a {
-  margin-right: 0;
-}
-.calendar-calendar thead th.days {
-  border-color: #e9edee;
-  background-color: transparent;
-  color: #2c353a;
 }
 .ktc-date {
   font-size: 14px;
