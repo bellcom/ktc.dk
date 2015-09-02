@@ -457,6 +457,8 @@ function ktc_netvaerk_field_default_field_instances() {
   // Exported field_instance: 'node-group-field_groupimage'
   $field_instances['node-group-field_groupimage'] = array(
     'bundle' => 'group',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => 'Billedet vil automatisk blive beskåret til 220x220 pixels.',
     'display' => array(
@@ -515,12 +517,22 @@ function ktc_netvaerk_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'indholdsside' => 0,
+          'ktc_content_image' => 0,
+          'ktc_profile_image_small' => 0,
+          'listevisning' => 0,
+          'listevisning_stor' => 0,
+          'teaservisning' => 0,
+        ),
+      ),
       'file_directory' => 'netvaerk',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'media_library_include_in_library' => FALSE,
-      'min_resolution' => '195x195',
+      'media_library_include_in_library' => 0,
+      'min_resolution' => '195x1',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
