@@ -24,6 +24,14 @@
       <!-- End - manchet -->
     <?php endif; ?>
 
+    <?php if (isset($content['field_coforfattere'])): ?>
+      <!-- Begin - authors -->
+      <div class="ktc-user-blue">
+        <?php print render($content['field_coforfattere']); ?>
+      </div>
+      <!-- End - authors -->
+    <?php endif; ?>
+
   </div>
 </article>
 <!-- End - teaser -->

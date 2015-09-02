@@ -45,13 +45,9 @@ global $base_url;
     </div>
 
     <div class="ktc-footer">
-      <a href="<?php print $base_url . $node_url; ?>#comments"
-         data-toggle="tooltip" data-placement="bottom" title="Kommentarer"
-         class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
-      <span data-toggle="tooltip" data-placement="bottom" title="Visninger"
-            class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
-      <span
-        class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
+      <a href="<?php print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
+      <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
+      <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
     </div>
 
   </article>
