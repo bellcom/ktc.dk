@@ -67,6 +67,12 @@
           var $toggle = $(this).parents('.ktc-aside-toggle');
           $toggle.toggleClass('closed');
       });
+
+      // Aside user toggle
+      $('.ktc-aside-toggle .ktc-aside-user-wrapper').on('click', function(event) {
+          var $toggle = $(this).parents('.ktc-aside-toggle');
+          $toggle.toggleClass('closed');
+      });
       if (Modernizr.touch) {
           $('.ktc-aside-toggle').each(function() {
               var $element = $(this);
