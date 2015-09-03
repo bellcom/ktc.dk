@@ -17,7 +17,7 @@ function ktc_user_profile_default_page_manager_handlers() {
   $handler->task = 'user_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = -30;
   $handler->conf = array(
     'title' => 'User profile',
     'no_blocks' => 0,
@@ -324,7 +324,7 @@ function ktc_user_profile_default_page_manager_handlers() {
   $handler->task = 'user_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 1;
+  $handler->weight = -27;
   $handler->conf = array(
     'title' => 'Other user',
     'no_blocks' => 0,
