@@ -357,13 +357,17 @@ function ktc_hearing_default_page_manager_handlers() {
       'formatter_settings' => array(),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Høringsbrev',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color ktc-margin-top',
+      'template_suggestion' => 'entity_field',
+    );
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
@@ -485,6 +489,29 @@ function ktc_hearing_default_page_manager_handlers() {
     $display->content['new-a4ae3b9f-a87d-4fdc-9bce-752032213029'] = $pane;
     $display->panels['center'][8] = 'new-a4ae3b9f-a87d-4fdc-9bce-752032213029';
     $pane = new stdClass();
+    $pane->pid = 'new-91f87405-906a-4cb3-83be-6e61a89baa6f';
+    $pane->panel = 'center';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'haering_answers-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 9;
+    $pane->locks = array();
+    $pane->uuid = '91f87405-906a-4cb3-83be-6e61a89baa6f';
+    $display->content['new-91f87405-906a-4cb3-83be-6e61a89baa6f'] = $pane;
+    $display->panels['center'][9] = 'new-91f87405-906a-4cb3-83be-6e61a89baa6f';
+    $pane = new stdClass();
     $pane->pid = 'new-a82904d3-c87a-4a39-9487-c0d39d865f14';
     $pane->panel = 'left';
     $pane->type = 'entity_field';
@@ -558,7 +585,7 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Deltagere',
+      'override_title_text' => 'Høringsansvarlige',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -575,6 +602,43 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->uuid = 'ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69';
     $display->content['new-ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69'] = $pane;
     $display->panels['left'][2] = 'new-ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69';
+    $pane = new stdClass();
+    $pane->pid = 'new-b89612c6-8209-4417-acd4-cb5d3290e307';
+    $pane->panel = 'left';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_attendees';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'entityreference_label',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'view_mode' => 'list2',
+        'links' => 1,
+        'link' => 1,
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Alle deltagere',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'entity_field',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'b89612c6-8209-4417-acd4-cb5d3290e307';
+    $display->content['new-b89612c6-8209-4417-acd4-cb5d3290e307'] = $pane;
+    $display->panels['left'][3] = 'new-b89612c6-8209-4417-acd4-cb5d3290e307';
     $pane = new stdClass();
     $pane->pid = 'new-9067a27e-7b7c-4019-a149-3527eeba2558';
     $pane->panel = 'right';
@@ -719,7 +783,7 @@ function ktc_hearing_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-list ktc-aside-color',
+      'css_class' => 'ktc-aside-list',
       'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();

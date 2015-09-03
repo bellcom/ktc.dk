@@ -87,6 +87,57 @@ function ktc_hearing_views_default_views() {
       'label' => 'Indhold: Høring (field_hearing_node)',
     ),
   );
+
+  /* Display: Svar */
+  $handler = $view->new_display('panel_pane', 'Svar', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Indsendte høringssvar';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'hearing_responses' => 'hearing_responses',
+  );
+  /* Filterkriterie: Indhold: Endeligt svar (field_is_final) */
+  $handler->display->display_options['filters']['field_is_final_value']['id'] = 'field_is_final_value';
+  $handler->display->display_options['filters']['field_is_final_value']['table'] = 'field_data_field_is_final';
+  $handler->display->display_options['filters']['field_is_final_value']['field'] = 'field_is_final_value';
+  $handler->display->display_options['filters']['field_is_final_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_is_final_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filterkriterie: Indhold: Har ikke svaret (field_is_no_answer) */
+  $handler->display->display_options['filters']['field_is_no_answer_value']['id'] = 'field_is_no_answer_value';
+  $handler->display->display_options['filters']['field_is_no_answer_value']['table'] = 'field_data_field_is_no_answer';
+  $handler->display->display_options['filters']['field_is_no_answer_value']['field'] = 'field_is_no_answer_value';
+  $handler->display->display_options['filters']['field_is_no_answer_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_is_no_answer_value']['value'] = array(
+    0 => '0',
+  );
+  $handler->display->display_options['argument_input'] = array(
+    'field_hearing_node_target_id' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Høring (field_hearing_node)',
+    ),
+  );
   $translatables['haering_answers'] = array(
     t('Master'),
     t('Endeligt høringssvar'),
@@ -99,6 +150,8 @@ function ktc_hearing_views_default_views() {
     t('Alle'),
     t('Endeligt svar'),
     t('View panes'),
+    t('Svar'),
+    t('Indsendte høringssvar'),
   );
   $export['haering_answers'] = $view;
 
@@ -408,6 +461,43 @@ function ktc_hearing_views_default_views() {
   /* Display: Content pane 2 */
   $handler = $view->new_display('panel_pane', 'Content pane 2', 'panel_pane_2');
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Ansvarlig formand */
+  $handler->display->display_options['fields']['field_responsible_foreman']['id'] = 'field_responsible_foreman';
+  $handler->display->display_options['fields']['field_responsible_foreman']['table'] = 'field_data_field_responsible_foreman';
+  $handler->display->display_options['fields']['field_responsible_foreman']['field'] = 'field_responsible_foreman';
+  $handler->display->display_options['fields']['field_responsible_foreman']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['field_responsible_foreman']['element_label_class'] = 'ktc-node-title-xs';
+  $handler->display->display_options['fields']['field_responsible_foreman']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_responsible_foreman']['settings'] = array(
+    'view_mode' => 'list3',
+    'links' => 1,
+  );
+  /* Felt: Indhold: Ansvarlig tovholder */
+  $handler->display->display_options['fields']['field_responsible_admin']['id'] = 'field_responsible_admin';
+  $handler->display->display_options['fields']['field_responsible_admin']['table'] = 'field_data_field_responsible_admin';
+  $handler->display->display_options['fields']['field_responsible_admin']['field'] = 'field_responsible_admin';
+  $handler->display->display_options['fields']['field_responsible_admin']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['field_responsible_admin']['element_label_class'] = 'ktc-node-title-xs';
+  $handler->display->display_options['fields']['field_responsible_admin']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_responsible_admin']['settings'] = array(
+    'view_mode' => 'list3',
+    'links' => 1,
+  );
+  $handler->display->display_options['pane_title'] = 'Høring deltagere/datoer';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Vis deltagerne */
+  $handler = $view->new_display('panel_pane', 'Vis deltagerne', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Formand */
   $handler->display->display_options['fields']['field_chairman']['id'] = 'field_chairman';
   $handler->display->display_options['fields']['field_chairman']['table'] = 'field_data_field_chairman';
@@ -510,10 +600,11 @@ function ktc_hearing_views_default_views() {
     t('Hørings ID'),
     t('View panes'),
     t('Content pane 2'),
+    t('Høring deltagere/datoer'),
+    t('Vis deltagerne'),
     t('Formand'),
     t('Tovholder'),
     t('Deltagere'),
-    t('Høring deltagere/datoer'),
   );
   $export['hearing_node_view'] = $view;
 
