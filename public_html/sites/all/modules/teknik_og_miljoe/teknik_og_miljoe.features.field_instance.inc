@@ -1896,8 +1896,11 @@ function teknik_og_miljoe_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'teasercomments',
+        ),
+        'type' => 'field_collection_fields',
         'weight' => 2,
       ),
       'teasercomments' => array(

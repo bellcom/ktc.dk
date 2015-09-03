@@ -41,9 +41,15 @@
 
   <?php if ($exposed): ?>
     <div class="view-filters">
-      <p style="float: right; margin-top:5px">
+      
+      <?php
+	      if (user_is_logged_in()) {  ?>
+		      
+<p style="float: right; margin-top:5px">
 	      <a class="btn btn-default" href="/search/brugersoegning"><span class="glyphicon glyphicon-user"></span> Brugersøgning</a>
 	  </p>
+	  <?php
+	      } ?>
       <?php print $exposed; ?>
       
     </div>
