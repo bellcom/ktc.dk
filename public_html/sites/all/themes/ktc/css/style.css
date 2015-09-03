@@ -9775,6 +9775,41 @@ fieldset[disabled] .field-type-image .button {
 .ktc-aside-toggle.closed > .ktc-aside-body {
   display: none;
 }
+.ktc-aside-toggle > .ktc-aside-user-wrapper .ktc-user-profile {
+  position: relative;
+  cursor: pointer;
+  cursor: hand;
+  padding-right: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ktc-aside-toggle > .ktc-aside-user-wrapper .ktc-user-profile:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 50%;
+  right: 15px;
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -275px;
+  width: 15px;
+  height: 15px;
+}
+.ktc-aside-toggle.closed > .ktc-aside-user-wrapper .ktc-user-profile {
+  padding-right: 30px;
+}
+.ktc-aside-toggle.closed > .ktc-aside-user-wrapper .ktc-user-profile:after {
+  margin-top: -7px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -449px;
+  width: 15px;
+  height: 15px;
+}
+.ktc-aside-toggle.closed > .ktc-aside-body {
+  display: none;
+}
 .ktc-aside-no-inner-spacing .ktc-aside-heading .ktc-aside-title {
   padding-top: 0;
   padding-bottom: 0;
@@ -9861,6 +9896,9 @@ fieldset[disabled] .field-type-image .button {
 }
 .ktc-aside-gold .ktc-aside-heading {
   background-color: #d3a900;
+}
+.ktc-aside-faceless .ktc-aside-heading {
+  background-color: transparent;
 }
 .ktc-aside-blue .ktc-aside-heading {
   background-color: #1f9bd7;

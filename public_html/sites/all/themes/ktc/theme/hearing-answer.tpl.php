@@ -5,6 +5,9 @@
  */
 $block_info = module_invoke('ktc_hearing', 'block_view', 'ktc_hearing_info_block');
 $block_status_form = module_invoke('ktc_hearing', 'block_view', 'ktc_hearing_set_status_form');
+
+$response_no_responses = array();
+$response_responses = array();
 ?>
 
 <div class="row">
@@ -36,10 +39,7 @@ $block_status_form = module_invoke('ktc_hearing', 'block_view', 'ktc_hearing_set
         <?php print render($block_status_form['content']); ?>
       </div>
     </div>
-
-
   </div>
-
 </div>
 
 <div class="row">
@@ -54,22 +54,64 @@ $block_status_form = module_invoke('ktc_hearing', 'block_view', 'ktc_hearing_set
 
       <div class="responses-container">
         <?php if (isset($responses)): ?>
-          <div class="pull-right"><a href="#" class="btn btn-default btn-sm toggle-all">Alle <span class="glyphicon glyphicon-chevron-right"></span></a></div><br /><br />
           <?php foreach ($responses as $response): ?>
-            <?php print render($response); ?>
+            <?php
+            // Has responded
+            if ($response['field_is_no_answer']['#items'][0]['value'] == 1) {
+              $response_responses[] = $response;
+            }
+            else {
+              $response_no_responses[] = $response;
+            }
+            ?>
           <?php endforeach; ?>
-        <?php endif; ?>
+        <?php endif ?>
+
+        <?php if (count($response_responses)): ?>
+          <div class="ktc-aside">
+            <div class="ktc-aside-heading">
+              <h3 class="ktc-aside-title"><?php print t('Har afgivet svar'); ?></h3>
+            </div>
+            <div class="ktc-aside-body">
+              <?php foreach ($response_responses as $response_response): ?>
+                <?php print render($response_response); ?>
+              <?php endforeach ?>
+            </div>
+          </div>
+        <?php endif ?>
+
+        <?php if (count($response_no_responses)): ?>
+          <div class="ktc-aside">
+            <div class="ktc-aside-heading">
+              <h3 class="ktc-aside-title"><?php print t('Svarer ikke'); ?></h3>
+            </div>
+            <div class="ktc-aside-body">
+              <?php foreach ($response_no_responses as $response_no_response): ?>
+                <?php print render($response_no_response); ?>
+              <?php endforeach ?>
+            </div>
+          </div>
+        <?php endif ?>
 
         <?php if (isset($no_response)): ?>
-          <hr>
-          <?php foreach ($no_response as $name): ?>
-
-            <div class="ktc-aside">
-              <div class="ktc-aside-heading">
-                <h3 class="ktc-aside-title"><?php print $name; ?> - Mangler svar</h3>
-              </div>
+          <div class="ktc-aside">
+            <div class="ktc-aside-heading">
+              <h3 class="ktc-aside-title"><?php print t('Mangler at afgive svar'); ?></h3>
             </div>
-          <?php endforeach; ?>
+            <div class="ktc-aside-body">
+              <?php foreach ($no_response as $key => $value): ?>
+                <?php if ($key && $user_object = user_load($key)): ?>
+                  <div class="ktc-aside ktc-aside-faceless">
+                    <div class="ktc-aside-user-wrapper">
+                      <?php if ($user_object): ?>
+                        <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list3')); ?>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                <?php endif ?>
+              <?php endforeach; ?>
+            </div>
+          </div>
         <?php endif; ?>
       </div>
 
