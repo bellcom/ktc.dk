@@ -3483,6 +3483,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   /* Felt: Indhold: Banner 1 */
   $handler->display->display_options['fields']['field_bannere']['id'] = 'field_bannere';
   $handler->display->display_options['fields']['field_bannere']['table'] = 'field_data_field_bannere';
@@ -3494,6 +3495,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_bannere']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_bannere']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_bannere']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bannere']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_bannere']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_bannere']['settings'] = array(
     'image_style' => 'magazine_teaser_banner',
@@ -3511,6 +3513,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['empty'] = '[field_bannere]';
+  $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_banner_1_tekst_og_link']['type'] = 'link_plain';
