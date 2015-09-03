@@ -43,7 +43,7 @@ function ktc_hearing_menu() {
 
   $items['node/%node/no_response'] = array(
     'type' => MENU_LOCAL_TASK,
-    'title' => 'Unlad at svare',
+    'title' => 'Undlad at svare',
     'page callback' => 'ktc_hearing_no_response',
     'page arguments' => array(1),
     'access callback' => 'ktc_hearing_access',
