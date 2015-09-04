@@ -1653,12 +1653,24 @@ function _ktc_hearing_user_answer_date($node, $role) {
   // Attendees have the normal deadline.
   if (key($role) == 'field_attendees') {
     if ($field = field_get_items('node', $node, 'field_attendee_deadlines')) {
-      return $field[0]['value'];
+      $formatted = field_view_value('node', $node, 'field_attendee_deadlines', $field[0], array(
+        'settings' => array(
+          'format_type' => 'medium'
+        )
+      ));
+
+      return $formatted['#markup'];
     }
   }
 
   // Chairman and foreman have other deadlines.
   if ($field = field_get_items('node', $node, 'field_enrollment_deadlines')) {
-    return $field[0]['value'];
+    $formatted = field_view_value('node', $node, 'field_enrollment_deadlines', $field[0], array(
+      'settings' => array(
+        'format_type' => 'medium'
+      )
+    ));
+
+    return $formatted['#markup'];
   }
 }
