@@ -33,7 +33,7 @@ global $user;
     <div class="container">
       <div class="row">
 
-        <div class="col-xs-6">
+        <div class="col-xs-6 col-md-4">
           <?php if ($page['logo']): ?>
             <!-- Begin - logo -->
             <div class="ktc-header-top-bar-logo">
@@ -52,11 +52,11 @@ global $user;
           <?php endif; ?>
         </div>
 
-        <div class="col-xs-6 text-right">
+        <div class="col-xs-6 col-md-8 text-right">
           <div class="row">
 
             <?php if ($logged_in): ?>
-              <div class="col-xs-12 col-md-8">
+              <div class="col-xs-12 col-md-9">
                 <!-- Begin - user display -->
                 <ul class="ktc-header-top-bar-list ktc-header-top-bar-user-display">
                   <li>
@@ -71,7 +71,7 @@ global $user;
             <?php endif; ?>
 
             <?php if ($logged_in): ?>
-              <div class="col-xs-12 col-md-4">
+              <div class="col-xs-12 col-md-3">
                 <!-- Begin - navigation -->
                 <ul class="ktc-header-top-bar-list ktc-header-top-bar-navigation">
 
