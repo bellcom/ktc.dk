@@ -489,29 +489,6 @@ function ktc_hearing_default_page_manager_handlers() {
     $display->content['new-a4ae3b9f-a87d-4fdc-9bce-752032213029'] = $pane;
     $display->panels['center'][8] = 'new-a4ae3b9f-a87d-4fdc-9bce-752032213029';
     $pane = new stdClass();
-    $pane->pid = 'new-91f87405-906a-4cb3-83be-6e61a89baa6f';
-    $pane->panel = 'center';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'haering_answers-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 9;
-    $pane->locks = array();
-    $pane->uuid = '91f87405-906a-4cb3-83be-6e61a89baa6f';
-    $display->content['new-91f87405-906a-4cb3-83be-6e61a89baa6f'] = $pane;
-    $display->panels['center'][9] = 'new-91f87405-906a-4cb3-83be-6e61a89baa6f';
-    $pane = new stdClass();
     $pane->pid = 'new-a82904d3-c87a-4a39-9487-c0d39d865f14';
     $pane->panel = 'left';
     $pane->type = 'entity_field';
