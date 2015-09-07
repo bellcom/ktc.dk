@@ -39,9 +39,11 @@ global $base_url;
         <!-- End - body -->
       <?php endif; ?>
 
-      <div class="ktc-call-to-action-button">
-        <a href="<?php print $base_url . $node_url; ?>" class="btn btn-default ktc-call-to-action-button"><?php print t('Meld dig ind/ud'); ?></a>
-      </div>
+      <?php if(user_is_logged_in() and $group_is_open == 0): ?>
+        <div class="ktc-call-to-action-button">
+          <a href="<?php print $base_url . $node_url; ?>" class="btn btn-default ktc-call-to-action-button"><?php print t('Meld dig ind/ud'); ?></a>
+        </div>
+      <?php endif ?>
 
       <?php if ($user_object): ?>
         <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list3')); ?>

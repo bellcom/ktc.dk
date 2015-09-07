@@ -377,6 +377,12 @@ function ktc_preprocess_node(&$vars) {
     $vars['statistics_count'] = $stats['totalcount'];
   }
 
+  if ($vars['type'] == 'group') {
+    if ($field = field_get_items('node', $vars['node'], 'field_open_group')) {
+      $vars['group_is_open'] = $field[0]['value'];
+    }
+  }
+
   // Added arrangement_day and arrangement_month for node--arrangement.tpl.php.
   if ($vars['type'] == 'arrangement') {
 
