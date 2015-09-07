@@ -70,7 +70,6 @@ function ktc_design_context_default_contexts() {
         1898 => 1898,
         1902 => 1902,
         20549 => 20549,
-        23192 => 23192,
       ),
       'options' => array(
         'node_form' => '1',
