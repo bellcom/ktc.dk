@@ -1272,6 +1272,64 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $display->content['new-9e1c3bd9-8f9c-487b-aa59-4a1bd8c0676a'] = $pane;
     $display->panels['left'][2] = 'new-9e1c3bd9-8f9c-487b-aa59-4a1bd8c0676a';
     $pane = new stdClass();
+    $pane->pid = 'new-04e5c085-dd37-4840-b46d-39d2424270cf';
+    $pane->panel = 'left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'magazine_banners-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-full-width-image ktc-margin-bottom',
+      'template_suggestion' => 'nohtml',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '04e5c085-dd37-4840-b46d-39d2424270cf';
+    $display->content['new-04e5c085-dd37-4840-b46d-39d2424270cf'] = $pane;
+    $display->panels['left'][3] = 'new-04e5c085-dd37-4840-b46d-39d2424270cf';
+    $pane = new stdClass();
+    $pane->pid = 'new-59929938-45ce-48bb-8a1d-533362fd960b';
+    $pane->panel = 'left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'magazine_banners-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-full-width-image',
+      'template_suggestion' => 'nohtml',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '59929938-45ce-48bb-8a1d-533362fd960b';
+    $display->content['new-59929938-45ce-48bb-8a1d-533362fd960b'] = $pane;
+    $display->panels['left'][4] = 'new-59929938-45ce-48bb-8a1d-533362fd960b';
+    $pane = new stdClass();
     $pane->pid = 'new-27f6d959-0030-4236-863b-6b9d7376baad';
     $pane->panel = 'right';
     $pane->type = 'page_tabs';
@@ -1371,64 +1429,6 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->uuid = '41268f7f-b46e-4f95-bb96-334dd4ad7e18';
     $display->content['new-41268f7f-b46e-4f95-bb96-334dd4ad7e18'] = $pane;
     $display->panels['right'][2] = 'new-41268f7f-b46e-4f95-bb96-334dd4ad7e18';
-    $pane = new stdClass();
-    $pane->pid = 'new-04e5c085-dd37-4840-b46d-39d2424270cf';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'magazine_banners-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'ktc-full-width-image ktc-margin-bottom',
-      'template_suggestion' => 'nohtml',
-    );
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '04e5c085-dd37-4840-b46d-39d2424270cf';
-    $display->content['new-04e5c085-dd37-4840-b46d-39d2424270cf'] = $pane;
-    $display->panels['right'][3] = 'new-04e5c085-dd37-4840-b46d-39d2424270cf';
-    $pane = new stdClass();
-    $pane->pid = 'new-59929938-45ce-48bb-8a1d-533362fd960b';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'magazine_banners-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'ktc-full-width-image',
-      'template_suggestion' => 'nohtml',
-    );
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '59929938-45ce-48bb-8a1d-533362fd960b';
-    $display->content['new-59929938-45ce-48bb-8a1d-533362fd960b'] = $pane;
-    $display->panels['right'][4] = 'new-59929938-45ce-48bb-8a1d-533362fd960b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
