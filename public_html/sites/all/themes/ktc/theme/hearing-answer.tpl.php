@@ -68,7 +68,7 @@ $response_responses = array();
         <?php endif ?>
 
         <?php if (count($response_responses)): ?>
-          <div class="ktc-aside">
+          <div class="ktc-aside ktc-aside-green">
             <div class="ktc-aside-heading">
               <h3 class="ktc-aside-title"><?php print t('Har afgivet svar'); ?></h3>
             </div>
@@ -81,7 +81,7 @@ $response_responses = array();
         <?php endif ?>
 
         <?php if (count($response_no_responses)): ?>
-          <div class="ktc-aside">
+          <div class="ktc-aside ktc-aside-green">
             <div class="ktc-aside-heading">
               <h3 class="ktc-aside-title"><?php print t('Svarer ikke'); ?></h3>
             </div>
