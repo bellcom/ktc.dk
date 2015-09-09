@@ -40,9 +40,35 @@ function ktc_netvaerk_menu() {
     'access callback'   => true,
     'page callback'     => 'ktc_netvaek_get_emner',
     'page arguments' => array(2, 3, 4),
-    'delivery callback' => 'drupal_json_output' 
+    'delivery callback' => 'drupal_json_output'
   );
+  $items['node/%node/administer'] = array(
+    'title' => 'Administrer medlemmer',
+    'access arguments' => array(1),
+    'access callback' => '_ktc_netvaerk_check_local_task',
+    'page callback' => 'ktc_netvaek_tabs_administer',
+    'page arguments' => array(1),
+    'type' => MENU_LOCAL_TASK,
+  );
+
   return $items;
+}
+
+/**
+ * @param $node
+ */
+function ktc_netvaek_tabs_administer($node) {
+  return drupal_goto('node/' . $node->nid);
+}
+
+/**
+ * @param $node
+ *
+ * @return bool
+ */
+function _ktc_netvaerk_check_local_task($node) {
+  return true;
+  return ($node->type == 'group') and user_access('your task permission');
 }
 
 function ktc_netvaek_get_emner($content_type, $network_type, $region) {
