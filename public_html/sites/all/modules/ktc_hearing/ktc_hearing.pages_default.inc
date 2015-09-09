@@ -588,12 +588,12 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'entityreference_label',
+      'formatter' => 'entityreference_entity_view',
       'delta_limit' => '0',
       'delta_offset' => '0',
       'delta_reversed' => 0,
       'formatter_settings' => array(
-        'view_mode' => 'list2',
+        'view_mode' => 'list3',
         'links' => 1,
         'link' => 1,
       ),
