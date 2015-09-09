@@ -761,6 +761,7 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['filters']['field_is_no_answer_value']['id'] = 'field_is_no_answer_value';
   $handler->display->display_options['filters']['field_is_no_answer_value']['table'] = 'field_data_field_is_no_answer';
   $handler->display->display_options['filters']['field_is_no_answer_value']['field'] = 'field_is_no_answer_value';
+  $handler->display->display_options['filters']['field_is_no_answer_value']['operator'] = 'not';
   $handler->display->display_options['filters']['field_is_no_answer_value']['value'] = array(
     1 => '1',
   );
