@@ -58,10 +58,10 @@ $response_responses = array();
             <?php
             // Has responded
             if ($response['field_is_no_answer']['#items'][0]['value'] == 1) {
-              $response_responses[] = $response;
+              $response_no_responses[] = $response;
             }
             else {
-              $response_no_responses[] = $response;
+              $response_responses[] = $response;
             }
             ?>
           <?php endforeach; ?>
