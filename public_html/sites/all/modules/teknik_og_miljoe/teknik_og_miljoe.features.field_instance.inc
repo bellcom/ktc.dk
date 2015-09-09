@@ -2775,7 +2775,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_short',
     'label' => 'Manchet',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -2809,6 +2809,11 @@ function teknik_og_miljoe_field_default_field_instances() {
       ),
       'custom_add_another' => '',
       'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
