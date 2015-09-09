@@ -390,7 +390,11 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
     $pane->position = 6;
     $pane->locks = array();
