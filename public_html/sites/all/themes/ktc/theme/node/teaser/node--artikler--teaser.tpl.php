@@ -32,6 +32,14 @@ global $base_url;
           href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a>
       </h4>
 
+      <?php if (isset($content['field_artikeltype'])): ?>
+        <!-- Begin - article type -->
+        <div class="ktc-teaser-article-type">
+          <?php print render($content['field_artikeltype']); ?>
+        </div>
+        <!-- End - article type -->
+      <?php endif; ?>
+
       <?php if (isset($published_at)): ?>
         <p class="ktc-date"><?php print $published_at; ?></p>
       <?php endif; ?>
