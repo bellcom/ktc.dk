@@ -712,7 +712,7 @@ function ktc_menu_local_task($variables) {
     return '';
   }
   if ($link['path'] == 'node/%/administer') {
-    $link['localized_options']['attributes']['class'][] = 'og-members-all';
+    $link['localized_options']['attributes']['class'][] = 'og-members-show-modal';
   }
 
   if (!empty($variables['element']['#active'])) {

@@ -53,7 +53,7 @@
             <?php endif ?>
 
             <?php if (isset($personal['full_name'])): ?>
-              <p class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></p>
+                <p class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></p>
             <?php endif ?>
 
             <?php if (isset($work['company'])): ?>
@@ -68,25 +68,23 @@
                 <a href="https://twitter.com/<?php print $personal['twitter']; ?>" target="_blank" class="ktc-user-profile-content-linked_in"><?php print $personal['twitter']; ?></a>
             <?php endif ?>
 
+            <?php if (isset($personal['education'])): ?>
+                <br>
+                <p class="ktc-font-color"><strong>Uddannelse og kurser:</strong></p>
+                <p class="ktc-user-profile-content-education"><?php print $personal['education']; ?></p>
+            <?php endif ?>
+
+            <?php if (isset($personal['special_skills'])): ?>
+                <br>
+                <p class="ktc-font-color"><strong>Andre kompetencer:</strong></p>
+                <p class="ktc-user-profile-content-special-skills"><?php print $personal['special_skills']; ?></p>
+            <?php endif ?>
+
         </div>
         <!-- End - profile content -->
 
     </div>
     <!-- End - wrapper -->
-
-    <?php if (isset($personal['education'])): ?>
-        <div class="ktc-well">
-            <p><strong>Uddannelse og kurser:</strong></p>
-            <p class="ktc-user-profile-content-education"><?php print $personal['education']; ?></p>
-        </div>
-    <?php endif ?>
-
-    <?php if (isset($personal['special_skills'])): ?>
-        <div class="ktc-well">
-            <p><strong>Andre kompetencer:</strong></p>
-            <p class="ktc-user-profile-content-special-skills"><?php print $personal['special_skills']; ?></p>
-        </div>
-    <?php endif ?>
 
 </section>
 <!-- End - user profile - list 7 -->

@@ -68,7 +68,8 @@ function ktc_netvaek_tabs_administer($node) {
  * @return bool
  */
 function _ktc_netvaerk_check_local_task($node) {
-  return ($node->type == 'group') and user_access('ktc administer member tab');
+
+  return ($node->type == 'group' and (og_user_access('node', $node->nid, 'administer group') || og_user_access('node', $node->nid, 'invite any user')));
 }
 
 function ktc_netvaek_get_emner($content_type, $network_type, $region) {
@@ -788,10 +789,6 @@ function ktc_netvaerk_permission() {
     'ktc access group tabs' => array(
       'title' => t('Adgang til ekstra tabs på node'),
       'description' => t('Giver bl.a. adgang til "Netværk" på en gruppe'),
-    ),
-    'ktc administer member tab' => array(
-      'title' => t('Vis administrer medlemmer tab på netværkssider'),
-      'description' => t('Giver brugeren mulighed for at se knappen'),
     ),
   );
 }
