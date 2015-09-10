@@ -124,12 +124,13 @@
     });
 
     // Show all members link.
-    $('.og-members-all a').click(function() {
+    $('.og-members-all a').on('click', function(event) {
+        event.preventDefault();
       $('#section-page-with-filter .pane-content .view').hide();
       $('.ktc-group-members').removeClass('hide');
       return false;
     });
-    $('.og-members-show-modal a').click(function() {
+    $('.og-members-show-modal a, .og-members-show-modal').click(function() {
       $('#member-modal').modal();
       return false;
     });

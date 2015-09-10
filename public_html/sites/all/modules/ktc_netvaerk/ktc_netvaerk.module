@@ -49,6 +49,7 @@ function ktc_netvaerk_menu() {
     'page callback' => 'ktc_netvaek_tabs_administer',
     'page arguments' => array(1),
     'type' => MENU_LOCAL_TASK,
+    'options' => array('attributes' => array('class' => array('event-blog-link hidden'))),
   );
 
   return $items;
@@ -67,8 +68,8 @@ function ktc_netvaek_tabs_administer($node) {
  * @return bool
  */
 function _ktc_netvaerk_check_local_task($node) {
-  return true;
-  return ($node->type == 'group') and user_access('your task permission');
+
+  return ($node->type == 'group' and (og_user_access('node', $node->nid, 'administer group') || og_user_access('node', $node->nid, 'invite any user')));
 }
 
 function ktc_netvaek_get_emner($content_type, $network_type, $region) {
