@@ -711,6 +711,9 @@ function ktc_menu_local_task($variables) {
   if ($link['path'] == 'node/%/track' || $link['path'] == 'node/%/log') {
     return '';
   }
+  if ($link['path'] == 'node/%/administer') {
+    $link['localized_options']['attributes']['class'][] = 'og-members-all';
+  }
 
   if (!empty($variables['element']['#active'])) {
     // Add text to indicate active tab for non-visual users.

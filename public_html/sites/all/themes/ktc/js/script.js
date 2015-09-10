@@ -124,7 +124,8 @@
     });
 
     // Show all members link.
-    $('.og-members-all a').click(function() {
+    $('.og-members-all a, .og-members-all').on('click', function(event) {
+        event.preventDefault();
       $('#section-page-with-filter .pane-content .view').hide();
       $('.ktc-group-members').removeClass('hide');
       return false;
