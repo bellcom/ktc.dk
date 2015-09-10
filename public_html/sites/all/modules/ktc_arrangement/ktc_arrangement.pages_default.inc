@@ -1008,6 +1008,32 @@ function ktc_arrangement_default_page_manager_pages() {
     $pane->uuid = 'bd58c8fc-f680-47a1-bbab-14eccbc5d443';
     $display->content['new-bd58c8fc-f680-47a1-bbab-14eccbc5d443'] = $pane;
     $display->panels['right'][2] = 'new-bd58c8fc-f680-47a1-bbab-14eccbc5d443';
+    $pane = new stdClass();
+    $pane->pid = 'new-7b68d7d6-a644-42d3-a13d-2b61b1070214';
+    $pane->panel = 'right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Kalendervisning',
+      'body' => '<p><a href="/calendar-node-field-arrangement-date/month/" title="Se arrangementer i kalendervisning"><img alt="Månedsvisning" class="img-responsive" src="http://ktc.bellcom.dk/sites/default/files/uploads/public/maanesvisning-link.png" /></a></p>
+',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '7b68d7d6-a644-42d3-a13d-2b61b1070214';
+    $display->content['new-7b68d7d6-a644-42d3-a13d-2b61b1070214'] = $pane;
+    $display->panels['right'][3] = 'new-7b68d7d6-a644-42d3-a13d-2b61b1070214';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
