@@ -56,9 +56,9 @@ global $user;
           <div class="row">
 
             <?php if ($logged_in): ?>
-              <div class="col-xs-12 col-md-9">
+              <div class="col-xs-12 col-md-9 hidden-xs hidden-sm">
                 <!-- Begin - user display -->
-                <ul class="ktc-header-top-bar-list ktc-header-top-bar-user-display">
+                <ul class="ktc-header-top-bar-list pull-right ktc-header-top-bar-user-display">
                   <li>
                     <?php print $profile = theme('user_profile', array(
                       'account'          => $user_object,
@@ -73,7 +73,7 @@ global $user;
             <?php if ($logged_in): ?>
               <div class="col-xs-12 col-md-3">
                 <!-- Begin - navigation -->
-                <ul class="ktc-header-top-bar-list ktc-header-top-bar-navigation">
+                <ul class="ktc-header-top-bar-list pull-right ktc-header-top-bar-navigation">
 
                   <!-- Begin - toggle -->
                   <li>
@@ -106,7 +106,7 @@ global $user;
             <?php if (!$logged_in): ?>
               <div class="col-xs-12">
                 <!-- Begin - user login -->
-                <ul class="ktc-header-top-bar-list ktc-header-top-bar-user-login">
+                <ul class="ktc-header-top-bar-list pull-right ktc-header-top-bar-user-login">
                   <li>
                     <?php print $user_login; ?>
                   </li>
@@ -125,6 +125,23 @@ global $user;
             <?php endif; ?>
 
           </div>
+        </div>
+      </div>
+
+      <div class="row hidden-md hidden-lg">
+        <div class="col-xs-12 ">
+          <?php if ($logged_in): ?>
+            <!-- Begin - user display -->
+            <ul class="ktc-header-top-bar-list ktc-header-top-bar-user-display xs-only">
+              <li>
+                <?php print $profile = theme('user_profile', array(
+                  'account'          => $user_object,
+                  'theme_suggestion' => 'header'
+                )); ?>
+              </li>
+            </ul>
+            <!-- End - user display -->
+          <?php endif; ?>
         </div>
       </div>
     </div>

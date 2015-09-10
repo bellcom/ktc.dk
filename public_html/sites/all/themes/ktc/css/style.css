@@ -10617,7 +10617,6 @@ fieldset[disabled] .field-type-image .button {
   height: auto;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list {
-  float: right !important;
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
@@ -10631,6 +10630,10 @@ fieldset[disabled] .field-type-image .button {
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list > li.first {
   padding-left: 0;
+}
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.xs-only {
+  margin-top: 25px;
+  margin-bottom: 5px;
 }
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list > li {
   height: inherit;
@@ -13638,6 +13641,7 @@ h6 + .ktc-date {
   margin-top: 0;
   padding-top: 0;
   margin-bottom: 3px;
+  font-size: 14px;
 }
 .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-job-title {
   font-size: 10px;
