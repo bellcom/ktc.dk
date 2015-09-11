@@ -8078,8 +8078,7 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-12 .pane-ktc-sign
 .page-taxonomy .main-container {
   background-color: #fff;
 }
-.region-content .taxonomy-term-description a,
-.region-content .field-name-body a {
+.region-content .taxonomy-term-description a {
   font-weight: 400;
   color: #2dace9;
 }
