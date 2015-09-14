@@ -315,14 +315,17 @@ function ktc_sectionpage_block_view($delta = '') {
  */
 function _ktc_section_block_hearing_content($type = 'hearing', $f1 = '', $f2 = '', $f3 = '', $f4 = 'all', $f5 = 'all', $is_empty = '') {
   global $user;
+
   $term_type = _ktc_sectionpage_filter_helper($f1);
   $emner = _ktc_sectionpage_filter_helper($f2);
-  $uid = ($f3 == 'mine') ? $user->uid : 'all';
+
+  $my_hearings = ($f3 == 'mine') ? implode('+', _ktc_hearing_get_hearing_nids_by_user_id($user)) : 'all';
+
   $status = (is_numeric($f4)) ? $f4 : 'all';
   $nids = _ktc_sectionpage_years_filter_helper($f5);
   $view = views_get_view('indhold_m_filter');
   $view->set_display('panel_pane_3');
-  $view->set_arguments(array('all', $nids, $uid, $status, $term_type, $emner));
+  $view->set_arguments(array('all', $nids, $my_hearings, $status, $term_type, $emner));
   $view->pre_execute();
   $view->execute();
   if (count($view->result) == 0) {
@@ -331,7 +334,6 @@ function _ktc_section_block_hearing_content($type = 'hearing', $f1 = '', $f2 = '
   else {
     return $view->render('panel_pane_3');
   }
-
 }
 
 /**
