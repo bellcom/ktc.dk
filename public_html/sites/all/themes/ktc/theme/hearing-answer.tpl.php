@@ -29,6 +29,7 @@ $response_responses = array();
       </div>
     </div>
 
+    <?php if($block_status_form['content']): ?>
     <div class="ktc-aside ktc-aside-action">
       <div class="ktc-aside-heading">
         <h3 class="ktc-aside-title">
@@ -39,6 +40,7 @@ $response_responses = array();
         <?php print render($block_status_form['content']); ?>
       </div>
     </div>
+    <?php endif ?>
   </div>
 </div>
 
