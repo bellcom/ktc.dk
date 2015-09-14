@@ -5775,6 +5775,266 @@ Alle
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: Bruger: Firma (field_account) */
+  $handler->display->display_options['relationships']['field_account_tid']['id'] = 'field_account_tid';
+  $handler->display->display_options['relationships']['field_account_tid']['table'] = 'field_data_field_account';
+  $handler->display->display_options['relationships']['field_account_tid']['field'] = 'field_account_tid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Bruger: Uid */
+  $handler->display->display_options['fields']['uid_1']['id'] = 'uid_1';
+  $handler->display->display_options['fields']['uid_1']['table'] = 'users';
+  $handler->display->display_options['fields']['uid_1']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid_1']['link_to_user'] = FALSE;
+  /* Felt: Bruger: Navn */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  /* Felt: Felt: Efternavn */
+  $handler->display->display_options['fields']['field_efternavn']['id'] = 'field_efternavn';
+  $handler->display->display_options['fields']['field_efternavn']['table'] = 'field_data_field_efternavn';
+  $handler->display->display_options['fields']['field_efternavn']['field'] = 'field_efternavn';
+  $handler->display->display_options['fields']['field_efternavn']['label'] = '';
+  $handler->display->display_options['fields']['field_efternavn']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_efternavn']['element_label_colon'] = FALSE;
+  /* Felt: Felt: Fornavn + mellemnavn */
+  $handler->display->display_options['fields']['field_navn']['id'] = 'field_navn';
+  $handler->display->display_options['fields']['field_navn']['table'] = 'field_data_field_navn';
+  $handler->display->display_options['fields']['field_navn']['field'] = 'field_navn';
+  $handler->display->display_options['fields']['field_navn']['label'] = 'Navn';
+  $handler->display->display_options['fields']['field_navn']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_navn']['alter']['text'] = '[field_navn] [field_efternavn]';
+  $handler->display->display_options['fields']['field_navn']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_navn']['alter']['path'] = 'user/[uid_1]';
+  $handler->display->display_options['fields']['field_navn']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_navn']['hide_alter_empty'] = FALSE;
+  /* Felt: Felt: Stilling/titel */
+  $handler->display->display_options['fields']['field_jobposition']['id'] = 'field_jobposition';
+  $handler->display->display_options['fields']['field_jobposition']['table'] = 'field_data_field_jobposition';
+  $handler->display->display_options['fields']['field_jobposition']['field'] = 'field_jobposition';
+  /* Felt: Bruger: Kommune */
+  $handler->display->display_options['fields']['field_kommune']['id'] = 'field_kommune';
+  $handler->display->display_options['fields']['field_kommune']['table'] = 'field_data_field_kommune';
+  $handler->display->display_options['fields']['field_kommune']['field'] = 'field_kommune';
+  $handler->display->display_options['fields']['field_kommune']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_kommune']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Bruger: Firma */
+  $handler->display->display_options['fields']['field_account']['id'] = 'field_account';
+  $handler->display->display_options['fields']['field_account']['table'] = 'field_data_field_account';
+  $handler->display->display_options['fields']['field_account']['field'] = 'field_account';
+  $handler->display->display_options['fields']['field_account']['empty'] = '[field_kommune]';
+  $handler->display->display_options['fields']['field_account']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
+  /* Felt: Bruger: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
+  /* Felt: Bruger: Mobil */
+  $handler->display->display_options['fields']['field_cell']['id'] = 'field_cell';
+  $handler->display->display_options['fields']['field_cell']['table'] = 'field_data_field_cell';
+  $handler->display->display_options['fields']['field_cell']['field'] = 'field_cell';
+  $handler->display->display_options['fields']['field_cell']['exclude'] = TRUE;
+  /* Felt: Felt: Direkte telefon */
+  $handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
+  $handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
+  $handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
+  $handler->display->display_options['fields']['field_directe_telefon']['label'] = 'Telefon / mobil';
+  $handler->display->display_options['fields']['field_directe_telefon']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_directe_telefon']['alter']['text'] = '<a href="tel:[field_directe_telefon]" title="Ring til direkte telefon">[field_directe_telefon]</a><a href="tel:[field_cell]" class="andcell" title="Ring til mobil"> [field_cell]</a>';
+  $handler->display->display_options['fields']['field_directe_telefon']['empty'] = '<a href="tel:[field_cell]" class="onlycell" title="Ring til mobil"> [field_cell]</a>';
+  /* Felt: Bruger: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = 'Handlinger';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['uid']['alter']['text'] = '<a href="/user/[uid]/edit">rediger</a>';
+  /* Felt: Bruger: Group membership */
+  $handler->display->display_options['fields']['og_user_node']['id'] = 'og_user_node';
+  $handler->display->display_options['fields']['og_user_node']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_user_node']['field'] = 'og_user_node';
+  $handler->display->display_options['fields']['og_user_node']['label'] = 'Netværk';
+  $handler->display->display_options['fields']['og_user_node']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['og_user_node']['delta_limit'] = '0';
+  $handler->display->display_options['fields']['og_user_node']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['og_user_node']['multi_type'] = 'ul';
+  /* Felt: Felt: Faglige emner */
+  $handler->display->display_options['fields']['field_topics']['id'] = 'field_topics';
+  $handler->display->display_options['fields']['field_topics']['table'] = 'field_data_field_topics';
+  $handler->display->display_options['fields']['field_topics']['field'] = 'field_topics';
+  $handler->display->display_options['fields']['field_topics']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_topics']['type'] = 'hs_taxonomy_term_reference_last_text_only';
+  $handler->display->display_options['fields']['field_topics']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_topics']['multi_type'] = 'ul';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sorteringskriterie: Felt: Fornavn + mellemnavn (field_navn) */
+  $handler->display->display_options['sorts']['field_navn_value']['id'] = 'field_navn_value';
+  $handler->display->display_options['sorts']['field_navn_value']['table'] = 'field_data_field_navn';
+  $handler->display->display_options['sorts']['field_navn_value']['field'] = 'field_navn_value';
+  /* Sorteringskriterie: Bruger: E-mail */
+  $handler->display->display_options['sorts']['mail']['id'] = 'mail';
+  $handler->display->display_options['sorts']['mail']['table'] = 'users';
+  $handler->display->display_options['sorts']['mail']['field'] = 'mail';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Bruger: Aktiv */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Aktiv';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    6 => 0,
+    5 => 0,
+    7 => 0,
+  );
+  /* Filterkriterie: Bruger: Navn (rå data) */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'users';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['name']['group'] = 1;
+  $handler->display->display_options['filters']['name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Navn';
+  $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    17 => 0,
+    15 => 0,
+    16 => 0,
+    14 => 0,
+    18 => 0,
+    10 => 0,
+    9 => 0,
+    5 => 0,
+    3 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+  );
+  /* Filterkriterie: Bruger: Kommune (field_kommune) */
+  $handler->display->display_options['filters']['field_kommune_tid']['id'] = 'field_kommune_tid';
+  $handler->display->display_options['filters']['field_kommune_tid']['table'] = 'field_data_field_kommune';
+  $handler->display->display_options['filters']['field_kommune_tid']['field'] = 'field_kommune_tid';
+  $handler->display->display_options['filters']['field_kommune_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_kommune_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_kommune_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_kommune_tid']['expose']['operator_id'] = 'field_kommune_tid_op';
+  $handler->display->display_options['filters']['field_kommune_tid']['expose']['label'] = 'Kommune';
+  $handler->display->display_options['filters']['field_kommune_tid']['expose']['operator'] = 'field_kommune_tid_op';
+  $handler->display->display_options['filters']['field_kommune_tid']['expose']['identifier'] = 'field_kommune_tid';
+  $handler->display->display_options['filters']['field_kommune_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_kommune_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_kommune_tid']['vocabulary'] = 'kommuner';
+  /* Filterkriterie: Bruger: E-mail */
+  $handler->display->display_options['filters']['mail']['id'] = 'mail';
+  $handler->display->display_options['filters']['mail']['table'] = 'users';
+  $handler->display->display_options['filters']['mail']['field'] = 'mail';
+  $handler->display->display_options['filters']['mail']['operator'] = 'contains';
+  $handler->display->display_options['filters']['mail']['group'] = 1;
+  $handler->display->display_options['filters']['mail']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['mail']['expose']['operator_id'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['label'] = 'E-mail';
+  $handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
+  /* Filterkriterie: Bruger: Roller */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['operator'] = 'not';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    5 => '5',
+    3 => '3',
+  );
+  $handler->display->display_options['filters']['rid']['group'] = 1;
+  $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Roller';
+  $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
+  $handler->display->display_options['filters']['rid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['rid']['reduce_duplicates'] = TRUE;
+  /* Filterkriterie: Bruger: Skjult i lister (field_hidden) */
+  $handler->display->display_options['filters']['field_hidden_value']['id'] = 'field_hidden_value';
+  $handler->display->display_options['filters']['field_hidden_value']['table'] = 'field_data_field_hidden';
+  $handler->display->display_options['filters']['field_hidden_value']['field'] = 'field_hidden_value';
+  $handler->display->display_options['filters']['field_hidden_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_hidden_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_hidden_value']['group'] = 1;
+  /* Filterkriterie: Felt: Fornavn + mellemnavn (field_navn) */
+  $handler->display->display_options['filters']['field_navn_value_1']['id'] = 'field_navn_value_1';
+  $handler->display->display_options['filters']['field_navn_value_1']['table'] = 'field_data_field_navn';
+  $handler->display->display_options['filters']['field_navn_value_1']['field'] = 'field_navn_value';
+  $handler->display->display_options['filters']['field_navn_value_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_navn_value_1']['group'] = 1;
+  $handler->display->display_options['path'] = 'search/brugersoegning';
+  $handler->display->display_options['menu']['title'] = 'Personsøgning';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: FE */
+  $handler = $view->new_display('page', 'FE', 'page_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Global: Kombinér felter filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
+  $handler->display->display_options['filters']['combine']['group'] = 1;
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Søg';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    6 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'field_navn' => 'field_navn',
+    'field_kommune' => 'field_kommune',
+    'mail' => 'mail',
+  );
+  $handler->display->display_options['path'] = 'user-search';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Admin Personsøgning';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Bruger: Uid */
   $handler->display->display_options['fields']['uid_1']['id'] = 'uid_1';
@@ -6011,40 +6271,10 @@ Alle
   $handler->display->display_options['filters']['field_navn_value_1']['field'] = 'field_navn_value';
   $handler->display->display_options['filters']['field_navn_value_1']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_navn_value_1']['group'] = 1;
-  $handler->display->display_options['path'] = 'search/brugersoegning';
+  $handler->display->display_options['path'] = 'admin/brugersoegning';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Personsøgning';
   $handler->display->display_options['menu']['name'] = 'management';
-
-  /* Display: FE */
-  $handler = $view->new_display('page', 'FE', 'page_1');
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Global: Kombinér felter filter */
-  $handler->display->display_options['filters']['combine']['id'] = 'combine';
-  $handler->display->display_options['filters']['combine']['table'] = 'views';
-  $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
-  $handler->display->display_options['filters']['combine']['group'] = 1;
-  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Søg';
-  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
-  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    6 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['combine']['fields'] = array(
-    'field_navn' => 'field_navn',
-    'field_kommune' => 'field_kommune',
-    'mail' => 'mail',
-  );
-  $handler->display->display_options['path'] = 'user-search';
   $translatables['user_search'] = array(
     t('Master'),
     t('Personsøgning'),
@@ -6124,6 +6354,7 @@ Alle
     t('Faglige emner'),
     t('FE'),
     t('Søg'),
+    t('Admin Personsøgning'),
   );
   $export['user_search'] = $view;
 
