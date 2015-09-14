@@ -702,16 +702,17 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
-  /* Kontekstuelt filter: Indhold: Forfatter uid */
-  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['table'] = 'node';
-  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['arguments']['nid_1']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid_1']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid_1']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid_1']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid_1']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid_1']['break_phrase'] = TRUE;
   /* Kontekstuelt filter: Indhold: Status (field_status) */
   $handler->display->display_options['arguments']['field_status_tid']['id'] = 'field_status_tid';
   $handler->display->display_options['arguments']['field_status_tid']['table'] = 'field_data_field_status';

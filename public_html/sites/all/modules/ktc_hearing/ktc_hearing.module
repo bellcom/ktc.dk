@@ -371,6 +371,32 @@ function ktc_hearing_block_view($delta = '') {
 }
 
 /**
+ * @param bool|FALSE $uid
+ *
+ * @return array
+ */
+function _ktc_hearing_get_hearing_nids_by_user_id($user) {
+  $nids = array();
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'hearing');
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+
+    foreach (node_load_multiple(array_keys($result['node'])) as $hearing) {
+
+      if (ktc_hearing_user_has_access($hearing, $user)) {
+        $nids[] = $hearing->nid;
+      }
+    }
+  }
+
+  return $nids;
+}
+
+/**
  * Implements views_pre_view().
  */
 function ktc_hearing_views_pre_view(&$view, &$display_id, &$args) {
