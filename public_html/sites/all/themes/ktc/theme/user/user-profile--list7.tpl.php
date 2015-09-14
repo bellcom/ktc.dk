@@ -60,6 +60,10 @@
                 <p class="ktc-user-profile-content-employer"><?php print $work['company']; ?></p>
             <?php endif ?>
 
+            <?php if (isset($work['department'])): ?>
+                <p class="ktc-user-profile-content-work-department"><?php print $work['department']; ?></p>
+            <?php endif ?>
+
             <?php if (isset($personal['linked_in'])): ?>
                 <a href="<?php print $personal['linked_in']; ?>" target="_blank" class="ktc-user-profile-content-social-icon ktc-user-profile-content-linked_in"></a>
             <?php endif ?>
@@ -69,6 +73,7 @@
             <?php endif ?>
 
             <?php if (isset($personal['education'])): ?>
+                <br>
                 <br>
                 <p class="ktc-font-color"><strong>Uddannelse og kurser:</strong></p>
                 <p class="ktc-user-profile-content-education"><?php print $personal['education']; ?></p>
