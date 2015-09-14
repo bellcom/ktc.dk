@@ -61,11 +61,11 @@
             <?php endif ?>
 
             <?php if (isset($personal['linked_in'])): ?>
-                <a href="<?php print $personal['linked_in']; ?>" target="_blank" class="ktc-user-profile-content-linked_in"><?php print $personal['linked_in']; ?></a>
+                <a href="<?php print $personal['linked_in']; ?>" target="_blank" class="ktc-user-profile-content-social-icon ktc-user-profile-content-linked_in"></a>
             <?php endif ?>
 
             <?php if (isset($personal['twitter'])): ?>
-                <a href="https://twitter.com/<?php print $personal['twitter']; ?>" target="_blank" class="ktc-user-profile-content-linked_in"><?php print $personal['twitter']; ?></a>
+                <a href="https://twitter.com/<?php print $personal['twitter']; ?>" target="_blank" class="ktc-user-profile-content-social-icon ktc-user-profile-content-twitter"></a>
             <?php endif ?>
 
             <?php if (isset($personal['education'])): ?>
