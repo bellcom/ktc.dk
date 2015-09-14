@@ -501,9 +501,12 @@ function ktc_supplier_field_default_field_instances() {
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
-          'ktc_artikel_billede' => 0,
-          'ktc_std_billede' => 0,
-          'netvaerks_logo' => 'netvaerks_logo',
+          'indholdsside' => 0,
+          'ktc_content_image' => 0,
+          'ktc_profile_image_small' => 0,
+          'listevisning' => 0,
+          'listevisning_stor' => 0,
+          'teaservisning' => 0,
         ),
       ),
       'file_directory' => 'supplier_logo',
@@ -533,7 +536,7 @@ function ktc_supplier_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_1' => 0,
           'media_default--media_browser_2' => 0,
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'media_internet' => 0,
