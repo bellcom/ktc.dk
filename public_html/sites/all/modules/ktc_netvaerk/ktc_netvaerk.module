@@ -56,6 +56,48 @@ function ktc_netvaerk_menu() {
 }
 
 /**
+ * Implements hook_preprocess_node().
+ */
+function ktc_netvaerk_preprocess_node(&$variables) {
+  if ($variables['type'] == 'group') {
+    $nid = $variables['nid'];
+    $variables['subscribe_button'] = _ktc_netvaerk_get_subscribe_links($nid);
+  }
+}
+
+/**
+ * @param $nid
+ *
+ * @return string
+ */
+function _ktc_netvaerk_get_subscribe_links($nid) {
+  $button = '';
+  $link_class = 'btn btn-default';
+  $og_is_member = og_is_member('node', $nid);
+  $node = node_load($nid);
+//  xdebug_break();
+
+  // Check if the user is a member,
+  // print out subscrib/unsubscrib link.
+  if (og_user_access('node', $nid, 'unsubscribe') && $og_is_member) {
+    $button = l(t('Afmeld'), 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' => $link_class)));
+  }
+  if (!$og_is_member) {
+    $field = field_get_items('node', $node, 'field_open_group');
+    if (og_user_access('node', $nid, 'subscribe without approval')) {
+      $button = l(t('Tilmeld'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
+    }
+    else {
+      if (og_user_access('node', $nid, 'subscribe')) {
+        $button = l(t('Ansøg'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
+      }
+    }
+  }
+
+  return $button;
+}
+
+/**
  * @param $node
  */
 function ktc_netvaek_tabs_administer($node) {
@@ -792,7 +834,6 @@ function ktc_netvaerk_permission() {
     ),
   );
 }
-
 /**
  * Implements hook_menu_alter().
  */
@@ -804,13 +845,24 @@ function ktc_netvaerk_menu_alter(&$items) {
   $items['group/%/%/admin/people/add-user']['theme callback'] = 'ktc_netvaerk_get_default_theme';
 
   // Restrict access to certain node menu links.
-  $items['node/%/group']['access callback'] = 'user_access';
-  $items['node/%/group']['access arguments'] = array('ktc access group tabs');
+  $items['node/%/group']['access callback'] = '_ktc_netvaerk_determine_tab';
+  $items['node/%/group']['access arguments'] = array(1, 'ktc access group tabs');
   $items['node/%node/track']['access callback'] = 'user_access';
   $items['node/%node/track']['access arguments'] = array('ktc access group tabs');
   $items['node/%node/log']['access callback'] = 'user_access';
   $items['node/%node/log']['access arguments'] = array('ktc access group tabs');
 }
+
+function _ktc_netvaerk_determine_tab($nid, $access) {
+  $node = node_load($nid);
+//xdebug_break();
+  if ($node->type == 'group' and user_access($access)) {
+    return true;
+  }
+
+  return false;
+}
+
 /**
  * Get default theme callback.
  */
