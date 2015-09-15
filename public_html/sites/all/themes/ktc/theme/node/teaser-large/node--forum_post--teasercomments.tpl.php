@@ -25,10 +25,6 @@ global $base_url;
         <p><?php print $body_shortened; ?></p>
       <?php endif; ?>
 
-      <?php if ($user_object): ?>
-        <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list3')); ?>
-      <?php endif; ?>
-
       <div class="ktc-comments-list">
         <div class="ktc-comments-list-body">
           <?php if (isset($comments_view)): ?>

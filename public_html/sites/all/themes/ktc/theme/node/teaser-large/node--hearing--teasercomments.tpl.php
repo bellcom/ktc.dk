@@ -37,12 +37,6 @@ global $base_url;
         <a class="btn btn-default" href="<?php print $base_url . $node_url; ?>"><?php print t('Afgiv/rediger svar'); ?></a>
       </div>
 
-      <?php if ($user_object): ?>
-        <?php print $profile = theme('user_profile', array('account'          => $user_object,
-                                                           'theme_suggestion' => 'list3'
-        )); ?>
-      <?php endif; ?>
-
     </div>
 
     <div class="ktc-footer">
