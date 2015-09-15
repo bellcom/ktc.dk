@@ -4011,9 +4011,11 @@ function ktc_users_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_twitter_brugernavn'
   $field_instances['user-user-field_twitter_brugernavn'] = array(
     'bundle' => 'user',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Indtast kun dit Twitter brugernavn. Der indsættes automatisk http://twitter.com/',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -4082,8 +4084,43 @@ function ktc_users_field_default_field_instances() {
     'label' => 'Twitter brugernavn',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -4540,6 +4577,7 @@ function ktc_users_field_default_field_instances() {
   t('Fornavn + mellemnavn');
   t('Fødselsdato');
   t('Gammel uid');
+  t('Indtast kun dit Twitter brugernavn. Der indsættes automatisk http://twitter.com/');
   t('Kommune');
   t('Land');
   t('LinkedIn');
