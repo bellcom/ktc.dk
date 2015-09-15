@@ -10471,24 +10471,12 @@ fieldset[disabled] .field-type-image .button {
 .ktc-teaser-large .ktc-teaser-large-body {
   padding: 5px 15px 10px;
 }
-.ktc-teaser-large > .ktc-teaser-large-heading a,
-.ktc-teaser-large > .ktc-teaser-large-heading a,
-.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.ktc-teaser-large > .ktc-teaser-large-heading a:hover {
-  color: #36a145;
-}
 .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
 .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
   color: #36a145;
 }
 .ktc-teaser-large .ktc-teaser-large-body .ktc-date,
 .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
-  color: #36a145;
-}
-.ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a,
-.ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a,
-.ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
   color: #36a145;
 }
 .ktc-green.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
@@ -10499,12 +10487,6 @@ fieldset[disabled] .field-type-image .button {
 .ktc-green .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #36a145;
 }
-.ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a,
-.ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a,
-.ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
-  color: #1f9bd7;
-}
 .ktc-blue.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
 .ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
   color: #1f9bd7;
@@ -10512,12 +10494,6 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
 .ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #1f9bd7;
-}
-.ktc-gold.ktc-teaser-large > .ktc-teaser-large-heading a,
-.ktc-gold .ktc-teaser-large > .ktc-teaser-large-heading a,
-.ktc-gold.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.ktc-gold .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
-  color: #d3a900;
 }
 .ktc-gold.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
 .ktc-gold .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
@@ -10527,12 +10503,6 @@ fieldset[disabled] .field-type-image .button {
 .ktc-gold .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #d3a900;
 }
-.ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a,
-.ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a,
-.ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
-  color: #e75311;
-}
 .ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
 .ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
   color: #e75311;
@@ -10541,32 +10511,12 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #e75311;
 }
-.og-context.og-context-node.ktc-teaser-large > .ktc-teaser-large-heading a,
-.og-context.og-context-node .ktc-teaser-large > .ktc-teaser-large-heading a,
-.og-context.og-context-node.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.og-context.og-context-node .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
-  color: #d3a900;
-}
 .og-context.og-context-node.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
 .og-context.og-context-node .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
   color: #d3a900;
 }
 .og-context.og-context-node.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
 .og-context.og-context-node .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
-  color: #d3a900;
-}
-.og-context.og-context-node .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a,
-.og-context.og-context-node .ktc-yellow.ktc-teaser-large > .ktc-teaser-large-heading a,
-.og-context.og-context-node .ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a,
-.og-context.og-context-node .ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a,
-.og-context.og-context-node .ktc-yellow .ktc-teaser-large > .ktc-teaser-large-heading a,
-.og-context.og-context-node .ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a,
-.og-context.og-context-node .ktc-green.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.og-context.og-context-node .ktc-yellow.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.og-context.og-context-node .ktc-blue.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.og-context.og-context-node .ktc-green .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.og-context.og-context-node .ktc-yellow .ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.og-context.og-context-node .ktc-blue .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
   color: #d3a900;
 }
 .og-context.og-context-node .ktc-green.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
@@ -10585,12 +10535,6 @@ fieldset[disabled] .field-type-image .button {
 .og-context.og-context-node .ktc-blue .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #d3a900;
 }
-.og-context.og-context-node .ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a,
-.og-context.og-context-node .ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a,
-.og-context.og-context-node .ktc-red.ktc-teaser-large > .ktc-teaser-large-heading a:hover,
-.og-context.og-context-node .ktc-red .ktc-teaser-large > .ktc-teaser-large-heading a:hover {
-  color: #e75311;
-}
 .og-context.og-context-node .ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
 .og-context.og-context-node .ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover {
   color: #e75311;
@@ -10598,6 +10542,19 @@ fieldset[disabled] .field-type-image .button {
 .og-context.og-context-node .ktc-red.ktc-teaser-large .ktc-teaser-large-body .ktc-date,
 .og-context.og-context-node .ktc-red .ktc-teaser-large .ktc-teaser-large-body .ktc-date {
   color: #e75311;
+}
+.ktc-teaser-large {
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+.ktc-teaser-large .ktc-teaser-large-heading .user-profile {
+  color: #d3a900;
+}
+.ktc-teaser-large .ktc-teaser-large-heading .user-profile.ktc-user-red {
+  color: #e75311;
+}
+.ktc-teaser-large .ktc-teaser-large-heading .user-profile.ktc-user-green {
+  color: #36a145;
 }
 .ktc-header .ktc-header-top-bar {
   min-height: 50px;

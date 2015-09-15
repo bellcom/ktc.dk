@@ -62,18 +62,6 @@
 	&.ktc-teaser-large,
 	.ktc-teaser-large {
 
-		// Heading
-		> .ktc-teaser-large-heading {
-
-			// Link
-			a {
-				&,
-				&:hover {
-					color: @color-font;
-				}
-			}
-		}
-
 		// Body
 		.ktc-teaser-large-body {
 
@@ -134,4 +122,26 @@
 	.ktc-red {
 		.ktc-mixin-teaser-large(@ktc-color-red-font);
 	}
+}
+
+// Teaser
+.ktc-teaser-large {
+  background-color: @ktc-color-light-content-background;
+  margin-bottom: @grid-gutter-width;
+
+  // Heading
+  .ktc-teaser-large-heading {
+
+	.user-profile {
+	  color: @ktc-color-gold-font;
+
+	  &.ktc-user-red {
+		color: @ktc-color-red-font;
+	  }
+
+	  &.ktc-user-green {
+		color: @ktc-color-green-font;
+	  }
+	}
+  }
 }

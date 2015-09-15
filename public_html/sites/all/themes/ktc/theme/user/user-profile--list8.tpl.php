@@ -37,6 +37,6 @@
 
 <!-- Begin - user profile - list 8 -->
 <?php if (isset($personal['full_name'])): ?>
-    <?php print l($personal['full_name'], 'user/' . $personal['uid']); ?>
+    <?php print l($personal['full_name'], 'user/' . $personal['uid'], array('attributes' => array('class' => array($classes)))); ?>
 <?php endif ?>
 <!-- End - user profile - list 8 -->
