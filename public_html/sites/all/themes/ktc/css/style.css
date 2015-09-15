@@ -13607,16 +13607,16 @@ h6 + .ktc-date {
   margin: 0;
   margin-bottom: 2px;
 }
-.ktc-user-profile .ktc-user-profile-content-social-icon {
+.ktc-user-profile .ktc-user-profile-content-social-icon-wrapper .ktc-user-profile-content-social-icon {
   display: inline-block;
 }
-.ktc-user-profile .ktc-user-profile-content-social-icon.ktc-user-profile-content-linked_in {
+.ktc-user-profile .ktc-user-profile-content-social-icon-wrapper .ktc-user-profile-content-social-icon.ktc-user-profile-content-linked_in {
   background: url('../images/footer_linkedin.png') center center no-repeat;
   background-size: 20px 20px;
   width: 20px;
   height: 20px;
 }
-.ktc-user-profile .ktc-user-profile-content-social-icon.ktc-user-profile-content-twitter {
+.ktc-user-profile .ktc-user-profile-content-social-icon-wrapper .ktc-user-profile-content-social-icon.ktc-user-profile-content-twitter {
   background: url('../images/footer_twitter.png') center center no-repeat;
   background-size: 21px 20px;
   width: 21px;
