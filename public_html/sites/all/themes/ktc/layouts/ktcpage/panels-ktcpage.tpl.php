@@ -26,17 +26,16 @@
             <div class="ktc-content-wide">
                 <?php print $content['left']; ?>
                 
-                <div class="ktc-aside">
-	                <div class="ktc-aside-body">
-		                <div class="ktc-aside-body-row">
-            	    		<?php print $content['left1']; ?>
-	            		</div>
-	                </div>
-                </div>
-                
-				<?php print $content['left2']; ?>
             </div>
+            <div class="row">
+            	<?php print $content['left1']; ?>
+            </div>
+				<?php print $content['left2']; ?>
+        
+            
         </div>
+
+
 
         <div class="col-md-3">
             <?php print $content['right']; ?>
