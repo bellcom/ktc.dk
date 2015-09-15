@@ -38,15 +38,11 @@ global $base_url;
         <p><?php print $body_shortened; ?></p>
       <?php endif; ?>
 
-      <?php if(user_is_logged_in() and $group_is_open == 0): ?>
+      <?php if(user_is_logged_in()): ?>
         <div class="ktc-call-to-action-button">
-          <a href="<?php print $base_url . $node_url; ?>" class="btn btn-default ktc-call-to-action-button"><?php print t('Meld dig ind/ud'); ?></a>
+          <?php print $subscribe_button; ?>
         </div>
       <?php endif ?>
-
-      <?php if ($user_object): ?>
-        <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list3')); ?>
-      <?php endif; ?>
 
     </div>
 

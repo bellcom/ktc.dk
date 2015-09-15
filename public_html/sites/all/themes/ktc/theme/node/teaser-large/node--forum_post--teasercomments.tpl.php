@@ -3,13 +3,15 @@ global $base_url;
 ?>
 
 <?php if (!$page): ?>
-  <!-- Begin - teaser -->
+  <!-- Begin - teaser large -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser-large"<?php print $attributes; ?>>
 
     <!-- Begin - heading -->
     <div class="ktc-teaser-large-heading">
       <span><?php print $created_ago . ' ' . t('siden'); ?></span>
-      <?php print $user_name; ?>
+      <?php if ($user_object): ?>
+        <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list8')); ?>
+      <?php endif; ?>
     </div>
     <!-- End - heading -->
 
@@ -45,5 +47,5 @@ global $base_url;
     </div>
 
   </article>
-  <!-- End - teaser -->
+  <!-- End - teaser large -->
 <?php endif; ?>

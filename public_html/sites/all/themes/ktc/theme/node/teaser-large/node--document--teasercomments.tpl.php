@@ -9,7 +9,9 @@ global $base_url;
     <!-- Begin - heading -->
     <div class="ktc-teaser-large-heading">
       <span><?php print $created_ago . ' ' . t('siden'); ?></span>
-      <?php print $user_name; ?>
+      <?php if ($user_object): ?>
+        <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list8')); ?>
+      <?php endif; ?>
     </div>
     <!-- End - heading -->
 
