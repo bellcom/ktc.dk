@@ -64,16 +64,21 @@
                 <p class="ktc-user-profile-content-work-department"><?php print $work['department']; ?></p>
             <?php endif ?>
 
-            <?php if (isset($personal['linked_in'])): ?>
-                <a href="<?php print $personal['linked_in']; ?>" target="_blank" class="ktc-user-profile-content-social-icon ktc-user-profile-content-linked_in"></a>
-            <?php endif ?>
+            <?php if (isset($personal['linked_in']) or isset($personal['twitter'])): ?>
+            <div class="ktc-user-profile-content-social-icon-wrapper">
 
-            <?php if (isset($personal['twitter'])): ?>
-                <a href="https://twitter.com/<?php print $personal['twitter']; ?>" target="_blank" class="ktc-user-profile-content-social-icon ktc-user-profile-content-twitter"></a>
+                <?php if (isset($personal['linked_in'])): ?>
+                    <a href="<?php print $personal['linked_in']; ?>" target="_blank" class="ktc-user-profile-content-social-icon ktc-user-profile-content-linked_in"></a>
+                <?php endif ?>
+
+                <?php if (isset($personal['twitter'])): ?>
+                    <a href="https://twitter.com/<?php print $personal['twitter']; ?>" target="_blank" class="ktc-user-profile-content-social-icon ktc-user-profile-content-twitter"></a>
+                <?php endif ?>
+
+            </div>
             <?php endif ?>
 
             <?php if (isset($personal['education'])): ?>
-                <br>
                 <br>
                 <p class="ktc-font-color"><strong>Uddannelse og kurser:</strong></p>
                 <p class="ktc-user-profile-content-education"><?php print $personal['education']; ?></p>

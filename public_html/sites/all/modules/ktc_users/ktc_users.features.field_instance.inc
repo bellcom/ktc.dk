@@ -1968,9 +1968,11 @@ function ktc_users_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_linkedin'
   $field_instances['user-user-field_linkedin'] = array(
     'bundle' => 'user',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Eksempel: http://www.linkedin.com/dinbruger',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -2052,8 +2054,43 @@ function ktc_users_field_default_field_instances() {
     'label' => 'LinkedIn',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -4495,6 +4532,7 @@ function ktc_users_field_default_field_instances() {
   t('CRM UUID');
   t('Direkte telefon');
   t('Efternavn');
+  t('Eksempel: http://www.linkedin.com/dinbruger');
   t('Ekspertise');
   t('Emner');
   t('Firma');
