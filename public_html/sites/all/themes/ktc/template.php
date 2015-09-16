@@ -931,6 +931,9 @@ function ktc_preprocess_user_profile(&$vars) {
     if ($vars['elements']['#view_mode'] == 'list7') {
       $vars['theme_hook_suggestions'][] = 'user_profile__list7';
     }
+    if ($vars['elements']['#view_mode'] == 'list8') {
+      $vars['theme_hook_suggestions'][] = 'user_profile__list8';
+    }
   }
 
   // User real name in field_navn.
