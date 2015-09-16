@@ -819,31 +819,6 @@ function ktc_preprocess_panels_pane(&$vars) {
   }
 }
 
-/**
- * Implements hook_preprocess_block().
- */
-function ktc_preprocess_block(&$vars) {
-  $block_id = $vars['block']->delta;
-  $classes = &$vars['classes_array'];
-  // Add classes based on the block delta.
-  switch ($block_id) {
-    /* Add .badge class to block #14 */
-    case 'menu-nyttige-links':
-      $classes[] = 'col-md-3 col-sm-4 col-xs-12';
-      break;
-
-    case 'footer_contact_persons-block':
-      $classes[] = 'col-md-4 col-sm-4 col-xs-12';
-      break;
-
-  }
-  if ($vars['block']->region == 'footer_4') {
-    $classes[] = 'col-md-5 col-sm-4 col-xs-12';
-  }
-  if ($vars['block']->region == 'footer') {
-    $classes[] = 'col-md-3 col-sm-3 col-xs-12';
-  }
-}
 
 /**
  * Get node create links.
