@@ -58,6 +58,7 @@ scripts[] = 'js/jquery.imagesloaded.js'
 scripts[] = 'js/ktc_filter.js'
 scripts[] = 'js/script.js'
 scripts[] = 'js/modernizr.min.js'
+scripts[] = 'js/bs3-masonry.js'
 ; scripts[] = 'js/os2web_spotbox_adjust.js'
 ;scripts[] = 'js/jquery.infinitescroll.min.js'
 

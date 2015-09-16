@@ -21,6 +21,8 @@
     <?php print $pane_prefix; ?>
 <?php endif; ?>
 
+<!-- panels-pane.tpl.php -->
+<!-- Begin - aside -->
 <div class="ktc-aside <?php print $classes; ?> <?php if(isset($panel_is_filter) && $panel_is_filter) { print 'ktc-aside-toggle'; } ?>" <?php print $id; ?> <?php print $attributes; ?>>
     <?php if ($admin_links): ?>
         <?php print $admin_links; ?>
@@ -34,9 +36,11 @@
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 
-    <div class="ktc-aside-body pane-content">
-        <?php print render($content); ?>
-    </div>
+    <?php if ($content): ?>
+        <div class="ktc-aside-body pane-content">
+            <?php print render($content); ?>
+        </div>
+    <?php endif; ?>
 
     <?php if ($links): ?>
         <div class="links">
@@ -59,3 +63,4 @@
 <?php if ($pane_suffix): ?>
     <?php print $pane_suffix; ?>
 <?php endif; ?>
+<!-- End - aside -->
