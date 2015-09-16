@@ -217,12 +217,73 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $display->content['new-064d4677-37c8-4f5e-b1f4-1b206f60b574'] = $pane;
     $display->panels['content-1'][2] = 'new-064d4677-37c8-4f5e-b1f4-1b206f60b574';
     $pane = new stdClass();
+    $pane->pid = 'new-bc130bb9-3830-4b64-a687-f20e98441623';
+    $pane->panel = 'content-1';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:group:field_netvaerkstype',
+          'settings' => array(
+            'field_netvaerkstype' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1134',
+                ),
+              ),
+            ),
+            'field_netvaerkstype_tid' => '1134',
+          ),
+          'context' => 'relationship_entity_from_field:field_vis_netvaerk-node-node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'arguments' => array(
+        'gid' => '%netvaerk:nid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Sekretær',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'bc130bb9-3830-4b64-a687-f20e98441623';
+    $display->content['new-bc130bb9-3830-4b64-a687-f20e98441623'] = $pane;
+    $display->panels['content-1'][3] = 'new-bc130bb9-3830-4b64-a687-f20e98441623';
+    $pane = new stdClass();
     $pane->pid = 'new-db7671ec-09d5-4453-924b-8eb1b010ac5e';
     $pane->panel = 'content-1-masonry';
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_5';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:group:field_netvaerkstype',
+          'settings' => array(
+            'field_netvaerkstype' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1134',
+                ),
+              ),
+            ),
+            'field_netvaerkstype_tid' => '1134',
+          ),
+          'context' => 'relationship_entity_from_field:field_vis_netvaerk-node-node_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'arguments' => array(
         'gid' => '%netvaerk:nid',
@@ -396,7 +457,25 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_netvaerkspraesentation-panel_pane_10';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:group:field_netvaerkstype',
+          'settings' => array(
+            'field_netvaerkstype' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1134',
+                ),
+              ),
+            ),
+            'field_netvaerkstype_tid' => '1134',
+          ),
+          'context' => 'relationship_entity_from_field:field_vis_netvaerk-node-node_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'arguments' => array(
         'gid' => '%netvaerk:nid',
@@ -433,14 +512,14 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
             'field_netvaerkstype' => array(
               'und' => array(
                 0 => array(
-                  'tid' => '1159',
+                  'tid' => '1134',
                 ),
               ),
             ),
-            'field_netvaerkstype_tid' => '1159',
+            'field_netvaerkstype_tid' => '1134',
           ),
           'context' => 'relationship_entity_from_field:field_vis_netvaerk-node-node_1',
-          'not' => FALSE,
+          'not' => TRUE,
         ),
       ),
     );
@@ -472,7 +551,25 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_netvaerkspraesentation-bs3_masonry_1';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:group:field_netvaerkstype',
+          'settings' => array(
+            'field_netvaerkstype' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1134',
+                ),
+              ),
+            ),
+            'field_netvaerkstype_tid' => '1134',
+          ),
+          'context' => 'relationship_entity_from_field:field_vis_netvaerk-node-node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'arguments' => array(
         'gid' => '%netvaerk:nid',
@@ -484,7 +581,11 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-green',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -497,7 +598,25 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_netvaerkspraesentation-bs3_masonry';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:group:field_netvaerkstype',
+          'settings' => array(
+            'field_netvaerkstype' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1134',
+                ),
+              ),
+            ),
+            'field_netvaerkstype_tid' => '1134',
+          ),
+          'context' => 'relationship_entity_from_field:field_vis_netvaerk-node-node_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'arguments' => array(
         'gid' => '%netvaerk:nid',
