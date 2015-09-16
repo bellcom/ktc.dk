@@ -11,6 +11,7 @@
               itemSelector: '.masonry-item'
           });
       }
+      bs3Masonry.init();
 
       // Search facetapi.
       $('ul.facetapi-facetapi-links li').each(function(){

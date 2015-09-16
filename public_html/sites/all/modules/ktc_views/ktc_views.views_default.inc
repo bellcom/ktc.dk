@@ -806,17 +806,19 @@ function ktc_views_views_default_views() {
   );
 
   /* Display: Medlemmer */
-  $handler = $view->new_display('panel_pane', 'Medlemmer', 'panel_pane_2');
+  $handler = $view->new_display('panel_pane', 'Medlemmer', 'bs3_masonry');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Medlemmer';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'ktc-aside-body-row row-eq-height';
+  $handler->display->display_options['css_class'] = 'ktc-aside-body-row';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-sm-6';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6 col-md-6 col-lg-6 bs3-masonry-item';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';
@@ -1609,7 +1611,7 @@ function ktc_views_views_default_views() {
   );
 
   /* Display: Faggruppe medlemmer */
-  $handler = $view->new_display('panel_pane', 'Faggruppe medlemmer', 'panel_pane_14');
+  $handler = $view->new_display('panel_pane', 'Faggruppe medlemmer', 'bs3_masonry_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Medlemmer';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
@@ -1619,7 +1621,9 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-sm-6';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6 col-md-6 col-lg-6 bs3-masonry-item';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';
