@@ -383,26 +383,26 @@ function _ktc_section_block_netvaerk_invite_links_content() {
     // If user has access to invite user to group.
     if ($access = og_user_access('node', $nid, 'invite any user') && $og_is_member) {
       $html .= '<div class="ktc-filter-button-container og-members-modal">';
-      $html .= l('Invitér', '', array('attributes' => array('class' => $link_class)));
+      $html .= l('Invitér', 'group/node/' . $nid . '/admin/people/invite-users', array('attributes' => array('class' => $link_class)));
       $html .= '</div>';
     }
     // Check if the user is a member,
     // print out subscrib/unsubscrib link.
     if (og_user_access('node', $nid, 'unsubscribe') && $og_is_member) {
       $html .= '<div class="ktc-filter-button-container">';
-      $html .= l('Afmeld', 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' => $link_class)));
+      $html .= l(t('Afmeld'), 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' => $link_class)));
       $html .= '</div>';
     }
-    if (!$og_is_member) {
-      if (og_user_access('node', $nid, 'subscribe without approval')) {
-        $html .= '<div class="ktc-filter-button-container">';
-        $html .= l('Tilmeld', 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
-        $html .= '</div>';
-      }
-      else {
-        if (og_user_access('node', $nid, 'subscribe')) {
+    else {
+      if (!$og_is_member) {
+        if (og_user_access('node', $nid, 'subscribe without approval')) {
           $html .= '<div class="ktc-filter-button-container">';
-          $html .= l('Ansøg', 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
+          $html .= l(t('Tilmeld'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
+          $html .= '</div>';
+        }
+        elseif (og_user_access('node', $nid, 'subscribe')) {
+          $html .= '<div class="ktc-filter-button-container">';
+          $html .= l(t('Ansøg'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
           $html .= '</div>';
         }
       }

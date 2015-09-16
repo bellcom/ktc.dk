@@ -75,7 +75,6 @@ function _ktc_netvaerk_get_subscribe_links($nid) {
   $link_class = 'btn btn-default';
   $og_is_member = og_is_member('node', $nid);
   $node = node_load($nid);
-//  xdebug_break();
 
   // Check if the user is a member,
   // print out subscrib/unsubscrib link.
@@ -83,7 +82,6 @@ function _ktc_netvaerk_get_subscribe_links($nid) {
     $button = l(t('Afmeld'), 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' => $link_class)));
   }
   if (!$og_is_member) {
-    $field = field_get_items('node', $node, 'field_open_group');
     if (og_user_access('node', $nid, 'subscribe without approval')) {
       $button = l(t('Tilmeld'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
     }
