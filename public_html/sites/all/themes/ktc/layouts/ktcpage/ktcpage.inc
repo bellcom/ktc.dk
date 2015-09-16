@@ -20,5 +20,10 @@ $plugin = array(
     'content-4-masonry' => t('Content - 4 - masonry'),
     'sidebar-right' => t('Sidebar - right'),
     'bottom' => t('Bottom'),
+
+    'right' => t('Right side'),
+    'left' => t('Left side'),
+    'left1' => t('Left side - 1'),
+    'left2' => t('Left side - 2'),
   ),
 );

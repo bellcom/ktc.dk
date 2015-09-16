@@ -97,11 +97,39 @@
                 </div>
             <?php endif ?>
 
+            <?php if($content['left']): ?>
+                <div class="ktc-content-wide ktc-margin-bottom">
+                    <?php print $content['left']; ?>
+                </div>
+            <?php endif ?>
+
+            <?php if($content['left1']): ?>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <?php print $content['left1']; ?>
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php if($content['left2']): ?>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <?php print $content['left2']; ?>
+                    </div>
+                </div>
+            <?php endif ?>
+
         </div>
 
         <?php if($content['sidebar-right']): ?>
             <div class="col-sm-3">
                 <?php print $content['sidebar-right']; ?>
+            </div>
+        <?php endif ?>
+
+        <?php if($content['right']): ?>
+            <div class="col-sm-3">
+                <?php print $content['right']; ?>
             </div>
         <?php endif ?>
 
