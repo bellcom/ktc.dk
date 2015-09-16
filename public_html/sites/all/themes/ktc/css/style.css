@@ -14252,6 +14252,7 @@ h6 + .ktc-date {
 .ktc-user-profile.ktc-user-profile-list-6 .ktc-user-profile-photo-container {
   display: table-cell;
   width: 240px;
+  text-align: right;
 }
 .ktc-user-profile.ktc-user-profile-list-6 .ktc-user-profile-photo-container img {
   display: inline-block;
@@ -14278,6 +14279,15 @@ h6 + .ktc-date {
   border-style: solid;
   background-color: transparent;
   padding: 3px;
+}
+.ktc-profile-photo-50-percent-width .ktc-user-profile-photo img {
+  max-width: 50%;
+}
+.ktc-profile-photo-75-percent-width .ktc-user-profile-photo img {
+  max-width: 75%;
+}
+.ktc-profile-photo-25-percent-width .ktc-user-profile-photo img {
+  max-width: 25%;
 }
 .ktc-user-profile .ktc-user-profile-photo-container img,
 .ktc-user-profile .ktc-user-profile-photo-container img {
