@@ -151,7 +151,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-green',
+      'css_class' => 'ktc-aside-green ktc-user-profile-xl',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
