@@ -14280,13 +14280,13 @@ h6 + .ktc-date {
   background-color: transparent;
   padding: 3px;
 }
-.ktc-profile-photo-50-percent-width .ktc-user-profile-photo img {
+.ktc-profile-photo-50-percent-width .ktc-user-profile-photo-container img {
   max-width: 50%;
 }
-.ktc-profile-photo-75-percent-width .ktc-user-profile-photo img {
+.ktc-profile-photo-75-percent-width .ktc-user-profile-photo-container img {
   max-width: 75%;
 }
-.ktc-profile-photo-25-percent-width .ktc-user-profile-photo img {
+.ktc-profile-photo-25-percent-width .ktc-user-profile-photo-container img {
   max-width: 25%;
 }
 .ktc-user-profile .ktc-user-profile-photo-container img,
@@ -14323,7 +14323,7 @@ h6 + .ktc-date {
 .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #2c353a;
 }
-.ktc-user-profile-photo img {
+.ktc-user-profile-photo-container img {
   border-color: #e9edee;
 }
 .ktc-user-green.ktc-user-profile .ktc-user-profile-photo-container img,
@@ -14360,7 +14360,7 @@ h6 + .ktc-date {
 .ktc-user-green .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #36a145;
 }
-.ktc-user-green .ktc-user-profile-photo img {
+.ktc-user-green .ktc-user-profile-photo-container img {
   border-color: #36a145;
 }
 .ktc-user-green .ktc-user-profile-content a {
@@ -14400,7 +14400,7 @@ h6 + .ktc-date {
 .ktc-user-blue .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #1f9bd7;
 }
-.ktc-user-blue .ktc-user-profile-photo img {
+.ktc-user-blue .ktc-user-profile-photo-container img {
   border-color: #1f9bd7;
 }
 .ktc-user-gold.ktc-user-profile .ktc-user-profile-photo-container img,
@@ -14437,7 +14437,7 @@ h6 + .ktc-date {
 .ktc-user-gold .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #d3a900;
 }
-.ktc-user-gold .ktc-user-profile-photo img {
+.ktc-user-gold .ktc-user-profile-photo-container img {
   border-color: #d3a900;
 }
 .ktc-user-red.ktc-user-profile .ktc-user-profile-photo-container img,
@@ -14474,7 +14474,7 @@ h6 + .ktc-date {
 .ktc-user-red .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #e75311;
 }
-.ktc-user-red .ktc-user-profile-photo img {
+.ktc-user-red .ktc-user-profile-photo-container img {
   border-color: #e75311;
 }
 .ktc-teaser.ktc-user-profile .ktc-user-profile-photo-container img,
@@ -14511,7 +14511,7 @@ h6 + .ktc-date {
 .ktc-teaser .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #d3a900;
 }
-.ktc-teaser .ktc-user-profile-photo img {
+.ktc-teaser .ktc-user-profile-photo-container img {
   border-color: #d3a900;
 }
 .ktc-teaser .ktc-user-profile-content a {
@@ -14552,7 +14552,7 @@ h6 + .ktc-date {
 .ktc-teaser .ktc-user-green.ktc-user-profile .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #36a145;
 }
-.ktc-teaser .ktc-user-green.ktc-user-profile .ktc-user-profile-photo img {
+.ktc-teaser .ktc-user-green.ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #36a145;
 }
 .ktc-teaser .ktc-user-green.ktc-user-profile .ktc-user-profile-content a {
@@ -14592,7 +14592,7 @@ h6 + .ktc-date {
 .ktc-teaser .ktc-user-blue.ktc-user-profile .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #1f9bd7;
 }
-.ktc-teaser .ktc-user-blue.ktc-user-profile .ktc-user-profile-photo img {
+.ktc-teaser .ktc-user-blue.ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #1f9bd7;
 }
 .ktc-teaser .ktc-user-blue.ktc-user-profile .ktc-user-profile-content a {
@@ -14632,7 +14632,7 @@ h6 + .ktc-date {
 .ktc-teaser .ktc-user-gold.ktc-user-profile .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #d3a900;
 }
-.ktc-teaser .ktc-user-gold.ktc-user-profile .ktc-user-profile-photo img {
+.ktc-teaser .ktc-user-gold.ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #d3a900;
 }
 .ktc-teaser .ktc-user-gold.ktc-user-profile .ktc-user-profile-content a {
@@ -14672,11 +14672,17 @@ h6 + .ktc-date {
 .ktc-teaser .ktc-user-red.ktc-user-profile .ktc-user-profile .ktc-user-profile-content a:hover {
   color: #e75311;
 }
-.ktc-teaser .ktc-user-red.ktc-user-profile .ktc-user-profile-photo img {
+.ktc-teaser .ktc-user-red.ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #e75311;
 }
 .ktc-teaser .ktc-user-red.ktc-user-profile .ktc-user-profile-content a {
   color: #e75311;
+}
+.ktc-user-profile-l .ktc-user-profile-content-name {
+  font-size: 22px;
+}
+.ktc-user-profile-xl .ktc-user-profile-content-name {
+  font-size: 30px;
 }
 .ktc-full-width-image img {
   min-width: 100%;

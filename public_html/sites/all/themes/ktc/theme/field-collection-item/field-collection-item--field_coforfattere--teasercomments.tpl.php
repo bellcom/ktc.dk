@@ -1,5 +1,4 @@
 <!-- field-collection-item--field_coforfattere--teasercomments.tpl.php -->
-<?php //xdebug_break(); ?>
 <?php
 /* Render system user */
 if (isset($content['field_eksisterende_bruger'])):

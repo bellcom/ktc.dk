@@ -1,4 +1,4 @@
-<!-- field-collection-item--field_coforfattere.tpl.php -->
+<!-- field-collection-item--field_coforfattere--full.tpl.php -->
 <?php
 /* Render system user */
 if (isset($content['field_eksisterende_bruger'])):
