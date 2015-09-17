@@ -151,7 +151,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-green',
+      'css_class' => 'ktc-aside-green ktc-user-profile-xl',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
@@ -178,7 +178,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-green',
+      'css_class' => 'ktc-aside-green ktc-user-profile-l ',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
@@ -207,7 +207,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-green',
+      'css_class' => 'ktc-aside-green ktc-user-profile-l',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
@@ -252,7 +252,11 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-green ktc-user-profile-l',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
@@ -297,7 +301,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -326,7 +330,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -355,7 +359,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -384,7 +388,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -442,7 +446,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -489,7 +493,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -536,7 +540,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
