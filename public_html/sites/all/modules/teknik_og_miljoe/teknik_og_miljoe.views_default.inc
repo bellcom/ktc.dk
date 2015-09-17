@@ -45,6 +45,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teasercomments';
   /* Forbindelse: Field collection item: Entity with the Forfatter(e) (field_coforfattere) */
   $handler->display->display_options['relationships']['field_coforfattere_node']['id'] = 'field_coforfattere_node';
   $handler->display->display_options['relationships']['field_coforfattere_node']['table'] = 'field_collection_item';
