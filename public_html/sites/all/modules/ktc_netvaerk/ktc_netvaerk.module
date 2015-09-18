@@ -867,7 +867,7 @@ function ktc_netvaerk_menu_alter(&$items) {
 
 function _ktc_netvaerk_determine_tab($nid, $access) {
   $node = node_load($nid);
-  
+
   if ($node->type == 'group' and user_access($access)) {
     return true;
   }

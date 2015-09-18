@@ -18,20 +18,25 @@ define('KTC_HEARING_STATUS_KL_ANSWER', variable_get('ktc_hearing_status_kl_answe
  * Implements hook_views_pre_render().
  * @param $view
  */
-//function ktc_hearing_views_pre_render(&$view) {
-//  $int = 0;
-//
-//  foreach($view->result as $key=>$result){
-//    $node = node_load($result->nid);
-//
-//    if (!node_access('view', $node)){
-//      unset($view->result[$key]);
-//    }
-//    $int++;
-//  }
-//  $view->query->pager->total_items = 150;
-//  $view->query->pager->update_page_info();
-//}
+function ktc_hearing_views_pre_render(&$view) {
+
+  if (($view->name == "indhold_m_filter" && ($view->current_display == 'panel_pane_4' or $view->current_display == 'panel_pane_5'))) {
+
+    foreach ($view->result as $key => $result) {
+      $node = node_load($result->nid);
+
+      if (!node_access('view', $node)) {
+        unset($view->result[$key]);
+      }
+    }
+
+    $current_items = $view->query->pager->total_items;
+    $total = $current_items - count($view->result);
+
+    $view->query->pager->total_items = $total;
+    $view->query->pager->update_page_info();
+  }
+}
 
 /**
  * Implements hook_menu().
