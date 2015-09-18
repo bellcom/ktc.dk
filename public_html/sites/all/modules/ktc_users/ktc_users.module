@@ -15,7 +15,8 @@ function ktc_users_get_user_info($user, $info_type) {
 
   switch ($info_type) {
     case 'Work':
-      if ($field = field_get_items('user', $user, 'field_account') && $account = taxonomy_term_load($field[0]['tid'])) {
+      $field = field_get_items('user', $user, 'field_account');
+      if ($field and $account = taxonomy_term_load($field[0]['tid'])) {
         $info = ktc_users_get_user_info_work_data($account);
       }
       else {
@@ -173,7 +174,6 @@ function ktc_users_get_user_info_old_work_data($entity) {
 function ktc_users_get_user_info_work_data($entity) {
   $data = array();
   $parents = taxonomy_get_parents_all($entity->tid);
-  xdebug_break();
 
   // Company.
   if ($entity->name) {
