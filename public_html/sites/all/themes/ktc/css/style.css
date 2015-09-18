@@ -11998,6 +11998,34 @@ fieldset[disabled] .field-type-image .button {
     width: 99.99%;
   }
 }
+.shareknapper .knap {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.shareknapper .knap > a {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-position: center center;
+  background-size: 16px 16px;
+  font-size: 0;
+}
+.shareknapper .knap + .knap {
+  margin-right: 5px;
+}
+.shareknapper .knap.facebook > a {
+  background-image: url('../images/knap_fb.png');
+}
+.shareknapper .knap.twitter > a {
+  background-image: url('../images/knap_twitter.png');
+}
+.shareknapper .knap.googpleplus > a {
+  background-image: url('../images/knap_googleplus.png');
+}
+.shareknapper .knap.linkedin > a {
+  background-image: url('../images/knap_linkedin.png');
+}
 .pagination {
   border-radius: 20px;
 }
