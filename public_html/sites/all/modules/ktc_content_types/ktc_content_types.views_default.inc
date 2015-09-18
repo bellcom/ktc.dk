@@ -284,6 +284,42 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['totalcount']['element_wrapper_class'] = 'ktc-node-header-button ktc-node-header-button-viewers pull-right';
   $handler->display->display_options['fields']['totalcount']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['totalcount']['separator'] = ' ';
+  /* Felt: Indhold: Sti */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Felt: Global: Tilpasset tekst */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="shareknapper">
+	<span class="knap first facebook">
+		<a href="http://www.facebook.com/sharer/sharer.php?u=[path]&title=[title]">Facebook</a>
+	</span>
+	<span class="knap twitter">
+		<a href="http://twitter.com/intent/tweet?status=[title]+[path]">Twitter</a>
+	</span>
+	<span class="knap googpleplus">
+		<a href="https://plus.google.com/share?url=[path]">Google Plus</a>
+	</span>
+	<span class="knap linkedin">
+		<a href="http://www.linkedin.com/shareArticle?mini=true&url=[path]&title=[title]&source=KTC.dk">LinkedIn</a>
+	</span>		
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'KTC';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -824,6 +860,20 @@ function ktc_content_types_views_default_views() {
     t('- [field_os2web_news_page_type]'),
     t('.'),
     t(' '),
+    t('<div class="shareknapper">
+	<span class="knap first facebook">
+		<a href="http://www.facebook.com/sharer/sharer.php?u=[path]&title=[title]">Facebook</a>
+	</span>
+	<span class="knap twitter">
+		<a href="http://twitter.com/intent/tweet?status=[title]+[path]">Twitter</a>
+	</span>
+	<span class="knap googpleplus">
+		<a href="https://plus.google.com/share?url=[path]">Google Plus</a>
+	</span>
+	<span class="knap linkedin">
+		<a href="http://www.linkedin.com/shareArticle?mini=true&url=[path]&title=[title]&source=KTC.dk">LinkedIn</a>
+	</span>		
+</div>'),
     t('KTC'),
     t('Pladser, tid og pris'),
     t('Signup node'),
