@@ -5665,11 +5665,16 @@ Alle
   $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
-    3 => '3',
-    7 => '7',
-    8 => '8',
-    4 => '4',
-    5 => '5',
+  3 => '3',
+  23 => '23',
+  25 => '25',
+  21 => '21',
+  7 => '7',
+  22 => '22',
+  8 => '8',
+  4 => '4',
+  26 => '26',
+  5 => '5',
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
