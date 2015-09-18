@@ -307,16 +307,16 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="shareknapper">
 	<span class="knap first facebook">
-		<a href="http://www.facebook.com/sharer/sharer.php?u=[path]&title=[title]">Facebook</a>
+		<a href="http://www.facebook.com/sharer/sharer.php?u=[path]&title=[title]" title="Del på Facebook">Facebook</a>
 	</span>
 	<span class="knap twitter">
-		<a href="http://twitter.com/intent/tweet?status=[title]+[path]">Twitter</a>
+		<a href="http://twitter.com/intent/tweet?status=[title]+[path]" title="Del på Twitter">Twitter</a>
 	</span>
 	<span class="knap googpleplus">
-		<a href="https://plus.google.com/share?url=[path]">Google Plus</a>
+		<a href="https://plus.google.com/share?url=[path]" title="Del på Google+">Google Plus</a>
 	</span>
 	<span class="knap linkedin">
-		<a href="http://www.linkedin.com/shareArticle?mini=true&url=[path]&title=[title]&source=KTC.dk">LinkedIn</a>
+		<a href="http://www.linkedin.com/shareArticle?mini=true&url=[path]&title=[title]&source=KTC.dk" title="Del på LinkedIn">LinkedIn</a>
 	</span>		
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
