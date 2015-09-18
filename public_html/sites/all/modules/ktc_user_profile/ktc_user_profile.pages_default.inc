@@ -387,7 +387,11 @@ function ktc_user_profile_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-user-profile-xl',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
