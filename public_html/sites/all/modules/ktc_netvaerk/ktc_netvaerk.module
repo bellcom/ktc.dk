@@ -10,6 +10,8 @@ define('KTC_NETVAERK_GROUP_OPEN', 1);
 define('KTC_NETVAERK_GROUP_CLOSED_VISIBLE', 2);
 // Status of a closed group with hidden content.
 define('KTC_NETVAERK_GROUP_CLOSED_HIDDEN', 3);
+// Status of a group which you cannot sign up for neither apply for membership.
+define('KTC_NETVAERK_GROUP_NONE_OTHER', 4);
 
 // Grouprole tid for group member.
 define('KTC_NETVAERK_MEMBER_TID', variable_get('ktc_netvaerk_member_tid'));
@@ -75,6 +77,7 @@ function _ktc_netvaerk_get_subscribe_links($nid) {
   $link_class = 'btn btn-default';
   $og_is_member = og_is_member('node', $nid);
   $node = node_load($nid);
+  $state = ktc_netvaerk_group_state($nid);
 
   // Check if the user is a member,
   // print out subscrib/unsubscrib link.
@@ -82,13 +85,12 @@ function _ktc_netvaerk_get_subscribe_links($nid) {
     $button = l(t('Afmeld'), 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' => $link_class)));
   }
   if (!$og_is_member) {
-    if (og_user_access('node', $nid, 'subscribe without approval')) {
+
+    if ($state == 1) {
       $button = l(t('Tilmeld'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
     }
-    else {
-      if (og_user_access('node', $nid, 'subscribe')) {
-        $button = l(t('Ansøg'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
-      }
+    elseif ($state == 2) {
+      $button = l(t('Ansøg'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
     }
   }
 
@@ -240,6 +242,13 @@ function ktc_netvaerk_settings() {
   $form['netvaerk_not_member'] = array(
     '#title' => t('Beskeder til brugere der ikke er medlem af netværket'),
     '#type' => 'fieldset',
+  );
+
+  $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_NONE_OTHER;
+  $form['netvaerk_not_member'][$var_name] = array(
+    '#type' => 'textarea',
+    '#title' => t('Besked på KTC grupper der styres af CRM (KTC faggruppe, KTC kredsnetværk, KTC internt netværk)'),
+    '#default_value' => variable_get($var_name),
   );
 
   $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_OPEN;
@@ -585,7 +594,7 @@ EOL;
  */
 function ktc_netvaerk_group_state($gid) {
   $group_node = node_load($gid);
-
+  $ktc_network_tids = array(1133, 1134, 1155);
   $open = 0;
   $access = 0;
 
@@ -595,12 +604,18 @@ function ktc_netvaerk_group_state($gid) {
   if ($field = field_get_items('node', $group_node, 'group_content_access')) {
     $access = $field[0]['value'];
   }
+  if ($field_type = field_get_items('node', $group_node, 'field_netvaerkstype')) {
+    $type = $field_type[0]['tid'];
+  }
 
-  if ($open) {
+  if (in_array($type, $ktc_network_tids)) {
+    return KTC_NETVAERK_GROUP_NONE_OTHER;
+  }
+  if ($open && og_user_access('node', $gid, 'subscribe without approval')) {
     return KTC_NETVAERK_GROUP_OPEN;
   }
   else {
-    if ($access == 1) {
+    if ($access == 1 && og_user_access('node', $gid, 'subscribe')) {
       return KTC_NETVAERK_GROUP_CLOSED_VISIBLE;
     }
     else {
@@ -666,7 +681,6 @@ function ktc_netvaerk_get_node_group_info($nid) {
 function ktc_netvaerk_check_my_groups($nid) {
   // Yellow is the genernal group.
   $class = 'ktc-gold';
-  ;
   $node = node_load($nid);
   $ktc_green_network_tids = array(1133, 1134, 1155);
 
@@ -853,7 +867,7 @@ function ktc_netvaerk_menu_alter(&$items) {
 
 function _ktc_netvaerk_determine_tab($nid, $access) {
   $node = node_load($nid);
-//xdebug_break();
+  
   if ($node->type == 'group' and user_access($access)) {
     return true;
   }
