@@ -160,6 +160,26 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'ktc-node-header';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Sidefod: Global: Ufiltreret tekst */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="shareknapper">
+	<span class="knap first facebook">
+		<a href="http://www.facebook.com/sharer/sharer.php?u=[path]&title=[title]" title="Del på Facebook">Facebook</a>
+	</span>
+	<span class="knap twitter">
+		<a href="http://twitter.com/intent/tweet?status=[title]+[path]" title="Del på Twitter">Twitter</a>
+	</span>
+	<span class="knap googpleplus">
+		<a href="https://plus.google.com/share?url=[path]" title="Del på Google+">Google Plus</a>
+	</span>
+	<span class="knap linkedin">
+		<a href="http://www.linkedin.com/shareArticle?mini=true&url=[path]&title=[title]&source=KTC.dk" title="Del på LinkedIn">LinkedIn</a>
+	</span>		
+</div>';
+  $handler->display->display_options['footer']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Type */
   $handler->display->display_options['fields']['type_1']['id'] = 'type_1';
@@ -305,6 +325,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="shareknapper">
 	<span class="knap first facebook">
 		<a href="http://www.facebook.com/sharer/sharer.php?u=[path]&title=[title]" title="Del på Facebook">Facebook</a>
@@ -446,7 +467,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Tilmeldingsfrist */
+  /* Felt: Indhold: Svarfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
@@ -818,7 +839,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Flere billeder */
+  /* Felt: Indhold: Billeder fra arrangementet */
   $handler->display->display_options['fields']['field_flere_billeder']['id'] = 'field_flere_billeder';
   $handler->display->display_options['fields']['field_flere_billeder']['table'] = 'field_data_field_flere_billeder';
   $handler->display->display_options['fields']['field_flere_billeder']['field'] = 'field_flere_billeder';
@@ -852,6 +873,20 @@ function ktc_content_types_views_default_views() {
     t('Indhold refererer til Indhold fra og_group_ref'),
     t('KTC Nodevisninger'),
     t('Titel, type og type'),
+    t('<div class="shareknapper">
+	<span class="knap first facebook">
+		<a href="http://www.facebook.com/sharer/sharer.php?u=[path]&title=[title]" title="Del på Facebook">Facebook</a>
+	</span>
+	<span class="knap twitter">
+		<a href="http://twitter.com/intent/tweet?status=[title]+[path]" title="Del på Twitter">Twitter</a>
+	</span>
+	<span class="knap googpleplus">
+		<a href="https://plus.google.com/share?url=[path]" title="Del på Google+">Google Plus</a>
+	</span>
+	<span class="knap linkedin">
+		<a href="http://www.linkedin.com/shareArticle?mini=true&url=[path]&title=[title]&source=KTC.dk" title="Del på LinkedIn">LinkedIn</a>
+	</span>		
+</div>'),
     t('- [field_arrangement_type]'),
     t('- [field_artikeltype]'),
     t('- [field_document_type]'),
@@ -860,20 +895,6 @@ function ktc_content_types_views_default_views() {
     t('- [field_os2web_news_page_type]'),
     t('.'),
     t(' '),
-    t('<div class="shareknapper">
-	<span class="knap first facebook">
-		<a href="http://www.facebook.com/sharer/sharer.php?u=[path]&title=[title]">Facebook</a>
-	</span>
-	<span class="knap twitter">
-		<a href="http://twitter.com/intent/tweet?status=[title]+[path]">Twitter</a>
-	</span>
-	<span class="knap googpleplus">
-		<a href="https://plus.google.com/share?url=[path]">Google Plus</a>
-	</span>
-	<span class="knap linkedin">
-		<a href="http://www.linkedin.com/shareArticle?mini=true&url=[path]&title=[title]&source=KTC.dk">LinkedIn</a>
-	</span>		
-</div>'),
     t('KTC'),
     t('Pladser, tid og pris'),
     t('Signup node'),
@@ -884,7 +905,7 @@ function ktc_content_types_views_default_views() {
     t('Slut'),
     t('Pris'),
     t('Målgruppe'),
-    t('Tilmeldingsfrist'),
+    t('Svarfrist'),
     t('Kort og adresse'),
     t('Adresse'),
     t('[field_arrangement_location]<br />
