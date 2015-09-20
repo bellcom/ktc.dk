@@ -26,10 +26,8 @@ global $base_url;
         <p><?php print $body_shortened; ?></p>
       <?php endif; ?>
 
-      <?php if (isset($hearing_duedate)): ?>
-        <p>
-          <strong><?php print t('Svarfrist:'); ?></strong> <?php print $hearing_duedate; ?>
-        </p>
+      <?php if ($hearing_info['answer_by']): ?>
+        <p><strong><?php print t('Din svarfrist:'); ?></strong> <?php print $hearing_info['answer_by']; ?></p>
       <?php endif ?>
 
       <?php if ($hearing_info['status']): ?>
