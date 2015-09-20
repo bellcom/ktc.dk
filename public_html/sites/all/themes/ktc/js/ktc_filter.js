@@ -1,13 +1,17 @@
 /* KTC filter script
  */
 (function ($) {
+
+    var button = 'filter-all';
+    var button_active = "btn-primary active";
+    var button_normal = "btn-default";
+    var cookie_data = {'type' : {}};
+
     $(window).load(function () {
 
-        var button = 'filter-all';
-        var button_active = "btn-primary active";
-        var button_normal = "btn-default";
         var $container = $('#section-page-with-filter').find('.view-content:first');
 
+        var filter_value;
         var path = window.location.href.split('/');
         var type = path[path.length - 1];
         if (type == 'teknikmiljoe') {
@@ -19,7 +23,24 @@
             $('.filter-box #filter-all').addClass(button_active);
             $('.filter-box #filter-all').removeClass(button_normal);
         }
+
+        // Check if filter-value is stored in a cookie, so we can restore the search filters to previous state
+        var filter_value_cookie;
+        if (filter_value_cookie = JSON.parse($.cookie('filter_value'))) {
+
+            // Check if cookie data is from this page.
+            var page = window.location.pathname.split( '/' )[1];
+            if (filter_value_cookie.page == page) {
+                // Cookie exist. Restore search filters
+                set_filter_value(filter_value_cookie);
+
+                // Submit search filters
+                display_content(check_filter_value());
+            }
+        }
+
         $('body').on('click', '.filter-link', function (event) {
+
             $container = $('#section-page-with-filter').find('.view-content:first');
 
             // Change the buttons class.
@@ -89,8 +110,7 @@
                 }
             }
             // Get all the filter values.
-            var filter_value = check_filter_value();
-
+            filter_value = check_filter_value();
 
             var activeFilterBox = $(this).closest('.panel-pane');
 
@@ -116,70 +136,19 @@
                 }
             });
 
-            var path = window.location.href.split('/');
-            var type = path[path.length - 1];
 
-            // Get the group id.
-            var gid = $('#content_id').find('.pane-content p').text();
-            if (gid == '') {
-                gid = check_gid_filter_value();
-            }
-            else {
-                gid += ',' + check_gid_filter_value();
-            }
-            if (type == 'teknikmiljoe') {
-                if (filter_value[0].indexOf("artikler") >= 0 || filter_value[0].indexOf("all") >= 0)
-                    $('#term_type').show();
-                else
-                    $('#term_type').hide();
-                if (filter_value[0].indexOf("magazine") >= 0 || filter_value[0].indexOf("all") >= 0)
-                    $('#magazine-date-filter').show();
-                else
-                    $('#magazine-date-filter').hide();
-            }
-            var link = '/ajax/' + type + '/view/' + filter_value[0] + '/' + filter_value[1] + '/' + filter_value[2] + '/' + filter_value[3] + '/' + filter_value[4] + '/' + gid;
+            // Store current filter values in cookie for later retrieval
+            cookie_data.page = window.location.pathname.split( '/' )[1];
+            cookie_data.type.regular = filter_value;
+            cookie_data.type.calendar_date = get_calendar_date_filter_value();
+            cookie_data.type.magazine_date = check_magazine_date_filter_value();
+            cookie_data.type.calendar_period = $('#period').find('.btn-primary').attr('data-filter');
+            cookie_data.type.hearing = check_hearing_extra_filter_value();
+            cookie_data.type.group = get_group_id(filter_value);
 
-            // Netvaerk section page my groups and all groups filter.
-            if (type == 'netvaerk' && (filter_value[1] != 'all,' || filter_value[2] != 'all,' || filter_value[3] != 'all,' || filter_value[4] != 'all,')) {
-                var link_2 = '/all_groups/' + filter_value[1] + '/' + filter_value[2] + '/' + filter_value[3] + '/' + filter_value[4] + '/all,';
-                var block = $('#section-page-with-filter-all-groups');
+            $.cookie('filter_value', JSON.stringify(cookie_data), { expires : Drupal.settings.ktc_sectionpage_filter_cookie_expire / 60 / 24, path: '/' });
 
-                if (gid == 'my,') {
-                    link_2 = '/all_groups/' + filter_value[1] + '/' + filter_value[2] + '/' + filter_value[3] + '/' + filter_value[4] + '/my,';
-                }
-                else if (gid == 'newest,') {
-                    link_2 = '/all_groups/' + filter_value[1] + '/' + filter_value[2] + '/' + filter_value[3] + '/' + filter_value[4] + '/newest';
-                }
-
-                jQuery.get(link_2, function (data) {
-                    block.find('.pane-content').html(data);
-                    add_pager_ajax();
-                });
-
-            }
-
-            // Arrangement/kalender section page: filter events on period (furture/old).
-            var substr = type.match(/kalender/g);
-            if (type == 'kalender' || substr == 'kalender') {
-                var period = $('#period').find('.btn-primary').attr('data-filter');
-                var calendar_date_filter_value = get_calendar_date_filter_value();
-                link = '/ajax/aktiviteter/view/all/' + filter_value[1] + '/' + period + '/' + calendar_date_filter_value[0] + '/' + calendar_date_filter_value[1] + '/' + gid;
-            }
-
-            if (type == 'hoeringer') {
-                var hearing_filter_value = check_hearing_extra_filter_value();
-                link = '/ajax/hoeringer/view/hearing/' + filter_value[1] + '/' + filter_value[2] + '/' + hearing_filter_value[0] + '/' + hearing_filter_value[1] + '/' + hearing_filter_value[2];
-            }
-
-            if (type == 'teknikmiljoe') {
-                var magazine_date_filter_value = check_magazine_date_filter_value();
-                link = '/ajax/' + type + '/view/' + filter_value[0] + '/' + filter_value[1] + '/' + magazine_date_filter_value[0] + '/' + magazine_date_filter_value[1] + '/' + filter_value[4] + '/' + gid;
-            }
-            jQuery.get(link, function (data) {
-                $('#section-page-with-filter .pane-content').html(data);
-                load_content();
-                add_pager_ajax();
-            });
+            display_content(filter_value);
         });
 
         $container = $('#section-page-with-filter').find('.view-content:first');
@@ -526,5 +495,192 @@
         calendar_date_filter_value.push(year);
         calendar_date_filter_value.push(month);
         return calendar_date_filter_value;
+    }
+
+    /**
+     * Sets the filter states after page load, in order to "remember" search history.
+     */
+    function set_filter_value(filter_value) {
+
+        if (filter_value.page == 'netvaerk' || filter_value.page == 'nyheder' || filter_value.page == 'teknikmiljoe') {
+            // Set on network (all, mine, newest)
+            if (typeof filter_value.type.group != 'undefined') {
+                var group = sanitize_str(filter_value.type.group);
+                $('#groups').find('[data-filter="' + group + '"]').addClass(button_active);
+                $('#groups').find('#filter-all').removeClass(button_active);
+                $('#groups').find('#filter-all').addClass(button_normal);
+            }
+
+            // Set buttons on Content types filter
+            var content_types = sanitize_str(filter_value.type.regular[0]).split(',');
+            for (var i = 0; i < content_types.length; i++) {
+                $('#content_type').find('#' + content_types[i]).addClass(button_active);
+                $('#content_type').find('#filter-all').removeClass(button_active);
+                $('#content_type').find('#filter-all').addClass(button_normal);
+            }
+
+            // Set buttons on newstype
+            var newstype = sanitize_str(filter_value.type.regular[1]).split(',');
+            for (var i = 0; i < newstype.length; i++) {
+                $('#term_type').find('#filter-' + newstype[i]).addClass(button_active);
+                $('#term_type').find('#filter-all').removeClass(button_active);
+                $('#term_type').find('#filter-all').addClass(button_normal);
+            }
+
+            // Set buttons on Emner
+            var topics = sanitize_str(filter_value.type.regular[2]).split(',');
+            for (var i = 0; i < topics.length; i++) {
+                $('#emner').find('#filter-' + topics[i]).addClass(button_active);
+                $('#emner').find('#filter-all').removeClass(button_active);
+                $('#emner').find('#filter-all').addClass(button_normal);
+            }
+
+            // Set buttons on news topic
+            var news_topic = sanitize_str(filter_value.type.regular[3]).split(',');
+            for (var i = 0; i < news_topic.length; i++) {
+                $('#tags').find('#filter-' + news_topic[i]).addClass(button_active);
+                $('#tags').find('#filter-all').removeClass(button_active);
+                $('#tags').find('#filter-all').addClass(button_normal);
+            }
+
+            // Set buttons on network types
+            var regions = sanitize_str(filter_value.type.regular[4]).split(',');
+            for (var i = 0; i < regions.length; i++) {
+                $('#regioner').find('#filter-' + regions[i]).addClass(button_active);
+                $('#regioner').find('#filter-all').removeClass(button_active);
+                $('#regioner').find('#filter-all').addClass(button_normal);
+            }
+        }
+
+        if (filter_value.page == 'kalender' || filter_value.page == 'teknikmiljoe') {
+
+            var magazine_date_year;
+            var magazine_date_month;
+
+            // Set buttons on calendar types (year)
+            if (typeof filter_value.type.calendar_date != 'undefined') {
+                magazine_date_year = sanitize_str(filter_value.type.calendar_date[0]).split(',');
+                magazine_date_month = sanitize_str(filter_value.type.calendar_date[1]).split(',');
+            }
+            else if (typeof filter_value.type.magazine_date != 'undefined') {
+                magazine_date_year = sanitize_str(filter_value.type.magazine_date[0]).split(',');
+                magazine_date_month = sanitize_str(filter_value.type.magazine_date[1]).split(',');
+            }
+
+            // Set buttons on calendar types (year)
+            for (var i = 0; i < magazine_date_year.length; i++) {
+                $('#magazine-date-filter').find('[data-filter="' + magazine_date_year[i] + '"]').addClass(button_active);
+                $('#magazine-date-filter').find('#filter-all').removeClass(button_active);
+                $('#magazine-date-filter').find('#filter-all').addClass(button_normal);
+            }
+
+            // Set buttons on calendar types (month)
+            for (var i = 0; i < magazine_date_month.length; i++) {
+                $('#magazine-date-filter').find('[data-filter="' + magazine_date_month[i] + '"]').addClass(button_active);
+                $('#magazine-date-filter').find('#filter-all').removeClass(button_active);
+                $('#magazine-date-filter').find('#filter-all').addClass(button_normal);
+            }
+        }
+
+        if (filter_value.page == 'kalender') {
+            // Set buttons on calendar period
+            var magazine_date_period = sanitize_str(filter_value.type.calendar_period[0]).split(',');
+            for (var i = 0; i < magazine_date_period.length; i++) {
+                $('#period').find('#filter-old').addClass(button_active);
+                $('#period').find('#filter-all').removeClass(button_active);
+                $('#period').find('#filter-all').addClass(button_normal);
+            }
+
+            // Set buttons on newstype
+            var newstype = sanitize_str(filter_value.type.regular[1]).split(',');
+            for (var i = 0; i < newstype.length; i++) {
+                $('#term_type').find('#filter-' + newstype[i]).addClass(button_active);
+                $('#term_type').find('#filter-all').removeClass(button_active);
+                $('#term_type').find('#filter-all').addClass(button_normal);
+            }
+        }
+    }
+
+   /*
+    * Helper function to remove trailing comma from a string.
+    */
+    function sanitize_str(str) {
+        return str.replace(/,\s*$/, "");
+    }
+
+   /*
+    * Loads the content base on the filter values, and displays it on the screen.
+    */
+    function display_content(filter_value) {
+        var path = window.location.href.split('/');
+        var type = path[path.length - 1];
+        var link = '/ajax/' + type + '/view/' + filter_value[0] + '/' + filter_value[1] + '/' + filter_value[2] + '/' + filter_value[3] + '/' + filter_value[4] + '/' + gid;
+        var gid = get_group_id();
+
+        if (type == 'teknikmiljoe') {
+            if (filter_value[0].indexOf("artikler") >= 0 || filter_value[0].indexOf("all") >= 0)
+                $('#term_type').show();
+            else
+                $('#term_type').hide();
+            if (filter_value[0].indexOf("magazine") >= 0 || filter_value[0].indexOf("all") >= 0)
+                $('#magazine-date-filter').show();
+            else
+                $('#magazine-date-filter').hide();
+        }
+
+        // Netvaerk section page my groups and all groups filter.
+        if (type == 'netvaerk' && (filter_value[1] != 'all,' || filter_value[2] != 'all,' || filter_value[3] != 'all,' || filter_value[4] != 'all,')) {
+            var link_2 = '/all_groups/' + filter_value[1] + '/' + filter_value[2] + '/' + filter_value[3] + '/' + filter_value[4] + '/all,';
+            var block = $('#section-page-with-filter-all-groups');
+
+            if (gid == 'my,') {
+                link_2 = '/all_groups/' + filter_value[1] + '/' + filter_value[2] + '/' + filter_value[3] + '/' + filter_value[4] + '/my,';
+            }
+            else if (gid == 'newest,') {
+                link_2 = '/all_groups/' + filter_value[1] + '/' + filter_value[2] + '/' + filter_value[3] + '/' + filter_value[4] + '/newest';
+            }
+
+            jQuery.get(link_2, function (data) {
+                block.find('.pane-content').html(data);
+                add_pager_ajax();
+            });
+
+        }
+
+        // Arrangement/kalender section page: filter events on period (future/old).
+        var substr = type.match(/kalender/g);
+        if (type == 'kalender' || substr == 'kalender') {
+            var period = $('#period').find('.btn-primary').attr('data-filter');
+            var calendar_date_filter_value = get_calendar_date_filter_value();
+            cookie_data.type.calendar_period = period;
+            link = '/ajax/aktiviteter/view/all/' + filter_value[1] + '/' + period + '/' + calendar_date_filter_value[0] + '/' + calendar_date_filter_value[1] + '/' + gid;
+        }
+
+        if (type == 'hoeringer') {
+            var hearing_filter_value = check_hearing_extra_filter_value();
+            link = '/ajax/hoeringer/view/hearing/' + filter_value[1] + '/' + filter_value[2] + '/' + hearing_filter_value[0] + '/' + hearing_filter_value[1] + '/' + hearing_filter_value[2];
+        }
+
+        if (type == 'teknikmiljoe') {
+            var magazine_date_filter_value = check_magazine_date_filter_value();
+            cookie_data.type.magazine_date = magazine_date_filter_value;
+            link = '/ajax/' + type + '/view/' + filter_value[0] + '/' + filter_value[1] + '/' + magazine_date_filter_value[0] + '/' + magazine_date_filter_value[1] + '/' + filter_value[4] + '/' + gid;
+        }
+        jQuery.get(link, function (data) {
+            $('#section-page-with-filter .pane-content').html(data);
+            load_content();
+            add_pager_ajax();
+        });
+    }
+
+    function get_group_id() {
+        var gid = $('#content_id').find('.pane-content p').text();
+        if (gid == '') {
+            gid = check_gid_filter_value();
+        }
+        else {
+            gid += ',' + check_gid_filter_value();
+        }
+        return gid;
     }
 })(jQuery);

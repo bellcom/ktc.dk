@@ -35,7 +35,29 @@ function ktc_sectionpage_menu() {
     'access callback' => 'user_is_logged_in',
     'page arguments'  => array(1),
   );
+
+  $items['admin/config/user-interface/filters'] = array(
+    'title' => t('Settings for content filters'),
+    'description' => t('Configure settings for content filters'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_ktc_sectionpage_settings_form'),
+    'access arguments' => array('access administration pages'),
+  );
   return $items;
+}
+
+/**
+ * KTC Sectionpage system settings form.
+ */
+function _ktc_sectionpage_settings_form() {
+  $form = array();
+
+  $form['ktc_sectionpage_filter_cookie_expire'] = array(
+    '#title' => t('How long to remember the user\'s filter settings (in minutes).'),
+    '#default_value' => variable_get('ktc_sectionpage_filter_cookie_expire'),
+    '#type' => 'textfield',
+  );
+  return system_settings_form($form);
 }
 
 /**

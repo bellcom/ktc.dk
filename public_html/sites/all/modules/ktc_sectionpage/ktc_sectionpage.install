@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Set default value of cookie expiration time.
+ */
+function ktc_sectionpage_update_7001() {
+  variable_set('ktc_sectionpage_filter_cookie_expire', 1440);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ktc_sectionpage_uninstall() {
+  variable_del('ktc_filter_cookie_expire');
+}

@@ -227,6 +227,9 @@ function ktc_preprocess_page(&$variables) {
   // Tabs
   $variables['tabs_primary'] = menu_primary_local_tasks();
   $variables['tabs_secondary'] = menu_secondary_local_tasks();
+
+  // Send cookie expire time to JavaScript (used in ktc_filter.js)
+  drupal_add_js(array('ktc_sectionpage_filter_cookie_expire' => variable_get('ktc_sectionpage_filter_cookie_expire')), 'setting');
 }
 
 /**
