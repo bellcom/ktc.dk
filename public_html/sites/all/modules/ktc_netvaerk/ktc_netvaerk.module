@@ -247,34 +247,28 @@ function ktc_netvaerk_settings() {
   $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_NONE_OTHER;
   $form['netvaerk_not_member'][$var_name] = array(
     '#type' => 'textarea',
-    '#title' => t('Besked på KTC grupper der styres af CRM (KTC faggruppe, KTC kredsnetværk, KTC internt netværk)'),
+    '#title' => t('Besked på netværkstyper der styres af CRM (KTC faggruppe, KTC kredsnetværk, KTC internt netværk) - uanset om gruppen er lukket/skjult og indholdsindstillinger.'),
     '#default_value' => variable_get($var_name),
   );
 
   $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_OPEN;
   $form['netvaerk_not_member'][$var_name] = array(
     '#type' => 'textarea',
-    '#title' => t('Besked på åbent netværk'),
+    '#title' => t('Besked på åbent netværk hvor brugeren kan tilmelde sig (ikke ansøge)'),
     '#default_value' => variable_get($var_name),
   );
 
   $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_CLOSED_VISIBLE;
   $form['netvaerk_not_member'][$var_name] = array(
     '#type' => 'textarea',
-    '#title' => t('Besked på (lukket)netværk hvor indholdet er synligt'),
+    '#title' => t('Besked på (lukket) netværk hvor indholdet er synligt'),
     '#default_value' => variable_get($var_name),
   );
 
   $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_CLOSED_HIDDEN;
   $form['netvaerk_not_member'][$var_name] = array(
     '#type' => 'textarea',
-    '#title' => t('Besked på (lukket)netværk hvor indholdet er skjult'),
-    '#default_value' => variable_get($var_name),
-  );
-  $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_CLOSED_HIDDEN;
-  $form['netvaerk_not_member']['ktc_netvaerk_search_empty_message'] = array(
-    '#type' => 'textarea',
-    '#title' => t('Besked på (lukket)netværk hvor indholdet er skjult'),
+    '#title' => t('Besked på (lukket) netværk hvor indholdet er skjult'),
     '#default_value' => variable_get($var_name),
   );
 
