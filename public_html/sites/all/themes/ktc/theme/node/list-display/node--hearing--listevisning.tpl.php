@@ -107,8 +107,8 @@
 
       <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
 
-      <?php if (isset($hearing_duedate)): ?>
-        <p><small><strong><?php print t('Svarfrist:'); ?></strong> <?php print $hearing_duedate; ?></small></p>
+      <?php if ($hearing_info['answer_by']): ?>
+        <p><small><strong><?php print t('Din svarfrist:'); ?></strong> <?php print $hearing_info['answer_by']; ?></small></p>
       <?php endif ?>
 
       <?php if ($hearing_info['status']): ?>
