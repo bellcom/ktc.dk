@@ -87,7 +87,7 @@
   <div class="ktc-list-display-large-body">
 
     <?php if ($hearing_info['role']): ?>
-      <p><strong><?php print t('Din status:'); ?></strong> <?php print $hearing_info['role']; ?></p>
+      <p><strong><?php print t('Din rolle:'); ?></strong> <?php print $hearing_info['role']; ?></p>
     <?php endif ?>
 
     <h3 class="ktc-list-display-large-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
