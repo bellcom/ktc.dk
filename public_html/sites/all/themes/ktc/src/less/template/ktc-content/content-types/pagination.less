@@ -1,0 +1,146 @@
+	// |--------------------------------------------------------------------------
+// | Pagination
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for:
+// | - .ktc-aside-list-table
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Default (gray background)
+.pagination {
+	border-radius: 20px;
+
+	> li {
+		> a,
+		> span {
+			font-weight: bold;
+			padding: @padding-base-vertical @padding-base-horizontal;
+			line-height: @line-height-base;
+			border-width: 2px;
+			margin-left: -2px;
+		}
+		&:first-child {
+			> a,
+			> span {
+				padding-left: floor( (@padding-base-horizontal * 1.4) );
+				.border-left-radius(20px);
+			}
+		}
+		&:last-child {
+			> a,
+			> span {
+				padding-right: floor( (@padding-base-horizontal * 1.4) );
+				.border-right-radius(20px);
+			}
+		}
+		&,
+		&.disabled {
+
+			&,
+			&:hover {
+				> a,
+				> span {
+					border-color: darken(@pagination-border, 4%);
+				}
+			}
+		}
+		&.active {
+			&,
+			&:hover {
+				> a,
+				> span {
+					background-color: @pagination-bg;
+				}
+			}
+		}
+	}
+}
+
+// Content or wide content (white background)
+.ktc-content,
+.ktc-content-wide {
+
+	// Pagination
+	.pagination {
+		> li {
+			&,
+			&.disabled {
+
+				&,
+				&:hover {
+					> a,
+					> span {
+						border-color: @pagination-border;
+					}
+				}
+			}
+		}
+	}
+}
+
+// View
+.view {
+
+	// Pagination
+	.pagination {
+		.progress-disabled {
+			float: left;
+		}
+	}
+}
+
+// Aside
+.ktc-aside-list {
+
+	// View
+	.view {
+
+		// Pager
+		ul.pager {
+			margin-top: 10px;
+
+			// List item
+			li {
+
+				// Link
+				a {
+					.btn;
+					.btn-default;
+				}
+
+				// Current
+				&.pager-current {
+					display: none;
+				}
+
+				// Previous
+				&.pager-previous {
+
+					// Link
+					a {
+					}
+				}
+
+				// Next
+				&.pager-next {
+
+					// Link
+					a {
+					}
+				}
+			}
+		}
+	}
+}
+.view .date-nav-wrapper .date-prev {
+	left: 0;
+	right: auto;
+}
+.view .date-nav-wrapper .date-next {
+	left: auto;
+	right: 0;
+}

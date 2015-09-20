@@ -75,7 +75,7 @@
 ?>
 
 <!-- Begin - header -->
-<header class="header-region ktc-header">
+<header class="header-region ktc-header hidden-print">
 
   <?php if ($page['header_top']): ?>
     <?php print render($page['header_top']); ?>

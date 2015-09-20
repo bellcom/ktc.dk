@@ -1,0 +1,291 @@
+// |--------------------------------------------------------------------------
+// | Link w. icon
+// |--------------------------------------------------------------------------
+// |
+// | Provide styling for:
+// | - .ktc-link-with-icon
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Link with icon
+.ktc-link-with-icon {
+
+	// Icon
+	&:before {
+		float: left;
+		margin-right: 5px;
+		content: "";
+	}
+
+	// Large
+	&.ktc-link-with-icon-large {
+		font-size: @font-size-large;
+		font-weight: bold;
+	}
+}
+
+
+
+// 2 columns
+.ktc-aside-link-list-2-col {
+
+	// Body
+	.ktc-aside-body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.view-content {
+		&:extend(.clearfix all);
+	}
+
+	// Link container
+	.ktc-link-container {
+		float: left;
+		width: 50%;
+		padding: 2px @ktc-default-left-right-inner-spacing;
+
+		// On left side
+		&:nth-child(odd) {
+			padding-left: @ktc-default-left-right-inner-spacing;
+			padding-right: floor( (@ktc-default-left-right-inner-spacing / 2) );
+		}
+
+		// On right side
+		&:nth-child(even) {
+			padding-left: floor( (@ktc-default-left-right-inner-spacing / 2) );
+			padding-right: @ktc-default-left-right-inner-spacing;
+		}
+	}
+}
+
+@media @media-query-mobile-only {
+  // 2 columns
+  .ktc-aside-link-list-2-col {
+
+	// Link container
+	.ktc-link-container {
+	  width: 100%;
+	  padding: 2px @ktc-default-left-right-inner-spacing;
+
+	  // On left side
+	  &:nth-child(odd) {
+		padding: 2px @ktc-default-left-right-inner-spacing;
+	  }
+
+	  // On right side
+	  &:nth-child(even) {
+		padding: 2px @ktc-default-left-right-inner-spacing;
+	  }
+	}
+  }
+}
+
+// 3 columns
+.ktc-aside-link-list-3-col {
+
+	// Body
+	.ktc-aside-body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	// Wrapper
+	.ktc-link-wrapper {
+
+		// Link container
+		.ktc-link-container {
+			float: left;
+			width: 33.333%;
+			padding: 2px floor( (@ktc-default-left-right-inner-spacing / 2) );
+
+			// On left side
+			&:nth-child(1) {
+				padding-left: @ktc-default-left-right-inner-spacing;
+				padding-right: floor( (@ktc-default-left-right-inner-spacing / 2) );
+			}
+
+			// On right side
+			&:nth-child(3) {
+				padding-left: floor( (@ktc-default-left-right-inner-spacing / 2) );
+				padding-right: @ktc-default-left-right-inner-spacing;
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Icons
+// --------------------------------------------------
+
+// Default
+& {
+
+	// Link with icon
+	&.ktc-link-with-icon,
+	.ktc-link-with-icon {
+
+		// Color arrow
+		&.ktc-link-icon-color-arrow {
+
+			// Icon
+			&:before {
+				.sprite(@ikon-pilgrey);
+			}
+		}
+
+		// Meeting doodle
+		&.ktc-link-icon-meeting_doodle {
+			line-height: @ikon-afstemning2-height;
+
+			// Icon
+			&:before {
+				.sprite(@ikon-afstemning2);
+			}
+		}
+
+		// Arrangement
+		&.ktc-link-icon-arrangement {
+			line-height: @ikon-arrangement2-height;
+
+			// Icon
+			&:before {
+				.sprite(@ikon-arrangement2);
+			}
+		}
+
+		// Forum post
+		&.ktc-link-icon-forum_post {
+			line-height: @ikon-debat-height;
+
+			// Icon
+			&:before {
+				.sprite(@ikon-debat);
+			}
+		}
+
+		// Document
+		&.ktc-link-icon-document {
+			line-height: @ikon-dokument-height;
+
+			// Icon
+			&:before {
+				.sprite(@ikon-dokument);
+			}
+		}
+
+		// Sub-network
+		&.ktc-link-icon-subnetwork {
+			line-height: @ikon-netvaerk2-height;
+
+			// Icon
+			&:before {
+				.sprite(@ikon-netvaerk2);
+			}
+		}
+
+		// Hearing
+		&.ktc-link-icon-hearing {
+			line-height: @ikon-hoering2-height;
+
+			// Icon
+			&:before {
+				.sprite(@ikon-hoering2);
+			}
+		}
+
+		// Hearing - (not round)
+		&.ktc-link-icon-hearing-simple {
+			line-height: @ikon-hoering-height;
+
+			// Icon
+			&:before {
+				.sprite(@ikon-hoering);
+			}
+		}
+
+		// OS2 web base_news
+		&.ktc-link-icon-os2web_base_news {
+			line-height: @ikon-nyhed2-height;
+
+			// Icon
+			&:before {
+				.sprite(@ikon-nyhed2);
+			}
+		}
+	}
+}
+
+// Green
+.ktc-green {
+
+	// Link with icon
+	&.ktc-link-with-icon,
+	.ktc-link-with-icon {
+
+		// Color arrow
+		&.ktc-link-icon-color-arrow {
+
+			// Icon
+			&:before {
+				.sprite(@arrow-green);
+			}
+		}
+	}
+}
+
+// Blue
+.ktc-blue {
+
+	// Link with icon
+	&.ktc-link-with-icon,
+	.ktc-link-with-icon {
+
+		// Color arrow
+		&.ktc-link-icon-color-arrow {
+			// Icon
+			&:before {
+				.sprite(@arrow-blue);
+			}
+		}
+	}
+}
+
+// Gold
+.ktc-gold {
+
+	// Link with icon
+	&.ktc-link-with-icon,
+	.ktc-link-with-icon {
+
+		// Color arrow
+		&.ktc-link-icon-color-arrow {
+
+			// Icon
+			&:before {
+				.sprite(@arrow-yellow);
+			}
+		}
+	}
+}
+
+// Red
+.ktc-red {
+
+	// Link with icon
+	&.ktc-link-with-icon,
+	.ktc-link-with-icon {
+
+		// Color arrow
+		&.ktc-link-icon-color-arrow {
+
+			// Icon
+			&:before {
+				.sprite(@arrow-red);
+			}
+		}
+	}
+}

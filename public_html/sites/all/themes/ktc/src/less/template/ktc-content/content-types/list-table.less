@@ -1,0 +1,132 @@
+// |--------------------------------------------------------------------------
+// | List table
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for:
+// | - .ktc-aside-list-table
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// List
+.ktc-aside-table-list {
+
+	.ktc-aside-body {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+  &.ktc-aside-no-stack {
+
+	.ktc-aside-body {
+	  padding-bottom: 0;
+	}
+  }
+
+	// Table
+	.table {
+		margin-bottom: 0;
+
+		// Header
+		thead {
+			display: none;
+		}
+
+		// Row
+		tr {
+
+			td {
+				position: relative;
+				padding: 4px floor( (@ktc-default-left-right-inner-spacing - 5px ));
+				padding-right: (floor( (@ktc-default-left-right-inner-spacing - 5px ) + 40px));
+				border: 0;
+				border-radius: 3px;
+
+				&,
+				&:hover {
+					background-color: transparent;
+				}
+
+				a {
+					display: inline-block;
+					.word-wrap();
+				}
+
+				.file-icon {
+					display: none;
+				}
+
+				.file-extension {
+					position: absolute;
+					right: floor( (@ktc-default-left-right-inner-spacing - 5px ));
+					top: 4px;
+					font-weight: bold;
+					color: @ktc-default-color-headline;
+				}
+			}
+
+			// Odd
+			&:nth-child(odd) {
+
+				td {
+
+					&,
+					&:hover {
+						background-color: @body-bg;
+					}
+				}
+			}
+		}
+	}
+
+  &.ktc-aside-table-list-reversed {
+
+
+	// Table
+	.table {
+
+	  // Row
+	  tr {
+
+		// Odd
+		&:nth-child(odd) {
+
+		  td {
+
+			&,
+			&:hover {
+			  background-color: transparent;
+			}
+		  }
+		}
+
+		// Even
+		&:nth-child(even) {
+
+		  td {
+
+			&,
+			&:hover {
+			  background-color: @body-bg;
+			}
+		  }
+		}
+	  }
+	}
+  }
+}
+
+// --------------------------------------------------
+// Reset
+// --------------------------------------------------
+
+// List
+.ktc-aside-table-list {
+
+	.field-item {
+		border: 0;
+		padding: 0;
+	}
+}

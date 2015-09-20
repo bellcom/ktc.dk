@@ -34,7 +34,7 @@ function ktc_user_profile_image_default_styles() {
     'name' => 'ktc_profile_image_large',
     'label' => 'KTC profile image large',
     'effects' => array(
-      4 => array(
+      3 => array(
         'label' => 'Skalér og beskær',
         'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
         'effect callback' => 'image_scale_and_crop_effect',
@@ -44,8 +44,8 @@ function ktc_user_profile_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 220,
-          'height' => 220,
+          'width' => 381,
+          'height' => 381,
         ),
         'weight' => 1,
       ),

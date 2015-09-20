@@ -1,0 +1,258 @@
+// |--------------------------------------------------------------------------
+// | Comments list
+// |--------------------------------------------------------------------------
+// |
+// | Contains the following:
+// | - .ktc-comments-list
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Comments list
+.ktc-comments-list {
+	.ktc-well;
+	margin-top: 30px;
+	margin-bottom: -30px; // accomidate for comment form
+
+	// Heading
+	.ktc-comments-list-heading {
+
+		// Title
+		.ktc-comments-list-title {}
+	}
+
+	// Body
+	.ktc-comments-list-body {
+
+		// Links
+		.links {
+			display: block;
+		}
+
+		// List item
+		.ktc-comments-list-item {
+			border-bottom: 2px solid #fff;
+			padding: 15px 0;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			.ktc-comments-list-item-wrapper {
+				display: table;
+				width: 100%;
+
+				.ktc-user-profile-photo-container,
+				.ktc-comments-list-content {
+					display: table-cell;
+					vertical-align: top;
+				}
+			}
+
+			.ktc-date {
+				font-size: floor((@font-size-base - 1px));
+				margin-bottom: 1px;
+			}
+
+			// Photo container
+			.ktc-user-profile-photo-container {
+				width: 60px;
+
+				// Photo
+				img {
+					display: inline-block;
+					height: auto;
+					width: auto;
+					max-width: 48px;
+					max-height: 48px;
+					border-radius: 100%;
+					border-width: @ktc-user-profile-photo-border-width;
+					border-style: solid;
+					border-color: #fff;
+					background-color: transparent;
+					padding: @ktc-user-profile-photo-border-distance;
+				}
+			}
+
+			// Content
+			.ktc-comments-content {
+				display: inherit;
+
+				// Headlines
+				h1, h2, h3, h4, h5, h6 {
+					font-family: @font-family-base;
+					font-size: @font-size-base;
+					margin-top: 0;
+					padding-top: 0;
+					margin-bottom: 1px;
+					color: @ktc-comments-default-photo-headline-color;
+
+					// Date (span)
+					span {
+						font-weight: normal;
+						margin-left: 5px;
+
+						// EM
+						> em {
+							font-style: normal;
+						}
+					}
+				}
+
+				// Date
+				.ktc-date {
+					color: @ktc-override-headline-color;
+					font-size: @font-size-base;
+					font-style: normal;
+				}
+			}
+
+			// Link
+			.ktc-comments-list-links {
+				padding-top: 10px;
+				text-align: right;
+
+				ul {
+					margin: 0;
+
+					> li {
+
+						&:last-child {
+							padding-right: 0;
+						}
+					}
+				}
+
+				// Links
+				a {
+					.btn;
+					.ktc-mixin-button(@ktc-override-button-default-background-color, @ktc-override-button-default-border-color, @ktc-override-button-default-font-color);
+				}
+			}
+
+			// Stacked
+			+ .ktc-comments-list-item {
+				border: 2px solid #fff;
+				margin-top: -2px;
+			}
+		}
+
+		// Indented
+		.indented {
+			.ktc-comments-list-item {
+				padding-left: 25px;
+
+				&,
+				&:first-child,
+				&:last-child {
+					border-bottom: 2px solid #fff;
+					margin-bottom: -2px;
+				}
+			}
+
+			// Indented
+			.indented {
+				.ktc-comments-list-item {
+					padding-left: 50px;
+				}
+
+				// Indented
+				.indented {
+					.ktc-comments-list-item {
+						padding-left: 75px;
+					}
+
+					// Indented
+					.indented {
+						.ktc-comments-list-item {
+							padding-left: 100px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.ktc-teaser,
+.ktc-teaser-large {
+
+	// Comments list
+	.ktc-comments-list {
+		margin-bottom: 0; // no comment form on these
+
+		// Clearfix
+		&:extend(.clearfix all);
+	}
+}
+
+// Content
+body {
+
+	&,
+	.ktc-content {
+
+		// Comments list
+		.ktc-comments-list {
+			.ktc-mixin-content-almost-full-width();
+		}
+	}
+}
+
+// Wide
+.ktc-content-wide {
+
+	// Comments list
+	.ktc-comments-list {
+		.ktc-mixin-content-wide-almost-full-width();
+	}
+}
+
+.ktc-teaser,
+.ktc-teaser-large {
+
+	&,
+	&.ktc-red,
+	&.ktc-blue,
+	&.ktc-green,
+	&.ktc-yellow {
+
+		// Comments list
+		.ktc-comments-list {
+			margin-top: 15px;
+
+			// Body
+			.ktc-comments-list-body {
+
+				// Stacked
+				.view-content {
+
+					> div {
+						border-bottom: 2px solid #fff;
+
+						+ div {
+							margin-top: -2px;
+						}
+
+						&:last-child {
+							border-bottom: 0;
+						}
+					}
+				}
+
+				// List item
+				.ktc-comments-list-item {
+
+					.ktc-date {
+						font-size: floor((@font-size-base - 1px));
+						margin-bottom: 1px;
+						font-style: normal;
+						color: @text-color;
+					}
+				}
+			}
+		}
+	}
+}

@@ -26,7 +26,7 @@
  * @ingroup themeable
  */
 ?>
-  <footer class="region region_footer footer_1 lcontainer-fluid">
+  <footer class="region region_footer footer_1 lcontainer-fluid hidden-print">
     <?php if ($content): ?>
     <div class="lcontainer-fluid clearfix footer_1">
       <div class="container">

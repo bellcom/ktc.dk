@@ -1,0 +1,351 @@
+// |--------------------------------------------------------------------------
+// | Header
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-header
+// |
+
+//== General
+@ktc-header-background-color: #fff;
+
+//== Top bar
+@ktc-header-top-bar-height: 50px;
+
+//== Logo
+@ktc-header-top-bar-logo-width: 140px;
+@ktc-header-top-bar-logo-height: 70px;
+
+// --------------------------------------------------
+// Top bar
+// --------------------------------------------------
+
+// Header
+.ktc-header {
+
+	// Top bar
+	.ktc-header-top-bar {
+		min-height: @ktc-header-top-bar-height;
+		background-color: @ktc-header-background-color;
+
+		// Logo
+		.ktc-header-top-bar-logo {
+			float: left;
+			width: @ktc-header-top-bar-logo-width;
+			margin-bottom: floor((@ktc-header-top-bar-height - @ktc-header-top-bar-logo-height));
+
+			// Image
+			img {
+				border: 0;
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		// List
+		.ktc-header-top-bar-list {
+			.list-inline;
+			margin: 0;
+			height: 48px;
+
+		  	&.xs-only {
+			  margin-top: 25px;
+			  margin-bottom: 5px;
+			}
+
+			// List item
+			> li {
+				height: inherit;
+				vertical-align: middle;
+				padding: 0;
+			}
+
+			// User display
+			&.ktc-header-top-bar-user-display {
+
+				// User profile
+				.ktc-header-top-bar-user-profile {
+
+					// Photo
+					.ktc-user-profile-photo-container {
+						float: left;
+						margin-right: 5px;
+
+						// Image
+						img {
+							display: inline-block;
+							width: 44px;
+							height: 44px;
+							border-radius: 100%;
+							border-width: @ktc-user-profile-photo-border-width;
+							border-style: solid;
+							background-color: transparent;
+							padding: @ktc-user-profile-photo-border-distance;
+							border-color: @ktc-color-red;
+						}
+					}
+
+					// Link
+					a {
+						color: @ktc-color-red-font;
+						font-size: 16px;
+						line-height: 48px;
+					  	.word-wrap();
+					}
+				}
+			}
+
+			// User login
+			&.ktc-header-top-bar-user-login {
+				padding-top: 10px;
+			}
+
+			// Navigation
+			&.ktc-header-top-bar-navigation {
+
+				// Icon
+				.ktc-header-top-bar-user-menu-icon {
+					display: inline-block;
+					margin-top: 10px;
+
+					// Settings
+					&.ktc-header-top-bar-user-menu-icon-settings {
+						.sprite(@header-cog);
+					}
+
+					// Search
+					&.ktc-header-top-bar-user-menu-icon-search {
+						.sprite(@header-search);
+					}
+
+					// Toggle
+					&.ktc-header-top-bar-user-menu-icon-toggle {
+						.sprite(@header-toggle);
+					}
+
+					// Log out
+					&.ktc-header-top-bar-user-menu-icon-user-logout {
+						.sprite(@header-logout);
+					}
+				}
+			}
+		}
+
+		// Button (add content)
+		.ktc-header-top-bar-add-content {
+			position: relative;
+			cursor: pointer;
+			float: left;
+			margin-top: 12px;
+			margin-left: floor(( @grid-gutter-width / 2));
+
+			// Open
+			&.open {
+				ul.create_content {
+					display: block;
+				}
+			}
+
+			// Icon
+			.ktc-header-top-bar-add-content-icon {
+				display: inlin
+				e-block;
+				.sprite(@node-add);
+			}
+			span {
+				padding: 5px 8px;
+				font-size: 13px;
+				line-height: 2em;
+				vertical-align: top;
+				font-weight: 700;
+			}
+			ul.create_content {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				padding: 0px;
+				background-color: #fff;
+				z-index: @zindex-navbar + 10;
+
+				li {
+					list-style: none;
+					padding: 2px 10px;
+					&:hover {
+						background-color: @gray-lighter;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Mobile only
+@media @media-query-mobile-only {
+
+	// Header
+	.ktc-header {
+
+		// Top bar
+		.ktc-header-top-bar {
+			min-height: @ktc-header-top-bar-height;
+			background-color: @ktc-header-background-color;
+
+			// List
+			.ktc-header-top-bar-list {
+				height: auto;
+
+				// Navigation
+				&.ktc-header-top-bar-navigation {
+
+					// Icon
+					.ktc-header-top-bar-user-menu-icon {
+						margin-top: 0;
+					}
+				}
+
+				// User login
+				&.ktc-header-top-bar-user-login {
+					padding-top: 0;
+				}
+			}
+
+			// Button (add content)
+			.ktc-header-top-bar-add-content {
+				float: none;
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Dropdown
+// --------------------------------------------------
+
+// Header
+.ktc-header {
+
+	// Dropdown
+	.ktc-header-dropdown {
+		display: none;
+		padding-top: floor( (floor( (@ktc-header-top-bar-logo-height - @ktc-header-top-bar-height )) + @grid-gutter-width));
+
+		// Container
+		> .container {
+			background-color: @ktc-header-background-color;
+		}
+
+		// Open
+		&.open {
+			display: block;
+		}
+
+		// Block
+		.ktc-block {
+			float: left;
+			width: 20%;
+			padding-left: floor( (@grid-gutter-width / 2));
+			padding-right: floor( (@grid-gutter-width / 2));
+		}
+	}
+}
+
+// --------------------------------------------------
+// Navigation
+// --------------------------------------------------
+
+// Header
+.ktc-header {
+
+	// Navigation
+	.ktc-header-navigation {
+		background: url("../images/bg_navigation.jpg") center top;
+
+		.navbar-toggle {
+
+			.navbar-toggle-text {
+				float:left;
+				margin-right:10px;
+				margin-top: -2px;
+				color: #fff;
+			}
+			.navbar-toggle-wrapper-icon-bar {
+				float: left;
+
+				.icon-bar {
+					background-color: #fff;
+				}
+			}
+		}
+
+		// Nav
+		.navbar-nav {
+			margin-left: @ktc-header-top-bar-logo-width;
+
+			// List item
+			> li {
+
+				// Link
+				> a {
+					font-size: 16px;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+				// Active
+				&.active {
+
+					// Link
+					> a {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Mobile only
+@media @media-query-mobile-only {
+
+	// Header
+	.ktc-header {
+
+		// Navigation
+		.ktc-header-navigation {
+
+			// Nav
+			.navbar-nav {
+				margin-left: 0;
+
+				// List item
+				> li {
+
+					// Link
+					> a {
+						padding-left: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Form
+// --------------------------------------------------
+
+// Header
+.ktc-header {
+
+	// Form
+	form {
+
+		// Button (submit)
+		button {
+			min-width: 0;
+		}
+	}
+}
