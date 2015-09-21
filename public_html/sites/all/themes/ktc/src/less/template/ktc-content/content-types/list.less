@@ -1,0 +1,93 @@
+// |--------------------------------------------------------------------------
+// | List
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for:
+// | - ul.related-links
+// | - a.related-link-type-{%node_type%}
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// List
+.ktc-list {
+	.list-unstyled;
+
+	// List item
+	> li {
+		position: relative;
+		padding: 5px 0;
+		padding-right: floor((@ikon-arrow-right-width + 8px));
+
+		// First
+		&:first-child {
+			margin-top: -5px;
+		}
+
+		// Last
+		&:last-child {
+			margin-bottom: -5px;
+		}
+
+		// Link
+		> a {
+			display: block;
+
+			// Icon
+			&:after {
+				position: absolute;
+				content: "";
+				top: 50%;
+				right: 0;
+				margin-top: floor( (0 - (@ikon-arrow-right-height / 2 )));
+				.sprite(@ikon-arrow-right);
+			}
+		}
+	}
+}
+
+// Aside
+.ktc-aside-list {
+
+	// Body
+	.ktc-aside-body {
+
+		// Field items
+		.field-items {
+
+			// Item
+			.field-item {
+				position: relative;
+				padding: 5px 0;
+				padding-right: floor((@ikon-arrow-right-width + 8px));
+
+				// First
+				&:first-child {
+					margin-top: -5px;
+				}
+
+				// Last
+				&:last-child {
+					margin-bottom: -5px;
+				}
+
+				// Link
+				> a {
+					display: block;
+
+					// Icon
+					&:after {
+						position: absolute;
+						content: "";
+						top: 50%;
+						right: 0;
+						margin-top: floor((0 - (@ikon-arrow-right-height / 2 )));
+						.sprite(@ikon-arrow-right);
+					}
+				}
+			}
+		}
+	}
+}

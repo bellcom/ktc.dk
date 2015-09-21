@@ -1,0 +1,240 @@
+// |--------------------------------------------------------------------------
+// | Variables
+// |--------------------------------------------------------------------------
+// |
+// | Provides variables for:
+// | - defaults
+// | - aside
+// | - block
+// | - teaser
+// |
+
+// --------------------------------------------------
+// General (defaults)
+// --------------------------------------------------
+
+//== Title
+@ktc-default-title-font-family: @headings-font-family;
+@ktc-default-title-font-size: @font-size-base;
+@ktc-default-title-font-weight: @headings-font-weight;
+@ktc-default-title-font-color: @headings-color;
+
+//== Spacing
+@ktc-default-left-right-inner-spacing: 15px;
+@ktc-default-wide-left-right-inner-spacing: 60px;
+@ktc-default-title-top-bottom-inner-spacing: 7px;
+@ktc-default-body-top-bottom-inner-spacing: 10px;
+@ktc-almost-full-width-inner-spacing: 5px;
+
+//== Colouring
+@ktc-default-color-headline: @gray-darker;
+@ktc-default-color-font: @text-color;
+
+@ktc-color-light-content-background: #fff;
+@ktc-color-light-content-background-font: @text-color;
+
+@ktc-color-dark-content-background: @gray-darker;
+@ktc-color-dark-content-background-font: #fff;
+
+@ktc-color-gray: #e9edee;
+
+@ktc-color-green: @brand-darkgreen;
+@ktc-color-green-font: @ktc-color-green;
+@ktc-color-green-background: @ktc-color-green;
+@ktc-color-green-background-font: #fff;
+
+@ktc-color-red: @brand-userlink-red;
+@ktc-color-red-font: @ktc-color-red;
+@ktc-color-red-background: @ktc-color-red;
+@ktc-color-red-background-font: #fff;
+
+@ktc-color-blue: @brand-darkblue;
+@ktc-color-blue-font: @ktc-color-blue;
+@ktc-color-blue-background: @ktc-color-blue;
+@ktc-color-blue-background-font: #fff;
+
+@ktc-color-gold: @brand-gold;
+@ktc-color-gold-font: @ktc-color-gold;
+@ktc-color-gold-background: @ktc-color-gold;
+@ktc-color-gold-background-font: #fff;
+
+//== Icons
+@ktc-icon-toggle-open: @ikon-pilgrey-ned;
+@ktc-icon-toggle-open-height: @ikon-pilgrey-ned-height;
+@ktc-icon-toggle-open-width: @ikon-pilgrey-ned-width;
+
+@ktc-icon-toggle-closed: @ikon-pilgrey;
+@ktc-icon-toggle-closed-height: @ikon-pilgrey-height;
+@ktc-icon-toggle-closed-width: @ikon-pilgrey-width;
+
+@ktc-icon-comment: @comment;
+@ktc-icon-comment-height: @comment-height;
+@ktc-icon-comment-width: @comment-width;
+
+@ktc-icon-viewers: @readed;
+@ktc-icon-viewers-height: @readed-height;
+@ktc-icon-viewers-width: @readed-width;
+
+@ktc-icon-hearing: @ikon-hoering;
+@ktc-icon-hearing-height: @ikon-hoering-height;
+@ktc-icon-hearing-width: @ikon-hoering-width;
+
+@ktc-icon-forum: @ikon-debat2;
+@ktc-icon-forum-height: @ikon-debat2-height;
+@ktc-icon-forum-width: @ikon-debat2-width;
+
+@ktc-icon-article: @ikon-artikkel;
+@ktc-icon-article-height: @ikon-artikkel-height;
+@ktc-icon-article-width: @ikon-artikkel-width;
+
+@ktc-icon-vote: @ikon-afstemning;
+@ktc-icon-vote-height: @ikon-afstemning-height;
+@ktc-icon-vote-width: @ikon-afstemning-width;
+
+@ktc-icon-news: @ikon-nyhed;
+@ktc-icon-news-height: @ikon-nyhed-height;
+@ktc-icon-news-width: @ikon-nyhed-width;
+
+@ktc-icon-private: @private;
+@ktc-icon-private-height: @private-height;
+@ktc-icon-private-width: @private-width;
+
+@ktc-icon-arrangement: @ikon-arrangement;
+@ktc-icon-arrangement-height: @ikon-arrangement-height;
+@ktc-icon-arrangement-width: @ikon-arrangement-width;
+
+@ktc-icon-document: @ikon-dok;
+@ktc-icon-document-height: @ikon-dok-height;
+@ktc-icon-document-width: @ikon-dok-width;
+
+@ktc-icon-network: @ikon-netvaerk;
+@ktc-icon-network-height: @ikon-netvaerk-height;
+@ktc-icon-network-width: @ikon-netvaerk-width;
+
+@ktc-icon-pin-green: @ikon-pin;
+@ktc-icon-pin-green-height: @ikon-pin-height;
+@ktc-icon-pin-green-width: @ikon-pin-width;
+
+@ktc-icon-pin-gold: @ikon-pin-yellow;
+@ktc-icon-pin-gold-height: @ikon-pin-yellow-height;
+@ktc-icon-pin-gold-width: @ikon-pin-yellow-width;
+
+@ktc-icon-pin-blue: @ikon-pin-blue;
+@ktc-icon-pin-blue-height: @ikon-pin-blue-height;
+@ktc-icon-pin-blue-width: @ikon-pin-blue-width;
+
+@ktc-icon-pin-red: @ikon-pin-red;
+@ktc-icon-pin-red-height: @ikon-pin-red-height;
+@ktc-icon-pin-red-width: @ikon-pin-red-width;
+
+// --------------------------------------------------
+// Content
+// --------------------------------------------------
+
+//==
+@ktc-content-top-bottom-inner-spacing: @ktc-default-body-top-bottom-inner-spacing;
+
+// --------------------------------------------------
+// Aside
+// --------------------------------------------------
+
+//== Heading
+@ktc-aside-heading-background-color: @ktc-color-dark-content-background;
+
+//== Title
+@ktc-aside-title-font-color: @ktc-color-dark-content-background-font;
+@ktc-aside-title-top-bottom-inner-spacing: @ktc-default-title-top-bottom-inner-spacing;
+@ktc-aside-title-font-family: @font-family-base;
+@ktc-aside-title-font-size: @font-size-base;
+@ktc-aside-title-font-weight: bold;
+
+//== Body
+@ktc-aside-body-top-bottom-inner-spacing: @ktc-default-body-top-bottom-inner-spacing;
+
+// --------------------------------------------------
+// Block
+// --------------------------------------------------
+
+//== Heading
+@ktc-block-heading-left-border-width: 8px;
+@ktc-block-heading-background-color: @ktc-color-dark-content-background;
+
+//== Title
+@ktc-block-title-font-color: @ktc-color-dark-content-background-font;
+@ktc-block-title-top-bottom-inner-spacing: floor((@ktc-default-title-top-bottom-inner-spacing + 3px));
+@ktc-block-title-font-family: @font-family-base;
+@ktc-block-title-font-size: @font-size-base;
+@ktc-block-title-font-weight: bold;
+
+//== Body
+@ktc-block-body-top-bottom-inner-spacing: @ktc-default-body-top-bottom-inner-spacing;
+
+// --------------------------------------------------
+// Teaser large
+// --------------------------------------------------
+
+//== Title
+@ktc-teaser-large-title-icon-spacing: 5px;
+@ktc-teaser-large-title-font-color: @ktc-default-title-font-color;
+@ktc-teaser-large-title-top-bottom-inner-spacing: @ktc-default-title-top-bottom-inner-spacing;
+@ktc-teaser-large-title-font-family: @ktc-default-title-font-family;
+@ktc-teaser-large-title-font-size: @font-size-h5;
+@ktc-teaser-large-title-link-font-color: @text-color;
+@ktc-teaser-large-title-span-font-color: @text-color;
+@ktc-teaser-large-title-link-font-weight: bold;
+@ktc-teaser-large-title-span-font-weight: normal;
+
+//== Body
+@ktc-teaser-large-body-top-bottom-inner-spacing: @ktc-default-body-top-bottom-inner-spacing;
+
+// --------------------------------------------------
+// Teaser
+// --------------------------------------------------
+
+//== Title
+@ktc-teaser-title-icon-spacing: 5px;
+@ktc-teaser-title-font-color: @ktc-default-title-font-color;
+@ktc-teaser-title-top-bottom-inner-spacing: @ktc-default-title-top-bottom-inner-spacing;
+@ktc-teaser-title-font-family: @ktc-default-title-font-family;
+@ktc-teaser-title-font-size: @ktc-default-title-font-size;
+@ktc-teaser-title-font-weight: @ktc-default-title-font-weight;
+
+//== Body
+@ktc-teaser-body-top-bottom-inner-spacing: @ktc-default-body-top-bottom-inner-spacing;
+
+
+// --------------------------------------------------
+// List display
+// --------------------------------------------------
+
+//== Title
+@ktc-list-display-title-icon-spacing: 5px;
+@ktc-list-display-title-font-color: @ktc-default-title-font-color;
+@ktc-list-display-title-top-bottom-inner-spacing: @ktc-default-title-top-bottom-inner-spacing;
+@ktc-list-display-title-font-family: @ktc-default-title-font-family;
+@ktc-list-display-title-font-size: @ktc-default-title-font-size;
+@ktc-list-display-title-font-weight: @ktc-default-title-font-weight;
+
+//== Headline
+@ktc-list-display-headline-font-family: @font-family-base;
+@ktc-list-display-headline-font-size: @font-size-base;
+@ktc-list-display-headline-font-color: @ktc-default-color-headline;
+@ktc-list-display-headline-font-weight: bold;
+
+// --------------------------------------------------
+// List display large
+// --------------------------------------------------
+
+//== Title
+@ktc-list-display-large-title-icon-spacing: 5px;
+@ktc-list-display-large-title-font-color: @ktc-default-title-font-color;
+@ktc-list-display-large-title-top-bottom-inner-spacing: @ktc-default-title-top-bottom-inner-spacing;
+@ktc-list-display-large-title-font-family: @ktc-default-title-font-family;
+@ktc-list-display-large-title-font-size: @ktc-default-title-font-size;
+@ktc-list-display-large-title-font-weight: @ktc-default-title-font-weight;
+
+//== Headline
+@ktc-list-display-large-headline-font-family: @font-family-base;
+@ktc-list-display-large-headline-font-size: floor((@font-size-base + 2px));
+@ktc-list-display-large-headline-font-color: @ktc-default-color-headline;
+@ktc-list-display-large-headline-font-weight: bold;

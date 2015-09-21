@@ -301,7 +301,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -330,7 +330,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -359,7 +359,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -388,7 +388,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -446,7 +446,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -493,7 +493,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();
@@ -540,7 +540,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green ktc-profile-photo-50-percent-width',
+      'css_class' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6 ktc-aside-green',
       'template_suggestion' => 'aside-masonry',
     );
     $pane->extras = array();

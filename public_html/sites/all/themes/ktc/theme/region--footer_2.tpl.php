@@ -29,7 +29,7 @@
 
 <?php if (isset($content)): ?>
 <!-- Begin - footer 2 -->
-<footer class="footer_2">
+<footer class="footer_2 hidden-print">
   <?php print $content; ?>
 </footer>
 <!-- End - footer 2 -->

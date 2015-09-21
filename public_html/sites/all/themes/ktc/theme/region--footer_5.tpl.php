@@ -26,7 +26,7 @@
  * @ingroup themeable
  */
 ?>
-  <footer class="region region_footer footer_5 lcontainer-fluid">
+  <footer class="region region_footer footer_5 lcontainer-fluid hidden-print">
     <div class="lcontainer-fluid clearfix"  id="footer-menu">
       <div class="container footer-5">
         <div class="row">

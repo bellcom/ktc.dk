@@ -110,6 +110,13 @@ function ktc_preprocess_entity(&$variables) {
  *   The name of the template being rendered ("block" in this case.)
  */
 function ktc_preprocess_page(&$variables) {
+
+  // Paths
+  $variables['path_js']   = base_path() . drupal_get_path('theme', 'ktc') . '/dist/js';
+  $variables['path_img']  = base_path() . drupal_get_path('theme', 'ktc') . '/dist/img';
+  $variables['path_css']  = base_path() . drupal_get_path('theme', 'ktc') . '/dist/css';
+  $variables['path_font'] = base_path() . drupal_get_path('theme', 'ktc') . '/dist/font';
+
   // Remove all Taxonomy auto listings here.
   $term = NULL;
   if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
@@ -258,26 +265,12 @@ function ktc_preprocess_taxonomy_term(&$variables) {
  * Implements THEME_preprocess_html().
  */
 function ktc_preprocess_html(&$variables) {
-  // Add conditional stylesheets for IE.
-  drupal_add_css(path_to_theme() . '/css/ie.css', array(
-    'group'      => CSS_THEME,
-    'browsers'   => array('IE' => 'lte IE 8', '!IE' => FALSE),
-    'preprocess' => FALSE,
-    'weight'     => 115,
-  ));
 
-  // Setup IE meta tag to force IE rendering mode.
-  $meta_ie_render_engine = array(
-    '#type'       => 'html_tag',
-    '#tag'        => 'meta',
-    '#attributes' => array(
-      'http-equiv' => 'X-UA-Compatible',
-      'content'    => 'IE=8,IE=Edge,chrome=1',
-    ),
-    '#weight'     => '-99999',
-  );
-  // Add header meta tag for IE to head.
-  drupal_add_html_head($meta_ie_render_engine, 'meta_ie_render_engine');
+  // Paths
+  $variables['path_js']   = base_path() . drupal_get_path('theme', 'ktc') . '/dist/js';
+  $variables['path_img']  = base_path() . drupal_get_path('theme', 'ktc') . '/dist/img';
+  $variables['path_css']  = base_path() . drupal_get_path('theme', 'ktc') . '/dist/css';
+  $variables['path_font'] = base_path() . drupal_get_path('theme', 'ktc') . '/dist/font';
 }
 
 /**
@@ -503,7 +496,7 @@ function ktc_preprocess_node(&$vars) {
   // Added comments_view and num_comments for node--teasecomments.tpl.php.
   $view = views_get_view('comments_in_teaser');
   if ($view && $view->access('block')) {
-    // It has a 'block' display.       
+    // It has a 'block' display.
     $view->set_display('block');
     $view->set_arguments(array($vars['nid']));
     $view->pre_execute();
@@ -1023,7 +1016,7 @@ function ktc_preprocess_region(&$variables, $hook) {
 function ktc_preprocess_user_picture(&$variables) {
   if (!$variables['user_picture']) {
     // If no user_picture is set. Generate a default one.
-    $img_src = '/' . drupal_get_path('theme', 'ktc') . '/images/user-icon.png';
+    $img_src = '/' . drupal_get_path('theme', 'ktc') . '/dist/images/user-icon.png';
     $title = $variables['account']->name . 's billede';
     $user_url = drupal_get_path_alias('user/' . $variables['account']->uid);
     $variables['user_picture'] = '<a href="' . $user_url . '" title="Vis brugerprofil."><img class="img-responsive" src="' . $img_src . '" alt="' . $title . '" title="' . $title . '"></a>';

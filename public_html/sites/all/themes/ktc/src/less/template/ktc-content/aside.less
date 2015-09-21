@@ -1,0 +1,402 @@
+// |--------------------------------------------------------------------------
+// | Aside
+// |--------------------------------------------------------------------------
+// |
+// | Provides styles for .ktc-aside
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Aside
+.ktc-aside {
+	background-color: @ktc-color-light-content-background;
+	margin-bottom: @grid-gutter-width;
+
+	// Heading
+	.ktc-aside-heading {
+		background-color: @ktc-aside-heading-background-color;
+
+		// Title
+		.ktc-aside-title {
+			display: block;
+			padding: @ktc-aside-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			margin: 0;
+
+			// Title and link
+			&,
+			> a {
+				text-transform: uppercase;
+				font-family: @ktc-aside-title-font-family;
+				font-size: @ktc-aside-title-font-size;
+				font-weight: @ktc-aside-title-font-weight;
+				color: @ktc-aside-title-font-color;
+			}
+		}
+	}
+
+	// Body
+	.ktc-aside-body {
+		padding: @ktc-aside-body-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+
+		// Row (this is crap)
+		.row {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	  	.ktc-aside-body-row {
+			margin-left: floor((0 - (@grid-gutter-width / 2)));
+			margin-right: floor((0 - (@grid-gutter-width / 2)));
+		}
+
+		// Headlines
+		h1, h2, h3, h4, h5, h6 {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		// Clearfix
+		&:extend(.clearfix all);
+	}
+}
+.ktc-aside-block {
+	.block-heading {
+		background-color: @ktc-aside-heading-background-color;
+		h3 { 
+			display: block;
+			padding: @ktc-aside-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			margin: 0;
+			color: @ktc-aside-title-font-color;
+
+		}
+	}
+}
+
+.ktc-aside {
+
+  .ktc-aside-body {
+
+	.ktc-teaser {
+
+	  .ktc-teaser-body {
+		padding: 0;
+	  }
+	}
+  }
+}
+
+// Toggle
+.ktc-aside-toggle {
+
+  // Heading
+  > .ktc-aside-heading {
+
+	// Title
+	.ktc-aside-title {
+	  position: relative;
+	  cursor: pointer;
+	  cursor: hand;
+	  padding-right: floor( (@ktc-default-left-right-inner-spacing + @ktc-icon-toggle-open-width) );
+	  .user-select(none);
+
+	  // Toggle icon
+	  &:after {
+		position: absolute;
+		display: block;
+		content: "";
+		top: 50%;
+		right: @ktc-default-left-right-inner-spacing;
+		margin-top: floor((0 - (@ktc-icon-toggle-open-height / 2)));
+		.sprite(@ktc-icon-toggle-open);
+	  }
+	}
+  }
+
+  // Closed
+  &.closed {
+
+	// Heading
+	> .ktc-aside-heading {
+
+	  // Title
+	  .ktc-aside-title {
+		padding-right: floor( (@ktc-default-left-right-inner-spacing + @ktc-icon-toggle-closed-width) );
+
+		// Toggle icon
+		&:after {
+		  margin-top: floor((@ktc-icon-toggle-closed-height / 2));
+		  .sprite(@ktc-icon-toggle-closed);
+		}
+	  }
+	}
+
+	// Body
+	> .ktc-aside-body {
+	  display: none;
+	}
+  }
+}
+
+// User toggle
+.ktc-aside-toggle {
+
+  // User wrapper
+  > .ktc-aside-user-wrapper {
+
+	// User profile
+	.ktc-user-profile {
+	  position: relative;
+	  cursor: pointer;
+	  cursor: hand;
+	  padding-right: floor( (@ktc-default-left-right-inner-spacing + @ktc-icon-toggle-open-width) );
+	  .user-select(none);
+
+	  // Toggle icon
+	  &:after {
+		position: absolute;
+		display: block;
+		content: "";
+		top: 50%;
+		right: @ktc-default-left-right-inner-spacing;
+		margin-top: floor((0 - (@ktc-icon-toggle-open-height / 2)));
+		.sprite(@ktc-icon-toggle-open);
+	  }
+	}
+  }
+
+  // Closed
+  &.closed {
+
+	// User wrapper
+	> .ktc-aside-user-wrapper {
+
+	  // User profile
+	  .ktc-user-profile {
+		padding-right: floor( (@ktc-default-left-right-inner-spacing + @ktc-icon-toggle-closed-width) );
+
+		// Toggle icon
+		&:after {
+		  margin-top: floor((0 - (@ktc-icon-toggle-closed-height / 2)));
+		  .sprite(@ktc-icon-toggle-closed);
+		}
+	  }
+	}
+
+	// Body
+	> .ktc-aside-body {
+	  display: none;
+	}
+  }
+}
+
+// No inner spacing
+.ktc-aside-no-inner-spacing {
+	.ktc-aside-heading {
+
+		.ktc-aside-title {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+	.ktc-aside-body {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+// Half inner spacing
+.ktc-aside-half-inner-spacing {
+	.ktc-aside-heading {
+
+		.ktc-aside-title {
+			padding-top: floor((@ktc-aside-title-top-bottom-inner-spacing / 2));
+			padding-bottom: floor((@ktc-aside-title-top-bottom-inner-spacing / 2));
+		}
+	}
+	.ktc-aside-body {
+		padding-top: floor((@ktc-aside-body-top-bottom-inner-spacing / 2));
+		padding-bottom: floor((@ktc-aside-body-top-bottom-inner-spacing / 2));
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Color
+.ktc-mixin-aside-color(@background-color, @font-color) {
+
+	& {
+
+		// Heading
+		.ktc-aside-heading {
+			background-color: @background-color;
+
+			// Title
+			.ktc-aside-title {
+
+				// Title and link
+				&,
+				> a {
+					color: @font-color;
+				}
+			}
+		}
+	}
+}
+
+// Default
+.ktc-aside-color {
+	.ktc-mixin-aside-color(@ktc-color-green-background, @ktc-color-green-background-font);
+}
+
+// Technique and environment (blue)
+.tech-env {
+
+	// Aside
+	&.ktc-aside-color,
+	.ktc-aside-color {
+		.ktc-mixin-aside-color(@ktc-color-blue-background, @ktc-color-blue-background-font);
+	}
+}
+
+// Network (gold)
+.og-context.og-context-node {
+
+	// Aside
+	&.ktc-aside-color,
+	.ktc-aside-color {
+		.ktc-mixin-aside-color(@ktc-color-gold-background, @ktc-color-gold-background-font);
+	}
+
+	// Not network (green)
+	&.no-network {
+
+		// Aside
+		&.ktc-aside-color,
+		.ktc-aside-color {
+			.ktc-mixin-aside-color(@ktc-color-green-background, @ktc-color-green-background-font);
+		}
+	}
+}
+
+// Not network (green)
+.no-network {
+
+	// Aside
+	&.ktc-aside-color,
+	.ktc-aside-color {
+		.ktc-mixin-aside-color(@ktc-color-green-background, @ktc-color-green-background-font);
+	}
+}
+
+// Action
+.ktc-aside-action {
+	.ktc-mixin-aside-color(@ktc-color-red-background, @ktc-color-red-background-font);
+	background-color: @ktc-color-dark-content-background;
+}
+
+// Action and dark
+.ktc-aside-action,
+.ktc-aside-dark {
+
+	// Link
+	a {
+		color: #e9edee;
+
+		// Hover and focus
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+// Green
+.ktc-aside-green {
+
+	// Heading
+	.ktc-aside-heading {
+		background-color: @ktc-color-green-background;
+	}
+}
+
+// Gold
+.ktc-aside-gold {
+
+  // Heading
+  .ktc-aside-heading {
+	background-color: @ktc-color-gold-background;
+  }
+}
+
+// Faceless
+.ktc-aside-faceless {
+
+  // Heading
+  .ktc-aside-heading {
+	background-color: transparent;
+  }
+}
+
+// Blue
+.ktc-aside-blue {
+
+	// Heading
+	.ktc-aside-heading {
+		background-color: @ktc-color-blue-background;
+	}
+}
+
+// Dark
+.ktc-aside-dark {
+	position: relative;
+	background-color: #222b2f;
+
+	// Heading
+	.ktc-aside-heading {
+
+		// Title
+		.ktc-aside-title {
+			font-weight: bold;
+		}
+	}
+
+	// Region
+	.contextual-links-region {
+		position: static;
+	}
+
+	// Body
+	.ktc-aside-body {
+
+		// Pager
+		.pager {
+			position: absolute;
+			top: 6px; // bad practice
+			right: @ktc-default-left-right-inner-spacing;
+		}
+
+		.view-footer {
+			position: absolute;
+			top: 5px; // Should have been: @ktc-aside-title-top-bottom-inner-spacing, which does not work
+			left: 110px;
+			margin: 0;
+			border: 0;
+			font-family: @ktc-aside-title-font-family;
+			font-size: @ktc-aside-title-font-size;
+			font-weight: @ktc-aside-title-font-weight;
+			text-transform: uppercase;
+			color: @ktc-aside-title-font-color;
+		}
+	}
+}
+
+// Aside
+.ktc-aside {
+
+	// No stack
+	&.ktc-aside-no-stack {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,114 @@
+// |--------------------------------------------------------------------------
+// | Content
+// |--------------------------------------------------------------------------
+// |
+// | Contains the following:
+// | - .ktc-content
+// | - .ktc-content-wide
+// | - .ktc-section-full-width
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Content
+.ktc-content {
+	background-color: @ktc-color-light-content-background;
+	padding: @ktc-content-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+
+	// Full width
+	.ktc-section-full-width {
+		margin-left: (0 - @ktc-default-left-right-inner-spacing);
+		margin-right: (0 - @ktc-default-left-right-inner-spacing);
+	}
+
+	// Top no margin
+	.ktc-section-top-no-margin {
+		margin-top: (0 - @ktc-content-top-bottom-inner-spacing);
+	}
+
+	// Bottom no margin
+	.ktc-section-bottom-no-margin {
+		margin-bottom: (0 - @ktc-content-top-bottom-inner-spacing);
+	}
+}
+
+// Wide
+.ktc-content-wide {
+	background-color: @ktc-color-light-content-background;
+	padding: @ktc-content-top-bottom-inner-spacing @ktc-default-wide-left-right-inner-spacing;
+
+	// Full width
+	.ktc-section-full-width {
+		margin-left: (0 - @ktc-default-wide-left-right-inner-spacing);
+		margin-right: (0 - @ktc-default-wide-left-right-inner-spacing);
+	}
+
+	// Top no margin
+	.ktc-section-top-no-margin {
+		margin-top: (0 - @ktc-content-top-bottom-inner-spacing);
+	}
+
+	// Bottom no margin
+	.ktc-section-bottom-no-margin {
+		margin-bottom: (0 - @ktc-content-top-bottom-inner-spacing);
+	}
+}
+
+// Articles
+.node-type-artikler {
+
+	// Wide
+	.ktc-content-wide {
+		padding-bottom: 0;
+	}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Almost full width (normal)
+.ktc-mixin-content-almost-full-width() {
+
+	& {
+		margin-left: floor((0 - (@ktc-default-left-right-inner-spacing - @ktc-almost-full-width-inner-spacing)));
+		margin-right: floor((0 - (@ktc-default-left-right-inner-spacing - @ktc-almost-full-width-inner-spacing)));
+		padding-left: floor((@ktc-default-left-right-inner-spacing - @ktc-almost-full-width-inner-spacing));
+		padding-right: floor((@ktc-default-left-right-inner-spacing - @ktc-almost-full-width-inner-spacing));
+	}
+}
+
+// Full width (normal)
+.ktc-mixin-content-full-width() {
+
+	& {
+		margin-left: (0 - @ktc-default-left-right-inner-spacing);
+		margin-right: (0 - @ktc-default-left-right-inner-spacing);
+		padding-left: @ktc-default-left-right-inner-spacing;
+		padding-right: @ktc-default-left-right-inner-spacing;
+	}
+}
+
+// Almost full width (wide)
+.ktc-mixin-content-wide-almost-full-width() {
+
+	& {
+		margin-left: floor((0 - (@ktc-default-wide-left-right-inner-spacing - @ktc-almost-full-width-inner-spacing)));
+		margin-right: floor((0 - (@ktc-default-wide-left-right-inner-spacing - @ktc-almost-full-width-inner-spacing)));
+		padding-left: floor((@ktc-default-wide-left-right-inner-spacing - @ktc-almost-full-width-inner-spacing));
+		padding-right: floor((@ktc-default-wide-left-right-inner-spacing - @ktc-almost-full-width-inner-spacing));
+	}
+}
+
+// Full width (wide)
+.ktc-mixin-content-wide-full-width() {
+
+	& {
+		margin-left: (0 - @ktc-default-wide-left-right-inner-spacing);
+		margin-right: (0 - @ktc-default-wide-left-right-inner-spacing);
+		padding-left: @ktc-default-wide-left-right-inner-spacing;
+		padding-right: @ktc-default-wide-left-right-inner-spacing;
+	}
+}

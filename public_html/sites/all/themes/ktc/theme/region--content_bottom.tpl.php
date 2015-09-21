@@ -25,7 +25,7 @@
 ?>
 
 <?php if ($content): ?>
-<footer class="region region_footer footer_1" <?php print $attributes; ?>>
+<footer class="region region_footer footer_1 hidden-print" <?php print $attributes; ?>>
   <div class="footer_1">
     <div class="container">
       <?php print $content; ?>

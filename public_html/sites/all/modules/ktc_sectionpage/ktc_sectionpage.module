@@ -419,7 +419,7 @@ function _ktc_section_block_netvaerk_invite_links_content() {
     else {
       if (!$og_is_member) {
 
-        if ($state == 1) {
+        if ($state == 0 || $state == 1) {
           $html .= '<div class="ktc-filter-button-container">';
           $html .= l(t('Tilmeld'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
           $html .= '</div>';

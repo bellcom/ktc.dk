@@ -1,0 +1,44 @@
+
+.shareknapper {
+
+  .knap {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+
+    > a {
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-position: center center;
+      background-size: 16px 16px;
+      font-size: 0;
+    }
+
+    + .knap {
+      margin-left: 5px;
+    }
+
+    &.facebook {
+      > a {
+        background-image: url('../images/knap_fb.png');
+      }
+    }
+    &.twitter {
+      > a {
+        background-image: url('../images/knap_twitter.png');
+      }
+    }
+    &.googpleplus {
+      > a {
+        background-image: url('../images/knap_googleplus.png');
+      }
+    }
+    &.linkedin {
+      > a {
+        
+        background-image: url('../images/knap_linkedin.png');
+      }
+    }
+  }
+}

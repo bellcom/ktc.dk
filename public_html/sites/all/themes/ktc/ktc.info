@@ -1,13 +1,17 @@
-name = KTC.dk Theme
-description = Subtheme of OS2web theme (a subtheme of Bootstrap), uses the LESS Bootstrap framework source files and must be compiled (not for beginners).
-core = 7.x
-base theme = os2web_bootstrap_theme
-php = 5.3.0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Theme information
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+name        = 'KTC'
+description = 'Subtheme of OS2web theme (a subtheme of Bootstrap), uses the LESS Bootstrap framework source files and must be compiled (not for beginners).'
+core        = '7.x'
+screenshot  = 'dist/images/screenshot.png'
+base theme  = 'os2web_bootstrap_theme'
+php         = '5.3.0'
 
-;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Regions
-;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 regions[header_top]     = 'Header top'
 regions[navigation]     = 'Navigation'
@@ -26,44 +30,25 @@ regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
 regions[content_bottom] = 'Content bottom'
 
-
-;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheets
-;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = css/style.css
-stylesheets[print][] = css/print.css
+stylesheets[all][] = 'dist/css/stylesheet.css'
 
-
-;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Scripts
-;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-scripts[] = 'bootstrap/js/affix.js'
-scripts[] = 'bootstrap/js/alert.js'
-scripts[] = 'bootstrap/js/button.js'
-scripts[] = 'bootstrap/js/carousel.js'
-scripts[] = 'bootstrap/js/collapse.js'
-scripts[] = 'bootstrap/js/dropdown.js'
-scripts[] = 'bootstrap/js/modal.js'
-scripts[] = 'bootstrap/js/tooltip.js'
-scripts[] = 'bootstrap/js/popover.js'
-scripts[] = 'bootstrap/js/scrollspy.js'
-scripts[] = 'bootstrap/js/tab.js'
-scripts[] = 'bootstrap/js/transition.js'
+scripts[] = 'dist/js/modernizr.js'
+scripts[] = 'dist/js/app.js'
 
-scripts[] = 'js/masonry.pkgd.min.js'
-scripts[] = 'js/isotope.pkgd.min.js'
-scripts[] = 'js/jquery.imagesloaded.js'
-scripts[] = 'js/ktc_filter.js'
-scripts[] = 'js/script.js'
-scripts[] = 'js/modernizr.min.js'
-scripts[] = 'js/bs3-masonry.js'
-; scripts[] = 'js/os2web_spotbox_adjust.js'
-;scripts[] = 'js/jquery.infinitescroll.min.js'
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Plugins
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+plugins[panels][layouts] = 'layouts'
 
-; Disable BootstrapCDN so the compiled LESS source files can be used.
-settings[bootstrap_cdn] = ''
-
-plugins[panels][layouts] = layouts
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Theme settings
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

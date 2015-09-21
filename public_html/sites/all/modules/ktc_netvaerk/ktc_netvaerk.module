@@ -5,7 +5,9 @@
  */
 
 // Status of an open group.
-define('KTC_NETVAERK_GROUP_OPEN', 1);
+define('KTC_NETVAERK_GROUP_OPEN_VISIBLE', 0);
+// Status of an open group.
+define('KTC_NETVAERK_GROUP_OPEN_HIDDEN', 1);
 // Status of a closed group with visible content.
 define('KTC_NETVAERK_GROUP_CLOSED_VISIBLE', 2);
 // Status of a closed group with hidden content.
@@ -86,7 +88,7 @@ function _ktc_netvaerk_get_subscribe_links($nid) {
   }
   if (!$og_is_member) {
 
-    if ($state == 1) {
+    if ($state == 0 || $state == 1) {
       $button = l(t('Tilmeld'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
     }
     elseif ($state == 2) {
@@ -251,10 +253,17 @@ function ktc_netvaerk_settings() {
     '#default_value' => variable_get($var_name),
   );
 
-  $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_OPEN;
+  $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_OPEN_VISIBLE;
   $form['netvaerk_not_member'][$var_name] = array(
     '#type' => 'textarea',
-    '#title' => t('Besked på åbent netværk hvor brugeren kan tilmelde sig (ikke ansøge)'),
+    '#title' => t('Besked på åbent netværk hvor brugeren kan tilmelde sig (ikke ansøge) hvor indholdet er synligt.'),
+    '#default_value' => variable_get($var_name),
+  );
+
+  $var_name = 'ktc_netvaerk_state_message-' . KTC_NETVAERK_GROUP_OPEN_HIDDEN;
+  $form['netvaerk_not_member'][$var_name] = array(
+    '#type' => 'textarea',
+    '#title' => t('Besked på åbent netværk hvor brugeren kan tilmelde sig (ikke ansøge) hvor indholdet er skjult.'),
     '#default_value' => variable_get($var_name),
   );
 
@@ -605,10 +614,21 @@ function ktc_netvaerk_group_state($gid) {
   if (in_array($type, $ktc_network_tids)) {
     return KTC_NETVAERK_GROUP_NONE_OTHER;
   }
+
+  // Open
   if ($open && og_user_access('node', $gid, 'subscribe without approval')) {
-    return KTC_NETVAERK_GROUP_OPEN;
+
+    if ($access == 1) {
+      return KTC_NETVAERK_GROUP_OPEN_VISIBLE;
+    }
+    else {
+      return KTC_NETVAERK_GROUP_OPEN_HIDDEN;
+    }
   }
+
+  // Closed
   else {
+
     if ($access == 1 && og_user_access('node', $gid, 'subscribe')) {
       return KTC_NETVAERK_GROUP_CLOSED_VISIBLE;
     }
