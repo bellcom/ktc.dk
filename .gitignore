@@ -12,3 +12,11 @@ public_html/sites/all/translations
 public_html/sites/ktc.dk.spint5.local
 ktcdkfs.sql
 public_html/sites/all/themes/ktc/less/style.css
+public_html/sites/all/modules/contrib/backup_migrate/
+public_html/sites/all/modules/contrib/devel/
+public_html/sites/all/modules/contrib/reroute_email/
+scripts/import/exporter/files.json
+scripts/import/exporter/makemeeting.json
+scripts/import/exporter/nodes.json
+scripts/import/exporter/users.json
+scripts/json_import/
