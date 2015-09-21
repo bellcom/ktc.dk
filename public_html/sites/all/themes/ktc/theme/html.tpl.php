@@ -19,7 +19,11 @@
   <!-- End - internal stylesheet -->
 
   <!--[if lt IE 9]>
+<<<<<<< HEAD
   <script src="<?php print $path_js . '/ie9.min.js'; ?>"></script>
+=======
+  <script src="<?php print $path_js . '/ie9-lt.min.js'; ?>"></script>
+>>>>>>> 4ce2947... Remove os2web bootstrap reference
   <![endif]-->
 
 </head>
