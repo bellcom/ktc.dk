@@ -611,8 +611,10 @@ function ktc_netvaerk_group_state($gid) {
     $type = $field_type[0]['tid'];
   }
 
-  if (in_array($type, $ktc_network_tids)) {
-    return KTC_NETVAERK_GROUP_NONE_OTHER;
+  if ($type) {
+    if (in_array($type, $ktc_network_tids)) {
+      return KTC_NETVAERK_GROUP_NONE_OTHER;
+    }
   }
 
   // Open

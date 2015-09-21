@@ -399,8 +399,11 @@ function ktc_preprocess_node(&$vars) {
     }
 
     if ($arrangement_type = field_get_items('node', $vars['node'], 'field_arrangement_type')) {
-      $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['tid']);
-      $vars['arrangement_type'] = $arrangement_type_term->name;
+      $arrangement_type_term = taxonomy_term_load($arrangement_type[0]['target_id']);
+
+      if ($arrangement_type_term->name) {
+        $vars['arrangement_type'] = $arrangement_type_term->name;
+      }
     }
   }
 
@@ -841,7 +844,7 @@ function ktc_get_node_create_link() {
 function ktc_preprocess_user_profile(&$vars) {
   global $user;
 
-  if ($vars['account']) {
+  if (isset($vars['account'])) {
     $user_obj = $vars['account'];
   }
   else {

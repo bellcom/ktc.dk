@@ -178,6 +178,11 @@ function ktc_users_get_user_info_work_data($entity) {
   // Company.
   if ($entity->name) {
     $index = count($parents) - 2;
+
+    if ($index < 0) {
+      $index = 0;
+    }
+    
     $data['company'] = $parents[$index]->name;
   }
   // Department
