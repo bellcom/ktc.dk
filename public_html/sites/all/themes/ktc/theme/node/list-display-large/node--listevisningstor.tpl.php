@@ -78,6 +78,7 @@
  *
  * @ingroup themeable
  */
+global $base_url;
 ?>
 
 <!-- Begin - list display large -->

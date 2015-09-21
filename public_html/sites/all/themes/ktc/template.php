@@ -870,7 +870,7 @@ function ktc_preprocess_user_profile(&$vars) {
   }
 
   // Allow for: print theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list2'));
-  if ($vars['theme_suggestion']) {
+  if (isset($vars['theme_suggestion'])) {
     $vars['theme_hook_suggestions'][] = 'user_profile__' . $vars['theme_suggestion'];
   }
 
