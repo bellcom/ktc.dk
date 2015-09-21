@@ -54,11 +54,14 @@ function ktc_crm_group_process_groups($groups) {
 function ktc_crm_node_delete($node) {
   if ((isset($_POST['form_id']) && $_POST['form_id'] == 'node_admin_content') ||
     (isset($_POST['form_id']) && $_POST['form_id'] == 'node_delete_confirm')) {
-    $groupdto = ktc_crm_group_map_group_to_groupdto($node);
+    // hf@bellcom.dk, only send if a network was deleted
+    if ($node->type === 'group') {
+      $groupdto = ktc_crm_group_map_group_to_groupdto($node);
 
-    $groupdto->VisibleOnWeb = 0;
+      $groupdto->VisibleOnWeb = 0;
 
-    ktc_crm_update_group($groupdto);
+      ktc_crm_update_group($groupdto);
+    }
   }
 }
 
