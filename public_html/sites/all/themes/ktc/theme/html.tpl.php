@@ -19,7 +19,7 @@
   <!-- End - internal stylesheet -->
 
   <!--[if lt IE 9]>
-  <!--<script src="<?php print $path_js . '/ie9-lt.min.js'; ?>"></script>-->
+  <script src="<?php print $path_js . '/ie9.min.js'; ?>"></script>
   <![endif]-->
 
 </head>

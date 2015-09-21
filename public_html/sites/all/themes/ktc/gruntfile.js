@@ -38,6 +38,14 @@ module.exports = function (grunt) {
                 },
                 src    : '<%= config.directory.src %>/less/stylesheet.less',
                 dest   : '<%= config.directory.dist %>/css/stylesheet.css'
+            },
+            ie9: {
+                options: {
+                    strictMath       : true,
+                    outputSourceFiles: true
+                },
+                src    : '<%= config.directory.src %>/less/stylesheet.less',
+                dest   : '<%= config.directory.dist %>/css/stylesheet-ie9.css'
             }
         },
 
@@ -66,27 +74,52 @@ module.exports = function (grunt) {
             ]
         },
 
-        cssmin: {
-            options: {
-                compatibility      : 'ie8',
-                keepSpecialComments: false,
-                advanced           : false
-            },
+        autoprefixer: {
             app    : {
-                src : '<%= config.directory.dist %>/css/stylesheet.css',
-                dest: '<%= config.directory.dist %>/css/stylesheet.min.css'
+                options: {
+                    map: true,
+                    browsers: gruntConfig.autoprefixer.browsers.other
+                },
+                src    : '<%= config.directory.dist %>/css/stylesheet.css'
+            },
+            ie9: {
+                options: {
+                    map: true,
+                    browsers: gruntConfig.autoprefixer.browsers.ie9
+                },
+                src    : '<%= config.directory.dist %>/css/stylesheet-ie9.css'
+            }
+
+        },
+
+        sakugawa: {
+            ie9: {
+                options: {
+                    maxSelectors: 4095,
+                    mediaQueries: 'separate',
+                    suffix: '-'
+                },
+                src: ['<%= config.directory.dist %>/css/stylesheet-ie9.css']
             }
         },
 
-        autoprefixer: {
-            options: {
-                browsers: gruntConfig.autoprefixer.browsers
-            },
-            app    : {
+        cssmin: {
+            app: {
                 options: {
-                    map: true
+                    keepSpecialComments: false,
+                    advanced           : false
                 },
-                src    : '<%= config.directory.dist %>/css/stylesheet.css'
+                src : '<%= config.directory.dist %>/css/stylesheet.css',
+                dest: '<%= config.directory.dist %>/css/stylesheet.min.css'
+            },
+            ie9: {
+                options: {
+                    compatibility      : 'ie9',
+                    keepSpecialComments: false,
+                    advanced           : false
+                },
+                src : '<%= config.directory.dist %>/css/stylesheet-ie9.css',
+                dest: '<%= config.directory.dist %>/css/stylesheet-ie9.min.css'
             }
         },
 
@@ -95,26 +128,9 @@ module.exports = function (grunt) {
                 devFile      : 'remote',
                 parseFiles   : true,
                 files        : {
-                    src: [gruntConfig.concat.jsApp, gruntConfig.concat.jsIe9Lt, '<%= config.directory.dist %>/css/stylesheet.css']
+                    src: ['<%= config.directory.dist %>/js/app.js', '<%= config.directory.dist %>/js/ie9.js', '<%= config.directory.dist %>/css/stylesheet.css']
                 },
                 outputFile   : '<%= config.directory.dist %>/js/modernizr.js',
-                extra        : {
-                    shiv      : false,
-                    printshiv : false,
-                    load      : true,
-                    mq        : true,
-                    cssclasses: true
-                },
-                extensibility: {
-                    addtest     : false,
-                    prefixed    : false,
-                    teststyles  : false,
-                    testprops   : false,
-                    testallprops: false,
-                    hasevents   : false,
-                    prefixes    : false,
-                    domprefixes : false
-                }
             }
         },
 
@@ -146,8 +162,8 @@ module.exports = function (grunt) {
                 dest: '<%= config.directory.dist %>/js/app.js'
             },
             ie9Lt  : {
-                src : gruntConfig.concat.jsIe9Lt,
-                dest: '<%= config.directory.dist %>/js/ie9-lt.js'
+                src : gruntConfig.concat.jsIe9,
+                dest: '<%= config.directory.dist %>/js/ie9.js'
             }
         },
 
@@ -164,8 +180,8 @@ module.exports = function (grunt) {
                 dest: '<%= config.directory.dist %>/js/app.min.js'
             },
             ie9Lt    : {
-                src : '<%= config.directory.dist %>/js/ie9-lt.js',
-                dest: '<%= config.directory.dist %>/js/ie9-lt.min.js'
+                src : '<%= config.directory.dist %>/js/ie9.js',
+                dest: '<%= config.directory.dist %>/js/ie9.min.js'
             },
             modernizr: {
                 src : '<%= config.directory.dist %>/js/modernizr.js',
@@ -218,7 +234,7 @@ module.exports = function (grunt) {
         watch: {
             less: {
                 files: ['<%= config.directory.src %>/less/**/*.less'],
-                tasks: ['clean:css', 'less', 'sprite', 'autoprefixer', 'cssmin', 'modernizr']
+                tasks: ['clean:css', 'less', 'sprite', 'autoprefixer', 'sakugawa', 'cssmin', 'modernizr']
             },
             js  : {
                 files: '<%= config.directory.src %>/js/**/*.js',
@@ -241,16 +257,17 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-spritesmith');
+    grunt.loadNpmTasks('grunt-sakugawa');
 
     // Register
     grunt.registerTask('default', ['watch']);
 
-    grunt.registerTask('build', ['clean', 'concat', 'sprite', 'less', 'autoprefixer', 'modernizr', 'uglify', 'cssmin']);
-    grunt.registerTask('build-css', ['clean:css', 'sprite', 'less', 'autoprefixer', 'modernizr', 'cssmin']);
+    grunt.registerTask('build', ['clean', 'concat', 'sprite', 'less', 'autoprefixer', 'modernizr', 'uglify', 'sakugawa', 'cssmin']);
+    grunt.registerTask('build-css', ['clean:css', 'sprite', 'less', 'autoprefixer', 'modernizr', 'sakugawa', 'cssmin']);
     grunt.registerTask('build-js', ['clean:js', 'concat', 'modernizr', 'uglify']);
 
-    grunt.registerTask('test', ['clean', 'concat', 'jscs', 'jshint', 'sprite', 'less', 'autoprefixer', 'csslint', 'modernizr', 'uglify', 'cssmin']);
-    grunt.registerTask('test-css', ['clean:css', 'sprite', 'less', 'autoprefixer', 'csslint', 'modernizr', 'cssmin']);
+    grunt.registerTask('test', ['clean', 'concat', 'jscs', 'jshint', 'sprite', 'less', 'autoprefixer', 'csslint', 'modernizr', 'uglify', 'sakugawa', 'cssmin']);
+    grunt.registerTask('test-css', ['clean:css', 'sprite', 'less', 'autoprefixer', 'csslint', 'modernizr', 'sakugawa', 'cssmin']);
     grunt.registerTask('test-js', ['clean:js', 'concat', 'jscs', 'jshint', 'modernizr', 'uglify']);
 
     grunt.registerTask('copy-files', ['copy']);

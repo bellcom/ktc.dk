@@ -265,12 +265,41 @@ function ktc_preprocess_taxonomy_term(&$variables) {
  * Implements THEME_preprocess_html().
  */
 function ktc_preprocess_html(&$variables) {
+  $theme_dist_path = path_to_theme() . '/dist';
 
   // Paths
-  $variables['path_js']   = base_path() . drupal_get_path('theme', 'ktc') . '/dist/js';
-  $variables['path_img']  = base_path() . drupal_get_path('theme', 'ktc') . '/dist/img';
-  $variables['path_css']  = base_path() . drupal_get_path('theme', 'ktc') . '/dist/css';
-  $variables['path_font'] = base_path() . drupal_get_path('theme', 'ktc') . '/dist/font';
+  $variables['path_js']   = $theme_dist_path . '/js';
+  $variables['path_img']  = $theme_dist_path . '/img';
+  $variables['path_css']  = $theme_dist_path . '/css';
+  $variables['path_font'] = $theme_dist_path . '/font';
+
+  // Add conditional stylesheets for IE9 and lower.
+  drupal_add_css($theme_dist_path . '/css/stylesheet-ie9-1.css', array(
+    'group'      => CSS_THEME,
+    'browsers'   => array('IE' => 'lte IE 9', '!IE' => FALSE),
+    'preprocess' => FALSE,
+    'weight'     => 115,
+  ));
+  drupal_add_css($theme_dist_path . '/css/stylesheet-ie9-2.css', array(
+    'group'      => CSS_THEME,
+    'browsers'   => array('IE' => 'lte IE 9', '!IE' => FALSE),
+    'preprocess' => FALSE,
+    'weight'     => 115,
+  ));
+  drupal_add_css($theme_dist_path . '/css/stylesheet-ie9-3.css', array(
+    'group'      => CSS_THEME,
+    'browsers'   => array('IE' => 'lte IE 9', '!IE' => FALSE),
+    'preprocess' => FALSE,
+    'weight'     => 115,
+  ));
+
+  // Add conditional javascript for IE9 and lower.
+  drupal_add_js($theme_dist_path . '/js/ie9.js', array(
+    'group'      => JS_THEME,
+    'browsers'   => array('IE' => 'lte IE 9', '!IE' => FALSE),
+    'preprocess' => FALSE,
+    'weight'     => 115,
+  ));
 }
 
 /**
