@@ -6,8 +6,7 @@ name        = 'KTC'
 description = 'Subtheme of OS2web theme (a subtheme of Bootstrap), uses the LESS Bootstrap framework source files and must be compiled (not for beginners).'
 core        = '7.x'
 screenshot  = 'dist/images/screenshot.png'
-base theme  = 'os2web_bootstrap_theme'
-php         = '5.3.0'
+base theme  = 'bootstrap'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Regions
@@ -35,6 +34,10 @@ regions[content_bottom] = 'Content bottom'
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = 'dist/css/stylesheet.css'
+stylesheets[all][] = 'dist/css/stylesheet1.css'
+stylesheets[all][] = 'dist/css/stylesheet2.css'
+stylesheets[all][] = 'dist/css/stylesheet3.css'
+stylesheets[all][] = 'dist/css/stylesheet4.css'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Scripts
