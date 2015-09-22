@@ -11,211 +11,227 @@
 
 // User profile
 .ktc-user-profile {
-	padding: @ktc-user-profile-top-bottom-padding 0;
+  padding: @ktc-user-profile-top-bottom-padding 0;
 
-	// Paragraph
-	p {
-		margin: 0;
-		margin-bottom: 2px;
+  // Paragraph
+  p {
+	margin: 0;
+	margin-bottom: 2px;
+  }
+
+  .ktc-user-profile-content-social-icon-wrapper {
+
+	.ktc-user-profile-content-social-icon {
+	  display: inline-block;
+
+	  &.ktc-user-profile-content-linked_in {
+		background: url('../images/footer_linkedin.png') center center no-repeat;
+		background-size: 20px 20px;
+		width: 20px;
+		height: 20px;
+	  }
+
+	  &.ktc-user-profile-content-twitter {
+		background: url('../images/footer_twitter.png') center center no-repeat;
+		background-size: 21px 20px;
+		width: 21px;
+		height: 20px;
+	  }
+	}
+  }
+
+  // Wrapper
+  .ktc-user-profile-content-wrapper {
+	display: table;
+	width: 100%;
+
+	// Photo container
+	.ktc-user-profile-photo-container {
+	  display: table-cell;
+	  width: 60px;
+
+	  // Photo
+	  img {
+		display: inline-block;
+		height: auto;
+		width: auto;
+		width: 48px;
+		height: 48px;
+		border-radius: 100%;
+		border-width: @ktc-user-profile-photo-border-width;
+		border-style: solid;
+		background-color: transparent;
+		padding: @ktc-user-profile-photo-border-distance;
+	  }
 	}
 
-	.ktc-user-profile-content-social-icon-wrapper {
+	// Content
+	.ktc-user-profile-content {
+	  display: table-cell;
+	  padding: 0;
+	  margin: 0;
+	  vertical-align: middle;
 
-		.ktc-user-profile-content-social-icon {
-			display: inline-block;
+	  // Name
+	  .ktc-user-profile-content-name {
+		font-weight: bold;
+		margin-top: 0;
+		padding-top: 0;
+		margin-bottom: 3px;
+		font-size: 14px;
+	  }
 
-			&.ktc-user-profile-content-linked_in {
-				background: url('../images/footer_linkedin.png') center center no-repeat;
-				background-size: 20px 20px;
-				width: 20px;
-				height: 20px;
-			}
+	  // Job title
+	  .ktc-user-profile-content-job-title {
+		font-size: 10px;
+	  }
 
-			&.ktc-user-profile-content-twitter {
-				background: url('../images/footer_twitter.png') center center no-repeat;
-				background-size: 21px 20px;
-				width: 21px;
-				height: 20px;
-			}
-		}
-	}
+	  // Employer
+	  .ktc-user-profile-content-employer {
+		font-weight: bold;
+	  }
 
-	// Wrapper
-	.ktc-user-profile-content-wrapper {
-		display: table;
-		width: 100%;
+	  // Department (work)
+	  .ktc-user-profile-content-work-department {}
 
-		// Photo container
-		.ktc-user-profile-photo-container {
-			display: table-cell;
-			width: 60px;
+	  // Address (work)
+	  .ktc-user-profile-content-work-address {}
 
-			// Photo
-			img {
-				display: inline-block;
-				height: auto;
-				width: auto;
-				width: 48px;
-				height: 48px;
-				border-radius: 100%;
-				border-width: @ktc-user-profile-photo-border-width;
-				border-style: solid;
-				background-color: transparent;
-				padding: @ktc-user-profile-photo-border-distance;
-			}
-		}
+	  // Address 2 (work)
+	  .ktc-user-profile-content-work-address-2 {}
 
-		// Content
-		.ktc-user-profile-content {
-			display: table-cell;
-			padding: 0;
-			margin: 0;
-			vertical-align: middle;
+	  // Zipcode and city (work)
+	  .ktc-user-profile-content-work-zipcode-city {}
 
-			// Name
-			.ktc-user-profile-content-name {
-				font-weight: bold;
-				margin-top: 0;
-				padding-top: 0;
-				margin-bottom: 3px;
-				font-size: 14px;
-			}
+	  // Country (work)
+	  .ktc-user-profile-content-work-zipcode-country {}
 
-			// Job title
-			.ktc-user-profile-content-job-title {
-				font-size: 10px;
-			}
+	  // Twitter
 
-			// Employer
-			.ktc-user-profile-content-employer {
-				font-weight: bold;
-			}
-
-			// Department (work)
-			.ktc-user-profile-content-work-department {}
-
-			// Address (work)
-			.ktc-user-profile-content-work-address {}
-
-			// Address 2 (work)
-			.ktc-user-profile-content-work-address-2 {}
-
-			// Zipcode and city (work)
-			.ktc-user-profile-content-work-zipcode-city {}
-
-			// Country (work)
-			.ktc-user-profile-content-work-zipcode-country {}
-
-			// Twitter
-
-			// Linked In
-		}
-
-		// Well
-		+ .ktc-well {
-			margin-top: 15px;
-		}
+	  // Linked In
 	}
 
 	// Well
-	.ktc-well {
-		margin-top: 8px;
-		padding-top: 10px;
-		padding-bottom: 10px;
+	+ .ktc-well {
+	  margin-top: 15px;
+	}
+  }
 
-		// Bold
-		strong {
-			color: @ktc-default-color-headline;
-		}
+  // Well
+  .ktc-well {
+	margin-top: 8px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	// Bold
+	strong {
+	  color: @ktc-default-color-headline;
+	}
+  }
+
+  // List 6
+  &.ktc-user-profile-list-6 {
+
+	// Photo container
+	.ktc-user-profile-photo-container {
+	  display: table-cell;
+	  width: 33.3%;
+	  text-align: right;
+
+	  // Photo
+	  img {
+		display: inline-block;
+		height: auto;
+		width: auto;
+		max-width: 100%;
+		max-height: none;
+		border-radius: 5px;
+	  }
 	}
 
-	// List 6
-	&.ktc-user-profile-list-6 {
+	// Content
+	.ktc-user-profile-content {
+	  vertical-align: top;
 
-		// Photo container
-		.ktc-user-profile-photo-container {
-			display: table-cell;
-			width: 33.3%;
-			text-align: right;
-
-			// Photo
-			img {
-				display: inline-block;
-				height: auto;
-				width: auto;
-				max-width: 100%;
-				max-height: none;
-				border-radius: 5px;
-			}
-		}
-
-		// Content
-		.ktc-user-profile-content {
-			vertical-align: top;
-
-			.ktc-user-profile-content-job-title {
-				font-size: @font-size-h5;
-			}
-		}
+	  .ktc-user-profile-content-job-title {
+		font-size: @font-size-base;
+	  }
 	}
+  }
 }
 
 
 
 .ktc-user-profile-l {
 
-	.ktc-user-profile {
+  .ktc-user-profile {
 
-		// Wrapper
-		.ktc-user-profile-content-wrapper {
+	// Wrapper
+	.ktc-user-profile-content-wrapper {
 
-			// Content
-			.ktc-user-profile-content {
+	  // Content
+	  .ktc-user-profile-content {
 
-				// Name
-				.ktc-user-profile-content-name {
-					font-size: 22px;
-				}
-			}
+		// Name
+		.ktc-user-profile-content-name {
+
+		  &,
+		  > a {
+			font-size: 22px;
+		  }
 		}
+
+		.ktc-user-profile-content-job-title {
+		  font-size: 16px;
+		}
+	  }
 	}
+  }
 }
 
 .ktc-user-profile-xl {
 
-	.ktc-user-profile {
+  .ktc-user-profile {
 
-		// Wrapper
-		.ktc-user-profile-content-wrapper {
+	// Wrapper
+	.ktc-user-profile-content-wrapper {
 
-			// Content
-			.ktc-user-profile-content {
+	  // Content
+	  .ktc-user-profile-content {
 
-				// Name
-				.ktc-user-profile-content-name {
-					font-size: 30px;
-				}
-			}
+		// Name
+		.ktc-user-profile-content-name {
+
+		  &,
+		  > a {
+			font-size: 30px;
+		  }
 		}
+
+		.ktc-user-profile-content-job-title {
+		  font-size: 20px;
+		}
+	  }
 	}
+  }
 }
 
 // Photo container
 .ktc-user-profile-photo {
 
-	// Photo
-	img {
-		display: inline-block;
-		height: auto;
-		width: auto;
-		max-width: 48px;
-		max-height: 48px;
-		border-radius: 100%;
-		border-width: @ktc-user-profile-photo-border-width;
-		border-style: solid;
-		background-color: transparent;
-		padding: @ktc-user-profile-photo-border-distance;
-	}
+  // Photo
+  img {
+	display: inline-block;
+	height: auto;
+	width: auto;
+	max-width: 48px;
+	max-height: 48px;
+	border-radius: 100%;
+	border-width: @ktc-user-profile-photo-border-width;
+	border-style: solid;
+	background-color: transparent;
+	padding: @ktc-user-profile-photo-border-distance;
+  }
 }
 
 // --------------------------------------------------
@@ -225,51 +241,51 @@
 // User profile
 .ktc-mixin-user-profile(@border-color, @text-color: @border-color) {
 
-	// User profile
-	&.ktc-user-profile,
-	.ktc-user-profile {
-
-		// Photo container
-		.ktc-user-profile-photo-container {
-
-			// Photo
-			img {
-				border-color: @border-color;
-			}
-		}
-
-		// Content
-		.ktc-user-profile-content {
-
-			// Headlines
-			h1, h2, h3, h4, h5, h6 {
-
-				// Headline and link
-				&,
-				> a {
-					color: @text-color;
-				}
-			}
-
-			// Link
-			a {
-
-				// Hover state
-				&:hover {
-					color: @text-color;
-				}
-			}
-		}
-	}
+  // User profile
+  &.ktc-user-profile,
+  .ktc-user-profile {
 
 	// Photo container
 	.ktc-user-profile-photo-container {
 
-		// Photo
-		img {
-			border-color: @border-color;
-		}
+	  // Photo
+	  img {
+		border-color: @border-color;
+	  }
 	}
+
+	// Content
+	.ktc-user-profile-content {
+
+	  // Headlines
+	  h1, h2, h3, h4, h5, h6 {
+
+		// Headline and link
+		&,
+		> a {
+		  color: @text-color;
+		}
+	  }
+
+	  // Link
+	  a {
+
+		// Hover state
+		&:hover {
+		  color: @text-color;
+		}
+	  }
+	}
+  }
+
+  // Photo container
+  .ktc-user-profile-photo-container {
+
+	// Photo
+	img {
+	  border-color: @border-color;
+	}
+  }
 }
 
 // Default
@@ -277,104 +293,104 @@
 
 // Green
 .ktc-user-green {
-	.ktc-mixin-user-profile(@ktc-color-green);
+  .ktc-mixin-user-profile(@ktc-color-green);
 
-	// Content
-	.ktc-user-profile-content {
+  // Content
+  .ktc-user-profile-content {
 
-		// Link
-		a {
-			color: @ktc-color-green;
-		}
+	// Link
+	a {
+	  color: @ktc-color-green;
 	}
+  }
 }
 
 // Blue
 .ktc-user-blue {
-	.ktc-mixin-user-profile(@ktc-color-blue);
+  .ktc-mixin-user-profile(@ktc-color-blue);
 }
 
 // Gold
 .ktc-user-gold {
-	.ktc-mixin-user-profile(@ktc-color-gold);
+  .ktc-mixin-user-profile(@ktc-color-gold);
 }
 
 // Red
 .ktc-user-red {
-	.ktc-mixin-user-profile(@ktc-color-red);
+  .ktc-mixin-user-profile(@ktc-color-red);
 }
 
 // Teaser
 .ktc-teaser {
 
+  // Default
+  & {
+	.ktc-mixin-user-profile(@ktc-color-gold);
+
 	// Default
-	& {
-		.ktc-mixin-user-profile(@ktc-color-gold);
+	.ktc-user-profile-content {
 
-		// Default
-		.ktc-user-profile-content {
-
-			// Link
-			a {
-				font-size: @font-size-large;
-				color: @ktc-color-gold;
-			}
-		}
+	  // Link
+	  a {
+		font-size: @font-size-large;
+		color: @ktc-color-gold;
+	  }
 	}
+  }
 
-	// Green
-	.ktc-user-green.ktc-user-profile {
-		.ktc-mixin-user-profile(@ktc-color-green);
+  // Green
+  .ktc-user-green.ktc-user-profile {
+	.ktc-mixin-user-profile(@ktc-color-green);
 
-		// Content
-		.ktc-user-profile-content {
+	// Content
+	.ktc-user-profile-content {
 
-			// Link
-			a {
-				color: @ktc-color-green;
-			}
-		}
+	  // Link
+	  a {
+		color: @ktc-color-green;
+	  }
 	}
+  }
 
-	// Blue
-	.ktc-user-blue.ktc-user-profile {
-		.ktc-mixin-user-profile(@ktc-color-blue);
+  // Blue
+  .ktc-user-blue.ktc-user-profile {
+	.ktc-mixin-user-profile(@ktc-color-blue);
 
-		// Content
-		.ktc-user-profile-content {
+	// Content
+	.ktc-user-profile-content {
 
-			// Link
-			a {
-				color: @ktc-color-blue;
-			}
-		}
+	  // Link
+	  a {
+		color: @ktc-color-blue;
+	  }
 	}
+  }
 
-	// Gold
-	.ktc-user-gold.ktc-user-profile {
-		.ktc-mixin-user-profile(@ktc-color-gold);
+  // Gold
+  .ktc-user-gold.ktc-user-profile {
+	.ktc-mixin-user-profile(@ktc-color-gold);
 
-		// Content
-		.ktc-user-profile-content {
+	// Content
+	.ktc-user-profile-content {
 
-			// Link
-			a {
-				color: @ktc-color-gold;
-			}
-		}
+	  // Link
+	  a {
+		color: @ktc-color-gold;
+	  }
 	}
+  }
 
-	// Red
-	.ktc-user-red.ktc-user-profile {
-		.ktc-mixin-user-profile(@ktc-color-red);
+  // Red
+  .ktc-user-red.ktc-user-profile {
+	.ktc-mixin-user-profile(@ktc-color-red);
 
-		// Content
-		.ktc-user-profile-content {
+	// Content
+	.ktc-user-profile-content {
 
-			// Link
-			a {
-				color: @ktc-color-red;
-			}
-		}
+	  // Link
+	  a {
+		color: @ktc-color-red;
+	  }
 	}
+  }
 }

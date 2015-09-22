@@ -45,11 +45,11 @@
         <div class="ktc-user-profile-content">
 
             <?php if (isset($personal['full_name'])): ?>
-              <h2 class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></h2>
+              <p class="ktc-user-profile-content-name"><?php print l($personal['full_name'], 'user/' . $personal['uid']); ?></p>
             <?php endif ?>
 
             <?php if (isset($personal['job_title'])): ?>
-              <h4 class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></h4>
+              <p class="ktc-user-profile-content-job-title"><?php print $personal['job_title']; ?></p>
             <?php endif ?>
 
             <?php if (isset($work['company'])): ?>
