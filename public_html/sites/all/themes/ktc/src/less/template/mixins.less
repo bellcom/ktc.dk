@@ -47,13 +47,13 @@ a {
   padding-bottom: @grid-gutter-width;
 }
 .extra-bottom-padding {
-  padding-bottom: @grid-gutter-width + 10px;
+  padding-bottom: (@grid-gutter-width + 10px);
 }
 
 .square-round-thumbnail(@width) {
   height: @width;
   width: @width;
-  border-radius: @width / 2;
+  border-radius: (@width / 2);
   border: 3px solid @gray;
 }
 
@@ -64,7 +64,7 @@ a {
 
   .inner {
     position: relative;
-    border-radius: @call-to-action-height / 2;
+    border-radius: (@call-to-action-height / 2);
     background: white;
     height: @call-to-action-height;
     display: table;

@@ -157,11 +157,11 @@ module.exports = function (grunt) {
                 sourceMap   : true,
                 stripBanners: true
             },
-            app    : {
+            app     : {
                 src : gruntConfig.concat.jsApp,
                 dest: '<%= config.directory.dist %>/js/app.js'
             },
-            ie9Lt  : {
+            ie9     : {
                 src : gruntConfig.concat.jsIe9,
                 dest: '<%= config.directory.dist %>/js/ie9.js'
             }
@@ -179,7 +179,7 @@ module.exports = function (grunt) {
                 src : '<%= config.directory.dist %>/js/app.js',
                 dest: '<%= config.directory.dist %>/js/app.min.js'
             },
-            ie9Lt    : {
+            ie9      : {
                 src : '<%= config.directory.dist %>/js/ie9.js',
                 dest: '<%= config.directory.dist %>/js/ie9.min.js'
             },

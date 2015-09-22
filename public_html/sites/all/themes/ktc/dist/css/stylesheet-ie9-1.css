@@ -6266,7 +6266,7 @@ a:hover {
 }
 
 .extra-bottom-padding {
-  padding-bottom: 20px + 10px;
+  padding-bottom: 30px;
 }
 
 .call-to-action {
@@ -6275,7 +6275,7 @@ a:hover {
 
 .call-to-action .inner {
   position: relative;
-  border-radius: 64px / 2;
+  border-radius: 32px;
   background: white;
   height: 64px;
   display: table;
@@ -6298,7 +6298,7 @@ a:hover {
   top: 6px;
   height: 52px;
   width: 52px;
-  border-radius: 52px / 2;
+  border-radius: 26px;
   border: 3px solid #67737a;
 }
 
@@ -6609,7 +6609,7 @@ body .form-control {
 .page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-field-os2web-base-field-lead-img img {
   height: 52px;
   width: 52px;
-  border-radius: 52px / 2;
+  border-radius: 26px;
   border: 3px solid #67737a;
 }
 
@@ -10199,7 +10199,7 @@ fieldset[disabled] a.field-type-image .button {
 }
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content .ktc-header-top-bar-add-content-icon {
-  display: inlin e-block;
+  display: inline-block;
   background-image: url(../images/sprites.png);
   background-position: -272px -214px;
   width: 28px;
@@ -10221,7 +10221,7 @@ fieldset[disabled] a.field-type-image .button {
   left: 0;
   padding: 0px;
   background-color: #fff;
-  z-index: 1000 + 10;
+  z-index: 1010;
 }
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content ul.create_content li {
