@@ -3,15 +3,13 @@
   "description": "Website",
   "version": "0.0.1",
   "dependencies": {
-    "bootstrap": "~3.*",
+    "bootstrap": "~3.1.1",
     "bs3-designer": "~0.*",
     "bs3-masonry": "~0.*",
     "fastclick": "~1.*",
     "fontawesome": "~4.*",
     "html5shiv": "~3.*",
     "imagesloaded": "~3.1.*",
-    "jquery": "~2.*",
-    "jquery-ui": "~1.*",
     "masonry": "~3.3.*",
     "respond": "~1.*",
     "isotope": "~2.*"
@@ -21,5 +19,8 @@
   ],
   "authors": [
     "Morten Nissen <mn@bellcom.dk> (http://bellcom.dk)"
-  ]
+  ],
+  "resolutions": {
+    "bootstrap": "~3.1.1"
+  }
 }
