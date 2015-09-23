@@ -10043,6 +10043,10 @@ fieldset[disabled] .field-type-image .button {
   padding-right: 5px;
 }
 
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-list > li.first {
+  padding-left: 0;
+}
+
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.xs-only {
   margin-top: 25px;
   margin-bottom: 5px;
