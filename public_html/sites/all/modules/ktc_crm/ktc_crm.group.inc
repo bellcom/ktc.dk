@@ -476,6 +476,28 @@ function _ktc_crm_group_get_region_tid($region) {
 }
 
 /**
+ * Updates CRM if node changes status.
+ *
+ * Implements hook_node_update.
+ *
+ * @param object $node
+ *   Node to check.
+ *
+ * @author Henrik Farre <hf@bellcom.dk>
+ */
+function ktc_crm_node_update($node) {
+  if ($node->type === 'group') {
+    $status = $node->status;
+
+    $groupdto = ktc_crm_group_map_group_to_groupdto($node);
+
+    $groupdto->VisibleOnWeb = $status;
+
+    ktc_crm_update_group($groupdto);
+  }
+}
+
+/**
  * Get a term id for a GroupType.
  */
 function _ktc_crm_group_get_grouptype_tid($crm_uuid, $name) {
