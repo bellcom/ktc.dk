@@ -15,6 +15,11 @@ $data = json_decode($file_contents);
 foreach ($data as $group_nid => $_data) {
   $new_group_nid = ktc_import_new_nid($group_nid);
 
+  if (empty($new_group_nid)) {
+    echo "Empty new group nid: $group_nid\n";
+    continue;
+  }
+
   foreach ($_data as $uid => $roles) {
     $new_uid = ktc_import_new_uid($uid);
 
