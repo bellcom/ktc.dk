@@ -58,6 +58,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
       'centertop' => NULL,
       'centerleft' => NULL,
       'centerright' => NULL,
+      'centertop_secondary' => NULL,
     ),
   );
   $display->cache = array();

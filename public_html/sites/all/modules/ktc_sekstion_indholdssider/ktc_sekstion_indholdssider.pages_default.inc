@@ -749,7 +749,7 @@ function ktc_sekstion_indholdssider_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'ktc-node-title',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
