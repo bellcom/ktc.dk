@@ -21,12 +21,13 @@ foreach ($data as $group_nid => $_data) {
     if ($new_uid == 0) {
       continue;
     }
-    $user = user_load($new_uid);
 
-    og_group('node', $new_group_nid, array(
-      "entity type"     => "user",
-      "entity"          => $user,
-      "membership type" => OG_MEMBERSHIP_TYPE_DEFAULT,
-    ));
+    if ($user = user_load($new_uid)) {
+      og_group('node', $new_group_nid, array(
+        "entity type"     => "user",
+        "entity"          => $user,
+        "membership type" => OG_MEMBERSHIP_TYPE_DEFAULT,
+      ));
+    }
   }
 }
