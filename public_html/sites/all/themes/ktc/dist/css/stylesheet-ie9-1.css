@@ -13526,18 +13526,15 @@ h6 + .ktc-date {
 }
 
 .ktc-user-profile.ktc-user-profile-list-6 .ktc-user-profile-photo-container {
-  display: table-cell;
-  width: 33.3%;
   text-align: right;
+  width: 110px;
 }
 
 .ktc-user-profile.ktc-user-profile-list-6 .ktc-user-profile-photo-container img {
-  display: inline-block;
-  height: auto;
-  width: auto;
   max-width: 100%;
-  max-height: none;
-  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .ktc-user-profile.ktc-user-profile-list-6 .ktc-user-profile-content {
@@ -13557,6 +13554,10 @@ h6 + .ktc-date {
   font-size: 16px;
 }
 
+.ktc-user-profile-l .ktc-user-profile.ktc-user-profile-list-6 .ktc-user-profile-photo-container {
+  width: 140px;
+}
+
 .ktc-user-profile-xl .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-name,
 .ktc-user-profile-xl .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-name > a {
   font-size: 30px;
@@ -13564,6 +13565,10 @@ h6 + .ktc-date {
 
 .ktc-user-profile-xl .ktc-user-profile .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-job-title {
   font-size: 20px;
+}
+
+.ktc-user-profile-xl .ktc-user-profile.ktc-user-profile-list-6 .ktc-user-profile-photo-container {
+  width: 170px;
 }
 
 .ktc-user-profile-photo img {
