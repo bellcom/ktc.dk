@@ -16,10 +16,15 @@ if (typeof(CKEDITOR) !== 'undefined') {
             /* Typography */
 
             {name: 'Afsnitsoverskift (H3)', element: 'h3', attributes: {'class': 'h3'}},
+            {name: 'Afsnitsoverskift (H3)', element: 'h3', attributes: {'class': 'h3 ktc-font-green'}},
             {name: 'Mindre overskrift (H4)', element: 'h4', attributes: {'class': 'h4'}},
+            {name: 'Mindre overskrift (H4)', element: 'h4', attributes: {'class': 'h4 ktc-font-green'}},
             {name: 'Listeoverskrift (H5)', element: 'h5', attributes: {'class': 'h5'}},
-            {name: 'Indledning', element: 'p', attributes: {'class': 'ktc-node-lead'}},
+            {name: 'Listeoverskrift (H5)', element: 'h5', attributes: {'class': 'h5 ktc-font-green'}},
+            {name: 'Indledning (manchet)', element: 'p', attributes: {'class': 'ktc-node-lead'}},
             {name: 'Afsnit', element: 'p', attributes: {'class': ''}},
+            {name: 'Kursiv', element: 'p', attributes: {'class': 'ktc-editor-italic'}},
+            {name: 'Mindre tekst', element: 'p', attributes: {'class': 'ktc-editor-smaller'}},
 
             {
                 name      : 'Liste',
