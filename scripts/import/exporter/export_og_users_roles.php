@@ -9,6 +9,8 @@ $result = $query->execute();
 
 $group_roles = array();
 
+$memberRoleRid = 2;
+
 foreach ($result['node'] as $group_nid => $info) {
   $group = node_load($group_nid);
   $result = db_select('og', 'c')
@@ -21,16 +23,29 @@ foreach ($result['node'] as $group_nid => $info) {
     $gid = $result['gid'];
   }
 
-  $query = db_select('og_users_roles', 'ogur');
-  $query
-    ->fields('ogur')
-    ->condition('ogur.gid', $gid, '=');
+  $query = db_select('og_membership', 'ogm')
+    ->fields('ogm')
+    ->condition('ogm.gid', $gid, '=');
 
-  $role_result = $query->execute()->fetchAll();
+  $member_result = $query->execute()->fetchAll();
 
-  foreach ($role_result as $row) {
-    if ($row->rid) {
-      $group_roles[$group->nid][$row->uid][$row->rid] = $row->rid;
+  foreach ($member_result as $member) {
+    $query = db_select('og_users_roles', 'ogur');
+    $query
+      ->fields('ogur')
+      ->condition('ogur.gid', $gid, '=')
+      ->condition('ogur.uid', $member->etid, '=');
+
+    $role_result = $query->execute()->fetchAll();
+
+    if ($role_result) {
+      foreach ($role_result as $role) {
+        if ($role->rid) {
+          $group_roles[$group->nid][$member->etid][$role->rid] = $role->rid;
+        }
+      }
+    } else {
+      $group_roles[$group->nid][$member->etid][$memberRoleRid] = $memberRoleRid;
     }
   }
 }
