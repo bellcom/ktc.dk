@@ -11883,6 +11883,11 @@ var getText = docElem.textContent ?
 ( function ($) {
   $(document).ready(function(){
 
+      // User page - user type select change - fixes error on company select (a quickfix)
+      $('.page-user').find('[name="field_usertype[und]"]').on('change', function(event) {
+        location.reload();
+      });
+
       // Load masonry
       $container = $('.masonry-wrapper .view-content');
       // Don't use masonry if items contain comments (it screws up comments)
