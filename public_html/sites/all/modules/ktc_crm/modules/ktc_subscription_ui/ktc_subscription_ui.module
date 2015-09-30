@@ -18,7 +18,7 @@ function ktc_subscription_ui_menu() {
     'title' => 'Abonnementer',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_subscription_ui_admin_form'),
-    'access arguments' => array('administer site'),
+    'access arguments' => array('administer site information'),
     'type' => MENU_NORMAL_ITEM,
   );
 
