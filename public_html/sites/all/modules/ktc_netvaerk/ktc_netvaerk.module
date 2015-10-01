@@ -78,20 +78,22 @@ function _ktc_netvaerk_get_subscribe_links($nid) {
   $button = '';
   $link_class = 'btn btn-default';
   $og_is_member = og_is_member('node', $nid);
-  $node = node_load($nid);
-  $state = ktc_netvaerk_group_state($nid);
 
   // Check if the user is a member,
   // print out subscrib/unsubscrib link.
-  if (og_user_access('node', $nid, 'unsubscribe') && $og_is_member) {
+  if ($og_is_member && og_user_access('node', $nid, 'unsubscribe')) {
     $button = l(t('Afmeld'), 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' => $link_class)));
   }
+
   if (!$og_is_member) {
 
-    if ($state == 0 || $state == 1) {
+    // Open for subscription.
+    if (og_user_access('node', $nid, 'subscribe without approval')) {
       $button = l(t('Tilmeld'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
     }
-    elseif ($state == 2) {
+
+    // Closed for subscription.
+    elseif (og_user_access('node', $nid, 'subscribe')) {
       $button = l(t('Ansøg'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
     }
   }
@@ -334,32 +336,31 @@ function ktc_netvaerk_og_user_access_alter(&$perm, $context) {
     $group = $context['group'];
 
     if (is_object($group)) {
-      // If the group is of the same type as the specified private
-      // ones. Don't allow the user to subscribe.
-      if ($field = field_get_items('node', $group, 'field_netvaerkstype')) {
-        $type_closed = variable_get('ktc_netvaerk_type_closed', array());
+      $nid = $group->nid;
+      $state = ktc_netvaerk_group_state($nid);
 
-        if (in_array($field[0]['tid'], array_values($type_closed))) {
-          // The private groups are only supposed to be handled from CRM.
-          $perm['subscribe'] = FALSE;
-          $perm['invite any user'] = FALSE;
-          $perm['administer group'] = FALSE;
-          $perm['add user'] = FALSE;
-          $perm['unsubscribe'] = FALSE;
-          $perm['manage members'] = FALSE;
+      // Not a closed network from network settings.
+      if ($state == KTC_NETVAERK_GROUP_NONE_OTHER) {
+
+        // The private groups are only supposed to be handled from CRM.
+        $perm['subscribe'] = FALSE;
+        $perm['invite any user'] = FALSE;
+        $perm['administer group'] = FALSE;
+        $perm['add user'] = FALSE;
+        $perm['unsubscribe'] = FALSE;
+        $perm['manage members'] = FALSE;
+      }
+      else {
+
+        // Open for subscription.
+        if ($state == KTC_NETVAERK_GROUP_OPEN_VISIBLE or $state == KTC_NETVAERK_GROUP_OPEN_HIDDEN) {
+          $perm['subscribe without approval'] = TRUE;
         }
-        else {
-          // Group is not public. Check if it is open for more subscribers
-          if ($field_open = field_get_items('node', $group, 'field_open_group')) {
-            if ($field_open[0]['value']) {
-              // Group is open for more members
-              $perm['subscribe without approval'] = TRUE;
-            }
-            else {
-              $perm['invite any user'] = FALSE;
-              $perm['subscribe without approval'] = FALSE;
-            }
-          }
+
+        // Closed for subscription.
+        elseif ($state == KTC_NETVAERK_GROUP_CLOSED_VISIBLE or $state == KTC_NETVAERK_GROUP_CLOSED_HIDDEN) {
+          $perm['invite any user'] = FALSE;
+          $perm['subscribe without approval'] = FALSE;
         }
       }
     }
@@ -593,48 +594,63 @@ EOL;
 }
 
 /**
- * Get netvaerk openess.
+ * Get netvaerk state
  */
 function ktc_netvaerk_group_state($gid) {
-  $group_node = node_load($gid);
-  $ktc_network_tids = array(1133, 1134, 1155);
-  $open = 0;
-  $access = 0;
+  $node = node_load($gid);
+  $open_closed = 0;
+  $content_visibility_settings = 0;
 
-  if ($field = field_get_items('node', $group_node, 'field_open_group')) {
-    $open = $field[0]['value'];
-  }
-  if ($field = field_get_items('node', $group_node, 'group_content_access')) {
-    $access = $field[0]['value'];
-  }
-  if ($field_type = field_get_items('node', $group_node, 'field_netvaerkstype')) {
-    $type = $field_type[0]['tid'];
+  // Open/closed (user can sign up) (0 = closed, 1 = open)
+  if ($field = field_get_items('node', $node, 'field_open_group')) {
+    $open_closed = $field[0]['value'];
   }
 
-  if ($type) {
-    if (in_array($type, $ktc_network_tids)) {
+  // Content visibility settings (1 = public, 2 = private)
+  if ($field = field_get_items('node', $node, 'group_content_access')) {
+    $content_visibility_settings = $field[0]['value'];
+  }
+
+  // Network type
+  if ($field = field_get_items('node', $node, 'field_netvaerkstype')) {
+    $network_type = $field[0]['tid'];
+  }
+
+  // Hidden networks
+  if ($field = variable_get('ktc_netvaerk_type_closed')) {
+    $hidden_networks = array_filter($field);
+  }
+
+  if ($network_type) {
+    if (in_array($network_type, $hidden_networks)) {
       return KTC_NETVAERK_GROUP_NONE_OTHER;
     }
   }
 
-  // Open
-  if ($open && og_user_access('node', $gid, 'subscribe without approval')) {
+  // Network is open
+  if ($open_closed == 1) {
 
-    if ($access == 1) {
+    // Public
+    if ($content_visibility_settings == 1) {
       return KTC_NETVAERK_GROUP_OPEN_VISIBLE;
     }
-    else {
+
+    // Private
+    elseif ($content_visibility_settings == 2) {
       return KTC_NETVAERK_GROUP_OPEN_HIDDEN;
     }
   }
 
-  // Closed
-  else {
+  // Network is closed
+  elseif ($open_closed == 0) {
 
-    if ($access == 1 && og_user_access('node', $gid, 'subscribe')) {
+    // Public
+    if ($content_visibility_settings == 1) {
       return KTC_NETVAERK_GROUP_CLOSED_VISIBLE;
     }
-    else {
+
+    // Private
+    elseif ($content_visibility_settings == 2) {
       return KTC_NETVAERK_GROUP_CLOSED_HIDDEN;
     }
   }
@@ -1032,6 +1048,7 @@ function _ktc_netvaerk_og_members_list() {
   if (!is_numeric($gid)) {
     return;
   }
+  $state = ktc_netvaerk_group_state($gid);
 
   module_load_include('inc', 'og_ui', 'og_ui.admin');
   drupal_add_js(drupal_get_path('module', 'ktc_netvaerk') . '/js/ktc_netvaerk.group.js');
@@ -1048,7 +1065,7 @@ function _ktc_netvaerk_og_members_list() {
 
   // Only show pending users and add form to users with administer group
   // permissions.
-  if (og_user_access('node', $gid, 'administer group') || og_user_access('node', $gid, 'invite any user')) {
+  if ((og_user_access('node', $gid, 'administer group') || og_user_access('node', $gid, 'invite any user')) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
     $view = views_get_view('ktc_og_members');
     $view->set_display('block_3');
     $view->set_arguments(array($gid));
@@ -1079,6 +1096,11 @@ function _ktc_netvaerk_og_members_list() {
 
   // Show messages in the modal.
   $messages = theme('status_messages', drupal_get_messages(NULL, FALSE));
+  $headline = '';
+
+  if ($state != KTC_NETVAERK_GROUP_NONE_OTHER) {
+    $headline = '<p><b>' . t('Godkendte medlemmer') . '</b></p>';
+  }
 
   $modal_markup = <<<EOL
 <div class="modal fade" id="member-modal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -1099,7 +1121,7 @@ function _ktc_netvaerk_og_members_list() {
         </div>
 
         <div class="content">
-          <p><b>Godkendte medlemmer</b></p>
+          $headline
           $view_markup
           $view_markup_pending
         </div>
