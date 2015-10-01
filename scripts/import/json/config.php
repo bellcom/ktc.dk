@@ -5,8 +5,8 @@
  */
 
 $config['files'] = array(
-//  'users' => 'users.json',
-  'nodes' => 'nodes.json',
+ 'users' => 'users.json',
+  // 'nodes' => 'nodes.json',
 //  'makemeeting' => 'makemeeting.json',
 //  'comments' => 'comments.json',
 );
@@ -66,7 +66,7 @@ $config['transform']['users'] = array(
   'uid' => 'ktc_import_set_old_uid',
   'created' => 'ktc_import_no_transform',
   'status' => 'ktc_import_no_transform',
-//  'name' => 'ktc_import_set_user_name',
+ 'name' => 'ktc_import_set_user_name',
   'mail' => 'ktc_import_no_transform',
   'init' => 'ktc_import_no_transform',
   'pass' => 'ktc_import_no_transform',

@@ -59,5 +59,5 @@ function process_data($entity_type, $data, $config) {
 
   // Save the entity to the db.
   $save($entity);
-  error_log('saved entity: ' . $entity_type);
+  // error_log('saved entity: ' . $entity_type);
 }
