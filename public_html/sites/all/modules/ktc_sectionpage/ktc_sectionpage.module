@@ -401,34 +401,35 @@ function _ktc_section_block_netvaerk_invite_links_content() {
     $link_class = 'filter-link btn btn-default';
     $node = node_load($nid);
     $og_is_member = og_is_member('node', $nid);
-    $state = ktc_netvaerk_group_state($nid);
 
     // If user has access to invite user to group.
-    if ($access = og_user_access('node', $nid, 'invite any user') && $og_is_member) {
+    if ($og_is_member && og_user_access('node', $nid, 'invite any user')) {
       $html .= '<div class="ktc-filter-button-container og-members-modal">';
       $html .= l('Invitér', 'group/node/' . $nid . '/admin/people/invite-users', array('attributes' => array('class' => $link_class)));
       $html .= '</div>';
     }
+
     // Check if the user is a member,
     // print out subscrib/unsubscrib link.
-    if (og_user_access('node', $nid, 'unsubscribe') && $og_is_member) {
+    if ($og_is_member && og_user_access('node', $nid, 'unsubscribe')) {
       $html .= '<div class="ktc-filter-button-container">';
       $html .= l(t('Afmeld'), 'group/node/' . $nid . '/unsubscribe', array('attributes' => array('class' => $link_class)));
       $html .= '</div>';
     }
-    else {
-      if (!$og_is_member) {
+    elseif (!$og_is_member) {
 
-        if ($state == 0 || $state == 1) {
-          $html .= '<div class="ktc-filter-button-container">';
-          $html .= l(t('Tilmeld'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
-          $html .= '</div>';
-        }
-        elseif ($state == 2) {
-          $html .= '<div class="ktc-filter-button-container">';
-          $html .= l(t('Ansøg'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
-          $html .= '</div>';
-        }
+      // Open for subscription.
+      if (og_user_access('node', $nid, 'subscribe without approval')) {
+        $html .= '<div class="ktc-filter-button-container">';
+        $html .= l(t('Tilmeld'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
+        $html .= '</div>';
+      }
+
+      // Closed for subscription.
+      elseif (og_user_access('node', $nid, 'subscribe')) {
+        $html .= '<div class="ktc-filter-button-container">';
+        $html .= l(t('Ansøg'), 'group/node/' . $nid . '/subscribe', array('attributes' => array('class' => $link_class)));
+        $html .= '</div>';
       }
     }
 
@@ -442,6 +443,7 @@ function _ktc_section_block_netvaerk_invite_links_content() {
 
     $html .= '</div>';
   }
+
   return $html;
 }
 
