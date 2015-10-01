@@ -65,11 +65,20 @@ function ktc_import_save_user($entity) {
   $access = $entity->access;
   $created = $entity->created;
 
+  // FIXME: corrently only new users are created
+  if (!defined('USERS_CREATE_NEW')) {
+    echo "====================================== ONLY NEW USERS ARE CREATED ======================================\n";
+    define('USERS_CREATE_NEW', true);
+  }
+
   if (!$entity->uid) {
+    // New users
+    echo "{$entity->mail}\n";
     $entity = user_save('', (array) $entity);
   }
   else {
-    user_save($entity, (array) $entity);
+    // echo "Update\n";
+    // user_save($entity, (array) $entity);
   }
 
   db_update('users')
