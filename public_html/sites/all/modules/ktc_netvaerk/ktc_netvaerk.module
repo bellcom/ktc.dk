@@ -115,7 +115,7 @@ function ktc_netvaek_tabs_administer($node) {
  */
 function _ktc_netvaerk_check_local_task($node) {
 
-  return ($node->type == 'group' and (og_user_access('node', $node->nid, 'administer group') || og_user_access('node', $node->nid, 'invite any user')));
+  return ($node->type == 'group' && og_user_access('node', $node->nid, 'administer group'));
 }
 
 function ktc_netvaek_get_emner($content_type, $network_type, $region) {
@@ -355,6 +355,7 @@ function ktc_netvaerk_og_user_access_alter(&$perm, $context) {
         // Open for subscription.
         if ($state == KTC_NETVAERK_GROUP_OPEN_VISIBLE or $state == KTC_NETVAERK_GROUP_OPEN_HIDDEN) {
           $perm['subscribe without approval'] = TRUE;
+          $perm['invite any user'] = TRUE;
         }
 
         // Closed for subscription.
@@ -1065,7 +1066,7 @@ function _ktc_netvaerk_og_members_list() {
 
   // Only show pending users and add form to users with administer group
   // permissions.
-  if ((og_user_access('node', $gid, 'administer group') || og_user_access('node', $gid, 'invite any user')) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
+  if ((og_user_access('node', $gid, 'administer group')) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
     $view = views_get_view('ktc_og_members');
     $view->set_display('block_3');
     $view->set_arguments(array($gid));
