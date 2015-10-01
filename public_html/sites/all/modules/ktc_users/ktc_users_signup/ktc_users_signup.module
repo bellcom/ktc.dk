@@ -20,7 +20,7 @@ function ktc_users_signup_menu() {
     'description' => 'Indstillinger for KTC opret bruger',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_users_signup_settings_form'),
-    'access arguments' => array('administer site information'),
+    'access arguments' => array('administer site configuration'),
     'type' => MENU_NORMAL_ITEM,
   );
 

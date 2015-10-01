@@ -12,7 +12,7 @@ function ktc_users_edit_menu() {
     'title' => 'Redigering af KTC brugere',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_users_edit_settings_form'),
-    'access arguments' => array('administer site information'),
+    'access arguments' => array('administer site configuration'),
     'type' => MENU_NORMAL_ITEM,
   );
 

@@ -27,7 +27,7 @@ function ktc_crm_menu() {
   $items['admin/config/services/ktc-crm'] = array(
     'title' => 'KTC CRM',
     'description' => 'Configure CRM integration',
-    'access arguments' => array('administer site information'),
+    'access arguments' => array('administer site configuration'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_crm_settings'),
   );
