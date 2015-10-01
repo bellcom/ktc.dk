@@ -674,7 +674,7 @@ function _ktc_user_comments_content($page = TRUE) {
 function _ktc_section_block_netvaerk_content_types() {
   $nid = arg(1);
   $types = array();
-  $html = '<div class="filter-box">';
+  $html = '';
   if (is_numeric($nid)) {
     // Se function ktc_netvaerk_get_group_content_types in ktc_netvaerk.module.
     $types = ktc_netvaerk_get_group_content_types($nid);
@@ -697,8 +697,8 @@ function _ktc_section_block_netvaerk_content_types() {
       </div>';
     }
   }
-  $html .= '</div>';
-  return $html;
+  
+  return $html ? '<div class="filter-box">' . $html . '</div>' : '';
 }
 
 /**
