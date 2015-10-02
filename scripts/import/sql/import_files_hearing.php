@@ -10,7 +10,7 @@ function import_files($type) {
   $fil_nr = 0;
   $miss = 0;
   $elements = get_hearing_elements_from_db_table('tx_ktchoringdb_proposal', 'files');
-  print "\ There are " . count($elements) . "nodes contain files. \n";
+  print "There are " . count($elements) . "nodes contain files. \n";
   foreach ($elements as $element) {
     if ($element['files'] != '') {
       $files_ar = explode(',', $element['files']);

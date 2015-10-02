@@ -6,9 +6,9 @@
 
 $config['files'] = array(
  // 'users' => 'users.json',
-  'nodes' => 'nodes.json',
- // 'makemeeting' => 'makemeeting.json',
-//  'comments' => 'comments.json',
+  // 'nodes' => 'nodes.json',
+ 'makemeeting' => 'makemeeting.json',
+ // 'comments' => 'comments.json',
 );
 
 /**

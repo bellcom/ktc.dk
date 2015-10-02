@@ -42,7 +42,7 @@ function ktc_import_save_node($entity) {
   $acceptedTypes = [
     // 'os2web_base_news',
     // 'group',
-    'forum_post',
+    // 'forum_post',
     // 'document',
     // 'meeting_doodle',
     // 'arrangement',
@@ -168,12 +168,15 @@ function ktc_import_load_makemeeting($entity) {
  *
  */
 function ktc_import_save_makemeeting($entity) {
-  echo "Saving makemeeting answers is temprorarily disabled - edit handler.php\n";
-  return;
-  unset($entity->answer_id);
+  // echo "Saving makemeeting answers is temprorarily disabled - edit handler.php\n";
+  // return;
   if ($entity->entity_id) {
+    unset($entity->answer_id);
     db_insert('makemeeting_answers')
       ->fields((array) $entity)
       ->execute();
+  }
+  else {
+    echo $entity->answer_id."\n";
   }
 }
