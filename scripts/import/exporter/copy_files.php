@@ -30,7 +30,7 @@ function copy_files($file_uris) {
 
     $num = $delta + 1;
     echo "Copy file: $scheme/$filepath ($num of $count)\n";
-    $cmd = "sshpass -p '$pass' scp ktc.dk:/var/www/netvaerk.ktc.dk/htdocs/sites/default/files/uploads/$scheme/$filepath $scheme/$filepath";
+    $cmd = "sshpass -p '$pass' scp root@netvaerk.ktc.dk:/var/www/netvaerk.ktc.dk/htdocs/sites/default/files/uploads/$scheme/$filepath $scheme/$filepath";
 
     $output = array();
     $return = '';

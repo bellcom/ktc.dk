@@ -266,14 +266,19 @@ function get_images_or_files($url, $file_dir, $name = NULL, $real_name = NULL) {
     }
     // Now get Drupal to copy it.
     $mydir = 'private://' . $file_dir;
+
+    $name = !isset($real_name) ? $name : $real_name;
+
+    $existing_files = file_load_multiple(array(), array('uri' => 'private://'.$file_dir.'/'.$name));
+
+    if (count($existing_files)) {
+      return reset($existing_files);
+    }
+
     file_prepare_directory($mydir, FILE_CREATE_DIRECTORY);
-    if (!isset($real_name)) {
-      $drupalfile = file_copy($dfile, 'private://' . $file_dir . '/' . $name, FILE_EXISTS_RENAME);
-    }
-    else {
-      $drupalfile = file_copy($dfile, 'private://' . $file_dir . '/' . $real_name, FILE_EXISTS_RENAME);
-    }
+    $drupalfile = file_copy($dfile, 'private://' . $file_dir . '/' . $name, FILE_EXISTS_RENAME);
   }
+
   return $drupalfile;
 }
 
