@@ -9,7 +9,7 @@ function get_hearing_elements_from_db_table($table, $condition = NULL) {
   if (isset($condition)) {
     $query->condition($condition, '', '<>');
   }
-//  $query->condition('tstamp', strtotime('2008-01-01 00:00:01'), '>');
+  $query->condition('tstamp', strtotime('2015-05-26 00:00:01'), '>');
   $result = $query->execute();
   while ($record = $result->fetchAssoc()) {
     $elements[] = $record;
