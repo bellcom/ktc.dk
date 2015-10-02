@@ -4,6 +4,11 @@ include 'functions.php';
 create_hearing_response_nodes();
 
 function create_hearing_response_nodes() {
+  if (!defined('HEARINGS_RESPONSE_CREATE_NEW')) {
+    echo "====================================== ONLY NEW HEARINGS_RESPONSE ARE CREATED ======================================\n";
+    define('HEARINGS_RESPONSE_CREATE_NEW', true);
+  }
+
   $elements = get_hearing_elements_from_db_table('tx_ktchoringdb_answer');
   print "There are " . count($elements) . " elements. \n";
   $step = 0;
@@ -23,6 +28,8 @@ function create_hearing_response_nodes() {
     }
 
     if ($nid = get_id_by_typo3_uid($element['uid'], 'hearing_responses')) {
+      // FIXME: only create new
+      continue;
       $node = node_load($nid);
     }
     else {
