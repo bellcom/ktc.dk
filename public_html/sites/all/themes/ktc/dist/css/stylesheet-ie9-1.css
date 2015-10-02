@@ -10966,12 +10966,9 @@ fieldset[disabled] .field-type-image .button {
   background-image: url('../images/knap_linkedin.png');
 }
 
-.ktc-stand-alone-panel-pane {
-  padding-bottom: 20px;
-}
-
 .ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading {
   background-color: #2c353a;
+  margin-bottom: 20px;
 }
 
 .ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title {
