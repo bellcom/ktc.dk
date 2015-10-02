@@ -34,10 +34,6 @@ regions[content_bottom] = 'Content bottom'
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = 'dist/css/stylesheet.css'
-stylesheets[all][] = 'dist/css/stylesheet1.css'
-stylesheets[all][] = 'dist/css/stylesheet2.css'
-stylesheets[all][] = 'dist/css/stylesheet3.css'
-stylesheets[all][] = 'dist/css/stylesheet4.css'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Scripts
