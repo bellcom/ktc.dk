@@ -1,12 +1,13 @@
 jQuery(document).ready(function($){
+
   /**
-    * Show the company address for the selected company.
-    */
-  $('#edit-field-account').bind('change-hierarchical-select', function(event) {
-    var account_tid = $('#edit-field-account select:last :selected').val();
+   * Show the company address for the selected company.
+   */
+  $('#edit-field-account--2').bind('change-hierarchical-select', function(event) {
+    var account_tid = $('#edit-field-account--2 select:last :selected').val();
 
     if (account_tid && account_tid.indexOf('label') != -1) {
-      account_tid = $('#edit-field-account .has-children:last:selected').val();
+      account_tid = $('#edit-field-account--2 .has-children:last:selected').val();
     }
 
     $.get('/ktc_users_edit/get_account_address/' + account_tid, function(data) {
@@ -15,9 +16,9 @@ jQuery(document).ready(function($){
   });
 
   /**
-    * Change the first level of the hierarchical select according to the
-    * selected usertype.
-    */
+   * Change the first level of the hierarchical select according to the
+   * selected usertype.
+   */
   function limitMembershipFieldsTo(usertypeTid) {
     var hidefields = Drupal.settings.ktcUsersEdit.membershipMap[usertypeTid];
 
@@ -47,7 +48,7 @@ jQuery(document).ready(function($){
     var usertypeMap = [];
     var firstLevel = Drupal.settings.ktcUsersEdit.usertypeMap[usertypeTid];
 
-    $select = $('#edit-field-account-und-hierarchical-select-selects-0');
+    $select = $('[name="field_account[und][hierarchical_select][selects][0]"]');
 
     // $select.children().removeAttr('selected');
     $select.find('option[value=' + firstLevel + ']').attr('selected', 'selected');
@@ -57,17 +58,17 @@ jQuery(document).ready(function($){
     }, 500);
   }
 
-  $('#edit-field-usertype-und').change(function(){
+  $('[name="field_usertype[und]"]').change(function(){
     limitCompaniesTo($(this).val());
     limitMembershipFieldsTo($(this).val());
   });
-  $('#edit-field-usertype-und').trigger('change');
+  $('[name="field_usertype[und]"]').trigger('change');
 
   $('.account-address a').click(function(event) {
     if (!$(this).attr('data-href')) {
       $(this).attr('data-href', $(this).attr('href'));
     }
-    var firstLevel = Drupal.settings.ktcUsersEdit.usertypeMap[$('#edit-field-usertype-und').val()];
+    var firstLevel = Drupal.settings.ktcUsersEdit.usertypeMap[$('[name="field_usertype[und]"]').val()];
     $(this).attr('href', $(this).attr('data-href') + '/' + firstLevel);
     if (window.confirm("Hvis du forlader denne side vil dine rettelser ikke blive tabt. \n\nEr du sikker på at du vil fortsætte?")) {
       return true;
@@ -81,8 +82,8 @@ jQuery(document).ready(function($){
 (function ($) {
   Drupal.behaviors.ktcUsersEdit = {
     attach: function (context, settings) {
-      $('#edit-field-account-und-hierarchical-select-selects-0').hide();
-      $('#edit-field-account-und-hierarchical-select-selects-0').css('height', 22);
+      $('[name="field_account[und][hierarchical_select][selects][0]"]').hide();
+      $('[name="field_account[und][hierarchical_select][selects][0]"]').css('height', 22);
     }
   };
 })(jQuery);

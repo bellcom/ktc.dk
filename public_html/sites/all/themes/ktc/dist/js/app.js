@@ -11883,11 +11883,6 @@ var getText = docElem.textContent ?
 ( function ($) {
   $(document).ready(function(){
 
-      // User page - user type select change - fixes error on company select (a quickfix)
-      $('.page-user').find('[name="field_usertype[und]"]').on('change', function(event) {
-        location.reload();
-      });
-
       // Load masonry
       $container = $('.masonry-wrapper .view-content');
       // Don't use masonry if items contain comments (it screws up comments)
@@ -12210,68 +12205,7 @@ Drupal.behaviors.feedbackFormSubmit = {
     }, 3000);
   }
 };
-
-/**
- * Collapse or uncollapse the feedback form block.
- */
-Drupal.feedbackFormToggle = function ($block, enable) {
-  if (enable) {
-    $block.animate({width:'329px'});
-    $block.css('z-index','960');
-    $block.find('form').css('display','block');
-    $('#feedback-form-toggle', $block).html('[ + ]');
-    var cittaslow = $('#block-cittaslow-block');
-    if (cittaslow.width() > 51) {
-      Drupal.cittaslowToggle(cittaslow, false);
-    }
-  }
-  else {
-    $block.animate({width:'29px'});
-    $block.css('z-index','900');
-    $('#feedback-form-toggle', $block).html('[ &minus; ]');
-  }
-};
-
-Drupal.behaviors.cittaslow= {
-  attach: function (context) {
-    $('#block-cittaslow-block', context).once(function () {
-      var $block = $(this);
-      $block.find('span.cittaslow-link').toggle(function () {
-          if ($block.width() < 300) {
-            Drupal.cittaslowToggle($block, true);
-          }
-          else {
-            Drupal.cittaslowToggle($block, false);
-          }
-
-          },
-          function() {
-            if ($block.width() < 300) {
-              Drupal.cittaslowToggle($block, true);
-            }
-            else {
-              Drupal.cittaslowToggle($block, false);
-            }
-          }
-        );
-      $block.show();
-    });
-  }
-};
-
-  Drupal.cittaslowToggle = function ($block, enable) {
-
-  if (enable) {
-    $block.animate({width:'351px'});
-
-  }
-  else {
-    $block.animate({width:'51px'});
-  }
-};
-
 })( jQuery );
-
 
 /**
  * Re-collapse the feedback form after every successful form submission.
