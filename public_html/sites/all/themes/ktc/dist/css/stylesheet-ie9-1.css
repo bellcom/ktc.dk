@@ -10966,11 +10966,11 @@ fieldset[disabled] .field-type-image .button {
   background-image: url('../images/knap_linkedin.png');
 }
 
-.ktc-stand-alone-panel .ktc-stand-alone-heading {
+.ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading {
   background-color: #2c353a;
 }
 
-.ktc-stand-alone-panel .ktc-stand-alone-heading .ktc-stand-alone-heading-title {
+.ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title {
   display: block;
   font-family: 'Lato', Geneva, Verdana, sans-serif;
   font-weight: 700;
@@ -10984,27 +10984,27 @@ fieldset[disabled] .field-type-image .button {
   margin: 0;
 }
 
-.ktc-stand-alone-panel .ktc-stand-alone-heading .ktc-stand-alone-heading-title small,
-.ktc-stand-alone-panel .ktc-stand-alone-heading .ktc-stand-alone-heading-title .small {
+.ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title small,
+.ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title .small {
   font-weight: normal;
   line-height: 1;
   color: #848e92;
 }
 
-.ktc-stand-alone-panel .ktc-stand-alone-heading .ktc-stand-alone-heading-title small,
-.ktc-stand-alone-panel .ktc-stand-alone-heading .ktc-stand-alone-heading-title .small {
+.ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title small,
+.ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title .small {
   font-size: 65%;
 }
 
-.ktc-stand-alone-panel.ktc-stand-alone-panel-gold .ktc-stand-alone-heading {
+.ktc-stand-alone-panel-pane.ktc-stand-alone-panel-gold .ktc-stand-alone-heading {
   background-color: #d3a900;
 }
 
-.ktc-stand-alone-panel.ktc-stand-alone-panel-blue .ktc-stand-alone-heading {
+.ktc-stand-alone-panel-pane.ktc-stand-alone-panel-blue .ktc-stand-alone-heading {
   background-color: #1f9bd7;
 }
 
-.ktc-stand-alone-panel.ktc-stand-alone-panel-green .ktc-stand-alone-heading {
+.ktc-stand-alone-panel-pane.ktc-stand-alone-panel-green .ktc-stand-alone-heading {
   background-color: #36a145;
 }
 
