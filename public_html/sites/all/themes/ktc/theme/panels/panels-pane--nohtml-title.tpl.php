@@ -2,7 +2,7 @@
     <?php print $pane_prefix; ?>
 <?php endif; ?>
 
-<div class="ktc-stand-alone-panel-pane <?php print $classes; ?>" <?php print $id; ?> <?php print $attributes; ?>>
+<div class="<?php print $classes; ?>" <?php print $id; ?> <?php print $attributes; ?>>
     <?php if ($admin_links): ?>
         <?php print $admin_links; ?>
     <?php endif; ?>
