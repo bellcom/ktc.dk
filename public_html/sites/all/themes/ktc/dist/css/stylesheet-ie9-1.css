@@ -10966,6 +10966,10 @@ fieldset[disabled] .field-type-image .button {
   background-image: url('../images/knap_linkedin.png');
 }
 
+.ktc-stand-alone-panel-pane {
+  margin-bottom: 20px;
+}
+
 .ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading {
   background-color: #2c353a;
 }
@@ -10996,15 +11000,15 @@ fieldset[disabled] .field-type-image .button {
   font-size: 65%;
 }
 
-.ktc-stand-alone-panel-pane.ktc-stand-alone-panel-gold .ktc-stand-alone-heading {
+.ktc-stand-alone-panel-pane.ktc-stand-alone-panel-pane-gold .ktc-stand-alone-panel-pane-heading {
   background-color: #d3a900;
 }
 
-.ktc-stand-alone-panel-pane.ktc-stand-alone-panel-blue .ktc-stand-alone-heading {
+.ktc-stand-alone-panel-pane.ktc-stand-alone-panel-pane-blue .ktc-stand-alone-panel-pane-heading {
   background-color: #1f9bd7;
 }
 
-.ktc-stand-alone-panel-pane.ktc-stand-alone-panel-green .ktc-stand-alone-heading {
+.ktc-stand-alone-panel-pane.ktc-stand-alone-panel-pane-green .ktc-stand-alone-panel-pane-heading {
   background-color: #36a145;
 }
 
