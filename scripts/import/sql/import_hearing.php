@@ -4,10 +4,18 @@ include 'functions.php';
 create_hearing_nodes();
 $people = array();
 function create_hearing_nodes() {
+  if (!defined('HEARINGS_CREATE_NEW')) {
+    echo "====================================== ONLY NEW HEARINGS ARE CREATED ======================================\n";
+    define('HEARINGS_CREATE_NEW', true);
+  }
+
   $elements = get_hearing_elements_from_db_table('tx_ktchoringdb_proposal');
   foreach ($elements as $element) {
 
     if ($nid = get_id_by_typo3_uid($element['uid'], 'hearing')) {
+      // FIXME: only create new
+      continue;
+
       $node = node_load($nid);
     }
     else {
@@ -43,6 +51,8 @@ function create_hearing_nodes() {
       }
       $node->uid = 1;
     }
+
+    echo $node->title."\n";
 
     $node->field_hearing_authority[LANGUAGE_NONE][0]['value'] = convert_char($element['authority']);
     $node->field_hearing_authority[LANGUAGE_NONE][0]['safe_value'] = convert_char($element['authority']);
@@ -197,11 +207,11 @@ function create_hearing_nodes() {
     }
     node_save($node);
   }
-  print_r($people);
+
+  // print_r($people);
   foreach ($people as $key => $value) {
     $people[$key] = "'" . $value . "'";
   }
   $text = implode(', ', $people);
-  print $text;
-
+  // print $text;
 }
