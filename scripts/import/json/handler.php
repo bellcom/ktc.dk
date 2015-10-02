@@ -40,7 +40,12 @@ function ktc_import_save_node($entity) {
   }
 
   $acceptedTypes = [
-    'os2web_base_news',
+    // 'os2web_base_news',
+    // 'group',
+    'forum_post',
+    // 'document',
+    // 'meeting_doodle',
+    // 'arrangement',
     ];
 
   if (!in_array($entity->type, $acceptedTypes)) {
