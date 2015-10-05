@@ -11709,7 +11709,9 @@ var getText = docElem.textContent ?
             // Set buttons on Content types filter
             var content_types = sanitize_str(filter_value.type.regular[0]).split(',');
             for (var i = 0; i < content_types.length; i++) {
-                $('#content_type').find('#' + content_types[i]).addClass(button_active);
+                if (content_types[i]) {
+                    $('#content_type').find('#' + content_types[i]).addClass(button_active);
+                }
                 $('#content_type').find('#filter-all').removeClass(button_active);
                 $('#content_type').find('#filter-all').addClass(button_normal);
             }
