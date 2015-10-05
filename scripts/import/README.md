@@ -80,3 +80,6 @@ Run these 3 drush scripts
 `drush scr ktc_php_script/import_hearing_response.php`
 
 `drush scr ktc_php_script/import_files_hearing.php`
+
+## Fixing timestamps
+The import tries to set the correct changed/update ts, but fails, run: `drush php-script ../scripts/fix-timestamp.php`
