@@ -14,4 +14,4 @@ features[features_api][] = api:2
 features[page_manager_handlers][] = node_view_panel_context_10
 features[page_manager_pages][] = hoeringer
 features[page_manager_pages][] = nyheder
-mtime = 1440150619
+mtime = 1443601244
