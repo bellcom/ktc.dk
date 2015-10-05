@@ -560,7 +560,6 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
     $query->fieldCondition('field_grouprole', 'target_id', $roles, 'IN');
   }
 
-  $query->range(0, 5);
   $result = $query->execute();
 
   if ($result['og_membership']) {
