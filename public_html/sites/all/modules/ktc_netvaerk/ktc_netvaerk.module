@@ -114,7 +114,6 @@ function ktc_netvaek_tabs_administer($node) {
  * @return bool
  */
 function _ktc_netvaerk_check_local_task($node) {
-
   return ($node->type == 'group' && og_user_access('node', $node->nid, 'administer group'));
 }
 
@@ -490,6 +489,45 @@ function ktc_netvaerk_block_view($delta = '') {
       break;
   }
   return $block;
+}
+
+/**
+ * Figure out if a user is an group admin
+ */
+function _ktc_netvaerk_user_is_admin($uid, $gid) {
+  if (!is_numeric($gid) or !is_numeric($uid)) {
+    return FALSE;
+  }
+
+  $admin_user_roles = variable_get('ktc_users_grouproles_map', array());
+  foreach ($admin_user_roles as $role_tid => $value) {
+
+    if ($value) {
+      $roles[] = $role_tid;
+    }
+  }
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'og_membership')
+    ->propertyCondition('gid', $gid);
+
+  if (!empty($roles)) {
+    $query->fieldCondition('field_grouprole', 'target_id', $roles, 'IN');
+  }
+  $result = $query->execute();
+
+  if ($result['og_membership']) {
+    $memberships = og_membership_load_multiple(array_keys($result['og_membership']));
+
+    foreach ($memberships as $membership) {
+
+      if ($membership->etid == $uid) {
+        return TRUE;
+      }
+    }
+  }
+
+  return FALSE;
 }
 
 /**
@@ -1044,12 +1082,15 @@ function ktc_netvaerk_og_membership_validate(&$form, &$form_state) {
  * Generate block content for 'group-members'.
  */
 function _ktc_netvaerk_og_members_list() {
+  global $user;
   $gid = arg(1);
+
 
   // Only proceed with generating the block if this is a group id.
   if (!is_numeric($gid)) {
     return;
   }
+  $user_is_admin = _ktc_netvaerk_user_is_admin($user->uid, $gid);
   $buttons = '';
   $state = ktc_netvaerk_group_state($gid);
 
@@ -1066,18 +1107,18 @@ function _ktc_netvaerk_og_members_list() {
   $view_markup_pending = '';
 
   // Add new member
-  if ((og_user_access('node', $gid, 'administer group')) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
+  if ( (og_user_access('node', $gid, 'administer group') or $user_is_admin) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
     $buttons .= '<p><a href="#" class="js-form-add-user btn"><span class="glyphicon glyphicon-plus"></span> Tilføj nyt medlem</a>';
   }
 
   // Invite new member
-  if ((og_user_access('node', $gid, 'invite any user')) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
+  if ( (og_user_access('node', $gid, 'invite any user') or $user_is_admin) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
     $buttons .= '<a href="#" class="js-form-massadd-user btn"><span class="glyphicon glyphicon-plus"></span> Inviter pr. email adresse</a></p>';
   }
 
   // Only show pending users and add form to users with administer group
   // permissions.
-  if ((og_user_access('node', $gid, 'administer group')) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
+  if ( (og_user_access('node', $gid, 'administer group') or $user_is_admin) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
     $view = views_get_view('ktc_og_members');
     $view->set_display('block_3');
     $view->set_arguments(array($gid));
@@ -1090,6 +1131,7 @@ function _ktc_netvaerk_og_members_list() {
     // Hide request message.
     $form['membership_fields']['og_membership_request']['#access'] = FALSE;
     $form['actions']['submit']['#value'] = t('Tilføj medlem');
+    $buttons .= '<div id="form-add-user" class="well well-sm hide">' . drupal_render($form) . '</div>';
 
     // Get og mass add user form.
     $form = drupal_get_form('og_massadd_massadd_form', 'node', $gid);
