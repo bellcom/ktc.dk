@@ -12165,53 +12165,6 @@ var getText = docElem.textContent ?
 
   });
 
-Drupal.behaviors.feedbackForm = {
-  attach: function (context) {
-    $('#block-feedback-form').addClass('hidden-xs');
-    $('#block-feedback-form', context).once('feedback', function () {
-      var $block = $(this);
-      $block.find('span.feedback-link')
-        .prepend('<span id="feedback-form-toggle">[ + ]</span> ')
-        .css('cursor', 'pointer')
-        .toggle(function () {
-            Drupal.feedbackFormToggle($block, true);
-          },
-          function() {
-            Drupal.feedbackFormToggle($block, false);
-          }
-        );
-      $block.find('form').hide();
-      $block.show();
-    });
-  }
-};
-
-/**
- * Re-collapse the feedback form after every successful form submission.
- */
-Drupal.behaviors.feedbackFormSubmit = {
-  attach: function (context) {
-    var $context = $(context);
-    if (!$context.is('#feedback-status-message')) {
-      return;
-    }
-    // Collapse the form.
-    $('#block-feedback-form .feedback-link').click();
-    // Blend out and remove status message.
-    window.setTimeout(function () {
-      $context.fadeOut('slow', function () {
-        $context.remove();
-      });
-    }, 3000);
-  }
-};
 })( jQuery );
-
-/**
- * Re-collapse the feedback form after every successful form submission.
- */
-Drupal.behaviors.feedbackFormSubmit = {
-  attach: function (context) {}
-};
 
 //# sourceMappingURL=app.js.map
