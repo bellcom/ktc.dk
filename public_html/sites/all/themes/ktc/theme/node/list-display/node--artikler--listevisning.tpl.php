@@ -83,40 +83,29 @@
 
 <!-- node--artikler--listevisning.tpl.php -->
 <!-- Begin - list display -->
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display ktc-list-display-artikler"<?php print $attributes; ?>>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display"<?php print $attributes; ?>>
 
-  <p class="ktc-date"><?php print $published_at; ?></p>
-  <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
-  <div>
+  <!-- Begin - body -->
+  <div class="ktc-list-display-body">
+    <div class="ktc-list-display-body-content">
 
-    <?php if (isset($content['field_os2web_base_field_lead_img'])): ?>
-      <!-- Begin - image -->
-      <div class="pull-right">
-        <?php print render($content['field_os2web_base_field_lead_img']); ?>
-      </div>
-      <!-- End - image -->
-    <?php endif; ?>
+      <p class="ktc-date"><?php print $published_at; ?></p>
+      <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
+      <p class="ktc-list-display-author">
 
-    <?php if (isset($content['field_short'])): ?>
-      <!-- Begin - manchet -->
-      <p class="ktc-list-display-short">
-        <?php print render($content['field_short']); ?>
+        <?php print t('Forfatter:'); ?>
+
+        <?php if (isset($content['field_coforfattere'])): ?>
+          <!-- Begin - authors -->
+          <?php print render($content['field_coforfattere']); ?>
+          <!-- End - authors -->
+        <?php endif; ?>
+
       </p>
-      <!-- End - manchet -->
-    <?php endif; ?>
 
-    <div class="clearfix"></div>
+    </div>
   </div>
-  <p class="ktc-list-display-author">
+  <!-- End - body -->
 
-    <?php print t('Forfatter:'); ?>
-
-    <?php if (isset($content['field_coforfattere'])): ?>
-      <!-- Begin - authors -->
-      <?php print render($content['field_coforfattere']); ?>
-      <!-- End - authors -->
-    <?php endif; ?>
-
-  </p>
 </article>
 <!-- End - list display -->

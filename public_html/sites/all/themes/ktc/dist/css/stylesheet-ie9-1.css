@@ -5589,8 +5589,8 @@ button.close {
 .ktc-aside .ktc-aside-body:after,
 .ktc-teaser-magazine .ktc-teaser-artikler:before,
 .ktc-teaser-magazine .ktc-teaser-artikler:after,
-.ktc-list-display-artikler:before,
-.ktc-list-display-artikler:after,
+.ktc-list-display-large-artikler:before,
+.ktc-list-display-large-artikler:after,
 .ktc-article-section.ktc-article-section-type-afsnitb:before,
 .ktc-article-section.ktc-article-section-type-afsnitb:after,
 .ktc-article-section.ktc-article-section-type-billedserie .photoswipe-gallery:before,
@@ -5646,7 +5646,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-user-login .form-actions:after,
 .ktc-aside .ktc-aside-body:after,
 .ktc-teaser-magazine .ktc-teaser-artikler:after,
-.ktc-list-display-artikler:after,
+.ktc-list-display-large-artikler:after,
 .ktc-article-section.ktc-article-section-type-afsnitb:after,
 .ktc-article-section.ktc-article-section-type-billedserie .photoswipe-gallery:after,
 .ktc-gallery-wrapper:after,
@@ -10546,24 +10546,6 @@ fieldset[disabled] .field-type-image .button {
   margin-bottom: 3px;
 }
 
-.ktc-list-display-artikler {
-  margin-bottom: 15px;
-}
-
-.ktc-list-display-artikler .ktc-list-display-headline {
-  font-size: 15px;
-  margin: 2px 0;
-}
-
-.ktc-list-display-artikler .ktc-date {
-  font-size: 10px;
-  margin-bottom: 1px;
-}
-
-.ktc-list-display-artikler .ktc-list-display-author {
-  margin-top: 3px;
-}
-
 .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title,
 .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title {
   padding-left: 17px;
@@ -10770,6 +10752,24 @@ fieldset[disabled] .field-type-image .button {
   margin-right: -15px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.ktc-list-display-large-artikler {
+  margin-bottom: 15px;
+}
+
+.ktc-list-display-large-artikler .ktc-list-display-large-headline {
+  font-size: 15px;
+  margin: 2px 0;
+}
+
+.ktc-list-display-large-artikler .ktc-date {
+  font-size: 10px;
+  margin-bottom: 1px;
+}
+
+.ktc-list-display-large-artikler .ktc-list-display-author {
+  margin-top: 3px;
 }
 
 .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title,
