@@ -794,7 +794,7 @@ function ktc_hearing_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('<a href="/node/[field_hearing_node]/hearing_response class="btn btn-default"">Se alle besvarelser</a>'),
+    t('<a href="/node/[field_hearing_node]/hearing_response" class="btn btn-default">Se alle besvarelser</a>'),
     t('forfatter'),
     t('Efternavn'),
     t('[field_navn] [field_efternavn]'),

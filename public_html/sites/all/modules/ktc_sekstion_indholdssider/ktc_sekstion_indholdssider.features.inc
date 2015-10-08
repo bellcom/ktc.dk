@@ -27,7 +27,7 @@ function ktc_sekstion_indholdssider_image_default_styles() {
     'name' => 'indholdsside',
     'label' => 'indholdsside',
     'effects' => array(
-      1 => array(
+      5 => array(
         'label' => 'EPSA Image Crop',
         'help' => '',
         'dimensions callback' => 'epsacrop_crop_dimensions',
@@ -49,7 +49,7 @@ function ktc_sekstion_indholdssider_image_default_styles() {
         ),
         'weight' => 1,
       ),
-      2 => array(
+      6 => array(
         'label' => 'Skalér og beskær',
         'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
         'effect callback' => 'image_scale_and_crop_effect',

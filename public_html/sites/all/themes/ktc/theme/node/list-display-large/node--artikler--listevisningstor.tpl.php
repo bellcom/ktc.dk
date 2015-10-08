@@ -78,13 +78,45 @@
  *
  * @ingroup themeable
  */
+
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display-large"<?php print $attributes; ?>>
-  <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
-  <div class="ktc-list-display-content">
-    <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
-    <p class="ktc-list-display-date-simple"><?php print $published_at; ?></p>
-    <p><?php print render($content['field_image']); ?></p>
-    <p><?php print render($content['body']); ?></p>
+
+<!-- node--artikler--listevisningstor.tpl.php -->
+<!-- Begin - list display -->
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display-large ktc-list-display-large-artikler"<?php print $attributes; ?>>
+
+  <p class="ktc-date"><?php print $published_at; ?></p>
+  <h3 class="ktc-list-display-large-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
+  <div>
+
+    <?php if (isset($content['field_os2web_base_field_lead_img'])): ?>
+      <!-- Begin - image -->
+      <div class="pull-right">
+        <?php print render($content['field_os2web_base_field_lead_img']); ?>
+      </div>
+      <!-- End - image -->
+    <?php endif; ?>
+
+    <?php if (isset($content['field_short'])): ?>
+      <!-- Begin - manchet -->
+      <p class="ktc-list-display-short">
+        <?php print render($content['field_short']); ?>
+      </p>
+      <!-- End - manchet -->
+    <?php endif; ?>
+
+    <div class="clearfix"></div>
   </div>
+  <p class="ktc-list-display-large-author">
+
+    <?php print t('Forfatter:'); ?>
+
+    <?php if (isset($content['field_coforfattere'])): ?>
+      <!-- Begin - authors -->
+      <?php print render($content['field_coforfattere']); ?>
+      <!-- End - authors -->
+    <?php endif; ?>
+
+  </p>
 </article>
+<!-- End - list display large -->

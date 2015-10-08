@@ -57,6 +57,12 @@ function ktc_hearing_notifications_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
@@ -120,6 +126,12 @@ function ktc_hearing_notifications_field_default_field_instances() {
         'weight' => 0,
       ),
       'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
