@@ -131,6 +131,10 @@ function teknik_og_miljoe_strongarm() {
             'weight' => '3',
             'visible' => FALSE,
           ),
+          'teaserfront' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),

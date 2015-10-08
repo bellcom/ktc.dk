@@ -25,9 +25,10 @@ function ktc_netvaerk_field_group_info() {
     'children' => array(
       0 => 'field_os2web_base_field_hidlinks',
       1 => 'field_open_group',
-      2 => 'group_dates',
-      3 => 'group_synlighedsdiv',
-      4 => 'group_underdiv',
+      2 => 'field_os2web_base_field_promote',
+      3 => 'group_dates',
+      4 => 'group_synlighedsdiv',
+      5 => 'group_underdiv',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -53,7 +54,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_administration';
   $field_group->data = array(
     'label' => 'Datoer',
-    'weight' => '14',
+    'weight' => '16',
     'children' => array(
       0 => 'field_end_date',
       1 => 'field_start_date',
@@ -178,7 +179,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjul',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'group_group',
       1 => 'field_gammel_gid',
@@ -334,7 +335,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_administration';
   $field_group->data = array(
     'label' => 'Synlighed for netværkets indhold',
-    'weight' => '11',
+    'weight' => '13',
     'children' => array(
       0 => 'group_content_access',
     ),
@@ -400,7 +401,7 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = 'group_administration';
   $field_group->data = array(
     'label' => 'Undernetværk',
-    'weight' => '12',
+    'weight' => '14',
     'children' => array(
       0 => 'field_subgroup',
       1 => 'og_group_ref',

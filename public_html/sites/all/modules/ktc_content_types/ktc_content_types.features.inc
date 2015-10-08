@@ -80,6 +80,41 @@ function ktc_content_types_image_default_styles() {
     ),
   );
 
+  // Exported image style: teaser_front.
+  $styles['teaser_front'] = array(
+    'name' => 'teaser_front',
+    'label' => 'Teaser front',
+    'effects' => array(
+      3 => array(
+        'label' => 'Reuse EPSA Image Crop',
+        'help' => 'Use the image crop selection from another image style',
+        'effect callback' => 'epsacrop_crop_image_reuse',
+        'form callback' => 'epsacrop_crop_image_reuse_form',
+        'module' => 'epsacrop',
+        'name' => 'epsacrop_crop_reuse',
+        'data' => array(
+          'jcrop_reuse' => 'indholdsside',
+        ),
+        'weight' => 1,
+      ),
+      4 => array(
+        'label' => 'Skalér og beskær',
+        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 633,
+          'height' => 236,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
   return $styles;
 }
 

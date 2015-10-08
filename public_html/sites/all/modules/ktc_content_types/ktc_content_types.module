@@ -40,11 +40,11 @@ function ktc_content_types_entity_info_alter(&$entity_info) {
   );
 
   /* Teaser front */
-  $entity_info['node']['view modes']['teaser_front'] = array(
+  $entity_info['node']['view modes']['teaserfront'] = array(
     'label' => t('Teaser front'),
     'custom settings' => TRUE,
   );
-  $entity_info['field_collection_item']['view modes']['teaser_front'] = array(
+  $entity_info['field_collection_item']['view modes']['teaserfront'] = array(
     'label' => t('Teaser front'),
     'custom settings' => TRUE,
   );

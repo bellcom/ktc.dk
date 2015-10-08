@@ -2,8 +2,8 @@
 global $base_url;
 ?>
 
-<?php if ($teaser): ?>
-  <!-- node--artikler--teaser_front.tpl.php -->
+<?php if (!$page): ?>
+  <!-- node--artikler--teaserfront.tpl.php -->
   <!-- Begin - teaser front -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser"<?php print $attributes; ?>>
 

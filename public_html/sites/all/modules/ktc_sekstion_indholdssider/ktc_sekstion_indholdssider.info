@@ -11,4 +11,4 @@ features[features_api][] = api:2
 features[image][] = indholdsside
 features[page_manager_handlers][] = node_view_panel_context
 features[panels_mini][] = sektionsside_footer
-mtime = 1442392412
+mtime = 1443425535

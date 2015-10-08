@@ -963,8 +963,9 @@ For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil
     'weight' => '62',
     'children' => array(
       0 => 'og_group_ref',
-      1 => 'scheduler_settings',
-      2 => 'group_visn',
+      1 => 'field_os2web_base_field_promote',
+      2 => 'scheduler_settings',
+      3 => 'group_visn',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
