@@ -111,9 +111,9 @@ function ktc_import_set_user_name($entity, $prop, $value) {
 }
 
 /**
- *
+ * @param string $dest_language Set default language for the new node. Used by fix-image.php script
  */
-function ktc_import_field_fetch_file($entity, $prop, $value, $opt) {
+function ktc_import_field_fetch_file($entity, $prop, $value, $opt, $dest_language = LANGUAGE_NONE) {
   $value = obj_to_array($value);
 
   $config = include dirname(__FILE__) . '/config.php';
@@ -130,6 +130,13 @@ function ktc_import_field_fetch_file($entity, $prop, $value, $opt) {
     $field_name = $config['image_field_mapping'][$entity->type][$field_name];
     echo "Using {$field_name} as image field\n";
   }
+
+  // We need that the file has the same language as the node, else we can't edit the image in admin
+  if ($entity->language != $dest_language) {
+    $dest_language = $entity->language;
+  }
+
+  $entity->{$field_name}[$dest_language] = [];
 
   $language = key($value);
   foreach ($value[$language] as $_key => $_val) {
@@ -150,7 +157,7 @@ function ktc_import_field_fetch_file($entity, $prop, $value, $opt) {
     $file->display = 1;
     file_save($file);
 
-    $entity->{$field_name}[LANGUAGE_NONE][$_key] = (array) $file;
+    $entity->{$field_name}[$dest_language][$_key] = (array) $file;
   }
 }
 
