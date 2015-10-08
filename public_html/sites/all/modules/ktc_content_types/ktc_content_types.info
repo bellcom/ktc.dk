@@ -584,4 +584,5 @@ features[views_view][] = ktc_full_node_field_displays
 features_exclude[field_base][field_typo3_uid] = field_typo3_uid
 features_exclude[taxonomy][os2web_taxonomies_tax_editor_tag] = os2web_taxonomies_tax_editor_tag
 features_exclude[taxonomy][os2web_news_page_newstypes] = os2web_news_page_newstypes
+mtime = 1439557274
 project path = sites/all/modules

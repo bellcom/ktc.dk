@@ -3801,11 +3801,14 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-arrangement-group_content_access'
   $field_instances['node-arrangement-group_content_access'] = array(
     'bundle' => 'arrangement',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => array(
       0 => array(
         'value' => 0,
       ),
     ),
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => 'Vælg om arrangementet skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, arrangementet er publiceret i)',
     'display' => array(
@@ -10880,7 +10883,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'max_filesize' => '',
       'max_resolution' => '',
       'media_library_include_in_library' => 0,
-      'min_resolution' => '800x300',
+      'min_resolution' => '',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
