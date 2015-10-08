@@ -532,7 +532,7 @@ function ktc_netvaerk_field_default_field_instances() {
       'max_filesize' => '',
       'max_resolution' => '',
       'media_library_include_in_library' => 0,
-      'min_resolution' => '195x1',
+      'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
