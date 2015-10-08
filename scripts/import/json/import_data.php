@@ -34,8 +34,13 @@ function process_data($entity_type, $data, $config) {
   // Load the entity.
   $entity = $load($data);
 
+  if ($entity === FALSE) {
+    echo "[WARNING]: No entity could be loaded for: {$data->title}\n";
+    return;
+  }
+
   if (!$entity) {
-    error_log('No entity could be loaded for: ' . print_r($data, 1));
+    // error_log('No entity could be loaded for: ' . print_r($data, 1));
     return;
   }
 
