@@ -4,12 +4,23 @@
  * Configuration for data import.
  */
 
+$config = [];
+
 $config['files'] = array(
  // 'users' => 'users.json',
-  // 'nodes' => 'nodes.json',
- 'makemeeting' => 'makemeeting.json',
+  'nodes' => 'nodes.json',
+ // 'makemeeting' => 'makemeeting.json',
  // 'comments' => 'comments.json',
 );
+
+$config['image_field_mapping'] = [
+    'os2web_base_news' => ['field_image' => 'field_os2web_base_field_lead_img'],
+    'group',
+    'forum_post',
+    'document',
+    'meeting_doodle',
+    'arrangement',
+  ];
 
 /**
  * Define handlers, load and save for entities.

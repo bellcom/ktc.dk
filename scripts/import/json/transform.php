@@ -125,6 +125,12 @@ function ktc_import_field_fetch_file($entity, $prop, $value, $opt) {
 
   $field_name = $opt['field'];
 
+  // Specify field name pr type
+  if (isset($config['image_field_mapping'][$entity->type][$field_name])) {
+    $field_name = $config['image_field_mapping'][$entity->type][$field_name];
+    echo "Using {$field_name} as image field\n";
+  }
+
   $language = key($value);
   foreach ($value[$language] as $_key => $_val) {
     $uri = $_val['uri'];
