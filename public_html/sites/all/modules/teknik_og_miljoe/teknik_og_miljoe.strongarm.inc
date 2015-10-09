@@ -123,6 +123,18 @@ function teknik_og_miljoe_strongarm() {
             'weight' => '4',
             'visible' => FALSE,
           ),
+          'teaser_front' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'listevisningstor' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'teaserfront' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),

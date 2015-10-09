@@ -73,6 +73,7 @@ features[field_instance][] = node-group-field_os2web_base_field_ext_link
 features[field_instance][] = node-group-field_os2web_base_field_hidlinks
 features[field_instance][] = node-group-field_os2web_base_field_kle_ref
 features[field_instance][] = node-group-field_os2web_base_field_media
+features[field_instance][] = node-group-field_os2web_base_field_promote
 features[field_instance][] = node-group-field_regioner
 features[field_instance][] = node-group-field_start_date
 features[field_instance][] = node-group-field_subgroup
