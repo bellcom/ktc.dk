@@ -14,7 +14,8 @@ foreach ($nodes as $node) {
   $nid = ktc_import_new_nid($node->nid);
 
   if (is_numeric($nid) && $existing_node = node_load($nid)) {
-    ktc_import_field_fetch_file($existing_node, FALSE, $node->field_image, ['field' => 'field_image']);
+    $existing_node->field_os2web_base_field_lead_img = [];
+    ktc_import_field_fetch_file($existing_node, FALSE, $node->field_image, ['field' => 'field_image'], $existing_node->language);
     node_save($existing_node);
   }
   else {

@@ -277,7 +277,13 @@ function ktc_crm_group_new_group() {
 
   node_object_prepare($node);
   $node->language = LANGUAGE_NONE;
-  $node->uid = 1;
+
+  $uid = 1;
+  $user = user_load_by_mail(variable_get('group_owner',FALSE));
+  if ($user) {
+    $uid = $user->uid;
+  }
+  $node->uid = $uid;
   $node->status = 1;
 
   return $node;
@@ -307,6 +313,8 @@ function ktc_crm_group_process_memberships($memberships) {
  * Update the users groupmemberships.
  */
 function ktc_crm_group_update_users_memberships($account, $groups) {
+  $logger = KtcCrmLogger::getInstance();
+
   foreach ($groups as $membership_info) {
     $group_uuid = $membership_info['group_uuid'];
     $membership_uuid = $membership_info['membership_uuid'];
@@ -335,6 +343,7 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
       }
       $group_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
 
+      $logger->log->addInfo('cron', 'Setting membership for '. $account->name.' ('.$account->uid.') to gid: '.$group->nid.' role: '.$grouprole_tid);
       og_membership_save($group_membership);
     }
   }
@@ -384,6 +393,7 @@ function ktc_crm_group_remove_old_groups($groups) {
  * are no longer in the data from the webservice.
  */
 function ktc_crm_group_remove_old_memberships($memberships) {
+  $logger = KtcCrmLogger::getInstance();
   $all_membership_uuid = array();
 
   // Generate a list of all membership ids in CRM.
@@ -402,6 +412,7 @@ function ktc_crm_group_remove_old_memberships($memberships) {
 
     if (isset($result['og_membership'])) {
       foreach ($result['og_membership'] as $membership_id => $info) {
+        $logger->log->addInfo('cron', 'Deleting membership: '.$membershop_id);
         og_membership_delete($membership_id);
       }
     }

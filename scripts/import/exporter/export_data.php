@@ -8,7 +8,7 @@ $dir = __DIR__ . '/';
 $query = new EntityFieldQuery();
 $query->entityCondition('entity_type', 'node')
   ->entityCondition('bundle', 'group', '!=')
-  ->propertyCondition('changed', strtotime('2015-05-26 00:00:01'), '>');
+  ->propertyCondition('changed', strtotime('2012-01-01 00:00:01'), '>');
 $result = $query->execute();
 
 $nodes = node_load_multiple(array_keys($result['node']));
@@ -27,7 +27,8 @@ foreach ($nodes as $node) {
 // And now groups.
 $query = new EntityFieldQuery();
 $query->entityCondition('entity_type', 'node')
-  ->entityCondition('bundle', 'group');
+  ->entityCondition('bundle', 'group')
+  ->propertyCondition('changed', strtotime('2012-01-01 00:00:01'), '>');
 $result = $query->execute();
 
 $nodes = array_merge($nodes, node_load_multiple(array_keys($result['node'])));
@@ -51,7 +52,7 @@ $nodes = NULL;
 //
 $query = new EntityFieldQuery();
 $query->entityCondition('entity_type', 'comment')
-   ->propertyCondition('changed', strtotime('2015-05-26 00:00:01'), '>');
+   ->propertyCondition('changed', strtotime('2012-01-01 00:00:01'), '>');
 $result = $query->execute();
 
 $comments = comment_load_multiple(array_keys($result['comment']));
@@ -64,7 +65,8 @@ $comments = NULL;
 //
 $query = new EntityFieldQuery();
 $query->entityCondition('entity_type', 'user')
-   ->propertyCondition('access', strtotime('2015-05-26 00:00:01'), '>');
+   ->propertyCondition('access', strtotime('2013-09-01 00:00:01'), '>')
+   ->propertyCondition('status', 1, '=');
 $result = $query->execute();
 
 $users = user_load_multiple(array_keys($result['user']));
