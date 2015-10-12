@@ -14,11 +14,10 @@ foreach ($users as $user) {
   if ($user->uid == 0) {
     continue;
   }
-  $email   = $user->mail;
+  $email    = $user->mail;
+
   $merge_vars = [
     'EMAIL' => $email,
-    'FNAME' => $user->field_navn[LANGUAGE_NONE][0]['value'],
-    'LNAME' => $user->field_efternavn[LANGUAGE_NONE][0]['value'],
     'GROUPINGS' => [
       [
         'id' => 6297,
@@ -31,5 +30,18 @@ foreach ($users as $user) {
     ],
   ];
 
-  mailchimp_subscribe($list_id, $email, $merge_vars, $double_optin, $confirm);
+  $name     = $user->field_navn[LANGUAGE_NONE][0]['value'];
+  $lastname = $user->field_efternavn[LANGUAGE_NONE][0]['value'];
+
+  if (!empty($name)) {
+    $merge_var['FNAME'] = $name;
+  }
+  if (!empty($lastname)) {
+    $merge_var['LNAME'] = $lastname;
+  }
+
+  if (!mailchimp_is_subscribed($list_id, $email)) {
+    mailchimp_subscribe($list_id, $email, $merge_vars, $double_optin, $confirm);
+    echo $email."\n";
+  }
 }
