@@ -166,7 +166,7 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['fields']['forwarding_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['forwarding_email']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['forwarding_email']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['forwarding_email']['empty'] = 'ktc@ktc.dk';
+  $handler->display->display_options['fields']['forwarding_email']['empty'] = 'ktcportalen@ktc.dk';
   /* Felt: Indhold: Email */
   $handler->display->display_options['fields']['field_arrangement_opretteremail']['id'] = 'field_arrangement_opretteremail';
   $handler->display->display_options['fields']['field_arrangement_opretteremail']['table'] = 'field_data_field_arrangement_opretteremail';
@@ -357,7 +357,7 @@ function ktc_arrangement_views_default_views() {
   $handler->display->display_options['fields']['forwarding_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['forwarding_email']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['forwarding_email']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['forwarding_email']['empty'] = 'ktc@ktc.dk';
+  $handler->display->display_options['fields']['forwarding_email']['empty'] = 'ktcportalen@ktc.dk';
   /* Felt: Indhold: Email */
   $handler->display->display_options['fields']['field_arrangement_opretteremail']['id'] = 'field_arrangement_opretteremail';
   $handler->display->display_options['fields']['field_arrangement_opretteremail']['table'] = 'field_data_field_arrangement_opretteremail';
@@ -477,7 +477,7 @@ function ktc_arrangement_views_default_views() {
     t('Pris (inkl./ ekskl. moms)'),
     t('Arrangementets dato'),
     t('[field_arrangement_date_1-value2]'),
-    t('ktc@ktc.dk'),
+    t('ktcportalen@ktc.dk'),
     t('[forwarding_email]'),
     t('<span class="addtocalendar atc-style-blue">
         <var class="atc_event">
