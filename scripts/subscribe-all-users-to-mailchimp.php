@@ -36,12 +36,21 @@ foreach ($users as $user) {
   if (!empty($name)) {
     $merge_var['FNAME'] = $name;
   }
+  else {
+    $merge_var['FNAME'] = $user->name;
+  }
   if (!empty($lastname)) {
     $merge_var['LNAME'] = $lastname;
+  }
+  else {
+    $merge_var['LNAME'] = $user->name;
   }
 
   if (!mailchimp_is_subscribed($list_id, $email)) {
     mailchimp_subscribe($list_id, $email, $merge_vars, $double_optin, $confirm);
-    echo $email."\n";
+    echo "New: " . $email."\n";
+  }
+  else {
+    echo "Exists: " . $email."\n";
   }
 }
