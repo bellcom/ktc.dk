@@ -103,6 +103,7 @@ function ktc_crm_account_create_update(\KTC\AccountService\AccountDto $accountdt
 
   if ($accountdto->DepartmentId) {
     if ($department = ktc_crm_account_load_from_uuid($accountdto->DepartmentId)) {
+      $logger->log->addInfo('cron', "Setting parent for {$accountdto->DepartmentId} to {$department->tid}");
       $account->parent = array($department->tid);
     }
   }
