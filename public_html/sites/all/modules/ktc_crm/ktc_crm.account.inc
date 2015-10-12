@@ -103,6 +103,7 @@ function ktc_crm_account_create_update(\KTC\AccountService\AccountDto $accountdt
 
   if ($accountdto->DepartmentId) {
     if ($department = ktc_crm_account_load_from_uuid($accountdto->DepartmentId)) {
+      $logger->log->addInfo('cron', "Setting parent for {$accountdto->DepartmentId} to {$department->tid}");
       $account->parent = array($department->tid);
     }
   }
@@ -147,7 +148,10 @@ function ktc_crm_account_create_update(\KTC\AccountService\AccountDto $accountdt
  * Set the top level account type for toplevelaccount term.
  */
 function ktc_crm_account_set_type($account, $type_name, $toplevelaccountid) {
+  $logger = KtcCrmLogger::getInstance();
+
   $type = $type_name . ' - segment';
+  $logger->log->addInfo('cron', 'Setting account type with top: '.$type);
   // The account type determine the parent term for the toplevelaccount.
   // This creates a term, for the type set on the account.
   $vocab = taxonomy_vocabulary_machine_name_load('accounts');
