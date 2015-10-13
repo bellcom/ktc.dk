@@ -35,7 +35,7 @@ function process_data($entity_type, $data, $config) {
   $entity = $load($data);
 
   if ($entity === FALSE) {
-    echo "[WARNING]: No entity could be loaded for: {$data->title}\n";
+    // echo "[WARNING]: No entity could be loaded for: {$data->title}\n";
     return;
   }
 

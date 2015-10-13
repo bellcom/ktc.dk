@@ -337,3 +337,28 @@ function ktc_import_roles_permissions($entity, $prop, $value) {
   );
   $entity->group_content_access[LANGUAGE_NONE][0]['value'] = (int) $value_map[$value[LANGUAGE_NONE][0]['value']];
 }
+
+function ktc_import_field_submission($entity, $prop, $value) {
+  $value = obj_to_array($value);
+
+  if (!empty($value)) {
+    foreach ($value[LANGUAGE_NONE] as $target)
+    {
+      $old_uid = $target['target_id'];
+      $type = $target['target_type'];
+      if ($type !== 'user') {
+        echo "[WARNING]: type is not user: {$type}\n";
+        return;
+      }
+
+      $new_uid = ktc_import_new_uid($old_uid);
+      if ($new_uid !== FALSE) {
+        echo "[INFO]: Setting submission user to: {$new_uid}\n";
+        $entity->field_submission[LANGUAGE_NONE][] = ['target_id' => $new_uid];
+      }
+      else {
+        echo "[WARNING]: could not find new uid for user: {$old_uid}\n";
+      }
+    }
+  }
+}
