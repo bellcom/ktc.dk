@@ -68,6 +68,7 @@ $config['transform']['nodes'] = array(
   'field_fil' => array('ktc_import_field_fetch_file', 'opt' => array('field' => 'field_os2web_base_field_media')),
   'field_groupimage' => array('ktc_import_field_fetch_file', 'opt' => array('field' => 'field_groupimage')),
   'field_image' => array('ktc_import_field_fetch_file', 'opt' => array('field' => 'field_image')),
+  'field_submission' => 'ktc_import_field_submission',
 );
 
 /**
