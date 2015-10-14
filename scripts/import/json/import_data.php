@@ -22,6 +22,7 @@ function process_file($entity, $filename, $config) {
  * Process the given data as to an entity.
  */
 function process_data($entity_type, $data, $config) {
+
   // Get the specified handler to load the entity.
   $load = $config['handler'][$entity_type]['load'];
   $save = $config['handler'][$entity_type]['save'];
@@ -41,6 +42,19 @@ function process_data($entity_type, $data, $config) {
 
   if (!$entity) {
     // error_log('No entity could be loaded for: ' . print_r($data, 1));
+    return;
+  }
+
+  $acceptedTypes = [
+    // 'os2web_base_news',
+    // 'group',
+    // 'forum_post',
+    // 'document',
+    // 'meeting_doodle',
+    'arrangement',
+    ];
+
+  if (!in_array($entity->type, $acceptedTypes)) {
     return;
   }
 

@@ -39,19 +39,6 @@ function ktc_import_save_node($entity) {
     $entity->uid = 1;
   }
 
-  $acceptedTypes = [
-    // 'os2web_base_news',
-    // 'group',
-    // 'forum_post',
-    // 'document',
-    // 'meeting_doodle',
-    'arrangement',
-    ];
-
-  if (!in_array($entity->type, $acceptedTypes)) {
-    return;
-  }
-
   // FIXME: corrently only new users are created
 /*
  *   if (!defined('NODES_CREATE_NEW')) {
@@ -63,8 +50,6 @@ function ktc_import_save_node($entity) {
  *     return;
  *   }
  */
-
-  echo $entity->title."\n";
 
   node_submit($entity);
   node_save($entity);
