@@ -48,7 +48,7 @@ function process_data($entity_type, $data, $config) {
   $acceptedTypes = [
     // 'os2web_base_news',
     // 'group',
-    // 'forum_post',
+    'forum_post',
     // 'document',
     // 'meeting_doodle',
     'arrangement',
