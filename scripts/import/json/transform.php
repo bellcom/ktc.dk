@@ -372,3 +372,13 @@ function ktc_import_field_submission($entity, $prop, $value) {
     }
   }
 }
+
+function ktc_import_field_body($entity, $prop, $value) {
+  $value = obj_to_array($value);
+
+  $language = key($value);
+  if (empty($entity->body) && !empty($value[$language][0]['value'])) {
+    $entity->body = ['da' => []];
+    $entity->body['da'][0]['value'] = $value[$language][0]['value'];
+  }
+}
