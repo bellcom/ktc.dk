@@ -126,14 +126,21 @@ function ktc_import_field_fetch_file($entity, $prop, $value, $opt, $dest_languag
   $field_name = $opt['field'];
 
   // Specify field name pr type
-  if (isset($config['image_field_mapping'][$entity->type][$field_name])) {
-    $field_name = $config['image_field_mapping'][$entity->type][$field_name];
-    echo "Using {$field_name} as image field\n";
-  }
+  /*
+   * if (isset($config['image_field_mapping'][$entity->type][$field_name])) {
+   *   $field_name = $config['image_field_mapping'][$entity->type][$field_name];
+   *   echo "Using {$field_name} as image field\n";
+   * }
+   */
 
   // We need that the file has the same language as the node, else we can't edit the image in admin
   if ($entity->language != $dest_language) {
     $dest_language = $entity->language;
+  }
+
+  // Override language for this field on this type to UND
+  if ($prop == 'field_file' && $entity->type == 'arrangement') {
+    $dest_language = LANGUAGE_NONE;
   }
 
   $entity->{$field_name}[$dest_language] = [];
@@ -156,6 +163,8 @@ function ktc_import_field_fetch_file($entity, $prop, $value, $opt, $dest_languag
     $file = file_uri_to_object(file_unmanaged_copy($file_path, $destination_uri, FILE_EXISTS_REPLACE));
     $file->display = 1;
     file_save($file);
+
+    echo "[INFO]: Attaching file to field: {$field_name} - lang: {$dest_language} - key: {$_key} - file: {$file->filename} - on {$entity->title}\n";
 
     $entity->{$field_name}[$dest_language][$_key] = (array) $file;
   }
@@ -341,6 +350,7 @@ function ktc_import_roles_permissions($entity, $prop, $value) {
 function ktc_import_field_submission($entity, $prop, $value) {
   $value = obj_to_array($value);
 
+  $entity->field_submission = [];
   if (!empty($value)) {
     foreach ($value[LANGUAGE_NONE] as $target)
     {
