@@ -121,8 +121,6 @@
                     if ($(passiveFilterBox).attr('id') == 'emner') {
                         //hiding or showing emner fields
                         jQuery.get("/netvaerk/emner/" + filter_value[0] + "/" + filter_value[1] + "/" + filter_value[4], function (data) {
-                            console.log(data);
-
                             $(passiveFilterBox).find('.filter-link').each(function (index, passivefilterLink) {
                                 if ($.inArray($(passivefilterLink).data('filter'), data) == -1) {
                                     $(passivefilterLink).removeClass('btn-default');
@@ -616,8 +614,8 @@
     function display_content(filter_value) {
         var path = window.location.href.split('/');
         var type = path[path.length - 1];
-        var link = '/ajax/' + type + '/view/' + filter_value[0] + '/' + filter_value[1] + '/' + filter_value[2] + '/' + filter_value[3] + '/' + filter_value[4] + '/' + gid;
         var gid = get_group_id();
+        var link = '/ajax/' + type + '/view/' + filter_value[0] + '/' + filter_value[1] + '/' + filter_value[2] + '/' + filter_value[3] + '/' + filter_value[4] + '/' + gid;
 
         if (type == 'teknikmiljoe') {
             if (filter_value[0].indexOf("artikler") >= 0 || filter_value[0].indexOf("all") >= 0)

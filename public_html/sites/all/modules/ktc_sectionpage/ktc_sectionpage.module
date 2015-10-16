@@ -172,8 +172,8 @@ function ktc_sectionpage_ajax_view($page, $f1, $f2, $f3, $f4, $f5, $gid) {
   if ($page == 'teknikmiljoe' || arg(0) == 'teknikmiljoe') {
     $output = _ktc_section_block_magazine_content($page, $f1, $f2, $f3, $f4, $f5, $gid, $is_empty_html);
   }
-  print $output;
 
+  print $output;
 }
 
 function ktc_subterms_filters_ajax_view($voc_id, $parent_id) {
@@ -188,7 +188,7 @@ function ktc_subterms_filters_ajax_view($voc_id, $parent_id) {
     $output = '<div class="ktc-aside panel-pane pane-views-panes pane-section-page-filter-panel-pane-3 ktc-aside-checkbox-filter" id="emner-' . $level . '">
                 <div class="ktc-aside-heading">
                     <h3 class="ktc-aside-title">Filtrer på faglige emner</h3>
-                 </div>        
+                 </div>
                 <div class="ktc-aside-body pane-content">';
     $output .= $view->render('panel_pane_4');
     $output .= '</div></div>';

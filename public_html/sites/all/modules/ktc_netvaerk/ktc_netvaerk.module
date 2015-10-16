@@ -133,9 +133,9 @@ function ktc_netvaek_get_emner($content_type, $network_type, $region) {
   if (isset($result['node'])) {
     $nids = array_keys($result['node']);
 
-    $db_or = db_or(); 
+    $db_or = db_or();
     foreach($nids as $nid){
-	 $db_or->condition('ogm.gid', $nid, '=');
+     $db_or->condition('ogm.gid', $nid, '=');
     }
 
     $query = db_select('og_membership', 'ogm');
@@ -144,10 +144,10 @@ function ktc_netvaek_get_emner($content_type, $network_type, $region) {
     $query->join('taxonomy_term_hierarchy', 'tth', 'tth.tid = f.field_topics_tid');
     $query->distinct()
           ->fields('f', array('entity_id', 'field_topics_tid'))
-	  ->condition($db_or)
+      ->condition($db_or)
           ->condition('ogm.entity_type', 'node', '=')
-	  ->condition('tth.parent', '0', '=');
-    
+      ->condition('tth.parent', '0', '=');
+
     if (!empty($content_types) && $content_types[0] != 'all') {
       $query->condition('n.type', $content_types, 'IN');
     }
@@ -162,7 +162,7 @@ function ktc_netvaek_get_emner($content_type, $network_type, $region) {
     }
 
     return $emner;
-  }  
+  }
 
   return array();
 }
@@ -835,7 +835,7 @@ function ktc_netvaerk_get_group_content_types($nid = 'all') {
     }
   }
   if ($nid == 'all') {
-      
+
     $node_types = node_type_get_types();
     foreach ($node_types as $obj) {
       // Skip hearing_responses type.
