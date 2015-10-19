@@ -14,6 +14,12 @@ function process_file($entity, $filename, $config) {
   $data = json_decode($file_contents);
 
   foreach ($data as $delta => $_data) {
+    // For debugging single node
+    /*
+     * if ($_data->nid != 132512) {
+     *   continue;
+     * }
+     */
     process_data($entity, $_data, $config);
   }
 }
@@ -22,7 +28,6 @@ function process_file($entity, $filename, $config) {
  * Process the given data as to an entity.
  */
 function process_data($entity_type, $data, $config) {
-
   // Get the specified handler to load the entity.
   $load = $config['handler'][$entity_type]['load'];
   $save = $config['handler'][$entity_type]['save'];
@@ -45,7 +50,7 @@ function process_data($entity_type, $data, $config) {
     return;
   }
 
-  $acceptedTypes = [
+  $accepted_types = [
     // 'os2web_base_news',
     // 'group',
     'forum_post',
@@ -54,7 +59,7 @@ function process_data($entity_type, $data, $config) {
     'arrangement',
     ];
 
-  if (!in_array($entity->type, $acceptedTypes)) {
+  if (!in_array($entity->type, $accepted_types)) {
     return;
   }
 
@@ -78,5 +83,5 @@ function process_data($entity_type, $data, $config) {
 
   // Save the entity to the db.
   $save($entity);
-  // error_log('saved entity: ' . $entity_type);
+  // print_r($entity);
 }
