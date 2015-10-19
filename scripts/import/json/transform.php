@@ -9,11 +9,11 @@ function ktc_import_no_transform($entity, $prop, $value, $opt) {
 
   if (is_object($value)) {
     $value = obj_to_array($value);
-    $entity->{$prop} = $value;
   }
-  else {
-    $entity->{$prop} = $value;
-  }
+
+  $value = ktc_import_change_language_if_needed($entity, $prop, $value);
+
+  $entity->{$prop} = $value;
 }
 
 function ktc_import_update_to_entity_reference($entity, $prop, $value, $opt) {
@@ -381,4 +381,18 @@ function ktc_import_field_body($entity, $prop, $value) {
     $entity->body = ['da' => []];
     $entity->body['da'][0]['value'] = $value[$language][0]['value'];
   }
+}
+
+function ktc_import_change_language_if_needed($entity, $prop, $value)
+{
+  $value_language = key($value);
+  if ($entity->language !== $value_language) {
+    // echo "[DEBUG]: Setting language for {$prop} to {$entity->language}\n";
+    $data =$value[$value_language];
+    $value = [];
+    $value[$entity->language] = $data;
+    unset($value[$value_language]);
+  }
+
+  return $value;
 }
