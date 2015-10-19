@@ -19,6 +19,10 @@ function ktc_import_no_transform($entity, $prop, $value, $opt) {
 function ktc_import_update_to_entity_reference($entity, $prop, $value, $opt) {
   $value = obj_to_array($value);
 
+  if (empty($value)) {
+    return;
+  }
+
   $language = key($value);
   foreach($value[$language] as $_key => $_value) {
     $value[$language][$_key]['target_id'] = reset($_value);
@@ -377,14 +381,29 @@ function ktc_import_field_body($entity, $prop, $value) {
   $value = obj_to_array($value);
 
   $language = key($value);
-  if (empty($entity->body) && !empty($value[$language][0]['value'])) {
+  $body_language = key($entity->body);
+  if ((empty($entity->body) || empty($entity->body[$body_language])) && !empty($value[$language][0]['value'])) {
+    // echo "[DEBUG]: Setting body to content from {$prop} to da\n";
+
     $entity->body = ['da' => []];
-    $entity->body['da'][0]['value'] = $value[$language][0]['value'];
+    $entity->body['da'][0]['value'] = $value[$language][0]['value'];;
   }
 }
 
 function ktc_import_change_language_if_needed($entity, $prop, $value)
 {
+  $supported_types_and_fields = [
+    'forum_post-body',
+    // 'forum_post-field_body',
+    ];
+
+  $type = $entity->type.'-'.$prop;
+
+  if (!in_array($type,$supported_types_and_fields)) {
+    return $value;
+  }
+
+  // echo "[DEBUG]: entity/field support: {$type}\n";
   $value_language = key($value);
   if ($entity->language !== $value_language) {
     // echo "[DEBUG]: Setting language for {$prop} to {$entity->language}\n";
