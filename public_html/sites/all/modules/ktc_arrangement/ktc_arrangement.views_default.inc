@@ -870,6 +870,8 @@ function ktc_arrangement_views_default_views() {
 
   /* Display: Listview */
   $handler = $view->new_display('block', 'Listview', 'block_3');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'section-content-ajax row';
   $handler->display->display_options['display_description'] = 'Liste view';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
