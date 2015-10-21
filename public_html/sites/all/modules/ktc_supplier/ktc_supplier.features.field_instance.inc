@@ -666,7 +666,10 @@ function ktc_supplier_field_default_field_instances() {
   // Exported field_instance: 'node-ktc_supplier-field_supplier_type'
   $field_instances['node-ktc_supplier-field_supplier_type'] = array(
     'bundle' => 'ktc_supplier',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(

@@ -117,22 +117,16 @@ function ktc_supplier_default_page_manager_handlers() {
     $display->content['new-d27d8fa0-d6dc-4cfc-9ee9-12144017faec'] = $pane;
     $display->panels['right'][0] = 'new-d27d8fa0-d6dc-4cfc-9ee9-12144017faec';
     $pane = new stdClass();
-    $pane->pid = 'new-03f59f51-61f7-4cd0-a8c0-eded4c1ce0fe';
+    $pane->pid = 'new-b9ddf039-171f-4de2-8458-c313e5fd8d8c';
     $pane->panel = 'right';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_supplier_type';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'leverandoerer_list-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'title',
-      'formatter' => 'taxonomy_term_reference_link',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'Leverandører kategori',
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -142,31 +136,9 @@ function ktc_supplier_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '03f59f51-61f7-4cd0-a8c0-eded4c1ce0fe';
-    $display->content['new-03f59f51-61f7-4cd0-a8c0-eded4c1ce0fe'] = $pane;
-    $display->panels['right'][1] = 'new-03f59f51-61f7-4cd0-a8c0-eded4c1ce0fe';
-    $pane = new stdClass();
-    $pane->pid = 'new-8ea2400e-7420-45cf-bed7-e73a0a34eae7';
-    $pane->panel = 'right';
-    $pane->type = 'block';
-    $pane->subtype = 'subscriptions_ui-0';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '8ea2400e-7420-45cf-bed7-e73a0a34eae7';
-    $display->content['new-8ea2400e-7420-45cf-bed7-e73a0a34eae7'] = $pane;
-    $display->panels['right'][2] = 'new-8ea2400e-7420-45cf-bed7-e73a0a34eae7';
+    $pane->uuid = 'b9ddf039-171f-4de2-8458-c313e5fd8d8c';
+    $display->content['new-b9ddf039-171f-4de2-8458-c313e5fd8d8c'] = $pane;
+    $display->panels['right'][1] = 'new-b9ddf039-171f-4de2-8458-c313e5fd8d8c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-471ef9f7-eb7f-47b4-8d19-c1556b487066';
   $handler->conf['display'] = $display;
@@ -186,7 +158,7 @@ function ktc_supplier_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Leverandører';
   $page->admin_description = '';
-  $page->path = 'leverandoerer';
+  $page->path = 'om-ktc/leverandoerer';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,

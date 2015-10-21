@@ -3606,13 +3606,12 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'listevisning';
   $handler->display->display_options['row_options']['links'] = FALSE;
   /* Sidefod: Global: Tekstområde */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/leverandoerer" class="btn-primary">Tilbage til Leverandører kategori </a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/om-ktc/leverandoerer" class="btn btn-primary">Tilbage til kategori-listen</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -3644,6 +3643,90 @@ function ktc_views_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'leverandoerlist';
+
+  /* Display: Side */
+  $handler = $view->new_display('page', 'Side', 'page_1');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h1>%1</h1>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontekstuelt filter: Indhold: Leverandører kategori (field_supplier_type) */
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['id'] = 'field_supplier_type_tid';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['table'] = 'field_data_field_supplier_type';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['field'] = 'field_supplier_type_tid';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['title'] = '%1';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['breadcrumb_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['breadcrumb'] = 'Leverandører - %1';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_supplier_type_tid']['validate_options']['vocabularies'] = array(
+    'suppelier_type' => 'suppelier_type',
+  );
+  $handler->display->display_options['path'] = 'om-ktc/leverandoerer/%';
+
+  /* Display: Leverandørkategori */
+  $handler = $view->new_display('panel_pane', 'Leverandørkategori', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Leverandør kategori(er)';
+  $handler->display->display_options['display_description'] = 'På leverandør node side';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Sidefod: Global: Tekstområde */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<br/><a href="/om-ktc/leverandoerer" class="btn btn-primary">Se alle kategorier</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Leverandører kategori */
+  $handler->display->display_options['fields']['field_supplier_type']['id'] = 'field_supplier_type';
+  $handler->display->display_options['fields']['field_supplier_type']['table'] = 'field_data_field_supplier_type';
+  $handler->display->display_options['fields']['field_supplier_type']['field'] = 'field_supplier_type';
+  $handler->display->display_options['fields']['field_supplier_type']['label'] = '';
+  $handler->display->display_options['fields']['field_supplier_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_supplier_type']['alter']['text'] = '[field_supplier_type]';
+  $handler->display->display_options['fields']['field_supplier_type']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_supplier_type']['alter']['path'] = '/om-ktc/leverandoerer/[field_supplier_type-tid]';
+  $handler->display->display_options['fields']['field_supplier_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_supplier_type']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_supplier_type']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
   $translatables['leverandoerer_list'] = array(
     t('Master'),
     t('Leverandører list'),
@@ -3660,8 +3743,19 @@ function ktc_views_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('<a href="/leverandoerer" class="btn-primary">Tilbage til Leverandører kategori </a>'),
+    t('<a href="/om-ktc/leverandoerer" class="btn btn-primary">Tilbage til kategori-listen</a>'),
     t('Page'),
+    t('Side'),
+    t('<h1>%1</h1>'),
+    t('Alle'),
+    t('%1'),
+    t('Leverandører - %1'),
+    t('Leverandørkategori'),
+    t('Leverandør kategori(er)'),
+    t('På leverandør node side'),
+    t('<br/><a href="/om-ktc/leverandoerer" class="btn btn-primary">Se alle kategorier</a>'),
+    t('[field_supplier_type]'),
+    t('View panes'),
   );
   $export['leverandoerer_list'] = $view;
 
