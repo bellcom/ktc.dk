@@ -4,15 +4,31 @@ jQuery(document).ready(function($){
    * Show the company address for the selected company.
    */
   $('#edit-field-account--2').bind('change-hierarchical-select', function(event) {
-    var account_tid = $('#edit-field-account--2 select:last :selected').val();
+    var account_tid = false;
+    var $wrapper = $('#edit-field-account--2');
+    var select_last_val = $wrapper.find('select:nth-last-child(1)').find('option:selected').val();
+    var select_second_last_val = $wrapper.find('select:nth-last-child(3)').find('option:selected').val();
 
-    if (account_tid && account_tid.indexOf('label') != -1) {
-      account_tid = $('#edit-field-account--2 .has-children:last:selected').val();
+    if (select_last_val != undefined) {
+
+      if (select_last_val.toLowerCase().indexOf('label') == -1) {
+        account_tid = select_last_val;
+      }
     }
 
-    $.get('/ktc_users_edit/get_account_address/' + account_tid, function(data) {
-      $('.account-address .address').html(data);
-    });
+    if (select_second_last_val != undefined && account_tid == false) {
+
+      if (select_second_last_val.toLowerCase().indexOf('label') == -1) {
+        account_tid = select_second_last_val;
+      }
+    }
+
+    if (account_tid != false) {
+
+      $.get('/ktc_users_edit/get_account_address/' + account_tid, function(data) {
+        $('.account-address .address').html(data);
+      });
+    }
   });
 
   /**
