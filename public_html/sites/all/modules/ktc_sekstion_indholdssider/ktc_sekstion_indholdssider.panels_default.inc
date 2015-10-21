@@ -183,7 +183,7 @@ function ktc_sekstion_indholdssider_default_panels_mini() {
     $pane->configuration = array(
       'admin_title' => 'Leverandører',
       'title' => 'Leverandører',
-      'body' => '<p><a href="/leverandoerer">Se vore leverandører her</a></p>
+      'body' => '<p><a href="/om-ktc/leverandoerer">Se vore leverandører her</a></p>
 ',
       'format' => 'filtered_html',
       'substitute' => TRUE,
