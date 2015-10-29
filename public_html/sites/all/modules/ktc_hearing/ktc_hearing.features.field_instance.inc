@@ -1988,7 +1988,7 @@ function ktc_hearing_field_default_field_instances() {
     'bundle' => 'hearing',
     'default_value' => array(
       0 => array(
-        'tid' => 4,
+        'tid' => 1836,
       ),
     ),
     'deleted' => 0,
