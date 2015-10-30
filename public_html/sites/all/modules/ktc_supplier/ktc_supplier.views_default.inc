@@ -38,6 +38,14 @@ function ktc_supplier_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Forbindelse: Ord i ordforråd: Repræsentativ node */
+  $handler->display->display_options['relationships']['tid_representative']['id'] = 'tid_representative';
+  $handler->display->display_options['relationships']['tid_representative']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['tid_representative']['field'] = 'tid_representative';
+  $handler->display->display_options['relationships']['tid_representative']['required'] = TRUE;
+  $handler->display->display_options['relationships']['tid_representative']['subquery_sort'] = 'node.nid';
+  $handler->display->display_options['relationships']['tid_representative']['subquery_view'] = '';
+  $handler->display->display_options['relationships']['tid_representative']['subquery_namespace'] = '';
   /* Felt: Ord i ordforråd: Navn */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -104,6 +112,7 @@ function ktc_supplier_views_default_views() {
     t('Sortér efter'),
     t('Stigende'),
     t('Faldende'),
+    t('Repræsentativ node'),
     t('<i class="icon-blue"></i> [name]'),
     t('Content pane'),
     t('.'),
