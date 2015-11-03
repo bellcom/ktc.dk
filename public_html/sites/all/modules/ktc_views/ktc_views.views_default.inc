@@ -3516,6 +3516,35 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['arguments']['etid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['etid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['etid']['validate']['type'] = 'user';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: OG membership: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['relationship'] = 'og_membership';
+  $handler->display->display_options['filters']['state']['value'] = array(
+    1 => '1',
+  );
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filterkriterie: OG membership: Entity_type */
+  $handler->display->display_options['filters']['entity_type']['id'] = 'entity_type';
+  $handler->display->display_options['filters']['entity_type']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['entity_type']['field'] = 'entity_type';
+  $handler->display->display_options['filters']['entity_type']['value'] = 'user';
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'group' => 'group',
+  );
   $handler->display->display_options['block_description'] = 'Dine netværk';
   $translatables['ktc_og_user_groups'] = array(
     t('Master'),
@@ -3685,6 +3714,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Sidefod: Global: Tekstområde */
