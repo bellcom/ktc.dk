@@ -12249,11 +12249,14 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-os2web_base_news-group_content_access'
   $field_instances['node-os2web_base_news-group_content_access'] = array(
     'bundle' => 'os2web_base_news',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => array(
       0 => array(
         'value' => 0,
       ),
     ),
+    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => 'Vælg om nyheden skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, nyheden er publiceret i)',
     'display' => array(
@@ -12303,7 +12306,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     'entity_type' => 'node',
     'field_name' => 'group_content_access',
     'label' => 'Synlighed',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -12335,6 +12338,8 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Exported field_instance: 'node-os2web_base_news-og_group_ref'
   $field_instances['node-os2web_base_news-og_group_ref'] = array(
     'bundle' => 'os2web_base_news',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
@@ -12417,7 +12422,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'providers' => array(
-            'og_context' => FALSE,
+            'og_context' => 0,
             'url' => 1,
           ),
           'skip_perm' => 0,

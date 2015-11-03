@@ -2628,9 +2628,7 @@ function ktc_content_types_field_default_field_bases() {
         ),
         'membership_type' => 'og_membership_type_default',
         'sort' => array(
-          'direction' => 'ASC',
-          'property' => 'title',
-          'type' => 'property',
+          'type' => 'none',
         ),
         'target_bundles' => array(
           'group' => 'group',
