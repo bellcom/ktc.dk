@@ -89,6 +89,7 @@ else {
         <?php print $status; ?>
       </div>
     </div>
+          <div><a class="ktc-footer-button pull-right btn btn-success" href="/om-ktc/hjaelp/22-hoeringsmodulet">Hjælp til Høringsmodulet</a></div>
   </div>
 
   <div class="ktc-footer">
@@ -104,40 +105,6 @@ else {
         <span class="ktc-footer-button pull-right">ID: <?php print $nid; ?></span>
         <span class="ktc-footer-button ktc-footer-button-hearing pull-right">Høring</span>
 
-      <!--    <tr>
-            <td>
-              Autoritet:
-            </td>
-            <td>
-              <?php print $authority; ?>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Din rolle:
-            </td>
-            <td>
-              <?php print $role; ?>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Faggruppe(r):
-            </td>
-            <td>
-              <?php print $group; ?>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Svarfrist:
-            </td>
-            <td>
-              <?php print $answer_by; ?>
-            </td>
-          </tr> -->
-          </tbody>
-        </table>
       </div>
     </div>
 
