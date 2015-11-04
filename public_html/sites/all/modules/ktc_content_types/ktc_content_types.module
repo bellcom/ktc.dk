@@ -228,6 +228,7 @@ function ktc_content_types_publish_node_form_submit(&$form, &$form_state) {
 function ktc_content_types_preprocess_page(&$variables) {
   if (isset($variables['node']) && is_object($variables['node'])) {
     global $user;
+    $output = '';
 
     if ($variables['node']->uid == $user->uid) {
       if (!$variables['node']->status) {

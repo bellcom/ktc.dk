@@ -499,6 +499,7 @@ function ktc_users_generate_username($name, $employer, $email, $uid) {
  */
 function ktc_users_get_user_network_role($account) {
   $node = menu_get_object('node');
+  $gid = FALSE;
 
   if (!$node) {
     return FALSE;
