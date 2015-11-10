@@ -217,7 +217,7 @@ function ktc_supplier_default_page_manager_pages() {
       'items_per_page' => '0',
       'offset' => '0',
       'override_title' => 1,
-      'override_title_text' => 'Lecvardørkategorier',
+      'override_title_text' => 'Leverandørkategorier',
     );
     $pane->cache = array();
     $pane->style = array(
