@@ -19,7 +19,7 @@ function ktc_crm_webuser_update_users() {
   variable_set('ktc_crm_user_sync_last_run', time());
   // Get timezone offset
   $offset = date('Z');
-  $updated_since = date('Y-m-d\TH:i:s', ($last_run - $offset));
+#  $updated_since = date('Y-m-d\TH:i:s', ($last_run - $offset));
 
   while ($fetch_users) {
     $options = array(
@@ -36,6 +36,7 @@ function ktc_crm_webuser_update_users() {
     }
 
     foreach ($webusers as $webuserdto) {
+      $logger->log->addInfo('cron', 'syncing user' . $webuserdto);
       ktc_crm_update_account_from_webuserdto($webuserdto);
     }
     $i++;
