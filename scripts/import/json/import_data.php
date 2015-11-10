@@ -4,6 +4,8 @@ $config = include dirname(__FILE__) . '/config.php';
 include dirname(__FILE__) . '/transform.php';
 include dirname(__FILE__) . '/handler.php';
 
+ini_set('default_socket_timeout', 1200);
+
 foreach ($config['files'] as $entity => $filename) {
   process_file($entity, $filename, $config);
 }
@@ -15,11 +17,10 @@ function process_file($entity, $filename, $config) {
 
   foreach ($data as $delta => $_data) {
     // For debugging single node
-    /*
-     * if ($_data->nid != 132512) {
-     *   continue;
-     * }
-     */
+    #if (!in_array($_data->nid, [131226, 131227])) {
+    #  continue;
+    #}
+ 
     process_data($entity, $_data, $config);
   }
 }
@@ -50,14 +51,20 @@ function process_data($entity_type, $data, $config) {
     return;
   }
 
+  // un: 2015.11.05
+  // forum_post & arrangement skal være her sammen for at virke.
+  // os2web_base_news og group skal være her sammen for at virke.
   $accepted_types = [
-    // 'os2web_base_news',
-    // 'group',
+    'os2web_base_news',
+    'group',
+
+# there are a lot of document's so migrating these takes a looooooong time ...
+    'document',
+#    'meeting_doodle',
+
     'forum_post',
-    // 'document',
-    // 'meeting_doodle',
     'arrangement',
-    ];
+  ];
 
   if (!in_array($entity->type, $accepted_types)) {
     return;
