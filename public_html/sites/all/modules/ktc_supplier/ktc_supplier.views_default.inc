@@ -35,8 +35,13 @@ function ktc_supplier_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-6';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['style_options']['fill_single_line'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Forbindelse: Ord i ordforråd: Repræsentativ node */
   $handler->display->display_options['relationships']['tid_representative']['id'] = 'tid_representative';

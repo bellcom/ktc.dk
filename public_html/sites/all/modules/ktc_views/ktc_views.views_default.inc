@@ -3671,6 +3671,14 @@ function ktc_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'KTC Leverandører';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Overskrift: Global: Ufiltreret tekst */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h1>Leverandørliste</h1>';
   $handler->display->display_options['path'] = 'leverandoerlist';
 
   /* Display: Side */
@@ -3714,7 +3722,6 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Sidefod: Global: Tekstområde */
@@ -3775,6 +3782,8 @@ function ktc_views_views_default_views() {
     t('sidste »'),
     t('<a href="/om-ktc/leverandoerer" class="btn btn-primary">Tilbage til kategori-listen</a>'),
     t('Page'),
+    t('KTC Leverandører'),
+    t('<h1>Leverandørliste</h1>'),
     t('Side'),
     t('<h1>%1</h1>'),
     t('Alle'),

@@ -189,7 +189,7 @@ function ktc_supplier_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'twocol';
+  $display->layout = 'ktc1col';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -198,6 +198,7 @@ function ktc_supplier_default_page_manager_pages() {
       'left' => NULL,
       'right' => NULL,
       'bottom' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
@@ -207,16 +208,16 @@ function ktc_supplier_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-5acaa6e0-5cfc-4766-964d-911e1a3f8dab';
-    $pane->panel = 'left';
+    $pane->panel = 'top';
     $pane->type = 'views_panes';
     $pane->subtype = 'supplier_list-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'items_per_page' => '20',
+      'items_per_page' => '0',
       'offset' => '0',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Lecvardørkategorier',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -228,10 +229,10 @@ function ktc_supplier_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '5acaa6e0-5cfc-4766-964d-911e1a3f8dab';
     $display->content['new-5acaa6e0-5cfc-4766-964d-911e1a3f8dab'] = $pane;
-    $display->panels['left'][0] = 'new-5acaa6e0-5cfc-4766-964d-911e1a3f8dab';
+    $display->panels['top'][0] = 'new-5acaa6e0-5cfc-4766-964d-911e1a3f8dab';
     $pane = new stdClass();
     $pane->pid = 'new-24ff592b-4351-4003-8db9-41501e5b5080';
-    $pane->panel = 'left';
+    $pane->panel = 'top';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -239,7 +240,8 @@ function ktc_supplier_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<a href="/leverandoerlist" class="btn-primary">Vis alle</a>',
+      'body' => '<p><a class="btn btn-primary" href="/leverandoerlist">Vis alle</a></p>
+',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -253,31 +255,7 @@ function ktc_supplier_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '24ff592b-4351-4003-8db9-41501e5b5080';
     $display->content['new-24ff592b-4351-4003-8db9-41501e5b5080'] = $pane;
-    $display->panels['left'][1] = 'new-24ff592b-4351-4003-8db9-41501e5b5080';
-    $pane = new stdClass();
-    $pane->pid = 'new-071a051f-c1bd-4e99-9649-e17779751525';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'supplier_list-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'items_per_page' => '22',
-      'offset' => '20',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '071a051f-c1bd-4e99-9649-e17779751525';
-    $display->content['new-071a051f-c1bd-4e99-9649-e17779751525'] = $pane;
-    $display->panels['right'][0] = 'new-071a051f-c1bd-4e99-9649-e17779751525';
+    $display->panels['top'][1] = 'new-24ff592b-4351-4003-8db9-41501e5b5080';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
