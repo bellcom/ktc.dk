@@ -21,12 +21,13 @@ function ktc_crm_fetch_webusers($options = array()) {
     foreach ($options as $key => $value) {
       $request->$key = $value;
     }
+    $logger->log->addInfo('RetrieveWebUser:', $options);
 
     $retrievewebusers = new KTC\WebUser\RetrieveWebUsers($request);
 
     $result = $webuser->RetrieveWebUsers($retrievewebusers);
 
-    $logger->log->addDebug('RetrieveWebUsers result', $result);
+    $logger->log->addDebug('RetrieveWebUsers', $result);
 
     $webusers = $result->RetrieveWebUsersResult->Results->WebUserDto;
 
