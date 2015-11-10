@@ -41,6 +41,7 @@ function ktc_supplier_views_default_views() {
   $handler->display->display_options['style_options']['row_class'] = 'col-md-6';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['style_options']['alignment'] = 'vertical';
   $handler->display->display_options['style_options']['fill_single_line'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Forbindelse: Ord i ordforråd: Repræsentativ node */
