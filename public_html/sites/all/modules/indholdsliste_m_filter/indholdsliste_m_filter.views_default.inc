@@ -28,6 +28,8 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
@@ -395,6 +397,7 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';

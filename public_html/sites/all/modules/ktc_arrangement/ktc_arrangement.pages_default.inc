@@ -902,7 +902,7 @@ function ktc_arrangement_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => 'section-page-with-filter',
-      'css_class' => 'row',
+      'css_class' => '',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
