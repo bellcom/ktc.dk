@@ -1,14 +1,17 @@
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix bg-white"<?php print $attributes; ?>>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser clearfix bg-white"<?php print $attributes; ?>>
 
-  <div class="wrap">
+  <div class="wrap row">
     <?php
       // Hide comments, tags, and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
       hide($content['field_tags']);
     ?>
+    <div class="col-sm-12 col-xs-12">
+            <h4 class="ktc-teaser-body-title"><a href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a></h4>
+    </div>
     <div class="col-md-5 col-sm-5 col-xs-12">
-      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+      
       <div class="contact-info">
         <div class="contact-info-content">
           <div>
@@ -16,6 +19,9 @@
           </div>
           <div>
             <?php print render($content['field_city']); ?>
+          </div>
+          <div><br />
+	          <a href="<?php print $node_url; ?>">Læs mere om <?php print $title; ?></a>
           </div>
         </div>
       </div>
@@ -41,12 +47,20 @@
       </div>
     </div>
     <div class="col-md-2 col-sm-2 col-xs-12">
-      <div class="supplier-logo">
         <?php if (field_get_items('node', $node, 'field_image')): ?>
-          <?php print render($content['field_image']); ?>
-        <?php endif; ?>
-      </div>
+			<div class="supplier-logo">
+          		<?php print render($content['field_image']); ?><br/>
+      		</div>
+         <?php endif; ?>
     </div>
+     
     </div>
-  </div>
+		<div class="ktc-footer">
+            <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers">
+            	<?php print $statistics_count; ?>
+            </span>
+            <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right">
+            	<?php print node_type_get_name($type); ?>
+            </span>
+        </div>
 </article>
