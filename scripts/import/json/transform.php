@@ -368,6 +368,13 @@ function ktc_import_field_submission($entity, $prop, $value) {
       $new_uid = ktc_import_new_uid($old_uid);
       if ($new_uid !== FALSE) {
         echo "[INFO]: Setting submission user to: {$new_uid}\n";
+
+        // Signup module
+        $signup_form = array();
+        $signup_form['nid'] = $entity->nid;
+        $signup_form['uid'] = $new_uid;
+        signup_sign_up_user($signup_form, FALSE);
+
         $entity->field_submission[LANGUAGE_NONE][] = ['target_id' => $new_uid];
       }
       else {
