@@ -1106,4 +1106,19 @@ function _ktc_text_shortener($text_string, $max_length) {
  */
 function ktc_form_alter(&$form, &$form_state, $form_id) {
   $form['revision_information']['#access'] = false;
+
+  if ($form_id === 'user_profile_form' ) {
+
+    if (isset($_REQUEST['pass-reset-token'])) {
+      $form['account']['pass']['#required'] = TRUE;
+      $form['#submit'][] = '_ktc_redirect_user_after_user_profile_form_reset_submit';
+    }
+  }
+}
+
+/**
+ * Redirect user after user profile submit
+ */
+function _ktc_redirect_user_after_user_profile_form_reset_submit() {
+  drupal_goto('<front>');
 }
