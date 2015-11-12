@@ -859,24 +859,13 @@ function ktc_netvaerk_node_validate($node, $form, &$form_state) {
     // Get users groups.
     $gids = og_get_groups_by_user();
 
-    // Check if user has 'create top group' permission.
-    $create_top_group = user_access('create ktc top group');
     // Top group field.
     $og_group_ref = isset($form_state['values']['og_group_ref']) ? $form_state['values']['og_group_ref'] : FALSE;
-    if (!$create_top_group) {
-      // If the user cannot create top group,
-      // so the og_group_ref field cannot be empty.
-      if (!$og_group_ref) {
-        form_set_error('og_group_ref', t('Du skal vælge et overstående netværk.'));
-      }
-      if (isset($og_group_ref['und'][0]['target_id'])) {
-        // Check if user is a member of the chosen group.
-        if (!in_array($og_group_ref['und'][0]['target_id'], $gids['node'])) {
-          form_set_error('og_group_ref', t('Du er ikke medlem af det netværk.'));
-        }
-      }
-      else {
-        form_set_error('og_group_ref', t('Du skal vælge et overstående netværk.'));
+    if (isset($og_group_ref['und'][0]['target_id'])) {
+
+      // Check if user is a member of the chosen group.
+      if (!in_array($og_group_ref['und'][0]['target_id'], $gids['node'])) {
+        form_set_error('og_group_ref', t('Du er ikke medlem af det netværk.'));
       }
     }
   }
