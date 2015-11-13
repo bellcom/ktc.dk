@@ -259,6 +259,8 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto, $uid = 0) {
 
   $edit['mail'] = $webuserdto->EMail;
   $edit['field_crm_uuid'][LANGUAGE_NONE][0]['value'] = $webuserdto->CrmId;
+  // Setting wheter the account is active or not. 
+  $edit['status'] = $webuserdto->Active;
   // Username is generated from firstname, lastname and toplevelaccount name.
   $edit['name'] = ktc_users_generate_username($webuserdto->FirstName . ' ' . $webuserdto->LastName, $webuserdto->TopLevelAccountName, $webuserdto->EMail, $uid);
 
