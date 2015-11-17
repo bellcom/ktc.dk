@@ -458,21 +458,6 @@ function ktc_hearing_default_page_manager_handlers() {
           'context' => 'argument_entity_id:node_1',
           'not' => TRUE,
         ),
-        1 => array(
-          'name' => 'entity_field_value:node:hearing:field_status',
-          'settings' => array(
-            'field_status' => array(
-              'und' => array(
-                0 => array(
-                  'tid' => '1892',
-                ),
-              ),
-            ),
-            'field_status_tid' => '1892',
-          ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => TRUE,
-        ),
       ),
       'logic' => 'or',
     );
