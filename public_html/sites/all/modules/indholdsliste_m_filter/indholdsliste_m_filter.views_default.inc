@@ -601,11 +601,6 @@ function indholdsliste_m_filter_views_default_views() {
     'hearing' => 'hearing',
     'os2web_base_news' => 'os2web_base_news',
   );
-  /* Filterkriterie: Indhold: Gruppe/Netværk (og_group_ref) */
-  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['operator'] = 'not empty';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
