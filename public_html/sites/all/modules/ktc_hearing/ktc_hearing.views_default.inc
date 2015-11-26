@@ -778,6 +778,22 @@ function ktc_hearing_views_default_views() {
       'label' => 'Indhold: Høring (field_hearing_node)',
     ),
   );
+
+  /* Display: Uden footer */
+  $handler = $view->new_display('panel_pane', 'Uden footer', 'panel_pane_2');
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'KTC';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'field_hearing_node_target_id' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Høring (field_hearing_node)',
+    ),
+  );
   $translatables['hearing_responses'] = array(
     t('Master'),
     t('Besvarelser'),
@@ -802,6 +818,8 @@ function ktc_hearing_views_default_views() {
     t('Alle'),
     t('Content pane'),
     t('View panes'),
+    t('Uden footer'),
+    t('KTC'),
   );
   $export['hearing_responses'] = $view;
 
