@@ -219,6 +219,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     drupal_set_message(t('Du mangler at udfylde nogle informationer i din brugerprofil.') . ' ' . l(t('Tryk her for at redigere.'), 'user/' . $account->uid . '/edit'), 'warning');
     drupal_goto('user/' . $account->uid . '/' . arg(2));
   }
+
   $top_level_account = ktc_crm_account_load_top_level_account($invoiceaccount);
 
   if ($field = field_get_items('node', $product, 'field_text_before_invoiceaccount')) {
@@ -239,6 +240,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     '#type' => 'textfield',
     '#default_value' => $form_state['subscriptiondto']->EAN,
   );
+
 
   if ($ktc_membership) {
     $region_uuid = '';
