@@ -213,8 +213,12 @@ function ktc_crm_account_load_from_uuid($uuid) {
  */
 function ktc_crm_account_load_top_level_account($account) {
   if ($field = field_get_items('taxonomy_term', $account, 'field_toplevelaccountid')) {
-    return ktc_crm_account_load_from_uuid($field[0]['value']);
+
+    if (!empty($field[0]['value'])) {
+      return ktc_crm_account_load_from_uuid($field[0]['value']);
+    }
   }
+
   return $account;
 }
 
