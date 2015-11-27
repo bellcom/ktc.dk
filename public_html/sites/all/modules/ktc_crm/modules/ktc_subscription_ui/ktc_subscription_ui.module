@@ -164,6 +164,8 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   );
 
   if ($product = node_load($product_nid)) {
+    print_r($product_nid);
+
     if ($field = field_get_items('node', $product, 'field_product_type')) {
       $ktc_membership = ($field[0]['value'] == 'ktc_membership');
       $form_state['ktc_membership'] = $ktc_membership;
