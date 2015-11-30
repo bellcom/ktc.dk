@@ -32,6 +32,15 @@ function ktc_crm_menu() {
     'page arguments' => array('ktc_crm_settings'),
   );
 
+   $items['user/%/ktc_crm_sync'] = array(
+    'title' => 'Bruger CRM sync',
+    'description' => 'This is the fallback for synching using to/from CRM',
+    'access arguments' => array('administer users'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_crm_user_sync_page'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
   return $items;
 }
 
@@ -59,6 +68,130 @@ function ktc_crm_settings() {
   );
 
   return system_settings_form($form);
+}
+
+/**
+  * Page callback to ktc_crm_sync menu item
+  */
+function ktc_crm_user_sync_page($form, &$form_state) {
+  $form = array();
+
+  $uid = arg(1);
+  $active_user = user_load($uid);
+
+  if ($active_user) {
+    $form['ktc_update_user_from_crm'] = array(
+      '#type' => 'submit',
+      '#value' => t('Update user from CRM'),
+      '#submit' => array('ktc_crm_user_synch_page_submit_from_crm')
+    );
+
+    $form['ktc_update_user_to_crm'] = array(
+      '#type' => 'submit',
+      '#value' => t('Save user information into CRM'),
+      '#submit' => array('ktc_crm_user_synch_page_submit_to_crm')
+    );
+  }
+  
+  return $form;
+}
+
+/**
+  * Update user from CRM submit function
+  */
+function ktc_crm_user_synch_page_submit_from_crm($form, &$form_state) {
+  $uid = arg(1);
+  $active_user = user_load($uid);
+
+  $batch = array(
+    'operations' => array(array('ktc_crm_user_synch_page_submit_from_crm_process', array($active_user))),
+    'finished' => 'ktc_crm_user_synch_page_submit_from_crm_finished',
+    'title' => t('Batch fix'),
+    'init_message' => t('Starting loading user from CRM...'),
+    'progress_message' => t('Processed @current out of @total.'),
+    'error_message' => t('Encountered an error.')
+  );
+
+  batch_set($batch);
+  batch_process('user/' . $uid . '/ktc_crm_sync'); // The path to redirect to when done.
+}
+
+/**
+  * Update user from CRM batch process function
+  */
+function ktc_crm_user_synch_page_submit_from_crm_process($user, &$context) {
+  $webuserdto = ktc_crm_lookup_webuser_by_mail($user->mail);
+  ktc_crm_update_account_from_webuserdto($webuserdto);
+
+  $context['message'] = t('Loading user "@username" from CRM', array('@username' => $user->name));
+}
+
+/**
+  * Update user from CRM batch finished function
+  */
+function ktc_crm_user_synch_page_submit_from_crm_finished($success, $results, $operations) {
+  if ($success) {
+    drupal_set_message('Successfully loaded user from CRM');
+  }
+  else {
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments', array(
+      '%error_operation' => $error_operation[0],
+      '@arguments' => print_r($error_operation[1], TRUE)
+    ));
+    drupal_set_message($message, 'error');
+  }
+}
+
+/**
+  * Save user information into CRM submit function
+  */
+function ktc_crm_user_synch_page_submit_to_crm($form, &$form_state) {
+  $uid = arg(1);
+  $active_user = user_load($uid);
+
+  if (field_get_items('user', $active_user, 'field_crm_uuid')) {
+    $batch = array(
+      'operations' => array(array('ktc_crm_user_synch_page_submit_to_crm_process', array($active_user))),
+      'finished' => 'ktc_crm_user_synch_page_submit_to_crm_finished',
+      'title' => t('Batch fix'),
+      'init_message' => t('Starting uploading user into CRM...'),
+      'progress_message' => t('Processed @current out of @total.'),
+      'error_message' => t('Encountered an error.')
+    );
+
+    batch_set($batch);
+    batch_process('user/' . $uid . '/ktc_crm_sync'); // The path to redirect to when done.
+  } else {
+    drupal_set_message('Cannot store user information into CRM, UUID is missing', 'warning');
+  }
+}
+
+/**
+  * Save user information into CRM batch process function
+  */
+function ktc_crm_user_synch_page_submit_to_crm_process($user, &$context) {
+  $webuserdto = ktc_crm_map_account_to_webuserdto($user);
+  ktc_crm_update_user($webuserdto);
+
+  $context['message'] = t('Uploading user "@username" into CRM', array('@username' => $user->name));
+}
+
+/**
+  * Save user information into CRM batch finish function
+  */
+function ktc_crm_user_synch_page_submit_to_crm_finished($success, $results, $operations) {
+  if ($success) {
+    drupal_set_message('Successfully uploaded user info into CRM');
+  }
+  else {
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments', array(
+      '%error_operation' => $error_operation[0],
+      '@arguments' => print_r($error_operation[1], TRUE)
+    ));
+    drupal_set_message($message, 'error');
+  }
 }
 
 /**
