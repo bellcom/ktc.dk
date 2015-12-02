@@ -162,7 +162,6 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     '#type' => 'item',
     '#markup' => '<a href="' . url('user/' . $account->uid . '/' . arg(2)) . '" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Tilbage</a>',
   );
-
   if ($product = node_load($product_nid)) {
     if ($field = field_get_items('node', $product, 'field_product_type')) {
       $ktc_membership = ($field[0]['value'] == 'ktc_membership');
@@ -213,6 +212,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   if (!$invoiceaccount) {
     $invoiceaccount = _ktc_crm_account_get_users_account($account);
   }
+
   if (!$invoiceaccount) {
     drupal_set_message(t('Du mangler at udfylde nogle informationer i din brugerprofil.') . ' ' . l(t('Tryk her for at redigere.'), 'user/' . $account->uid . '/edit'), 'warning');
     drupal_goto('user/' . $account->uid . '/' . arg(2));
