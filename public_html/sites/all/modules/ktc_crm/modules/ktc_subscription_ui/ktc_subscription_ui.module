@@ -162,12 +162,14 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     '#type' => 'item',
     '#markup' => '<a href="' . url('user/' . $account->uid . '/' . arg(2)) . '" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Tilbage</a>',
   );
-
   if ($product = node_load($product_nid)) {
     if ($field = field_get_items('node', $product, 'field_product_type')) {
       $ktc_membership = ($field[0]['value'] == 'ktc_membership');
       $form_state['ktc_membership'] = $ktc_membership;
     }
+
+    print_r('------');
+    print_r($ktc_membership);
 
     $form['text'] = array(
       '#type' => 'item',
@@ -213,11 +215,14 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   if (!$invoiceaccount) {
     $invoiceaccount = _ktc_crm_account_get_users_account($account);
   }
+
   if (!$invoiceaccount) {
     drupal_set_message(t('Du mangler at udfylde nogle informationer i din brugerprofil.') . ' ' . l(t('Tryk her for at redigere.'), 'user/' . $account->uid . '/edit'), 'warning');
     drupal_goto('user/' . $account->uid . '/' . arg(2));
   }
   $top_level_account = ktc_crm_account_load_top_level_account($invoiceaccount);
+
+//  print_r('4' . $top_level_account);
 
   if ($field = field_get_items('node', $product, 'field_text_before_invoiceaccount')) {
     $form['text_before_invoiceaccount'] = array(
@@ -239,11 +244,17 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   );
 
   if ($ktc_membership) {
+    print_r($top_level_account);
     $region_uuid = '';
     $region_name = '';
 
     if ($top_level_account && $field = field_get_items('taxonomy_term', $top_level_account, 'field_regioner')) {
       $region_tid = $field[0]['tid'];
+
+      print_r('FIELD');
+      print_r($field);
+      print_r('TID');
+      print_r($region_tid);
 
       $ktc_membership_settings = variable_get('ktc_subscription_ktc_membership', array());
 

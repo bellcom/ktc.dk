@@ -228,7 +228,10 @@ function ktc_crm_account_load_top_level_account($account) {
  */
 function _ktc_crm_account_get_users_account($account) {
   if ($field = field_get_items('user', $account, 'field_account')) {
-    return taxonomy_term_load($field[0]['tid']);
+
+    if (!empty($field[0]['tid'])) {
+      return taxonomy_term_load($field[0]['tid']);
+    }
   }
   return FALSE;
 }
