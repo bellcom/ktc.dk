@@ -192,6 +192,7 @@ function ktc_netvaerk_notifications_node_presave($node) {
         $params['body'] = token_replace(variable_get('ktc_netvaerk_notifications_body'), $token_data);
 
         drupal_mail('ktc_netvaerk_notifications', 'notify_new', $to, $language, $params);
+        error_log('mail sent:' . $to );
       }
     }
   }

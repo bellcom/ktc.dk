@@ -19,7 +19,14 @@ $count_all = 0;
 $no_email = 0;
 $uids = array();
 
-echo "This will set up the initial user syncronization based on users emails.";
+echo "This will set up the initial user syncronization based on users emails.\n";
+
+    echo "Name,";
+    echo "UserName,";
+    echo "CrmId,";
+    echo "WebUser,";
+    echo "Website\n";
+
 $fetch_users = TRUE;
 
 while ($fetch_users) {
@@ -38,13 +45,18 @@ while ($fetch_users) {
   }
 
   // Just for the fun of it we time it.
-  echo "Time for connection " . ($stop - $start) . "s\n";
+#  echo "Time for connection " . ($stop - $start) . "s\n";
 
   foreach ($webusers as $webuserdto) {
     $uid = 0;
     if (!$webuserdto->EMail) {
-
-      sync_users_disable_webuser($webuserdto);
+    echo $webuserdto->FirstName . " " . $webuserdto->LastName . ",";
+    echo $webuserdto->UserName . ",";
+    echo $webuserdto->CrmId . ",";
+    echo $webuserdto->WebUser . ",";
+    echo $webuserdto->Website . "\n";
+#print_r($webuserdto);
+#      sync_users_disable_webuser($webuserdto);
       $no_email++;
     }
     else {
@@ -61,7 +73,7 @@ while ($fetch_users) {
       }
     }
     $count_all++;
-  }
+ }
 
   $i++;
 }
@@ -87,7 +99,13 @@ function sync_users_update_user($uid, $webuserdto) {
   $edit = ktc_crm_map_webuserdto_to_edit_array($webuserdto);
 
   error_log('Sync: ' . $uid . ' > ' . $account->name);
-  // user_save($account, $edit);
+  user_save($account, $edit);
+  $webuserdto->DrupalId = $uid;
+#  $webuserdto->LastSavedByDrupalName = date("Y-m-d h:i:s");
+
+print_r($webuserdto);
+
+  ktc_crm_update_user($webuserdto);
 }
 
 /**
@@ -95,8 +113,8 @@ function sync_users_update_user($uid, $webuserdto) {
  */
 function sync_users_disable_webuser($webuserdto) {
   // Set "WebUser" to 0, this will exclude the user from the webservice.
+  // $webuserdto->DrupalId = 0;
   // $webuserdto->WebUser = 0;
-  // ktc_crm_update_user($webuserdto);
 
   error_log('Disable: ' .  print_r($webuserdto->FirstName, 1));
 }
