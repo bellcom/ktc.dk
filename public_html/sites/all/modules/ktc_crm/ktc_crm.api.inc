@@ -93,6 +93,9 @@ function ktc_crm_update_user(\KTC\WebUser\WebUserDto $webuserdto) {
   $logger = KtcCrmLogger::getInstance();
   $url = variable_get('ktc_crm_url', '');
 
+  // Set the update timestamp each time we update. 
+  $webuserdto->LastSavedByDrupalName = date("Y-m-d h:i:s");
+
   $wsdl_url = $url . '/' . KTC_CRM_WEBUSER_WSDL;
 
   $logger->log->addInfo('CreateUpdateWebUser', $webuserdto);
@@ -420,7 +423,7 @@ function ktc_crm_update_group(\KTC\GroupService\GroupDto $groupdto) {
   $url = variable_get('ktc_crm_url', '');
 
   $wsdl_url = $url . '/' . KTC_CRM_GROUPSERVICE_WSDL;
-
+  #print_r($groupdto);
   try {
     $groupservice = new \KTC\GroupService\GroupService(array(), $wsdl_url);
 
@@ -438,6 +441,7 @@ function ktc_crm_update_group(\KTC\GroupService\GroupDto $groupdto) {
     $logger->log->addError('soap error', array(
       'message' => $e->getMessage(),
       'method' => 'CreateUpdateGroupMember',
+      'network' => print_r($groupdto->GroupName),
     ));
   }
 

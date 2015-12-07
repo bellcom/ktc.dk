@@ -55,7 +55,7 @@ while ($fetch_users) {
     echo $webuserdto->CrmId . ",";
     echo $webuserdto->WebUser . ",";
     echo $webuserdto->Website . "\n";
-
+#print_r($webuserdto);
 #      sync_users_disable_webuser($webuserdto);
       $no_email++;
     }
@@ -100,6 +100,12 @@ function sync_users_update_user($uid, $webuserdto) {
 
   error_log('Sync: ' . $uid . ' > ' . $account->name);
   user_save($account, $edit);
+  $webuserdto->DrupalId = $uid;
+#  $webuserdto->LastSavedByDrupalName = date("Y-m-d h:i:s");
+
+print_r($webuserdto);
+
+  ktc_crm_update_user($webuserdto);
 }
 
 /**
@@ -107,8 +113,8 @@ function sync_users_update_user($uid, $webuserdto) {
  */
 function sync_users_disable_webuser($webuserdto) {
   // Set "WebUser" to 0, this will exclude the user from the webservice.
+  // $webuserdto->DrupalId = 0;
   // $webuserdto->WebUser = 0;
-  // ktc_crm_update_user($webuserdto);
 
   error_log('Disable: ' .  print_r($webuserdto->FirstName, 1));
 }
