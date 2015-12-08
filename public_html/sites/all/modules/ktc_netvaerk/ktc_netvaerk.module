@@ -802,7 +802,7 @@ function ktc_netvaerk_node_insert($node) {
 }
 
 /**
- * Chang group owner.
+ * Change group owner.
  */
 function ktc_netvaerk_change_own($node) {
   if ($node->type == 'group') {
@@ -1168,4 +1168,71 @@ function _ktc_netvaerk_og_members_list() {
 EOL;
 
   return $modal_markup;
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function ktc_netvaerk_node_access($node, $op, $account) {
+  if ($node->type == 'group' && $op == 'view') {
+    return NODE_ACCESS_ALLOW;
+  }
+}
+
+/**
+ * Implements hook_node_access_explain().
+ */
+function ktc_netvaerk_node_access_explain($row) {
+  if ($row->realm == 'ktc_netvaerk_anonymous') {
+    return t('Everyone may view this node.');
+  }
+}
+
+/**
+ * Implements hook_node_access_records().
+ */
+function ktc_netvaerk_node_access_records($node) {
+  // The 'anonymous' grant that will be set on OG content.
+  $grant = array (
+    'realm' => 'ktc_netvaerk_anonymous',
+    'gid' => 0,
+    'grant_view' => 1,
+    'grant_update' => 0,
+    'grant_delete' => 0,
+    'priority' => 0,
+  );
+
+  if ($node->type == 'group') {
+    return array($grant);
+  }
+
+  return NULL;
+}
+
+/**
+ * Implements hook_node_grants().
+ */
+function ktc_netvaerk_node_grants($account, $op) {
+  $grants = array();
+
+  // Allow anonymous users to view group nodes.
+  if ($op == 'view') {
+    $grants['ktc_netvaerk_anonymous'][] = 0;
+  }
+
+  return $grants;
+}
+
+/**
+ * Implements hook_og_access_grants_alter().
+ */
+function ktc_netvaerk_og_access_grants_alter(&$grants, $node) {
+  // og_access is about to insert grants for this node.
+  // Remove any public grants, so that this node is visible to everyone.
+  // It will be replaced by ktc_netvaerk_anonymous grant.
+  foreach ($grants as $key => $grant) {
+    if ($grant['realm'] == 'og_public') {
+      unset($grants[$key]);
+    }
+  }
 }
