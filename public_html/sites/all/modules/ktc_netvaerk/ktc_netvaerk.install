@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Node permissions needs to be rebuilt.
+ */
+function ktc_netvaerk_update_7000() {
+  node_access_rebuild();
+}
