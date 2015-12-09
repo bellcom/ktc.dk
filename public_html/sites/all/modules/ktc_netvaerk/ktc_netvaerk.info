@@ -101,6 +101,7 @@ features[rules_config][] = og_ktc_rules_og_member_pending
 features[taxonomy][] = ktc_netvaerk_grouproles
 features[taxonomy][] = netv_rkstype
 features[variable][] = field_bundle_settings_node__group
+features[variable][] = og_massadd_createunknowns
 features[views_view][] = og_ktc_kontekst
 features[views_view][] = subgroups
 features_exclude[dependencies][ctools] = ctools
