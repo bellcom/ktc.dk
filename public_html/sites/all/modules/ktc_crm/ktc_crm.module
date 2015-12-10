@@ -56,6 +56,18 @@ function ktc_crm_theme() {
 }
 
 /**
+ * Implements hook_permissions().
+ */
+function ktc_crm_permission() {
+  return array(
+    'administer ktc_crm' => array(
+      'title' => t('Administer KTC CRM'),
+      'description' => t('Perform various administration tasks KTC CRM module.'),
+    ),
+  );
+}
+
+/**
  * Form callback for settings.
  */
 function ktc_crm_settings() {
@@ -199,7 +211,7 @@ function ktc_crm_user_synch_page_submit_to_crm_finished($success, $results, $ope
  */
 function ktc_crm_form_alter(&$form, &$form_state, $form_id) {
   // We have no interest in lettings users edit this.
-  if (!user_access('administer ktc_crm uuid')) {
+  if (!user_access('administer ktc_crm')) {
     if ($form_id == 'user_profile_form') {
       $form['field_crm_uuid']['#access'] = FALSE;
     }
