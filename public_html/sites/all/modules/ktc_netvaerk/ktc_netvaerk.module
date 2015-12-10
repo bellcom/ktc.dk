@@ -221,7 +221,7 @@ function ktc_netvaerk_approve_membership($form, &$form_state, $group_type, $gid,
 function ktc_netvaerk_approve_membership_submit($form, &$form_state) {
   $og_membership = $form_state['og_membership'];
   $og_membership->state = 1;
-
+  $og_membership->field_grouprole[LANGUAGE_NONE][0]['target_id'] = KTC_NETVAERK_MEMBER_TID;
   og_membership_save($og_membership);
   drupal_set_message(t('Medlemsskabet er blevet godkendt.'));
 }
@@ -791,6 +791,7 @@ function ktc_netvaerk_node_insert($node) {
                 "entity type"       => "user",
                 "entity"        => $account,
                 "membership type"   => OG_MEMBERSHIP_TYPE_DEFAULT,
+                "field_grouprole" =>KTC_NETVAERK_ADMIN_TID,
             ));
     // Changes the users role in the group
     // (1 = non-member, 2 = member, 3 = administrator member).
