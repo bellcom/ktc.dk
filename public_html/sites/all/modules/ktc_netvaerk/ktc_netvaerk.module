@@ -1030,6 +1030,12 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
     $form['og_roles_permissions'][LANGUAGE_NONE]['#default_value'] = 0;
     $form['group_access']['#attributes']['class'][] = 'hide';
     $form['group_access'][LANGUAGE_NONE]['#default_value'] = 0;
+    
+   global $user; 
+   
+   if (($user->uid==1 or in_array('administrator', $user->roles) or in_array('Ansat i KL', $user->roles))=== FALSE) {  	
+      $form['og_group_ref']['und']["#options"] = ktc_netvaerk_user_groups();        
+    }
   }
 
   if ($form_id == 'og_ui_confirm_subscribe') {
@@ -1043,6 +1049,20 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
   }
 }
 
+/**
+ * 
+ * return user's groups list
+ */
+function ktc_netvaerk_user_groups() { 
+  $groups = og_get_groups_by_user();  
+  $options = array();
+  foreach ($groups['node'] as $key => $value) {
+    $node = node_load($value);
+    $options[$key] = $node->title;
+  }
+  return $options;
+    
+}
 /**
  * Extra validation handler for creating/editing an og_membership.
  */
