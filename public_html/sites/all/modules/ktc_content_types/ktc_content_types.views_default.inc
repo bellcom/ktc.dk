@@ -878,6 +878,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'ktc-node-title-small ktc-node-title-light ktc-padding-bottom-sm ktc-padding-top';
   $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['empty'] = '<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>';
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
     'link' => 1,
   );
