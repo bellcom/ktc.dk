@@ -473,7 +473,8 @@ function ktc_crm_group_membership_delete($crm_uuid) {
  */
 function _ktc_crm_group_get_region_tid($region) {
   $vocabulary = taxonomy_vocabulary_machine_name_load('regioner');
-
+  // crm return region name as Sjaelland
+  if ($region == 'Sjaelland')     $region = 'Sjælland'; 
   $query = new EntityFieldQuery();
   $result = $query->entityCondition('entity_type', 'taxonomy_term')
     ->propertyCondition('name', $region)
