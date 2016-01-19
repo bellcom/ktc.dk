@@ -71,7 +71,7 @@ global $user;
             <?php endif; ?>
 
             <?php if ($logged_in): ?>
-              <div class="col-xs-12 col-md-3">
+              <div class="col-xs-12 col-md-3 no-padding">
                 <!-- Begin - navigation -->
                 <ul class="ktc-header-top-bar-list pull-right ktc-header-top-bar-navigation">
 
@@ -98,6 +98,11 @@ global $user;
                     <a href="/search" data-toggle="tooltip" data-placement="bottom" title="Søg"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-search"></span></a>
                   </li>
                   <!-- End - search -->
+                  <!-- Begin - help -->
+                   <li>
+                    <a href="/om-ktc/hjaelp" data-toggle="tooltip" data-placement="bottom" title="Help"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-help"></span></a>
+                  </li>
+                  <!-- End - help -->
                 </ul>
               </div>
               <!-- End - navigation -->
@@ -108,7 +113,7 @@ global $user;
                 <!-- Begin - user login -->
                 <ul class="ktc-header-top-bar-list pull-right ktc-header-top-bar-user-login">
                   <li>
-                    <?php print $user_login; ?>
+                    <?php print $user_login; ?>                    
                   </li>
                 </ul>
                 <!-- End - user login -->

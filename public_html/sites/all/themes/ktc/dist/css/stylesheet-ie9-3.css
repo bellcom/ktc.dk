@@ -2574,6 +2574,42 @@
   }
 }
 
+@media screen {
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 991px) {
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media print {
+
+}
+
 @media (min-width: 768px) {
   .ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-image {
     float: left;

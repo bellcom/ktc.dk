@@ -6632,7 +6632,7 @@ body .form-control {
 
 .header-region .header_top #block-views-exp-search-page .views-submit-button .form-submit#edit-submit-search {
   background-image: url(../images/sprites.png);
-  background-position: -321px -42px;
+  background-position: -272px -214px;
   width: 28px;
   height: 28px;
   border: none;
@@ -8101,7 +8101,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -82px -321px;
+  background-position: -321px -42px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8112,7 +8112,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -321px -167px;
+  background-position: -321px -83px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8832,7 +8832,7 @@ fieldset[disabled] .field-type-image .button {
 
 .addthisevent_dropdown .atefacebook:before {
   background-image: url(../images/sprites.png);
-  background-position: -321px -290px;
+  background-position: -321px -288px;
   width: 16px;
   height: 16px;
 }
@@ -8974,14 +8974,28 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-login {
   background-image: url(../images/sprites.png);
-  background-position: -256px -274px;
+  background-position: -214px -274px;
   width: 28px;
   height: 28px;
 }
 
+.ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-user-password {
+  background-image: url(../images/sprites.png);
+  background-position: -82px -321px;
+  width: 27px;
+  height: 27px;
+}
+
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-search {
   background-image: url(../images/sprites.png);
-  background-position: -321px -249px;
+  background-position: -321px -247px;
+  width: 27px;
+  height: 27px;
+}
+
+.ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-help {
+  background-image: url(../images/sprites.png);
+  background-position: -287px -321px;
   width: 27px;
   height: 27px;
 }
@@ -10106,14 +10120,14 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-settings {
   background-image: url(../images/sprites.png);
-  background-position: -321px -126px;
+  background-position: -321px -124px;
   width: 27px;
   height: 27px;
 }
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-search {
   background-image: url(../images/sprites.png);
-  background-position: -321px -249px;
+  background-position: -321px -247px;
   width: 27px;
   height: 27px;
 }
@@ -10127,9 +10141,16 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-logout {
   background-image: url(../images/sprites.png);
-  background-position: -321px 0px;
+  background-position: -256px -274px;
   width: 28px;
   height: 28px;
+}
+
+.ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-help {
+  background-image: url(../images/sprites.png);
+  background-position: -287px -321px;
+  width: 27px;
+  height: 27px;
 }
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content {
@@ -10147,7 +10168,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content .ktc-header-top-bar-add-content-icon {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -321px -84px;
+  background-position: -321px 0px;
   width: 28px;
   height: 28px;
 }
@@ -13744,36 +13765,4 @@ h6 + .ktc-date {
 .ktc-user-blue.ktc-user-profile .ktc-user-profile-photo-container img,
 .ktc-user-blue .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #1f9bd7;
-}
-
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h1,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h1,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h2,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h2,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h3,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h3,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h4,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h4,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h5,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h5,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h6,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h6,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h1 > a,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h1 > a,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h2 > a,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h2 > a,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h3 > a,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h3 > a,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h4 > a,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h4 > a,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h5 > a,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h5 > a,
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content h6 > a,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content h6 > a {
-  color: #1f9bd7;
-}
-
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-content a:hover,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-content a:hover {
-  color: #1f9bd7;
 }
