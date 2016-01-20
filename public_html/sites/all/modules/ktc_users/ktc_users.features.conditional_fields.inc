@@ -10,7 +10,7 @@
 function ktc_users_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["user:user:0"] = array(
     'entity' => 'user',
     'bundle' => 'user',
     'dependent' => 'field_membership_dabyfo',
@@ -147,7 +147,7 @@ function ktc_users_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["user:user:1"] = array(
     'entity' => 'user',
     'bundle' => 'user',
     'dependent' => 'field_membership_dp',
@@ -284,7 +284,7 @@ function ktc_users_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["user:user:2"] = array(
     'entity' => 'user',
     'bundle' => 'user',
     'dependent' => 'field_membership_envina',
@@ -421,7 +421,7 @@ function ktc_users_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["user:user:3"] = array(
     'entity' => 'user',
     'bundle' => 'user',
     'dependent' => 'field_membership_ffuk',
@@ -558,7 +558,7 @@ function ktc_users_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["user:user:4"] = array(
     'entity' => 'user',
     'bundle' => 'user',
     'dependent' => 'field_membership_kef',
@@ -695,7 +695,7 @@ function ktc_users_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["user:user:5"] = array(
     'entity' => 'user',
     'bundle' => 'user',
     'dependent' => 'field_membership_kpn',
@@ -832,7 +832,7 @@ function ktc_users_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["user:user:6"] = array(
     'entity' => 'user',
     'bundle' => 'user',
     'dependent' => 'field_membership_ktc',
@@ -969,7 +969,7 @@ function ktc_users_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["user:user:7"] = array(
     'entity' => 'user',
     'bundle' => 'user',
     'dependent' => 'field_membership_kvf',

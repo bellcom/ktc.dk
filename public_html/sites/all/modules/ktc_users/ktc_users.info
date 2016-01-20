@@ -133,3 +133,4 @@ features_exclude[field_instance][taxonomy_term-kommuner-field_typo3_uid] = taxon
 features_exclude[taxonomy][emner_faste_] = emner_faste_
 features_exclude[taxonomy][emner] = emner
 features_exclude[taxonomy][regioner] = regioner
+mtime = 1434103185
