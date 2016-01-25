@@ -192,7 +192,17 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
       }
       $option = decode_entities($option);
     }
+    $form['#validate'][] = 'ktc_hearing_form_validate';
+    $form['#after_build'][] = 'ktc_hearing_form_after_build';
+    $form['#suffix'] = '<div id="confirm" title="Dates confirmation"></div>';
   }
+}
+/**
+ * Implements hook_form_after_build().
+ */
+function ktc_hearing_form_after_build($form, &$form_state) {
+  drupal_add_js(drupal_get_path('module', 'ktc_hearing') . '/ktc_hearing_node_submit.js');
+    return $form;
 }
 
 /**
@@ -273,6 +283,22 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
   $form['options']['#access'] = 0;
   $form['revision_information']['#access'] = 0;
   $form['actions']['preview_changes']['#access'] = 0;
+}
+
+/**
+ * Implements hook_form_validate().
+ */
+function ktc_hearing_form_validate($form, &$form_state) {
+ $official_date = strtotime($form_state['values']['field_official_date']['und'][0]['value']);
+ $official_responsedate = strtotime($form_state['values']['field_official_responsedate']['und'][0]['value']);
+ $attendee_deadlines = strtotime($form_state['values']['field_attendee_deadlines']['und'][0]['value']);
+ $enrollment_deadlines = strtotime($form_state['values']['field_enrollment_deadlines']['und'][0]['value']);
+
+ if ($official_date > $official_responsedate || $official_date > $attendee_deadlines || $official_date > $enrollment_deadlines)
+   form_set_error ('field_official_date', t("Den officielle udsendelsesdato skal opsættes til at være tidligere end alle andre datoer i høringen"));
+
+ if ($official_responsedate < $$official_date || $official_responsedate < $attendee_deadlines || $official_responsedate < $enrollment_deadlines)
+   form_set_error ('field_official_responsedate', t("Den officielle svardato skal opsættes til at være senere end alle andre datoer i høringen"));
 }
 
 /**
