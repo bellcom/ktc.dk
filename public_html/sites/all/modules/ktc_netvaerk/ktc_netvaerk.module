@@ -1257,3 +1257,11 @@ function ktc_netvaerk_og_access_grants_alter(&$grants, $node) {
     }
   }
 }
+
+/**
+ * Implements hook_og_membership_presave().
+ */
+function ktc_netvaerk_og_membership_presave($og_membership){
+  if (!isset($og_membership->field_grouprole[LANGUAGE_NONE][0]['target_id']) or empty($og_membership->field_grouprole[LANGUAGE_NONE][0]['target_id']))
+    $og_membership->field_grouprole[LANGUAGE_NONE][0]['target_id'] = KTC_NETVAERK_MEMBER_TID;
+}
