@@ -557,7 +557,8 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
   $tags = _ktc_sectionpage_filter_helper($f4);
   $groups_with_region = _ktc_get_groups_with_region($f5);
   $gid = _ktc_sectionpage_group_filter_helper($gid);
-
+  $nids = _ktc_sectionpage_get_group_members_nid($gid);
+ 
   // If the content type:document does not included in the content_type,
   // remove the document type from term_type filter value.
   if (strpos($content_type, 'document') === FALSE) {
@@ -573,17 +574,19 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
   // Default content_pane from view "indhold_m_filter".
   // Content displays in one columns.
   $display = 'panel_pane_4';
-
+  $arguments = array($content_type, $term_type, $emner, $tags, $groups_with_region,  $gid);
   if ($page == 'nyheder' || arg(0) == 'nyheder') {
     $content_type = 'os2web_base_news';
     // Content displays in two columns.
     $display = 'panel_pane_5';
+    $arguments = array($content_type, $term_type, $emner, $tags, $groups_with_region,  $nids);
   }
 
   if ($page == 'hoeringer' || arg(0) == 'hoeringer') {
     $content_type = 'hearing';
     // Content displays in one columns.
     $display = 'panel_pane_5';
+     $arguments = array($content_type, $term_type, $emner, $tags, $groups_with_region,  $nids);
   }
   if ($page == 'teknikmiljoe' || arg(0) == 'teknikmiljoe') {
     if ($f1 == '') {
@@ -597,6 +600,7 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
     // Get the group ids from group type(s).
     if ($gids_netvaerk_type = _ktc_sectionpage_get_gids_from_group_types($term_type)) {
       $gid = $gids_netvaerk_type;
+      $nids = _ktc_sectionpage_get_group_members_nid($gid);
     }
 
     // So there are no other term_type filters,
@@ -604,15 +608,16 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
     $term_type = 'all';
     // Content displays in two columns.
     $display = 'panel_pane_5';
+    $arguments = array($content_type, $term_type, $emner, $tags, $groups_with_region,  $nids);
   }
 
   // Exclude profile subpage user/group/new_content.
   if ($page != 'new_content') {
     $view = views_get_view('indhold_m_filter');
-
     $view->set_display($display);
     $view->set_arguments(
-      array($content_type, $term_type, $emner, $tags, $groups_with_region, $gid)
+       $arguments
+      //array($content_type, $term_type, $emner, $tags, $groups_with_region, $gid)
     );
     $view->pre_execute();
     $view->execute();
@@ -885,7 +890,27 @@ function _ktc_sectionpage_get_gids_from_group_types($term_type) {
   if (!empty($gids_ar)) {
     $gids = implode('+', $gids_ar);
   }
+
   return $gids;
+}
+
+function _ktc_sectionpage_get_group_members_nid($gid) {
+  $gids_ar = array();
+  if($gid =='all')      return 'all';
+  $gids = explode('+', $gid);
+  if (!empty($gids)) {
+      $query = db_select('og_membership', 'n')
+        ->fields('n', array('etid'))
+        ->condition('gid', $gids, 'IN')
+        ->condition('entity_type', 'node', '=');
+      $result = $query->execute();
+      if ($result->rowCount() > 0) {
+        while ($record = $result->fetchAssoc()) {
+          $gids_ar[] = $record['etid'];
+        }
+      }
+ }
+ return implode('+', $gids_ar);
 }
 
 /**
