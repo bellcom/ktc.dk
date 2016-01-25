@@ -630,7 +630,7 @@ function scheduler_form_alter(&$form, $form_state) {
           // Make this a popup calendar widget.
           $form['scheduler_settings']['publish_on']['#type'] = 'date_popup';
           $form['scheduler_settings']['publish_on']['#date_format'] = $date_format;
-          $form['scheduler_settings']['publish_on']['#date_year_range'] = '0:+10';
+          $form['scheduler_settings']['publish_on']['#date_year_range'] = '-5:+5';
           $form['scheduler_settings']['publish_on']['#date_increment'] = variable_get('scheduler_date_popup_minute_increment', 1);
           unset($descriptions['format']);
           $form['scheduler_settings']['publish_on']['#description'] = filter_xss(implode(' ', $descriptions));
@@ -659,7 +659,7 @@ function scheduler_form_alter(&$form, $form_state) {
           // Make this a popup calendar widget.
           $form['scheduler_settings']['unpublish_on']['#type'] = 'date_popup';
           $form['scheduler_settings']['unpublish_on']['#date_format'] = $date_format;
-          $form['scheduler_settings']['unpublish_on']['#date_year_range'] = '0:+10';
+          $form['scheduler_settings']['unpublish_on']['#date_year_range'] = '-5:+5';
           $form['scheduler_settings']['unpublish_on']['#date_increment'] = variable_get('scheduler_date_popup_minute_increment', 1);
           unset($descriptions['format']);
           $form['scheduler_settings']['unpublish_on']['#description'] = filter_xss(implode(' ', $descriptions));
