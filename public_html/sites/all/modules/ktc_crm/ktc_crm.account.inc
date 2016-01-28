@@ -14,7 +14,11 @@ function ktc_crm_account_update_accounts() {
   $fetch_accounts = TRUE;
   $amount = 100;
   $i = 0;
-
+  if ($last_run = variable_get('ktc_crm_accounts_sync_last_run')) {
+      $offset = date('Z');
+      $updated_since = date('Y-m-d\TH:i:s', ($last_run - $offset)); 
+  }
+  variable_set('ktc_crm_accounts_sync_last_run', time());
   $vocab = taxonomy_vocabulary_machine_name_load('accounts');
   // Set all terms as updated = 0. When the term is updated, it will be set
   // to 1.
