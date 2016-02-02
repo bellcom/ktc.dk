@@ -1,0 +1,21 @@
+diff --git a/public_html/sites/all/modules/contrib/mailchimp/mailchimp.module b/public_html/sites/all/modules/contrib/mailchimp/mailchimp.module
+index 58ce007..8815b53 100644
+--- a/public_html/sites/all/modules/contrib/mailchimp/mailchimp.module
++++ b/public_html/sites/all/modules/contrib/mailchimp/mailchimp.module
+@@ -341,11 +341,12 @@ function mailchimp_get_memberinfo($list_id, $email, $reset = FALSE) {
+  */
+ function mailchimp_is_subscribed($list_id, $email, $reset = FALSE) {
+   $subscribed = FALSE;
+-  $memberinfo = mailchimp_get_memberinfo($list_id, $email, $reset);
+-  if (isset($memberinfo['status']) && $memberinfo['status'] == 'subscribed') {
+-    $subscribed = TRUE;
++  if ($email) {
++    $memberinfo = mailchimp_get_memberinfo($list_id, $email, $reset);
++    if (isset($memberinfo['status']) && $memberinfo['status'] == 'subscribed') {
++      $subscribed = TRUE;
++    }
+   }
+-
+   return $subscribed;
+ }
+ 

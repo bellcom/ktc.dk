@@ -341,11 +341,12 @@ function mailchimp_get_memberinfo($list_id, $email, $reset = FALSE) {
  */
 function mailchimp_is_subscribed($list_id, $email, $reset = FALSE) {
   $subscribed = FALSE;
-  $memberinfo = mailchimp_get_memberinfo($list_id, $email, $reset);
-  if (isset($memberinfo['status']) && $memberinfo['status'] == 'subscribed') {
-    $subscribed = TRUE;
+  if ($email) {
+    $memberinfo = mailchimp_get_memberinfo($list_id, $email, $reset);
+    if (isset($memberinfo['status']) && $memberinfo['status'] == 'subscribed') {
+      $subscribed = TRUE;
+    }
   }
-
   return $subscribed;
 }
 
