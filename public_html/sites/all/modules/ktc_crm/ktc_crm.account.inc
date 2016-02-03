@@ -5,9 +5,10 @@
  */
 
 /**
- * Update accounts.
+ * Quick Update accounts. (only updated accounts are syncing)
  */
-function ktc_crm_account_update_accounts() {
+
+function ktc_crm_account_quick_update_accounts() {
   $logger = KtcCrmLogger::getInstance();
   $logger->log->addInfo('cron', 'start account sync');
   // The webservice complains about not using paging cookie.
@@ -15,10 +16,63 @@ function ktc_crm_account_update_accounts() {
   $amount = 100;
   $i = 0;
   if ($last_run = variable_get('ktc_crm_accounts_sync_last_run')) {
-      $offset = date('Z');
-      $updated_since = date('Y-m-d\TH:i:s', ($last_run - $offset)); 
+    $offset = date('Z');
+    $updated_since = date('Y-m-d\TH:i:s', ($last_run - $offset)); 
   }
   variable_set('ktc_crm_accounts_sync_last_run', time());
+  $vocab = taxonomy_vocabulary_machine_name_load('accounts');
+  // Set all terms as updated = 0. When the term is updated, it will be set
+  // to 1.
+  db_update('taxonomy_term_data')
+    ->fields(array('updated' => 0))
+    ->condition('vid', $vocab->vid)
+    ->execute();
+
+  while ($fetch_accounts) {
+    $options = array(
+      'MaxReturned' => $amount,
+      'Skip' => ($i * $amount),
+      'UpdatedSince' => $updated_since,
+    );
+
+    $accounts = ktc_crm_fetch_accounts($options);
+
+    if ($accounts == 'error') {
+      $logger->log->addError('cron', 'account sync aborted crm died?');
+      return FALSE;
+    }
+
+    if (!$accounts && $i == 0) {
+      // If no accounts are returned on first fetch, don't no anything more.
+      $logger->log->addInfo('cron', 'no accounts returned from webservice');
+      return;
+    }
+    if (!$accounts) {
+      $fetch_accounts = FALSE;
+      break;
+    }
+
+    foreach ($accounts as $accountdto) {
+      // Reset the static cache for taxonomy terms. Before this we ran out of
+      // memory once in a while.
+      taxonomy_terms_static_reset();
+      ktc_crm_account_create_update($accountdto);
+    }
+    $i++;
+  }
+} 
+  
+/**
+* Full Update accounts. (Update and delete old accounts)
+*/
+function ktc_crm_account_update_accounts() {
+  $logger = KtcCrmLogger::getInstance();
+  $logger->log->addInfo('cron', 'start account sync');
+  // The webservice complains about not using paging cookie.
+  $fetch_accounts = TRUE;
+  $amount = 100;
+  $i = 0;
+
   $vocab = taxonomy_vocabulary_machine_name_load('accounts');
   // Set all terms as updated = 0. When the term is updated, it will be set
   // to 1.
