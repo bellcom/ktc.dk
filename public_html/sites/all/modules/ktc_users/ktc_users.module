@@ -145,13 +145,13 @@ function ktc_users_get_user_info_old_work_data($entity) {
     $data['vat_number'] = $field[0]['value'];
   }
   // Address.
-  if ($field = field_get_items('user', $entity, 'field_adresse')) {
-    $data['address'] = $field[0]['value'];
-  }
+//  if ($field = field_get_items('user', $entity, 'field_adresse')) {
+//    $data['address'] = $field[0]['value'];
+//  }
   // Address 2.
-  if ($field = field_get_items('user', $entity, 'field_adresse_2')) {
-    $data['address_2'] = $field[0]['value'];
-  }
+//  if ($field = field_get_items('user', $entity, 'field_adresse_2')) {
+//    $data['address_2'] = $field[0]['value'];
+//  }
   // Zipcode.
   if ($field = field_get_items('user', $entity, 'field_zipcode')) {
     $data['zipcode'] = $field[0]['value'];
