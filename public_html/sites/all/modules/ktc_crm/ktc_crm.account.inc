@@ -21,13 +21,7 @@ function ktc_crm_account_quick_update_accounts() {
   }
   variable_set('ktc_crm_accounts_sync_last_run', time());
   $vocab = taxonomy_vocabulary_machine_name_load('accounts');
-  // Set all terms as updated = 0. When the term is updated, it will be set
-  // to 1.
-  db_update('taxonomy_term_data')
-    ->fields(array('updated' => 0))
-    ->condition('vid', $vocab->vid)
-    ->execute();
-
+  
   while ($fetch_accounts) {
     $options = array(
       'MaxReturned' => $amount,
