@@ -13,7 +13,7 @@ function ktc_crm_account_quick_update_accounts() {
   $logger->log->addInfo('cron', 'start account sync');
   // The webservice complains about not using paging cookie.
   $fetch_accounts = TRUE;
-  $amount = 100;
+  $amount = 25;
   $i = 0;
   if ($last_run = variable_get('ktc_crm_accounts_sync_last_run')) {
     $offset = date('Z');
@@ -52,6 +52,10 @@ function ktc_crm_account_quick_update_accounts() {
       taxonomy_terms_static_reset();
       ktc_crm_account_create_update($accountdto);
     }
+    if (sizeof($accounts) < $amount){
+       $fetch_accounts = FALSE;
+    }
+    
     $i++;
   }
 } 
@@ -64,7 +68,7 @@ function ktc_crm_account_update_accounts() {
   $logger->log->addInfo('cron', 'start account sync');
   // The webservice complains about not using paging cookie.
   $fetch_accounts = TRUE;
-  $amount = 100;
+  $amount = 25;
   $i = 0;
 
   $vocab = taxonomy_vocabulary_machine_name_load('accounts');
@@ -104,6 +108,10 @@ function ktc_crm_account_update_accounts() {
       // memory once in a while.
       taxonomy_terms_static_reset();
       ktc_crm_account_create_update($accountdto);
+    }
+    
+    if (sizeof($accounts) < $amount){
+       $fetch_accounts = FALSE;
     }
     $i++;
   }
@@ -150,7 +158,7 @@ function ktc_crm_account_create_update(\KTC\AccountService\AccountDto $accountdt
     $account->vid = $vocab->vid;
     $account->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $accountdto->CrmId;
   }
-
+  
   $account->name = $accountdto->Name;
 
   if ($accountdto->DepartmentId) {
