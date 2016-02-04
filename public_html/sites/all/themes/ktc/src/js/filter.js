@@ -24,6 +24,11 @@
             $('.filter-box #filter-all').removeClass(button_normal);
         }
 
+        if ($('#content_type').find('#document').hasClass(button_active))
+           $('#term_type').show();
+        else
+           $('#term_type').hide();
+
         // Check if filter-value is stored in a cookie, so we can restore the search filters to previous state
         var filter_value_cookie;
         if (filter_value_cookie = JSON.parse($.cookie('filter_value'))) {
@@ -47,6 +52,7 @@
             if (!$(this).hasClass(button_active)) {
                 $(this).addClass(button_active);
                 $(this).removeClass(button_normal);
+
                 if ($(this).attr('id') == 'filter-all') {
                     $(this).closest('.filter-box').find('.filter-link').not(this).removeClass(button_active);
                     $(this).closest('.filter-box').find('.filter-link').not(this).addClass(button_normal);
@@ -626,6 +632,13 @@
                 $('#magazine-date-filter').show();
             else
                 $('#magazine-date-filter').hide();
+        }
+
+        if (type == 'netvaerk') {
+            if (filter_value[0].indexOf("document") >= 0)
+              $('#term_type').show();
+            else
+              $('#term_type').hide();
         }
 
         // Netvaerk section page my groups and all groups filter.
