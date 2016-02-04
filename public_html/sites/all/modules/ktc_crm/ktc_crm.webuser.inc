@@ -166,7 +166,7 @@ function ktc_crm_map_account_to_webuserdto($account) {
 
   if ($field = field_get_items('user', $account, 'field_regioner')) {
     $term_name = _ktc_crm_get_term_name($field[0]['tid']);
-    $term_name = _ktc_crm_translitterate($term_name);
+    $term_name = $term_name;
     $eanaddressdto->Region = $term_name;
   }
 
