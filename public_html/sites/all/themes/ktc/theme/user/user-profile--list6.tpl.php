@@ -57,19 +57,7 @@
             <?php endif ?>
 
             <?php if (isset($work['department'])): ?>
-                <p class="ktc-user-profile-content-work-department"><?php print $work['department']; ?></p>
-            <?php endif ?>
-
-            <?php if (isset($work['address'])): ?>
-                <p class="ktc-user-profile-content-work-address"><?php print $work['address']; ?></p>
-              <?php endif ?>
-
-            <?php if (isset($work['address_2'])): ?>
-                <p class="ktc-user-profile-content-work-address-2"><?php print $work['address_2']; ?></p>
-              <?php endif ?>
-
-            <?php if (isset($work['zipcode']) && isset($work['city'])): ?>
-                <p class="ktc-user-profile-content-work-zipcode-city"><?php print $work['zipcode'] . ' ' . $work['city']; ?></p>
+              <p class="ktc-user-profile-content-work-department"><?php print $work['department']; ?></p>
             <?php endif ?>
 
             <?php if (isset($personal['cellphone'])): ?>
