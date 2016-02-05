@@ -803,11 +803,20 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'meeting_doodle' => 'meeting_doodle',
     'arrangement' => 'arrangement',
+    'artikler' => 'artikler',
     'forum_post' => 'forum_post',
     'document' => 'document',
     'hearing' => 'hearing',
     'hearing_responses' => 'hearing_responses',
+    'ktc_supplier' => 'ktc_supplier',
+    'group' => 'group',
+    'os2web_base_news' => 'os2web_base_news',
+    'page' => 'page',
+    'magazine' => 'magazine',
+    'webform' => 'webform',
+    'intern_side' => 'intern_side',
   );
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
@@ -817,11 +826,30 @@ function ktc_user_profile_views_default_views() {
   $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    3 => 0,
     4 => 0,
-    5 => 0,
     6 => 0,
     7 => 0,
+    8 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    17 => 0,
+    15 => 0,
+    16 => 0,
+    14 => 0,
+    18 => 0,
+    10 => 0,
+    9 => 0,
+    5 => 0,
+    3 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
+    26 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
   /* Filterkriterie: Indhold: Udgivet */

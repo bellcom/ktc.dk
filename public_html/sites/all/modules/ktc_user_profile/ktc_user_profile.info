@@ -27,4 +27,4 @@ features[views_view][] = comments
 features[views_view][] = forfatters_indhold
 features[views_view][] = new_content_from_group
 features[views_view][] = user_profile_info
-mtime = 1444032240
+mtime = 1446541286
