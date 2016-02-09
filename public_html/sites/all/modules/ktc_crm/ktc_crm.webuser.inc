@@ -12,14 +12,14 @@ function ktc_crm_webuser_update_users() {
   $logger->log->addInfo('cron', 'start user sync');
   // The webservice complains about not using paging cookie.
   $fetch_users = TRUE;
-  $amount = 100;
+  $amount = 50;
   $i = 0;
 
   $last_run = variable_get('ktc_crm_user_sync_last_run', time());
   variable_set('ktc_crm_user_sync_last_run', time());
   // Get timezone offset
   $offset = date('Z');
-#  $updated_since = date('Y-m-d\TH:i:s', ($last_run - $offset));
+  $updated_since = date('Y-m-d\TH:i:s', ($last_run - $offset));
 
   while ($fetch_users) {
     $options = array(
