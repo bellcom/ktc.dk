@@ -175,9 +175,10 @@ function ktc_crm_group_map_group_to_groupdto($group) {
   if ($field = field_get_items('node', $group, 'og_group_ref')) {
     $parent_group = node_load($field[0]['target_id']);
     $parent_group_uuid = _ktc_crm_get_uuid('node', $parent_group);
-
-    $parentgroupdto = new \KTC\GroupService\ReferenceDto($parent_group_uuid);
-    $groupdto->ParentGroup = $parentgroupdto;
+    if ($parent_group_uuid) {
+      $parentgroupdto = new \KTC\GroupService\ReferenceDto($parent_group_uuid);
+      $groupdto->ParentGroup = $parentgroupdto;
+    }
   }
 
   if ($field = field_get_items('node', $group, 'field_topics')) {

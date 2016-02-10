@@ -39,6 +39,9 @@ function ktc_crm_webuser_update_users() {
       $logger->log->addInfo('cron', 'syncing user' . $webuserdto);
       ktc_crm_update_account_from_webuserdto($webuserdto);
     }
+    if (sizeof($webusers) < $amount){
+       $fetch_users = FALSE;
+    }
     $i++;
   }
 }
