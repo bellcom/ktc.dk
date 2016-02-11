@@ -238,8 +238,9 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
   $group_node->field_end_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->EndDate));
 
   $group_node->og_group_ref = array();
-  if (!empty($groupdto->ParentGroup)) {
+  if (!empty($groupdto->ParentGroup)) {    
     if ($parent_group = ktc_crm_group_load_from_uuid($groupdto->ParentGroup->CrmId)) {
+      $group_node->field_subgroup[$language][0]['value'] = 1;
       $group_node->og_group_ref[$language][0]['target_id'] = $parent_group->nid;
     }
   }
