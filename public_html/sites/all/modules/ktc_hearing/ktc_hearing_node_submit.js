@@ -13,7 +13,7 @@
             modal: true,
             resizable: false,
             buttons: {
-                "Submit Form": function() {
+                "Fortsæt": function() {
                     $(this).dialog("close");
                     $('#hearing-node-form').submit();
                     return true;
