@@ -538,7 +538,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => 'term_type',
-      'css_class' => 'ktc-aside-checkbox-filter ktc-aside-toggle',
+      'css_class' => 'ktc-aside-checkbox-filter ktc-aside-toggle document-filter',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();

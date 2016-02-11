@@ -11219,6 +11219,12 @@ var getText = docElem.textContent ?
             $('.filter-box #filter-all').removeClass(button_normal);
         }
 
+        if ($('#content_type').find('#document').hasClass(button_active))
+           $('#term_type.document-filter').show();
+        else
+           $('#term_type.document-filter').hide();
+
+
         // Check if filter-value is stored in a cookie, so we can restore the search filters to previous state
         var filter_value_cookie;
         if (filter_value_cookie = JSON.parse($.cookie('filter_value'))) {
@@ -11822,6 +11828,11 @@ var getText = docElem.textContent ?
             else
                 $('#magazine-date-filter').hide();
         }
+
+            if (filter_value[0].indexOf("document") >= 0)
+              $('#term_type.document-filter').show();
+            else
+              $('#term_type.document-filter').hide();
 
         // Netvaerk section page my groups and all groups filter.
         if (type == 'netvaerk' && (filter_value[1] != 'all,' || filter_value[2] != 'all,' || filter_value[3] != 'all,' || filter_value[4] != 'all,')) {

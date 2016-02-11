@@ -635,12 +635,10 @@
                 $('#magazine-date-filter').hide();
         }
 
-        if (type == 'netvaerk') {
-            if (filter_value[0].indexOf("document") >= 0)
-              $('#term_type.document-filter').show();
-            else
-              $('#term_type.document-filter').hide();
-        }
+        if (filter_value[0].indexOf("document") >= 0)
+           $('#term_type.document-filter').show();
+        else
+           $('#term_type.document-filter').hide();
 
         // Netvaerk section page my groups and all groups filter.
         if (type == 'netvaerk' && (filter_value[1] != 'all,' || filter_value[2] != 'all,' || filter_value[3] != 'all,' || filter_value[4] != 'all,')) {
