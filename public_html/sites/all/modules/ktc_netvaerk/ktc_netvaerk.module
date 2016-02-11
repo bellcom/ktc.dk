@@ -807,8 +807,8 @@ function ktc_netvaerk_node_insert($node) {
  */
 function ktc_netvaerk_change_own($node) {
   if ($node->type == 'group') {
-    $name = variable_get('group_owner', 'netvaerk@ktc.dk');
-    if ($owner = user_load_by_name($name)) {
+    $mail= variable_get('group_owner', 'netvaerk@ktc.dk');
+    if ($owner = user_load_by_mail($mail)) {
       db_update('node')->fields(array('uid' => $owner->uid))->condition('nid', $node->nid)->execute();
     }
   }
