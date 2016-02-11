@@ -36,12 +36,11 @@ function ktc_users_field_group_info() {
       10 => 'field_tags',
       11 => 'field_gammel_uid',
       12 => 'field_typo3_uid',
-      13 => 'field_crm_uuid',
-      14 => 'field_membership_ktc_category',
-      15 => 'ckeditor',
-      16 => 'metatags',
-      17 => 'timezone',
-      18 => 'locale',
+      13 => 'field_membership_ktc_category',
+      14 => 'ckeditor',
+      15 => 'metatags',
+      16 => 'timezone',
+      17 => 'locale',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -76,12 +75,13 @@ function ktc_users_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Privatadresse',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => 'Denne adresse bliver ikke vist offentligt, ej heller til andre brugere på ktc.dk. Den anvendes KUN til udsendelse af Magasinet "Teknik & Miljø", såfremt du har valgt levering til din privatadresse.',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_home_address|user|user|form'] = $field_group;
@@ -97,7 +97,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Medlemskaber og udpegninger',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_memberships_text',
       1 => 'field_membership_appointments',
@@ -167,7 +167,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dine netværk på KTC.dk',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'og_user_node',
     ),
@@ -195,7 +195,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Notifikationer',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_nyhedsbrev_ktc_update',
       1 => 'field_netvaerk_notifications',
@@ -380,7 +380,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dine kompetencer',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_special_skills',
       1 => 'field_topics',
