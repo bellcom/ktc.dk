@@ -1882,7 +1882,7 @@ function ktc_content_types_field_default_field_bases() {
     'settings' => array(
       'display_default' => 1,
       'display_field' => 1,
-      'uri_scheme' => 'public',
+      'uri_scheme' => 'private',
     ),
     'translatable' => 0,
     'type' => 'file',

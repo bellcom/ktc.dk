@@ -2687,7 +2687,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -2758,7 +2758,7 @@ function ktc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -5781,7 +5781,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
       'settings' => array(
         'allowed_schemes' => array(
           'prezi' => 'prezi',
-          'private' => 0,
+          'private' => 'private',
           'public' => 'public',
           'youtube' => 'youtube',
         ),
