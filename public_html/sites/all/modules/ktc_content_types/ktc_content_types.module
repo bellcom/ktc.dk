@@ -152,6 +152,11 @@ function ktc_content_types_manage_vocabularies() {
       'perm' => 'use activitytype-',
       'field' => 'field_arrangement_type',
     ),
+    'netv_rkstype' => array(
+      'title' => 'Brug netværkstype: ',
+      'perm' => 'use netv_rkstype-',
+      'field' => 'field_arrangement_type',
+    ),
     'artikeltyper' => array(
       'title' => 'Brug artikeltype: ',
       'perm' => 'use articletype-',
