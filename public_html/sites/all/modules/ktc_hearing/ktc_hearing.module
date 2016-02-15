@@ -194,7 +194,7 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
     }
     $form['#validate'][] = 'ktc_hearing_form_validate';
     $form['#after_build'][] = 'ktc_hearing_form_after_build';
-    $form['#suffix'] = '<div id="confirm" title="Dates confirmation"></div>';
+    $form['#suffix'] = '<div id="confirm" title="Bekræft datoer"></div>';
   }
 }
 /**
