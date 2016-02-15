@@ -11,6 +11,8 @@ $nids = db_select('node', 'n')
       ->execute()
       ->fetchCol();
 
+$mail= variable_get('group_owner', 'netvaerk@ktc.dk');
+$ktc_webmaster = user_load_by_mail($mail);
 foreach($nids as $nid){
 $node = node_load($nid);
 $account = user_load($node->uid );
@@ -20,6 +22,9 @@ if ($membership = og_get_membership('node', $nid, 'user', $node->uid)) {
           $membership->field_grouprole[LANGUAGE_NONE][0]['target_id'] = KTC_NETVAERK_ADMIN_TID;
           og_membership_save($membership);
         }
+}
+if ($ktc_webmaster_membership = og_get_membership('node', $nid, 'user', $ktc_webmaster->uid)) {
+    og_membership_delete($ktc_webmaster_membership->id);
 }
  ktc_netvaerk_change_own($node);
 
