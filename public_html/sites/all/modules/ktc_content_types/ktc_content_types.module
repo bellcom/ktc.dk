@@ -155,7 +155,7 @@ function ktc_content_types_manage_vocabularies() {
     'netv_rkstype' => array(
       'title' => 'Brug netværkstype: ',
       'perm' => 'use netv_rkstype-',
-      'field' => 'field_arrangement_type',
+      'field' => 'field_netvaerkstype',
     ),
     'artikeltyper' => array(
       'title' => 'Brug artikeltype: ',
