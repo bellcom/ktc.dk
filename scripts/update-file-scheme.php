@@ -10,7 +10,7 @@
  */
 
 $fields_to_update = array('field_dokument', 'field_os2web_base_field_media');
-$affected_content_type = array('document', 'arrangement', 'forum-post', 'group', 'os2web-base-news');
+$affected_content_type = array('document', 'arrangement', 'forum_post', 'group', 'os2web_base_news');
 
 foreach($fields_to_update as $field) {
     $fids = db_select('field_data_' . $field, 'f')
@@ -35,6 +35,7 @@ foreach($fields_to_update as $field) {
         } else {
           print("Cannot move fid ($fid) from $file->uri to $replaced_dir" . PHP_EOL);
           print("Aborting" . PHP_EOL);
+          return;
         }
       }
     }
