@@ -536,6 +536,9 @@ function _ktc_netvaerk_user_is_admin($uid, $gid) {
 function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
   $gid = arg(1);
   $list = '';
+  
+  $ktc_webmaster_mail = variable_get('group_owner', 'netvaerk@ktc.dk');
+  $ktc_webmaster = user_load_by_mail($ktc_webmaster_mail);
 
   // Only proceed with generating the block if this is a group id.
   if (!is_numeric($gid)) {
@@ -566,7 +569,7 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
     $memberships = og_membership_load_multiple(array_keys($result['og_membership']));
 
     foreach ($memberships as $membership) {
-      if ($membership->etid == 1) {
+      if ($membership->etid == 1 || $membership->etid == $ktc_webmaster->uid) {
         continue;
       }
 
