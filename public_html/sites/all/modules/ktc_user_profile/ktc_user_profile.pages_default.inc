@@ -587,6 +587,16 @@ function ktc_user_profile_default_page_manager_handlers() {
           'context' => 'argument_entity_id:user_1',
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => TRUE,
+        ),
       ),
       'logic' => 'and',
     ),
