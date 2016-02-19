@@ -232,6 +232,8 @@ function ktc_crm_map_account_to_webuserdto($account) {
   }
 
   $webuserdto->Active = $account->status;
+  
+  $webuserdto->WebUser = TRUE;
 
   if ($account->access) {
     $webuserdto->LastLogin = date('Y-m-d\TH:i:s', $account->access);
