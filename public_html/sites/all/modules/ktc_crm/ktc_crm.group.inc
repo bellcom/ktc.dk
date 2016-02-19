@@ -85,20 +85,19 @@ function ktc_crm_og_membership_delete($og_membership) {
  * Implements hook_og_membership_insert().
  */
 function ktc_crm_og_membership_insert($og_membership) {
-  if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_add_users') {
-    // If a users is added to a group send this info to CRM.
-    if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
-      $logger = KtcCrmLogger::getInstance();
+// If a users is added to a group send this info to CRM.
+  if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
+  $logger = KtcCrmLogger::getInstance();
 
-      $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
+  $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
 
-      $logger->log->addInfo('group add membership', array('crm_uuid' => $membership_uuid));
-
-      // Set the membership uuid on the og_membership entity.
-      $og_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
-      $og_membership->is_new = FALSE;
-      og_membership_save($og_membership);
-    }
+  $logger->log->addInfo('group add membership', array('crm_uuid' => $membership_uuid));
+    if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_add_users') {
+        // Set the membership uuid on the og_membership entity.
+        $og_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
+        $og_membership->is_new = FALSE;
+        og_membership_save($og_membership);
+      }
   }
 }
 
@@ -165,6 +164,11 @@ function ktc_crm_group_map_group_to_groupdto($group) {
       $groupdto->GroupTypeId = $grouptype_uuid;
     }
   }
+  if($start_date = field_get_items('node', $group , 'field_start_date'))
+    $groupdto->StartDate = date('Y-m-d\TH:i:s', strtotime($start_date[0]['value']));
+
+  if($end_date = field_get_items('node', $group , 'field_end_date'))
+    $groupdto->EndDate =  date('Y-m-d\TH:i:s', strtotime($end_date[0]['value']));
 
   if ($field = field_get_items('node', $group, 'field_regioner')) {
     $tid = $field[0]['tid'];
@@ -234,8 +238,11 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
   $group_node->body[$language][0]['value'] = $groupdto->Description;
   $group_node->body[$language][0]['format'] = 'filtered_html';
 
-  $group_node->field_start_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->StartDate));
-  $group_node->field_end_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->EndDate));
+  if ($groupdto->StartDate)
+    $group_node->field_start_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->StartDate));
+
+  if ($groupdto->EndDate)
+    $group_node->field_end_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->EndDate));
 
   $group_node->og_group_ref = array();
   if (!empty($groupdto->ParentGroup)) {    
