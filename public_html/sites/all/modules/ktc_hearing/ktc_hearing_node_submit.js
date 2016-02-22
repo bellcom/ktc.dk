@@ -18,7 +18,7 @@
                     $('#hearing-node-form').submit();
                     return true;
                 },
-                "Cancel": function() {
+                "Annuller": function() {
                     $(this).dialog("close");
                     return false;
                 }
