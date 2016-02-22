@@ -842,6 +842,42 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $display->content['new-2edbc3bb-c757-4817-9f75-b2f59fc565e7'] = $pane;
     $display->panels['left'][7] = 'new-2edbc3bb-c757-4817-9f75-b2f59fc565e7';
     $pane = new stdClass();
+    $pane->pid = 'new-78294957-9ca2-43c4-85c0-8465feef0bad';
+    $pane->panel = 'left';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_annonce';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'image',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'image_style' => '',
+        'image_link' => '',
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-full-width-image',
+      'template_suggestion' => 'entity-field',
+    );
+    $pane->extras = array();
+    $pane->position = 8;
+    $pane->locks = array();
+    $pane->uuid = '78294957-9ca2-43c4-85c0-8465feef0bad';
+    $display->content['new-78294957-9ca2-43c4-85c0-8465feef0bad'] = $pane;
+    $display->panels['left'][8] = 'new-78294957-9ca2-43c4-85c0-8465feef0bad';
+    $pane = new stdClass();
     $pane->pid = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
     $pane->panel = 'left';
     $pane->type = 'node_comment_form';
