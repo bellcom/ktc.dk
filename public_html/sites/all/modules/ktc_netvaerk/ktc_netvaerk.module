@@ -1287,4 +1287,9 @@ function ktc_netvaerk_og_access_grants_alter(&$grants, $node) {
 function ktc_netvaerk_og_membership_presave($og_membership){
   if (!isset($og_membership->field_grouprole[LANGUAGE_NONE][0]['target_id']) or empty($og_membership->field_grouprole[LANGUAGE_NONE][0]['target_id']))
     $og_membership->field_grouprole[LANGUAGE_NONE][0]['target_id'] = KTC_NETVAERK_MEMBER_TID;
+  if ($og_membership->entity_type == 'user') {
+    $account = user_load($og_membership->etid);
+    $account->field_netvaerk_notifications['und'][]['target_id']=$og_membership->gid;
+    user_save($account);
+  }
 }
