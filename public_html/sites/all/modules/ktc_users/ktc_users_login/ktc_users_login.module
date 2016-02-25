@@ -28,6 +28,11 @@ function ktc_users_login() {
   $form['actions']['submit']['#attributes']['data-toggle'] = 'tooltip';
   $form['actions']['submit']['#attributes']['data-placement'] = 'bottom';
   $form['actions']['submit']['#attributes']['title'] = t('Log ind');
+  
+  // Foggot password
+  $form['actions']['user-password'] = array(
+    '#markup' => l('', 'user/password', array('attributes' => array('class' => array('ktc-user-login-action-button', 'ktc-user-login-action-button-user-password'), 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('Glemt kodeord')))),
+  );
 
   // Create user
   $form['actions']['create-user'] = array(
@@ -37,6 +42,11 @@ function ktc_users_login() {
   // Search
   $form['actions']['search'] = array(
     '#markup' => l('', 'search', array('attributes' => array('class' => array('ktc-user-login-action-button', 'ktc-user-login-action-button-search'), 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('Søg')))),
+  );
+  
+  // Help
+  $form['actions']['help'] = array(
+    '#markup' => l('', 'om-ktc/hjaelp', array('attributes' => array('class' => array('ktc-user-login-action-button', 'ktc-user-login-action-button-help'), 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('Help')))),
   );
 
   unset($form['links']);

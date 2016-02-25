@@ -4,6 +4,7 @@ sessions/*
 tmp/*
 private/*
 site
+d7
 production-to-test.sh
 production-to-preprod.sh
 public_html/sites/ktc.dk.local

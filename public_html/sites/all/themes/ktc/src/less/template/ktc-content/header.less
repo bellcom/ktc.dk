@@ -47,9 +47,9 @@
 			margin: 0;
 			height: 48px;
 
-		  	&.xs-only {
-			  margin-top: 25px;
-			  margin-bottom: 5px;
+			&.xs-only {
+				margin-top: 25px;
+				margin-bottom: 5px;
 			}
 
 			// List item
@@ -89,7 +89,7 @@
 						color: @ktc-color-red-font;
 						font-size: 16px;
 						line-height: 48px;
-					  	.word-wrap();
+						.word-wrap();
 					}
 				}
 			}
@@ -125,6 +125,11 @@
 					// Log out
 					&.ktc-header-top-bar-user-menu-icon-user-logout {
 						.sprite(@header-logout);
+					}
+
+					// Help
+					&.ktc-header-top-bar-user-menu-icon-help {
+						.sprite(@spg-icon);
 					}
 				}
 			}
@@ -227,7 +232,7 @@
 	// Dropdown
 	.ktc-header-dropdown {
 		display: none;
-		padding-top: floor( (floor( (@ktc-header-top-bar-logo-height - @ktc-header-top-bar-height )) + @grid-gutter-width));
+		padding-top: floor((floor( (@ktc-header-top-bar-logo-height - @ktc-header-top-bar-height )) + @grid-gutter-width));
 
 		// Container
 		> .container {
@@ -243,8 +248,8 @@
 		.ktc-block {
 			float: left;
 			width: 20%;
-			padding-left: floor( (@grid-gutter-width / 2));
-			padding-right: floor( (@grid-gutter-width / 2));
+			padding-left: floor((@grid-gutter-width / 2));
+			padding-right: floor((@grid-gutter-width / 2));
 		}
 	}
 }
@@ -263,8 +268,8 @@
 		.navbar-toggle {
 
 			.navbar-toggle-text {
-				float:left;
-				margin-right:10px;
+				float: left;
+				margin-right: 10px;
 				margin-top: -2px;
 				color: #fff;
 			}
