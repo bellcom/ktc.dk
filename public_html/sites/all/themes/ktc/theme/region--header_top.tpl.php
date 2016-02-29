@@ -100,7 +100,7 @@ global $user;
                   <!-- End - search -->
                   <!-- Begin - help -->
                    <li>
-                    <a href="/om-ktc/hjaelp" data-toggle="tooltip" data-placement="bottom" title="Help"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-help"></span></a>
+                    <a href="/om-ktc/hjaelp" data-toggle="tooltip" data-placement="bottom" title="<?php print t('Help'); ?>"><span class="ktc-header-top-bar-user-menu-icon ktc-header-top-bar-user-menu-icon-help"></span></a>
                   </li>
                   <!-- End - help -->
                 </ul>
