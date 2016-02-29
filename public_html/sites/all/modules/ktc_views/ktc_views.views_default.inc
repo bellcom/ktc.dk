@@ -1950,6 +1950,13 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
   $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1';
 
+  /* Filterkriterie: Bruger: Bruger ID */
+  $handler->display->display_options['filters']['uid_raw_1']['id'] = 'uid_raw_1';
+  $handler->display->display_options['filters']['uid_raw_1']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_raw_1']['field'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw_1']['operator'] = '!=';
+  $handler->display->display_options['filters']['uid_raw_1']['value']['value'] = '1974';
+
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
 
@@ -2647,6 +2654,12 @@ function ktc_views_views_default_views() {
     2 => '2',
     3 => '3',
   );
+  /* Filterkriterie: Bruger: Bruger ID */
+  $handler->display->display_options['filters']['uid_raw']['id'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
+  $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1974';  
   $translatables['ktc_og_members'] = array(
     t('Defaults'),
     t('mere'),
