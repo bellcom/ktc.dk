@@ -286,8 +286,11 @@ function ktc_users_signup_form_submit(&$form, &$form_state) {
  * Implements hook_user_login().
  */
 function ktc_users_user_login(&$edit, $account) {
+  global $user;
+  $webuserdto = ktc_crm_lookup_webuser_by_mail($account->mail); 
+  ktc_crm_update_account_from_webuserdto($webuserdto);
   if ($account->access == 0) {
-    global $user;
+    drupal_set_message($user->mail);
     drupal_goto('user/' . $user->uid . '/edit');
   }
 }
