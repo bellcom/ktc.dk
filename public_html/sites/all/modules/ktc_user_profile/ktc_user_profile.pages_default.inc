@@ -566,7 +566,7 @@ function ktc_user_profile_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -29;
   $handler->conf = array(
-    'title' => 'KTC Sekretariatet',
+    'title' => 'KTC Sekretariatet og VIP',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -581,7 +581,8 @@ function ktc_user_profile_default_page_manager_handlers() {
           'name' => 'role',
           'settings' => array(
             'rids' => array(
-              0 => 20,
+              0 => 19,
+              1 => 20,
             ),
           ),
           'context' => 'argument_entity_id:user_1',
