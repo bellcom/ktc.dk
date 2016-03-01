@@ -1,18 +1,7 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/*$account=user_load(2323);
-   $user_type = FALSE;
-   $user_type = $account->field_usertype[LANGUAGE_NONE][0]['tid'];
-   var_dump( $user_type);
-    $usertype_map = variable_get('ktc_users_roles_usertype_map', array());
-    $role_id = $usertype_map[$user_type];
-    var_dump();*/
-   
+/*
+ * Script for changing user role depending usertype field value
+*/
    
 $query = db_select('users', 'u');
     $query->fields('u', array('uid'));
