@@ -55,7 +55,7 @@ function ktc_users_roles_user_presave(&$edit, $account, $category) {
 
   // If a usertype was set, and a role rule is set for it. We want to remove it
   // from the user.
-  if ($account_old_usertype && $usertype_map[$account_old_usertype]) {
+  if ($account_old_usertype && $usertype_map[$account_old_usertype] && $edit_new_usertype) {
     $role_id = $usertype_map[$account_old_usertype];
     // Remove the role.
     $edit['roles'][$role_id] = 0;
