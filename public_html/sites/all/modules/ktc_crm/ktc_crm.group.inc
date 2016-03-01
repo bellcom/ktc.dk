@@ -42,7 +42,7 @@ function ktc_crm_group_update_groups() {
  */
 function ktc_crm_group_process_groups($groups) {
   foreach ($groups->Results->GroupDto as $groupdto) {
-    if ($groupdto->VisibleOnWeb) {
+    if ($groupdto->SynchronizeWithKtcDk) {
       ktc_crm_group_update_from_groupdto($groupdto);
     }
   }
