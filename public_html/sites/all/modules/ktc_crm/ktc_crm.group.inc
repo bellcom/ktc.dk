@@ -143,7 +143,6 @@ function ktc_crm_group_map_group_to_groupdto($group) {
   $groupdto = new \KTC\GroupService\GroupDto($group_uuid);
 
   $groupdto->VisibleOnWeb = $group->status;
-  $groupdto->Active = $group->status;
   $groupdto->SynchronizeWithKtcDk = 1;
 
   if ($field = field_get_items('node', $group, 'body')) {
