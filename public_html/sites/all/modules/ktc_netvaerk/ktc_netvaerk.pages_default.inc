@@ -524,7 +524,7 @@ function ktc_netvaerk_default_page_manager_handlers() {
     $pane->configuration = array(
       'use_pager' => 0,
       'pager_id' => '0',
-      'items_per_page' => '9',
+      'items_per_page' => '0',
       'offset' => '0',
       'arguments' => array(
         'vid' => '10',
