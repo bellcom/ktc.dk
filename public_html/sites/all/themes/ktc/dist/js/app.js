@@ -11219,7 +11219,7 @@ var getText = docElem.textContent ?
             $('.filter-box #filter-all').removeClass(button_normal);
         }
 
-        if ($('#content_type').find('#document').hasClass(button_active))
+         if ($('#content_type').find('#document').hasClass(button_active))
            $('#term_type.document-filter').show();
         else
            $('#term_type.document-filter').hide();
@@ -11248,6 +11248,7 @@ var getText = docElem.textContent ?
             if (!$(this).hasClass(button_active)) {
                 $(this).addClass(button_active);
                 $(this).removeClass(button_normal);
+
                 if ($(this).attr('id') == 'filter-all') {
                     $(this).closest('.filter-box').find('.filter-link').not(this).removeClass(button_active);
                     $(this).closest('.filter-box').find('.filter-link').not(this).addClass(button_normal);
@@ -11829,10 +11830,10 @@ var getText = docElem.textContent ?
                 $('#magazine-date-filter').hide();
         }
 
-            if (filter_value[0].indexOf("document") >= 0)
-              $('#term_type.document-filter').show();
-            else
-              $('#term_type.document-filter').hide();
+        if (filter_value[0].indexOf("document") >= 0)
+           $('#term_type.document-filter').show();
+        else
+           $('#term_type.document-filter').hide();
 
         // Netvaerk section page my groups and all groups filter.
         if (type == 'netvaerk' && (filter_value[1] != 'all,' || filter_value[2] != 'all,' || filter_value[3] != 'all,' || filter_value[4] != 'all,')) {

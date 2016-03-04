@@ -8960,7 +8960,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-user-login .form-actions .ktc-user-login-action-button {
   float: left;
   vertical-align: middle;
-  min-width: initial;
+  min-width: 0;
   padding: 0;
   margin: 0;
   border: 0;
