@@ -85,22 +85,24 @@ function ktc_crm_og_membership_delete($og_membership) {
  * Implements hook_og_membership_insert().
  */
 function ktc_crm_og_membership_insert($og_membership) {
-  if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_add_users') {
-    // If a users is added to a group send this info to CRM.
-    if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
-      $logger = KtcCrmLogger::getInstance();
+// If a users is added to a group send this info to CRM.
+  if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
+  $logger = KtcCrmLogger::getInstance();
 
-      $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
-
-      $logger->log->addInfo('group add membership', array('crm_uuid' => $membership_uuid));
-
-      // Set the membership uuid on the og_membership entity.
-      $og_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
-      $og_membership->is_new = FALSE;
-      og_membership_save($og_membership);
-    }
+  $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
+  if ($og_membership->entity_type == 'user' && !in_array($og_membership->etid, _ktc_netvaerk_notifications_get_users($og_membership->gid))) {
+    $account = user_load($og_membership->etid);
+    $account->field_netvaerk_notifications['und'][]['target_id']=$og_membership->gid;
+    user_save($account);
+  } 
+  $logger->log->addInfo('group add membership', array('crm_uuid' => $membership_uuid));
+    if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_add_users') {
+        // Set the membership uuid on the og_membership entity.
+        $og_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
+        $og_membership->is_new = FALSE;
+        og_membership_save($og_membership);
+      }
   }
-}
 
 /**
  * Implements hook_og_membership_update().
