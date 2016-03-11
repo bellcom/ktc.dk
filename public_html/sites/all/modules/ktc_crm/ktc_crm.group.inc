@@ -91,6 +91,11 @@ function ktc_crm_og_membership_insert($og_membership) {
 
   $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
 
+  if ($og_membership->entity_type == 'user' && !in_array($og_membership->etid, _ktc_netvaerk_notifications_get_users($og_membership->gid))) {
+    $account = user_load($og_membership->etid);
+    $account->field_netvaerk_notifications['und'][]['target_id']=$og_membership->gid;
+    user_save($account);
+  } 
   $logger->log->addInfo('group add membership', array('crm_uuid' => $membership_uuid));
     if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_add_users') {
         // Set the membership uuid on the og_membership entity.
