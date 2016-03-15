@@ -1076,7 +1076,6 @@ function ktc_hearing_responses($hearing) {
   $vars = array();
 
   $user_decline_respond = FALSE;
-  dsm($result);
   global $user;
   if ($result) {
     foreach ($result as $nid) {
@@ -1095,10 +1094,10 @@ function ktc_hearing_responses($hearing) {
         $users_response = $node;
       }
 
-      //if ($node->status) {
+      if ($node->status) {
 
         $vars['responses'][$node->uid] = node_view($node, 'teaser');
-      //}
+      }
     }
   }
 
@@ -1108,7 +1107,6 @@ function ktc_hearing_responses($hearing) {
     'type' => $type,
     'language' => LANGUAGE_NONE,
   );
-  dsm($users_response);
   if (isset($users_response)) {
     $node = $users_response;
   }
@@ -1134,7 +1132,6 @@ function ktc_hearing_responses($hearing) {
   if ($user_decline_respond) {
     $vars['answer_form'] = t('Du har valgt ikke at svare på denne høring.');
   }
-  dsm($vars);
   return theme('hearing_answer', $vars);
 }
 
