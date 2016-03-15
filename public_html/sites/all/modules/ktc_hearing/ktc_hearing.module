@@ -518,13 +518,17 @@ function ktc_hearing_access($node, $op) {
     'view responses',
     'view summary response',
   );
-
   if (in_array($op, $disable_on_closed) && $status == KTC_HEARING_STATUS_APPROVED) {
+    error_log(print_r($op, true) . __file__ ."\n", 3, '/Users/yani/workplace/error_log.log');
+    error_log(print_r($status, true)." her her \n", 3, '/Users/yani/workplace/error_log.log');
+
     return FALSE;
   }
 
   if ($node->type != 'hearing') {
-    return FALSE;
+      //error_log("not type \n", 3, '/Users/yani/workplace/error_log.log');
+
+    //return FALSE;
   }
 
   global $user;
@@ -1072,14 +1076,14 @@ function ktc_hearing_responses($hearing) {
   $vars = array();
 
   $user_decline_respond = FALSE;
-
+  dsm($result);
   global $user;
   if ($result) {
     foreach ($result as $nid) {
       $node = node_load($nid);
 
       if (_ktc_hearing_response_is_summary($node)) {
-        continue;
+        //continue;
       }
 
       if ($node->uid == $user->uid) {
@@ -1091,9 +1095,10 @@ function ktc_hearing_responses($hearing) {
         $users_response = $node;
       }
 
-      if ($node->status) {
+      //if ($node->status) {
+
         $vars['responses'][$node->uid] = node_view($node, 'teaser');
-      }
+      //}
     }
   }
 
@@ -1103,7 +1108,7 @@ function ktc_hearing_responses($hearing) {
     'type' => $type,
     'language' => LANGUAGE_NONE,
   );
-
+  dsm($users_response);
   if (isset($users_response)) {
     $node = $users_response;
   }
@@ -1119,17 +1124,17 @@ function ktc_hearing_responses($hearing) {
     }
   }
 
-  if (ktc_hearing_access($hearing, 'respond') && ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
+  //if (ktc_hearing_access($hearing, 'respond') && ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
     $node_form = drupal_get_form($type . '_node_form', $node);
     $node_form['actions']['submit']['#submit'][] = '_ktc_hearings_node_no_redirect';
 
     $vars['answer_form'] = render($node_form);
-  }
+  //}
 
   if ($user_decline_respond) {
     $vars['answer_form'] = t('Du har valgt ikke at svare på denne høring.');
   }
-
+  dsm($vars);
   return theme('hearing_answer', $vars);
 }
 
@@ -1283,7 +1288,6 @@ function ktc_hearing_user_has_access($hearing, $account = FALSE) {
   if ($account->uid == $hearing->uid) {
     $access = array_merge($access, $reference_permissions['creator']);
   }
-
   return $access;
 }
 
