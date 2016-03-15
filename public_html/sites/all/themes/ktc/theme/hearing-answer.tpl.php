@@ -85,7 +85,7 @@ $response_responses = array();
         <?php if (count($response_no_responses)): ?>
           <div class="ktc-aside ktc-aside-green">
             <div class="ktc-aside-heading">
-              <h3 class="ktc-aside-title"><?php print t('Svarer ikke'); ?></h3>
+              <h3 class="ktc-aside-title"><?php print t('Har valgt at svare ikke'); ?></h3>
             </div>
             <div class="ktc-aside-body">
               <?php foreach ($response_no_responses as $response_no_response): ?>

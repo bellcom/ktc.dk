@@ -378,6 +378,10 @@ function ktc_hearing_block_info() {
     'info' => t('KTC Høring - info om aktuelle høring.'),
     'cache' => DRUPAL_NO_CACHE,
   );
+  $blocks['ktc_hearing_my_hearing'] = array(
+    'info' => t('Mine høringer.'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
   return $blocks;
 }
 
@@ -391,14 +395,14 @@ function ktc_hearing_block_view($delta = '') {
     case 'ktc_hearing_unresponded':
       $vars['unresponded_hearings'] = _ktc_hearing_get_unresponded();
 
-      $block['subject'] = t('Dine høringer der mangler svar');
+      $block['subject'] = t('Høringer der mangler dine svare');
       $block['content'] = theme('block_hearing_unresponded', $vars);
       break;
 
     case 'ktc_hearing_unresponded_section':
       $vars['unresponded_hearings'] = _ktc_hearing_get_unresponded();
 
-      $block['subject'] = t('Dine høringer der mangler svar');
+      $block['subject'] = t('Høringer der mangler dine svare');
       $block['content'] = theme('block_hearing_unresponded_sectionpage', $vars);
       break;
 
@@ -415,6 +419,12 @@ function ktc_hearing_block_view($delta = '') {
       $vars = _ktc_hearing_get_info_vars();
 
       $block['content'] = theme('block_hearing_info', $vars);
+      break;
+
+   case 'ktc_hearing_my_hearing':
+      $vars['unresponded_hearings'] = _ktc_hearing_get_my_hearings();
+
+      $block['content'] = theme('block_hearing_unresponded', $vars);
       break;
   }
   return $block;
@@ -518,13 +528,12 @@ function ktc_hearing_access($node, $op) {
     'view responses',
     'view summary response',
   );
-
   if (in_array($op, $disable_on_closed) && $status == KTC_HEARING_STATUS_APPROVED) {
     return FALSE;
   }
 
   if ($node->type != 'hearing') {
-    return FALSE;
+    //return FALSE;
   }
 
   global $user;
@@ -1072,14 +1081,13 @@ function ktc_hearing_responses($hearing) {
   $vars = array();
 
   $user_decline_respond = FALSE;
-
   global $user;
   if ($result) {
     foreach ($result as $nid) {
       $node = node_load($nid);
 
       if (_ktc_hearing_response_is_summary($node)) {
-        continue;
+        //continue;
       }
 
       if ($node->uid == $user->uid) {
@@ -1092,6 +1100,7 @@ function ktc_hearing_responses($hearing) {
       }
 
       if ($node->status) {
+
         $vars['responses'][$node->uid] = node_view($node, 'teaser');
       }
     }
@@ -1103,7 +1112,6 @@ function ktc_hearing_responses($hearing) {
     'type' => $type,
     'language' => LANGUAGE_NONE,
   );
-
   if (isset($users_response)) {
     $node = $users_response;
   }
@@ -1422,6 +1430,8 @@ function _ktc_hearing_reference_permissions() {
     'creator' => array(
       'link to kl answer' => 'link to kl answer',
       'update' => 'update',
+      'view responses' => 'view responses',
+      'view summary response' => 'view summary response',
       'view' => 'view',
     ),
   );
@@ -1550,6 +1560,27 @@ function _ktc_hearing_get_unresponded($user = FALSE) {
     }
   }
   return $unresponded_hearings;
+}
+
+function _ktc_hearing_get_my_hearings($user = FALSE) {
+  if (!$user) {
+    global $user;
+  }
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'hearing')
+    ->propertyCondition( 'uid' , $user->uid)
+    ->propertyOrderBy('created', 'DESC');
+  $result = $query->execute();
+
+  $my_hearings = array();
+  if (isset($result['node'])) {
+    foreach (node_load_multiple(array_keys($result['node'])) as $hearing) {
+      $hearing->user_mail = $user->mail;
+      $my_hearings[$hearing->nid] = $hearing;
+    }
+  }
+  return $my_hearings;
 }
 /**
  * Get a users unresponded hearings.
