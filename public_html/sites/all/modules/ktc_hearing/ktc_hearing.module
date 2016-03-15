@@ -529,15 +529,10 @@ function ktc_hearing_access($node, $op) {
     'view summary response',
   );
   if (in_array($op, $disable_on_closed) && $status == KTC_HEARING_STATUS_APPROVED) {
-    error_log(print_r($op, true) . __file__ ."\n", 3, '/Users/yani/workplace/error_log.log');
-    error_log(print_r($status, true)." her her \n", 3, '/Users/yani/workplace/error_log.log');
-
     return FALSE;
   }
 
   if ($node->type != 'hearing') {
-      //error_log("not type \n", 3, '/Users/yani/workplace/error_log.log');
-
     //return FALSE;
   }
 
@@ -1132,16 +1127,17 @@ function ktc_hearing_responses($hearing) {
     }
   }
 
-  //if (ktc_hearing_access($hearing, 'respond') && ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
+  if (ktc_hearing_access($hearing, 'respond') && ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
     $node_form = drupal_get_form($type . '_node_form', $node);
     $node_form['actions']['submit']['#submit'][] = '_ktc_hearings_node_no_redirect';
 
     $vars['answer_form'] = render($node_form);
-  //}
+  }
 
   if ($user_decline_respond) {
     $vars['answer_form'] = t('Du har valgt ikke at svare på denne høring.');
   }
+
   return theme('hearing_answer', $vars);
 }
 
@@ -1295,6 +1291,7 @@ function ktc_hearing_user_has_access($hearing, $account = FALSE) {
   if ($account->uid == $hearing->uid) {
     $access = array_merge($access, $reference_permissions['creator']);
   }
+
   return $access;
 }
 
