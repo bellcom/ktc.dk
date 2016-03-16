@@ -173,4 +173,4 @@ features_exclude[field_base][field_os2web_base_field_hidlinks] = field_os2web_ba
 features_exclude[field_base][field_os2web_base_field_ext_link] = field_os2web_base_field_ext_link
 features_exclude[field_instance][taxonomy_term-emner_faste_-field_typo3_uid] = taxonomy_term-emner_faste_-field_typo3_uid
 features_exclude[taxonomy][emner_faste_] = emner_faste_
-mtime = 1444310827
+mtime = 1458032522

@@ -474,7 +474,7 @@ function ktc_hearing_default_page_manager_handlers() {
           'not' => TRUE,
         ),
       ),
-      'logic' => 'or',
+      'logic' => 'and',
     );
     $pane->configuration = array(
       'context' => array(
@@ -624,7 +624,7 @@ function ktc_hearing_default_page_manager_handlers() {
     $display->content['new-a82904d3-c87a-4a39-9487-c0d39d865f14'] = $pane;
     $display->panels['left'][0] = 'new-a82904d3-c87a-4a39-9487-c0d39d865f14';
     $pane = new stdClass();
-    $pane->pid = 'new-b23006c5-6ea6-4cfd-9a66-0ebb341082c6';
+    $pane->pid = 'new-9dd330ff-cb8d-4af3-9441-de4d1d7ee6db';
     $pane->panel = 'left';
     $pane->type = 'views_panes';
     $pane->subtype = 'ktc_full_node_field_displays-panel_pane_1';
@@ -635,7 +635,7 @@ function ktc_hearing_default_page_manager_handlers() {
         0 => 'argument_entity_id:node_1',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Hørings Indmelder',
+      'override_title_text' => 'Hørings indmelder',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -649,9 +649,9 @@ function ktc_hearing_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'b23006c5-6ea6-4cfd-9a66-0ebb341082c6';
-    $display->content['new-b23006c5-6ea6-4cfd-9a66-0ebb341082c6'] = $pane;
-    $display->panels['left'][1] = 'new-b23006c5-6ea6-4cfd-9a66-0ebb341082c6';
+    $pane->uuid = '9dd330ff-cb8d-4af3-9441-de4d1d7ee6db';
+    $display->content['new-9dd330ff-cb8d-4af3-9441-de4d1d7ee6db'] = $pane;
+    $display->panels['left'][1] = 'new-9dd330ff-cb8d-4af3-9441-de4d1d7ee6db';
     $pane = new stdClass();
     $pane->pid = 'new-ca4f9d56-23c9-426c-8cb4-e0f92f2a7a69';
     $pane->panel = 'left';
