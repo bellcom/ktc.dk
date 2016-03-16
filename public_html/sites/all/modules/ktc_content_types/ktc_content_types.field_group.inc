@@ -676,7 +676,7 @@ For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-doodle field-group-tab',
-        'description' => '<div class="well well-sm">Vælg de netværk som afstemningen skal publiceres i</div>',
+        'description' => '<div class="well well-sm">Vælg de netværk som indholdet skal publiceres i</div>',
       ),
       'formatter' => 'closed',
     ),
@@ -1846,7 +1846,7 @@ For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil
         'required_fields' => 1,
         'id' => '',
         'classes' => 'group-synlighedsdiv field-group-div well well-sm',
-        'description' => 'Vælg om afstemningen skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, afstemningen er publiceret i)',
+        'description' => 'Vælg om indholdet skal være offentlig (kan læses af alle), eller privat (kan kun læses af medlemmer i de netværk, indholdet er publiceret i)',
         'show_label' => '1',
         'label_element' => 'h3',
         'effect' => 'none',

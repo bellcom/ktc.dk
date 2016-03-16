@@ -111,16 +111,22 @@ function ktc_content_types_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Forfatter', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Forfatter';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    21 => '21',
+    20 => '20',
+    9 => '9',
+    10 => '10',
+    5 => '5',
+  );
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: Indhold: Forfatter */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Forbindelse: Entity Reference: Refererende entity */
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['id'] = 'reverse_og_group_ref_node';
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['field'] = 'reverse_og_group_ref_node';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Bruger: Rendered Bruger */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
@@ -929,7 +935,6 @@ function ktc_content_types_views_default_views() {
     t('<span class="content-type-logo"></span>'),
     t('Alle'),
     t('Forfatter'),
-    t('Indhold refererer til Indhold fra og_group_ref'),
     t('KTC Nodevisninger'),
     t('Titel, type og type'),
     t('<div class="shareknapper">
