@@ -27,14 +27,16 @@ function ktc_netvaerk_default_rules_configuration() {
         },
         { "mail" : {
             "to" : [ "account:mail" ],
-            "subject" : "Your membership request was approved for \\u0027[group:title]\\u0027\\r\\n",
-            "message" : "[account:name],\\r\\n\\r\\nYou are now a member in the group \\u0027[group:title]\\u0027 located at [group:url]"
+            "subject" : "Din ans\\u00f8gning om medlemsskab til \\u0027[group:title]\\u0027 er blevet godkendt. ",
+            "message" : "[account:name],\\r\\n\\r\\nDu er nu medlem af gruppen \\u0027[group:title]\\u0027 som kan findes p\\u00e5 [group:url]",
+            "language" : [ "" ]
           }
         },
         { "mail" : {
             "to" : [ "group:author:mail" ],
-            "subject" : "[account:name] joined [group:title]",
-            "message" : "[group:author:name],\\r\\n\\r\\n[account:name] joined [group:title] in [group:url]"
+            "subject" : "[account:name] meldte sig ind i [group:title]",
+            "message" : "[group:author:name],\\r\\n\\r\\n[account:name] meldte sig ind i [group:title] p\\u00e5 [group:url]",
+            "language" : [ "" ]
           }
         }
       ]
@@ -58,14 +60,16 @@ function ktc_netvaerk_default_rules_configuration() {
         },
         { "mail" : {
             "to" : [ "account:mail" ],
-            "subject" : "Your membership request for \\u0027[group:title]\\u0027",
-            "message" : "[account:name],\\r\\n\\r\\nYour membership to group \\u0027[group:title]\\u0027 located at [group:url] is pending approval."
+            "subject" : "Din anmodning om medlemsskab for \\u0027[group:title]\\u0027",
+            "message" : "[account:name],\\r\\n\\r\\nDit medlemsskab til gruppen \\u0027[group:title]\\u0027 som kan findes p\\u00e5 [group:url] afventer godkendelse.",
+            "language" : [ "" ]
           }
         },
         { "mail" : {
             "to" : [ "group:author:mail" ],
-            "subject" : "[account:name] membership request [group:title]",
-            "message" : "[group:author:name],\\r\\n\\r\\n[account:name] requests membership for group \\u0027[group:title]\\u0027 in [group:url].\\r\\n\\r\\n[og_membership:og-membership-request]"
+            "subject" : "[account:name] anmoder om medlemsskab i [group:title]",
+            "message" : "[group:author:name],\\r\\n\\r\\n[account:name] anmoder om medlemsskab i gruppen \\u0027[group:title]\\u0027 som kan findes p\\u00e5 [group:url].\\r\\n\\r\\n[og_membership:og-membership-request]",
+            "language" : [ "" ]
           }
         }
       ]
