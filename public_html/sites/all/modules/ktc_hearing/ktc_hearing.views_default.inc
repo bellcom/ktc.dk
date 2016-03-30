@@ -310,6 +310,10 @@ function ktc_hearing_views_default_views() {
   $handler->display->display_options['fields']['field_link_kl_hoeringssvar']['id'] = 'field_link_kl_hoeringssvar';
   $handler->display->display_options['fields']['field_link_kl_hoeringssvar']['table'] = 'field_data_field_link_kl_hoeringssvar';
   $handler->display->display_options['fields']['field_link_kl_hoeringssvar']['field'] = 'field_link_kl_hoeringssvar';
+  $handler->display->display_options['fields']['field_link_kl_hoeringssvar']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link_kl_hoeringssvar']['alter']['text'] = '<a href="[field_link_kl_hoeringssvar-url]" target="_blank">Åben høringssvar</a>';
+  $handler->display->display_options['fields']['field_link_kl_hoeringssvar']['alter']['max_length'] = '40';
+  $handler->display->display_options['fields']['field_link_kl_hoeringssvar']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['field_link_kl_hoeringssvar']['element_class'] = 'col-md-6 col-sm-6 col-xm-12';
   $handler->display->display_options['fields']['field_link_kl_hoeringssvar']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_link_kl_hoeringssvar']['element_label_class'] = 'col-md-6 col-sm-6 col-xm-12';
@@ -588,6 +592,7 @@ function ktc_hearing_views_default_views() {
     t('Content pane'),
     t('Status'),
     t('Link til KL høringssvar'),
+    t('<a href="[field_link_kl_hoeringssvar-url]" target="_blank">Åben høringssvar</a>'),
     t('Myndighed'),
     t('[field_hearing_authority]'),
     t('Officiel udsendelsesdato'),

@@ -154,7 +154,7 @@ function ktc_hearing_strongarm() {
           'weight' => '8',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '10',
         ),
       ),
       'display' => array(

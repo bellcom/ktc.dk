@@ -328,9 +328,10 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto, $uid = 0) {
     $edit[$field_name][LANGUAGE_NONE][0]['value'] = (int) $webuserdto->{$crm_field};
   }
 
-  if ($uid) {
-    $user_account = user_load($uid);
-    $edit['roles'] = $user_account->roles;
+  if ($uid && is_int($uid)) {
+    if ($user_account = user_load($uid)) {
+      $edit['roles'] = $user_account->roles;
+    }
   }
 
   return $edit;

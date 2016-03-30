@@ -717,7 +717,7 @@ function ktc_hearing_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 28,
+      'weight' => 7,
     ),
   );
 
@@ -1313,7 +1313,7 @@ function ktc_hearing_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 29,
+      'weight' => 8,
     ),
   );
 
@@ -1651,7 +1651,7 @@ function ktc_hearing_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 24,
+      'weight' => 3,
     ),
   );
 
@@ -2055,7 +2055,7 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 31,
+      'weight' => 1,
     ),
   );
 
@@ -2298,7 +2298,7 @@ function ktc_hearing_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 30,
+      'weight' => 9,
     ),
   );
 
@@ -2442,7 +2442,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 26,
+      'weight' => 5,
     ),
   );
 
@@ -2514,7 +2514,7 @@ function ktc_hearing_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 27,
+      'weight' => 6,
     ),
   );
 
@@ -2599,7 +2599,7 @@ function ktc_hearing_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 25,
+      'weight' => 4,
     ),
     'widget_type' => 'options_select',
   );

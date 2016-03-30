@@ -18,13 +18,11 @@ function ktc_hearing_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'hearing';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_hidden';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Avanceret',
-    'weight' => '21',
-    'children' => array(
-      0 => 'field_status',
-    ),
+    'weight' => '3',
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Avanceret',
@@ -263,7 +261,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjult',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_status',
       1 => 'field_hearing_archived',
