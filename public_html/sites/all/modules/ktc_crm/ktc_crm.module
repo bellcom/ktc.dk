@@ -5,15 +5,15 @@
  */
 
 // Load webservice classes.
-//module_load_include('php', 'ktc_crm', 'includes/KTC/WebUser/WebUser');
-//module_load_include('php', 'ktc_crm', 'includes/KTC/Subscription/Subscription');
-//module_load_include('php', 'ktc_crm', 'includes/KTC/GroupService/GroupService');
-//module_load_include('php', 'ktc_crm', 'includes/KTC/AccountService/AccountService');
-//
-//module_load_include('inc', 'ktc_crm', 'ktc_crm.api');
-//module_load_include('inc', 'ktc_crm', 'ktc_crm.group');
-//module_load_include('inc', 'ktc_crm', 'ktc_crm.webuser');
-//module_load_include('inc', 'ktc_crm', 'ktc_crm.account');
+module_load_include('php', 'ktc_crm', 'includes/KTC/WebUser/WebUser');
+module_load_include('php', 'ktc_crm', 'includes/KTC/Subscription/Subscription');
+module_load_include('php', 'ktc_crm', 'includes/KTC/GroupService/GroupService');
+module_load_include('php', 'ktc_crm', 'includes/KTC/AccountService/AccountService');
+
+module_load_include('inc', 'ktc_crm', 'ktc_crm.api');
+module_load_include('inc', 'ktc_crm', 'ktc_crm.group');
+module_load_include('inc', 'ktc_crm', 'ktc_crm.webuser');
+module_load_include('inc', 'ktc_crm', 'ktc_crm.account');
 
 define('KTC_CRM_WEBUSER_WSDL', 'WebUser.svc?wsdl');
 define('KTC_CRM_SUBSCRIPTION_WSDL', 'Subscription.svc?wsdl');
