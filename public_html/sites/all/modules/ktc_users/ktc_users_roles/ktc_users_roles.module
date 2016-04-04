@@ -43,6 +43,9 @@ function ktc_users_roles_menu() {
 function ktc_users_roles_user_presave(&$edit, $account, $category) {
   $usertype_map = variable_get('ktc_users_roles_usertype_map', array());
 
+  if (!isset($edit['roles']) and !empty($account->roles))
+      $edit['roles'] = $account->roles;
+
   $edit_new_usertype = FALSE;
   if (!empty($edit['field_usertype']) && $edit['field_usertype'][LANGUAGE_NONE][0]['tid']) {
     $edit_new_usertype = $edit['field_usertype'][LANGUAGE_NONE][0]['tid'];
