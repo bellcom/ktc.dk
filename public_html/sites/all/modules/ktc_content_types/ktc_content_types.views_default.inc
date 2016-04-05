@@ -117,11 +117,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Forbindelse: Entity Reference: Refererende entity */
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['id'] = 'reverse_og_group_ref_node';
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['field'] = 'reverse_og_group_ref_node';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
+
   /* Felt: Bruger: Rendered Bruger */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_user';
