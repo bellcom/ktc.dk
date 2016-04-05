@@ -111,16 +111,14 @@ function ktc_content_types_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Forfatter', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Forfatter';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: Indhold: Forfatter */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Forbindelse: Entity Reference: Refererende entity */
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['id'] = 'reverse_og_group_ref_node';
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['field'] = 'reverse_og_group_ref_node';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Bruger: Rendered Bruger */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
@@ -569,10 +567,6 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
-  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
-  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
-  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Logo */
   $handler->display->display_options['fields']['field_groupimage']['id'] = 'field_groupimage';
@@ -929,7 +923,6 @@ function ktc_content_types_views_default_views() {
     t('<span class="content-type-logo"></span>'),
     t('Alle'),
     t('Forfatter'),
-    t('Indhold refererer til Indhold fra og_group_ref'),
     t('KTC Nodevisninger'),
     t('Titel, type og type'),
     t('<div class="shareknapper">
@@ -970,7 +963,6 @@ function ktc_content_types_views_default_views() {
     t('[field_arrangement_location]<br />
 [field_arrangement_address]'),
     t('Logo og netværksnavn'),
-    t('Group node from OG membership'),
     t('<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>'),
     t('Oprettet af'),
     t('Logo på Netværk'),

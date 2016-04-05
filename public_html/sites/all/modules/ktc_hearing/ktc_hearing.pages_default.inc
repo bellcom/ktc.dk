@@ -474,7 +474,7 @@ function ktc_hearing_default_page_manager_handlers() {
           'not' => TRUE,
         ),
       ),
-      'logic' => 'or',
+      'logic' => 'and',
     );
     $pane->configuration = array(
       'context' => array(
