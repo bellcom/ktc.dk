@@ -465,7 +465,7 @@ function ktc_section_panel_h_ring_og_nyheder_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Bilag',
     );
     $pane->cache = array();
     $pane->style = array(
