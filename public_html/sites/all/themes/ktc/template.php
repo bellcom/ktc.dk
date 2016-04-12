@@ -319,6 +319,12 @@ function ktc_preprocess_field(&$vars, $hook) {
  */
 function ktc_preprocess_node(&$vars) {
 
+  // Make unpublished nodes appear with highlighted background.
+  if ($vars['status'] == 0) {
+    $vars['classes_array'][] = 'ktc-node-unpublished';
+  }
+
+
   // Add css class "node--NODETYPE--VIEWMODE" to nodes.
   $vars['classes_array'][] = 'node--' . $vars['type'] . '--' . $vars['view_mode'];
 
