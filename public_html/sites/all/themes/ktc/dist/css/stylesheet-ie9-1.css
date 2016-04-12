@@ -10220,6 +10220,14 @@ fieldset[disabled] .field-type-image .button {
   padding-right: 10px;
 }
 
+.ktc-header .ktc-header-dropdown .ktc-block .block-panels-mini .ktc-block-body {
+  padding: 0px 0px;
+}
+
+.ktc-header .ktc-header-dropdown .ktc-block .block-panels-mini .ktc-block-body .ktc-aside-heading {
+  border-left-color: #36a145;
+}
+
 .ktc-header .ktc-header-navigation {
   background: url("../images/bg_navigation.jpg") center top;
 }
