@@ -10220,12 +10220,19 @@ fieldset[disabled] .field-type-image .button {
   padding-right: 10px;
 }
 
-.ktc-header .ktc-header-dropdown .ktc-block .block-panels-mini .ktc-block-body {
+.ktc-header .ktc-header-dropdown .ktc-block.block-panels-mini .ktc-block-body {
   padding: 0px 0px;
 }
 
-.ktc-header .ktc-header-dropdown .ktc-block .block-panels-mini .ktc-block-body .ktc-aside-heading {
+.ktc-header .ktc-header-dropdown .ktc-block.block-panels-mini .ktc-block-body .ktc-aside-heading {
   border-left-color: #36a145;
+  border-left-width: 8px;
+  border-left-style: solid;
+}
+
+.ktc-header .ktc-header-dropdown .ktc-block.block-panels-mini .ktc-block-body .ktc-aside-heading .ktc-aside-title {
+  padding: 10px 15px;
+  padding-left: 7px;
 }
 
 .ktc-header .ktc-header-navigation {
@@ -10560,6 +10567,7 @@ fieldset[disabled] .field-type-image .button {
   font-weight: bold;
   color: #2c353a;
   margin: 0;
+  word-break: break-all;
 }
 
 .ktc-list-display .ktc-list-display-body .ktc-list-display-body-content .ktc-list-display-subheadline {

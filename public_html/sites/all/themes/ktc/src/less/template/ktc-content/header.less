@@ -250,11 +250,17 @@
 			width: 20%;
 			padding-left: floor((@grid-gutter-width / 2));
 			padding-right: floor((@grid-gutter-width / 2));
-                        .block-panels-mini {
+                        &.block-panels-mini {
                           .ktc-block-body {
                             padding: 0px 0px;
                             .ktc-aside-heading {
                               border-left-color: @ktc-color-green-background;
+                              border-left-width: 8px;
+                              border-left-style: solid;
+                              .ktc-aside-title {
+                                padding: 10px 15px;
+                                padding-left: 7px;
+                              }
                             }
                           }
                         }
