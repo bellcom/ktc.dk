@@ -76,7 +76,7 @@ function ktc_netvaerk_preprocess_node(&$variables) {
  */
 function _ktc_netvaerk_get_subscribe_links($nid) {
   $button = '';
-  $link_class = 'btn btn-default';
+  $link_class = array('btn', 'btn-default');
   $og_is_member = og_is_member('node', $nid);
 
   // Check if the user is a member,
