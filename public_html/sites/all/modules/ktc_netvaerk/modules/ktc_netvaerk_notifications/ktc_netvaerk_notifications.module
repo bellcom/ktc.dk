@@ -152,15 +152,35 @@ function ktc_netvaerk_notifications_mail($key, &$message, $params) {
 }
 
 /**
- * Implements hook_node_presave().
+ * Implements hook_node_insert().
  */
-function ktc_netvaerk_notifications_node_presave($node) {
-  if (is_object($node) && $node->nid && $node->status && $field = field_get_items('node', $node, 'og_group_ref')) {
+function ktc_netvaerk_notifications_node_insert($node) {
+   if (is_object($node) && $node->nid && $node->status && $field = field_get_items('node', $node, 'og_group_ref')) {
     if ($node->type == 'hearing' || $node->type == 'hearing_responses') {
       return;
     }
+   ktc_netvaerk_notifications_send_notification_emails($node);
+  }
+}
 
+/**
+ * Implements hook_node_update().
+ */
+function ktc_netvaerk_notifications_node_update($node) {
+   if (is_object($node) && $node->nid && $node->status && $field = field_get_items('node', $node, 'og_group_ref')) {
+    if ($node->type == 'hearing' || $node->type == 'hearing_responses') {
+      return;
+    }
+   ktc_netvaerk_notifications_send_notification_emails($node);
+  }
+}
+
+/**
+ * Sends notification emails to members of networks
+ */
+function ktc_netvaerk_notifications_send_notification_emails($node){
     $result = db_query('SELECT status FROM {ktc_netvaerk_notifications} WHERE nid = :nid', array(':nid' => $node->nid))->fetchAll();
+    $field = field_get_items('node', $node, 'og_group_ref');
 
     if (empty($result)) {
       db_insert('ktc_netvaerk_notifications')
@@ -195,9 +215,8 @@ function ktc_netvaerk_notifications_node_presave($node) {
         error_log('mail sent:' . $to );
       }
     }
-  }
-}
 
+}
 /**
  * Get a list of users to notify for the content node.
  */
