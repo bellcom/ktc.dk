@@ -1878,7 +1878,7 @@ function ktc_content_types_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-table-list ktc-aside-no-stack',
+      'css_class' => 'ktc-aside-color ktc-aside-table-list ktc-aside-no-stack',
       'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();
@@ -1904,7 +1904,7 @@ function ktc_content_types_default_page_manager_handlers() {
         'file_view_mode' => 'teaser',
       ),
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => 'Flere bilag',
     );
     $pane->cache = array();
