@@ -192,9 +192,20 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
       }
       $option = decode_entities($option);
     }
+
+     // added private networks
+    foreach ($group_ids as $nid) {
+      if (!in_array($nid, $form['og_group_ref'][LANGUAGE_NONE]['#options'])) {
+        $node = node_load($nid);
+        $form['og_group_ref'][LANGUAGE_NONE]['#options'][$nid] = $node->title;
+        continue;
+      }
+      $option = decode_entities($option);
+    }
+
     $form['#validate'][] = 'ktc_hearing_form_validate';
     $form['#after_build'][] = 'ktc_hearing_form_after_build';
-    $form['#suffix'] = '<div id="confirm" title="Bekræft datoer"></div>';
+    $form['#suffix'] = '<div id="confirm" title="BekrÃ¦ft datoer"></div>';
   }
 }
 /**
@@ -1346,7 +1357,9 @@ function _ktc_hearing_user_can_create_hearing_groups($uid) {
   // Fetch ids for all networks of this type.
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-    ->fieldCondition('field_netvaerkstype', 'tid', 1134);
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_netvaerkstype', 'tid', 1134)
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
   $result = $query->execute();
 
   if (isset($result['node'])) {
