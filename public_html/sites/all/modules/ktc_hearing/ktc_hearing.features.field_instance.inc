@@ -1691,7 +1691,7 @@ function ktc_hearing_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1766,7 +1766,7 @@ function ktc_hearing_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1894,7 +1894,7 @@ function ktc_hearing_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teasercomments' => array(
         'label' => 'above',
@@ -1979,7 +1979,7 @@ function ktc_hearing_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -2098,7 +2098,7 @@ function ktc_hearing_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'teasercomments' => array(
         'label' => 'above',
