@@ -904,7 +904,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
     $display->content['new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7'] = $pane;
-    $display->panels['left'][8] = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
+    $display->panels['left'][9] = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
     $pane = new stdClass();
     $pane->pid = 'new-ee946fb4-4482-4a9c-9c63-137149ee2658';
     $pane->panel = 'right';
@@ -1658,6 +1658,96 @@ function teknik_og_miljoe_default_page_manager_pages() {
     $display->content['new-33e08013-8f61-4ba6-b550-f6a1fd0b868c'] = $pane;
     $display->panels['right'][1] = 'new-33e08013-8f61-4ba6-b550-f6a1fd0b868c';
     $pane = new stdClass();
+    $pane->pid = 'new-0b73e999-b21a-4246-b8f2-d77b69622962';
+    $pane->panel = 'right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'TM højrebanner - 307x360',
+      'title' => '',
+      'body' => '<!--/*
+  *
+  * Revive Adserver Javascript Tag
+  * - Generated with Revive Adserver v3.2.2
+  *
+  */--><!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   \'http://revive.ktc.dk/www/delivery/...\'
+  * to
+  *   \'https://revive.ktc.dk/www/delivery/...\'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */--><script type=\'text/javascript\'><!--//<![CDATA[
+   var m3_u = (location.protocol==\'https:\'?\'https://revive.ktc.dk/www/delivery/ajs.php\':\'http://revive.ktc.dk/www/delivery/ajs.php\');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = \',\';
+   document.write ("<scr"+"ipt type=\'text/javascript\' src=\'"+m3_u);
+   document.write ("?zoneid=18");
+   document.write (\'&amp;cb=\' + m3_r);
+   if (document.MAX_used != \',\') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? \'&amp;charset=\'+document.charset : (document.characterSet ? \'&amp;charset=\'+document.characterSet : \'\'));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("\'><\\/scr"+"ipt>");
+//]]>--></script><noscript><a href=\'http://revive.ktc.dk/www/delivery/ck.php?n=a724c1ce&amp;cb=INSERT_RANDOM_NUMBER_HERE\' target=\'_blank\'><img src=\'http://revive.ktc.dk/www/delivery/avw.php?zoneid=18&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a724c1ce\' border=\'0\' alt=\'\' /></a></noscript> <BR>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'nohtml',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '0b73e999-b21a-4246-b8f2-d77b69622962';
+    $display->content['new-0b73e999-b21a-4246-b8f2-d77b69622962'] = $pane;
+    $display->panels['right'][2] = 'new-0b73e999-b21a-4246-b8f2-d77b69622962';
+    $pane = new stdClass();
+    $pane->pid = 'new-62bce034-9bf7-4c7c-8c8c-39dbb08eef8c';
+    $pane->panel = 'right';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-10';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'block',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '62bce034-9bf7-4c7c-8c8c-39dbb08eef8c';
+    $display->content['new-62bce034-9bf7-4c7c-8c8c-39dbb08eef8c'] = $pane;
+    $display->panels['right'][3] = 'new-62bce034-9bf7-4c7c-8c8c-39dbb08eef8c';
+    $pane = new stdClass();
     $pane->pid = 'new-965c96a3-3ea6-434b-af9f-402dd6f705ff';
     $pane->panel = 'right';
     $pane->type = 'views_panes';
@@ -1685,11 +1775,11 @@ function teknik_og_miljoe_default_page_manager_pages() {
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = '965c96a3-3ea6-434b-af9f-402dd6f705ff';
     $display->content['new-965c96a3-3ea6-434b-af9f-402dd6f705ff'] = $pane;
-    $display->panels['right'][2] = 'new-965c96a3-3ea6-434b-af9f-402dd6f705ff';
+    $display->panels['right'][4] = 'new-965c96a3-3ea6-434b-af9f-402dd6f705ff';
     $pane = new stdClass();
     $pane->pid = 'new-35218de2-66ce-4bd1-acbd-e9103ef9d846';
     $pane->panel = 'right';
@@ -1718,11 +1808,11 @@ function teknik_og_miljoe_default_page_manager_pages() {
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '35218de2-66ce-4bd1-acbd-e9103ef9d846';
     $display->content['new-35218de2-66ce-4bd1-acbd-e9103ef9d846'] = $pane;
-    $display->panels['right'][3] = 'new-35218de2-66ce-4bd1-acbd-e9103ef9d846';
+    $display->panels['right'][5] = 'new-35218de2-66ce-4bd1-acbd-e9103ef9d846';
     $pane = new stdClass();
     $pane->pid = 'new-8235599d-8033-42a7-aeb7-42c724f3fc10';
     $pane->panel = 'right';
@@ -1751,11 +1841,37 @@ function teknik_og_miljoe_default_page_manager_pages() {
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 6;
     $pane->locks = array();
     $pane->uuid = '8235599d-8033-42a7-aeb7-42c724f3fc10';
     $display->content['new-8235599d-8033-42a7-aeb7-42c724f3fc10'] = $pane;
-    $display->panels['right'][4] = 'new-8235599d-8033-42a7-aeb7-42c724f3fc10';
+    $display->panels['right'][6] = 'new-8235599d-8033-42a7-aeb7-42c724f3fc10';
+    $pane = new stdClass();
+    $pane->pid = 'new-3421213a-42d9-4959-a1c0-641fca8f8c89';
+    $pane->panel = 'right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Forfattervejledning',
+      'body' => '<p><a href="/user/2792">Hvordan gør man?</a></p>
+',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = '3421213a-42d9-4959-a1c0-641fca8f8c89';
+    $display->content['new-3421213a-42d9-4959-a1c0-641fca8f8c89'] = $pane;
+    $display->panels['right'][7] = 'new-3421213a-42d9-4959-a1c0-641fca8f8c89';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

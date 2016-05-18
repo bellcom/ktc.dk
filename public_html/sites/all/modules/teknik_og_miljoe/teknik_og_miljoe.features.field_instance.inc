@@ -105,8 +105,8 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
-          'photoswipe_image_style' => '',
-          'photoswipe_node_style' => '',
+          'photoswipe_image_style' => 'ktc_content_image',
+          'photoswipe_node_style' => 'ktc_content_image',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -1454,6 +1454,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 20,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1564,6 +1570,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1651,6 +1663,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 17,
       ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1731,6 +1749,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 18,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1772,13 +1796,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'all' => array(
           'view' => 0,
         ),
-        'all_published' => 0,
+        'all_published' => 1,
         'author' => array(
           'delete' => 0,
           'update' => 0,
           'view' => 0,
         ),
-        'author_published' => 0,
+        'author_published' => 1,
         'create' => array(
           'arrangement' => 0,
           'artikler' => 0,
@@ -1805,7 +1829,7 @@ function teknik_og_miljoe_field_default_field_instances() {
           'deny_update' => 0,
           'deny_view' => 0,
           'update' => 'update',
-          'view' => 0,
+          'view' => 'view',
         ),
         'referenced_published' => 1,
         'unused' => 0,
@@ -1870,6 +1894,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 21,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1959,6 +1989,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 12,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2053,6 +2090,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'field_collection_fields',
         'weight' => 2,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'field_collection',
@@ -2145,6 +2188,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 13,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2229,6 +2278,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 7,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2317,6 +2372,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2399,6 +2460,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2499,6 +2566,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 5,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2578,6 +2651,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2664,6 +2743,16 @@ function teknik_og_miljoe_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'indholdsside',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -2796,6 +2885,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 16,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2897,6 +2992,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2971,6 +3072,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'rss' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3057,6 +3164,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         ),
         'type' => 'text_trimmed',
         'weight' => 1,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -3186,6 +3300,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 3,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3263,6 +3384,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3366,6 +3494,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 14,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',

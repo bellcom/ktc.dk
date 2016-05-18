@@ -81,13 +81,19 @@ function teknik_og_miljoe_strongarm() {
         'custom_settings' => FALSE,
       ),
       'rss' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
+      ),
+      'teaserfront' => array(
+        'custom_settings' => TRUE,
+      ),
+      'listevisningboks' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
@@ -133,6 +139,10 @@ function teknik_og_miljoe_strongarm() {
           ),
           'teaserfront' => array(
             'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '13',
             'visible' => FALSE,
           ),
         ),
