@@ -279,6 +279,30 @@ function ktc_users_signup_form_submit(&$form, &$form_state) {
   // Send an email.
   _user_mail_notify($op, $account);
 
+  //add user memberships
+  $webuserdto = ktc_crm_lookup_webuser_by_mail($account->mail);
+    if ($webuserdto) {
+      $memberships = array();
+      if (is_array($webuserdto->UdvalgsMedlemskaber->GroupMemberDto )) {
+      foreach ( $webuserdto->UdvalgsMedlemskaber->GroupMemberDto as  $groupmember) {      
+        $memberships[$groupmember->Member->CrmId][] = array(
+          'group_uuid' => $groupmember->Group->CrmId,
+          'membership_uuid' => $groupmember->CrmId,
+          'grouprole_uuid' => $groupmember->Role->CrmId,
+        );
+       }
+      }
+      else {
+        $memberships[$webuserdto->UdvalgsMedlemskaber->GroupMemberDto->Member->CrmId][] = array(
+          'group_uuid' => $webuserdto->UdvalgsMedlemskaber->GroupMemberDto->Group->CrmId,
+          'membership_uuid' => $webuserdto->UdvalgsMedlemskaber->GroupMemberDto->CrmId,
+          'grouprole_uuid' => $webuserdto->UdvalgsMedlemskaber->GroupMemberDto->Role->CrmId,
+        );
+      }
+      if (!empty($memberships))
+        ktc_crm_group_process_memberships($memberships);
+  }
+
   $form_state['rebuild'] = TRUE;
 }
 
