@@ -55,7 +55,7 @@ function _ktc_related_links_block_content() {
           ->propertyCondition('status', 1)
           ->entityCondition('bundle', array('hearing', 'group', 'document'), 'NOT IN')
           ->fieldCondition('field_os2web_base_field_kle_ref', 'tid', $kle['tid'])
-          ->propertyOrderBy('created', 'ASC')
+          ->propertyOrderBy('created', 'DESC')
           ->range(0,10)
           ->execute();
         if (isset($result['node'])) {
@@ -88,7 +88,7 @@ function _ktc_related_links_block_content() {
           ->propertyCondition('status', 1)
           ->entityCondition('bundle', array('hearing', 'group', 'document'), 'NOT IN')
           ->fieldCondition('field_topics', 'tid', $item['tid'])
-          ->propertyOrderBy('created', 'ASC')
+          ->propertyOrderBy('created', 'DESC')
           ->range(0,10)
           ->execute();
         if (isset($result['node'])) {
@@ -122,7 +122,7 @@ function _ktc_related_links_block_content() {
           ->propertyCondition('status', 1)
           ->entityCondition('bundle', array('hearing', 'group'), 'NOT IN')
           ->fieldCondition('field_tags', 'tid', $item['tid'])
-          ->propertyOrderBy('created', 'ASC')
+          ->propertyOrderBy('created', 'DESC')
           ->range(0,10)
           ->execute();
         if (isset($result['node'])) {
