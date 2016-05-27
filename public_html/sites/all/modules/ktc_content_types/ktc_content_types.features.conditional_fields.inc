@@ -10,7 +10,7 @@
 function ktc_content_types_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["node:arrangement:0"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_direkte_tele',
@@ -325,7 +325,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:1"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_direkte_tele',
@@ -640,7 +640,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:2"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_efternavn',
@@ -955,7 +955,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:3"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_efternavn',
@@ -1270,7 +1270,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:4"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_fornavn',
@@ -1585,7 +1585,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:5"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_fornavn',
@@ -1900,7 +1900,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:6"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_opretteremail',
@@ -2215,7 +2215,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:7"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_opretteremail',
@@ -2530,7 +2530,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:8"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_pressentations',
@@ -2856,7 +2856,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:9"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_referat',
@@ -3171,7 +3171,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:10"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_stilling_titel',
@@ -3486,7 +3486,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:11"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_stilling_titel',
@@ -3801,7 +3801,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:12"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_virksomhed',
@@ -4116,7 +4116,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:13"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_arrangement_virksomhed',
@@ -4431,7 +4431,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:arrangement:14"] = array(
     'entity' => 'node',
     'bundle' => 'arrangement',
     'dependent' => 'field_artikel_reference',
@@ -4746,146 +4746,7 @@ function ktc_content_types_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'group',
-    'dependent' => 'og_group_ref',
-    'dependee' => 'field_subgroup',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        4 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        5 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        4 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        5 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value_form' => 1,
-      'value' => array(
-        0 => array(
-          'value' => 1,
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
+  $items["node:group:0"] = array(
     'entity' => 'node',
     'bundle' => 'group',
     'dependent' => 'field_open_group',
@@ -5197,6 +5058,145 @@ function ktc_content_types_conditional_fields_default_fields() {
         2 => 1155,
       ),
       'value' => array(),
+    ),
+  );
+
+  $items["node:group:1"] = array(
+    'entity' => 'node',
+    'bundle' => 'group',
+    'dependent' => 'og_group_ref',
+    'dependee' => 'field_subgroup',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        4 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        5 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        6 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value_form' => 1,
+      'value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'values' => array(),
     ),
   );
 

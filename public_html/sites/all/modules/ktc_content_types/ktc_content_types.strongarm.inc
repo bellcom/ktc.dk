@@ -988,7 +988,7 @@ function ktc_content_types_strongarm() {
         'custom_settings' => FALSE,
       ),
       'rss' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_index' => array(
         'custom_settings' => FALSE,
@@ -1017,6 +1017,15 @@ function ktc_content_types_strongarm() {
       'listevisningstor' => array(
         'custom_settings' => TRUE,
       ),
+      'teasercomments' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaserfront' => array(
+        'custom_settings' => TRUE,
+      ),
+      'listevisningboks' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'display' => array(
@@ -1033,6 +1042,14 @@ function ktc_content_types_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
         'subscriptions_ui' => array(
           'teaser' => array(
@@ -1047,6 +1064,7 @@ function ktc_content_types_strongarm() {
             'weight' => '100',
             'visible' => FALSE,
           ),
+          'rss' => NULL,
         ),
       ),
       'form' => array(
@@ -1313,6 +1331,7 @@ function ktc_content_types_strongarm() {
   $strongarm->name = 'menu_options_page';
   $strongarm->value = array(
     0 => 'main-menu',
+    1 => 'menu-skraldepand',
   );
   $export['menu_options_page'] = $strongarm;
 

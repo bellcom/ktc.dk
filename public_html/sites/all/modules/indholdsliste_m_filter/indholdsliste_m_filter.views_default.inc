@@ -80,13 +80,6 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['type']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['type']['limit'] = '0';
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
   /* Display: Side */
   $handler = $view->new_display('page', 'Side', 'page_1');
@@ -292,6 +285,10 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['css_class'] = 'section-content-ajax row';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'col-md-12 col-s-12 col-xs-12 switch-elements';
@@ -568,43 +565,20 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['validate_options']['type'] = 'tids';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['depth'] = '6';
   $handler->display->display_options['arguments']['term_node_tid_depth_2']['break_phrase'] = TRUE;
-    /* Kontekstuelt filter: regioner */	
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['id'] = 'term_node_tid_depth_3';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['table'] = 'node';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['ui_name'] = 'regioner';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate_options']['vocabularies'] = array(
-  'regioner' => 'regioner',
-  );
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['validate_options']['type'] = 'tids';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['depth'] = '6';
-  $handler->display->display_options['arguments']['term_node_tid_depth_3']['break_phrase'] = TRUE;
-  /* Kontekstuelt filter: Indhold: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Kontekstuelt filter: Indhold: Gruppe/Netværk (og_group_ref) */
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['validate']['type'] = 'og';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['break_phrase'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -978,13 +952,6 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['og_group_ref_target_id']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -1154,13 +1121,6 @@ function indholdsliste_m_filter_views_default_views() {
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';

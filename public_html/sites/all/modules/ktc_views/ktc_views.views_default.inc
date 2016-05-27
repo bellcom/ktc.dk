@@ -1949,7 +1949,6 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
   $handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
   $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1';
-
   /* Filterkriterie: Bruger: Bruger ID */
   $handler->display->display_options['filters']['uid_raw_1']['id'] = 'uid_raw_1';
   $handler->display->display_options['filters']['uid_raw_1']['table'] = 'users';
@@ -2659,7 +2658,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['filters']['uid_raw']['table'] = 'users';
   $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
   $handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
-  $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1974';  
+  $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1974';
   $translatables['ktc_og_members'] = array(
     t('Defaults'),
     t('mere'),
@@ -4796,8 +4795,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
@@ -4903,6 +4901,10 @@ function ktc_views_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Term first level', 'panel_pane_1');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'filter-box';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -5074,6 +5076,9 @@ Alle
 
   /* Display: Term 1. level width */
   $handler = $view->new_display('panel_pane', 'Term 1. level width', 'panel_pane_3');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;

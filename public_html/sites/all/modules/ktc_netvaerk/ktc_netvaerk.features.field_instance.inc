@@ -120,6 +120,80 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-group-field_active'
+  $field_instances['node-group-field_active'] = array(
+    'bundle' => 'group',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_label_token' => 1,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 24,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_active',
+    'label' => 'Active',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-group-field_crm_uuid'
   $field_instances['node-group-field_crm_uuid'] = array(
     'bundle' => 'group',
@@ -742,6 +816,8 @@ function ktc_netvaerk_field_default_field_instances() {
   // Exported field_instance: 'node-group-field_os2web_base_field_ext_link'
   $field_instances['node-group-field_os2web_base_field_ext_link'] = array(
     'bundle' => 'group',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -792,7 +868,7 @@ function ktc_netvaerk_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_ext_link',
-    'label' => 'Ekstern links',
+    'label' => 'Eksterne links',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -810,6 +886,11 @@ function ktc_netvaerk_field_default_field_instances() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'rel_remove' => 'default',
       'title' => 'optional',
       'title_label_use_field_label' => 0,
@@ -2229,6 +2310,7 @@ function ktc_netvaerk_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('<p class="well well-sm">Her skal du angive om netværket er åbent for alle registrerede brugere på ktc.dk, så de frit kan melde sig ind, eller om du selv vil invitere og tilføje medlemmer. Selvom netværket er lukket, er det muligt for alle at se titel, billede og beskrivelse og alle kan ansøge om medlemskab. Det er op til dig, eller andre af netværkets administratorer at give adgang.</p>');
+  t('Active');
   t('Angiv hvilken region dit netværk tilhører. Angiv landsdækkende, hvis det ikke tilhører en specifik region');
   t('Beskriv målgruppen for dette netværk');
   t('Beskrivelse og formål');
@@ -2237,7 +2319,7 @@ function ktc_netvaerk_field_default_field_instances() {
   t('CRM UUID');
   t('Determine if this is an OG group.');
   t('Du kan vælge om alle brugere der er logget på, må se netværkets indhold, eller om det skal være usynligt. Når brugere i dit netværk laver indhold, kan de selv vælge om indholdet må vises til andre der ikke er medlemmer af netværket.');
-  t('Ekstern links');
+  t('Eksterne links');
   t('Er dette netværk et undernetværk til et andet netværk?');
   t('Faglige emner');
   t('Forfrem til');

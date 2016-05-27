@@ -179,14 +179,13 @@ function ktc_netvaerk_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjul',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'group_group',
       1 => 'field_gammel_gid',
       2 => 'field_gammel_nid',
       3 => 'field_gammel_typo3_id',
-      4 => 'field_crm_uuid',
-      5 => 'path',
+      4 => 'path',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

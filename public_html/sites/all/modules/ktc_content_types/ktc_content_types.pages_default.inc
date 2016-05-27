@@ -1878,7 +1878,7 @@ function ktc_content_types_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-aside-color ktc-aside-table-list ktc-aside-no-stack',
+      'css_class' => 'ktc-aside-table-list ktc-aside-no-stack  ktc-aside-color ',
       'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();

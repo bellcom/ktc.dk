@@ -13,4 +13,4 @@ features[image][] = listevisning
 features[image][] = listevisning_stor
 features[image][] = magazinethumb
 features[views_view][] = indhold_m_filter
-mtime = 1445425774
+mtime = 1452694645

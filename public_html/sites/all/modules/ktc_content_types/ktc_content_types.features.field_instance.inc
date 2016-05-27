@@ -7780,80 +7780,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
   );
 
-  // Exported field_instance: 'node-group-field_active'
-  $field_instances['node-group-field_active'] = array(
-    'bundle' => 'group',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'default_value_label_token' => 1,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 24,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningboks' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaserfront' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_active',
-    'label' => 'Active',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 0,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-intern_side-body'
   $field_instances['node-intern_side-body'] = array(
     'bundle' => 'intern_side',
@@ -10790,6 +10716,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -10895,6 +10827,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'type' => 'hidden',
         'weight' => 6,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -10964,6 +10902,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -11036,6 +10980,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -11107,6 +11057,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'type' => 'hidden',
         'weight' => 9,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -11175,6 +11131,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'weight' => 0,
       ),
       'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'rss' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -11272,6 +11234,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -11346,6 +11314,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'weight' => 11,
       ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'rss' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -11744,6 +11718,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'type' => 'hidden',
         'weight' => 13,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -11839,6 +11819,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'weight' => 14,
       ),
       'related_block' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'rss' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -12107,6 +12093,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -12189,6 +12181,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'weight' => 0,
       ),
       'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'rss' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -12281,6 +12279,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -12357,6 +12361,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 7,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -12455,6 +12465,12 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -13670,7 +13686,6 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   // Translatables
   // Included for use with string extractors like potx.
   t('<a href="/node/add/artikler">Opret artikel</a> | <a href="/node/add/os2web-base-news">Opret nyheder</a>');
-  t('Active');
   t('Adresse');
   t('Afholdelsessted');
   t('Alle artikler og nyheder der har relation til denne udgivelse.');

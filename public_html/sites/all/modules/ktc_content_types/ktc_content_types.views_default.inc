@@ -113,6 +113,11 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['title'] = 'Forfatter';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: Indhold: Forfatter */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -662,6 +667,11 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'ktc-node-header';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Type */
   $handler->display->display_options['fields']['type_1']['id'] = 'type_1';
