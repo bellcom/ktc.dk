@@ -11,6 +11,9 @@
         hide($content['field_gammel_nid']);
         hide($content['field_gammel_typo3_id']);
         hide($content['field_news_author']);
+        hide($content['field_is_no_answer']);
+        hide($content['field_is_final']);
+        hide($content['field_is_summary']);
         print render($content);
       ?>
 
@@ -39,6 +42,8 @@
             hide($content['field_gammel_typo3_id']);
             hide($content['field_news_author']);
             hide($content['field_is_no_answer']);
+            hide($content['field_is_final']);
+            hide($content['field_is_summary']);
             print render($content);
           ?>
 
