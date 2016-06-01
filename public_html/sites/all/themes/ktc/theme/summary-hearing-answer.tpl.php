@@ -87,12 +87,14 @@
     </table>
 
     <h1><?php print $summary_node->title; ?></h1>
-    <b>Detaljerede bemærkninger</b><br />
-    <?php print render(field_view_field('node', $summary_node, 'body', array('label' => 'hidden'))); ?><br />
     <b>Helhedsindtryk</b><br />
     <?php print render(field_view_field('node', $summary_node, 'field_impression', array('label' => 'hidden'))); ?><br />
     <b>Generelle bemærkninger</b><br />
     <?php print render(field_view_field('node', $summary_node, 'field_general_comments', array('label' => 'hidden'))); ?><br />
+    <b>Detaljerede bemærkninger</b><br />
+    <?php print render(field_view_field('node', $summary_node, 'body', array('label' => 'hidden'))); ?><br />
+    <b> Følgevirkninger (herunder økonomiske)</b><br />
+    <?php print render(field_view_field('node', $summary_node, 'field_consequences', array('label' => 'hidden'))); ?><br />    
     <b>Videre handlinger</b><br />
     <?php print render(field_view_field('node', $summary_node, 'field_further_action', array('label' => 'hidden'))); ?><br />
     <b>Vedhæftede fil(er)</b><br />
