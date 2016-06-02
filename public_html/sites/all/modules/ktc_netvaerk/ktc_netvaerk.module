@@ -536,6 +536,8 @@ function _ktc_netvaerk_user_is_admin($uid, $gid) {
 function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
   $gid = arg(1);
   $list = '';
+  $i = 1;
+  $i_max = 7; // Number of allowed users to be loaded
   
   $ktc_webmaster_mail = variable_get('group_owner', 'netvaerk@ktc.dk');
   $ktc_webmaster = user_load_by_mail($ktc_webmaster_mail);
@@ -557,8 +559,9 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
 
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'og_membership')
-     ->propertyCondition('gid', $gid);
-
+     ->propertyCondition('gid', $gid)
+     ->propertyOrderBy('created', 'DESC');
+  
   if (!empty($roles)) {
     $query->fieldCondition('field_grouprole', 'target_id', $roles, 'IN');
   }
@@ -569,7 +572,7 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
     $memberships = og_membership_load_multiple(array_keys($result['og_membership']));
 
     foreach ($memberships as $membership) {
-      if ($membership->etid == 1 || $membership->etid == $ktc_webmaster->uid) {
+      if ($membership->etid == 1 || $membership->etid == $ktc_webmaster->uid || $i > $i_max) {
         continue;
       }
 
@@ -579,6 +582,8 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
       }
 
       $list .= render(user_view($user, 'list3'));
+
+      $i++;
     }
   }
   return $list;
