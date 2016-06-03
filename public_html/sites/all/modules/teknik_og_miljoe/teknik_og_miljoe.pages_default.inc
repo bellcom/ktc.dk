@@ -603,7 +603,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'image_style' => 'ktc_content_image',
+        'image_style' => 'indholdsside',
         'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',
@@ -900,7 +900,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
-    $pane->position = 8;
+    $pane->position = 9;
     $pane->locks = array();
     $pane->uuid = '249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
     $display->content['new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7'] = $pane;
