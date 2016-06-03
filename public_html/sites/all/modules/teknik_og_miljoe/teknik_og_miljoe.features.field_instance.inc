@@ -1794,12 +1794,12 @@ function teknik_og_miljoe_field_default_field_instances() {
       'custom_remove' => '',
       'nodeaccess_userreference' => array(
         'all' => array(
-          'view' => 0,
+          'view' => 'view',
         ),
-        'all_published' => 1,
+        'all_published' => 0,
         'author' => array(
           'delete' => 0,
-          'update' => 0,
+          'update' => 'update',
           'view' => 0,
         ),
         'author_published' => 1,
@@ -1829,7 +1829,7 @@ function teknik_og_miljoe_field_default_field_instances() {
           'deny_update' => 0,
           'deny_view' => 0,
           'update' => 'update',
-          'view' => 'view',
+          'view' => 0,
         ),
         'referenced_published' => 1,
         'unused' => 0,
@@ -2717,7 +2717,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'ktc_std_billede',
+          'image_style' => 'indholdsside',
         ),
         'type' => 'image',
         'weight' => 2,

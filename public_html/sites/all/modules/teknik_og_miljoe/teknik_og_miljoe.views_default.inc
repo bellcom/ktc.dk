@@ -1230,14 +1230,8 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['css_class'] = 'magasinflow';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mere';
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    3 => '3',
-    14 => '14',
-    9 => '9',
-    10 => '10',
-    5 => '5',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'create magazine content';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -1427,6 +1421,12 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Rediger';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sorteringskriterie: Indhold: Officiel udsendelsesdato (field_official_date) */
+  $handler->display->display_options['sorts']['field_official_date_value']['id'] = 'field_official_date_value';
+  $handler->display->display_options['sorts']['field_official_date_value']['table'] = 'field_data_field_official_date';
+  $handler->display->display_options['sorts']['field_official_date_value']['field'] = 'field_official_date_value';
+  $handler->display->display_options['sorts']['field_official_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
