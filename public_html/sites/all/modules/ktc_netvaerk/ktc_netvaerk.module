@@ -877,6 +877,17 @@ function ktc_netvaerk_node_validate($node, $form, &$form_state) {
         form_set_error('og_group_ref', t('Du er ikke medlem af det netværk.'));
       }
     }
+    // If the node is new, and there is a group used the same name, return form error.
+    if (isset($node->is_new)) {
+
+      $sql = "SELECT n.title, n.nid FROM {node} n WHERE type = '%s' AND title = '%s'";
+      $results = db_query($sql, $node->type, $node->title);
+      $existing = db_fetch_object($results);
+      if ( (!$node->nid || $existing->nid != $node->nid) && $existing->title == $node->title ) {
+        $link = l('netværk nid (' . $existing->nid . ')', 'node/'.$existing->nid, NULL, NULL, NULL, FALSE, FALSE);
+        form_set_error('title', t('Der findes en netværk hedder ') . $node->title .'. Se her '.$link);
+      }
+    }
   }
 }
 
