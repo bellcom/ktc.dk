@@ -51,19 +51,16 @@
 .node-unpublished,
 .ktc-node-unpublished {
 
-	&:not('.ktc-list-display-large') {
-		background-color: #FFBAA8;
+	&.ktc-list-display-large,
+	&.ktc-teaser {
+
+		.ktc-footer {
+			background-color: @brand-danger !important;
+		}
 	}
 
-	&.ktc-list-display-large {
-
-		.ktc-list-display-large-body {
-			padding-left: 15px;
-			padding-right: 15px;
-			margin-left: -15px;
-			margin-right: -15px;
-			background-color: #FFBAA8;
-		}
+	&.ktc-list-display {
+		background-color: @brand-danger;
 	}
 }
 
