@@ -1829,7 +1829,7 @@ function teknik_og_miljoe_field_default_field_instances() {
           'deny_update' => 0,
           'deny_view' => 0,
           'update' => 'update',
-          'view' => 0,
+          'view' => 'view',
         ),
         'referenced_published' => 1,
         'unused' => 0,
