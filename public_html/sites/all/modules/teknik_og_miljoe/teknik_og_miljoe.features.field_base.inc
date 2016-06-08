@@ -707,7 +707,7 @@ function teknik_og_miljoe_field_default_field_bases() {
 
   // Exported field_base: 'field_send_opdateringer_til_alle'
   $field_bases['field_send_opdateringer_til_alle'] = array(
-    'active' => 1,
+    'active' => 0,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
