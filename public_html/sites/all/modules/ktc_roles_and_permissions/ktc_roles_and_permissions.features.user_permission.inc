@@ -19,5 +19,15 @@ function ktc_roles_and_permissions_user_default_permissions() {
     'module' => 'ktc_crm',
   );
 
+  // Exported permission: 'view any unpublished magazine content'.
+  $permissions['view any unpublished magazine content'] = array(
+    'name' => 'view any unpublished magazine content',
+    'roles' => array(
+      'KTC Magasinlayouter' => 'KTC Magasinlayouter',
+      'KTC Magasinredaktør' => 'KTC Magasinredaktør',
+    ),
+    'module' => 'view_unpublished',
+  );
+
   return $permissions;
 }
