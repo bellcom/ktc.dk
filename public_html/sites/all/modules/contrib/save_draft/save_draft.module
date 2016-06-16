@@ -61,13 +61,13 @@ function save_draft_form_node_form_alter(&$form, &$form_state) {
       $form['actions']['draft'] = array(
         '#type' => 'submit',
         '#class' => 'form-submit',
-        '#limit_validation_errors' => array( array('title')),
+       // '#limit_validation_errors' => array( array('title')),
         '#value' => t('Save as draft'),
         '#weight' => '9',
         '#submit' => array('save_draft_submit')
       );
       $form['actions']['submit']['#value'] = t('Publish');
-      $form['actions']['submit']['#limit_validation_errors'] = array( array('title'));
+      //$form['actions']['submit']['#limit_validation_errors'] = array( array('title'));
     }
   }
 }
