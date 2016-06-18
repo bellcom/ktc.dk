@@ -60,8 +60,7 @@ jQuery(document).ready(function($){
     if (selected_groups) {
       $.each(selected_groups, function(i, val) {
         if ( change_groups === null || change_groups.indexOf(val) == -1) {
-          $.getJSON('/ktc_hearing_attendees/get_group_members/' + val, function(data) {
-
+          $.getJSON('/ktc_hearing_attendees/get_group_members/' + val + '/' + change_groups, function(data) {
             $.each(data, function (field, attendees) {
               $.each(attendees, function (i, val) {
                 $('#edit-field-'+field+' .chosen-entityreference-container select option[value="' + i + '"]').remove();
@@ -79,7 +78,7 @@ jQuery(document).ready(function($){
       $.each(change_groups, function(i, val) {
 
         if (selected_groups === null || selected_groups.indexOf(val) == -1) {
-          addGroupMembers(val, 'selected');
+          addGroupMembers(val, 'selected', change_groups);
         }
       });
     }
@@ -133,9 +132,8 @@ jQuery(document).ready(function($){
     return exists;
   }
 
-  function addGroupMembers(group_id, selected) {
-    $.getJSON('/ktc_hearing_attendees/get_group_members/' + group_id, function(data) {
-
+  function addGroupMembers(group_id, selected, selected_groups, remove) {
+    $.getJSON('/ktc_hearing_attendees/get_group_members/' + group_id + '/' + selected_groups, function(data) {
       $.each(data, function (field, attendees) {
         $.each(attendees, function (i, val) {
 
