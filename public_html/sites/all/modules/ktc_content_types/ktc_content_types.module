@@ -234,19 +234,17 @@ function ktc_content_types_preprocess_page(&$variables) {
   if (isset($variables['node']) && is_object($variables['node'])) {
     global $user;
     $output = '';
-    if ($variables['node']->type != 'artikler') {
-      if (node_access('update', $variables['node'], $user)) {
-        if (!$variables['node']->status) {
-          $output = '<div class="alert alert-danger" role="alert">';
-          $output .= 'Denne side er kun gemt som kladde, og er skjult for alle andre. Du kan redigere indholdet ved at klikke på rediger, eller udgive indholdet ved at klikke på Publicér.';
-          $output .= drupal_render(drupal_get_form('ktc_content_types_publish_node_form', $variables['node']->nid, 'publish'));
-          $output .= '</div>';
-        }
-
-        $variables['node_publish'] = array(
-          '#markup' => $output,
-        );
+    if (node_access('update', $variables['node'], $user)) {
+      if (!$variables['node']->status) {
+        $output = '<div class="alert alert-danger" role="alert">';
+        $output .= 'Denne side er kun gemt som kladde, og er skjult for alle andre. Du kan redigere indholdet ved at klikke på rediger, eller udgive indholdet ved at klikke på Publicér.';
+        $output .= drupal_render(drupal_get_form('ktc_content_types_publish_node_form', $variables['node']->nid, 'publish'));
+        $output .= '</div>';
       }
+
+      $variables['node_publish'] = array(
+        '#markup' => $output,
+      );
     }
   }
 }
