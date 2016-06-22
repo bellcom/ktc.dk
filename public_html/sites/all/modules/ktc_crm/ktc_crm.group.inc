@@ -111,7 +111,7 @@ if (isset($_POST['form_id']) && ($_POST['form_id'] == 'og_ui_add_users' || $_POS
  * Implements hook_og_membership_update().
  */
 function ktc_crm_og_membership_update($og_membership) {
-  if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_edit_membership') {
+  if (isset($_POST['form_id']) && ($_POST['form_id'] == 'og_ui_edit_membership' || $_POST['form_id'] = 'ktc_netvaerk_approve_membership')) {
     if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
       $logger = KtcCrmLogger::getInstance();
 

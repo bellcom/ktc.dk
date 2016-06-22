@@ -560,6 +560,7 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'og_membership')
      ->propertyCondition('gid', $gid)
+     ->propertyCondition('state', OG_STATE_ACTIVE)
      ->propertyOrderBy('created', 'DESC');
   
   if (!empty($roles)) {
