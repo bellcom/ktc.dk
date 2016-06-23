@@ -470,7 +470,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Tilmeldingsfrist */
+  /* Felt: Indhold: Svarfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
@@ -843,7 +843,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Flere billeder */
+  /* Felt: Indhold: Billeder fra arrangementet */
   $handler->display->display_options['fields']['field_flere_billeder']['id'] = 'field_flere_billeder';
   $handler->display->display_options['fields']['field_flere_billeder']['table'] = 'field_data_field_flere_billeder';
   $handler->display->display_options['fields']['field_flere_billeder']['field'] = 'field_flere_billeder';
@@ -967,7 +967,7 @@ function ktc_content_types_views_default_views() {
     t('Slut'),
     t('Pris'),
     t('Målgruppe'),
-    t('Tilmeldingsfrist'),
+    t('Svarfrist'),
     t('Kort og adresse'),
     t('Adresse'),
     t('[field_arrangement_location]<br />
