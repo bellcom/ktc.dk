@@ -724,7 +724,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="well">[field_tekst_til_bilaget]</div>';
+  $handler->display->display_options['header']['area']['content'] = '[field_tekst_til_bilaget]';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Forbindelse: Filbrug: Indhold */
@@ -738,7 +738,10 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['fields']['field_tekst_til_bilaget']['relationship'] = 'file_to_node';
   $handler->display->display_options['fields']['field_tekst_til_bilaget']['label'] = '';
   $handler->display->display_options['fields']['field_tekst_til_bilaget']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['alter']['text'] = '<div class="well">[field_tekst_til_bilaget]</div>';
   $handler->display->display_options['fields']['field_tekst_til_bilaget']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['hide_empty'] = TRUE;
   /* Felt: Fil: Navn */
   $handler->display->display_options['fields']['filename']['id'] = 'filename';
   $handler->display->display_options['fields']['filename']['table'] = 'file_managed';
@@ -795,8 +798,9 @@ function ktc_views_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('<div class="well">[field_tekst_til_bilaget]</div>'),
+    t('[field_tekst_til_bilaget]'),
     t('Indhold'),
+    t('<div class="well">[field_tekst_til_bilaget]</div>'),
     t('Alle'),
     t('Content pane'),
     t('View panes'),
