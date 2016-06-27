@@ -132,21 +132,33 @@ jQuery(document).ready(function($){
     return exists;
   }
 
-  function addGroupMembers(group_id, selected, selected_groups, remove) {
+  function addGroupMembers(group_id, selected, selected_groups) {
     $.getJSON('/ktc_hearing_attendees/get_group_members/' + group_id + '/' + selected_groups, function(data) {
       $.each(data, function (field, attendees) {
+        var $select = $('#edit-field-'+field+' .chosen-entityreference-container select');
+
         $.each(attendees, function (i, val) {
 
-          var $select = $('#edit-field-'+field+' .chosen-entityreference-container select');
-
           if (!optionExists($select, i)) {
-            $select.append(
-              $('<option/>', {
-                value: i,
-                text: val
-              }).attr(selected, selected));
+            var $option = $('<option />', {
+              value: i,
+              text: val
+            });
+
+            if ($select.attr('multiple')) {
+              $option.attr('selected', 'selected');
+            }
+
+            $select.append($option);
           }
         });
+
+        if (typeof $select.attr('multiple') == 'undefined') {
+          if (!$select.val().length) {
+            $select.find('option:nth-child(2)').attr('selected', 'selected');
+          }
+        }
+
       });
 
       $(".chosen-entityreference-container select").trigger("chosen:updated");
