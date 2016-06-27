@@ -878,9 +878,7 @@ function ktc_netvaerk_node_validate($node, $form, &$form_state) {
       }
     }
     if ($form['#form_id'] == 'group_node_form') {
-      $title_field = $form_state['input']['title_field'][LANGUAGE_NONE][0]['value'];
-      $node = $form_state['#node'];
-
+      $title_field = $form_state['input']['title'];
       $sql = "SELECT n.title, n.nid FROM {node} n WHERE type = :type AND title = :title";
       $results = db_query($sql, array(':type' => 'group', ':title' => $title_field));
       $existing = $results->fetchObject();
