@@ -690,7 +690,7 @@ function _ktc_crm_group_transform_content_access($status) {
   return $status == "Visible" ? 1 : 2;
 }
 /**
- * Helper, transform visibility status to/from CRM <> bool.
+ * Helper. check if membership is exists already
  */
 function _ktc_crm_group_is_membership_exists($membership_uuid) {
  $query = new EntityFieldQuery();
