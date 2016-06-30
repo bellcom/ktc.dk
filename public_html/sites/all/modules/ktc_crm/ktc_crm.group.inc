@@ -337,7 +337,8 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
   foreach ($groups as $membership_info) {
     $group_uuid = $membership_info['group_uuid'];
     $membership_uuid = $membership_info['membership_uuid'];
-
+    $is_new_membership = _ktc_crm_group_is_membership_exists($membership_uuid) ? FALSE : TRUE;
+    
     if ($group = ktc_crm_group_load_from_uuid($group_uuid)) {
 
       $values = array(
@@ -364,6 +365,11 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
 
       $logger->log->addInfo('cron', 'Setting membership for '. $account->name.' ('.$account->uid.') to gid: '.$group->nid.' role: '.$grouprole_tid);
       og_membership_save($group_membership);
+      // Set up notification to TRUE by default
+      if ($is_new_membership && !in_array($account->uid, _ktc_netvaerk_notifications_get_users($group->nid))) {
+        $account->field_netvaerk_notifications['und'][]['target_id']=$group->nid;
+        user_save($account);
+      }
     }
   }
 }
@@ -682,4 +688,17 @@ function _ktc_crm_group_transform_content_access($status) {
     return $status == 1 ? "Visible" : "Invisible";
   }
   return $status == "Visible" ? 1 : 2;
+}
+/**
+ * Helper, transform visibility status to/from CRM <> bool.
+ */
+function _ktc_crm_group_is_membership_exists($membership_uuid) {
+ $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'og_membership')
+     ->fieldCondition('field_crm_uuid', 'value', $membership_uuid);
+  $result = $query->execute();
+  if (!empty($result['og_membership'])) {
+    return TRUE;
+  }
+  return FALSE;
 }
