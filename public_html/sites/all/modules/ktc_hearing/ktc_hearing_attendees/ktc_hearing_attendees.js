@@ -62,9 +62,15 @@ jQuery(document).ready(function($){
         if ( change_groups === null || change_groups.indexOf(val) == -1) {
           $.getJSON('/ktc_hearing_attendees/get_group_members/' + val + '/' + change_groups, function(data) {
             $.each(data, function (field, attendees) {
+              var $select = $('#edit-field-'+field+' .chosen-entityreference-container select');
               $.each(attendees, function (i, val) {
                 $('#edit-field-'+field+' .chosen-entityreference-container select option[value="' + i + '"]').remove();
               });
+              if (typeof $select.attr('multiple') == 'undefined') {
+                if (!$select.val().length) {
+                  $select.find('option:nth-child(2)').attr('selected', 'selected');
+                }
+              }
             });
 
             $(".chosen-entityreference-container select").trigger("chosen:updated");
