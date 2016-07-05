@@ -67,7 +67,7 @@ jQuery(document).ready(function($){
                 $('#edit-field-'+field+' .chosen-entityreference-container select option[value="' + i + '"]').remove();
               });
               if (typeof $select.attr('multiple') == 'undefined') {
-                if (!$select.val().length) {
+                if ($select.val() == null || !$select.val().length) {
                   $select.find('option:nth-child(2)').attr('selected', 'selected');
                 }
               }
@@ -160,7 +160,7 @@ jQuery(document).ready(function($){
         });
 
         if (typeof $select.attr('multiple') == 'undefined') {
-          if (!$select.val().length) {
+          if ($select.val() == null || !$select.val().length) {
             $select.find('option:nth-child(2)').attr('selected', 'selected');
           }
         }
