@@ -666,6 +666,148 @@ function ktc_views_views_default_views() {
   $export['footer_contact_persons'] = $view;
 
   $view = new view();
+  $view->name = 'ktc_dokumenter_bilagsliste';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'file_managed';
+  $view->human_name = 'KTC Dokumenter Bilagsliste';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Bilag';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_tekst_til_bilaget' => 'field_tekst_til_bilaget',
+    'filename' => 'filename',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_tekst_til_bilaget' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'filename' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['summary'] = '[field_tekst_til_bilaget]';
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '[field_tekst_til_bilaget]';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  /* Forbindelse: Filbrug: Indhold */
+  $handler->display->display_options['relationships']['file_to_node']['id'] = 'file_to_node';
+  $handler->display->display_options['relationships']['file_to_node']['table'] = 'file_usage';
+  $handler->display->display_options['relationships']['file_to_node']['field'] = 'file_to_node';
+  /* Felt: Indhold: Tekst til bilag */
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['id'] = 'field_tekst_til_bilaget';
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['table'] = 'field_data_field_tekst_til_bilaget';
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['field'] = 'field_tekst_til_bilaget';
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['relationship'] = 'file_to_node';
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['label'] = '';
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['alter']['text'] = '<div class="well">[field_tekst_til_bilaget]</div>';
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tekst_til_bilaget']['hide_empty'] = TRUE;
+  /* Felt: Fil: Navn */
+  $handler->display->display_options['fields']['filename']['id'] = 'filename';
+  $handler->display->display_options['fields']['filename']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['filename']['field'] = 'filename';
+  $handler->display->display_options['fields']['filename']['label'] = '';
+  $handler->display->display_options['fields']['filename']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['filename']['alter']['ellipsis'] = FALSE;
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'file_to_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
+  $translatables['ktc_dokumenter_bilagsliste'] = array(
+    t('Master'),
+    t('Bilag'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Antal elementer'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('« første'),
+    t('‹ forrige'),
+    t('næste ›'),
+    t('sidste »'),
+    t('[field_tekst_til_bilaget]'),
+    t('Indhold'),
+    t('<div class="well">[field_tekst_til_bilaget]</div>'),
+    t('Alle'),
+    t('Content pane'),
+    t('View panes'),
+  );
+  $export['ktc_dokumenter_bilagsliste'] = $view;
+
+  $view = new view();
   $view->name = 'ktc_netvaerkspraesentation';
   $view->description = '';
   $view->tag = 'default';
