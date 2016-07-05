@@ -61,19 +61,22 @@ jQuery(document).ready(function($){
       $.each(selected_groups, function(i, val) {
         if ( change_groups === null || change_groups.indexOf(val) == -1) {
           $.getJSON('/ktc_hearing_attendees/get_group_members/' + val + '/' + change_groups, function(data) {
-            $.each(data, function (field, attendees) {
-              var $select = $('#edit-field-'+field+' .chosen-entityreference-container select');
-              $.each(attendees, function (i, val) {
-                $('#edit-field-'+field+' .chosen-entityreference-container select option[value="' + i + '"]').remove();
-              });
-              if (typeof $select.attr('multiple') == 'undefined') {
-                if ($select.val() == null || !$select.val().length) {
-                  $select.find('option:nth-child(2)').attr('selected', 'selected');
+            var response_type = $.parseJSON(data);
+            if (typeof response_type == 'object') {
+              $.each(data, function (field, attendees) {
+                var $select = $('#edit-field-' + field + ' .chosen-entityreference-container select');
+                $.each(attendees, function (i, val) {
+                  $('#edit-field-' + field + ' .chosen-entityreference-container select option[value="' + i + '"]').remove();
+                });
+                if (typeof $select.attr('multiple') == 'undefined') {
+                  if (!$select.val().length) {
+                    $select.find('option:nth-child(2)').attr('selected', 'selected');
+                  }
                 }
-              }
-            });
+              });
 
-            $(".chosen-entityreference-container select").trigger("chosen:updated");
+              $(".chosen-entityreference-container select").trigger("chosen:updated");
+            }
           });
         }
       });
@@ -140,34 +143,37 @@ jQuery(document).ready(function($){
 
   function addGroupMembers(group_id, selected, selected_groups) {
     $.getJSON('/ktc_hearing_attendees/get_group_members/' + group_id + '/' + selected_groups, function(data) {
-      $.each(data, function (field, attendees) {
-        var $select = $('#edit-field-'+field+' .chosen-entityreference-container select');
+      var response_type = $.parseJSON(data);
+      if (typeof response_type == 'object') {
+        $.each(data, function (field, attendees) {
+          var $select = $('#edit-field-'+field+' .chosen-entityreference-container select');
 
-        $.each(attendees, function (i, val) {
+          $.each(attendees, function (i, val) {
 
-          if (!optionExists($select, i)) {
-            var $option = $('<option />', {
-              value: i,
-              text: val
-            });
+            if (!optionExists($select, i)) {
+              var $option = $('<option />', {
+                value: i,
+                text: val
+              });
 
-            if ($select.attr('multiple')) {
-              $option.attr('selected', 'selected');
+              if ($select.attr('multiple')) {
+                $option.attr('selected', 'selected');
+              }
+
+              $select.append($option);
             }
+          });
 
-            $select.append($option);
+          if (typeof $select.attr('multiple') == 'undefined') {
+            if (!$select.val().length) {
+              $select.find('option:nth-child(2)').attr('selected', 'selected');
+            }
           }
+
         });
 
-        if (typeof $select.attr('multiple') == 'undefined') {
-          if ($select.val() == null || !$select.val().length) {
-            $select.find('option:nth-child(2)').attr('selected', 'selected');
-          }
-        }
-
-      });
-
-      $(".chosen-entityreference-container select").trigger("chosen:updated");
+        $(".chosen-entityreference-container select").trigger("chosen:updated");
+      }
     });
   }
 
