@@ -15,6 +15,25 @@ define('KTC_HEARING_STATUS_CLOSED', variable_get('ktc_hearing_status_closed', 18
 define('KTC_HEARING_STATUS_KL_ANSWER', variable_get('ktc_hearing_status_kl_answer', 1892));
 
 /**
+ * Implements hook_views_pre_render().
+ * @param $view
+ */
+function ktc_hearing_views_pre_render(&$view) {
+
+  if (($view->name == "indhold_m_filter" && ($view->current_display == 'panel_pane_4' or $view->current_display == 'panel_pane_5'))) {
+
+    foreach ($view->result as $key => $result) {
+      $node = node_load($result->nid);
+
+      if (!node_access('view', $node)) {
+        unset($view->result[$key]);
+      }
+    }
+    $view->query->pager->update_page_info();
+  }
+}
+
+/**
  * Implements hook_menu().
  */
 function ktc_hearing_menu() {
