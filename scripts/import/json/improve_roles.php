@@ -1,0 +1,85 @@
+<?php
+
+include dirname(__FILE__) . '/transform.php';
+include dirname(__FILE__) . '/handler.php';
+
+$file_contents = file_get_contents(__DIR__ . '/var/' . 'og_users_roles.json');
+
+$data = json_decode($file_contents);
+
+/*$admin_roles = array(
+    3,
+  304,
+  312,
+  316,
+  320,
+  324,
+  340,
+  344,
+  348,
+  356,
+  360,
+  364,
+  368,
+  372,
+  376,
+  384,
+  388,
+  392,
+  396,
+  400,
+  404,
+  408,
+  412,
+  416,
+  420,
+  424,
+  428,
+  432,
+  436,
+  440,
+  444,
+  452,
+  456,
+  460,
+  464,
+);
+*/
+
+$groups = og_get_all_group();
+foreach  ($groups as $_group_id){
+  $node = node_load($_group_id);
+  $members = og_get_group_members_properties($node,array(
+        "entity type"     => "user",        
+        "membership type" => OG_MEMBERSHIP_TYPE_DEFAULT,), 'members', 'node');
+  foreach ($members as $uid){
+    if ($membership = og_get_membership('node', $_group_id, 'user', $uid)) {         
+         // if (!isset($membership->field_grouprole[LANGUAGE_NONE][0]['target_id']))
+           $membership->field_grouprole[LANGUAGE_NONE][0]['target_id'] = KTC_NETVAERK_MEMBER_TID;
+           og_membership_save($membership);
+        }
+  }       
+  
+}
+
+// CRM sync checks if the update is form a form submission by checking what
+// form_id is set in the $_POST array. We want these changes sent to CRM.
+/*$_POST['form_id'] = 'og_ui_edit_membership';
+
+foreach ($data as $group_nid => $_data) {
+  $new_group_nid = ktc_import_new_nid($group_nid);
+
+  foreach ($_data as $uid => $roles) {
+    $new_uid = ktc_import_new_uid($uid);
+
+    foreach ($roles as $role) {
+      if (in_array($role, $admin_roles)) {
+        if ($membership = og_get_membership('node', $new_group_nid, 'user', $new_uid)) {
+          og_role_grant('node', $new_group_nid, $new_uid, 3);
+          $membership->field_grouprole[LANGUAGE_NONE][0]['target_id'] = KTC_NETVAERK_ADMIN_TID;
+          og_membership_save($membership);
+        }
+      }
+    }
+  }
+}
