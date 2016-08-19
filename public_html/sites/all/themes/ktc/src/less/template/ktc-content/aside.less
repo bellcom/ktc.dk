@@ -63,7 +63,7 @@
 .ktc-aside-block {
 	.block-heading {
 		background-color: @ktc-aside-heading-background-color;
-		h3 { 
+		h3 {
 			display: block;
 			padding: @ktc-aside-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
 			margin: 0;
@@ -399,4 +399,13 @@
 	&.ktc-aside-no-stack {
 		margin-bottom: 0;
 	}
+}
+
+.page-search {
+  .ktc-aside {
+    a.btn {
+      z-index: 1;
+      position: relative;
+    }
+  }
 }

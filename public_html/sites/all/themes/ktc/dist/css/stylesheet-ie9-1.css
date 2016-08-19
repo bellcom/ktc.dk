@@ -9296,6 +9296,11 @@ fieldset[disabled] .field-type-image .button {
   margin-bottom: 0;
 }
 
+.page-search .ktc-aside a.btn {
+  z-index: 1;
+  position: relative;
+}
+
 .ktc-block {
   background-color: #fff;
   margin-bottom: 20px;
