@@ -572,6 +572,10 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Logo */
   $handler->display->display_options['fields']['field_groupimage']['id'] = 'field_groupimage';
@@ -843,7 +847,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: Billeder fra arrangementet */
+  /* Felt: Indhold: Flere billeder */
   $handler->display->display_options['fields']['field_flere_billeder']['id'] = 'field_flere_billeder';
   $handler->display->display_options['fields']['field_flere_billeder']['table'] = 'field_data_field_flere_billeder';
   $handler->display->display_options['fields']['field_flere_billeder']['field'] = 'field_flere_billeder';
@@ -973,6 +977,7 @@ function ktc_content_types_views_default_views() {
     t('[field_arrangement_location]<br />
 [field_arrangement_address]'),
     t('Logo og netværksnavn'),
+    t('Group node from OG membership'),
     t('<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>'),
     t('Oprettet af'),
     t('Logo på Netværk'),
