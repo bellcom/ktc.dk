@@ -284,7 +284,8 @@ function ktc_users_signup_form_submit(&$form, &$form_state) {
     if ($webuserdto) {
       $memberships = array();
       if (is_array($webuserdto->UdvalgsMedlemskaber->GroupMemberDto )) {
-      foreach ( $webuserdto->UdvalgsMedlemskaber->GroupMemberDto as  $groupmember) {      
+      foreach ( $webuserdto->UdvalgsMedlemskaber->GroupMemberDto as  $groupmember) {
+       if($groupmember->IsActiveMember)
         $memberships[$groupmember->Member->CrmId][] = array(
           'group_uuid' => $groupmember->Group->CrmId,
           'membership_uuid' => $groupmember->CrmId,
@@ -293,6 +294,7 @@ function ktc_users_signup_form_submit(&$form, &$form_state) {
        }
       }
       else {
+        if($groupmember->UdvalgsMedlemskaber->GroupMemberDto->IsActiveMember)
         $memberships[$webuserdto->UdvalgsMedlemskaber->GroupMemberDto->Member->CrmId][] = array(
           'group_uuid' => $webuserdto->UdvalgsMedlemskaber->GroupMemberDto->Group->CrmId,
           'membership_uuid' => $webuserdto->UdvalgsMedlemskaber->GroupMemberDto->CrmId,
