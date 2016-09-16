@@ -1822,18 +1822,15 @@ function ktc_content_types_default_page_manager_handlers() {
     $display->content['new-e939b038-3cb8-4c74-91e8-e371a195e62f'] = $pane;
     $display->panels['right'][0] = 'new-e939b038-3cb8-4c74-91e8-e371a195e62f';
     $pane = new stdClass();
-    $pane->pid = 'new-7a811c22-5433-490b-820d-6cbd78ef2288';
+    $pane->pid = 'new-51dbdb4a-1eb2-40e9-b9c3-cc9235937dc1';
     $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'ktc_dokumenter_bilagsliste-panel_pane_1';
+    $pane->type = 'block';
+    $pane->subtype = 'ktc_sectionpage-ktc_document_bilag_list';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-      'override_title' => 0,
-      'override_title_text' => '%node:field_tekst_til_bilaget',
+      'override_title' => 1,
+      'override_title_text' => 'Bilag',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1847,9 +1844,9 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '7a811c22-5433-490b-820d-6cbd78ef2288';
-    $display->content['new-7a811c22-5433-490b-820d-6cbd78ef2288'] = $pane;
-    $display->panels['right'][1] = 'new-7a811c22-5433-490b-820d-6cbd78ef2288';
+    $pane->uuid = '51dbdb4a-1eb2-40e9-b9c3-cc9235937dc1';
+    $display->content['new-51dbdb4a-1eb2-40e9-b9c3-cc9235937dc1'] = $pane;
+    $display->panels['right'][1] = 'new-51dbdb4a-1eb2-40e9-b9c3-cc9235937dc1';
     $pane = new stdClass();
     $pane->pid = 'new-afffaf6f-02d7-4f73-a38b-b310d70eb200';
     $pane->panel = 'right';

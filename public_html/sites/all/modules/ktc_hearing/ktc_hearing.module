@@ -525,6 +525,9 @@ function ktc_hearing_file_download($uri) {
  * Access callback function.
  */
 function ktc_hearing_access($node, $op) {
+  if($node->type !='hearing') 
+    return FALSE;
+  
   $status = ktc_hearing_get_status($node);
 
   $disable_on_closed = array(

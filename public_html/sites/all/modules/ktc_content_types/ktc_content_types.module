@@ -86,7 +86,7 @@ function ktc_content_types_entity_info_alter(&$entity_info) {
 function ktc_content_types_form_node_form_alter(&$form, $form_state, $form_id) {
   // Properly hide hidden groups.
   ktc_content_types_field_group_hide_field_groups($form, array('group_hidden'));
-
+   
   // Remove n/a from radio.
   unset($form['field_hearing_official'][LANGUAGE_NONE]['#options']['_none']);
 
