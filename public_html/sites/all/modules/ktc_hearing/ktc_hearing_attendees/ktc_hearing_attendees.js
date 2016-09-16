@@ -52,24 +52,39 @@ jQuery(document).ready(function ($) {
 
     });
 
-
+    // Groups (loaded if we have data from a previous save)
     var groups = $('#edit-og-group-ref-und').val();
 
-    // Handle adding/removing groups
+    // Update group/network list
     $('#edit-og-group-ref-und').change(function (event) {
-        var change_groups = $('#edit-og-group-ref-und').val();
+        var groups_temp = $('#edit-og-group-ref-und').val();
 
         // group removed
         if (groups) {
-            $.each(groups, function (i, val) {
-                if (change_groups === null || change_groups.indexOf(val) == -1) {
-                    $.getJSON('/ktc_hearing_attendees/get_group_members/' + val + '/' + change_groups, function (data) {
+            console.log('Groups = ');
+            console.log(groups);
+
+            // Run through all groups
+            $.each(groups, function (index, value) {
+
+                // There is no longer any groups or the group does no longer exist inside groups_temp
+                if (groups_temp === null || groups_temp.indexOf(value) == -1) {
+
+                    // Get a list of members we need to remove from the group we are running through
+                    $.getJSON('/ktc_hearing_attendees/get_group_members/' + value + '/' + groups_temp, function (data) {
+
+                        // Run through each field to which we need to grab attendees
                         $.each(data, function (field, attendees) {
-                            $.each(attendees, function (i, val) {
-                                $('#edit-field-' + field + ' .chosen-entityreference-container select option[value="' + i + '"]').remove();
+
+                            // Run through all attendees
+                            $.each(attendees, function (index, value) {
+
+                                // Remove
+                                $('#edit-field-' + field + ' .chosen-entityreference-container select option[value="' + index + '"]').remove();
                             });
                         });
 
+                        // Update chosen to reflect the updated list
                         $(".chosen-entityreference-container select").trigger("chosen:updated");
                     });
                 }
@@ -78,15 +93,20 @@ jQuery(document).ready(function ($) {
 
 
         // group added
-        if (change_groups) {
-            $.each(change_groups, function (i, val) {
+        if (groups_temp) {
 
-                if (groups === null || groups.indexOf(val) == -1) {
-                    addGroupMembers(val, 'selected', change_groups);
+            // Run through all temporary groups
+            $.each(groups_temp, function (index, value) {
+
+                // This group does not exist inside the groups variable, so it must be new
+                if (groups === null || groups.indexOf(value) == -1) {
+                    addGroupMembers(value, 'selected', groups_temp);
                 }
             });
         }
-        groups = change_groups;
+
+        // Update groups variable after alterations
+        groups = groups_temp;
     });
 
 
