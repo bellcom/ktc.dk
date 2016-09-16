@@ -53,15 +53,15 @@ jQuery(document).ready(function ($) {
     });
 
 
-    var selected_groups = $('#edit-og-group-ref-und').val();
+    var groups = $('#edit-og-group-ref-und').val();
 
     // Handle adding/removing groups
     $('#edit-og-group-ref-und').change(function (event) {
         var change_groups = $('#edit-og-group-ref-und').val();
 
         // group removed
-        if (selected_groups) {
-            $.each(selected_groups, function (i, val) {
+        if (groups) {
+            $.each(groups, function (i, val) {
                 if (change_groups === null || change_groups.indexOf(val) == -1) {
                     $.getJSON('/ktc_hearing_attendees/get_group_members/' + val + '/' + change_groups, function (data) {
                         $.each(data, function (field, attendees) {
@@ -81,12 +81,12 @@ jQuery(document).ready(function ($) {
         if (change_groups) {
             $.each(change_groups, function (i, val) {
 
-                if (selected_groups === null || selected_groups.indexOf(val) == -1) {
+                if (groups === null || groups.indexOf(val) == -1) {
                     addGroupMembers(val, 'selected', change_groups);
                 }
             });
         }
-        selected_groups = change_groups;
+        groups = change_groups;
     });
 
 
@@ -137,8 +137,8 @@ jQuery(document).ready(function ($) {
         return exists;
     }
 
-    function addGroupMembers(group_id, selected, selected_groups) {
-        $.getJSON('/ktc_hearing_attendees/get_group_members/' + group_id + '/' + selected_groups, function (data) {
+    function addGroupMembers(group_id, selected, groups) {
+        $.getJSON('/ktc_hearing_attendees/get_group_members/' + group_id + '/' + groups, function (data) {
             $.each(data, function (field, attendees) {
                 var $select = $('#edit-field-' + field + ' .chosen-entityreference-container select');
 
