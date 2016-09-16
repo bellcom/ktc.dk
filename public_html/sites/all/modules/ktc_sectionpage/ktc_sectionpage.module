@@ -251,6 +251,10 @@ function ktc_sectionpage_block_info() {
   $blocks['ktc_page_menu_tabs'] = array(
     'info' => t('Page menu tabs'),
   );
+  
+  $blocks['ktc_document_bilag_list'] = array(
+    'info' => t('KTC Bilag list on documnent page'),
+  );
 
   return $blocks;
 }
@@ -321,7 +325,13 @@ function ktc_sectionpage_block_view($delta = '') {
       $block['subject'] = '';
       $block['content'] = _ktc_section_block_page_menu_tabs();
       break;
+    
+    case 'ktc_document_bilag_list':
+      $block['subject'] = '';
+      $block['content'] = _ktc_section_block_ktc_document_bilag_list();
+      break;  
   }
+    
   return $block;
 }
 
@@ -447,6 +457,63 @@ function _ktc_section_block_netvaerk_invite_links_content() {
   }
 
   return $html;
+}
+
+function _ktc_section_block_ktc_document_bilag_list() {
+  $node = FALSE;
+  $nid = arg(1);
+  $output = '';
+  if (is_numeric($nid)) {
+    $node = node_load($nid);
+  }
+
+  $block_content = array();
+  if (isset($node->field_tekst_til_bilaget)) {
+    $block_content['description'] = $node->field_tekst_til_bilaget['und'][0]['value'];
+  }
+
+  if (isset($node->field_dokument)) {
+    foreach ($node->field_dokument['und'] as $key => $value) {
+      $block_content['files'][] = array(
+        'filename' => (!empty($value['description'])) ? $value['description'] : $value['filename'],
+        'link' => $value['uri']
+      );
+    }
+  }
+  if (isset($node->field_os2web_base_field_media))
+    foreach ($node->field_os2web_base_field_media['und'] as $key => $value) {
+      $block_content['files'][] = array(
+        'filename' => (!empty($value['description'])) ? $value['description'] : $value['filename'],
+        'link' => $value['uri']
+      );
+    }
+  if (!empty($block_content)) {
+    $output = _ktc_section_block_ktc_document_bilag_list_markup($block_content);
+  }
+  return $output;
+}
+
+/**
+ * Make block bilags markup.
+ */
+function _ktc_section_block_ktc_document_bilag_list_markup($block) {
+
+  $output = '';
+  if (isset($block['description']))
+    $output .= '<div class="well">' . $block['description'] . '</div>';
+
+  if (isset($block['files'])) {
+    $output .= '<div class="table-responsive">'
+      . '<table class="table table-hover table-striped"> '
+      . '<tbody>';
+    foreach ($block['files'] as $key => $file) {
+      $output .= '<tr><td>' . l($file['filename'], file_create_url($file['link'])) . '</td></tr>';
+    }
+    $output .= '</tbody>'
+      . '</table>'
+      . '</div>';
+  }
+  return $output;
 }
 
 /**

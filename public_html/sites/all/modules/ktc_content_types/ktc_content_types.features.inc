@@ -85,7 +85,7 @@ function ktc_content_types_image_default_styles() {
     'name' => 'teaser_front',
     'label' => 'Teaser front',
     'effects' => array(
-      3 => array(
+      7 => array(
         'label' => 'Reuse EPSA Image Crop',
         'help' => 'Use the image crop selection from another image style',
         'effect callback' => 'epsacrop_crop_image_reuse',
@@ -97,7 +97,7 @@ function ktc_content_types_image_default_styles() {
         ),
         'weight' => 1,
       ),
-      4 => array(
+      8 => array(
         'label' => 'Skalér og beskær',
         'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
         'effect callback' => 'image_scale_and_crop_effect',

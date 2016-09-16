@@ -233,6 +233,34 @@ function teknik_og_miljoe_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_hidden|node|artikler|form';
+  $field_group->group_name = 'group_hidden';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'artikler';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Skjul',
+    'weight' => '48',
+    'children' => array(
+      0 => 'field_send_opdateringer_til_alle',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Skjul',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-hidden field-group-fieldset hidden',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_hidden|node|artikler|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_indhold|node|artikler|form';
   $field_group->group_name = 'group_indhold';
   $field_group->entity_type = 'node';
@@ -372,9 +400,8 @@ function teknik_og_miljoe_field_group_info() {
       2 => 'field_antal_anslag',
       3 => 'field_deadline',
       4 => 'field_highres_billeder',
-      5 => 'field_send_opdateringer_til_alle',
-      6 => 'field_medtaget_i_udgivelse',
-      7 => 'group_forfatterperm',
+      5 => 'field_medtaget_i_udgivelse',
+      6 => 'group_forfatterperm',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

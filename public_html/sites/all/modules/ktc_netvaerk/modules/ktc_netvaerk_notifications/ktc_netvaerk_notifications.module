@@ -93,7 +93,8 @@ function ktc_netvaerk_notifications_current_groups() {
   if ($field = field_get_items('user', $account, 'og_user_node')) {
     foreach ($field as $delta => $value) {
       $nid = $value['target_id'];
-      $member_groups[$nid] = _ktc_netvaerk_notifications_get_node_title($nid);
+      if (_ktc_netvaerk_notifications_get_node_status($nid) === "1")
+        $member_groups[$nid] = _ktc_netvaerk_notifications_get_node_title($nid);
     }
   }
 
@@ -250,6 +251,14 @@ function ktc_netvaerk_notifications_notify_for_node($node, $uid) {
 function _ktc_netvaerk_notifications_get_node_title($nid) {
   return db_query('SELECT title FROM {node} WHERE nid = :nid', array(':nid' => $nid))->fetchField();
 }
+
+/**
+ * Helper function to get the node status.
+ */
+function _ktc_netvaerk_notifications_get_node_status($nid) {
+  return db_query('SELECT status FROM {node} WHERE nid = :nid', array(':nid' => $nid))->fetchField();
+}
+
 
 /**
  * Get a list of users to notify.
