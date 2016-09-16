@@ -53,11 +53,12 @@ jQuery(document).ready(function ($) {
     });
 
     // Groups (loaded if we have data from a previous save)
-    var groups = $('#edit-og-group-ref-und').val();
+    var $group_field = $('#edit-og-group-ref-und'),
+        groups = $group_field.val();
 
     // Update group/network list
-    $('#edit-og-group-ref-und').change(function (event) {
-        var groups_temp = $('#edit-og-group-ref-und').val();
+    $group_field.change(function (event) {
+        var groups_temp = $group_field.val();
 
         // A group was removed
         if (groups) {
@@ -71,19 +72,31 @@ jQuery(document).ready(function ($) {
                     // Get a list of members we need to remove from the group we are running through
                     $.getJSON('/ktc_hearing_attendees/get_group_members/' + value + '/' + groups_temp, function (data) {
 
-                        // Run through each field to which we need to grab attendees
-                        $.each(data, function (field, attendees) {
+                        if (data) {
 
-                            // Run through all attendees
-                            $.each(attendees, function (index, value) {
+                            // Run through each field to which we need to grab attendees
+                            $.each(data, function (field, attendees) {
+                                var $select = $('#edit-field-' + field + ' .chosen-entityreference-container select');
 
-                                // Remove
-                                $('#edit-field-' + field + ' .chosen-entityreference-container select option[value="' + index + '"]').remove();
+                                if (attendees) {
+
+                                    // Run through all attendees
+                                    $.each(attendees, function (index, value) {
+
+                                        // Remove
+                                        $('#edit-field-' + field + ' .chosen-entityreference-container select option[value="' + index + '"]').remove();
+                                    });
+
+                                    // Select first option
+                                    if (!$select.val()) {
+                                        selectFirstOption($select);
+                                    }
+                                }
                             });
-                        });
 
-                        // Update chosen to reflect the updated list
-                        $(".chosen-entityreference-container select").trigger("chosen:updated");
+                            // Update chosen to reflect the updated list
+                            $(".chosen-entityreference-container select").trigger("chosen:updated");
+                        }
                     });
                 }
             });
@@ -97,12 +110,12 @@ jQuery(document).ready(function ($) {
 
                 // This group does not exist inside the groups variable, so it must be new
                 if (groups === null || groups.indexOf(value) == -1) {
+                    console.log('Add group');
                     addGroupMembers(value, 'selected', groups_temp);
                 }
             });
         }
 
-        // Update groups variable after alterations
         groups = groups_temp;
     });
 
@@ -116,33 +129,48 @@ jQuery(document).ready(function ($) {
             $.each(data, function (field, attendees) {
                 var $select = $('#edit-field-' + field + ' .chosen-entityreference-container select');
 
-                // Run through all attendees
-                $.each(attendees, function (index, value) {
+                // Attendees was returned
+                if (attendees) {
 
-                    // The option does not exist
-                    if (!optionExists($select, index)) {
-                        var $option = $('<option />', {
-                            value: index,
-                            text: value
-                        });
+                    // Run through all attendees
+                    $.each(attendees, function (index, value) {
 
-                        $select.append($option);
-                    }
-                });
+                        // The option does not exist
+                        if (!optionExists($select, index)) {
+                            var $option = $('<option />', {
+                                value: index,
+                                text: value
+                            });
 
-                // The selected option is empty
-                if (!$select.val().length) {
+                            // Select option as it is belongs to a multiple select
+                            if ($select.attr('multiple')) {
+                                $option.attr('selected', 'selected');
+                            }
 
-                    // Check to see if a second option exist, and has a value
-                    if ($select.find('option:nth-child(2)') && $select.find('option:nth-child(2)').val()) {
-                        $select.find('option:nth-child(2)').attr('selected', 'selected');
-                    }
+                            $select.append($option);
+                        }
+                    });
+                }
+
+                // Select first option
+                if (!$select.val()) {
+                    selectFirstOption($select);
                 }
             });
 
             // Update chosen to reflect the updated list
             $(".chosen-entityreference-container select").trigger("chosen:updated");
         });
+    }
+
+
+    // Select the first option
+    function selectFirstOption($select) {
+
+        // Check to see if a second option exist, and has a value
+        if ($select.find('option:nth-child(2)') && $select.find('option:nth-child(2)').val()) {
+            $select.find('option:nth-child(2)').attr('selected', 'selected');
+        }
     }
 
 
@@ -183,17 +211,16 @@ jQuery(document).ready(function ($) {
         }
     }
 
+
     function optionExists($select, option_value) {
-        var exists = false;
+        var $option = $select.find('[value="' + option_value + '"]');
 
-        $select.find('option').each(function (index, value) {
+        // The option already exists
+        if ($option.length > 0) {
+            return true;
+        }
 
-            if ($(this).value == option_value) {
-                exists = true;
-            }
-        });
-
-        return exists;
+        return false;
     }
 
     // Handle data in form, on form error.
