@@ -59,10 +59,8 @@ jQuery(document).ready(function ($) {
     $('#edit-og-group-ref-und').change(function (event) {
         var groups_temp = $('#edit-og-group-ref-und').val();
 
-        // group removed
+        // A group was removed
         if (groups) {
-            console.log('Groups = ');
-            console.log(groups);
 
             // Run through all groups
             $.each(groups, function (index, value) {
@@ -91,8 +89,7 @@ jQuery(document).ready(function ($) {
             });
         }
 
-
-        // group added
+        // A group was added
         if (groups_temp) {
 
             // Run through all temporary groups
@@ -108,6 +105,45 @@ jQuery(document).ready(function ($) {
         // Update groups variable after alterations
         groups = groups_temp;
     });
+
+    // Add groups members
+    function addGroupMembers(group_id, selected, groups) {
+
+        // Get a list of all attendees from the new group
+        $.getJSON('/ktc_hearing_attendees/get_group_members/' + group_id + '/' + groups, function (data) {
+
+            // Run through all fields
+            $.each(data, function (field, attendees) {
+                var $select = $('#edit-field-' + field + ' .chosen-entityreference-container select');
+
+                // Run through all attendees
+                $.each(attendees, function (index, value) {
+
+                    // The option does not exist
+                    if (!optionExists($select, index)) {
+                        var $option = $('<option />', {
+                            value: index,
+                            text: value
+                        });
+
+                        $select.append($option);
+                    }
+                });
+
+                // The selected option is empty
+                if (!$select.val().length) {
+
+                    // Check to see if a second option exist, and has a value
+                    if ($select.find('option:nth-child(2)') && $select.find('option:nth-child(2)').val()) {
+                        $select.find('option:nth-child(2)').attr('selected', 'selected');
+                    }
+                }
+            });
+
+            // Update chosen to reflect the updated list
+            $(".chosen-entityreference-container select").trigger("chosen:updated");
+        });
+    }
 
 
     function restrictOptions($select, val) {
@@ -147,47 +183,17 @@ jQuery(document).ready(function ($) {
         }
     }
 
-    function optionExists($select, val) {
-        exists = false;
-        $select.find('option').each(function () {
-            if (this.value == val) {
+    function optionExists($select, option_value) {
+        var exists = false;
+
+        $select.find('option').each(function (index, value) {
+
+            if ($(this).value == option_value) {
                 exists = true;
             }
         });
+
         return exists;
-    }
-
-    function addGroupMembers(group_id, selected, groups) {
-        $.getJSON('/ktc_hearing_attendees/get_group_members/' + group_id + '/' + groups, function (data) {
-            $.each(data, function (field, attendees) {
-                var $select = $('#edit-field-' + field + ' .chosen-entityreference-container select');
-
-                $.each(attendees, function (i, val) {
-
-                    if (!optionExists($select, i)) {
-                        var $option = $('<option />', {
-                            value: i,
-                            text: val
-                        });
-
-                        if ($select.attr('multiple')) {
-                            $option.attr('selected', 'selected');
-                        }
-
-                        $select.append($option);
-                    }
-                });
-
-                if (typeof $select.attr('multiple') == 'undefined') {
-                    if (!$select.val().length) {
-                        $select.find('option:nth-child(2)').attr('selected', 'selected');
-                    }
-                }
-
-            });
-
-            $(".chosen-entityreference-container select").trigger("chosen:updated");
-        });
     }
 
     // Handle data in form, on form error.
