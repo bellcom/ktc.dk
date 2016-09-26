@@ -35,6 +35,9 @@ function ktc_crm_group_update_groups() {
     $logger->log->addInfo('cron group', 'remove old memberships');
     ktc_crm_group_remove_old_memberships($group_members);
   }
+
+  $logger->log->addInfo('cron group', 'remove memberships which are not linked with CRM');
+  ktc_crm_group_remove_unlinked_memberships();
 }
 
 /**
@@ -441,6 +444,29 @@ function ktc_crm_group_remove_old_memberships($memberships) {
         og_membership_delete($membership_id);
       }
     }
+  }
+}
+
+/* Remove unlinked memberships
+ * This will remove all memberships which are not linked with CRM:
+ * (ield_crm_uuid is NULL
+ */
+
+function ktc_crm_group_remove_unlinked_memberships() {
+  $logger = KtcCrmLogger::getInstance();
+
+  // select all memberships with empty crm_uuid
+  $query = db_select('og_membership', 'og');
+  $query->leftJoin('field_data_field_crm_uuid', 'f_uuid', 'og.id = f_uuid.entity_id');
+  $query->fields('og', array('id'))
+    ->condition('og.entity_type', 'user')
+    ->isNull('field_crm_uuid_value');
+  $result = $query->execute();
+
+  // Delete memberships
+  while ($membership_id = $result->fetchField()) {
+    $logger->log->addInfo('cron', 'Deleting membership: ' . $membership_id);
+    og_membership_delete($membership_id);
   }
 }
 
