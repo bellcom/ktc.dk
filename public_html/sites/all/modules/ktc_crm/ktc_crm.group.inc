@@ -465,8 +465,12 @@ function ktc_crm_group_remove_unlinked_memberships() {
 
   // Delete memberships
   while ($membership_id = $result->fetchField()) {
-    $logger->log->addInfo('cron', 'Deleting membership: ' . $membership_id);
-    og_membership_delete($membership_id);
+    $membership = og_membership_load($membership_id);
+    $group = node_load($membership->gid);
+    if ($membership->etid != $group->uid){
+      $logger->log->addInfo('cron', 'Deleting membership: ' . $membership_id);
+      og_membership_delete($membership_id);
+    }
   }
 }
 
