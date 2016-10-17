@@ -1291,7 +1291,7 @@ function ktc_hearing_user_has_access($hearing, $account = FALSE) {
   // Loop over them and determine what level of acces the user has.
   foreach ($fields as $field_name) {
     if ($field = field_get_items('node', $hearing, 'field_' . $field_name)) {
-      if (_ktc_hearing_account_in_field($account->uid, $field) || $account->uid == 1) {
+      if (_ktc_hearing_account_in_field($account->uid, $field) || $account->uid == 1 || in_array('Ansat i KL', $account->roles)) {
         $access = array_merge($access, $reference_permissions[$field_name]);
       }
     }
