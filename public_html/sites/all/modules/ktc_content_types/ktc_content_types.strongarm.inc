@@ -1152,6 +1152,27 @@ function ktc_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'hide_submit_indicator_style';
+  $strongarm->value = 'expand-right';
+  $export['hide_submit_indicator_style'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hide_submit_method';
+  $strongarm->value = 'indicator';
+  $export['hide_submit_method'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'hide_submit_reset_time';
+  $strongarm->value = '0';
+  $export['hide_submit_reset_time'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_arrangement';
   $strongarm->value = '0';
   $export['language_content_type_arrangement'] = $strongarm;
