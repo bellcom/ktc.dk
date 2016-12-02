@@ -15701,7 +15701,7 @@ a:hover {
 .field-type-file .file a {
   word-break: break-all;
 }
-.view-forfatters-indhold .views-field-title a {
+.view-forfatters-indhold .views-field-title p {
   word-break: break-all;
 }
 .form-control:focus {
