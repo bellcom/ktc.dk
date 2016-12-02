@@ -381,7 +381,7 @@ function ktc_arrangement_views_default_views() {
 	    <span class="timezone">Europe/Copenhagen</span>
 	    <span class="title">[title]</span>
 	    <span class="description">[body]</span>
-	    <span class="location">[field_arrangement_location]</span>
+	    <span class="location">[field_arrangement_address] ([field_arrangement_location])</span>
 	    <span class="organizer">[field_news_author]</span>
 	    <span class="organizer_email">[forwarding_email]</span>
 	    <span class="all_day_event">false</span>
@@ -500,7 +500,7 @@ function ktc_arrangement_views_default_views() {
 	    <span class="timezone">Europe/Copenhagen</span>
 	    <span class="title">[title]</span>
 	    <span class="description">[body]</span>
-	    <span class="location">[field_arrangement_location]</span>
+	    <span class="location">[field_arrangement_address] ([field_arrangement_location])</span>
 	    <span class="organizer">[field_news_author]</span>
 	    <span class="organizer_email">[forwarding_email]</span>
 	    <span class="all_day_event">false</span>
