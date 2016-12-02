@@ -110,7 +110,6 @@ jQuery(document).ready(function ($) {
 
                 // This group does not exist inside the groups variable, so it must be new
                 if (groups === null || groups.indexOf(value) == -1) {
-                    console.log('Add group');
                     addGroupMembers(value, 'selected', groups_temp);
                 }
             });
