@@ -1,7 +1,7 @@
 name = Teknik og Miljø
 core = 7.x
 package = KTC
-version = 7.x-1.0
+version = 7.x-1.1
 project = teknik_og_miljoe
 dependencies[] = context
 dependencies[] = field_group
@@ -123,4 +123,4 @@ features_exclude[dependencies][entityreference] = entityreference
 features_exclude[dependencies][views] = views
 features_exclude[dependencies][views_content] = views_content
 features_exclude[dependencies][entity] = entity
-mtime = 1464957811
+mtime = 1481225295

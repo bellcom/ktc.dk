@@ -1665,7 +1665,7 @@ function teknik_og_miljoe_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'TM højrebanner - 307x360',
+      'admin_title' => 'TM medieinfobanner - 307x360',
       'title' => '',
       'body' => '<!--/*
   *
@@ -1702,7 +1702,9 @@ function teknik_og_miljoe_default_page_manager_pages() {
    if (document.context) document.write ("&context=" + escape(document.context));
    if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
    document.write ("\'><\\/scr"+"ipt>");
-//]]>--></script><noscript><a href=\'http://revive.ktc.dk/www/delivery/ck.php?n=a724c1ce&amp;cb=INSERT_RANDOM_NUMBER_HERE\' target=\'_blank\'><img src=\'http://revive.ktc.dk/www/delivery/avw.php?zoneid=18&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a724c1ce\' border=\'0\' alt=\'\' /></a></noscript> <BR>',
+//]]>--></script><noscript><a href=\'http://revive.ktc.dk/www/delivery/ck.php?n=a724c1ce&amp;cb=INSERT_RANDOM_NUMBER_HERE\' target=\'_blank\'><img src=\'http://revive.ktc.dk/www/delivery/avw.php?zoneid=18&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a724c1ce\' border=\'0\' alt=\'\' /></a></noscript>
+<p>&nbsp;</p>
+<BR>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
