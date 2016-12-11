@@ -233,6 +233,34 @@ function teknik_og_miljoe_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_hidden|field_collection_item|field_magasin_indhold|form';
+  $field_group->group_name = 'group_hidden';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_magasin_indhold';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_opbygning';
+  $field_group->data = array(
+    'label' => 'Skjult',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_magasin_filer',
+      1 => 'field_magasin_side_artikel',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-hidden field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_hidden|field_collection_item|field_magasin_indhold|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_hidden|node|artikler|form';
   $field_group->group_name = 'group_hidden';
   $field_group->entity_type = 'node';
@@ -291,6 +319,62 @@ function teknik_og_miljoe_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_meta|field_collection_item|field_magasin_indhold|form';
+  $field_group->group_name = 'group_meta';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_magasin_indhold';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_opbygning';
+  $field_group->data = array(
+    'label' => 'Meta',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_magasin_side_nr',
+      1 => 'field_magasin_side_status',
+      2 => 'field_magasin_tema',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-meta field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_meta|field_collection_item|field_magasin_indhold|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_opbygning|field_collection_item|field_magasin_indhold|form';
+  $field_group->group_name = 'group_opbygning';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_magasin_indhold';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Sideopbygning',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_meta',
+      1 => 'group_hidden',
+      2 => 'group_sidebygger',
+    ),
+    'format_type' => 'tabs',
+    'format_settings' => array(
+      'label' => 'Sideopbygning',
+      'instance_settings' => array(
+        'classes' => 'group-opbygning field-group-tabs well',
+      ),
+    ),
+  );
+  $export['group_opbygning|field_collection_item|field_magasin_indhold|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_publicering|node|artikler|form';
   $field_group->group_name = 'group_publicering';
   $field_group->entity_type = 'node';
@@ -315,6 +399,33 @@ function teknik_og_miljoe_field_group_info() {
     ),
   );
   $export['group_publicering|node|artikler|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sidebygger|field_collection_item|field_magasin_indhold|form';
+  $field_group->group_name = 'group_sidebygger';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_magasin_indhold';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_opbygning';
+  $field_group->data = array(
+    'label' => 'Sidebygger',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_magasin_side_indhold',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-sidebygger field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_sidebygger|field_collection_item|field_magasin_indhold|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

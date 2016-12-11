@@ -103,3 +103,27 @@ function teknik_og_miljoe_node_info() {
   drupal_alter('node_info', $items);
   return $items;
 }
+
+/**
+ * Implements hook_paragraphs_info().
+ */
+function teknik_og_miljoe_paragraphs_info() {
+  $items = array(
+    'udgivelse_annonce' => array(
+      'name' => 'Annonce',
+      'bundle' => 'udgivelse_annonce',
+      'locked' => '1',
+    ),
+    'udgivelse_artikel' => array(
+      'name' => 'Artikel',
+      'bundle' => 'udgivelse_artikel',
+      'locked' => '1',
+    ),
+    'udgivelse_navne' => array(
+      'name' => 'Nyt om navne',
+      'bundle' => 'udgivelse_navne',
+      'locked' => '1',
+    ),
+  );
+  return $items;
+}

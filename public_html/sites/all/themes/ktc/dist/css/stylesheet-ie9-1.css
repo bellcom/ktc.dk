@@ -11046,6 +11046,76 @@ fieldset[disabled] .field-type-image .button {
   background-color: #36a145;
 }
 
+.udgivelse.udgivelse-editor {
+  position: relative;
+  height: 400px;
+  width: 300px;
+}
+
+.udgivelse.udgivelse-editor .view-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.udgivelse-editor .page-section {
+  float: left;
+  position: relative;
+  background-color: #FFF;
+}
+
+.udgivelse-editor .page-section.udgivelse-annonce {
+  background-color: #dedede;
+}
+
+.udgivelse-editor .page-section.udgivelse-artikel {
+  background-color: #d7f8fd;
+}
+
+.udgivelse-editor .page-section .views-field {
+  padding: 10px;
+}
+
+.udgivelse-editor .width-100 {
+  width: 100%;
+}
+
+.udgivelse-editor .width-75 {
+  width: 75%;
+}
+
+.udgivelse-editor .width-50 {
+  width: 50%;
+}
+
+.udgivelse-editor .width-25 {
+  width: 25%;
+}
+
+.udgivelse-editor .height-100 {
+  height: 100%;
+}
+
+.udgivelse-editor .height-75 {
+  height: 75%;
+}
+
+.udgivelse-editor .height-50 {
+  height: 50%;
+}
+
+.udgivelse-editor .height-25 {
+  height: 25%;
+}
+
+.page-field-collection-field-magasin-indhold-edit .region-sidebar-second {
+  margin-top: 0;
+}
+
+.page-field-collection-field-magasin-indhold-edit .ktc-wrapper {
+  padding-top: 5px;
+}
+
 .pagination {
   border-radius: 20px;
 }

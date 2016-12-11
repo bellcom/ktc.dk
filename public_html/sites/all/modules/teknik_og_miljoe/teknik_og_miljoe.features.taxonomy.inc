@@ -33,5 +33,13 @@ function teknik_og_miljoe_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'udgivelser_side_layouts' => array(
+      'name' => 'Udgivelser - Section Layouts',
+      'machine_name' => 'udgivelser_side_layouts',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
   );
 }
