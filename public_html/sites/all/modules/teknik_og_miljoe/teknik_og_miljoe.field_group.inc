@@ -25,8 +25,9 @@ function teknik_og_miljoe_field_group_info() {
     'children' => array(
       0 => 'field_tema_trompet',
       1 => 'field_artikeltype',
-      2 => 'title',
-      3 => 'group_forfatters',
+      2 => 'field_paragraphs',
+      3 => 'title',
+      4 => 'group_forfatters',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -178,7 +179,7 @@ function teknik_og_miljoe_field_group_info() {
   $field_group->parent_name = 'group_artikel';
   $field_group->data = array(
     'label' => 'Viste forfattere',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_coforfattere',
     ),

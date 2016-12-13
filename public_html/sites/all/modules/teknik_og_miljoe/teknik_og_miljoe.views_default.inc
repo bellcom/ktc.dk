@@ -57,7 +57,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['item_id']['label'] = '';
   $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
-  /* Felt: Field collection item: Eksisterende bruger */
+  /* Felt: Felt: Eksisterende bruger */
   $handler->display->display_options['fields']['field_eksisterende_bruger']['id'] = 'field_eksisterende_bruger';
   $handler->display->display_options['fields']['field_eksisterende_bruger']['table'] = 'field_data_field_eksisterende_bruger';
   $handler->display->display_options['fields']['field_eksisterende_bruger']['field'] = 'field_eksisterende_bruger';
