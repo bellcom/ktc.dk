@@ -1,0 +1,304 @@
+diff --git a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.admin.inc b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.admin.inc
+index 3e80783..10820bc 100644
+--- a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.admin.inc
++++ b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.admin.inc
+@@ -243,4 +243,107 @@ function paragraphs_admin_bundle_delete_form_submit($form, &$form_state) {
+  */
+ function paragraphs_bundle_title_callback($bundle) {
+   return t('Edit Paragraph Bundle !name', array('!name' => $bundle->name));
++}
++
++/**
++ * Separate paragraphs_item edit form
++ */
++function paragraphs_form_edit($form, &$form_state, $paragraphs_item) {
++  if (!$paragraphs_item) {
++    drupal_not_found();
++  }
++
++  $bundle = paragraphs_bundle_load($paragraphs_item->bundle);
++  drupal_set_title(t('Edit !title paragraph', array('!title' => $bundle->name)));
++
++  $form['paragraphs_item'] = array(
++    '#type' => 'value',
++    '#value' => $paragraphs_item,
++  );
++
++  $form['actions'] = array('#type' => 'actions');
++  $form['actions']['submit'] = array(
++    '#type' => 'submit',
++    '#weight' => 10000,
++    '#value' => t('Save'),
++  );
++
++  field_attach_form('paragraphs_item', $paragraphs_item, $form, $form_state);
++
++  // Get the top-level host entity.
++  $item = $paragraphs_item;
++  $host = NULL;
++  while (method_exists($item, 'hostEntity')) {
++    $host = $item->hostEntity();
++    $host_entity_type = $item->hostEntityType();
++    $host_entity_id = $item->hostEntityId();
++    $host_entity_bundle = $item->hostEntityBundle();
++    $item = $host;
++  }
++  // Only show revisioning options if our host is definitely revisioned.
++  $show_revision_options = FALSE;
++  $use_revisions = FALSE;
++  if ($host_entity_type == 'node') {
++    $show_revision_options = TRUE;
++    $host_settings = variable_get('node_options_' . $host_entity_bundle, array());
++    $use_revisions = in_array('revision', $host_settings, TRUE);
++  }
++  if ($show_revision_options) {
++    $form['additional_settings'] = array(
++      '#type' => 'vertical_tabs',
++      '#weight' => 99,
++    );
++    $form['revision_information'] = array(
++      '#type' => 'fieldset',
++      '#title' => t('Revision information'),
++      '#collapsible' => TRUE,
++      // Collapsed by default when "Create new revision" is unchecked.
++      '#collapsed' => !$use_revisions,
++      '#group' => 'additional_settings',
++      '#attributes' => array(
++        'class' => array('node-form-revision-information'),
++      ),
++      '#attached' => array(
++        'js' => array(drupal_get_path('module', 'node') . '/node.js'),
++      ),
++      '#weight' => 20,
++      '#access' => user_access('administer nodes'),
++    );
++    $form['revision_information']['revision'] = array(
++      '#type' => 'checkbox',
++      '#title' => t('Create new revision'),
++      '#default_value' => $use_revisions,
++      '#access' => user_access('administer nodes'),
++    );
++  }
++
++  return $form;
++}
++
++/**
++ * Validation function for entity form for validating the fields.
++ */
++function paragraphs_form_edit_validate($form, &$form_state) {
++  field_attach_form_validate('paragraphs_item', $form_state['values']['paragraphs_item'], $form, $form_state);
++}
++
++/**
++ * Submit function for edit entity form.
++ */
++function paragraphs_form_edit_submit($form, &$form_state) {
++  $paragraphs_item = $form_state['values']['paragraphs_item'];
++  field_attach_submit('paragraphs_item', $paragraphs_item, $form, $form_state);
++
++  // Save a new revision of our host entity?
++  $save_new_revision = !empty($form_state['values']['revision']);
++  if ($save_new_revision) {
++    $paragraphs_item->is_new_revision = TRUE;
++  }
++
++  // You get a new revision when you save a node, even if there are no changes.
++  // Ensure that we do not save the host node if $save_new_revision is FALSE.
++  $paragraphs_item->save(FALSE);
++
++  $bundle = paragraphs_bundle_load($paragraphs_item->bundle);
++  drupal_set_message(t('Paragraph !title has been saved.', array('!title' => $bundle->name)));
+ }
+\ No newline at end of file
+diff --git a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.field_formatter.inc b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.field_formatter.inc
+index 90a8177..b8958c8 100644
+--- a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.field_formatter.inc
++++ b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.field_formatter.inc
+@@ -100,6 +100,13 @@ function paragraphs_field_formatter_view($entity_type, $entity, $field, $instanc
+           if (entity_access('view', 'paragraphs_item', $paragraph)) {
+             $element[$delta]['entity'] = $paragraph->view($view_mode);
+           }
++          if (!empty($instance['settings']['separate_edit'])) {
++            $contextual_links = array(
++              'paragraphs',
++              array($paragraph->item_id),
++            );
++            $element[$delta]['entity']['paragraphs_item'][$paragraph->item_id]['#contextual_links']['paragraphs'] = $contextual_links;
++          }
+         }
+       }
+       break;
+diff --git a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.module b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.module
+index 973b785..8341576 100644
+--- a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.module
++++ b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.module
+@@ -10,6 +10,7 @@ define('PARAGRAPHS_DEFAULT_TITLE', 'Paragraph');
+ define('PARAGRAPHS_DEFAULT_TITLE_MULTIPLE', 'Paragraphs');
+ define('PARAGRAPHS_DEFAULT_EDIT_MODE', 'open');
+ define('PARAGRAPHS_DEFAULT_ADD_MODE', 'select');
++define('PARAGRAPHS_DEFAULT_SEPARATE_EDIT', FALSE);
+ 
+ /**
+  * Modules should return this value from hook_paragraphs_item_access() to allow access to a paragraphs item.
+@@ -413,6 +414,17 @@ function paragraphs_menu() {
+     'file' => 'paragraphs.ajax.inc',
+   );
+ 
++  $items['paragraphs/%paragraphs_item/edit'] = array(
++    'title' => t('Edit paragraph'),
++    'type' => MENU_LOCAL_ACTION,
++    'context' => MENU_CONTEXT_INLINE,
++    'page callback' => 'drupal_get_form',
++    'page arguments' => array('paragraphs_form_edit', 1),
++    'access callback' => 'paragraphs_separate_edit_access',
++    'access arguments' => array(1),
++    'file' => 'paragraphs.admin.inc',
++  );
++
+   return $items;
+ }
+ 
+@@ -566,6 +578,13 @@ function paragraphs_field_instance_settings_form($field, $instance) {
+     '#required' => TRUE,
+   );
+ 
++  $element['separate_edit'] = array(
++    '#type' => 'checkbox',
++    '#title' => t('Enable separate edit with contextual links'),
++    '#description' => t('Enables contextual links per paragraph for editing on a separate page.'),
++    '#default_value' => isset($settings['separate_edit']) ? $settings['separate_edit'] : PARAGRAPHS_DEFAULT_SEPARATE_EDIT,
++  );
++
+   if (!count($bundles)) {
+     $element['allowed_bundles_explain'] = array(
+       '#type' => 'markup',
+@@ -1366,3 +1385,111 @@ function paragraphs_bundle_copy_info() {
+     ),
+   );
+ }
++
++/**
++ * Access callback for separate form.
++ */
++function paragraphs_separate_edit_access($paragraphs_item) {
++  /** @var ParagraphsItemEntity $paragraphs_item */
++  $paragraphs_item->hostEntity();
++  $host_entity_type = $paragraphs_item->hostEntityType();
++  $instance = $paragraphs_item->instanceInfo();
++
++  // Check separate forms are enabled and that the user has access to update
++  // the host entity as well as the paragraph item itself.
++  return !empty($instance['settings']['separate_edit']) && entity_access('update', $host_entity_type, $paragraphs_item->hostEntity()) && entity_access('update', 'paragraphs_item', $paragraphs_item);
++}
++
++/**
++ * Retrieves contextual links for a path based on registered local tasks.
++ *
++ * @see menu_contextual_links()
++ */
++function paragraphs_contextual_links($args) {
++  $links = array();
++
++  $data = &drupal_static(__FUNCTION__);
++  if (!isset($data)) {
++    $data = paragraphs_get_router_items('paragraphs/%');
++  }
++
++  array_unshift($args, 'paragraphs');
++  foreach ($data as $item) {
++    // Extract the actual "task" string from the path argument.
++    $key = drupal_substr($item['path'], 13);
++
++    // Denormalize and translate the contextual link.
++    _menu_translate($item, $args, TRUE);
++    if (!$item['access']) {
++      continue;
++    }
++
++    // All contextual links are keyed by the actual "task" path argument,
++    // prefixed with the name of the implementing module.
++    $links['paragraphs-' . $key] = $item;
++  }
++
++  return $links;
++}
++
++/**
++ * Implements hook_contextual_links_view_alter().
++ *
++ * Since there is no root path for the separate form for editing a paragraph,
++ * contextual links need building in a custom fashion.
++ *
++ * @see contextual_pre_render_links()
++ */
++function paragraphs_contextual_links_view_alter(&$element, $items) {
++  if (isset($element['#contextual_links']['paragraphs'])) {
++    // Retrieve contextual menu links.
++    $items += paragraphs_contextual_links($element['#contextual_links']['paragraphs'][1]);
++
++    // Transform contextual links into parameters suitable for theme_link().
++    $links = array();
++    foreach ($items as $class => $item) {
++      $class = drupal_html_class($class);
++      $links[$class] = array(
++        'title' => $item['title'],
++        'href' => $item['href'],
++      );
++      // @todo theme_links() should *really* use the same parameters as l().
++      $item['localized_options'] += array('query' => array());
++      $item['localized_options']['query'] += drupal_get_destination();
++      $links[$class] += $item['localized_options'];
++    }
++    $element['#links'] = $links;
++  }
++}
++
++/**
++ * Implements hook_admin_paths().
++ */
++function paragraphs_admin_paths() {
++  if (variable_get('node_admin_theme')) {
++  $paths = array(
++    'paragraphs/*/edit' => TRUE,
++  );
++
++  return $paths; 
++}
++}
++
++/**
++ * Get Paragraphs' router items.
++ *
++ * @param $base
++ * @return mixed
++ */
++function paragraphs_get_router_items($base) {
++  // Performance: We only query available tasks once per request.
++  return db_select('menu_router', 'm')
++    ->fields('m')
++    ->condition('tab_root', db_like($base) . '%', 'LIKE')
++    ->condition('context', MENU_CONTEXT_NONE, '<>')
++    ->condition('context', MENU_CONTEXT_PAGE, '<>')
++    ->orderBy('weight')
++    ->orderBy('title')
++    ->execute()
++    ->fetchAllAssoc('path', PDO::FETCH_ASSOC);
++}
+\ No newline at end of file
+diff --git a/public_html/sites/all/modules/contrib/paragraphs/theme/paragraphs-item.tpl.php b/public_html/sites/all/modules/contrib/paragraphs/theme/paragraphs-item.tpl.php
+index 733190f..8635c92 100644
+--- a/public_html/sites/all/modules/contrib/paragraphs/theme/paragraphs-item.tpl.php
++++ b/public_html/sites/all/modules/contrib/paragraphs/theme/paragraphs-item.tpl.php
+@@ -27,7 +27,10 @@
+  */
+ ?>
+ <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
++  <?php print render($title_prefix); ?>
++  <?php print render($title_suffix); ?>
+   <div class="content"<?php print $content_attributes; ?>>
+-    <?php print render($content); ?>
++    <?php print render($content); 
++    dpm?>
+   </div>
+ </div>

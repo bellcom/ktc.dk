@@ -100,6 +100,13 @@ function paragraphs_field_formatter_view($entity_type, $entity, $field, $instanc
           if (entity_access('view', 'paragraphs_item', $paragraph)) {
             $element[$delta]['entity'] = $paragraph->view($view_mode);
           }
+          if (!empty($instance['settings']['separate_edit'])) {
+            $contextual_links = array(
+              'paragraphs',
+              array($paragraph->item_id),
+            );
+            $element[$delta]['entity']['paragraphs_item'][$paragraph->item_id]['#contextual_links']['paragraphs'] = $contextual_links;
+          }
         }
       }
       break;

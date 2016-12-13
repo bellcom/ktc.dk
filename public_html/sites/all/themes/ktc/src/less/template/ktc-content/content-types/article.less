@@ -28,6 +28,10 @@
   &.ktc-article-section-type-faktaboksyellow,
   &.ktc-article-section-type-faktaboksblue,
   &.ktc-article-section-type-faktaboksblack,
+  &.ktc-paragraph-faktaboksgreen,
+  &.ktc-paragraph-faktaboksblack,
+  &.ktc-paragraph-faktaboksblue, 
+  &.ktc-paragraph-faktaboksyellow,
   &.ktc-article-section-type-billedserie {
 	border-top: 10px solid @body-bg;
 	border-bottom: 10px solid @body-bg;
@@ -330,14 +334,21 @@
 .ktc-article-section-type-faktaboksgreen {
   .ktc-mixin-article-section-faq(@ktc-color-green-background, lighten(@ktc-color-green-background, 20%), @ktc-color-green-background-font);
 }
-
+.ktc-paragraph-faktaboksgreen {
+  .ktc-mixin-article-section-faq(@ktc-color-green-background, lighten(@ktc-color-green-background, 20%), @ktc-color-green-background-font);
+}
 // FAQ - gold / yellow
 .ktc-article-section-type-faktaboksyellow {
   .ktc-mixin-article-section-faq(@ktc-color-gold-background, lighten(@ktc-color-gold-background, 20%), @ktc-color-gold-background-font);
 }
-
+.ktc-paragraph-faktaboksyellow {
+  .ktc-mixin-article-section-faq(@ktc-color-gold-background, lighten(@ktc-color-gold-background, 20%), @ktc-color-gold-background-font);
+}
 // FAQ - blue
 .ktc-article-section-type-faktaboksblue {
+  .ktc-mixin-article-section-faq(@ktc-color-blue-background, lighten(@ktc-color-blue-background, 20%), @ktc-color-blue-background-font);
+}
+.ktc-paragraph-faktaboksblue {
   .ktc-mixin-article-section-faq(@ktc-color-blue-background, lighten(@ktc-color-blue-background, 20%), @ktc-color-blue-background-font);
 }
 
@@ -345,6 +356,10 @@
 .ktc-article-section-type-faktaboksblack {
   .ktc-mixin-article-section-faq(@ktc-color-dark-content-background, lighten(@ktc-color-dark-content-background, 20%), @ktc-color-dark-content-background-font);
 }
+.ktc-paragraph-faktaboksblack {
+  .ktc-mixin-article-section-faq(@ktc-color-dark-content-background, lighten(@ktc-color-dark-content-background, 20%), @ktc-color-dark-content-background-font);
+}
+
 
 // --------------------------------------------------
 // Reset
