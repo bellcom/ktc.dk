@@ -85,6 +85,7 @@ jQuery(document).ready(function ($) {
 
                                         // Remove
                                         $('#edit-field-' + field + ' .chosen-entityreference-container select option[value="' + index + '"]').remove();
+                                        $('#edit-field-' + field + ' .chosen-entityreference-container select option[value=" ' + index + '"]').remove();
                                     });
 
                                     // Select first option
