@@ -7336,66 +7336,6 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
   color: #36a145;
 }
 
-.magasinflow .magasinsider .inner {
-  padding: 4px 4px*2;
-  background-color: #fff;
-  border: 1px solid #e9edee;
-  margin-bottom: 15px;
-  display: block;
-  color: #2c353a;
-}
-
-.magasinflow .magasinsider .inner H3 {
-  margin-top: 0;
-  margin-bottom: 4px;
-}
-
-.magasinflow .magasinsider .btn-danger {
-  margin-right: 10px;
-}
-
-.magasinflow .planlagt .inner {
-  background-color: #FFF8DC;
-}
-
-.magasinflow .ommer .inner {
-  background-color: #FFBAA8;
-}
-
-.magasinflow .gennemsyn .inner {
-  background-color: #C6EEF8;
-}
-
-.magasinflow .faerdig .inner {
-  background-color: #B0DFB7;
-}
-
-.magasinflow .views-row-first::after {
-  clear: both;
-}
-
-.magasinflow .views-row-even {
-  clear: both;
-}
-
-.magasinflow .view-footer {
-  clear: both;
-  margin-top: 20px;
-}
-
-.magasinflow .sidenummer {
-  float: left;
-  height: 30px;
-  font-size: 24px;
-  margin-right: 5px;
-  margin-top: -5px;
-}
-
-.magasinflow .sidenr {
-  display: block;
-  min-height: 30px;
-}
-
 .filter-wrapper,
 .ckeditor_links {
   display: none;
@@ -11046,13 +10986,119 @@ fieldset[disabled] .field-type-image .button {
   background-color: #36a145;
 }
 
-.udgivelse.udgivelse-editor {
+.magasinflow .magasinsider .magasin-side {
+  height: 140px;
+}
+
+.magasinflow .magasinsider .magasin-side .views-field-view {
+  float: left;
+  margin-right: 5px;
+}
+
+.magasinflow .magasinsider .magasin-side.views-row-even {
+  clear: both;
+}
+
+.magasinflow .magasinsider .magasin-side.views-row-even .views-field-view {
+  float: right;
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+.magasinflow .magasinsider .magasin-side.views-row-first .views-field-view {
+  float: right;
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+.magasinflow .magasinsider .inner {
+  padding: 4px 4px*2;
+  background-color: #fff;
+  border: 1px solid #e9edee;
+  margin-bottom: 15px;
+  display: block;
+  color: #2c353a;
+  padding: 5px;
+  height: 130px;
+  margin-bottom: 5px;
+}
+
+.magasinflow .magasinsider .inner H3 {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.magasinflow .magasinsider .btn-danger {
+  margin-right: 10px;
+}
+
+.magasinflow .planlagt .inner {
+  background-color: #FFF8DC;
+}
+
+.magasinflow .ommer .inner {
+  background-color: #FFBAA8;
+}
+
+.magasinflow .gennemsyn .inner {
+  background-color: #C6EEF8;
+}
+
+.magasinflow .faerdig .inner {
+  background-color: #B0DFB7;
+}
+
+.magasinflow .views-row-first::after {
+  clear: both;
+}
+
+.magasinflow .view-footer {
+  clear: both;
+  margin-top: 20px;
+}
+
+.magasinflow .sidenummer {
+  float: left;
+  height: 30px;
+  font-size: 24px;
+  margin-right: 5px;
+  margin-top: -5px;
+}
+
+.magasinflow .sidenr {
+  display: block;
+  min-height: 30px;
+}
+
+.page-udgivelser .udgivelse-liste {
+  height: 120px;
+  width: 90px;
+}
+
+.page-udgivelser .udgivelse.udgivelse-editor {
+  position: relative;
+  height: 120px;
+  width: 90px;
+}
+
+.page-udgivelser .udgivelse.udgivelse-editor .view-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.page-field-collection-field-magasin-indhold-edit .udgivelse-liste {
+  height: 120px;
+  width: 90px;
+}
+
+.page-field-collection-field-magasin-indhold-edit .udgivelse.udgivelse-editor {
   position: relative;
   height: 400px;
   width: 300px;
 }
 
-.udgivelse.udgivelse-editor .view-content {
+.page-field-collection-field-magasin-indhold-edit .udgivelse.udgivelse-editor .view-content {
   height: 100%;
   width: 100%;
   position: relative;
@@ -11072,8 +11118,33 @@ fieldset[disabled] .field-type-image .button {
   background-color: #d7f8fd;
 }
 
+.udgivelse-editor .page-section.udgivelse-artikel h4 {
+  font-size: 10px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+.udgivelse-editor .page-section.udgivelse-artikel .ktc-teaser {
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
+.udgivelse-editor .page-section.udgivelse-artikel .ktc-teaser-body {
+  padding: 0;
+}
+
+.udgivelse-editor .page-section.udgivelse-artikel .ktc-footer,
+.udgivelse-editor .page-section.udgivelse-artikel .ktc-date,
+.udgivelse-editor .page-section.udgivelse-artikel .field-name-field-short {
+  display: none;
+}
+
 .udgivelse-editor .page-section .views-field {
-  padding: 10px;
+  padding: 3px;
 }
 
 .udgivelse-editor .width-100 {
@@ -13806,49 +13877,4 @@ h6 + .ktc-date {
 .ktc-user-green.ktc-user-profile .ktc-user-profile-photo-container img,
 .ktc-user-green .ktc-user-profile .ktc-user-profile-photo-container img {
   border-color: #36a145;
-}
-
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h1,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h1,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h2,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h2,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h3,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h3,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h4,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h4,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h5,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h5,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h6,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h6,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h1 > a,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h1 > a,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h2 > a,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h2 > a,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h3 > a,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h3 > a,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h4 > a,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h4 > a,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h5 > a,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h5 > a,
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content h6 > a,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content h6 > a {
-  color: #36a145;
-}
-
-.ktc-user-green.ktc-user-profile .ktc-user-profile-content a:hover,
-.ktc-user-green .ktc-user-profile .ktc-user-profile-content a:hover {
-  color: #36a145;
-}
-
-.ktc-user-green .ktc-user-profile-photo-container img {
-  border-color: #36a145;
-}
-
-.ktc-user-green .ktc-user-profile-content a {
-  color: #36a145;
-}
-
-.ktc-user-blue.ktc-user-profile .ktc-user-profile-photo-container img,
-.ktc-user-blue .ktc-user-profile .ktc-user-profile-photo-container img {
-  border-color: #1f9bd7;
 }

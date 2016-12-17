@@ -1020,7 +1020,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 [field_magasin_side_status_1]';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 [field_magasin_side_status_1] magasin-side';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Sidefod: Global: Tekstområde */
@@ -1037,6 +1037,15 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['item_id']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['item_id']['separator'] = '';
+  /* Felt: Global: Vis */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'udgivelser_sidevisning';
+  $handler->display->display_options['fields']['view']['display'] = 'block';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!item_id]';
   /* Felt: Field collection item: Field path */
   $handler->display->display_options['fields']['field_path']['id'] = 'field_path';
   $handler->display->display_options['fields']['field_path']['table'] = 'field_collection_item';
@@ -1157,6 +1166,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_magasin_side_artikel']['table'] = 'field_data_field_magasin_side_artikel';
   $handler->display->display_options['fields']['field_magasin_side_artikel']['field'] = 'field_magasin_side_artikel';
   $handler->display->display_options['fields']['field_magasin_side_artikel']['label'] = 'Artikler';
+  $handler->display->display_options['fields']['field_magasin_side_artikel']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_magasin_side_artikel']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_magasin_side_artikel']['settings'] = array(
     'link' => 1,
@@ -1769,6 +1779,373 @@ function teknik_og_miljoe_views_default_views() {
     t('Antal sider'),
   );
   $export['magasinstatus'] = $view;
+
+  $view = new view();
+  $view->name = 'udgivelser_sidevisning';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'paragraphs_item';
+  $view->human_name = 'Udgivelser - Sidevisning';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Udgivelser - Sidevisning';
+  $handler->display->display_options['css_class'] = 'udgivelse udgivelse-side udgivelse-editor';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'page-section [bundle] width-[field_section_width] height-[field_section_height]';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Forbindelse: Entity Reference: Refereret entity */
+  $handler->display->display_options['relationships']['field_section_size_target_id']['id'] = 'field_section_size_target_id';
+  $handler->display->display_options['relationships']['field_section_size_target_id']['table'] = 'field_data_field_section_size';
+  $handler->display->display_options['relationships']['field_section_size_target_id']['field'] = 'field_section_size_target_id';
+  $handler->display->display_options['relationships']['field_section_size_target_id']['label'] = 'field_section_size';
+  /* Forbindelse: Entity Reference: Refereret entity */
+  $handler->display->display_options['relationships']['field_artikel_reference_target_id']['id'] = 'field_artikel_reference_target_id';
+  $handler->display->display_options['relationships']['field_artikel_reference_target_id']['table'] = 'field_data_field_artikel_reference';
+  $handler->display->display_options['relationships']['field_artikel_reference_target_id']['field'] = 'field_artikel_reference_target_id';
+  $handler->display->display_options['relationships']['field_artikel_reference_target_id']['label'] = 'field_artikel_reference';
+  /* Forbindelse: Felt: Annonce (field_annonce:fid) */
+  $handler->display->display_options['relationships']['field_annonce_fid']['id'] = 'field_annonce_fid';
+  $handler->display->display_options['relationships']['field_annonce_fid']['table'] = 'field_data_field_annonce';
+  $handler->display->display_options['relationships']['field_annonce_fid']['field'] = 'field_annonce_fid';
+  $handler->display->display_options['relationships']['field_annonce_fid']['label'] = 'annoncebillede';
+  /* Forbindelse: Paragraphs item: Entity with the Side Indhold (field_magasin_side_indhold) */
+  $handler->display->display_options['relationships']['field_magasin_side_indhold_field_collection_item']['id'] = 'field_magasin_side_indhold_field_collection_item';
+  $handler->display->display_options['relationships']['field_magasin_side_indhold_field_collection_item']['table'] = 'paragraphs_item';
+  $handler->display->display_options['relationships']['field_magasin_side_indhold_field_collection_item']['field'] = 'field_magasin_side_indhold_field_collection_item';
+  /* Felt: Paragraphs item: Paragraphs item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'paragraphs_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['label'] = '';
+  $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['item_id']['separator'] = '';
+  /* Felt: Paragraphs item: Rendered Paragraphs item */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_paragraphs_item';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Felt: Ord i ordforråd: Section Height */
+  $handler->display->display_options['fields']['field_section_height']['id'] = 'field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['table'] = 'field_data_field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['field'] = 'field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['relationship'] = 'field_section_size_target_id';
+  $handler->display->display_options['fields']['field_section_height']['label'] = '';
+  $handler->display->display_options['fields']['field_section_height']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_section_height']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_section_height']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_section_height']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Felt: Ord i ordforråd: Section Width */
+  $handler->display->display_options['fields']['field_section_width']['id'] = 'field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['table'] = 'field_data_field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['field'] = 'field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['relationship'] = 'field_section_size_target_id';
+  $handler->display->display_options['fields']['field_section_width']['label'] = '';
+  $handler->display->display_options['fields']['field_section_width']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_section_width']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_section_width']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_section_width']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_section_width']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Felt: Paragraphs item: Bundle */
+  $handler->display->display_options['fields']['bundle']['id'] = 'bundle';
+  $handler->display->display_options['fields']['bundle']['table'] = 'paragraphs_item';
+  $handler->display->display_options['fields']['bundle']['field'] = 'bundle';
+  $handler->display->display_options['fields']['bundle']['label'] = '';
+  $handler->display->display_options['fields']['bundle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['bundle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['bundle']['machine_name'] = TRUE;
+  /* Kontekstuelt filter: Field collection item: Field collection item ID */
+  $handler->display->display_options['arguments']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['arguments']['item_id']['table'] = 'field_collection_item';
+  $handler->display->display_options['arguments']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['arguments']['item_id']['relationship'] = 'field_magasin_side_indhold_field_collection_item';
+  $handler->display->display_options['arguments']['item_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['item_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['item_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['item_id']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['item_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['item_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['item_id']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: Annonce */
+  $handler = $view->new_display('block', 'Annonce', 'block_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'well udgivelse udgivelse-liste udgivelse-editor';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Paragraphs item: Paragraphs item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'paragraphs_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['label'] = '';
+  $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['item_id']['separator'] = '';
+  /* Felt: Paragraphs item: Rendered Paragraphs item */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_paragraphs_item';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'udgivelseside';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Felt: Ord i ordforråd: Section Height */
+  $handler->display->display_options['fields']['field_section_height']['id'] = 'field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['table'] = 'field_data_field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['field'] = 'field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['relationship'] = 'field_section_size_target_id';
+  $handler->display->display_options['fields']['field_section_height']['label'] = '';
+  $handler->display->display_options['fields']['field_section_height']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_section_height']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_section_height']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_section_height']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Felt: Ord i ordforråd: Section Width */
+  $handler->display->display_options['fields']['field_section_width']['id'] = 'field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['table'] = 'field_data_field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['field'] = 'field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['relationship'] = 'field_section_size_target_id';
+  $handler->display->display_options['fields']['field_section_width']['label'] = '';
+  $handler->display->display_options['fields']['field_section_width']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_section_width']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_section_width']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_section_width']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_section_width']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Felt: Paragraphs item: Bundle */
+  $handler->display->display_options['fields']['bundle']['id'] = 'bundle';
+  $handler->display->display_options['fields']['bundle']['table'] = 'paragraphs_item';
+  $handler->display->display_options['fields']['bundle']['field'] = 'bundle';
+  $handler->display->display_options['fields']['bundle']['label'] = '';
+  $handler->display->display_options['fields']['bundle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['bundle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['bundle']['machine_name'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontekstuelt filter: Paragraphs item: Paragraphs item ID */
+  $handler->display->display_options['arguments']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['arguments']['item_id']['table'] = 'paragraphs_item';
+  $handler->display->display_options['arguments']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['arguments']['item_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['item_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['item_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['item_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['item_id']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Nyt om navne */
+  $handler = $view->new_display('block', 'Nyt om navne', 'block_2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'well udgivelse udgivelse-liste udgivelse-editor';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Paragraphs item: Paragraphs item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'paragraphs_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['label'] = '';
+  $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['item_id']['separator'] = '';
+  /* Felt: Paragraphs item: Rendered Paragraphs item */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_paragraphs_item';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'udgivelseside';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Felt: Ord i ordforråd: Section Height */
+  $handler->display->display_options['fields']['field_section_height']['id'] = 'field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['table'] = 'field_data_field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['field'] = 'field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['relationship'] = 'field_section_size_target_id';
+  $handler->display->display_options['fields']['field_section_height']['label'] = '';
+  $handler->display->display_options['fields']['field_section_height']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_section_height']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_section_height']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_section_height']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Felt: Ord i ordforråd: Section Width */
+  $handler->display->display_options['fields']['field_section_width']['id'] = 'field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['table'] = 'field_data_field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['field'] = 'field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['relationship'] = 'field_section_size_target_id';
+  $handler->display->display_options['fields']['field_section_width']['label'] = '';
+  $handler->display->display_options['fields']['field_section_width']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_section_width']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_section_width']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_section_width']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_section_width']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Felt: Paragraphs item: Bundle */
+  $handler->display->display_options['fields']['bundle']['id'] = 'bundle';
+  $handler->display->display_options['fields']['bundle']['table'] = 'paragraphs_item';
+  $handler->display->display_options['fields']['bundle']['field'] = 'bundle';
+  $handler->display->display_options['fields']['bundle']['label'] = '';
+  $handler->display->display_options['fields']['bundle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['bundle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['bundle']['machine_name'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontekstuelt filter: Paragraphs item: Paragraphs item ID */
+  $handler->display->display_options['arguments']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['arguments']['item_id']['table'] = 'paragraphs_item';
+  $handler->display->display_options['arguments']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['arguments']['item_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['item_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['item_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['item_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['item_id']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Artikel */
+  $handler = $view->new_display('block', 'Artikel', 'block_3');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'well udgivelse udgivelse-liste udgivelse-editor';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Paragraphs item: Paragraphs item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'paragraphs_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['label'] = '';
+  $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['item_id']['separator'] = '';
+  /* Felt: Paragraphs item: Rendered Paragraphs item */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_paragraphs_item';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'udgivelseside';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Felt: Ord i ordforråd: Section Height */
+  $handler->display->display_options['fields']['field_section_height']['id'] = 'field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['table'] = 'field_data_field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['field'] = 'field_section_height';
+  $handler->display->display_options['fields']['field_section_height']['relationship'] = 'field_section_size_target_id';
+  $handler->display->display_options['fields']['field_section_height']['label'] = '';
+  $handler->display->display_options['fields']['field_section_height']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_section_height']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_section_height']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Felt: Ord i ordforråd: Section Width */
+  $handler->display->display_options['fields']['field_section_width']['id'] = 'field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['table'] = 'field_data_field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['field'] = 'field_section_width';
+  $handler->display->display_options['fields']['field_section_width']['relationship'] = 'field_section_size_target_id';
+  $handler->display->display_options['fields']['field_section_width']['label'] = '';
+  $handler->display->display_options['fields']['field_section_width']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_section_width']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_section_width']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_section_width']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Felt: Paragraphs item: Bundle */
+  $handler->display->display_options['fields']['bundle']['id'] = 'bundle';
+  $handler->display->display_options['fields']['bundle']['table'] = 'paragraphs_item';
+  $handler->display->display_options['fields']['bundle']['field'] = 'bundle';
+  $handler->display->display_options['fields']['bundle']['label'] = '';
+  $handler->display->display_options['fields']['bundle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['bundle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['bundle']['machine_name'] = TRUE;
+  /* Felt: Paragraphs item: Rendered Paragraphs item */
+  $handler->display->display_options['fields']['rendered_entity_1']['id'] = 'rendered_entity_1';
+  $handler->display->display_options['fields']['rendered_entity_1']['table'] = 'views_entity_paragraphs_item';
+  $handler->display->display_options['fields']['rendered_entity_1']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity_1']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity_1']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity_1']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'udgivelseliste';
+  $handler->display->display_options['fields']['rendered_entity_1']['bypass_access'] = 0;
+  /* Felt: Felt: Artikel reference */
+  $handler->display->display_options['fields']['field_artikel_reference']['id'] = 'field_artikel_reference';
+  $handler->display->display_options['fields']['field_artikel_reference']['table'] = 'field_data_field_artikel_reference';
+  $handler->display->display_options['fields']['field_artikel_reference']['field'] = 'field_artikel_reference';
+  $handler->display->display_options['fields']['field_artikel_reference']['label'] = '';
+  $handler->display->display_options['fields']['field_artikel_reference']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_artikel_reference']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_artikel_reference']['settings'] = array(
+    'view_mode' => 'listevisning',
+    'links' => 0,
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontekstuelt filter: Paragraphs item: Paragraphs item ID */
+  $handler->display->display_options['arguments']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['arguments']['item_id']['table'] = 'paragraphs_item';
+  $handler->display->display_options['arguments']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['arguments']['item_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['item_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['item_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['item_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['item_id']['summary_options']['items_per_page'] = '25';
+  $translatables['udgivelser_sidevisning'] = array(
+    t('Master'),
+    t('Udgivelser - Sidevisning'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('field_section_size'),
+    t('field_artikel_reference'),
+    t('annoncebillede'),
+    t('field_magasin_side_indhold'),
+    t('.'),
+    t('Alle'),
+    t('Block'),
+    t('Annonce'),
+    t('Nyt om navne'),
+    t('Artikel'),
+  );
+  $export['udgivelser_sidevisning'] = $view;
 
   return $export;
 }
