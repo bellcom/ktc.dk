@@ -690,6 +690,22 @@ function teknik_og_miljoe_field_default_field_bases() {
     'type' => 'file',
   );
 
+  // Exported field_base: 'field_magasin_side_indhold'
+  $field_bases['field_magasin_side_indhold'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_magasin_side_indhold',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'paragraphs',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'paragraphs',
+  );
+
   // Exported field_base: 'field_medtaget_i_udgivelse'
   $field_bases['field_medtaget_i_udgivelse'] = array(
     'active' => 1,
@@ -776,6 +792,84 @@ function teknik_og_miljoe_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'paragraphs',
+  );
+
+  // Exported field_base: 'field_section_height'
+  $field_bases['field_section_height'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_section_height',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_section_size'
+  $field_bases['field_section_size'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_section_size',
+    'foreign keys' => array(
+      'taxonomy_term_data' => array(
+        'columns' => array(
+          'target_id' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'field_default_token' => array(
+            'status' => TRUE,
+          ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'udgivelser_side_layouts' => 'udgivelser_side_layouts',
+        ),
+      ),
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_section_width'
+  $field_bases['field_section_width'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_section_width',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_send_opdateringer_til_alle'

@@ -144,7 +144,7 @@ function teknik_og_miljoe_strongarm() {
       'display' => array(
         'signup' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '10',
             'visible' => TRUE,
           ),
           'teaser' => array(
