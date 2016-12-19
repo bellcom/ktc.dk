@@ -104,8 +104,38 @@ function ktc_hearing_attendees_menu() {
 /**
  * Page callback, get members for group.
  */
-function ktc_hearing_attendees_get_group_members($id = NULL) {
+function ktc_hearing_attendees_get_group_members($id = NULL, $other_groups) {
   if ($group = node_load($id)) {
+
+    $other_groups_memberships = array();
+    $other_groups_memberships_members = array();
+    $new_memberships = og_membership_load_multiple(FALSE, array('gid' => $id, 'entity_type' => 'user'));
+    $memberships = array();
+    $members = array();
+
+    if ($other_groups !== 'null' && $id != $other_groups) {
+      $other_groups = explode(',', $other_groups);
+      if (($key = array_search($id, $other_groups))) {
+       unset($other_groups[$key]);
+      }
+      $other_groups_memberships = og_membership_load_multiple(FALSE, array('gid' => $other_groups, 'entity_type' => 'user'));
+
+      foreach ($other_groups_memberships as $other_groups_membership) {
+        $other_groups_memberships_members[] = $other_groups_membership->etid;
+      }
+
+      if (count($other_groups_memberships_members) > 0) {
+        foreach ($new_memberships as $new_membership) {
+          if (($key = array_search($new_membership->etid, $other_groups_memberships_members))) {
+             continue;
+          } else {
+            $memberships[] = $new_membership;
+          }
+        }
+      }
+    } else {
+      $memberships = $new_memberships;
+    }
 
     // Figure out tids for Formand and Høringstovholder grouproles, we
     // need this later on.
@@ -120,9 +150,6 @@ function ktc_hearing_attendees_get_group_members($id = NULL) {
         $coordinator_tid = $grouprole->tid;
       }
     }
-
-    $memberships = og_membership_load_multiple(FALSE, array('gid' => $id, 'entity_type' => 'user'));
-    $members = array();
 
     // Generate an array of members according to their grouprole.
     foreach ($memberships as $membership) {
