@@ -1,7 +1,7 @@
-diff --git a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.admin.inc b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.admin.inc
+diff --git a/paragraphs.admin.inc b/paragraphs.admin.inc
 index 3e80783..10820bc 100644
---- a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.admin.inc
-+++ b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.admin.inc
+--- a/paragraphs.admin.inc
++++ b/paragraphs.admin.inc
 @@ -243,4 +243,107 @@ function paragraphs_admin_bundle_delete_form_submit($form, &$form_state) {
   */
  function paragraphs_bundle_title_callback($bundle) {
@@ -111,10 +111,10 @@ index 3e80783..10820bc 100644
 +  drupal_set_message(t('Paragraph !title has been saved.', array('!title' => $bundle->name)));
  }
 \ No newline at end of file
-diff --git a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.field_formatter.inc b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.field_formatter.inc
+diff --git a/paragraphs.field_formatter.inc b/paragraphs.field_formatter.inc
 index 90a8177..b8958c8 100644
---- a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.field_formatter.inc
-+++ b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.field_formatter.inc
+--- a/paragraphs.field_formatter.inc
++++ b/paragraphs.field_formatter.inc
 @@ -100,6 +100,13 @@ function paragraphs_field_formatter_view($entity_type, $entity, $field, $instanc
            if (entity_access('view', 'paragraphs_item', $paragraph)) {
              $element[$delta]['entity'] = $paragraph->view($view_mode);
@@ -129,10 +129,10 @@ index 90a8177..b8958c8 100644
          }
        }
        break;
-diff --git a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.module b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.module
-index 973b785..8341576 100644
---- a/public_html/sites/all/modules/contrib/paragraphs/paragraphs.module
-+++ b/public_html/sites/all/modules/contrib/paragraphs/paragraphs.module
+diff --git a/paragraphs.module b/paragraphs.module
+index 973b785..4506976 100644
+--- a/paragraphs.module
++++ b/paragraphs.module
 @@ -10,6 +10,7 @@ define('PARAGRAPHS_DEFAULT_TITLE', 'Paragraph');
  define('PARAGRAPHS_DEFAULT_TITLE_MULTIPLE', 'Paragraphs');
  define('PARAGRAPHS_DEFAULT_EDIT_MODE', 'open');
@@ -173,7 +173,7 @@ index 973b785..8341576 100644
    if (!count($bundles)) {
      $element['allowed_bundles_explain'] = array(
        '#type' => 'markup',
-@@ -1366,3 +1385,111 @@ function paragraphs_bundle_copy_info() {
+@@ -1366,3 +1385,109 @@ function paragraphs_bundle_copy_info() {
      ),
    );
  }
@@ -258,13 +258,11 @@ index 973b785..8341576 100644
 + * Implements hook_admin_paths().
 + */
 +function paragraphs_admin_paths() {
-+  if (variable_get('node_admin_theme')) {
 +  $paths = array(
 +    'paragraphs/*/edit' => TRUE,
 +  );
 +
-+  return $paths; 
-+}
++  return $paths;
 +}
 +
 +/**
@@ -286,19 +284,16 @@ index 973b785..8341576 100644
 +    ->fetchAllAssoc('path', PDO::FETCH_ASSOC);
 +}
 \ No newline at end of file
-diff --git a/public_html/sites/all/modules/contrib/paragraphs/theme/paragraphs-item.tpl.php b/public_html/sites/all/modules/contrib/paragraphs/theme/paragraphs-item.tpl.php
-index 733190f..8635c92 100644
---- a/public_html/sites/all/modules/contrib/paragraphs/theme/paragraphs-item.tpl.php
-+++ b/public_html/sites/all/modules/contrib/paragraphs/theme/paragraphs-item.tpl.php
-@@ -27,7 +27,10 @@
+diff --git a/theme/paragraphs-item.tpl.php b/theme/paragraphs-item.tpl.php
+index 733190f..e41c4c9 100644
+--- a/theme/paragraphs-item.tpl.php
++++ b/theme/paragraphs-item.tpl.php
+@@ -27,6 +27,8 @@
   */
  ?>
  <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
 +  <?php print render($title_prefix); ?>
 +  <?php print render($title_suffix); ?>
    <div class="content"<?php print $content_attributes; ?>>
--    <?php print render($content); ?>
-+    <?php print render($content); 
-+    dpm?>
+     <?php print render($content); ?>
    </div>
- </div>

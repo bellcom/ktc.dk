@@ -1622,13 +1622,15 @@ function paragraphs_contextual_links_add($args) {
  * Implements hook_admin_paths().
  */
 function paragraphs_admin_paths() {
-  $paths = array(
-    'paragraphs/*/edit' => TRUE,
-    'paragraphs/*/delete' => TRUE,
-    'paragraphs/add/*' => TRUE,
-  );
+  if (variable_get('node_admin_theme')) {
+    $paths = array(
+      'paragraphs/*/edit' => TRUE,
+      'paragraphs/*/delete' => TRUE,
+      'paragraphs/add/*' => TRUE,
+    );
 
-  return $paths;
+    return $paths;
+  }
 }
 
 /**

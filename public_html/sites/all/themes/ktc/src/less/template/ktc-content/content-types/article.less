@@ -37,6 +37,12 @@
 	border-bottom: 10px solid @body-bg;
 	.ktc-mixin-content-wide-full-width();
   }
+  &.entity-paragraphs-item {
+    .contextual-links-wrapper, 
+    .contextual-links-region {
+       display: none;
+    }
+  }  
 
   // Headline (all)
   .ktc-article-section-headline {
@@ -167,7 +173,8 @@
 .ktc-article-section {
 
   // Quote
-  &.ktc-article-section-type-citat {
+  &.ktc-article-section-type-citat,
+  &.ktc-paragraph-citat{
 	border-top: 2px solid #e0e4e5;
 	border-bottom: 2px solid #e0e4e5;
 	text-align: center;
@@ -367,14 +374,16 @@
 
 // Section wrapper
 .ktc-article-section-wrapper {
-
-  // Reset from field_collection contrib CSS
-  .field-collection-view {
+  
+ // Reset from field_collection contrib CSS
+  .field-collection-view, 
+  .paragraphs-items{
 	padding: 0;
 	margin: 0;
 	border-bottom: 0;
 
-	.field-collection-view-links {
+	.field-collection-view-links,
+    .paragraphs-items-view-links {
 	  margin: 0;
 	  padding: 0;
 
@@ -414,11 +423,12 @@
 	float: none;
   }
 
-  .field-collection-container {
+  .field-collection-container,
+  .paragraphs-items-field-paragraphs {
 	border: 0;
 	margin: 0;
 
-	.action-links-field-collection-add {
+	.action-links-field-collection-add{
 	  padding: 0;
 	  margin: 0;
 
@@ -432,5 +442,30 @@
 		.btn-success;
 	  }
 	}
+   .action-links-paragraphs-add{
+	  padding: 0;
+	  margin: 0;  
+
+	  // Link
+	  a.dropdown-toggle {
+		.btn;
+		.btn-success;
+	  }
+	 }
   }
+}
+ ul.paragraphs-items-view-links {   
+   float: right;
+   font-size: 0.821em;
+   list-style-type: none;
+   width: auto;
+   z-index: 9999;  
+   li {
+      float: left;
+   }
+}
+
+ul.action-links-paragraphs-add {
+    float: right;  
+    clear: both;
 }

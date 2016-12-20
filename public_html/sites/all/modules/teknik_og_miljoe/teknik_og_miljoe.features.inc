@@ -109,6 +109,31 @@ function teknik_og_miljoe_node_info() {
  */
 function teknik_og_miljoe_paragraphs_info() {
   $items = array(
+    'ktc_artikel_billedserie' => array(
+      'name' => 'KTC article gallery',
+      'bundle' => 'ktc_artikel_billedserie',
+      'locked' => '1',
+    ),
+    'ktc_artikelafsnit_tekst' => array(
+      'name' => 'KTC article text',
+      'bundle' => 'ktc_artikelafsnit_tekst',
+      'locked' => '1',
+    ),
+    'ktc_artikelafsnit_tekst_billede' => array(
+      'name' => 'KTC article text and image',
+      'bundle' => 'ktc_artikelafsnit_tekst_billede',
+      'locked' => '1',
+    ),
+    'ktc_eksisterende_bruger' => array(
+      'name' => 'KTC persons',
+      'bundle' => 'ktc_eksisterende_bruger',
+      'locked' => '1',
+    ),
+    'ktc_related_artikle' => array(
+      'name' => 'KTC related articles',
+      'bundle' => 'ktc_related_artikle',
+      'locked' => '1',
+    ),
     'udgivelse_annonce' => array(
       'name' => 'Annonce',
       'bundle' => 'udgivelse_annonce',

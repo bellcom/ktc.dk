@@ -25,9 +25,8 @@ function teknik_og_miljoe_field_group_info() {
     'children' => array(
       0 => 'field_tema_trompet',
       1 => 'field_artikeltype',
-      2 => 'field_paragraphs',
-      3 => 'title',
-      4 => 'group_forfatters',
+      2 => 'title',
+      3 => 'group_forfatters',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -302,7 +301,8 @@ function teknik_og_miljoe_field_group_info() {
     'children' => array(
       0 => 'field_short',
       1 => 'field_artikel_afsnit',
-      2 => 'group_billede',
+      2 => 'field_paragraphs',
+      3 => 'group_billede',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

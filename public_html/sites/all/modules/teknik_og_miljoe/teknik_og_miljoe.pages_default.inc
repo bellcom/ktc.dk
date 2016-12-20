@@ -778,7 +778,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->panel = 'left';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_artikel_afsnit';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',

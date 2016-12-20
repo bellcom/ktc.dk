@@ -11681,6 +11681,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   padding-left: 60px;
   padding-right: 60px;
 }
+.ktc-article-section.entity-paragraphs-item .contextual-links-wrapper,
+.ktc-article-section.entity-paragraphs-item .contextual-links-region {
+  display: none;
+}
 .ktc-article-section .ktc-article-section-headline h1,
 .ktc-article-section .ktc-article-section-headline h2,
 .ktc-article-section .ktc-article-section-headline h3,
@@ -11761,14 +11765,16 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
 .ktc-article-section.ktc-article-section-type-indrykket {
   padding-left: 40px;
 }
-.ktc-article-section.ktc-article-section-type-citat {
+.ktc-article-section.ktc-article-section-type-citat,
+.ktc-article-section.ktc-paragraph-citat {
   border-top: 2px solid #e0e4e5;
   border-bottom: 2px solid #e0e4e5;
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
 }
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body p {
+.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body p,
+.ktc-article-section.ktc-paragraph-citat .ktc-article-section-body p {
   font-weight: normal;
   font-style: italic;
   font-size: 22px;
@@ -11776,12 +11782,17 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   margin-bottom: 0;
 }
 .ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body p:after,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body p:before {
+.ktc-article-section.ktc-paragraph-citat .ktc-article-section-body p:after,
+.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body p:before,
+.ktc-article-section.ktc-paragraph-citat .ktc-article-section-body p:before {
   content: '"';
 }
 .ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body-extra,
+.ktc-article-section.ktc-paragraph-citat .ktc-article-section-body-extra,
 .ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body-extra span,
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body-extra p {
+.ktc-article-section.ktc-paragraph-citat .ktc-article-section-body-extra span,
+.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body-extra p,
+.ktc-article-section.ktc-paragraph-citat .ktc-article-section-body-extra p {
   font-style: italic;
   color: #36a145;
 }
@@ -12027,19 +12038,29 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   color: #fff;
   font-weight: bold;
 }
-.ktc-article-section-wrapper .field-collection-view {
+.ktc-article-section-wrapper .field-collection-view,
+.ktc-article-section-wrapper .paragraphs-items {
   padding: 0;
   margin: 0;
   border-bottom: 0;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links {
   margin: 0;
   padding: 0;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links > li {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links > li,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links > li,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links > li,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links > li {
   padding-left: 6px;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a {
   margin-right: 0;
   display: inline-block;
   margin-bottom: 0;
@@ -12068,19 +12089,40 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   border-color: #e9edee;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a:focus,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:active:focus,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active:focus {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a:active:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a:active:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a:active:focus,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.active:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.active:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:hover,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:focus {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a:hover,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a:focus {
   color: #2c353a;
   text-decoration: none;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:active,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a:active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a:active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a:active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
@@ -12088,8 +12130,17 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.disabled,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.disabled,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.disabled,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.disabled,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a[disabled],
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a[disabled],
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a[disabled],
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a[disabled],
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -12098,218 +12149,476 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-co
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-xs {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-xs,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-xs,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-xs,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-xs {
   min-width: 20px;
   padding: 1px 6px;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-sm {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-sm,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-sm,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-sm,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-sm {
   min-width: 25px;
   padding: 2px 8px;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-lg {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-lg,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-lg,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-lg,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-lg {
   min-width: 70px;
   padding: 5px 25px;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.active {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a:active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a:active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a:active {
   -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-default,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-default,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-default,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-default,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-primary,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-primary,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-primary {
   background-color: #fff;
   color: #2c353a;
   border-color: #e9edee;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-default:hover,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary:hover {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-default:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-default:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-default:hover,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-primary:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-primary:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-primary:hover {
   background-color: #f0f0f0;
   color: #2c353a;
   border-color: #d5ddde;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-default:focus,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary:focus {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-default:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-default:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-default:focus,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-primary:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-primary:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-primary:focus {
   color: #2c353a;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-default.active,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary.active {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-default.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-default.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-default.active,
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-primary.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-primary.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-primary.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-primary.active {
   border-color: #a1b2b6;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-success,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-success,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-success {
   background-color: #36a145;
   color: #fff;
   border-color: #308e3d;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-success:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-success:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-success:hover {
   background-color: #2e8a3b;
   color: #fff;
   border-color: #277331;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success:focus {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-success:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-success:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-success:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-success.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-success.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-success.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-success.active {
   border-color: #102e14;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-info,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-info,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-info {
   background-color: #2dace9;
   color: #fff;
   border-color: #18a2e5;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-info:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-info:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-info:hover {
   background-color: #179fe0;
   color: #fff;
   border-color: #158bc4;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info:focus {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-info:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-info:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-info:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-info.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-info.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-info.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-info.active {
   border-color: #0c5071;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-danger,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-danger,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-danger {
   background-color: #e75311;
   color: #fff;
   border-color: #cf4a0f;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-danger:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-danger:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-danger:hover {
   background-color: #ca490f;
   color: #fff;
   border-color: #ae3f0d;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger:focus {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-danger:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-danger:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-danger:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-danger.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-danger.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-danger.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-danger.active {
   border-color: #582007;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-warning,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-warning,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-warning {
   background-color: #d3a900;
   color: #fff;
   border-color: #ba9500;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-warning:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-warning:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-warning:hover {
   background-color: #b49000;
   color: #fff;
   border-color: #967800;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning:focus {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-warning:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-warning:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-warning:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-warning.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-warning.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-warning.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-warning.active {
   border-color: #3a2e00;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-action,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-action,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-action {
   background-color: #2c353a;
   color: #fff;
   border-color: #586a74;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-action:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-action:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-action:hover {
   background-color: #1f2529;
   color: #fff;
   border-color: #495760;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action:focus {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-action:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-action:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-action:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.btn-action.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.btn-action.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.btn-action.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.btn-action.active {
   border-color: #21282c;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:hover {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a:hover {
   background-color: #f0f0f0;
   color: #2c353a;
   border-color: #d5ddde;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:focus {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a:focus {
   color: #2c353a;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links a.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links a.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links a.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links a.active {
   border-color: #a1b2b6;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a {
   color: #fff;
   background-color: #2dace9;
   border-color: #18a2e5;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a:hover,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a:focus,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a:active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a:active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a:active,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.active,
-.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.active,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a,
+.open .dropdown-toggle.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a,
+.open .dropdown-toggle.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a {
   color: #fff;
   background-color: #1698d7;
   border-color: #127bad;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a:active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a:active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a:active,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.active,
-.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.active,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a,
+.open .dropdown-toggle.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a,
+.open .dropdown-toggle.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a {
   background-image: none;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.disabled,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.disabled,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.disabled,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled],
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a[disabled],
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a[disabled],
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a[disabled],
 fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.disabled:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.disabled:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.disabled:hover,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled]:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a[disabled]:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a[disabled]:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a[disabled]:hover,
 fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:hover,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a:hover,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a:hover,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a:hover,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.disabled:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.disabled:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.disabled:focus,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled]:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a[disabled]:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a[disabled]:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a[disabled]:focus,
 fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:focus,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a:focus,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a:focus,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a:focus,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled:active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.disabled:active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.disabled:active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.disabled:active,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled]:active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a[disabled]:active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a[disabled]:active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a[disabled]:active,
 fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:active,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a:active,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a:active,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a:active,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.disabled.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.disabled.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.disabled.active,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled].active,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.active {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a[disabled].active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a[disabled].active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a[disabled].active,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.active,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.active,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.active,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.active {
   background-color: #2dace9;
   border-color: #18a2e5;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a .badge {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a .badge,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a .badge,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a .badge,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a .badge {
   color: #2dace9;
   background-color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a {
   color: #fff;
   background-color: #e75311;
   border-color: #cf4a0f;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a:hover,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a:focus,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a:active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a:active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a:active,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.active,
-.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.active,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a,
+.open .dropdown-toggle.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a,
+.open .dropdown-toggle.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a {
   color: #fff;
   background-color: #c1450e;
   border-color: #96360b;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a:active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a:active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a:active,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.active,
-.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.active,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a,
+.open .dropdown-toggle.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a,
+.open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a,
+.open .dropdown-toggle.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a {
   background-image: none;
 }
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.disabled,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.disabled,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.disabled,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled],
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a[disabled],
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a[disabled],
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a[disabled],
 fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.disabled:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.disabled:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.disabled:hover,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled]:hover,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a[disabled]:hover,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a[disabled]:hover,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a[disabled]:hover,
 fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:hover,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a:hover,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a:hover,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a:hover,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.disabled:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.disabled:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.disabled:focus,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled]:focus,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a[disabled]:focus,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a[disabled]:focus,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a[disabled]:focus,
 fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:focus,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a:focus,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a:focus,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a:focus,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled:active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.disabled:active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.disabled:active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.disabled:active,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled]:active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a[disabled]:active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a[disabled]:active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a[disabled]:active,
 fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:active,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a:active,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a:active,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a:active,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled.active,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.disabled.active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.disabled.active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.disabled.active,
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled].active,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.active {
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a[disabled].active,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a[disabled].active,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a[disabled].active,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.active,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.active,
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.active,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.active {
   background-color: #e75311;
   border-color: #cf4a0f;
 }
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a .badge {
+.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a .badge,
+.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a .badge,
+.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a .badge,
+.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a .badge {
   color: #e75311;
   background-color: #fff;
 }
@@ -12320,18 +12629,22 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-co
   width: auto;
   float: none;
 }
-.ktc-article-section-wrapper .field-collection-container {
+.ktc-article-section-wrapper .field-collection-container,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs {
   border: 0;
   margin: 0;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add {
   padding: 0;
   margin: 0;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add > li {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add > li,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add > li {
   padding: 0;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a {
   display: inline-block;
   margin-bottom: 0;
   font-weight: 600;
@@ -12359,19 +12672,26 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-co
   border-color: #308e3d;
 }
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:focus,
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:active:focus,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active:focus {
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:active:focus,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:hover,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:focus {
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:hover,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:focus {
   color: #2c353a;
   text-decoration: none;
 }
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:active,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active {
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:active,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
@@ -12379,8 +12699,11 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-co
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.disabled,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.disabled,
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a[disabled],
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a {
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a[disabled],
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -12389,138 +12712,431 @@ fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .act
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-xs {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-xs,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-xs {
   min-width: 20px;
   padding: 1px 6px;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-sm {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-sm,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-sm {
   min-width: 25px;
   padding: 2px 8px;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-lg {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-lg,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-lg {
   min-width: 70px;
   padding: 5px 25px;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.active {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:active {
   -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary {
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-default,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-primary {
   background-color: #fff;
   color: #2c353a;
   border-color: #e9edee;
 }
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default:hover,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary:hover {
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-default:hover,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-primary:hover {
   background-color: #f0f0f0;
   color: #2c353a;
   border-color: #d5ddde;
 }
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default:focus,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary:focus {
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-default:focus,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-primary:focus {
   color: #2c353a;
 }
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default.active,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary.active {
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-default.active,
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-primary.active {
   border-color: #a1b2b6;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-success {
   background-color: #36a145;
   color: #fff;
   border-color: #308e3d;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-success:hover {
   background-color: #2e8a3b;
   color: #fff;
   border-color: #277331;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success:focus {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-success:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-success.active {
   border-color: #102e14;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-info {
   background-color: #2dace9;
   color: #fff;
   border-color: #18a2e5;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-info:hover {
   background-color: #179fe0;
   color: #fff;
   border-color: #158bc4;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info:focus {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-info:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-info.active {
   border-color: #0c5071;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-danger {
   background-color: #e75311;
   color: #fff;
   border-color: #cf4a0f;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-danger:hover {
   background-color: #ca490f;
   color: #fff;
   border-color: #ae3f0d;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger:focus {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-danger:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-danger.active {
   border-color: #582007;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-warning {
   background-color: #d3a900;
   color: #fff;
   border-color: #ba9500;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-warning:hover {
   background-color: #b49000;
   color: #fff;
   border-color: #967800;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning:focus {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-warning:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-warning.active {
   border-color: #3a2e00;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-action {
   background-color: #2c353a;
   color: #fff;
   border-color: #586a74;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-action:hover {
   background-color: #1f2529;
   color: #fff;
   border-color: #495760;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action:focus {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-action:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-action.active {
   border-color: #21282c;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:hover {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:hover {
   background-color: #2e8a3b;
   color: #fff;
   border-color: #277331;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:focus {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:focus {
   color: #fff;
 }
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active {
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.active {
   border-color: #102e14;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add {
+  padding: 0;
+  margin: 0;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-width: 50px;
+  padding: 3px 15px;
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  background-color: #36a145;
+  color: #fff;
+  border-color: #308e3d;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle:focus,
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle:active:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle:active:focus,
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.active:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle:hover,
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle:focus {
+  color: #2c353a;
+  text-decoration: none;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle:active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle:active,
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.disabled,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.disabled,
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle[disabled],
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle[disabled],
+fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle,
+fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-xs,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-xs {
+  min-width: 20px;
+  padding: 1px 6px;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-sm,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-sm {
+  min-width: 25px;
+  padding: 2px 8px;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-lg,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-lg {
+  min-width: 70px;
+  padding: 5px 25px;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle:active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle:active {
+  -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-default,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-default,
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-primary,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-primary {
+  background-color: #fff;
+  color: #2c353a;
+  border-color: #e9edee;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-default:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-default:hover,
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-primary:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-primary:hover {
+  background-color: #f0f0f0;
+  color: #2c353a;
+  border-color: #d5ddde;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-default:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-default:focus,
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-primary:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-primary:focus {
+  color: #2c353a;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-default.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-default.active,
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-primary.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-primary.active {
+  border-color: #a1b2b6;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-success,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-success {
+  background-color: #36a145;
+  color: #fff;
+  border-color: #308e3d;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-success:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-success:hover {
+  background-color: #2e8a3b;
+  color: #fff;
+  border-color: #277331;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-success:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-success:focus {
+  color: #fff;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-success.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-success.active {
+  border-color: #102e14;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-info,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-info {
+  background-color: #2dace9;
+  color: #fff;
+  border-color: #18a2e5;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-info:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-info:hover {
+  background-color: #179fe0;
+  color: #fff;
+  border-color: #158bc4;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-info:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-info:focus {
+  color: #fff;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-info.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-info.active {
+  border-color: #0c5071;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-danger,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-danger {
+  background-color: #e75311;
+  color: #fff;
+  border-color: #cf4a0f;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-danger:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-danger:hover {
+  background-color: #ca490f;
+  color: #fff;
+  border-color: #ae3f0d;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-danger:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-danger:focus {
+  color: #fff;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-danger.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-danger.active {
+  border-color: #582007;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-warning,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-warning {
+  background-color: #d3a900;
+  color: #fff;
+  border-color: #ba9500;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-warning:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-warning:hover {
+  background-color: #b49000;
+  color: #fff;
+  border-color: #967800;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-warning:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-warning:focus {
+  color: #fff;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-warning.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-warning.active {
+  border-color: #3a2e00;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-action,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-action {
+  background-color: #2c353a;
+  color: #fff;
+  border-color: #586a74;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-action:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-action:hover {
+  background-color: #1f2529;
+  color: #fff;
+  border-color: #495760;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-action:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-action:focus {
+  color: #fff;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-action.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-action.active {
+  border-color: #21282c;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle:hover,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle:hover {
+  background-color: #2e8a3b;
+  color: #fff;
+  border-color: #277331;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle:focus,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle:focus {
+  color: #fff;
+}
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.active,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.active {
+  border-color: #102e14;
+}
+ul.paragraphs-items-view-links {
+  float: right;
+  font-size: 0.821em;
+  list-style-type: none;
+  width: auto;
+  z-index: 9999;
+}
+ul.paragraphs-items-view-links li {
+  float: left;
+}
+ul.action-links-paragraphs-add {
+  float: right;
+  clear: both;
 }
 .ktc-gallery-wrapper {
   border-top: 10px solid #e9edee;
