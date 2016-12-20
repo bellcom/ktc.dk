@@ -405,7 +405,6 @@ function paragraphs_form_add($form, &$form_state, $mode, $paragraphs_bundle, $ho
       }
     }
   }
-
   // Create the new paragraph item and set the host entity + position.
   $new_paragraph = entity_create('paragraphs_item', array(
     'bundle' => $paragraphs_bundle->bundle,

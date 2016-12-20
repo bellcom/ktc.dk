@@ -30,7 +30,6 @@
   <?php print render($title_prefix); ?>
   <?php print render($title_suffix); ?>
   <div class="content"<?php print $content_attributes; ?>>
-    <?php print render($content); 
-    dpm?>
+    <?php print render($content); ?>
   </div>
 </div>
