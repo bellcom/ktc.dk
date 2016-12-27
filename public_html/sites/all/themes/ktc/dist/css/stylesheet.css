@@ -11676,6 +11676,7 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
 .ktc-article-section.ktc-article-section-type-billedserie {
   border-top: 10px solid #e9edee;
   border-bottom: 10px solid #e9edee;
+  padding-bottom: 40px;
   margin-left: -60px;
   margin-right: -60px;
   padding-left: 60px;
@@ -12628,6 +12629,12 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-it
 .ktc-article-section-wrapper .field-collection-view .entity-field-collection-item {
   width: auto;
   float: none;
+}
+.ktc-article-section-wrapper .paragraphs-items#sortable .draggable {
+  cursor: move;
+}
+.ktc-article-section-wrapper .paragraphs-items .insert-point.contextual-links-region {
+  display: none;
 }
 .ktc-article-section-wrapper .field-collection-container,
 .ktc-article-section-wrapper .paragraphs-items-field-paragraphs {

@@ -1,7 +1,40 @@
 <?php
+
 /**
  * @file
  * Code for the Teknik og Miljø feature.
  */
 
 include_once 'teknik_og_miljoe.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function teknik_og_miljoe_menu() {
+  $items = array();
+  $items['ajax/paragraphs/reorder'] = array(
+    'page callback' => 'teknik_og_miljoe_paragraphs_reorder',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'delivery callback' => 'ajax_deliver',
+ );
+ return $items;
+}
+
+function teknik_og_miljoe_paragraphs_reorder(){
+  $key = array_shift(array_keys($_POST));
+  $nid=substr($key, strripos($key, "_") + 1);
+  $node = node_load($nid);
+  $paragraphs = field_get_items('node', $node, 'field_paragraphs');
+  foreach ($_POST[$key] as $key=>$value){
+    $node->field_paragraphs['und'][$key] = _teknik_og_miljoe_paragraphs_search_element($paragraphs, $value);
+  }
+ node_save($node);
+
+}
+
+function _teknik_og_miljoe_paragraphs_search_element($paragraphs_field, $needle){
+  foreach ($paragraphs_field as $key => $elem)
+    if ($elem['value'] == $needle)
+      return $elem;
+}

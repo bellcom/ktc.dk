@@ -101,10 +101,11 @@ function ktc_preprocess_entity(&$variables) {
   if (!empty($variables['entity_type']) == 'paragraphs_item') {
    if (!empty($variables['paragraphs_item']) && $variables['paragraphs_item']->field_name ==  'field_paragraphs' ) {
       $variables['theme_hook_suggestions'][] = 'paragraphs_item__field_paragraphs';
-      
       // Get paragraph entity.
       $paragraphs_item = $variables['paragraphs_item'];      
-      $host_entity_type = $paragraphs_item->hostEntityType();      
+      $host_entity_type = $paragraphs_item->hostEntityType();       
+      $variables['item_id'] = $paragraphs_item->item_id;
+      $variables['host_entity_id'] = $paragraphs_item->hostEntityId();
       
       if (entity_access('update', $host_entity_type, $paragraphs_item->hostEntity()) && entity_access('update', 'paragraphs_item', $paragraphs_item)){
         $destination = drupal_get_destination();
@@ -1148,13 +1149,16 @@ function _ktc_redirect_user_after_user_profile_form_reset_submit() {
 function ktc_preprocess_paragraphs_items(&$variables, $hook) {
   $field_name = $variables['element']['#field_name'];
   $bundle = $variables['element']['#bundle'];
-  $node =  $variables['element']['#object']; 
+  $node =  $variables['element']['#object'];   
   if ($field_name == 'field_paragraphs' && entity_access('update', 'node', $variables['element']['#object'])) { 
+    drupal_add_library('system', 'ui.sortable');
+    drupal_add_js(drupal_get_path('module', 'teknik_og_miljoe') .'/js/teknik_og_miljoe_paragraphs_reorder.js');
     //entity_access('update', $host_entity_type, $host_entity)
      $paragrphs_items = $variables['element']['#items'];
      $last_element =  array_pop($paragrphs_items);
      $field_info = field_info_instance('node', $field_name,  'artikler');
      $destination = drupal_get_destination();
+     $variables['host_entity_id'] = $node->id;
      foreach($field_info['settings']['allowed_bundles'] as $bundle) {
        if ($bundle != '-1'){
          $paragraphs_bundle = paragraphs_bundle_load($bundle);

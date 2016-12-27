@@ -26,18 +26,18 @@
  * @see template_process()
  */
 ?>
-
+<div id = "ktc_paragraph_<?php print $host_entity_id ?>_<?php print $item_id ?>" class='draggable'>
 <div class="ktc-article-section <?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php print render($title_prefix); ?>
-  <?php print render($title_suffix); ?>
+  <?php //print render($title_prefix); ?>
+  <?php //print render($title_suffix); ?>
   <div class="content"<?php print $content_attributes; ?>>
     <?php print render($content); 
+    hide($paragraphs_add);
     ?>
-  </div>  
-</div>
-<ul class="paragraphs-items-view-links">
+    <ul class="paragraphs-items-view-links">
   <li class="edit first"><?php print render($operations['edit'])?></li>
   <li class="delete last"><?php print render($operations['delete'])?></li>
 </ul>
- 
-    
+  </div>  
+</div>
+  </div>

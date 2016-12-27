@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation for a group of paragraph items.
@@ -24,11 +23,10 @@
  * @see template_process()
  */
 ?>
-
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php
+<div <?php if(isset($operations['add'])) :?> id = 'sortable' <?php endif ?> class="<?php print $classes; ?>"<?php print $attributes; ?>>
+  <?php  
     print $content;
-  ?>
+  ?>  
   <?php if(isset($operations['add'])) :?>
   <ul class="action-links action-links-paragraphs-add dropdown">
     
