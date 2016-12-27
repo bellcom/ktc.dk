@@ -23,20 +23,20 @@
  * @see template_process()
  */
 ?>
-<div <?php if(isset($operations['add'])) :?> id = 'sortable' <?php endif ?> class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php  
-    print $content;
-  ?>  
-  <?php if(isset($operations['add'])) :?>
-  <ul class="action-links action-links-paragraphs-add dropdown">
-    
-    <a class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown"> <?php print t('Add') ?>
-    </a> 
-    <ul class="dropdown-menu">
-     <?php foreach($operations['add'] as $add_link) : ?>
-  <li><?php print render($add_link)?></li>
-  <?php endforeach;?>
-  </ul>
-</ul>
-    <?php endif ?>
+<div <?php if (isset($operations['add'])) : ?> id = 'sortable' <?php endif ?> class="<?php print $classes; ?>"<?php print $attributes; ?>>
+  <?php
+  print $content;
+  ?>
+  <?php if (isset($operations['add'])) : ?>
+    <ul class="action-links action-links-paragraphs-add dropdown">
+
+      <a class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown"> <?php print t('Add') ?>
+      </a>
+      <ul class="dropdown-menu">
+        <?php foreach ($operations['add'] as $add_link) : ?>
+          <li><?php print render($add_link) ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </ul>
+  <?php endif ?>
 </div>
