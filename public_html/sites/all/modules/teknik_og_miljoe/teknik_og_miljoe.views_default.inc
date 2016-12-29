@@ -1020,7 +1020,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 [field_magasin_side_status_1]';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 [field_magasin_side_status_1] draggable';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Sidefod: Global: Tekstområde */

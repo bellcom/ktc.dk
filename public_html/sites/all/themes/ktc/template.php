@@ -1152,7 +1152,7 @@ function ktc_preprocess_paragraphs_items(&$variables, $hook) {
   $node =  $variables['element']['#object'];   
   if ($field_name == 'field_paragraphs' && entity_access('update', 'node', $variables['element']['#object'])) { 
     drupal_add_library('system', 'ui.sortable');
-    drupal_add_js(drupal_get_path('module', 'teknik_og_miljoe') .'/js/teknik_og_miljoe_paragraphs_reorder.js');
+    drupal_add_js(drupal_get_path('module', 'teknik_og_miljoe') .'/js/teknik_og_miljoe_items_reorder.js');
     //entity_access('update', $host_entity_type, $host_entity)
      $paragrphs_items = $variables['element']['#items'];
      $last_element =  array_pop($paragrphs_items);
@@ -1168,3 +1168,12 @@ function ktc_preprocess_paragraphs_items(&$variables, $hook) {
      }
   }
  }
+ 
+ function  ktc_preprocess_views_view(&$variables) {
+  $view = $variables['view'];
+  if ($view->name == "magasin_sider") {
+    drupal_add_library('system', 'ui.sortable');
+    drupal_add_js(drupal_get_path('module', 'teknik_og_miljoe') .'/js/teknik_og_miljoe_items_reorder.js');
+  }   
+ 
+}

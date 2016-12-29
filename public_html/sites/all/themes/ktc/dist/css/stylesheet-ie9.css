@@ -8071,6 +8071,9 @@ body.node-type-ktc-supplier .region-content article .field-name-body {
 .magasinflow .planlagt .inner {
   background-color: #FFF8DC;
 }
+.magasinflow .draggable {
+  cursor: move;
+}
 .magasinflow .ommer .inner {
   background-color: #FFBAA8;
 }
@@ -12630,7 +12633,7 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-it
   width: auto;
   float: none;
 }
-.ktc-article-section-wrapper .paragraphs-items#sortable .draggable {
+.ktc-article-section-wrapper .paragraphs-items#article-sortable .draggable {
   cursor: move;
 }
 .ktc-article-section-wrapper .paragraphs-items .insert-point.contextual-links-region {

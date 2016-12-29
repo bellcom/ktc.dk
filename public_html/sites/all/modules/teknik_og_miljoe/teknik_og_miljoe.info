@@ -3,6 +3,7 @@ core = 7.x
 package = KTC
 version = 7.x-2.0-alpha1
 project = teknik_og_miljoe
+dependencies[] = classy_paragraphs
 dependencies[] = classy_paragraphs_ui
 dependencies[] = context
 dependencies[] = field_group

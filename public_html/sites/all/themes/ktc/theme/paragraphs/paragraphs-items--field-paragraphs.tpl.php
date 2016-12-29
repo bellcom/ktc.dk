@@ -23,7 +23,7 @@
  * @see template_process()
  */
 ?>
-<div <?php if (isset($operations['add'])) : ?> id = 'sortable' <?php endif ?> class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<div <?php if (isset($operations['add'])) : ?> id = 'article-sortable' <?php endif ?> class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php
   print $content;
   ?>
