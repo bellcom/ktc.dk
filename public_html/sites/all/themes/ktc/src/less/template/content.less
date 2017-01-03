@@ -392,6 +392,43 @@ body.node-type-ktc-supplier {
 	}
 }
 
+.magasinflow {
+	.magasinsider {
+
+		.inner {
+			padding: @thumbnail-padding @thumbnail-padding*2 ;
+			background-color: @panel-bg;
+			border: @border-std;
+			margin-bottom: @panel-body-padding;
+			display: block;
+			color: @gray-darker;
+			H3 {
+				margin-top: 0;
+				margin-bottom: @thumbnail-padding;
+			}}
+
+		.btn-danger { margin-right: 10px;}
+				}
+		.planlagt {
+					.inner { background-color: @state-warning-bg}
+		}
+    .draggable {
+      cursor: move;
+    }
+		.ommer {
+					.inner { background-color: @state-danger-bg}
+		}
+		.gennemsyn {
+					.inner { background-color: @state-info-bg}
+		}
+		.faerdig { .inner { background-color: @state-success-bg}}
+		.views-row-first::after { clear: both;  }
+		.views-row-even { clear: both;}
+		.view-footer { clear: both; margin-top: 20px;}
+		.sidenummer { float: left; height: 30px; font-size: 24px; margin-right: 5px; margin-top: -5px;}
+		.sidenr { display: block; min-height: 30px;}
+
+}
 .filter-wrapper,
 .ckeditor_links { display: none}
 
