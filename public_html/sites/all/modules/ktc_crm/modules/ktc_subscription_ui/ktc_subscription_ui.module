@@ -93,6 +93,14 @@ function ktc_subscription_ui_menu() {
     'page arguments' => array('ktc_crm_subscription_cancel_form', 1, 3),
   );
 
+  $items['admin/config/services/ktc-crm_product-role-relation'] = array(
+    'title' => t('KTC CRM Product Role Relation'),
+    'access arguments' => array('administer site configuration'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_subscription_ui_product_role_relation_form'),
+    'type' => MENU_LOCAL_TASK
+  );
+
   return $items;
 }
 
@@ -462,6 +470,9 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     '#type' => 'submit',
   );
 
+  $form_state['account'] = $account;
+  $form_state['product'] = $product;
+
   return $form;
 }
 
@@ -501,7 +512,9 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
   // Default redirect path.
   $overview_path = 'abonnementer';
 
-  global $user;
+  $account = $form_state['account'];
+  $account = user_load($account->uid);
+  $product = $form_state['product'];
 
   // If this is a ktc_membership, handle the extra products aswell.
   if ($form_state['ktc_membership']) {
@@ -509,7 +522,6 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
     ktc_crm_subscription_update_membership_extras($subscriptiondto, $form_state['values']['region']);
 
     // Update the membership category.
-    $account = user_load($user->uid);
     ktc_crm_webuser_update_membership_category($account, $form_state['values']['ktc_membership_category']);
 
     // Redirect to membership overview.
@@ -517,12 +529,21 @@ function ktc_subscription_ui_form_submit(&$form, &$form_state) {
   }
 
   $return = ktc_crm_update_user_subscription($subscriptiondto);
+
+  //add role to user
+  $related_role = variable_get('ktc_subscription_product_' . $product->nid . '_role_relation');
+  if ($related_role && !user_has_role($related_role, $account)) {
+    $new_roles = $account->roles;
+    $new_roles[$related_role] = user_role_load($related_role)->name;
+    user_save($account, array('roles' => $new_roles));
+  }
+
   if ($return == 'error') {
     drupal_set_message('Der er sket en teknisk fejl. Det var ikke muligt at oprette det ønskede abonnement. Prøv venligst igen senere.', 'error');
     $form_state['rebuild'] = TRUE;
   }
   else {
-    drupal_goto('user/' . $user->uid . '/' . $overview_path);
+    drupal_goto('user/' . $account->uid . '/' . $overview_path);
   }
 }
 
@@ -560,6 +581,9 @@ function ktc_crm_subscription_cancel_form($form, &$form_state, $account, $produc
         $form_state['subscriptiondto'] = $subscriptions[$product_uuid];
       }
     }
+
+    $form_state['account'] = $account;
+    $form_state['product'] = $product;
   }
   if (!$form_state['subscriptiondto']) {
     drupal_set_message('Der er sket en fejl, prøv venligst igen senere. Hvis problemet vedvarer kontakt da KTC.', 'error');
@@ -592,7 +616,10 @@ function ktc_crm_subscription_cancel_form($form, &$form_state, $account, $produc
 function ktc_crm_subscription_cancel_form_submit($form, &$form_state) {
   $subscriptiondto = $form_state['subscriptiondto'];
   $subscriptiondto->EndDate = date('Y-m-d\TH:i:s', time());
-  global $user;
+
+  $account = $form_state['account'];
+  $account = user_load($account->uid);
+  $product = $form_state['product'];
 
   // Default redirect path.
   $overview_path = 'abonnementer';
@@ -600,7 +627,6 @@ function ktc_crm_subscription_cancel_form_submit($form, &$form_state) {
   if ($form_state['ktc_membership']) {
     // Update the additional products to the membership.
     ktc_crm_subscription_update_membership_extras($subscriptiondto, $form_state['values']['region']);
-    $account = user_load($user->uid);
     ktc_crm_webuser_cancel_membership($account);
 
     // Redirect to membership overview.
@@ -609,7 +635,44 @@ function ktc_crm_subscription_cancel_form_submit($form, &$form_state) {
 
   ktc_crm_update_user_subscription($subscriptiondto);
 
-  drupal_goto('user/' . $user->uid . '/' . $overview_path);
+  //remove role from account
+  $related_role = variable_get('ktc_subscription_product_' . $product->nid . '_role_relation');
+  if ($related_role && user_has_role($related_role, $account)) {
+    //check if there is no other product related with account, that hold to this role
+    $user_subscriptions = ktc_crm_subscriptions_fetch_user_subscriptions($account);
+
+    //unset remove the subscription that we are currently cancelling
+    $product_uuid = field_get_items('node', $product, 'field_crm_uuid');
+    if ($product_uuid) {
+      unset($user_subscriptions[strtolower($product_uuid[0]['value'])]);
+    }
+    $all_products = ktc_subscription_ui_get_product_list('subscription');
+
+    foreach($all_products as $prod) {
+      $product_uuid = field_get_items('node', $prod, 'field_crm_uuid');
+      if ($product_uuid && isset($user_subscriptions[$product_uuid[0]['value']])) {
+        if ($user_subscriptions[$product_uuid[0]['value']]->is_active) {
+          if ($related_role == variable_get('ktc_subscription_product_' . $prod->nid . '_role_relation')) {
+            $related_role = NULL;//cancelling role removing
+          }
+        }
+      }
+    }
+
+    //check if we still need to remote the role from a user
+    if ($related_role) {
+      $new_roles = array();
+      foreach($account->roles as $id => $name) {
+        if ($id != $related_role) {
+          $new_roles[$id] = $name;
+        }
+      }
+      user_save($account, array('roles' => $new_roles));
+    }
+  }
+
+
+  drupal_goto('user/' . $account->uid . '/' . $overview_path);
 }
 
 /**
@@ -777,4 +840,96 @@ function ktc_subscription_ui_validate_ean($ean) {
   $valid = $valid && (substr($ean, 12) == $get_ean_check_digit(substr($ean, 0, 12)));
 
   return $valid;
+}
+
+/**
+ * Form facilitating product -> user_role relation
+ *
+ * @param $form
+ * @param $form_state
+ * @return mixed
+ */
+function ktc_subscription_ui_product_role_relation_form($form, $form_state) {
+  $type = 'subscription';
+  $products = ktc_subscription_ui_get_product_list($type);
+
+  $roles = user_roles(TRUE);
+
+  foreach ($products as $nid => $product) {
+    $form['product_fieldset' . $nid] = array(
+      '#type' => 'fieldset',
+      '#title' => t('@title [nid: @nid]', array('@title' => $product->title, '@nid' => $nid)),
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+    );
+
+    $form['product_fieldset' . $nid][] = array(
+      '#markup' => l($product->title, 'node/' . $nid, array('attributes' => array('target' => '_blank'))) . ' ' . t('is related to role'),
+    );
+
+    $form['product_fieldset' . $nid]['ktc_subscription_product_' . $nid . '_role_relation'] = array(
+      '#type' => 'select',
+      '#options' => $roles,
+      '#empty_value' => 0,
+      '#default_value' => variable_get('ktc_subscription_product_' . $nid . '_role_relation', 0),
+    );
+  }
+
+  return system_settings_form($form);
+}
+
+/**
+ * Updates the user roles based on the user subscriptions (products)
+ *
+ * @param $account
+ */
+function ktc_subscription_ui_update_user_roles($account) {
+  //getting all available products
+  $type = 'subscription';
+  $products = ktc_subscription_ui_get_product_list($type);
+
+  //getting all available subscriptions
+  $user_subscriptions = ktc_crm_subscriptions_fetch_user_subscriptions($account);
+
+  //calculating which roles to add/remove
+  $roles_to_remove = array();
+  $roles_to_add = array();
+  foreach ($products as $product) {
+    $related_role = variable_get('ktc_subscription_product_' . $product->nid . '_role_relation');
+    if ($related_role) {
+      $roles_to_remove[] = $related_role;
+    }
+
+    $product_uuid = field_get_items('node', $product, 'field_crm_uuid');
+    if ($product_uuid && isset($user_subscriptions[$product_uuid[0]['value']])) {
+      if ($user_subscriptions[$product_uuid[0]['value']]->is_active) {
+        $roles_to_add[] = $related_role;
+      }
+    }
+  }
+  $roles_to_remove = array_unique($roles_to_remove);
+  $roles_to_add = array_unique($roles_to_add);
+
+  //removing those that are not present in the add array
+  $roles_to_remove = array_diff($roles_to_remove, $roles_to_add);
+  if (!empty($roles_to_remove)) {
+    foreach ($account->roles as $id => $name) {
+      if (!in_array($id, $roles_to_remove)) {
+        $new_roles[$id] = $name;
+      }
+    }
+    user_save($account, array('roles' => $new_roles));
+    $account = user_load($account->uid);
+  }
+
+  //adding new roles
+  if (!empty($roles_to_add)) {
+    $new_roles = $account->roles;
+    foreach ($roles_to_add as $role) {
+      if (!user_has_role($role, $account)) {
+        $new_roles[$role] = user_role_load($role)->name;
+      }
+    }
+    user_save($account, array('roles' => $new_roles));
+  }
 }
