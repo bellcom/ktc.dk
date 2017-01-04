@@ -13,6 +13,36 @@ function teknik_og_miljoe_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'classy_paragraphs_settings';
+  $strongarm->value = array(
+    0 => array(
+      'the_id' => '0',
+      'css_class_name' => 'ktc-paragraph-faktaboksgreen',
+      'css_class_display' => 'Green',
+    ),
+    1 => array(
+      'the_id' => '1',
+      'css_class_name' => 'ktc-paragraph-faktaboksyellow',
+      'css_class_display' => 'Yellow',
+    ),
+    2 => array(
+      'css_class_name' => 'ktc-paragraph-faktaboksblue',
+      'css_class_display' => 'Blue',
+    ),
+    3 => array(
+      'css_class_name' => 'ktc-paragraph-faktaboksblack',
+      'css_class_display' => 'Black',
+    ),
+    4 => array(
+      'css_class_name' => 'ktc-paragraph-citat',
+      'css_class_display' => 'Quote',
+    ),
+  );
+  $export['classy_paragraphs_settings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_artikler';
   $strongarm->value = 0;
   $export['comment_anonymous_artikler'] = $strongarm;

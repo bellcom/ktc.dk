@@ -178,7 +178,7 @@ function teknik_og_miljoe_field_group_info() {
   $field_group->parent_name = 'group_artikel';
   $field_group->data = array(
     'label' => 'Viste forfattere',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_coforfattere',
     ),
@@ -301,7 +301,8 @@ function teknik_og_miljoe_field_group_info() {
     'children' => array(
       0 => 'field_short',
       1 => 'field_artikel_afsnit',
-      2 => 'group_billede',
+      2 => 'field_paragraphs',
+      3 => 'group_billede',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

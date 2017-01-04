@@ -778,7 +778,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->panel = 'left';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_artikel_afsnit';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
@@ -813,6 +813,34 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $display->content['new-724a8346-03d9-4915-864c-617076ece4ac'] = $pane;
     $display->panels['left'][6] = 'new-724a8346-03d9-4915-864c-617076ece4ac';
     $pane = new stdClass();
+    $pane->pid = 'new-d99b79f4-0113-4333-b024-d348f8ccd796';
+    $pane->panel = 'left';
+    $pane->type = 'token';
+    $pane->subtype = 'node:field_paragraphs';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'sanitize' => 1,
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-article-section-wrapper',
+      'template_suggestion' => 'content',
+    );
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = 'd99b79f4-0113-4333-b024-d348f8ccd796';
+    $display->content['new-d99b79f4-0113-4333-b024-d348f8ccd796'] = $pane;
+    $display->panels['left'][7] = 'new-d99b79f4-0113-4333-b024-d348f8ccd796';
+    $pane = new stdClass();
     $pane->pid = 'new-2edbc3bb-c757-4817-9f75-b2f59fc565e7';
     $pane->panel = 'left';
     $pane->type = 'node_comments';
@@ -836,11 +864,11 @@ function teknik_og_miljoe_default_page_manager_handlers() {
       'template_suggestion' => 'comments-list',
     );
     $pane->extras = array();
-    $pane->position = 7;
+    $pane->position = 8;
     $pane->locks = array();
     $pane->uuid = '2edbc3bb-c757-4817-9f75-b2f59fc565e7';
     $display->content['new-2edbc3bb-c757-4817-9f75-b2f59fc565e7'] = $pane;
-    $display->panels['left'][7] = 'new-2edbc3bb-c757-4817-9f75-b2f59fc565e7';
+    $display->panels['left'][8] = 'new-2edbc3bb-c757-4817-9f75-b2f59fc565e7';
     $pane = new stdClass();
     $pane->pid = 'new-78294957-9ca2-43c4-85c0-8465feef0bad';
     $pane->panel = 'left';
@@ -872,11 +900,11 @@ function teknik_og_miljoe_default_page_manager_handlers() {
       'template_suggestion' => 'entity-field',
     );
     $pane->extras = array();
-    $pane->position = 8;
+    $pane->position = 9;
     $pane->locks = array();
     $pane->uuid = '78294957-9ca2-43c4-85c0-8465feef0bad';
     $display->content['new-78294957-9ca2-43c4-85c0-8465feef0bad'] = $pane;
-    $display->panels['left'][8] = 'new-78294957-9ca2-43c4-85c0-8465feef0bad';
+    $display->panels['left'][9] = 'new-78294957-9ca2-43c4-85c0-8465feef0bad';
     $pane = new stdClass();
     $pane->pid = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
     $pane->panel = 'left';
@@ -900,11 +928,11 @@ function teknik_og_miljoe_default_page_manager_handlers() {
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
-    $pane->position = 9;
+    $pane->position = 10;
     $pane->locks = array();
     $pane->uuid = '249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
     $display->content['new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7'] = $pane;
-    $display->panels['left'][9] = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
+    $display->panels['left'][10] = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
     $pane = new stdClass();
     $pane->pid = 'new-ee946fb4-4482-4a9c-9c63-137149ee2658';
     $pane->panel = 'right';
