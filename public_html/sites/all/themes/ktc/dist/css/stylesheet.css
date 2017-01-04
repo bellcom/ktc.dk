@@ -14369,6 +14369,10 @@ h6 + .ktc-date {
 .tech-env .ktc-node-trompet {
   color: #1f9bd7;
 }
+.tech-env.ktc-date,
+.tech-env .ktc-date {
+  color: #1f9bd7;
+}
 .og-context.og-context-node.ktc-node-lead,
 .og-context.og-context-node .ktc-node-lead {
   color: #d3a900;
