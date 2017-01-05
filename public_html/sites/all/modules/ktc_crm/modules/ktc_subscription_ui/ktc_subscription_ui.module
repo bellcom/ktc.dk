@@ -233,13 +233,23 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     '#suffix' => '</div>',
     '#value' => array($invoiceaccount->tid),
   );
-
-  $form['ean'] = array(
+  $form['ktc_ean'] = array(
+      '#tree' => FALSE,
+      '#type' => 'fieldset',
+      '#title' => t('EAN')
+   );
+  $form['ktc_ean']['ean_bill'] = array(
+    '#title' => t('EAN fakturering'),
+    '#type' => 'checkbox',
+    '#default_value' => isset($form_state['ean_bill'])? true : false,
+    '#attributes' => array('id' => array('ean_billing'))
+  );
+  $form['ktc_ean']['ean'] = array(
     '#title' => 'EAN',
     '#type' => 'textfield',
     '#default_value' => $form_state['subscriptiondto']->EAN,
+    '#attributes' => array('id' => array('field_ean'))
   );
-
 
   if ($ktc_membership) {
     $region_uuid = '';
@@ -533,8 +543,9 @@ function ktc_subscription_ui_form_validate(&$form, &$form_state) {
   if ($form_state['values']['enddate'] && strtotime($form_state['values']['enddate']) < time()) {
     form_set_error('enddate', t('Du skal vælge en dato i fremtiden'));
   }
-  if ($form_state['values']['ean'] && !ktc_subscription_ui_validate_ean($form_state['values']['ean'])) {
-    form_set_error('ean', t('Det indtastede EAN er ikke gyldigt.'));
+
+  if ($form_state['values']['ean_bill'] == 1 && !ktc_subscription_ui_validate_ean($form_state['values']['ean'])) {
+    form_set_error('ean', t('Det indtastede EAN nummer er ikke korrekt.'));
   }
   if (!$form_state['values']['region'] && $form_state['ktc_membership']) {
     form_set_error('region', t('Kredsmedlemsskabet kunne ikke bestemmes, da der ikke er nogen region tilknyttet dit firma. Kontakt KTC.'));
