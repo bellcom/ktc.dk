@@ -1020,9 +1020,19 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 [field_magasin_side_status_1] draggable';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 [field_magasin_side_status_1] magasin-side draggable';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="col-md-6 magasin-side">
+  <div class="inner">
+    Sider til udgivelser
+  </div>
+</div>  ';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Sidefod: Global: Tekstområde */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
@@ -1210,6 +1220,11 @@ function teknik_og_miljoe_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
+    t('<div class="col-md-6 magasin-side">
+  <div class="inner">
+    Sider til udgivelser
+  </div>
+</div>  '),
     t('<div class="col-md-12">[nothing_2]</div>'),
     t('Field collection item ID'),
     t('.'),

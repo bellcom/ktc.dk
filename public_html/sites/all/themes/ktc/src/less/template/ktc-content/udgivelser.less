@@ -7,22 +7,13 @@
       	margin-right: 5px;
     	}
       &.views-row-even {
-    	  clear: both;
         .views-field-view {
           float: right;
           margin-left: 5px;
           margin-right: 0;
           }
         }
-      &.views-row-first {
-        .views-field-view {
-          float: right;
-          margin-left: 5px;
-          margin-right: 0;
-          }
-        }
-  	  }
-  	
+  	  }  	
 
 		.inner {
 			padding: @thumbnail-padding @thumbnail-padding*2 ;
@@ -62,6 +53,9 @@
   	.inner { 
     	background-color: @state-success-bg;
   	}
+  }
+  .draggable {
+      cursor: move;
   }
 	.views-row-first::after {
   	clear: both;
