@@ -253,6 +253,8 @@ function ktc_crm_update_account_from_webuserdto(\KTC\WebUser\WebUserDto $webuser
     $edit = ktc_crm_map_webuserdto_to_edit_array($webuserdto, $account->uid);
 
     user_save($account, $edit);
+
+    ktc_subscription_ui_update_user_roles($account);
   }
 }
 
