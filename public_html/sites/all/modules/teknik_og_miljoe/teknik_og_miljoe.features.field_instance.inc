@@ -1505,6 +1505,115 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_side_kommentarer'
+  $field_instances['field_collection_item-field_magasin_indhold-field_magasin_side_kommentarer'] = array(
+    'bundle' => 'field_magasin_indhold',
+    'custom_add_another' => 'Tilføj kommentar',
+    'custom_remove' => 'Fjern kommentar',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magasin_side_kommentarer',
+    'label' => 'Kommentarer',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-artikler-field_annonce'
   $field_instances['node-artikler-field_annonce'] = array(
     'bundle' => 'artikler',
@@ -5407,6 +5516,7 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Højtopløste billeder');
   t('Introtekst til artiklen');
   t('KL Emneord');
+  t('Kommentarer');
   t('Lille billede');
   t('Manchet');
   t('Medtaget i udgivelse');

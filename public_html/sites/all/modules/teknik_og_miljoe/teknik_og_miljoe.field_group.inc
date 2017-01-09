@@ -333,6 +333,7 @@ function teknik_og_miljoe_field_group_info() {
       0 => 'field_magasin_side_nr',
       1 => 'field_magasin_side_status',
       2 => 'field_magasin_tema',
+      3 => 'field_magasin_side_kommentarer',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -359,8 +360,8 @@ function teknik_og_miljoe_field_group_info() {
     'label' => 'Sideopbygning',
     'weight' => '0',
     'children' => array(
-      0 => 'group_meta',
-      1 => 'group_hidden',
+      0 => 'group_hidden',
+      1 => 'group_meta',
       2 => 'group_sidebygger',
     ),
     'format_type' => 'tabs',
