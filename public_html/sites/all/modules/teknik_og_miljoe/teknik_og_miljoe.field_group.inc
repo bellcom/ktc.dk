@@ -145,7 +145,7 @@ function teknik_og_miljoe_field_group_info() {
   $field_group->parent_name = 'group_workflow';
   $field_group->data = array(
     'label' => 'Skriveadgang',
-    'weight' => '26',
+    'weight' => '27',
     'children' => array(
       0 => 'field_artikel_forfattere',
     ),
@@ -334,6 +334,7 @@ function teknik_og_miljoe_field_group_info() {
       1 => 'field_magasin_side_status',
       2 => 'field_magasin_tema',
       3 => 'field_magasin_side_kommentarer',
+      4 => 'field_magasin_side_sidegenre',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -514,7 +515,8 @@ function teknik_og_miljoe_field_group_info() {
       3 => 'field_deadline',
       4 => 'field_highres_billeder',
       5 => 'field_medtaget_i_udgivelse',
-      6 => 'group_forfatterperm',
+      6 => 'field_frigivelse_til_alle',
+      7 => 'group_forfatterperm',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
