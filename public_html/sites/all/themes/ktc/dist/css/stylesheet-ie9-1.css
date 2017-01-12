@@ -10991,7 +10991,7 @@ fieldset[disabled] .field-type-image .button {
   background-color: #36a145;
 }
 
-.magasinflow.view-display-id-default {
+.magasinflow {
   position: relative;
   min-height: 1px;
   padding-left: 10px;

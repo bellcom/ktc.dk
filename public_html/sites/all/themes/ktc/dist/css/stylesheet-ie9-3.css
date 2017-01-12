@@ -2611,7 +2611,7 @@
 }
 
 @media (min-width: 992px) {
-  .magasinflow.view-display-id-default {
+  .magasinflow {
     float: left;
     width: 100%;
   }
