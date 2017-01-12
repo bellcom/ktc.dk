@@ -9,19 +9,19 @@
  */
 function ktc_crm_group_update_groups() {
   $logger = KtcCrmLogger::getInstance();
-  $logger->log->addInfo('cron', 'start group sync');
+  $logger->log->addInfo('cron: start group sync');
 
   $groups = ktc_crm_fetch_groups();
 
   if ($groups) {
-    $logger->log->addInfo('cron group', 'update groups');
+    $logger->log->addInfo('cron group : update groups');
     ktc_crm_group_process_groups($groups);
 
-    $logger->log->addInfo('cron group', 'remove old groups');
+    $logger->log->addInfo('cron group: remove old groups');
     ktc_crm_group_remove_old_groups($groups);
   }
 
-  $logger->log->addInfo('cron group', 'update grouproles');
+  $logger->log->addInfo('cron group: update grouproles');
   $grouproles = ktc_crm_fetch_grouproles();
   ktc_crm_group_update_grouproles($grouproles);
 
@@ -29,14 +29,14 @@ function ktc_crm_group_update_groups() {
 
   $group_members = ktc_crm_group_create_array($groups);
   if ($group_members) {
-    $logger->log->addInfo('cron group', 'update memberhips');
+    $logger->log->addInfo('cron group: update memberhips');
     ktc_crm_group_process_memberships($group_members);
 
-    $logger->log->addInfo('cron group', 'remove old memberships');
+    $logger->log->addInfo('cron group: remove old memberships');
     ktc_crm_group_remove_old_memberships($group_members);
   }
 
-  $logger->log->addInfo('cron group', 'remove memberships which are not linked with CRM');
+  $logger->log->addInfo('cron group: remove memberships which are not linked with CRM');
   ktc_crm_group_remove_unlinked_memberships();
 }
 
@@ -99,7 +99,7 @@ if (isset($_POST['form_id']) && ($_POST['form_id'] == 'og_ui_add_users' || $_POS
     $account = user_load($og_membership->etid);
     $account->field_netvaerk_notifications['und'][]['target_id']=$og_membership->gid;
     user_save($account);
-  } 
+  }
   $logger->log->addInfo('group add membership', array('crm_uuid' => $membership_uuid));
 
         // Set the membership uuid on the og_membership entity.
@@ -153,10 +153,10 @@ function ktc_crm_group_map_group_to_groupdto($group) {
 
   $groupdto->VisibleOnWeb = $group->status;
   $groupdto->SynchronizeWithKtcDk = 1;
-  
+
   if ($field = field_get_items('node', $group, 'field_active'))
      $groupdto->Active = $field[0]['value'];
-  
+
   if ($field = field_get_items('node', $group, 'body')) {
     $groupdto->Description = substr($field[0]['value'], 0, 1999);
   }
@@ -256,7 +256,7 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
     $group_node->field_end_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->EndDate));
 
   $group_node->og_group_ref = array();
-  if (!empty($groupdto->ParentGroup)) {    
+  if (!empty($groupdto->ParentGroup)) {
     if ($parent_group = ktc_crm_group_load_from_uuid($groupdto->ParentGroup->CrmId)) {
       $group_node->field_subgroup[$language][0]['value'] = 1;
       $group_node->og_group_ref[$language][0]['target_id'] = $parent_group->nid;
@@ -341,7 +341,7 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
     $group_uuid = $membership_info['group_uuid'];
     $membership_uuid = $membership_info['membership_uuid'];
     $is_new_membership = _ktc_crm_group_is_membership_exists($membership_uuid) ? FALSE : TRUE;
-    
+
     if ($group = ktc_crm_group_load_from_uuid($group_uuid)) {
 
       $values = array(
@@ -366,7 +366,7 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
       }
       $group_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
 
-      $logger->log->addInfo('cron', 'Setting membership for '. $account->name.' ('.$account->uid.') to gid: '.$group->nid.' role: '.$grouprole_tid);
+      $logger->log->addInfo('cron: Setting membership for '. $account->name.' ('.$account->uid.') to gid: '.$group->nid.' role: '.$grouprole_tid);
       og_membership_save($group_membership);
       // Set up notification to TRUE by default
       if ($is_new_membership && !in_array($account->uid, _ktc_netvaerk_notifications_get_users($group->nid))) {
@@ -404,7 +404,7 @@ function ktc_crm_group_remove_old_groups($groups) {
 
     if (isset($result['node'])) {
       foreach ($result['node'] as $node_id => $info) {
-        $logger->log->addInfo('Unpublish old group', $node_id);
+        $logger->log->addInfo('Unpublish old group', array('nid' => $node_id));
 
         $node = node_load($node_id);
         $node->status = 0;
@@ -440,7 +440,7 @@ function ktc_crm_group_remove_old_memberships($memberships) {
 
     if (isset($result['og_membership'])) {
       foreach ($result['og_membership'] as $membership_id => $info) {
-        $logger->log->addInfo('cron', 'Deleting membership: '.$membershop_id);
+        $logger->log->addInfo('cron: Deleting membership', array('crm_uuid' => $membership_id));
         og_membership_delete($membership_id);
       }
     }
@@ -468,7 +468,7 @@ function ktc_crm_group_remove_unlinked_memberships() {
     $membership = og_membership_load($membership_id);
     $group = node_load($membership->gid);
     if ($membership->etid != $group->uid){
-      $logger->log->addInfo('cron', 'Deleting membership: ' . $membership_id);
+      $logger->log->addInfo('cron: Deleting membership', array('crm_uuid' => $membership_id));
       og_membership_delete($membership_id);
     }
   }
