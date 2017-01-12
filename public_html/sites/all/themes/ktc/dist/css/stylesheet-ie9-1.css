@@ -11109,6 +11109,10 @@ fieldset[disabled] .field-type-image .button {
   background-color: #FFF;
 }
 
+.udgivelse-editor .page-section.udgivelse-navne {
+  background-color: #9ad190;
+}
+
 .udgivelse-editor .page-section.udgivelse-annonce {
   background-color: #dedede;
 }
