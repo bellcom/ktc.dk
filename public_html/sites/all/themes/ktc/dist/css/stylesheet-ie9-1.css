@@ -11194,6 +11194,14 @@ fieldset[disabled] .field-type-image .button {
   display: none;
 }
 
+body.kontekst-magasinstatus {
+  background-color: #FFF;
+}
+
+body.kontekst-magasinstatus .ktc-wrapper-background {
+  display: none;
+}
+
 .pagination {
   border-radius: 20px;
 }
@@ -12928,9 +12936,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
 .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-lg {
   min-width: 70px;
   padding: 5px 25px;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.active {
-  box-shadow: none;
 }
