@@ -2610,6 +2610,13 @@
 
 }
 
+@media (min-width: 992px) {
+  .magasinflow.view-display-id-default {
+    float: left;
+    width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-image {
     float: left;

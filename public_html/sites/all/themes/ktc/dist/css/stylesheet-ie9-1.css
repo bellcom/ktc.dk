@@ -10993,8 +10993,6 @@ fieldset[disabled] .field-type-image .button {
 
 .magasinflow.view-display-id-default {
   position: relative;
-  float: left;
-  width: 100%;
   min-height: 1px;
   padding-left: 10px;
   padding-right: 10px;
