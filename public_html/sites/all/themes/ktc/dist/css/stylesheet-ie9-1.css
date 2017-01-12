@@ -11186,6 +11186,10 @@ fieldset[disabled] .field-type-image .button {
   padding-top: 5px;
 }
 
+.paragraphs-item-udgivelse-artikel .user-profile {
+  display: none;
+}
+
 .pagination {
   border-radius: 20px;
 }
@@ -12925,9 +12929,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
 .ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.active,
 .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.active {
   box-shadow: none;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle:active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle:active {
-  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
 }
