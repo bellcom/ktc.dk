@@ -10991,6 +10991,15 @@ fieldset[disabled] .field-type-image .button {
   background-color: #36a145;
 }
 
+.magasinflow.view-display-id-default {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .magasinflow .magasinsider .magasin-side {
   height: 140px;
 }
@@ -12930,10 +12939,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
 .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-sm {
   min-width: 25px;
   padding: 2px 8px;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-lg,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-lg {
-  min-width: 70px;
-  padding: 5px 25px;
 }
