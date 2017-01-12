@@ -367,9 +367,10 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
       $group_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
 
       $logger->log->addInfo('cron: Setting membership for '. $account->name.' ('.$account->uid.') to gid: '.$group->nid.' role: '.$grouprole_tid);
-      og_membership_save($group_membership);
-      // Set up notification to TRUE by default
-      if ($is_new_membership && !in_array($account->uid, _ktc_netvaerk_notifications_get_users($group->nid))) {
+
+      if (og_membership_save($group_membership) ==  SAVED_NEW)
+        if( !in_array($account->uid, _ktc_netvaerk_notifications_get_users($group->nid))) {
+        // Set up notification to TRUE by default
         $account->field_netvaerk_notifications['und'][]['target_id']=$group->nid;
         user_save($account);
       }
