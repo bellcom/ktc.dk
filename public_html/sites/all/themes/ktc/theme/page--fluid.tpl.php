@@ -105,19 +105,23 @@
   <div class="ktc-wrapper-background"></div>
   <div class="container-fluid">
     <div class="row">
-
-      <?php /* region--sidebar.tpl.php */ ?>
-      <?php if ($page['sidebar_first']): ?>
+    <?php if (!empty($page['sidebar_first'])): ?>
+      <aside class="col-sm-3" role="complementary">
         <?php print render($page['sidebar_first']); ?>
-      <?php endif; ?>
+      </aside>  <!-- /#sidebar-first -->
+    <?php endif; ?>
 
-      <?php /* region--sidebar.tpl.php */ ?>
-      <?php if ($page['sidebar_second']): ?>
+
+    <?php /* region--content.tpl.php */ ?>
+      <section<?php print $content_column_class; ?>>
+        <?php print render($page['content']); ?>
+      </section>
+    
+    <?php if (!empty($page['sidebar_second'])): ?>
+      <aside class="col-sm-3" role="complementary">
         <?php print render($page['sidebar_second']); ?>
-      <?php endif; ?>
-
-      <?php /* region--content.tpl.php */ ?>
-      <?php print render($page['content']); ?>
+      </aside>  <!-- /#sidebar-second -->
+    <?php endif; ?>
 
     </div>
 

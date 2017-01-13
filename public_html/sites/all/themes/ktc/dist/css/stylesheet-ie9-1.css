@@ -11114,6 +11114,7 @@ fieldset[disabled] .field-type-image .button {
   float: left;
   position: relative;
   background-color: #FFF;
+  overflow: hidden;
 }
 
 .udgivelse-editor .page-section h4 {
