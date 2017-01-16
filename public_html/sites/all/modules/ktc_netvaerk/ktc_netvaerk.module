@@ -538,7 +538,7 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
   $list = '';
   $i = 1;
   $i_max = 7; // Number of allowed users to be loaded
-  
+
   $ktc_webmaster_mail = variable_get('group_owner', 'netvaerk@ktc.dk');
   $ktc_webmaster = user_load_by_mail($ktc_webmaster_mail);
 
@@ -561,7 +561,7 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
   $query->entityCondition('entity_type', 'og_membership')
      ->propertyCondition('gid', $gid)
      ->propertyOrderBy('created', 'DESC');
-  
+
   if (!empty($roles)) {
     $query->fieldCondition('field_grouprole', 'target_id', $roles, 'IN');
   }
@@ -1049,11 +1049,11 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
     $form['og_roles_permissions'][LANGUAGE_NONE]['#default_value'] = 0;
     $form['group_access']['#attributes']['class'][] = 'hide';
     $form['group_access'][LANGUAGE_NONE]['#default_value'] = 0;
-    
-   global $user; 
-   
-   if (($user->uid==1 or in_array('administrator', $user->roles) or in_array('Ansat i KL', $user->roles))=== FALSE) {  	
-      $form['og_group_ref']['und']["#options"] = ktc_netvaerk_user_groups();        
+
+   global $user;
+
+   if (($user->uid==1 or in_array('administrator', $user->roles) or in_array('Ansat i KL', $user->roles))=== FALSE) {
+      $form['og_group_ref']['und']["#options"] = ktc_netvaerk_user_groups();
     }
   }
 
@@ -1069,18 +1069,18 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
 }
 
 /**
- * 
+ *
  * return user's groups list
  */
-function ktc_netvaerk_user_groups() { 
-  $groups = og_get_groups_by_user();  
+function ktc_netvaerk_user_groups() {
+  $groups = og_get_groups_by_user();
   $options = array();
   foreach ($groups['node'] as $key => $value) {
     $node = node_load($value);
     $options[$key] = $node->title;
   }
   return $options;
-    
+
 }
 /**
  * Extra validation handler for creating/editing an og_membership.
@@ -1233,7 +1233,8 @@ function ktc_netvaerk_node_access_explain($row) {
  */
 function ktc_netvaerk_node_access_records($node) {
   // The 'anonymous' grant that will be set on OG content.
- if ($node->type == 'group' && $node->published == true) {
+  // if node is unpublished, so we don't allow to see it.
+ if ($node->type == 'group' && $node->status == NODE_PUBLISHED) {
    $grant = array (
     'realm' => 'ktc_netvaerk_anonymous',
     'gid' => 0,
@@ -1242,10 +1243,18 @@ function ktc_netvaerk_node_access_records($node) {
     'grant_delete' => 0,
     'priority' => 0,
   );
-    return array($grant);
+  return array($grant);
   }
-   else if (!empty($node->og_group_ref)){
-    $content_access = field_get_items('node', $node, 'group_content_access');    ;
+  /*
+   * we need this hook because "Group content visibility" must have name group_access (not group_content_access)
+   * https://github.com/bellcom/ktc.dk/blob/master/public_html/sites/all/modules/contrib/og/og_access/og_access.module#L17
+   */
+
+
+  // If node is group content
+  if ($node->type != 'group' && !empty($node->og_group_ref)){
+    $content_access = field_get_items('node', $node, 'group_content_access');
+   // if group content access by it's group defaults.
     if($content_access[0]['value']==0) {
       $sids = array();
       $gid = field_get_items('node', $node, 'og_group_ref');
@@ -1266,7 +1275,7 @@ function ktc_netvaerk_node_access_records($node) {
           'priority' => 0,
         );
        }
-       return $grant; 
+       return $grant;
     }
  }
   return NULL;
