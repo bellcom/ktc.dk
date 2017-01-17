@@ -287,11 +287,22 @@ function ktc_users_signup_form_submit(&$form, &$form_state) {
  */
 function ktc_users_user_login(&$edit, $account) {
   global $user;
-  $webuserdto = ktc_crm_lookup_webuser_by_mail($account->mail); 
-  ktc_crm_update_account_from_webuserdto($webuserdto);
+  if ($webuserdto = ktc_crm_lookup_webuser_by_mail($account->mail)) {
+    ktc_crm_update_account_from_webuserdto($webuserdto);
+    //user exists in CRM but has empty crm_uuid in drupal
+    if (!isset($account->field_crm_uuid[LANGUAGE_NONE][0])){
+      $account->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $webuserdto->CrmId;
+      user_save($account);
+    }
+  }
   $webuserdto = ktc_crm_map_account_to_webuserdto($account);
   $webuserdto->LastLogin = date('Y-m-d\TH:i:s', time());
-  ktc_crm_update_user($webuserdto);
+  $crm_uuid = ktc_crm_update_user($webuserdto);
+  // if user was not exists in CRM
+  if (!isset($account->field_crm_uuid[LANGUAGE_NONE][0])){
+    $account->field_crm_uuid[LANGUAGE_NONE][0]['value'] =  $crm_uuid;    ;
+    user_save($account);
+  }
   if ($account->access == 0) {
     drupal_set_message($user->mail);
     drupal_goto('user/' . $user->uid . '/edit');
