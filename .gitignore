@@ -21,5 +21,5 @@ scripts/import/exporter/makemeeting.json
 scripts/import/exporter/nodes.json
 scripts/import/exporter/users.json
 scripts/json_import/
-/public_html/sites/ktcdk.dd
-/public_html/sites/ktc-dec16.dd
+/public_html/sites/*.dd
+public_html/sites/*.dd
