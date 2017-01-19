@@ -145,7 +145,7 @@ function teknik_og_miljoe_field_group_info() {
   $field_group->parent_name = 'group_workflow';
   $field_group->data = array(
     'label' => 'Skriveadgang',
-    'weight' => '27',
+    'weight' => '28',
     'children' => array(
       0 => 'field_artikel_forfattere',
     ),
@@ -516,7 +516,8 @@ function teknik_og_miljoe_field_group_info() {
       4 => 'field_highres_billeder',
       5 => 'field_medtaget_i_udgivelse',
       6 => 'field_frigivelse_til_alle',
-      7 => 'group_forfatterperm',
+      7 => 'field_fri_for_alle',
+      8 => 'group_forfatterperm',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
