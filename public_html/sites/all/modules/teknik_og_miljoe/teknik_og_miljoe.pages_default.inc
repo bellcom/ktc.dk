@@ -1688,13 +1688,14 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
-      'formatter' => 'entityreference_entity_view',
+      'formatter' => 'entityreference_label',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
         'view_mode' => 'listevisningstor',
         'links' => 0,
+        'link' => 1,
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
