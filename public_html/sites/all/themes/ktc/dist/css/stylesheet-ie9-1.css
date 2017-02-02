@@ -7409,6 +7409,10 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-top: 1.6em;
 }
 
+.ui-sortable .draggable .entity-paragraphs-item {
+  border: 4px dashed rgba(0, 0, 0, 0.5);
+}
+
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
