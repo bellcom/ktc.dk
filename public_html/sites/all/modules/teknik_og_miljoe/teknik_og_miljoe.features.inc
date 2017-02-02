@@ -114,6 +114,16 @@ function teknik_og_miljoe_paragraphs_info() {
       'bundle' => 'ktc_artikel_billedserie',
       'locked' => '1',
     ),
+    'ktc_artikelafsnit_citat' => array(
+      'name' => 'Citat',
+      'bundle' => 'ktc_artikelafsnit_citat',
+      'locked' => '1',
+    ),
+    'ktc_artikelafsnit_faktaboks' => array(
+      'name' => 'Faktaboks',
+      'bundle' => 'ktc_artikelafsnit_faktaboks',
+      'locked' => '1',
+    ),
     'ktc_artikelafsnit_tekst' => array(
       'name' => 'Tekstafsnit',
       'bundle' => 'ktc_artikelafsnit_tekst',
