@@ -219,6 +219,7 @@ function teknik_og_miljoe_field_group_info() {
       3 => 'group_indhold',
       4 => 'group_publicering',
       5 => 'group_workflow',
+      6 => 'group_glartikler',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -229,6 +230,33 @@ function teknik_og_miljoe_field_group_info() {
     ),
   );
   $export['group_formular|node|artikler|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_glartikler|node|artikler|form';
+  $field_group->group_name = 'group_glartikler';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'artikler';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_formular';
+  $field_group->data = array(
+    'label' => 'Gl artikler',
+    'weight' => '19',
+    'children' => array(
+      0 => 'field_artikel_afsnit',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-glartikler field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_glartikler|node|artikler|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -300,9 +328,8 @@ function teknik_og_miljoe_field_group_info() {
     'weight' => '15',
     'children' => array(
       0 => 'field_short',
-      1 => 'field_artikel_afsnit',
-      2 => 'field_paragraphs',
-      3 => 'group_billede',
+      1 => 'field_paragraphs',
+      2 => 'group_billede',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -507,7 +534,7 @@ function teknik_og_miljoe_field_group_info() {
   $field_group->parent_name = 'group_formular';
   $field_group->data = array(
     'label' => 'Redaktion',
-    'weight' => '19',
+    'weight' => '20',
     'children' => array(
       0 => 'field_artikel_status',
       1 => 'field_annonce',

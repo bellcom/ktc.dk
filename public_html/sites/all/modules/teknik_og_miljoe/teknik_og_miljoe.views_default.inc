@@ -1162,7 +1162,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_magasin_side_nr']['field'] = 'field_magasin_side_nr';
   $handler->display->display_options['fields']['field_magasin_side_nr']['label'] = '';
   $handler->display->display_options['fields']['field_magasin_side_nr']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_magasin_side_nr']['alter']['text'] = '<div class="sidenummer">[field_magasin_side_nr]</div>([counter]) [field_magasin_side_status]';
+  $handler->display->display_options['fields']['field_magasin_side_nr']['alter']['text'] = '[counter] - [field_magasin_side_status]';
   $handler->display->display_options['fields']['field_magasin_side_nr']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_magasin_side_nr']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_magasin_side_nr']['element_wrapper_class'] = 'sidenr';
@@ -1248,7 +1248,7 @@ function teknik_og_miljoe_views_default_views() {
     t('Tilføj'),
     t('Tema: [field_magasin_tema]'),
     t('Status: [field_magasin_side_status]'),
-    t('<div class="sidenummer">[field_magasin_side_nr]</div>([counter]) [field_magasin_side_status]'),
+    t('[counter] - [field_magasin_side_status]'),
     t('Artikler'),
     t('Kommentarer'),
     t('Alle'),
