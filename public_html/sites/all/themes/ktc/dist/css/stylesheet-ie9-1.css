@@ -7409,13 +7409,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-top: 1.6em;
 }
 
-.ui-sortable .draggable .entity-paragraphs-item {
+.ui-sortable .draggable .entity-paragraphs-item.ui-sortable-helper {
   border: 4px dashed rgba(0, 0, 0, 0.15);
   margin-bottom: 20px;
-}
-
-.ui-sortable .ui-sorable-helper {
-  background-color: #fdeddc;
 }
 
 #nyheder-carousel-large {
@@ -12937,4 +12933,10 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
   opacity: 0.65;
   filter: alpha(opacity=65);
   box-shadow: none;
+}
+
+.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-xs,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-xs {
+  min-width: 20px;
+  padding: 1px 6px;
 }
