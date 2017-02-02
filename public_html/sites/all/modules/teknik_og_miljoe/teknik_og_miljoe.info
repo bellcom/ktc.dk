@@ -111,6 +111,7 @@ features[field_instance][] = field_collection_item-field_coforfattere-field_jobp
 features[field_instance][] = field_collection_item-field_coforfattere-field_navn
 features[field_instance][] = field_collection_item-field_magasin_indhold-field_magasin_side_indhold
 features[field_instance][] = field_collection_item-field_magasin_indhold-field_magasin_side_kommentarer
+features[field_instance][] = field_collection_item-field_magasin_indhold-field_magasin_side_sidegenre
 features[field_instance][] = node-artikler-field_annonce
 features[field_instance][] = node-artikler-field_antal_anslag
 features[field_instance][] = node-artikler-field_artikel_afsnit
