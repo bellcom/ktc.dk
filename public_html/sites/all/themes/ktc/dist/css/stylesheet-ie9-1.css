@@ -7410,10 +7410,11 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 }
 
 .ui-sortable .draggable .entity-paragraphs-item {
-  border: 4px dashed rgba(0, 0, 0, 0.2);
+  border: 4px dashed rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
 }
 
-.ui-sortable .draggable.ui-sorable-helper {
+.ui-sortable .ui-sorable-helper {
   background-color: #fdeddc;
 }
 
