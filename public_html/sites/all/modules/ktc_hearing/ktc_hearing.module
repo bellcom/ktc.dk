@@ -1525,13 +1525,15 @@ function ktc_hearing_generate_hearing_summary_view($hearing, $php_script = FALSE
   global $base_url;
   $module_path = drupal_get_path('module', 'ktc_hearing');
   $summary = ktc_hearing_get_summary_response($hearing);
+  if ($summary) {
+    $vars['style_sheet_url'] = $base_url . '/' . $module_path . '/css/summary_hearing_answer.css';
+    $vars['hearing_node'] = $hearing;
+    $vars['summary_node'] = $summary;
+    $vars['php_script'] = $php_script;
 
-  $vars['style_sheet_url'] = $base_url . '/' . $module_path . '/css/summary_hearing_answer.css';
-  $vars['hearing_node'] = $hearing;
-  $vars['summary_node'] = $summary;
-  $vars['php_script'] = $php_script;
-
-  return theme('summary_hearing_answer', $vars);
+    return theme('summary_hearing_answer', $vars);
+  }
+  return FALSE;
 }
 
 /**
