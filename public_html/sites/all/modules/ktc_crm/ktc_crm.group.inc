@@ -72,13 +72,13 @@ function ktc_crm_node_delete($node) {
  * Implements hook_og_membership_delete().
  */
 function ktc_crm_og_membership_delete($og_membership) {
-  if ((isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_delete_membership') ||
+  if ((isset($_POST['form_id']) && ($_POST['form_id'] == 'og_ui_delete_membership' || $_POST['form_id'] == 'og_ui_confirm_unsubscribe')) ||
     (isset($_GET['q']) && $_GET['q'] == 'batch')) {
-    $logger = KtcCrmLogger::getInstance();
-    $logger->log->addInfo('group delete membership', array('crm_uuid' => $crm_uuid));
 
     // Send changes for membership to CRM.
     if ($crm_uuid = _ktc_crm_get_uuid('og_membership', $og_membership)) {
+      $logger = KtcCrmLogger::getInstance();
+      $logger->log->addInfo('group delete membership', array('crm_uuid' => $crm_uuid));
       ktc_crm_group_membership_delete($crm_uuid);
     }
   }
@@ -91,6 +91,7 @@ function ktc_crm_og_membership_insert($og_membership) {
 if (isset($_POST['form_id']) && ($_POST['form_id'] == 'og_ui_add_users' || $_POST['form_id'] == 'group_node_form')){
 // If a users is added to a group send this info to CRM.
   if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
+
     $logger = KtcCrmLogger::getInstance();
     $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
     $logger->log->addInfo('group add membership', array('crm_uuid' => $membership_uuid));
