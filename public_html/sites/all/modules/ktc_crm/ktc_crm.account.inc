@@ -10,7 +10,7 @@
 
 function ktc_crm_account_quick_update_accounts() {
   $logger = KtcCrmLogger::getInstance();
-  $logger->log->addInfo('cron', 'start account sync');
+  $logger->log->addInfo('cron: start account sync');
   // The webservice complains about not using paging cookie.
   $fetch_accounts = TRUE;
   $amount = 25;
@@ -32,13 +32,13 @@ function ktc_crm_account_quick_update_accounts() {
     $accounts = ktc_crm_fetch_accounts($options);
 
     if ($accounts == 'error') {
-      $logger->log->addError('cron', 'account sync aborted crm died?');
+      $logger->log->addError('cron: account sync aborted crm died?');
       return FALSE;
     }
 
     if (!$accounts && $i == 0) {
       // If no accounts are returned on first fetch, don't no anything more.
-      $logger->log->addInfo('cron', 'no accounts returned from webservice');
+      $logger->log->addInfo('cron: no accounts returned from webservice');
       return;
     }
     if (!$accounts) {
@@ -65,7 +65,7 @@ function ktc_crm_account_quick_update_accounts() {
 */
 function ktc_crm_account_update_accounts() {
   $logger = KtcCrmLogger::getInstance();
-  $logger->log->addInfo('cron', 'start account sync');
+  $logger->log->addInfo('cron: start account sync');
   // The webservice complains about not using paging cookie.
   $fetch_accounts = TRUE;
   $amount = 25;
@@ -89,13 +89,13 @@ function ktc_crm_account_update_accounts() {
     $accounts = ktc_crm_fetch_accounts($options);
 
     if ($accounts == 'error') {
-      $logger->log->addError('cron', 'account sync aborted crm died?');
+      $logger->log->addError('cron: account sync aborted crm died?');
       return FALSE;
     }
 
     if (!$accounts && $i == 0) {
       // If no accounts are returned on first fetch, don't no anything more.
-      $logger->log->addInfo('cron', 'no accounts returned from webservice');
+      $logger->log->addInfo('cron: no accounts returned from webservice');
       return;
     }
     if (!$accounts) {
@@ -148,7 +148,7 @@ function ktc_crm_account_create_update(\KTC\AccountService\AccountDto $accountdt
   $vocab = taxonomy_vocabulary_machine_name_load('accounts');
   $logger = KtcCrmLogger::getInstance();
 
-  $logger->log->addDebug('create_update_account', $accountdto);
+  $logger->log->addDebug('create_update_account', array('result' => json_encode((array) $accountdto)));
   // Try to load an account term.
   $account = ktc_crm_account_load_from_uuid($accountdto->CrmId);
 
@@ -163,7 +163,7 @@ function ktc_crm_account_create_update(\KTC\AccountService\AccountDto $accountdt
 
   if ($accountdto->DepartmentId) {
     if ($department = ktc_crm_account_load_from_uuid($accountdto->DepartmentId)) {
-      $logger->log->addInfo('cron', "Setting parent for {$accountdto->DepartmentId} to {$department->tid}");
+      $logger->log->addInfo("cron: Setting parent for {$accountdto->DepartmentId} to {$department->tid}");
       $account->parent = array($department->tid);
     }
   }
@@ -211,7 +211,7 @@ function ktc_crm_account_set_type($account, $type_name, $toplevelaccountid) {
   $logger = KtcCrmLogger::getInstance();
 
   $type = $type_name . ' - segment';
-  $logger->log->addInfo('cron', 'Setting account type with top: '.$type);
+  $logger->log->addInfo('cron: Setting account type with top', array('type'=>$type));
   // The account type determine the parent term for the toplevelaccount.
   // This creates a term, for the type set on the account.
   $vocab = taxonomy_vocabulary_machine_name_load('accounts');
