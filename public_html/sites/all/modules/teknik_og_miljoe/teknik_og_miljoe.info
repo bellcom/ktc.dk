@@ -212,4 +212,4 @@ features[views_view][] = magasin_sider
 features[views_view][] = magasinstatus
 features[views_view][] = udgivelser_sidevisning
 features_exclude[dependencies][list] = list
-mtime = 1484810835
+mtime = 1486038463

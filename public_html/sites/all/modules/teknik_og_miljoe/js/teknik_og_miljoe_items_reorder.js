@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -24,8 +24,14 @@
         update: function (event, ui) {
           $(".magasinsider .view-content").sortable("refresh");
           var moved_item_id = ui.item.attr('id').split('_');
-          var prev_item_id = ui.item.prev('.draggable').attr('id').split('_');
-          var next_item_id = ui.item.prev('.draggable').attr('id').split('_');
+          var prev_item_id = 0;
+          if (ui.item.prev('.draggable').attr('id')) {
+            prev_item_id = ui.item.prev('.draggable').attr('id').split('_');
+          }
+          var next_item_id = 0;
+          if (ui.item.next('.draggable').attr('id')) {
+            next_item_id = ui.item.next('.draggable').attr('id').split('_');
+          }
           $.ajax({
             type: 'POST',
             data: {prev_item: prev_item_id[4], moved_item: moved_item_id[4], next_item: next_item_id[4]},
@@ -37,4 +43,3 @@
     }
   }
 })(jQuery)
-

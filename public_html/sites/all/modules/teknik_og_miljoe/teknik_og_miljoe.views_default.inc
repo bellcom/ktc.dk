@@ -1040,6 +1040,11 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<div class="col-md-12">[nothing_2]</div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
+  /* Forbindelse: Field collection item: Entity with the Magasin indhold (field_magasin_indhold) */
+  $handler->display->display_options['relationships']['field_magasin_indhold_node']['id'] = 'field_magasin_indhold_node';
+  $handler->display->display_options['relationships']['field_magasin_indhold_node']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_magasin_indhold_node']['field'] = 'field_magasin_indhold_node';
+  $handler->display->display_options['relationships']['field_magasin_indhold_node']['required'] = TRUE;
   /* Felt: Field collection item: Field collection item ID */
   $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
   $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
@@ -1203,12 +1208,10 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['id'] = 'field_magasin_side_kommentarer';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['table'] = 'field_data_field_magasin_side_kommentarer';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['field'] = 'field_magasin_side_kommentarer';
+  $handler->display->display_options['fields']['field_magasin_side_kommentarer']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_magasin_side_kommentarer']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['delta_offset'] = '0';
-  /* Sorteringskriterie: Field collection item: Side nr (field_magasin_side_nr) */
-  $handler->display->display_options['sorts']['field_magasin_side_nr_value']['id'] = 'field_magasin_side_nr_value';
-  $handler->display->display_options['sorts']['field_magasin_side_nr_value']['table'] = 'field_data_field_magasin_side_nr';
-  $handler->display->display_options['sorts']['field_magasin_side_nr_value']['field'] = 'field_magasin_side_nr_value';
   /* Kontekstuelt filter: Field collection item: Field collection item ID */
   $handler->display->display_options['arguments']['item_id']['id'] = 'item_id';
   $handler->display->display_options['arguments']['item_id']['table'] = 'field_collection_item';
@@ -1241,6 +1244,7 @@ function teknik_og_miljoe_views_default_views() {
   </div>
 </div>  '),
     t('<div class="col-md-12">[nothing_2]</div>'),
+    t('field_magasin_indhold'),
     t('Field collection item ID'),
     t('.'),
     t('Redigér'),
@@ -1451,6 +1455,7 @@ function teknik_og_miljoe_views_default_views() {
     'display_id' => 'default',
     'add' => 'Tilføj',
   );
+  $handler->display->display_options['fields']['field_magasin_indhold']['delta_limit'] = '0';
   $handler->display->display_options['fields']['field_magasin_indhold']['delta_offset'] = '0';
   /* Felt: Indhold: Redigér-link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
@@ -1467,7 +1472,6 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['sorts']['field_official_date_value']['id'] = 'field_official_date_value';
   $handler->display->display_options['sorts']['field_official_date_value']['table'] = 'field_data_field_official_date';
   $handler->display->display_options['sorts']['field_official_date_value']['field'] = 'field_official_date_value';
-  $handler->display->display_options['sorts']['field_official_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

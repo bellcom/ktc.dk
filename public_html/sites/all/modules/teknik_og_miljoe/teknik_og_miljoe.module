@@ -55,66 +55,40 @@ function teknik_og_miljoe_paragraphs_reorder(){
 function teknik_og_miljoe_udgivelser_content_reorder($nid){
   $magasin = node_load($nid);
   $magasin_content = field_get_items('node', $magasin, 'field_magasin_indhold');
-  $magasin_content_ids = array();
-  foreach($magasin_content as $key => $value)
-    $magasin_content_ids[] = $value['value'];
-  $moved_item = current(entity_load('field_collection_item', array($_POST['moved_item'])));
-  $prev_item = current(entity_load('field_collection_item', array($_POST['prev_item'])));
-  $next_item = current(entity_load('field_collection_item', array($_POST['next_item'])));
-  $moved_item_side_nr = array_pop(array_shift(field_get_items('field_collection_item', $moved_item, 'field_magasin_side_nr')));
-  $prev_item_side_nr = array_pop(array_shift(field_get_items('field_collection_item', $prev_item, 'field_magasin_side_nr')));
-  $next_item_side_nr = array_pop(array_shift(field_get_items('field_collection_item', $next_item, 'field_magasin_side_nr')));
 
-  if ($moved_item_side_nr < $prev_item_side_nr ){
-    //item moved down
-    $query = new EntityFieldQuery;
-		$query->entityCondition('entity_type', 'field_collection_item')
-			->propertyCondition('field_name', 'field_magasin_indhold')
-			->propertyCondition('item_id', $magasin_content_ids, 'IN')
-      ->fieldCondition('field_magasin_side_nr' , 'value', array($moved_item_side_nr, $prev_item_side_nr ), 'BETWEEN')
-      ->fieldCondition('field_magasin_side_nr' , 'value', $moved_item_side_nr, '!=')
-      ->fieldOrderBy('field_magasin_side_nr' , 'value', 'DESC');
-     $result = $query->execute();
-     $moved_item->field_magasin_side_nr['und'][0]['value'] = $prev_item_side_nr;
-     entity_save('field_collection_item', $moved_item);
-     $current_value = $prev_item_side_nr - 1;
-     foreach ($result['field_collection_item'] as $key =>$item) {
-       $content = current(entity_load('field_collection_item', array($key)));
-       if(isset($content->field_magasin_side_nr['und'][0]['value']) && !empty($content->field_magasin_side_nr['und'][0]['value'])){
-        if ($content->field_magasin_side_nr['und'][0]['value'] == $current_value)  break;
-           $content->field_magasin_side_nr['und'][0]['value'] = $current_value;
-           $current_value--;
-           entity_save('field_collection_item', $content);
+  $moved_item = $_POST['moved_item'];
+  $prev_item = $_POST['prev_item'];
+  $next_item = $_POST['next_item'];
 
-       }
-     }
+  /*** rearranging ***/
+  $moved_item_element = null;
+  for ($i = 0; $i < count($magasin_content); $i++) {
+    if ($magasin_content[$i]['value'] == $moved_item) {
+      $moved_item_element = $magasin_content[$i];
+      unset($magasin_content[$i]);
+      break;
+    }
   }
 
-  if ($moved_item_side_nr > $next_item_side_nr ){
-    //item moved up
-    $query = new EntityFieldQuery;
-		$query->entityCondition('entity_type', 'field_collection_item')
-			->propertyCondition('field_name', 'field_magasin_indhold')
-			->propertyCondition('item_id', $magasin_content_ids, 'IN')
-      ->fieldCondition('field_magasin_side_nr' , 'value', array($next_item_side_nr, $moved_item_side_nr ), 'BETWEEN')
-      ->fieldCondition('field_magasin_side_nr' , 'value', $moved_item_side_nr, '!=')
-      ->fieldOrderBy('field_magasin_side_nr' , 'value', 'ACS');
-     $result = $query->execute();
-     $moved_item->field_magasin_side_nr['und'][0]['value'] = $next_item_side_nr;
-     entity_save('field_collection_item', $moved_item);
-     $current_value = $next_item_side_nr + 1;
-     foreach ($result['field_collection_item'] as $key =>$item) {
-       $content = current(entity_load('field_collection_item', array($key)));
-       if(isset($content->field_magasin_side_nr['und'][0]['value']) && !empty($content->field_magasin_side_nr['und'][0]['value'])){
-        if ($content->field_magasin_side_nr['und'][0]['value'] == $current_value)  break;
-           $content->field_magasin_side_nr['und'][0]['value'] = $current_value;
-           $current_value++;
-           entity_save('field_collection_item', $content);
+  $magasin_content = array_values($magasin_content);
 
-       }
-     }
-   }
+  $rearranged_items = array();
+  if ($prev_item == 0) {
+    $rearranged_items[] = $moved_item_element;
   }
+
+  for ($i = 0; $i < count($magasin_content); $i++) {
+    $rearranged_items[] = $magasin_content[$i];
+    if ($magasin_content[$i]['value'] == $prev_item) {
+      $rearranged_items[] = $moved_item_element;
+    }
+  }
+
+  /*** END rearranging ***/
+
+  $magasin->field_magasin_indhold['und'] = $rearranged_items;
+  node_save($magasin);
+}
 
 /*
  * Helper function
