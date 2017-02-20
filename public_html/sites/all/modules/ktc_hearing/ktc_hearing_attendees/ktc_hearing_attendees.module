@@ -115,7 +115,8 @@ function ktc_hearing_attendees_get_group_members($id = NULL, $other_groups) {
 
     if ($other_groups !== 'null' && $id != $other_groups) {
       $other_groups = explode(',', $other_groups);
-      if (($key = array_search($id, $other_groups))) {
+      $key = array_search($id, $other_groups);
+      if ($key !== FALSE) {
        unset($other_groups[$key]);
       }
       $other_groups_memberships = og_membership_load_multiple(FALSE, array('gid' => $other_groups, 'entity_type' => 'user'));
