@@ -9,7 +9,8 @@
  */
 function ktc_crm_webuser_update_users() {
   $logger = KtcCrmLogger::getInstance();
-  $logger->log->addInfo('cron', 'start user sync');
+  $logger->log->addInfo('cron: start user sync');
+
   // The webservice complains about not using paging cookie.
   $fetch_users = TRUE;
   $amount = 50;
@@ -36,7 +37,7 @@ function ktc_crm_webuser_update_users() {
     }
 
     foreach ($webusers as $webuserdto) {
-      $logger->log->addInfo('cron', 'syncing user' . $webuserdto);
+      $logger->log->addInfo('cron: syncing user', array ('crm_uuid' => $webuserdto));
       ktc_crm_update_account_from_webuserdto($webuserdto);
     }
     if (sizeof($webusers) < $amount){
@@ -232,7 +233,7 @@ function ktc_crm_map_account_to_webuserdto($account) {
   }
 
   $webuserdto->Active = $account->status;
-  
+
   $webuserdto->WebUser = TRUE;
 
   if ($account->access) {
@@ -264,7 +265,7 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto, $uid = 0) {
 
   $edit['mail'] = $webuserdto->EMail;
   $edit['field_crm_uuid'][LANGUAGE_NONE][0]['value'] = $webuserdto->CrmId;
-  // Setting wheter the account is active or not. 
+  // Setting wheter the account is active or not.
   $edit['status'] = $webuserdto->Active;
   // Username is generated from firstname, lastname and toplevelaccount name.
   $edit['name'] = ktc_users_generate_username($webuserdto->FirstName . ' ' . $webuserdto->LastName, $webuserdto->TopLevelAccountName, $webuserdto->EMail, $uid);
