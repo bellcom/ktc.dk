@@ -11028,6 +11028,7 @@ fieldset[disabled] .field-type-image .button {
   padding: 5px;
   height: 130px;
   margin-bottom: 5px;
+  overflow: auto;
 }
 
 .magasinflow .magasinsider .inner H3 {
