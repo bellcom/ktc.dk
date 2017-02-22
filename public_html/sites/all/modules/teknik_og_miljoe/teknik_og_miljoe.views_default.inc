@@ -459,18 +459,6 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Felt: Indhold: Antal anslag - længde på artikel */
-  $handler->display->display_options['fields']['field_antal_anslag']['id'] = 'field_antal_anslag';
-  $handler->display->display_options['fields']['field_antal_anslag']['table'] = 'field_data_field_antal_anslag';
-  $handler->display->display_options['fields']['field_antal_anslag']['field'] = 'field_antal_anslag';
-  $handler->display->display_options['fields']['field_antal_anslag']['label'] = 'Antal anslag';
-  $handler->display->display_options['fields']['field_antal_anslag']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_antal_anslag']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_antal_anslag']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_antal_anslag']['settings'] = array(
-    'thousand_separator' => '.',
-    'prefix_suffix' => 0,
-  );
   /* Felt: Indhold: Artikel status */
   $handler->display->display_options['fields']['field_artikel_status']['id'] = 'field_artikel_status';
   $handler->display->display_options['fields']['field_artikel_status']['table'] = 'field_data_field_artikel_status';
@@ -482,14 +470,6 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_artikel_status']['settings'] = array(
     'link' => 0,
   );
-  /* Felt: Indhold: Artikeltype */
-  $handler->display->display_options['fields']['field_artikeltype']['id'] = 'field_artikeltype';
-  $handler->display->display_options['fields']['field_artikeltype']['table'] = 'field_data_field_artikeltype';
-  $handler->display->display_options['fields']['field_artikeltype']['field'] = 'field_artikeltype';
-  $handler->display->display_options['fields']['field_artikeltype']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_artikeltype']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_artikeltype']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_artikeltype']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Indhold: Deadline */
   $handler->display->display_options['fields']['field_deadline']['id'] = 'field_deadline';
   $handler->display->display_options['fields']['field_deadline']['table'] = 'field_data_field_deadline';
@@ -504,6 +484,26 @@ function teknik_og_miljoe_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Felt: Indhold: Antal anslag - længde på artikel */
+  $handler->display->display_options['fields']['field_antal_anslag']['id'] = 'field_antal_anslag';
+  $handler->display->display_options['fields']['field_antal_anslag']['table'] = 'field_data_field_antal_anslag';
+  $handler->display->display_options['fields']['field_antal_anslag']['field'] = 'field_antal_anslag';
+  $handler->display->display_options['fields']['field_antal_anslag']['label'] = 'Antal anslag';
+  $handler->display->display_options['fields']['field_antal_anslag']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_antal_anslag']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_antal_anslag']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_antal_anslag']['settings'] = array(
+    'thousand_separator' => '.',
+    'prefix_suffix' => 0,
+  );
+  /* Felt: Indhold: Artikeltype */
+  $handler->display->display_options['fields']['field_artikeltype']['id'] = 'field_artikeltype';
+  $handler->display->display_options['fields']['field_artikeltype']['table'] = 'field_data_field_artikeltype';
+  $handler->display->display_options['fields']['field_artikeltype']['field'] = 'field_artikeltype';
+  $handler->display->display_options['fields']['field_artikeltype']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_artikeltype']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_artikeltype']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_artikeltype']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Indhold: Forfatter(e) */
   $handler->display->display_options['fields']['field_coforfattere']['id'] = 'field_coforfattere';
   $handler->display->display_options['fields']['field_coforfattere']['table'] = 'field_data_field_coforfattere';
@@ -549,13 +549,6 @@ function teknik_og_miljoe_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Højtopløste billeder */
-  $handler->display->display_options['fields']['field_highres_billeder']['id'] = 'field_highres_billeder';
-  $handler->display->display_options['fields']['field_highres_billeder']['table'] = 'field_data_field_highres_billeder';
-  $handler->display->display_options['fields']['field_highres_billeder']['field'] = 'field_highres_billeder';
-  $handler->display->display_options['fields']['field_highres_billeder']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_highres_billeder']['type'] = 'file_table';
-  $handler->display->display_options['fields']['field_highres_billeder']['delta_offset'] = '0';
   /* Felt: Indhold: Medtaget i udgivelse */
   $handler->display->display_options['fields']['field_medtaget_i_udgivelse']['id'] = 'field_medtaget_i_udgivelse';
   $handler->display->display_options['fields']['field_medtaget_i_udgivelse']['table'] = 'field_data_field_medtaget_i_udgivelse';
@@ -564,6 +557,13 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_medtaget_i_udgivelse']['settings'] = array(
     'link' => 1,
   );
+  /* Felt: Indhold: Højtopløste billeder */
+  $handler->display->display_options['fields']['field_highres_billeder']['id'] = 'field_highres_billeder';
+  $handler->display->display_options['fields']['field_highres_billeder']['table'] = 'field_data_field_highres_billeder';
+  $handler->display->display_options['fields']['field_highres_billeder']['field'] = 'field_highres_billeder';
+  $handler->display->display_options['fields']['field_highres_billeder']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highres_billeder']['type'] = 'file_table';
+  $handler->display->display_options['fields']['field_highres_billeder']['delta_offset'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'none',
@@ -602,16 +602,16 @@ function teknik_og_miljoe_views_default_views() {
     t('[title] [field_artikeltype] [field_os2web_news_page_type] - [type]
 '),
     t('Content pane'),
-    t('Antal anslag'),
     t('Status'),
-    t('Artikeltype'),
     t('Deadline'),
+    t('Antal anslag'),
+    t('Artikeltype'),
     t('Forfatter(e)'),
     t('Forfattere'),
     t('Fri for alle'),
     t('Frigivelse til alle'),
-    t('Højtopløste billeder'),
     t('Medtaget i udgivelse'),
+    t('Højtopløste billeder'),
     t('View panes'),
   );
   $export['artikler'] = $view;
