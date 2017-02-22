@@ -9,6 +9,14 @@
  */
 function teknik_og_miljoe_taxonomy_default_vocabularies() {
   return array(
+    'arbejdsomr_der' => array(
+      'name' => 'Arbejdsområder',
+      'machine_name' => 'arbejdsomr_der',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'artikeltyper' => array(
       'name' => 'Artikeltyper',
       'machine_name' => 'artikeltyper',
@@ -44,6 +52,14 @@ function teknik_og_miljoe_taxonomy_default_vocabularies() {
     'status' => array(
       'name' => 'Status',
       'machine_name' => 'status',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
+    'stofomraade' => array(
+      'name' => 'Stofområde',
+      'machine_name' => 'stofomraade',
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
