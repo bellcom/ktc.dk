@@ -215,6 +215,200 @@ function teknik_og_miljoe_views_default_views() {
   $export['artikel_forfattere'] = $view;
 
   $view = new view();
+  $view->name = 'artikelinfo';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Artikelinfo';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Felt: Indhold: Antal anslag - længde på artikel */
+  $handler->display->display_options['fields']['field_antal_anslag']['id'] = 'field_antal_anslag';
+  $handler->display->display_options['fields']['field_antal_anslag']['table'] = 'field_data_field_antal_anslag';
+  $handler->display->display_options['fields']['field_antal_anslag']['field'] = 'field_antal_anslag';
+  $handler->display->display_options['fields']['field_antal_anslag']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Felt: Indhold: Artikel status */
+  $handler->display->display_options['fields']['field_artikel_status']['id'] = 'field_artikel_status';
+  $handler->display->display_options['fields']['field_artikel_status']['table'] = 'field_data_field_artikel_status';
+  $handler->display->display_options['fields']['field_artikel_status']['field'] = 'field_artikel_status';
+  $handler->display->display_options['fields']['field_artikel_status']['settings'] = array(
+    'link' => 0,
+  );
+  /* Felt: Indhold: Artikeltype */
+  $handler->display->display_options['fields']['field_artikeltype']['id'] = 'field_artikeltype';
+  $handler->display->display_options['fields']['field_artikeltype']['table'] = 'field_data_field_artikeltype';
+  $handler->display->display_options['fields']['field_artikeltype']['field'] = 'field_artikeltype';
+  $handler->display->display_options['fields']['field_artikeltype']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Indhold: Deadline */
+  $handler->display->display_options['fields']['field_deadline']['id'] = 'field_deadline';
+  $handler->display->display_options['fields']['field_deadline']['table'] = 'field_data_field_deadline';
+  $handler->display->display_options['fields']['field_deadline']['field'] = 'field_deadline';
+  $handler->display->display_options['fields']['field_deadline']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Felt: Indhold: Forfatter(e) */
+  $handler->display->display_options['fields']['field_coforfattere']['id'] = 'field_coforfattere';
+  $handler->display->display_options['fields']['field_coforfattere']['table'] = 'field_data_field_coforfattere';
+  $handler->display->display_options['fields']['field_coforfattere']['field'] = 'field_coforfattere';
+  $handler->display->display_options['fields']['field_coforfattere']['settings'] = array(
+    'edit' => 'Redigér',
+    'delete' => 'Slet',
+    'add' => 'Tilføj',
+    'description' => 0,
+    'view_mode' => 'listevisning',
+  );
+  $handler->display->display_options['fields']['field_coforfattere']['delta_offset'] = '0';
+  /* Felt: Indhold: Forfattere (field_artikel_forfattere:delta) */
+  $handler->display->display_options['fields']['delta']['id'] = 'delta';
+  $handler->display->display_options['fields']['delta']['table'] = 'field_data_field_artikel_forfattere';
+  $handler->display->display_options['fields']['delta']['field'] = 'delta';
+  $handler->display->display_options['fields']['delta']['label'] = 'Forfattere';
+  /* Felt: Indhold: Fri for alle */
+  $handler->display->display_options['fields']['field_fri_for_alle']['id'] = 'field_fri_for_alle';
+  $handler->display->display_options['fields']['field_fri_for_alle']['table'] = 'field_data_field_fri_for_alle';
+  $handler->display->display_options['fields']['field_fri_for_alle']['field'] = 'field_fri_for_alle';
+  $handler->display->display_options['fields']['field_fri_for_alle']['hide_empty'] = TRUE;
+  /* Felt: Indhold: Frigivelse til alle */
+  $handler->display->display_options['fields']['field_frigivelse_til_alle']['id'] = 'field_frigivelse_til_alle';
+  $handler->display->display_options['fields']['field_frigivelse_til_alle']['table'] = 'field_data_field_frigivelse_til_alle';
+  $handler->display->display_options['fields']['field_frigivelse_til_alle']['field'] = 'field_frigivelse_til_alle';
+  $handler->display->display_options['fields']['field_frigivelse_til_alle']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Felt: Indhold: Højtopløste billeder */
+  $handler->display->display_options['fields']['field_highres_billeder']['id'] = 'field_highres_billeder';
+  $handler->display->display_options['fields']['field_highres_billeder']['table'] = 'field_data_field_highres_billeder';
+  $handler->display->display_options['fields']['field_highres_billeder']['field'] = 'field_highres_billeder';
+  $handler->display->display_options['fields']['field_highres_billeder']['label'] = '';
+  $handler->display->display_options['fields']['field_highres_billeder']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_highres_billeder']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_highres_billeder']['type'] = 'file_table';
+  $handler->display->display_options['fields']['field_highres_billeder']['delta_offset'] = '0';
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Kontekstuelt filter: Indhold: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'artikler' => 'artikler',
+  );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['pane_title'] = 'Artikelinfo til forfattere';
+  $handler->display->display_options['pane_category']['name'] = 'KTC';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
+
+  /* Display: Blok */
+  $handler = $view->new_display('block', 'Blok', 'block_1');
+  $translatables['artikelinfo'] = array(
+    t('Master'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Antal elementer'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('« første'),
+    t('‹ forrige'),
+    t('næste ›'),
+    t('sidste »'),
+    t('Antal anslag - længde på artikel'),
+    t('Artikel status'),
+    t('Artikeltype'),
+    t('Deadline'),
+    t('Forfatter(e)'),
+    t('Forfattere'),
+    t('.'),
+    t(','),
+    t('Fri for alle'),
+    t('Frigivelse til alle'),
+    t('Alle'),
+    t('Content pane'),
+    t('Artikelinfo til forfattere'),
+    t('KTC'),
+    t('Blok'),
+  );
+  $export['artikelinfo'] = $view;
+
+  $view = new view();
   $view->name = 'artikler';
   $view->description = '';
   $view->tag = 'default';
