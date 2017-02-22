@@ -1456,7 +1456,9 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_artikel_afsnit';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(),
+    );
     $pane->configuration = array(
       'label' => 'hidden',
       'formatter' => 'field_collection_view',

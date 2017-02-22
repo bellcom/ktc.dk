@@ -1136,8 +1136,11 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_magasin_side_sidegenre']['id'] = 'field_magasin_side_sidegenre';
   $handler->display->display_options['fields']['field_magasin_side_sidegenre']['table'] = 'field_data_field_magasin_side_sidegenre';
   $handler->display->display_options['fields']['field_magasin_side_sidegenre']['field'] = 'field_magasin_side_sidegenre';
-  $handler->display->display_options['fields']['field_magasin_side_sidegenre']['label'] = '';
-  $handler->display->display_options['fields']['field_magasin_side_sidegenre']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_magasin_side_sidegenre']['label'] = 'Genre';
+  $handler->display->display_options['fields']['field_magasin_side_sidegenre']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_magasin_side_sidegenre']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_magasin_side_sidegenre']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_magasin_side_sidegenre']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_magasin_side_sidegenre']['settings'] = array(
     'link' => 0,
   );
@@ -1151,6 +1154,17 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_magasin_tema']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['field_magasin_tema']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_magasin_tema']['hide_empty'] = TRUE;
+  /* Felt: Field collection item: Stofområde */
+  $handler->display->display_options['fields']['field_magasinside_stofomraade']['id'] = 'field_magasinside_stofomraade';
+  $handler->display->display_options['fields']['field_magasinside_stofomraade']['table'] = 'field_data_field_magasinside_stofomraade';
+  $handler->display->display_options['fields']['field_magasinside_stofomraade']['field'] = 'field_magasinside_stofomraade';
+  $handler->display->display_options['fields']['field_magasinside_stofomraade']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_magasinside_stofomraade']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_magasinside_stofomraade']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_magasinside_stofomraade']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_magasinside_stofomraade']['settings'] = array(
+    'link' => 0,
+  );
   /* Felt: Field collection item: Status */
   $handler->display->display_options['fields']['field_magasin_side_status']['id'] = 'field_magasin_side_status';
   $handler->display->display_options['fields']['field_magasin_side_status']['table'] = 'field_data_field_magasin_side_status';
@@ -1208,9 +1222,12 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['id'] = 'field_magasin_side_kommentarer';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['table'] = 'field_data_field_magasin_side_kommentarer';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['field'] = 'field_magasin_side_kommentarer';
+  $handler->display->display_options['fields']['field_magasin_side_kommentarer']['label'] = '';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_magasin_side_kommentarer']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_magasin_side_kommentarer']['delta_limit'] = 'All';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['delta_offset'] = '0';
   /* Kontekstuelt filter: Field collection item: Field collection item ID */
   $handler->display->display_options['arguments']['item_id']['id'] = 'item_id';
@@ -1250,11 +1267,12 @@ function teknik_og_miljoe_views_default_views() {
     t('Redigér'),
     t('Slet'),
     t('Tilføj'),
+    t('Genre'),
     t('Tema: [field_magasin_tema]'),
+    t('Stofområde'),
     t('Status: [field_magasin_side_status]'),
     t('[counter] - [field_magasin_side_status]'),
     t('Artikler'),
-    t('Kommentarer'),
     t('Alle'),
   );
   $export['magasin_sider'] = $view;

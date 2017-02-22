@@ -362,6 +362,7 @@ function teknik_og_miljoe_field_group_info() {
       2 => 'field_magasin_tema',
       3 => 'field_magasin_side_kommentarer',
       4 => 'field_magasin_side_sidegenre',
+      5 => 'field_magasinside_stofomraade',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
