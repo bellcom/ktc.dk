@@ -26,7 +26,7 @@
  */
 ?>
 <div id = "ktc_paragraph_<?php print $host_entity_id ?>_<?php print $item_id ?>" class='draggable'>
-  <div class="ktc-article-section <?php print $classes; ?>"<?php print $attributes; ?>>
+  <div class="ting ktc-article-section <?php print $classes; ?>"<?php print $attributes; ?>>
     <?php print render($title_prefix); ?>
     <?php print render($title_suffix); ?>
     <div class="content"<?php print $content_attributes; ?>>
