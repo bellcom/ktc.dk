@@ -2680,7 +2680,7 @@
 }
 
 @media (min-width: 768px) {
-  .paragraphs-item-ktc-artikel-billedserie .field-items .field-item {
+  .paragraphs-item-ktc-artikel-billedserie .field-type-image .field-items .field-item {
     float: left;
     width: 25%;
   }
