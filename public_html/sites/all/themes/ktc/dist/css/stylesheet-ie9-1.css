@@ -5623,6 +5623,8 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-aside-tabs .ktc-aside-body:after,
 .ktc-aside-link-list-2-col .view-content:before,
 .ktc-aside-link-list-2-col .view-content:after,
+.paragraphs-item-ktc-artikel-billedserie .field-items:before,
+.paragraphs-item-ktc-artikel-billedserie .field-items:after,
 .date-no-float .date-padding:before,
 .date-no-float .date-padding:after {
   content: " ";
@@ -5663,6 +5665,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-aside-filter .filter-box:after,
 .ktc-aside-tabs .ktc-aside-body:after,
 .ktc-aside-link-list-2-col .view-content:after,
+.paragraphs-item-ktc-artikel-billedserie .field-items:after,
 .date-no-float .date-padding:after {
   clear: both;
 }
@@ -12921,23 +12924,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
   outline: 0;
   background-image: none;
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.disabled,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.disabled,
-.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle[disabled],
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle[disabled],
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  box-shadow: none;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-paragraphs-add a.dropdown-toggle.btn-xs,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-paragraphs-add a.dropdown-toggle.btn-xs {
-  min-width: 20px;
-  padding: 1px 6px;
 }
