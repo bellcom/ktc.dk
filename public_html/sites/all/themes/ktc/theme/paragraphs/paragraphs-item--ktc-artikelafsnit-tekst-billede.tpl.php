@@ -26,8 +26,10 @@
  * @see template_process()
  */
 ?>
-<div class="artikelafsnit-tekst-billede <?php print $classes; ?>"<?php print $attributes; ?>>
+<div class="ktc-article-section artikelafsnit-tekst-billede <?php print $classes; ?>"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-    <?php print render($content); ?>
+    <?php print render($content['field_artikelafsnit_billede']); ?>
+    <?php print render($content['field_artikelafsnit_overskrift']); ?>
+    <?php print render($content['field_artikelafsnit_tekst']); ?>
   </div>
 </div>
