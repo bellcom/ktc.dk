@@ -11534,7 +11534,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
 }
 
 .ktc-article-section {
-  padding: 20px 0;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0 -60px;
+  padding: 20px 60px;
 }
 
 .ktc-article-section.ktc-article-section-type-faktaboks,
