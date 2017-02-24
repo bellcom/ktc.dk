@@ -11955,6 +11955,7 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   padding: 0;
   margin: 0;
   border-bottom: 0;
+  background-color: #FFF;
 }
 
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links,
@@ -12593,7 +12594,10 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-it
 .ktc-article-section-wrapper .field-collection-container,
 .ktc-article-section-wrapper .paragraphs-items-field-paragraphs {
   border: 0;
-  margin: 0;
+  margin: 0 -60px;
+  padding: 0 60px;
+  color: #E9EDEE;
+  background-color: #E9EDEE;
 }
 
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add,
