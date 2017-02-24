@@ -7412,7 +7412,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   margin-top: 1.6em;
 }
 
-.ui-sortable .draggable .entity-paragraphs-item.ui-sortable-helper {
+.ui-sortable .draggable.ui-sortable-helper {
   border: 4px dashed rgba(0, 0, 0, 0.15);
   margin-bottom: 20px;
 }
