@@ -445,6 +445,8 @@ function teknik_og_miljoe_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '[field_artikel_status]';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -464,6 +466,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_artikel_status']['table'] = 'field_data_field_artikel_status';
   $handler->display->display_options['fields']['field_artikel_status']['field'] = 'field_artikel_status';
   $handler->display->display_options['fields']['field_artikel_status']['label'] = 'Status';
+  $handler->display->display_options['fields']['field_artikel_status']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_artikel_status']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_artikel_status']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_artikel_status']['element_default_classes'] = FALSE;
@@ -602,6 +605,7 @@ function teknik_og_miljoe_views_default_views() {
     t('[title] [field_artikeltype] [field_os2web_news_page_type] - [type]
 '),
     t('Content pane'),
+    t('[field_artikel_status]'),
     t('Status'),
     t('Deadline'),
     t('Antal anslag'),
@@ -1367,12 +1371,12 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['table'] = 'field_data_field_magasin_side_kommentarer';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['field'] = 'field_magasin_side_kommentarer';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['label'] = '';
-  $handler->display->display_options['fields']['field_magasin_side_kommentarer']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_magasin_side_kommentarer']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['delta_limit'] = 'All';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_magasin_side_kommentarer']['delta_reversed'] = TRUE;
+  $handler->display->display_options['fields']['field_magasin_side_kommentarer']['multi_type'] = 'ul';
   /* Kontekstuelt filter: Field collection item: Field collection item ID */
   $handler->display->display_options['arguments']['item_id']['id'] = 'item_id';
   $handler->display->display_options['arguments']['item_id']['table'] = 'field_collection_item';

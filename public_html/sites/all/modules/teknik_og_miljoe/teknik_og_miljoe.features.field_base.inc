@@ -550,7 +550,7 @@ function teknik_og_miljoe_field_default_field_bases() {
   // Exported field_base: 'field_eksisterende_bruger'
   $field_bases['field_eksisterende_bruger'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_eksisterende_bruger',
