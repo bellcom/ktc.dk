@@ -4,8 +4,6 @@
   "version": "0.0.1",
   "dependencies": {
     "bootstrap": "~3.1.1",
-    "bs3-designer": "~0.*",
-    "bs3-masonry": "~0.*",
     "fastclick": "~1.*",
     "fontawesome": "~4.*",
     "html5shiv": "~3.*",
