@@ -209,7 +209,7 @@ EOL;
   $params['subject'] = 'Formular for virksomhedsinformationer indsendt.';
   $params['body'] = $message;
   $language = $user->language;
-  $to = variable_get('ktc_users_edit_company_form_recipient', variable_get('site_mail', ''));
+  $to = variable_get('ktc_users_edit_company_form_mail', variable_get('site_mail', ''));
 
   drupal_mail('ktc_users_edit', 'notify_new', $to, $language, $params);
   drupal_set_message(variable_get('ktc_users_edit_company_form_submit_message', ''));

@@ -27,7 +27,7 @@ function ktc_crm_fetch_webusers($options = array()) {
 
     $result = $webuser->RetrieveWebUsers($retrievewebusers);
 
-    $logger->log->addDebug('RetrieveWebUsers', $result);
+    $logger->log->addDebug('RetrieveWebUsers:', array('result' => json_encode((array) $result)));
 
     $webusers = $result->RetrieveWebUsersResult->Results->WebUserDto;
 
@@ -60,7 +60,7 @@ function ktc_crm_lookup_webuser_by_mail($mail) {
 
   $wsdl_url = $url . '/' . KTC_CRM_WEBUSER_WSDL;
 
-  $logger->log->AddInfo('RetrieveWebUsersByMail', $mail);
+  $logger->log->AddInfo('RetrieveWebUsersByMail', array('mail' => $mail));
 
   try {
     $webuser = new KTC\WebUser\WebUser(array(), $wsdl_url);
@@ -69,7 +69,7 @@ function ktc_crm_lookup_webuser_by_mail($mail) {
 
     $result = $webuser->RetrieveWebUserByMail($retrievewebuserbymail);
 
-    $logger->log->AddDebug('RetrieveWebUserByMail result', $result);
+    $logger->log->AddDebug('RetrieveWebUserByMail result', array('result' => json_encode((array) $result)));
 
     if (is_object($result->RetrieveWebUserByMailResult->Results->WebUserDto)) {
       return $result->RetrieveWebUserByMailResult->Results->WebUserDto;
@@ -98,7 +98,7 @@ function ktc_crm_update_user(\KTC\WebUser\WebUserDto $webuserdto) {
 
   $wsdl_url = $url . '/' . KTC_CRM_WEBUSER_WSDL;
 
-  $logger->log->addInfo('CreateUpdateWebUser', $webuserdto);
+  $logger->log->addInfo('CreateUpdateWebUser', array('result' => json_encode((array) $webuserdto)));
   try {
     $webuser = new KTC\WebUser\WebUser(array(), $wsdl_url);
 
@@ -106,7 +106,7 @@ function ktc_crm_update_user(\KTC\WebUser\WebUserDto $webuserdto) {
 
     $result = $webuser->CreateUpdateWebUser($createupdate);
 
-    $logger->log->addDebug('CreateUpdateWebUser result', $result);
+    $logger->log->addDebug('CreateUpdateWebUser result', array('result' => json_encode((array) $result)));
 
     if (is_object($result) && isset($result->CreateUpdateWebUserResult)) {
       return $result->CreateUpdateWebUserResult;
@@ -140,7 +140,7 @@ function ktc_crm_fetch_subscriptions($options = array()) {
 
     $result = $subscription->RetrieveSubscriptions($retrievesubscriptions);
 
-    $logger->log->addDebug('RetrieveSubscriptions result', $result);
+    $logger->log->addDebug('RetrieveSubscriptions result', array('result' => json_encode((array) $result)));
 
     if (is_object($result) && isset($result->RetrieveSubscriptionsResult)) {
       return $result->RetrieveSubscriptionsResult;
@@ -177,7 +177,7 @@ function ktc_crm_update_user_subscription(\KTC\Subscription\SubscriptionDto $sub
 
     $result = $subscription->CreateUpdateSubscription($createupdatesubscriptions);
 
-    $logger->log->addDebug('CreateUpdateSubscription result', $result);
+    $logger->log->addDebug('CreateUpdateSubscription result', array('result' => json_encode((array) $result)));
 
     if (is_object($result) && isset($result->CreateUpdateSubscriptionResponse)) {
       return $result->CreateUpdateSubscriptionResponse;
@@ -289,9 +289,8 @@ function ktc_crm_fetch_groups($options = array()) {
     $retrivegroups = new \KTC\GroupService\RetrieveGroups($request);
 
     $result = $groupservice->RetrieveGroups($retrivegroups);
-
-    $logger->log->addDebug('RetrieveGroups result', $result);
-
+    $logger->log->addDebug('RetrieveGroups result:', array('result' => json_encode((array) $result)));
+    
     if (is_object($result) && isset($result->RetrieveGroupsResult)) {
       return $result->RetrieveGroupsResult;
     }
@@ -328,7 +327,7 @@ function ktc_crm_fetch_grouptypess($options = array()) {
 
     $result = $groupservice->RetrieveGroupTypes($retrivegrouptypes);
 
-    $logger->log->addDebug('RetrieveGroupTypess result', $result);
+    $logger->log->addDebug('RetrieveGroupTypess result', array('result' => json_encode((array) $result)));
 
     if (is_object($result) && isset($result->RetrieveGroupTypesResult)) {
       return $result->RetrieveGroupTypesResult;
@@ -366,7 +365,7 @@ function ktc_crm_fetch_grouproles($options = array()) {
 
     $result = $groupservice->RetrieveGroupRoles($retrivegroups);
 
-    $logger->log->addDebug('RetrieveGroupRoles result', $result);
+    $logger->log->addDebug('RetrieveGroupRoles result', array('result' => json_encode((array) $result)));
 
     if (is_object($result) && isset($result->RetrieveGroupRolesResult)) {
       return $result->RetrieveGroupRolesResult;
@@ -399,7 +398,7 @@ function ktc_crm_fetch_groupmembers() {
 
     $result = $groupservice->RetrieveGroupMembers($retrivegroups);
 
-    $logger->log->addDebug('RetrieveGroupMembers result', $result);
+    $logger->log->addDebug('RetrieveGroupMembers result', array('result' => json_encode((array) $result)));
 
     if (is_object($result) && isset($result->RetrieveGroupMembersResult)) {
       return $result->RetrieveGroupMembersResult;
@@ -431,7 +430,7 @@ function ktc_crm_update_group(\KTC\GroupService\GroupDto $groupdto) {
 
     $result = $groupservice->CreateUpdateGroup($createupdategroup);
 
-    $logger->log->addDebug('CreateUpdateGroup result', $result);
+    $logger->log->addDebug('CreateUpdateGroup result',  array('result' => json_encode((array) $result)));
 
     if (is_object($result) && isset($result->CreateUpdateGroupResult)) {
       return $result->CreateUpdateGroupResult;
@@ -464,7 +463,7 @@ function ktc_crm_update_groupmember(\KTC\GroupService\GroupMemberDto $groupmembe
 
     $result = $groupservice->CreateUpdateGroupMember($createupdategroupmember);
 
-    $logger->log->addDebug('CreateUpdateGroupMember result', $result);
+    $logger->log->addDebug('CreateUpdateGroupMember result', array('result' => json_encode((array) $result)));
 
     if (is_object($result) && isset($result->CreateUpdateGroupMemberResult)) {
       return $result->CreateUpdateGroupMemberResult;
@@ -502,7 +501,7 @@ function ktc_crm_fetch_accounts($options = array()) {
 
     $result = $webuser->RetrieveAccounts($retrieveaccounts);
 
-    $logger->log->addDebug('RetrieveAccounts result', $result);
+    $logger->log->addDebug('RetrieveAccounts result', array('result' => json_encode((array) $result)));
 
     $accounts = $result->RetrieveAccountsResult->Results->AccountDto;
 

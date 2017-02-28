@@ -279,6 +279,32 @@ function ktc_users_signup_form_submit(&$form, &$form_state) {
   // Send an email.
   _user_mail_notify($op, $account);
 
+  //add user memberships
+  $webuserdto = ktc_crm_lookup_webuser_by_mail($account->mail);
+    if ($webuserdto) {
+      $memberships = array();
+      if (is_array($webuserdto->UdvalgsMedlemskaber->GroupMemberDto )) {
+      foreach ( $webuserdto->UdvalgsMedlemskaber->GroupMemberDto as  $groupmember) {
+       if($groupmember->IsActiveMember)
+        $memberships[$groupmember->Member->CrmId][] = array(
+          'group_uuid' => $groupmember->Group->CrmId,
+          'membership_uuid' => $groupmember->CrmId,
+          'grouprole_uuid' => $groupmember->Role->CrmId,
+        );
+       }
+      }
+      else {
+        if($groupmember->UdvalgsMedlemskaber->GroupMemberDto->IsActiveMember)
+        $memberships[$webuserdto->UdvalgsMedlemskaber->GroupMemberDto->Member->CrmId][] = array(
+          'group_uuid' => $webuserdto->UdvalgsMedlemskaber->GroupMemberDto->Group->CrmId,
+          'membership_uuid' => $webuserdto->UdvalgsMedlemskaber->GroupMemberDto->CrmId,
+          'grouprole_uuid' => $webuserdto->UdvalgsMedlemskaber->GroupMemberDto->Role->CrmId,
+        );
+      }
+      if (!empty($memberships))
+        ktc_crm_group_process_memberships($memberships);
+  }
+
   $form_state['rebuild'] = TRUE;
 }
 
@@ -289,9 +315,12 @@ function ktc_users_user_login(&$edit, $account) {
   global $user;
   $webuserdto = ktc_crm_lookup_webuser_by_mail($account->mail); 
   ktc_crm_update_account_from_webuserdto($webuserdto);
-  $webuserdto = ktc_crm_map_account_to_webuserdto($account);
-  $webuserdto->LastLogin = date('Y-m-d\TH:i:s', time());
-  ktc_crm_update_user($webuserdto);
+  //sync user with crm only if he has CRM uuid
+  if ($uuid_field = field_get_items('user', $account, 'field_crm_uuid')) {
+    $webuserdto = ktc_crm_map_account_to_webuserdto($account);
+    $webuserdto->LastLogin = date('Y-m-d\TH:i:s', time());
+    ktc_crm_update_user($webuserdto);
+  }
   if ($account->access == 0) {
     drupal_set_message($user->mail);
     drupal_goto('user/' . $user->uid . '/edit');
