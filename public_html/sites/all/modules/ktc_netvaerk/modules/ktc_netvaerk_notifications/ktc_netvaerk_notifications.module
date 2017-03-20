@@ -199,6 +199,8 @@ function ktc_netvaerk_notifications_send_notification_emails($node){
       foreach ($uids as $uid) {
         $user = user_load($uid);
 
+        if (!og_is_member('node', $group_id, 'user', $user)) continue; //not send notification if user not goup member
+
         $token_data = array('user' => $user, 'node' => $node);
         $to = $user->mail;
 

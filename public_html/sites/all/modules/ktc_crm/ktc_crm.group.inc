@@ -81,6 +81,25 @@ function ktc_crm_og_membership_delete($og_membership) {
       $logger->log->addInfo('group delete membership', array('crm_uuid' => $crm_uuid));
       ktc_crm_group_membership_delete($crm_uuid);
     }
+    // Notification delete.
+    if ($og_membership->entity_type == 'user' && in_array($og_membership->etid, _ktc_netvaerk_notifications_get_users($og_membership->gid))) {
+      $account = user_load($og_membership->etid);
+      foreach ($account->field_netvaerk_notifications['und'] as $delta => $value) {
+        if ($value['target_id'] == $og_membership->gid) {
+          unset($account->field_netvaerk_notifications['und'][$delta]);
+        }
+      }
+      foreach ($account->og_user_node['und'] as $delta => $value) {
+        if ($value['target_id'] == $og_membership->gid) {
+          unset($account->og_user_node['und'][$delta]);
+          break;
+        }
+      }
+      field_attach_update('user', $account);
+      field_attach_presave('user', $account);
+      // Clear the static loading cache.
+      entity_get_controller('user')->resetCache(array($account->uid));
+    }
   }
 }
 
