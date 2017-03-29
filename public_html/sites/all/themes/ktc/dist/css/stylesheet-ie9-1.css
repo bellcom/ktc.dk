@@ -11016,7 +11016,7 @@ fieldset[disabled] .field-type-image .button {
   margin-right: 5px;
 }
 
-.magasinflow .magasinsider .magasin-side.views-row-even .views-field-view {
+.magasinflow .magasinsider .magasin-side:nth-child(even) .views-field-view {
   float: right;
   margin-left: 5px;
   margin-right: 0;
