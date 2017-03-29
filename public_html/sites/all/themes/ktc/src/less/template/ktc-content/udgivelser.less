@@ -2,7 +2,8 @@
   .make-md-column(12);
 	.magasinsider {
   	.magasin-side {
-    	height: 140px;
+    	height: 130px;
+    	margin-bottom: 20px;
     	.views-field-view {
       	float: left;
       	margin-right: 5px;
@@ -17,15 +18,13 @@
   	  }  	
 
 		.inner {
-			padding: @thumbnail-padding @thumbnail-padding*2 ;
+			padding: @thumbnail-padding (@thumbnail-padding * 2) ;
 			background-color: @panel-bg;
 			border: @border-std;
 			margin-bottom: @panel-body-padding;
 			display: block;
-			color: @gray-darker;
-			padding: 5px;
+			color: @gray-darker; 
 			height: 130px; 
-			margin-bottom: 5px;
 			overflow: auto;
 			H3 {
 				margin-top: 0;
