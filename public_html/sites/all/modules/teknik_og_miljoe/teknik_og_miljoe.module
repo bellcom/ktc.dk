@@ -26,6 +26,14 @@ function teknik_og_miljoe_menu() {
     'delivery callback' => 'ajax_deliver',
  );
 
+ $items['admin/config/content/artikler'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => 'Teknik og miljoe',
+    'description' => 'Configure Teknik og miljoe module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('teknik_og_miljoe_permission_settings_form'),
+    'access arguments' => array('access administration pages'),
+  );
  return $items;
 }
 /*
@@ -102,4 +110,16 @@ function _teknik_og_miljoe_paragraphs_search_element($paragraphs_field, $needle)
   foreach ($paragraphs_field as $key => $elem)
     if ($elem['value'] == $needle)
       return $elem;
+}
+
+function teknik_og_miljoe_permission_settings_form() {  
+  $form = array();
+  $group_roles = 	user_roles();
+  $form['teknik_og_miljoe_roles_article_full_access'] = array(
+      '#title' => t('User roles who has full access to article'),
+      '#type' => 'checkboxes',
+      '#options' => $group_roles,
+      '#default_value' => variable_get('teknik_og_miljoe_roles_article_full_access', array()),
+    );
+  return system_settings_form($form);
 }
