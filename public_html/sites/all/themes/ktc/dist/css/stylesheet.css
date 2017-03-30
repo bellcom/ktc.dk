@@ -11759,6 +11759,9 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   margin: -9px -60px;
   padding: 20px 60px;
 }
+.ktc-article-section.edit-mode {
+  padding-bottom: 45px;
+}
 .ktc-article-section.ktc-article-section-type-faktaboks,
 .ktc-article-section.ktc-article-section-type-faktaboksgreen,
 .ktc-article-section.ktc-article-section-type-faktaboksyellow,

@@ -108,6 +108,7 @@ function ktc_preprocess_entity(&$variables) {
       $variables['host_entity_id'] = $paragraphs_item->hostEntityId();
 
       if (entity_access('update', $host_entity_type, $paragraphs_item->hostEntity()) && entity_access('update', 'paragraphs_item', $paragraphs_item)){
+        $variables['classes_array'][] = 'edit-mode';
         $destination = drupal_get_destination();
         $variables['operations']['edit'] = l(t('Edit'), '/paragraphs/' . $paragraphs_item->item_id . '/edit', array('query' => $destination));
         $variables['operations']['delete'] = l(t('Delete'), '/paragraphs/' . $paragraphs_item->item_id . '/delete', array('query' => $destination));
