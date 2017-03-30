@@ -335,7 +335,6 @@ function ktc_preprocess_field(&$vars, $hook) {
  * Implements template_preprocess_node().
  */
 function ktc_preprocess_node(&$vars) {
-  global $user;
   // Make unpublished nodes appear with highlighted background.
   if ($vars['status'] == 0) {
     $vars['classes_array'][] = 'ktc-node-unpublished';
