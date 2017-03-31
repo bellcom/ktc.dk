@@ -37,7 +37,7 @@
   &.ktc-article-section-type-faktaboksblack,
   &.ktc-paragraph-faktaboksgreen,
   &.ktc-paragraph-faktaboksblack,
-  &.ktc-paragraph-faktaboksblue, 
+  &.ktc-paragraph-faktaboksblue,
   &.ktc-paragraph-faktaboksyellow,
   &.ktc-article-section-type-billedserie {
 	border-top: 10px solid @body-bg;
@@ -46,7 +46,7 @@
 	.ktc-mixin-content-wide-full-width();
   }
   &.entity-paragraphs-item {
-    .contextual-links-wrapper, 
+    .contextual-links-wrapper,
     .contextual-links-region {
        display: none;
        .contextual-links-region {}
@@ -54,7 +54,7 @@
         display: block;
       }
     }
-  }  
+  }
 
   // Headline (all)
   .ktc-article-section-headline {
@@ -170,7 +170,7 @@
 
 // Section
 .ktc-article-section {
- 
+
   // Indented
   &.ktc-article-section-type-indrykket {
 	padding-left: 40px;
@@ -386,9 +386,9 @@
 
 // Section wrapper
 .ktc-article-section-wrapper {
-  
+
  // Reset from field_collection contrib CSS
-  .field-collection-view, 
+  .field-collection-view,
   .paragraphs-items{
 	padding: 0;
 	margin: 0;
@@ -399,6 +399,8 @@
     .paragraphs-items-view-links {
 	  margin: 0;
 	  padding: 0;
+    position: relative;
+    z-index:999;
 
 	  > li {
 		padding-left: 6px;
@@ -444,7 +446,7 @@
    .insert-point.contextual-links-region {
       display: none;
    }
-  } 
+  }
 
   .field-collection-container,
   .paragraphs-items-field-paragraphs {
@@ -470,7 +472,7 @@
 	}
    .action-links-paragraphs-add{
 	  padding: 0;
-	  margin: 0;  
+	  margin: 0;
 
 	  // Link
 	  a.dropdown-toggle {
@@ -480,19 +482,19 @@
 	 }
   }
 }
- ul.paragraphs-items-view-links {   
+ ul.paragraphs-items-view-links {
    float: right;
    font-size: 0.821em;
    list-style-type: none;
    width: auto;
-   z-index: 9999;  
+   z-index: 9999;
    li {
       float: left;
    }
 }
 
 ul.action-links-paragraphs-add {
-    float: right;  
+    float: right;
     clear: both;
 }
 
@@ -509,4 +511,39 @@ ul.action-links-paragraphs-add {
   height: 25px;
   width: 25px;
   background-repeat: no-repeat;
+}
+
+.node-type-artikler .pane-user-login {
+  .ktc-aside-body {
+    padding: 0px;
+    .form-item {
+      padding: 6px 15px;
+    }
+    .form-control {
+      background-color: transparent;
+      border: 0;
+      resize: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+    .form-actions {
+      background-color: #2c353a;
+      border: 0;
+      border-radius: 0;
+      padding: 6px 15px;
+      text-align: right;
+
+      .form-submit {
+        min-width: initial;
+        padding: 0;
+        margin: 0;
+        font-weight: normal;
+        border: 0;
+        background-color: transparent;
+        outline: 0;
+        color: #fff;
+      }
+    }
+  }
 }
