@@ -21,7 +21,6 @@ define('KTC_NETVAERK_MEMBER_TID', variable_get('ktc_netvaerk_member_tid'));
 define('KTC_NETVAERK_ADMIN_TID', variable_get('ktc_netvaerk_admin_tid'));
 
 include_once 'ktc_netvaerk.features.inc';
-
 /**
  * Implements hook_menu().
  */
@@ -321,7 +320,13 @@ function ktc_netvaerk_settings() {
     '#options' => $grouproles_options,
     '#default_value' => variable_get('ktc_netvaerk_member_tid'),
   );
-
+  $ktc_netvaerk_five_hundred_page = variable_get('ktc_netvaerk_five_hundred_page', array('value' => ' ', 'format' => NULL));
+  $form['ktc_netvaerk_five_hundred_page'] = array(
+    '#type' => 'text_format',
+    '#format' => $ktc_netvaerk_five_hundred_page['format'],
+    '#title' => t('Error 500 page text'),
+    '#default_value' => $ktc_netvaerk_five_hundred_page['value'],
+  );
   return system_settings_form($form);
 }
 
