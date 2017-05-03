@@ -10567,7 +10567,7 @@ fieldset[disabled] .field-type-image .button {
   font-weight: bold;
   color: #2c353a;
   margin: 0;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .ktc-list-display .ktc-list-display-body .ktc-list-display-body-content .ktc-list-display-subheadline {
