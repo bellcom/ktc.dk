@@ -72,7 +72,7 @@
           <?php if (!empty($messages)): print $messages; endif; ?>
           <div id="content-content" class="clearfix">
             <?php if ($title == t("Error")): ?>
-            <?php  $ktc_netvaerk_five_hundred_page = variable_get('ktc_netvaerk_five_hundred_page', array('value' => ' ', 'format' => NULL));
+            <?php  $ktc_netvaerk_five_hundred_page = variable_get('ktc_netvaerk_five_hundred_page_text', array('value' => ' ', 'format' => NULL));
                    print $ktc_netvaerk_five_hundred_page['value'];
             ?>
             <?php else: ?>
