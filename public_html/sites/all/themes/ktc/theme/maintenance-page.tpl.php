@@ -30,7 +30,7 @@
 
         <?php if (!empty($logo)): ?>
           <a href="<?php print $base_path; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+            <img src="<?php ($title == t("Error") && !empty(variable_get('ktc_netvaerk_five_hundred_page_logo_fid', '')))? print file_create_url(file_load(variable_get('ktc_netvaerk_five_hundred_page_logo_fid', ''))->uri) :  print $logo; ?>" alt="<?php print t('Home'); ?>" />
           </a>
         <?php endif; ?>
 
@@ -66,7 +66,9 @@
       <div id="main" class="column"><div id="main-squeeze">
 
         <div id="content">
-          <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+          <?php if (!empty($title)): ?>
+            <h1 class="title" id="page-title"><?php ($title == t("Error")) ? print variable_get('ktc_netvaerk_five_hundred_page_title', t('Error')) : print $title; ?></h1>
+          <?php endif; ?>
           <?php if (!empty($messages)): print $messages; endif; ?>
           <div id="content-content" class="clearfix">
             <?php if ($title == t("Error")): ?>

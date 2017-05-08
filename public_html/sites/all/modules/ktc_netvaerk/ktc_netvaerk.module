@@ -320,16 +320,38 @@ function ktc_netvaerk_settings() {
     '#options' => $grouproles_options,
     '#default_value' => variable_get('ktc_netvaerk_member_tid'),
   );
-  $ktc_netvaerk_five_hundred_page = variable_get('ktc_netvaerk_five_hundred_page', array('value' => ' ', 'format' => NULL));
-  $form['ktc_netvaerk_five_hundred_page'] = array(
+  $form['ktc_netvaerk_five_hundred_page_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Error 500 page title'),
+    '#default_value' => variable_get('ktc_netvaerk_five_hundred_page_title', t('Error'))
+  );
+  $ktc_netvaerk_five_hundred_page = variable_get('ktc_netvaerk_five_hundred_page_text', array('value' => ' ', 'format' => NULL));
+  $form['ktc_netvaerk_five_hundred_page_text'] = array(
     '#type' => 'text_format',
     '#format' => $ktc_netvaerk_five_hundred_page['format'],
     '#title' => t('Error 500 page text'),
     '#default_value' => $ktc_netvaerk_five_hundred_page['value'],
   );
+  $form['ktc_netvaerk_five_hundred_page_logo_fid'] = array(
+    '#title' => t('Error 500 page logo'),
+    '#type' => 'managed_file',
+    '#description' => t('The logo will be shown in the Error 500 page'),
+    '#default_value' => variable_get('ktc_netvaerk_five_hundred_page_logo_fid', ''),
+    '#upload_location' => 'public://',
+  );
   return system_settings_form($form);
 }
 
+function ktc_netvaerk_settings_submit($form, &$form_state) {
+  $file = file_load($form_state['values']['ktc_netvaerk_five_hundred_page_logo_fid']);
+  if ($file) {
+    $file->status = FILE_STATUS_PERMANENT;
+    file_save($file);
+    file_usage_add($file, 'ktc_netvaerk', 'ktc_netvaerk', $file->fid);
+    variable_set('ktc_netvaerk_five_hundred_page_logo_fid', $file->fid);
+    unset($form_state['values']['ktc_netvaerk_five_hundred_page_logo_fid']);
+  }
+}
 /**
  * Implements hook_og_user_access_alter().
  */
@@ -543,7 +565,7 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
   $list = '';
   $i = 1;
   $i_max = 7; // Number of allowed users to be loaded
-  
+
   $ktc_webmaster_mail = variable_get('group_owner', 'netvaerk@ktc.dk');
   $ktc_webmaster = user_load_by_mail($ktc_webmaster_mail);
 
@@ -567,7 +589,7 @@ function ktc_netvaerk_sidebar_group_members($admins = FALSE) {
      ->propertyCondition('gid', $gid)
      ->propertyCondition('state', OG_STATE_ACTIVE)
      ->propertyOrderBy('created', 'DESC');
-  
+
   if (!empty($roles)) {
     $query->fieldCondition('field_grouprole', 'target_id', $roles, 'IN');
   }
@@ -1055,11 +1077,11 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
     $form['og_roles_permissions'][LANGUAGE_NONE]['#default_value'] = 0;
     $form['group_access']['#attributes']['class'][] = 'hide';
     $form['group_access'][LANGUAGE_NONE]['#default_value'] = 0;
-    
-   global $user; 
-   
-   if (($user->uid==1 or in_array('administrator', $user->roles) or in_array('Ansat i KL', $user->roles))=== FALSE) {  	
-      $form['og_group_ref']['und']["#options"] = ktc_netvaerk_user_groups();        
+
+   global $user;
+
+   if (($user->uid==1 or in_array('administrator', $user->roles) or in_array('Ansat i KL', $user->roles))=== FALSE) {
+      $form['og_group_ref']['und']["#options"] = ktc_netvaerk_user_groups();
     }
   }
 
@@ -1075,18 +1097,18 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
 }
 
 /**
- * 
+ *
  * return user's groups list
  */
-function ktc_netvaerk_user_groups() { 
-  $groups = og_get_groups_by_user();  
+function ktc_netvaerk_user_groups() {
+  $groups = og_get_groups_by_user();
   $options = array();
   foreach ($groups['node'] as $key => $value) {
     $node = node_load($value);
     $options[$key] = $node->title;
   }
   return $options;
-    
+
 }
 /**
  * Extra validation handler for creating/editing an og_membership.
@@ -1272,7 +1294,7 @@ function ktc_netvaerk_node_access_records($node) {
           'priority' => 0,
         );
        }
-       return $grant; 
+       return $grant;
     }
  }
   return NULL;
