@@ -40,6 +40,10 @@ function ktc_netvaerk_notifications_form_alter(&$form, &$form_state, $form_id) {
       if (!is_array($options) || !in_array($gid, $options)) {
         unset($form['field_netvaerk_notifications'][LANGUAGE_NONE]['#options'][$gid]);
       }
+      // hide notification settings if user is not member of network
+      if (!og_is_member('node', $gid, 'user', $form['#entity'])) {
+        unset($form['field_netvaerk_notifications'][LANGUAGE_NONE]['#options'][$gid]);
+      }
     }
   }
 }
@@ -198,6 +202,8 @@ function ktc_netvaerk_notifications_send_notification_emails($node){
 
       foreach ($uids as $uid) {
         $user = user_load($uid);
+
+        if (!og_is_member('node', $group_id, 'user', $user)) continue; //not send notification if user not goup member
 
         $token_data = array('user' => $user, 'node' => $node);
         $to = $user->mail;
