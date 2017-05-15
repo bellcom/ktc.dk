@@ -11539,6 +11539,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   padding: 20px 60px;
 }
 
+.ktc-article-section.edit-mode {
+  padding-bottom: 45px;
+}
+
 .ktc-article-section.ktc-article-section-type-faktaboks,
 .ktc-article-section.ktc-article-section-type-faktaboksgreen,
 .ktc-article-section.ktc-article-section-type-faktaboksyellow,
@@ -11966,6 +11970,8 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
 .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links {
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 999;
 }
 
 .ktc-article-section-wrapper .field-collection-view .field-collection-view-links > li,
