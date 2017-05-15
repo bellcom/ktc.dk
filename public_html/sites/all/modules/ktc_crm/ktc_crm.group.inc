@@ -107,10 +107,9 @@ function ktc_crm_og_membership_delete($og_membership) {
  * Implements hook_og_membership_insert().
  */
 function ktc_crm_og_membership_insert($og_membership) {
-if (isset($_POST['form_id']) && ($_POST['form_id'] == 'og_ui_add_users' || $_POST['form_id'] == 'group_node_form')){
+if (isset($_POST['form_id']) && ($_POST['form_id'] == 'og_ui_add_users' || $_POST['form_id'] == 'group_node_form' ||  $_POST['form_id'] == 'og_massadd_massadd_form')){
 // If a users is added to a group send this info to CRM.
   if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
-
     $logger = KtcCrmLogger::getInstance();
     $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
     $logger->log->addInfo('group add membership', array('crm_uuid' => $membership_uuid));

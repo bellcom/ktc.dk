@@ -78,6 +78,26 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
       }
     }
   }
+
+  //invite users by email
+  if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_massadd_massadd_form') {
+    $tmp_account = clone $account;
+    foreach ($edit as $key => $value) {
+      $tmp_account->$key = $value;
+    }
+    if ($account->is_new) {
+      $webuserdto = ktc_crm_lookup_webuser_by_mail($edit['mail']);
+      if ($webuserdto){
+        $edit = array_merge($edit, ktc_crm_map_webuserdto_to_edit_array($webuserdto));
+      }
+      else {
+        $webuserdto = ktc_crm_map_account_to_webuserdto($tmp_account);
+        if ($crm_uuid = ktc_crm_update_user($webuserdto)) {
+          $edit['field_crm_uuid'][LANGUAGE_NONE][0]['value'] = $crm_uuid;
+        }
+      }
+    }
+  }
 }
 
 /**
