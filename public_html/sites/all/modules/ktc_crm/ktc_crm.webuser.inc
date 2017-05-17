@@ -90,12 +90,12 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
       if ($webuserdto){
         $edit = array_merge($edit, ktc_crm_map_webuserdto_to_edit_array($webuserdto));
       }
+    }
       else {
-        $webuserdto = ktc_crm_map_account_to_webuserdto($tmp_account);
-        if ($crm_uuid = ktc_crm_update_user($webuserdto)) {
-          $edit['field_crm_uuid'][LANGUAGE_NONE][0]['value'] = $crm_uuid;
-        }
-      }
+        $webuserdto = ktc_crm_lookup_webuser_by_mail($tmp_account->mail);
+        $edit['field_crm_uuid'][LANGUAGE_NONE][0]['value'] = $webuserdto->CrmId;
+        $edit['field_navn'][LANGUAGE_NONE][0]['value'] = $webuserdto->FirstName;
+        $edit['field_efternavn'][LANGUAGE_NONE][0]['value'] = $webuserdto->LastName;
     }
   }
 }
