@@ -244,13 +244,13 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   $form['ktc_ean'] = array(
       '#tree' => FALSE,
       '#type' => 'fieldset',
-      '#title' => t('EAN')
+      '#title' => t('EAN fakturering')
    );
   $form['ktc_ean']['ean_bill'] = array(
-    '#title' => t('EAN fakturering'),
-    '#type' => 'checkbox',
-    '#default_value' => isset($form_state['ean_bill'])? true : false,
-    '#attributes' => array('id' => array('ean_billing'))
+    '#type' => 'radios',
+    '#options' => array(1 => t('Yes'), 0 => t('No')),
+    '#default_value' => isset($form_state['ean_bill'])? $form_state['ean_bill'] : null,
+    '#attributes' => array('class' => array('ean_billing'))
   );
   $form['ktc_ean']['ean'] = array(
     '#title' => 'EAN',
