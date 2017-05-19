@@ -156,6 +156,7 @@ function ktc_subscription_ui_page($account) {
  * Form callback for creating/editing a subscription.
  */
 function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
+  var_dump($product_nid);
   $css = '
       .container-inline-date {clear: none; float: left;}
       #edit-invoiceaccount-hierarchical-select-selects-0 {display: none;}

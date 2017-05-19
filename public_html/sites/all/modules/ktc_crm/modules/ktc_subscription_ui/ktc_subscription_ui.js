@@ -11,13 +11,11 @@
         }, 50);
       });
       $('input[name=ean_bill]').click(function(){
-        console.log($(this).val());
         if($(this).val() == 1 )
           $('.form-item-ean').show();
         else
           $('.form-item-ean').hide();
-      });
-      alert($('input[name=ean_bill]:checked').val());
+      });      
       if($('input[name=ean_bill]:checked').val() == 1)
         $('.form-item-ean').show();
       else
