@@ -89,6 +89,13 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
       $webuserdto = ktc_crm_lookup_webuser_by_mail($edit['mail']);
       if ($webuserdto){
         $edit = array_merge($edit, ktc_crm_map_webuserdto_to_edit_array($webuserdto));
+        $edit['status'] = 1;
+      }
+      else {
+        $webuserdto = ktc_crm_map_account_to_webuserdto($tmp_account);
+        if ($crm_uuid = ktc_crm_update_user($webuserdto)) {
+          $edit['field_crm_uuid'][LANGUAGE_NONE][0]['value'] = $crm_uuid;
+        }
       }
     }
       else {
