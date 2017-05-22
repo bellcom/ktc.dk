@@ -64,7 +64,38 @@ function ktc_subscription_ui_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__product';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teasercomments' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaserfront' => array(
+        'custom_settings' => TRUE,
+      ),
+      'listevisning' => array(
+        'custom_settings' => TRUE,
+      ),
+      'listevisningstor' => array(
+        'custom_settings' => TRUE,
+      ),
+      'listevisningboks' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -77,7 +108,14 @@ function ktc_subscription_ui_strongarm() {
           'weight' => '15',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'signup' => array(
+          'default' => array(
+            'weight' => '11',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__product'] = $strongarm;

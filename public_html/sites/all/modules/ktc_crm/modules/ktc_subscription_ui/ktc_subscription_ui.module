@@ -402,6 +402,9 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
       '#required' => TRUE,
     );
   }
+  if ($field = field_get_items('node', $product, 'field_description_before_submit')) {
+    $form['text_before_submit']['#description'] = $field[0]['value'];
+  }
 
   // Generate default value for date_popup.
   $startdate = str_replace(array('T', 'Z'), array(' ', ''), $form_state['subscriptiondto']->StartDate);
