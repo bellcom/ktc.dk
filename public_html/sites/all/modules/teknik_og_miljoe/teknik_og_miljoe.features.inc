@@ -155,7 +155,7 @@ function teknik_og_miljoe_paragraphs_info() {
       'locked' => '1',
     ),
     'udgivelse_navne' => array(
-      'name' => 'Nyt om navne',
+      'name' => 'Nyhed',
       'bundle' => 'udgivelse_navne',
       'locked' => '1',
     ),

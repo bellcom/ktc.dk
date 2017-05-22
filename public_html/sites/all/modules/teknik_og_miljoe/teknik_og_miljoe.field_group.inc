@@ -272,7 +272,8 @@ function teknik_og_miljoe_field_group_info() {
     'weight' => '9',
     'children' => array(
       0 => 'field_magasin_filer',
-      1 => 'field_magasin_side_artikel',
+      1 => 'field_magasin_side_nr',
+      2 => 'field_magasin_side_artikel',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -357,12 +358,11 @@ function teknik_og_miljoe_field_group_info() {
     'label' => 'Meta',
     'weight' => '7',
     'children' => array(
-      0 => 'field_magasin_side_nr',
-      1 => 'field_magasin_side_status',
-      2 => 'field_magasin_tema',
-      3 => 'field_magasin_side_kommentarer',
-      4 => 'field_magasin_side_sidegenre',
-      5 => 'field_magasinside_stofomraade',
+      0 => 'field_magasin_side_status',
+      1 => 'field_magasin_tema',
+      2 => 'field_magasin_side_kommentarer',
+      3 => 'field_magasin_side_sidegenre',
+      4 => 'field_magasinside_stofomraade',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
