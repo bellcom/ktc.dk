@@ -343,11 +343,11 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   }
 
   $form['recipient_address'] = array(
-    '#prefix' => '<label>Vælg leveringsadresse</label>',
+    '#prefix' => '<label>Vælg leveringsadresse *</label>',
     '#type' => 'tableselect',
     '#multiple' => FALSE,
     '#header' => array('Leveres til', 'Adresse', ''),
-    '#required' => TRUE,
+  //  '#required' => TRUE,
     '#options' => $recipient_addresses,
     '#default_value' => $form_state['subscriptiondto']->RecipientAddress,
   );
@@ -398,8 +398,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   if ($field = field_get_items('node', $product, 'field_text_before_submit')) {
     $form['text_before_submit'] = array(
       '#type' => 'checkbox',
-      '#title' => $field[0]['value'],
-      '#required' => TRUE,
+      '#title' => $field[0]['value'] . ' *'
     );
   }
   if ($field = field_get_items('node', $product, 'field_description_before_submit')) {
@@ -573,6 +572,12 @@ function ktc_subscription_ui_form_validate(&$form, &$form_state) {
   }
   if (!$form_state['values']['region'] && $form_state['ktc_membership']) {
     form_set_error('region', t('Kredsmedlemsskabet kunne ikke bestemmes, da der ikke er nogen region tilknyttet dit firma. Kontakt KTC.'));
+  }
+  if (!$form_state['values']['recipient_address']) {
+    form_set_error('recipient_address', t('Du mangler at vælge leveringsadresse til dit aboniment'));
+  }
+  if (!$form_state['values']['field_text_before_submit']) {
+    form_set_error('field_text_before_submit', t('Du skal ælge en sludato til dit abonnement som er senere end dags dato'));
   }
 }
 
