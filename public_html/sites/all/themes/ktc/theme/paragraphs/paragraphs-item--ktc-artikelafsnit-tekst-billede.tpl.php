@@ -31,5 +31,6 @@
     <?php print render($content['field_artikelafsnit_billede']); ?>
     <?php print render($content['field_artikelafsnit_overskrift']); ?>
     <?php print render($content['field_artikelafsnit_tekst']); ?>
+    <?php print render($content['field_artikelafsnit_ekstra']); ?>
   </div>
 </div>
