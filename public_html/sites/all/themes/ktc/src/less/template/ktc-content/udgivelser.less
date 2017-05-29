@@ -92,6 +92,17 @@
       position: relative;
     }
   }
+  .page-section {
+    .ktc-teaser,
+    .ktc-article-section {
+      background-color: transparent;
+      display: block;
+    }
+    .ktc-article-section.entity-paragraphs-item .contextual-links-wrapper, 
+    .ktc-article-section.entity-paragraphs-item .contextual-links-region {
+      .ktc-article-section {}
+    }
+  }
 }
 
 .page-field-collection-field-magasin-indhold-edit {
@@ -110,6 +121,8 @@
     }
   }
 }
+
+
 
 .udgivelse-side {}
 .udgivelse-editor  {
@@ -221,5 +234,12 @@ body.kontekst-magasinstatus {
   .button {
     .btn;
     .btn-default;
+  }
+}
+.field-widget-paragraphs-embed.form-wrapper {
+  .field-multiple-table {
+    .form-actions {
+      margin-top: 20px
+    }
   }
 }

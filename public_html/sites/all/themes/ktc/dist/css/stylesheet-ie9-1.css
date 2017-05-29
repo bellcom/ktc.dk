@@ -11101,6 +11101,12 @@ fieldset[disabled] .field-type-image .button {
   position: relative;
 }
 
+.page-udgivelser .page-section .ktc-teaser,
+.page-udgivelser .page-section .ktc-article-section {
+  background-color: transparent;
+  display: block;
+}
+
 .page-field-collection-field-magasin-indhold-edit .udgivelse-liste {
   height: 120px;
   width: 90px;
@@ -11451,6 +11457,10 @@ fieldset[disabled] .group-upload .button {
 
 .group-upload .button.active {
   border-color: #a1b2b6;
+}
+
+.field-widget-paragraphs-embed.form-wrapper .field-multiple-table .form-actions {
+  margin-top: 20px;
 }
 
 .pagination {
@@ -13025,11 +13035,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info.active,
 .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-info.active {
   border-color: #0c5071;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-danger {
-  background-color: #e75311;
-  color: #fff;
-  border-color: #cf4a0f;
 }
