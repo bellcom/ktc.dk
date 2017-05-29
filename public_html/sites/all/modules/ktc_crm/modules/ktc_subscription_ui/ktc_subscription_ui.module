@@ -398,7 +398,8 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   if ($field = field_get_items('node', $product, 'field_text_before_submit')) {
     $form['text_before_submit'] = array(
       '#type' => 'checkbox',
-      '#title' => $field[0]['value'] . ' *'
+      '#title' => $field[0]['value'] . ' *',
+     // '#required' => TRUE,
     );
   }
   if ($field = field_get_items('node', $product, 'field_description_before_submit')) {
@@ -576,8 +577,8 @@ function ktc_subscription_ui_form_validate(&$form, &$form_state) {
   if (!$form_state['values']['recipient_address']) {
     form_set_error('recipient_address', t('Du mangler at vælge leveringsadresse til dit aboniment'));
   }
-  if (!$form_state['values']['field_text_before_submit']) {
-    form_set_error('field_text_before_submit', t('Du skal ælge en sludato til dit abonnement som er senere end dags dato'));
+  if (!$form_state['values']['text_before_submit']) {
+    form_set_error('text_before_submit', t('Du skal ælge en sludato til dit abonnement som er senere end dags dato'));
   }
 }
 

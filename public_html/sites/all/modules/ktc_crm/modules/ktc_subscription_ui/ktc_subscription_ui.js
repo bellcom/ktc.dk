@@ -15,12 +15,14 @@
           $('.form-item-ean').show();
         else
           $('.form-item-ean').hide();
-      });      
+      });
       if($('input[name=ean_bill]:checked').val() == 1)
         $('.form-item-ean').show();
       else
         $('.form-item-ean').hide();
+      $('.has-error').closest('.table-responsive').addClass('has-error');
     }
+
   };
 
 
