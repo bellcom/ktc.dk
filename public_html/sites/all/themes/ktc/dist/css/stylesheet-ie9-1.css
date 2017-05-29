@@ -11237,49 +11237,220 @@ body.kontekst-magasinstatus .ktc-wrapper-background {
 }
 
 .group-upload .button {
-  color: #fff;
-  background-color: #e75311;
-  border-color: #cf4a0f;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  user-select: none;
+  min-width: 50px;
+  padding: 3px 15px;
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  background-color: #fff;
+  color: #2c353a;
+  border-color: #e9edee;
+}
+
+.group-upload .button:focus,
+.group-upload .button:active:focus,
+.group-upload .button.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 
 .group-upload .button:hover,
-.group-upload .button:focus,
-.group-upload .button:active,
-.group-upload .button.active,
-.open .dropdown-toggle.group-upload .button {
-  color: #fff;
-  background-color: #c1450e;
-  border-color: #96360b;
+.group-upload .button:focus {
+  color: #2c353a;
+  text-decoration: none;
 }
 
 .group-upload .button:active,
-.group-upload .button.active,
-.open .dropdown-toggle.group-upload .button {
+.group-upload .button.active {
+  outline: 0;
   background-image: none;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
 .group-upload .button.disabled,
 .group-upload .button[disabled],
-fieldset[disabled] .group-upload .button,
-.group-upload .button.disabled:hover,
-.group-upload .button[disabled]:hover,
-fieldset[disabled] .group-upload .button:hover,
-.group-upload .button.disabled:focus,
-.group-upload .button[disabled]:focus,
-fieldset[disabled] .group-upload .button:focus,
-.group-upload .button.disabled:active,
-.group-upload .button[disabled]:active,
-fieldset[disabled] .group-upload .button:active,
-.group-upload .button.disabled.active,
-.group-upload .button[disabled].active,
-fieldset[disabled] .group-upload .button.active {
+fieldset[disabled] .group-upload .button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  box-shadow: none;
+}
+
+.group-upload .button.btn-xs {
+  min-width: 20px;
+  padding: 1px 6px;
+}
+
+.group-upload .button.btn-sm {
+  min-width: 25px;
+  padding: 2px 8px;
+}
+
+.group-upload .button.btn-lg {
+  min-width: 70px;
+  padding: 5px 25px;
+}
+
+.group-upload .button.active {
+  box-shadow: none;
+}
+
+.group-upload .button:active {
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.group-upload .button.btn-default,
+.group-upload .button.btn-primary {
+  background-color: #fff;
+  color: #2c353a;
+  border-color: #e9edee;
+}
+
+.group-upload .button.btn-default:hover,
+.group-upload .button.btn-primary:hover {
+  background-color: #f0f0f0;
+  color: #2c353a;
+  border-color: #d5ddde;
+}
+
+.group-upload .button.btn-default:focus,
+.group-upload .button.btn-primary:focus {
+  color: #2c353a;
+}
+
+.group-upload .button.btn-default.active,
+.group-upload .button.btn-primary.active {
+  border-color: #a1b2b6;
+}
+
+.group-upload .button.btn-success {
+  background-color: #36a145;
+  color: #fff;
+  border-color: #308e3d;
+}
+
+.group-upload .button.btn-success:hover {
+  background-color: #2e8a3b;
+  color: #fff;
+  border-color: #277331;
+}
+
+.group-upload .button.btn-success:focus {
+  color: #fff;
+}
+
+.group-upload .button.btn-success.active {
+  border-color: #102e14;
+}
+
+.group-upload .button.btn-info {
+  background-color: #2dace9;
+  color: #fff;
+  border-color: #18a2e5;
+}
+
+.group-upload .button.btn-info:hover {
+  background-color: #179fe0;
+  color: #fff;
+  border-color: #158bc4;
+}
+
+.group-upload .button.btn-info:focus {
+  color: #fff;
+}
+
+.group-upload .button.btn-info.active {
+  border-color: #0c5071;
+}
+
+.group-upload .button.btn-danger {
   background-color: #e75311;
+  color: #fff;
   border-color: #cf4a0f;
 }
 
-.group-upload .button .badge {
-  color: #e75311;
-  background-color: #fff;
+.group-upload .button.btn-danger:hover {
+  background-color: #ca490f;
+  color: #fff;
+  border-color: #ae3f0d;
+}
+
+.group-upload .button.btn-danger:focus {
+  color: #fff;
+}
+
+.group-upload .button.btn-danger.active {
+  border-color: #582007;
+}
+
+.group-upload .button.btn-warning {
+  background-color: #d3a900;
+  color: #fff;
+  border-color: #ba9500;
+}
+
+.group-upload .button.btn-warning:hover {
+  background-color: #b49000;
+  color: #fff;
+  border-color: #967800;
+}
+
+.group-upload .button.btn-warning:focus {
+  color: #fff;
+}
+
+.group-upload .button.btn-warning.active {
+  border-color: #3a2e00;
+}
+
+.group-upload .button.btn-action {
+  background-color: #2c353a;
+  color: #fff;
+  border-color: #586a74;
+}
+
+.group-upload .button.btn-action:hover {
+  background-color: #1f2529;
+  color: #fff;
+  border-color: #495760;
+}
+
+.group-upload .button.btn-action:focus {
+  color: #fff;
+}
+
+.group-upload .button.btn-action.active {
+  border-color: #21282c;
+}
+
+.group-upload .button:hover {
+  background-color: #f0f0f0;
+  color: #2c353a;
+  border-color: #d5ddde;
+}
+
+.group-upload .button:focus {
+  color: #2c353a;
+}
+
+.group-upload .button.active {
+  border-color: #a1b2b6;
 }
 
 .pagination {
@@ -12861,69 +13032,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
   background-color: #e75311;
   color: #fff;
   border-color: #cf4a0f;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger:hover,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-danger:hover {
-  background-color: #ca490f;
-  color: #fff;
-  border-color: #ae3f0d;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger:focus,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-danger:focus {
-  color: #fff;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-danger.active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-danger.active {
-  border-color: #582007;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-warning {
-  background-color: #d3a900;
-  color: #fff;
-  border-color: #ba9500;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning:hover,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-warning:hover {
-  background-color: #b49000;
-  color: #fff;
-  border-color: #967800;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning:focus,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-warning:focus {
-  color: #fff;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-warning.active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-warning.active {
-  border-color: #3a2e00;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-action {
-  background-color: #2c353a;
-  color: #fff;
-  border-color: #586a74;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action:hover,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-action:hover {
-  background-color: #1f2529;
-  color: #fff;
-  border-color: #495760;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action:focus,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-action:focus {
-  color: #fff;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-action.active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-action.active {
-  border-color: #21282c;
 }
