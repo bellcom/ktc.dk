@@ -28,9 +28,6 @@
 ?>
 <div class="ktc-article-section artikelafsnit-tekst-billede <?php print $classes; ?>"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-    <?php print render($content['field_artikelafsnit_billede']); ?>
-    <?php print render($content['field_artikelafsnit_overskrift']); ?>
-    <?php print render($content['field_artikelafsnit_tekst']); ?>
-    <?php print render($content['field_artikelafsnit_ekstra']); ?>
+    <?php print render($content); ?>
   </div>
 </div>
