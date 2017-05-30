@@ -271,13 +271,6 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filterkriterie: Indhold: Udgivet */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -1181,13 +1174,14 @@ function teknik_og_miljoe_views_default_views() {
   <div class="inner">
     Sider til udgivelser
   </div>
-</div>  ';
+</div>  
+';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Sidefod: Global: Tekstområde */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="col-md-12">[nothing_2]</div>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="col-md-12">   [nothing_2]   [nothing_3]</div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   /* Forbindelse: Field collection item: Entity with the Magasin indhold (field_magasin_indhold) */
@@ -1389,6 +1383,18 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['delta_reversed'] = TRUE;
   $handler->display->display_options['fields']['field_magasin_side_kommentarer']['multi_type'] = 'ul';
+  /* Felt: Save button  */
+  $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
+  $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Save button ';
+  $handler->display->display_options['fields']['nothing_3']['label'] = '';
+  $handler->display->display_options['fields']['nothing_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = 'Gem';
+  $handler->display->display_options['fields']['nothing_3']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_3']['alter']['path'] = 'udgivelser/[host_entity_id]';
+  $handler->display->display_options['fields']['nothing_3']['alter']['link_class'] = 'btn btn-success btn-xs';
+  $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   /* Kontekstuelt filter: Field collection item: Field collection item ID */
   $handler->display->display_options['arguments']['item_id']['id'] = 'item_id';
   $handler->display->display_options['arguments']['item_id']['table'] = 'field_collection_item';
@@ -1419,8 +1425,9 @@ function teknik_og_miljoe_views_default_views() {
   <div class="inner">
     Sider til udgivelser
   </div>
-</div>  '),
-    t('<div class="col-md-12">[nothing_2]</div>'),
+</div>  
+'),
+    t('<div class="col-md-12">   [nothing_2]   [nothing_3]</div>'),
     t('field_magasin_indhold'),
     t('Field collection item ID'),
     t('.'),
@@ -1433,6 +1440,7 @@ function teknik_og_miljoe_views_default_views() {
     t('Tema: [field_magasin_tema]'),
     t('Stofområde'),
     t('Artikler'),
+    t('Gem'),
     t('Alle'),
   );
   $export['magasin_sider'] = $view;

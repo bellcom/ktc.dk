@@ -389,11 +389,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     'bundle' => 'field_artikel_afsnit',
     'custom_add_another' => '',
     'custom_remove' => '',
-    'default_value' => array(
-      0 => array(
-        'value' => 'left',
-      ),
-    ),
+    'default_value' => NULL,
     'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
@@ -562,11 +558,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     'bundle' => 'field_artikel_afsnit',
     'custom_add_another' => '',
     'custom_remove' => '',
-    'default_value' => array(
-      0 => array(
-        'value' => 'afsnit',
-      ),
-    ),
+    'default_value' => NULL,
     'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
@@ -1800,7 +1792,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 23,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1812,7 +1804,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 23,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1916,7 +1908,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 22,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1928,7 +1920,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 22,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2009,7 +2001,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 21,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2021,7 +2013,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 20,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -2095,7 +2087,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2107,7 +2099,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 21,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2241,7 +2233,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 24,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2253,7 +2245,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 24,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2336,7 +2328,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 16,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2348,7 +2340,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 15,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -2428,11 +2420,8 @@ function teknik_og_miljoe_field_default_field_instances() {
       ),
       'listevisning' => array(
         'label' => 'hidden',
-        'module' => 'field_collection',
-        'settings' => array(
-          'view_mode' => 'listevisning',
-        ),
-        'type' => 'field_collection_fields',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'listevisningboks' => array(
@@ -2443,12 +2432,9 @@ function teknik_og_miljoe_field_default_field_instances() {
       ),
       'listevisningstor' => array(
         'label' => 'hidden',
-        'module' => 'field_collection',
-        'settings' => array(
-          'view_mode' => 'listevisning',
-        ),
-        'type' => 'field_collection_fields',
-        'weight' => 2,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2534,7 +2520,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 17,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2546,7 +2532,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 16,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2633,7 +2619,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2645,7 +2631,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2717,7 +2703,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2729,7 +2715,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2802,7 +2788,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 11,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2814,7 +2800,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2895,7 +2881,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2907,7 +2893,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 13,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2984,7 +2970,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2996,7 +2982,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3089,7 +3075,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3101,7 +3087,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3175,7 +3161,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 15,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3187,7 +3173,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3263,7 +3249,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3408,7 +3394,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 20,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3420,7 +3406,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3515,7 +3501,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3527,7 +3513,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3600,7 +3586,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3612,7 +3598,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3710,7 +3696,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 12,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3722,7 +3708,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 11,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3795,7 +3781,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3933,7 +3919,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3945,7 +3931,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -4018,7 +4004,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 13,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -4030,7 +4016,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 12,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -4128,7 +4114,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -4140,7 +4126,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 17,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -4987,19 +4973,19 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'udgivelseliste' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'udgivelseside' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'paragraphs_item',
@@ -5043,6 +5029,97 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_ekstra'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_ekstra'] = array(
+    'bundle' => 'ktc_artikelafsnit_tekst_billede',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstra',
+    'label' => 'Ekstra tekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_overskrift'
   $field_instances['paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_overskrift'] = array(
     'bundle' => 'ktc_artikelafsnit_tekst_billede',
@@ -5060,15 +5137,17 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'paragraphs_editor_preview' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_plain',
         'weight' => 0,
       ),
       'udgivelseliste' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_plain',
         'weight' => 0,
       ),
       'udgivelseside' => array(
@@ -5154,19 +5233,19 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'udgivelseliste' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'udgivelseside' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'paragraphs_item',
@@ -5280,12 +5359,15 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'inline_entity_form',
+      'module' => 'entityreference',
       'settings' => array(
         'fields' => array(),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
         'type_settings' => array(),
       ),
-      'type' => 'inline_entity_form',
+      'type' => 'entityreference_autocomplete',
       'weight' => 2,
     ),
   );
@@ -5305,7 +5387,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
-          'view_mode' => 'teasercomments',
+          'view_mode' => 'listevisning',
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 0,
@@ -5369,7 +5451,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     'custom_add_another' => '',
     'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Bruges til online version af annoncen',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -5462,7 +5544,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 1,
     ),
   );
 
@@ -5472,7 +5554,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     'custom_add_another' => '',
     'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Bruges til upload af selve annonce-filen til tryk',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -5539,7 +5621,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -5606,7 +5688,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 0,
     ),
   );
 
@@ -6047,12 +6129,15 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Billede i fuld bredde');
   t('Billede med annonce der skal vises på web sammen med artiklen.');
   t('Billedserie');
+  t('Bruges til online version af annoncen');
+  t('Bruges til upload af selve annonce-filen til tryk');
   t('Citat tekst');
   t('Deadline');
   t('Der skal oprettes mindst et afsnit for at oprette en artikel.');
   t('Efternavn');
   t('Eksisterende bruger');
   t('Eksterne links');
+  t('Ekstra tekst');
   t('Ekstratekst');
   t('Evt. navn på person der har sagt citatet');
   t('Faglige emner');

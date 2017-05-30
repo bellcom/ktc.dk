@@ -155,7 +155,7 @@ function teknik_og_miljoe_strongarm() {
             'visible' => FALSE,
           ),
           'listevisning' => array(
-            'weight' => '3',
+            'weight' => '6',
             'visible' => FALSE,
           ),
           'teasercomments' => array(
@@ -167,7 +167,7 @@ function teknik_og_miljoe_strongarm() {
             'visible' => FALSE,
           ),
           'listevisningstor' => array(
-            'weight' => '3',
+            'weight' => '6',
             'visible' => FALSE,
           ),
           'teaserfront' => array(

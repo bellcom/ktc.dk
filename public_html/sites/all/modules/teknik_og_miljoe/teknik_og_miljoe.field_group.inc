@@ -527,6 +527,39 @@ function teknik_og_miljoe_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_upload|paragraphs_item|udgivelse_annonce|form';
+  $field_group->group_name = 'group_upload';
+  $field_group->entity_type = 'paragraphs_item';
+  $field_group->bundle = 'udgivelse_annonce';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Upload',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_annonce_fil',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Upload',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-upload field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_upload|paragraphs_item|udgivelse_annonce|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_workflow|node|artikler|form';
   $field_group->group_name = 'group_workflow';
   $field_group->entity_type = 'node';

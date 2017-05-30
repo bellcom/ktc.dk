@@ -2818,7 +2818,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Paywall til medlemmer',
       'title' => 'Artikel endnu ikke online uden abonnement',
-      'body' => '<p>Denne artikel er endnu ikke publiceret for andre end vores online abonnementer.</p>
+      'body' => '<p><span class="ktc-article-locked">&nbsp;</span> Denne artikel er endnu ikke publiceret for andre end vores online abonnenter.</p>
 
 <p>Artiklen frigives d. %node:field-frigivelse-til-alle</p>
 
@@ -2861,7 +2861,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Paywall til besøgende',
       'title' => 'Artikel endnu ikke online uden abonnement',
-      'body' => '<p>Denne artikel er endnu ikke publiceret for andre end vores online abonnementer.</p>
+      'body' => '<p><span class="ktc-article-locked">&nbsp;</span> Denne artikel er endnu ikke publiceret for andre end vores online abonnenter.</p>
 
 <p>Artiklen frigives d.<strong> %node:field-frigivelse-til-alle</strong></p>
 ',
