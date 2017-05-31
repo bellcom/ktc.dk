@@ -228,35 +228,48 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   }
 
   $top_level_account = ktc_crm_account_load_top_level_account($invoiceaccount);
-
+  $user_data = ktc_users_get_user_info_personal_data($account);
   if ($field = field_get_items('node', $product, 'field_text_before_invoiceaccount')) {
     $form['text_before_invoiceaccount'] = array(
       '#markup' => '<div>' . $field[0]['value'] . '</div><br />',
     );
   }
-
-  $form['invoiceaccount'] = array(
+  $form['subscriptionform'] = array(
+    '#type' => 'vertical_tabs',
+  );
+  $form['fakturering'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Fakturering'),
+    '#collapsible' => TRUE,
+    '#group' => 'subscriptionform'
+   );
+  $form['fakturering']['invoiceaccount'] = array(
     '#type' => 'value',
-    '#prefix' => '<div class="form-item form-group"><label>Firma</label><p>' . $top_level_account->name . '<br />' . $invoiceaccount->name . '<br />' . ktc_users_get_user_address($account, 'Work') . '</p>',
+    '#prefix' => '<div class="form-item form-group"><h5>Faktureringoplysninger:</h5><b><p>' . $user_data['firstname'] . ' ' .  $user_data['lastname'] . '</p><label>Firma</label><p>' . $top_level_account->name . '<br />' . $invoiceaccount->name . '<br />' . ktc_users_get_user_address($account, 'Work') . '</p></b>',
     '#suffix' => '</div>',
     '#value' => array($invoiceaccount->tid),
+    '#group' => 'subscriptionform'
   );
-  $form['ktc_ean'] = array(
-      '#tree' => FALSE,
-      '#type' => 'fieldset',
-      '#title' => t('EAN fakturering')
+
+  $form['fakturering']['ktc_ean'] = array(
+     '#tree' => FALSE,
+     '#type' => 'fieldset',
+     '#title' => t('EAN fakturering'),
+     //'#group' => 'subscriptionform'
    );
-  $form['ktc_ean']['ean_bill'] = array(
+  $form['fakturering']['ktc_ean']['ean_bill'] = array(
     '#type' => 'radios',
     '#options' => array(1 => t('Yes'), 0 => t('No')),
     '#default_value' => isset($form_state['ean_bill'])? $form_state['ean_bill'] : null,
-    '#attributes' => array('class' => array('ean_billing'))
+    '#attributes' => array('class' => array('ean_billing')),
+    '#group' => 'subscriptionform'
   );
-  $form['ktc_ean']['ean'] = array(
-    '#title' => 'EAN',
+  $form['fakturering']['ktc_ean']['ean'] = array(
+    '#title' => t('Indtast EAN nr:'),
     '#type' => 'textfield',
     '#default_value' => $form_state['subscriptiondto']->EAN,
-    '#attributes' => array('id' => array('field_ean'))
+    '#attributes' => array('id' => array('field_ean')),
+    '#group' => 'subscriptionform'
   );
 
   if ($ktc_membership) {
@@ -279,11 +292,18 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     if ($field = field_get_items('node', $product, 'field_text_before_membership')) {
       $prefix = '<div>' . $field[0]['value'] . '</div>';
     }
-    $form['ktc_membership_type'] = array(
-      '#tree' => FALSE,
+    $form['ktc_membership'] = array(
       '#type' => 'fieldset',
+      '#title' => t('Medlemskab'),
+      '#collapsible' => TRUE,
+      '#group' => 'subscriptionform'
     );
 
+    $form['ktc_membership']['ktc_membership_type'] = array(
+      '#tree' => FALSE,
+      '#type' => 'fieldset',
+      '#title' => t('Vælg medlemsparagraf'),
+    );
     $membership_categories = ktc_crm_webuser_membership_categories();
 
     $membership_category = '';
@@ -291,7 +311,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
       $membership_category = $field[0]['value'];
     }
 
-    $form['ktc_membership_type']['ktc_membership_category'] = array(
+    $form['ktc_membership']['ktc_membership_type']['ktc_membership_category'] = array(
       '#title' => 'Vælg medlemsparagraf',
       '#type' => 'select',
       '#prefix' => $prefix,
@@ -300,34 +320,43 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
       '#default_value' => $membership_category,
     );
 
-    $form['kreds'] = array(
+    $form['ktc_membership']['kreds'] = array(
       '#tree' => FALSE,
       '#type' => 'fieldset',
+      '#title' => t('Kredsmedlemskab'),
     );
 
     if ($field = field_get_items('node', $product, 'field_text_before_region')) {
-      $form['kreds']['text_before_region'] = array(
+      $form['ktc_membership']['kreds']['text_before_region'] = array(
         '#markup' => '<div>' . $field[0]['value'] . '</div><br />',
       );
     }
 
-    $form['kreds']['region'] = array(
+    $form['ktc_membership']['kreds']['region'] = array(
       '#type' => 'value',
-      '#prefix' => $region_name,
+      '#prefix' => '<b>' . $region_name . '</b>',
       '#value' => $region_uuid,
     );
   }
-
+  $form['levering'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Levering'),
+      '#collapsible' => TRUE,
+      '#group' => 'subscriptionform'
+  );
+  $form['levering']['title'] = array(
+      '#markup' => '<div><h5>Levering</h5></div><br />',
+    );
   $recipient_addresses['Work'] = array(
     'Arbejde',
     ktc_users_get_user_address($account, 'Work'),
-    l(t('ret'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
+    l(t('ret adresse'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
   );
 
   $recipient_addresses['Private'] = array(
     'Privat',
     ktc_users_get_user_address($account, 'Private'),
-    l(t('ret'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
+    l(t('ret adresse'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
   );
 
   $recipient_addresses['Other'] = array(
@@ -337,12 +366,12 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   );
 
   if ($field = field_get_items('node', $product, 'field_text_before_address')) {
-    $form['text_before_address'] = array(
+    $form['levering']['text_before_address'] = array(
       '#markup' => '<div>' . $field[0]['value'] . '</div><br />',
     );
   }
 
-  $form['recipient_address'] = array(
+  $form['levering']['recipient_address'] = array(
     '#prefix' => '<label>Vælg leveringsadresse *</label>',
     '#type' => 'tableselect',
     '#multiple' => FALSE,
@@ -358,38 +387,38 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     $text_before_other_address = $field[0]['value'];
   }
 
-  $form['other_address'] = array(
+  $form['levering']['other_address'] = array(
     '#type' => 'fieldset',
     '#title' => 'Anden leveringsadresse',
     '#description' => $text_before_other_address,
     '#tree' => FALSE,
   );
 
-  $form['other_address']['address_line_1'] = array(
+  $form['levering']['other_address']['address_line_1'] = array(
     '#title' => t('Vejnavn'),
     '#type' => 'textfield',
     '#default_value' => $form_state['subscriptiondto']->OtherAddress->AddressLine1,
   );
 
-  $form['other_address']['address_line_2'] = array(
+  $form['levering']['other_address']['address_line_2'] = array(
     '#title' => t('Vejnavn 2'),
     '#type' => 'textfield',
     '#default_value' => $form_state['subscriptiondto']->OtherAddress->AddressLine2,
   );
 
-  $form['other_address']['postal_code'] = array(
+  $form['levering']['other_address']['postal_code'] = array(
     '#title' => t('Postnummer'),
     '#type' => 'textfield',
     '#default_value' => $form_state['subscriptiondto']->OtherAddress->PostalCode,
   );
 
-  $form['other_address']['city'] = array(
+  $form['levering']['other_address']['city'] = array(
     '#title' => t('By'),
     '#type' => 'textfield',
     '#default_value' => $form_state['subscriptiondto']->OtherAddress->City,
   );
 
-  $form['other_address']['country'] = array(
+  $form['levering']['other_address']['country'] = array(
     '#title' => t('Land'),
     '#type' => 'textfield',
     '#default_value' => $form_state['subscriptiondto']->OtherAddress->Country,
@@ -397,6 +426,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
 
   if ($field = field_get_items('node', $product, 'field_text_before_submit')) {
     $form['text_before_submit'] = array(
+      '#prefix' => '<div><h5> Bekræfter oplysninger og betingelser:</h5></div>',
       '#type' => 'checkbox',
       '#title' => $field[0]['value'] . ' *',
      // '#required' => TRUE,
@@ -405,7 +435,15 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   if ($field = field_get_items('node', $product, 'field_description_before_submit')) {
     $form['text_before_submit']['#description'] = $field[0]['value'];
   }
-
+$form['dates'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Start- og sultdato'),
+      '#collapsible' => TRUE,
+      '#group' => 'subscriptionform'
+  );
+  $form['dates']['title'] = array(
+      '#markup' => '<div><h5>Start- og sultdato:</h5></div>',
+    );
   // Generate default value for date_popup.
   $startdate = str_replace(array('T', 'Z'), array(' ', ''), $form_state['subscriptiondto']->StartDate);
   // If there is no startdate, assume that this is a new subscription and
@@ -424,13 +462,18 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   $field = field_get_items('node', $product, 'field_show_datepicker');
   if ($field && $field[0]['value']) {
     if ($field = field_get_items('node', $product, 'field_text_before_date')) {
-      $form['text_date'] = array(
+      $form['dates']['text_date'] = array(
         '#type' => 'item',
         '#markup' => $field[0]['value'],
       );
     }
 
-    $form['startdate'] = array(
+    $form['dates']['title_date'] = array(
+        '#type' => 'item',
+        '#markup' =>'<div> <h5>Indrast startdato og eventuel slutdato:</h5></div>',
+      );
+    
+    $form['dates']['startdate'] = array(
       '#title' => 'Startdato',
       '#type' => 'date_popup',
       '#date_format' => 'd/m/Y',
@@ -438,7 +481,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
       '#default_value' => $startdate,
       '#date_label_position' => 'invisible',
     );
-    $form['enddate'] = array(
+    $form['dates']['enddate'] = array(
       '#title' => 'Slutdato',
       '#type' => 'date_popup',
       '#date_format' => 'd/m/Y',
@@ -450,7 +493,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   }
   else {
     // If not, we just set the enddate to somewhere in the future.
-    $form['startdate'] = array(
+    $form['dates']['startdate'] = array(
       '#type' => 'value',
       '#value' => $startdate,
     );
@@ -461,7 +504,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
       $enddate = '';
     }
 
-    $form['enddate'] = array(
+    $form['dates']['enddate'] = array(
       '#type' => 'value',
       '#value' => $enddate,
     );

@@ -16,13 +16,27 @@
         else
           $('.form-item-ean').hide();
       });
+      $('input[name=recipient_address]').click(function(){
+        if ($('input[name=recipient_address]:checked').val() == 'Other') {
+        $('#edit-other-address').show();
+      }
+      else {
+        $('#edit-other-address').hide();
+     }
+      })
       if($('input[name=ean_bill]:checked').val() == 1)
         $('.form-item-ean').show();
       else
         $('.form-item-ean').hide();
       $('.has-error').closest('.table-responsive').addClass('has-error');
-    }
 
+      if ($('input[name=recipient_address]:checked').val() == 'Other') {
+        $('#edit-other-address').show();
+      }
+      else {
+        $('#edit-other-address').hide();
+     }
+    }
   };
 
 
