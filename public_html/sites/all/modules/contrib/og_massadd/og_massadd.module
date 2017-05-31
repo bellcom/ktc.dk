@@ -348,20 +348,19 @@ function _og_massadd_adduser($user, $group_type, $group_ids) {
 //dpm('Unable to find available username');
       return FALSE;
     }
-  }
+    if (variable_get('og_massadd_createunknowns', '')) {
+      $fname = variable_get('og_massadd_profilefname', '');
+      $lname = variable_get('og_massadd_profilelname', '');
 
-  if (variable_get('og_massadd_createunknowns', '')) {
-    $fname = variable_get('og_massadd_profilefname', '');
-    $lname = variable_get('og_massadd_profilelname', '');
+      if (drupal_strlen($fname) && field_info_field($fname)) {
+        $account->{$fname}['und'][0]['value'] = $firstname;
+      }
+      if (drupal_strlen($lname) && field_info_field($lname)) {
+        $account->{$lname}['und'][0]['value'] = $lastname;
+      }
 
-    if (drupal_strlen($fname) && field_info_field($fname)) {
-      $account->{$fname}['und'][0]['value'] = $firstname;
+      user_save($account); // Actually, we don't care if this fails for now. We need better field-handling first.
     }
-    if (drupal_strlen($lname) && field_info_field($lname)) {
-      $account->{$lname}['und'][0]['value'] = $lastname;
-    }
-
-    user_save($account); // Actually, we don't care if this fails for now. We need better field-handling first.
   }
 
   // Add user to groups
