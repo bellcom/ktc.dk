@@ -464,6 +464,7 @@ function ktc_users_generate_username($name, $employer, $email, $uid) {
   }
 
   $username = str_replace(array(',', '/', '+'), array('', '-', ''), $username);
+  $username = trim(preg_replace('/\s+/',' ', $username)); //remove extra spaces
 
   // Drupal only allows the users to have a 60 character long username.
   if (strlen($username) > 60) {
