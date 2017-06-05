@@ -488,7 +488,7 @@ $form['dates'] = array(
       '#date_year_range' => ':+20',
       '#default_value' => $enddate,
       '#date_label_position' => 'invisible',
-      '#suffix' => '<br /><br /><br />',
+      '#suffix' => '<br /><br />' .t('Lad feltet "slutdato" være tomt, hvis du ønsker fortløbende abonnement/medlemskab.') . '<br />',
     );
   }
   else {
