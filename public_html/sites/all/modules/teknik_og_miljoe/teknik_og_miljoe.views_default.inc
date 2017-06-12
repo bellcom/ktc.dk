@@ -1393,7 +1393,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = 'Gem';
   $handler->display->display_options['fields']['nothing_3']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_3']['alter']['path'] = 'udgivelser/[host_entity_id]';
-  $handler->display->display_options['fields']['nothing_3']['alter']['link_class'] = 'btn btn-success btn-xs';
+  $handler->display->display_options['fields']['nothing_3']['alter']['link_class'] = 'btn btn-success btn-xs not-active';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   /* Kontekstuelt filter: Field collection item: Field collection item ID */
   $handler->display->display_options['arguments']['item_id']['id'] = 'item_id';
