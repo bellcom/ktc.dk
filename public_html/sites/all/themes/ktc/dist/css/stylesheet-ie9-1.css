@@ -7411,6 +7411,25 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   padding: 10px 20px;
 }
 
+.ktc-aside.stacked {
+  margin-bottom: 0;
+}
+
+.hide-label.show-login.ktc-comments-form {
+  background-color: transparent;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.hide-label.show-login.ktc-comments-form .pane-content {
+  padding: 10px;
+  background-color: #FFF;
+}
+
+.hide-label.show-login.ktc-comments-form .pane-content .ktc-comment-form-title {
+  display: none;
+}
+
 #edit-search-api-views-fulltext-wrapper {
   margin-top: 1.6em;
 }
@@ -13015,16 +13034,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
 .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success:focus,
 .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-success:focus {
   color: #fff;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success.active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-success.active {
-  border-color: #102e14;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-info,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-info {
-  background-color: #2dace9;
-  color: #fff;
-  border-color: #18a2e5;
 }
