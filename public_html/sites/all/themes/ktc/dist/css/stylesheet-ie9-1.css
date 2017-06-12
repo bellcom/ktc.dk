@@ -11025,6 +11025,11 @@ fieldset[disabled] .field-type-image .button {
   background-color: #36a145;
 }
 
+.page-field-collection-field-magasin-indhold-edit .ktc-article-open,
+.page-field-collection-field-magasin-indhold-edit .ktc-article-locked {
+  display: none;
+}
+
 .magasinflow {
   position: relative;
   min-height: 1px;
@@ -13033,9 +13038,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
   background-color: #2e8a3b;
   color: #fff;
   border-color: #277331;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success:focus,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-success:focus {
-  color: #fff;
 }
