@@ -11030,6 +11030,14 @@ fieldset[disabled] .field-type-image .button {
   display: none;
 }
 
+.page-udgivelser .ktc-article-open,
+.page-udgivelser .ktc-article-locked {
+  height: 12px;
+  width: 11px;
+  background-repeat: no-repeat;
+  background-size: 12px;
+}
+
 .magasinflow {
   position: relative;
   min-height: 1px;
@@ -13031,11 +13039,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
   background-color: #36a145;
   color: #fff;
   border-color: #308e3d;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-success:hover,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-success:hover {
-  background-color: #2e8a3b;
-  color: #fff;
-  border-color: #277331;
 }
