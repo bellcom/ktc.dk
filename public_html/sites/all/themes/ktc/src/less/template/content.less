@@ -45,8 +45,6 @@
 // Default show for a node with 3 columns.
 body.page-node,
 body.page-taxonomy-term {
-  h1.page-header {
-  }
   article,
   div.node-os2web-base-news {
 
@@ -142,10 +140,6 @@ body.page-taxonomy-term {
       border-top: 1px solid @brand-warmgray;
       padding: 5px 0;
 
-      .file-icon {
-        // This overrides the file-icon and replaces it with an download icon.
-      }
-
       a {
         margin-left: 10px;
         color: @brand-blacknblue;
@@ -203,22 +197,9 @@ body.page-taxonomy-term.term-is-not-top {
     }
   }
 
-  &.one-sidebar,
-  .region-content.col-sm-6,
-  .region-content.col-md-6 {
-    article,
-    div.node-os2web-base-news {
-      // .one-sidebar
-    }
-  }
-
   &.no-sidebars,
   .region-content.col-sm-12,
   .region-content.col-md-12 {
-    article,
-    div.node-os2web-base-news {
-      // .no-sidebars
-    }
     .pane-ktc-signup-block-ktc-signup-link-block {
       ul.tabs--primary {
         display: none;
@@ -262,16 +243,7 @@ body.page-taxonomy-term.term-is-not-top {
 }
 .node-type-group {
   .panel-pane {
-
-    .field-name-group-group {
-
-      a {
-        // .btn();
-        // .btn-blacknblue();
-      }
-    }
-
-    &.pane-node-body {
+    .field-name-group-group.pane-node-body {
       .parent-group {
         a {
           color: @gray-darker;
@@ -298,10 +270,6 @@ body.page-taxonomy-term.term-is-not-top {
   &.pane-hearing-node-view-panel-pane-1 {
     .views-field-field-hearing-materials {
 
-
-        .file-icon {
-          // This overrides the file-icon and replaces it with an download icon.
-        }
         a {
           margin-left: 10px;
           color: @brand-blacknblue;
@@ -441,6 +409,9 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel { padding: 0
 }
 .ktc-aside.stacked {
   margin-bottom: 0;
+}
+.node-type-artikler .ktc-content-wide.with-padding {
+  padding-bottom: 20px;
 }
 .hide-label.show-login {
   &.ktc-comments-form {

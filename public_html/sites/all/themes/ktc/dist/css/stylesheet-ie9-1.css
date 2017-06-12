@@ -7207,7 +7207,7 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-12 .pane-ktc-sign
   margin-bottom: 20px;
 }
 
-.node-type-group .panel-pane.pane-node-body .parent-group a {
+.node-type-group .panel-pane .field-name-group-group.pane-node-body .parent-group a {
   color: #2c353a;
   font-weight: 700;
 }
@@ -7413,6 +7413,10 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 
 .ktc-aside.stacked {
   margin-bottom: 0;
+}
+
+.node-type-artikler .ktc-content-wide.with-padding {
+  padding-bottom: 20px;
 }
 
 .hide-label.show-login.ktc-comments-form {
