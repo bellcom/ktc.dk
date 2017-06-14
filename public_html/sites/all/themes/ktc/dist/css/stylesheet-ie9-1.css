@@ -11515,50 +11515,54 @@ fieldset[disabled] .group-upload .button {
   margin-top: 20px;
 }
 
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button {
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default {
   color: #fff;
   background-color: #36a145;
   border-color: #308e3d;
 }
 
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:hover,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:focus,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:active,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.active,
-.open .dropdown-toggle#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button {
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default:hover,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default:focus,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default:active,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default.active,
+.open .dropdown-toggle.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default {
   color: #fff;
   background-color: #2c8238;
   border-color: #206029;
 }
 
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:active,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.active,
-.open .dropdown-toggle#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button {
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default:active,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default.active,
+.open .dropdown-toggle.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default {
   background-image: none;
 }
 
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.disabled,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button[disabled],
-fieldset[disabled] #edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.disabled:hover,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button[disabled]:hover,
-fieldset[disabled] #edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:hover,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.disabled:focus,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button[disabled]:focus,
-fieldset[disabled] #edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:focus,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.disabled:active,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button[disabled]:active,
-fieldset[disabled] #edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:active,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.disabled.active,
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button[disabled].active,
-fieldset[disabled] #edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.active {
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default.disabled,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default[disabled],
+fieldset[disabled] .field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default.disabled:hover,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default[disabled]:hover,
+fieldset[disabled] .field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default:hover,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default.disabled:focus,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default[disabled]:focus,
+fieldset[disabled] .field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default:focus,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default.disabled:active,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default[disabled]:active,
+fieldset[disabled] .field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default:active,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default.disabled.active,
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default[disabled].active,
+fieldset[disabled] .field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default.active {
   background-color: #36a145;
   border-color: #308e3d;
 }
 
-#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button .badge {
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper button.btn-default .badge {
   color: #36a145;
   background-color: #fff;
+}
+
+.ief-entity-table .ief-entity-operations .btn-default.form-submit {
+  display: none;
 }
 
 .pagination {
@@ -13025,10 +13029,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
   opacity: 0.65;
   filter: alpha(opacity=65);
   box-shadow: none;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-xs,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-xs {
-  min-width: 20px;
-  padding: 1px 6px;
 }
