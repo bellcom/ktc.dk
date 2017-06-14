@@ -11029,19 +11029,6 @@ fieldset[disabled] .field-type-image .button {
   background-color: #36a145;
 }
 
-.page-field-collection-field-magasin-indhold-edit .ktc-article-open,
-.page-field-collection-field-magasin-indhold-edit .ktc-article-locked {
-  display: none;
-}
-
-.page-udgivelser .ktc-article-open,
-.page-udgivelser .ktc-article-locked {
-  height: 12px;
-  width: 11px;
-  background-repeat: no-repeat;
-  background-size: 12px;
-}
-
 .magasinflow {
   position: relative;
   min-height: 1px;
@@ -11149,11 +11136,27 @@ fieldset[disabled] .field-type-image .button {
 .page-udgivelser .page-section .ktc-article-section {
   background-color: transparent;
   display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .page-udgivelser .page-section .ktc-teaser.contextual-links-region,
 .page-udgivelser .page-section .ktc-article-section.contextual-links-region {
   display: block;
+}
+
+.page-udgivelser .page-section .ktc-teaser .ktc-teaser-heading,
+.page-udgivelser .page-section .ktc-article-section .ktc-teaser-heading {
+  display: none;
+}
+
+.page-udgivelser .page-section .udgivelse-annonce .ktc-article-section {
+  margin: 0;
+  padding: 0;
+}
+
+.page-udgivelser .page-section .udgivelse-annonce .ktc-article-section .file .file-size {
+  display: none;
 }
 
 .page-field-collection-field-magasin-indhold-edit .udgivelse-liste {
@@ -11510,6 +11513,52 @@ fieldset[disabled] .group-upload .button {
 
 .field-widget-paragraphs-embed.form-wrapper .field-multiple-table .form-actions {
   margin-top: 20px;
+}
+
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button {
+  color: #fff;
+  background-color: #36a145;
+  border-color: #308e3d;
+}
+
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:hover,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:focus,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:active,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.active,
+.open .dropdown-toggle#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button {
+  color: #fff;
+  background-color: #2c8238;
+  border-color: #206029;
+}
+
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:active,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.active,
+.open .dropdown-toggle#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button {
+  background-image: none;
+}
+
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.disabled,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button[disabled],
+fieldset[disabled] #edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.disabled:hover,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button[disabled]:hover,
+fieldset[disabled] #edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:hover,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.disabled:focus,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button[disabled]:focus,
+fieldset[disabled] #edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:focus,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.disabled:active,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button[disabled]:active,
+fieldset[disabled] #edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button:active,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.disabled.active,
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button[disabled].active,
+fieldset[disabled] #edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button.active {
+  background-color: #36a145;
+  border-color: #308e3d;
+}
+
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions button .badge {
+  color: #36a145;
+  background-color: #fff;
 }
 
 .pagination {
@@ -12982,58 +13031,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragrap
 .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-xs {
   min-width: 20px;
   padding: 1px 6px;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-sm,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-sm {
-  min-width: 25px;
-  padding: 2px 8px;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-lg,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-lg {
-  min-width: 70px;
-  padding: 5px 25px;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.active {
-  box-shadow: none;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:active {
-  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-default,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-primary {
-  background-color: #fff;
-  color: #2c353a;
-  border-color: #e9edee;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default:hover,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-default:hover,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary:hover,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-primary:hover {
-  background-color: #f0f0f0;
-  color: #2c353a;
-  border-color: #d5ddde;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default:focus,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-default:focus,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary:focus,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-primary:focus {
-  color: #2c353a;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-default.active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-default.active,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.btn-primary.active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.btn-primary.active {
-  border-color: #a1b2b6;
 }

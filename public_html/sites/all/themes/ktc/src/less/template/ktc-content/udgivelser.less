@@ -1,19 +1,3 @@
-.page-field-collection-field-magasin-indhold-edit {
-  .ktc-article-open,
-  .ktc-article-locked {
-    display: none;
-  }
-}
-.page-udgivelser {
-  .ktc-article-open,
-  .ktc-article-locked {
-    height: 12px;
-    width: 11px;
-    background-repeat: no-repeat;
-    background-size: 12px;
-  }
-}
-
 .magasinflow {
   .make-md-column(12);
 	.magasinsider {
@@ -114,8 +98,24 @@
     .ktc-article-section {
       background-color: transparent;
       display: block;
+      margin: 0;
+      padding: 0;
       &.contextual-links-region {
         display: block;
+      }
+    .ktc-teaser-heading {
+      display: none;
+    }
+    }
+    .udgivelse-annonce {
+      .ktc-article-section {
+        margin: 0;
+        padding: 0;
+        .file {
+          .file-size {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -257,5 +257,10 @@ body.kontekst-magasinstatus {
     .form-actions {
       margin-top: 20px
     }
+  }
+}
+#edit-field-magasin-side-indhold-und-0-field-magasin-side-nyheder-und-actions {
+  button {
+    .btn-success;
   }
 }
