@@ -11563,7 +11563,49 @@ fieldset[disabled] .field-type-entityreference.field-widget-inline-entity-form.f
 }
 
 .ief-entity-table .ief-entity-operations .btn-default.form-submit {
-  display: none;
+  color: #fff;
+  background-color: #d3a900;
+  border-color: #ba9500;
+}
+
+.ief-entity-table .ief-entity-operations .btn-default.form-submit:hover,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit:focus,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit:active,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit.active,
+.open .dropdown-toggle.ief-entity-table .ief-entity-operations .btn-default.form-submit {
+  color: #fff;
+  background-color: #aa8800;
+  border-color: #7c6400;
+}
+
+.ief-entity-table .ief-entity-operations .btn-default.form-submit:active,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit.active,
+.open .dropdown-toggle.ief-entity-table .ief-entity-operations .btn-default.form-submit {
+  background-image: none;
+}
+
+.ief-entity-table .ief-entity-operations .btn-default.form-submit.disabled,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit[disabled],
+fieldset[disabled] .ief-entity-table .ief-entity-operations .btn-default.form-submit,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit.disabled:hover,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit[disabled]:hover,
+fieldset[disabled] .ief-entity-table .ief-entity-operations .btn-default.form-submit:hover,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit.disabled:focus,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit[disabled]:focus,
+fieldset[disabled] .ief-entity-table .ief-entity-operations .btn-default.form-submit:focus,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit.disabled:active,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit[disabled]:active,
+fieldset[disabled] .ief-entity-table .ief-entity-operations .btn-default.form-submit:active,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit.disabled.active,
+.ief-entity-table .ief-entity-operations .btn-default.form-submit[disabled].active,
+fieldset[disabled] .ief-entity-table .ief-entity-operations .btn-default.form-submit.active {
+  background-color: #d3a900;
+  border-color: #ba9500;
+}
+
+.ief-entity-table .ief-entity-operations .btn-default.form-submit .badge {
+  color: #d3a900;
+  background-color: #fff;
 }
 
 .pagination {
@@ -12958,76 +13000,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-it
 .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add {
   padding: 0;
   margin: 0;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add > li,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add > li {
-  padding: 0;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: 600;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 12px;
-  line-height: 1.42857143;
-  border-radius: 4px;
-  user-select: none;
-  min-width: 50px;
-  padding: 3px 15px;
-  border-radius: 20px;
-  border-width: 2px;
-  border-style: solid;
-  background-color: #36a145;
-  color: #fff;
-  border-color: #308e3d;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:focus,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:focus,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:active:focus,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:active:focus,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active:focus,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.active:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:hover,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:hover,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:focus,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:focus {
-  color: #2c353a;
-  text-decoration: none;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a:active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a:active,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.active,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.active {
-  outline: 0;
-  background-image: none;
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a.disabled,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a.disabled,
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a[disabled],
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a[disabled],
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add a,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add a {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  box-shadow: none;
 }
