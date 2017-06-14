@@ -392,7 +392,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 12,
     ),
   );
 
@@ -603,7 +603,7 @@ function ktc_subscription_ui_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_show_datepicker',
-    'label' => 'Vis datovælger',
+    'label' => 'Vis fanen Start- og Slutdato',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -617,7 +617,79 @@ function ktc_subscription_ui_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 5,
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-product-field_show_hide_fields'
+  $field_instances['node-product-field_show_hide_fields'] = array(
+    'bundle' => 'product',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_label_token' => 0,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 15,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_show_hide_fields',
+    'label' => 'Vis/skjul faner i formularen',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 16,
     ),
   );
 
@@ -717,7 +789,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -817,7 +889,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -917,7 +989,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -1017,7 +1089,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -1117,7 +1189,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -1217,7 +1289,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -1326,7 +1398,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -1346,8 +1418,9 @@ function ktc_subscription_ui_field_default_field_instances() {
   t('Lang beskrivelse');
   t('Opsig advarsel');
   t('Produkt type');
-  t('Vis datovælger');
   t('Vis datovælger på formularen for dette produkt. Tillad brugeren at vælge slutdato for abonnementet.');
+  t('Vis fanen Start- og Slutdato');
+  t('Vis/skjul faner i formularen');
 
   return $field_instances;
 }

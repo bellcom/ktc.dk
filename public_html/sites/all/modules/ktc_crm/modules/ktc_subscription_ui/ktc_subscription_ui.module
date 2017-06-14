@@ -163,7 +163,9 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
       #edit-submit {display: block; clear: left; margin-top: 10px; float: left; margin-top: 10px;}
     ';
   drupal_add_css($css, 'inline');
-
+  
+ 
+  
   $form = array();
 
   $form['back'] = array(
@@ -171,7 +173,11 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     '#markup' => '<a href="' . url('user/' . $account->uid . '/' . arg(2)) . '" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Tilbage</a>',
   );
   if ($product = node_load($product_nid)) {
-
+    $show_hide_fileds = field_get_items('node', $product, 'field_show_hide_fields');
+    $allowed_fields =  array();
+    foreach ($show_hide_fileds as $val) {
+      $allowed_fields[]=$val['value'];
+    }
     if ($field = field_get_items('node', $product, 'field_product_type')) {
       $ktc_membership = ($field[0]['value'] == 'ktc_membership');
       $form_state['ktc_membership'] = $ktc_membership;
@@ -237,6 +243,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   $form['subscriptionform'] = array(
     '#type' => 'vertical_tabs',
   );
+  
   $form['fakturering'] = array(
     '#type' => 'fieldset',
     '#title' => t('Fakturering'),
@@ -250,28 +257,33 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     '#value' => array($invoiceaccount->tid),
     '#group' => 'subscriptionform'
   );
-
-  $form['fakturering']['ktc_ean'] = array(
-     '#tree' => FALSE,
-     '#type' => 'fieldset',
-     '#title' => t('EAN fakturering'),
-     //'#group' => 'subscriptionform'
-   );
-  $form['fakturering']['ktc_ean']['ean_bill'] = array(
-    '#type' => 'radios',
-    '#options' => array(1 => t('Yes'), 0 => t('No')),
-    '#default_value' => isset($form_state['ean_bill'])? $form_state['ean_bill'] : null,
-    '#attributes' => array('class' => array('ean_billing')),
-    '#group' => 'subscriptionform'
-  );
-  $form['fakturering']['ktc_ean']['ean'] = array(
-    '#title' => t('Indtast EAN nr:'),
-    '#type' => 'textfield',
-    '#default_value' => $form_state['subscriptiondto']->EAN,
-    '#attributes' => array('id' => array('field_ean')),
-    '#group' => 'subscriptionform'
-  );
-
+  
+    $form['fakturering']['ktc_ean'] = array(
+       '#tree' => FALSE,
+       '#type' => 'fieldset',
+       '#title' => t('EAN fakturering'),
+       //'#group' => 'subscriptionform'
+     );
+    
+    if (!in_array('fakturering', $allowed_fields)) {
+      $form['fakturering']['#access'] = FALSE;
+    }
+    
+    $form['fakturering']['ktc_ean']['ean_bill'] = array(
+      '#type' => 'radios',
+      '#options' => array(1 => t('Yes'), 0 => t('No')),
+      '#default_value' => isset($form_state['ean_bill'])? $form_state['ean_bill'] : null,
+      '#attributes' => array('class' => array('ean_billing')),
+      '#group' => 'subscriptionform'
+    );
+    $form['fakturering']['ktc_ean']['ean'] = array(
+      '#title' => t('Indtast EAN nr:'),
+      '#type' => 'textfield',
+      '#default_value' => $form_state['subscriptiondto']->EAN,
+      '#attributes' => array('id' => array('field_ean')),
+      '#group' => 'subscriptionform'
+    );
+ 
   if ($ktc_membership) {
     $region_uuid = '';
     $region_name = '';
@@ -288,142 +300,148 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
     }
 
     $prefix = '';
-
     if ($field = field_get_items('node', $product, 'field_text_before_membership')) {
-      $prefix = '<div>' . $field[0]['value'] . '</div>';
+        $prefix = '<div>' . $field[0]['value'] . '</div>';
+      }
+      $form['ktc_membership'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Medlemskab'),
+        '#collapsible' => TRUE,
+        '#group' => 'subscriptionform'
+      );
+      
+      if (!in_array('ktc_membership', $allowed_fields)) {
+        $form['ktc_membership']['#access'] = FALSE;
+      }
+      $form['ktc_membership']['ktc_membership_type'] = array(
+        '#tree' => FALSE,
+        '#type' => 'fieldset',
+        '#title' => t('Vælg medlemsparagraf'),
+      );
+      $membership_categories = ktc_crm_webuser_membership_categories();
+
+      $membership_category = '';
+      if ($field = field_get_items('user', $account, 'field_membership_ktc_category')) {
+        $membership_category = $field[0]['value'];
+      }
+
+      $form['ktc_membership']['ktc_membership_type']['ktc_membership_category'] = array(
+        '#title' => 'Vælg medlemsparagraf',
+        '#type' => 'select',
+        '#prefix' => $prefix,
+        '#required' => TRUE,
+        '#options' => $membership_categories,
+        '#default_value' => $membership_category,
+      );
+
+      $form['ktc_membership']['kreds'] = array(
+        '#tree' => FALSE,
+        '#type' => 'fieldset',
+        '#title' => t('Kredsmedlemskab'),
+      );
+
+      if ($field = field_get_items('node', $product, 'field_text_before_region')) {
+        $form['ktc_membership']['kreds']['text_before_region'] = array(
+          '#markup' => '<div>' . $field[0]['value'] . '</div><br />',
+        );
+      }
+
+      $form['ktc_membership']['kreds']['region'] = array(
+        '#type' => 'value',
+        '#prefix' => '<b>' . $region_name . '</b>',
+        '#value' => $region_uuid,
+      );
     }
-    $form['ktc_membership'] = array(
-      '#type' => 'fieldset',
-      '#title' => t('Medlemskab'),
-      '#collapsible' => TRUE,
-      '#group' => 'subscriptionform'
+ 
+  $form['levering'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Levering'),
+    '#collapsible' => TRUE,
+    '#group' => 'subscriptionform'
     );
-
-    $form['ktc_membership']['ktc_membership_type'] = array(
-      '#tree' => FALSE,
-      '#type' => 'fieldset',
-      '#title' => t('Vælg medlemsparagraf'),
-    );
-    $membership_categories = ktc_crm_webuser_membership_categories();
-
-    $membership_category = '';
-    if ($field = field_get_items('user', $account, 'field_membership_ktc_category')) {
-      $membership_category = $field[0]['value'];
+    if (!in_array('levering', $allowed_fields)) {
+       $form['levering']['#access'] = FALSE;
     }
-
-    $form['ktc_membership']['ktc_membership_type']['ktc_membership_category'] = array(
-      '#title' => 'Vælg medlemsparagraf',
-      '#type' => 'select',
-      '#prefix' => $prefix,
-      '#required' => TRUE,
-      '#options' => $membership_categories,
-      '#default_value' => $membership_category,
+    $form['levering']['title'] = array(
+        '#markup' => '<div><h5>Levering</h5></div><br />',
+      );
+    $recipient_addresses['Work'] = array(
+      'Arbejde',
+      ktc_users_get_user_address($account, 'Work'),
+      l(t('ret adresse'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
     );
 
-    $form['ktc_membership']['kreds'] = array(
-      '#tree' => FALSE,
-      '#type' => 'fieldset',
-      '#title' => t('Kredsmedlemskab'),
+    $recipient_addresses['Private'] = array(
+      'Privat',
+      ktc_users_get_user_address($account, 'Private'),
+      l(t('ret adresse'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
     );
 
-    if ($field = field_get_items('node', $product, 'field_text_before_region')) {
-      $form['ktc_membership']['kreds']['text_before_region'] = array(
+    $recipient_addresses['Other'] = array(
+      'Anden leveringsadresse',
+      'Udfyldes herunder.',
+      '',
+    );
+
+    if ($field = field_get_items('node', $product, 'field_text_before_address')) {
+      $form['levering']['text_before_address'] = array(
         '#markup' => '<div>' . $field[0]['value'] . '</div><br />',
       );
     }
 
-    $form['ktc_membership']['kreds']['region'] = array(
-      '#type' => 'value',
-      '#prefix' => '<b>' . $region_name . '</b>',
-      '#value' => $region_uuid,
+    $form['levering']['recipient_address'] = array(
+      '#prefix' => '<label>Vælg leveringsadresse *</label>',
+      '#type' => 'tableselect',
+      '#multiple' => FALSE,
+      '#header' => array('Leveres til', 'Adresse', ''),
+    //  '#required' => TRUE,
+      '#options' => $recipient_addresses,
+      '#default_value' => isset($form_state['subscriptiondto']->RecipientAddress) ?$form_state['subscriptiondto']->RecipientAddress : 'Work',
     );
-  }
-  $form['levering'] = array(
+
+    $text_before_address = 'Udfyldes kun, hvis "Anden leveringsadresse" vælges ovenfor.';
+
+    if ($field = field_get_items('node', $product, 'field_text_before_other_address')) {
+      $text_before_other_address = $field[0]['value'];
+    }
+
+    $form['levering']['other_address'] = array(
       '#type' => 'fieldset',
-      '#title' => t('Levering'),
-      '#collapsible' => TRUE,
-      '#group' => 'subscriptionform'
-  );
-  $form['levering']['title'] = array(
-      '#markup' => '<div><h5>Levering</h5></div><br />',
+      '#title' => 'Anden leveringsadresse',
+      '#description' => $text_before_other_address,
+      '#tree' => FALSE,
     );
-  $recipient_addresses['Work'] = array(
-    'Arbejde',
-    ktc_users_get_user_address($account, 'Work'),
-    l(t('ret adresse'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
-  );
 
-  $recipient_addresses['Private'] = array(
-    'Privat',
-    ktc_users_get_user_address($account, 'Private'),
-    l(t('ret adresse'), 'user/' . $account->uid . '/edit', array('query' => array('destination' => current_path()))),
-  );
-
-  $recipient_addresses['Other'] = array(
-    'Anden leveringsadresse',
-    'Udfyldes herunder.',
-    '',
-  );
-
-  if ($field = field_get_items('node', $product, 'field_text_before_address')) {
-    $form['levering']['text_before_address'] = array(
-      '#markup' => '<div>' . $field[0]['value'] . '</div><br />',
+    $form['levering']['other_address']['address_line_1'] = array(
+      '#title' => t('Vejnavn'),
+      '#type' => 'textfield',
+      '#default_value' => $form_state['subscriptiondto']->OtherAddress->AddressLine1,
     );
-  }
 
-  $form['levering']['recipient_address'] = array(
-    '#prefix' => '<label>Vælg leveringsadresse *</label>',
-    '#type' => 'tableselect',
-    '#multiple' => FALSE,
-    '#header' => array('Leveres til', 'Adresse', ''),
-  //  '#required' => TRUE,
-    '#options' => $recipient_addresses,
-    '#default_value' => $form_state['subscriptiondto']->RecipientAddress,
-  );
+    $form['levering']['other_address']['address_line_2'] = array(
+      '#title' => t('Vejnavn 2'),
+      '#type' => 'textfield',
+      '#default_value' => $form_state['subscriptiondto']->OtherAddress->AddressLine2,
+    );
 
-  $text_before_address = 'Udfyldes kun, hvis "Anden leveringsadresse" vælges ovenfor.';
+    $form['levering']['other_address']['postal_code'] = array(
+      '#title' => t('Postnummer'),
+      '#type' => 'textfield',
+      '#default_value' => $form_state['subscriptiondto']->OtherAddress->PostalCode,
+    );
 
-  if ($field = field_get_items('node', $product, 'field_text_before_other_address')) {
-    $text_before_other_address = $field[0]['value'];
-  }
+    $form['levering']['other_address']['city'] = array(
+      '#title' => t('By'),
+      '#type' => 'textfield',
+      '#default_value' => $form_state['subscriptiondto']->OtherAddress->City,
+    );
 
-  $form['levering']['other_address'] = array(
-    '#type' => 'fieldset',
-    '#title' => 'Anden leveringsadresse',
-    '#description' => $text_before_other_address,
-    '#tree' => FALSE,
-  );
-
-  $form['levering']['other_address']['address_line_1'] = array(
-    '#title' => t('Vejnavn'),
-    '#type' => 'textfield',
-    '#default_value' => $form_state['subscriptiondto']->OtherAddress->AddressLine1,
-  );
-
-  $form['levering']['other_address']['address_line_2'] = array(
-    '#title' => t('Vejnavn 2'),
-    '#type' => 'textfield',
-    '#default_value' => $form_state['subscriptiondto']->OtherAddress->AddressLine2,
-  );
-
-  $form['levering']['other_address']['postal_code'] = array(
-    '#title' => t('Postnummer'),
-    '#type' => 'textfield',
-    '#default_value' => $form_state['subscriptiondto']->OtherAddress->PostalCode,
-  );
-
-  $form['levering']['other_address']['city'] = array(
-    '#title' => t('By'),
-    '#type' => 'textfield',
-    '#default_value' => $form_state['subscriptiondto']->OtherAddress->City,
-  );
-
-  $form['levering']['other_address']['country'] = array(
-    '#title' => t('Land'),
-    '#type' => 'textfield',
-    '#default_value' => $form_state['subscriptiondto']->OtherAddress->Country,
-  );
-
+    $form['levering']['other_address']['country'] = array(
+      '#title' => t('Land'),
+      '#type' => 'textfield',
+      '#default_value' => $form_state['subscriptiondto']->OtherAddress->Country,
+    );
+ 
   if ($field = field_get_items('node', $product, 'field_text_before_submit')) {
     $form['text_before_submit'] = array(
       '#prefix' => '<div><h5> Bekræfter oplysninger og betingelser:</h5></div>',
@@ -435,7 +453,11 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   if ($field = field_get_items('node', $product, 'field_description_before_submit')) {
     $form['text_before_submit']['#description'] = $field[0]['value'];
   }
-$form['dates'] = array(
+
+  // If the product allows showing a datepicker add that form item.
+  $field = field_get_items('node', $product, 'field_show_datepicker'); 
+  if ($field && $field[0]['value']) {
+    $form['dates'] = array(
       '#type' => 'fieldset',
       '#title' => t('Start- og sultdato'),
       '#collapsible' => TRUE,
@@ -457,10 +479,7 @@ $form['dates'] = array(
   if (!$form_state['subscriptiondto']->EndDate || strtotime($enddate) < time()) {
     $enddate = '';
   }
-
-  // If the product allows showing a datepicker add that form item.
-  $field = field_get_items('node', $product, 'field_show_datepicker');
-  if ($field && $field[0]['value']) {
+  
     if ($field = field_get_items('node', $product, 'field_text_before_date')) {
       $form['dates']['text_date'] = array(
         '#type' => 'item',
@@ -489,9 +508,9 @@ $form['dates'] = array(
       '#default_value' => $enddate,
       '#date_label_position' => 'invisible',
       '#suffix' => '<br /><br />' .t('Lad feltet "slutdato" være tomt, hvis du ønsker fortløbende abonnement/medlemskab.') . '<br />',
-    );
-  }
+  );}
   else {
+    $form['dates']['#access'] = FALSE;
     // If not, we just set the enddate to somewhere in the future.
     $form['dates']['startdate'] = array(
       '#type' => 'value',
@@ -611,13 +630,13 @@ function ktc_subscription_ui_form_validate(&$form, &$form_state) {
     form_set_error('enddate', t('Du skal vælge en dato i fremtiden'));
   }
 
-  if ($form_state['values']['ean_bill'] == 1 && !ktc_subscription_ui_validate_ean($form_state['values']['ean'])) {
+  if (isset($form_state['values']['ean_bill']) && $form_state['values']['ean_bill'] == 1 && !ktc_subscription_ui_validate_ean($form_state['values']['ean'])) {
     form_set_error('ean', t('Det indtastede EAN nummer er ikke korrekt.'));
   }
   if (!$form_state['values']['region'] && $form_state['ktc_membership']) {
     form_set_error('region', t('Kredsmedlemsskabet kunne ikke bestemmes, da der ikke er nogen region tilknyttet dit firma. Kontakt KTC.'));
   }
-  if (!$form_state['values']['recipient_address']) {
+  if (isset($form_state['values']['recipient_address']) && !$form_state['values']['recipient_address']) {
     form_set_error('recipient_address', t('Du mangler at vælge leveringsadresse til dit aboniment'));
   }
   if (!$form_state['values']['text_before_submit']) {
@@ -995,4 +1014,8 @@ function ktc_subscription_ui_update_user_roles($account) {
     }
     user_save($account, array('roles' => $new_roles));
   }
+}
+
+function ktc_subscription_ui_form_alter(&$form, $form_state, $form_id) { 
+  
 }

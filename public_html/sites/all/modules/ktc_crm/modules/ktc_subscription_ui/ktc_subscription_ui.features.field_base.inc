@@ -152,6 +152,33 @@ function ktc_subscription_ui_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
+  // Exported field_base: 'field_show_hide_fields'
+  $field_bases['field_show_hide_fields'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_show_hide_fields',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'fakturering' => 'Vis fanen Fakturering',
+        'ktc_membership' => 'Vis fanen Medlemskab',
+        'levering' => 'Vis fanen Levering',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_text_before_address'
   $field_bases['field_text_before_address'] = array(
     'active' => 1,
