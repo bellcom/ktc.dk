@@ -144,7 +144,6 @@ function ktc_subscription_ui_page($account) {
 
   $args['subscription_nodes'] = ktc_subscription_ui_get_product_list($type);
   $args['user_subscriptions'] = ktc_crm_subscriptions_fetch_user_subscriptions($account);
-
   if ($args['user_subscriptions'] == 'error') {
     drupal_set_message('Der er sket en teknisk fejl. Det var ikke muligt at hente en oversigt over dine eksisterende abonnementer. Prøv venligst igen senere.', 'error');
   }
