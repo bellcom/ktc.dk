@@ -2626,7 +2626,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'ktc-node-lead',
+      'css_class' => 'ktc-node-lead with-padding',
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
@@ -2768,34 +2768,6 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $display->content['new-78294957-9ca2-43c4-85c0-8465feef0bad'] = $pane;
     $display->panels['left'][9] = 'new-78294957-9ca2-43c4-85c0-8465feef0bad';
     $pane = new stdClass();
-    $pane->pid = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
-    $pane->panel = 'left';
-    $pane->type = 'node_comment_form';
-    $pane->subtype = 'node_comment_form';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'anon_links' => 1,
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'ktc-comments-form',
-      'template_suggestion' => 'content',
-    );
-    $pane->extras = array();
-    $pane->position = 10;
-    $pane->locks = array();
-    $pane->uuid = '249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
-    $display->content['new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7'] = $pane;
-    $display->panels['left'][10] = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
-    $pane = new stdClass();
     $pane->pid = 'new-35a1f065-527d-4578-aff6-5a5314cc5aad';
     $pane->panel = 'left1';
     $pane->type = 'custom';
@@ -2872,7 +2844,11 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'stacked',
+      'template_suggestion' => 'custom',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -2880,11 +2856,39 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $display->content['new-b9396ba0-beea-4c45-a35a-e448e92847ae'] = $pane;
     $display->panels['left1'][1] = 'new-b9396ba0-beea-4c45-a35a-e448e92847ae';
     $pane = new stdClass();
+    $pane->pid = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
+    $pane->panel = 'left1';
+    $pane->type = 'node_comment_form';
+    $pane->subtype = 'node_comment_form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'anon_links' => 1,
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-comments-form hide-label show-login',
+      'template_suggestion' => 'content',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
+    $display->content['new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7'] = $pane;
+    $display->panels['left1'][2] = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
+    $pane = new stdClass();
     $pane->pid = 'new-0df367d5-77b2-4bde-a188-cad380e4b2d9';
     $pane->panel = 'left2';
     $pane->type = 'block';
     $pane->subtype = 'user-login';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,

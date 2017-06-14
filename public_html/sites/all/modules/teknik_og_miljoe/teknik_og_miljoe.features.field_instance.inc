@@ -5486,7 +5486,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'paragraphs_item',
@@ -5558,27 +5558,39 @@ function teknik_og_miljoe_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'text' => 'Annonce [file:name]',
+        ),
+        'type' => 'file_download_link',
         'weight' => 1,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'text' => 'Download [file:name]',
+        ),
+        'type' => 'file_download_link',
         'weight' => 2,
       ),
       'udgivelseliste' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'inline',
+        'module' => 'file_entity',
+        'settings' => array(
+          'text' => 'Annonce [file:name]',
+        ),
+        'type' => 'file_download_link',
         'weight' => 2,
       ),
       'udgivelseside' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'inline',
+        'module' => 'file_entity',
+        'settings' => array(
+          'text' => 'Annonce [file:name]',
+        ),
+        'type' => 'file_download_link',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'paragraphs_item',
@@ -5660,9 +5672,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 1,
       ),
       'udgivelseside' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 0,
       ),
     ),
@@ -5858,11 +5873,11 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-udgivelse_navne-field_artikler_og_nyheder'
-  $field_instances['paragraphs_item-udgivelse_navne-field_artikler_og_nyheder'] = array(
+  // Exported field_instance: 'paragraphs_item-udgivelse_navne-field_magasin_side_nyheder'
+  $field_instances['paragraphs_item-udgivelse_navne-field_magasin_side_nyheder'] = array(
     'bundle' => 'udgivelse_navne',
-    'custom_add_another' => '',
-    'custom_remove' => '',
+    'custom_add_another' => 'Tilføj nyhed',
+    'custom_remove' => 'Fjern',
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -5875,7 +5890,7 @@ function teknik_og_miljoe_field_default_field_instances() {
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'hidden',
@@ -5885,16 +5900,7 @@ function teknik_og_miljoe_field_default_field_instances() {
           'view_mode' => 'listevisning',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 1,
-      ),
-      'paragraphs_udgivelse_lister' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'udgivelseliste' => array(
         'label' => 'hidden',
@@ -5904,22 +5910,22 @@ function teknik_og_miljoe_field_default_field_instances() {
           'view_mode' => 'listevisning',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'udgivelseside' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'links' => 1,
+          'links' => 0,
           'view_mode' => 'listevisning',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_artikler_og_nyheder',
-    'label' => 'Artikler og nyheder',
+    'field_name' => 'field_magasin_side_nyheder',
+    'label' => 'Nyheder',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -5947,7 +5953,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -5965,7 +5971,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'inline',
@@ -5989,13 +5995,13 @@ function teknik_og_miljoe_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'udgivelseside' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'paragraphs_item',
@@ -6124,7 +6130,6 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Artikel reference');
   t('Artikel status');
   t('Artikeltype');
-  t('Artikler og nyheder');
   t('Bilag');
   t('Billede i fuld bredde');
   t('Billede med annonce der skal vises på web sammen med artiklen.');
@@ -6159,6 +6164,7 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Lille billede');
   t('Manchet');
   t('Medtaget i udgivelse');
+  t('Nyheder');
   t('Overskrift');
   t('Placering af lille billede');
   t('Plads på siden');
