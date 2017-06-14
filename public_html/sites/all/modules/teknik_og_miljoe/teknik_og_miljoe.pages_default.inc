@@ -2789,8 +2789,9 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->configuration = array(
       'admin_title' => 'Paywall til medlemmer',
-      'title' => 'Artikel endnu ikke online uden abonnement',
-      'body' => '<p><span class="ktc-article-locked">&nbsp;</span> Denne artikel er endnu ikke publiceret for andre end vores online abonnenter.</p>
+      'title' => 'Du har ikke adgang til denne artikel',
+      'body' => '<p><span class="ktc-article-locked">&nbsp;</span> Denne artikel kan kun læses af vores online abonnenter. </p>
+<p>Hvis du har tegnet online abonnement, skal du logge ind herunder. Har du endnu ikke et digitalt abonnement, kan du på din brugerprofil redigere dine abonnementer og tilføje et digitalt abonnement.</p>
 
 <p>Artiklen frigives d. %node:field-frigivelse-til-alle</p>
 
@@ -2832,10 +2833,13 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     );
     $pane->configuration = array(
       'admin_title' => 'Paywall til besøgende',
-      'title' => 'Artikel endnu ikke online uden abonnement',
-      'body' => '<p><span class="ktc-article-locked">&nbsp;</span> Denne artikel er endnu ikke publiceret for andre end vores online abonnenter.</p>
+      'title' => 'Du har ikke adgang til denne artikel',
+      'body' => '<p><span class="ktc-article-locked">&nbsp;</span> Denne artikel kan kun læses af vores online abonnenter.</p>
 
-<p>Artiklen frigives d.<strong> %node:field-frigivelse-til-alle</strong></p>
+<p>Hvis du har tegnet online abonnement, skal du logge ind herunder. Har du endnu ikke et digitalt abonnement, kan du på din brugerprofil redigere dine abonnementer og tilføje et digitalt abonnement. Har du ikke en brugerprofil, skal du<a href="/user/signup"> oprette en </a>og tilføje digitalt abonnement. Bruge evt ikonerne herunder til at oprette en brugerprofil.</p>
+
+<p>Visse artikler frigives til alle<br />
+Artiklen frigives d.<strong> %node:field-frigivelse-til-alle</strong></p>
 ',
       'format' => 'full_html',
       'substitute' => 1,

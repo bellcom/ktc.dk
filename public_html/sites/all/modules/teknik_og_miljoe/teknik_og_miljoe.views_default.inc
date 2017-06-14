@@ -524,7 +524,7 @@ function teknik_og_miljoe_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_artikel_forfattere']['delta_offset'] = '0';
-  /* Felt: Indhold: Fri for alle */
+  /* Felt: Indhold: Nulstil paywall for denne artikel */
   $handler->display->display_options['fields']['field_fri_for_alle']['id'] = 'field_fri_for_alle';
   $handler->display->display_options['fields']['field_fri_for_alle']['table'] = 'field_data_field_fri_for_alle';
   $handler->display->display_options['fields']['field_fri_for_alle']['field'] = 'field_fri_for_alle';
@@ -532,7 +532,7 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['field_fri_for_alle']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_fri_for_alle']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_fri_for_alle']['hide_empty'] = TRUE;
-  /* Felt: Indhold: Frigivelse til alle */
+  /* Felt: Indhold: Indstillinger for paywall */
   $handler->display->display_options['fields']['field_frigivelse_til_alle']['id'] = 'field_frigivelse_til_alle';
   $handler->display->display_options['fields']['field_frigivelse_til_alle']['table'] = 'field_data_field_frigivelse_til_alle';
   $handler->display->display_options['fields']['field_frigivelse_til_alle']['field'] = 'field_frigivelse_til_alle';
@@ -607,8 +607,8 @@ function teknik_og_miljoe_views_default_views() {
     t('Artikeltype'),
     t('Forfatter(e)'),
     t('Skriveadgang'),
-    t('Fri for alle'),
-    t('Frigivelse til alle'),
+    t('Nulstil paywall for denne artikel'),
+    t('Indstillinger for paywall'),
     t('Medtaget i udgivelse'),
     t('Højtopløste billeder'),
     t('View panes'),
@@ -2028,6 +2028,8 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';

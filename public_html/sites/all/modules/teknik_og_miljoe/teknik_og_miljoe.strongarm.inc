@@ -138,7 +138,7 @@ function teknik_og_miljoe_strongarm() {
           'weight' => '11',
         ),
         'scheduler_settings' => array(
-          'weight' => '22',
+          'weight' => '25',
         ),
         'metatags' => array(
           'weight' => '40',

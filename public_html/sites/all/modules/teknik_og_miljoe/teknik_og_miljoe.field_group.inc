@@ -406,6 +406,40 @@ function teknik_og_miljoe_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_paywall|node|artikler|form';
+  $field_group->group_name = 'group_paywall';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'artikler';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_publicering';
+  $field_group->data = array(
+    'label' => 'Paywall',
+    'weight' => '26',
+    'children' => array(
+      0 => 'field_frigivelse_til_alle',
+      1 => 'field_fri_for_alle',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Paywall',
+      'instance_settings' => array(
+        'required_fields' => 0,
+        'id' => '',
+        'classes' => 'group-paywall field-group-div well well-sm',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_paywall|node|artikler|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_publicering|node|artikler|form';
   $field_group->group_name = 'group_publicering';
   $field_group->entity_type = 'node';
@@ -418,6 +452,7 @@ function teknik_og_miljoe_field_group_info() {
     'children' => array(
       0 => 'field_os2web_base_field_promote',
       1 => 'scheduler_settings',
+      2 => 'group_paywall',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -576,9 +611,7 @@ function teknik_og_miljoe_field_group_info() {
       3 => 'field_deadline',
       4 => 'field_highres_billeder',
       5 => 'field_medtaget_i_udgivelse',
-      6 => 'field_frigivelse_til_alle',
-      7 => 'field_fri_for_alle',
-      8 => 'group_forfatterperm',
+      6 => 'group_forfatterperm',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

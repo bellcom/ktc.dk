@@ -2606,7 +2606,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
     'default_value_label_token' => 0,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Hvis du sætter flueben i denne boks, vil artiklen vil være synlig for alle besøgende',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2660,7 +2660,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_fri_for_alle',
-    'label' => 'Fri for alle',
+    'label' => 'Nulstil paywall for denne artikel',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -2674,7 +2674,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 24,
+      'weight' => 27,
     ),
   );
 
@@ -2684,7 +2684,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     'custom_add_another' => '',
     'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Her kan du sætte datoen for hvornår artiklen må vises for brugere der IKKE har et digitalt abonnement. Hvis du ikke sætter en dato i dette felt, vil artiklen KUN være tilgængelig for brugere der har et digitalt abonnement',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2744,7 +2744,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_frigivelse_til_alle',
-    'label' => 'Frigivelse til alle',
+    'label' => 'Indstillinger for paywall',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -2767,7 +2767,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 23,
+      'weight' => 26,
     ),
   );
 
@@ -3560,7 +3560,7 @@ function teknik_og_miljoe_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 23,
+      'weight' => 27,
     ),
   );
 
@@ -4174,6 +4174,8 @@ function teknik_og_miljoe_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(
         'apply_chosen' => 0,
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
       ),
       'type' => 'taxonomy_hs',
       'weight' => 44,
@@ -5791,10 +5793,10 @@ function teknik_og_miljoe_field_default_field_instances() {
           'allow_existing' => 1,
           'allow_new' => 1,
           'delete_references' => 0,
-          'label_plural' => 'indholdselementer',
-          'label_singular' => 'indholdselement',
+          'label_plural' => 'artikler',
+          'label_singular' => 'artikel',
           'match_operator' => 'CONTAINS',
-          'override_labels' => 0,
+          'override_labels' => 1,
         ),
       ),
       'type' => 'inline_entity_form',
@@ -5946,10 +5948,10 @@ function teknik_og_miljoe_field_default_field_instances() {
           'allow_existing' => 1,
           'allow_new' => 1,
           'delete_references' => 0,
-          'label_plural' => 'indholdselementer',
-          'label_singular' => 'indholdselement',
+          'label_plural' => 'nyheder',
+          'label_singular' => 'nyhed',
           'match_operator' => 'CONTAINS',
-          'override_labels' => 0,
+          'override_labels' => 1,
         ),
       ),
       'type' => 'inline_entity_form',
@@ -6151,19 +6153,21 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Forfrem til');
   t('Fornavn + mellemnavn');
   t('Foto af forfatter');
-  t('Fri for alle');
-  t('Frigivelse til alle');
   t('Genre');
   t('Her kan du indtaste stikord til artiklen (tags)');
+  t('Her kan du sætte datoen for hvornår artiklen må vises for brugere der IKKE har et digitalt abonnement. Hvis du ikke sætter en dato i dette felt, vil artiklen KUN være tilgængelig for brugere der har et digitalt abonnement');
   t('Her skal du angive deadline for artikel');
   t('Hvis der ikke ønskes en overskrift på afsnittet, så skal dette felt ikke udfyldes.');
+  t('Hvis du sætter flueben i denne boks, vil artiklen vil være synlig for alle besøgende');
   t('Højtopløste billeder');
+  t('Indstillinger for paywall');
   t('Introtekst til artiklen');
   t('KL Emneord');
   t('Kommentarer');
   t('Lille billede');
   t('Manchet');
   t('Medtaget i udgivelse');
+  t('Nulstil paywall for denne artikel');
   t('Nyheder');
   t('Overskrift');
   t('Placering af lille billede');
