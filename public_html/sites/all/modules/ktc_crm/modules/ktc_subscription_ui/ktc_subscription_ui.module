@@ -459,7 +459,7 @@ function ktc_subscription_ui_form($form, &$form_state, $account, $product_nid) {
   if ($field && $field[0]['value']) {
     $form['dates'] = array(
       '#type' => 'fieldset',
-      '#title' => t('Start- og sultdato'),
+      '#title' => t('Start- og slutdato'),
       '#collapsible' => TRUE,
       '#group' => 'subscriptionform'
   );
