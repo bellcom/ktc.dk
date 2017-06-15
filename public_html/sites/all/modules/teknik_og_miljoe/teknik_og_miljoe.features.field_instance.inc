@@ -62,6 +62,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_artikel_billedserie',
@@ -142,6 +148,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -233,6 +245,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -331,6 +349,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -436,6 +460,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_artikelafsnit_placering',
@@ -500,6 +530,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -605,6 +641,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_artikelafsnit_type',
@@ -676,6 +718,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -776,6 +824,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 5,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -906,6 +960,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'token' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -1000,6 +1060,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1132,6 +1198,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'token' => array(
         'label' => 'above',
         'module' => 'image',
@@ -1236,6 +1308,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1355,6 +1433,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'token' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -1464,6 +1548,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_magasin_side_indhold',
@@ -1544,6 +1634,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1661,6 +1757,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_magasin_side_sidegenre',
@@ -1738,6 +1840,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1835,6 +1943,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 20,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -1952,6 +2066,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_antal_anslag',
@@ -2045,6 +2165,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 17,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_artikel_afsnit',
@@ -2130,6 +2256,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -2277,6 +2409,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 21,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_artikel_status',
@@ -2374,6 +2512,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 12,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_artikeltype',
@@ -2432,9 +2576,12 @@ function teknik_og_miljoe_field_default_field_instances() {
       ),
       'listevisningstor' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'listevisningstor',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 2,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2476,6 +2623,12 @@ function teknik_og_miljoe_field_default_field_instances() {
           'view_mode' => 'teasercomments',
         ),
         'type' => 'field_collection_fields',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -2563,6 +2716,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 13,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -2657,6 +2816,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_fri_for_alle',
@@ -2736,6 +2901,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2832,6 +3003,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 7,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_highres_billeder',
@@ -2925,6 +3102,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_medtaget_i_udgivelse',
@@ -3013,6 +3196,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -3119,6 +3308,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 5,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_hidlinks',
@@ -3204,6 +3399,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -3316,6 +3517,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 1,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -3438,6 +3645,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 16,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_media',
@@ -3545,6 +3758,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_promote',
@@ -3598,7 +3817,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3624,6 +3843,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_paragraphs',
@@ -3633,24 +3858,28 @@ function teknik_og_miljoe_field_default_field_instances() {
       'add_mode' => 'select',
       'allowed_bundles' => array(
         'ktc_artikel_billedserie' => 'ktc_artikel_billedserie',
+        'ktc_artikel_indrykket' => 'ktc_artikel_indrykket',
         'ktc_artikelafsnit_citat' => 'ktc_artikelafsnit_citat',
         'ktc_artikelafsnit_faktaboks' => 'ktc_artikelafsnit_faktaboks',
         'ktc_artikelafsnit_tekst' => 'ktc_artikelafsnit_tekst',
         'ktc_artikelafsnit_tekst_billede' => 'ktc_artikelafsnit_tekst_billede',
         'ktc_eksisterende_bruger' => 'ktc_eksisterende_bruger',
         'ktc_related_artikle' => 'ktc_related_artikle',
+        'ktc_tekst_med_lille_billede' => 'ktc_tekst_med_lille_billede',
         'udgivelse_annonce' => -1,
         'udgivelse_artikel' => -1,
         'udgivelse_navne' => -1,
       ),
       'bundle_weights' => array(
         'ktc_artikel_billedserie' => -18,
+        'ktc_artikel_indrykket' => 16,
         'ktc_artikelafsnit_citat' => -15,
         'ktc_artikelafsnit_faktaboks' => -14,
         'ktc_artikelafsnit_tekst' => -20,
         'ktc_artikelafsnit_tekst_billede' => -19,
         'ktc_eksisterende_bruger' => -17,
         'ktc_related_artikle' => -16,
+        'ktc_tekst_med_lille_billede' => 9,
         'udgivelse_annonce' => -13,
         'udgivelse_artikel' => -12,
         'udgivelse_navne' => -11,
@@ -3739,6 +3968,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -3840,6 +4075,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         ),
         'type' => 'text_trimmed',
         'weight' => 2,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -3964,6 +4205,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
@@ -4048,6 +4295,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -4159,6 +4412,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 14,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
@@ -4257,6 +4516,97 @@ function teknik_og_miljoe_field_default_field_instances() {
       ),
       'type' => 'image_image',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikel_billedserie-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_artikel_billedserie-field_artikelafsnit_ekstratekst'] = array(
+    'bundle' => 'ktc_artikel_billedserie',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
     ),
   );
 
@@ -4533,6 +4883,97 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_faktaboks-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_faktaboks-field_artikelafsnit_ekstratekst'] = array(
+    'bundle' => 'ktc_artikelafsnit_faktaboks',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_faktaboks-field_artikelafsnit_overskrift'
   $field_instances['paragraphs_item-ktc_artikelafsnit_faktaboks-field_artikelafsnit_overskrift'] = array(
     'bundle' => 'ktc_artikelafsnit_faktaboks',
@@ -4768,6 +5209,97 @@ function teknik_og_miljoe_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst-field_artikelafsnit_ekstratekst'] = array(
+    'bundle' => 'ktc_artikelafsnit_tekst',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
     ),
   );
 
@@ -5122,190 +5654,6 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_overskrift'
-  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_overskrift'] = array(
-    'bundle' => 'ktc_artikelafsnit_tekst_billede',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'paragraphs_editor_preview' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_plain',
-        'weight' => 0,
-      ),
-      'udgivelseliste' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_plain',
-        'weight' => 0,
-      ),
-      'udgivelseside' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_artikelafsnit_overskrift',
-    'label' => 'Overskrift',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'emails' => 'emails',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'mailchimp_campaign' => 'mailchimp_campaign',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'emails' => array(
-              'weight' => 0,
-            ),
-            'filtered_html' => array(
-              'weight' => -10,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'linkit' => array(
-        'button_text' => 'Søg',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_tekst'
-  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_tekst'] = array(
-    'bundle' => 'ktc_artikelafsnit_tekst_billede',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'paragraphs_editor_preview' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-      'udgivelseliste' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-      'udgivelseside' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_artikelafsnit_tekst',
-    'label' => 'Tekst',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'emails' => 0,
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'mailchimp_campaign' => 0,
-          'plain_text' => 0,
-        ),
-        'allowed_formats_toggle' => 1,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'emails' => array(
-              'weight' => 0,
-            ),
-            'filtered_html' => array(
-              'weight' => -10,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'linkit' => array(
-        'button_text' => 'Søg',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'paragraphs_item-ktc_eksisterende_bruger-field_eksisterende_bruger'
   $field_instances['paragraphs_item-ktc_eksisterende_bruger-field_eksisterende_bruger'] = array(
     'bundle' => 'ktc_eksisterende_bruger',
@@ -5320,8 +5668,8 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'links' => 1,
-          'view_mode' => 'list7',
+          'links' => 0,
+          'view_mode' => 'list2',
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 0,
@@ -5389,7 +5737,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
-          'view_mode' => 'listevisning',
+          'view_mode' => 'titles',
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 0,

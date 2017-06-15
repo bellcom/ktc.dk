@@ -18,27 +18,22 @@ function teknik_og_miljoe_strongarm() {
     0 => array(
       'the_id' => '0',
       'css_class_name' => 'ktc-paragraph-faktaboksgreen',
-      'css_class_display' => 'Grøn',
+      'css_class_display' => 'Green',
     ),
     1 => array(
       'the_id' => '1',
       'css_class_name' => 'ktc-paragraph-faktaboksyellow',
-      'css_class_display' => 'Gul',
+      'css_class_display' => 'Yellow',
     ),
     2 => array(
       'the_id' => '2',
       'css_class_name' => 'ktc-paragraph-faktaboksblue',
-      'css_class_display' => 'Blå',
+      'css_class_display' => 'Blue',
     ),
     3 => array(
       'the_id' => '3',
       'css_class_name' => 'ktc-paragraph-faktaboksblack',
-      'css_class_display' => 'Sort',
-    ),
-    4 => array(
-      'the_id' => '4',
-      'css_class_name' => 'ktc-paragraph-citat',
-      'css_class_display' => 'Citat',
+      'css_class_display' => 'Black',
     ),
   );
   $export['classy_paragraphs_settings'] = $strongarm;

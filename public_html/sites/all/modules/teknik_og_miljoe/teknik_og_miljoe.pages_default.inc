@@ -2790,8 +2790,9 @@ function teknik_og_miljoe_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Paywall til medlemmer',
       'title' => 'Du har ikke adgang til denne artikel',
-      'body' => '<p><span class="ktc-article-locked">&nbsp;</span> Denne artikel kan kun læses af vores online abonnenter. </p>
-<p>Hvis du har tegnet online abonnement, skal du logge ind herunder. Har du endnu ikke et digitalt abonnement, kan du på din brugerprofil redigere dine abonnementer og tilføje et digitalt abonnement.</p>
+      'body' => '<p><span class="ktc-article-locked">&nbsp;</span> Denne artikel kan kun læses af vores online abonnenter.</p>
+
+<p>Hvis du ønsker adgang til denne artikel, skal du først tegne et online abonnement. Få adgang med det samme ved at klikke på knappen herunder.</p>
 
 <p>Artiklen frigives d. %node:field-frigivelse-til-alle</p>
 

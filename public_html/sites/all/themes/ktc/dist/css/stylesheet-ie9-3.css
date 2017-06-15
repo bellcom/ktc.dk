@@ -2618,27 +2618,35 @@
 }
 
 @media (min-width: 768px) {
-  .ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-image {
+  .ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-image,
+  .ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede .ktc-article-section-image {
     float: left;
     width: 41.66666667%;
   }
 }
 
 @media (min-width: 768px) {
-  .ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-body {
+  .ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-body,
+  .ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede .ktc-article-section-body {
     float: left;
     width: 58.33333333%;
   }
 }
 
 @media (min-width: 768px) {
-  .ktc-article-section.ktc-article-section-type-afsnitb.ktc-article-section-type-afsnitb-image-left .ktc-article-section-image {
+  .ktc-article-section.ktc-article-section-type-afsnitb.ktc-article-section-type-afsnitb-image-left .ktc-article-section-image,
+  .ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede.ktc-article-section-type-afsnitb-image-left .ktc-article-section-image,
+  .ktc-article-section.ktc-article-section-type-afsnitb.ktc-article-section-type-afsnitb-image-left .ktc-article-section-image,
+  .ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede.ktc-article-section-type-afsnitb-image-left .ktc-article-section-image {
     right: 58.33333333%;
   }
 }
 
 @media (min-width: 768px) {
-  .ktc-article-section.ktc-article-section-type-afsnitb.ktc-article-section-type-afsnitb-image-left .ktc-article-section-body {
+  .ktc-article-section.ktc-article-section-type-afsnitb.ktc-article-section-type-afsnitb-image-left .ktc-article-section-body,
+  .ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede.ktc-article-section-type-afsnitb-image-left .ktc-article-section-body,
+  .ktc-article-section.ktc-article-section-type-afsnitb.ktc-article-section-type-afsnitb-image-left .ktc-article-section-body,
+  .ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede.ktc-article-section-type-afsnitb-image-left .ktc-article-section-body {
     left: 41.66666667%;
   }
 }
