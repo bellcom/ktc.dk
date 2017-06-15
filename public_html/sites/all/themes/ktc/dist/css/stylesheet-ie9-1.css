@@ -5593,8 +5593,6 @@ button.close {
 .ktc-list-display-large-artikler:after,
 .ktc-article-section.ktc-article-section-type-afsnitb:before,
 .ktc-article-section.ktc-article-section-type-afsnitb:after,
-.ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede:before,
-.ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede:after,
 .ktc-article-section.ktc-article-section-type-billedserie .photoswipe-gallery:before,
 .ktc-article-section.ktc-article-section-type-billedserie .photoswipe-gallery:after,
 .ktc-gallery-wrapper:before,
@@ -5654,7 +5652,6 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 .ktc-teaser-magazine .ktc-teaser-artikler:after,
 .ktc-list-display-large-artikler:after,
 .ktc-article-section.ktc-article-section-type-afsnitb:after,
-.ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede:after,
 .ktc-article-section.ktc-article-section-type-billedserie .photoswipe-gallery:after,
 .ktc-gallery-wrapper:after,
 .ktc-gallery-wrapper:after,
@@ -11986,14 +11983,12 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   font-weight: bold;
 }
 
-.ktc-article-section.ktc-article-section-type-afsnitb,
-.ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede {
+.ktc-article-section.ktc-article-section-type-afsnitb {
   margin-left: -10px;
   margin-right: -10px;
 }
 
-.ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-headline,
-.ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede .ktc-article-section-headline {
+.ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-headline {
   position: relative;
   float: left;
   width: 100%;
@@ -12002,8 +11997,7 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   padding-right: 10px;
 }
 
-.ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-image,
-.ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede .ktc-article-section-image {
+.ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-image {
   float: left;
   width: 100%;
   position: relative;
@@ -12012,8 +12006,7 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   padding-right: 10px;
 }
 
-.ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-body,
-.ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede .ktc-article-section-body {
+.ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-body {
   float: left;
   width: 100%;
   position: relative;
@@ -12022,8 +12015,7 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   padding-right: 10px;
 }
 
-.ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-body-extra,
-.ktc-article-section.ktc-article-section.paragraphs-item-ktc-tekst-med-lille-billede .ktc-article-section-body-extra {
+.ktc-article-section.ktc-article-section-type-afsnitb .ktc-article-section-body-extra {
   position: relative;
   float: left;
   width: 100%;
@@ -12980,4 +12972,32 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-it
 
 .ktc-article-section-wrapper .field-collection-container .field-items .field-item {
   margin-bottom: 0;
+}
+
+.ktc-article-section-wrapper .field-collection-view .entity-field-collection-item {
+  width: auto;
+  float: none;
+}
+
+.ktc-article-section-wrapper .paragraphs-items#article-sortable .draggable {
+  cursor: move;
+}
+
+.ktc-article-section-wrapper .paragraphs-items .insert-point {
+  display: none;
+}
+
+.ktc-article-section-wrapper .field-collection-container,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs {
+  border: 0;
+  margin: 0 -60px;
+  padding: 0 60px;
+  color: #E9EDEE;
+  background-color: #E9EDEE;
+}
+
+.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add,
+.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add {
+  padding: 0;
+  margin: 0;
 }

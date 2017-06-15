@@ -98,11 +98,7 @@ function ktc_preprocess_entity(&$variables) {
       }
     }
   }
-  if (!empty($variables['entity_type']) == 'paragraphs_item') {
-    if ($variables['paragraphs_item']->bundle == 'ktc_tekst_med_lille_billede') {            
-      $field =  field_get_items('paragraphs_item', $variables['paragraphs_item'], 'field_artikelafsnit_placering');
-      $variables['classes_array'][] = 'ktc-article-section-type-afsnitb-image-' .  $field[0]['value'];
-    }
+  if (!empty($variables['entity_type']) == 'paragraphs_item') {   
     
    if (!empty($variables['paragraphs_item']) && $variables['paragraphs_item']->field_name ==  'field_paragraphs' ) {
       $variables['theme_hook_suggestions'][] = 'paragraphs_item__field_paragraphs';
