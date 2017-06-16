@@ -11955,8 +11955,8 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   display: none;
 }
 
-.ktc-article-section.entity-paragraphs-item .contextual-links-wrapper.node-artikler,
-.ktc-article-section.entity-paragraphs-item .contextual-links-region.node-artikler {
+.ktc-article-section.entity-paragraphs-item .contextual-links-wrapper.node,
+.ktc-article-section.entity-paragraphs-item .contextual-links-region.node {
   display: block;
 }
 
