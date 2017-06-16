@@ -48,6 +48,15 @@
           <?php print render($content['field_artikelafsnit_xs_billede']) ?>
         </div>
       <?php endif;?>  
+       <?php 
+       hide($content['field_artikelafsnit_xs_billede']);
+       hide($content['field_artikelafsnit_tekst']);
+       hide($content['field_artikelafsnit_placering']);
+       hide($content['field_artikelafsnit_overskrift']);
+       ?>        
+      <div class="col-xs-12">
+       <?php print render($content); ?>
+      </div>  
       </div>  
       <ul class="paragraphs-items-view-links">
         <li class="edit first"><?php print render($operations['edit']) ?></li>

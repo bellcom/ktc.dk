@@ -12101,7 +12101,7 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   color: #36a145;
 }
 
-.ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body-extra {
+.ktc-article-section .ktc-article-section-body-extra {
   color: #36a145;
 }
 
@@ -12114,7 +12114,7 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   color: #1f9bd7;
 }
 
-.tech-env .ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body-extra {
+.tech-env .ktc-article-section .ktc-article-section-body-extra {
   color: #1f9bd7;
 }
 
@@ -12127,7 +12127,7 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   color: #d3a900;
 }
 
-.og-context.og-context-node .ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body-extra {
+.og-context.og-context-node .ktc-article-section .ktc-article-section-body-extra {
   color: #d3a900;
 }
 
@@ -12140,7 +12140,7 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   color: #36a145;
 }
 
-.no-network .ktc-article-section.ktc-article-section-type-citat .ktc-article-section-body-extra {
+.no-network .ktc-article-section .ktc-article-section-body-extra {
   color: #36a145;
 }
 
@@ -12154,6 +12154,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
 .ktc-article-section-type-faktaboksgreen .ktc-article-section-headline h4,
 .ktc-article-section-type-faktaboksgreen .ktc-article-section-headline h5,
 .ktc-article-section-type-faktaboksgreen .ktc-article-section-headline h6 {
+  color: #6ecf7c;
+}
+
+.ktc-article-section-type-faktaboksgreen .ktc-article-section-body-extra {
   color: #6ecf7c;
 }
 
@@ -12182,6 +12186,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   color: #6ecf7c;
 }
 
+.ktc-paragraph-faktaboksgreen .ktc-article-section-body-extra {
+  color: #6ecf7c;
+}
+
 .ktc-paragraph-faktaboksgreen .ktc-article-section-body,
 .ktc-paragraph-faktaboksgreen .ktc-article-section-body span,
 .ktc-paragraph-faktaboksgreen .ktc-article-section-body p {
@@ -12204,6 +12212,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
 .ktc-article-section-type-faktaboksyellow .ktc-article-section-headline h4,
 .ktc-article-section-type-faktaboksyellow .ktc-article-section-headline h5,
 .ktc-article-section-type-faktaboksyellow .ktc-article-section-headline h6 {
+  color: #ffd83a;
+}
+
+.ktc-article-section-type-faktaboksyellow .ktc-article-section-body-extra {
   color: #ffd83a;
 }
 
@@ -12232,6 +12244,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   color: #ffd83a;
 }
 
+.ktc-paragraph-faktaboksyellow .ktc-article-section-body-extra {
+  color: #ffd83a;
+}
+
 .ktc-paragraph-faktaboksyellow .ktc-article-section-body,
 .ktc-paragraph-faktaboksyellow .ktc-article-section-body span,
 .ktc-paragraph-faktaboksyellow .ktc-article-section-body p {
@@ -12254,6 +12270,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
 .ktc-article-section-type-faktaboksblue .ktc-article-section-headline h4,
 .ktc-article-section-type-faktaboksblue .ktc-article-section-headline h5,
 .ktc-article-section-type-faktaboksblue .ktc-article-section-headline h6 {
+  color: #71c3eb;
+}
+
+.ktc-article-section-type-faktaboksblue .ktc-article-section-body-extra {
   color: #71c3eb;
 }
 
@@ -12282,6 +12302,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   color: #71c3eb;
 }
 
+.ktc-paragraph-faktaboksblue .ktc-article-section-body-extra {
+  color: #71c3eb;
+}
+
 .ktc-paragraph-faktaboksblue .ktc-article-section-body,
 .ktc-paragraph-faktaboksblue .ktc-article-section-body span,
 .ktc-paragraph-faktaboksblue .ktc-article-section-body p {
@@ -12307,6 +12331,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   color: #586a74;
 }
 
+.ktc-article-section-type-faktaboksblack .ktc-article-section-body-extra {
+  color: #586a74;
+}
+
 .ktc-article-section-type-faktaboksblack .ktc-article-section-body,
 .ktc-article-section-type-faktaboksblack .ktc-article-section-body span,
 .ktc-article-section-type-faktaboksblack .ktc-article-section-body p {
@@ -12329,6 +12357,10 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
 .ktc-paragraph-faktaboksblack .ktc-article-section-headline h4,
 .ktc-paragraph-faktaboksblack .ktc-article-section-headline h5,
 .ktc-paragraph-faktaboksblack .ktc-article-section-headline h6 {
+  color: #586a74;
+}
+
+.ktc-paragraph-faktaboksblack .ktc-article-section-body-extra {
   color: #586a74;
 }
 
@@ -12972,32 +13004,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-it
 
 .ktc-article-section-wrapper .field-collection-container .field-items .field-item {
   margin-bottom: 0;
-}
-
-.ktc-article-section-wrapper .field-collection-view .entity-field-collection-item {
-  width: auto;
-  float: none;
-}
-
-.ktc-article-section-wrapper .paragraphs-items#article-sortable .draggable {
-  cursor: move;
-}
-
-.ktc-article-section-wrapper .paragraphs-items .insert-point {
-  display: none;
-}
-
-.ktc-article-section-wrapper .field-collection-container,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs {
-  border: 0;
-  margin: 0 -60px;
-  padding: 0 60px;
-  color: #E9EDEE;
-  background-color: #E9EDEE;
-}
-
-.ktc-article-section-wrapper .field-collection-container .action-links-field-collection-add,
-.ktc-article-section-wrapper .paragraphs-items-field-paragraphs .action-links-field-collection-add {
-  padding: 0;
-  margin: 0;
 }
