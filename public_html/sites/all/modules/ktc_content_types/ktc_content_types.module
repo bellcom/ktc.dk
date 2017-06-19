@@ -78,6 +78,16 @@ function ktc_content_types_entity_info_alter(&$entity_info) {
     'label' => t('Listevisning boks'),
     'custom settings' => TRUE,
   );
+  
+  /* Listevisning boks */
+  $entity_info['node']['view modes']['titles'] = array(
+    'label' => t('Node titles'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['field_collection_item']['view modes']['titles'] = array(
+    'label' => t('Node titles'),
+    'custom settings' => TRUE,
+  );
 }
 
 /**

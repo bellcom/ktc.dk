@@ -82,7 +82,11 @@
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display"<?php print $attributes; ?>>
   <span class="ktc-list-display-icon ktc-list-display-icon-<?php print $type; ?>"></span>
   <div class="ktc-list-display-content">
-    <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
+    <h3 class="ktc-list-display-headline">
+      <?php if (isset($article_access)) :?>
+         <span class="<?php print $article_access ?>">&nbsp;</span>
+      <?php endif;?>
+      <a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
     <p class="ktc-list-display-date-simple"><?php print $published_at; ?></p>
     <p><?php print render($content['field_image']); ?></p>
     <p><?php print render($content['body']); ?></p>

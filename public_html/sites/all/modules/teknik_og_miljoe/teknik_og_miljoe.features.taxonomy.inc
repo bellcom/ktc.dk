@@ -9,10 +9,26 @@
  */
 function teknik_og_miljoe_taxonomy_default_vocabularies() {
   return array(
+    'arbejdsomr_der' => array(
+      'name' => 'Arbejdsområder',
+      'machine_name' => 'arbejdsomr_der',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'artikeltyper' => array(
       'name' => 'Artikeltyper',
       'machine_name' => 'artikeltyper',
       'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
+    'design_enhed' => array(
+      'name' => 'Design-enhed',
+      'machine_name' => 'design_enhed',
+      'description' => 'Standard, boks, harmonika - andre typer af strukturelle design-enheder.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
@@ -25,9 +41,33 @@ function teknik_og_miljoe_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'sidegenrer' => array(
+      'name' => 'Sidegenrer',
+      'machine_name' => 'sidegenrer',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'status' => array(
       'name' => 'Status',
       'machine_name' => 'status',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
+    'stofomraade' => array(
+      'name' => 'Stofområde',
+      'machine_name' => 'stofomraade',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
+    'udgivelser_side_layouts' => array(
+      'name' => 'Udgivelser - Section Layouts',
+      'machine_name' => 'udgivelser_side_layouts',
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',

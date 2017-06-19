@@ -45,8 +45,6 @@
 // Default show for a node with 3 columns.
 body.page-node,
 body.page-taxonomy-term {
-  h1.page-header {
-  }
   article,
   div.node-os2web-base-news {
 
@@ -142,10 +140,6 @@ body.page-taxonomy-term {
       border-top: 1px solid @brand-warmgray;
       padding: 5px 0;
 
-      .file-icon {
-        // This overrides the file-icon and replaces it with an download icon.
-      }
-
       a {
         margin-left: 10px;
         color: @brand-blacknblue;
@@ -203,22 +197,9 @@ body.page-taxonomy-term.term-is-not-top {
     }
   }
 
-  &.one-sidebar,
-  .region-content.col-sm-6,
-  .region-content.col-md-6 {
-    article,
-    div.node-os2web-base-news {
-      // .one-sidebar
-    }
-  }
-
   &.no-sidebars,
   .region-content.col-sm-12,
   .region-content.col-md-12 {
-    article,
-    div.node-os2web-base-news {
-      // .no-sidebars
-    }
     .pane-ktc-signup-block-ktc-signup-link-block {
       ul.tabs--primary {
         display: none;
@@ -262,16 +243,7 @@ body.page-taxonomy-term.term-is-not-top {
 }
 .node-type-group {
   .panel-pane {
-
-    .field-name-group-group {
-
-      a {
-        // .btn();
-        // .btn-blacknblue();
-      }
-    }
-
-    &.pane-node-body {
+    .field-name-group-group.pane-node-body {
       .parent-group {
         a {
           color: @gray-darker;
@@ -298,10 +270,6 @@ body.page-taxonomy-term.term-is-not-top {
   &.pane-hearing-node-view-panel-pane-1 {
     .views-field-field-hearing-materials {
 
-
-        .file-icon {
-          // This overrides the file-icon and replaces it with an download icon.
-        }
         a {
           margin-left: 10px;
           color: @brand-blacknblue;
@@ -392,40 +360,6 @@ body.node-type-ktc-supplier {
 	}
 }
 
-.magasinflow {
-	.magasinsider {
-
-		.inner {
-			padding: @thumbnail-padding @thumbnail-padding*2 ;
-			background-color: @panel-bg;
-			border: @border-std;
-			margin-bottom: @panel-body-padding;
-			display: block;
-			color: @gray-darker;
-			H3 {
-				margin-top: 0;
-				margin-bottom: @thumbnail-padding;
-			}}
-
-		.btn-danger { margin-right: 10px;}
-				}
-		.planlagt {
-					.inner { background-color: @state-warning-bg}
-		}
-		.ommer {
-					.inner { background-color: @state-danger-bg}
-		}
-		.gennemsyn {
-					.inner { background-color: @state-info-bg}
-		}
-		.faerdig { .inner { background-color: @state-success-bg}}
-		.views-row-first::after { clear: both;  }
-		.views-row-even { clear: both;}
-		.view-footer { clear: both; margin-top: 20px;}
-		.sidenummer { float: left; height: 30px; font-size: 24px; margin-right: 5px; margin-top: -5px;}
-		.sidenr { display: block; min-height: 30px;}
-
-}
 .filter-wrapper,
 .ckeditor_links { display: none}
 
@@ -472,4 +406,24 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel { padding: 0
 
 .pane-ktc-netvaerk-group-not-member-message .pane-content {
   padding: 10px 20px;
+}
+.ktc-aside.stacked {
+  margin-bottom: 0;
+}
+.panel-pane.with-padding {
+  padding-bottom: 20px;
+}
+.hide-label.show-login {
+  &.ktc-comments-form {
+    background-color: transparent;
+    margin-top: 0;
+    padding-top: 0;
+    .pane-content {
+      padding: 10px;
+      background-color: #FFF;
+      .ktc-comment-form-title {
+        display: none;
+      }
+    }
+  }
 }

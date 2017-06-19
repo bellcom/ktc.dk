@@ -1160,7 +1160,7 @@ function ktc_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'hide_submit_method';
-  $strongarm->value = 'indicator';
+  $strongarm->value = 'hide';
   $export['hide_submit_method'] = $strongarm;
 
   $strongarm = new stdClass();
