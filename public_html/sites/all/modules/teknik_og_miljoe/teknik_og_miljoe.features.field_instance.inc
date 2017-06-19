@@ -2204,7 +2204,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 0,
         ),
         'type' => 'entityreference_label',
         'weight' => 7,
@@ -2578,7 +2578,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
-          'view_mode' => 'listevisningstor',
+          'view_mode' => 'listevisning',
         ),
         'type' => 'field_collection_fields',
         'weight' => 2,
@@ -3872,17 +3872,17 @@ function teknik_og_miljoe_field_default_field_instances() {
       ),
       'bundle_weights' => array(
         'ktc_artikel_billedserie' => -18,
-        'ktc_artikel_indrykket' => 16,
-        'ktc_artikelafsnit_citat' => -15,
-        'ktc_artikelafsnit_faktaboks' => -14,
-        'ktc_artikelafsnit_tekst' => -20,
+        'ktc_artikel_indrykket' => -21,
+        'ktc_artikelafsnit_citat' => -20,
+        'ktc_artikelafsnit_faktaboks' => -22,
+        'ktc_artikelafsnit_tekst' => -24,
         'ktc_artikelafsnit_tekst_billede' => -19,
-        'ktc_eksisterende_bruger' => -17,
-        'ktc_related_artikle' => -16,
-        'ktc_tekst_med_lille_billede' => 9,
-        'udgivelse_annonce' => -13,
-        'udgivelse_artikel' => -12,
-        'udgivelse_navne' => -11,
+        'ktc_eksisterende_bruger' => -16,
+        'ktc_related_artikle' => -17,
+        'ktc_tekst_med_lille_billede' => -23,
+        'udgivelse_annonce' => -15,
+        'udgivelse_artikel' => -14,
+        'udgivelse_navne' => -13,
       ),
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -4515,7 +4515,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -4606,7 +4606,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -4697,7 +4697,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -5193,7 +5193,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
     'entity_type' => 'paragraphs_item',
     'field_name' => 'field_paragraph_class',
-    'label' => 'Visning',
+    'label' => 'Vælg farve',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -5563,8 +5563,8 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_ekstra'
-  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_ekstra'] = array(
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_ekstratekst'] = array(
     'bundle' => 'ktc_artikelafsnit_tekst_billede',
     'custom_add_another' => '',
     'custom_remove' => '',
@@ -5577,30 +5577,30 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 0,
       ),
       'udgivelseliste' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 0,
       ),
       'udgivelseside' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_artikelafsnit_ekstra',
-    'label' => 'Ekstra tekst',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -5669,7 +5669,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
-          'view_mode' => 'list2',
+          'view_mode' => 'list3',
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 0,
@@ -5777,20 +5777,23 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'inline_entity_form',
+      'module' => 'entityreference',
       'settings' => array(
         'fields' => array(),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
         'type_settings' => array(
           'allow_existing' => 1,
           'allow_new' => 0,
           'delete_references' => 0,
           'label_plural' => 'indholdselementer',
           'label_singular' => 'indholdselement',
-          'match_operator' => 'CONTAINS',
+          'match_operator' => 'STARTS_WITH',
           'override_labels' => 0,
         ),
       ),
-      'type' => 'inline_entity_form',
+      'type' => 'entityreference_autocomplete',
       'weight' => 2,
     ),
   );
@@ -6492,7 +6495,6 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Efternavn');
   t('Eksisterende bruger');
   t('Eksterne links');
-  t('Ekstra tekst');
   t('Ekstratekst');
   t('Evt. navn på person der har sagt citatet');
   t('Faglige emner');
@@ -6535,7 +6537,7 @@ function teknik_og_miljoe_field_default_field_instances() {
   t('Tekst');
   t('Tema / trompet');
   t('Type');
-  t('Visning');
+  t('Vælg farve');
   t('Vælg gerne 3-7 emner og underemner - og vær så specifik som muligt. ');
   t('Vælg type på din artikel');
 

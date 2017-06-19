@@ -36,6 +36,7 @@
         <?php if ($content['field_artikelafsnit_placering']['#items'][0]['value'] == 'left'):?>
         <div class="col-sm-5">
           <?php print render($content['field_artikelafsnit_xs_billede']) ?>
+          <?php print render($content['field_artikelafsnit_ekstratekst'])?>
           </div>  
         <div class="col-sm-7">
           <?php print render($content['field_artikelafsnit_tekst']) ?>
@@ -46,6 +47,7 @@
         </div>  
         <div class="col-sm-5">
           <?php print render($content['field_artikelafsnit_xs_billede']) ?>
+          <?php print render($content['field_artikelafsnit_ekstratekst'])?>
         </div>
       <?php endif;?>  
        <?php 
@@ -53,10 +55,8 @@
        hide($content['field_artikelafsnit_tekst']);
        hide($content['field_artikelafsnit_placering']);
        hide($content['field_artikelafsnit_overskrift']);
-       ?>        
-      <div class="col-xs-12">
-       <?php print render($content); ?>
-      </div>  
+       ?>      
+      
       </div>  
       <ul class="paragraphs-items-view-links">
         <li class="edit first"><?php print render($operations['edit']) ?></li>

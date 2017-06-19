@@ -114,7 +114,6 @@
   <p class="ktc-list-display-large-author">
 
     <?php print t('Forfatter:'); ?>
-
     <?php if (isset($content['field_coforfattere'])): ?>
       <!-- Begin - authors -->
       <?php print render($content['field_coforfattere']); ?>

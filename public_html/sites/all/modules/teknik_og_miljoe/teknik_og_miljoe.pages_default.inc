@@ -2794,8 +2794,6 @@ function teknik_og_miljoe_default_page_manager_handlers() {
 
 <p>Hvis du ønsker adgang til denne artikel, skal du først tegne et online abonnement. Få adgang med det samme ved at klikke på knappen herunder.</p>
 
-<p>Artiklen frigives d. %node:field-frigivelse-til-alle</p>
-
 <p><a class="btn btn-info" href="/abonnementer">Bestil online abonnement</a></p>
 ',
       'format' => 'full_html',
@@ -2839,8 +2837,7 @@ function teknik_og_miljoe_default_page_manager_handlers() {
 
 <p>Hvis du har tegnet online abonnement, skal du logge ind herunder. Har du endnu ikke et digitalt abonnement, kan du på din brugerprofil redigere dine abonnementer og tilføje et digitalt abonnement. Har du ikke en brugerprofil, skal du<a href="/user/signup"> oprette en </a>og tilføje digitalt abonnement. Bruge evt ikonerne herunder til at oprette en brugerprofil.</p>
 
-<p>Visse artikler frigives til alle<br />
-Artiklen frigives d.<strong> %node:field-frigivelse-til-alle</strong></p>
+<p>Visse artikler frigives til alle.</p>
 ',
       'format' => 'full_html',
       'substitute' => 1,
@@ -2860,6 +2857,25 @@ Artiklen frigives d.<strong> %node:field-frigivelse-til-alle</strong></p>
     $pane->uuid = 'b9396ba0-beea-4c45-a35a-e448e92847ae';
     $display->content['new-b9396ba0-beea-4c45-a35a-e448e92847ae'] = $pane;
     $display->panels['left1'][1] = 'new-b9396ba0-beea-4c45-a35a-e448e92847ae';
+    $pane = new stdClass();
+    $pane->pid = 'new-33b132ae-9596-4198-a1d9-98a1b9088813';
+    $pane->panel = 'left1';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'artikelinfo-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '33b132ae-9596-4198-a1d9-98a1b9088813';
+    $display->content['new-33b132ae-9596-4198-a1d9-98a1b9088813'] = $pane;
+    $display->panels['left1'][2] = 'new-33b132ae-9596-4198-a1d9-98a1b9088813';
     $pane = new stdClass();
     $pane->pid = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
     $pane->panel = 'left1';
@@ -2883,11 +2899,11 @@ Artiklen frigives d.<strong> %node:field-frigivelse-til-alle</strong></p>
       'template_suggestion' => 'content',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
     $display->content['new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7'] = $pane;
-    $display->panels['left1'][2] = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
+    $display->panels['left1'][3] = 'new-249434b2-4c43-4ec7-964d-6f9e3dc2ffc7';
     $pane = new stdClass();
     $pane->pid = 'new-0df367d5-77b2-4bde-a188-cad380e4b2d9';
     $pane->panel = 'left2';
