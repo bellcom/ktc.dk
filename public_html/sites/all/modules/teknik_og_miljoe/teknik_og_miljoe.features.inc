@@ -103,3 +103,62 @@ function teknik_og_miljoe_node_info() {
   drupal_alter('node_info', $items);
   return $items;
 }
+
+/**
+ * Implements hook_paragraphs_info().
+ */
+function teknik_og_miljoe_paragraphs_info() {
+  $items = array(
+    'ktc_artikel_billedserie' => array(
+      'name' => 'Billedserie/ galleri',
+      'bundle' => 'ktc_artikel_billedserie',
+      'locked' => '1',
+    ),
+    'ktc_artikelafsnit_citat' => array(
+      'name' => 'Citat',
+      'bundle' => 'ktc_artikelafsnit_citat',
+      'locked' => '1',
+    ),
+    'ktc_artikelafsnit_faktaboks' => array(
+      'name' => 'Faktaboks',
+      'bundle' => 'ktc_artikelafsnit_faktaboks',
+      'locked' => '1',
+    ),
+    'ktc_artikelafsnit_tekst' => array(
+      'name' => 'Tekst m. overskrift',
+      'bundle' => 'ktc_artikelafsnit_tekst',
+      'locked' => '1',
+    ),
+    'ktc_artikelafsnit_tekst_billede' => array(
+      'name' => 'Billede i fuld bredde',
+      'bundle' => 'ktc_artikelafsnit_tekst_billede',
+      'locked' => '1',
+    ),
+    'ktc_eksisterende_bruger' => array(
+      'name' => 'Visning af person',
+      'bundle' => 'ktc_eksisterende_bruger',
+      'locked' => '1',
+    ),
+    'ktc_related_artikle' => array(
+      'name' => 'Relateret indhold',
+      'bundle' => 'ktc_related_artikle',
+      'locked' => '1',
+    ),
+    'udgivelse_annonce' => array(
+      'name' => 'Annonce',
+      'bundle' => 'udgivelse_annonce',
+      'locked' => '1',
+    ),
+    'udgivelse_artikel' => array(
+      'name' => 'Artikel',
+      'bundle' => 'udgivelse_artikel',
+      'locked' => '1',
+    ),
+    'udgivelse_navne' => array(
+      'name' => 'Nyhed',
+      'bundle' => 'udgivelse_navne',
+      'locked' => '1',
+    ),
+  );
+  return $items;
+}

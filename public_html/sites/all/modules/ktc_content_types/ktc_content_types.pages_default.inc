@@ -559,7 +559,7 @@ function ktc_content_types_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
+  $handler->weight = -23;
   $handler->conf = array(
     'title' => 'Panel',
     'no_blocks' => 0,
@@ -751,7 +751,7 @@ function ktc_content_types_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -26;
+  $handler->weight = -24;
   $handler->conf = array(
     'title' => 'node edit',
     'no_blocks' => 0,
@@ -857,7 +857,7 @@ function ktc_content_types_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 7;
+  $handler->weight = -18;
   $handler->conf = array(
     'title' => 'Afstemning',
     'no_blocks' => 0,
@@ -1351,7 +1351,7 @@ function ktc_content_types_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -23;
+  $handler->weight = -25;
   $handler->conf = array(
     'title' => 'Netværksindhold',
     'no_blocks' => 0,
@@ -1458,7 +1458,7 @@ function ktc_content_types_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 4;
+  $handler->weight = -23;
   $handler->conf = array(
     'title' => 'Dokument og diskussion',
     'no_blocks' => 0,

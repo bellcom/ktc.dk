@@ -596,7 +596,7 @@ function ktc_content_types_field_default_field_bases() {
   // Exported field_base: 'field_artikel_reference'
   $field_bases['field_artikel_reference'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_artikel_reference',
@@ -622,6 +622,9 @@ function ktc_content_types_field_default_field_bases() {
       'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
+          'field_default_token' => array(
+            'status' => TRUE,
+          ),
           'views-select-list' => array(
             'status' => 0,
           ),
@@ -630,7 +633,15 @@ function ktc_content_types_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
+          'arrangement' => 'arrangement',
           'artikler' => 'artikler',
+          'document' => 'document',
+          'forum_post' => 'forum_post',
+          'group' => 'group',
+          'hearing' => 'hearing',
+          'ktc_supplier' => 'ktc_supplier',
+          'magazine' => 'magazine',
+          'meeting_doodle' => 'meeting_doodle',
           'os2web_base_news' => 'os2web_base_news',
         ),
       ),
@@ -1057,6 +1068,7 @@ function ktc_content_types_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'artikler' => 'artikler',
+          'os2web_base_news' => 'os2web_base_news',
         ),
       ),
       'target_type' => 'node',
@@ -1640,6 +1652,7 @@ function ktc_content_types_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'artikler' => 'artikler',
+          'os2web_base_news' => 'os2web_base_news',
         ),
       ),
       'target_type' => 'node',

@@ -5,3 +5,15 @@
  */
 
 include_once 'ktc_views.features.inc';
+function ktc_views_entity_info_alter(&$entity_info) {
+  
+  /* Paragraphs */
+  $entity_info['paragraphs_item']['view modes']['udgivelseliste'] = array(
+  'label' => t('Udgivelser Side Listevisning'),
+  'custom settings' => TRUE,
+  );
+  $entity_info['paragraphs_item']['view modes']['udgivelseside'] = array(
+  'label' => t('Udgivelser Side Editor'),
+  'custom settings' => TRUE,
+  );
+}

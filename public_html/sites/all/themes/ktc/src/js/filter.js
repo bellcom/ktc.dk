@@ -113,7 +113,7 @@
                     }
                 }
                 else {
-                    $(this).closest('.pane-views-panes').nextAll().remove();
+                    $(this).closest('.pane-views-panes').nextUntil('#content_id').remove();
                 }
             }
             // Get all the filter values.

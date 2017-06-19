@@ -1,0 +1,109 @@
+.pane-node-field-paragraphs {
+  margin-top: 10px; 
+  .draggable {
+    &.ui-sortable-helper {
+      border: none;
+    }
+  }
+ .draggable.ui-sortable-helper .entity-paragraphs-item {
+    border: 3px dashed rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+}
+.paragraphs-item-ktc-artikelafsnit-citat .content {
+  text-align: center;
+  font-style: italic;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  .ktc-article-section-body {
+    font-size: 200%;
+    padding-right: 20px;
+  }
+  .ktc-article-section-body-extra {
+    padding-right: 20px;
+    padding-top: 0;
+  }
+}
+
+.paragraphs-item-ktc-artikel-billedserie {
+  .field-type-image {
+    .field-items {
+      .make-row();
+      .field-item {
+        .make-xs-column(6);
+        .make-sm-column(3);
+        padding-bottom: 20px;
+        img {
+          min-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+.paragraphs-item-ktc-artikelafsnit-tekst-billede {
+  .ktc-article-section-image {
+    margin-bottom: 10px;
+  }
+}
+
+.paragraphs-item-ktc-related-artikle {
+  .ktc-teaser {
+    display: block;
+  }
+}
+
+.page-field-collection-field-magasin-indhold {
+  .ktc-article-section.entity-paragraphs-item .contextual-links-region,
+  .ktc-article-section.entity-paragraphs-item.contextual-links-region {
+    display: block !important;
+  }
+  .ktc-article-section {
+    padding: 0;
+    margin: 0;
+    &.entity-paragraphs-item {
+      &.contextual-links-region  {
+      display: block;  
+      }
+    }
+  }
+  #block-views-udgivelser-sidevisning-block {
+    p.mute {
+      display: none;
+    }
+    .field-name-field-artikler-og-nyheder {
+      .ktc-full-width-image,
+      .field-name-field-os2web-base-field-summary,
+      .ktc-teaser-heading {
+        display: none;
+      }      
+    }
+  }
+}
+
+.field-name-field-artikelafsnit-ekstra {
+  font-style: italic;
+  color: #333333;
+  margin-top: 30px;
+}
+
+
+
+#edit-group_hidden {
+  display: none;
+}
+
+.paragraphs-item-ktc-eksisterende-bruger {
+  .field-items {
+    .make-row();
+    .field-item {
+      .make-xs-column(6);
+      .make-sm-column(6);
+      .make-md-column(6);
+    }
+  }
+}
+.paragraphs-item-ktc-artikelafsnit-faktaboks {
+  margin-bottom: 10px;
+}
