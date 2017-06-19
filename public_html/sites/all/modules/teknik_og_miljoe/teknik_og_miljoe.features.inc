@@ -114,6 +114,11 @@ function teknik_og_miljoe_paragraphs_info() {
       'bundle' => 'ktc_artikel_billedserie',
       'locked' => '1',
     ),
+    'ktc_artikel_indrykket' => array(
+      'name' => 'Indrykket tekst',
+      'bundle' => 'ktc_artikel_indrykket',
+      'locked' => '1',
+    ),
     'ktc_artikelafsnit_citat' => array(
       'name' => 'Citat',
       'bundle' => 'ktc_artikelafsnit_citat',
@@ -142,6 +147,11 @@ function teknik_og_miljoe_paragraphs_info() {
     'ktc_related_artikle' => array(
       'name' => 'Relateret indhold',
       'bundle' => 'ktc_related_artikle',
+      'locked' => '1',
+    ),
+    'ktc_tekst_med_lille_billede' => array(
+      'name' => 'Tekst m. billede',
+      'bundle' => 'ktc_tekst_med_lille_billede',
       'locked' => '1',
     ),
     'udgivelse_annonce' => array(
