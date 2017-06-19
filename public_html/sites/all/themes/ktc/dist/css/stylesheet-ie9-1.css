@@ -10550,7 +10550,7 @@ fieldset[disabled] .field-type-image .button {
   font-weight: bold;
   color: #2c353a;
   margin: 0;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .ktc-list-display .ktc-list-display-body .ktc-list-display-body-content .ktc-list-display-subheadline {
@@ -12122,6 +12122,122 @@ fieldset[disabled] .ktc-aside-list .view ul.pager li a {
   color: #1f9bd7;
 }
 
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen {
+  background-color: #36a145;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-headline h1,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-headline h2,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-headline h3,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-headline h4,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-headline h5,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-headline h6 {
+  color: #6ecf7c;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-body-extra {
+  color: #6ecf7c;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-body,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-body span,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-body p {
+  color: #fff;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-body a,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksgreen .ktc-article-section-body a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow {
+  background-color: #d3a900;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-headline h1,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-headline h2,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-headline h3,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-headline h4,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-headline h5,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-headline h6 {
+  color: #ffd83a;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-body-extra {
+  color: #ffd83a;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-body,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-body span,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-body p {
+  color: #fff;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-body a,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksyellow .ktc-article-section-body a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue {
+  background-color: #1f9bd7;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-headline h1,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-headline h2,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-headline h3,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-headline h4,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-headline h5,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-headline h6 {
+  color: #71c3eb;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-body-extra {
+  color: #71c3eb;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-body,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-body span,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-body p {
+  color: #fff;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-body a,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblue .ktc-article-section-body a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack {
+  background-color: #2c353a;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-headline h1,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-headline h2,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-headline h3,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-headline h4,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-headline h5,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-headline h6 {
+  color: #586a74;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-body-extra {
+  color: #586a74;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-body,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-body span,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-body p {
+  color: #fff;
+}
+
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-body a,
+.tech-env .ktc-article-section.ktc-paragraph-faktaboksblack .ktc-article-section-body a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
 .og-context.og-context-node .ktc-article-section .ktc-article-section-headline h1,
 .og-context.og-context-node .ktc-article-section .ktc-article-section-headline h2,
 .og-context.og-context-node .ktc-article-section .ktc-article-section-headline h3,
@@ -12932,76 +13048,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-it
 .open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a,
 .open .dropdown-toggle.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a {
   background-image: none;
-}
-
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.disabled,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.disabled,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.disabled,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled],
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a[disabled],
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a[disabled],
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a[disabled],
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled:hover,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.disabled:hover,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.disabled:hover,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.disabled:hover,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled]:hover,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a[disabled]:hover,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a[disabled]:hover,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a[disabled]:hover,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:hover,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a:hover,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a:hover,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a:hover,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled:focus,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.disabled:focus,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.disabled:focus,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.disabled:focus,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled]:focus,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a[disabled]:focus,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a[disabled]:focus,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a[disabled]:focus,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:focus,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a:focus,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a:focus,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a:focus,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled:active,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.disabled:active,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.disabled:active,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.disabled:active,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled]:active,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a[disabled]:active,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a[disabled]:active,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a[disabled]:active,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a:active,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a:active,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a:active,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a:active,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.disabled.active,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.disabled.active,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.disabled.active,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.disabled.active,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a[disabled].active,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a[disabled].active,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a[disabled].active,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a[disabled].active,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a.active,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a.active,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a.active,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a.active {
-  background-color: #e75311;
-  border-color: #cf4a0f;
-}
-
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .delete a .badge,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .delete a .badge,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .delete a .badge,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .delete a .badge {
-  color: #e75311;
-  background-color: #fff;
 }
