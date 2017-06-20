@@ -233,4 +233,4 @@ features[views_view][] = bladintro_nyheder
 features[views_view][] = magasin_sider
 features[views_view][] = magasinstatus
 features[views_view][] = udgivelser_sidevisning
-mtime = 1497899708
+mtime = 1497902761

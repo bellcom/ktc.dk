@@ -2760,7 +2760,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => array(
       0 => array(
-        'value' => 0,
+        'value' => 1,
       ),
     ),
     'default_value_label_token' => 0,
