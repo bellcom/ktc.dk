@@ -81,7 +81,6 @@ function ktc_comment_post_forbidden($variables) {
  * Implements template_preprocess_entity().
  */
 function ktc_preprocess_entity(&$variables) {
-
   // Artikel afsnit
   if ($variables['elements']['#bundle'] == 'field_artikel_afsnit') {
 
@@ -99,6 +98,26 @@ function ktc_preprocess_entity(&$variables) {
       }
     }
   }
+  if (!empty($variables['entity_type']) == 'paragraphs_item') {   
+    
+   if (!empty($variables['paragraphs_item']) && $variables['paragraphs_item']->field_name ==  'field_paragraphs' ) {
+      $variables['theme_hook_suggestions'][] = 'paragraphs_item__field_paragraphs';
+      // Get paragraph entity.
+      $paragraphs_item = $variables['paragraphs_item'];
+      $host_entity_type = $paragraphs_item->hostEntityType();
+      $variables['item_id'] = $paragraphs_item->item_id;
+      $variables['host_entity_id'] = $paragraphs_item->hostEntityId();
+
+      if (entity_access('update', $host_entity_type, $paragraphs_item->hostEntity()) && entity_access('update', 'paragraphs_item', $paragraphs_item)){
+        $variables['classes_array'][] = 'edit-mode';
+        $destination = drupal_get_destination();
+        $variables['operations']['edit'] = l(t('Edit'), '/paragraphs/' . $paragraphs_item->item_id . '/edit', array('query' => $destination));
+        $variables['operations']['delete'] = l(t('Delete'), '/paragraphs/' . $paragraphs_item->item_id . '/delete', array('query' => $destination));
+
+      }
+   }
+  }
+
 }
 
 /**
@@ -318,7 +337,6 @@ function ktc_preprocess_field(&$vars, $hook) {
  * Implements template_preprocess_node().
  */
 function ktc_preprocess_node(&$vars) {
-
   // Make unpublished nodes appear with highlighted background.
   if ($vars['status'] == 0) {
     $vars['classes_array'][] = 'ktc-node-unpublished';
@@ -347,6 +365,10 @@ function ktc_preprocess_node(&$vars) {
   // Node--listevisningboks.tpl.php.
   if ($vars['elements']['#view_mode'] == 'listevisningboks') {
     $vars['theme_hook_suggestions'][] = 'node__listevisningboks';
+  }
+  // Node--listevisning.tpl.php.
+  if ($vars['elements']['#view_mode'] == 'titles') {
+    $vars['theme_hook_suggestions'][] = 'node__titles';
   }
   // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes.
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
@@ -486,7 +508,19 @@ function ktc_preprocess_node(&$vars) {
       $vars['num_attachments'] = count($media);
     }
   }
-
+  if ($vars['type'] == 'artikler') {
+    $free_for_all = field_get_items('node', $vars['node'], 'field_fri_for_alle');
+    if($free_for_all){
+      if($free_for_all[0]['value'] == 0) {
+        if( _ktc_user_has_full_access_to_article()){
+          $vars['article_access'] = 'ktc-article-open';
+        }
+        else {
+          $vars['article_access'] = 'ktc-article-locked';
+        }
+      }
+    }
+  }
   // Hearing
   if ($vars['type'] == 'hearing') {
 
@@ -989,6 +1023,9 @@ function ktc_preprocess_user_profile(&$vars) {
 
 function ktc_field($variables) {
   $output = '';
+  //we not need field-items class on article page
+ if ($variables["element"]["#field_name"] == 'field_paragraphs' && $variables["element"]["#bundle"] == 'artikler' )
+    return;
   // Render the label, if it's not hidden.
   if (!$variables['label_hidden']) {
     $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
@@ -1127,4 +1164,47 @@ function ktc_form_alter(&$form, &$form_state, $form_id) {
  */
 function _ktc_redirect_user_after_user_profile_form_reset_submit() {
   drupal_goto('<front>');
+}
+
+function ktc_preprocess_paragraphs_items(&$variables, $hook) {
+  $field_name = $variables['element']['#field_name'];
+  $bundle = $variables['element']['#bundle'];
+  $node =  $variables['element']['#object'];
+  if ($field_name == 'field_paragraphs' && entity_access('update', 'node', $variables['element']['#object'])) {
+    drupal_add_library('system', 'ui.sortable');
+    drupal_add_js(drupal_get_path('module', 'teknik_og_miljoe') .'/js/teknik_og_miljoe_items_reorder.js');
+    //entity_access('update', $host_entity_type, $host_entity)
+     $paragrphs_items = $variables['element']['#items'];
+     $last_element =  array_pop($paragrphs_items);
+     $field_info = field_info_instance('node', $field_name,  'artikler');
+     $destination = drupal_get_destination();
+     $variables['host_entity_id'] = $node->id;
+     foreach($field_info['settings']['allowed_bundles'] as $bundle) {
+       if ($bundle != '-1'){
+         $paragraphs_bundle = paragraphs_bundle_load($bundle);
+         $variables['operations']['add'][$bundle] = l($paragraphs_bundle->name, 'paragraphs/add/after/' . $bundle . '/node/' . $last_element['value'] . '/' .$field_name, array('query' => $destination));
+
+       }
+     }
+  }
+ }
+
+ function  ktc_preprocess_views_view(&$variables) {
+  $view = $variables['view'];
+  if ($view->name == "magasin_sider") {
+    drupal_add_library('system', 'ui.sortable');
+    drupal_add_js(drupal_get_path('module', 'teknik_og_miljoe') .'/js/teknik_og_miljoe_items_reorder.js');
+  }
+
+}
+
+function _ktc_user_has_full_access_to_article() {
+  global $user;
+  $group_roles = variable_get('teknik_og_miljoe_roles_article_full_access', array());
+  foreach ($user->roles as $key => $role){
+    if (in_array($key, $group_roles)) {
+      return TRUE;
+    }
+  }
+  return FALSE;
 }

@@ -1,7 +1,35 @@
 <?php
+
 /**
  * @file
  * Code for the KTC Sekstion - Indholdssider feature.
  */
 
 include_once 'ktc_sekstion_indholdssider.features.inc';
+
+/**
+ * Implements hook_cron().
+ * looks at the content type "Artikel" and changes a field (field_fri_for_alle)
+ * when the date on the article matches the current date.
+ */
+
+function ktc_sekstion_indholdssider_cron() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'artikler')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_frigivelse_til_alle', 'value',  date("Y-m-d H:i"), '<=');
+
+  $result = $query->execute();
+    if (isset($result['node'])) {
+      $items_nids = array_keys($result['node']);
+      $items = entity_load('node', $items_nids);
+      foreach ($items as $nid => $node){
+        //Upda
+        if (!isset($node->field_fri_for_alle) || $node->field_fri_for_alle['und'][0]['value'] != 1){
+          $node->field_fri_for_alle['und'][0]['value'] = 1;
+          node_save($node);
+        }
+      }
+    }
+  }

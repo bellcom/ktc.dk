@@ -1,0 +1,132 @@
+<?php
+
+/**
+ * @file
+ * Code for the Teknik og Miljø feature.
+ */
+
+include_once 'teknik_og_miljoe.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function teknik_og_miljoe_menu() {
+  $items = array();
+  $items['ajax/paragraphs/reorder'] = array(
+    'page callback' => 'teknik_og_miljoe_paragraphs_reorder',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'delivery callback' => 'ajax_deliver',
+ );
+  $items['ajax/udgivelser/%/reorder'] = array(
+    'page callback' => 'teknik_og_miljoe_udgivelser_content_reorder',
+    'page arguments' => array (2),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'delivery callback' => 'ajax_deliver',
+ );
+
+ return $items;
+}
+/*
+ * ajax call
+ * paragraphs reorder in article content type *
+ *
+ */
+function teknik_og_miljoe_paragraphs_reorder(){
+  $key = array_shift(array_keys($_POST));
+  $nid=substr($key, strripos($key, "_") + 1);
+  $node = node_load($nid);
+  $paragraphs = field_get_items('node', $node, 'field_paragraphs');
+  foreach ($_POST[$key] as $key=>$value){
+    $node->field_paragraphs['und'][$key] = _teknik_og_miljoe_paragraphs_search_element($paragraphs, $value);
+  }
+ node_save($node);
+
+}
+
+/*
+ * ajax call
+ * magasin content reorder
+ *
+ * @param
+ * $nid - magasin node_id
+ */
+function teknik_og_miljoe_udgivelser_content_reorder($nid){
+  $magasin = node_load($nid);
+  $magasin_content = field_get_items('node', $magasin, 'field_magasin_indhold');
+  $magasin_content_ids = array();
+  foreach($magasin_content as $key => $value)
+    $magasin_content_ids[] = $value['value'];
+  $moved_item = current(entity_load('field_collection_item', array($_POST['moved_item'])));
+  $prev_item = current(entity_load('field_collection_item', array($_POST['prev_item'])));
+  $next_item = current(entity_load('field_collection_item', array($_POST['next_item'])));
+  $moved_item_side_nr = array_pop(array_shift(field_get_items('field_collection_item', $moved_item, 'field_magasin_side_nr')));
+  $prev_item_side_nr = array_pop(array_shift(field_get_items('field_collection_item', $prev_item, 'field_magasin_side_nr')));
+  $next_item_side_nr = array_pop(array_shift(field_get_items('field_collection_item', $next_item, 'field_magasin_side_nr')));
+
+  if ($moved_item_side_nr < $prev_item_side_nr ){
+    //item moved down
+    $query = new EntityFieldQuery;
+		$query->entityCondition('entity_type', 'field_collection_item')
+			->propertyCondition('field_name', 'field_magasin_indhold')
+			->propertyCondition('item_id', $magasin_content_ids, 'IN')
+      ->fieldCondition('field_magasin_side_nr' , 'value', array($moved_item_side_nr, $prev_item_side_nr ), 'BETWEEN')
+      ->fieldCondition('field_magasin_side_nr' , 'value', $moved_item_side_nr, '!=')
+      ->fieldOrderBy('field_magasin_side_nr' , 'value', 'DESC');
+     $result = $query->execute();
+     $moved_item->field_magasin_side_nr['und'][0]['value'] = $prev_item_side_nr;
+     entity_save('field_collection_item', $moved_item);
+     $current_value = $prev_item_side_nr - 1;
+     foreach ($result['field_collection_item'] as $key =>$item) {
+       $content = current(entity_load('field_collection_item', array($key)));
+       if(isset($content->field_magasin_side_nr['und'][0]['value']) && !empty($content->field_magasin_side_nr['und'][0]['value'])){
+        if ($content->field_magasin_side_nr['und'][0]['value'] == $current_value)  break;
+           $content->field_magasin_side_nr['und'][0]['value'] = $current_value;
+           $current_value--;
+           entity_save('field_collection_item', $content);
+
+       }
+     }
+  }
+
+  if ($moved_item_side_nr > $next_item_side_nr ){
+    //item moved up
+    $query = new EntityFieldQuery;
+		$query->entityCondition('entity_type', 'field_collection_item')
+			->propertyCondition('field_name', 'field_magasin_indhold')
+			->propertyCondition('item_id', $magasin_content_ids, 'IN')
+      ->fieldCondition('field_magasin_side_nr' , 'value', array($next_item_side_nr, $moved_item_side_nr ), 'BETWEEN')
+      ->fieldCondition('field_magasin_side_nr' , 'value', $moved_item_side_nr, '!=')
+      ->fieldOrderBy('field_magasin_side_nr' , 'value', 'ACS');
+     $result = $query->execute();
+     $moved_item->field_magasin_side_nr['und'][0]['value'] = $next_item_side_nr;
+     entity_save('field_collection_item', $moved_item);
+     $current_value = $next_item_side_nr + 1;
+     foreach ($result['field_collection_item'] as $key =>$item) {
+       $content = current(entity_load('field_collection_item', array($key)));
+       if(isset($content->field_magasin_side_nr['und'][0]['value']) && !empty($content->field_magasin_side_nr['und'][0]['value'])){
+        if ($content->field_magasin_side_nr['und'][0]['value'] == $current_value)  break;
+           $content->field_magasin_side_nr['und'][0]['value'] = $current_value;
+           $current_value++;
+           entity_save('field_collection_item', $content);
+
+       }
+     }
+   }
+  }
+
+/*
+ * Helper function
+ * return paragraph item by id
+ *
+ * @params
+ * $paragraphs_field - Node paragraphs field items
+ * $needle - Paragraph ID
+ */
+function _teknik_og_miljoe_paragraphs_search_element($paragraphs_field, $needle){
+  foreach ($paragraphs_field as $key => $elem)
+    if ($elem['value'] == $needle)
+      return $elem;
+}
+

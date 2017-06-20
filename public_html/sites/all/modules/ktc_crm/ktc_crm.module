@@ -30,6 +30,7 @@ function ktc_crm_menu() {
     'access arguments' => array('administer site configuration'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ktc_crm_settings'),
+    'type' => MENU_NORMAL_ITEM | MENU_LOCAL_TASK,
   );
 
    $items['user/%/ktc_crm_sync'] = array(

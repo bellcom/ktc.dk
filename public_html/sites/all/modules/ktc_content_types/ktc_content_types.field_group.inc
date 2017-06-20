@@ -904,10 +904,10 @@ For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil
     'weight' => '0',
     'children' => array(
       0 => 'group_annoncer',
-      1 => 'group_featured',
-      2 => 'group_sider',
-      3 => 'group_udgave',
-      4 => 'group_artiklernyheder',
+      1 => 'group_artiklernyheder',
+      2 => 'group_featured',
+      3 => 'group_sider',
+      4 => 'group_udgave',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -1185,7 +1185,7 @@ For at vise artikler og nyheder skal de desuden tilknyttes under Intro - det vil
       'instance_settings' => array(
         'required_fields' => 1,
         'id' => '',
-        'classes' => 'group-indholdet field-group-div hidden',
+        'classes' => 'group-indholdet field-group-div',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',

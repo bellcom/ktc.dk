@@ -1261,7 +1261,8 @@ function ktc_netvaerk_node_access_explain($row) {
  */
 function ktc_netvaerk_node_access_records($node) {
   // The 'anonymous' grant that will be set on OG content.
- if ($node->type == 'group' && $node->published == true) {
+  // if node is unpublished, so we don't allow to see it.
+ if ($node->type == 'group' && $node->status == NODE_PUBLISHED) {
    $grant = array (
     'realm' => 'ktc_netvaerk_anonymous',
     'gid' => 0,
@@ -1270,10 +1271,18 @@ function ktc_netvaerk_node_access_records($node) {
     'grant_delete' => 0,
     'priority' => 0,
   );
-    return array($grant);
+  return array($grant);
   }
-   else if (!empty($node->og_group_ref)){
-    $content_access = field_get_items('node', $node, 'group_content_access');    ;
+  /*
+   * we need this hook because "Group content visibility" must have name group_access (not group_content_access)
+   * https://github.com/bellcom/ktc.dk/blob/master/public_html/sites/all/modules/contrib/og/og_access/og_access.module#L17
+   */
+
+
+  // If node is group content
+  if ($node->type != 'group' && !empty($node->og_group_ref)){
+    $content_access = field_get_items('node', $node, 'group_content_access');
+   // if group content access by it's group defaults.
     if($content_access[0]['value']==0) {
       $sids = array();
       $gid = field_get_items('node', $node, 'og_group_ref');

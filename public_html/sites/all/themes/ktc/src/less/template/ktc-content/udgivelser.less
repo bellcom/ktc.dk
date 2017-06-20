@@ -1,0 +1,271 @@
+.magasinflow {
+  .make-md-column(12);
+	.magasinsider {
+  	.magasin-side {
+    	height: 130px;
+    	margin-bottom: 20px;
+    	.views-field-view {
+      	float: left;
+      	margin-right: 5px;
+    	}
+    	&:nth-child(even) {
+        .views-field-view {
+          float: right;
+          margin-left: 5px;
+          margin-right: 0;
+          }
+        }
+  	  }  	
+
+		.inner {
+			padding: @thumbnail-padding (@thumbnail-padding * 2) ;
+			background-color: @panel-bg;
+			border: @border-std;
+			margin-bottom: @panel-body-padding;
+			display: block;
+			color: @gray-darker; 
+			height: 130px; 
+			overflow: auto;
+			H3 {
+				margin-top: 0;
+				margin-bottom: @thumbnail-padding;
+			}
+		}
+
+		.btn-danger {
+  		margin-right: 10px;
+    }
+  }
+  .planlagt {
+		.inner {
+  		background-color: @state-warning-bg;
+		}
+  }
+  .ommer {
+		.inner { background-color: @state-danger-bg;
+		}
+  }
+	.gennemsyn {
+	  .inner {
+  	  background-color: @state-info-bg;  
+	  }
+	}
+	.faerdig { 
+  	.inner { 
+    	background-color: @state-success-bg;
+  	}
+  }
+  .draggable {
+      cursor: move;
+  }
+	.views-row-first::after {
+  	clear: both;
+  	}
+	.view-footer {
+  	clear: both;
+  	margin-top: 20px;
+  	}
+  .sidenummer {
+    float: left; 
+    height: 30px;
+    font-size: 24px;
+    margin-right: 5px;
+    margin-top: -5px;
+    }
+	.sidenr {
+  	display: block; min-height: 30px;
+  	}
+}
+
+.page-udgivelser {
+  .udgivelse-liste {
+    height: 120px;
+    width: 90px;
+  }
+  .udgivelse.udgivelse-editor {
+  position: relative;
+  height: 120px;
+  width: 90px;
+    .view-content {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      border: 1px solid #999;
+    }
+  }
+  .page-section {
+    .ktc-teaser,
+    .ktc-article-section {
+      background-color: transparent;
+      display: block;
+      margin: 0;
+      padding: 0;
+      &.contextual-links-region {
+        display: block;
+      }
+    .ktc-teaser-heading {
+      display: none;
+    }
+    }
+    .udgivelse-annonce {
+      .ktc-article-section {
+        margin: 0;
+        padding: 0;
+        .file {
+          .file-size {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-field-collection-field-magasin-indhold-edit {
+  .udgivelse-liste {
+    height: 120px;
+    width: 90px;
+  }
+  .udgivelse.udgivelse-editor {
+  position: relative;
+  height: 400px;
+  width: 300px;
+    .view-content {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+  }
+}
+
+.udgivelse-side {}
+.udgivelse-editor  {
+  .page-section {
+    float: left;
+    position: relative;
+    background-color: #FFF;
+    overflow: hidden;
+    border: 1px solid #fff;
+    h4 {
+      font-size: 10px;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      margin-top: 3px;
+      margin-bottom: 0;
+    }
+    .ktc-teaser {
+      background-color: transparent;
+      margin-bottom: 0;
+    }
+    .ktc-teaser-body {
+      padding: 0;
+    }
+    .ktc-footer,
+    .ktc-date,
+    .field-name-field-short,
+    .ktc-user-profile,
+    .ktc-user-blue {
+      display: none;
+    }
+    &.udgivelse-navne {
+      background-color: #9ad190;
+    }
+    &.udgivelse-annonce {
+      background-color: #dedede;
+    }
+    &.udgivelse-artikel {
+      background-color: #d7f8fd;
+    }
+    .views-field {
+      padding: 3px;
+    }
+  }
+  .width-100 {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .width-75 {
+    width: 75%;
+    max-width: 75%;
+    min-width: 75%;
+  }
+  .width-50 {
+    width: 50%;
+    max-width: 50%;
+    min-width: 50%;
+  }
+  .width-25 {
+    width: 25%;
+    max-width: 25%;
+    min-width: 25%;
+  }
+  .height-100 {
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+  }
+  .height-75 {
+    height: 75%;
+    max-height: 75%;
+    min-height: 75%;
+  }
+  .height-50 {
+    height: 50%;
+    max-height: 50%;
+    min-height: 50%;
+
+  }
+  .height-25 {
+    height: 25%;
+    max-height: 25%;
+    min-height: 25%;
+  }
+}
+.page-field-collection-field-magasin-indhold-edit {
+  .region-sidebar-second {
+    margin-top: 0;
+  }
+  .ktc-wrapper {
+    padding-top: 5px;
+  }
+}
+
+.paragraphs-item-udgivelse-artikel {
+  .user-profile {
+    display: none;
+  }
+}
+body.kontekst-magasinstatus {
+  background-color: #FFF;
+  .ktc-wrapper-background {
+    display: none;
+  }
+}
+
+.group-upload {
+  .button {
+    .btn;
+    .btn-default;
+  }
+}
+.field-widget-paragraphs-embed.form-wrapper {
+  .field-multiple-table {
+    .form-actions {
+      margin-top: 20px
+    }
+  }
+}
+.field-type-entityreference.field-widget-inline-entity-form.form-wrapper {
+  button.btn-default {
+    .btn-success;
+  }
+}
+
+.ief-entity-table .ief-entity-operations {
+  .btn-default.form-submit {
+    .btn-warning;
+  }
+}

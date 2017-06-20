@@ -17,6 +17,11 @@ function teknik_og_miljoe_context_default_contexts() {
   $context->description = '';
   $context->tag = '';
   $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'field-collection/field-magasin-indhold/*' => 'field-collection/field-magasin-indhold/*',
+      ),
+    ),
     'views' => array(
       'values' => array(
         'magasinstatus' => 'magasinstatus',

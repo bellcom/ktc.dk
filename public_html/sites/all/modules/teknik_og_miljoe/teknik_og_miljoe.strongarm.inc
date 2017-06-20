@@ -13,6 +13,34 @@ function teknik_og_miljoe_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'classy_paragraphs_settings';
+  $strongarm->value = array(
+    0 => array(
+      'the_id' => '0',
+      'css_class_name' => 'ktc-paragraph-faktaboksgreen',
+      'css_class_display' => 'Grøn faktaboks',
+    ),
+    1 => array(
+      'the_id' => '1',
+      'css_class_name' => 'ktc-paragraph-faktaboksyellow',
+      'css_class_display' => 'Gul faktaboks',
+    ),
+    2 => array(
+      'the_id' => '2',
+      'css_class_name' => 'ktc-paragraph-faktaboksblue',
+      'css_class_display' => 'Blå faktaboks',
+    ),
+    3 => array(
+      'the_id' => '3',
+      'css_class_name' => 'ktc-paragraph-faktaboksblack',
+      'css_class_display' => 'Sort faktaboks',
+    ),
+  );
+  $export['classy_paragraphs_settings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_artikler';
   $strongarm->value = 0;
   $export['comment_anonymous_artikler'] = $strongarm;
@@ -95,6 +123,9 @@ function teknik_og_miljoe_strongarm() {
       'listevisningboks' => array(
         'custom_settings' => TRUE,
       ),
+      'titles' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -105,7 +136,7 @@ function teknik_og_miljoe_strongarm() {
           'weight' => '11',
         ),
         'scheduler_settings' => array(
-          'weight' => '22',
+          'weight' => '25',
         ),
         'metatags' => array(
           'weight' => '40',
@@ -122,7 +153,7 @@ function teknik_og_miljoe_strongarm() {
             'visible' => FALSE,
           ),
           'listevisning' => array(
-            'weight' => '3',
+            'weight' => '6',
             'visible' => FALSE,
           ),
           'teasercomments' => array(
@@ -134,7 +165,7 @@ function teknik_og_miljoe_strongarm() {
             'visible' => FALSE,
           ),
           'listevisningstor' => array(
-            'weight' => '3',
+            'weight' => '6',
             'visible' => FALSE,
           ),
           'teaserfront' => array(
