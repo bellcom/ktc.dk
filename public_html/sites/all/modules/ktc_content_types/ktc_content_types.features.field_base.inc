@@ -633,16 +633,7 @@ function ktc_content_types_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'arrangement' => 'arrangement',
           'artikler' => 'artikler',
-          'document' => 'document',
-          'forum_post' => 'forum_post',
-          'group' => 'group',
-          'hearing' => 'hearing',
-          'ktc_supplier' => 'ktc_supplier',
-          'magazine' => 'magazine',
-          'meeting_doodle' => 'meeting_doodle',
-          'os2web_base_news' => 'os2web_base_news',
         ),
       ),
       'target_type' => 'node',
@@ -1281,6 +1272,60 @@ function ktc_content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
+  );
+
+  // Exported field_base: 'field_indhold_reference'
+  $field_bases['field_indhold_reference'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_indhold_reference',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'field_default_token' => array(
+            'status' => TRUE,
+          ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'arrangement' => 'arrangement',
+          'artikler' => 'artikler',
+          'document' => 'document',
+          'forum_post' => 'forum_post',
+          'group' => 'group',
+          'hearing' => 'hearing',
+          'magazine' => 'magazine',
+          'meeting_doodle' => 'meeting_doodle',
+          'os2web_base_news' => 'os2web_base_news',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_link'

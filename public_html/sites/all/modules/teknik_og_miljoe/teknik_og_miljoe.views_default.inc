@@ -1964,13 +1964,12 @@ function teknik_og_miljoe_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Rediger';
-  /* Felt: Indhold: Clone link */
+  /* Felt: Handler mangler eller er i stykker */
   $handler->display->display_options['fields']['clone_node']['id'] = 'clone_node';
   $handler->display->display_options['fields']['clone_node']['table'] = 'node';
   $handler->display->display_options['fields']['clone_node']['field'] = 'clone_node';
   $handler->display->display_options['fields']['clone_node']['label'] = '';
   $handler->display->display_options['fields']['clone_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['clone_node']['text'] = 'Klon';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sorteringskriterie: Indhold: Udgivelsesdato (field_udgivelsesdato) */
   $handler->display->display_options['sorts']['field_udgivelsesdato_value']['id'] = 'field_udgivelsesdato_value';
@@ -2005,7 +2004,6 @@ function teknik_og_miljoe_views_default_views() {
     t('Udgivet efter'),
     t('Blok'),
     t('Antal sider'),
-    t('Klon'),
   );
   $export['magasinstatus'] = $view;
 

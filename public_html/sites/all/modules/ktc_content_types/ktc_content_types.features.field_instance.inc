@@ -14249,6 +14249,72 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-ktc_related_artikle-field_indhold_reference'
+  $field_instances['paragraphs_item-ktc_related_artikle-field_indhold_reference'] = array(
+    'bundle' => 'ktc_related_artikle',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'view_mode' => 'titles',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_indhold_reference',
+    'label' => 'Indhold reference',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-emner_faste_-field_crm_uuid'
   $field_instances['taxonomy_term-emner_faste_-field_crm_uuid'] = array(
     'bundle' => 'emner_faste_',
@@ -14681,6 +14747,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.');
   t('Her kan du uploade det billede, som du ønsker der skal være arrangementets primære billede. Husk at KTC skal have rettighed til at vise billedet. Billeder du finder på nettet, er normalt beskyttet af ophavsrettigheder, og må derfor ikke anvendes på KTC.dk.');
   t('Her kan du vælge om du vil publicere Diskussionen på andre platforme (kræver særlige rettigheder)');
   t('Indhold');
+  t('Indhold reference');
   t('Indtast din nyhed her. Adskil gerne med afsnit og typografier');
   t('Indtast dit oplæg til diskussion her');
   t('Indtast en kort beskrivelse af dit dokument - eller formålet med det');
