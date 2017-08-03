@@ -40,6 +40,33 @@ function ktc_subscription_ui_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_description_before_submit'
+  $field_bases['field_description_before_submit'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_description_before_submit',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_product_type'
   $field_bases['field_product_type'] = array(
     'active' => 1,
@@ -123,6 +150,33 @@ function ktc_subscription_ui_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'field_show_hide_fields'
+  $field_bases['field_show_hide_fields'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_show_hide_fields',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'fakturering' => 'Vis fanen Fakturering',
+        'ktc_membership' => 'Vis fanen Medlemskab',
+        'levering' => 'Vis fanen Levering',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_text_before_address'

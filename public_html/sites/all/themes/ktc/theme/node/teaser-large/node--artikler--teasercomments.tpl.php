@@ -13,6 +13,9 @@
   <div class="ktc-teaser-body">
 
     <h4 class="ktc-teaser-body-title">
+      <?php if (isset($article_access)) :?>
+         <span class="<?php print $article_access ?>">&nbsp;</span>
+      <?php endif;?>
       <a href="<?php print $base_url . $node_url; ?>"><?php print $title_shortened; ?></a>
     </h4>
 

@@ -65,6 +65,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
@@ -162,6 +168,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -265,6 +277,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_crm_uuid',
@@ -284,6 +302,121 @@ function ktc_subscription_ui_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-product-field_description_before_submit'
+  $field_instances['node-product-field_description_before_submit'] = array(
+    'bundle' => 'product',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 13,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_description_before_submit',
+    'label' => 'Beskrivelse før indsend',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 12,
     ),
   );
 
@@ -335,6 +468,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -407,6 +546,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -491,10 +636,16 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_show_datepicker',
-    'label' => 'Vis datovælger',
+    'label' => 'Vis fanen Start- og Slutdato',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -508,7 +659,85 @@ function ktc_subscription_ui_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 5,
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-product-field_show_hide_fields'
+  $field_instances['node-product-field_show_hide_fields'] = array(
+    'bundle' => 'product',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_label_token' => 0,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 15,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_show_hide_fields',
+    'label' => 'Vis/skjul faner i formularen',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 16,
     ),
   );
 
@@ -564,6 +793,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_text_before_address',
@@ -608,7 +843,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -664,6 +899,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_text_before_date',
@@ -708,7 +949,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -759,6 +1000,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -864,6 +1111,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_text_before_membership',
@@ -908,7 +1161,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -964,6 +1217,12 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_text_before_other_address',
@@ -1008,12 +1267,118 @@ function ktc_subscription_ui_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
   // Exported field_instance: 'node-product-field_text_before_region'
   $field_instances['node-product-field_text_before_region'] = array(
+    'bundle' => 'product',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_text_before_region',
+    'label' => 'Beskrivelse før kreds',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-product-field_text_before_submit'
+  $field_instances['node-product-field_text_before_submit'] = array(
     'bundle' => 'product',
     'custom_add_another' => '',
     'custom_remove' => '',
@@ -1064,101 +1429,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_text_before_region',
-    'label' => 'Beskrivelse før kreds',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'mailchimp_campaign' => 'mailchimp_campaign',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => -10,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-product-field_text_before_submit'
-  $field_instances['node-product-field_text_before_submit'] = array(
-    'bundle' => 'product',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
-      ),
-      'listevisning' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningboks' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'listevisningstor' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teasercomments' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaserfront' => array(
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1167,11 +1438,12 @@ function ktc_subscription_ui_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_text_before_submit',
-    'label' => 'Beskrivelse før indsend',
+    'label' => 'Label før indsend',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'emails' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
           'mailchimp_campaign' => 'mailchimp_campaign',
@@ -1181,6 +1453,9 @@ function ktc_subscription_ui_field_default_field_instances() {
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => -10,
             ),
@@ -1198,6 +1473,11 @@ function ktc_subscription_ui_field_default_field_instances() {
       ),
       'custom_add_another' => '',
       'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1208,7 +1488,7 @@ function ktc_subscription_ui_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 10,
     ),
   );
 
@@ -1224,11 +1504,13 @@ function ktc_subscription_ui_field_default_field_instances() {
   t('CRM UUID');
   t('Denne besked vises til brugeren når han/hun skal bekræfte at opsige abonnementet.');
   t('Kort beskrivelse');
+  t('Label før indsend');
   t('Lang beskrivelse');
   t('Opsig advarsel');
   t('Produkt type');
-  t('Vis datovælger');
   t('Vis datovælger på formularen for dette produkt. Tillad brugeren at vælge slutdato for abonnementet.');
+  t('Vis fanen Start- og Slutdato');
+  t('Vis/skjul faner i formularen');
 
   return $field_instances;
 }

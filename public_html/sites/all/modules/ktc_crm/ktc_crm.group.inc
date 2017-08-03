@@ -72,13 +72,13 @@ function ktc_crm_node_delete($node) {
  * Implements hook_og_membership_delete().
  */
 function ktc_crm_og_membership_delete($og_membership) {
-  if ((isset($_POST['form_id']) && ($_POST['form_id'] == 'og_ui_delete_membership' || $_POST['form_id'] == 'og_ui_confirm_unsubscribe')) ||
+  if ((isset($_POST['form_id']) && $_POST['form_id'] == 'og_ui_delete_membership') ||
     (isset($_GET['q']) && $_GET['q'] == 'batch')) {
+    $logger = KtcCrmLogger::getInstance();
+    $logger->log->addInfo('group delete membership', array('crm_uuid' => $crm_uuid));
 
     // Send changes for membership to CRM.
     if ($crm_uuid = _ktc_crm_get_uuid('og_membership', $og_membership)) {
-      $logger = KtcCrmLogger::getInstance();
-      $logger->log->addInfo('group delete membership', array('crm_uuid' => $crm_uuid));
       ktc_crm_group_membership_delete($crm_uuid);
     }
     // Notification delete.
@@ -172,10 +172,10 @@ function ktc_crm_group_map_group_to_groupdto($group) {
 
   $groupdto->VisibleOnWeb = $group->status;
   $groupdto->SynchronizeWithKtcDk = 1;
-
+  
   if ($field = field_get_items('node', $group, 'field_active'))
      $groupdto->Active = $field[0]['value'];
-
+  
   if ($field = field_get_items('node', $group, 'body')) {
     $groupdto->Description = substr($field[0]['value'], 0, 1999);
   }
@@ -275,7 +275,7 @@ function ktc_crm_group_update_from_groupdto(\KTC\GroupService\GroupDto $groupdto
     $group_node->field_end_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($groupdto->EndDate));
 
   $group_node->og_group_ref = array();
-  if (!empty($groupdto->ParentGroup)) {
+  if (!empty($groupdto->ParentGroup)) {    
     if ($parent_group = ktc_crm_group_load_from_uuid($groupdto->ParentGroup->CrmId)) {
       $group_node->field_subgroup[$language][0]['value'] = 1;
       $group_node->og_group_ref[$language][0]['target_id'] = $parent_group->nid;

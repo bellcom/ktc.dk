@@ -90,7 +90,11 @@
     <div class="ktc-list-display-body-content">
 
       <p class="ktc-date"><?php print $published_at; ?></p>
-      <h3 class="ktc-list-display-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
+      <h3 class="ktc-list-display-headline">
+        <?php if (isset($article_access)) :?>
+         <span class="<?php print $article_access ?>">&nbsp;</span>
+        <?php endif;?>
+        <a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
       <p class="ktc-list-display-author">
 
         <?php print t('Forfatter:'); ?>

@@ -86,7 +86,11 @@
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-list-display-large ktc-list-display-large-artikler"<?php print $attributes; ?>>
 
   <p class="ktc-date"><?php print $published_at; ?></p>
-  <h3 class="ktc-list-display-large-headline"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
+  <h3 class="ktc-list-display-large-headline">
+    <?php if (isset($article_access)) :?>
+         <span class="<?php print $article_access ?>">&nbsp;</span>
+    <?php endif;?>
+    <a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
   <div>
 
     <?php if (isset($content['field_os2web_base_field_lead_img'])): ?>
@@ -110,7 +114,6 @@
   <p class="ktc-list-display-large-author">
 
     <?php print t('Forfatter:'); ?>
-
     <?php if (isset($content['field_coforfattere'])): ?>
       <!-- Begin - authors -->
       <?php print render($content['field_coforfattere']); ?>

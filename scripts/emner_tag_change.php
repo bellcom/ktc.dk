@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Script for change field_topics values
  * */
@@ -27,11 +26,13 @@ if (isset($result['node'])) {
 
     node_save($node_obj);
   }
+
 }
 
 //update account
 $query = new EntityFieldQuery();
 $query->entityCondition('entity_type', 'user');
+
 $query->fieldCondition('field_topics', 'tid', OLD_TID);
 $result = $query->execute();
 

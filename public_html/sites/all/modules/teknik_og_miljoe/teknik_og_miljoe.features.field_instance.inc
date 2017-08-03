@@ -62,6 +62,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_artikel_billedserie',
@@ -142,6 +148,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -233,6 +245,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -336,6 +354,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_artikelafsnit_overskrift',
@@ -389,11 +413,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     'bundle' => 'field_artikel_afsnit',
     'custom_add_another' => '',
     'custom_remove' => '',
-    'default_value' => array(
-      0 => array(
-        'value' => 'left',
-      ),
-    ),
+    'default_value' => NULL,
     'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
@@ -435,6 +455,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -509,6 +535,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_artikelafsnit_tekst',
@@ -562,11 +594,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     'bundle' => 'field_artikel_afsnit',
     'custom_add_another' => '',
     'custom_remove' => '',
-    'default_value' => array(
-      0 => array(
-        'value' => 'afsnit',
-      ),
-    ),
+    'default_value' => NULL,
     'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
@@ -608,6 +636,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -684,6 +718,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -784,6 +824,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 5,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -914,6 +960,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'token' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -1008,6 +1060,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1140,6 +1198,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'token' => array(
         'label' => 'above',
         'module' => 'image',
@@ -1244,6 +1308,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1363,6 +1433,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'token' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -1418,6 +1494,390 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_side_indhold'
+  $field_instances['field_collection_item-field_magasin_indhold-field_magasin_side_indhold'] = array(
+    'bundle' => 'field_magasin_indhold',
+    'custom_add_another' => 'Tilføj element',
+    'custom_remove' => 'Fjern element',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'udgivelseliste',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 6,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magasin_side_indhold',
+    'label' => 'Side Indhold',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'button',
+      'allowed_bundles' => array(
+        'udgivelse_annonce' => 'udgivelse_annonce',
+        'udgivelse_artikel' => 'udgivelse_artikel',
+        'udgivelse_navne' => 'udgivelse_navne',
+      ),
+      'bundle_weights' => array(
+        'udgivelse_annonce' => 2,
+        'udgivelse_artikel' => 3,
+        'udgivelse_navne' => 4,
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'default_edit_mode' => 'preview',
+      'title' => 'Side element',
+      'title_multiple' => 'Side elementer',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_side_kommentarer'
+  $field_instances['field_collection_item-field_magasin_indhold-field_magasin_side_kommentarer'] = array(
+    'bundle' => 'field_magasin_indhold',
+    'custom_add_another' => 'Tilføj kommentar',
+    'custom_remove' => 'Fjern kommentar',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magasin_side_kommentarer',
+    'label' => 'Kommentarer',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasin_side_sidegenre'
+  $field_instances['field_collection_item-field_magasin_indhold-field_magasin_side_sidegenre'] = array(
+    'bundle' => 'field_magasin_indhold',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magasin_side_sidegenre',
+    'label' => 'Genre',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_magasin_indhold-field_magasinside_stofomraade'
+  $field_instances['field_collection_item-field_magasin_indhold-field_magasinside_stofomraade'] = array(
+    'bundle' => 'field_magasin_indhold',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 9,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_magasinside_stofomraade',
+    'label' => 'Stofområde',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-artikler-field_annonce'
   $field_instances['node-artikler-field_annonce'] = array(
     'bundle' => 'artikler',
@@ -1434,13 +1894,13 @@ function teknik_og_miljoe_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 22,
+        'weight' => 16,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 23,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1452,7 +1912,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 23,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1483,6 +1943,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 20,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -1529,7 +1995,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 29,
+      'weight' => 30,
     ),
   );
 
@@ -1550,13 +2016,13 @@ function teknik_og_miljoe_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 19,
+        'weight' => 13,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 22,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1568,7 +2034,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 22,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1600,6 +2066,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_antal_anslag',
@@ -1619,7 +2091,7 @@ function teknik_og_miljoe_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 25,
+      'weight' => 27,
     ),
   );
 
@@ -1633,23 +2105,23 @@ function teknik_og_miljoe_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
-          'add' => 'Tilføj',
+          'add' => '',
           'delete' => 'Slet',
-          'description' => TRUE,
+          'description' => 0,
           'edit' => 'Redigér',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 12,
+        'weight' => 22,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 21,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1661,7 +2133,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 20,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -1693,6 +2165,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 17,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_artikel_afsnit',
@@ -1708,7 +2186,7 @@ function teknik_og_miljoe_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 17,
+      'weight' => 15,
     ),
   );
 
@@ -1726,16 +2204,16 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 0,
         ),
         'type' => 'entityreference_label',
-        'weight' => 11,
+        'weight' => 7,
       ),
       'listevisning' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1747,7 +2225,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 21,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1778,6 +2256,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -1875,13 +2359,13 @@ function teknik_og_miljoe_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 10,
+        'weight' => 6,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 24,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1893,7 +2377,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 24,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1925,6 +2409,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 21,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_artikel_status',
@@ -1951,7 +2441,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 23,
+      'weight' => 25,
     ),
   );
 
@@ -1970,13 +2460,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 24,
+        'weight' => 18,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 16,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -1988,7 +2478,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 15,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -2022,6 +2512,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 12,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_artikeltype',
@@ -2054,7 +2550,7 @@ function teknik_og_miljoe_field_default_field_instances() {
     'description' => 'Angiv hvem der skal stå som forfatter af artiklen. Det er muligt at tilføje flere forfattere.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Tilføj',
@@ -2064,15 +2560,12 @@ function teknik_og_miljoe_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 23,
+        'weight' => 17,
       ),
       'listevisning' => array(
         'label' => 'hidden',
-        'module' => 'field_collection',
-        'settings' => array(
-          'view_mode' => 'listevisning',
-        ),
-        'type' => 'field_collection_fields',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'listevisningboks' => array(
@@ -2132,6 +2625,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'field_collection_fields',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_coforfattere',
@@ -2168,13 +2667,13 @@ function teknik_og_miljoe_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 18,
+        'weight' => 12,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 17,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2186,7 +2685,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 16,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2218,6 +2717,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 13,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_deadline',
@@ -2248,24 +2753,32 @@ function teknik_og_miljoe_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-artikler-field_highres_billeder'
-  $field_instances['node-artikler-field_highres_billeder'] = array(
+  // Exported field_instance: 'node-artikler-field_fri_for_alle'
+  $field_instances['node-artikler-field_fri_for_alle'] = array(
     'bundle' => 'artikler',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'default_value_label_token' => 0,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Hvis du sætter flueben i denne boks, vil artiklen vil være synlig for alle besøgende',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 21,
+        'type' => 'list_default',
+        'weight' => 24,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 2,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2277,7 +2790,188 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 5,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_fri_for_alle',
+    'label' => 'Nulstil paywall for denne artikel',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 27,
+    ),
+  );
+
+  // Exported field_instance: 'node-artikler-field_frigivelse_til_alle'
+  $field_instances['node-artikler-field_frigivelse_til_alle'] = array(
+    'bundle' => 'artikler',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'deleted' => 0,
+    'description' => 'Her kan du sætte datoen for hvornår artiklen må vises for brugere der IKKE har et digitalt abonnement. Hvis du ikke sætter en dato i dette felt, vil artiklen KUN være tilgængelig for brugere der har et digitalt abonnement',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 23,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_frigivelse_til_alle',
+    'label' => 'Indstillinger for paywall',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 26,
+    ),
+  );
+
+  // Exported field_instance: 'node-artikler-field_highres_billeder'
+  $field_instances['node-artikler-field_highres_billeder'] = array(
+    'bundle' => 'artikler',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 15,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2309,6 +3003,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 7,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_highres_billeder',
@@ -2331,7 +3031,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 28,
+      'weight' => 29,
     ),
   );
 
@@ -2352,13 +3052,13 @@ function teknik_og_miljoe_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 26,
+        'weight' => 20,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2370,7 +3070,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 13,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2402,6 +3102,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_medtaget_i_udgivelse',
@@ -2425,7 +3131,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 24,
+      'weight' => 26,
     ),
   );
 
@@ -2441,13 +3147,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 16,
+        'weight' => 10,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2459,7 +3165,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2490,6 +3196,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -2546,13 +3258,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 15,
+        'weight' => 9,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2564,7 +3276,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2595,6 +3307,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -2632,13 +3350,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 25,
+        'weight' => 19,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 15,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2650,7 +3368,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2681,6 +3399,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -2720,13 +3444,13 @@ function teknik_og_miljoe_field_default_field_instances() {
           'image_style' => 'indholdsside',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'listevisning' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2794,6 +3518,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'image',
         'weight' => 1,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_lead_img',
@@ -2848,7 +3578,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 15,
+      'weight' => 48,
     ),
   );
 
@@ -2865,13 +3595,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 8,
+        'weight' => 4,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 20,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2883,7 +3613,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2914,6 +3644,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 16,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -2972,13 +3708,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 17,
+        'weight' => 11,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -2990,7 +3726,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3022,6 +3758,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_promote',
@@ -3037,7 +3779,127 @@ function teknik_og_miljoe_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 23,
+      'weight' => 27,
+    ),
+  );
+
+  // Exported field_instance: 'node-artikler-field_paragraphs'
+  $field_instances['node-artikler-field_paragraphs'] = array(
+    'bundle' => 'artikler',
+    'custom_add_another' => 'Tilføj afsnit',
+    'custom_remove' => 'fjern',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Der skal oprettes mindst et afsnit for at oprette en artikel.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 21,
+      ),
+      'listevisning' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'listevisningboks' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'listevisningstor' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teasercomments' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_paragraphs',
+    'label' => 'Afsnit',
+    'required' => 1,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'ktc_artikel_billedserie' => 'ktc_artikel_billedserie',
+        'ktc_artikel_indrykket' => 'ktc_artikel_indrykket',
+        'ktc_artikelafsnit_citat' => 'ktc_artikelafsnit_citat',
+        'ktc_artikelafsnit_faktaboks' => 'ktc_artikelafsnit_faktaboks',
+        'ktc_artikelafsnit_tekst' => 'ktc_artikelafsnit_tekst',
+        'ktc_artikelafsnit_tekst_billede' => 'ktc_artikelafsnit_tekst_billede',
+        'ktc_eksisterende_bruger' => 'ktc_eksisterende_bruger',
+        'ktc_related_artikle' => 'ktc_related_artikle',
+        'ktc_tekst_med_lille_billede' => 'ktc_tekst_med_lille_billede',
+        'udgivelse_annonce' => -1,
+        'udgivelse_artikel' => -1,
+        'udgivelse_navne' => -1,
+      ),
+      'bundle_weights' => array(
+        'ktc_artikel_billedserie' => -18,
+        'ktc_artikel_indrykket' => -21,
+        'ktc_artikelafsnit_citat' => -20,
+        'ktc_artikelafsnit_faktaboks' => -22,
+        'ktc_artikelafsnit_tekst' => -24,
+        'ktc_artikelafsnit_tekst_billede' => -19,
+        'ktc_eksisterende_bruger' => -16,
+        'ktc_related_artikle' => -17,
+        'ktc_tekst_med_lille_billede' => -23,
+        'udgivelse_annonce' => -15,
+        'udgivelse_artikel' => -14,
+        'udgivelse_navne' => -13,
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'default_edit_mode' => 'closed',
+      'separate_create' => 1,
+      'separate_delete' => 1,
+      'separate_edit' => 1,
+      'title' => 'Afsnit',
+      'title_multiple' => 'Afsnit',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 16,
     ),
   );
 
@@ -3057,13 +3919,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 20,
+        'weight' => 14,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 12,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3075,7 +3937,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 11,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3106,6 +3968,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -3142,13 +4010,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'listevisning' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3207,6 +4075,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         ),
         'type' => 'text_trimmed',
         'weight' => 2,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -3280,13 +4154,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3298,7 +4172,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -3330,6 +4204,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 15,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -3365,13 +4245,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 8,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 13,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3383,7 +4263,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 12,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -3415,6 +4295,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -3475,13 +4361,13 @@ function teknik_og_miljoe_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'listevisning' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
       'listevisningboks' => array(
         'label' => 'above',
@@ -3493,7 +4379,7 @@ function teknik_og_miljoe_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 17,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -3526,6 +4412,12 @@ function teknik_og_miljoe_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 14,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_topics',
@@ -3541,57 +4433,2717 @@ function teknik_og_miljoe_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(
         'apply_chosen' => 0,
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
       ),
       'type' => 'taxonomy_hs',
       'weight' => 44,
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-ktc_artikel_billedserie-field_artikel_billedserie'
+  $field_instances['paragraphs_item-ktc_artikel_billedserie-field_artikel_billedserie'] = array(
+    'bundle' => 'ktc_artikel_billedserie',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'photoswipe',
+        'settings' => array(
+          'photoswipe_image_style' => '',
+          'photoswipe_node_style' => 'ktc_galleri_miniature',
+        ),
+        'type' => 'photoswipe',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikel_billedserie',
+    'label' => 'Billedserie',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'indholdsside' => 0,
+          'ktc_content_image' => 0,
+          'ktc_profile_image_small' => 0,
+          'listevisning' => 0,
+          'listevisning_stor' => 0,
+          'teaser_front' => 0,
+          'teaservisning' => 0,
+        ),
+      ),
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'media_library_include_in_library' => 0,
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikel_billedserie-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_artikel_billedserie-field_artikelafsnit_ekstratekst'] = array(
+    'bundle' => 'ktc_artikel_billedserie',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikel_billedserie-field_artikelafsnit_overskrift'
+  $field_instances['paragraphs_item-ktc_artikel_billedserie-field_artikelafsnit_overskrift'] = array(
+    'bundle' => 'ktc_artikel_billedserie',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_overskrift',
+    'label' => 'Overskrift',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikel_indrykket-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_artikel_indrykket-field_artikelafsnit_ekstratekst'] = array(
+    'bundle' => 'ktc_artikel_indrykket',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikel_indrykket-field_artikelafsnit_overskrift'
+  $field_instances['paragraphs_item-ktc_artikel_indrykket-field_artikelafsnit_overskrift'] = array(
+    'bundle' => 'ktc_artikel_indrykket',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_overskrift',
+    'label' => 'Overskrift',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikel_indrykket-field_artikelafsnit_tekst'
+  $field_instances['paragraphs_item-ktc_artikel_indrykket-field_artikelafsnit_tekst'] = array(
+    'bundle' => 'ktc_artikel_indrykket',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_tekst',
+    'label' => 'Tekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_citat-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_citat-field_artikelafsnit_ekstratekst'] = array(
+    'bundle' => 'ktc_artikelafsnit_citat',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Evt. navn på person der har sagt citatet',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_citat-field_artikelafsnit_tekst'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_citat-field_artikelafsnit_tekst'] = array(
+    'bundle' => 'ktc_artikelafsnit_citat',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_tekst',
+    'label' => 'Citat tekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_faktaboks-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_faktaboks-field_artikelafsnit_ekstratekst'] = array(
+    'bundle' => 'ktc_artikelafsnit_faktaboks',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_faktaboks-field_artikelafsnit_overskrift'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_faktaboks-field_artikelafsnit_overskrift'] = array(
+    'bundle' => 'ktc_artikelafsnit_faktaboks',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_overskrift',
+    'label' => 'Overskrift',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_faktaboks-field_artikelafsnit_tekst'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_faktaboks-field_artikelafsnit_tekst'] = array(
+    'bundle' => 'ktc_artikelafsnit_faktaboks',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_tekst',
+    'label' => 'Tekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_faktaboks-field_paragraph_class'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_faktaboks-field_paragraph_class'] = array(
+    'bundle' => 'ktc_artikelafsnit_faktaboks',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_label_token' => 0,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_paragraph_class',
+    'label' => 'Vælg farve',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst-field_artikelafsnit_ekstratekst'] = array(
+    'bundle' => 'ktc_artikelafsnit_tekst',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst-field_artikelafsnit_overskrift'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst-field_artikelafsnit_overskrift'] = array(
+    'bundle' => 'ktc_artikelafsnit_tekst',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Hvis der ikke ønskes en overskrift på afsnittet, så skal dette felt ikke udfyldes.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_overskrift',
+    'label' => 'Overskrift',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst-field_artikelafsnit_tekst'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst-field_artikelafsnit_tekst'] = array(
+    'bundle' => 'ktc_artikelafsnit_tekst',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_tekst',
+    'label' => 'Tekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_billede'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_billede'] = array(
+    'bundle' => 'ktc_artikelafsnit_tekst_billede',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_billede',
+    'label' => 'Billede i fuld bredde',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'indholdsside' => 'indholdsside',
+          'ktc_content_image' => 'ktc_content_image',
+          'ktc_profile_image_small' => 0,
+          'listevisning' => 0,
+          'listevisning_stor' => 0,
+          'teaser_front' => 0,
+          'teaservisning' => 0,
+        ),
+      ),
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'media_library_include_in_library' => 0,
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_artikelafsnit_tekst_billede-field_artikelafsnit_ekstratekst'] = array(
+    'bundle' => 'ktc_artikelafsnit_tekst_billede',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_eksisterende_bruger-field_eksisterende_bruger'
+  $field_instances['paragraphs_item-ktc_eksisterende_bruger-field_eksisterende_bruger'] = array(
+    'bundle' => 'ktc_eksisterende_bruger',
+    'custom_add_another' => 'Tilføj person',
+    'custom_remove' => 'Fjern person',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'list3',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_eksisterende_bruger',
+    'label' => 'Eksisterende bruger',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'fields' => array(),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+        'type_settings' => array(),
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_tekst_med_lille_billede-field_artikelafsnit_ekstratekst'
+  $field_instances['paragraphs_item-ktc_tekst_med_lille_billede-field_artikelafsnit_ekstratekst'] = array(
+    'bundle' => 'ktc_tekst_med_lille_billede',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_ekstratekst',
+    'label' => 'Ekstratekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_tekst_med_lille_billede-field_artikelafsnit_overskrift'
+  $field_instances['paragraphs_item-ktc_tekst_med_lille_billede-field_artikelafsnit_overskrift'] = array(
+    'bundle' => 'ktc_tekst_med_lille_billede',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_overskrift',
+    'label' => 'Overskrift',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_tekst_med_lille_billede-field_artikelafsnit_placering'
+  $field_instances['paragraphs_item-ktc_tekst_med_lille_billede-field_artikelafsnit_placering'] = array(
+    'bundle' => 'ktc_tekst_med_lille_billede',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 'left',
+      ),
+    ),
+    'default_value_label_token' => 0,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_placering',
+    'label' => 'Placering af lille billede',
+    'required' => 1,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_tekst_med_lille_billede-field_artikelafsnit_tekst'
+  $field_instances['paragraphs_item-ktc_tekst_med_lille_billede-field_artikelafsnit_tekst'] = array(
+    'bundle' => 'ktc_tekst_med_lille_billede',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_tekst',
+    'label' => 'Tekst',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 0,
+          'mailchimp_campaign' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-ktc_tekst_med_lille_billede-field_artikelafsnit_xs_billede'
+  $field_instances['paragraphs_item-ktc_tekst_med_lille_billede-field_artikelafsnit_xs_billede'] = array(
+    'bundle' => 'ktc_tekst_med_lille_billede',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'artikel_lille_billede',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikelafsnit_xs_billede',
+    'label' => 'Lille billede',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'indholdsside' => 0,
+          'ktc_content_image' => 0,
+          'ktc_profile_image_small' => 0,
+          'listevisning' => 0,
+          'listevisning_stor' => 0,
+          'teaser_front' => 0,
+          'teaservisning' => 0,
+        ),
+      ),
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'media_library_include_in_library' => 0,
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-udgivelse_annonce-field_annonce'
+  $field_instances['paragraphs_item-udgivelse_annonce-field_annonce'] = array(
+    'bundle' => 'udgivelse_annonce',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'deleted' => 0,
+    'description' => 'Bruges til online version af annoncen',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'billede_preview',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'preview',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 1,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'ktc_galleri_miniature',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_annonce',
+    'label' => 'Annonce',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          'indholdsside' => 0,
+          'ktc_content_image' => 0,
+          'ktc_profile_image_small' => 0,
+          'listevisning' => 0,
+          'listevisning_stor' => 0,
+          'teaser_front' => 0,
+          'teaservisning' => 0,
+        ),
+      ),
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'media_library_include_in_library' => 0,
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'prezi' => 0,
+          'private' => 'private',
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'presentation' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-udgivelse_annonce-field_annonce_fil'
+  $field_instances['paragraphs_item-udgivelse_annonce-field_annonce_fil'] = array(
+    'bundle' => 'udgivelse_annonce',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'deleted' => 0,
+    'description' => 'Bruges til upload af selve annonce-filen til tryk',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'text' => 'Annonce [file:name]',
+        ),
+        'type' => 'file_download_link',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'text' => 'Download [file:name]',
+        ),
+        'type' => 'file_download_link',
+        'weight' => 2,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'inline',
+        'module' => 'file_entity',
+        'settings' => array(
+          'text' => 'Annonce [file:name]',
+        ),
+        'type' => 'file_download_link',
+        'weight' => 2,
+      ),
+      'udgivelseside' => array(
+        'label' => 'inline',
+        'module' => 'file_entity',
+        'settings' => array(
+          'text' => 'Annonce [file:name]',
+        ),
+        'type' => 'file_download_link',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_annonce_fil',
+    'label' => 'Annonce - FIL',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'description_field' => 0,
+      'file_directory' => 'annonce_filer',
+      'file_extensions' => 'pdf psd doc docx',
+      'max_filesize' => '',
+      'media_library_include_in_library' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'prezi' => 0,
+          'private' => 0,
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 0,
+          'presentation' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_2' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-udgivelse_annonce-field_section_size'
+  $field_instances['paragraphs_item-udgivelse_annonce-field_section_size'] = array(
+    'bundle' => 'udgivelse_annonce',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'udgivelseside' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_section_size',
+    'label' => 'Plads på siden',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-udgivelse_artikel-field_artikel_reference'
+  $field_instances['paragraphs_item-udgivelse_artikel-field_artikel_reference'] = array(
+    'bundle' => 'udgivelse_artikel',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'listevisning',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_artikel_reference',
+    'label' => 'Artikel reference',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'artikler',
+          'label_singular' => 'artikel',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
+      ),
+      'type' => 'inline_entity_form',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-udgivelse_artikel-field_section_size'
+  $field_instances['paragraphs_item-udgivelse_artikel-field_section_size'] = array(
+    'bundle' => 'udgivelse_artikel',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(),
+        'type' => 'entityreference_entity_id',
+        'weight' => 1,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_section_size',
+    'label' => 'Plads på siden',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-udgivelse_navne-field_magasin_side_nyheder'
+  $field_instances['paragraphs_item-udgivelse_navne-field_magasin_side_nyheder'] = array(
+    'bundle' => 'udgivelse_navne',
+    'custom_add_another' => 'Tilføj nyhed',
+    'custom_remove' => 'Fjern',
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'listevisning',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 2,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'listevisning',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 2,
+      ),
+      'udgivelseside' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'listevisning',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_magasin_side_nyheder',
+    'label' => 'Nyheder',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'nyheder',
+          'label_singular' => 'nyhed',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
+      ),
+      'type' => 'inline_entity_form',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-udgivelse_navne-field_section_size'
+  $field_instances['paragraphs_item-udgivelse_navne-field_section_size'] = array(
+    'bundle' => 'udgivelse_navne',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+      'paragraphs_udgivelse_lister' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'udgivelseliste' => array(
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+      'udgivelseside' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_section_size',
+    'label' => 'Plads på siden',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-udgivelser_side_layouts-field_section_height'
+  $field_instances['taxonomy_term-udgivelser_side_layouts-field_section_height'] = array(
+    'bundle' => 'udgivelser_side_layouts',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_section_height',
+    'label' => 'Section Height',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'max' => 100,
+      'min' => 25,
+      'prefix' => '',
+      'suffix' => '%',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 41,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-udgivelser_side_layouts-field_section_width'
+  $field_instances['taxonomy_term-udgivelser_side_layouts-field_section_width'] = array(
+    'bundle' => 'udgivelser_side_layouts',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_section_width',
+    'label' => 'Section Width',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'max' => 100,
+      'min' => 25,
+      'prefix' => '',
+      'suffix' => '%',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 42,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Afsnit');
   t('Angiv hvem der skal stå som forfatter af artiklen. Det er muligt at tilføje flere forfattere.');
   t('Annonce');
+  t('Annonce - FIL');
   t('Ansættelsessted');
   t('Antal anslag - længde på artikel');
   t('Artikel Afsnit');
+  t('Artikel reference');
   t('Artikel status');
   t('Artikeltype');
   t('Bilag');
   t('Billede i fuld bredde');
   t('Billede med annonce der skal vises på web sammen med artiklen.');
   t('Billedserie');
+  t('Bruges til online version af annoncen');
+  t('Bruges til upload af selve annonce-filen til tryk');
+  t('Citat tekst');
   t('Deadline');
+  t('Der skal oprettes mindst et afsnit for at oprette en artikel.');
   t('Efternavn');
   t('Eksisterende bruger');
   t('Eksterne links');
   t('Ekstratekst');
+  t('Evt. navn på person der har sagt citatet');
   t('Faglige emner');
   t('Forfatter(e)');
   t('Forfattere');
   t('Forfrem til');
   t('Fornavn + mellemnavn');
   t('Foto af forfatter');
+  t('Genre');
   t('Her kan du indtaste stikord til artiklen (tags)');
+  t('Her kan du sætte datoen for hvornår artiklen må vises for brugere der IKKE har et digitalt abonnement. Hvis du ikke sætter en dato i dette felt, vil artiklen KUN være tilgængelig for brugere der har et digitalt abonnement');
   t('Her skal du angive deadline for artikel');
+  t('Hvis der ikke ønskes en overskrift på afsnittet, så skal dette felt ikke udfyldes.');
+  t('Hvis du sætter flueben i denne boks, vil artiklen vil være synlig for alle besøgende');
   t('Højtopløste billeder');
+  t('Indstillinger for paywall');
   t('Introtekst til artiklen');
   t('KL Emneord');
+  t('Kommentarer');
   t('Lille billede');
   t('Manchet');
   t('Medtaget i udgivelse');
+  t('Nulstil paywall for denne artikel');
+  t('Nyheder');
   t('Overskrift');
   t('Placering af lille billede');
+  t('Plads på siden');
   t('Primært billede');
+  t('Section Height');
+  t('Section Width');
   t('Send besked til artiklens andre forfattere om dine ændringer');
   t('Send notifikation');
+  t('Side Indhold');
   t('Skjul auto relaterede links');
   t('Skriv et stikord eller tema for artiklen');
   t('Stikord (Tags)');
   t('Stilling/titel');
+  t('Stofområde');
   t('Systemet generere automatik links til relateret indhold på baggrund af de faglige emner og tags der er valgt ovenfor. Skjul disse eller genovervej de emner der er valgt.');
   t('Tekst');
   t('Tema / trompet');
   t('Type');
+  t('Vælg farve');
   t('Vælg gerne 3-7 emner og underemner - og vær så specifik som muligt. ');
   t('Vælg type på din artikel');
 

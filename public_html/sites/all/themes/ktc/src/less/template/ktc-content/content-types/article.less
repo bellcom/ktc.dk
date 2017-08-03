@@ -20,7 +20,14 @@
 
 // Section
 .ktc-article-section {
-  padding: 20px 0;
+  background-color: #ffffff;
+  color: #333333;
+  margin: -9px -60px;
+  padding: 20px 60px;
+
+  &.edit-mode {
+    padding-bottom: 45px;
+  }
 
   // Full width elements
   &.ktc-article-section-type-faktaboks,
@@ -28,10 +35,25 @@
   &.ktc-article-section-type-faktaboksyellow,
   &.ktc-article-section-type-faktaboksblue,
   &.ktc-article-section-type-faktaboksblack,
+  &.ktc-paragraph-faktaboksgreen,
+  &.ktc-paragraph-faktaboksblack,
+  &.ktc-paragraph-faktaboksblue,
+  &.ktc-paragraph-faktaboksyellow,
   &.ktc-article-section-type-billedserie {
 	border-top: 10px solid @body-bg;
 	border-bottom: 10px solid @body-bg;
+  padding-bottom: 40px;
 	.ktc-mixin-content-wide-full-width();
+  }
+  &.entity-paragraphs-item {
+    .contextual-links-wrapper,
+    .contextual-links-region {
+       display: none;
+       .contextual-links-region {}
+      &.node {
+        display: block;
+      }
+    }
   }
 
   // Headline (all)
@@ -151,7 +173,10 @@
 
   // Indented
   &.ktc-article-section-type-indrykket {
-	padding-left: 40px;
+    padding-left: 40px;
+  }
+  &.paragraphs-item-ktc-artikel-indrykket {
+    padding-left: 100px;
   }
 }
 
@@ -163,7 +188,8 @@
 .ktc-article-section {
 
   // Quote
-  &.ktc-article-section-type-citat {
+  &.ktc-article-section-type-citat,
+  &.ktc-paragraph-citat{
 	border-top: 2px solid #e0e4e5;
 	border-bottom: 2px solid #e0e4e5;
 	text-align: center;
@@ -251,6 +277,11 @@
 		color: @headline-font-color;
 	  }
 	}
+  
+  .ktc-article-section-body-extra {
+    color: @headline-font-color;
+  }
+  
 
 	// Body
 	.ktc-article-section-body {
@@ -284,13 +315,13 @@
 	}
 
 	// Quote
-	&.ktc-article-section-type-citat {
+	//&.ktc-article-section-type-citat {
 
 	  // Extra body
 	  .ktc-article-section-body-extra {
 		color: @headline-font-color;
 	  }
-	}
+	//}
   }
 }
 
@@ -303,11 +334,41 @@
 .tech-env {
 
   // Section
-  .ktc-article-section {
+.ktc-article-section{
 	.ktc-mixin-article-section-typography(@ktc-color-blue-font);
   }
-}
+  .ktc-article-section {
+    // FAQ - green
+    &.ktc-article-section-type-faktaboksgreen {
+      .ktc-mixin-article-section-faq(@ktc-color-green-background, lighten(@ktc-color-green-background, 20%), @ktc-color-green-background-font);
+    }
+    &.ktc-paragraph-faktaboksgreen {
+      .ktc-mixin-article-section-faq(@ktc-color-green-background, lighten(@ktc-color-green-background, 20%), @ktc-color-green-background-font);
+    }
+    // FAQ - gold / yellow
+    &.ktc-article-section-type-faktaboksyellow {
+      .ktc-mixin-article-section-faq(@ktc-color-gold-background, lighten(@ktc-color-gold-background, 20%), @ktc-color-gold-background-font);
+    }
+    &.ktc-paragraph-faktaboksyellow {
+      .ktc-mixin-article-section-faq(@ktc-color-gold-background, lighten(@ktc-color-gold-background, 20%), @ktc-color-gold-background-font);
+    }
+    // FAQ - blue
+    &.ktc-article-section-type-faktaboksblue {
+      .ktc-mixin-article-section-faq(@ktc-color-blue-background, lighten(@ktc-color-blue-background, 20%), @ktc-color-blue-background-font);
+    }
+    &.ktc-paragraph-faktaboksblue {
+      .ktc-mixin-article-section-faq(@ktc-color-blue-background, lighten(@ktc-color-blue-background, 20%), @ktc-color-blue-background-font);
+    }
 
+    // FAQ - black
+    &.ktc-article-section-type-faktaboksblack {
+      .ktc-mixin-article-section-faq(@ktc-color-dark-content-background, lighten(@ktc-color-dark-content-background, 20%), @ktc-color-dark-content-background-font);
+    }
+    &.ktc-paragraph-faktaboksblack {
+      .ktc-mixin-article-section-faq(@ktc-color-dark-content-background, lighten(@ktc-color-dark-content-background, 20%), @ktc-color-dark-content-background-font);
+    }
+  }
+}
 // Network (gold)
 .og-context.og-context-node {
 
@@ -330,14 +391,21 @@
 .ktc-article-section-type-faktaboksgreen {
   .ktc-mixin-article-section-faq(@ktc-color-green-background, lighten(@ktc-color-green-background, 20%), @ktc-color-green-background-font);
 }
-
+.ktc-paragraph-faktaboksgreen {
+  .ktc-mixin-article-section-faq(@ktc-color-green-background, lighten(@ktc-color-green-background, 20%), @ktc-color-green-background-font);
+}
 // FAQ - gold / yellow
 .ktc-article-section-type-faktaboksyellow {
   .ktc-mixin-article-section-faq(@ktc-color-gold-background, lighten(@ktc-color-gold-background, 20%), @ktc-color-gold-background-font);
 }
-
+.ktc-paragraph-faktaboksyellow {
+  .ktc-mixin-article-section-faq(@ktc-color-gold-background, lighten(@ktc-color-gold-background, 20%), @ktc-color-gold-background-font);
+}
 // FAQ - blue
 .ktc-article-section-type-faktaboksblue {
+  .ktc-mixin-article-section-faq(@ktc-color-blue-background, lighten(@ktc-color-blue-background, 20%), @ktc-color-blue-background-font);
+}
+.ktc-paragraph-faktaboksblue {
   .ktc-mixin-article-section-faq(@ktc-color-blue-background, lighten(@ktc-color-blue-background, 20%), @ktc-color-blue-background-font);
 }
 
@@ -345,6 +413,10 @@
 .ktc-article-section-type-faktaboksblack {
   .ktc-mixin-article-section-faq(@ktc-color-dark-content-background, lighten(@ktc-color-dark-content-background, 20%), @ktc-color-dark-content-background-font);
 }
+.ktc-paragraph-faktaboksblack {
+  .ktc-mixin-article-section-faq(@ktc-color-dark-content-background, lighten(@ktc-color-dark-content-background, 20%), @ktc-color-dark-content-background-font);
+}
+
 
 // --------------------------------------------------
 // Reset
@@ -353,15 +425,20 @@
 // Section wrapper
 .ktc-article-section-wrapper {
 
-  // Reset from field_collection contrib CSS
-  .field-collection-view {
+ // Reset from field_collection contrib CSS
+  .field-collection-view,
+  .paragraphs-items{
 	padding: 0;
 	margin: 0;
 	border-bottom: 0;
+	background-color: #FFF;
 
-	.field-collection-view-links {
+	.field-collection-view-links,
+    .paragraphs-items-view-links {
 	  margin: 0;
 	  padding: 0;
+    position: relative;
+    z-index:999;
 
 	  > li {
 		padding-left: 6px;
@@ -398,12 +475,26 @@
 	width: auto;
 	float: none;
   }
+  .paragraphs-items {
+    &#article-sortable {
+      .draggable {
+        cursor: move;
+      }
+    }
+   .insert-point {
+      display: none;
+   }
+  }
 
-  .field-collection-container {
-	border: 0;
-	margin: 0;
+  .field-collection-container,
+  .paragraphs-items-field-paragraphs {
+  	border: 0;
+    margin: 0 -60px;
+    padding: 0 60px;
+    color: #E9EDEE;
+    background-color: #E9EDEE;
 
-	.action-links-field-collection-add {
+	.action-links-field-collection-add{
 	  padding: 0;
 	  margin: 0;
 
@@ -417,5 +508,80 @@
 		.btn-success;
 	  }
 	}
+   .action-links-paragraphs-add{
+	  padding: 0;
+	  margin: 0;
+
+	  // Link
+	  a.dropdown-toggle {
+		.btn;
+		.btn-success;
+	  }
+	 }
+  }
+}
+ ul.paragraphs-items-view-links {
+   float: right;
+   font-size: 0.821em;
+   list-style-type: none;
+   width: auto;
+   z-index: 9999;
+   li {
+      float: left;
+   }
+}
+
+ul.action-links-paragraphs-add {
+    float: right;
+    clear: both;
+}
+
+.ktc-article-open{
+  background-image: url('../images/lock_opened.png');
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  background-repeat: no-repeat;
+}
+.ktc-article-locked{
+  background-image: url('../images/lock_locked.png');
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  background-repeat: no-repeat;
+}
+
+.node-type-artikler .pane-user-login {
+  .ktc-aside-body {
+    padding: 0px;
+    .form-item {
+      padding: 6px 15px;
+    }
+    .form-control {
+      background-color: transparent;
+      border: 0;
+      resize: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+    .form-actions {
+      background-color: #2c353a;
+      border: 0;
+      border-radius: 0;
+      padding: 6px 15px;
+      text-align: right;
+
+      .form-submit {
+        min-width: initial;
+        padding: 0;
+        margin: 0;
+        font-weight: normal;
+        border: 0;
+        background-color: transparent;
+        outline: 0;
+        color: #fff;
+      }
+    }
   }
 }

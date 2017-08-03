@@ -1,7 +1,125 @@
 <?php
+
 /**
  * @file
  * Code for the Teknik og Miljø feature.
  */
 
 include_once 'teknik_og_miljoe.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function teknik_og_miljoe_menu() {
+  $items = array();
+  $items['ajax/paragraphs/reorder'] = array(
+    'page callback' => 'teknik_og_miljoe_paragraphs_reorder',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'delivery callback' => 'ajax_deliver',
+ );
+  $items['ajax/udgivelser/%/reorder'] = array(
+    'page callback' => 'teknik_og_miljoe_udgivelser_content_reorder',
+    'page arguments' => array (2),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'delivery callback' => 'ajax_deliver',
+ );
+
+ $items['admin/config/content/artikler'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => 'Teknik og miljoe',
+    'description' => 'Configure Teknik og miljoe module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('teknik_og_miljoe_permission_settings_form'),
+    'access arguments' => array('access administration pages'),
+  );
+ return $items;
+}
+/*
+ * ajax call
+ * paragraphs reorder in article content type *
+ *
+ */
+function teknik_og_miljoe_paragraphs_reorder(){
+  $key = array_shift(array_keys($_POST));
+  $nid=substr($key, strripos($key, "_") + 1);
+  $node = node_load($nid);
+  $paragraphs = field_get_items('node', $node, 'field_paragraphs');
+  foreach ($_POST[$key] as $key=>$value){
+    $node->field_paragraphs['und'][$key] = _teknik_og_miljoe_paragraphs_search_element($paragraphs, $value);
+  }
+ node_save($node);
+
+}
+
+/*
+ * ajax call
+ * magasin content reorder
+ *
+ * @param
+ * $nid - magasin node_id
+ */
+function teknik_og_miljoe_udgivelser_content_reorder($nid){
+  $magasin = node_load($nid);
+  $magasin_content = field_get_items('node', $magasin, 'field_magasin_indhold');
+
+  $moved_item = $_POST['moved_item'];
+  $prev_item = $_POST['prev_item'];
+  $next_item = $_POST['next_item'];
+
+  /*** rearranging ***/
+  $moved_item_element = null;
+  for ($i = 0; $i < count($magasin_content); $i++) {
+    if ($magasin_content[$i]['value'] == $moved_item) {
+      $moved_item_element = $magasin_content[$i];
+      unset($magasin_content[$i]);
+      break;
+    }
+  }
+
+  $magasin_content = array_values($magasin_content);
+
+  $rearranged_items = array();
+  if ($prev_item == 0) {
+    $rearranged_items[] = $moved_item_element;
+  }
+
+  for ($i = 0; $i < count($magasin_content); $i++) {
+    $rearranged_items[] = $magasin_content[$i];
+    if ($magasin_content[$i]['value'] == $prev_item) {
+      $rearranged_items[] = $moved_item_element;
+    }
+  }
+
+  /*** END rearranging ***/
+
+  $magasin->field_magasin_indhold['und'] = $rearranged_items;
+  node_save($magasin);
+}
+
+/*
+ * Helper function
+ * return paragraph item by id
+ *
+ * @params
+ * $paragraphs_field - Node paragraphs field items
+ * $needle - Paragraph ID
+ */
+function _teknik_og_miljoe_paragraphs_search_element($paragraphs_field, $needle){
+  foreach ($paragraphs_field as $key => $elem)
+    if ($elem['value'] == $needle)
+      return $elem;
+}
+
+function teknik_og_miljoe_permission_settings_form() {  
+  $form = array();
+  $group_roles = 	user_roles();
+  $form['teknik_og_miljoe_roles_article_full_access'] = array(
+      '#title' => t('User roles who has full access to article'),
+      '#type' => 'checkboxes',
+      '#options' => $group_roles,
+      '#default_value' => variable_get('teknik_og_miljoe_roles_article_full_access', array()),
+    );
+  return system_settings_form($form);
+}
