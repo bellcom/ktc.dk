@@ -631,8 +631,8 @@ function _ktc_crm_group_get_tid($vocabulary, $crm_uuid, $name) {
   if (!$crm_uuid && !$name) {
     return FALSE;
   }
-
-  $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary);
+  $vocabulary_name = $vocabulary;
+  $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_name);
 
   $query = new EntityFieldQuery();
   $result = $query->entityCondition('entity_type', 'taxonomy_term')
@@ -647,6 +647,17 @@ function _ktc_crm_group_get_tid($vocabulary, $crm_uuid, $name) {
   }
   else {
     $term = new stdClass();
+    if ($name) {
+      $query = new EntityFieldQuery();
+      $result = $query->entityCondition('entity_type', 'taxonomy_term')
+        ->propertyCondition('vid', $vocabulary->vid)
+        ->propertyCondition('name',  $name)
+        ->execute();
+       if (isset($result['taxonomy_term'])) {
+          $term = taxonomy_term_load(key($result['taxonomy_term']));
+       }
+    }
+
     $term->vid = $vocabulary->vid;
     $term->name = $name;
 
@@ -660,7 +671,6 @@ function _ktc_crm_group_get_tid($vocabulary, $crm_uuid, $name) {
 
   return $term->tid ? $term->tid : FALSE;
 }
-
 /**
  * Helper, get group uuid from group nid.
  */
