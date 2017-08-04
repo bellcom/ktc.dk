@@ -1512,7 +1512,7 @@ function ktc_hearing_generate_hearing_summary_preview($hearing) {
  */
 function ktc_hearing_generate_markdown($markup) {
   $markdown = new HTML_To_Markdown(nl2br($markup));
-  $markdown = utf8_decode(strip_tags($markdown->output()));
+  $markdown = strip_tags($markdown->output());
   return file_unmanaged_save_data($markdown, NULL, FILE_EXISTS_RENAME);
 }
 
