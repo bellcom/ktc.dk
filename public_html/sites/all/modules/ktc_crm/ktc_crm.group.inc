@@ -480,6 +480,7 @@ function ktc_crm_group_remove_unlinked_memberships() {
   $query->leftJoin('field_data_field_crm_uuid', 'f_uuid', 'og.id = f_uuid.entity_id');
   $query->fields('og', array('id'))
     ->condition('og.entity_type', 'user')
+    ->condition('og.state', 1)
     ->isNull('field_crm_uuid_value');
   $result = $query->execute();
 
