@@ -7110,10 +7110,22 @@ body.page-taxonomy-term .field-name-field-hearing-materials .field-item {
   padding: 5px 0;
 }
 
+body.page-node .field-name-field-hearing-materials .field-item table,
+body.page-taxonomy-term .field-name-field-hearing-materials .field-item table {
+  table-layout: fixed;
+}
+
 body.page-node .field-name-field-hearing-materials .field-item a,
 body.page-taxonomy-term .field-name-field-hearing-materials .field-item a {
   margin-left: 10px;
   color: #30353c;
+  -ms-word-break: break-all;
+  -ms-word-wrap: break-all;
+  -webkit-word-break: break-word;
+  -webkit-word-wrap: break-word;
+  word-break: normal;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 body.page-node .field-type-text-long img,
@@ -13043,68 +13055,4 @@ fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-it
 .open .dropdown-toggle.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a,
 .open .dropdown-toggle.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a {
   background-image: none;
-}
-
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.disabled,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.disabled,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.disabled,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled],
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a[disabled],
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a[disabled],
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a[disabled],
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled:hover,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.disabled:hover,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.disabled:hover,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.disabled:hover,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled]:hover,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a[disabled]:hover,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a[disabled]:hover,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a[disabled]:hover,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:hover,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a:hover,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a:hover,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a:hover,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled:focus,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.disabled:focus,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.disabled:focus,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.disabled:focus,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled]:focus,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a[disabled]:focus,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a[disabled]:focus,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a[disabled]:focus,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:focus,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a:focus,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a:focus,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a:focus,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled:active,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.disabled:active,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.disabled:active,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.disabled:active,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled]:active,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a[disabled]:active,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a[disabled]:active,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a[disabled]:active,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a:active,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a:active,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a:active,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a:active,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.disabled.active,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.disabled.active,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.disabled.active,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.disabled.active,
-.ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a[disabled].active,
-.ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a[disabled].active,
-.ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a[disabled].active,
-.ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a[disabled].active,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .field-collection-view-links .edit a.active,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .field-collection-view-links .edit a.active,
-fieldset[disabled] .ktc-article-section-wrapper .field-collection-view .paragraphs-items-view-links .edit a.active,
-fieldset[disabled] .ktc-article-section-wrapper .paragraphs-items .paragraphs-items-view-links .edit a.active {
-  background-color: #2dace9;
-  border-color: #18a2e5;
 }

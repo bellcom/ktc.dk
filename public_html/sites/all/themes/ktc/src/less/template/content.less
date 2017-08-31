@@ -139,10 +139,21 @@ body.page-taxonomy-term {
     .field-item {
       border-top: 1px solid @brand-warmgray;
       padding: 5px 0;
-
+      table {
+        table-layout: fixed;
+      }
       a {
         margin-left: 10px;
         color: @brand-blacknblue;
+        -ms-word-break: break-all;
+        -ms-word-wrap: break-all;
+        -webkit-word-break: break-word;
+        -webkit-word-wrap: break-word;
+        word-break: normal;
+        word-wrap: break-word;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
       }
     }
   }
