@@ -7114,6 +7114,10 @@ body.page-node .field-name-field-hearing-materials .field-item a,
 body.page-taxonomy-term .field-name-field-hearing-materials .field-item a {
   margin-left: 10px;
   color: #30353c;
+  word-wrap: break-word;
+  word-break: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
 }
 
 body.page-node .field-type-text-long img,
