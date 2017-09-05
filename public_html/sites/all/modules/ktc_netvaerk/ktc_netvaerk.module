@@ -221,6 +221,11 @@ function ktc_netvaerk_approve_membership_submit($form, &$form_state) {
   $og_membership = $form_state['og_membership'];
   $og_membership->state = 1;
   $og_membership->field_grouprole[LANGUAGE_NONE][0]['target_id'] = KTC_NETVAERK_MEMBER_TID;
+  if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
+      $logger = KtcCrmLogger::getInstance();
+      $membership_uuid = ktc_crm_update_groupmember($groupmemberdto);
+      $og_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
+  }
   og_membership_save($og_membership);
   drupal_set_message(t('Medlemsskabet er blevet godkendt.'));
 }
