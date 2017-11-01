@@ -303,7 +303,7 @@ function ktc_crm_map_webuserdto_to_edit_array($webuserdto, $uid = 0) {
   $edit['field_efternavn'][LANGUAGE_NONE][0]['value'] = $webuserdto->LastName;
   $edit['field_jobposition'][LANGUAGE_NONE][0]['value'] = $webuserdto->Salutation;
   $edit['field_dob'][LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', strtotime($webuserdto->Birthday));
-  $edit['field_phone'][LANGUAGE_NONE][0]['value'] = $webuserdto->Phone;
+  $edit['field_directe_telefon'][LANGUAGE_NONE][0]['value'] = $webuserdto->Phone;
   $edit['field_cell'][LANGUAGE_NONE][0]['value'] = $webuserdto->MobilePhone;
 
   if (is_array($webuserdto->Adresses->EANAddressDto)) {
