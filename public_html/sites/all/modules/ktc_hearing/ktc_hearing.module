@@ -201,7 +201,14 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'][] = 'ktc_hearing_form_validate';
     $form['#after_build'][] = 'ktc_hearing_form_after_build';
     $form['#suffix'] = '<div id="confirm" title="Bekræft datoer"></div>';
+    $form['#submit'][] = 'ktc_hearing_form_log_submit';
   }
+}
+function ktc_hearing_form_log_submit($form, &$form_state) {
+    global $user;
+    $browser= _ktc_hearing_getBrowser();
+    error_log('HOOK_HEARING_FORM_SUBMIT: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
+    . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
 }
 /**
  * Implements hook_form_after_build().
@@ -525,9 +532,9 @@ function ktc_hearing_file_download($uri) {
  * Access callback function.
  */
 function ktc_hearing_access($node, $op) {
-  if($node->type !='hearing') 
+  if($node->type !='hearing')
     return FALSE;
-  
+
   $status = ktc_hearing_get_status($node);
 
   $disable_on_closed = array(
@@ -804,6 +811,10 @@ function _ktc_hearing_trigger_hook($entity, $original, $type) {
  */
 function ktc_hearing_ktc_hearing_save($hearing) {
   $hearing_status = ktc_hearing_get_status($hearing);
+  global $user;
+  $browser = _ktc_hearing_getBrowser();
+  error_log('HOOK_HEARING_SAVE: ' . time() . ' User: ' . $user->name . ' nid: ' . $hearing->nid . ' title: ' .$hearing->title . ' IP: ' . ip_address()
+    . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
 
   if ($hearing->status == 1 && $hearing_status == KTC_HEARING_STATUS_NEW) {
     // Set status to open.
@@ -1796,4 +1807,88 @@ function _ktc_hearing_user_answer_date($node, $role) {
 
     return $formatted['#markup'];
   }
+}
+function _ktc_hearing_getBrowser() {
+    $u_agent = $_SERVER['HTTP_USER_AGENT'];
+    $bname = 'Unknown';
+    $platform = 'Unknown';
+    $version= "";
+
+    //First get the platform?
+    if (preg_match('/linux/i', $u_agent)) {
+        $platform = 'linux';
+    }
+    elseif (preg_match('/macintosh|mac os x/i', $u_agent)) {
+        $platform = 'mac';
+    }
+    elseif (preg_match('/windows|win32/i', $u_agent)) {
+        $platform = 'windows';
+    }
+
+    // Next get the name of the useragent yes seperately and for good reason
+    if(preg_match('/MSIE/i',$u_agent) && !preg_match('/Opera/i',$u_agent))
+    {
+        $bname = 'Internet Explorer';
+        $ub = "MSIE";
+    }
+    elseif(preg_match('/Firefox/i',$u_agent))
+    {
+        $bname = 'Mozilla Firefox';
+        $ub = "Firefox";
+    }
+    elseif(preg_match('/OPR/i',$u_agent))
+    {
+        $bname = 'Opera';
+        $ub = "Opera";
+    }
+    elseif(preg_match('/Chrome/i',$u_agent))
+    {
+        $bname = 'Google Chrome';
+        $ub = "Chrome";
+    }
+    elseif(preg_match('/Safari/i',$u_agent))
+    {
+        $bname = 'Apple Safari';
+        $ub = "Safari";
+    }
+    elseif(preg_match('/Netscape/i',$u_agent))
+    {
+        $bname = 'Netscape';
+        $ub = "Netscape";
+    }
+
+    // finally get the correct version number
+    $known = array('Version', $ub, 'other');
+    $pattern = '#(?<browser>' . join('|', $known) .
+    ')[/ ]+(?<version>[0-9.|a-zA-Z.]*)#';
+    if (!preg_match_all($pattern, $u_agent, $matches)) {
+        // we have no matching number just continue
+    }
+
+    // see how many we have
+    $i = count($matches['browser']);
+    if ($i != 1) {
+        //we will have two since we are not using 'other' argument yet
+        //see if version is before or after the name
+        if (strripos($u_agent,"Version") < strripos($u_agent,$ub)){
+            $version= $matches['version'][0];
+        }
+        else {
+            $version= $matches['version'][1];
+        }
+    }
+    else {
+        $version= $matches['version'][0];
+    }
+
+    // check if we have a number
+    if ($version==null || $version=="") {$version="?";}
+
+    return array(
+        'userAgent' => $u_agent,
+        'name'      => $bname,
+        'version'   => $version,
+        'platform'  => $platform,
+        'pattern'    => $pattern
+    );
 }
