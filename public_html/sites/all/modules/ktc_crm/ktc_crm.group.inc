@@ -13,13 +13,13 @@ function ktc_crm_group_update_groups() {
 
   $groups = ktc_crm_fetch_groups();
 
-  if ($groups) {
+ /* if ($groups) {
     $logger->log->addInfo('cron group : update groups');
     ktc_crm_group_process_groups($groups);
 
     $logger->log->addInfo('cron group: remove old groups');
     ktc_crm_group_remove_old_groups($groups);
-  }
+  }*/
 
   $logger->log->addInfo('cron group: update grouproles');
   $grouproles = ktc_crm_fetch_grouproles();
@@ -102,14 +102,20 @@ function ktc_crm_og_membership_delete($og_membership) {
     }
   }
 }
-
+function ktc_crm_og_membership_presave ($og_membership){
+  if ($og_membership->is_new && $og_membership->entity_type == 'user' && !in_array($og_membership->etid, _ktc_netvaerk_notifications_get_users($og_membership->gid))) {
+    $account = user_load($og_membership->etid);
+    $account->field_netvaerk_notifications['und'][]['target_id']=$og_membership->gid;
+    user_save($account);
+  }
+}
 /**
  * Implements hook_og_membership_insert().
  */
 function ktc_crm_og_membership_insert($og_membership) {
-if (isset($_POST['form_id']) && 
-    ($_POST['form_id'] == 'og_ui_add_users' || $_POST['form_id'] == 'group_node_form' ||  $_POST['form_id'] == 'og_massadd_massadd_form' 
-    || ($_POST['form_id'] == 'og_ui_confirm_subscribe' && $og_membership->state  == 1 ))){
+if (isset($_POST['form_id']) &&
+    ($_POST['form_id'] == 'og_ui_add_users' || $_POST['form_id'] == 'group_node_form' ||  $_POST['form_id'] == 'og_massadd_massadd_form'
+    || ($_POST['form_id'] == 'og_ui_confirm_subscribe' && $og_membership->state  == 1))){
 // If a users is added to a group send this info to CRM.
   if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
     $logger = KtcCrmLogger::getInstance();
@@ -119,16 +125,9 @@ if (isset($_POST['form_id']) &&
     // Set the membership uuid on the og_membership entity.
     $og_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
     $og_membership->is_new = FALSE;
-     if (og_membership_save($og_membership)) {
-       //add notification
-       if ($og_membership->entity_type == 'user' && !in_array($og_membership->etid, _ktc_netvaerk_notifications_get_users($og_membership->gid))) {
-         $account = user_load($og_membership->etid);
-         $account->field_netvaerk_notifications['und'][]['target_id']=$og_membership->gid;
-         user_save($account);
-      }
-    }
+    og_membership_save($og_membership);
+   }
   }
- }
 }
 
 /**
@@ -347,6 +346,7 @@ function ktc_crm_group_update_grouproles($grouproles) {
  */
 function ktc_crm_group_process_memberships($memberships) {
   foreach ($memberships as $user_uuid => $groups) {
+
     if ($account = ktc_crm_load_account_from_crm_uuid($user_uuid)) {
       ktc_crm_group_update_users_memberships($account, $groups);
     }
@@ -388,13 +388,8 @@ function ktc_crm_group_update_users_memberships($account, $groups) {
       }
       $group_membership->field_crm_uuid[LANGUAGE_NONE][0]['value'] = $membership_uuid;
       $logger->log->addInfo('cron: Setting membership for '. $account->name.' ('.$account->uid.') to gid: '.$group->nid.' role: '.$grouprole_tid);
+      og_membership_save($group_membership);
 
-      if (og_membership_save($group_membership) ==  SAVED_NEW)
-        if( !in_array($account->uid, _ktc_netvaerk_notifications_get_users($group->nid))) {
-        // Set up notification to TRUE by default
-        $account->field_netvaerk_notifications['und'][]['target_id']=$group->nid;
-        user_save($account);
-      }
     }
   }
 }
