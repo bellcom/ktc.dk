@@ -1255,7 +1255,7 @@ function ktc_content_types_default_page_manager_handlers() {
     $pane->panel = 'right';
     $pane->type = 'block';
     $pane->subtype = 'ktc_related_links-related_links_block';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
