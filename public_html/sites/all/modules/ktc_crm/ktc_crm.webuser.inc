@@ -48,6 +48,48 @@ function ktc_crm_webuser_update_users() {
 }
 
 /**
+ * Update all users with data from CRM.
+ */
+function ktc_crm_webuser_full_update_users() {
+  $logger = KtcCrmLogger::getInstance();
+  $logger->log->addInfo('cron: start user sync');
+
+  // The webservice complains about not using paging cookie.
+  $fetch_users = TRUE;
+  $amount = 50;
+  $i = 0;
+
+  $last_run = variable_get('ktc_crm_user_sync_last_run', time());
+  variable_set('ktc_crm_user_sync_last_run', time());
+  // Get timezone offset
+  $offset = date('Z');
+  //$updated_since = date('Y-m-d\TH:i:s', ($last_run - $offset));
+
+  while ($fetch_users) {
+    $options = array(
+      'MaxReturned' => $amount,
+      'Skip' => ($i * $amount),
+     // 'UpdatedSince' => $updated_since,
+    );
+
+    $webusers = ktc_crm_fetch_webusers($options);
+
+    if (!$webusers) {
+      $fetch_users = FALSE;
+      return;
+    }
+
+    foreach ($webusers as $webuserdto) {
+      $logger->log->addInfo('cron: syncing user', array ('crm_uuid' => $webuserdto));
+      ktc_crm_update_account_from_webuserdto($webuserdto);
+    }
+    if (sizeof($webusers) < $amount){
+       $fetch_users = FALSE;
+    }
+    $i++;
+  }
+}
+/**
  * Implements hook_user_presave().
  */
 function ktc_crm_user_presave(&$edit, $account, $category) {
