@@ -1753,7 +1753,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 13,
+      'weight' => 66,
     ),
   );
 
@@ -3375,10 +3375,12 @@ function ktc_users_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_netvaerk_notifications'
   $field_instances['user-user-field_netvaerk_notifications'] = array(
     'bundle' => 'user',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => 'Afkryds de netværk hvorfra du ønsker at modtage notifikationer på nyt indhold.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -3446,7 +3448,7 @@ function ktc_users_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_netvaerk_notifications',
-    'label' => 'Netværks notifikationer',
+    'label' => 'Vælg notifikationer',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -3463,7 +3465,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 1,
+      'weight' => 64,
     ),
   );
 
@@ -4560,7 +4562,6 @@ function ktc_users_field_default_field_instances() {
   t('Adresse');
   t('Adresse 2');
   t('Afdeling');
-  t('Afkryds de netværk hvorfra du ønsker at modtage notifikationer på nyt indhold.');
   t('Andre kompetencer');
   t('Andre medlemskaber af foreninger (skriv her)');
   t('Arbejdsgiver');
@@ -4590,7 +4591,6 @@ function ktc_users_field_default_field_instances() {
   t('Medlemskab af KTC');
   t('Medlemskab af KVF (Kommunal Vejteknisk Forening)');
   t('Mobil');
-  t('Netværks notifikationer');
   t('Postnr');
   t('Regioner');
   t('Send besked når andre brugere kommenterer mine indlæg (inkl. mine egne kommentarer)');
@@ -4603,6 +4603,7 @@ function ktc_users_field_default_field_instances() {
   t('Typo3 uid(fe_users)');
   t('Uddannelser og kurser');
   t('Udpegninger i foreninger, udvalg og nævn');
+  t('Vælg notifikationer');
   t('membership_ktc_category');
 
   return $field_instances;

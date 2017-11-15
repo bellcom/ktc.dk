@@ -362,7 +362,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: Signup: Node */
+  /* Forbindelse: Signup: Indholdselement */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'signup_log';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
@@ -456,7 +456,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: Signup: Node */
+  /* Forbindelse: Signup: Indholdselement */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'signup_log';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
@@ -572,7 +572,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Forbindelse: OG membership: Group Node from OG membership */
+  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';

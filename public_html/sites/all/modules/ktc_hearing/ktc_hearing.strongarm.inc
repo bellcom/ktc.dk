@@ -148,13 +148,13 @@ function ktc_hearing_strongarm() {
           'weight' => '16',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
         'scheduler_settings' => array(
           'weight' => '8',
         ),
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
       ),
       'display' => array(
@@ -216,6 +216,15 @@ function ktc_hearing_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'teasercomments' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaserfront' => array(
+        'custom_settings' => TRUE,
+      ),
+      'listevisningboks' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -234,6 +243,10 @@ function ktc_hearing_strongarm() {
           'teaser' => array(
             'weight' => '11',
             'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '9',
+            'visible' => TRUE,
           ),
         ),
       ),

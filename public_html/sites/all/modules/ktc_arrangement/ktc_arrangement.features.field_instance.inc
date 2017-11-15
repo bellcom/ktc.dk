@@ -63,6 +63,12 @@ function ktc_arrangement_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_promote',

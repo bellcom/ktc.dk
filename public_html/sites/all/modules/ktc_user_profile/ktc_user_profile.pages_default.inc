@@ -184,7 +184,7 @@ function ktc_user_profile_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'pane-page-tabs ktc-aside-action ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-tabs-menu-fix',
+      'css_class' => '123123123 pane-page-tabs ktc-aside-action ktc-aside-tabs ktc-aside-tabs-1-col ktc-aside-tabs-menu-fix',
       'template_suggestion' => 'page_tabs',
     );
     $pane->extras = array();
@@ -213,7 +213,7 @@ function ktc_user_profile_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => ' ktc-aside ktc-aside-list',
+      'css_class' => ' ktc-aside ktc-aside-list HEST',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
@@ -566,7 +566,7 @@ function ktc_user_profile_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -29;
   $handler->conf = array(
-    'title' => 'KTC Sekretariatet og VIP',
+    'title' => 'KTC Sekretariatet',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
