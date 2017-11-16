@@ -13,13 +13,13 @@ function ktc_crm_group_update_groups() {
 
   $groups = ktc_crm_fetch_groups();
 
- /* if ($groups) {
+ if ($groups) {
     $logger->log->addInfo('cron group : update groups');
     ktc_crm_group_process_groups($groups);
 
     $logger->log->addInfo('cron group: remove old groups');
     ktc_crm_group_remove_old_groups($groups);
-  }*/
+  }
 
   $logger->log->addInfo('cron group: update grouproles');
   $grouproles = ktc_crm_fetch_grouproles();
