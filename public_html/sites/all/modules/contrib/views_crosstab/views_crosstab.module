@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * views_crosstab module file
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function views_crosstab_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'views_crosstab'),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function views_crosstab_theme() {
+  return array(
+    'views_crosstab_ui_table' => array(
+      'render element' => 'form',
+      'file' => 'theme.inc',
+    ),
+  );
+}
+
+/**
+ * Keep the keys/names of our main field options in one place.
+ */
+function views_crosstab_field_options() {
+  return array(
+    'crosstab_rows' => t('Crosstab rows'),
+    'crosstab_columns' => t('Crosstab columns'),
+    'crosstab_data' => t('Crosstab data'),
+  );
+}
