@@ -1,0 +1,196 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+define('KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT', '[comment:author] has commented on [comment:node:title]');
+define('KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT', 'Hi [user:field_navn],
+
+[comment:author] has commented on: "[comment:node:title]"
+
+----
+[comment:title]
+[comment:body]
+----
+
+You can view the comment at the following url
+[comment:url]
+
+You can set up auto-following feature for all future posts
+by creating your own user with a few clicks here [site:login-url]
+
+-- [site:name] team
+[site:url]');
+
+/**
+ * Implements hook_permission().
+ */
+function ktc_netvaerk_comment_notify_permission() {
+  return array(
+    'administer ktc netvaerk comment notify' => array(
+      'title' => 'Administer Comment Notify',
+      'description' => 'Change global comment notification settings.',
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_netvaerk_comment_notify_menu() {
+  $items['admin/netvaerk_setting/comment_notify'] = array(
+    'title' => 'Comment Notify',
+    'description' => 'Configure settings for e-mails about new comments.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ktc_netvaerk_comment_notify_settings'),
+    'access arguments' => array('administer ktc netvaerk comment notify'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+/*
+ * Page callback for administrative settings form.
+ */
+
+function ktc_netvaerk_comment_notify_settings() {
+  $form['ktc_netvaerk_comment_notify_settings'] = array();
+
+  $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_notify_default_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Emne'),
+    '#return_value' => 1,
+    '#token_types' => array('comment', 'user'),
+    '#default_value' => variable_get('ktc_netvaerk_comment_notify_default_subject', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT),
+    '#element_validate' => array('token_element_validate'),
+  );
+
+  $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_notify_default_mailtext'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Default mail text for sending out the notifications to node authors'),
+    '#default_value' => variable_get('ktc_netvaerk_comment_notify_default_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT),
+    '#return_value' => 1,
+    '#cols' => 80,
+    '#rows' => 15,
+    '#token_types' => array('comment', 'user'),
+    '#element_validate' => array('token_element_validate'),
+  );
+
+  $form['ktc_netvaerk_comment_notify_settings']['token_help'] = array(
+    '#theme' => 'token_tree',
+    '#token_types' => array('comment', 'user'),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function ktc_netvaerk_comment_notify_comment_insert($comment) {
+  $node = node_load($comment->nid);
+  if (is_object($node) && $node->status && $field = field_get_items('node', $node, 'og_group_ref')) {
+    ktc_netvaerk_comment_notify_send_notification_emails($comment);
+  }
+  else {
+    $user = user_load($node->uid);
+    ktc_netvaerk_comment_notify_send_mail($comment, $user);
+  }
+}
+
+function ktc_netvaerk_comment_notify_send_notification_emails($comment) {
+  $result = db_query('SELECT status FROM {ktc_netvaerk_comment_notify} WHERE nid = :nid AND cid = :cid AND status = :status', array(':nid' => $comment->nid, ':cid' => $comment->cid, ':status' => 1))->fetchAll();
+  $node = node_load($comment->nid);
+
+  $field = field_get_items('node', $node, 'og_group_ref');
+  $field = reset($field);
+  $group_id = $field['target_id'];
+  if (empty($result)) {
+    $uids = _ktc_netvaerk_comment_notify_get_users($group_id);
+    foreach ($uids as $uid) {
+      $user = user_load($uid);
+      if (!og_is_member('node', $group_id, 'user', $user))
+        continue; //not send notification if user not goup member
+
+      ktc_netvaerk_comment_notify_send_mail($comment, $user);
+    }
+    db_insert('ktc_netvaerk_comment_notify')
+        ->fields(array(
+          'nid' => $comment->nid,
+          'cid' => $comment->cid,
+          'status' => 1,
+        ))
+        ->execute();
+  }
+}
+
+function ktc_netvaerk_comment_notify_send_mail($comment, $user) {
+  $token_data = array('user' => $user, 'comment' => $comment);
+  $to = $user->mail;
+
+  // Testing.
+  if ($test_mail = variable_get('ktc_test_mail_address', FALSE)) {
+    $to = 'juulia@bellcom.ee'; //$test_mail;
+  }
+  $language = $user->language;
+
+  $params = array();
+  $params['subject'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_subject', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT), $token_data);
+  $params['body'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT), $token_data);
+  drupal_mail('ktc_netvaerk_comment_notify', 'notify_new', $to, $language, $params);
+  error_log('mail sent:' . $to);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function ktc_netvaerk_comment_notify_mail($key, &$message, $params) {
+  $message['subject'] = $params['subject'];
+  $message['body'][] = $params['body'];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_netvaerk_comment_notify_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_profile_form') {
+    // Unset groups the user is not member of.
+    // Get the users groups.
+    $options = og_get_groups_by_user($form['#entity'], 'node');
+
+// Get the current selected options. We don't wan't to unset these.
+    $default_value = $form['field_netvaerk_comment_notify'][LANGUAGE_NONE]['#default_value'];
+    foreach ($default_value as $_val) {
+      $options[$_val] = $_val;
+    }
+
+    // The actual unsetting.
+    foreach ($form['field_netvaerk_comment_notify'][LANGUAGE_NONE]['#options'] as $gid => $value) {
+      if (!is_array($options) || !in_array($gid, $options)) {
+        unset($form['field_netvaerk_comment_notify'][LANGUAGE_NONE]['#options'][$gid]);
+      }
+      // hide notification settings if user is not member of network
+      if (!og_is_member('node', $gid, 'user', $form['#entity'])) {
+        unset($form['field_netvaerk_comment_notify'][LANGUAGE_NONE]['#options'][$gid]);
+      }
+    }
+  }
+}
+
+function _ktc_netvaerk_comment_notify_get_users($group_id) {
+
+  // Get a list of users who want notifications for this group.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'user')
+      ->fieldCondition('field_netvaerk_comment_notify', 'target_id', $group_id);
+  $result = $query->execute();
+
+  if (isset($result['user'])) {
+    return array_keys($result['user']);
+  }
+  return array();
+}

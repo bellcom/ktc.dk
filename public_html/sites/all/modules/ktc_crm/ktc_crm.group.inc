@@ -102,6 +102,14 @@ function ktc_crm_og_membership_delete($og_membership) {
     }
   }
 }
+function ktc_crm_og_membership_presave ($og_membership){
+  if ($og_membership->is_new && $og_membership->entity_type == 'user' && !in_array($og_membership->etid, _ktc_netvaerk_notifications_get_users($og_membership->gid))) {
+    $account = user_load($og_membership->etid);
+    $account->field_netvaerk_notifications['und'][]['target_id']=$og_membership->gid;
+    $account->field_netvaerk_comment_notify['und'][]['target_id']=$og_membership->gid;
+    user_save($account);
+  }
+}
 
 /**
  * Implements hook_og_membership_insert().

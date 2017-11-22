@@ -1,0 +1,39 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function ktc_netvaerk_comment_notify_schema() {
+  $schema['ktc_netvaerk_comment_notify'] = array(
+    'description' => 'Keep track of comments in netvaerk content notification',
+    'fields' => array(
+      'cid' => array(
+        'description' => 'id of the conment.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'nid' => array(
+        'description' => 'Nid of the content.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'status' => array(
+        'description' => 'Status - is notification sent',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+    ),
+    'primary key' => array('cid'),
+  );
+
+  return $schema;
+}
