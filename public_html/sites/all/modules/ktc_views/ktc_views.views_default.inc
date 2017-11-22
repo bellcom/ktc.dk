@@ -4577,6 +4577,25 @@ function ktc_views_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: Block for Anonymous users */
+  $handler = $view->new_display('block', 'Block for Anonymous users', 'block_anonym_user');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Ordforråd: Internt navn */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'arrangementstyper' => 'arrangementstyper',
+  );
+  /* Filterkriterie: Ord i ordforråd: Anonymous users access (field_ktc_arrangementtype_access) */
+  $handler->display->display_options['filters']['field_ktc_arrangementtype_access_value']['id'] = 'field_ktc_arrangementtype_access_value';
+  $handler->display->display_options['filters']['field_ktc_arrangementtype_access_value']['table'] = 'field_data_field_ktc_arrangementtype_access';
+  $handler->display->display_options['filters']['field_ktc_arrangementtype_access_value']['field'] = 'field_ktc_arrangementtype_access_value';
+  $handler->display->display_options['filters']['field_ktc_arrangementtype_access_value']['value'] = array(
+    1 => '1',
+  );
   $translatables['opret_arrangement'] = array(
     t('Master'),
     t('Opret arrangement'),
@@ -4588,6 +4607,7 @@ function ktc_views_views_default_views() {
     t('Faldende'),
     t('.'),
     t('Block'),
+    t('Block for Anonymous users'),
   );
   $export['opret_arrangement'] = $view;
 
