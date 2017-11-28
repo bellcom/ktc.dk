@@ -5,3 +5,22 @@
  */
 
 include_once 'ktc_user_profile.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function ktc_user_profile_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_profile_form') {
+    // Get the users groups.
+  $options = og_get_groups_by_user($form['#entity'], 'node');
+  // show text notification selects instead
+  if (empty($options)) {
+    $form['no_networks_help'] = array(
+      '#type' => 'item',
+      '#markup' => '<div > <b>Du er ikke medlem of nogen netværk</b></div>',
+      '#weight' => $form['field_netvaerk_comment_notify']['#weight']
+    );
+    $form['#groups']['group_notification_help']->children[] = 'no_networks_help';
+  }
+  }
+}

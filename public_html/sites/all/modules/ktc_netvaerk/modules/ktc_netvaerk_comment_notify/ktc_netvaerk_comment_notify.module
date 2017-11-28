@@ -6,24 +6,21 @@
  * and open the template in the editor.
  */
 
-define('KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT', '[comment:author] has commented on [comment:node:title]');
-define('KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT', 'Hi [user:field_navn],
+define('KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT', 'Du har fået en kommentar på dit indlæg: [comment:node:title]');
+define('KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT', 'Hej [comment:node:author],
 
-[comment:author] has commented on: "[comment:node:title]"
+Du har fået en kommentar på: "[comment:node:title]"
 
 ----
-[comment:title]
 [comment:body]
 ----
-
-You can view the comment at the following url
+Du kan se hele kommentaren på:
 [comment:url]
 
-You can set up auto-following feature for all future posts
-by creating your own user with a few clicks here [site:login-url]
+Du kan afmelde notifikationer for nye kommentarer på dit indhold
+ved at følge dette link: [comment:node:author:edit-url].
 
--- [site:name] team
-[site:url]');
+Har du spørgsmål til brugen af KTC Netværk og ktc.dk, kan du søge viden på http://www.ktc.dk/om-ktc/hjaelp, eller kontakte supporten i KTC Sekretariatet: support@ktc.dk, eller pr. telefon +45 7228 2804');
 
 /**
  * Implements hook_permission().
@@ -71,7 +68,7 @@ function ktc_netvaerk_comment_notify_settings() {
 
   $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_notify_default_mailtext'] = array(
     '#type' => 'textarea',
-    '#title' => t('Default mail text for sending out the notifications to node authors'),
+    '#title' =>  t('Besked'),
     '#default_value' => variable_get('ktc_netvaerk_comment_notify_default_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT),
     '#return_value' => 1,
     '#cols' => 80,
@@ -162,7 +159,7 @@ function ktc_netvaerk_comment_notify_form_alter(&$form, &$form_state, $form_id) 
     // Get the users groups.
     $options = og_get_groups_by_user($form['#entity'], 'node');
 
-// Get the current selected options. We don't wan't to unset these.
+  // Get the current selected options. We don't wan't to unset these.
     $default_value = $form['field_netvaerk_comment_notify'][LANGUAGE_NONE]['#default_value'];
     foreach ($default_value as $_val) {
       $options[$_val] = $_val;
@@ -177,6 +174,9 @@ function ktc_netvaerk_comment_notify_form_alter(&$form, &$form_state, $form_id) 
       if (!og_is_member('node', $gid, 'user', $form['#entity'])) {
         unset($form['field_netvaerk_comment_notify'][LANGUAGE_NONE]['#options'][$gid]);
       }
+    }
+    if (empty($options)) {
+     $form['field_netvaerk_comment_notify']['#access'] = FALSE;
     }
   }
 }
