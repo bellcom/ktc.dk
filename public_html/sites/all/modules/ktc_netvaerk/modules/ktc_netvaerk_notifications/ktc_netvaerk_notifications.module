@@ -29,6 +29,10 @@ function ktc_netvaerk_notifications_form_alter(&$form, &$form_state, $form_id) {
     // Get the users groups.
     $options = og_get_groups_by_user($form['#entity'], 'node');
 
+    if (empty($options)) {
+     $form['field_netvaerk_notifications']['#access'] = FALSE;
+    }
+
     // Get the current selected options. We don't wan't to unset these.
     $default_value = $form['field_netvaerk_notifications'][LANGUAGE_NONE]['#default_value'];
     foreach ($default_value as $_val) {
@@ -45,9 +49,7 @@ function ktc_netvaerk_notifications_form_alter(&$form, &$form_state, $form_id) {
         unset($form['field_netvaerk_notifications'][LANGUAGE_NONE]['#options'][$gid]);
       }
     }
-    if (empty($options)) {
-     $form['field_netvaerk_notifications']['#access'] = FALSE;
-    }
+
   }
 }
 
