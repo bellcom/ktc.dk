@@ -89,6 +89,11 @@ function ktc_crm_og_membership_delete($og_membership) {
           unset($account->field_netvaerk_notifications['und'][$delta]);
         }
       }
+      foreach ($account->field_netvaerk_comment_notify['und'] as $delta => $value) {
+        if ($value['target_id'] == $og_membership->gid) {
+          unset($account->field_netvaerk_comment_notify['und'][$delta]);
+        }
+      }
       foreach ($account->og_user_node['und'] as $delta => $value) {
         if ($value['target_id'] == $og_membership->gid) {
           unset($account->og_user_node['und'][$delta]);

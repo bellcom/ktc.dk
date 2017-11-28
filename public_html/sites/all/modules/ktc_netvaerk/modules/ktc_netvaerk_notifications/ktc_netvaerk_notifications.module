@@ -45,6 +45,9 @@ function ktc_netvaerk_notifications_form_alter(&$form, &$form_state, $form_id) {
         unset($form['field_netvaerk_notifications'][LANGUAGE_NONE]['#options'][$gid]);
       }
     }
+    if (empty($options)) {
+     $form['field_netvaerk_notifications']['#access'] = FALSE;
+    }
   }
 }
 
