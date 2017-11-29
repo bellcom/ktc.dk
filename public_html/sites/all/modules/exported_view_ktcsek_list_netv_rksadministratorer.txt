@@ -1,0 +1,222 @@
+$view = new view();
+$view->name = 'ktcsek_list_netv_rksadministratorer';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'node';
+$view->human_name = 'KTCSEK: List netværksadministratorer';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'KTCSEK: List netværksadministratorer';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['use_more_text'] = 'mere';
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['distinct'] = TRUE;
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+$handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+$handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+$handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+$handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+$handler->display->display_options['pager']['type'] = 'full';
+$handler->display->display_options['pager']['options']['items_per_page'] = '1000';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['pager']['options']['id'] = '0';
+$handler->display->display_options['pager']['options']['quantity'] = '9';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+$handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+$handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+$handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+$handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+$handler->display->display_options['style_plugin'] = 'table';
+$handler->display->display_options['style_options']['columns'] = array(
+  'created' => 'created',
+  'title' => 'title',
+  'name' => 'name',
+  'mail' => 'mail',
+  'access' => 'access',
+  'field_directe_telefon' => 'field_directe_telefon',
+  'field_netvaerkstype' => 'field_netvaerkstype',
+);
+$handler->display->display_options['style_options']['default'] = 'created';
+$handler->display->display_options['style_options']['info'] = array(
+  'created' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'title' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'name' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'mail' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'access' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_directe_telefon' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_netvaerkstype' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+);
+/* Forbindelse: OG membership: OG membership from Node group */
+$handler->display->display_options['relationships']['og_membership_rel_group']['id'] = 'og_membership_rel_group';
+$handler->display->display_options['relationships']['og_membership_rel_group']['table'] = 'node';
+$handler->display->display_options['relationships']['og_membership_rel_group']['field'] = 'og_membership_rel_group';
+/* Forbindelse: OG membership: Bruger from OG membership */
+$handler->display->display_options['relationships']['og_membership_related_user']['id'] = 'og_membership_related_user';
+$handler->display->display_options['relationships']['og_membership_related_user']['table'] = 'og_membership';
+$handler->display->display_options['relationships']['og_membership_related_user']['field'] = 'og_membership_related_user';
+$handler->display->display_options['relationships']['og_membership_related_user']['relationship'] = 'og_membership_rel_group';
+/* Forbindelse: OG membership: OG Roles from membership */
+$handler->display->display_options['relationships']['og_users_roles']['id'] = 'og_users_roles';
+$handler->display->display_options['relationships']['og_users_roles']['table'] = 'og_membership';
+$handler->display->display_options['relationships']['og_users_roles']['field'] = 'og_users_roles';
+$handler->display->display_options['relationships']['og_users_roles']['relationship'] = 'og_membership_related_user';
+/* Felt: Indhold: Oprettelsesdato */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = 'Dato';
+$handler->display->display_options['fields']['created']['date_format'] = 'short';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Felt: Bruger: Navn */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'users';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['relationship'] = 'og_membership_related_user';
+/* Felt: Bruger: E-mail */
+$handler->display->display_options['fields']['mail']['id'] = 'mail';
+$handler->display->display_options['fields']['mail']['table'] = 'users';
+$handler->display->display_options['fields']['mail']['field'] = 'mail';
+$handler->display->display_options['fields']['mail']['relationship'] = 'og_membership_related_user';
+/* Felt: Bruger: Seneste tilgang */
+$handler->display->display_options['fields']['access']['id'] = 'access';
+$handler->display->display_options['fields']['access']['table'] = 'users';
+$handler->display->display_options['fields']['access']['field'] = 'access';
+$handler->display->display_options['fields']['access']['relationship'] = 'og_membership_related_user';
+$handler->display->display_options['fields']['access']['date_format'] = 'short';
+$handler->display->display_options['fields']['access']['second_date_format'] = 'long';
+/* Felt: Felt: Direkte telefon */
+$handler->display->display_options['fields']['field_directe_telefon']['id'] = 'field_directe_telefon';
+$handler->display->display_options['fields']['field_directe_telefon']['table'] = 'field_data_field_directe_telefon';
+$handler->display->display_options['fields']['field_directe_telefon']['field'] = 'field_directe_telefon';
+$handler->display->display_options['fields']['field_directe_telefon']['relationship'] = 'og_membership_related_user';
+/* Felt: Indhold: Netværkstype */
+$handler->display->display_options['fields']['field_netvaerkstype']['id'] = 'field_netvaerkstype';
+$handler->display->display_options['fields']['field_netvaerkstype']['table'] = 'field_data_field_netvaerkstype';
+$handler->display->display_options['fields']['field_netvaerkstype']['field'] = 'field_netvaerkstype';
+/* Sorteringskriterie: Indhold: Oprettelsesdato */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+/* Filterkriterie: Indhold: Udgivet */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'group' => 'group',
+);
+/* Filterkriterie: OG user roles: Role Name */
+$handler->display->display_options['filters']['name']['id'] = 'name';
+$handler->display->display_options['filters']['name']['table'] = 'og_role';
+$handler->display->display_options['filters']['name']['field'] = 'name';
+$handler->display->display_options['filters']['name']['relationship'] = 'og_users_roles';
+$handler->display->display_options['filters']['name']['value'] = array(
+  'min' => '',
+  'max' => '',
+  'value' => '',
+  'administrator member' => 'administrator member',
+);
+/* Filterkriterie: Bruger: Bruger ID */
+$handler->display->display_options['filters']['uid_raw']['id'] = 'uid_raw';
+$handler->display->display_options['filters']['uid_raw']['table'] = 'users';
+$handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
+$handler->display->display_options['filters']['uid_raw']['relationship'] = 'og_membership_related_user';
+$handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
+$handler->display->display_options['filters']['uid_raw']['value']['value'] = '1974';
+
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['path'] = 'ktcsek-list-netv-rksadministratorer';
+$translatables['ktcsek_list_netv_rksadministratorer'] = array(
+  t('Master'),
+  t('KTCSEK: List netværksadministratorer'),
+  t('mere'),
+  t('Udfør'),
+  t('Gendan'),
+  t('Sortér efter'),
+  t('Stigende'),
+  t('Faldende'),
+  t('Antal elementer'),
+  t('- Alle -'),
+  t('Forskydning'),
+  t('« første'),
+  t('‹ forrige'),
+  t('næste ›'),
+  t('sidste »'),
+  t('OG membership from node group'),
+  t('user from OG membership'),
+  t('OG Roles from OG membership'),
+  t('Dato'),
+  t('Navn'),
+  t('E-mail'),
+  t('Seneste tilgang'),
+  t('Direkte telefon'),
+  t('Netværkstype'),
+  t('Page'),
+);

@@ -1,0 +1,255 @@
+$view = new view();
+$view->name = 'ktcsek_hvilket_indhold_er_der_i_netv_rket';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'node';
+$view->human_name = 'KTCSEK: Hvilket indhold er der i netværket';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'KTCSEK: Hvilket indhold er der i netværket';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['use_more_text'] = 'mere';
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['distinct'] = TRUE;
+$handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+$handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+$handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+$handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+$handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+$handler->display->display_options['pager']['type'] = 'full';
+$handler->display->display_options['pager']['options']['items_per_page'] = '100';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+$handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+$handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+$handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+$handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+$handler->display->display_options['style_plugin'] = 'table';
+$handler->display->display_options['style_options']['columns'] = array(
+  'type_1' => 'type_1',
+  'nid' => 'nid',
+);
+$handler->display->display_options['style_options']['default'] = '-1';
+$handler->display->display_options['style_options']['info'] = array(
+  'type_1' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'nid' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+);
+/* Overskrift: Global: Resumé af resultat */
+$handler->display->display_options['header']['result']['id'] = 'result';
+$handler->display->display_options['header']['result']['table'] = 'views';
+$handler->display->display_options['header']['result']['field'] = 'result';
+/* Sidefod: Global: Resumé af resultat */
+$handler->display->display_options['footer']['result']['id'] = 'result';
+$handler->display->display_options['footer']['result']['table'] = 'views';
+$handler->display->display_options['footer']['result']['field'] = 'result';
+/* Forbindelse: Indhold: Forfatter */
+$handler->display->display_options['relationships']['uid']['id'] = 'uid';
+$handler->display->display_options['relationships']['uid']['table'] = 'node';
+$handler->display->display_options['relationships']['uid']['field'] = 'uid';
+/* Felt: Global: View resultattæller */
+$handler->display->display_options['fields']['counter']['id'] = 'counter';
+$handler->display->display_options['fields']['counter']['table'] = 'views';
+$handler->display->display_options['fields']['counter']['field'] = 'counter';
+$handler->display->display_options['fields']['counter']['label'] = '';
+$handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['counter']['counter_start'] = '1';
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Felt: Indhold: Type */
+$handler->display->display_options['fields']['type']['id'] = 'type';
+$handler->display->display_options['fields']['type']['table'] = 'node';
+$handler->display->display_options['fields']['type']['field'] = 'type';
+$handler->display->display_options['fields']['type']['group_type'] = 'count';
+/* Felt: Indhold: Kommentarantal */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['label'] = 'Komm.';
+/* Felt: Indhold: Opdateret/kommenteret dato */
+$handler->display->display_options['fields']['last_updated']['id'] = 'last_updated';
+$handler->display->display_options['fields']['last_updated']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['last_updated']['field'] = 'last_updated';
+$handler->display->display_options['fields']['last_updated']['label'] = 'Dato';
+$handler->display->display_options['fields']['last_updated']['date_format'] = 'short';
+$handler->display->display_options['fields']['last_updated']['second_date_format'] = 'long';
+/* Felt: Indhold: Gruppe/Netværk */
+$handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
+$handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
+$handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
+$handler->display->display_options['fields']['og_group_ref']['settings'] = array(
+  'link' => 1,
+);
+$handler->display->display_options['fields']['og_group_ref']['group_column'] = 'entity_id';
+$handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
+/* Felt: Bruger: Rendered Bruger */
+$handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+$handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_user';
+$handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+$handler->display->display_options['fields']['rendered_entity']['relationship'] = 'uid';
+$handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+$handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'list1';
+$handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+/* Filterkriterie: Indhold: Udgivet */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filterkriterie: Indholdstyper i netværk */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['ui_name'] = 'Indholdstyper i netværk';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'meeting_doodle' => 'meeting_doodle',
+  'arrangement' => 'arrangement',
+  'forum_post' => 'forum_post',
+  'document' => 'document',
+  'os2web_base_news' => 'os2web_base_news',
+);
+/* Filterkriterie: Bruger: Roller */
+$handler->display->display_options['filters']['rid']['id'] = 'rid';
+$handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+$handler->display->display_options['filters']['rid']['field'] = 'rid';
+$handler->display->display_options['filters']['rid']['relationship'] = 'uid';
+$handler->display->display_options['filters']['rid']['operator'] = 'not';
+$handler->display->display_options['filters']['rid']['value'] = array(
+  18 => '18',
+  10 => '10',
+  9 => '9',
+  5 => '5',
+  3 => '3',
+  20 => '20',
+);
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['label'] = 'Dato (node)';
+$handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+  'node.changed' => 'node.changed',
+);
+
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['path'] = 'ktcsek-hvilket-indhold-er-der-i-netv-rket';
+
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page_1');
+$handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['group_by'] = TRUE;
+$handler->display->display_options['defaults']['query'] = FALSE;
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'none';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Felt: Indhold: Type */
+$handler->display->display_options['fields']['type_1']['id'] = 'type_1';
+$handler->display->display_options['fields']['type_1']['table'] = 'node';
+$handler->display->display_options['fields']['type_1']['field'] = 'type';
+/* Felt: Indhold: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['group_type'] = 'count';
+$handler->display->display_options['path'] = 'ktcsek-hvilket-indhold-er-der-i-netv-rket-2';
+$translatables['ktcsek_hvilket_indhold_er_der_i_netv_rket'] = array(
+  t('Master'),
+  t('KTCSEK: Hvilket indhold er der i netværket'),
+  t('mere'),
+  t('Udfør'),
+  t('Gendan'),
+  t('Sortér efter'),
+  t('Stigende'),
+  t('Faldende'),
+  t('Antal elementer'),
+  t('- Alle -'),
+  t('Forskydning'),
+  t('« første'),
+  t('‹ forrige'),
+  t('næste ›'),
+  t('sidste »'),
+  t('Displaying @start - @end of @total'),
+  t('forfatter'),
+  t('Titel'),
+  t('Type'),
+  t('Komm.'),
+  t('.'),
+  t(','),
+  t('Dato'),
+  t('Gruppe/Netværk'),
+  t('Rendered Bruger'),
+  t('Dato (node)'),
+  t('Page'),
+  t('Nid'),
+);
