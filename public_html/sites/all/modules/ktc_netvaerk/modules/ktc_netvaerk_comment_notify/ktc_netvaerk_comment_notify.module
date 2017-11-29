@@ -6,8 +6,24 @@
  * and open the template in the editor.
  */
 
-define('KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT', 'Du har fået en kommentar på dit indlæg: [comment:node:title]');
-define('KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT', 'Hej [comment:node:author],
+define('KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT', 'Ny kommentar i netværket [node:og-group-ref]');
+define('KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT', 'Hej [user:field_navn]
+
+Der er en ny kommentar i netværket: <a href="[node:ktc-netvaerk-url]">[node:og-group-ref]</a> som du er medlem af:
+Kommentar til: <a href="[node:url]">[comment:node:title]</a>
+Af: [comment:author]
+
+Kommentar:
+
+[comment:body]
+
+Se hele dialogen her: [comment:url]
+
+Har du spørgsmål til brugen af KTC Netværk og ktc.dk, kan du søge viden på http://www.ktc.dk/om-ktc/hjaelp, eller kontakte supporten i KTC Sekretariatet: support@ktc.dk, eller pr. telefon +45 7228 2804');
+
+
+define('KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_SUBJECT', 'Du har fået en kommentar på dit indlæg: [comment:node:title]');
+define('KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_MAILTEXT', 'Hej [comment:node:author],
 
 Du har fået en kommentar på: "[comment:node:title]"
 
@@ -61,25 +77,45 @@ function ktc_netvaerk_comment_notify_settings() {
     '#type' => 'textfield',
     '#title' => t('Emne'),
     '#return_value' => 1,
-    '#token_types' => array('comment', 'user'),
+    '#token_types' => array('comment', 'user', 'node'),
     '#default_value' => variable_get('ktc_netvaerk_comment_notify_default_subject', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT),
     '#element_validate' => array('token_element_validate'),
   );
 
   $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_notify_default_mailtext'] = array(
     '#type' => 'textarea',
-    '#title' =>  t('Besked'),
+    '#title' =>  t('Default mail text for sending out the notifications to network members'),
     '#default_value' => variable_get('ktc_netvaerk_comment_notify_default_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT),
     '#return_value' => 1,
     '#cols' => 80,
     '#rows' => 15,
-    '#token_types' => array('comment', 'user'),
+    '#token_types' => array('comment', 'user', 'node'),
+    '#element_validate' => array('token_element_validate'),
+  );
+  ;
+  $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_notify_author_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Emne'),
+    '#return_value' => 1,
+    '#token_types' => array('comment', 'user', 'node'),
+    '#default_value' => variable_get('ktc_netvaerk_comment_notify_author_subject', KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_SUBJECT),
+    '#element_validate' => array('token_element_validate'),
+  );
+
+  $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_author_default_mailtext'] = array(
+    '#type' => 'textarea',
+    '#title' =>  t('Default mail text for sending out the notifications to node authors'),
+    '#default_value' => variable_get('ktc_netvaerk_comment_notify_authort_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_MAILTEXT),
+    '#return_value' => 1,
+    '#cols' => 80,
+    '#rows' => 15,
+    '#token_types' => array('comment', 'user', 'node'),
     '#element_validate' => array('token_element_validate'),
   );
 
   $form['ktc_netvaerk_comment_notify_settings']['token_help'] = array(
     '#theme' => 'token_tree',
-    '#token_types' => array('comment', 'user'),
+    '#token_types' => array('comment', 'user', 'node'),
   );
 
   return system_settings_form($form);
@@ -95,7 +131,7 @@ function ktc_netvaerk_comment_notify_comment_insert($comment) {
   }
   else {
     $user = user_load($node->uid);
-    ktc_netvaerk_comment_notify_send_mail($comment, $user);
+    ktc_netvaerk_comment_notify_send_mail('notify_author', $comment, $user, $node);
   }
 }
 
@@ -113,7 +149,7 @@ function ktc_netvaerk_comment_notify_send_notification_emails($comment) {
       if (!og_is_member('node', $group_id, 'user', $user))
         continue; //not send notification if user not goup member
 
-      ktc_netvaerk_comment_notify_send_mail($comment, $user);
+      ktc_netvaerk_comment_notify_send_mail('notify_default',  $comment, $user, $node);
     }
     db_insert('ktc_netvaerk_comment_notify')
         ->fields(array(
@@ -125,20 +161,28 @@ function ktc_netvaerk_comment_notify_send_notification_emails($comment) {
   }
 }
 
-function ktc_netvaerk_comment_notify_send_mail($comment, $user) {
-  $token_data = array('user' => $user, 'comment' => $comment);
+function ktc_netvaerk_comment_notify_send_mail($notification_type, $comment, $user, $node) {
+  $token_data = array('user' => $user, 'comment' => $comment, 'node' => $node);
   $to = $user->mail;
 
   // Testing.
   if ($test_mail = variable_get('ktc_test_mail_address', FALSE)) {
-    $to = 'juulia@bellcom.ee'; //$test_mail;
+    $to = $test_mail;
   }
   $language = $user->language;
 
   $params = array();
-  $params['subject'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_subject', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT), $token_data);
-  $params['body'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT), $token_data);
-  drupal_mail('ktc_netvaerk_comment_notify', 'notify_new', $to, $language, $params);
+  if ($notification_type  == 'notify_author') {
+    $params['subject'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_subject', KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_SUBJECT), $token_data);
+    $params['body'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_MAILTEXT), $token_data);
+
+  }
+  else {
+    $params['subject'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_subject', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT), $token_data);
+    $params['body'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT), $token_data);
+
+  }
+    drupal_mail('ktc_netvaerk_comment_notify', 'notify_new', $to, $language, $params);
   error_log('mail sent:' . $to);
 }
 
