@@ -81,11 +81,12 @@ function ktc_netvaerk_comment_notify_settings() {
     '#default_value' => variable_get('ktc_netvaerk_comment_notify_default_subject', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT),
     '#element_validate' => array('token_element_validate'),
   );
-
-  $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_notify_default_mailtext'] = array(
-    '#type' => 'textarea',
-    '#title' =>  t('Default mail text for sending out the notifications to network members'),
-    '#default_value' => variable_get('ktc_netvaerk_comment_notify_default_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT),
+    $mailtext = variable_get('ktc_netvaerk_comment_notify_default_mailtext', array('value' => KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT));
+    $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_notify_default_mailtext'] = array(
+    '#type'=>'text_format',
+    '#format'=>'filtered_html',
+    '#title' =>  t('Notifikation om ny kommentar i netværk'),
+    '#default_value' => $mailtext['value'],
     '#return_value' => 1,
     '#cols' => 80,
     '#rows' => 15,
@@ -102,10 +103,12 @@ function ktc_netvaerk_comment_notify_settings() {
     '#element_validate' => array('token_element_validate'),
   );
 
+  $mailtext = variable_get('ktc_netvaerk_comment_author_default_mailtext', array('value' => KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_MAILTEXT));
   $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_author_default_mailtext'] = array(
-    '#type' => 'textarea',
+    '#type'=>'text_format',
+    '#format'=>'filtered_html',
     '#title' =>  t('Default mail text for sending out the notifications to node authors'),
-    '#default_value' => variable_get('ktc_netvaerk_comment_notify_authort_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_MAILTEXT),
+    '#default_value' => $mailtext['value'],
     '#return_value' => 1,
     '#cols' => 80,
     '#rows' => 15,
@@ -173,13 +176,15 @@ function ktc_netvaerk_comment_notify_send_mail($notification_type, $comment, $us
 
   $params = array();
   if ($notification_type  == 'notify_author') {
-    $params['subject'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_subject', KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_SUBJECT), $token_data);
-    $params['body'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_MAILTEXT), $token_data);
+    $body = $mailtext['value'] = variable_get('ktc_netvaerk_comment_author_default_mailtext', array('value' => KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_MAILTEXT));
+    $params['subject'] = token_replace(variable_get('ktc_netvaerk_comment_notify_author_subject', KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_SUBJECT), $token_data);
+    $params['body'] = token_replace($body['value'], $token_data);
 
   }
   else {
+    $body = $mailtext['value'] = variable_get('ktc_netvaerk_comment_notify_default_mailtext', array('value' => KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT));
     $params['subject'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_subject', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_SUBJECT), $token_data);
-    $params['body'] = token_replace(variable_get('ktc_netvaerk_comment_notify_default_mailtext', KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT), $token_data);
+    $params['body'] = token_replace($body['value'], $token_data);
 
   }
     drupal_mail('ktc_netvaerk_comment_notify', 'notify_new', $to, $language, $params);
