@@ -399,7 +399,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 12,
+      'weight' => 8,
     ),
   );
 
@@ -713,7 +713,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 7,
     ),
   );
 
@@ -1008,7 +1008,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 10,
     ),
   );
 
@@ -1454,7 +1454,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 12,
     ),
   );
 
@@ -1558,7 +1558,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 11,
     ),
   );
 
@@ -1654,7 +1654,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 19,
+      'weight' => 14,
     ),
   );
 
@@ -1753,7 +1753,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 66,
+      'weight' => 1,
     ),
   );
 
@@ -1961,7 +1961,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 9,
     ),
   );
 
@@ -2960,7 +2960,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 17,
     ),
   );
 
@@ -3263,7 +3263,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 9,
+      'weight' => 4,
     ),
   );
 
@@ -3448,7 +3448,7 @@ function ktc_users_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_netvaerk_comment_notify',
-    'label' => 'Comments notifikationer',
+    'label' => 'Vælg netværk hvor du ønsker besked om nye kommentarer',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -3545,7 +3545,7 @@ function ktc_users_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_netvaerk_notifications',
-    'label' => 'Vælg notifikationer',
+    'label' => 'Vælg netværk hvor du ønsker besked om nyt indhold',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -3666,7 +3666,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 13,
     ),
   );
 
@@ -3769,7 +3769,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 6,
     ),
   );
 
@@ -4002,7 +4002,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 22,
+      'weight' => 16,
     ),
   );
 
@@ -4326,7 +4326,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 20,
+      'weight' => 15,
     ),
   );
 
@@ -4665,7 +4665,6 @@ function ktc_users_field_default_field_instances() {
   t('Brugertype');
   t('By');
   t('CRM UUID');
-  t('Comments notifikationer');
   t('Direkte telefon');
   t('Efternavn');
   t('Eksempel: http://www.linkedin.com/dinbruger');
@@ -4701,7 +4700,8 @@ function ktc_users_field_default_field_instances() {
   t('Typo3 uid(fe_users)');
   t('Uddannelser og kurser');
   t('Udpegninger i foreninger, udvalg og nævn');
-  t('Vælg notifikationer');
+  t('Vælg netværk hvor du ønsker besked om nye kommentarer');
+  t('Vælg netværk hvor du ønsker besked om nyt indhold');
   t('membership_ktc_category');
 
   return $field_instances;
