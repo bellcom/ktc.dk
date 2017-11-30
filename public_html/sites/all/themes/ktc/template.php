@@ -1208,3 +1208,59 @@ function _ktc_user_has_full_access_to_article() {
   }
   return FALSE;
 }
+
+/**
+ * Implements hook_theme().
+ */
+function ktc_theme($existing, $type, $theme, $path){
+  return array(
+    'user_profile_form' => array(
+      'render element' => 'form',
+    ),
+  );
+}
+
+/**
+ * Theme function for user_profile_form.
+ */
+function ktc_user_profile_form($vars) {
+  if (isset($vars['form']['additional_settings']['group_notifikationer']['group_notification_help'])) {
+    $notifications_help = &$vars['form']['additional_settings']['group_notifikationer']['group_notification_help'];
+
+    $header = array(t('Netværk'), t('Content'), t('Comments'));
+    $fields = array('field_netvaerk_notifications', 'field_netvaerk_comment_notify');
+    foreach (element_children($notifications_help[$fields[0]][LANGUAGE_NONE]) as $network) {
+      $row = array();
+      $row[] = $notifications_help[$fields[0]][LANGUAGE_NONE][$network]['#title'];
+      $notifications_help[$fields[1]][LANGUAGE_NONE][$network]['#states'] = array(
+        'disabled' => array(
+          ':input[name="' . $fields[0] . '[' . LANGUAGE_NONE . '][' . $network . ']"]' => array('unchecked' => TRUE),
+        ),
+      );
+
+      foreach ($fields as $field) {
+        $notifications_help[$field][LANGUAGE_NONE][$network]['#title_display'] = 'invisible';;
+        $row[] = array('data' => drupal_render($notifications_help[$field][LANGUAGE_NONE][$network]), 'class' => array('checkbox', 'checkbox-' . $field));
+      }
+      $rows[] = $row;
+    }
+    foreach ($fields as $field) {
+      $notifications_help[$field]['#printed'] = TRUE;
+    }
+
+    $notifications_help['user_notifications'] = array(
+      '#markup' => theme('table', array(
+        'header' => $header,
+        'rows' => $rows,
+        'attributes' => array(
+          'class' => array('network-notification'),
+        ),
+      )),
+      '#weight' => '66',
+    );
+  }
+
+  $form = $vars['form'];
+  $output = drupal_render_children($form);
+  return $output;
+}

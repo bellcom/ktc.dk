@@ -12277,6 +12277,21 @@ var getText = docElem.textContent ?
         }
     };
 
+    /**
+     * Shows checked and disabled checkboxes for inherited permissions.
+     */
+    Drupal.behaviors.networkNotification = {
+      attach: function (context) {
+        $('table.network-notification').once('network-notification', function () {
+          $('.checkbox-field_netvaerk_notifications input[type=checkbox]', this).on('click', function() {
+            if (!$(this).checked) {
+              $(this).parents('tr').find('.checkbox-field_netvaerk_comment_notify input[type=checkbox]').removeAttr('checked');
+            }
+          });
+        });
+      }
+    };
+
 })( jQuery );
 
 
