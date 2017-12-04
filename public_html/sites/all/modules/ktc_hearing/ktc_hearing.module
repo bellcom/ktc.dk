@@ -218,8 +218,7 @@ function ktc_hearing_form_log_submit($form, &$form_state) {
         . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
     } else {      
     $browser= _ktc_hearing_getBrowser();
-        error_log();
-   throw new Exception('HOOK_HEARING_FORM_SUBMIT_DUPLICATE: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
+    throw new Exception('HOOK_HEARING_FORM_SUBMIT_DUPLICATE: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
         . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
 
   }
