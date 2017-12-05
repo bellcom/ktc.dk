@@ -18,6 +18,7 @@ $query = db_select('users', 'u');
     if ($user_groups) {
     unset($account->field_netvaerk_comment_notify['und']);
     foreach ($user_groups['node'] as $nid){
+      if (in_array($account->uid, _ktc_netvaerk_notifications_get_users($nid)))
        $account->field_netvaerk_comment_notify['und'][]['target_id']=$nid;       
     }    
     user_save($account);
