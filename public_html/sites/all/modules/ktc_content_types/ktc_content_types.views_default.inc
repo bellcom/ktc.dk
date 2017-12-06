@@ -362,7 +362,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: Signup: Indholdselement */
+  /* Forbindelse: Signup: Node */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'signup_log';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
@@ -456,7 +456,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: Signup: Indholdselement */
+  /* Forbindelse: Signup: Node */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'signup_log';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
@@ -470,11 +470,10 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Svarfrist */
+  /* Felt: Indhold: Tilmeldingsfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
-  $handler->display->display_options['fields']['field_registration_deadline']['label'] = 'Tilmeldingsfrist';
   $handler->display->display_options['fields']['field_registration_deadline']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_registration_deadline']['element_class'] = 'large-text';
   $handler->display->display_options['fields']['field_registration_deadline']['element_label_type'] = 'strong';
@@ -573,7 +572,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
+  /* Forbindelse: OG membership: Group Node from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
@@ -925,6 +924,68 @@ function ktc_content_types_views_default_views() {
       'label' => 'Indhold: Nid',
     ),
   );
+
+  /* Display: Titel og hængelås */
+  $handler = $view->new_display('panel_pane', 'Titel og hængelås', 'panel_pane_11');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Nulstil paywall for denne artikel */
+  $handler->display->display_options['fields']['field_fri_for_alle']['id'] = 'field_fri_for_alle';
+  $handler->display->display_options['fields']['field_fri_for_alle']['table'] = 'field_data_field_fri_for_alle';
+  $handler->display->display_options['fields']['field_fri_for_alle']['field'] = 'field_fri_for_alle';
+  $handler->display->display_options['fields']['field_fri_for_alle']['label'] = '';
+  $handler->display->display_options['fields']['field_fri_for_alle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_fri_for_alle']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_fri_for_alle']['alter']['text'] = ' <span class="ktc-article-locked">&nbsp;</span>';
+  $handler->display->display_options['fields']['field_fri_for_alle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_fri_for_alle']['empty'] = ' <span class="ktc-article-locked">&nbsp;</span>';
+  $handler->display->display_options['fields']['field_fri_for_alle']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_fri_for_alle']['hide_alter_empty'] = FALSE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[field_fri_for_alle] [title]';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h1';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+
+  /* Display: Titel og åben hængelås */
+  $handler = $view->new_display('panel_pane', 'Titel og åben hængelås', 'panel_pane_12');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Nulstil paywall for denne artikel */
+  $handler->display->display_options['fields']['field_fri_for_alle']['id'] = 'field_fri_for_alle';
+  $handler->display->display_options['fields']['field_fri_for_alle']['table'] = 'field_data_field_fri_for_alle';
+  $handler->display->display_options['fields']['field_fri_for_alle']['field'] = 'field_fri_for_alle';
+  $handler->display->display_options['fields']['field_fri_for_alle']['label'] = '';
+  $handler->display->display_options['fields']['field_fri_for_alle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_fri_for_alle']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_fri_for_alle']['alter']['text'] = ' <span class="ktc-article-open">&nbsp;</span>';
+  $handler->display->display_options['fields']['field_fri_for_alle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_fri_for_alle']['empty'] = ' <span class="ktc-article-open">&nbsp;</span>';
+  $handler->display->display_options['fields']['field_fri_for_alle']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_fri_for_alle']['hide_alter_empty'] = FALSE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[field_fri_for_alle] [title]';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h1';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $translatables['ktc_full_node_field_displays'] = array(
     t('Master'),
     t('Logo'),
@@ -986,6 +1047,11 @@ function ktc_content_types_views_default_views() {
     t('Flere billeder - galleri'),
     t('View panes'),
     t('Logo og netværksnavn without group connection'),
+    t('Titel og hængelås'),
+    t(' <span class="ktc-article-locked">&nbsp;</span>'),
+    t('[field_fri_for_alle] [title]'),
+    t('Titel og åben hængelås'),
+    t(' <span class="ktc-article-open">&nbsp;</span>'),
   );
   $export['ktc_full_node_field_displays'] = $view;
 
