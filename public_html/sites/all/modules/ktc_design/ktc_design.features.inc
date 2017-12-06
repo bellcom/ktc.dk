@@ -92,17 +92,19 @@ function ktc_design_image_default_styles() {
     'name' => 'teaservisning',
     'label' => 'teaservisning',
     'effects' => array(
-      1 => array(
+      3 => array(
         'label' => 'Reuse EPSA Image Crop',
         'help' => 'Use the image crop selection from another image style',
         'effect callback' => 'epsacrop_crop_image_reuse',
         'form callback' => 'epsacrop_crop_image_reuse_form',
         'module' => 'epsacrop',
         'name' => 'epsacrop_crop_reuse',
-        'data' => array(),
+        'data' => array(
+          'jcrop_reuse' => 'indholdsside',
+        ),
         'weight' => 1,
       ),
-      2 => array(
+      4 => array(
         'label' => 'Skalér og beskær',
         'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
         'effect callback' => 'image_scale_and_crop_effect',

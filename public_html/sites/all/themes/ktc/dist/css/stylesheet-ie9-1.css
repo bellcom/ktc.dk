@@ -7450,6 +7450,24 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
   display: none;
 }
 
+.network-notification th {
+  text-align: center;
+}
+
+.network-notification th:first-child {
+  text-align: left;
+}
+
+.checkbox-field_netvaerk_notifications .form-item,
+.checkbox-field_netvaerk_comment_notify .form-item {
+  text-align: center;
+}
+
+.checkbox-field_netvaerk_notifications input[type="checkbox"],
+.checkbox-field_netvaerk_comment_notify input[type="checkbox"] {
+  float: none;
+}
+
 #edit-search-api-views-fulltext-wrapper {
   margin-top: 1.6em;
 }

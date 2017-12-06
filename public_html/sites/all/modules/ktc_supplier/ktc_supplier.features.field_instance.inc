@@ -62,6 +62,12 @@ function ktc_supplier_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
@@ -159,6 +165,12 @@ function ktc_supplier_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_adresse',
@@ -227,6 +239,12 @@ function ktc_supplier_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -305,6 +323,12 @@ function ktc_supplier_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_directe_telefon',
@@ -378,6 +402,12 @@ function ktc_supplier_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_e_mail',
@@ -446,6 +476,12 @@ function ktc_supplier_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -526,6 +562,12 @@ function ktc_supplier_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -641,6 +683,12 @@ function ktc_supplier_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'titles' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_link',
@@ -666,10 +714,7 @@ function ktc_supplier_field_default_field_instances() {
   // Exported field_instance: 'node-ktc_supplier-field_supplier_type'
   $field_instances['node-ktc_supplier-field_supplier_type'] = array(
     'bundle' => 'ktc_supplier',
-    'custom_add_another' => '',
-    'custom_remove' => '',
     'default_value' => NULL,
-    'default_value_label_token' => 0,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -712,6 +757,12 @@ function ktc_supplier_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaserfront' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'titles' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

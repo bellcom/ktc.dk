@@ -14315,6 +14315,48 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-arrangementstyper-field_ktc_arrangementtype_access'
+  $field_instances['taxonomy_term-arrangementstyper-field_ktc_arrangementtype_access'] = array(
+    'bundle' => 'arrangementstyper',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'default_value_label_token' => 0,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_ktc_arrangementtype_access',
+    'label' => 'Anonymous users access',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-emner_faste_-field_crm_uuid'
   $field_instances['taxonomy_term-emner_faste_-field_crm_uuid'] = array(
     'bundle' => 'emner_faste_',
@@ -14692,6 +14734,7 @@ Dette deaktiverer muligheden for at tilmelde sig via KTC.dk.',
   t('Angiv hvilken type din nyhed er');
   t('Angiv svarfrist for denne afstemning');
   t('Annoncør');
+  t('Anonymous users access');
   t('Antal pladser');
   t('Antal sider');
   t('Arrangementets dato');

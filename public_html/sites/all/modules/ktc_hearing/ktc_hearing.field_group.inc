@@ -53,7 +53,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Deltagere',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'og_group_ref',
       1 => 'field_attendees',
@@ -85,7 +85,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Besked til faggruppe',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_message',
     ),
@@ -112,7 +112,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Bilag',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_hearing_materials',
     ),
@@ -139,7 +139,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Emner',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_topics',
       1 => 'field_tags',
@@ -168,7 +168,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'Datoer og frister',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_attendee_deadlines',
       1 => 'field_enrollment_deadlines',
@@ -232,10 +232,11 @@ function ktc_hearing_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'body',
-      1 => 'field_titel_kort',
-      2 => 'title',
-      3 => 'group_indstillinger',
-      4 => 'group_officiel',
+      1 => 'field_status',
+      2 => 'field_titel_kort',
+      3 => 'title',
+      4 => 'group_indstillinger',
+      5 => 'group_officiel',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -263,16 +264,15 @@ function ktc_hearing_field_group_info() {
     'label' => 'Skjult',
     'weight' => '2',
     'children' => array(
-      0 => 'field_status',
-      1 => 'field_hearing_archived',
-      2 => 'field_titel_lang',
-      3 => 'field_typo3_uid',
-      4 => 'field_typo3_user_id',
-      5 => 'field_missing_files',
-      6 => 'field_os2web_base_field_hidlinks',
-      7 => 'group_content_access',
-      8 => 'metatags',
-      9 => 'path',
+      0 => 'field_hearing_archived',
+      1 => 'field_titel_lang',
+      2 => 'field_typo3_uid',
+      3 => 'field_typo3_user_id',
+      4 => 'field_missing_files',
+      5 => 'field_os2web_base_field_hidlinks',
+      6 => 'group_content_access',
+      7 => 'metatags',
+      8 => 'path',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -337,7 +337,7 @@ function ktc_hearing_field_group_info() {
   $field_group->parent_name = 'group_hearing_fields';
   $field_group->data = array(
     'label' => 'KL Høringssvar / Eksterne links',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_os2web_base_field_ext_link',
       1 => 'field_link_kl_hoeringssvar',

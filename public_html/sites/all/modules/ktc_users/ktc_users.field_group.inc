@@ -21,7 +21,7 @@ function ktc_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Skjul',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_all_comment_notify',
       1 => 'field_content_type_notify',
@@ -39,8 +39,9 @@ function ktc_users_field_group_info() {
       13 => 'field_membership_ktc_category',
       14 => 'ckeditor',
       15 => 'metatags',
-      16 => 'timezone',
-      17 => 'locale',
+      16 => 'mimemail',
+      17 => 'timezone',
+      18 => 'locale',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -187,6 +188,42 @@ function ktc_users_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_notification_help|user|user|form';
+  $field_group->group_name = 'group_notification_help';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_notifikationer';
+  $field_group->data = array(
+    'label' => 'Notifikationer fra netværk',
+    'weight' => '62',
+    'children' => array(
+      0 => 'field_netvaerk_notifications',
+      1 => 'field_netvaerk_comment_notify',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Notifikationer fra netværk',
+      'instance_settings' => array(
+        'required_fields' => 0,
+        'id' => '',
+        'classes' => 'group-notification-help field-group- well well-sm',
+        'description' => 'Herunder kan du vælge hvilke notifikationer du vil modtage fra de netværk du er medlem af. Du kan vælge at få notifikationer om nyt indhold (f.esk. diskussioner, arrangementer, dokumenter mm.) og du kan vælge at få en besked, når der er kommentarer til indhold i dine netværk. Kryds af i listen herunder.
+
+<br/>',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_notification_help|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_notifikationer|user|user|form';
   $field_group->group_name = 'group_notifikationer';
   $field_group->entity_type = 'user';
@@ -198,8 +235,7 @@ function ktc_users_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'field_nyhedsbrev_ktc_update',
-      1 => 'field_netvaerk_notifications',
-      2 => 'mimemail',
+      1 => 'group_notification_help',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

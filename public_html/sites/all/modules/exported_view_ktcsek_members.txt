@@ -26,71 +26,51 @@ $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
 $handler->display->display_options['exposed_form']['type'] = 'basic';
 $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
-$handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+$handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
 $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
 $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
 $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
-$handler->display->display_options['pager']['type'] = 'full';
-$handler->display->display_options['pager']['options']['items_per_page'] = '5000';
+$handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['pager']['options']['offset'] = '0';
-$handler->display->display_options['pager']['options']['id'] = '0';
-$handler->display->display_options['pager']['options']['quantity'] = '9';
-$handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
-$handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
-$handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
-$handler->display->display_options['pager']['options']['tags']['first'] = '« første';
-$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
-$handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
-$handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
 $handler->display->display_options['style_plugin'] = 'table';
 $handler->display->display_options['style_options']['columns'] = array(
   'title' => 'title',
   'field_netvaerkstype' => 'field_netvaerkstype',
   'created' => 'created',
-  'nid' => 'nid',
   'uid' => 'uid',
-  'created_1' => 'created_1',
+  'rendered_entity' => 'rendered_entity',
 );
 $handler->display->display_options['style_options']['default'] = '-1';
 $handler->display->display_options['style_options']['info'] = array(
   'title' => array(
-    'sortable' => 0,
+    'sortable' => 1,
     'default_sort_order' => 'asc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
   ),
   'field_netvaerkstype' => array(
-    'sortable' => 0,
+    'sortable' => 1,
     'default_sort_order' => 'asc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
   ),
   'created' => array(
-    'sortable' => 0,
-    'default_sort_order' => 'asc',
-    'align' => '',
-    'separator' => '',
-    'empty_column' => 0,
-  ),
-  'nid' => array(
-    'sortable' => 0,
+    'sortable' => 1,
     'default_sort_order' => 'asc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
   ),
   'uid' => array(
-    'sortable' => 0,
+    'sortable' => 1,
     'default_sort_order' => 'asc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
   ),
-  'created_1' => array(
-    'sortable' => 0,
-    'default_sort_order' => 'asc',
+  'rendered_entity' => array(
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
@@ -342,8 +322,8 @@ $handler->display->display_options['filters']['date_filter_1']['date_fields'] = 
   'node.created' => 'node.created',
 );
 
-/* Display: Page */
-$handler = $view->new_display('page', 'Page', 'page');
+/* Display: Indhold */
+$handler = $view->new_display('page', 'Indhold', 'page');
 $handler->display->display_options['defaults']['relationships'] = FALSE;
 /* Forbindelse: OG membership: OG membership from Node group */
 $handler->display->display_options['relationships']['og_membership_rel_group_1']['id'] = 'og_membership_rel_group_1';
@@ -372,13 +352,6 @@ $handler->display->display_options['fields']['created']['table'] = 'node';
 $handler->display->display_options['fields']['created']['field'] = 'created';
 $handler->display->display_options['fields']['created']['date_format'] = 'short';
 $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-/* Felt: COUNT(Indhold: Nid) */
-$handler->display->display_options['fields']['nid']['id'] = 'nid';
-$handler->display->display_options['fields']['nid']['table'] = 'node';
-$handler->display->display_options['fields']['nid']['field'] = 'nid';
-$handler->display->display_options['fields']['nid']['relationship'] = 'og_membership_related_node';
-$handler->display->display_options['fields']['nid']['group_type'] = 'count';
-$handler->display->display_options['fields']['nid']['label'] = 'Indhold';
 /* Felt: MAX(Indhold: Oprettelsesdato) */
 $handler->display->display_options['fields']['created_1']['id'] = 'created_1';
 $handler->display->display_options['fields']['created_1']['table'] = 'node';
@@ -399,12 +372,237 @@ $handler->display->display_options['fields']['type']['id'] = 'type';
 $handler->display->display_options['fields']['type']['table'] = 'node';
 $handler->display->display_options['fields']['type']['field'] = 'type';
 $handler->display->display_options['fields']['type']['relationship'] = 'og_membership_related_node';
-/* Felt: COUNT(Indhold: Type) */
-$handler->display->display_options['fields']['type_1']['id'] = 'type_1';
-$handler->display->display_options['fields']['type_1']['table'] = 'node';
-$handler->display->display_options['fields']['type_1']['field'] = 'type';
-$handler->display->display_options['fields']['type_1']['relationship'] = 'og_membership_related_node';
-$handler->display->display_options['fields']['type_1']['group_type'] = 'count';
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title_2']['id'] = 'title_2';
+$handler->display->display_options['fields']['title_2']['table'] = 'node';
+$handler->display->display_options['fields']['title_2']['field'] = 'title';
+$handler->display->display_options['fields']['title_2']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['title_2']['label'] = 'Indhold';
+$handler->display->display_options['fields']['title_2']['alter']['text'] = '[type] [title_2]';
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+$handler->display->display_options['fields']['title_1']['table'] = 'node';
+$handler->display->display_options['fields']['title_1']['field'] = 'title';
+$handler->display->display_options['fields']['title_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['title_1']['label'] = '';
+$handler->display->display_options['fields']['title_1']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['title_1']['alter']['text'] = '[title_2] ([type])';
+$handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filterkriterie: Indhold: Udgivet */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'group' => 'group',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filterkriterie: Indhold: Udgivet */
+$handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+$handler->display->display_options['filters']['status_1']['table'] = 'node';
+$handler->display->display_options['filters']['status_1']['field'] = 'status';
+$handler->display->display_options['filters']['status_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['status_1']['value'] = '1';
+$handler->display->display_options['filters']['status_1']['group'] = 1;
+/* Filterkriterie: Indhold: Netværkstype (field_netvaerkstype) */
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['id'] = 'field_netvaerkstype_tid';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['table'] = 'field_data_field_netvaerkstype';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['field'] = 'field_netvaerkstype_tid';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['group'] = 1;
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['operator_id'] = 'field_netvaerkstype_tid_op';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['label'] = 'Netværkstype';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['operator'] = 'field_netvaerkstype_tid_op';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['identifier'] = 'field_netvaerkstype_tid';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['vocabulary'] = 'netv_rkstype';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['hierarchy'] = 1;
+/* Filterkriterie: Felt: Regioner (field_regioner) */
+$handler->display->display_options['filters']['field_regioner_tid']['id'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['table'] = 'field_data_field_regioner';
+$handler->display->display_options['filters']['field_regioner_tid']['field'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['group'] = 1;
+$handler->display->display_options['filters']['field_regioner_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['operator_id'] = 'field_regioner_tid_op';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['label'] = 'Region';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['operator'] = 'field_regioner_tid_op';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['identifier'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['field_regioner_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_regioner_tid']['vocabulary'] = 'regioner';
+$handler->display->display_options['filters']['field_regioner_tid']['hierarchy'] = 1;
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter']['group'] = 1;
+$handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['label'] = 'Netværk';
+$handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'network';
+$handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter']['year_range'] = '2003:+1';
+$handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+  'node.created' => 'node.created',
+);
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter_1']['id'] = 'date_filter_1';
+$handler->display->display_options['filters']['date_filter_1']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter_1']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['date_filter_1']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter_1']['group'] = 1;
+$handler->display->display_options['filters']['date_filter_1']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter_1']['expose']['operator_id'] = 'date_filter_1_op';
+$handler->display->display_options['filters']['date_filter_1']['expose']['label'] = 'Indhold';
+$handler->display->display_options['filters']['date_filter_1']['expose']['operator'] = 'date_filter_1_op';
+$handler->display->display_options['filters']['date_filter_1']['expose']['identifier'] = 'indhold';
+$handler->display->display_options['filters']['date_filter_1']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter_1']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter_1']['default_date'] = 'today -3 months';
+$handler->display->display_options['filters']['date_filter_1']['default_to_date'] = 'today';
+$handler->display->display_options['filters']['date_filter_1']['year_range'] = '2003:+3';
+$handler->display->display_options['filters']['date_filter_1']['date_fields'] = array(
+  'node.created' => 'node.created',
+);
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+$handler->display->display_options['filters']['type_1']['table'] = 'node';
+$handler->display->display_options['filters']['type_1']['field'] = 'type';
+$handler->display->display_options['filters']['type_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['type_1']['value'] = array(
+  'meeting_doodle' => 'meeting_doodle',
+  'arrangement' => 'arrangement',
+  'forum_post' => 'forum_post',
+  'document' => 'document',
+  'hearing' => 'hearing',
+  'os2web_base_news' => 'os2web_base_news',
+);
+$handler->display->display_options['filters']['type_1']['group'] = 1;
 $handler->display->display_options['merge_rows'] = TRUE;
 $handler->display->display_options['field_config'] = array(
   'title' => array(
@@ -419,10 +617,6 @@ $handler->display->display_options['field_config'] = array(
     'merge_option' => 'first_value',
     'separator' => ', ',
   ),
-  'nid' => array(
-    'merge_option' => 'first_value',
-    'separator' => ', ',
-  ),
   'created_1' => array(
     'merge_option' => 'first_value',
     'separator' => ', ',
@@ -433,19 +627,30 @@ $handler->display->display_options['field_config'] = array(
   ),
   'type' => array(
     'merge_option' => 'merge_unique',
-    'separator' => ', ',
+    'separator' => '<br/>',
   ),
-  'type_1' => array(
+  'title_1' => array(
     'merge_option' => 'merge_unique',
+    'separator' => '<br/>',
+  ),
+  'title_2' => array(
+    'merge_option' => 'count_unique',
     'separator' => ', ',
   ),
 );
 $handler->display->display_options['path'] = 'statistik/network_overview';
+$handler->display->display_options['menu']['type'] = 'tab';
+$handler->display->display_options['menu']['title'] = 'Indhold';
+$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
+$handler->display->display_options['tab_options']['type'] = 'tab';
+$handler->display->display_options['tab_options']['weight'] = '0';
 
-/* Display: Page */
-$handler = $view->new_display('page', 'Page', 'page_1');
+/* Display: Medlemmer */
+$handler = $view->new_display('page', 'Medlemmer', 'page_1');
 $handler->display->display_options['defaults']['title'] = FALSE;
-$handler->display->display_options['title'] = 'KTCSEK: Netværks Overblik Medlemer';
+$handler->display->display_options['title'] = 'KTCSEK: Netværks Overblik Medlemmer';
 $handler->display->display_options['defaults']['pager'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'full';
 $handler->display->display_options['pager']['options']['items_per_page'] = '0';
@@ -691,47 +896,6 @@ $handler->display->display_options['filters']['date_filter_1']['date_fields'] = 
   'node.created' => 'node.created',
 );
 /* Filterkriterie: Bruger: Bruger ID */
-$handler->display->display_options['filters']['uid_raw']['id'] = 'uid_raw';
-$handler->display->display_options['filters']['uid_raw']['table'] = 'users';
-$handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
-$handler->display->display_options['filters']['uid_raw']['relationship'] = 'og_membership_related_user';
-$handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
-$handler->display->display_options['filters']['uid_raw']['value']['value'] = '0';
-$handler->display->display_options['filters']['uid_raw']['exposed'] = TRUE;
-$handler->display->display_options['filters']['uid_raw']['expose']['operator_id'] = 'uid_raw_op';
-$handler->display->display_options['filters']['uid_raw']['expose']['label'] = 'Bruger ID';
-$handler->display->display_options['filters']['uid_raw']['expose']['operator'] = 'uid_raw_op';
-$handler->display->display_options['filters']['uid_raw']['expose']['identifier'] = 'uid_raw';
-$handler->display->display_options['filters']['uid_raw']['expose']['remember_roles'] = array(
-  2 => '2',
-  1 => 0,
-  4 => 0,
-  6 => 0,
-  7 => 0,
-  8 => 0,
-  11 => 0,
-  12 => 0,
-  13 => 0,
-  17 => 0,
-  15 => 0,
-  16 => 0,
-  14 => 0,
-  18 => 0,
-  10 => 0,
-  9 => 0,
-  5 => 0,
-  3 => 0,
-  19 => 0,
-  20 => 0,
-  21 => 0,
-  22 => 0,
-  23 => 0,
-  24 => 0,
-  25 => 0,
-  26 => 0,
-  27 => 0,
-);
-/* Filterkriterie: Bruger: Bruger ID */
 $handler->display->display_options['filters']['uid_raw_1']['id'] = 'uid_raw_1';
 $handler->display->display_options['filters']['uid_raw_1']['table'] = 'users';
 $handler->display->display_options['filters']['uid_raw_1']['field'] = 'uid_raw';
@@ -766,61 +930,243 @@ $handler->display->display_options['field_config'] = array(
   ),
 );
 $handler->display->display_options['path'] = 'statistik/network_overview_members';
+$handler->display->display_options['menu']['type'] = 'tab';
+$handler->display->display_options['menu']['title'] = 'Medlemmer';
+$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
 
-/* Display: Side 2 */
-$handler = $view->new_display('page', 'Side 2', 'page_2');
+/* Display: Høringer */
+$handler = $view->new_display('page', 'Høringer', 'page_2');
 $handler->display->display_options['defaults']['title'] = FALSE;
-$handler->display->display_options['title'] = 'KTCSEK: Netværks Overblik Indhold 2';
+$handler->display->display_options['title'] = 'Høringsstatistik';
+$handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'none';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'table';
+$handler->display->display_options['style_options']['columns'] = array(
+  'name' => 'name',
+  'created' => 'created',
+  'field_hearing_type' => 'field_hearing_type',
+  'nid_1' => 'nid_1',
+  'title' => 'title',
+  'field_official_date' => 'field_official_date',
+  'field_official_responsedate' => 'field_official_responsedate',
+  'nid' => 'nid',
+  'field_responsible_foreman' => 'field_responsible_foreman',
+  'field_responsible_admin' => 'field_responsible_admin',
+  'field_attendee_deadlines' => 'field_attendee_deadlines',
+  'field_attendees' => 'field_attendees',
+  'og_group_ref' => 'og_group_ref',
+);
+$handler->display->display_options['style_options']['default'] = '-1';
+$handler->display->display_options['style_options']['info'] = array(
+  'name' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'created' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_hearing_type' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'nid_1' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'title' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_official_date' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_official_responsedate' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'nid' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_responsible_foreman' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_responsible_admin' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_attendee_deadlines' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_attendees' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'og_group_ref' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+);
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Forbindelse: Entity Reference: Refererende entity */
+$handler->display->display_options['relationships']['reverse_field_hearing_node_node']['id'] = 'reverse_field_hearing_node_node';
+$handler->display->display_options['relationships']['reverse_field_hearing_node_node']['table'] = 'node';
+$handler->display->display_options['relationships']['reverse_field_hearing_node_node']['field'] = 'reverse_field_hearing_node_node';
+/* Forbindelse: Indhold: Forfatter */
+$handler->display->display_options['relationships']['uid']['id'] = 'uid';
+$handler->display->display_options['relationships']['uid']['table'] = 'node';
+$handler->display->display_options['relationships']['uid']['field'] = 'uid';
 /* Forbindelse: OG membership: OG membership from Node */
 $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
 $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
 $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-$handler->display->display_options['relationships']['og_membership_rel']['required'] = TRUE;
-/* Forbindelse: OG membership: Group Node from OG membership */
-$handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
-$handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
-$handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
-$handler->display->display_options['relationships']['og_membership_related_node_group']['relationship'] = 'og_membership_rel';
-/* Forbindelse: OG membership: Node from OG membership */
-$handler->display->display_options['relationships']['og_membership_related_node']['id'] = 'og_membership_related_node';
-$handler->display->display_options['relationships']['og_membership_related_node']['table'] = 'og_membership';
-$handler->display->display_options['relationships']['og_membership_related_node']['field'] = 'og_membership_related_node';
-$handler->display->display_options['relationships']['og_membership_related_node']['relationship'] = 'og_membership_related_node_group';
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Felt: Indhold: Titel */
-$handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-$handler->display->display_options['fields']['title_1']['table'] = 'node';
-$handler->display->display_options['fields']['title_1']['field'] = 'title';
-$handler->display->display_options['fields']['title_1']['relationship'] = 'og_membership_related_node';
-$handler->display->display_options['fields']['title_1']['label'] = 'Netværk';
-/* Felt: Indhold: Titel */
-$handler->display->display_options['fields']['title']['id'] = 'title';
-$handler->display->display_options['fields']['title']['table'] = 'node';
-$handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-/* Felt: Indhold: Netværkstype */
-$handler->display->display_options['fields']['field_netvaerkstype']['id'] = 'field_netvaerkstype';
-$handler->display->display_options['fields']['field_netvaerkstype']['table'] = 'field_data_field_netvaerkstype';
-$handler->display->display_options['fields']['field_netvaerkstype']['field'] = 'field_netvaerkstype';
-$handler->display->display_options['fields']['field_netvaerkstype']['relationship'] = 'og_membership_related_node';
-$handler->display->display_options['fields']['field_netvaerkstype']['type'] = 'taxonomy_term_reference_plain';
+/* Felt: Bruger: Navn */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'users';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['relationship'] = 'uid';
+$handler->display->display_options['fields']['name']['label'] = 'Oprettet af';
+$handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+$handler->display->display_options['fields']['name']['format_username'] = FALSE;
 /* Felt: Indhold: Oprettelsesdato */
 $handler->display->display_options['fields']['created']['id'] = 'created';
 $handler->display->display_options['fields']['created']['table'] = 'node';
 $handler->display->display_options['fields']['created']['field'] = 'created';
 $handler->display->display_options['fields']['created']['date_format'] = 'short';
 $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-/* Felt: MAX(Indhold: Oprettelsesdato) */
-$handler->display->display_options['fields']['created_1']['id'] = 'created_1';
-$handler->display->display_options['fields']['created_1']['table'] = 'node';
-$handler->display->display_options['fields']['created_1']['field'] = 'created';
-$handler->display->display_options['fields']['created_1']['relationship'] = 'og_membership_related_node_group';
-$handler->display->display_options['fields']['created_1']['group_type'] = 'max';
-$handler->display->display_options['fields']['created_1']['label'] = 'Indhold fra';
-$handler->display->display_options['fields']['created_1']['date_format'] = 'short';
-$handler->display->display_options['fields']['created_1']['second_date_format'] = 'long';
+/* Felt: Indhold: Høringstype */
+$handler->display->display_options['fields']['field_hearing_type']['id'] = 'field_hearing_type';
+$handler->display->display_options['fields']['field_hearing_type']['table'] = 'field_data_field_hearing_type';
+$handler->display->display_options['fields']['field_hearing_type']['field'] = 'field_hearing_type';
+$handler->display->display_options['fields']['field_hearing_type']['type'] = 'taxonomy_term_reference_plain';
+/* Felt: Indhold: Nid */
+$handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+$handler->display->display_options['fields']['nid_1']['table'] = 'node';
+$handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+$handler->display->display_options['fields']['nid_1']['label'] = 'ID';
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Felt: Indhold: Officiel udsendelsesdato */
+$handler->display->display_options['fields']['field_official_date']['id'] = 'field_official_date';
+$handler->display->display_options['fields']['field_official_date']['table'] = 'field_data_field_official_date';
+$handler->display->display_options['fields']['field_official_date']['field'] = 'field_official_date';
+$handler->display->display_options['fields']['field_official_date']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Felt: Indhold: Officiel svardato */
+$handler->display->display_options['fields']['field_official_responsedate']['id'] = 'field_official_responsedate';
+$handler->display->display_options['fields']['field_official_responsedate']['table'] = 'field_data_field_official_responsedate';
+$handler->display->display_options['fields']['field_official_responsedate']['field'] = 'field_official_responsedate';
+$handler->display->display_options['fields']['field_official_responsedate']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Felt: Indhold: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_hearing_node_node';
+$handler->display->display_options['fields']['nid']['label'] = 'Svar';
+/* Felt: Indhold: Ansvarlig formand */
+$handler->display->display_options['fields']['field_responsible_foreman']['id'] = 'field_responsible_foreman';
+$handler->display->display_options['fields']['field_responsible_foreman']['table'] = 'field_data_field_responsible_foreman';
+$handler->display->display_options['fields']['field_responsible_foreman']['field'] = 'field_responsible_foreman';
+$handler->display->display_options['fields']['field_responsible_foreman']['settings'] = array(
+  'link' => 0,
+);
+/* Felt: Indhold: Ansvarlig tovholder */
+$handler->display->display_options['fields']['field_responsible_admin']['id'] = 'field_responsible_admin';
+$handler->display->display_options['fields']['field_responsible_admin']['table'] = 'field_data_field_responsible_admin';
+$handler->display->display_options['fields']['field_responsible_admin']['field'] = 'field_responsible_admin';
+$handler->display->display_options['fields']['field_responsible_admin']['settings'] = array(
+  'link' => 0,
+);
+/* Felt: Indhold: Deltagers frist */
+$handler->display->display_options['fields']['field_attendee_deadlines']['id'] = 'field_attendee_deadlines';
+$handler->display->display_options['fields']['field_attendee_deadlines']['table'] = 'field_data_field_attendee_deadlines';
+$handler->display->display_options['fields']['field_attendee_deadlines']['field'] = 'field_attendee_deadlines';
+$handler->display->display_options['fields']['field_attendee_deadlines']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Felt: Indhold: Deltagere */
+$handler->display->display_options['fields']['field_attendees']['id'] = 'field_attendees';
+$handler->display->display_options['fields']['field_attendees']['table'] = 'field_data_field_attendees';
+$handler->display->display_options['fields']['field_attendees']['field'] = 'field_attendees';
+$handler->display->display_options['fields']['field_attendees']['settings'] = array(
+  'link' => 0,
+);
+$handler->display->display_options['fields']['field_attendees']['delta_offset'] = '0';
+/* Felt: Indhold: Gruppe/Netværk */
+$handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
+$handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
+$handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
+$handler->display->display_options['fields']['og_group_ref']['settings'] = array(
+  'link' => 0,
+);
+$handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
 $handler->display->display_options['defaults']['sorts'] = FALSE;
 /* Sorteringskriterie: Indhold: Titel */
 $handler->display->display_options['sorts']['title']['id'] = 'title';
@@ -840,18 +1186,180 @@ $handler->display->display_options['filters']['status']['expose']['operator'] = 
 $handler->display->display_options['filters']['type']['id'] = 'type';
 $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
-$handler->display->display_options['filters']['type']['operator'] = 'not in';
+$handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_hearing_node_node';
 $handler->display->display_options['filters']['type']['value'] = array(
   'hearing_responses' => 'hearing_responses',
-  'ktc_hearings_notification' => 'ktc_hearings_notification',
-  'ktc_supplier' => 'ktc_supplier',
+);
+/* Filterkriterie: Indhold: Har ikke svaret (field_is_no_answer) */
+$handler->display->display_options['filters']['field_is_no_answer_value']['id'] = 'field_is_no_answer_value';
+$handler->display->display_options['filters']['field_is_no_answer_value']['table'] = 'field_data_field_is_no_answer';
+$handler->display->display_options['filters']['field_is_no_answer_value']['field'] = 'field_is_no_answer_value';
+$handler->display->display_options['filters']['field_is_no_answer_value']['relationship'] = 'reverse_field_hearing_node_node';
+$handler->display->display_options['filters']['field_is_no_answer_value']['operator'] = 'not';
+$handler->display->display_options['filters']['field_is_no_answer_value']['value'] = array(
+  0 => '0',
+);
+/* Filterkriterie: Indhold: Endeligt svar (field_is_final) */
+$handler->display->display_options['filters']['field_is_final_value']['id'] = 'field_is_final_value';
+$handler->display->display_options['filters']['field_is_final_value']['table'] = 'field_data_field_is_final';
+$handler->display->display_options['filters']['field_is_final_value']['field'] = 'field_is_final_value';
+$handler->display->display_options['filters']['field_is_final_value']['relationship'] = 'reverse_field_hearing_node_node';
+$handler->display->display_options['filters']['field_is_final_value']['operator'] = 'not';
+$handler->display->display_options['filters']['field_is_final_value']['value'] = array(
+  1 => '1',
+);
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['label'] = 'Dato';
+$handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter']['default_date'] = 'today -12 months';
+$handler->display->display_options['filters']['date_filter']['default_to_date'] = 'today';
+$handler->display->display_options['filters']['date_filter']['year_range'] = '-8:+3';
+$handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+  'node.changed' => 'node.changed',
+  'node.created' => 'node.created',
+);
+$handler->display->display_options['merge_rows'] = TRUE;
+$handler->display->display_options['field_config'] = array(
+  'name' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'created' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'field_hearing_type' => array(
+    'merge_option' => 'first_value',
+    'separator' => ', ',
+  ),
+  'nid_1' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'title' => array(
+    'merge_option' => 'filter',
+    'separator' => ', ',
+  ),
+  'field_official_date' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'field_official_responsedate' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'nid' => array(
+    'merge_option' => 'count_unique',
+    'separator' => ', ',
+  ),
+  'field_responsible_foreman' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'field_responsible_admin' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'field_attendee_deadlines' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'field_attendees' => array(
+    'merge_option' => 'merge',
+    'separator' => '<br/>',
+  ),
+  'og_group_ref' => array(
+    'merge_option' => 'merge',
+    'separator' => '<br/>',
+  ),
+);
+$handler->display->display_options['path'] = 'statistik/network_overview_hearings';
+
+/* Display: Bilag 4 */
+$handler = $view->new_display('attachment', 'Bilag 4', 'attachment_4');
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '0';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['title']['label'] = 'Indhold';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Felt: Indhold: Forfatter uid */
+$handler->display->display_options['fields']['uid']['id'] = 'uid';
+$handler->display->display_options['fields']['uid']['table'] = 'node';
+$handler->display->display_options['fields']['uid']['field'] = 'uid';
+$handler->display->display_options['fields']['uid']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['uid']['label'] = 'Forfattere';
+$handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+$handler->display->display_options['fields']['title_1']['table'] = 'node';
+$handler->display->display_options['fields']['title_1']['field'] = 'title';
+$handler->display->display_options['fields']['title_1']['label'] = 'Netværk';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filterkriterie: Indhold: Udgivet */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
   'group' => 'group',
-  'panel' => 'panel',
-  'product' => 'product',
-  'page' => 'page',
-  'magazine' => 'magazine',
-  'webform' => 'webform',
-  'intern_side' => 'intern_side',
 );
 /* Filterkriterie: Indhold: Netværkstype (field_netvaerkstype) */
 $handler->display->display_options['filters']['field_netvaerkstype_tid']['id'] = 'field_netvaerkstype_tid';
@@ -985,7 +1493,6 @@ $handler->display->display_options['filters']['date_filter_1']['table'] = 'node'
 $handler->display->display_options['filters']['date_filter_1']['field'] = 'date_filter';
 $handler->display->display_options['filters']['date_filter_1']['relationship'] = 'og_membership_related_node';
 $handler->display->display_options['filters']['date_filter_1']['operator'] = 'between';
-$handler->display->display_options['filters']['date_filter_1']['value']['min'] = '2014-01-01';
 $handler->display->display_options['filters']['date_filter_1']['exposed'] = TRUE;
 $handler->display->display_options['filters']['date_filter_1']['expose']['operator_id'] = 'date_filter_1_op';
 $handler->display->display_options['filters']['date_filter_1']['expose']['label'] = 'Dato (indhold)';
@@ -1021,45 +1528,29 @@ $handler->display->display_options['filters']['date_filter_1']['expose']['rememb
   27 => 0,
 );
 $handler->display->display_options['filters']['date_filter_1']['form_type'] = 'date_popup';
-$handler->display->display_options['filters']['date_filter_1']['default_to_date'] = 'now';
+$handler->display->display_options['filters']['date_filter_1']['default_date'] = 'today -3 months';
+$handler->display->display_options['filters']['date_filter_1']['default_to_date'] = 'today';
+$handler->display->display_options['filters']['date_filter_1']['year_range'] = '2003:+3';
 $handler->display->display_options['filters']['date_filter_1']['date_fields'] = array(
   'node.created' => 'node.created',
 );
-$handler->display->display_options['path'] = 'statistik/network_overview_content';
-
-/* Display: Bilag 4 */
-$handler = $view->new_display('attachment', 'Bilag 4', 'attachment_4');
-$handler->display->display_options['pager']['type'] = 'some';
-$handler->display->display_options['pager']['options']['items_per_page'] = '0';
-$handler->display->display_options['pager']['options']['offset'] = '0';
-$handler->display->display_options['defaults']['style_plugin'] = FALSE;
-$handler->display->display_options['style_plugin'] = 'default';
-$handler->display->display_options['defaults']['style_options'] = FALSE;
-$handler->display->display_options['defaults']['row_plugin'] = FALSE;
-$handler->display->display_options['row_plugin'] = 'fields';
-$handler->display->display_options['defaults']['row_options'] = FALSE;
-$handler->display->display_options['defaults']['fields'] = FALSE;
-/* Felt: Indhold: Titel */
-$handler->display->display_options['fields']['title']['id'] = 'title';
-$handler->display->display_options['fields']['title']['table'] = 'node';
-$handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node';
-$handler->display->display_options['fields']['title']['label'] = 'Indhold';
-$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-/* Felt: Indhold: Forfatter uid */
-$handler->display->display_options['fields']['uid']['id'] = 'uid';
-$handler->display->display_options['fields']['uid']['table'] = 'node';
-$handler->display->display_options['fields']['uid']['field'] = 'uid';
-$handler->display->display_options['fields']['uid']['relationship'] = 'og_membership_related_node';
-$handler->display->display_options['fields']['uid']['label'] = 'Forfattere';
-$handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-/* Felt: Indhold: Titel */
-$handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-$handler->display->display_options['fields']['title_1']['table'] = 'node';
-$handler->display->display_options['fields']['title_1']['field'] = 'title';
-$handler->display->display_options['fields']['title_1']['label'] = 'Netværk';
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+$handler->display->display_options['filters']['type_1']['table'] = 'node';
+$handler->display->display_options['filters']['type_1']['field'] = 'type';
+$handler->display->display_options['filters']['type_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['type_1']['operator'] = 'not in';
+$handler->display->display_options['filters']['type_1']['value'] = array(
+  'artikler' => 'artikler',
+  'hearing_responses' => 'hearing_responses',
+  'ktc_hearings_notification' => 'ktc_hearings_notification',
+  'group' => 'group',
+  'panel' => 'panel',
+  'product' => 'product',
+  'page' => 'page',
+  'magazine' => 'magazine',
+  'intern_side' => 'intern_side',
+);
 $handler->display->display_options['merge_rows'] = TRUE;
 $handler->display->display_options['field_config'] = array(
   'title' => array(
@@ -1078,26 +1569,1317 @@ $handler->display->display_options['field_config'] = array(
 $handler->display->display_options['displays'] = array(
   'page' => 'page',
   'page_1' => 'page_1',
-  'page_2' => 'page_2',
   'default' => 0,
+  'page_2' => 0,
+  'page_3' => 0,
 );
 $handler->display->display_options['inherit_exposed_filters'] = TRUE;
+
+/* Display: Bilag */
+$handler = $view->new_display('attachment', 'Bilag', 'attachment_1');
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '5000';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'table';
+$handler->display->display_options['style_options']['columns'] = array(
+  'type' => 'type',
+  'type_1' => 'type_1',
+);
+$handler->display->display_options['style_options']['default'] = '-1';
+$handler->display->display_options['style_options']['info'] = array(
+  'type' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'type_1' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+);
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Felt: Indhold: Type */
+$handler->display->display_options['fields']['type']['id'] = 'type';
+$handler->display->display_options['fields']['type']['table'] = 'node';
+$handler->display->display_options['fields']['type']['field'] = 'type';
+$handler->display->display_options['fields']['type']['relationship'] = 'og_membership_related_node';
+/* Felt: COUNT(DISTINCT Indhold: Type) */
+$handler->display->display_options['fields']['type_1']['id'] = 'type_1';
+$handler->display->display_options['fields']['type_1']['table'] = 'node';
+$handler->display->display_options['fields']['type_1']['field'] = 'type';
+$handler->display->display_options['fields']['type_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['type_1']['group_type'] = 'count_distinct';
+$handler->display->display_options['fields']['type_1']['label'] = '';
+$handler->display->display_options['fields']['type_1']['element_label_colon'] = FALSE;
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Kontekstuelt filter: Indhold: Type */
+$handler->display->display_options['arguments']['type']['id'] = 'type';
+$handler->display->display_options['arguments']['type']['table'] = 'node';
+$handler->display->display_options['arguments']['type']['field'] = 'type';
+$handler->display->display_options['arguments']['type']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['arguments']['type']['default_action'] = 'summary';
+$handler->display->display_options['arguments']['type']['exception']['title'] = 'Alle';
+$handler->display->display_options['arguments']['type']['default_argument_type'] = 'fixed';
+$handler->display->display_options['arguments']['type']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['type']['summary']['format'] = 'unformatted_summary';
+$handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['arguments']['type']['specify_validation'] = TRUE;
+$handler->display->display_options['arguments']['type']['validate']['type'] = 'node';
+$handler->display->display_options['arguments']['type']['validate_options']['types'] = array(
+  'arrangement' => 'arrangement',
+  'document' => 'document',
+  'forum_post' => 'forum_post',
+  'os2web_base_news' => 'os2web_base_news',
+  'hearing' => 'hearing',
+);
+$handler->display->display_options['arguments']['type']['limit'] = '0';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filterkriterie: Indhold: Udgivet */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'group' => 'group',
+);
+/* Filterkriterie: Indhold: Netværkstype (field_netvaerkstype) */
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['id'] = 'field_netvaerkstype_tid';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['table'] = 'field_data_field_netvaerkstype';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['field'] = 'field_netvaerkstype_tid';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['operator_id'] = 'field_netvaerkstype_tid_op';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['label'] = 'Netværkstype';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['operator'] = 'field_netvaerkstype_tid_op';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['identifier'] = 'field_netvaerkstype_tid';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['vocabulary'] = 'netv_rkstype';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['hierarchy'] = 1;
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['label'] = 'Netværksoprettelse';
+$handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter']['year_range'] = '-10:+1';
+$handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+  'node.created' => 'node.created',
+);
+/* Filterkriterie: Felt: Regioner (field_regioner) */
+$handler->display->display_options['filters']['field_regioner_tid']['id'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['table'] = 'field_data_field_regioner';
+$handler->display->display_options['filters']['field_regioner_tid']['field'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['operator_id'] = 'field_regioner_tid_op';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['label'] = 'Region';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['operator'] = 'field_regioner_tid_op';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['identifier'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['field_regioner_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_regioner_tid']['vocabulary'] = 'regioner';
+$handler->display->display_options['filters']['field_regioner_tid']['hierarchy'] = 1;
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter_1']['id'] = 'date_filter_1';
+$handler->display->display_options['filters']['date_filter_1']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter_1']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['date_filter_1']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter_1']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter_1']['expose']['operator_id'] = 'date_filter_1_op';
+$handler->display->display_options['filters']['date_filter_1']['expose']['label'] = 'Dato (indhold)';
+$handler->display->display_options['filters']['date_filter_1']['expose']['operator'] = 'date_filter_1_op';
+$handler->display->display_options['filters']['date_filter_1']['expose']['identifier'] = 'date_filter_1';
+$handler->display->display_options['filters']['date_filter_1']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter_1']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter_1']['default_date'] = 'today -3 months';
+$handler->display->display_options['filters']['date_filter_1']['default_to_date'] = 'today';
+$handler->display->display_options['filters']['date_filter_1']['year_range'] = '2003:+3';
+$handler->display->display_options['filters']['date_filter_1']['date_fields'] = array(
+  'node.created' => 'node.created',
+);
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+$handler->display->display_options['filters']['type_1']['table'] = 'node';
+$handler->display->display_options['filters']['type_1']['field'] = 'type';
+$handler->display->display_options['filters']['type_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['type_1']['operator'] = 'not in';
+$handler->display->display_options['filters']['type_1']['value'] = array(
+  'hearing_responses' => 'hearing_responses',
+  'group' => 'group',
+);
+$handler->display->display_options['field_config'] = array(
+  'type' => array(
+    'merge_option' => 'filter',
+    'separator' => ', ',
+  ),
+  'type_1' => array(
+    'merge_option' => 'count',
+    'separator' => ', ',
+  ),
+);
+$handler->display->display_options['displays'] = array(
+  'page' => 'page',
+  'page_1' => 'page_1',
+  'default' => 0,
+  'page_2' => 0,
+  'page_3' => 0,
+);
+$handler->display->display_options['inherit_exposed_filters'] = TRUE;
+
+/* Display: Data export */
+$handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+$handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'none';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['style_plugin'] = 'views_data_export_xls';
+$handler->display->display_options['style_options']['attach_text'] = 'Hent hele listen som XLS uden filtre';
+$handler->display->display_options['style_options']['provide_file'] = 1;
+$handler->display->display_options['style_options']['filename'] = '%view-%display.xls';
+$handler->display->display_options['style_options']['parent_sort'] = 0;
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Forbindelse: OG membership: OG membership from Node group */
+$handler->display->display_options['relationships']['og_membership_rel_group_1']['id'] = 'og_membership_rel_group_1';
+$handler->display->display_options['relationships']['og_membership_rel_group_1']['table'] = 'node';
+$handler->display->display_options['relationships']['og_membership_rel_group_1']['field'] = 'og_membership_rel_group';
+/* Forbindelse: OG membership: Node from OG membership */
+$handler->display->display_options['relationships']['og_membership_related_node']['id'] = 'og_membership_related_node';
+$handler->display->display_options['relationships']['og_membership_related_node']['table'] = 'og_membership';
+$handler->display->display_options['relationships']['og_membership_related_node']['field'] = 'og_membership_related_node';
+$handler->display->display_options['relationships']['og_membership_related_node']['relationship'] = 'og_membership_rel_group_1';
+/* Forbindelse: OG membership: Bruger from OG membership */
+$handler->display->display_options['relationships']['og_membership_related_user']['id'] = 'og_membership_related_user';
+$handler->display->display_options['relationships']['og_membership_related_user']['table'] = 'og_membership';
+$handler->display->display_options['relationships']['og_membership_related_user']['field'] = 'og_membership_related_user';
+$handler->display->display_options['relationships']['og_membership_related_user']['relationship'] = 'og_membership_rel_group_1';
+/* Forbindelse: Indhold: Forfatter */
+$handler->display->display_options['relationships']['uid']['id'] = 'uid';
+$handler->display->display_options['relationships']['uid']['table'] = 'node';
+$handler->display->display_options['relationships']['uid']['field'] = 'uid';
+$handler->display->display_options['relationships']['uid']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Felt: Indhold: Gruppe/Netværk */
+$handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
+$handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
+$handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
+$handler->display->display_options['fields']['og_group_ref']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['og_group_ref']['settings'] = array(
+  'link' => 0,
+);
+$handler->display->display_options['fields']['og_group_ref']['group_column'] = 'entity_id';
+$handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
+/* Felt: OG membership: Group ID */
+$handler->display->display_options['fields']['gid']['id'] = 'gid';
+$handler->display->display_options['fields']['gid']['table'] = 'og_membership';
+$handler->display->display_options['fields']['gid']['field'] = 'gid';
+$handler->display->display_options['fields']['gid']['relationship'] = 'og_membership_rel_group_1';
+$handler->display->display_options['fields']['gid']['separator'] = '';
+/* Felt: Indhold: Netværkstype */
+$handler->display->display_options['fields']['field_netvaerkstype']['id'] = 'field_netvaerkstype';
+$handler->display->display_options['fields']['field_netvaerkstype']['table'] = 'field_data_field_netvaerkstype';
+$handler->display->display_options['fields']['field_netvaerkstype']['field'] = 'field_netvaerkstype';
+$handler->display->display_options['fields']['field_netvaerkstype']['type'] = 'taxonomy_term_reference_plain';
+/* Felt: Indhold: Oprettelsesdato */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['label'] = 'Netværk oprettet';
+$handler->display->display_options['fields']['created']['date_format'] = 'short';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Felt: COUNT(Indhold: Nid) */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['nid']['group_type'] = 'count';
+$handler->display->display_options['fields']['nid']['label'] = 'Indhold';
+/* Felt: COUNT(Bruger: Uid) */
+$handler->display->display_options['fields']['uid']['id'] = 'uid';
+$handler->display->display_options['fields']['uid']['table'] = 'users';
+$handler->display->display_options['fields']['uid']['field'] = 'uid';
+$handler->display->display_options['fields']['uid']['relationship'] = 'og_membership_related_user';
+$handler->display->display_options['fields']['uid']['group_type'] = 'count';
+$handler->display->display_options['fields']['uid']['label'] = 'Medl.';
+/* Felt: MAX(Indhold: Oprettelsesdato) */
+$handler->display->display_options['fields']['created_1']['id'] = 'created_1';
+$handler->display->display_options['fields']['created_1']['table'] = 'node';
+$handler->display->display_options['fields']['created_1']['field'] = 'created';
+$handler->display->display_options['fields']['created_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['created_1']['group_type'] = 'max';
+$handler->display->display_options['fields']['created_1']['label'] = 'Indhold fra';
+$handler->display->display_options['fields']['created_1']['date_format'] = 'short';
+$handler->display->display_options['fields']['created_1']['second_date_format'] = 'long';
+/* Felt: Indhold: Kommentarantal */
+$handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+$handler->display->display_options['fields']['comment_count']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['comment_count']['label'] = 'Kommentarer';
+$handler->display->display_options['fields']['comment_count']['separator'] = '';
+/* Felt: Indhold: Tidspunkt for seneste kommentar */
+$handler->display->display_options['fields']['last_comment_timestamp']['id'] = 'last_comment_timestamp';
+$handler->display->display_options['fields']['last_comment_timestamp']['table'] = 'node_comment_statistics';
+$handler->display->display_options['fields']['last_comment_timestamp']['field'] = 'last_comment_timestamp';
+$handler->display->display_options['fields']['last_comment_timestamp']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['last_comment_timestamp']['date_format'] = 'short';
+$handler->display->display_options['fields']['last_comment_timestamp']['second_date_format'] = 'long';
+/* Felt: Bruger: Navn */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'users';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['relationship'] = 'uid';
+$handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filterkriterie: Indhold: Udgivet */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'group' => 'group',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filterkriterie: Felt: Regioner (field_regioner) */
+$handler->display->display_options['filters']['field_regioner_tid']['id'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['table'] = 'field_data_field_regioner';
+$handler->display->display_options['filters']['field_regioner_tid']['field'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['operator_id'] = 'field_regioner_tid_op';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['label'] = 'Regioner (field_regioner)';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['operator'] = 'field_regioner_tid_op';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['identifier'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['field_regioner_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_regioner_tid']['vocabulary'] = 'regioner';
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['label'] = 'Netværk';
+$handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter']['year_range'] = '2003:+3';
+$handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+  'node.created' => 'node.created',
+);
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter_1']['id'] = 'date_filter_1';
+$handler->display->display_options['filters']['date_filter_1']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter_1']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['date_filter_1']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter_1']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter_1']['expose']['operator_id'] = 'date_filter_1_op';
+$handler->display->display_options['filters']['date_filter_1']['expose']['label'] = 'Dato (node)';
+$handler->display->display_options['filters']['date_filter_1']['expose']['operator'] = 'date_filter_1_op';
+$handler->display->display_options['filters']['date_filter_1']['expose']['identifier'] = 'date_filter_1';
+$handler->display->display_options['filters']['date_filter_1']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter_1']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter_1']['default_date'] = 'today -3 months';
+$handler->display->display_options['filters']['date_filter_1']['default_to_date'] = 'today';
+$handler->display->display_options['filters']['date_filter_1']['year_range'] = '2003:+3';
+$handler->display->display_options['filters']['date_filter_1']['date_fields'] = array(
+  'node.created' => 'node.created',
+);
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+$handler->display->display_options['filters']['type_1']['table'] = 'node';
+$handler->display->display_options['filters']['type_1']['field'] = 'type';
+$handler->display->display_options['filters']['type_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['type_1']['value'] = array(
+  'meeting_doodle' => 'meeting_doodle',
+  'arrangement' => 'arrangement',
+  'forum_post' => 'forum_post',
+  'document' => 'document',
+  'hearing' => 'hearing',
+  'os2web_base_news' => 'os2web_base_news',
+);
+$handler->display->display_options['filters']['type_1']['exposed'] = TRUE;
+$handler->display->display_options['filters']['type_1']['expose']['operator_id'] = 'type_1_op';
+$handler->display->display_options['filters']['type_1']['expose']['label'] = 'Type';
+$handler->display->display_options['filters']['type_1']['expose']['operator'] = 'type_1_op';
+$handler->display->display_options['filters']['type_1']['expose']['identifier'] = 'type_1';
+$handler->display->display_options['filters']['type_1']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['path'] = 'statistik/network_overview_export';
+$handler->display->display_options['displays'] = array(
+  'page' => 'page',
+  'default' => 0,
+  'page_1' => 0,
+  'page_2' => 0,
+);
+
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page_3');
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'views_crosstab_table';
+$handler->display->display_options['style_options']['columns'] = array(
+  'title' => 'title',
+  'field_netvaerkstype' => 'field_netvaerkstype',
+  'type' => 'type',
+  'nid' => 'nid',
+);
+$handler->display->display_options['style_options']['default'] = '-1';
+$handler->display->display_options['style_options']['info'] = array(
+  'title' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => ', ',
+    'empty_column' => 0,
+  ),
+  'field_netvaerkstype' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'type' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'nid' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+);
+$handler->display->display_options['style_options']['sticky'] = TRUE;
+$handler->display->display_options['style_options']['crosstab_rows'] = 'title';
+$handler->display->display_options['style_options']['crosstab_columns'] = 'type';
+$handler->display->display_options['style_options']['crosstab_data'] = 'nid';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Forbindelse: OG membership: OG membership from Node group */
+$handler->display->display_options['relationships']['og_membership_rel_group_1']['id'] = 'og_membership_rel_group_1';
+$handler->display->display_options['relationships']['og_membership_rel_group_1']['table'] = 'node';
+$handler->display->display_options['relationships']['og_membership_rel_group_1']['field'] = 'og_membership_rel_group';
+/* Forbindelse: OG membership: Node from OG membership */
+$handler->display->display_options['relationships']['og_membership_related_node']['id'] = 'og_membership_related_node';
+$handler->display->display_options['relationships']['og_membership_related_node']['table'] = 'og_membership';
+$handler->display->display_options['relationships']['og_membership_related_node']['field'] = 'og_membership_related_node';
+$handler->display->display_options['relationships']['og_membership_related_node']['relationship'] = 'og_membership_rel_group_1';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Felt: Indhold: Netværkstype */
+$handler->display->display_options['fields']['field_netvaerkstype']['id'] = 'field_netvaerkstype';
+$handler->display->display_options['fields']['field_netvaerkstype']['table'] = 'field_data_field_netvaerkstype';
+$handler->display->display_options['fields']['field_netvaerkstype']['field'] = 'field_netvaerkstype';
+$handler->display->display_options['fields']['field_netvaerkstype']['type'] = 'taxonomy_term_reference_plain';
+/* Felt: Indhold: Type */
+$handler->display->display_options['fields']['type']['id'] = 'type';
+$handler->display->display_options['fields']['type']['table'] = 'node';
+$handler->display->display_options['fields']['type']['field'] = 'type';
+$handler->display->display_options['fields']['type']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['fields']['type']['machine_name'] = TRUE;
+/* Felt: Indhold: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filterkriterie: Indhold: Udgivet */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'group' => 'group',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filterkriterie: Indhold: Udgivet */
+$handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+$handler->display->display_options['filters']['status_1']['table'] = 'node';
+$handler->display->display_options['filters']['status_1']['field'] = 'status';
+$handler->display->display_options['filters']['status_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['status_1']['value'] = '1';
+$handler->display->display_options['filters']['status_1']['group'] = 1;
+/* Filterkriterie: Indhold: Netværkstype (field_netvaerkstype) */
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['id'] = 'field_netvaerkstype_tid';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['table'] = 'field_data_field_netvaerkstype';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['field'] = 'field_netvaerkstype_tid';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['group'] = 1;
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['operator_id'] = 'field_netvaerkstype_tid_op';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['label'] = 'Netværkstype';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['operator'] = 'field_netvaerkstype_tid_op';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['identifier'] = 'field_netvaerkstype_tid';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['vocabulary'] = 'netv_rkstype';
+$handler->display->display_options['filters']['field_netvaerkstype_tid']['hierarchy'] = 1;
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter']['group'] = 1;
+$handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['label'] = 'Netværksoprettelse';
+$handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter']['year_range'] = '-10:+1';
+$handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+  'node.created' => 'node.created',
+);
+/* Filterkriterie: Felt: Regioner (field_regioner) */
+$handler->display->display_options['filters']['field_regioner_tid']['id'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['table'] = 'field_data_field_regioner';
+$handler->display->display_options['filters']['field_regioner_tid']['field'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['group'] = 1;
+$handler->display->display_options['filters']['field_regioner_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['operator_id'] = 'field_regioner_tid_op';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['label'] = 'Region';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['operator'] = 'field_regioner_tid_op';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['identifier'] = 'field_regioner_tid';
+$handler->display->display_options['filters']['field_regioner_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['field_regioner_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_regioner_tid']['vocabulary'] = 'regioner';
+$handler->display->display_options['filters']['field_regioner_tid']['hierarchy'] = 1;
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter_1']['id'] = 'date_filter_1';
+$handler->display->display_options['filters']['date_filter_1']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter_1']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['date_filter_1']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter_1']['group'] = 1;
+$handler->display->display_options['filters']['date_filter_1']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter_1']['expose']['operator_id'] = 'date_filter_1_op';
+$handler->display->display_options['filters']['date_filter_1']['expose']['label'] = 'Dato (indhold)';
+$handler->display->display_options['filters']['date_filter_1']['expose']['operator'] = 'date_filter_1_op';
+$handler->display->display_options['filters']['date_filter_1']['expose']['identifier'] = 'date_filter_1';
+$handler->display->display_options['filters']['date_filter_1']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter_1']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter_1']['default_date'] = 'today -3 months';
+$handler->display->display_options['filters']['date_filter_1']['default_to_date'] = 'today';
+$handler->display->display_options['filters']['date_filter_1']['year_range'] = '-7:+3';
+$handler->display->display_options['filters']['date_filter_1']['date_fields'] = array(
+  'node.created' => 'node.created',
+);
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+$handler->display->display_options['filters']['type_1']['table'] = 'node';
+$handler->display->display_options['filters']['type_1']['field'] = 'type';
+$handler->display->display_options['filters']['type_1']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['filters']['type_1']['value'] = array(
+  'meeting_doodle' => 'meeting_doodle',
+  'arrangement' => 'arrangement',
+  'forum_post' => 'forum_post',
+  'document' => 'document',
+  'os2web_base_news' => 'os2web_base_news',
+);
+$handler->display->display_options['field_config'] = array(
+  'title' => array(
+    'merge_option' => 'filter',
+    'separator' => ', ',
+  ),
+  'field_netvaerkstype' => array(
+    'merge_option' => 'first_value',
+    'separator' => ', ',
+  ),
+  'field_regioner' => array(
+    'merge_option' => 'first_value',
+    'separator' => ', ',
+  ),
+  'type' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => '<br/>',
+  ),
+  'title_1' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => '<br/>',
+  ),
+);
+$handler->display->display_options['path'] = 'statistik/network_overview_pivot';
+
+/* Display: Høringer 2 */
+$handler = $view->new_display('page', 'Høringer 2', 'page_4');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Høringsstatistik';
+$handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'none';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'table';
+$handler->display->display_options['style_options']['columns'] = array(
+  'name' => 'name',
+  'created' => 'created',
+  'field_hearing_type' => 'field_hearing_type',
+  'nid_1' => 'nid_1',
+  'title' => 'title',
+  'field_official_date' => 'field_official_date',
+  'field_official_responsedate' => 'field_official_responsedate',
+  'nid' => 'nid',
+  'field_responsible_foreman' => 'field_responsible_foreman',
+  'field_responsible_admin' => 'field_responsible_admin',
+  'field_attendee_deadlines' => 'field_attendee_deadlines',
+  'field_attendees' => 'field_attendees',
+  'og_group_ref' => 'og_group_ref',
+);
+$handler->display->display_options['style_options']['default'] = '-1';
+$handler->display->display_options['style_options']['info'] = array(
+  'name' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'created' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_hearing_type' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'nid_1' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'title' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_official_date' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_official_responsedate' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'nid' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_responsible_foreman' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_responsible_admin' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_attendee_deadlines' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_attendees' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'og_group_ref' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+);
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Forbindelse: Entity Reference: Refererende entity */
+$handler->display->display_options['relationships']['reverse_field_hearing_node_node']['id'] = 'reverse_field_hearing_node_node';
+$handler->display->display_options['relationships']['reverse_field_hearing_node_node']['table'] = 'node';
+$handler->display->display_options['relationships']['reverse_field_hearing_node_node']['field'] = 'reverse_field_hearing_node_node';
+/* Forbindelse: Indhold: Forfatter */
+$handler->display->display_options['relationships']['uid']['id'] = 'uid';
+$handler->display->display_options['relationships']['uid']['table'] = 'node';
+$handler->display->display_options['relationships']['uid']['field'] = 'uid';
+/* Forbindelse: OG membership: OG membership from Node */
+$handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+$handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+$handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Felt: Bruger: Navn */
+$handler->display->display_options['fields']['name']['id'] = 'name';
+$handler->display->display_options['fields']['name']['table'] = 'users';
+$handler->display->display_options['fields']['name']['field'] = 'name';
+$handler->display->display_options['fields']['name']['relationship'] = 'uid';
+$handler->display->display_options['fields']['name']['label'] = 'Oprettet af';
+$handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+$handler->display->display_options['fields']['name']['format_username'] = FALSE;
+/* Felt: Indhold: Oprettelsesdato */
+$handler->display->display_options['fields']['created']['id'] = 'created';
+$handler->display->display_options['fields']['created']['table'] = 'node';
+$handler->display->display_options['fields']['created']['field'] = 'created';
+$handler->display->display_options['fields']['created']['date_format'] = 'short';
+$handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+/* Felt: Indhold: Høringstype */
+$handler->display->display_options['fields']['field_hearing_type']['id'] = 'field_hearing_type';
+$handler->display->display_options['fields']['field_hearing_type']['table'] = 'field_data_field_hearing_type';
+$handler->display->display_options['fields']['field_hearing_type']['field'] = 'field_hearing_type';
+$handler->display->display_options['fields']['field_hearing_type']['type'] = 'taxonomy_term_reference_plain';
+/* Felt: Indhold: Nid */
+$handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+$handler->display->display_options['fields']['nid_1']['table'] = 'node';
+$handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+$handler->display->display_options['fields']['nid_1']['label'] = 'ID';
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Felt: Indhold: Officiel udsendelsesdato */
+$handler->display->display_options['fields']['field_official_date']['id'] = 'field_official_date';
+$handler->display->display_options['fields']['field_official_date']['table'] = 'field_data_field_official_date';
+$handler->display->display_options['fields']['field_official_date']['field'] = 'field_official_date';
+$handler->display->display_options['fields']['field_official_date']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Felt: Indhold: Officiel svardato */
+$handler->display->display_options['fields']['field_official_responsedate']['id'] = 'field_official_responsedate';
+$handler->display->display_options['fields']['field_official_responsedate']['table'] = 'field_data_field_official_responsedate';
+$handler->display->display_options['fields']['field_official_responsedate']['field'] = 'field_official_responsedate';
+$handler->display->display_options['fields']['field_official_responsedate']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Felt: Indhold: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_hearing_node_node';
+$handler->display->display_options['fields']['nid']['label'] = 'Svar';
+/* Felt: Indhold: Ansvarlig formand */
+$handler->display->display_options['fields']['field_responsible_foreman']['id'] = 'field_responsible_foreman';
+$handler->display->display_options['fields']['field_responsible_foreman']['table'] = 'field_data_field_responsible_foreman';
+$handler->display->display_options['fields']['field_responsible_foreman']['field'] = 'field_responsible_foreman';
+$handler->display->display_options['fields']['field_responsible_foreman']['settings'] = array(
+  'link' => 0,
+);
+/* Felt: Indhold: Ansvarlig tovholder */
+$handler->display->display_options['fields']['field_responsible_admin']['id'] = 'field_responsible_admin';
+$handler->display->display_options['fields']['field_responsible_admin']['table'] = 'field_data_field_responsible_admin';
+$handler->display->display_options['fields']['field_responsible_admin']['field'] = 'field_responsible_admin';
+$handler->display->display_options['fields']['field_responsible_admin']['settings'] = array(
+  'link' => 0,
+);
+/* Felt: Indhold: Deltagers frist */
+$handler->display->display_options['fields']['field_attendee_deadlines']['id'] = 'field_attendee_deadlines';
+$handler->display->display_options['fields']['field_attendee_deadlines']['table'] = 'field_data_field_attendee_deadlines';
+$handler->display->display_options['fields']['field_attendee_deadlines']['field'] = 'field_attendee_deadlines';
+$handler->display->display_options['fields']['field_attendee_deadlines']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Felt: Indhold: Deltagere */
+$handler->display->display_options['fields']['field_attendees']['id'] = 'field_attendees';
+$handler->display->display_options['fields']['field_attendees']['table'] = 'field_data_field_attendees';
+$handler->display->display_options['fields']['field_attendees']['field'] = 'field_attendees';
+$handler->display->display_options['fields']['field_attendees']['settings'] = array(
+  'link' => 0,
+);
+$handler->display->display_options['fields']['field_attendees']['delta_offset'] = '0';
+/* Felt: Indhold: Gruppe/Netværk */
+$handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
+$handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
+$handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
+$handler->display->display_options['fields']['og_group_ref']['settings'] = array(
+  'link' => 0,
+);
+$handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sorteringskriterie: Indhold: Titel */
+$handler->display->display_options['sorts']['title']['id'] = 'title';
+$handler->display->display_options['sorts']['title']['table'] = 'node';
+$handler->display->display_options['sorts']['title']['field'] = 'title';
+$handler->display->display_options['sorts']['title']['relationship'] = 'og_membership_related_node';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filterkriterie: Indhold: Udgivet */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filterkriterie: Indhold: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_hearing_node_node';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'hearing_responses' => 'hearing_responses',
+);
+/* Filterkriterie: Indhold: Har ikke svaret (field_is_no_answer) */
+$handler->display->display_options['filters']['field_is_no_answer_value']['id'] = 'field_is_no_answer_value';
+$handler->display->display_options['filters']['field_is_no_answer_value']['table'] = 'field_data_field_is_no_answer';
+$handler->display->display_options['filters']['field_is_no_answer_value']['field'] = 'field_is_no_answer_value';
+$handler->display->display_options['filters']['field_is_no_answer_value']['relationship'] = 'reverse_field_hearing_node_node';
+$handler->display->display_options['filters']['field_is_no_answer_value']['operator'] = 'not';
+$handler->display->display_options['filters']['field_is_no_answer_value']['value'] = array(
+  0 => '0',
+);
+/* Filterkriterie: Indhold: Endeligt svar (field_is_final) */
+$handler->display->display_options['filters']['field_is_final_value']['id'] = 'field_is_final_value';
+$handler->display->display_options['filters']['field_is_final_value']['table'] = 'field_data_field_is_final';
+$handler->display->display_options['filters']['field_is_final_value']['field'] = 'field_is_final_value';
+$handler->display->display_options['filters']['field_is_final_value']['relationship'] = 'reverse_field_hearing_node_node';
+$handler->display->display_options['filters']['field_is_final_value']['operator'] = 'not';
+$handler->display->display_options['filters']['field_is_final_value']['value'] = array(
+  1 => '1',
+);
+/* Filterkriterie: Dato: Dato (node) */
+$handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['table'] = 'node';
+$handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['operator'] = 'between';
+$handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+$handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['label'] = 'Dato';
+$handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+$handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'date_filter';
+$handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+  11 => 0,
+  12 => 0,
+  13 => 0,
+  17 => 0,
+  15 => 0,
+  16 => 0,
+  14 => 0,
+  18 => 0,
+  10 => 0,
+  9 => 0,
+  5 => 0,
+  3 => 0,
+  19 => 0,
+  20 => 0,
+  21 => 0,
+  22 => 0,
+  23 => 0,
+  24 => 0,
+  25 => 0,
+  26 => 0,
+  27 => 0,
+);
+$handler->display->display_options['filters']['date_filter']['form_type'] = 'date_popup';
+$handler->display->display_options['filters']['date_filter']['default_date'] = 'today -12 months';
+$handler->display->display_options['filters']['date_filter']['default_to_date'] = 'today';
+$handler->display->display_options['filters']['date_filter']['year_range'] = '2003:+3';
+$handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+  'node.changed' => 'node.changed',
+  'node.created' => 'node.created',
+);
+$handler->display->display_options['merge_rows'] = TRUE;
+$handler->display->display_options['field_config'] = array(
+  'name' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'created' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'field_hearing_type' => array(
+    'merge_option' => 'first_value',
+    'separator' => ', ',
+  ),
+  'nid_1' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'title' => array(
+    'merge_option' => 'filter',
+    'separator' => ', ',
+  ),
+  'field_official_date' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'field_official_responsedate' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'nid' => array(
+    'merge_option' => 'count_unique',
+    'separator' => ', ',
+  ),
+  'field_responsible_foreman' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'field_responsible_admin' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'field_attendee_deadlines' => array(
+    'merge_option' => 'merge_unique',
+    'separator' => ', ',
+  ),
+  'field_attendees' => array(
+    'merge_option' => 'count',
+    'separator' => '<br/>',
+  ),
+  'og_group_ref' => array(
+    'merge_option' => 'filter',
+    'separator' => '<br/>',
+  ),
+);
+$handler->display->display_options['path'] = 'statistik/network_overview_hearinglist';
 $translatables['ktcsek_network_overview'] = array(
   t('Master'),
   t('KTCSEK: Netværks Overblik Indhold'),
   t('mere'),
   t('Udfør'),
-  t('Gendan'),
+  t('Reset'),
   t('Sortér efter'),
   t('Stigende'),
   t('Faldende'),
-  t('Antal elementer'),
-  t('- Alle -'),
-  t('Forskydning'),
-  t('« første'),
-  t('‹ forrige'),
-  t('næste ›'),
-  t('sidste »'),
   t('OG membership from node group'),
   t('node from OG membership'),
   t('user from OG membership'),
@@ -1110,16 +2892,50 @@ $translatables['ktcsek_network_overview'] = array(
   t('Netværksoprettelse'),
   t('Region'),
   t('Dato (indhold)'),
-  t('Page'),
   t('Type'),
-  t('KTCSEK: Netværks Overblik Medlemer'),
-  t('Navn'),
-  t('Bruger ID'),
-  t('Side 2'),
-  t('KTCSEK: Netværks Overblik Indhold 2'),
-  t('OG membership from node'),
-  t('Group node from OG membership'),
+  t('[type] [title_2]'),
+  t('[title_2] ([type])'),
   t('Netværk'),
+  t('Medlemmer'),
+  t('KTCSEK: Netværks Overblik Medlemmer'),
+  t('Antal elementer'),
+  t('- Alle -'),
+  t('Forskydning'),
+  t('« første'),
+  t('‹ forrige'),
+  t('næste ›'),
+  t('sidste »'),
+  t('Navn'),
+  t('Høringer'),
+  t('Høringsstatistik'),
+  t('Indhold refererer til Indhold fra field_hearing_node'),
+  t('forfatter'),
+  t('OG membership from node'),
+  t('Oprettet af'),
+  t('Høringstype'),
+  t('ID'),
+  t('Officiel udsendelsesdato'),
+  t('Officiel svardato'),
+  t('Svar'),
+  t('Ansvarlig formand'),
+  t('Ansvarlig tovholder'),
+  t('Deltagers frist'),
+  t('Deltagere'),
+  t('Gruppe/Netværk'),
+  t('Dato'),
   t('Bilag 4'),
   t('Forfattere'),
+  t('Bilag'),
+  t('Alle'),
+  t('Data export'),
+  t('Group ID'),
+  t('.'),
+  t('Netværk oprettet'),
+  t('Kommentarer'),
+  t('Tidspunkt for seneste kommentar'),
+  t('Regioner (field_regioner)'),
+  t('Dato (node)'),
+  t('Page'),
+  t('Nid'),
+  t('Høringer 2'),
 );

@@ -20,6 +20,10 @@
       $('#member-modal .js-form-massadd-user').click(function(){
         $('#form-massadd-user').toggleClass('hide');
       });
+      $('#member-modal .content .ktc-user-profile-photo-container a').click(function(event){
+         window.open($(this).attr('href'), "_blank");
+         return false;
+      });
 
       $('#form-div .close').click(function(){
         $('#form-div').addClass('hide');
@@ -27,6 +31,8 @@
       });
 
       $('#member-modal .content a').click(function(){
+        if ($(this).parent('div').hasClass('ktc-user-profile-photo-container'))
+          return false;
         var url = $(this).attr('href');
         var pieces = url.split('/');
 

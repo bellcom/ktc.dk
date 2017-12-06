@@ -1,0 +1,3 @@
+name = KTC Netværk commnet notify
+description = Notification handling when new comment is added to network content
+core = 7.x

@@ -12,3 +12,4 @@ features[features_api][] = api:2
 features[image][] = ktc_content_image
 features[image][] = square_thumbnail
 features[image][] = teaservisning
+mtime = 1481573495

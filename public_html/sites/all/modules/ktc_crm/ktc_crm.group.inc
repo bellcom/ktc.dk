@@ -89,6 +89,11 @@ function ktc_crm_og_membership_delete($og_membership) {
           unset($account->field_netvaerk_notifications['und'][$delta]);
         }
       }
+      foreach ($account->field_netvaerk_comment_notify['und'] as $delta => $value) {
+        if ($value['target_id'] == $og_membership->gid) {
+          unset($account->field_netvaerk_comment_notify['und'][$delta]);
+        }
+      }
       foreach ($account->og_user_node['und'] as $delta => $value) {
         if ($value['target_id'] == $og_membership->gid) {
           unset($account->og_user_node['und'][$delta]);
@@ -100,6 +105,14 @@ function ktc_crm_og_membership_delete($og_membership) {
       // Clear the static loading cache.
       entity_get_controller('user')->resetCache(array($account->uid));
     }
+  }
+}
+function ktc_crm_og_membership_presave ($og_membership){
+  if ($og_membership->is_new && $og_membership->entity_type == 'user' && !in_array($og_membership->etid, _ktc_netvaerk_notifications_get_users($og_membership->gid))) {
+    $account = user_load($og_membership->etid);
+    $account->field_netvaerk_notifications['und'][]['target_id']=$og_membership->gid;
+    $account->field_netvaerk_comment_notify['und'][]['target_id']=$og_membership->gid;
+    user_save($account);
   }
 }
 

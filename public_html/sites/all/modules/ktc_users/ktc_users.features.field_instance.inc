@@ -399,7 +399,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 12,
+      'weight' => 8,
     ),
   );
 
@@ -713,7 +713,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 7,
     ),
   );
 
@@ -904,7 +904,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1008,7 +1008,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 10,
     ),
   );
 
@@ -1454,7 +1454,7 @@ function ktc_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 12,
     ),
   );
 
@@ -1558,7 +1558,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 11,
     ),
   );
 
@@ -1654,7 +1654,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 19,
+      'weight' => 14,
     ),
   );
 
@@ -1753,7 +1753,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 13,
+      'weight' => 1,
     ),
   );
 
@@ -1961,7 +1961,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 9,
     ),
   );
 
@@ -2960,7 +2960,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 17,
     ),
   );
 
@@ -3263,7 +3263,7 @@ function ktc_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 9,
+      'weight' => 4,
     ),
   );
 
@@ -3372,13 +3372,112 @@ function ktc_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_netvaerk_notifications'
-  $field_instances['user-user-field_netvaerk_notifications'] = array(
+  // Exported field_instance: 'user-user-field_netvaerk_comment_notify'
+  $field_instances['user-user-field_netvaerk_comment_notify'] = array(
     'bundle' => 'user',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => 'Afkryds de netværk hvorfra du ønsker at modtage notifikationer på nyt indhold.',
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 51,
+      ),
+      'list1' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list2' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list3' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list4' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list5' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list6' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list7' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser2' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_netvaerk_comment_notify',
+    'label' => 'Vælg netværk hvor du ønsker besked om nye kommentarer',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 65,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_netvaerk_notifications'
+  $field_instances['user-user-field_netvaerk_notifications'] = array(
+    'bundle' => 'user',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -3446,7 +3545,7 @@ function ktc_users_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_netvaerk_notifications',
-    'label' => 'Netværks notifikationer',
+    'label' => 'Vælg netværk hvor du ønsker besked om nyt indhold',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -3463,7 +3562,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 1,
+      'weight' => 64,
     ),
   );
 
@@ -3567,7 +3666,7 @@ function ktc_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 13,
     ),
   );
 
@@ -3670,7 +3769,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 6,
     ),
   );
 
@@ -3903,7 +4002,7 @@ function ktc_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 22,
+      'weight' => 16,
     ),
   );
 
@@ -4227,7 +4326,7 @@ function ktc_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 20,
+      'weight' => 15,
     ),
   );
 
@@ -4560,7 +4659,6 @@ function ktc_users_field_default_field_instances() {
   t('Adresse');
   t('Adresse 2');
   t('Afdeling');
-  t('Afkryds de netværk hvorfra du ønsker at modtage notifikationer på nyt indhold.');
   t('Andre kompetencer');
   t('Andre medlemskaber af foreninger (skriv her)');
   t('Arbejdsgiver');
@@ -4590,7 +4688,6 @@ function ktc_users_field_default_field_instances() {
   t('Medlemskab af KTC');
   t('Medlemskab af KVF (Kommunal Vejteknisk Forening)');
   t('Mobil');
-  t('Netværks notifikationer');
   t('Postnr');
   t('Regioner');
   t('Send besked når andre brugere kommenterer mine indlæg (inkl. mine egne kommentarer)');
@@ -4603,6 +4700,8 @@ function ktc_users_field_default_field_instances() {
   t('Typo3 uid(fe_users)');
   t('Uddannelser og kurser');
   t('Udpegninger i foreninger, udvalg og nævn');
+  t('Vælg netværk hvor du ønsker besked om nye kommentarer');
+  t('Vælg netværk hvor du ønsker besked om nyt indhold');
   t('membership_ktc_category');
 
   return $field_instances;
