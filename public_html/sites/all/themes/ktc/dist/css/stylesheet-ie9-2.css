@@ -1522,8 +1522,8 @@ body .ktc-content .ktc-comments-form .form-actions {
 .ktc-comments-list .ktc-comments-list-body .ktc-comments-list-item .ktc-comments-list-item-wrapper .ktc-comments-list-content {
   display: table-cell;
   vertical-align: top;
-  -ms-word-break: break-all;
-  -ms-word-wrap: break-all;
+  -ms-word-break: break-word;
+  -ms-word-wrap: break-word;
   -webkit-word-break: break-word;
   -webkit-word-wrap: break-word;
   word-break: break-word;
