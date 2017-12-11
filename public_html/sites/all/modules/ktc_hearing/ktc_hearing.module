@@ -201,15 +201,35 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'][] = 'ktc_hearing_form_validate';
     $form['#after_build'][] = 'ktc_hearing_form_after_build';
     $form['#suffix'] = '<div id="confirm" title="Bekræft datoer"></div>';
-    $form['#submit'][] = 'ktc_hearing_form_log_submit';
+    array_unshift($form['#submit'], 'ktc_hearing_form_log_submit');     
   }
 }
+
 function ktc_hearing_form_log_submit($form, &$form_state) {
+  try {
     global $user;
+    $lastHearingTimestamp = $_SESSION['last_hearing_save_timestamp'];
+    $currentTime = time();
+    $threshold = 10;//values in MS
+    if (!$lastHearingTimestamp || $currentTime - $lastHearingTimestamp > $threshold) {
+      $_SESSION['last_hearing_save_timestamp'] = $currentTime;
+      $browser= _ktc_hearing_getBrowser();
+        error_log('HOOK_HEARING_FORM_SUBMIT: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
+        . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
+    } else {      
     $browser= _ktc_hearing_getBrowser();
-    error_log('HOOK_HEARING_FORM_SUBMIT: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
-    . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
+    throw new Exception('HOOK_HEARING_FORM_SUBMIT_DUPLICATE: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
+        . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
+
+  }
+  }
+  catch (Exception $e) {
+    error_log($e->getMessage());
+    $url = url("node/" .  _ktc_hearing_get_last_user_hearing_nid());
+    drupal_goto($url);  
+  }
 }
+
 /**
  * Implements hook_form_after_build().
  */
@@ -1891,4 +1911,18 @@ function _ktc_hearing_getBrowser() {
         'platform'  => $platform,
         'pattern'    => $pattern
     );
+}
+
+/*Helper function
+ * return nid last hearing saved by user
+ */
+function _ktc_hearing_get_last_user_hearing_nid(){
+  global $user;
+  $query = db_select('node', 'n');
+  $query->condition('n.type', 'hearing')
+        ->condition('n.uid', $user->uid);  
+  $query->addExpression('MAX(nid)');
+  $nid= $query->execute()->fetchField();
+
+  return $nid;
 }
