@@ -204,22 +204,26 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
     array_unshift($form['#submit'], 'ktc_hearing_form_log_submit');     
   }
 }
-
+/*
+ * Implements custom submit function for hearing node save
+ * Prevent hearing dublicates creation
+ */
 function ktc_hearing_form_log_submit($form, &$form_state) {
   try {
     global $user;
-    $lastHearingTimestamp = $_SESSION['last_hearing_save_timestamp'];
-    $currentTime = time();
-    $threshold = 10;//values in MS
-    if (!$lastHearingTimestamp || $currentTime - $lastHearingTimestamp > $threshold) {
-      $_SESSION['last_hearing_save_timestamp'] = $currentTime;
+    $last_hearing_timestamp = $_SESSION['last_hearing_save_timestamp'];
+    $current_time = time();
+    //values in MS
+    $threshold = 10;
+    if (!$last_hearing_timestamp || $current_time - $last_hearing_timestamp > $threshold) {
+      $_SESSION['last_hearing_save_timestamp'] = $current_time;
       $browser= _ktc_hearing_getBrowser();
-        error_log('HOOK_HEARING_FORM_SUBMIT: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
+        error_log('HOOK_HEARING_FORM_SUBMIT: ' . time() . ' User: ' . $user->name . ' title: ' . $form_state['values']['title'] . ' IP: ' . ip_address()
         . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
     } else {      
     $browser= _ktc_hearing_getBrowser();
     throw new Exception('HOOK_HEARING_FORM_SUBMIT_DUPLICATE: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
-        . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
+      . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
 
   }
   }
@@ -1920,7 +1924,7 @@ function _ktc_hearing_get_last_user_hearing_nid(){
   global $user;
   $query = db_select('node', 'n');
   $query->condition('n.type', 'hearing')
-        ->condition('n.uid', $user->uid);  
+    ->condition('n.uid', $user->uid);
   $query->addExpression('MAX(nid)');
   $nid= $query->execute()->fetchField();
 
