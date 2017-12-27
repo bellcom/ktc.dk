@@ -41,6 +41,10 @@ function ktc_netvaerk_notifications_form_alter(&$form, &$form_state, $form_id) {
 
     // The actual unsetting.
     foreach ($form['field_netvaerk_notifications'][LANGUAGE_NONE]['#options'] as $gid => $value) {
+      // hide notification settings if network is unpublished
+      if (_ktc_netvaerk_notifications_get_node_status($gid) === "0"){
+        unset($form['field_netvaerk_notifications'][LANGUAGE_NONE]['#options'][$gid]);
+      }
       if (!is_array($options) || !in_array($gid, $options)) {
         unset($form['field_netvaerk_notifications'][LANGUAGE_NONE]['#options'][$gid]);
       }
@@ -169,6 +173,12 @@ function ktc_netvaerk_notifications_node_insert($node) {
     if ($node->type == 'hearing' || $node->type == 'hearing_responses') {
       return;
     }
+    $field = reset($field);
+    $group_id = $field['target_id'];
+    //not send notification is network is unpublished
+    if (_ktc_netvaerk_notifications_get_node_status($group_id) == 0) {
+      return;
+    }
    ktc_netvaerk_notifications_send_notification_emails($node);
   }
 }
@@ -179,6 +189,12 @@ function ktc_netvaerk_notifications_node_insert($node) {
 function ktc_netvaerk_notifications_node_update($node) {
    if (is_object($node) && $node->nid && $node->status && $field = field_get_items('node', $node, 'og_group_ref')) {
     if ($node->type == 'hearing' || $node->type == 'hearing_responses') {
+      return;
+    }
+    $field = reset($field);
+    $group_id = $field['target_id'];
+    //not send notification is network is unpublished
+    if (_ktc_netvaerk_notifications_get_node_status($group_id) == 0) {
       return;
     }
    ktc_netvaerk_notifications_send_notification_emails($node);
@@ -246,7 +262,10 @@ function ktc_netvaerk_notifications_content_get_users($node) {
 function ktc_netvaerk_notifications_notify_for_node($node, $uid) {
   if ($field = field_get_items('node', $node, 'og_group_ref')) {
     $group_id = $field[0]['target_id'];
-
+    //not send notification is network is unpublished
+    if (_ktc_netvaerk_notifications_get_node_status($group_id) === "0") {
+      return FALSE;
+    }
     $notify_uids = _ktc_netvaerk_notifications_get_users($group_id);
 
     if (in_array($uid, $notify_uids)) {
@@ -286,3 +305,4 @@ function _ktc_netvaerk_notifications_get_users($group_id) {
   }
   return array();
 }
+

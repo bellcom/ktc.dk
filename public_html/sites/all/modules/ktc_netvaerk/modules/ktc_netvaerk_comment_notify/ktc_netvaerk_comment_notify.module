@@ -130,6 +130,12 @@ function ktc_netvaerk_comment_notify_settings() {
 function ktc_netvaerk_comment_notify_comment_insert($comment) {
   $node = node_load($comment->nid);
   if (is_object($node) && $node->status && $field = field_get_items('node', $node, 'og_group_ref')) {
+    $field = reset($field);
+    $group_id = $field['target_id'];
+    //not send notification if network is unpublished
+    if (_ktc_netvaerk_comment_notify_get_node_status($group_id) === "0") {
+      return;
+    }
     ktc_netvaerk_comment_notify_send_notification_emails($comment);
   }
   else {
@@ -220,6 +226,10 @@ function ktc_netvaerk_comment_notify_form_alter(&$form, &$form_state, $form_id) 
 
     // The actual unsetting.
     foreach ($form['field_netvaerk_comment_notify'][LANGUAGE_NONE]['#options'] as $gid => $value) {
+      //// hide notification settings if network unpublished
+      if (_ktc_netvaerk_comment_notify_get_node_status($gid) === "0") {
+        unset($form['field_netvaerk_comment_notify'][LANGUAGE_NONE]['#options'][$gid]);
+      }
       if (!is_array($options) || !in_array($gid, $options)) {
         unset($form['field_netvaerk_comment_notify'][LANGUAGE_NONE]['#options'][$gid]);
       }
@@ -243,4 +253,10 @@ function _ktc_netvaerk_comment_notify_get_users($group_id) {
     return array_keys($result['user']);
   }
   return array();
+}
+/**
+ * Helper function to get the node status.
+ */
+function _ktc_netvaerk_comment_notify_get_node_status($nid) {
+  return db_query('SELECT status FROM {node} WHERE nid = :nid', array(':nid' => $nid))->fetchField();
 }
