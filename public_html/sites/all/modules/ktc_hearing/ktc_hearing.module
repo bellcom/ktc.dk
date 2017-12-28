@@ -218,7 +218,8 @@ function ktc_hearing_form_log_submit($form, &$form_state) {
     if (!$last_hearing_timestamp || $current_time - $last_hearing_timestamp > $threshold) {
       $_SESSION['last_hearing_save_timestamp'] = $current_time;
       $browser= _ktc_hearing_getBrowser();
-        error_log('HOOK_HEARING_FORM_SUBMIT: ' . time() . ' User: ' . $user->name . ' title: ' . $form_state['values']['title'] . ' IP: ' . ip_address()
+       error_log('HOOK_HEARING_FORM_SUBMIT: last_hearing_save_timestamp: ' . $last_hearing_timestamp . ' current_time: '  . $current_time);
+       error_log('HOOK_HEARING_FORM_SUBMIT: ' . time() . ' User: ' . $user->name . ' title: ' . $form_state['values']['title'] . ' IP: ' . ip_address()
         . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
     } else {      
     $browser= _ktc_hearing_getBrowser();
