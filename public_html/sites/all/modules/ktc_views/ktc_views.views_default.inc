@@ -6367,11 +6367,19 @@ Alle
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: Bruger: Firma (field_account) */
   $handler->display->display_options['relationships']['field_account_tid']['id'] = 'field_account_tid';
   $handler->display->display_options['relationships']['field_account_tid']['table'] = 'field_data_field_account';
   $handler->display->display_options['relationships']['field_account_tid']['field'] = 'field_account_tid';
+  $handler->display->display_options['relationships']['field_account_tid']['label'] = 'term from field_account';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Bruger: Uid */
   $handler->display->display_options['fields']['uid_1']['id'] = 'uid_1';
@@ -6406,18 +6414,16 @@ Alle
   $handler->display->display_options['fields']['field_jobposition']['id'] = 'field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['table'] = 'field_data_field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['field'] = 'field_jobposition';
-  /* Felt: Bruger: Kommune */
-  $handler->display->display_options['fields']['field_kommune']['id'] = 'field_kommune';
-  $handler->display->display_options['fields']['field_kommune']['table'] = 'field_data_field_kommune';
-  $handler->display->display_options['fields']['field_kommune']['field'] = 'field_kommune';
-  $handler->display->display_options['fields']['field_kommune']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_kommune']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Bruger: Firma */
   $handler->display->display_options['fields']['field_account']['id'] = 'field_account';
   $handler->display->display_options['fields']['field_account']['table'] = 'field_data_field_account';
   $handler->display->display_options['fields']['field_account']['field'] = 'field_account';
-  $handler->display->display_options['fields']['field_account']['empty'] = '[field_kommune]';
+  $handler->display->display_options['fields']['field_account']['label'] = 'Ansættelsessted';
+  $handler->display->display_options['fields']['field_account']['empty'] = 'Brugeren har ikke valgt et ansættelsessted';
   $handler->display->display_options['fields']['field_account']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
+  $handler->display->display_options['fields']['field_account']['settings'] = array(
+    'linked' => 0,
+  );
   /* Felt: Bruger: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
@@ -6529,20 +6535,6 @@ Alle
     21 => 0,
     22 => 0,
   );
-  /* Filterkriterie: Bruger: Kommune (field_kommune) */
-  $handler->display->display_options['filters']['field_kommune_tid']['id'] = 'field_kommune_tid';
-  $handler->display->display_options['filters']['field_kommune_tid']['table'] = 'field_data_field_kommune';
-  $handler->display->display_options['filters']['field_kommune_tid']['field'] = 'field_kommune_tid';
-  $handler->display->display_options['filters']['field_kommune_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_kommune_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_kommune_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_kommune_tid']['expose']['operator_id'] = 'field_kommune_tid_op';
-  $handler->display->display_options['filters']['field_kommune_tid']['expose']['label'] = 'Kommune';
-  $handler->display->display_options['filters']['field_kommune_tid']['expose']['operator'] = 'field_kommune_tid_op';
-  $handler->display->display_options['filters']['field_kommune_tid']['expose']['identifier'] = 'field_kommune_tid';
-  $handler->display->display_options['filters']['field_kommune_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_kommune_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_kommune_tid']['vocabulary'] = 'kommuner';
   /* Filterkriterie: Bruger: E-mail */
   $handler->display->display_options['filters']['mail']['id'] = 'mail';
   $handler->display->display_options['filters']['mail']['table'] = 'users';
@@ -6586,6 +6578,87 @@ Alle
   $handler->display->display_options['filters']['field_navn_value_1']['field'] = 'field_navn_value';
   $handler->display->display_options['filters']['field_navn_value_1']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_navn_value_1']['group'] = 1;
+  /* Filterkriterie: Bruger: Brugertype (field_usertype) */
+  $handler->display->display_options['filters']['field_usertype_tid']['id'] = 'field_usertype_tid';
+  $handler->display->display_options['filters']['field_usertype_tid']['table'] = 'field_data_field_usertype';
+  $handler->display->display_options['filters']['field_usertype_tid']['field'] = 'field_usertype_tid';
+  $handler->display->display_options['filters']['field_usertype_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_usertype_tid']['expose']['operator_id'] = 'field_usertype_tid_op';
+  $handler->display->display_options['filters']['field_usertype_tid']['expose']['label'] = 'Brugertype';
+  $handler->display->display_options['filters']['field_usertype_tid']['expose']['operator'] = 'field_usertype_tid_op';
+  $handler->display->display_options['filters']['field_usertype_tid']['expose']['identifier'] = 'usertype';
+  $handler->display->display_options['filters']['field_usertype_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    17 => 0,
+    15 => 0,
+    16 => 0,
+    14 => 0,
+    18 => 0,
+    10 => 0,
+    9 => 0,
+    5 => 0,
+    3 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
+    26 => 0,
+    27 => 0,
+  );
+  $handler->display->display_options['filters']['field_usertype_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_usertype_tid']['vocabulary'] = 'brugertyper';
+  /* Filterkriterie: Bruger: Firma (field_account) */
+  $handler->display->display_options['filters']['field_account_tid']['id'] = 'field_account_tid';
+  $handler->display->display_options['filters']['field_account_tid']['table'] = 'field_data_field_account';
+  $handler->display->display_options['filters']['field_account_tid']['field'] = 'field_account_tid';
+  $handler->display->display_options['filters']['field_account_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_account_tid']['expose']['operator_id'] = 'field_account_tid_op';
+  $handler->display->display_options['filters']['field_account_tid']['expose']['label'] = 'Ansættelsessted';
+  $handler->display->display_options['filters']['field_account_tid']['expose']['operator'] = 'field_account_tid_op';
+  $handler->display->display_options['filters']['field_account_tid']['expose']['identifier'] = 'firma';
+  $handler->display->display_options['filters']['field_account_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    17 => 0,
+    15 => 0,
+    16 => 0,
+    14 => 0,
+    18 => 0,
+    10 => 0,
+    9 => 0,
+    5 => 0,
+    3 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
+    26 => 0,
+    27 => 0,
+  );
+  $handler->display->display_options['filters']['field_account_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_account_tid']['vocabulary'] = 'accounts';
+  $handler->display->display_options['filters']['field_account_tid']['hierarchy'] = 1;
   $handler->display->display_options['path'] = 'search/brugersoegning';
   $handler->display->display_options['menu']['title'] = 'Personsøgning';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -6661,17 +6734,12 @@ Alle
   $handler->display->display_options['fields']['field_jobposition']['id'] = 'field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['table'] = 'field_data_field_jobposition';
   $handler->display->display_options['fields']['field_jobposition']['field'] = 'field_jobposition';
-  /* Felt: Bruger: Kommune */
-  $handler->display->display_options['fields']['field_kommune']['id'] = 'field_kommune';
-  $handler->display->display_options['fields']['field_kommune']['table'] = 'field_data_field_kommune';
-  $handler->display->display_options['fields']['field_kommune']['field'] = 'field_kommune';
-  $handler->display->display_options['fields']['field_kommune']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_kommune']['type'] = 'taxonomy_term_reference_plain';
   /* Felt: Bruger: Firma */
   $handler->display->display_options['fields']['field_account']['id'] = 'field_account';
   $handler->display->display_options['fields']['field_account']['table'] = 'field_data_field_account';
   $handler->display->display_options['fields']['field_account']['field'] = 'field_account';
-  $handler->display->display_options['fields']['field_account']['empty'] = '[field_kommune]';
+  $handler->display->display_options['fields']['field_account']['label'] = 'Ansættelsessted';
+  $handler->display->display_options['fields']['field_account']['empty'] = 'Brugeren har ikke valgt et ansættelsessted';
   $handler->display->display_options['fields']['field_account']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
   /* Felt: Bruger: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
@@ -6807,20 +6875,6 @@ Alle
     21 => 0,
     22 => 0,
   );
-  /* Filterkriterie: Bruger: Kommune (field_kommune) */
-  $handler->display->display_options['filters']['field_kommune_tid']['id'] = 'field_kommune_tid';
-  $handler->display->display_options['filters']['field_kommune_tid']['table'] = 'field_data_field_kommune';
-  $handler->display->display_options['filters']['field_kommune_tid']['field'] = 'field_kommune_tid';
-  $handler->display->display_options['filters']['field_kommune_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_kommune_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_kommune_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_kommune_tid']['expose']['operator_id'] = 'field_kommune_tid_op';
-  $handler->display->display_options['filters']['field_kommune_tid']['expose']['label'] = 'Kommune';
-  $handler->display->display_options['filters']['field_kommune_tid']['expose']['operator'] = 'field_kommune_tid_op';
-  $handler->display->display_options['filters']['field_kommune_tid']['expose']['identifier'] = 'field_kommune_tid';
-  $handler->display->display_options['filters']['field_kommune_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_kommune_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_kommune_tid']['vocabulary'] = 'kommuner';
   /* Filterkriterie: Bruger: E-mail */
   $handler->display->display_options['filters']['mail']['id'] = 'mail';
   $handler->display->display_options['filters']['mail']['table'] = 'users';
@@ -6860,6 +6914,89 @@ Alle
   $handler->display->display_options['filters']['field_navn_value_1']['field'] = 'field_navn_value';
   $handler->display->display_options['filters']['field_navn_value_1']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_navn_value_1']['group'] = 1;
+  /* Filterkriterie: Bruger: Brugertype (field_usertype) */
+  $handler->display->display_options['filters']['field_usertype_tid']['id'] = 'field_usertype_tid';
+  $handler->display->display_options['filters']['field_usertype_tid']['table'] = 'field_data_field_usertype';
+  $handler->display->display_options['filters']['field_usertype_tid']['field'] = 'field_usertype_tid';
+  $handler->display->display_options['filters']['field_usertype_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_usertype_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_usertype_tid']['expose']['operator_id'] = 'field_usertype_tid_op';
+  $handler->display->display_options['filters']['field_usertype_tid']['expose']['label'] = 'Brugertype';
+  $handler->display->display_options['filters']['field_usertype_tid']['expose']['operator'] = 'field_usertype_tid_op';
+  $handler->display->display_options['filters']['field_usertype_tid']['expose']['identifier'] = 'usertype';
+  $handler->display->display_options['filters']['field_usertype_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    17 => 0,
+    15 => 0,
+    16 => 0,
+    14 => 0,
+    18 => 0,
+    10 => 0,
+    9 => 0,
+    5 => 0,
+    3 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
+    26 => 0,
+    27 => 0,
+  );
+  $handler->display->display_options['filters']['field_usertype_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_usertype_tid']['vocabulary'] = 'brugertyper';
+  $handler->display->display_options['filters']['field_usertype_tid']['hierarchy'] = 1;
+  /* Filterkriterie: Bruger: Firma (field_account) */
+  $handler->display->display_options['filters']['field_account_tid']['id'] = 'field_account_tid';
+  $handler->display->display_options['filters']['field_account_tid']['table'] = 'field_data_field_account';
+  $handler->display->display_options['filters']['field_account_tid']['field'] = 'field_account_tid';
+  $handler->display->display_options['filters']['field_account_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_account_tid']['expose']['operator_id'] = 'field_account_tid_op';
+  $handler->display->display_options['filters']['field_account_tid']['expose']['label'] = 'Ansættelsessted';
+  $handler->display->display_options['filters']['field_account_tid']['expose']['operator'] = 'field_account_tid_op';
+  $handler->display->display_options['filters']['field_account_tid']['expose']['identifier'] = 'firma';
+  $handler->display->display_options['filters']['field_account_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    17 => 0,
+    15 => 0,
+    16 => 0,
+    14 => 0,
+    18 => 0,
+    10 => 0,
+    9 => 0,
+    5 => 0,
+    3 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
+    26 => 0,
+    27 => 0,
+  );
+  $handler->display->display_options['filters']['field_account_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_account_tid']['vocabulary'] = 'accounts';
+  $handler->display->display_options['filters']['field_account_tid']['hierarchy'] = 1;
   $handler->display->display_options['path'] = 'admin/brugersoegning';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Personsøgning';
@@ -6930,17 +7067,19 @@ Alle
     t('Navn'),
     t('Kombinér felter filter'),
     t('Page'),
+    t('term from field_account'),
     t('Uid'),
     t('[field_navn] [field_efternavn]'),
     t('Stilling/titel'),
-    t('Firma'),
-    t('[field_kommune]'),
+    t('Ansættelsessted'),
+    t('Brugeren har ikke valgt et ansættelsessted'),
     t('Mobil'),
     t('Telefon / mobil'),
     t('<a href="tel:[field_directe_telefon]" title="Ring til direkte telefon">[field_directe_telefon]</a><a href="tel:[field_cell]" class="andcell" title="Ring til mobil"> [field_cell]</a>'),
     t('<a href="tel:[field_cell]" class="onlycell" title="Ring til mobil"> [field_cell]</a>'),
     t('Netværk'),
     t('Faglige emner'),
+    t('Brugertype'),
     t('FE'),
     t('Søg'),
     t('Admin Personsøgning'),

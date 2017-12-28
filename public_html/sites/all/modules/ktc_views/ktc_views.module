@@ -5,6 +5,21 @@
  */
 
 include_once 'ktc_views.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_views_menu() {
+  $items = array();
+  $items['ajax/users_search/get_children_accounts/%'] = array(
+    'page callback' => '_ktc_views_get_accounts_list',
+    'page arguments' => array (3),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'delivery callback' => 'drupal_json_output',
+ );
+  return $items;
+} 
 function ktc_views_entity_info_alter(&$entity_info) {
   
   /* Paragraphs */
@@ -16,4 +31,32 @@ function ktc_views_entity_info_alter(&$entity_info) {
   'label' => t('Udgivelser Side Editor'),
   'custom settings' => TRUE,
   );
+}
+/*
+ * implement hook_form_alter
+ */
+function ktc_views_form_alter(&$form, &$form_state, $form_id){
+  if ($form['#id'] == 'views-exposed-form-user-search-page' || $form['#id'] == 'views-exposed-form-user-search-page-2'){
+      $usertype_map = variable_get('ktc_users_edit_type_company_map', array());
+    
+    drupal_add_js(array('ktcUsersSearch' => array('usertypeMap' => $usertype_map)), 'setting');
+    drupal_add_js(drupal_get_path('module', 'ktc_views') . '/js/ktc_user_search.js');
+  }
+}
+
+
+function _ktc_views_get_accounts_list($parent_tid) { 
+  $result[0]=array('key' => 'All', 'title' => t('- Any -'));
+  _ktc_views_taxonomy_get_children_all($parent_tid, "", $result);
+   return $result;
+}
+
+function _ktc_views_taxonomy_get_children_all($tid, $key="", &$result = array()){
+  $tree = taxonomy_get_children($tid);
+  
+  foreach ($tree as $tid => $term){
+    $result[] = array('key' => $tid, 'title' => $key . $term->name);
+    _ktc_views_taxonomy_get_children_all($tid, $key . '-', $result);    
+  }
+  return $result;
 }
