@@ -362,7 +362,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: Signup: Node */
+  /* Forbindelse: Signup: Indholdselement */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'signup_log';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
@@ -456,7 +456,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Forbindelse: Signup: Node */
+  /* Forbindelse: Signup: Indholdselement */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'signup_log';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
@@ -470,7 +470,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Tilmeldingsfrist */
+  /* Felt: Indhold: Svarfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
@@ -572,7 +572,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Forbindelse: OG membership: Group Node from OG membership */
+  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
@@ -986,6 +986,79 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+
+  /* Display: Logo og arrangement */
+  $handler = $view->new_display('panel_pane', 'Logo og arrangement', 'panel_pane_13');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Logo og arrangement';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: Indhold: Forfatter */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Logo */
+  $handler->display->display_options['fields']['field_arrangement_logo']['id'] = 'field_arrangement_logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['table'] = 'field_data_field_arrangement_logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['field'] = 'field_arrangement_logo';
+  $handler->display->display_options['fields']['field_arrangement_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_arrangement_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_arrangement_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_arrangement_logo']['settings'] = array(
+    'image_style' => 'netvaerks_logo',
+    'image_link' => '',
+  );
+  /* Felt: Indhold: Gruppe/Netværk */
+  $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['label'] = '';
+  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'ktc-node-title-small ktc-node-title-light ktc-padding-bottom-sm ktc-padding-top';
+  $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
+  /* Felt: Bruger: Rendered Bruger */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_user';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = 'Oprettet af';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_class'] = 'ktc-node-title-xs';
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'list3';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  $handler->display->display_options['pane_category']['name'] = 'KTC Nodevisninger';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
   $translatables['ktc_full_node_field_displays'] = array(
     t('Master'),
     t('Logo'),
@@ -1033,7 +1106,7 @@ function ktc_content_types_views_default_views() {
     t('Slut'),
     t('Pris'),
     t('Målgruppe'),
-    t('Tilmeldingsfrist'),
+    t('Svarfrist'),
     t('Kort og adresse'),
     t('Adresse'),
     t('[field_arrangement_location]<br />
@@ -1052,6 +1125,7 @@ function ktc_content_types_views_default_views() {
     t('[field_fri_for_alle] [title]'),
     t('Titel og åben hængelås'),
     t(' <span class="ktc-article-open">&nbsp;</span>'),
+    t('Logo og arrangement'),
   );
   $export['ktc_full_node_field_displays'] = $view;
 
