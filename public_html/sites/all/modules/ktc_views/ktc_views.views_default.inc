@@ -6071,7 +6071,8 @@ Alle
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Nulstil søgning';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
@@ -7006,7 +7007,7 @@ Alle
     t('Personsøgning'),
     t('mere'),
     t('Udfør'),
-    t('Gendan'),
+    t('Nulstil søgning'),
     t('Sortér efter'),
     t('Stigende'),
     t('Faldende'),
@@ -7067,6 +7068,7 @@ Alle
     t('Navn'),
     t('Kombinér felter filter'),
     t('Page'),
+    t('Gendan'),
     t('term from field_account'),
     t('Uid'),
     t('[field_navn] [field_efternavn]'),

@@ -19,9 +19,9 @@ function ktc_views_menu() {
     'delivery callback' => 'drupal_json_output',
  );
   return $items;
-} 
+}
 function ktc_views_entity_info_alter(&$entity_info) {
-  
+
   /* Paragraphs */
   $entity_info['paragraphs_item']['view modes']['udgivelseliste'] = array(
   'label' => t('Udgivelser Side Listevisning'),
@@ -38,25 +38,44 @@ function ktc_views_entity_info_alter(&$entity_info) {
 function ktc_views_form_alter(&$form, &$form_state, $form_id){
   if ($form['#id'] == 'views-exposed-form-user-search-page' || $form['#id'] == 'views-exposed-form-user-search-page-2'){
       $usertype_map = variable_get('ktc_users_edit_type_company_map', array());
-    
+
     drupal_add_js(array('ktcUsersSearch' => array('usertypeMap' => $usertype_map)), 'setting');
     drupal_add_js(drupal_get_path('module', 'ktc_views') . '/js/ktc_user_search.js');
   }
 }
 
 
-function _ktc_views_get_accounts_list($parent_tid) { 
+function _ktc_views_get_accounts_list($parent_tid) {
   $result[0]=array('key' => 'All', 'title' => t('- Any -'));
-  _ktc_views_taxonomy_get_children_all($parent_tid, "", $result);
+  $tree = taxonomy_get_children($parent_tid);
+
+  foreach ($tree as $tid => $term){
+    $result[] = array('key' => $tid, 'title' => $term->name);
+
+  }
+  //_ktc_views_taxonomy_get_children_all($parent_tid, "", $result);
    return $result;
 }
 
-function _ktc_views_taxonomy_get_children_all($tid, $key="", &$result = array()){
+function _ktc_views_taxonomy_get_all_children_terms($tid, &$result = array()){
   $tree = taxonomy_get_children($tid);
-  
   foreach ($tree as $tid => $term){
-    $result[] = array('key' => $tid, 'title' => $key . $term->name);
-    _ktc_views_taxonomy_get_children_all($tid, $key . '-', $result);    
+    $result[] = $tid;
+    _ktc_views_taxonomy_get_all_children_terms($tid, $result);
   }
   return $result;
+}
+
+function ktc_views_views_query_alter(&$view, &$query) {
+ if ($view->name =='user_search') {
+   foreach($query->where[1]['conditions'] as $key => $value) {
+     if ($value['field'] == 'field_data_field_account.field_account_tid') {
+       $tid = $value['value'];
+       $result = array($tid);
+       $tids=_ktc_views_taxonomy_get_all_children_terms($tid, $result);
+       unset($query->where[1]['conditions'][$key]);
+       $query->add_where(1,'field_data_field_account.field_account_tid', $tids, 'IN');
+     }
+   }
+ }
 }
