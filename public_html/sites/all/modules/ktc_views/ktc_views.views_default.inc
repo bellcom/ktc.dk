@@ -3256,7 +3256,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Ingen netværk';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
+  /* Forbindelse: OG membership: Group Node from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
@@ -6242,11 +6242,11 @@ Alle
   </ul>
 </nav>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
-  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
+  /* Forbindelse: OG membership: Group Node from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
-  /* Forbindelse: OG membership: Indholdselement from OG membership */
+  /* Forbindelse: OG membership: Node from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node']['id'] = 'og_membership_related_node';
   $handler->display->display_options['relationships']['og_membership_related_node']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node']['field'] = 'og_membership_related_node';
@@ -6371,7 +6371,8 @@ Alle
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Nulstil søgning';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
@@ -7068,7 +7069,6 @@ Alle
     t('Navn'),
     t('Kombinér felter filter'),
     t('Page'),
-    t('Gendan'),
     t('term from field_account'),
     t('Uid'),
     t('[field_navn] [field_efternavn]'),
