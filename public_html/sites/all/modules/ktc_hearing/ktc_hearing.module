@@ -204,29 +204,30 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
     array_unshift($form['#submit'], 'ktc_hearing_form_log_submit');
   }
 }
-/*
+
+/**
  * Implements custom submit function for hearing node save
  * Prevent hearing dublicates creation
  */
 function ktc_hearing_form_log_submit($form, &$form_state) {
   try {
     global $user;
-    $last_hearing_timestamp = $_SESSION['last_hearing_save_timestamp'];
-    $current_time = time();
+    $values_hash_file_flag = &drupal_static('ktc_hearing_values_hash_file_flag');
+    $values_hash_file_flag = file_directory_temp() . DIRECTORY_SEPARATOR . 'hearing-' . $form_state['input']['form_build_id'];
     //values in MS
     $threshold = 10;
-    if (!$last_hearing_timestamp || $current_time - $last_hearing_timestamp > $threshold) {
-      $_SESSION['last_hearing_save_timestamp'] = time();
+    if (!file_exists($values_hash_file_flag)) {
+      touch($values_hash_file_flag);
       $browser= _ktc_hearing_getBrowser();
-      error_log('HOOK_HEARING_FORM_SUBMIT: last_hearing_save_timestamp: ' . $last_hearing_timestamp . ' current_time: '  . $current_time);
       error_log('HOOK_HEARING_FORM_SUBMIT: ' . time() . ' User: ' . $user->name . ' title: ' . $form_state['values']['title'] . ' IP: ' . ip_address()
         . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
-    } else {
-    $browser= _ktc_hearing_getBrowser();
-    throw new Exception('HOOK_HEARING_FORM_SUBMIT_DUPLICATE: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
-      . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
-
-  }
+      error_log('HOOK_HEARING_SET_FILE_FLAG: ' . $values_hash_file_flag);
+    }
+    else {
+      $browser= _ktc_hearing_getBrowser();
+      throw new Exception('HOOK_HEARING_FORM_SUBMIT_DUPLICATE: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
+        . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
+    }
   }
   catch (Exception $e) {
     error_log($e->getMessage());
@@ -846,6 +847,12 @@ function ktc_hearing_ktc_hearing_save($hearing) {
     $language = field_language('node', $hearing, 'field_status');
     $hearing->field_status[$language][0]['tid'] = KTC_HEARING_STATUS_OPEN;
     node_save($hearing);
+  }
+
+  $values_hash_file_flag = &drupal_static('ktc_hearing_values_hash_file_flag');
+  if (file_exists($values_hash_file_flag)) {
+    unlink($values_hash_file_flag);
+    error_log('HOOK_HEARING_REMOVE_FILE_FLAG: ' . $values_hash_file_flag);
   }
 }
 
