@@ -6376,6 +6376,47 @@ Alle
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<nav>
+  <ul class="pagination hidden">
+    <li><a href="/search/brugersoegning/">Alle</a></li>
+    <li><a href="/search/brugersoegning/a">A</a></li>
+    <li><a href="/search/brugersoegning/b">B</a></li>
+    <li><a href="/search/brugersoegning/c">C</a></li>
+    <li><a href="/search/brugersoegning/d">D</a></li>
+    <li><a href="/search/brugersoegning/e">E</a></li>
+    <li><a href="/search/brugersoegning/f">F</a></li>
+    <li><a href="/search/brugersoegning/g">G</a></li>
+    <li><a href="/search/brugersoegning/h">H</a></li>
+    <li><a href="/search/brugersoegning/i">I</a></li>
+    <li><a href="/search/brugersoegning/j">J</a></li>
+    <li><a href="/search/brugersoegning/k">K</a></li>
+    <li><a href="/search/brugersoegning/l">L</a></li>
+    <li><a href="/search/brugersoegning/m">M</a></li>
+    <li><a href="/search/brugersoegning/n">N</a></li>
+    <li><a href="/search/brugersoegning/o">O</a></li>
+    <li><a href="/search/brugersoegning/p">P</a></li>
+    <li><a href="/search/brugersoegning/q">Q</a></li>
+    <li><a href="/search/brugersoegning/r">R</a></li>
+    <li><a href="/search/brugersoegning/s">S</a></li>
+    <li><a href="/search/brugersoegning/t">T</a></li>
+    <li><a href="/search/brugersoegning/u">U</a></li>
+    <li><a href="/search/brugersoegning/v">V</a></li>
+    <li><a href="/search/brugersoegning/w">W</a></li>
+    <li><a href="/search/brugersoegning/x">X</a></li>
+    <li><a href="/search/brugersoegning/y">Y</a></li>
+    <li><a href="/search/brugersoegning/z">Z</a></li>
+    <li><a href="/search/brugersoegning/æ">Æ</a></li>
+    <li><a href="/search/brugersoegning/ø">Ø</a></li>
+    <li><a href="/search/brugersoegning/å">Å</a></li>
+  </ul>
+</nav>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Forbindelse: Bruger: Firma (field_account) */
   $handler->display->display_options['relationships']['field_account_tid']['id'] = 'field_account_tid';
@@ -6702,6 +6743,47 @@ Alle
   $handler = $view->new_display('page', 'Page', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Admin Personsøgning';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<nav>
+  <ul class="pagination" style ="display:none">
+    <li><a href="/search/brugersoegning/">Alle</a></li>
+    <li><a href="/search/brugersoegning/a">A</a></li>
+    <li><a href="/search/brugersoegning/b">B</a></li>
+    <li><a href="/search/brugersoegning/c">C</a></li>
+    <li><a href="/search/brugersoegning/d">D</a></li>
+    <li><a href="/search/brugersoegning/e">E</a></li>
+    <li><a href="/search/brugersoegning/f">F</a></li>
+    <li><a href="/search/brugersoegning/g">G</a></li>
+    <li><a href="/search/brugersoegning/h">H</a></li>
+    <li><a href="/search/brugersoegning/i">I</a></li>
+    <li><a href="/search/brugersoegning/j">J</a></li>
+    <li><a href="/search/brugersoegning/k">K</a></li>
+    <li><a href="/search/brugersoegning/l">L</a></li>
+    <li><a href="/search/brugersoegning/m">M</a></li>
+    <li><a href="/search/brugersoegning/n">N</a></li>
+    <li><a href="/search/brugersoegning/o">O</a></li>
+    <li><a href="/search/brugersoegning/p">P</a></li>
+    <li><a href="/search/brugersoegning/q">Q</a></li>
+    <li><a href="/search/brugersoegning/r">R</a></li>
+    <li><a href="/search/brugersoegning/s">S</a></li>
+    <li><a href="/search/brugersoegning/t">T</a></li>
+    <li><a href="/search/brugersoegning/u">U</a></li>
+    <li><a href="/search/brugersoegning/v">V</a></li>
+    <li><a href="/search/brugersoegning/w">W</a></li>
+    <li><a href="/search/brugersoegning/x">X</a></li>
+    <li><a href="/search/brugersoegning/y">Y</a></li>
+    <li><a href="/search/brugersoegning/z">Z</a></li>
+    <li><a href="/search/brugersoegning/æ">Æ</a></li>
+    <li><a href="/search/brugersoegning/ø">Ø</a></li>
+    <li><a href="/search/brugersoegning/å">Å</a></li>
+  </ul>
+</nav>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Bruger: Uid */
   $handler->display->display_options['fields']['uid_1']['id'] = 'uid_1';
@@ -7069,6 +7151,40 @@ Alle
     t('Navn'),
     t('Kombinér felter filter'),
     t('Page'),
+    t('<nav>
+  <ul class="pagination hidden">
+    <li><a href="/search/brugersoegning/">Alle</a></li>
+    <li><a href="/search/brugersoegning/a">A</a></li>
+    <li><a href="/search/brugersoegning/b">B</a></li>
+    <li><a href="/search/brugersoegning/c">C</a></li>
+    <li><a href="/search/brugersoegning/d">D</a></li>
+    <li><a href="/search/brugersoegning/e">E</a></li>
+    <li><a href="/search/brugersoegning/f">F</a></li>
+    <li><a href="/search/brugersoegning/g">G</a></li>
+    <li><a href="/search/brugersoegning/h">H</a></li>
+    <li><a href="/search/brugersoegning/i">I</a></li>
+    <li><a href="/search/brugersoegning/j">J</a></li>
+    <li><a href="/search/brugersoegning/k">K</a></li>
+    <li><a href="/search/brugersoegning/l">L</a></li>
+    <li><a href="/search/brugersoegning/m">M</a></li>
+    <li><a href="/search/brugersoegning/n">N</a></li>
+    <li><a href="/search/brugersoegning/o">O</a></li>
+    <li><a href="/search/brugersoegning/p">P</a></li>
+    <li><a href="/search/brugersoegning/q">Q</a></li>
+    <li><a href="/search/brugersoegning/r">R</a></li>
+    <li><a href="/search/brugersoegning/s">S</a></li>
+    <li><a href="/search/brugersoegning/t">T</a></li>
+    <li><a href="/search/brugersoegning/u">U</a></li>
+    <li><a href="/search/brugersoegning/v">V</a></li>
+    <li><a href="/search/brugersoegning/w">W</a></li>
+    <li><a href="/search/brugersoegning/x">X</a></li>
+    <li><a href="/search/brugersoegning/y">Y</a></li>
+    <li><a href="/search/brugersoegning/z">Z</a></li>
+    <li><a href="/search/brugersoegning/æ">Æ</a></li>
+    <li><a href="/search/brugersoegning/ø">Ø</a></li>
+    <li><a href="/search/brugersoegning/å">Å</a></li>
+  </ul>
+</nav>'),
     t('term from field_account'),
     t('Uid'),
     t('[field_navn] [field_efternavn]'),
@@ -7085,6 +7201,40 @@ Alle
     t('FE'),
     t('Søg'),
     t('Admin Personsøgning'),
+    t('<nav>
+  <ul class="pagination" style ="display:none">
+    <li><a href="/search/brugersoegning/">Alle</a></li>
+    <li><a href="/search/brugersoegning/a">A</a></li>
+    <li><a href="/search/brugersoegning/b">B</a></li>
+    <li><a href="/search/brugersoegning/c">C</a></li>
+    <li><a href="/search/brugersoegning/d">D</a></li>
+    <li><a href="/search/brugersoegning/e">E</a></li>
+    <li><a href="/search/brugersoegning/f">F</a></li>
+    <li><a href="/search/brugersoegning/g">G</a></li>
+    <li><a href="/search/brugersoegning/h">H</a></li>
+    <li><a href="/search/brugersoegning/i">I</a></li>
+    <li><a href="/search/brugersoegning/j">J</a></li>
+    <li><a href="/search/brugersoegning/k">K</a></li>
+    <li><a href="/search/brugersoegning/l">L</a></li>
+    <li><a href="/search/brugersoegning/m">M</a></li>
+    <li><a href="/search/brugersoegning/n">N</a></li>
+    <li><a href="/search/brugersoegning/o">O</a></li>
+    <li><a href="/search/brugersoegning/p">P</a></li>
+    <li><a href="/search/brugersoegning/q">Q</a></li>
+    <li><a href="/search/brugersoegning/r">R</a></li>
+    <li><a href="/search/brugersoegning/s">S</a></li>
+    <li><a href="/search/brugersoegning/t">T</a></li>
+    <li><a href="/search/brugersoegning/u">U</a></li>
+    <li><a href="/search/brugersoegning/v">V</a></li>
+    <li><a href="/search/brugersoegning/w">W</a></li>
+    <li><a href="/search/brugersoegning/x">X</a></li>
+    <li><a href="/search/brugersoegning/y">Y</a></li>
+    <li><a href="/search/brugersoegning/z">Z</a></li>
+    <li><a href="/search/brugersoegning/æ">Æ</a></li>
+    <li><a href="/search/brugersoegning/ø">Ø</a></li>
+    <li><a href="/search/brugersoegning/å">Å</a></li>
+  </ul>
+</nav>'),
     t('CRM UUID'),
   );
   $export['user_search'] = $view;
