@@ -5430,6 +5430,131 @@ function teknik_og_miljoe_default_page_manager_pages() {
     $display->content['new-33e08013-8f61-4ba6-b550-f6a1fd0b868c'] = $pane;
     $display->panels['right'][1] = 'new-33e08013-8f61-4ba6-b550-f6a1fd0b868c';
     $pane = new stdClass();
+    $pane->pid = 'new-965c96a3-3ea6-434b-af9f-402dd6f705ff';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '9',
+      'offset' => '0',
+      'arguments' => array(
+        'vid' => '34,19',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer på artikeltype',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'term_type',
+      'css_class' => 'ktc-aside-checkbox-filter',
+      'template_suggestion' => 'views_panes',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '965c96a3-3ea6-434b-af9f-402dd6f705ff';
+    $display->content['new-965c96a3-3ea6-434b-af9f-402dd6f705ff'] = $pane;
+    $display->panels['right'][2] = 'new-965c96a3-3ea6-434b-af9f-402dd6f705ff';
+    $pane = new stdClass();
+    $pane->pid = 'new-35218de2-66ce-4bd1-acbd-e9103ef9d846';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter-panel_pane_2';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '9',
+      'offset' => '0',
+      'arguments' => array(
+        'vid' => '1',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer på emner',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'tags',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
+      'template_suggestion' => 'views_panes',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '35218de2-66ce-4bd1-acbd-e9103ef9d846';
+    $display->content['new-35218de2-66ce-4bd1-acbd-e9103ef9d846'] = $pane;
+    $display->panels['right'][3] = 'new-35218de2-66ce-4bd1-acbd-e9103ef9d846';
+    $pane = new stdClass();
+    $pane->pid = 'new-8235599d-8033-42a7-aeb7-42c724f3fc10';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'section_page_filter-panel_pane_3';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '9',
+      'offset' => '0',
+      'arguments' => array(
+        'vid' => '4',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Filtrer på faglige emner',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'emner',
+      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
+      'template_suggestion' => 'views_panes',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '8235599d-8033-42a7-aeb7-42c724f3fc10';
+    $display->content['new-8235599d-8033-42a7-aeb7-42c724f3fc10'] = $pane;
+    $display->panels['right'][4] = 'new-8235599d-8033-42a7-aeb7-42c724f3fc10';
+    $pane = new stdClass();
+    $pane->pid = 'new-62bce034-9bf7-4c7c-8c8c-39dbb08eef8c';
+    $pane->panel = 'right';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-10';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'block',
+    );
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '62bce034-9bf7-4c7c-8c8c-39dbb08eef8c';
+    $display->content['new-62bce034-9bf7-4c7c-8c8c-39dbb08eef8c'] = $pane;
+    $display->panels['right'][5] = 'new-62bce034-9bf7-4c7c-8c8c-39dbb08eef8c';
+    $pane = new stdClass();
     $pane->pid = 'new-0b73e999-b21a-4246-b8f2-d77b69622962';
     $pane->panel = 'right';
     $pane->type = 'custom';
@@ -5490,136 +5615,11 @@ function teknik_og_miljoe_default_page_manager_pages() {
       'template_suggestion' => 'nohtml',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 6;
     $pane->locks = array();
     $pane->uuid = '0b73e999-b21a-4246-b8f2-d77b69622962';
     $display->content['new-0b73e999-b21a-4246-b8f2-d77b69622962'] = $pane;
-    $display->panels['right'][2] = 'new-0b73e999-b21a-4246-b8f2-d77b69622962';
-    $pane = new stdClass();
-    $pane->pid = 'new-62bce034-9bf7-4c7c-8c8c-39dbb08eef8c';
-    $pane->panel = 'right';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-10';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-      'template_suggestion' => 'block',
-    );
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '62bce034-9bf7-4c7c-8c8c-39dbb08eef8c';
-    $display->content['new-62bce034-9bf7-4c7c-8c8c-39dbb08eef8c'] = $pane;
-    $display->panels['right'][3] = 'new-62bce034-9bf7-4c7c-8c8c-39dbb08eef8c';
-    $pane = new stdClass();
-    $pane->pid = 'new-965c96a3-3ea6-434b-af9f-402dd6f705ff';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'section_page_filter-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'use_pager' => 0,
-      'pager_id' => '0',
-      'items_per_page' => '9',
-      'offset' => '0',
-      'arguments' => array(
-        'vid' => '34,19',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Filtrer på artikeltype',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'term_type',
-      'css_class' => 'ktc-aside-checkbox-filter',
-      'template_suggestion' => 'views_panes',
-    );
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '965c96a3-3ea6-434b-af9f-402dd6f705ff';
-    $display->content['new-965c96a3-3ea6-434b-af9f-402dd6f705ff'] = $pane;
-    $display->panels['right'][4] = 'new-965c96a3-3ea6-434b-af9f-402dd6f705ff';
-    $pane = new stdClass();
-    $pane->pid = 'new-35218de2-66ce-4bd1-acbd-e9103ef9d846';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'section_page_filter-panel_pane_2';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'use_pager' => 0,
-      'pager_id' => '0',
-      'items_per_page' => '9',
-      'offset' => '0',
-      'arguments' => array(
-        'vid' => '1',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Filtrer på emner',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'tags',
-      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
-      'template_suggestion' => 'views_panes',
-    );
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $pane->uuid = '35218de2-66ce-4bd1-acbd-e9103ef9d846';
-    $display->content['new-35218de2-66ce-4bd1-acbd-e9103ef9d846'] = $pane;
-    $display->panels['right'][5] = 'new-35218de2-66ce-4bd1-acbd-e9103ef9d846';
-    $pane = new stdClass();
-    $pane->pid = 'new-8235599d-8033-42a7-aeb7-42c724f3fc10';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'section_page_filter-panel_pane_3';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'use_pager' => 0,
-      'pager_id' => '0',
-      'items_per_page' => '9',
-      'offset' => '0',
-      'arguments' => array(
-        'vid' => '4',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Filtrer på faglige emner',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'emner',
-      'css_class' => 'ktc-aside-filter ktc-aside-filter-2-col',
-      'template_suggestion' => 'views_panes',
-    );
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $pane->uuid = '8235599d-8033-42a7-aeb7-42c724f3fc10';
-    $display->content['new-8235599d-8033-42a7-aeb7-42c724f3fc10'] = $pane;
-    $display->panels['right'][6] = 'new-8235599d-8033-42a7-aeb7-42c724f3fc10';
+    $display->panels['right'][6] = 'new-0b73e999-b21a-4246-b8f2-d77b69622962';
     $pane = new stdClass();
     $pane->pid = 'new-3421213a-42d9-4959-a1c0-641fca8f8c89';
     $pane->panel = 'right';

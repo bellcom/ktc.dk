@@ -323,6 +323,6 @@ function ktc_users_user_login(&$edit, $account) {
   }
   if ($account->access == 0) {
     drupal_set_message($user->mail);
-    drupal_goto('user/' . $user->uid . '/edit');
+   // drupal_goto('user/' . $user->uid . '/edit');
   }
 }
