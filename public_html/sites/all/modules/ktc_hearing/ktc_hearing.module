@@ -237,6 +237,24 @@ function ktc_hearing_form_log_submit($form, &$form_state) {
 }
 
 /**
+ * Implements hook_cron().
+ * Delete expired hash_fale flags
+ */
+function ktc_hearing_cron() {
+  $flags = glob(file_directory_temp() . DIRECTORY_SEPARATOR . 'hearing-*');
+  $threshold = 600;
+  $current_time = time();
+  foreach ($flags as $filepath) {
+    $file_time = filemtime($filepath);
+    // check if more than 10 min after file was created
+    if($current_time - $file_time >  $threshold){
+      unlink($filepath);
+      error_log('HOOK_HEARING_REMOVE_FILE_FLAG: ' . $filepath);
+    }
+  }
+}
+
+/**
  * Implements hook_form_after_build().
  */
 function ktc_hearing_form_after_build($form, &$form_state) {
@@ -849,11 +867,11 @@ function ktc_hearing_ktc_hearing_save($hearing) {
     node_save($hearing);
   }
 
-  $values_hash_file_flag = &drupal_static('ktc_hearing_values_hash_file_flag');
-  if (file_exists($values_hash_file_flag)) {
-    unlink($values_hash_file_flag);
-    error_log('HOOK_HEARING_REMOVE_FILE_FLAG: ' . $values_hash_file_flag);
-  }
+  //$values_hash_file_flag = &drupal_static('ktc_hearing_values_hash_file_flag');
+  //if (file_exists($values_hash_file_flag)) {
+  //  unlink($values_hash_file_flag);
+  //  error_log('HOOK_HEARING_REMOVE_FILE_FLAG: ' . $values_hash_file_flag);
+  //}
 }
 
 /**
