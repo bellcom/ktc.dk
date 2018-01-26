@@ -212,7 +212,6 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
 function ktc_hearing_form_log_submit($form, &$form_state) {
   try {
     global $user;
-    $values_hash_file_flag = &drupal_static('ktc_hearing_values_hash_file_flag');
     $values_hash_file_flag = file_directory_temp() . DIRECTORY_SEPARATOR . 'hearing-' . $form_state['input']['form_build_id'];
     //values in MS
     $threshold = 10;
@@ -238,7 +237,8 @@ function ktc_hearing_form_log_submit($form, &$form_state) {
 
 /**
  * Implements hook_cron().
- * Delete expired hash_fale flags
+ *
+ * Delete expired hash_fale flags.
  */
 function ktc_hearing_cron() {
   $flags = glob(file_directory_temp() . DIRECTORY_SEPARATOR . 'hearing-*');
@@ -246,8 +246,8 @@ function ktc_hearing_cron() {
   $current_time = time();
   foreach ($flags as $filepath) {
     $file_time = filemtime($filepath);
-    // check if more than 10 min after file was created
-    if($current_time - $file_time >  $threshold){
+    // Check if more than 10 min after file was created.
+    if ($current_time - $file_time > $threshold) {
       unlink($filepath);
       error_log('HOOK_HEARING_REMOVE_FILE_FLAG: ' . $filepath);
     }
@@ -866,12 +866,6 @@ function ktc_hearing_ktc_hearing_save($hearing) {
     $hearing->field_status[$language][0]['tid'] = KTC_HEARING_STATUS_OPEN;
     node_save($hearing);
   }
-
-  //$values_hash_file_flag = &drupal_static('ktc_hearing_values_hash_file_flag');
-  //if (file_exists($values_hash_file_flag)) {
-  //  unlink($values_hash_file_flag);
-  //  error_log('HOOK_HEARING_REMOVE_FILE_FLAG: ' . $values_hash_file_flag);
-  //}
 }
 
 /**
