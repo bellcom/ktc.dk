@@ -205,45 +205,53 @@ function ktc_netvaerk_notifications_node_update($node) {
  * Sends notification emails to members of networks
  */
 function ktc_netvaerk_notifications_send_notification_emails($node){
-    $result = db_query('SELECT status FROM {ktc_netvaerk_notifications} WHERE nid = :nid', array(':nid' => $node->nid))->fetchAll();
-    $field = field_get_items('node', $node, 'og_group_ref');
+  $result = db_query('SELECT status FROM {ktc_netvaerk_notifications} WHERE nid = :nid', array(':nid' => $node->nid))->fetchAll();
+  $fields = field_get_items('node', $node, 'og_group_ref');
 
-    if (empty($result)) {
-      db_insert('ktc_netvaerk_notifications')
-        ->fields(array(
-          'nid' => $node->nid,
-          'status' => 1,
-        ))
-        ->execute();
+  if (empty($result)) {
+    db_insert('ktc_netvaerk_notifications')
+      ->fields(array(
+        'nid' => $node->nid,
+        'status' => 1,
+      ))
+      ->execute();
 
-      $field = reset($field);
+    $uids = array();
+    $groups = array();
+    foreach ($fields as $field) {
       $group_id = $field['target_id'];
-
-      $uids = _ktc_netvaerk_notifications_get_users($group_id);
-
-      foreach ($uids as $uid) {
-        $user = user_load($uid);
-
-        if (!og_is_member('node', $group_id, 'user', $user)) continue; //not send notification if user not goup member
-
-        $token_data = array('user' => $user, 'node' => $node);
-        $to = $user->mail;
-
-        // Testing.
-        if ($test_mail = variable_get('ktc_test_mail_address', FALSE)) {
-          $to = $test_mail;
-        }
-        $language = $user->language;
-
-        $params = array();
-        $params['subject'] = token_replace(variable_get('ktc_netvaerk_notifications_subject'), $token_data);
-        $params['body'] = token_replace(variable_get('ktc_netvaerk_notifications_body'), $token_data);
-
-        drupal_mail('ktc_netvaerk_notifications', 'notify_new', $to, $language, $params);
-        error_log('mail sent:' . $to );
-      }
+      $uids= array_merge($uids,  _ktc_netvaerk_notifications_get_users($group_id));
+      $groups[] = $group_id;
     }
+    $uids = array_unique($uids);
+    foreach ($uids as $uid) {
+      $user = user_load($uid);
+      //not send notification if user not goup member
+      $send_notification = FALSE;
+      foreach ( $groups as $group_id) {
+        if (og_is_member('node', $group_id, 'user', $user)) {
+          $send_notification = TRUE;
+          break;
+        }
+      }
+      if ($send_notification === FALSE) continue;
+      $token_data = array('user' => $user, 'node' => $node);
+      $to = $user->mail;
 
+      // Testing.
+      if ($test_mail = variable_get('ktc_test_mail_address', FALSE)) {
+        $to = $test_mail;
+      }
+      $language = $user->language;
+
+      $params = array();
+      $params['subject'] = token_replace(variable_get('ktc_netvaerk_notifications_subject'), $token_data);
+      $params['body'] = token_replace(variable_get('ktc_netvaerk_notifications_body'), $token_data);
+
+      drupal_mail('ktc_netvaerk_notifications', 'notify_new', $to, $language, $params);
+      error_log('mail sent:' . $to );
+    }
+  }
 }
 /**
  * Get a list of users to notify for the content node.

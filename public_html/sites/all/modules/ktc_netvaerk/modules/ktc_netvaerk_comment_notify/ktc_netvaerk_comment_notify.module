@@ -147,17 +147,27 @@ function ktc_netvaerk_comment_notify_comment_insert($comment) {
 function ktc_netvaerk_comment_notify_send_notification_emails($comment) {
   $result = db_query('SELECT status FROM {ktc_netvaerk_comment_notify} WHERE nid = :nid AND cid = :cid AND status = :status', array(':nid' => $comment->nid, ':cid' => $comment->cid, ':status' => 1))->fetchAll();
   $node = node_load($comment->nid);
-
-  $field = field_get_items('node', $node, 'og_group_ref');
-  $field = reset($field);
-  $group_id = $field['target_id'];
   if (empty($result)) {
-    $uids = _ktc_netvaerk_comment_notify_get_users($group_id);
+    $fields = field_get_items('node', $node, 'og_group_ref');
+    $uids = array();
+    $groups = array();
+    foreach ($fields as $field) {
+      $group_id = $field['target_id'];
+      $uids= array_merge($uids,  _ktc_netvaerk_notifications_get_users($group_id));
+      $groups[] = $group_id;
+    }
+
+    $uids = array_unique($uids);
     foreach ($uids as $uid) {
       $user = user_load($uid);
-      if (!og_is_member('node', $group_id, 'user', $user))
-        continue; //not send notification if user not goup member
-
+      $send_notification = FALSE;
+      foreach ( $groups as $group_id) {
+        if (og_is_member('node', $group_id, 'user', $user)) {
+          $send_notification = TRUE;
+          break;
+        }
+      }
+      if ($send_notification === FALSE) continue;
       ktc_netvaerk_comment_notify_send_mail('notify_default',  $comment, $user, $node);
     }
     db_insert('ktc_netvaerk_comment_notify')
