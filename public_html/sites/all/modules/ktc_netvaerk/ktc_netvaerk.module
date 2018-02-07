@@ -843,6 +843,15 @@ function ktc_netvaerk_node_insert($node) {
   }
 }
 
+function ktc_netvaerk_node_update($node) {
+  $mail= variable_get('group_owner', 'netvaerk@ktc.dk');
+  $old_uid = $node->uid;
+  if ($owner = user_load_by_mail($mail) && $owner->uid != $old_uid ) {
+    // Update node: add global owner to group.
+    ktc_netvaerk_change_own($node);
+  }
+}
+
 /**
  * Change group owner.
  */
