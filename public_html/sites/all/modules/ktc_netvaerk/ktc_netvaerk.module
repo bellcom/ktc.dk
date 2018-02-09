@@ -1101,7 +1101,10 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
       $form['og_group_ref']['und']["#options"] = ktc_netvaerk_user_groups();
     }
   }
-
+  
+  if (!($user->uid==1 || in_array('administrator', $user->roles))) {
+    $form['field_active']["#access"] =  FALSE;
+  }
   if ($form_id == 'og_ui_confirm_subscribe') {
     $form['field_grouprole']['#access'] = FALSE;
   }
