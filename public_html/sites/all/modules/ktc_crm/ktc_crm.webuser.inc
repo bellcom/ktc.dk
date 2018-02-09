@@ -122,7 +122,7 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
   }
 
   //invite users by email
-  if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_massadd_massadd_form') {
+  /*if (isset($_POST['form_id']) && $_POST['form_id'] == 'og_massadd_massadd_form') {
     $tmp_account = clone $account;
     foreach ($edit as $key => $value) {
       $tmp_account->$key = $value;
@@ -146,7 +146,7 @@ function ktc_crm_user_presave(&$edit, $account, $category) {
         $edit['field_navn'][LANGUAGE_NONE][0]['value'] = $webuserdto->FirstName;
         $edit['field_efternavn'][LANGUAGE_NONE][0]['value'] = $webuserdto->LastName;
     }
-  }
+  }*/
 }
 
 /**
