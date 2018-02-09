@@ -1097,12 +1097,12 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
 
    global $user;
 
-   if (($user->uid==1 or in_array('administrator', $user->roles) or in_array('Ansat i KL', $user->roles))=== FALSE) {
+   if (($user->uid==1 or in_array('Administrator', $user->roles) or in_array('Ansat i KL', $user->roles))=== FALSE) {
       $form['og_group_ref']['und']["#options"] = ktc_netvaerk_user_groups();
     }
   }
   
-  if (!($user->uid==1 || !in_array('administrator', $user->roles))) {
+  if (!($user->uid==1 || in_array('Administrator', $user->roles))) {
     $form['field_active']["#access"] =  FALSE;
   }
   if ($form_id == 'og_ui_confirm_subscribe') {
