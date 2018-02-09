@@ -1,0 +1,6 @@
+name = KTC Høring Admin Suite
+description = KTC Høring Admin Suite modul. Contain scripts for admin tasks
+core = 7.x
+package = KTC
+version = 7.x-1.0
+project = ktc_hearing

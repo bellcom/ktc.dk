@@ -1,0 +1,17 @@
+
+#ktc-hearing-admin-suite-hearing-cleanup-search-form .container-inline-date {
+  display: inline-block;
+}
+#ktc-hearing-admin-suite-hearing-cleanup-search-form .form-submit {
+  clear: both;
+  display: block;
+}
+#ktc-hearing-admin-suite-hearing-cleanup-search-form .form-item-date-from-date label, 
+#ktc-hearing-admin-suite-hearing-cleanup-search-form .form-item-date-to-date label {
+  display: none;
+} 
+#ktc-hearing-admin-suite-hearing-cleanup-search-form .search-submit-btn{
+  display: inline-block;    
+  vertical-align: bottom;
+  margin-bottom: 35px;
+}      
