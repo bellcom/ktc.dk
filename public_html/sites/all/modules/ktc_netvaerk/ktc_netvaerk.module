@@ -1102,7 +1102,7 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
     }
   }
   
-  if (!($user->uid==1 || in_array('administrator', $user->roles))) {
+  if (!($user->uid==1 || !in_array('administrator', $user->roles))) {
     $form['field_active']["#access"] =  FALSE;
   }
   if ($form_id == 'og_ui_confirm_subscribe') {
