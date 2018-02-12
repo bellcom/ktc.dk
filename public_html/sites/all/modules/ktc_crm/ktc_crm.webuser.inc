@@ -471,9 +471,9 @@ function ktc_crm_webuser_membership_categories() {
 }
 
 /*
- * Sync users which accessed during current day
+ * Sync users FROM CRM which accessed during current day
  */
-function ktc_crm_webuser_sync_users_accessed_today(){
+function ktc_crm_webuser_sync_users_accessed_today_from_crm(){
   $result = db_select('users', 'u')
     ->fields('u', array('uid'))
     ->condition('status', 0,'>')
@@ -485,3 +485,22 @@ function ktc_crm_webuser_sync_users_accessed_today(){
    ktc_crm_update_account_from_webuserdto($webuserdto);
  };
 }
+
+/*
+ * Sync users TO CRM which accessed during current day
+ */
+function ktc_crm_webuser_sync_users_accessed_today_to_crm(){
+  $result = db_select('users', 'u')
+    ->fields('u', array('uid'))
+    ->condition('status', 0,'>')
+    ->condition('access', time()-86400,'>' )
+    ->execute();
+  while($record = $result->fetchAssoc()) {
+   $user = user_load($record['uid']);
+   $webuserdto = ktc_crm_map_account_to_webuserdto($user);
+   ktc_crm_update_user($webuserdto);
+ };
+}
+
+
+
