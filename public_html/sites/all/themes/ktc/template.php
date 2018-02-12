@@ -775,8 +775,14 @@ function ktc_menu_local_task($variables) {
   $link = $variables['element']['#link'];
   $link_text = $link['title'];
 
+  global $user;
+
   // Hide "Følg" and "Log"
   if ($link['path'] == 'node/%/track' || $link['path'] == 'node/%/log') {
+    return '';
+  }
+  // Hide signup/settings for non-admin users
+  if ($link['path'] == 'node/%/signups/settings'  &&  !($user->uid==1 || in_array('Administrator', $user->roles))) {
     return '';
   }
   if ($link['path'] == 'node/%/administer') {
