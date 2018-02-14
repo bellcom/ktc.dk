@@ -234,7 +234,7 @@ body {
   font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 12px;
   line-height: 1.42857143;
-  color: #848e92;
+  color: #4B6068;
   background-color: #e9edee;
 }
 
@@ -366,7 +366,7 @@ h6 .small,
 .h6 .small {
   font-weight: normal;
   line-height: 1;
-  color: #848e92;
+  color: #4B6068;
 }
 
 h1,
@@ -490,7 +490,7 @@ cite {
 }
 
 .text-muted {
-  color: #848e92;
+  color: #4B6068;
 }
 
 .text-primary {
@@ -631,7 +631,7 @@ dd {
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted #848e92;
+  border-bottom: 1px dotted #4B6068;
 }
 
 .initialism {
@@ -658,7 +658,7 @@ blockquote .small {
   display: block;
   font-size: 80%;
   line-height: 1.42857143;
-  color: #848e92;
+  color: #4B6068;
 }
 
 blockquote footer:before,
@@ -1348,16 +1348,16 @@ output {
 }
 
 .form-control::-moz-placeholder {
-  color: #848e92;
+  color: #4B6068;
   opacity: 1;
 }
 
 .form-control:-ms-input-placeholder {
-  color: #848e92;
+  color: #4B6068;
 }
 
 .form-control::-webkit-input-placeholder {
-  color: #848e92;
+  color: #4B6068;
 }
 
 .form-control[disabled],
@@ -1594,7 +1594,7 @@ select[multiple].input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #c8ccce;
+  color: #89a1aa;
 }
 
 .form-horizontal .control-label,
@@ -1983,7 +1983,7 @@ fieldset[disabled] .btn-link {
 fieldset[disabled] .btn-link:hover,
 .btn-link[disabled]:focus,
 fieldset[disabled] .btn-link:focus {
-  color: #848e92;
+  color: #4B6068;
   text-decoration: none;
 }
 
@@ -2950,7 +2950,7 @@ input[type="button"].btn-block {
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
-  color: #848e92;
+  color: #4B6068;
 }
 
 .dropdown-menu > .disabled > a:hover,
@@ -2985,7 +2985,7 @@ input[type="button"].btn-block {
   padding: 3px 20px;
   font-size: 10px;
   line-height: 1.42857143;
-  color: #848e92;
+  color: #4B6068;
 }
 
 .dropdown-backdrop {
@@ -3420,12 +3420,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .nav > li.disabled > a {
-  color: #848e92;
+  color: #4B6068;
 }
 
 .nav > li.disabled > a:hover,
 .nav > li.disabled > a:focus {
-  color: #848e92;
+  color: #4B6068;
   text-decoration: none;
   background-color: transparent;
   cursor: not-allowed;
@@ -3812,7 +3812,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-brand {
-  color: #848e92;
+  color: #4B6068;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -3822,11 +3822,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-text {
-  color: #848e92;
+  color: #4B6068;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #848e92;
+  color: #4B6068;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -3875,7 +3875,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-link {
-  color: #848e92;
+  color: #4B6068;
 }
 
 .navbar-inverse .navbar-link:hover {
@@ -3897,7 +3897,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .breadcrumb > li + li:before {
   content: "-\00a0";
   padding: 0 5px;
-  color: #848e92;
+  color: #4B6068;
 }
 
 .breadcrumb > .active {
@@ -3969,7 +3969,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pagination > .disabled > a,
 .pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus {
-  color: #848e92;
+  color: #4B6068;
   background-color: #fff;
   border-color: #e9edee;
   cursor: not-allowed;
@@ -4051,7 +4051,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
 .pager .disabled > span {
-  color: #848e92;
+  color: #4B6068;
   background-color: #fff;
   cursor: not-allowed;
 }
@@ -4086,12 +4086,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .label-default {
-  background-color: #848e92;
+  background-color: #4B6068;
 }
 
 .label-default[href]:hover,
 .label-default[href]:focus {
-  background-color: #6b7478;
+  background-color: #36454a;
 }
 
 .label-primary {
@@ -4150,7 +4150,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   vertical-align: baseline;
   white-space: nowrap;
   text-align: center;
-  background-color: #848e92;
+  background-color: #4B6068;
   border-radius: 10px;
 }
 
@@ -4236,7 +4236,7 @@ a.thumbnail.active {
 
 .thumbnail .caption {
   padding: 9px;
-  color: #848e92;
+  color: #4B6068;
 }
 
 .alert {
@@ -5812,7 +5812,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 
 .chosen-container .chosen-results li.disabled-result {
   display: list-item;
-  color: #848e92;
+  color: #4B6068;
 }
 
 .chosen-container .chosen-results .no-results {
@@ -5912,7 +5912,7 @@ div.ktc-comments-form form.ktc-comments-form .form-actions:after,
 }
 
 .chosen-container-single .chosen-default {
-  color: #848e92;
+  color: #4B6068;
 }
 
 .chosen-container-single .chosen-search {
@@ -6209,7 +6209,7 @@ This must be run when you have at least 2 sprites.
 */
 
 a {
-  color: #848e92;
+  color: #4B6068;
   text-decoration: none;
 }
 
@@ -6243,7 +6243,7 @@ a:hover {
   padding: 0 34px 0 64px;
   font-size: 19px;
   font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
-  color: #848e92;
+  color: #4B6068;
   display: table-cell;
   vertical-align: middle;
   line-height: 1.1;
@@ -6315,7 +6315,7 @@ a:hover {
 
 .carousel .carousel-inner > .item > .carousel-caption a {
   font-size: 24px;
-  color: #848e92;
+  color: #4B6068;
   text-transform: initial;
 }
 
@@ -6345,7 +6345,7 @@ a:hover {
 }
 
 .content_header_2 {
-  color: #848e92;
+  color: #4B6068;
   text-transform: initial;
   font-family: 'Bree Serif', Geneva, Verdana, sans-serif;
   font-size: 32px;
@@ -7004,7 +7004,7 @@ body.page-taxonomy-term div.node-os2web-base-news header h2 {
   margin-top: 14px;
   font-family: 'Lato', Geneva, Verdana, sans-serif;
   text-transform: initial;
-  color: #848e92;
+  color: #4B6068;
   font-weight: 600;
 }
 
@@ -7012,7 +7012,7 @@ body.page-node article header h2 a,
 body.page-taxonomy-term article header h2 a,
 body.page-node div.node-os2web-base-news header h2 a,
 body.page-taxonomy-term div.node-os2web-base-news header h2 a {
-  color: #848e92;
+  color: #4B6068;
   text-transform: initial;
   font-family: 'Lato', Geneva, Verdana, sans-serif;
 }
@@ -7535,7 +7535,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 
 .front-s-news-item-text .news-title {
   font-size: 24px;
-  color: #848e92;
+  color: #4B6068;
 }
 
 .front-s-news-item-text .news-title:hover {
@@ -7705,7 +7705,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 
 .menu-block-wrapper ul li a {
   font-size: 15px;
-  color: #848e92;
+  color: #4B6068;
 }
 
 .region_footer.footer_5 {
@@ -9559,7 +9559,7 @@ fieldset[disabled] .field-type-image .button {
   font-family: 'Lato', Geneva, Verdana, sans-serif;
   font-size: 12px;
   font-weight: 700;
-  color: #848e92;
+  color: #4B6068;
   padding: 7px 15px;
   text-transform: uppercase;
 }
@@ -9901,7 +9901,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-teaser-large .ktc-teaser-large-heading {
   position: relative;
   display: block;
-  color: #848e92;
+  color: #4B6068;
   padding: 7px 0;
   margin: 0 15px;
   margin-bottom: -7px;
@@ -9915,13 +9915,13 @@ fieldset[disabled] .field-type-image .button {
 }
 
 .ktc-teaser-large .ktc-teaser-large-heading a {
-  color: #848e92;
+  color: #4B6068;
   font-weight: bold;
 }
 
 .ktc-teaser-large .ktc-teaser-large-heading span {
   float: right;
-  color: #848e92;
+  color: #4B6068;
   font-weight: normal;
 }
 
@@ -10481,7 +10481,7 @@ fieldset[disabled] .field-type-image .button {
   font-family: 'Lato', Geneva, Verdana, sans-serif;
   font-size: 12px;
   font-weight: normal;
-  color: #848e92;
+  color: #4B6068;
   font-size: 85%;
   padding: 7px 15px;
   text-transform: uppercase;
@@ -10760,7 +10760,7 @@ fieldset[disabled] .field-type-image .button {
   font-family: 'Lato', Geneva, Verdana, sans-serif;
   font-size: 12px;
   font-weight: normal;
-  color: #848e92;
+  color: #4B6068;
   font-size: 85%;
   padding: 7px 15px;
   text-transform: uppercase;
@@ -11039,7 +11039,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title .small {
   font-weight: normal;
   line-height: 1;
-  color: #848e92;
+  color: #4B6068;
 }
 
 .ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title small,
