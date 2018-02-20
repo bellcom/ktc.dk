@@ -160,6 +160,7 @@ function ktc_hearing_admin_suite_hearing_cleanup_hearings_form_submit($form, &$f
       ))
       ->condition('entity_id', $nids, 'in')
       ->execute();
-  drupal_flush_all_caches();
+  //drupal_flush_all_caches();
+  entity_get_controller('node')->resetCache($nids);
   drupal_set_message(t('!hearings hearings have been closed.', array('!hearings' => $updated)));
 }
