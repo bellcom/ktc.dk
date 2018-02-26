@@ -1086,8 +1086,10 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
     if (isset($form_state['entityreference_prepopulate'])) {
       drupal_set_title('Opret Undernetværk');
     }
-    unset($form['actions']['draft']);
-
+    if (!isset($form['nid']['#value'])) {
+      unset($form['actions']['draft']);
+    }
+     unset($form['actions']['delete']);
     // Can't make ktc_content_types_field_group_hide_field_groups work
     // on these two fields. Hide with CSS instead and set a dummy default value.
     $form['og_roles_permissions']['#attributes']['class'][] = 'hide';
