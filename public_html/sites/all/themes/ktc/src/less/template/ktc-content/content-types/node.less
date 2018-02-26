@@ -50,10 +50,52 @@
 .ktc-aside-node-title-small {
   a {
     font-family: @ktc-teaser-title-font-family;
-    font-size: @ktc-teaser-title-font-size;
+    font-size: 11px;
     font-weight: @ktc-teaser-title-font-weight;
     color: @ktc-teaser-title-font-color;
     text-transform: uppercase;
+    display: block;
+    padding-left: 15px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+  }
+  a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    margin-top: 3px;
+  }
+  a.ktc-green {
+    &:before {
+     .sprite(@ktc-icon-pin-green);
+    }
+    &:hover {
+     color: @brand-darkgreen;
+    }
+  }
+  a.ktc-gold {
+    &:before {
+     .sprite(@ktc-icon-pin-gold);
+    }
+    &:hover {
+     color: @brand-gold;
+    }
+  }
+   a.ktc-red {
+    &:before {
+     .sprite(@ktc-icon-pin-red);
+    }
+    &:hover {
+     color: @brand-red;
+    }
+  }
+   a.ktc-blue {
+    &:before {
+     .sprite(@ktc-icon-pin-blue);
+    }
+    &:hover {
+     color: @brand-darkblue;
+    }
   }
 }
 // Unpublished
@@ -66,7 +108,7 @@
   &.ktc-teaser-magazine {
 
 		.ktc-list-display-large-body,
-    .ktc-teaser-large-body, 
+    .ktc-teaser-large-body,
     .ktc-teaser-body,
     .ktc-teaser-heading,
     .ktc-aside-body {
