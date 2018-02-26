@@ -115,7 +115,7 @@ function ktc_hearing_admin_suite_hearing_cleanup_hearings_form() {
   $options = array();
   foreach ($result as $key => $row) {
     $options[$row->nid] = array(
-      'title' => $row->title,
+      'title' => l($row->title, "node/" . $row->nid,  array('attributes' => array('target' => '_blank'))),
       'status' => taxonomy_term_load($row->field_status_tid)->name,
       'date' => date("d/m/Y", strtotime($row->field_official_date_value)),
       'operations' => array(
