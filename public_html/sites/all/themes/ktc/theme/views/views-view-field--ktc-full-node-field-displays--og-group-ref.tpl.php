@@ -12,4 +12,3 @@ foreach ($row->field_og_group_ref as $key => $value ) {
   print l($group_info['name'], drupal_get_path_alias('node/' . $value['raw']['target_id'] ), array('attributes' => array('class' => $group_info['class'])));
  }
 ?>
-<?php // print implode(', ', $links); ?>
