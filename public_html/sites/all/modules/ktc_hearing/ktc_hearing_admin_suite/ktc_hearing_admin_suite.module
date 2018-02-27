@@ -136,7 +136,7 @@ function ktc_hearing_admin_suite_hearing_cleanup_hearings_form() {
       '#multiple' => TRUE,
         //'#default_value' => $default_values,
     );
-    $form['pager'] = array('#markup' => theme('pager'));
+   // $form['pager'] = array('#markup' => theme('pager'));
     $form['cleanup']['submit'] = array(
       '#type' => 'submit',
       '#suffix' => t('<p><b>ATTENTION! This action can\'t be undone</b></p>'),
