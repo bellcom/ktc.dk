@@ -93,7 +93,7 @@ function ktc_hearing_admin_suite_hearing_cleanup_hearings_form() {
   $query->fields('n', array('nid', 'title'))
       ->fields('s', array('field_status_tid'))
       ->fields('d', array('field_official_date_value'));
-  $query->condition('field_status_tid', array(KTC_HEARING_STATUS_APPROVED, KTC_HEARING_STATUS_CLOSED), 'not in');
+  //$query->condition('field_status_tid', array(KTC_HEARING_STATUS_APPROVED, KTC_HEARING_STATUS_CLOSED), 'not in');
   if (!empty($_GET['date_from'])) {
     $search_params['date_from'] = str_replace('/', '-', $_GET['date_from']) . ' 00:00:00';
     $query->condition('d.field_official_date_value', str_replace('/', '-', $_GET['date_from']) . ' 00:00:00', '>=');
@@ -136,6 +136,7 @@ function ktc_hearing_admin_suite_hearing_cleanup_hearings_form() {
       '#multiple' => TRUE,
         //'#default_value' => $default_values,
     );
+    $form['pager'] = array('#markup' => theme('pager'));
     $form['cleanup']['submit'] = array(
       '#type' => 'submit',
       '#suffix' => t('<p><b>ATTENTION! This action can\'t be undone</b></p>'),
