@@ -268,7 +268,7 @@ function ktc_content_types_unpublish_access($nid) {
   if ($node->status && $node->uid == $user->uid) {
     return TRUE;
   }
-  if ($node->type == 'group' && og_user_access('node', $node->nid, 'administer group')) {
+  if ($node->type == 'group' && $node->status && og_user_access('node', $node->nid, 'administer group')) {
     return TRUE;
   }
   return FALSE;
