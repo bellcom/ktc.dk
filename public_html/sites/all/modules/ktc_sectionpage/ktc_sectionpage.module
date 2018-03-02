@@ -251,7 +251,7 @@ function ktc_sectionpage_block_info() {
   $blocks['ktc_page_menu_tabs'] = array(
     'info' => t('Page menu tabs'),
   );
-  
+
   $blocks['ktc_document_bilag_list'] = array(
     'info' => t('KTC Bilag list on documnent page'),
   );
@@ -325,13 +325,13 @@ function ktc_sectionpage_block_view($delta = '') {
       $block['subject'] = '';
       $block['content'] = _ktc_section_block_page_menu_tabs();
       break;
-    
+
     case 'ktc_document_bilag_list':
       $block['subject'] = '';
       $block['content'] = _ktc_section_block_ktc_document_bilag_list();
-      break;  
+      break;
   }
-    
+
   return $block;
 }
 
@@ -414,7 +414,7 @@ function _ktc_section_block_netvaerk_invite_links_content() {
 
     // If user has access to invite user to group.
     if ($og_is_member ) {
-      if (og_user_access('node', $nid, 'invite any user')) {
+      if ($node->status && og_user_access('node', $nid, 'invite any user')) {
         $html .= '<div class="ktc-filter-button-container  og-members-show-modal">';
         $html .= l('Invitér', 'group/node/' . $nid . '/admin/people/invite-users', array('attributes' => array('class' => $link_class)));
         $html .= '</div>';
@@ -449,10 +449,11 @@ function _ktc_section_block_netvaerk_invite_links_content() {
     $html .= l(t('Medlemmer'), '#', array('attributes' => array('class' => $link_class)));
     $html .= '</div>';
 
-    $html .= '<div class="ktc-filter-button-container og-members-show-modal">';
-    $html .= l(t('Medlemsliste'), '#', array('attributes' => array('class' => $link_class)));
-    $html .= '</div>';
-
+    if ($node->status) {
+      $html .= '<div class="ktc-filter-button-container og-members-show-modal">';
+      $html .= l(t('Medlemsliste'), '#', array('attributes' => array('class' => $link_class)));
+      $html .= '</div>';
+    }
     $html .= '</div>';
   }
 
@@ -625,7 +626,7 @@ function _ktc_content_filter_view($page = '', $f1 = '', $f2 = '', $f3 = '', $f4 
   $groups_with_region = _ktc_get_groups_with_region($f5);
   $gid = _ktc_sectionpage_group_filter_helper($gid);
   $nids = _ktc_sectionpage_get_group_members_nid($gid);
- 
+
   // If the content type:document does not included in the content_type,
   // remove the document type from term_type filter value.
   if (strpos($content_type, 'document') === FALSE) {

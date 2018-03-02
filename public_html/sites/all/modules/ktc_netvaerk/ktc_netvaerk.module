@@ -113,7 +113,7 @@ function ktc_netvaek_tabs_administer($node) {
  * @return bool
  */
 function _ktc_netvaerk_check_local_task($node) {
-  return ($node->type == 'group' && og_user_access('node', $node->nid, 'administer group'));
+  return ($node->type == 'group' && $node->status && og_user_access('node', $node->nid, 'administer group'));
 }
 
 function ktc_netvaek_get_emner($content_type, $network_type, $region) {
