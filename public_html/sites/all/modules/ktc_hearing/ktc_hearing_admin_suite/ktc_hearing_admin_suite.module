@@ -1,0 +1,167 @@
+<?php
+
+/**
+ * @file
+ * Code for the KTC Høring admin suite.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ktc_hearing_admin_suite_menu() {
+  $items['admin/config/ktc_hearings_admin_suite'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => 'KTC Høringer admin suite',
+    'description' => 'KTC Høringer admin suite',
+    'access arguments' => array('administer ktc hearings'),
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+  $items['admin/config/ktc_hearings_admin_suite/cleanup'] = array(
+    'type' => MENU_LOCAL_TASK,
+    'title' => 'KTC Høringer cleanup',
+    'description' => 'Close old hearings',
+    'page callback' => 'ktc_hearing_admin_suite_hearing_cleanup_page',
+    'access arguments' => array('administer ktc hearings'),
+  );
+
+
+  return $items;
+}
+
+function ktc_hearing_admin_suite_hearing_cleanup_page() {
+  drupal_set_title(t('Close old hearings'));
+
+
+  $search_form = drupal_get_form('ktc_hearing_admin_suite_hearing_cleanup_search_form');
+  $hearings_form = "";
+  if (!empty($_GET['date_to'] || !empty($_GET['date_from']))) {
+    $hearings_form = drupal_get_form('ktc_hearing_admin_suite_hearing_cleanup_hearings_form');
+  }
+  return drupal_render($search_form) . drupal_render($hearings_form);
+}
+
+function ktc_hearing_admin_suite_hearing_cleanup_search_form() {
+  drupal_add_css(drupal_get_path('module', 'ktc_hearing_admin_suite') . '/css/ktc_hearing_admin_suite.css');
+  $form['search']['date_from'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('From'),
+    '#date_format' => 'd/m/Y',
+    '#date_year_range' => '-20:+0',
+    '#default_value' => isset($_GET['date_from']) ? $_GET['date_from'] : "",
+  );
+  $form['search']['date_to'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('To'),
+    '#date_format' => 'd/m/Y',
+    '#date_year_range' => '-20:+0',
+    '#default_value' => isset($_GET['date_to']) ? $_GET['date_to'] : "",
+  );
+  $form['search']['search_submit'] = array(
+    '#prefix' => '<div class="search-submit-btn">',
+    '#suffix' => '</div>',
+    '#type' => 'submit',
+    '#value' => t('Search'),
+  );
+  return $form;
+}
+
+/**
+ * Implements hook_FORM_submit().
+ */
+function ktc_hearing_admin_suite_hearing_cleanup_search_form_submit($form, &$form_state) {
+  drupal_goto('admin/config/ktc_hearings_admin_suite/cleanup', array(
+    'query' => array(
+      'date_from' => $form_state['values']['date_from'],
+      'date_to' => $form_state['values']['date_to'],
+    ),
+  ));
+}
+
+function ktc_hearing_admin_suite_hearing_cleanup_hearings_form() {
+  $destination = drupal_get_destination();
+  $headers = array(
+    'title' => array('data' => t('Title'), 'field' => 'title'),
+    'status' => array('data' => t('Status'), 'field' => 'field_status_tid'),
+    'date' => array('data' => t('Date'), 'field' => 'field_official_date_value', 'sort' => 'asc'),
+    'operations' => t('Operations')
+  );
+  $query = db_select('node', 'n');
+  $query->innerJoin('field_data_field_official_date', 'd', 'n.nid = d.entity_id');
+  $query->innerJoin('field_data_field_status', 's', 'n.nid = s.entity_id');
+  $query->fields('n', array('nid', 'title'))
+      ->fields('s', array('field_status_tid'))
+      ->fields('d', array('field_official_date_value'));
+  //$query->condition('field_status_tid', array(KTC_HEARING_STATUS_APPROVED, KTC_HEARING_STATUS_CLOSED), 'not in');
+  if (!empty($_GET['date_from'])) {
+    $search_params['date_from'] = str_replace('/', '-', $_GET['date_from']) . ' 00:00:00';
+    $query->condition('d.field_official_date_value', str_replace('/', '-', $_GET['date_from']) . ' 00:00:00', '>=');
+  }
+
+  if (!empty($_GET['date_to'])) {
+    $search_params['date_to'] = str_replace('/', '-', $_GET['date_to']) . ' 23:59:59';
+
+    $query->condition('d.field_official_date_value', str_replace('/', '-', $_GET['date_to']) . ' 23:59:59', '<=');
+  }
+  $query->extend('TableSort')
+      ->orderByHeader($headers);
+  $pager = $query->extend('PagerDefault')
+      ->limit(500);
+
+  $result = $pager->execute()
+      ->fetchAll();
+
+  $options = array();
+  foreach ($result as $key => $row) {
+    $options[$row->nid] = array(
+      'title' => l($row->title, "node/" . $row->nid,  array('attributes' => array('target' => '_blank'))),
+      'status' => taxonomy_term_load($row->field_status_tid)->name,
+      'date' => date("d/m/Y", strtotime($row->field_official_date_value)),
+      'operations' => array(
+        'data' => array(
+          '#type' => 'link',
+          '#title' => t('edit'),
+          '#href' => "node/" . $row->nid . "/edit",
+          '#options' => array('query' => $destination),
+        ),
+      )
+    );
+  }
+  if (!empty($options)) {
+    $form['cleanup']['hearings'] = array(
+      '#type' => 'tableselect',
+      '#header' => $headers,
+      '#options' => $options,
+      '#multiple' => TRUE,
+        //'#default_value' => $default_values,
+    );
+   // $form['pager'] = array('#markup' => theme('pager'));
+    $form['cleanup']['submit'] = array(
+      '#type' => 'submit',
+      '#suffix' => t('<p><b>ATTENTION! This action can\'t be undone</b></p>'),
+      '#value' => t('Close selected hearings'),
+    );
+  }
+  else {
+    $form['cleanup'] = array(
+      '#markup' => t('Hearings not found'));
+  }
+  return $form;
+}
+
+function ktc_hearing_admin_suite_hearing_cleanup_hearings_form_submit($form, &$form_state) {
+
+  $nids = array_filter($form_state['values']['hearings'], function($a) {
+    return ($a !== 0);
+  });
+  $updated = db_update('field_data_field_status')
+      ->fields(array(
+        'field_status_tid' => KTC_HEARING_STATUS_APPROVED,
+      ))
+      ->condition('entity_id', $nids, 'in')
+      ->execute();
+  //drupal_flush_all_caches();
+  entity_get_controller('node')->resetCache($nids);
+  drupal_set_message(t('!hearings hearings have been closed.', array('!hearings' => $updated)));
+}

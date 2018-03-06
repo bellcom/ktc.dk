@@ -470,7 +470,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Svarfrist */
+  /* Felt: Indhold: Tilmeldingsfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
@@ -595,10 +595,11 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['label'] = '';
-  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'ktc-node-title-small ktc-node-title-light ktc-padding-bottom-sm ktc-padding-top';
-  $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['label'] = 'Indholdet er publiceret i følgende';
+  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'div';
+  $handler->display->display_options['fields']['og_group_ref']['element_class'] = '.ktc-aside-node-title-small ktc-padding-bottom-sm ';
+  $handler->display->display_options['fields']['og_group_ref']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['og_group_ref']['element_label_class'] = 'ktc-node-title-xs ktc-padding-top';
   $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
     'link' => 1,
@@ -1106,7 +1107,7 @@ function ktc_content_types_views_default_views() {
     t('Slut'),
     t('Pris'),
     t('Målgruppe'),
-    t('Svarfrist'),
+    t('Tilmeldingsfrist'),
     t('Kort og adresse'),
     t('Adresse'),
     t('[field_arrangement_location]<br />
@@ -1114,6 +1115,7 @@ function ktc_content_types_views_default_views() {
     t('Logo og netværksnavn'),
     t('Group node from OG membership'),
     t('<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>'),
+    t('Indholdet er publiceret i følgende'),
     t('Oprettet af'),
     t('Logo på Netværk'),
     t('Titel, type og type - uden Addthis'),

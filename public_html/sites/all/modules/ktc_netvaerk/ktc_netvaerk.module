@@ -113,7 +113,7 @@ function ktc_netvaek_tabs_administer($node) {
  * @return bool
  */
 function _ktc_netvaerk_check_local_task($node) {
-  return ($node->type == 'group' && og_user_access('node', $node->nid, 'administer group'));
+  return ($node->type == 'group' && $node->status && og_user_access('node', $node->nid, 'administer group'));
 }
 
 function ktc_netvaek_get_emner($content_type, $network_type, $region) {
@@ -1086,7 +1086,10 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
     if (isset($form_state['entityreference_prepopulate'])) {
       drupal_set_title('Opret Undernetværk');
     }
-
+    if (!isset($form['nid']['#value'])) {
+      unset($form['actions']['draft']);
+    }
+     unset($form['actions']['delete']);
     // Can't make ktc_content_types_field_group_hide_field_groups work
     // on these two fields. Hide with CSS instead and set a dummy default value.
     $form['og_roles_permissions']['#attributes']['class'][] = 'hide';
@@ -1096,11 +1099,14 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
 
    global $user;
 
-   if (($user->uid==1 or in_array('administrator', $user->roles) or in_array('Ansat i KL', $user->roles))=== FALSE) {
+   if (($user->uid==1 or in_array('Administrator', $user->roles) or in_array('Ansat i KL', $user->roles))=== FALSE) {
       $form['og_group_ref']['und']["#options"] = ktc_netvaerk_user_groups();
     }
   }
-
+  
+  if (!($user->uid==1 || in_array('Administrator', $user->roles))) {
+    $form['field_active']["#access"] =  FALSE;
+  }
   if ($form_id == 'og_ui_confirm_subscribe') {
     $form['field_grouprole']['#access'] = FALSE;
   }
@@ -1182,12 +1188,6 @@ function _ktc_netvaerk_og_members_list() {
   if ( (og_user_access('node', $gid, 'administer group') or $user_is_admin) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
     $buttons .= '<p><a href="#" class="js-form-add-user btn"><span class="glyphicon glyphicon-plus"></span> Tilføj nyt medlem</a>';
   }
-
-  // Invite new member
-  if ( (og_user_access('node', $gid, 'invite any user') or $user_is_admin) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
-    $buttons .= '<a href="#" class="js-form-massadd-user btn"><span class="glyphicon glyphicon-plus"></span> Inviter pr. email adresse</a></p>';
-  }
-
   // Only show pending users and add form to users with administer group
   // permissions.
   if ( (og_user_access('node', $gid, 'administer group') or $user_is_admin) && $state != KTC_NETVAERK_GROUP_NONE_OTHER) {
