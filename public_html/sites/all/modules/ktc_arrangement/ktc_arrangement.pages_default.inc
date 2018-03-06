@@ -76,6 +76,35 @@ function ktc_arrangement_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-b2459bf8-9bd9-4050-8c0d-5234ab3abf97';
+    $pane->panel = 'bottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'signup_user_list-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '%node:nid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Tilmeldte',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'ktc-aside-color ktc-margin-top',
+      'template_suggestion' => 'contentd',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b2459bf8-9bd9-4050-8c0d-5234ab3abf97';
+    $display->content['new-b2459bf8-9bd9-4050-8c0d-5234ab3abf97'] = $pane;
+    $display->panels['bottom'][0] = 'new-b2459bf8-9bd9-4050-8c0d-5234ab3abf97';
+    $pane = new stdClass();
     $pane->pid = 'new-2ecf2c8a-1234-4286-bf4b-024c97851dd5';
     $pane->panel = 'center';
     $pane->type = 'views_panes';
@@ -578,7 +607,7 @@ return true;',
     $pane->panel = 'left';
     $pane->type = 'views_panes';
     $pane->subtype = 'signup_user_list-panel_pane_1';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
