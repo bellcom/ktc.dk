@@ -595,10 +595,11 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['label'] = '';
-  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['og_group_ref']['element_class'] = 'ktc-node-title-small ktc-node-title-light ktc-padding-bottom-sm ktc-padding-top';
-  $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_group_ref']['label'] = 'Indholdet er publiceret i følgende';
+  $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'div';
+  $handler->display->display_options['fields']['og_group_ref']['element_class'] = '.ktc-aside-node-title-small ktc-padding-bottom-sm ';
+  $handler->display->display_options['fields']['og_group_ref']['element_label_type'] = 'h5';
+  $handler->display->display_options['fields']['og_group_ref']['element_label_class'] = 'ktc-node-title-xs ktc-padding-top';
   $handler->display->display_options['fields']['og_group_ref']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
     'link' => 1,
@@ -1114,6 +1115,7 @@ function ktc_content_types_views_default_views() {
     t('Logo og netværksnavn'),
     t('Group node from OG membership'),
     t('<div class="ktc-logo"><div class="ktc-logo-image"><span class="content-type-logo"></span></div>  </div>'),
+    t('Indholdet er publiceret i følgende'),
     t('Oprettet af'),
     t('Logo på Netværk'),
     t('Titel, type og type - uden Addthis'),

@@ -121,8 +121,7 @@ function ktc_crm_og_membership_presave ($og_membership){
  */
 function ktc_crm_og_membership_insert($og_membership) {
 if (isset($_POST['form_id']) && 
-    ($_POST['form_id'] == 'og_ui_add_users' || $_POST['form_id'] == 'group_node_form' ||  $_POST['form_id'] == 'og_massadd_massadd_form' 
-    || ($_POST['form_id'] == 'og_ui_confirm_subscribe' && $og_membership->state  == 1 ))){
+    ($_POST['form_id'] == 'og_ui_add_users' || $_POST['form_id'] == 'group_node_form' || ($_POST['form_id'] == 'og_ui_confirm_subscribe' && $og_membership->state  == 1 ))){
 // If a users is added to a group send this info to CRM.
   if ($groupmemberdto = _ktc_crm_group_groupmemberdto_from_og_membership($og_membership)) {
     $logger = KtcCrmLogger::getInstance();
