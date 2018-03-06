@@ -3256,7 +3256,7 @@ function ktc_views_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Ingen netværk';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Forbindelse: OG membership: Group Node from OG membership */
+  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
@@ -6242,11 +6242,11 @@ Alle
   </ul>
 </nav>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
-  /* Forbindelse: OG membership: Group Node from OG membership */
+  /* Forbindelse: OG membership: Group Indholdselement from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
-  /* Forbindelse: OG membership: Node from OG membership */
+  /* Forbindelse: OG membership: Indholdselement from OG membership */
   $handler->display->display_options['relationships']['og_membership_related_node']['id'] = 'og_membership_related_node';
   $handler->display->display_options['relationships']['og_membership_related_node']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node']['field'] = 'og_membership_related_node';
@@ -7081,7 +7081,7 @@ Alle
   $handler->display->display_options['filters']['field_account_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_account_tid']['vocabulary'] = 'accounts';
   $handler->display->display_options['filters']['field_account_tid']['hierarchy'] = 1;
-  $handler->display->display_options['path'] = 'admin/brugersoegning';
+  $handler->display->display_options['path'] = 'admin/people/brugersoegning';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Personsøgning';
   $handler->display->display_options['menu']['name'] = 'management';
