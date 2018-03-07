@@ -304,7 +304,6 @@ function ktc_crm_map_account_to_webuserdto($account) {
   $webuserdto->Active = $account->status;
 
   $webuserdto->WebUser = TRUE;
-
   if ($account->access) {
     $webuserdto->LastLogin = date('Y-m-d\TH:i:s', $account->access);
   }
@@ -496,6 +495,7 @@ function ktc_crm_webuser_sync_users_accessed_today_to_crm(){
     ->condition('access', time()-86400,'>' )
     ->execute();
   while($record = $result->fetchAssoc()) {
+   entity_get_controller('user')->resetCache(array($record['uid']));
    $user = user_load($record['uid']);
    $webuserdto = ktc_crm_map_account_to_webuserdto($user);
    ktc_crm_update_user($webuserdto);
