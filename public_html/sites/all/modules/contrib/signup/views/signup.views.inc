@@ -299,6 +299,15 @@ function signup_views_data() {
       'help' => t('Link to edit this particular signup.'),
     ),
   );
+  $data['signup_log']['signup_count'] = array(
+    'title' => t('Signup Count'),
+    // Information for displaying signup count
+    'field' => array(
+      'handler' => 'signup_handler_field_signup_count',
+      'help' => t('Number of users signed up.'),
+      'click sortable' => TRUE,
+    ),
+  );
 
   return $data;
 }
@@ -334,6 +343,9 @@ function signup_views_handlers() {
         'parent' => 'views_handler_field',
       ),
       'signup_handler_field_signup_user_email' => array(
+        'parent' => 'views_handler_field',
+      ),
+      'signup_handler_field_signup_count' => array(
         'parent' => 'views_handler_field',
       ),
       'signup_handler_field_signup_user_form_data' => array(
