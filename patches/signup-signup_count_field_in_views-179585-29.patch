@@ -1,0 +1,84 @@
+From 327fbaf1aad866e952c4a80afed2220868dbf3fc Mon Sep 17 00:00:00 2001
+From: Jerenus <jun.zheng@insready.com>
+Date: Tue, 9 Apr 2013 00:01:04 +0800
+Subject: [PATCH] Issue #179585 by Jerenus: Added Signup count field in Views
+ 7.x.
+
+---
+ signup.info                                         |    1 +
+ .../handlers/signup_handler_field_signup_count.inc  |   19 +++++++++++++++++++
+ views/signup.views.inc                              |   13 +++++++++++++
+ 3 files changed, 33 insertions(+)
+ create mode 100644 views/handlers/signup_handler_field_signup_count.inc
+
+diff --git a/signup.info b/signup.info
+index 7460cb3..92b42ac 100644
+--- a/signup.info
++++ b/signup.info
+@@ -13,6 +13,7 @@ files[] = views/handlers/signup_handler_field_signup_status.inc
+ files[] = views/handlers/signup_handler_field_signup_user_attended.inc
+ files[] = views/handlers/signup_handler_field_signup_user_email.inc
+ files[] = views/handlers/signup_handler_field_signup_user_form_data.inc
++files[] = views/handlers/signup_handler_field_signup_count.inc
+ files[] = views/handlers/signup_handler_filter_signup_disabled.inc
+ files[] = views/handlers/signup_handler_filter_signup_status.inc
+ files[] = views/handlers/signup_handler_filter_signup_user_attended.inc
+diff --git a/views/handlers/signup_handler_field_signup_count.inc b/views/handlers/signup_handler_field_signup_count.inc
+new file mode 100644
+index 0000000..e184e35
+--- /dev/null
++++ b/views/handlers/signup_handler_field_signup_count.inc
+@@ -0,0 +1,19 @@
++<?php
++
++/**
++ * Field handler to display the number of signups for a node.
++ */
++class signup_handler_field_signup_count extends views_handler_field {
++  function query() {
++    $sql = t("SELECT COUNT(*) FROM {signup_log} WHERE nid = node.nid");
++    $this->aliases['signup_count'] = $this->query->add_field('', "($sql)", 'signup_count');
++  }
++
++  function render($values) {
++    return $values->{$this->aliases['signup_count']};
++  }
++
++  function click_sort($order) {
++    $this->query->add_orderby('', '', $order, $this->aliases['signup_count']);
++  }
++}
+diff --git a/views/signup.views.inc b/views/signup.views.inc
+index 5748fae..b5f80d2 100644
+--- a/views/signup.views.inc
++++ b/views/signup.views.inc
+@@ -292,6 +292,16 @@ function signup_views_data() {
+     ),
+   );
+ 
++  $data['signup_log']['signup_count'] = array(
++    'title' => t('Signup Count'),
++    // Information for displaying signup count
++    'field' => array(
++      'handler' => 'signup_handler_field_signup_count',
++      'help' => t('Number of users signed up.'),
++      'click sortable' => TRUE,
++    ),
++  );
++
+   $data['signup_log']['edit_link'] = array(
+     'title' => t('User: Edit signup link'),
+     'field' => array(
+@@ -336,6 +346,9 @@ function signup_views_handlers() {
+       'signup_handler_field_signup_user_email' => array(
+         'parent' => 'views_handler_field',
+       ),
++      'signup_handler_field_signup_count' => array(
++        'parent' => 'views_handler_field',
++      ),
+       'signup_handler_field_signup_user_form_data' => array(
+         'parent' => 'views_handler_field_prerender_list',
+       ),
+-- 
+1.7.10.4
+

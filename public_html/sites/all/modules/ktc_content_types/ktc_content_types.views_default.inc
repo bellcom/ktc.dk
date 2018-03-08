@@ -285,6 +285,15 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_news_page_type']['element_wrapper_class'] = 'ktc-node-header-button ktc-node-header-button-type';
   $handler->display->display_options['fields']['field_os2web_news_page_type']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_os2web_news_page_type']['type'] = 'taxonomy_term_reference_plain';
+  /* Felt: Signup: Signup Count */
+  $handler->display->display_options['fields']['signup_count']['id'] = 'signup_count';
+  $handler->display->display_options['fields']['signup_count']['table'] = 'signup_log';
+  $handler->display->display_options['fields']['signup_count']['field'] = 'signup_count';
+  $handler->display->display_options['fields']['signup_count']['label'] = '';
+  $handler->display->display_options['fields']['signup_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['signup_count']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['signup_count']['element_wrapper_class'] = 'ktc-node-header-button ktc-node-header-button-arrangement pull-right';
+  $handler->display->display_options['fields']['signup_count']['hide_empty'] = TRUE;
   /* Felt: Indhold: Kommentarantal */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
@@ -470,7 +479,7 @@ function ktc_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_target_group']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_target_group']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_target_group']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Tilmeldingsfrist */
+  /* Felt: Indhold: Svarfrist */
   $handler->display->display_options['fields']['field_registration_deadline']['id'] = 'field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['table'] = 'field_data_field_registration_deadline';
   $handler->display->display_options['fields']['field_registration_deadline']['field'] = 'field_registration_deadline';
@@ -1107,7 +1116,7 @@ function ktc_content_types_views_default_views() {
     t('Slut'),
     t('Pris'),
     t('Målgruppe'),
-    t('Tilmeldingsfrist'),
+    t('Svarfrist'),
     t('Kort og adresse'),
     t('Adresse'),
     t('[field_arrangement_location]<br />
