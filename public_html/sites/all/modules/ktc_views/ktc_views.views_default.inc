@@ -6061,6 +6061,9 @@ Alle
     7 => '7',
     22 => '22',
     8 => '8',
+    20 => '20',
+    9 => '9',
+    10 => '10',
     4 => '4',
     26 => '26',
     5 => '5',
@@ -6095,7 +6098,6 @@ Alle
     'field_efternavn' => 'field_efternavn',
     'field_navn' => 'field_navn',
     'field_jobposition' => 'field_jobposition',
-    'field_kommune' => 'field_kommune',
     'field_account' => 'field_account',
     'mail' => 'mail',
     'field_cell' => 'field_cell',
@@ -6104,25 +6106,26 @@ Alle
     'og_user_node' => 'og_user_node',
     'field_topics' => 'field_topics',
     'field_crm_uuid' => 'field_crm_uuid',
+    'access' => 'access',
   );
   $handler->display->display_options['style_options']['default'] = 'field_navn';
   $handler->display->display_options['style_options']['info'] = array(
     'uid_1' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 1,
     ),
     'name' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 1,
     ),
     'field_efternavn' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -6142,43 +6145,36 @@ Alle
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_kommune' => array(
+    'field_account' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_account' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
     'mail' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_cell' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_directe_telefon' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'uid' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -6195,6 +6191,13 @@ Alle
       'empty_column' => 1,
     ),
     'field_crm_uuid' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'access' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -6743,6 +6746,19 @@ Alle
   $handler = $view->new_display('page', 'Page', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Admin Personsøgning';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1000';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Overskrift: Global: Tekstområde */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -6874,6 +6890,12 @@ Alle
   $handler->display->display_options['fields']['field_crm_uuid']['id'] = 'field_crm_uuid';
   $handler->display->display_options['fields']['field_crm_uuid']['table'] = 'field_data_field_crm_uuid';
   $handler->display->display_options['fields']['field_crm_uuid']['field'] = 'field_crm_uuid';
+  /* Felt: Bruger: Seneste tilgang */
+  $handler->display->display_options['fields']['access']['id'] = 'access';
+  $handler->display->display_options['fields']['access']['table'] = 'users';
+  $handler->display->display_options['fields']['access']['field'] = 'access';
+  $handler->display->display_options['fields']['access']['date_format'] = 'short';
+  $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sorteringskriterie: Felt: Fornavn + mellemnavn (field_navn) */
   $handler->display->display_options['sorts']['field_navn_value']['id'] = 'field_navn_value';
@@ -7236,6 +7258,7 @@ Alle
   </ul>
 </nav>'),
     t('CRM UUID'),
+    t('Seneste tilgang'),
   );
   $export['user_search'] = $view;
 
