@@ -1103,7 +1103,7 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
       $form['og_group_ref']['und']["#options"] = ktc_netvaerk_user_groups();
     }
   }
-  
+
   if (!($user->uid==1 || in_array('Administrator', $user->roles))) {
     $form['field_active']["#access"] =  FALSE;
   }
@@ -1302,24 +1302,33 @@ function ktc_netvaerk_node_access_records($node) {
     if($content_access[0]['value']==0) {
       $sids = array();
       $gid = field_get_items('node', $node, 'og_group_ref');
-        foreach ($gid as $key=>$target_id){
-          $netveark = node_load($target_id['target_id']);
-          $netveark_content_access = field_get_items('node', $netveark, 'group_content_access');
-          if($netveark_content_access[0]['value']==2){
-           $sids[] = $target_id['target_id'];
-          }
-       }
-       foreach ($sids as $nid){
-         $grant[] = array (
-          'realm' => 'og_access:node',
-          'gid' => $nid,
-          'grant_view' => 1,
-          'grant_update' => 0,
-          'grant_delete' => 0,
-          'priority' => 0,
-        );
-       }
-       return $grant;
+      $has_private = FALSE;
+      foreach ($gid as $key=>$target_id){
+        $netveark = node_load($target_id['target_id']);
+        $netveark_content_access = field_get_items('node', $netveark, 'group_content_access');
+        $sids[] = $target_id['target_id'];
+        if ($has_private) {
+          // We already know we have a private group, so we can avoid
+          // re-checking it.
+          continue;
+        }
+        if($netveark_content_access[0]['value']==2){
+          $has_private = TRUE;
+        }
+      }
+      if($has_private) {
+        foreach ($sids as $nid){
+          $grant[] = array (
+           'realm' => 'og_access:node',
+           'gid' => $nid,
+           'grant_view' => 1,
+           'grant_update' => 0,
+           'grant_delete' => 0,
+           'priority' => 0,
+         );
+        }
+      }
+      return $grant;
     }
  }
   return NULL;
