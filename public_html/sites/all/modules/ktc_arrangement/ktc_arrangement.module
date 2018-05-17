@@ -5,3 +5,17 @@
  */
 
 include_once 'ktc_arrangement.features.inc';
+
+/**
+ * Implements hook_signup_close.
+ */
+function ktc_arrangement_signup_close($node){
+ entity_get_controller('node')->resetCache(array($node->nid));
+}
+
+/**
+ * Implements hook_signup_open.
+ */
+function ktc_arrangement_signup_open($node){
+ entity_get_controller('node')->resetCache(array($node->nid));
+}
