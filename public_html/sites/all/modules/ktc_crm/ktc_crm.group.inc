@@ -578,22 +578,25 @@ function _ktc_crm_group_get_region_tid($region) {
 /**
  * Updates CRM if node changes status.
  *
- * Implements hook_node_update.
+ * Implements hook_node_postupdate.
  *
  * @param object $node
  *   Node to check.
  *
- * @author Henrik Farre <hf@bellcom.dk>
  */
-function ktc_crm_node_update($node) {
-  if ($node->type === 'group') {
-    $status = $node->status;
-
+function ktc_crm_node_postupdate($node) {
+   if ($node->type === 'group') {
     $groupdto = ktc_crm_group_map_group_to_groupdto($node);
+    $result = ktc_crm_update_group($groupdto);
 
-    $groupdto->VisibleOnWeb = $status;
-
-    ktc_crm_update_group($groupdto);
+    if ( $result && $node->field_crm_uuid[LANGUAGE_NONE][0]['value'] != $result) {
+      db_update('field_data_field_crm_uuid')
+          ->fields(array('field_crm_uuid_value' => $result))
+          ->condition('entity_type', 'node')
+          ->condition('bundle', 'group')
+          ->condition('entity_id', $node->nid)
+          ->execute();
+    }
   }
 }
 
