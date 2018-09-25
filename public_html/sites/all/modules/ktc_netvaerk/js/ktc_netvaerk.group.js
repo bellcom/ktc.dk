@@ -30,7 +30,7 @@
         return false;
       });
 
-      $('#member-modal .content a').click(function(){
+      $('#member-modal .content .views-field-edit-membership a').click(function(){
         if ($(this).parent('div').hasClass('ktc-user-profile-photo-container'))
           return false;
         var url = $(this).attr('href');
