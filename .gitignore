@@ -23,3 +23,7 @@ scripts/import/exporter/users.json
 scripts/json_import/
 /public_html/sites/*.dd
 public_html/sites/*.dd
+
+# Ignore files used for local development
+docker-compose.yml
+mariadb-init/*
