@@ -1160,7 +1160,7 @@ function ktc_arrangement_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'Kalendervisning',
-      'body' => '<p><a href="/calendar-node-field-arrangement-date/month/" title="Se arrangementer i kalendervisning"><img alt="Månedsvisning" class="img-responsive" src="http://ktc.bellcom.dk/sites/default/files/uploads/public/maanesvisning-link.png" /></a></p>
+      'body' => '<p><a href="/calendar-node-field-arrangement-date/month/" title="Se arrangementer i kalendervisning"><img alt="Månedsvisning" class="img-responsive" src="https://www.ktc.dk/sites/default/files/uploads/public/maanesvisning-link.png" /></a></p>
 ',
       'format' => 'full_html',
       'substitute' => TRUE,

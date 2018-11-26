@@ -145,8 +145,8 @@ function ktc_publicer_eksternt_views_default_views() {
         'description' => 'Twitterfeed fra KTC.dk',
         'language' => 'da',
         'category' => '',
-        'image' => 'http://www.ktc.dk/sites/all/themes/ktc/logo.png',
-        'copyright' => 'http://www.ktc.dk',
+        'image' => 'https://www.ktc.dk/sites/all/themes/ktc/logo.png',
+        'copyright' => 'https://www.ktc.dk',
         'managingEditor' => 'ktc@ktc.dk',
         'webMaster' => 'ktc@ktc.dk',
         'generator' => '',
@@ -216,7 +216,7 @@ function ktc_publicer_eksternt_views_default_views() {
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'http://www.ktc.dk/node/[nid]';
+  $handler->display->display_options['fields']['nid']['alter']['text'] = 'https://www.ktc.dk/node/[nid]';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Felt: Indhold: Primært billede */
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['id'] = 'field_os2web_base_field_lead_img';
@@ -315,8 +315,8 @@ function ktc_publicer_eksternt_views_default_views() {
         'description' => 'Twitterfeed fra KTC.dk',
         'language' => 'da',
         'category' => '',
-        'image' => 'http://www.ktc.dk/sites/all/themes/ktc/logo.png',
-        'copyright' => 'http://www.ktc.dk',
+        'image' => 'https://www.ktc.dk/sites/all/themes/ktc/logo.png',
+        'copyright' => 'https://www.ktc.dk',
         'managingEditor' => 'ktc@ktc.dk',
         'webMaster' => 'ktc@ktc.dk',
         'generator' => '',
@@ -386,7 +386,7 @@ function ktc_publicer_eksternt_views_default_views() {
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'http://www.ktc.dk/node/[nid]';
+  $handler->display->display_options['fields']['nid']['alter']['text'] = 'https://www.ktc.dk/node/[nid]';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Felt: Indhold: Primært billede */
   $handler->display->display_options['fields']['field_os2web_base_field_lead_img']['id'] = 'field_os2web_base_field_lead_img';
@@ -494,7 +494,7 @@ function ktc_publicer_eksternt_views_default_views() {
     t('Twitter'),
     t('Twitter RSS'),
     t('forfatter'),
-    t('http://www.ktc.dk/node/[nid]'),
+    t('https://www.ktc.dk/node/[nid]'),
     t('Tema / trompet'),
     t('Oprettelsesdato'),
     t('Link'),
