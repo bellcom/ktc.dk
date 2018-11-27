@@ -98,8 +98,8 @@ function ktc_preprocess_entity(&$variables) {
       }
     }
   }
-  if (!empty($variables['entity_type']) == 'paragraphs_item') {   
-    
+  if (!empty($variables['entity_type']) == 'paragraphs_item') {
+
    if (!empty($variables['paragraphs_item']) && $variables['paragraphs_item']->field_name ==  'field_paragraphs' ) {
       $variables['theme_hook_suggestions'][] = 'paragraphs_item__field_paragraphs';
       // Get paragraph entity.
@@ -185,7 +185,7 @@ function ktc_preprocess_page(&$variables) {
   drupal_add_html_head(array(
     '#tag'        => 'link',
     '#attributes' => array(
-      'href' => 'http://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:300italic,400italic,400,700,300,800',
+      'href' => 'https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:300italic,400italic,400,700,300,800',
       // font-family: 'Lato', sans-serif;
       // font-family: 'Open Sans', sans-serif;
 
