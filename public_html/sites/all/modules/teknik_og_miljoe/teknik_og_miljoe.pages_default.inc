@@ -5586,7 +5586,7 @@ function teknik_og_miljoe_default_page_manager_pages() {
   * average, the noscript tag is called from less than 1% of internet
   * users.
   */--><script type=\'text/javascript\'><!--//<![CDATA[
-   var m3_u = (location.protocol==\'https:\'?\'https://revive.ktc.dk/www/delivery/ajs.php\':\'https://revive.ktc.dk/www/delivery/ajs.php\');
+   var m3_u = (location.protocol==\'https:\'?\'http://revive.ktc.dk/www/delivery/ajs.php\':\'http://revive.ktc.dk/www/delivery/ajs.php\');
    var m3_r = Math.floor(Math.random()*99999999999);
    if (!document.MAX_used) document.MAX_used = \',\';
    document.write ("<scr"+"ipt type=\'text/javascript\' src=\'"+m3_u);
@@ -5599,7 +5599,7 @@ function teknik_og_miljoe_default_page_manager_pages() {
    if (document.context) document.write ("&context=" + escape(document.context));
    if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
    document.write ("\'><\\/scr"+"ipt>");
-//]]>--></script><noscript><a href=\'https://revive.ktc.dk/www/delivery/ck.php?n=a724c1ce&amp;cb=INSERT_RANDOM_NUMBER_HERE\' target=\'_blank\'><img src=\'https://revive.ktc.dk/www/delivery/avw.php?zoneid=18&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a724c1ce\' border=\'0\' alt=\'\' /></a></noscript>
+//]]>--></script><noscript><a href=\'http://revive.ktc.dk/www/delivery/ck.php?n=a724c1ce&amp;cb=INSERT_RANDOM_NUMBER_HERE\' target=\'_blank\'><img src=\'http://revive.ktc.dk/www/delivery/avw.php?zoneid=18&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a724c1ce\' border=\'0\' alt=\'\' /></a></noscript>
 <p>&nbsp;</p>
 <BR>',
       'format' => 'full_html',
