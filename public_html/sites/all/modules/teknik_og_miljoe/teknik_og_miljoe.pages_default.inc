@@ -5586,7 +5586,7 @@ function teknik_og_miljoe_default_page_manager_pages() {
   * average, the noscript tag is called from less than 1% of internet
   * users.
   */--><script type=\'text/javascript\'><!--//<![CDATA[
-   var m3_u = (location.protocol==\'https:\'?\'http://revive.ktc.dk/www/delivery/ajs.php\':\'http://revive.ktc.dk/www/delivery/ajs.php\');
+   var m3_u = (location.protocol==\'http:\'?\'http://revive.ktc.dk/www/delivery/ajs.php\':\'http://revive.ktc.dk/www/delivery/ajs.php\');
    var m3_r = Math.floor(Math.random()*99999999999);
    if (!document.MAX_used) document.MAX_used = \',\';
    document.write ("<scr"+"ipt type=\'text/javascript\' src=\'"+m3_u);
