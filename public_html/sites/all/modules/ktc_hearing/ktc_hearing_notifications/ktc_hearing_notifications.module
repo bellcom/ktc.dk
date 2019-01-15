@@ -155,7 +155,7 @@ function ktc_hearing_notifications_notify_users($op, $hearing) {
     if (!empty($summary_markup)) {
       $pdf_attachment = array(
         'filepath' => ktc_hearing_generate_pdf($summary_markup),
-        'filename' => utf8_decode('høringssvar.pdf'),
+        'filename' => 'høringssvar.pdf',
         'filemime' => 'application/pdf',
       );
 
@@ -163,7 +163,7 @@ function ktc_hearing_notifications_notify_users($op, $hearing) {
 
       $plain_attachment = array(
         'filepath' => ktc_hearing_generate_markdown($summary_markup),
-        'filename' => utf8_decode('høringssvar.txt'),
+        'filename' => 'høringssvar.txt',
         'filemime' => 'text/plain',
       );
 
