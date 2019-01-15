@@ -153,13 +153,13 @@ function ktc_hearing_notifications_notify_users($op, $hearing) {
   if ($op == 'approved') {
     $summary_markup = ktc_hearing_generate_hearing_summary_view($hearing);
     if (!empty($summary_markup)) {
-      // $pdf_attachment = array(
-      //   'filepath' => ktc_hearing_generate_pdf($summary_markup),
-      //   'filename' => 'høringssvar.pdf',
-      //   'filemime' => 'application/pdf',
-      // );
+      $pdf_attachment = array(
+        'filepath' => ktc_hearing_generate_pdf($summary_markup),
+        'filename' => 'høringssvar.pdf',
+        'filemime' => 'application/pdf',
+      );
 
-      // $params['attachments'][] = $pdf_attachment;
+      $params['attachments'][] = $pdf_attachment;
 
       $plain_attachment = array(
         'filepath' => ktc_hearing_generate_markdown($summary_markup),
