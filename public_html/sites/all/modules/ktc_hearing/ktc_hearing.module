@@ -1050,8 +1050,10 @@ function ktc_hearing_set_status_approval(&$form, &$form_state) {
     $hearing = node_load(arg(1));
 
     // Ensure summary is set to published.
-    $summary_response->status = 1;
-    node_save($summary_response);
+    if ($summary_response->status == 0) {
+      $summary_response->status = 1;
+      node_save($summary_response);
+    }
 
     $values['values']['hearing_nid'] = $hearing->nid;
     $values['values']['status'] = KTC_HEARING_STATUS_APPROVAL;
