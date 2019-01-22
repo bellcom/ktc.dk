@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the KTC Høring feature.
@@ -16,6 +17,7 @@ define('KTC_HEARING_STATUS_KL_ANSWER', variable_get('ktc_hearing_status_kl_answe
 
 /**
  * Implements hook_views_pre_render().
+ *
  * @param $view
  */
 function ktc_hearing_views_pre_render(&$view) {
@@ -188,7 +190,7 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
       $option = decode_entities($option);
     }
 
-     // added private networks
+    // Added private networks.
     foreach ($group_ids as $nid) {
       if (!in_array($nid, $form['og_group_ref'][LANGUAGE_NONE]['#options'])) {
         $node = node_load($nid);
@@ -207,30 +209,30 @@ function ktc_hearing_form_alter(&$form, &$form_state, $form_id) {
 
 /**
  * Implements custom submit function for hearing node save
- * Prevent hearing dublicates creation
+ * Prevent hearing dublicates creation.
  */
 function ktc_hearing_form_log_submit($form, &$form_state) {
   try {
     global $user;
     $values_hash_file_flag = file_directory_temp() . DIRECTORY_SEPARATOR . 'hearing-' . $form_state['input']['form_build_id'];
-    //values in MS
+    // Values in MS.
     $threshold = 10;
     if (!file_exists($values_hash_file_flag)) {
       touch($values_hash_file_flag);
-      $browser= _ktc_hearing_getBrowser();
+      $browser = _ktc_hearing_getBrowser();
       error_log('HOOK_HEARING_FORM_SUBMIT: ' . time() . ' User: ' . $user->name . ' title: ' . $form_state['values']['title'] . ' IP: ' . ip_address()
-        . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
+        . ' browser: ' . $browser['name'] . ' ' . $browser['version'] . ' ' . $browser['platform']);
       error_log('HOOK_HEARING_SET_FILE_FLAG: ' . $values_hash_file_flag);
     }
     else {
-      $browser= _ktc_hearing_getBrowser();
-      throw new Exception('HOOK_HEARING_FORM_SUBMIT_DUPLICATE: ' . time() . ' User: ' . $user->name . ' title: ' .$form_state['values']['title'] . ' IP: ' . ip_address()
-        . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
+      $browser = _ktc_hearing_getBrowser();
+      throw new Exception('HOOK_HEARING_FORM_SUBMIT_DUPLICATE: ' . time() . ' User: ' . $user->name . ' title: ' . $form_state['values']['title'] . ' IP: ' . ip_address()
+        . ' browser: ' . $browser['name'] . ' ' . $browser['version'] . ' ' . $browser['platform']);
     }
   }
   catch (Exception $e) {
     error_log($e->getMessage());
-    $url = url("node/" .  _ktc_hearing_get_last_user_hearing_nid());
+    $url = url("node/" . _ktc_hearing_get_last_user_hearing_nid());
     drupal_goto($url);
   }
 }
@@ -259,7 +261,7 @@ function ktc_hearing_cron() {
  */
 function ktc_hearing_form_after_build($form, &$form_state) {
   drupal_add_js(drupal_get_path('module', 'ktc_hearing') . '/ktc_hearing_node_submit.js');
-    return $form;
+  return $form;
 }
 
 /**
@@ -299,6 +301,17 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
   // workflow. To ease the process. An extra submit button is added.
   switch (arg(2)) {
     case 'summary_hearing_response':
+      $summary = $form['#entity'];
+
+      if (!isset($summary->nid) || $summary->status == 0) {
+        // Hide publish button.
+        $form['actions']['submit']['#access'] = FALSE;
+      }
+      else {
+        // Hide unpublish button.
+        $form['actions']['draft']['#access'] = FALSE;
+      }
+
       $language = $form['field_is_summary']['#language'];
       $form['field_is_summary'][$language]['#default_value'] = 1;
       $form['title']['#default_value'] = t('Endeligt høringssvar') . ': ' . $user_name;
@@ -315,6 +328,9 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
       break;
 
     case 'approve_summary_hearing_response':
+      // Hide unpublish button.
+      $form['actions']['draft']['#access'] = FALSE;
+
       $form['actions']['set_approved'] = array(
         '#type' => 'submit',
         '#value' => t('Gem og godkend'),
@@ -346,16 +362,18 @@ function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state
  * Implements hook_form_validate().
  */
 function ktc_hearing_form_validate($form, &$form_state) {
- $official_date = strtotime($form_state['values']['field_official_date']['und'][0]['value']);
- $official_responsedate = strtotime($form_state['values']['field_official_responsedate']['und'][0]['value']);
- $attendee_deadlines = strtotime($form_state['values']['field_attendee_deadlines']['und'][0]['value']);
- $enrollment_deadlines = strtotime($form_state['values']['field_enrollment_deadlines']['und'][0]['value']);
+  $official_date = strtotime($form_state['values']['field_official_date']['und'][0]['value']);
+  $official_responsedate = strtotime($form_state['values']['field_official_responsedate']['und'][0]['value']);
+  $attendee_deadlines = strtotime($form_state['values']['field_attendee_deadlines']['und'][0]['value']);
+  $enrollment_deadlines = strtotime($form_state['values']['field_enrollment_deadlines']['und'][0]['value']);
 
- if ($official_date > $official_responsedate || $official_date > $attendee_deadlines || $official_date > $enrollment_deadlines)
-   form_set_error ('field_official_date', t("Den officielle udsendelsesdato skal opsættes til at være tidligere end alle andre datoer i høringen"));
+  if ($official_date > $official_responsedate || $official_date > $attendee_deadlines || $official_date > $enrollment_deadlines) {
+    form_set_error('field_official_date', t("Den officielle udsendelsesdato skal opsættes til at være tidligere end alle andre datoer i høringen"));
+  }
 
- if ($official_responsedate < $$official_date || $official_responsedate < $attendee_deadlines || $official_responsedate < $enrollment_deadlines)
-   form_set_error ('field_official_responsedate', t("Den officielle svardato skal opsættes til at være senere end alle andre datoer i høringen"));
+  if ($official_responsedate < $$official_date || $official_responsedate < $attendee_deadlines || $official_responsedate < $enrollment_deadlines) {
+    form_set_error('field_official_responsedate', t("Den officielle svardato skal opsættes til at være senere end alle andre datoer i høringen"));
+  }
 }
 
 /**
@@ -478,7 +496,7 @@ function ktc_hearing_block_view($delta = '') {
       $block['content'] = theme('block_hearing_info', $vars);
       break;
 
-   case 'ktc_hearing_my_hearing':
+    case 'ktc_hearing_my_hearing':
       $vars['unresponded_hearings'] = _ktc_hearing_get_my_hearings();
 
       $block['content'] = theme('block_hearing_unresponded', $vars);
@@ -488,7 +506,7 @@ function ktc_hearing_block_view($delta = '') {
 }
 
 /**
- * @param bool|FALSE $uid
+ * @param bool|false $uid
  *
  * @return array
  */
@@ -576,8 +594,9 @@ function ktc_hearing_file_download($uri) {
  * Access callback function.
  */
 function ktc_hearing_access($node, $op) {
-  if($node->type !='hearing')
+  if ($node->type != 'hearing') {
     return FALSE;
+  }
 
   $status = ktc_hearing_get_status($node);
 
@@ -593,7 +612,7 @@ function ktc_hearing_access($node, $op) {
   }
 
   if ($node->type != 'hearing') {
-    //return FALSE;
+    // Return FALSE;.
   }
 
   global $user;
@@ -686,7 +705,6 @@ function ktc_hearing_summary_responses($hearing) {
   if (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_OPEN) {
     $vars['preface'] = 'Ønsker du at starte sammenskrivning skal du ændre status til "Under sammenskrivning" i blokken til højre.';
   }
-
   elseif (ktc_hearing_get_status($hearing) == KTC_HEARING_STATUS_RECAP) {
     module_load_include('inc', 'node', 'node.pages');
 
@@ -821,7 +839,6 @@ function ktc_hearing_entity_update($entity, $type) {
   drupal_register_shutdown_function('_ktc_hearing_trigger_hook', $entity, $entity->original, $type);
 }
 
-
 /**
  * Handler for hearing updates.
  */
@@ -857,8 +874,8 @@ function ktc_hearing_ktc_hearing_save($hearing) {
   $hearing_status = ktc_hearing_get_status($hearing);
   global $user;
   $browser = _ktc_hearing_getBrowser();
-  error_log('HOOK_HEARING_SAVE: ' . time() . ' User: ' . $user->name . ' nid: ' . $hearing->nid . ' title: ' .$hearing->title . ' IP: ' . ip_address()
-    . ' browser: ' . $browser['name'] . ' ' .  $browser['version'] . ' ' . $browser['platform']);
+  error_log('HOOK_HEARING_SAVE: ' . time() . ' User: ' . $user->name . ' nid: ' . $hearing->nid . ' title: ' . $hearing->title . ' IP: ' . ip_address()
+    . ' browser: ' . $browser['name'] . ' ' . $browser['version'] . ' ' . $browser['platform']);
 
   if ($hearing->status == 1 && $hearing_status == KTC_HEARING_STATUS_NEW) {
     // Set status to open.
@@ -886,7 +903,7 @@ function ktc_hearing_kl_hearing_answer_form($form, &$form_state, $hearing) {
     '#states' => array(
       'invisible' => array(
         ':input[name="kl_hearing_answer_url"]' => array('value' => 'http://'),
-      )
+      ),
     ),
   );
   return $form;
@@ -1032,6 +1049,12 @@ function ktc_hearing_set_status_approval(&$form, &$form_state) {
     $summary_response = $form['#entity'];
     $hearing = node_load(arg(1));
 
+    // Ensure summary is set to published.
+    if ($summary_response->status == 0) {
+      $summary_response->status = 1;
+      node_save($summary_response);
+    }
+
     $values['values']['hearing_nid'] = $hearing->nid;
     $values['values']['status'] = KTC_HEARING_STATUS_APPROVAL;
 
@@ -1139,7 +1162,7 @@ function ktc_hearing_responses($hearing) {
     ->fields('h', array('entity_id'))
     ->condition('field_hearing_node_target_id', $hearing->nid)
     ->execute()
-    ->fetchAllKeyed(0,0);
+    ->fetchAllKeyed(0, 0);
 
   $type = 'hearing_responses';
   $vars = array();
@@ -1630,6 +1653,9 @@ function _ktc_hearing_get_unresponded($user = FALSE) {
   return $unresponded_hearings;
 }
 
+/**
+ *
+ */
 function _ktc_hearing_get_my_hearings($user = FALSE) {
   if (!$user) {
     global $user;
@@ -1637,7 +1663,7 @@ function _ktc_hearing_get_my_hearings($user = FALSE) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'hearing')
-    ->propertyCondition( 'uid' , $user->uid)
+    ->propertyCondition('uid', $user->uid)
     ->propertyOrderBy('created', 'DESC');
   $result = $query->execute();
 
@@ -1650,6 +1676,7 @@ function _ktc_hearing_get_my_hearings($user = FALSE) {
   }
   return $my_hearings;
 }
+
 /**
  * Get a users unresponded hearings.
  */
@@ -1688,7 +1715,7 @@ function _ktc_hearing_get_info_vars($node = NULL) {
   // Oprettet dato              => $created (unix timestamp)
   // Antal deltagere            => $attendee_count
   // Antal deltagere har svaret => $answer_count
-  // Din status i høringen      => $role
+  // Din status i høringen      => $role.
   $vars = array();
 
   if ($node == NULL) {
@@ -1772,7 +1799,7 @@ function _ktc_hearing_get_user_role($node) {
   global $user;
 
   // Find out if user uid is in the fields data.
-  $uid_id_field = function($field, $uid) {
+  $uid_id_field = function ($field, $uid) {
     foreach ($field as $_val) {
       if ($_val['target_id'] == $uid) {
         return TRUE;
@@ -1833,8 +1860,8 @@ function _ktc_hearing_user_answer_date($node, $role) {
     if ($field = field_get_items('node', $node, 'field_attendee_deadlines')) {
       $formatted = field_view_value('node', $node, 'field_attendee_deadlines', $field[0], array(
         'settings' => array(
-          'format_type' => 'medium'
-        )
+          'format_type' => 'medium',
+        ),
       ));
 
       return $formatted['#markup'];
@@ -1845,20 +1872,24 @@ function _ktc_hearing_user_answer_date($node, $role) {
   if ($field = field_get_items('node', $node, 'field_enrollment_deadlines')) {
     $formatted = field_view_value('node', $node, 'field_enrollment_deadlines', $field[0], array(
       'settings' => array(
-        'format_type' => 'medium'
-      )
+        'format_type' => 'medium',
+      ),
     ));
 
     return $formatted['#markup'];
   }
 }
+
+/**
+ *
+ */
 function _ktc_hearing_getBrowser() {
   $u_agent = $_SERVER['HTTP_USER_AGENT'];
   $bname = 'Unknown';
   $platform = 'Unknown';
-  $version= "";
+  $version = "";
 
-  //First get the platform?
+  // First get the platform?
   if (preg_match('/linux/i', $u_agent)) {
     $platform = 'linux';
   }
@@ -1869,82 +1900,85 @@ function _ktc_hearing_getBrowser() {
     $platform = 'windows';
   }
 
-  // Next get the name of the useragent yes seperately and for good reason
-  if(preg_match('/MSIE/i',$u_agent) && !preg_match('/Opera/i',$u_agent)) {
+  // Next get the name of the useragent yes seperately and for good reason.
+  if (preg_match('/MSIE/i', $u_agent) && !preg_match('/Opera/i', $u_agent)) {
     $bname = 'Internet Explorer';
     $ub = "MSIE";
   }
-  elseif(preg_match('/Trident/i',$u_agent)) {
+  elseif (preg_match('/Trident/i', $u_agent)) {
     $bname = 'Internet Explorer';
     $ub = "rv";
   }
-  elseif(preg_match('/Firefox/i',$u_agent)) {
+  elseif (preg_match('/Firefox/i', $u_agent)) {
     $bname = 'Mozilla Firefox';
     $ub = "Firefox";
   }
-  elseif(preg_match('/OPR/i',$u_agent)) {
+  elseif (preg_match('/OPR/i', $u_agent)) {
     $bname = 'Opera';
     $ub = "Opera";
   }
-  elseif(preg_match('/Chrome/i',$u_agent)) {
+  elseif (preg_match('/Chrome/i', $u_agent)) {
     $bname = 'Google Chrome';
     $ub = "Chrome";
   }
-  elseif(preg_match('/Safari/i',$u_agent)) {
+  elseif (preg_match('/Safari/i', $u_agent)) {
     $bname = 'Apple Safari';
     $ub = "Safari";
   }
-  elseif(preg_match('/Netscape/i',$u_agent)) {
+  elseif (preg_match('/Netscape/i', $u_agent)) {
     $bname = 'Netscape';
     $ub = "Netscape";
   }
 
-  // finally get the correct version number
+  // Finally get the correct version number.
   $known = array('Version', $ub, 'other');
   $pattern = '#(?<browser>' . join('|', $known) .
     ')[/ ]+(?<version>[0-9.|a-zA-Z.]*)#';
   if (!preg_match_all($pattern, $u_agent, $matches)) {
-    // we have no matching number just continue
+    // We have no matching number just continue.
   }
 
-  // see how many we have
+  // See how many we have.
   $i = count($matches['browser']);
   if ($i != 1) {
-    //we will have two since we are not using 'other' argument yet
-    //see if version is before or after the name
-    if (strripos($u_agent,"Version") < strripos($u_agent,$ub)){
-      $version= $matches['version'][0];
+    // We will have two since we are not using 'other' argument yet
+    // see if version is before or after the name.
+    if (strripos($u_agent, "Version") < strripos($u_agent, $ub)) {
+      $version = $matches['version'][0];
     }
     else {
-      $version= $matches['version'][1];
+      $version = $matches['version'][1];
     }
   }
   else {
-    $version= $matches['version'][0];
+    $version = $matches['version'][0];
   }
 
-  // check if we have a number
-  if ($version==null || $version=="") {$version="?";}
+  // Check if we have a number.
+  if ($version == NULL || $version == "") {
+    $version = "?";
+  }
 
   return array(
     'userAgent' => $u_agent,
-    'name'      => $bname,
-    'version'   => $version,
-    'platform'  => $platform,
-    'pattern'    => $pattern
+    'name' => $bname,
+    'version' => $version,
+    'platform' => $platform,
+    'pattern' => $pattern,
   );
 }
 
-/*Helper function
- * return nid last hearing saved by user
+/**
+ * Helper function
+ * return nid last hearing saved by user.
  */
-function _ktc_hearing_get_last_user_hearing_nid(){
+function _ktc_hearing_get_last_user_hearing_nid() {
   global $user;
   $query = db_select('node', 'n');
   $query->condition('n.type', 'hearing')
     ->condition('n.uid', $user->uid);
   $query->addExpression('MAX(nid)');
-  $nid= $query->execute()->fetchField();
+  $nid = $query->execute()->fetchField();
 
   return $nid;
 }
