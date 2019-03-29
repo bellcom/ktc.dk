@@ -19,3 +19,16 @@ function ktc_arrangement_signup_close($node){
 function ktc_arrangement_signup_open($node){
  entity_get_controller('node')->resetCache(array($node->nid));
 }
+
+function ktc_arrangement_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'arrangement_node_form'){
+    global $user;
+    if($user->uid == 0){
+      unset($form['#groups']['group_groups']);
+      unset($form['#fieldgroups']['group_groups']);
+      unset($form['#groups']['group_arrangementbesk']);
+      unset($form['#fieldgroups']['group_arrangementbesk']);
+    }
+    return $form;
+  }
+}
