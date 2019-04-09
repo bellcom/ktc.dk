@@ -84,7 +84,7 @@ function ktc_netvaerk_comment_notify_settings() {
     $mailtext = variable_get('ktc_netvaerk_comment_notify_default_mailtext', array('value' => KTC_NETVEARK_COMMENT_NOTIFY_DEFAULT_MAILTEXT));
     $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_notify_default_mailtext'] = array(
     '#type'=>'text_format',
-    '#format'=>'filtered_html',
+    '#format'=>'full_html',
     '#title' =>  t('Notifikation om ny kommentar i netværk'),
     '#default_value' => $mailtext['value'],
     '#return_value' => 1,
@@ -106,7 +106,7 @@ function ktc_netvaerk_comment_notify_settings() {
   $mailtext = variable_get('ktc_netvaerk_comment_author_default_mailtext', array('value' => KTC_NETVEARK_COMMENT_NOTIFY_AUTHOR_MAILTEXT));
   $form['ktc_netvaerk_comment_notify_settings']['ktc_netvaerk_comment_author_default_mailtext'] = array(
     '#type'=>'text_format',
-    '#format'=>'filtered_html',
+    '#format'=>'full_html',
     '#title' =>  t('Default mail text for sending out the notifications to node authors'),
     '#default_value' => $mailtext['value'],
     '#return_value' => 1,
