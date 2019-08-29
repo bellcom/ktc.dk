@@ -57,7 +57,7 @@ function ktc_crm_webuser_full_update_users() {
   // The webservice complains about not using paging cookie.
   $fetch_users = TRUE;
   $amount = 50;
-  $i = 0;
+  $i = 3100;
 
   $last_run = variable_get('ktc_crm_user_sync_last_run', time());
   variable_set('ktc_crm_user_sync_last_run', time());
