@@ -6,7 +6,7 @@ The database for the local setup will then be set up automatic when you run:
 ```
 docker-compose up -d
 ```
-* After that create the settings.php file in: /public_html/sites/default with the following settings db settings:
+* After that create the settings.php file in: /public_html/sites/default with the following db settings:
 ```
 $databases = array(
   'default' =>
