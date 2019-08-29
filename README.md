@@ -1,25 +1,29 @@
 # ktc.dk
 
 ## Setup locally
-* Add database dump to this folder: /docker/data/db-init
+* Add database dump to this folder: /docker/data/db-init.
 The database for the local setup will then be set up automatic when you run:
-* docker-compose up -d
-After that create the settings.php file in: /public_html/sites/default with the following settings db settings:
-* $databases = array(
-*   'default' =>
-*     array(
-*     'default' =>
-*       array(
-*       'database' => 'drop',
-*       'username' => 'drop',
-*       'password' => 'drop',
-*       'host' => 'mysql',
-*       'port' => '',
-*       'driver' => 'mysql',
-*       'prefix' => '',
-*      ),
-*    ),
-* );
+```
+docker-compose up -d
+```
+* After that create the settings.php file in: /public_html/sites/default with the following settings db settings:
+```
+$databases = array(
+  'default' =>
+    array(
+    'default' =>
+      array(
+      'database' => 'drop',
+      'username' => 'drop',
+      'password' => 'drop',
+      'host' => 'mysql',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+     ),
+   ),
+);
+```
 
 * use the command: ./shortcut.sh drush uli to login to the site
 * save the file system: /admin/config/media/file-system
