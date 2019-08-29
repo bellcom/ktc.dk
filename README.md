@@ -1,11 +1,10 @@
 # ktc.dk
 
 ## Setup locally
-* Add database to /docker/data/db-init
-
+* Add database dump to this folder: /docker/data/db-init
+The database for the local setup will then be set up automatic when you run:
 * docker-compose up -d
-
-* add settings.php in /public_html/sites/default/ with the following db settings:
+After that create the settings.php file in: /public_html/sites/default with the following settings db settings:
 * $databases = array(
 *   'default' =>
 *     array(
