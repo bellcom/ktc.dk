@@ -1,5 +1,31 @@
 # ktc.dk
 
+## Setup locally
+* Add database to /docker/data/db-init
+
+* docker-compose up -d
+
+* add settings.php in /public_html/sites/default/ with the following db settings:
+* $databases = array(
+*   'default' =>
+*     array(
+*     'default' =>
+*       array(
+*       'database' => 'drop',
+*       'username' => 'drop',
+*       'password' => 'drop',
+*       'host' => 'mysql',
+*       'port' => '',
+*       'driver' => 'mysql',
+*       'prefix' => '',
+*      ),
+*    ),
+* );
+
+* use the command: ./shortcut.sh drush uli to login to the site
+* save the file system: /admin/config/media/file-system
+* enable stage_file_proxy
+
 ## Elasticsearch setup
 
 ### Elasticsearch on Debian

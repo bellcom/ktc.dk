@@ -24,6 +24,7 @@ scripts/json_import/
 /public_html/sites/*.dd
 public_html/sites/*.dd
 
-# Ignore files used for local development
-docker-compose.yml
-mariadb-init/*
+# Docker
+docker/data/db
+docker/data/db-init/*
+!docker/data/db-init/.gitkeep
