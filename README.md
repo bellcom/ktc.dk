@@ -24,7 +24,9 @@ $databases = array(
    ),
 );
 ```
-
+* Disable ktc_crm and ktc_users_signup and say no to update composer. Run the following commands:
+* ./shortcut.sh drush dis ktc_crm
+* ./shortcut.sh drush dis ktc_users_signup
 * use the command: ./shortcut.sh drush uli to login to the site
 * save the file system: /admin/config/media/file-system
 * enable stage_file_proxy
