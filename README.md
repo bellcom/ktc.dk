@@ -1,27 +1,32 @@
 # ktc.dk
 
 ## Setup locally
-* Add database to /docker/data/db-init
-
-* docker-compose up -d
-
-* add settings.php in /public_html/sites/default/ with the following db settings:
-* $databases = array(
-*   'default' =>
-*     array(
-*     'default' =>
-*       array(
-*       'database' => 'drop',
-*       'username' => 'drop',
-*       'password' => 'drop',
-*       'host' => 'mysql',
-*       'port' => '',
-*       'driver' => 'mysql',
-*       'prefix' => '',
-*      ),
-*    ),
-* );
-
+* Add database dump to this folder: /docker/data/db-init.
+The database for the local setup will then be set up automatic when you run:
+```
+docker-compose up -d
+```
+* After that create the settings.php file in: /public_html/sites/default with the following db settings:
+```
+$databases = array(
+  'default' =>
+    array(
+    'default' =>
+      array(
+      'database' => 'drop',
+      'username' => 'drop',
+      'password' => 'drop',
+      'host' => 'mysql',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+     ),
+   ),
+);
+```
+* Disable ktc_crm and ktc_users_signup and say no to update composer. Run the following commands:
+* ./shortcut.sh drush dis ktc_crm
+* ./shortcut.sh drush dis ktc_users_signup
 * use the command: ./shortcut.sh drush uli to login to the site
 * save the file system: /admin/config/media/file-system
 * enable stage_file_proxy
