@@ -2546,6 +2546,12 @@
 }
 
 @media (min-width: 768px) {
+  .footer_2 {
+    padding: 90px 0;
+  }
+}
+
+@media (min-width: 768px) {
   .footer_4 .block {
     padding: 15px;
   }
