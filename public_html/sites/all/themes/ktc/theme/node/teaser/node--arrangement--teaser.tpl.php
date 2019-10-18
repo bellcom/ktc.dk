@@ -5,7 +5,9 @@ global $base_url;
 <?php if ($teaser): ?>
   <!-- Begin - teaser -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser"<?php print $attributes; ?>>
-
+    <div class="ktc-teaser-type-heading">
+      <span class="ktc-teaser-button ktc-teaser-button-<?php print $type; ?>"><?php print node_type_get_name($type); ?></span>
+    </div>
     <!-- Begin - full width image -->
     <?php if (isset($content['field_arrangement_billede'])) : ?>
       <div class="ktc-full-width-image">
@@ -45,7 +47,9 @@ global $base_url;
       <?php endif ?>
 
       <?php if (isset($body_shortened)): ?>
-        <p><?php print $body_shortened; ?></p>
+        <div class="ktc-teaser-manchet">
+          <p><?php print $body_shortened; ?></p>
+        </div>
       <?php endif; ?>
 
       <div class="ktc-call-to-action-button">
@@ -64,7 +68,7 @@ global $base_url;
       <?php if ($signup_total): ?>
       <span data-toggle="tooltip" data-placement="bottom" title="Tilmeldte" class="ktc-footer-button ktc-footer-button-arrangement"><?php print $signup_total; ?></span>
       <?php endif ?>
-      <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
+      
     </div>
 
   </article>

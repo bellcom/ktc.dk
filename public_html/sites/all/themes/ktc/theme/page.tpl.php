@@ -102,7 +102,6 @@
 
 <!-- Begin - wrapper -->
 <div id="wrapper" class="ktc-wrapper">
-  <div class="ktc-wrapper-background"></div>
   <div class="container">
     <div class="row">
     	<?php if (!panels_get_current_page_display() && $tabs): ?>

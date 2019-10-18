@@ -334,8 +334,8 @@ h6,
 .h6,
 body.page-node .field-name-field-hearing-materials .field-label,
 body.page-taxonomy-term .field-name-field-hearing-materials .field-label {
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
-  font-weight: 700;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
+  font-weight: 600;
   line-height: 1.1;
   color: #2c353a;
 }
@@ -6499,7 +6499,7 @@ h3.pane-title {
 
 .icon-hearing-sm {
   background-image: url(../images/sprites.png);
-  background-position: -298px -274px;
+  background-position: -433px -87px;
   width: 9px;
   height: 16px;
   vertical-align: middle;
@@ -6544,7 +6544,7 @@ body .form-control {
 }
 
 .filter-box .view-empty {
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 12px;
   padding: 10px 20px;
 }
@@ -6753,7 +6753,7 @@ body .form-control {
 
 .navigation .header_bottom .header_fixed .header-user .header-user-name .icon-arrow-down {
   background-image: url(../images/sprites.png);
-  background-position: -404px -90px;
+  background-position: -404px -127px;
   width: 15px;
   height: 15px;
   display: inline-block;
@@ -7007,7 +7007,7 @@ body.page-node div.node-os2web-base-news header h2,
 body.page-taxonomy-term div.node-os2web-base-news header h2 {
   margin: 0;
   margin-top: 14px;
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   text-transform: initial;
   color: #4b6068;
   font-weight: 600;
@@ -7019,7 +7019,7 @@ body.page-node div.node-os2web-base-news header h2 a,
 body.page-taxonomy-term div.node-os2web-base-news header h2 a {
   color: #4b6068;
   text-transform: initial;
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
 }
 
 body.page-node article .wrap,
@@ -7085,7 +7085,7 @@ body.page-node article .field-name-field-os2web-base-field-summary .field-item,
 body.page-taxonomy-term article .field-name-field-os2web-base-field-summary .field-item,
 body.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-summary .field-item,
 body.page-taxonomy-term div.node-os2web-base-news .field-name-field-os2web-base-field-summary .field-item {
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 1.3em;
   line-height: 1.1em;
   padding-bottom: 20px;
@@ -7727,7 +7727,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 
 .region_footer.footer_5 .footer-5 .footer_location {
   background-image: url(../images/sprites.png);
-  background-position: -26px -392px;
+  background-position: -433px 0px;
   width: 12px;
   height: 15px;
   display: inline-block;
@@ -7899,18 +7899,18 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 
 .node-teaser .node-teaser-bottom .left .icon-comment {
   background-image: url(../images/sprites.png);
-  background-position: -404px -263px;
-  width: 15px;
-  height: 14px;
+  background-position: -363px -41px;
+  width: 20px;
+  height: 18px;
   display: inline-block;
   vertical-align: middle;
 }
 
 .node-teaser .node-teaser-bottom .left .icon-statistics {
   background-image: url(../images/sprites.png);
-  background-position: -363px -290px;
-  width: 23px;
-  height: 11px;
+  background-position: -60px -362px;
+  width: 20px;
+  height: 12px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -7926,7 +7926,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -404px -235px;
+  background-position: -404px -301px;
   width: 15px;
   height: 14px;
   vertical-align: top;
@@ -7936,7 +7936,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-meeting_doodle {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -60px -362px;
+  background-position: 0px -392px;
   width: 16px;
   height: 13px;
   vertical-align: top;
@@ -7946,7 +7946,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -404px -291px;
+  background-position: -404px -329px;
   width: 14px;
   height: 14px;
   vertical-align: top;
@@ -7956,7 +7956,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -298px -274px;
+  background-position: -433px -87px;
   width: 9px;
   height: 16px;
   vertical-align: top;
@@ -7966,7 +7966,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -404px -319px;
+  background-position: -404px -357px;
   width: 12px;
   height: 16px;
   vertical-align: top;
@@ -7976,7 +7976,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .node-teaser .node-teaser-bottom .right .node-type-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -404px -31px;
+  background-position: -404px -97px;
   width: 15px;
   height: 16px;
   vertical-align: top;
@@ -8114,7 +8114,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -321px -42px;
+  background-position: -321px -83px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8125,7 +8125,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -321px -83px;
+  background-position: -321px -124px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8136,7 +8136,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -363px 0px;
+  background-position: -123px -321px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8147,7 +8147,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -205px -321px;
+  background-position: -82px -321px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8169,7 +8169,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -123px -321px;
+  background-position: -205px -321px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8301,7 +8301,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node .views-field .term-name a .icon-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -363px -259px;
+  background-position: -363px -260px;
   width: 17px;
   height: 17px;
   vertical-align: bottom;
@@ -8387,7 +8387,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.red-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.red-dot {
   background-image: url(../images/sprites.png);
-  background-position: -162px -362px;
+  background-position: -433px -190px;
   width: 8px;
   height: 8px;
 }
@@ -8395,7 +8395,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.yellow-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.yellow-dot {
   background-image: url(../images/sprites.png);
-  background-position: -206px -362px;
+  background-position: -433px -168px;
   width: 8px;
   height: 8px;
 }
@@ -8403,7 +8403,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.green-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.green-dot {
   background-image: url(../images/sprites.png);
-  background-position: -184px -362px;
+  background-position: -433px -234px;
   width: 8px;
   height: 8px;
 }
@@ -8411,7 +8411,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.blue-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.blue-dot {
   background-image: url(../images/sprites.png);
-  background-position: -140px -362px;
+  background-position: -433px -212px;
   width: 8px;
   height: 8px;
 }
@@ -8455,7 +8455,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content ul.pager .pager-previous a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-previous a {
   background-image: url(../images/sprites.png);
-  background-position: -404px -148px;
+  background-position: -404px -272px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -8466,7 +8466,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content ul.pager .pager-next a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-next a {
   background-image: url(../images/sprites.png);
-  background-position: -404px -61px;
+  background-position: -404px -185px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -8810,42 +8810,42 @@ fieldset[disabled] .field-type-image .button {
 
 .addthisevent_dropdown .ateappleical:before {
   background-image: url(../images/sprites.png);
-  background-position: -363px -315px;
+  background-position: -328px -321px;
   width: 16px;
   height: 16px;
 }
 
 .addthisevent_dropdown .ateoutlook:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -362px;
+  background-position: -321px -288px;
   width: 16px;
   height: 16px;
 }
 
 .addthisevent_dropdown .ateoutlookcom:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -362px;
+  background-position: -321px -288px;
   width: 16px;
   height: 16px;
 }
 
 .addthisevent_dropdown .ategoogle:before {
   background-image: url(../images/sprites.png);
-  background-position: -328px -321px;
+  background-position: 0px -362px;
   width: 16px;
   height: 16px;
 }
 
 .addthisevent_dropdown .ateyahoo:before {
   background-image: url(../images/sprites.png);
-  background-position: -30px -362px;
+  background-position: -363px -322px;
   width: 16px;
   height: 16px;
 }
 
 .addthisevent_dropdown .atefacebook:before {
   background-image: url(../images/sprites.png);
-  background-position: -321px -288px;
+  background-position: -30px -362px;
   width: 16px;
   height: 16px;
 }
@@ -8935,7 +8935,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-aside-action ul.pager .pager-previous a {
   background-image: url(../images/sprites.png);
-  background-position: -404px -206px;
+  background-position: -404px -243px;
   width: 15px;
   height: 15px;
   background-color: transparent;
@@ -8945,7 +8945,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-aside-action ul.pager .pager-next a {
   background-image: url(../images/sprites.png);
-  background-position: -404px -119px;
+  background-position: -404px -214px;
   width: 15px;
   height: 15px;
   background-color: transparent;
@@ -8994,7 +8994,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-user-password {
   background-image: url(../images/sprites.png);
-  background-position: -82px -321px;
+  background-position: -287px -321px;
   width: 27px;
   height: 27px;
 }
@@ -9008,7 +9008,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-help {
   background-image: url(../images/sprites.png);
-  background-position: -287px -321px;
+  background-position: -321px -42px;
   width: 27px;
   height: 27px;
 }
@@ -9031,7 +9031,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-aside .ktc-aside-heading .ktc-aside-title {
   display: block;
-  padding: 7px 15px;
+  padding: 20px 20px;
   margin: 0;
 }
 
@@ -9045,7 +9045,7 @@ fieldset[disabled] .field-type-image .button {
 }
 
 .ktc-aside .ktc-aside-body {
-  padding: 10px 15px;
+  padding: 10px 20px;
 }
 
 .ktc-aside .ktc-aside-body .row {
@@ -9074,7 +9074,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-aside-block .block-heading h3 {
   display: block;
-  padding: 7px 15px;
+  padding: 20px 20px;
   margin: 0;
   color: #fff;
 }
@@ -9087,7 +9087,7 @@ fieldset[disabled] .field-type-image .button {
   position: relative;
   cursor: pointer;
   cursor: hand;
-  padding-right: 30px;
+  padding-right: 35px;
   user-select: none;
 }
 
@@ -9096,22 +9096,22 @@ fieldset[disabled] .field-type-image .button {
   display: block;
   content: "";
   top: 50%;
-  right: 15px;
+  right: 20px;
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -177px;
+  background-position: -404px -156px;
   width: 15px;
   height: 15px;
 }
 
 .ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title {
-  padding-right: 30px;
+  padding-right: 35px;
 }
 
 .ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title:after {
   margin-top: 7px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -61px;
+  background-position: -404px -185px;
   width: 15px;
   height: 15px;
 }
@@ -9124,7 +9124,7 @@ fieldset[disabled] .field-type-image .button {
   position: relative;
   cursor: pointer;
   cursor: hand;
-  padding-right: 30px;
+  padding-right: 35px;
   user-select: none;
 }
 
@@ -9133,22 +9133,22 @@ fieldset[disabled] .field-type-image .button {
   display: block;
   content: "";
   top: 50%;
-  right: 15px;
+  right: 20px;
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -177px;
+  background-position: -404px -156px;
   width: 15px;
   height: 15px;
 }
 
 .ktc-aside-toggle.closed > .ktc-aside-user-wrapper .ktc-user-profile {
-  padding-right: 30px;
+  padding-right: 35px;
 }
 
 .ktc-aside-toggle.closed > .ktc-aside-user-wrapper .ktc-user-profile:after {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -61px;
+  background-position: -404px -185px;
   width: 15px;
   height: 15px;
 }
@@ -9168,8 +9168,8 @@ fieldset[disabled] .field-type-image .button {
 }
 
 .ktc-aside-half-inner-spacing .ktc-aside-heading .ktc-aside-title {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .ktc-aside-half-inner-spacing .ktc-aside-body {
@@ -9289,7 +9289,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-aside-dark .ktc-aside-body .pager {
   position: absolute;
   top: 6px;
-  right: 15px;
+  right: 20px;
 }
 
 .ktc-aside-dark .ktc-aside-body .view-footer {
@@ -9322,7 +9322,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-block .ktc-block-heading .ktc-block-title {
   display: block;
   padding: 10px 15px;
-  padding-left: 7px;
+  padding-left: 12px;
   margin: 0;
 }
 
@@ -9336,7 +9336,7 @@ fieldset[disabled] .field-type-image .button {
 }
 
 .ktc-block .ktc-block-body {
-  padding: 10px 15px;
+  padding: 10px 20px;
 }
 
 .ktc-block .ktc-block-heading,
@@ -9559,17 +9559,17 @@ fieldset[disabled] .field-type-image .button {
 }
 
 .ktc-teaser .ktc-teaser-heading {
-  margin-bottom: -7px;
+  margin-bottom: -20px;
 }
 
 .ktc-teaser .ktc-teaser-heading .ktc-teaser-title {
   position: relative;
   display: block;
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   color: #4b6068;
-  padding: 7px 15px;
+  padding: 20px 20px;
   text-transform: uppercase;
 }
 
@@ -9577,12 +9577,37 @@ fieldset[disabled] .field-type-image .button {
   display: block;
   position: absolute;
   top: 50%;
-  left: 15px;
+  left: 20px;
   content: "";
 }
 
 .ktc-teaser .ktc-teaser-body {
-  padding: 5px 15px 10px;
+  padding: 20px;
+}
+
+.ktc-teaser .ktc-teaser-button {
+  color: #222B2F;
+  letter-spacing: 1px;
+  line-height: 1.42857143;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.ktc-teaser-type-heading {
+  padding: 20px;
+  border-bottom: 1px solid #DBD9D9;
+}
+
+.ktc-teaser-type-heading .ktc-teaser-button {
+  margin-bottom: 0;
+}
+
+.ktc-teaser-manchet {
+  line-height: 20px;
+  color: #4B6067;
+  margin-bottom: 10px;
 }
 
 .ktc-teaser-magazine {
@@ -9644,17 +9669,17 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
-  padding-left: 32px;
+  padding-left: 48px;
   margin: 0;
 }
 
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before,
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
-  margin-top: -8px;
+  margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -349px;
-  width: 12px;
-  height: 15px;
+  background-position: -404px -31px;
+  width: 13px;
+  height: 19px;
 }
 
 .ktc-teaser > .ktc-teaser-heading a.ktc-teaser-title:hover,
@@ -9692,21 +9717,22 @@ fieldset[disabled] .field-type-image .button {
 .ktc-teaser .ktc-teaser-body h6 a,
 .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
+  margin-bottom: 15px;
 }
 
 .ktc-green.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-green .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
-  padding-left: 32px;
+  padding-left: 48px;
   margin: 0;
 }
 
 .ktc-green.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before,
 .ktc-green .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
-  margin-top: -8px;
+  margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -349px;
-  width: 12px;
-  height: 15px;
+  background-position: -404px -31px;
+  width: 13px;
+  height: 19px;
 }
 
 .ktc-green.ktc-teaser > .ktc-teaser-heading a.ktc-teaser-title:hover,
@@ -9744,11 +9770,12 @@ fieldset[disabled] .field-type-image .button {
 .ktc-green.ktc-teaser .ktc-teaser-body h6 a,
 .ktc-green .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
+  margin-bottom: 15px;
 }
 
 .ktc-blue.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-blue .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
-  padding-left: 32px;
+  padding-left: 47px;
   margin: 0;
 }
 
@@ -9756,7 +9783,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -392px;
+  background-position: -433px -58px;
   width: 12px;
   height: 15px;
 }
@@ -9796,21 +9823,22 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue.ktc-teaser .ktc-teaser-body h6 a,
 .ktc-blue .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
+  margin-bottom: 15px;
 }
 
 .ktc-gold.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-gold .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
-  padding-left: 32px;
+  padding-left: 48px;
   margin: 0;
 }
 
 .ktc-gold.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before,
 .ktc-gold .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
-  margin-top: -8px;
+  margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -52px -392px;
-  width: 12px;
-  height: 15px;
+  background-position: -404px -64px;
+  width: 13px;
+  height: 19px;
 }
 
 .ktc-gold.ktc-teaser > .ktc-teaser-heading a.ktc-teaser-title:hover,
@@ -9848,11 +9876,12 @@ fieldset[disabled] .field-type-image .button {
 .ktc-gold.ktc-teaser .ktc-teaser-body h6 a,
 .ktc-gold .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
+  margin-bottom: 15px;
 }
 
 .ktc-red.ktc-teaser > .ktc-teaser-heading .ktc-teaser-title,
 .ktc-red .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title {
-  padding-left: 32px;
+  padding-left: 47px;
   margin: 0;
 }
 
@@ -9860,7 +9889,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -78px -392px;
+  background-position: -433px -29px;
   width: 12px;
   height: 15px;
 }
@@ -9900,6 +9929,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red.ktc-teaser .ktc-teaser-body h6 a,
 .ktc-red .ktc-teaser .ktc-teaser-body h6 a {
   color: #2c353a;
+  margin-bottom: 15px;
 }
 
 .ktc-teaser-large {
@@ -9911,15 +9941,15 @@ fieldset[disabled] .field-type-image .button {
   position: relative;
   display: block;
   color: #4b6068;
-  padding: 7px 0;
-  margin: 0 15px;
-  margin-bottom: -7px;
+  padding: 20px 0;
+  margin: 0 20px;
+  margin-bottom: -20px;
   border-bottom: 1px solid #e9edee;
 }
 
 .ktc-teaser-large .ktc-teaser-large-heading a,
 .ktc-teaser-large .ktc-teaser-large-heading span {
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 15px;
 }
 
@@ -9935,7 +9965,7 @@ fieldset[disabled] .field-type-image .button {
 }
 
 .ktc-teaser-large .ktc-teaser-large-body {
-  padding: 5px 15px 10px;
+  padding: 5px 20px 10px;
 }
 
 .ktc-teaser-large .ktc-teaser-large-body .ktc-teaser-large-body-title a:hover,
@@ -10137,7 +10167,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-settings {
   background-image: url(../images/sprites.png);
-  background-position: -321px -124px;
+  background-position: -363px 0px;
   width: 27px;
   height: 27px;
 }
@@ -10165,7 +10195,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-help {
   background-image: url(../images/sprites.png);
-  background-position: -287px -321px;
+  background-position: -321px -42px;
   width: 27px;
   height: 27px;
 }
@@ -10253,7 +10283,7 @@ fieldset[disabled] .field-type-image .button {
 }
 
 .ktc-header .ktc-header-navigation {
-  background: url("../images/bg_navigation.jpg") center top;
+  background-color: #222B2F;
 }
 
 .ktc-header .ktc-header-navigation .navbar-toggle .navbar-toggle-text {
@@ -10298,24 +10328,14 @@ fieldset[disabled] .field-type-image .button {
   min-height: 250px;
 }
 
-.ktc-wrapper .ktc-wrapper-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 241px;
-  background: url("../images/bg_body.jpg") center top repeat-x;
-  border-bottom: 10px solid #d5dcde;
-}
-
 .ktc-content {
   background-color: #fff;
-  padding: 10px 15px;
+  padding: 10px 20px;
 }
 
 .ktc-content .ktc-section-full-width {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 .ktc-content .ktc-section-top-no-margin {
@@ -10355,7 +10375,7 @@ fieldset[disabled] .field-type-image .button {
 
 .region.no-panels .region-inner {
   background-color: #fff;
-  padding: 20px 15px;
+  padding: 20px 20px;
 }
 
 .footer_2 {
@@ -10431,7 +10451,7 @@ fieldset[disabled] .field-type-image .button {
 .footer_4 .ktc-user-profile.ktc-user-yellow .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-name > a,
 .footer_4 .ktc-user-profile.ktc-user-red .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-name > a,
 .footer_4 .ktc-user-profile.ktc-user-blue .ktc-user-profile-content-wrapper .ktc-user-profile-content .ktc-user-profile-content-name > a {
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 15px;
   font-weight: 400;
 }
@@ -10481,18 +10501,18 @@ fieldset[disabled] .field-type-image .button {
 }
 
 .ktc-list-display .ktc-list-display-heading {
-  margin-bottom: -7px;
+  margin-bottom: -20px;
 }
 
 .ktc-list-display .ktc-list-display-heading .ktc-list-display-title {
   position: relative;
   display: block;
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 12px;
   font-weight: normal;
   color: #4b6068;
   font-size: 85%;
-  padding: 7px 15px;
+  padding: 20px 20px;
   text-transform: uppercase;
 }
 
@@ -10521,21 +10541,21 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-meeting_doodle {
   background-image: url(../images/sprites.png);
-  background-position: -60px -362px;
+  background-position: 0px -392px;
   width: 16px;
   height: 13px;
 }
 
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-document {
   background-image: url(../images/sprites.png);
-  background-position: -404px -319px;
+  background-position: -404px -357px;
   width: 12px;
   height: 16px;
 }
 
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-os2web_base_news {
   background-image: url(../images/sprites.png);
-  background-position: -404px -31px;
+  background-position: -404px -97px;
   width: 15px;
   height: 16px;
 }
@@ -10549,28 +10569,28 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-arrangement {
   background-image: url(../images/sprites.png);
-  background-position: -404px -291px;
+  background-position: -404px -329px;
   width: 14px;
   height: 14px;
 }
 
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-forum_post {
   background-image: url(../images/sprites.png);
-  background-position: -404px -235px;
+  background-position: -404px -301px;
   width: 15px;
   height: 14px;
 }
 
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-hearing {
   background-image: url(../images/sprites.png);
-  background-position: -298px -274px;
+  background-position: -433px -87px;
   width: 9px;
   height: 16px;
 }
 
 .ktc-list-display .ktc-list-display-body .ktc-list-display-icon-container .ktc-list-display-icon.ktc-list-display-icon-artikler {
   background-image: url(../images/sprites.png);
-  background-position: -115px -362px;
+  background-position: -433px -143px;
   width: 11px;
   height: 11px;
 }
@@ -10607,17 +10627,17 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title,
 .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title {
-  padding-left: 17px;
+  padding-left: 18px;
   margin: 0;
 }
 
 .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before,
 .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
-  margin-top: -8px;
+  margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -349px;
-  width: 12px;
-  height: 15px;
+  background-position: -404px -31px;
+  width: 13px;
+  height: 19px;
 }
 
 .ktc-list-display > .ktc-list-display-heading a.ktc-list-display-title:hover,
@@ -10637,17 +10657,17 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-green .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title,
 .ktc-green.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title {
-  padding-left: 17px;
+  padding-left: 18px;
   margin: 0;
 }
 
 .ktc-green .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before,
 .ktc-green.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
-  margin-top: -8px;
+  margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -349px;
-  width: 12px;
-  height: 15px;
+  background-position: -404px -31px;
+  width: 13px;
+  height: 19px;
 }
 
 .ktc-green .ktc-list-display > .ktc-list-display-heading a.ktc-list-display-title:hover,
@@ -10675,7 +10695,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -392px;
+  background-position: -433px -58px;
   width: 12px;
   height: 15px;
 }
@@ -10697,17 +10717,17 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-gold .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title,
 .ktc-gold.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title {
-  padding-left: 17px;
+  padding-left: 18px;
   margin: 0;
 }
 
 .ktc-gold .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before,
 .ktc-gold.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
-  margin-top: -8px;
+  margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -52px -392px;
-  width: 12px;
-  height: 15px;
+  background-position: -404px -64px;
+  width: 13px;
+  height: 19px;
 }
 
 .ktc-gold .ktc-list-display > .ktc-list-display-heading a.ktc-list-display-title:hover,
@@ -10735,7 +10755,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -78px -392px;
+  background-position: -433px -29px;
   width: 12px;
   height: 15px;
 }
@@ -10760,18 +10780,18 @@ fieldset[disabled] .field-type-image .button {
 }
 
 .ktc-list-display-large .ktc-list-display-large-heading {
-  margin-bottom: -7px;
+  margin-bottom: -20px;
 }
 
 .ktc-list-display-large .ktc-list-display-large-heading .ktc-list-display-large-title {
   position: relative;
   display: block;
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
   font-size: 12px;
   font-weight: normal;
   color: #4b6068;
   font-size: 85%;
-  padding: 7px 15px;
+  padding: 20px 20px;
   text-transform: uppercase;
 }
 
@@ -10807,10 +10827,10 @@ fieldset[disabled] .field-type-image .button {
 }
 
 .ktc-list-display-large .ktc-footer {
-  margin-left: -15px;
-  margin-right: -15px;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .ktc-list-display-large-artikler {
@@ -10833,17 +10853,17 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title,
 .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title {
-  padding-left: 17px;
+  padding-left: 18px;
   margin: 0;
 }
 
 .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before,
 .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
-  margin-top: -8px;
+  margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -349px;
-  width: 12px;
-  height: 15px;
+  background-position: -404px -31px;
+  width: 13px;
+  height: 19px;
 }
 
 .ktc-list-display-large > .ktc-list-display-large-heading a.ktc-list-display-large-title:hover,
@@ -10863,17 +10883,17 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-green .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title,
 .ktc-green.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title {
-  padding-left: 17px;
+  padding-left: 18px;
   margin: 0;
 }
 
 .ktc-green .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before,
 .ktc-green.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
-  margin-top: -8px;
+  margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -349px;
-  width: 12px;
-  height: 15px;
+  background-position: -404px -31px;
+  width: 13px;
+  height: 19px;
 }
 
 .ktc-green .ktc-list-display-large > .ktc-list-display-large-heading a.ktc-list-display-large-title:hover,
@@ -10901,7 +10921,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -392px;
+  background-position: -433px -58px;
   width: 12px;
   height: 15px;
 }
@@ -10923,17 +10943,17 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-gold .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title,
 .ktc-gold.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title {
-  padding-left: 17px;
+  padding-left: 18px;
   margin: 0;
 }
 
 .ktc-gold .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before,
 .ktc-gold.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
-  margin-top: -8px;
+  margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -52px -392px;
-  width: 12px;
-  height: 15px;
+  background-position: -404px -64px;
+  width: 13px;
+  height: 19px;
 }
 
 .ktc-gold .ktc-list-display-large > .ktc-list-display-large-heading a.ktc-list-display-large-title:hover,
@@ -10961,7 +10981,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -78px -392px;
+  background-position: -433px -29px;
   width: 12px;
   height: 15px;
 }
@@ -11027,20 +11047,21 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading {
   background-color: #2c353a;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  border-top-left-radius: 40px;
 }
 
 .ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title {
   display: block;
-  font-family: 'Lato', Geneva, Verdana, sans-serif;
-  font-weight: 700;
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
+  font-weight: 600;
   line-height: 1.1;
   color: #2c353a;
-  margin-top: 17px;
+  margin-top: 8.5px;
   margin-bottom: 8.5px;
-  font-size: 22px;
+  font-size: 19px;
   color: #fff;
-  padding: 10px 15px;
+  padding: 30px 30px 30px 65px;
   margin: 0;
 }
 
@@ -11053,7 +11074,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title small,
 .ktc-stand-alone-panel-pane .ktc-stand-alone-panel-pane-heading .ktc-stand-alone-panel-pane-heading-title .small {
-  font-size: 65%;
+  font-size: 75%;
 }
 
 .ktc-stand-alone-panel-pane.ktc-stand-alone-panel-pane-gold .ktc-stand-alone-panel-pane-heading {
@@ -11328,10 +11349,6 @@ fieldset[disabled] .field-type-image .button {
 
 body.kontekst-magasinstatus {
   background-color: #FFF;
-}
-
-body.kontekst-magasinstatus .ktc-wrapper-background {
-  display: none;
 }
 
 .group-upload .button {

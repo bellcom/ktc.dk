@@ -42,8 +42,33 @@
 
 	// Body
 	.ktc-teaser-body {
-		padding: (@ktc-teaser-body-top-bottom-inner-spacing / 2) @ktc-default-left-right-inner-spacing @ktc-teaser-body-top-bottom-inner-spacing;
+		padding: @ktc-default-body-inner-spacing;
 	}
+
+	.ktc-teaser-button {
+		color: @ktc-color-dark-grey;
+		letter-spacing: 1px;
+		line-height: @line-height-base;
+		text-transform: uppercase;
+		font-weight: 900;
+		margin-bottom: @ktc-almost-full-width-inner-spacing;
+		display: inline-block;
+	}
+}
+
+.ktc-teaser-type-heading {
+	padding: @ktc-default-spacing;
+	border-bottom: 1px solid @ktc-border-color;
+
+	.ktc-teaser-button {
+		margin-bottom: 0;
+	}
+}
+
+.ktc-teaser-manchet {
+	line-height: @ktc-teaser-manchet-line-height;
+	color: @ktc-teaser-manchet-font-color;
+	margin-bottom: (@ktc-default-spacing / 2 );
 }
 
 // Magazine teaser (get's its own, because its not actually a teaser)
@@ -170,6 +195,7 @@
 				&,
 				a {
 					color: @ktc-default-color-headline;
+					margin-bottom: 15px;
 				}
 			}
 		}
