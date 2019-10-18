@@ -9279,6 +9279,10 @@ fieldset[disabled] .field-type-image .button {
   color: #fff;
 }
 
+.ktc-aside-dark .ktc-aside-body {
+  background-color: #2c353a;
+}
+
 .ktc-aside-green .ktc-aside-heading {
   background-color: #36a145;
 }
@@ -9297,7 +9301,6 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-aside-dark {
   position: relative;
-  background-color: #222b2f;
 }
 
 .ktc-aside-dark .ktc-aside-heading .ktc-aside-title {

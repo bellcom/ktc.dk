@@ -25,7 +25,7 @@
     <?php endif ?>
 
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-8">
 
             <?php if($content['main-content']): ?>
                 <div class="ktc-content-wide ktc-margin-bottom">
@@ -122,13 +122,13 @@
         </div>
 
         <?php if($content['sidebar-right']): ?>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <?php print $content['sidebar-right']; ?>
             </div>
         <?php endif ?>
 
         <?php if($content['right']): ?>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <?php print $content['right']; ?>
             </div>
         <?php endif ?>
