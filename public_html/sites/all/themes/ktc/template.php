@@ -266,11 +266,22 @@ function ktc_process_page(&$variables) {
   $variables['primary_nav'] = array();
   if ($variables['main_menu']) {
     // Build links.
-    $tree = menu_tree_all_data('main-menu', $link = NULL, $max_depth = 2);
-    $variables['primary_nav'] = menu_tree_output($tree);
+    $link = menu_link_load(486);
+    $main_tree = menu_tree_all_data('main-menu', $link, 3);
+    $variables['primary_nav'] = menu_tree_output($main_tree);
     // Provide default theme wrapper function.
     $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
   }
+}
+
+function _ktc_submenu_tree_all_data($title, $menu = 'main-menu') {
+  $tree = menu_tree_all_data($menu);
+  foreach ($tree as $branch) {
+    if ($branch['link']['title'] == $title) {
+      return $branch['below'];
+    }
+  }
+  return array();
 }
 
 /**
