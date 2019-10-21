@@ -3592,12 +3592,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-collapse {
-  max-height: 340px;
   overflow-x: visible;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -3678,14 +3673,47 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-top: 4px;
 }
 
-.navbar-nav {
-  margin: 18.75px -10px;
+.navbar-nav > li > a {
+  padding: 25px 30px;
+  line-height: 22px;
 }
 
-.navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 17px;
+.navbar-nav > li {
+  position: relative;
+}
+
+.navbar-nav > li.expanded > a {
+  padding-right: 17px;
+}
+
+.navbar-nav > li.expanded > a:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  content: "";
+  margin-top: -3px;
+  background-image: url(../images/sprites.png);
+  background-position: -433px -296px;
+  width: 7px;
+  height: 6px;
+}
+
+.navbar-nav > li.is-open > a {
+  padding-right: 17px;
+}
+
+.navbar-nav > li.is-open > a:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  content: "";
+  margin-top: -3px;
+  background-image: url(../images/sprites.png);
+  background-position: -433px -276px;
+  width: 7px;
+  height: 6px;
 }
 
 .navbar-form {
@@ -6647,7 +6675,7 @@ body .form-control {
 
 .header-region .header_top #block-views-exp-search-page .views-submit-button .form-submit#edit-submit-search {
   background-image: url(../images/sprites.png);
-  background-position: -214px -274px;
+  background-position: -321px 0px;
   width: 28px;
   height: 28px;
   border: none;
@@ -6753,7 +6781,7 @@ body .form-control {
 
 .navigation .header_bottom .header_fixed .header-user .header-user-name .icon-arrow-down {
   background-image: url(../images/sprites.png);
-  background-position: -404px -214px;
+  background-position: -404px -127px;
   width: 15px;
   height: 15px;
   display: inline-block;
@@ -8103,7 +8131,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-arrangement {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: 0px -321px;
+  background-position: -321px -83px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8114,7 +8142,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-os2web_base_news {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -82px -321px;
+  background-position: -321px -165px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8125,7 +8153,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-forum_post {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -321px -206px;
+  background-position: -123px -321px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8136,7 +8164,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-group {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -246px -321px;
+  background-position: -321px -206px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8147,7 +8175,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-document {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -321px -83px;
+  background-position: -41px -321px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8158,7 +8186,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-meeting_doodle {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -41px -321px;
+  background-position: -82px -321px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8169,7 +8197,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node.node-type-arrangement .main-container .pane-center .pane-node-create-links .pane-content ul li .group-add-hearing {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -287px -321px;
+  background-position: -321px -247px;
   width: 27px;
   height: 27px;
   vertical-align: middle;
@@ -8301,7 +8329,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .page-node .views-field .term-name a .icon-blue {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -363px -291px;
+  background-position: -363px -136px;
   width: 17px;
   height: 17px;
   vertical-align: bottom;
@@ -8387,7 +8415,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.red-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.red-dot {
   background-image: url(../images/sprites.png);
-  background-position: -433px -190px;
+  background-position: -433px -234px;
   width: 8px;
   height: 8px;
 }
@@ -8395,7 +8423,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.yellow-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.yellow-dot {
   background-image: url(../images/sprites.png);
-  background-position: -433px -234px;
+  background-position: -433px -168px;
   width: 8px;
   height: 8px;
 }
@@ -8403,7 +8431,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content .view-header li i.green-dot,
 #section-page-with-filter-all-groups .pane-content .view-header li i.green-dot {
   background-image: url(../images/sprites.png);
-  background-position: -433px -168px;
+  background-position: -433px -190px;
   width: 8px;
   height: 8px;
 }
@@ -8455,7 +8483,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content ul.pager .pager-previous a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-previous a {
   background-image: url(../images/sprites.png);
-  background-position: -404px -185px;
+  background-position: -404px -156px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -8466,7 +8494,7 @@ div.field-group-tabs-wrapper div.field-type-datetime fieldset.panel {
 .darkgray-box .pane-content ul.pager .pager-next a,
 #section-page-with-filter-all-groups .pane-content ul.pager .pager-next a {
   background-image: url(../images/sprites.png);
-  background-position: -404px -156px;
+  background-position: -404px -214px;
   width: 15px;
   height: 15px;
   background-color: #2c353a;
@@ -8810,42 +8838,42 @@ fieldset[disabled] .field-type-image .button {
 
 .addthisevent_dropdown .ateappleical:before {
   background-image: url(../images/sprites.png);
-  background-position: -30px -362px;
+  background-position: -321px -288px;
   width: 16px;
   height: 16px;
 }
 
 .addthisevent_dropdown .ateoutlook:before {
   background-image: url(../images/sprites.png);
-  background-position: -363px -322px;
+  background-position: 0px -362px;
   width: 16px;
   height: 16px;
 }
 
 .addthisevent_dropdown .ateoutlookcom:before {
   background-image: url(../images/sprites.png);
-  background-position: -363px -322px;
+  background-position: 0px -362px;
   width: 16px;
   height: 16px;
 }
 
 .addthisevent_dropdown .ategoogle:before {
   background-image: url(../images/sprites.png);
-  background-position: -328px -321px;
+  background-position: -30px -362px;
   width: 16px;
   height: 16px;
 }
 
 .addthisevent_dropdown .ateyahoo:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -362px;
+  background-position: -328px -321px;
   width: 16px;
   height: 16px;
 }
 
 .addthisevent_dropdown .atefacebook:before {
   background-image: url(../images/sprites.png);
-  background-position: -321px -288px;
+  background-position: -363px -322px;
   width: 16px;
   height: 16px;
 }
@@ -8935,7 +8963,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-aside-action ul.pager .pager-previous a {
   background-image: url(../images/sprites.png);
-  background-position: -404px -243px;
+  background-position: -404px -272px;
   width: 15px;
   height: 15px;
   background-color: transparent;
@@ -8945,7 +8973,7 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-aside-action ul.pager .pager-next a {
   background-image: url(../images/sprites.png);
-  background-position: -404px -272px;
+  background-position: -404px -243px;
   width: 15px;
   height: 15px;
   background-color: transparent;
@@ -8987,35 +9015,35 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-login {
   background-image: url(../images/sprites.png);
-  background-position: -256px -274px;
+  background-position: -272px -214px;
   width: 28px;
   height: 28px;
 }
 
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-user-password {
   background-image: url(../images/sprites.png);
-  background-position: -321px -165px;
+  background-position: 0px -321px;
   width: 27px;
   height: 27px;
 }
 
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-search {
   background-image: url(../images/sprites.png);
-  background-position: -363px 0px;
+  background-position: -164px -321px;
   width: 27px;
   height: 27px;
 }
 
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-help {
   background-image: url(../images/sprites.png);
-  background-position: -321px -124px;
+  background-position: -287px -321px;
   width: 27px;
   height: 27px;
 }
 
 .ktc-user-login .form-actions .ktc-user-login-action-button.ktc-user-login-action-button-create-user {
   background-image: url(../images/sprites.png);
-  background-position: -123px -321px;
+  background-position: -246px -321px;
   width: 27px;
   height: 27px;
 }
@@ -9121,7 +9149,7 @@ fieldset[disabled] .field-type-image .button {
   right: 20px;
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -127px;
+  background-position: -404px -185px;
   width: 15px;
   height: 15px;
 }
@@ -9133,7 +9161,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-aside-toggle.closed > .ktc-aside-heading .ktc-aside-title:after {
   margin-top: 7px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -156px;
+  background-position: -404px -214px;
   width: 15px;
   height: 15px;
 }
@@ -9158,7 +9186,7 @@ fieldset[disabled] .field-type-image .button {
   right: 20px;
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -127px;
+  background-position: -404px -185px;
   width: 15px;
   height: 15px;
 }
@@ -9170,7 +9198,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-aside-toggle.closed > .ktc-aside-user-wrapper .ktc-user-profile:after {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -156px;
+  background-position: -404px -214px;
   width: 15px;
   height: 15px;
 }
@@ -9702,7 +9730,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -64px;
+  background-position: -404px -31px;
   width: 13px;
   height: 19px;
 }
@@ -9755,7 +9783,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-green .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -64px;
+  background-position: -404px -31px;
   width: 13px;
   height: 19px;
 }
@@ -9808,7 +9836,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -433px 0px;
+  background-position: -433px -29px;
   width: 12px;
   height: 15px;
 }
@@ -9861,7 +9889,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-gold .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -31px;
+  background-position: -404px -64px;
   width: 13px;
   height: 19px;
 }
@@ -9914,7 +9942,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red .ktc-teaser > .ktc-teaser-heading .ktc-teaser-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -433px -29px;
+  background-position: -433px 0px;
   width: 12px;
   height: 15px;
 }
@@ -10192,35 +10220,35 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-settings {
   background-image: url(../images/sprites.png);
-  background-position: -205px -321px;
+  background-position: -321px -42px;
   width: 27px;
   height: 27px;
 }
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-search {
   background-image: url(../images/sprites.png);
-  background-position: -363px 0px;
+  background-position: -164px -321px;
   width: 27px;
   height: 27px;
 }
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-toggle {
   background-image: url(../images/sprites.png);
-  background-position: -164px -321px;
+  background-position: -205px -321px;
   width: 27px;
   height: 27px;
 }
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-user-logout {
   background-image: url(../images/sprites.png);
-  background-position: -321px 0px;
+  background-position: -256px -274px;
   width: 28px;
   height: 28px;
 }
 
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-list.ktc-header-top-bar-navigation .ktc-header-top-bar-user-menu-icon.ktc-header-top-bar-user-menu-icon-help {
   background-image: url(../images/sprites.png);
-  background-position: -321px -124px;
+  background-position: -287px -321px;
   width: 27px;
   height: 27px;
 }
@@ -10240,7 +10268,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-header .ktc-header-top-bar .ktc-header-top-bar-add-content .ktc-header-top-bar-add-content-icon {
   display: inline-block;
   background-image: url(../images/sprites.png);
-  background-position: -272px -214px;
+  background-position: -214px -274px;
   width: 28px;
   height: 28px;
 }
@@ -10307,6 +10335,24 @@ fieldset[disabled] .field-type-image .button {
   padding-left: 7px;
 }
 
+.ktc-header__overlay {
+  visibility: hidden;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(34, 43, 47, 0.36);
+  position: absolute;
+  left: 0;
+  top: 75px;
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.ktc-header__overlay.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
 .ktc-header .ktc-header-navigation {
   background-color: #222B2F;
 }
@@ -10326,10 +10372,6 @@ fieldset[disabled] .field-type-image .button {
   background-color: #fff;
 }
 
-.ktc-header .ktc-header-navigation .navbar-nav {
-  margin-left: 140px;
-}
-
 .ktc-header .ktc-header-navigation .navbar-nav > li > a {
   font-size: 16px;
 }
@@ -10340,6 +10382,19 @@ fieldset[disabled] .field-type-image .button {
 
 .ktc-header .ktc-header-navigation .navbar-nav > li.active > a {
   text-decoration: underline;
+}
+
+.ktc-header .ktc-header-navigation .navbar-nav > li ul {
+  display: none;
+  padding: 0 30px;
+}
+
+.ktc-header .ktc-header-navigation .navbar-nav > li ul a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ktc-header .ktc-header-navigation .navbar-nav > li.is-open ul {
+  display: block;
 }
 
 .ktc-header form button {
@@ -10660,7 +10715,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -64px;
+  background-position: -404px -31px;
   width: 13px;
   height: 19px;
 }
@@ -10690,7 +10745,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-green.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -64px;
+  background-position: -404px -31px;
   width: 13px;
   height: 19px;
 }
@@ -10720,7 +10775,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -433px 0px;
+  background-position: -433px -29px;
   width: 12px;
   height: 15px;
 }
@@ -10750,7 +10805,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-gold.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -31px;
+  background-position: -404px -64px;
   width: 13px;
   height: 19px;
 }
@@ -10780,7 +10835,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red.ktc-list-display > .ktc-list-display-heading .ktc-list-display-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -433px -29px;
+  background-position: -433px 0px;
   width: 12px;
   height: 15px;
 }
@@ -10886,7 +10941,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -64px;
+  background-position: -404px -31px;
   width: 13px;
   height: 19px;
 }
@@ -10916,7 +10971,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-green.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -64px;
+  background-position: -404px -31px;
   width: 13px;
   height: 19px;
 }
@@ -10946,7 +11001,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-blue.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -433px 0px;
+  background-position: -433px -29px;
   width: 12px;
   height: 15px;
 }
@@ -10976,7 +11031,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-gold.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -10px;
   background-image: url(../images/sprites.png);
-  background-position: -404px -31px;
+  background-position: -404px -64px;
   width: 13px;
   height: 19px;
 }
@@ -11006,7 +11061,7 @@ fieldset[disabled] .field-type-image .button {
 .ktc-red.ktc-list-display-large > .ktc-list-display-large-heading .ktc-list-display-large-title:before {
   margin-top: -8px;
   background-image: url(../images/sprites.png);
-  background-position: -433px -29px;
+  background-position: -433px 0px;
   width: 12px;
   height: 15px;
 }

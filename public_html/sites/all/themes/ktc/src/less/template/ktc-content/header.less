@@ -276,6 +276,25 @@
 // Header
 .ktc-header {
 
+	// Overlay 
+	&__overlay {
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(34,43,47, 0.36);
+    position: absolute;
+    left: 0;
+    top: 75px;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    // transition: opacity $animation-2, visibility $animation-2;
+    &.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
 	// Navigation
 	.ktc-header-navigation {
 		background-color: @ktc-color-dark-grey;
@@ -299,7 +318,7 @@
 
 		// Nav
 		.navbar-nav {
-			margin-left: @ktc-header-top-bar-logo-width;
+			// margin-left: @ktc-header-top-bar-logo-width;
 
 			// List item
 			> li {
@@ -321,6 +340,101 @@
 						text-decoration: underline;
 					}
 				}
+
+				ul {
+					display: none;
+					padding: 0 30px;
+
+					a {
+						color: rgba(255,255,255, 0.5);
+					}
+				}
+
+				&.is-open {
+					ul {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Tablet and up
+@media @media-query-tablet {
+	.ktc-header {
+
+		&__overlay {
+			top: 175px;
+		}
+
+		.ktc-header-navigation {
+			.navbar-nav {
+				> li {
+					> a {
+						&:first-child {
+							padding-left: 0;
+						}
+					} 
+
+					&.expanded {
+						> a {
+							padding-right: 30px;
+
+							&:before {
+								right: 10px;
+							}
+						}
+					}
+
+					ul {
+						position: absolute;
+						top: 100%;
+						background: #FFF;
+						z-index: 2;
+						padding: 15px 0;
+						transform: translateX(-50%);
+						left: 50%;
+
+						li {
+							box-sizing: border-box;
+						}
+
+						&:before {
+							content: '';
+					    display: block;
+					    position: absolute;
+					    left: 50%;
+					    width: 0;
+					    height: 0;
+					    border-style: solid;
+					    bottom: 100%;
+					    border-color: transparent transparent #FFF transparent ;
+					    border-width: 10px;
+					    transform: translateX(-50%);
+						}
+
+						a {
+							color:  @ktc-color-dark-grey;
+							padding: 10px 25px;
+							font-weight: 600;
+							white-space: nowrap;
+							cursor: pointer;
+							box-sizing: border-box;
+							border-left: 3px solid transparent;
+
+							&:hover {
+								color: @ktc-color-green;
+								border-color:  @ktc-color-green;
+							}
+
+							&.active {
+								color: @ktc-color-green;
+								border-color:  @ktc-color-green;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -335,16 +449,21 @@
 		// Navigation
 		.ktc-header-navigation {
 
+			.container {
+				padding: 0;
+			}
+
 			// Nav
 			.navbar-nav {
 				margin-left: 0;
 
 				// List item
 				> li {
+					border-bottom: 1px solid #313B3F;
 
 					// Link
 					> a {
-						padding-left: 0;
+						// padding-left: 0;
 					}
 				}
 			}

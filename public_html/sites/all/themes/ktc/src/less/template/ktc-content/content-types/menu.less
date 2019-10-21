@@ -42,12 +42,21 @@
 				}
 			}
 		}
-		&.expanded.active {
+		&.collapsed {
 				> a {
-					&:before {
-						.sprite(@ktc-icon-arrow-down-black);
-					}
+				padding-right: floor( (@ktc-icon-arrow-down-black-width + 10px) );
+				// Icon
+				&:before {
+					display: block;
+					position: absolute;
+					top: 50%;
+					right: 0;
+					content: "";
+
+					margin-top: floor((0 - (@ktc-icon-arrow-down-black-height / 2 )));
+					.sprite(@ktc-icon-arrow-down-black);
 				}
+			}
 		}
 
 		> a {
