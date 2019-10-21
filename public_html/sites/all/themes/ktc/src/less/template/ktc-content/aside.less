@@ -11,26 +11,25 @@
 
 // Aside
 .ktc-aside {
-	background-color: @ktc-color-light-content-background;
 	margin-bottom: @grid-gutter-width;
 
 	// Heading
 	.ktc-aside-heading {
-		background-color: @ktc-aside-heading-background-color;
+		background-color: @ktc-color-green-background;
+    margin-bottom: 10px;
+    border-top-left-radius: 40px;
 
 		// Title
 		.ktc-aside-title {
 			display: block;
-			padding: @ktc-aside-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
-			margin: 0;
+      color: @ktc-aside-title-font-color;
+      padding: 30px;
+      margin: 0;
 
 			// Title and link
 			&,
 			> a {
-				text-transform: uppercase;
-				font-family: @ktc-aside-title-font-family;
-				font-size: @ktc-aside-title-font-size;
-				font-weight: @ktc-aside-title-font-weight;
+				.h4;
 				color: @ktc-aside-title-font-color;
 			}
 		}
@@ -39,6 +38,7 @@
 	// Body
 	.ktc-aside-body {
 		padding: @ktc-aside-body-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+		background-color: @ktc-color-light-content-background;
 
 		// Row (this is crap)
 		.row {
@@ -311,6 +311,11 @@
 		}
 	}
 }
+.ktc-aside-dark {
+	.ktc-aside-body {
+		background-color: @ktc-color-dark-content-background;
+	}
+}
 
 // Green
 .ktc-aside-green {
@@ -351,7 +356,7 @@
 // Dark
 .ktc-aside-dark {
 	position: relative;
-	background-color: #222b2f;
+	// background-color: #222b2f;
 
 	// Heading
 	.ktc-aside-heading {

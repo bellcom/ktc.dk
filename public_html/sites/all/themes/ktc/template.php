@@ -1270,3 +1270,12 @@ function ktc_user_profile_form($vars) {
   $output = drupal_render_children($form);
   return $output;
 }
+
+/**
+ * Overrides theme_menu_link().
+ *
+ * We need default theming for this specific menu block for KTC-71.
+ */
+function ktc_menu_link__menu_block__7($variables) {
+  return theme_menu_link($variables);
+}

@@ -5,7 +5,9 @@ global $base_url;
 <?php if ($teaser): ?>
     <!-- Begin - teaser -->
     <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> ktc-teaser"<?php print $attributes; ?>>
-
+        <div class="ktc-teaser-type-heading">
+          <span class="ktc-teaser-button ktc-teaser-button-<?php print $type; ?>"><?php print node_type_get_name($type); ?></span>
+        </div>
         <!-- Begin - full width image -->
         <?php if (isset($content['field_os2web_base_field_lead_img'])) : ?>
             <div class="ktc-full-width-image">
@@ -36,8 +38,9 @@ global $base_url;
             <?php if (isset($news_type)): ?>
                 <p class="mute"><?php print $news_type; ?></p>
             <?php endif ?>
-
-            <p><?php print render($content['field_os2web_base_field_summary']); ?></p>
+            <div class="ktc-teaser-manchet">
+                <p><?php print render($content['field_os2web_base_field_summary']); ?></p>
+            </div>
 
             <?php if ($user_object): ?>
                 <?php print $profile = theme('user_profile', array('account' => $user_object, 'theme_suggestion' => 'list3')); ?>
@@ -50,7 +53,6 @@ global $base_url;
         <div class="ktc-footer">
             <a href="<?php print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
             <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
-            <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
         </div>
         <!-- End - footer -->
 

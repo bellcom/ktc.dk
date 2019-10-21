@@ -2546,6 +2546,12 @@
 }
 
 @media (min-width: 768px) {
+  .footer_2 {
+    padding: 90px 0;
+  }
+}
+
+@media (min-width: 768px) {
   .footer_4 .block {
     padding: 15px;
   }
@@ -2667,15 +2673,15 @@
 @media screen and (max-width: 767px) {
   .ktc-aside-link-list-2-col .ktc-link-container {
     width: 100%;
-    padding: 2px 15px;
+    padding: 2px 20px;
   }
 
   .ktc-aside-link-list-2-col .ktc-link-container:nth-child(odd) {
-    padding: 2px 15px;
+    padding: 2px 20px;
   }
 
   .ktc-aside-link-list-2-col .ktc-link-container:nth-child(even) {
-    padding: 2px 15px;
+    padding: 2px 20px;
   }
 }
 

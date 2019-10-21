@@ -18,12 +18,12 @@
 	.ktc-block-heading {
 	 	border-left-width: @ktc-block-heading-left-border-width;
 	 	border-left-style: solid;
-		background-color: @ktc-block-heading-background-color;
+		// background-color: @ktc-block-heading-background-color;
 
 		// Title
 		.ktc-block-title {
 			display: block;
-			padding: @ktc-block-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+			padding: 10px 15px;
 			padding-left: floor( (@ktc-default-left-right-inner-spacing - @ktc-block-heading-left-border-width) );
 			margin: 0;
 
@@ -57,6 +57,7 @@
 
 		// Heading
 		.ktc-block-heading {
+			background-color: @border-color;
 			border-left-color: @border-color;
 		}
 	}
