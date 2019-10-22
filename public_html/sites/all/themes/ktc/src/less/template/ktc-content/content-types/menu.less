@@ -26,7 +26,16 @@
 			border: 0;
 		}
 
-		&.expanded {
+		& > ul {
+			display: none;
+		}
+
+		&.has-submenu.is-open {
+
+			ul {
+				display: block;
+			}
+
 			> a {
 				padding-right: floor( (@ktc-icon-arrow-up-width + 10px) );
 				// Icon
@@ -42,7 +51,7 @@
 				}
 			}
 		}
-		&.collapsed {
+		&.has-submenu {
 				> a {
 				padding-right: floor( (@ktc-icon-arrow-down-black-width + 10px) );
 				// Icon
@@ -68,8 +77,12 @@
 			&:hover {
 				background-color: transparent;
 				text-decoration: underline;
+			}
+			&:focus {
+				background-color: transparent;
 			}	
 
+			&.active-trail,
 			&.active {
 				color: #137c34;
 			}
