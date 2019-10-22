@@ -313,6 +313,7 @@
 				// Link
 				> a {
 					font-size: 16px;
+					text-transform: uppercase;
 
 					&:hover {
 						text-decoration: underline;
@@ -343,6 +344,14 @@
 					}
 				}
 			}
+
+			&.mobile-user-links {
+				> li {
+					> a {
+						text-transform: none;
+					}
+				}
+			}
 		}
 	}
 }
@@ -356,6 +365,7 @@
 	    visibility: hidden;
 	    width: 100%;
 	    height: 100vh;
+	    min-height: 100%;
 	    background-color: rgba(34,43,47, 0.36);
 	    position: absolute;
 	    left: 0;
