@@ -12223,6 +12223,34 @@ var getText = docElem.textContent ?
           _closeMegaMenu();
         });
 
+        // Side Menu
+
+        // Add class for showing arrow
+        $('.side-menu li ul').each(function() {
+          $(this).closest("li").addClass('has-submenu');
+        });
+
+        $('.side-menu .has-submenu').each(function() {
+          if ($(this).find('.active').length) {
+            $(this).addClass('is-open')
+          }
+        });
+        
+
+        $('.side-menu .has-submenu a').click(function(e) {
+
+          var item = $(this).closest('li');
+          if (item.hasClass('is-open')) {
+            e.preventDefault();
+            item.removeClass('is-open');
+          } else {
+            if (item.find('.menu').length) {
+              e.preventDefault();
+              item.addClass('is-open');
+            }
+          }
+        });
+
     });
 
     Drupal.behaviors.feedbackForm = {
