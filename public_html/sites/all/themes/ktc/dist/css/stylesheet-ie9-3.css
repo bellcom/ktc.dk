@@ -2535,13 +2535,85 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .ktc-header__overlay {
+    top: 175px;
+  }
+
+  .ktc-header .ktc-header-navigation .navbar-nav > li > a:first-child {
+    padding-left: 0;
+  }
+
+  .ktc-header .ktc-header-navigation .navbar-nav > li.expanded > a {
+    padding-right: 30px;
+  }
+
+  .ktc-header .ktc-header-navigation .navbar-nav > li.expanded > a:before {
+    right: 10px;
+  }
+
+  .ktc-header .ktc-header-navigation .navbar-nav > li ul {
+    position: absolute;
+    top: 100%;
+    background: #FFF;
+    z-index: 2;
+    padding: 15px 0;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+  }
+
+  .ktc-header .ktc-header-navigation .navbar-nav > li ul li {
+    box-sizing: border-box;
+  }
+
+  .ktc-header .ktc-header-navigation .navbar-nav > li ul:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    bottom: 100%;
+    border-color: transparent transparent #FFF transparent;
+    border-width: 10px;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .ktc-header .ktc-header-navigation .navbar-nav > li ul a {
+    color: #222B2F;
+    padding: 10px 25px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-left: 3px solid transparent;
+  }
+
+  .ktc-header .ktc-header-navigation .navbar-nav > li ul a:hover {
+    color: #36a145;
+    border-color: #36a145;
+  }
+
+  .ktc-header .ktc-header-navigation .navbar-nav > li ul a.active {
+    color: #36a145;
+    border-color: #36a145;
+  }
+}
+
 @media screen and (max-width: 767px) {
+  .ktc-header .ktc-header-navigation .container {
+    padding: 0;
+  }
+
   .ktc-header .ktc-header-navigation .navbar-nav {
     margin-left: 0;
   }
 
-  .ktc-header .ktc-header-navigation .navbar-nav > li > a {
-    padding-left: 0;
+  .ktc-header .ktc-header-navigation .navbar-nav > li {
+    border-bottom: 1px solid #313B3F;
   }
 }
 
