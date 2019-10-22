@@ -267,7 +267,7 @@ function ktc_process_page(&$variables) {
   if ($variables['main_menu']) {
     // Build links.
     $link = menu_link_load(486);
-    $main_tree = menu_tree_all_data('main-menu', $link, 4);
+    $main_tree = menu_tree_all_data('main-menu', $link, 3);
     $variables['primary_nav'] = menu_tree_output($main_tree);
     // Provide default theme wrapper function.
     $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
