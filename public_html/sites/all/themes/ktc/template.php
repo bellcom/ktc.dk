@@ -1032,6 +1032,8 @@ function ktc_field($variables) {
   //we not need field-items class on article page
  if ($variables["element"]["#field_name"] == 'field_paragraphs' && $variables["element"]["#bundle"] == 'artikler' )
     return;
+  if ($variables["element"]["#field_name"] == 'field_paragraphs' && $variables["element"]["#bundle"] == 'page' )
+    return;
   // Render the label, if it's not hidden.
   if (!$variables['label_hidden']) {
     $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
