@@ -266,8 +266,7 @@ function ktc_process_page(&$variables) {
   $variables['primary_nav'] = array();
   if ($variables['main_menu']) {
     // Build links.
-    $link = menu_link_load(486);
-    $main_tree = menu_tree_all_data('main-menu', $link, 3);
+    $main_tree = menu_tree_all_data('main-menu', NULL, 3);
     $variables['primary_nav'] = menu_tree_output($main_tree);
     // Provide default theme wrapper function.
     $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
@@ -280,15 +279,6 @@ function ktc_process_page(&$variables) {
   }
 }
 
-function _ktc_submenu_tree_all_data($title, $menu = 'main-menu') {
-  $tree = menu_tree_all_data($menu);
-  foreach ($tree as $branch) {
-    if ($branch['link']['title'] == $title) {
-      return $branch['below'];
-    }
-  }
-  return array();
-}
 
 /**
  * Implements template_preprocess_taxonomy_term().
@@ -659,19 +649,25 @@ function ktc_date_translate($time_ar) {
 function ktc_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
-  if ($element['#below']) {
-    // Prevent dropdown functions from being added to management menu so it
-    // does not affect the navbar module.
-    if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
-      $sub_menu = drupal_render($element['#below']);
-    }
-    elseif ($element['#original_link']['in_active_trail']) {
-      $sub_menu = drupal_render($element['#below']);
-    }
-    else {
-      $element['#attributes']['class'][] = 'has-children';
+  if (($element['#original_link']['menu_name'] == 'main-menu')) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  else {
+    if ($element['#below']) {
+      // Prevent dropdown functions from being added to management menu so it
+      // does not affect the navbar module.
+      if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
+        $sub_menu = drupal_render($element['#below']);
+      }
+      elseif ($element['#original_link']['in_active_trail']) {
+        $sub_menu = drupal_render($element['#below']);
+      }
+      else {
+        $element['#attributes']['class'][] = 'has-children';
+      }
     }
   }
+
   // On primary navigation menu, class 'active' is not set on active menu item.
   // @see https://drupal.org/node/1896674
   if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
