@@ -48,6 +48,12 @@
         <?php if ($page['primary_nav']): ?>
           <nav class="navbar-collapse collapse">
             <?php print render($page['primary_nav']); ?>
+              <?php if ($page['is_mobile'] == TRUE): ?>
+              <ul class="menu nav navbar-nav mobile-user-links">
+                  <li class="leaf"><a href="/user" class="mobile-user-link mobile-user-link-user">Opret bruger</a></li>
+                  <li class="last"><a href="/user/signup"  class="mobile-user-link mobile-user-link-signup">Log ind</a></li>
+              </ul>
+                <?php endif; ?>
           </nav>
         <?php endif; ?>
 

@@ -1,0 +1,45 @@
+.mobile-user-links {
+
+  li {
+    padding-left: 30px;
+  }
+  .mobile-user-link {
+    // Icon
+    &:before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      content: "";
+      margin-right: 20px;
+    }
+
+    &.mobile-user-link-user {
+      padding-left: floor( (@header-user-create-width + 10px) );
+
+      // Icon
+      &:before {
+        margin-top: floor((0 - (@header-user-create-height / 2 )));
+        .sprite(@header-user-create);
+      }
+    }
+
+    &.mobile-user-link-signup {
+      padding-left: floor( (@header-login-width + 10px) );
+
+      // Icon
+      &:before {
+        margin-top: floor((0 - (@header-login-height / 2 )));
+        .sprite(@header-login);
+      }
+    }
+
+    
+  }
+}
+
+@media @media-query-tablet {
+  .mobile-user-links {
+    display: none;
+  }
+}

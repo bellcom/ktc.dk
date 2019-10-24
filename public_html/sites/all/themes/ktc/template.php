@@ -279,6 +279,7 @@ function ktc_process_page(&$variables) {
   }
 }
 
+
 /**
  * Implements template_preprocess_taxonomy_term().
  */
@@ -1043,6 +1044,8 @@ function ktc_field($variables) {
   $output = '';
   //we not need field-items class on article page
  if ($variables["element"]["#field_name"] == 'field_paragraphs' && $variables["element"]["#bundle"] == 'artikler' )
+    return;
+  if ($variables["element"]["#field_name"] == 'field_paragraphs' && $variables["element"]["#bundle"] == 'page' )
     return;
   // Render the label, if it's not hidden.
   if (!$variables['label_hidden']) {

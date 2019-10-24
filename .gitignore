@@ -22,7 +22,7 @@ scripts/import/exporter/users.json
 scripts/json_import/
 /public_html/sites/*.dd
 public_html/sites/*.dd
-
+.DS_Store
 # Docker
 docker/data/db
 docker/data/db-init/*
