@@ -10,11 +10,32 @@
 // --------------------------------------------------
 
 // Menu
-.menu-block-wrapper {
+.menu-block-wrapper ul {
+	border-radius: 0;
+	background-color: transparent;
+
+	> li {
+		border: 0;
+
+		> a {
+			font-size: @font-size-base;
+			padding: 6px 0;
+			color: @gray-darker;
+			font-weight: bold;
+
+			&:hover {
+				background-color: transparent;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+// Side Menu
+.side-menu .menu-block-wrapper {
 	margin: -15px -20px;
 }
 
-.menu-block-wrapper ul {
+.side-menu .menu-block-wrapper ul {
 	border-radius: 0;
 	background-color: transparent;
 
