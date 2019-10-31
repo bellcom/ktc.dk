@@ -11,6 +11,9 @@ function ktc_users_login() {
   $form['#attributes']['class'][] = 'ktc-user-login';
   $form['#attributes']['class'][] = 'form-inline';
 
+  $form['#prefix'] = '<div class="ktc-user-login-mobile">';
+  $form['#suffix'] = '</div>';
+
   // Remove form labels
   $form['name']['#title'] = '';
   $form['name']['#description'] = '';
