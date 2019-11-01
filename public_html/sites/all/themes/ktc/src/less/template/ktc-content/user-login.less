@@ -66,4 +66,25 @@
 		// Clearfix
 		&:extend(.clearfix all);
 	}
+
+	@media @media-query-mobile-only {
+	  > div {
+	  	display: flex;
+	    flex-wrap: wrap;
+	    justify-content: flex-end;
+	    margin-top: 10px;
+
+	    .form-type-textfield {
+	    	width: 50%;
+		    padding-right: 10px;
+		    box-sizing: border-box;
+	    }
+	    .form-type-password {
+	    	width: 50%;
+    		box-sizing: border-box;
+	    }
+		}
+	}
+
+	
 }
