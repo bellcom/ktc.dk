@@ -12228,6 +12228,7 @@ var getText = docElem.textContent ?
         // Add class for showing arrow
         $('.side-menu li ul').each(function() {
           $(this).closest("li").addClass('has-submenu');
+          $(this).closest("li").find('> a').after('<span class="arrow">');
         });
 
         $('.side-menu .has-submenu').each(function() {
@@ -12237,15 +12238,15 @@ var getText = docElem.textContent ?
         });
         
 
-        $('.side-menu .has-submenu a').click(function(e) {
+        $('.side-menu .has-submenu .arrow').click(function(e) {
 
           var item = $(this).closest('li');
           if (item.hasClass('is-open')) {
-            e.preventDefault();
+            // e.preventDefault();
             item.removeClass('is-open');
           } else {
             if (item.find('.menu').length) {
-              e.preventDefault();
+              // e.preventDefault();
               item.addClass('is-open');
             }
           }
