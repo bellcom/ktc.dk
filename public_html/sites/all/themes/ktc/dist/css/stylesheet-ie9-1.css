@@ -3683,14 +3683,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav > li.expanded > a {
-  padding-right: 17px;
+  padding-right: 40px;
 }
 
 .navbar-nav > li.expanded > a:before {
   display: block;
   position: absolute;
   top: 50%;
-  right: 30px;
+  right: 25px;
   content: "";
   margin-top: -3px;
   background-image: url(../images/sprites.png);
