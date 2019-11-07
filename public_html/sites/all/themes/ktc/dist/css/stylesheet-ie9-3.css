@@ -2585,11 +2585,11 @@
   }
 
   .ktc-header .ktc-header-navigation .navbar-nav > li.expanded > a {
-    padding-right: 30px;
+    padding-right: 40px;
   }
 
   .ktc-header .ktc-header-navigation .navbar-nav > li.expanded > a:before {
-    right: 10px;
+    right: 25px;
   }
 
   .ktc-header .ktc-header-navigation .navbar-nav > li ul {
