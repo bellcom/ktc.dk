@@ -5,7 +5,9 @@ global $base_url;
 <?php if ($teaser): ?>
   <!-- Begin - teaser -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>  ktc-teaser"<?php print $attributes; ?>>
-
+    <div class="ktc-teaser-type-heading">
+      <span class="ktc-teaser-button ktc-teaser-button-<?php print $type; ?>"><?php print node_type_get_name($type); ?></span>
+    </div>
     <!-- Begin - heading -->
     <?php if (isset($network_groups)): ?>
       <?php foreach ($network_groups AS $network_group): ?>
@@ -27,7 +29,9 @@ global $base_url;
       <?php endif; ?>
 
       <?php if (isset($body_shortened)): ?>
-        <p><?php print $body_shortened; ?></p>
+        <div class="ktc-teaser-manchet">
+          <p><?php print $body_shortened; ?></p>
+        </div>
       <?php endif; ?>
 
       <?php if ($user_object): ?>
@@ -39,7 +43,6 @@ global $base_url;
     <div class="ktc-footer">
       <a href="<?php print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
       <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
-      <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
     </div>
 
   </article>

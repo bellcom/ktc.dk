@@ -283,6 +283,8 @@
         // errors.
         $('fieldset.tab-pane').removeAttr('style');
 
+
+
     });
 
     Drupal.behaviors.feedbackForm = {

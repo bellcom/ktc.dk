@@ -26,6 +26,7 @@ global $base_url;
     <!-- End - heading -->
 
     <div class="ktc-teaser-body">
+      <span class="ktc-teaser-button ktc-teaser-button-<?php print $type; ?>"><?php print node_type_get_name($type); ?></span>
 
       <h4 class="ktc-teaser-body-title">
         <?php if (isset($article_access)) :?>
@@ -49,7 +50,9 @@ global $base_url;
 
       <?php if (isset($content['field_short'])): ?>
         <!-- Begin - manchet -->
-        <?php print render($content['field_short']); ?>
+        <div class="ktc-teaser-manchet">
+          <?php print render($content['field_short']); ?>
+        </div>
         <!-- End - manchet -->
       <?php endif; ?>
 
@@ -66,7 +69,7 @@ global $base_url;
     <div class="ktc-footer">
       <a href="<?php print $base_url . $node_url; ?>#comments" data-toggle="tooltip" data-placement="bottom" title="Kommentarer" class="ktc-footer-button ktc-footer-button-comment"><?php print $num_comments; ?></a>
       <span data-toggle="tooltip" data-placement="bottom" title="Visninger" class="ktc-footer-button ktc-footer-button-viewers"><?php print $statistics_count; ?></span>
-      <span class="ktc-footer-button ktc-footer-button-<?php print $type; ?> pull-right"><?php print node_type_get_name($type); ?></span>
+      
     </div>
 
   </article>

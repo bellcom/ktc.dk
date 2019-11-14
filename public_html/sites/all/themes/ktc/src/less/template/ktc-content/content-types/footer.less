@@ -11,15 +11,14 @@
 
 // Footer
 .ktc-footer {
-	background-color: @ktc-type-footer-background-color;
-	border: 0;
-	border-radius: 0;
-	padding: @ktc-type-footer-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+	border-top: 1px solid @ktc-border-color;
+	padding: @ktc-type-footer-inner-spacing;
 
 	// Button
 	.ktc-footer-button {
 		position: relative;
-		color: #fff;
+		color: @ktc-type-footer-font-color;
+		font-weight: 600;
 		float: left;
 
 		// Additional elements
@@ -48,7 +47,7 @@
 
 			// Icon
 			&:before {
-				margin-top: floor((0 - (@ktc-icon-comment-height / 2 )));
+				margin-top: floor((0 - (@ktc-icon-comment-height / 2 ) + 2px));
 				.sprite(@ktc-icon-comment);
 			}
 		}

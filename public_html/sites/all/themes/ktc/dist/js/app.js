@@ -12175,6 +12175,97 @@ var getText = docElem.textContent ?
         // errors.
         $('fieldset.tab-pane').removeAttr('style');
 
+        // Menu overlay
+        var _overlay = function() {
+          var header = $('.ktc-header');
+          if (!this.overlayMenu) {
+              var overlay = this.overlayMenu = $('<div class="ktc-header__overlay js-overlay js-menu-close">');
+              header.append(overlay);
+          }
+          if ($('.navbar-nav > li').hasClass('is-open')  || $('.navbar-toggle').hasClass('.collapsed')) {
+              header.find('.js-overlay').addClass('is-open');
+              header.addClass('is-open');
+          } else {
+              header.find('.js-overlay').removeClass('is-open');
+              header.removeClass('is-open');
+          }
+          $('.js-overlay').click(function(){
+              $('.ktc-header').find('.is-open').removeClass('is-open');
+              $('.ktc-header').removeClass('is-open');
+              $('html').removeClass('is-no-scroll is-fake-scroll');
+          });
+        };
+        var _closeMegaMenu = function() {
+          var header = $('.ktc-header');
+          header.find('.navbar-nav > li').removeClass('is-open');
+          header.find('.navbar-toggle').removeClass('collapsed');
+          header.find('.js-overlay').removeClass('is-open');
+        };
+        // Mega Menu
+
+        $('.navbar-nav li ul').each(function() {
+          $(this).closest("li").addClass('has-submenu');
+          $(this).closest("li").find('> a').after('<span class="arrow">');
+        });
+
+        $('.navbar-nav .arrow').click(function(e) {
+
+          var item = $(this).closest('li');
+          if (item.hasClass('is-open')) {
+            item.removeClass('is-open');
+            _closeMegaMenu();
+          } else {
+            if (item.find('.menu').length) {
+              item.addClass('is-open');
+              _overlay();
+            }
+          }
+        });
+        $(".navbar-nav .has-submenu ").on({
+          mouseenter: function() {
+            $(this).addClass('is-open');
+              // _overlay();
+              
+          },
+          mouseleave: function() {
+           $(this).removeClass('is-open');
+              // _closeMegaMenu(); 
+          }
+        } );
+
+        $('.js-menu-close, .navbar-toggle:not(.collapsed)').click(function(e) {
+          _closeMegaMenu();
+        });
+
+        // Side Menu
+
+        // Add class for showing arrow
+        $('.side-menu li ul').each(function() {
+          $(this).closest("li").addClass('has-submenu');
+          $(this).closest("li").find('> a').after('<span class="arrow">');
+        });
+
+        $('.side-menu .has-submenu').each(function() {
+          if ($(this).find('.active').length) {
+            $(this).addClass('is-open')
+          }
+        });
+        
+
+        $('.side-menu .has-submenu .arrow').click(function(e) {
+
+          var item = $(this).closest('li');
+          if (item.hasClass('is-open')) {
+            // e.preventDefault();
+            item.removeClass('is-open');
+          } else {
+            if (item.find('.menu').length) {
+              // e.preventDefault();
+              item.addClass('is-open');
+            }
+          }
+        });
+
     });
 
     Drupal.behaviors.feedbackForm = {

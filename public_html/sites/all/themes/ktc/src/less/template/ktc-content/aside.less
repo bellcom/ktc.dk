@@ -11,27 +11,27 @@
 
 // Aside
 .ktc-aside {
-	background-color: @ktc-color-light-content-background;
 	margin-bottom: @grid-gutter-width;
 
 	// Heading
 	.ktc-aside-heading {
-		background-color: @ktc-aside-heading-background-color;
+		background-color: @ktc-color-green-dark-background;
+    border-top-left-radius: 40px;
 
 		// Title
 		.ktc-aside-title {
 			display: block;
-			padding: @ktc-aside-title-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
-			margin: 0;
+      color: @ktc-aside-title-font-color;
+      padding: 20px;
+      margin: 0;
 
 			// Title and link
 			&,
 			> a {
-				text-transform: uppercase;
-				font-family: @ktc-aside-title-font-family;
-				font-size: @ktc-aside-title-font-size;
-				font-weight: @ktc-aside-title-font-weight;
+				.h4;
 				color: @ktc-aside-title-font-color;
+				margin-top: 0;
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -39,6 +39,7 @@
 	// Body
 	.ktc-aside-body {
 		padding: @ktc-aside-body-top-bottom-inner-spacing @ktc-default-left-right-inner-spacing;
+		background-color: @ktc-color-light-content-background;
 
 		// Row (this is crap)
 		.row {
@@ -80,7 +81,7 @@
 	.ktc-teaser {
 
 	  .ktc-teaser-body {
-		padding: 0;
+			padding: 0;
 	  }
 	}
   }
@@ -294,7 +295,7 @@
 // Action
 .ktc-aside-action {
 	.ktc-mixin-aside-color(@ktc-color-red-background, @ktc-color-red-background-font);
-	background-color: @ktc-color-dark-content-background;
+	// background-color: @ktc-color-dark-content-background;
 }
 
 // Action and dark
@@ -309,6 +310,11 @@
 		&:hover {
 			color: #fff;
 		}
+	}
+}
+.ktc-aside-dark {
+	.ktc-aside-body {
+		background-color: @ktc-color-dark-content-background;
 	}
 }
 
@@ -351,7 +357,7 @@
 // Dark
 .ktc-aside-dark {
 	position: relative;
-	background-color: #222b2f;
+	// background-color: #222b2f;
 
 	// Heading
 	.ktc-aside-heading {
@@ -373,14 +379,14 @@
 		// Pager
 		.pager {
 			position: absolute;
-			top: 6px; // bad practice
+			top: 20px; // bad practice
 			right: @ktc-default-left-right-inner-spacing;
 		}
 
 		.view-footer {
 			position: absolute;
-			top: 5px; // Should have been: @ktc-aside-title-top-bottom-inner-spacing, which does not work
-			left: 110px;
+			top: 20px; // Should have been: @ktc-aside-title-top-bottom-inner-spacing, which does not work
+			left: 137px;
 			margin: 0;
 			border: 0;
 			font-family: @ktc-aside-title-font-family;

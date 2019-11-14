@@ -102,7 +102,6 @@
 
 <!-- Begin - wrapper -->
 <div id="wrapper" class="ktc-wrapper page-fluid">
-  <div class="ktc-wrapper-background"></div>
   <div class="container-fluid">
     <div class="row">
 
