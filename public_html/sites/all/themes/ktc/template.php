@@ -411,13 +411,13 @@ function ktc_preprocess_node(&$vars) {
   }
 
   // Title (shortened)
-  $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 60);
+  $vars['title_shortened'] = $vars['title'];
 
   // Teaser
   if ($vars['elements']['#view_mode'] == 'teaser') {
 
     // Title (shortened)
-    $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 40);
+    $vars['title_shortened'] = $vars['title'];
   }
 
   // Added user_name and user_object for node--teaser/teasercomments templates.
