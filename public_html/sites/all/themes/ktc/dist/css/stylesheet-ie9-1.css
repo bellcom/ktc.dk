@@ -9413,6 +9413,10 @@ fieldset[disabled] .field-type-image .button {
   background-color: #36a145;
 }
 
+.ktc-block-green .ktc-block .ktc-block-heading {
+  background-color: #36a145;
+}
+
 .ktc-block-blue.ktc-block .ktc-block-heading,
 .ktc-block-blue .ktc-block .ktc-block-heading {
   border-left-color: #1f9bd7;
@@ -9420,6 +9424,10 @@ fieldset[disabled] .field-type-image .button {
 
 .block:not(.block-panels-mini) .ktc-block-blue.ktc-block .ktc-block-heading,
 .block:not(.block-panels-mini) .ktc-block-blue .ktc-block .ktc-block-heading {
+  background-color: #1f9bd7;
+}
+
+.ktc-block-blue .ktc-block .ktc-block-heading {
   background-color: #1f9bd7;
 }
 
@@ -9433,6 +9441,10 @@ fieldset[disabled] .field-type-image .button {
   background-color: #d3a900;
 }
 
+.ktc-block-gold .ktc-block .ktc-block-heading {
+  background-color: #d3a900;
+}
+
 .ktc-block-red.ktc-block .ktc-block-heading,
 .ktc-block-red .ktc-block .ktc-block-heading {
   border-left-color: #e75311;
@@ -9440,6 +9452,10 @@ fieldset[disabled] .field-type-image .button {
 
 .block:not(.block-panels-mini) .ktc-block-red.ktc-block .ktc-block-heading,
 .block:not(.block-panels-mini) .ktc-block-red .ktc-block .ktc-block-heading {
+  background-color: #e75311;
+}
+
+.ktc-block-red .ktc-block .ktc-block-heading {
   background-color: #e75311;
 }
 
