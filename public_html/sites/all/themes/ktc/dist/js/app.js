@@ -12203,21 +12203,35 @@ var getText = docElem.textContent ?
         };
         // Mega Menu
 
-        $('.navbar-nav a').click(function(e) {
+        $('.navbar-nav li ul').each(function() {
+          $(this).closest("li").addClass('has-submenu');
+          $(this).closest("li").find('> a').after('<span class="arrow">');
+        });
+
+        $('.navbar-nav .arrow').click(function(e) {
 
           var item = $(this).closest('li');
           if (item.hasClass('is-open')) {
-            e.preventDefault();
             item.removeClass('is-open');
             _closeMegaMenu();
           } else {
             if (item.find('.menu').length) {
-              e.preventDefault();
               item.addClass('is-open');
               _overlay();
             }
           }
         });
+        $(".navbar-nav .has-submenu ").on({
+          mouseenter: function() {
+            $(this).addClass('is-open');
+              // _overlay();
+              
+          },
+          mouseleave: function() {
+           $(this).removeClass('is-open');
+              // _closeMegaMenu(); 
+          }
+        } );
 
         $('.js-menu-close, .navbar-toggle:not(.collapsed)').click(function(e) {
           _closeMegaMenu();
