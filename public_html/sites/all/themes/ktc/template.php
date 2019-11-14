@@ -1139,15 +1139,17 @@ function _ktc_get_network_groups($nid) {
  * Text shortener
  */
 function _ktc_text_shortener($text_string, $max_length) {
-  $alter = array(
-    'max_length'    => $max_length,
-    'ellipsis'      => TRUE,
-    'word_boundary' => TRUE,
-    'html'          => TRUE,
-  );
-  $shortened_string = views_trim_text($alter, $text_string);
-
-  return $shortened_string;
+  // We remove the shortening for KTC-77. Leaving old code for reference.
+//  $alter = array(
+//    'max_length'    => $max_length,
+//    'ellipsis'      => TRUE,
+//    'word_boundary' => TRUE,
+//    'html'          => TRUE,
+//  );
+//  $shortened_string = views_trim_text($alter, $text_string);
+//
+//  return $shortened_string;
+  return $text_string;
 }
 
 /**
