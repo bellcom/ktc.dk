@@ -3683,7 +3683,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav > li.expanded > a {
-  padding-right: 40px;
+  padding-right: 30px;
 }
 
 .navbar-nav > li.expanded > a:before {
