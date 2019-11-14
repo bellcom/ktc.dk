@@ -395,13 +395,13 @@ function ktc_preprocess_node(&$vars) {
   }
 
   // Title (shortened)
-  $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 60);
+  $vars['title_shortened'] = $vars['title'];
 
   // Teaser
   if ($vars['elements']['#view_mode'] == 'teaser') {
 
     // Title (shortened)
-    $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 40);
+    $vars['title_shortened'] = $vars['title'];
   }
 
   // Added user_name and user_object for node--teaser/teasercomments templates.
@@ -1139,17 +1139,15 @@ function _ktc_get_network_groups($nid) {
  * Text shortener
  */
 function _ktc_text_shortener($text_string, $max_length) {
-  // We remove the shortening for KTC-77. Leaving old code for reference.
-//  $alter = array(
-//    'max_length'    => $max_length,
-//    'ellipsis'      => TRUE,
-//    'word_boundary' => TRUE,
-//    'html'          => TRUE,
-//  );
-//  $shortened_string = views_trim_text($alter, $text_string);
-//
-//  return $shortened_string;
-  return $text_string;
+  $alter = array(
+    'max_length'    => $max_length,
+    'ellipsis'      => TRUE,
+    'word_boundary' => TRUE,
+    'html'          => TRUE,
+  );
+  $shortened_string = views_trim_text($alter, $text_string);
+
+  return $shortened_string;
 }
 
 /**
