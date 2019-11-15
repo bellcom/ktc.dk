@@ -266,8 +266,7 @@ function ktc_process_page(&$variables) {
   $variables['primary_nav'] = array();
   if ($variables['main_menu']) {
     // Build links.
-    $link = menu_link_load(486);
-    $main_tree = menu_tree_all_data('main-menu', $link, 3);
+    $main_tree = menu_tree_all_data('main-menu', NULL, 2);
     $variables['primary_nav'] = menu_tree_output($main_tree);
     // Provide default theme wrapper function.
     $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
@@ -412,13 +411,13 @@ function ktc_preprocess_node(&$vars) {
   }
 
   // Title (shortened)
-  $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 60);
+  $vars['title_shortened'] = $vars['title'];
 
   // Teaser
   if ($vars['elements']['#view_mode'] == 'teaser') {
 
     // Title (shortened)
-    $vars['title_shortened'] = _ktc_text_shortener($vars['title'], 40);
+    $vars['title_shortened'] = $vars['title'];
   }
 
   // Added user_name and user_object for node--teaser/teasercomments templates.
@@ -659,17 +658,22 @@ function ktc_date_translate($time_ar) {
 function ktc_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
-  if ($element['#below']) {
-    // Prevent dropdown functions from being added to management menu so it
-    // does not affect the navbar module.
-    if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
-      $sub_menu = drupal_render($element['#below']);
-    }
-    elseif ($element['#original_link']['in_active_trail']) {
-      $sub_menu = drupal_render($element['#below']);
-    }
-    else {
-      $element['#attributes']['class'][] = 'has-children';
+  if (($element['#original_link']['menu_name'] == 'main-menu')) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  else {
+    if ($element['#below']) {
+      // Prevent dropdown functions from being added to management menu so it
+      // does not affect the navbar module.
+      if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
+        $sub_menu = drupal_render($element['#below']);
+      }
+      elseif ($element['#original_link']['in_active_trail']) {
+        $sub_menu = drupal_render($element['#below']);
+      }
+      else {
+        $element['#attributes']['class'][] = 'has-children';
+      }
     }
   }
   // On primary navigation menu, class 'active' is not set on active menu item.
@@ -1048,6 +1052,8 @@ function ktc_field($variables) {
   $output = '';
   //we not need field-items class on article page
  if ($variables["element"]["#field_name"] == 'field_paragraphs' && $variables["element"]["#bundle"] == 'artikler' )
+    return;
+  if ($variables["element"]["#field_name"] == 'field_paragraphs' && $variables["element"]["#bundle"] == 'page' )
     return;
   // Render the label, if it's not hidden.
   if (!$variables['label_hidden']) {
