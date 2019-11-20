@@ -9369,7 +9369,8 @@ fieldset[disabled] .field-type-image .button {
   border-left-style: solid;
 }
 
-.block-panels-mini .ktc-block .ktc-block-heading {
+.block-panels-mini .ktc-block .ktc-block-heading,
+.ktc-header-dropdown .ktc-block .ktc-block-heading {
   background-color: #2c353a;
 }
 
