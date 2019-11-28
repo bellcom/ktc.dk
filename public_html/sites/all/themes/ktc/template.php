@@ -108,12 +108,13 @@ function ktc_preprocess_entity(&$variables) {
       $variables['item_id'] = $paragraphs_item->item_id;
       $variables['host_entity_id'] = $paragraphs_item->hostEntityId();
 
-      if (entity_access('update', $host_entity_type, $paragraphs_item->hostEntity()) && entity_access('update', 'paragraphs_item', $paragraphs_item)){
+     global $user;
+     $allowedRoles = array('Administrator', 'super_administrator', 'KTC Siteadmin', 'KTC Webmaster');
+     if (array_intersect($allowedRoles, $user->roles)){
         $variables['classes_array'][] = 'edit-mode';
         $destination = drupal_get_destination();
         $variables['operations']['edit'] = l(t('Edit'), '/paragraphs/' . $paragraphs_item->item_id . '/edit', array('query' => $destination));
         $variables['operations']['delete'] = l(t('Delete'), '/paragraphs/' . $paragraphs_item->item_id . '/delete', array('query' => $destination));
-
       }
    }
   }
@@ -1202,8 +1203,11 @@ function ktc_preprocess_paragraphs_items(&$variables, $hook) {
      foreach($field_info['settings']['allowed_bundles'] as $bundle) {
        if ($bundle != '-1'){
          $paragraphs_bundle = paragraphs_bundle_load($bundle);
-         $variables['operations']['add'][$bundle] = l($paragraphs_bundle->name, 'paragraphs/add/after/' . $bundle . '/node/' . $last_element['value'] . '/' .$field_name, array('query' => $destination));
-
+         global $user;
+         $allowedRoles = array('Administrator', 'super_administrator', 'KTC Siteadmin', 'KTC Webmaster');
+         if (array_intersect($allowedRoles, $user->roles)) {
+           $variables['operations']['add'][$bundle] = l($paragraphs_bundle->name, 'paragraphs/add/after/' . $bundle . '/node/' . $last_element['value'] . '/' . $field_name, array('query' => $destination));
+         }
        }
      }
   }
