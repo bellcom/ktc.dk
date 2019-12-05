@@ -109,7 +109,20 @@ function ktc_preprocess_entity(&$variables) {
       $variables['host_entity_id'] = $paragraphs_item->hostEntityId();
 
      global $user;
-     $allowedRoles = array('Administrator', 'super_administrator', 'KTC Siteadmin', 'KTC Webmaster');
+     $allowedRoles = array(
+       'Administrator',
+       'super_administrator',
+       'KTC Siteadmin',
+       'KTC Webmaster',
+       'Redaktør',
+       'KTC Netværksredaktør',
+       'KTC Nyhedsredaktør',
+       'KTC arrangementsredaktør',
+       'KTC Nyhedsbrevsredaktør',
+       'KTC Leverandørredaktør',
+       'KTC Magasinredaktør',
+       'KTC Magasinlayouter'
+     );
      if (array_intersect($allowedRoles, $user->roles)){
         $variables['classes_array'][] = 'edit-mode';
         $destination = drupal_get_destination();
@@ -1213,7 +1226,20 @@ function ktc_preprocess_paragraphs_items(&$variables, $hook) {
        if ($bundle != '-1'){
          $paragraphs_bundle = paragraphs_bundle_load($bundle);
          global $user;
-         $allowedRoles = array('Administrator', 'super_administrator', 'KTC Siteadmin', 'KTC Webmaster');
+         $allowedRoles = array(
+           'Administrator',
+           'super_administrator',
+           'KTC Siteadmin',
+           'KTC Webmaster',
+           'Redaktør',
+           'KTC Netværksredaktør',
+           'KTC Nyhedsredaktør',
+           'KTC arrangementsredaktør',
+           'KTC Nyhedsbrevsredaktør',
+           'KTC Leverandørredaktør',
+           'KTC Magasinredaktør',
+           'KTC Magasinlayouter'
+           );
          if (array_intersect($allowedRoles, $user->roles)) {
            $variables['operations']['add'][$bundle] = l($paragraphs_bundle->name, 'paragraphs/add/after/' . $bundle . '/node/' . $last_element['value'] . '/' . $field_name, array('query' => $destination));
          }
