@@ -293,16 +293,6 @@ function ktc_process_page(&$variables) {
   }
 }
 
-function _ktc_submenu_tree_all_data($title, $menu = 'main-menu') {
-  $tree = menu_tree_all_data($menu);
-  foreach ($tree as $branch) {
-    if ($branch['link']['title'] == $title) {
-      return $branch['below'];
-    }
-  }
-  return array();
-}
-
 /**
  * Implements template_preprocess_taxonomy_term().
  */
@@ -690,6 +680,7 @@ function ktc_menu_link(array $variables) {
       }
     }
   }
+
   // On primary navigation menu, class 'active' is not set on active menu item.
   // @see https://drupal.org/node/1896674
   if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
