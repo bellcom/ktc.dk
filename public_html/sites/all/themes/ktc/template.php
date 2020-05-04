@@ -109,20 +109,10 @@ function ktc_preprocess_entity(&$variables) {
       $variables['host_entity_id'] = $paragraphs_item->hostEntityId();
 
      global $user;
-     $allowedRoles = array(
-       'Administrator',
-       'super_administrator',
-       'KTC Siteadmin',
-       'KTC Webmaster',
-       'Redaktør',
-       'KTC Netværksredaktør',
-       'KTC Nyhedsredaktør',
-       'KTC arrangementsredaktør',
-       'KTC Nyhedsbrevsredaktør',
-       'KTC Leverandørredaktør',
-       'KTC Magasinredaktør',
-       'KTC Magasinlayouter'
-     );
+
+     $allowedRoles = array('Administrator', 'super_administrator', 'KTC Siteadmin', 'KTC Webmaster');
+     
+
      if (array_intersect($allowedRoles, $user->roles)){
         $variables['classes_array'][] = 'edit-mode';
         $destination = drupal_get_destination();

@@ -182,7 +182,7 @@ function ktc_users_get_user_info_work_data($entity) {
     if ($index < 0) {
       $index = 0;
     }
-    
+
     $data['company'] = $parents[$index]->name;
   }
   // Department
