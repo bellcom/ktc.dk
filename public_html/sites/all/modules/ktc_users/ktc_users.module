@@ -182,7 +182,7 @@ function ktc_users_get_user_info_work_data($entity) {
     if ($index < 0) {
       $index = 0;
     }
-    
+
     $data['company'] = $parents[$index]->name;
   }
   // Department
@@ -526,10 +526,4 @@ function ktc_users_get_user_network_role($account) {
   }
 
   return 'Medlem';
-}
-
-function ktc_users_node_access($node, $op, $account) {
-  if ($node->type == 'artikler' && $node->status == '0'  && $op == 'view' && !user_is_logged_in()) {
-    return NODE_ACCESS_DENY;
-  }
 }
