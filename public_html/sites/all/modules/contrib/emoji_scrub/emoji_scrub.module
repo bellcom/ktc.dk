@@ -1,0 +1,200 @@
+<?php
+/**
+ * @file
+ * Scrubs emojis from filtered text and input fields.
+ */
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function emoji_scrub_module_implements_alter(&$implementations, $hook) {
+  switch ($hook) {
+    case 'entity_presave':
+      // Move emoji_scrub.module to get included first.
+      unset($implementations['emoji_scrub']);
+      $implementations = array_merge(array('emoji_scrub' => 'emoji_scrub'), $implementations);
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function emoji_scrub_entity_presave($entity, $type) {
+  // Get the bundle of the entity.
+  list(, , $bundle) = entity_extract_ids($type, $entity);
+  // Process out the emoji in fields.
+  $entity = emoji_scrub_entity_text_fields($entity, $type, $bundle);
+  // Depending on the type of entity, there are edge cases that need to be
+  // sanitized.
+  $text_properties = array(
+    'title',
+    'name',
+    'label',
+    'description',
+    'subject',
+    'signature',
+  );
+  foreach ($text_properties as $text_property) {
+    if (!empty($entity->$text_property)) {
+      $entity->$text_property = _emoji_scrub_adub_dub($entity->$text_property);
+    }
+  }
+}
+
+/**
+ * Loop through all the entity text fields and strip the emojis.
+ *
+ * @param object $entity
+ *   Fully loaded entity object.
+ * @param string $type
+ *   Type of entity.
+ * @param string $bundle
+ *   Entity Bundle.
+ *
+ * @return object
+ *   Edited entity to return
+ */
+function emoji_scrub_entity_text_fields($entity, $type, $bundle) {
+  $wrapper = entity_metadata_wrapper($type, $entity);
+  $fields = field_info_instances($type, $bundle);
+  // Defining Field.
+  $field_processed = array();
+  // Loop through all field instances.
+  foreach ($fields as $field_id => $field) {
+    // Process only text fields.
+    if ($field['widget']['module'] == 'text') {
+      $field_value = $wrapper->$field_id->value();
+      unset($field_processed);
+
+      // Check if field have text processing.
+      if (is_array($field_value)) {
+        // Field with text processing.
+        if (!empty($field_value['value']) || !empty($field_value['summary'])) {
+          $field_processed = $field_value;
+          $field_processed['summary'] = _emoji_scrub_adub_dub($field_value['summary']);
+          $field_processed['value'] = _emoji_scrub_adub_dub($field_value['value']);
+
+        }
+      }
+      else {
+        // Field with plain text.
+        if (!empty($field_value)) {
+          $field_processed = _emoji_scrub_adub_dub($field_value);
+        }
+      }
+
+      // Update field if emoji was removed.
+      if (isset($field_processed) && ($field_value != $field_processed)) {
+        $wrapper->$field_id->set($field_processed);
+      }
+    }
+  }
+
+  return $wrapper->value();
+}
+
+/**
+ * Custom function to scrub all emojis away.
+ *
+ * @param string $text
+ *   Text which need to be processed.
+ * @param string $replace
+ *   Text for emoji replacement.
+ *
+ * @return string
+ *   Processed text.
+ */
+function _emoji_scrub_adub_dub($text, $replace = '') {
+  if ($replace == '') {
+    $replace = variable_get('emoji_scrub_replace', '');
+  }
+  // Regex grabbed from https://www.drupal.org/node/1910376.
+  // @see https://www.drupal.org/node/1910376
+  // @see http://webcollab.sourceforge.net/unicode.html
+  // Reject overly long 2 byte sequences, as well as characters above U+10000
+  // and replace with empty.
+  $regex = '/[\x00-\x08\x10\x0B\x0C\x0E-\x19\x7F]';
+  $regex .= '|[\x00-\x7F][\x80-\xBF]+';
+  $regex .= '|([\xC0\xC1]|[\xF0-\xFF])[\x80-\xBF]*';
+  $regex .= '|[\xC2-\xDF]((?![\x80-\xBF])|[\x80-\xBF]{2,})';
+  $regex .= '|[\xE0-\xEF](([\x80-\xBF](?![\x80-\xBF]))|(?![\x80-\xBF]{2})|[\x80-\xBF]{3,})/S';
+  $stripped_string = preg_replace($regex, $replace, $text);
+  // Reject overly long 3 byte sequences and UTF-16 surrogates and replace
+  // with --.
+  $stripped_string = preg_replace('/\xE0[\x80-\x9F][\x80-\xBF]' . '|\xED[\xA0-\xBF][\x80-\xBF]/S', $replace, $stripped_string);
+  return $stripped_string;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function emoji_scrub_permission() {
+  return array(
+    'administer emoji scrub settings' => array(
+      'title' => t('Alter the emoji scrub settings'),
+      'description' => t('Alter the emoji scrub settings'),
+      'restrict access' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function emoji_scrub_menu() {
+  $items = array();
+
+  $items['admin/config/content/emoji_scrub'] = array(
+    'title' => 'Emoji Scrub Settings',
+    'description' => 'Settings for Emoji Scrub',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('emoji_scrub_settings'),
+    'access arguments' => array('administer emoji scrub settings'),
+  );
+
+  return $items;
+}
+
+/**
+ * Creates the settings form for Emoji Scrub.
+ */
+function emoji_scrub_settings() {
+  $form = array();
+
+  $form['emoji_scrub_replace'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Replacement string for emojis',
+    '#description' => t('The string value here will replace all emojis on the site.'),
+    '#default_value' => variable_get('emoji_scrub_replace', ''),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_help().
+ */
+function emoji_scrub_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#emoji_scrub':
+      $filepath = dirname(__FILE__) . '/README.md';
+      $readme = file_get_contents($filepath);
+
+      if (module_exists('markdown')) {
+        $filters = module_invoke('markdown', 'filter_info');
+        $info = $filters['filter_markdown'];
+
+        if (function_exists($info['process callback'])) {
+          $output = $info['process callback']($readme, NULL);
+        }
+        else {
+          $output = '<pre>' . $readme . '</pre>';
+        }
+      }
+      else {
+        $output = '<pre>' . $readme . '</pre>';
+      }
+
+      return $output;
+  }
+}

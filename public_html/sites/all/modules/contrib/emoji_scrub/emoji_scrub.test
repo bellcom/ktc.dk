@@ -1,0 +1,93 @@
+<?php
+/**
+ * @file
+ * Simpletest case for emoji_scrub module.
+ *
+ * Verify example module functionality.
+ */
+
+/**
+ * Functionality tests of the emoji scrub module.
+ *
+ * @ingroup emoji_scrub
+ */
+class EmojiScrubTestCase extends DrupalWebTestCase {
+
+  protected $privilegedUser;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    // Note: getInfo() strings are not translated with t().
+    return array(
+      'name' => 'Emoji Scrub',
+      'description' => 'Ensure that the emoji_scrub is scrubbing effectively.',
+      'group' => 'Emoji Scrub',
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setUp() {
+    // Enable emoji scrub.
+    parent::setUp(array('emoji_scrub'));
+    // Create and log in our privileged user.
+    $this->privilegedUser = $this->drupalCreateUser(array(
+      'administer taxonomy',
+      'create article content',
+      'administer emoji scrub settings',
+      ));
+    $this->drupalLogin($this->privilegedUser);
+  }
+
+  /**
+   * Tests the scrubbing of a test article with emojis in the body.
+   */
+  public function testEmojiScrubArticle() {
+    $emoji_text = "😘😘😘 Best Test Text ever 😒😡😤";
+    // Create node to edit.
+    $edit = array();
+    $edit['title'] = $this->randomName(8);
+    $edit['body[und][0][value]'] = $emoji_text;
+    $this->drupalPost('node/add/article', $edit, t('Save'));
+    $this->assertText(t('Article @title has been created.', array('@title' => $edit['title'])));
+  }
+
+  /**
+   * Test the scrubbing of the tags.
+   */
+  public function testEmojiScrubTag() {
+    $emoji_text = "😘😘😘 Best Test Text ever 😒😡😤";
+    // Create node to edit.
+    $edit = array();
+    $edit['name'] = $this->randomName(8);
+    $edit['description[value]'] = $emoji_text;
+    $this->drupalPost('admin/structure/taxonomy/tags/add', $edit, t('Save'));
+    $this->assertText(t('Created new term @name', array('@name' => $edit['name'])));
+  }
+
+  /**
+   * Test the replacement of the emoji text.
+   */
+  public function testEmojiScrubAdubReplace() {
+    $edit = array();
+    $em = 'em';
+    $edit['emoji_scrub_replace'] = $em;
+    $this->drupalPost('admin/config/content/emoji_scrub', $edit, t('Save configuration'));
+    // Create node to edit.
+    $emoji_text = "😘😘😘 Best Test Text ever 😒😡😤";
+    $replaced_text = $em . $em . $em . ' Best Test Text ever ' . $em . $em . $em;
+    // Create an article with the proper settings.
+    $settings = array(
+      'type' => 'article',
+      'title' => $this->randomName(32),
+      'body' => array(LANGUAGE_NONE => array(array('value' => $emoji_text))),
+    );
+    $node = $this->drupalCreateNode($settings);
+    // Test to make sure node's body is equal to the emoji scrub replacement.
+    $this->assertEqual($node->body[LANGUAGE_NONE][0]['value'], $replaced_text, 'Text Replaced');
+  }
+
+}

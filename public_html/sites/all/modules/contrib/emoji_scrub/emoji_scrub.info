@@ -1,0 +1,13 @@
+name = Emoji Scrub
+description = Scrubs filtered text for emojis
+core = 7.x
+configure = admin/config/content/emoji_scrub
+files[] = emoji_scrub.test
+dependencies[] = entity
+
+; Information added by Drupal.org packaging script on 2015-10-26
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "emoji_scrub"
+datestamp = "1445885941"
+
