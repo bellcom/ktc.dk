@@ -1021,6 +1021,8 @@ function ktc_netvaerk_theme($existing, $type, $theme, $path) {
  * Implements hook_form_alter().
  */
 function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
+  global $user;
+
   if (in_array($form_id, array('og_ui_edit_membership', 'og_ui_add_users'))) {
     // The roles on the membership, are all set using ktc_users_roles.
     // So we hide this form item.
@@ -1096,8 +1098,6 @@ function ktc_netvaerk_form_alter(&$form, $form_state, $form_id) {
     $form['og_roles_permissions'][LANGUAGE_NONE]['#default_value'] = 0;
     $form['group_access']['#attributes']['class'][] = 'hide';
     $form['group_access'][LANGUAGE_NONE]['#default_value'] = 0;
-
-   global $user;
 
    if (($user->uid==1 or in_array('Administrator', $user->roles) or in_array('Ansat i KL', $user->roles))=== FALSE) {
       $form['og_group_ref']['und']["#options"] = ktc_netvaerk_user_groups();

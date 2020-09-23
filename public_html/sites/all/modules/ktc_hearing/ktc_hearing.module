@@ -270,11 +270,10 @@ function ktc_hearing_form_after_build($form, &$form_state) {
 function ktc_hearing_form_hearing_responses_node_form_alter(&$form, &$form_state, $form_id) {
   // Don't process the entire form and don't use cache if this was an ajax
   // request. This will break the prefilled fields.
-
-  /*if (!empty($form_state['triggering_element']['#ajax'])) {
+//  if (!empty($form_state['triggering_element']['#ajax'])) {
     $form_state['no_cache'] = TRUE;
-    return;
-  }*/
+//    return;
+//  }
 
   // Change the way the form for hearing responses behave on the response page.
   $form['#hearing_id'] = arg(1);
