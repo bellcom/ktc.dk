@@ -102,10 +102,27 @@ function og_rules_action_info() {
     ),
     'provides' => array(
       'group_managers' => array('type' => 'list<user>', 'label' => t('List of group managers')),
-    ),
+    ),  
     'base' => 'og_rules_get_managers',
     'access callback' => 'og_rules_integration_access',
   );
+
+  $items['og_get_managers_from_group'] = array(
+        'label' => t('Get group managers from a group.'),
+        'group' => t('Organic groups'),
+        'parameter' => array(
+            'group' => array(
+                'type' => 'entity',
+                'label' => t('Group'),
+                'description' => t('The group entity determining the group managers.'),
+              ),
+          ),
+        'provides' => array(
+            'group_managers' => array('type' => 'list<user>', 'label' => t('List of group managers')),
+          ),
+        'base' => 'og_rules_get_managers_from_group',
+        'access callback' => 'og_rules_integration_access',
+      );
 
   $items['og_get_group_content'] = array(
     'label' => t('Get group content from a group'),
@@ -304,6 +321,47 @@ function og_rules_get_members($group_content) {
 }
 
 /**
+ * Action: Get group managers from a group.
+ */
+function og_rules_get_managers_from_group(EntityDrupalWrapper $group) {
+    $entity_type = $group->type();
+    $entity_id = $group->getIdentifier();
+
+    // Not a group.
+    if (!og_is_group($entity_type, $group)) {
+        return;
+  }
+
+  // Get the group roles.
+  $roles = og_roles($entity_type, $group->getBundle(), $entity_id);
+  $admin_rid = array_search(OG_ADMINISTRATOR_ROLE, $roles);
+
+  // Bail out if we can't figure out the admin role id.
+  if (!$admin_rid) {
+        return;
+  }
+
+  $admins = array();
+
+  // Get the group admins for the group.
+  $members = db_select('og_users_roles', 'our')
+      ->fields('our', array('uid'))
+      ->condition('our.gid', $entity_id)
+      ->condition('our.group_type', $entity_type)
+      ->condition('our.rid', $admin_rid)
+      ->execute()
+      ->fetchCol();
+
+  $admins = array_merge($admins, $members);
+
+  // Remove duplicate items.
+  $admins = array_keys(array_flip($admins));
+
+  return array('group_managers' => $admins);
+}
+
+
+/**
  * Action: Get group managers from a group content.
  */
 function og_rules_get_managers($group_content) {
@@ -315,8 +373,9 @@ function og_rules_get_managers($group_content) {
   $return = array();
   foreach ($group_content->og_membership->value() as $og_membership) {
     $group = entity_load_single($og_membership->group_type, $og_membership->gid);
-    if(!empty($group->uid)){
-      $return[] = $group->uid;
+    $managers = og_rules_get_managers_from_group($group);
+    if (!empty($managers['group_managers'])) {
+      $return += $managers['group_managers'];
     }
   }
 
