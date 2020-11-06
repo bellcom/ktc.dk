@@ -1102,7 +1102,8 @@ function ktc_preprocess_region(&$variables, $hook) {
     global $user;
     $user_object = user_load($user->uid);
     $variables['user_object'] = $user_object;
-    $variables['user_login'] = drupal_render(ktc_users_login());
+    $login = ktc_users_login();
+    $variables['user_login'] = drupal_render($login);
   }
 
   if ($variables['region'] == "sidebar_second") {
