@@ -54,6 +54,7 @@ function ktc_hearing_attendees_field_widget_form_alter(&$element, &$form_state, 
   );
 
   if (isset($element['#field_name']) && in_array($element['#field_name'], $show_for_fields)) {
+    $element['#maxlength'] = 100000;
     $element['#suffix'] = '<div class="chosen-entityreference-container"><select data-placeholder="Vælg" class="form-control chosen-entityreference no-ajax" multiple>' . _ktc_hearing_attendees_selected($element) . '</select></div>';
   }
 
@@ -61,9 +62,9 @@ function ktc_hearing_attendees_field_widget_form_alter(&$element, &$form_state, 
     'field_responsible_foreman',
     'field_responsible_admin',
   );
-
   if (isset($element['#field_name']) && in_array($element['#field_name'], $show_for_fields)) {
-    $element['#suffix'] = '<div class="chosen-entityreference-container"><select data-placeholder="Vælg" class="form-control chosen-entityreference no-ajax">' . _ktc_hearing_attendees_selected($element) . '</select></div>';
+    $element['#maxlength'] = 100000;
+//    $element['#suffix'] = '<div class="chosen-entityreference-container"><select data-placeholder="Vælg" class="form-control chosen-entityreference no-ajax">' . $atendees . '</select></div>';
   }
 }
 
