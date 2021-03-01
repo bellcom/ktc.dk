@@ -78,7 +78,7 @@ function ktc_content_types_entity_info_alter(&$entity_info) {
     'label' => t('Listevisning boks'),
     'custom settings' => TRUE,
   );
-  
+
   /* Listevisning boks */
   $entity_info['node']['view modes']['titles'] = array(
     'label' => t('Node titles'),
@@ -96,7 +96,7 @@ function ktc_content_types_entity_info_alter(&$entity_info) {
 function ktc_content_types_form_node_form_alter(&$form, $form_state, $form_id) {
   // Properly hide hidden groups.
   ktc_content_types_field_group_hide_field_groups($form, array('group_hidden'));
-   
+
   // Remove n/a from radio.
   unset($form['field_hearing_official'][LANGUAGE_NONE]['#options']['_none']);
 
@@ -283,4 +283,23 @@ function ktc_content_types_unpublish_node() {
   node_save($node);
 
   drupal_goto('node/' . $node->nid);
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function ktc_content_types_node_presave($node) {
+  if ($node->type == 'page') {
+    // TODO: Need another filter here if 'field_vis_netvaerk' is populated.
+    foreach ($node->field_os2web_base_field_media['und'] as $loadedfile) {
+      $file = file_load($loadedfile['fid']);
+      if (file_uri_scheme($file->uri) == 'private') {
+        if ($moved_file = file_move($file, 'public://' . file_uri_target($file->uri), FILE_EXISTS_RENAME)) {
+          // Only re-assign the file object if file_move() did not fail.
+          $file = $moved_file;
+        }
+        file_save($file);
+      }
+    }
+  }
 }
