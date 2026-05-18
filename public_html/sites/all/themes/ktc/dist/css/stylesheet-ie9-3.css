@@ -2641,13 +2641,13 @@
   }
 
   .ktc-header .ktc-header-navigation .navbar-nav > li ul a:hover {
-    color: #137c34;
-    border-color: #137c34;
+    color: #1c4220;
+    border-color: #1c4220;
   }
 
   .ktc-header .ktc-header-navigation .navbar-nav > li ul a.active {
-    color: #137c34;
-    border-color: #137c34;
+    color: #1c4220;
+    border-color: #1c4220;
   }
 }
 
@@ -2675,8 +2675,8 @@
   }
 
   .footer_4 .block:nth-child(2) {
-    border-left: 2px solid #16923d;
-    border-right: 2px solid #16923d;
+    border-left: 2px solid #245429;
+    border-right: 2px solid #245429;
   }
 }
 
