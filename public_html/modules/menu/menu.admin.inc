@@ -346,15 +346,10 @@ function menu_edit_item($form, &$form_state, $type, $item, $menu) {
   );
 
   // Generate a list of possible parents (not including this link or descendants).
-  if ($type == 'add') {
-    $options = menu_parent_options(array($menu['menu_name'] => t($menu['title'])), $item);
-  }
-  else {
-    $options = menu_parent_options(menu_get_menus(), $item);
-  }
+  $options = menu_parent_options(menu_get_menus(), $item);
   $default = $item['menu_name'] . ':' . $item['plid'];
   if (!isset($options[$default])) {
-    $default = $item['menu_name'] . ':0';
+    $default = 'navigation:0';
   }
   $form['parent'] = array(
     '#type' => 'select',
@@ -486,7 +481,6 @@ function menu_edit_menu($form, &$form_state, $type, $menu = array()) {
     '#default_value' => $menu['menu_name'],
     '#maxlength' => MENU_MAX_MENU_NAME_LENGTH_UI,
     '#description' => t('A unique name to construct the URL for the menu. It must only contain lowercase letters, numbers and hyphens.'),
-    '#field_prefix' => empty($menu['old_name']) ? 'menu-' : '',
     '#machine_name' => array(
       'exists' => 'menu_edit_menu_name_exists',
       'source' => array('title'),

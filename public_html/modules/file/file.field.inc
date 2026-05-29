@@ -184,7 +184,7 @@ function file_field_load($entity_type, $entities, $field, $instances, $langcode,
     foreach ($items[$id] as $delta => $item) {
       // If the file does not exist, mark the entire item as empty.
       if (empty($item['fid']) || !isset($files[$item['fid']])) {
-        unset($items[$id][$delta]);
+        $items[$id][$delta] = NULL;
       }
       else {
         $items[$id][$delta] = array_merge((array) $files[$item['fid']], $item);

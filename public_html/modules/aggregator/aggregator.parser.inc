@@ -98,14 +98,14 @@ function aggregator_parse_feed(&$data, $feed) {
       $item[$key] = trim($value);
     }
 
-    // Resolve the item's title. If no title is found, we use up to 255
-    // characters of the description ending at a word boundary.
+    // Resolve the item's title. If no title is found, we use up to 40
+    // characters of the description ending at a word boundary, but not
+    // splitting potential entities.
     if (!empty($item['title'])) {
       $item['title'] = $item['title'];
     }
     elseif (!empty($item['description'])) {
-      $clean_description = strip_tags(html_entity_decode($item['description'], ENT_QUOTES, 'UTF-8'));
-      $item['title'] = truncate_utf8($clean_description, 255, TRUE, TRUE);
+      $item['title'] = preg_replace('/^(.*)[^\w;&].*?$/', "\\1", truncate_utf8($item['description'], 40));
     }
     else {
       $item['title'] = '';
