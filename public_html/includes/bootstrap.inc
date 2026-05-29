@@ -8,7 +8,7 @@
 /**
  * The current system version.
  */
-define('VERSION', '7.91');
+define('VERSION', '7.103');
 
 /**
  * Core API compatibility.
@@ -18,7 +18,7 @@ define('DRUPAL_CORE_COMPATIBILITY', '7.x');
 /**
  * Minimum supported version of PHP.
  */
-define('DRUPAL_MINIMUM_PHP', '5.2.4');
+define('DRUPAL_MINIMUM_PHP', '5.3.3');
 
 /**
  * Minimum recommended value of PHP memory_limit.
@@ -454,6 +454,9 @@ abstract class DrupalCacheArray implements ArrayAccess {
    * Destructs the DrupalCacheArray object.
    */
   public function __destruct() {
+    if ($this->bin == 'cache_form' && !variable_get('drupal_cache_array_persist_cache_form', FALSE)) {
+      return;
+    }
     $data = array();
     foreach ($this->keysToPersist as $offset => $persist) {
       if ($persist) {
@@ -726,8 +729,8 @@ function drupal_environment_initialize() {
 /**
  * Validates that a hostname (for example $_SERVER['HTTP_HOST']) is safe.
  *
- * @return
- *  TRUE if only containing valid characters, or FALSE otherwise.
+ * @return bool
+ *   TRUE if it only contains valid characters, FALSE otherwise.
  */
 function drupal_valid_http_host($host) {
   // Limit the length of the host name to 1000 bytes to prevent DoS attacks with
@@ -804,8 +807,8 @@ function drupal_settings_initialize() {
     // Otherwise use $base_url as session name, without the protocol
     // to use the same session identifiers across HTTP and HTTPS.
     list( , $session_name) = explode('://', $base_url, 2);
-    // HTTP_HOST can be modified by a visitor, but we already sanitized it
-    // in drupal_settings_initialize().
+    // HTTP_HOST can be modified by a visitor, but we already sanitized it in
+    // drupal_environment_initialize().
     if (!empty($_SERVER['HTTP_HOST'])) {
       $cookie_domain = _drupal_get_cookie_domain($_SERVER['HTTP_HOST']);
     }
@@ -2039,6 +2042,8 @@ function watchdog_exception($type, Exception $exception, $message = NULL, $varia
  *   - WATCHDOG_DEBUG: Debug-level messages.
  * @param $link
  *   A link to associate with the message.
+ *   SECURITY NOTE: Make sure your link is properly sanitized.
+ *   Use the l() function to generate secure links.
  *
  * @see watchdog_severity_levels()
  * @see hook_watchdog()
@@ -2280,7 +2285,8 @@ function drupal_block_denied($ip) {
  *   The number of random bytes to fetch and base64 encode.
  *
  * @return string
- *   The base64 encoded result will have a length of up to 4 * $byte_count.
+ *   A base-64 encoded string, with + replaced with -, / with _ and any =
+ *   padding characters removed.
  */
 function drupal_random_key($byte_count = 32) {
   return drupal_base64_encode(drupal_random_bytes($byte_count));
@@ -2303,15 +2309,30 @@ function drupal_base64_encode($string) {
 /**
  * Returns a string of highly randomized bytes (over the full 8-bit range).
  *
- * This function is better than simply calling mt_rand() or any other built-in
- * PHP function because it can return a long string of bytes (compared to < 4
- * bytes normally from mt_rand()) and uses the best available pseudo-random
- * source.
+ * On PHP 7 and later, this function is a wrapper around the built-in PHP
+ * function random_bytes(). If that function does not exist or cannot find an
+ * appropriate source of randomness, this function is better than simply calling
+ * mt_rand() or any other built-in PHP function because it can return a long
+ * string of bytes (compared to < 4 bytes normally from mt_rand()) and uses the
+ * best available pseudo-random source.
  *
- * @param $count
+ * @param int $count
  *   The number of characters (bytes) to return in the string.
+ *
+ * @return string
+ *   A randomly generated string.
  */
 function drupal_random_bytes($count)  {
+  if (function_exists('random_bytes')) {
+    try {
+      return random_bytes($count);
+    }
+    catch (Exception $e) {
+      // An appropriate source of randomness could not be found. Fall back to a
+      // less secure implementation.
+    }
+  }
+
   // $random_state does not use drupal_static as it stores random bytes.
   static $random_state, $bytes, $has_openssl;
 
@@ -2348,7 +2369,7 @@ function drupal_random_bytes($count)  {
     // the microtime() - is prepended rather than appended. This is to avoid
     // directly leaking $random_state via the $output stream, which could
     // allow for trivial prediction of further "random" numbers.
-    if (strlen($bytes) < $count) {
+    if (strlen((string) $bytes) < $count) {
       // Initialize on the first call. The contents of $_SERVER includes a mix of
       // user-specific and system information that varies a little with each page.
       if (!isset($random_state)) {
@@ -2697,6 +2718,18 @@ function _drupal_bootstrap_configuration() {
   timer_start('page');
   // Initialize the configuration, including variables from settings.php.
   drupal_settings_initialize();
+
+  // Check trusted HTTP Host headers to protect against header attacks.
+  if (PHP_SAPI !== 'cli') {
+    $host_patterns = variable_get('trusted_host_patterns', array());
+    if (!empty($host_patterns)) {
+      if (!drupal_check_trusted_hosts($_SERVER['HTTP_HOST'], $host_patterns)) {
+        header($_SERVER['SERVER_PROTOCOL'] . ' 400 Bad Request');
+        print 'The provided host name is not valid for this server.';
+        exit;
+      }
+    }
+  }
 
   // Sanitize unsafe keys from the request.
   DrupalRequestSanitizer::sanitize();
@@ -3928,6 +3961,36 @@ function drupal_clear_opcode_cache($filepath) {
 }
 
 /**
+ * Checks trusted HTTP Host headers to protect against header injection attacks.
+ *
+ * @param string|null $host
+ *   The host name.
+ * @param array $host_patterns
+ *   The array of trusted host patterns.
+ *
+ * @return bool
+ *   TRUE if the host is trusted, FALSE otherwise.
+ */
+function drupal_check_trusted_hosts($host, array $host_patterns) {
+  if (!empty($host) && !empty($host_patterns)) {
+    // Trim and remove the port number from host; host is lowercase as per
+    // RFC 952/2181.
+    $host = strtolower(preg_replace('/:\d+$/', '', trim($host)));
+
+    foreach ($host_patterns as $pattern) {
+      $pattern = sprintf('{%s}i', $pattern);
+      if (preg_match($pattern, $host)) {
+        return TRUE;
+      }
+    }
+
+    return FALSE;
+  }
+
+  return TRUE;
+}
+
+/**
  * Drupal's wrapper around PHP's setcookie() function.
  *
  * This allows the cookie's $value and $options to be altered.
@@ -3949,6 +4012,14 @@ function drupal_setcookie($name, $value, $options) {
     setcookie($name, $value, $options);
   }
   else {
+    $defaults = array(
+      'expires' => 0,
+      'path' => '',
+      'domain' => '',
+      'secure' => FALSE,
+      'httponly' => FALSE,
+    );
+    $options += $defaults;
     setcookie($name, $value, $options['expires'], $options['path'], $options['domain'], $options['secure'], $options['httponly']);
   }
 }
