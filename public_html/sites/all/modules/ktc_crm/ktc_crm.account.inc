@@ -83,21 +83,36 @@ function ktc_crm_account_update_accounts() {
     $options = array(
       'MaxReturned' => $amount,
       'Skip' => ($i * $amount),
-      'UpdatedSince' => $updated_since,
+      'UpdatedSince' => NULL,
     );
 
     $accounts = ktc_crm_fetch_accounts($options);
 
-    if ($accounts == 'error') {
+    if ($accounts === 'error') {
       $logger->log->addError('cron: account sync aborted crm died?');
+
+      // Resetting all terms to not be deleted.
+      db_update('taxonomy_term_data')
+        ->fields(array('updated' => 1))
+        ->condition('vid', $vocab->vid)
+        ->execute();
+
       return FALSE;
     }
 
     if (!$accounts && $i == 0) {
       // If no accounts are returned on first fetch, don't no anything more.
       $logger->log->addInfo('cron: no accounts returned from webservice');
+
+      // Resetting all terms to not be deleted.
+      db_update('taxonomy_term_data')
+        ->fields(array('updated' => 1))
+        ->condition('vid', $vocab->vid)
+        ->execute();
+
       return;
     }
+
     if (!$accounts) {
       $fetch_accounts = FALSE;
       break;

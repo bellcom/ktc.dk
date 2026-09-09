@@ -521,9 +521,7 @@ function ktc_crm_fetch_accounts($options = array()) {
       'method' => 'RetrieveAccounts',
     ));
 
-    if ($e->getMessage() == 'Error Fetching http headers') {
-      return 'error';
-    }
+    return 'error';
   }
 
   return FALSE;
